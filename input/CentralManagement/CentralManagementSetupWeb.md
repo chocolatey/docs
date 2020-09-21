@@ -1,0 +1,460 @@
+# Central Management Website Setup
+
+This is the Central Management website that gives an API and a web layer to centrally manage information about your environment and manage endpoints with deployment tasks.
+
+> :warning: **WARNING**
+>
+> Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
+
+___
+<!-- TOC depthFrom:2 depthTo:5 -->
+
+- [Step 1: Complete Prerequisites](#step-1-complete-prerequisites)
+  - [Script for some prerequisites](#script-for-some-prerequisites)
+- [Step 2: Install Central Management Web Package](#step-2-install-central-management-web-package)
+  - [Package Parameters](#package-parameters)
+  - [IIS Settings](#iis-settings)
+  - [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations)
+  - [Scenarios](#scenarios)
+    - [SQL Server Windows Authentication](#sql-server-windows-authentication)
+      - [Use Active Directory Domain Account](#use-active-directory-domain-account)
+      - [Use Local Windows Account to Local SQL Server](#use-local-windows-account-to-local-sql-server)
+      - [Use Windows Account to Attach SQL Server](#use-windows-account-to-attach-sql-server)
+      - [Use Local Windows Account to Remote SQL Server](#use-local-windows-account-to-remote-sql-server)
+    - [SQL Server Account Authentication](#sql-server-account-authentication)
+      - [Use SQL Server Authentication Locally](#use-sql-server-authentication-locally)
+      - [Use SQL Server Account to Remote SQL Server](#use-sql-server-account-to-remote-sql-server)
+- [Step 3: Verify Installation](#step-3-verify-installation)
+- [Step 4: Set Up Website](#step-4-set-up-website)
+  - [Step 4.1: Login And Change Default Credentials](#step-41-login-and-change-default-credentials)
+  - [Step 4.2: SMTP Configuration](#step-42-smtp-configuration)
+    - [appsettings.json configuration](#appsettingsjson-configuration)
+  - [Step 4.3: Application Settings File](#step-43-application-settings-file)
+- [FAQ](#faq)
+  - [Can I install the Chocolatey Central Management Web Site under a Virtual Directory in IIS?](#can-i-install-the-chocolatey-central-management-web-site-under-a-virtual-directory-in-iis)
+  - [What is the CCM compatibility matrix?](#what-is-the-ccm-compatibility-matrix)
+  - [I entered incorrect database details on install, do I need to reinstall to fix that?](#i-entered-incorrect-database-details-on-install-do-i-need-to-reinstall-to-fix-that)
+  - [Where is the management website installed?](#where-is-the-management-website-installed)
+- [Common Errors and Resolutions](#common-errors-and-resolutions)
+  - [The specified path, file name, or both are too long](#the-specified-path-file-name-or-both-are-too-long)
+  - [HTTP Error when trying to access Chocolatey Central Management Website](#http-error-when-trying-to-access-chocolatey-central-management-website)
+  - [The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.](#the-term-install-chocolateyappsettingsjsonfile-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
+  - [Cannot process command because of one or more missing mandatory parameters: FilePath](#cannot-process-command-because-of-one-or-more-missing-mandatory-parameters-filepath)
+  - [All attempts to send email from CCM result in an error](#all-attempts-to-send-email-from-ccm-result-in-an-error)
+  - [Emails sent from CCM to users has links that contains localhost, rather than actual CCM Server name](#emails-sent-from-ccm-to-users-has-links-that-contains-localhost-rather-than-actual-ccm-server-name)
+  - [The updated license file is not being picked up in the website](#the-updated-license-file-is-not-being-picked-up-in-the-website)
+  - [A computer or group is not showing as available for deployments but I have plenty of available licenses](#a-computer-or-group-is-not-showing-as-available-for-deployments-but-i-have-plenty-of-available-licenses)
+  - [Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path.](#failed-to-generate-a-user-instance-of-sql-server-due-to-failure-in-retrieving-the-users-local-application-data-path)
+  - [The website app pool shuts down almost as soon as it is started](#the-website-app-pool-shuts-down-almost-as-soon-as-it-is-started)
+
+<!-- /TOC -->
+
+___
+## Step 1: Complete Prerequisites
+
+* > :warning: The [[database|CentralManagementSetupDatabase]] must be setup and available, along with [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+* Windows Server 2012+
+* PowerShell 3+
+* .NET Framework 4.6.1+
+* IIS Set up and available
+* aspnetcore-runtimepackagestore version 2.2.7
+* dotnetcore-windowshosting version 2.2.7
+
+The CCM Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note, that the codebase is currently locked to version `2.2.7` of these packages, and it is critical that you install these right, otherwise you will encounter errors.
+
+### Script for some prerequisites
+
+```powershell
+choco install dotnet4.6.1 -y
+choco install IIS-WebServer -s windowsfeatures -y
+choco install IIS-ApplicationInit -s windowsfeatures -y
+choco install aspnetcore-runtimepackagestore --version 2.2.7 -y
+choco install dotnetcore-windowshosting --version 2.2.7 -y
+
+choco pin add --name="'aspnetcore-runtimepackagestore'" --version="'2.2.7'" --reason="'Required for CCM website'"
+choco pin add --name="'dotnetcore-windowshosting'" --version="'2.2.7'" --reason="'Required for CCM website'"
+# "reason" only available in commercial editions
+```
+
+___
+## Step 2: Install Central Management Web Package
+
+> :memo: **NOTE**: At this time we don't recommend opening internet access to CCM web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
+
+### Package Parameters
+Note items with "`:`" mean a value should be provided, items without are simply switches.
+
+* `/Username:` - Username that the IIS Web Application Pool will run under. Defaults to `IIS APPPOOL\ChocolateyCentralManagement`. If this is specified, you must also specify either `/Password` or `/EnterPassword`. **NOTE**: This may require manual steps after install as well. See [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations).
+* `/Password:` - Password for the user. Defaults to a Windows autogenerated secure password for the IIS AppPool.
+* `/EnterPassword` -  Receive the password at runtime as a secure string. Requires input at runtime whe installing/upgrading the package.
+* `/ConnectionString:` - The SQL Server database connection string to be used to connect to the Chocolatey Central Management database. Defaults to default or explicit values for `/SqlServiceInstance` and `/Database`, along with Integrated Security (`Server=<LOCAL COMPUTER FQDN NAME>; Database=ChocolateyManagement; Trusted_Connection=True;`). The account should have `db_datareader`/`db_datawriter` access to the database ([data reader / data writer](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)).
+* `/SqlServerInstance:` - Instance name of the SQL Server database to connect to. Alternative to passing full connection string with `/ConnectionString`. Uses `/Database` (below) to build a connection string. Defaults to `<LOCAL COMPUTER FQDN NAME>`.
+* `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
+
+### IIS Settings
+
+This package creates the CCM Website and Application Pool with the following defaults:
+
+* IIS Web Application Pool:               **ChocolateyCentralManagement**
+  * enable32BitAppOnWin64:                **True**
+  * managedPipelineMode:                  **Integrated**
+  * managedRuntimeVersion:                &lt;blank&gt;
+  * startMode:                            **AlwaysRunning**
+  * processModel.idleTimeout:             **0**
+  * recycling.periodicRestart.schedule:   **Disabled**
+  * recycling.periodicRestart.time:       **0**
+* Website Name:                             **ChocolateyCentralManagement**
+  * PortBinding:                          **80**
+  * applicationDefaults.preloadEnabled:   **True**
+
+### Non-Default App Pool User Considerations
+
+If you've used a specific username for the app pool, specified by `/Username:` or added manually later to IIS settings, it's important to note that the installation procedure as of CCM v0.3.0 do not currently set the following and they will need to be done manually.
+
+This includes (but may not be everything):
+  * User needs granted "Logon as batch"  in local security policy.
+  * User needs to be given explicit Read/Execute rights (ACLs) to `c:\tools\chocolatey-management-web`.
+  * User needs to be given explicit Modify rights (ACLs) to `c:\tools\chocolatey-management-web\App_Data`.
+
+### Scenarios
+#### SQL Server Windows Authentication
+##### Use Active Directory Domain Account
+Scenario 1: Active Directory - you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication).
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
+```
+
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
+
+##### Use Local Windows Account to Local SQL Server
+Scenario 2: Monolithic - you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
+
+* Specify User:
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<LocalWindowsAccount>'" --package-parameters-sensitive="'/Password:<Local account password>'"
+```
+
+> :warning: **WARNING**
+>
+> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+
+* Default User (`IIS APPPOOL\ChocolateyCentralManagement`)
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True;'"
+```
+
+> :warning: **WARNING**
+>
+> Please ensure the user `IIS APPPOOL\ChocolateyCentralManagement` has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
+
+##### Use Windows Account to Attach SQL Server
+You are using AttachDBFile or User Instance in your Connection String. This is effectively asking to attach a database file to the User's Data directory.
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Data Source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|SomeDbFile.mdf;User Instance=true;'"
+```
+
+> :warning: **WARNING**
+>
+> STOP right here. This is an unsupported scenario.
+>
+> While it may work, it's a really bad idea. Please look at one of the other options.
+> It can also result in "Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path."
+
+
+##### Use Local Windows Account to Remote SQL Server
+Scenario 3: you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
+
+> :warning: **WARNING**
+>
+> STOP right here.
+> This is an invalid scenario and will not work. Please look at one of the other options. If you don't have LDAP, you will want to look at [SQL Server Account Authentication](#sql-server-account-authentication) below.
+
+It's worth noting here that `ChocolateyLocalAdmin` on two boxes is NOT the same account, so there is no way for Windows to recognize the account from a different box.
+
+
+#### SQL Server Account Authentication
+##### Use SQL Server Authentication Locally
+Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [[database|CentralManagementSetupDatabase]] to use Mixed Mode Authentication.
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
+```
+
+> :warning: **WARNING**
+>
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+
+* SQL Server Express:
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
+```
+
+> :warning: **WARNING**
+>
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+
+##### Use SQL Server Account to Remote SQL Server
+Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [[database|CentralManagementSetupDatabase]] to use Mixed Mode Authentication.
+
+```powershell
+choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
+```
+
+> :warning: **WARNING**
+>
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+
+___
+## Step 3: Verify Installation
+
+The `chocolatey-management-web` package is responsible for creating and deploying the CCM Website within IIS.  A successful installation of this package can be verified by:
+
+* Opening an internet browser on the machine to the following address `http://localhost` which should result in the login page for CCM being displayed.
+* It should be possible to login to the site using the default credentials mentioned in Step 4 (below).
+* The installation folder for `chocolatey-management-web` is at `c:\tools\chocolatey-management-web` (this is configurable by `$env:ChocolateyToolsLocation`).
+* Open the website log file located at `c:\tools\chocolatey-management-web\App_Data\Logs\ccm-website.log` and verify that there are no recently reported errors. If you are on a version of CCM prior to 0.2.0, the log will be located at `c:\tools\chocolatey-management-web\App_Data\Logs\Logs.txt`.
+
+___
+## Step 4: Set Up Website
+
+### Step 4.1: Login And Change Default Credentials
+When you access the CCM Website you will be prompted to provide a username and password to access the site.  By default, the username is `ccmadmin` and the password is `123qwe`.  After you input this, you will be prompted to change the password.
+
+![First time login - change password](images/features/ccm/change_password.png)
+
+
+### Step 4.2: SMTP Configuration
+
+The CCM Site needs to be able to send email for certain actions.  For example, when a new user is registering with the system, or when sending out forgotten password emails.  Valid SMTP Configuration has to be provided in order for these emails to be sent out.  Follow these steps to configure SMTP for CCM.
+
+1. Open the CCM Site in the browser
+1. Login with the `ccmadmin` user
+1. In the left hand menu click on `Administration` and then `Settings`
+1. Click on the `Email (SMTP)` tab in the `Settings` screen
+1. Add the SMTP settings for your environment
+1. Click the `Save All` button to save changes
+1. Change the email address to go to your email address
+1. Click the `Send Test Email` button and ensure that an email is received correctly
+
+You should received a notification similar to this:
+
+![Test email sent successfully](images/features/ccm/test_email_sent_correctly.png)
+
+#### appsettings.json configuration
+
+**NOTE**: In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
+
+There is a requirement within the CCM site to send emails to end users of the application.  For example, when registering a new user, or resetting a password.  To ensure that these emails contain a properly clickable link a modification needs to be made to the `appsettings.json` file which is located in the `c:\tools\chocolatey-management-web` folder.
+
+Open this file in a text editor, and add the following entry:
+
+~~~json
+    "App": {
+        "WebSiteRootAddress": "<URL_to_CCM>"
+    }
+~~~
+
+* `URL_to_CCM` should be the accessible URL to access the CCM Website.  This will typically be the FQDN of the server that is hosting the CCM Web Site, but it will depend on your environments configuration.
+
+> :memo: **NOTE**: When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.  i.e. the end result needs to be a properly formatted JSON document.
+
+
+The end result should look something like this:
+
+![Modified appsettings.json file](images/features/ccm/updated_appsettingsjson_file.png)
+
+Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
+
+~~~powershell
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
+~~~
+
+And then try accessing the website again.  Any emails that are then sent from CCM should then contain valid links back to the site.
+
+### Step 4.3: Application Settings File
+
+Some application settings will require you to edit the `appsettings.json` file, which is located in the `c:\tools\chocolatey-management-web` folder.
+
+Here is a copy of items that can be set. They are not required to be encrypted. Any item that is encrypted can be replaced by a non-encrypted value. During package install/upgrade, Chocolatey will encrypt certain settings (even if they were previously plain text).
+
+```json
+{
+  "ConnectionStrings": {
+        "Default": "Server=localhost; Database=ChocolateyManagement; Trusted_Connection=True;"
+  },
+  "App": {
+    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+  },
+  "Recaptcha": {
+    "SiteKey": "<INSERT SITE KEY HERE>",
+    "SecretKey": "<INSERT SECRET KEY HERE>"
+  }
+}
+```
+
+> :warning: **WARNING**:
+>
+> Recaptcha is likely to require a publicly available CCM Web, and we currently have a strong recommendation to ***NOT*** open up the web to the internet. You likely do not want to set this or turn it on inside the Administration -> Settings section. However if you do, you will NEED the items set here in the appsettings.json as well.
+
+___
+## FAQ
+### Can I install the Chocolatey Central Management Web Site under a Virtual Directory in IIS?
+
+Currently no.  The Chocolatey Central Management Web Site expects to reside at the site level within IIS.
+
+### What is the CCM compatibility matrix?
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [[CCM Component Compatibility Matrix|CentralManagement#ccm-component-compatibility-matrix]] for details.
+
+
+### I entered incorrect database details on install, do I need to reinstall to fix that?
+It depends. You can simply go to the appsettings.json file and adjust the connection string to be plaintext. It will remain in plaintext though (at least until upgrade), so if you have actual password details you need to keep secure, you should do a force installation.
+
+1. The file is located at `c:\tools\chocolatey-management-web\appsettings.json`.
+1. You would open that up in an editor and modify the `"Default"` connection string.
+1. It would look something like the following (adjust the connection string as necessary):
+
+    ```json
+    {
+      "ConnectionStrings": {
+            "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+      },
+      "App": {
+        "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+      }
+    }
+    ```
+
+1. Then restart the website by running from admin powershell: `Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process`
+
+> :warning: **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
+
+### Where is the management website installed?
+The default installation folder for `chocolatey-management-web` is at `c:\tools\chocolatey-management-web`. However, this is configurable based on `$env:ChocolateyToolsLocation`. We would not suggest changing that value once you have installed anything that makes use of it as permissions and other things will be pointing to that set of folders.
+
+___
+## Common Errors and Resolutions
+### The specified path, file name, or both are too long
+
+This error can occur when installing the `chocolatey-management-web` package.  Due to the nested folder structure contained within this package, when extracting to the default cache location, the path can become too long.  This problem is known is occur in the 0.1.0-beta-20181009 release of this package, and it should be corrected in subsequent releases.  As a workaround, adding the following parameters to the install command should allow the installation to complete successfully:
+
+~~~powershell
+--cache-location="'C:\Temp\choco'"
+~~~
+
+### HTTP Error when trying to access Chocolatey Central Management Website
+
+When you try to access the Chocolatey Central Management Website (by default, this is hosted on http://localhost), errors messages similar to the following may be returned:
+
+`HTTP Error 500.19 - Internal Server Error`
+
+These errors happen very early in the application execution, and as a result, are not logged to the standard log location.  It is possible to increase the logging that is performed by the ASP.NET Worker Process, so that additional information about the error can be found.  Follow these steps to enable that additional logging:
+
+1. In Windows Explorer, navigate to the `c:/tools/chocolatey-management-web` folder
+1. Find the `web.config` file and open this in a text editor
+1. Locate the `stdoutLogEnabled` attribute, which will be set to false by default
+1. Change this to true, and save the file
+1. Check to see if there is a running process called `ChocolateySoftware.ChocolateyManagement.Web.Mvc.exe`.  If there is, stop it.
+1. Attempt to access the website again.  An additional log file will be created in the `App_Data\Logs\stdout` folder
+1. Review this log for additional error information
+1. Ensure that you set the `stdoutLogEnabled` attribute back to false
+
+In these situations, we have found that incorrect database connection strings are typically the root cause of the problem.
+
+
+### The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
+
+In the beta version of Chocolatey.Extension, there was a Cmdlet named Install-ChocolateyAppSettingsJsonFile and this was used in the 0.1.0-beta-20181009 release of the Chocolatey Central Management components. In the final released version of the Chocolatey.Extension, this was renamed to Install-AppSettingsJsonFile.
+
+As a result, the Chocolatey Central Management beta no longer works with the released version of Chocolatey.Extension. This will be corrected once the next release of the Chocolatey Central Management components is completed.
+
+### Cannot process command because of one or more missing mandatory parameters: FilePath
+
+During the creation of Chocolatey Central Management, some additional PowerShell cmdlets were created, and these are installed as part of the Chocolatey Extension package.  These cmdlets went through a number of iterations, and as a result, different combinations of Chocolatey Central Management packages were incompatible with the Chocolatey Extension package, resulting in the error:
+
+`Cannot process command because of one or more missing mandatory parameters: FilePath`
+
+The guidance in this case is either to pin to the specific version of the Chocolatey Extension package required by the version of Chocolatey Central Management being used, or, update to the latest versions of all packages, where the situation should be addressed.
+
+### All attempts to send email from CCM result in an error
+
+When any attempt is made by CCM to send an email, an error occurs.  This either results in an HTTP 500 errors similar to the following:
+
+![HTTP 500 error when sending email](images/features/ccm/error_when_sending_email_500.png)
+
+Or an inline error, similar to this:
+
+![Inline error when sending email](images/features/ccm/error_when_sending_email_inline.png)
+
+Checking the log file, an error similar to this is found:
+
+~~~powershell
+ERROR 2019-06-14 00:54:03,491 [55   ] Microsoft.AspNetCore.Server.Kestrel      - Connection id "0HLNGIPBBV01R", Request id "0HLNGIPBBV01R:00000001": An unhandled exception was thrown by the application.
+System.Net.Sockets.SocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:25
+~~~
+
+This is caused due to the default SMTP configuration being used by CCM, which is incompatible with the environment.  CCM, by default, assumes that there is an available SMTP Server available on the current machine, using port 25.  To fix this, follow the installation steps [above](#smtp-configuration).
+
+### Emails sent from CCM to users has links that contains localhost, rather than actual CCM Server name
+
+There is a requirement within the CCM site to send emails to end users of the application.  For example, when registering a new user, or resetting a password.  When this happens, the email should contain a link back to the CCM Site, which the user can click on to bring up the site in their browser.  However, emails sent from CCM contain links that contain localhost in the address, which means when clicked on, they fail to open correctly.  This can be fixed by making a change to the `appsettings.json` file which is located in the `c:\tools\chocolatey-management-web` folder.
+
+Open this file in a text editor, and add the following entry:
+
+~~~json
+    "App": {
+        "WebSiteRootAddress": "<URL_to_CCM>"
+    }
+~~~
+
+NOTE: When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.  i.e. the end result needs to be a properly formatted JSON document.
+
+where `URL_to_CCM` should be the accessible URL to access the CCM Website.  This will typically be the FQDN of the server that is hosting the CCM Web Site, but it will depend on your environments configuration.
+
+The end result should look something like this:
+
+![Modified appsettings.json file](images/features/ccm/updated_appsettingsjson_file.png)
+
+Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
+
+~~~powershell
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
+~~~
+
+And then try accessing the website again.  Any emails that are then sent from CCM should then contain valid links back to the site.
+
+
+### The updated license file is not being picked up in the website
+You need to restart the web executable currently. We are looking to have it automatically picked up in future releases. Here's a script to handle that:
+
+```powershell
+Get-Service chocolatey-* | Stop-Service
+Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
+Get-Service chocolatey-* | Start-Service
+```
+
+### A computer or group is not showing as available for deployments but I have plenty of available licenses
+Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
+
+### Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path.
+You may see the following: "System.Data.SqlClient.SqlException (0x80131904): Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path. Please make sure the user has a local user profile on the computer. The connection will be closed."
+
+This means you are attempting to attach a Local DB file as part of your connection. This is an invalid scenario as noted at [Use Windows Account to Attach SQL Server](#use-windows-account-to-attach-sql-server).
+
+
+### The website app pool shuts down almost as soon as it is started
+
+If you see the app pool shutting down immediately when you start it.
+
+* Check the event log first. It's very helpful in seeing what the actual issues are
+* Turn on stdout logging in the config at `c:\tools\chocolatey-management-web\web.config` if it is not already on. The attribute is named `stdoutLogEnabled` (set it to true). This will allow logging to `c:\tools\chocolatey-management-web\App_Data\Logs`. Permissions will play a role in this so ensure [the user has the right access](#non-default-app-pool-user-considerations).
+* Check for [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations).
+
+___
+[[Central Management Setup|CentralManagementSetup]] | [[Chocolatey Central Management|CentralManagement]]
