@@ -4,7 +4,7 @@ Title: Central Management Upgrade
 Description: How to upgrade CCM
 ---
 
-# Chocolatey Central Mangement Upgrade
+# Chocolatey Central Management Upgrade
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
 > :memo: **NOTE**: Looking for installation instructions? See [[Central Management Setup|CentralManagementSetup]].
@@ -22,7 +22,7 @@ ___
 
 - [Step 1: Download Latest Packages](#step-1-download-latest-packages)
 - [Step 2: Upgrade Central Management Database](#step-2-upgrade-central-management-database)
-- [Step 3: Setup Central Mangement Windows Service(s)](#step-3-setup-central-mangement-windows-services)
+- [Step 3: Setup Central Management Windows Service(s)](#step-3-setup-central-management-windows-services)
 - [Step 4: Setup Central Management Website](#step-4-setup-central-management-website)
 - [Step 5: Upgrade Agent Machines](#step-5-upgrade-agent-machines)
   - [New Deployments Feature Example](#new-deployments-feature-example)
@@ -82,7 +82,7 @@ choco upgrade chocolatey-management-database -y
 > :warning: **WARNING** If you are using QDE and receive an error about deserializing and padding, see the resolution below.
 
 ___
-## Step 3: Setup Central Mangement Windows Service(s)
+## Step 3: Setup Central Management Windows Service(s)
 
 > :memo: **NOTE**: Please see [[Central Management Service Setup|CentralManagementSetupService]] for details about all arguments that can be passed and set.
 

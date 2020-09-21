@@ -4,7 +4,7 @@ Title: Central Management Deployments
 Description: How to deploy packages, and execute PowerShell, on client machines
 ---
 
-# Chocolatey Central Mangement Deployments
+# Chocolatey Central Management Deployments
 
 > :warning: **WARNING**: This is a Work in Progress. Please check back later.
 >

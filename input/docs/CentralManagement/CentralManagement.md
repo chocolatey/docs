@@ -4,7 +4,7 @@ Title: Central Management Overview
 Description: What is CCM?
 ---
 
-# Chocolatey Central Mangement (CCM)
+# Chocolatey Central Management (CCM)
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments. CCM is available with Chocolatey for Business only.
 
@@ -17,7 +17,7 @@ Once installed and configured, you can use CCM to:
 
 ![Central Management Logo](images/features/ccm/central-management.png)
 
-This provides an overview on Chocolatey Central Mangement (CCM). It provides both setup and use of CCM.
+This provides an overview on Chocolatey Central Management (CCM). It provides both setup and use of CCM.
 
 ___
 <!-- TOC depthFrom:2 depthTo:5 -->

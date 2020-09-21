@@ -1,4 +1,4 @@
-# Chocolatey Central Mangement Reports
+# Chocolatey Central Management Reports
 
 > :warning: **WARNING**: This is a Work in Progress. Please check back later.
 

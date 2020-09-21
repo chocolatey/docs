@@ -4,7 +4,7 @@ Title: Central Managment Setup
 Description: Information on how to setup CCM
 ---
 
-# Chocolatey Central Mangement Setup
+# Chocolatey Central Management Setup
 
 Installing CCM takes a little more pre-thought than simply running the package installs.
 While it is envisioned that CCM will be installed across multiple servers (split installation), it is certainly possible to run CCM on a single server (monolithic).
@@ -36,7 +36,7 @@ ___
 - [High Level Requirements](#high-level-requirements)
 - [Step 1: Internalize Packages](#step-1-internalize-packages)
 - [Step 2: Setup Central Management Database](#step-2-setup-central-management-database)
-- [Step 3: Setup Central Mangement Windows Service(s)](#step-3-setup-central-mangement-windows-services)
+- [Step 3: Setup Central Management Windows Service(s)](#step-3-setup-central-management-windows-services)
 - [Step 4: Setup Central Management Website](#step-4-setup-central-management-website)
 - [Step 5: Setting up Agent Machines](#step-5-setting-up-agent-machines)
 - [Upgrading?](#upgrading)
@@ -116,7 +116,7 @@ Please see [[Central Management Database Setup|CentralManagementSetupDatabase]].
 > :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 ___
-## Step 3: Setup Central Mangement Windows Service(s)
+## Step 3: Setup Central Management Windows Service(s)
 Please see [[Central Management Service Setup|CentralManagementSetupService]].
 
 > :memo: **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
