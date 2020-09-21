@@ -1,3 +1,4 @@
 .dotnet/
 tools/
 BuildArtifacts/
+config.wyam.*
