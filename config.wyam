@@ -1,0 +1,1 @@
+Pipelines["RenderPages"].InsertAfter("WriteMetadata", new Headings(3)); // Heading level
