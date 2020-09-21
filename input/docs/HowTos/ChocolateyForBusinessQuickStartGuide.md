@@ -40,7 +40,7 @@ Let's get started!
 
 ## Components
 
-![Implementation Diagram](images/C4B-implementation-diagram.jpg)<!--remove {.border style="max-width:820px;"} remove-->
+![Implementation Diagram](/assets/images/C4B-implementation-diagram.jpg)<!--remove {.border style="max-width:820px;"} remove-->
 
 As illustrated in the diagram above, there are five main components to a default Chocolatey install, namely:
 

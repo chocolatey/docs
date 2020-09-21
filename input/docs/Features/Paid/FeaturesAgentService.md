@@ -105,17 +105,17 @@ This makes for happy users and happy admins as they are able to move quicker tow
 
 * Chocolatey's Self-Service Installer - Part 1:
 
-[![Chocolatey's Self-Service Installer - Part 1](images/features/features_selfservice_video1.jpg)](https://www.youtube.com/watch?v=Thw9GpQaZ6M "Chocolatey's Self-Service Installer - Part 1")
+[![Chocolatey's Self-Service Installer - Part 1](/assets/images/features/features_selfservice_video1.jpg)](https://www.youtube.com/watch?v=Thw9GpQaZ6M "Chocolatey's Self-Service Installer - Part 1")
 
 * Chocolatey's Self-Service Installer - Part 2:
 
-[![Chocolatey's Self-Service Installer - Part 2](images/features/features_selfservice_video2.jpg)](https://www.youtube.com/watch?v=BnnAwFftUwU "Chocolatey's Self-Service Installer - Part 2")
+[![Chocolatey's Self-Service Installer - Part 2](/assets/images/features/features_selfservice_video2.jpg)](https://www.youtube.com/watch?v=BnnAwFftUwU "Chocolatey's Self-Service Installer - Part 2")
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 Consider the following image:
 
-![Attempting to install software as non-admin - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](images/features/features_non_admin_installer.png)
+![Attempting to install software as non-admin - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_installer.png)
 
 <!--
 Text in the image above:
@@ -129,7 +129,7 @@ This is the status quo for a non-administrative user. Can't install software wit
 
 Now, how does that change once we have background mode?
 
-![Installing software with Chocolatey's background mode from the command line. - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](images/features/features_non_admin_selfservice.png)
+![Installing software with Chocolatey's background mode from the command line. - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_selfservice.png)
 
 <!--
 Text in the image above:
@@ -149,7 +149,7 @@ This image shows running `choco install adobereader -y`.
 Once you've configured background mode and configured approved sources for installation, a user can install only those approved applications using the command line or the Chocolatey GUI.
 
 Now, if a user wants to install from a non-approved source, they are met with the following message:
-![Not able to install from custom source](images/features/features_non_admin_custom_source_error.png)
+![Not able to install from custom source](/assets/images/features/features_non_admin_custom_source_error.png)
 
 This ensures non-admin users can only install from sources that you configure.
 

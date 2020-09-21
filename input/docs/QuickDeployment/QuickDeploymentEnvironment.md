@@ -12,7 +12,7 @@ It provides a single virtual machine appliance to be imported into your hypervis
 > For best results, we would recommend a distributed infrastructure, separating each component into its own discrete node.
 > If you find yourself in need of a more scalable solution, please contact Support and we'll be more than happy to provide guidance for larger solutions.
 
-![QDE Architecture](images/quickdeploy/QDE-architecture.gif)
+![QDE Architecture](/assets/images/quickdeploy/QDE-architecture.gif)
 
 <!-- TOC depthFrom:2 -->
 

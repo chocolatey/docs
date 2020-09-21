@@ -146,7 +146,7 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
 1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://chocolatey.org/packages/chocolatey and find a version you want.
 1. Click on Download to download that version's nupkg file.
 
-  ![download chocolatey.nupkg visual](images/DownloadChocolateyPackage.png)
+  ![download chocolatey.nupkg visual](/assets/images/DownloadChocolateyPackage.png)
 
 1. You can also download [the latest version directly](https://chocolatey.org/api/v2/package/chocolatey).
 1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/puppetlabs/chocolatey#manage-chocolatey-installation

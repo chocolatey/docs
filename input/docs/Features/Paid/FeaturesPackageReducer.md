@@ -86,7 +86,7 @@ To turn on Package Reducer, you need to run the following:
 
 ### See It In Action
 
-![Package Reducer - if you are on https://chocolatey.org/docs/features-package-reducer, see commented html below for detailed description of image](images/features/features_package_reducer.png)
+![Package Reducer - if you are on https://chocolatey.org/docs/features-package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer.png)
 
 <!--
 Text in the image above:
@@ -202,7 +202,7 @@ choco optimize --reduce-nupkg-only
 
 ### See It In Action
 
-![choco optimize - if you are on https://chocolatey.org/docs/features-package-reducer, see commented html below for detailed description of image](images/features/features_package_reducer_optimize.png)
+![choco optimize - if you are on https://chocolatey.org/docs/features-package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer_optimize.png)
 
 <!--
 Text in the image above:

@@ -237,7 +237,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
     <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus Server Admin](images/quickdeploy/QDE-nexus-web-1.gif)
+    ![Nexus Server Admin](/assets/images/quickdeploy/QDE-nexus-web-1.gif)
 
     </details>
 
@@ -246,7 +246,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
     <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus Create Role](images/quickdeploy/QDE-nexus-web-2.gif)
+    ![Nexus Create Role](/assets/images/quickdeploy/QDE-nexus-web-2.gif)
 
     </details>
 
@@ -255,7 +255,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
     <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus chocorole](images/quickdeploy/QDE-nexus-web-3.gif)
+    ![Nexus chocorole](/assets/images/quickdeploy/QDE-nexus-web-3.gif)
 
     </details>
 
@@ -269,7 +269,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
     <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus roles](images/quickdeploy/QDE-nexus-web-4.gif)
+    ![Nexus roles](/assets/images/quickdeploy/QDE-nexus-web-4.gif)
 
     </details>
 
@@ -278,7 +278,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
     <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus Create Role button](images/quickdeploy/QDE-nexus-web-5.gif)
+    ![Nexus Create Role button](/assets/images/quickdeploy/QDE-nexus-web-5.gif)
 
     </details>
 
@@ -290,7 +290,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
    <details>
     <summary><strong>Show Animation</strong></summary>
 
-   ![Nexus Create chocouser](images/quickdeploy/QDE-nexus-web-6.gif)
+   ![Nexus Create chocouser](/assets/images/quickdeploy/QDE-nexus-web-6.gif)
    </details>
 
 1. In the Roles section, double-click the `chocorole` Role to to add it to the `Granted` section. Click the `Create local user` button to create your user.
@@ -298,7 +298,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
      <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus Assign chocorole](images/quickdeploy/QDE-nexus-web-7.gif)
+    ![Nexus Assign chocorole](/assets/images/quickdeploy/QDE-nexus-web-7.gif)
     </details>
 
 1. Under the `Security` sidebar menu, select `Anonymous Access`. Un-check the box next to the option `Allow anonymous users to access the server`, and click `Save`.
@@ -306,7 +306,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
     <details>
      <summary><strong>Show Animation</strong></summary>
 
-    ![Nexus Disable Anonymous Access](images/quickdeploy/QDE-nexus-web-8.gif)
+    ![Nexus Disable Anonymous Access](/assets/images/quickdeploy/QDE-nexus-web-8.gif)
 
     </details>
 

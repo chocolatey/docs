@@ -63,15 +63,15 @@ To make the existing package local, use these steps.
 
 `1.` Download the package from Chocolatey's community feed by going to the [package page](https://chocolatey.org/packages/notepadplusplus.commandline) and clicking the download link.
 
-![Download Link](images/recompile/choco_npp_download.png)
+![Download Link](/assets/images/recompile/choco_npp_download.png)
 
 `2.` Rename the downloaded file to end with `.zip` and unpack the file as a regular archive.
 
-![Rename to append .zip suffix](images/recompile/choco_rename_nupkg_zip.png)
+![Rename to append .zip suffix](/assets/images/recompile/choco_rename_nupkg_zip.png)
 
 `3.` Delete the `_rels` and `package` folders and the `[Content_Types].xml` file. These are created during `choco pack` and should not be included, as they will be regenerated (and their existence leads to issues).
 
-![Remove _rels, package, and the xml file](images/recompile/choco_delete_pkg_files.png)
+![Remove _rels, package, and the xml file](/assets/images/recompile/choco_delete_pkg_files.png)
 
 `4.` Next, open `tools\chocolateyInstall.ps1`.
 
@@ -81,7 +81,7 @@ Install-ChocolateyZipPackage 'notepadplusplus.commandline' 'https://notepad-plus
 
 `5.` Download the zip file and place it in the tools folder of the package.
 
-![Zip file embedding in package](images/recompile/choco_download_zip.png)
+![Zip file embedding in package](/assets/images/recompile/choco_download_zip.png)
 
 `6.` If the file ends in `.exe`, create an empty file called `*.exe.ignore`, where the name is an exact match with the exe with `.ignore` appended at the end (e.g. `bob.exe` would have a file next to it named `bob.exe.ignore`).
 

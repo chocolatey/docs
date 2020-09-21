@@ -172,7 +172,7 @@ Steps to create a QDE virtual machine in Azure:
 <details>
     <summary>Cick to show animated summary</summary>
 
-![QDE Hyper-V Appliance Import](images/quickdeploy/QDE-hypervapp.gif)
+![QDE Hyper-V Appliance Import](/assets/images/quickdeploy/QDE-hypervapp.gif)
 </details>
 
 #### Hyper-V VHD
@@ -200,7 +200,7 @@ Steps to create a QDE virtual machine in Azure:
 <details>
     <summary>Cick to show animated summary</summary>
 
-![QDE Hyper-V VHD](images/quickdeploy/QDE-hyperv.gif)
+![QDE Hyper-V VHD](/assets/images/quickdeploy/QDE-hyperv.gif)
 </details>
 
 ### Platform: VMware / Other (OVF/OVA Template)
@@ -229,13 +229,13 @@ Steps to create a QDE virtual machine in Azure:
 <details>
     <summary>Click to show animated summary (ESX/i)</summary>
 
-![QDE VMware VMDK](images/quickdeploy/QDE-vmdk-esx.gif)
+![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-esx.gif)
 </details>
 
 <details>
     <summary>Click to show animated summary (VMware Fusion, OSX)</summary>
 
-![QDE VMware VMDK](images/quickdeploy/QDE-vmdk-fusion.gif)
+![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-fusion.gif)
 </details>
 
 ### Platform: Other
@@ -346,7 +346,7 @@ Upgrading to a newer version via the typical Jenkins installer package requires 
 Upgrading through the Web UI is the simpler way to go, and doesn't seem to carry any of the complications that can arise when upgrading via their MSI installer.
 When an upgrade is available, Jenkins will show a new notification that looks like this when clicked:
 
-![Jenkins upgrade notification, showing the notification message prompting to upgrade](images/jenkins-upgrade-notification.png)
+![Jenkins upgrade notification, showing the notification message prompting to upgrade](/assets/images/jenkins-upgrade-notification.png)
 
 To upgrade via the web UI:
 

@@ -49,7 +49,7 @@ Chocolatey for Business is able to inspect an installer and determine silent arg
 ### Command Line
 When calling `choco new`, just add `--file=value` to point to a native installer and Chocolatey for Business will automatically determine the silent arguments, create the packaging and wrap that all around the installer.
 
-![Create Packages from Installers - if you are on https://chocolatey.org/docs/features-create-packages-from-installers, see commented html below for detailed description of image](images/features/features_packages_from_installers.png)
+![Create Packages from Installers - if you are on https://chocolatey.org/docs/features-create-packages-from-installers, see commented html below for detailed description of image](/assets/images/features/features_packages_from_installers.png)
 
 <!--
 Text in the image above:
@@ -125,7 +125,7 @@ Another way Package Builder can generate packages is based on looking at what is
 
 ### More business concepts
 
-![auto package creation/synchronize](images/gifs/choco_business_features.gif)
+![auto package creation/synchronize](/assets/images/gifs/choco_business_features.gif)
 
 ## Options and Switches
 

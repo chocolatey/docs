@@ -31,7 +31,7 @@ Chocolatey for Business is able to automatically download packages and resources
 
 Call `choco download` with options including the name of an existing package for Chocolatey for Business to download and download all existing remote resources.
 
-![Internalize Existing Packages, Recompiling Resources - if you are on https://chocolatey.org/docs/features-automatically-recompile-packages, see commented html below for detailed description of image](images/features/features_recompile_packages.png)
+![Internalize Existing Packages, Recompiling Resources - if you are on https://chocolatey.org/docs/features-automatically-recompile-packages, see commented html below for detailed description of image](/assets/images/features/features_recompile_packages.png)
 
 <!--
 Text in the image above:
@@ -50,7 +50,7 @@ This image shows running `choco download --recompile git.install`.
 
 ## See It In Action
 
-![automatic recompile](images/gifs/choco_business_features_recompile.gif)
+![automatic recompile](/assets/images/gifs/choco_business_features_recompile.gif)
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

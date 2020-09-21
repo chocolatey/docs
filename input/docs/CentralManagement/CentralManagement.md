@@ -15,7 +15,7 @@ Once installed and configured, you can use CCM to:
 * Create reports for tracking and auditing purposes
 * Manage endpoints with deployments through groups and collections
 
-![Central Management Logo](images/features/ccm/central-management.png)
+![Central Management Logo](/assets/images/features/ccm/central-management.png)
 
 This provides an overview on Chocolatey Central Management (CCM). It provides both setup and use of CCM.
 
@@ -119,7 +119,7 @@ ___
 * [[CCM Deployments|CentralManagementDeployments]]
 * [[CCM Reports|CentralManagementReports]]
 
-![CCM Overview](images/features/ccm/ccm_overview.jpg)
+![CCM Overview](/assets/images/features/ccm/ccm_overview.jpg)
 
 ___
 ## Related Articles

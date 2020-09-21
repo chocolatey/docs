@@ -130,7 +130,7 @@ Resize-VHD -Path C:\path\to\QuickDeploy Environment.vhd -Size 500GB
 
 Video Summary:
 
-![QDE Hyper-V Appliance Import](images/quickdeploy/QDE-hypervapp.gif)
+![QDE Hyper-V Appliance Import](/assets/images/quickdeploy/QDE-hypervapp.gif)
 
 ### Platform: Hyper-V (VHD file)
 
@@ -157,7 +157,7 @@ Resize-VHD -Path C:\path\to\QuickDeploy Environment.vhd -Size 500GB
 
 Video Summary:
 
-![QDE Hyper-V VHD](images/quickdeploy/QDE-hyperv.gif)
+![QDE Hyper-V VHD](/assets/images/quickdeploy/QDE-hyperv.gif)
 
 ### Platform: VMware (VMDK file)
 
@@ -176,10 +176,10 @@ Video Summary:
 Video Summary:
 
 * VMware ESX/i:
-![QDE VMware VMDK](images/quickdeploy/QDE-vmdk-esx.gif)
+![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-esx.gif)
 
 * VMware Fusion (Mac OS):
-![QDE VMware VMDK](images/quickdeploy/QDE-vmdk-fusion.gif)
+![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-fusion.gif)
 
 ### Platform: VMware (OVF template)
 

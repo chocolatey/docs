@@ -30,10 +30,10 @@ We are pleased to offer runtime malware protection for our [customers](https://c
 ## Usage
 
 When a binary is not flagged:
-![Virus scan pass](images/virus_scan_normal.png)
+![Virus scan pass](/assets/images/virus_scan_normal.png)
 
 When a binary is flagged:
-![Virus scan failure](images/virus_scan_flagged.png)
+![Virus scan failure](/assets/images/virus_scan_flagged.png)
 
 
 ### VirusTotal
@@ -78,7 +78,7 @@ In `genericVirusScannerValidExitCodes`, these are exit codes that indicate that 
 
 ## See It In Action
 
-![Pro install in action](images/gifs/chocopro_install_stopped.gif)
+![Pro install in action](/assets/images/gifs/chocopro_install_stopped.gif)
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

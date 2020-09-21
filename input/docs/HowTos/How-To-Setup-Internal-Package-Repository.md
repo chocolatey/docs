@@ -47,7 +47,7 @@ For these reasons, we do not recommend that organizations use the Chocolatey Com
 
 Chocolatey recommends you use an architecture that meets the [organizational requirements](#organizational-requirements) as we have shown below.
 
-![Chocolatey Architecture Diagram](images/internalizer/architecture-diagram.png)
+![Chocolatey Architecture Diagram](/assets/images/internalizer/architecture-diagram.png)
 
 Let's break down the diagram:
 
@@ -191,7 +191,7 @@ To install and configure Jenkins:
 1. As the code we will be running in the Jenkins jobs is PowerShell, we need to add the PowerShell plugin.
   * On the home page, click **Manage Jenkins**
   * Click **Manage Plugins**;
-  ![Jenkins PowerShell Plugin](images/internalizer/jenkins-ps-plugin.png)
+  ![Jenkins PowerShell Plugin](/assets/images/internalizer/jenkins-ps-plugin.png)
   * Click the **Available** tab;
   * In the _Filter_ box type `PowerShell`;
   * Tick the _PowerShell_ plugin and click **Install without Restart**;

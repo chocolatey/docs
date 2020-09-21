@@ -3,7 +3,7 @@ Chocolatey Central Management gives you visibility into what's installed on a gi
 
 The **Computers** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar.
 
-![Computers menu entry on the CCM Dashboard](images/computers/ccm-computers-nav.png)
+![Computers menu entry on the CCM Dashboard](/assets/images/computers/ccm-computers-nav.png)
 
 
 ___
@@ -36,11 +36,11 @@ ___
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
 Select the **:gear: Actions** menu in the corresponding right-hand column, and click **Details**.
 
-![Finding a computer's details menu option](images/computers/ccm-computers-details-menu.png)
+![Finding a computer's details menu option](/assets/images/computers/ccm-computers-details-menu.png)
 
 You will be presented with a list of the installed software packages for the machine, similar to below.
 
-![Computer details screen showing installed software](images/computers/ccm-computers-details.png)
+![Computer details screen showing installed software](/assets/images/computers/ccm-computers-details.png)
 
 ___
 ## Removing a Computer from Central Management
@@ -52,11 +52,11 @@ ___
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
 Select the **:gear: Actions** menu in the corresponding right-hand column, and click **Delete**.
 
-![Deleting a computer in Central Management](images/computers/ccm-computers-delete-menu.png)
+![Deleting a computer in Central Management](/assets/images/computers/ccm-computers-delete-menu.png)
 
 You will be prompted to confirm the deletion.
 
-![Prompt to confirm deletion of a computer in Central Management](images/computers/ccm-computers-delete-confirm.png)
+![Prompt to confirm deletion of a computer in Central Management](/assets/images/computers/ccm-computers-delete-confirm.png)
 
 
 ___

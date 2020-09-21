@@ -37,7 +37,7 @@ A good way to find what you need is to translate from Kbps to bits: [Google Kbps
 * Chocolatey Licensed Extension (`chocolatey.extension` package) v1.10.0+.
 
 ## See It In Action
-![Package Throttle downloading a package and resources - - if you are on https://chocolatey.org/docs/features-package-throttle, see commented html below for detailed description of image](images/features/features_package_throttle.png)
+![Package Throttle downloading a package and resources - - if you are on https://chocolatey.org/docs/features-package-throttle, see commented html below for detailed description of image](/assets/images/features/features_package_throttle.png)
 
 <!--
 Text in the image above:

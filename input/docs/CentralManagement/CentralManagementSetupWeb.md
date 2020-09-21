@@ -227,7 +227,7 @@ ___
 ### Step 4.1: Login And Change Default Credentials
 When you access the CCM Website you will be prompted to provide a username and password to access the site.  By default, the username is `ccmadmin` and the password is `123qwe`.  After you input this, you will be prompted to change the password.
 
-![First time login - change password](images/features/ccm/change_password.png)
+![First time login - change password](/assets/images/features/ccm/change_password.png)
 
 
 ### Step 4.2: SMTP Configuration
@@ -245,7 +245,7 @@ The CCM Site needs to be able to send email for certain actions.  For example, w
 
 You should received a notification similar to this:
 
-![Test email sent successfully](images/features/ccm/test_email_sent_correctly.png)
+![Test email sent successfully](/assets/images/features/ccm/test_email_sent_correctly.png)
 
 #### appsettings.json configuration
 
@@ -268,7 +268,7 @@ Open this file in a text editor, and add the following entry:
 
 The end result should look something like this:
 
-![Modified appsettings.json file](images/features/ccm/updated_appsettingsjson_file.png)
+![Modified appsettings.json file](/assets/images/features/ccm/updated_appsettingsjson_file.png)
 
 Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
 
@@ -386,11 +386,11 @@ The guidance in this case is either to pin to the specific version of the Chocol
 
 When any attempt is made by CCM to send an email, an error occurs.  This either results in an HTTP 500 errors similar to the following:
 
-![HTTP 500 error when sending email](images/features/ccm/error_when_sending_email_500.png)
+![HTTP 500 error when sending email](/assets/images/features/ccm/error_when_sending_email_500.png)
 
 Or an inline error, similar to this:
 
-![Inline error when sending email](images/features/ccm/error_when_sending_email_inline.png)
+![Inline error when sending email](/assets/images/features/ccm/error_when_sending_email_inline.png)
 
 Checking the log file, an error similar to this is found:
 
@@ -419,7 +419,7 @@ where `URL_to_CCM` should be the accessible URL to access the CCM Website.  This
 
 The end result should look something like this:
 
-![Modified appsettings.json file](images/features/ccm/updated_appsettingsjson_file.png)
+![Modified appsettings.json file](/assets/images/features/ccm/updated_appsettingsjson_file.png)
 
 Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
 

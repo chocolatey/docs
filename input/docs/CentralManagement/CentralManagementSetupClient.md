@@ -90,9 +90,9 @@ ___
 * The installation folder for `chocolatey-agent` is at `$env:ChocolateyInstall\lib\chocolatey-agent\tools\service`.
 * Open the Service log file located at `$env:ChocolateyInstall\logs\chocolatey-agent.log` and verify that there are no recently reported errors. If you are on a version of Chocolatey Agent prior to 0.10.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-agent\tools\service\logs\chocolatey-agent.log`.
 * There should be messages of connecting to the ccm server and checking in. It will be similar to this:
-  ![Agent Setup For CCM](images/features/ccm/agent_ccm_setup_good.png)
+  ![Agent Setup For CCM](/assets/images/features/ccm/agent_ccm_setup_good.png)
   Connection to report in:
-  ![Agent Checkin to CCM](images/features/ccm/agent_ccm_communication.png)
+  ![Agent Checkin to CCM](/assets/images/features/ccm/agent_ccm_communication.png)
 
 ___
 ## FAQ

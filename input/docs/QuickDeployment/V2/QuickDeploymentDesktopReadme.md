@@ -252,7 +252,7 @@ Once logged in perform the following steps:
 <details>
     <summary>Click to show animated summary</summary>
 
-![changing the choco API key](images/gifs/choco_qde_update_apikey.gif)
+![changing the choco API key](/assets/images/gifs/choco_qde_update_apikey.gif)
 </details>
 
 1. Click on your username in the upper right-hand side of the homepage
@@ -326,7 +326,7 @@ slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 
 When attempting to reset the `admin` account credential in Nexus, you receive a "Server Error" warning in the top right corner of the page, as shown below:
 
-![QDE Nexus pw error](images/quickdeploy/QDE-nexus-pw-error.png)
+![QDE Nexus pw error](/assets/images/quickdeploy/QDE-nexus-pw-error.png)
 
 Though it may not be obvious, this is actually caused by Nexus not having enough disk space to function properly.
 We sometimes see this occur if [Step 1: Expand Disk Size](#step-1-expand-disk-size) was skipped.

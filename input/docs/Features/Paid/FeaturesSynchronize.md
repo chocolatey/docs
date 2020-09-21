@@ -62,7 +62,7 @@ As commercial editions lean more towards software management, they have much bet
 
 ### Usage
 
-![Automatic Synchronize - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](images/features/features_synchronize.png)
+![Automatic Synchronize - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](/assets/images/features/features_synchronize.png)
 
 In the image above, someone manually removed the 1Password software. On the next run of Chocolatey, auto sync sees the software has been removed, so it removes the package tracking to that software in response to those system changes.
 
@@ -99,7 +99,7 @@ If the software is an MSI, the Product Guid is used for managing uninstalls. Gue
 
 
 ### See It In Action
-![auto package creation/synchronize](images/gifs/choco_business_features.gif)
+![auto package creation/synchronize](/assets/images/gifs/choco_business_features.gif)
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
@@ -139,7 +139,7 @@ We've prepared a short video to show sync in action:
 
 In the following image, sync is run on a system that has 18 applications installed and a base Chocolatey for Business install. Note after running sync, all software on the machine is now being managed by Chocolatey.
 
-![Chocolatey's Package Synchronizer Sync Command - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](images/features/features_choco_sync.png)
+![Chocolatey's Package Synchronizer Sync Command - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](/assets/images/features/features_choco_sync.png)
 
 <!--
 Text in the image above:
@@ -201,7 +201,7 @@ In C4B, you can flip a switch and see all packages in Programs and Features, eve
 
 ### Usage
 
-![All Packages in Programs And Features - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](images/features/features_packages_in_programs_and_features.png)
+![All Packages in Programs And Features - if you are on https://chocolatey.org/docs/features-synchronize, see commented html below for detailed description of image](/assets/images/features/features_packages_in_programs_and_features.png)
 
 <!--
 Text in the image above:

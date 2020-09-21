@@ -87,15 +87,15 @@ Once you have resolved any issues on your side, we can lift the block. A block w
 
 As a measure to increase site stability and prevent excessive use, the Chocolatey website uses rate limiting on requests for the community repository. Rate limiting was introduced in November 2018. Most folks typically won't hit rate limits unless they are automatically tagged for excessive use. If you do trigger the rate limit, you will see a `(429) Too Many Requests`. When attempting to install Chocolatey you will see the following:
 
-![Exception calling "DownloadFile" with "2" arguments: The remote server returned an error: 429 Too Many Requests](images/cloudflare_ratelimiting_choco_install.png)
+![Exception calling "DownloadFile" with "2" arguments: The remote server returned an error: 429 Too Many Requests](/assets/images/cloudflare_ratelimiting_choco_install.png)
 
 It will look like the following using choco.exe:
 
-![The remote server returned an error: 429 Too Many Requests](images/cloudflare_ratelimiting_choco.png)
+![The remote server returned an error: 429 Too Many Requests](/assets/images/cloudflare_ratelimiting_choco.png)
 
 If you go to a package page and attempt to use the download link in the left menu, you will see the following:
 
-![Error 1015, You are being rate limited](images/cloudflare_ratelimiting.png)
+![Error 1015, You are being rate limited](/assets/images/cloudflare_ratelimiting.png)
 
 You will start to see `429 Too Many Requests` if you have triggered the rate limit. Currently the rate limit will be in place for one hour. If you trigger it again, it will then be set for another hour.
 

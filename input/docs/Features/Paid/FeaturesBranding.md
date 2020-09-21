@@ -20,12 +20,12 @@ We are aware that some of customers want to be able to brand Chocolatey GUI so
 that is "looks" like their own internal applications.  Out of the box, Chocolatey
 GUI's main screen looks like this:
 
-![Chocolatey GUI Main Screen](images/gui/main-screen.png)
+![Chocolatey GUI Main Screen](/assets/images/gui/main-screen.png)
 
 However, with branding applied, Chocolatey GUI's main screen can instead look like
 this:
 
-![Chocolatey GUI Main Screen with Branding](images/gui/main-screen-with-branding.png)
+![Chocolatey GUI Main Screen with Branding](/assets/images/gui/main-screen-with-branding.png)
 
 Here, the logo of a company called A Squared Software Ltd is being used, instead
 of the main Chocolatey logo.  In addition, a _Powered By Chocolatey_ logo is added
@@ -107,11 +107,11 @@ entire organisation.
 The below GIF shows the default opening of the Chocolatey GUI application when
 there is no branding applied.
 
-![Chocolatey GUI in action](images/gui/in-action.gif)
+![Chocolatey GUI in action](/assets/images/gui/in-action.gif)
 
 In this GIF, we see branding being applied to the Chocolatey GUI application.
 
-![Chocolatey GUI in action with branding](images/gui/in-action-with-branding.gif)
+![Chocolatey GUI in action with branding](/assets/images/gui/in-action-with-branding.gif)
 
 Notice that the splash screen image has been replaced, as well as the logo at the
 top left of the application, and the icon in the taskbar.

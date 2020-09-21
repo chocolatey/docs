@@ -308,7 +308,7 @@ After the Nexus service has completed restarting, you should now be able to brow
 ### "Server Error" warning when resetting "admin" credential in Nexus
 When attempting to reset the `admin` account credential in Nexus, you receive a "Server Error" warning in the top right corner of the page, as shown below:
 
-![QDE Nexus pw error](images/quickdeploy/QDE-nexus-pw-error.png)
+![QDE Nexus pw error](/assets/images/quickdeploy/QDE-nexus-pw-error.png)
 
 Though it may not be obvious, this is actually caused by Nexus not having enough disk space to function properly. We often see this occur if the `Expand disk size` step from above was missed. Please confirm that you have completed the [Step 1: Expand Disk Size](#step-1-expand-disk-size) step. Please keep in mind, this step is **NOT** the same as expanding the disk at the hypervisor level.
 
