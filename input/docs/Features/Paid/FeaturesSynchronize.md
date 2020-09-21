@@ -72,7 +72,7 @@ Text in the image above:
 Synchronize with Programs and Features
 
 - Chocolatey for Business - any Chocolatey command will trigger synchronization
-- Synchronizes state between Chocoaltey and Programs and Features
+- Synchronizes state between Chocolatey and Programs and Features
 - Currently supports manual software removals
 - Adding upgrade tracking
 
