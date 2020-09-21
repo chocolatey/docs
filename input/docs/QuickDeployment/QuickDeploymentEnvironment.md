@@ -31,8 +31,6 @@ It provides a single virtual machine appliance to be imported into your hypervis
 
 <!-- /TOC -->
 
----
-
 ## QDE Components
 
 The QDE appliance provides a unified architecture containing the following components:
@@ -44,8 +42,6 @@ The QDE appliance provides a unified architecture containing the following compo
 | **Chocolatey Central Management**   | This is your web dashboard for Chocolatey, that will allow you to track and monitor Chocolatey packages on your endpoint clients. You can see what packages are installed where, and whether or not they are out-of-date. |
 | **Scripts for Internal Deployment** | Various scripts to help you configure this solution are included, for your convenience.                                                                                                                                   |
 
----
-
 ## Getting QDE
 
 To get QDE into your environment, please [reach out to us](https://chocolatey.org/contact/quick-deployment) so we can work to get you set up.
@@ -53,8 +49,6 @@ To get QDE into your environment, please [reach out to us](https://chocolatey.or
 > :memo: **Note**
 >
 > A QDE environment is a fully functional Chocolatey for Business (C4B) environment; as such, it will require a business or trial license.
-
----
 
 ## Related Articles
 
@@ -68,8 +62,6 @@ A lot of what is done in QDE condenses or completely eliminates the work found i
 If you find that QDE is only good for a proof-of-concept in your environment due to having thousands of endpoints, you will want to understand how to scale out that infrastructure.
 The above articles document how that is done.
 
----
-
 ## Links
 
 * [[QDE Setup|QuickDeploymentSetup]]
@@ -78,8 +70,6 @@ The above articles document how that is done.
 * [[QDE Firewall Changes|QuickDeploymentFirewallChanges]]
 * [[QDE Client Setup|QuickDeploymentClientSetup]] (setting up your client machines)
 * [How do I upgrade QDE?](#how-do-i-upgrade-qde).
-
----
 
 ## FAQ
 

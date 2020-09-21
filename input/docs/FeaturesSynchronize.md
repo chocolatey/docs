@@ -6,8 +6,6 @@ Chocolatey maintains its own state of the world, while Windows maintains the sta
 * [Synchronize Command](#sync-command) (currently Business edition only - check https://chocolatey.org/compare#compare for availability)
 * [All Packages in Programs And Features (C4B)](#all-packages-in-programs-and-features)
 
----
-
 <!-- TOC -->
 
 - [Automatic Synchronize](#automatic-synchronize)

@@ -53,8 +53,6 @@ To finish setting up QDE (Quick Deployment Environment), you'll need to work thr
 
 If you run into any issues as you set up your QDE and clients, please reach out to support and we can set up a session to work with you on this.
 
----
-
 ## Step 0: Complete Prerequisites
 
 There are some initial steps you will need to have taken before you work through this document.
@@ -62,8 +60,6 @@ Please make sure you have taken those steps ahead of time.
 See the [Online Documentation](https://chocolatey.org/docs/quick-deployment-setup#step-3-virtual-environment-setup) for the most up to date information.
 
 * [[QDE Setup|QuickDeploymentSetup]]
-
----
 
 ## Step 1: Expand Disk Size
 
@@ -75,8 +71,6 @@ After starting the VM, you can run the below command to resize the Windows parti
 ```powershell
 Resize-Partition -DriveLetter C -Size ((Get-PartitionSupportedSize -DriveLetter C).SizeMax)
 ```
-
----
 
 ## Step 2: Environment Setup
 
@@ -139,8 +133,6 @@ You can also call `Get-Help C:\choco-setup\files\Set-QDEnvironment.ps1 -Full` fo
 | `-CertificateDnsName`    | If using a wildcard certificate this _must_ be included with either `-CertificateThumbprint` or `-CertificateSubject`.                                                               |
 | `-InternetEnabled`       | When this parameter is used, the QDE Server is configured for internet-facing clients.                                                                                               |
 
----
-
 ### 4. Select Community Packages to Internalize
 
 > :memo: **Note**
@@ -156,8 +148,6 @@ When you're happy with your selections (don't worry, you can always use the buil
 
 This internalization will happen automatically in the background, and will generally take about a minute or two per package, depending on the size of the package.
 We recommend you leave the VM running while it's happening; you can keep tabs on its progress by opening Nexus to the ChocolateyInternal repository and checking the available packages.
-
----
 
 ## Step 3: Review & Configure Host Services
 
@@ -253,8 +243,6 @@ You will find Google Chrome pre-installed in the environment.
 > There is a known issue in some QDE configurations where Firefox will be unable to load Nexus correctly.
 > If this occurs, you need to disable the `Block dangerous and deceptive content` option under **Security** in order to load Nexus.
 
----
-
 ## Step 4: Change the API Key (Recommended)
 
 You may wish to change the API key before you start using things.
@@ -307,13 +295,9 @@ To do so:
    1. Replace the contents of the field with the new API key
    1. Press the **Save** button at the bottom of the page
 
----
-
 ## Step 5: Install and Configure Chocolatey On Clients
 
 Refer to [the Client Setup documentation](https://chocolatey.org/docs/quick-deployment-client-setup).
-
----
 
 ## Step 6: License the QDE VM
 
@@ -330,8 +314,6 @@ If you rely on Retail or MAK licensing, you will need to apply the license using
 ```powershell
 slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 ```
-
----
 
 ## Common Errors and Resolutions
 
@@ -366,8 +348,6 @@ Then, restart Explorer for your changes to take effect immediately.
 choco upgrade chocolatey.extension -y --source="'C:\choco-setup\packages'"
 Stop-Process -Name explorer -Force
 ```
-
----
 
 ## See Also
 

@@ -14,8 +14,6 @@
 
 <!-- /TOC -->
 
----
-
 ## External Firewall Ports (Optional)
 
 > :warning: **WARNING**
@@ -33,8 +31,6 @@ These are ports that need to be opened through the corporate firewall, if users 
 | 8443  | Nexus Web UI               |
 | 24020 | Central Management Service |
 
----
-
 ## Internal Firewall Ports
 
 These are the ports that are already opened on Windows Firewall in QDE.
@@ -44,8 +40,6 @@ These are the ports that are already opened on Windows Firewall in QDE.
 | 8443  | Nexus Web UI  |
 |  443  | CCM Dashboard |
 | 24020 | CCM Service   |
-
----
 
 ## FAQ
 
@@ -57,7 +51,5 @@ With Central Management v0.3.0, more security has been put into allowing for che
 
 As of QDE version 2.0, you can enable CCM (and Nexus) internet accessibility by using the `Set-QDEnvironmentInternetSecurity.ps1` script provided with the VM.
 If you run the `Set-QDEnvironment.ps1` script with the `-InternetEnabled` switch (which requires you to provide your own certificate), this will happen automatically.
-
----
 
 [[Quick Deployment Environment|QuickDeploymentEnvironment]]

@@ -43,8 +43,6 @@ Once you have this downloaded, it will be ready for extraction and import into y
 
 <!-- /TOC -->
 
----
-
 ## Step 0: Setup Considerations
 
 Keep the following points in mind during initial setup:
@@ -78,8 +76,6 @@ If you rename the QDE Environment after running the initial setup scripts, there
    See [[the Client Setup|QuickDeploymentClientSetup]] documentation for instructions on how to do this.
 1. There may be additional places impacted
    Check with support if you need confirmation.
-
----
 
 ## Step 1: Import the Virtual Environment
 
@@ -251,16 +247,12 @@ Please ensure you know what you're doing before attempting this.
 We can only support the hypervisors listed here, and will not be able to provide assistance in conversion and ensuring the QDE image works in your environment.
 However, once you have the image running in your hypervisor, our support team will be happy to assist you however they can.
 
----
-
 ## Step 2: Other Considerations
 
 ### Step 2.1: DNS Settings
 
 The QDE environment is configured by default to use DHCP for easier initial setup.
 You will likely need to reconfigure it with a static IP address depending on your organization's policies.
-
----
 
 ## Step 3: Virtual Environment Setup
 
@@ -324,19 +316,13 @@ If you would like to change the credentials associated with the database, you wi
     Choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString=""Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=NewPassword;""'"
     ```
 
----
-
 ## Step 4: Firewall Changes
 
 See [[QDE Firewall Changes|QuickDeploymentFirewallChanges]].
 
----
-
 ## Step 5: Install and Configure Chocolatey on Clients
 
 See [[QDE Client Setup|QuickDeploymentClientSetup]].
-
----
 
 ## FAQ
 
@@ -375,7 +361,5 @@ To upgrade via the web UI:
 If you would like to upgrade Jenkins to a newer version using the installer, please refer to [Jenkins' Upgrade Guide](https://www.jenkins.io/doc/upgrade-guide/2.235/#upgrading-to-jenkins-lts-2-235-5).
 Some or all of the complexities in the upgrade process will likely be made automatic in the Chocolatey package as we're able to test and verify that the upgrade path works.
 Until then, approach with caution and follow the Jenkins documentation closely when attempting an upgrade.
-
----
 
 [[Quick Deployment Environment|QuickDeploymentEnvironment]]

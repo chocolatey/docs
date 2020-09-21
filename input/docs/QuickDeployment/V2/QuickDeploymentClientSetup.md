@@ -10,10 +10,10 @@
 - [Summary](#summary)
 - [DNS](#dns)
 - [Client Installation](#client-installation)
+  - [Import Self-Signed Certificate from QDE Server](#import-self-signed-certificate-from-qde-server)
+  - [Run ClientSetup.ps1](#run-clientsetupps1)
 
 <!-- /TOC -->
-
----
 
 ## Summary
 
@@ -24,14 +24,10 @@ To do that, you'll need to do the following on the clients:
 1. Install the QDE SSL/TLS certificate so clients can access HTTPS components.
 1. Install Chocolatey components.
 
----
-
 ## DNS
 
 In most environments, once you've added the QDE server, clients should be able to access it.
 In some situations, you may need to add the host name with the IP address to your HOSTS file to reach your environment.
-
----
 
 ## Client Installation
 
@@ -70,8 +66,6 @@ The `ClientSetup.ps1` script executed here will:
 1. Configure ChocolateyInternal source
 1. Configure Self-Service mode
 1. Configure Central Management check-in
-
----
 
 > :memo: **NOTE**
 >

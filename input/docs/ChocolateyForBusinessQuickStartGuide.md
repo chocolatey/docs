@@ -4,9 +4,9 @@ Thank you for choosing Chocolatey as your partner in Windows software automation
 
 > :memo: **NOTE**
 >
-> This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept. 
-> It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive. 
-> Our goal is to get you up-and-running quickly, and testing out the feature set. 
+> This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
+> It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
+> Our goal is to get you up-and-running quickly, and testing out the feature set.
 > For a more complete reference of possible scenarios and solutions, please refer to the [[Organizational Deployment Documentation|HowToSetupOfflineInstallation]].
 
 If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
@@ -17,18 +17,18 @@ Let's get started!
 
 - [Components](#components)
 - [Requirements](#requirements)
-    - [Administrator Workstation](#administrator-workstation)
-    - [Repository Server (Nexus):](#repository-server-nexus)
-    - [Deployment/Configuration Management Solution](#deploymentconfiguration-management-solution)
-    - [Central Management Server](#central-management-server)
-    - [Clients/Nodes:](#clientsnodes)
+  - [Administrator Workstation](#administrator-workstation)
+  - [Repository Server (Nexus):](#repository-server-nexus)
+  - [Deployment/Configuration Management Solution](#deploymentconfiguration-management-solution)
+  - [Central Management Server](#central-management-server)
+  - [Clients/Nodes:](#clientsnodes)
 - [Installation](#installation)
-    - [Preparation on Administrator Workstation](#preparation-on-administrator-workstation)
-    - [Repository Server Setup](#repository-server-setup)
-    - [Back on Administrative Workstation](#back-on-administrative-workstation)
-    - [Client Nodes](#client-nodes)
-    - [Central Management Server](#central-management-server-1)
-    - [Conclusion](#conclusion)
+  - [Preparation on Administrator Workstation](#preparation-on-administrator-workstation)
+  - [Repository Server Setup](#repository-server-setup)
+  - [Back on Administrative Workstation](#back-on-administrative-workstation)
+  - [Client Nodes](#client-nodes)
+  - [Central Management Server](#central-management-server-1)
+  - [Conclusion](#conclusion)
 
 <!-- /TOC -->
 
@@ -43,8 +43,6 @@ As illustrated in the diagram above, there are five main components to a default
 1. **Deployment/Configuration Management Solution**: We are going to stick to PowerShell commands and scripts in this guide. However, it is _strongly_ recommended to use a full-featured configuration management solution to manage your package deployments. Some examples are Puppet, Chef, Ansible, and SaltStack. Read more about them on the [[Infrastucture Automation page|FeaturesInfrastructureAutomation]].
 1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](https://chocolatey.org/docs/central-management-setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
 1. **Clients/Nodes**: These are the workstation or server endpoints you wish to manage packages on, with Chocolatey. Every node requires a license.
-
----
 
 ## Requirements
 
@@ -85,7 +83,6 @@ As with configuration managers, this is out-of-scope for this document. Generall
 * PowerShell v2+ (not PowerShell Core)
 * .NET Framework 4.6.1+ (minimum required version for Chocolatey Central Management access)
 
----
 
 ## Installation
 
@@ -148,8 +145,8 @@ As recommended, we will assume you have access to the internet from this server.
 
     > :warning: **WARNING**
     >
-    > If you have already installed your Nexus repository, then the above step is not required. 
-    > This guide assumes you are starting form scratch. It may be easier, if you are following this verbatim and don't have anything in your repositoryyet, to simply run `choco uninstall nexus-repository -y` and then `choco install nexus-repository -y`. 
+    > If you have already installed your Nexus repository, then the above step is not required.
+    > This guide assumes you are starting form scratch. It may be easier, if you are following this verbatim and don't have anything in your repositoryyet, to simply run `choco uninstall nexus-repository -y` and then `choco install nexus-repository -y`.
     > As the next step requires a freshly-installed Nexus repository, with admin passwords not reset, this would be the most compatible approach.
 
 1. Versions of Nexus newer than 3.21 have disabled the ability to run automated scripting by default. However, we'll need this to be enabled in order to automate our repository cleanup and creation.
