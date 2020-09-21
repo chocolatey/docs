@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Security
+Description: Chocolatey takes security very seriously
+---
+
 # Security
 
 <!-- TOC -->

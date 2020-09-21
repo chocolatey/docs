@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Why Chocolatey?
+Description: Why should I use Chocolatey
+---
+
 ## Why Chocolatey?
 
 "You've never deployed software faster than you will with Chocolatey." -Rob Reynolds
