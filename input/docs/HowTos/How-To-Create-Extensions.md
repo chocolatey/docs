@@ -1,3 +1,9 @@
+---
+Order: 100
+Title: Extend Chocolatey With PowerSHell Modules (extensions)
+Description: Create your own custom extensions
+---
+
 # Create Your Own Custom Extensions
 
 For years Chocolatey has allowed you to extend Chocolatey with your own PowerShell modules and functions. These are known as extensions.

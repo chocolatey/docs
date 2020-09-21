@@ -1,3 +1,9 @@
+---
+Order: 80
+Title: Mount Iso
+Description: How to mount an iso in Chocolatey package
+---
+
 # Mount ISO image
 
 <!-- TOC -->

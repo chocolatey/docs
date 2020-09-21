@@ -1,3 +1,9 @@
+---
+Order: 50
+Title: Package Audit (C4B)
+Description: Know who installed what package and when
+---
+
 # Package Audit (Business Editions Only)
 > Know who installed what package and when.
 

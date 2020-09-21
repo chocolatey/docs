@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Change Download Cache Location aka Don't use TEMP for downloads
+Description: How to change the download folder
+---
+
 # How To Change The Download Folder
 
 By default Chocolatey uses the Temp Folder for downloads. However that is sometimes blocked by Group Policy and/or other things. To change that you need to adjust the cache location in your choco config file.

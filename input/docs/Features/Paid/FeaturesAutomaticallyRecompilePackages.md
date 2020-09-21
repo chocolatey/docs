@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Package Internalizer (C4B)
+Description: Automatically internalize/recompile existing packages
+---
+
 # Package Internalizer
 Automatically Internalize/Recompile Existing Packages (Business and MSP Editions Only)
 

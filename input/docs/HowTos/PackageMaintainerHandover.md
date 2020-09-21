@@ -1,3 +1,9 @@
+---
+Order: 60
+Title: Take Over Package Maintenance Exclusively
+Description: Package maintainer handover
+---
+
 # Package Maintainer Handover
 
 **NOTE**: This process comes after the [Package Triage Process](PackageTriageProcess). If you are a **software vendor** wanting to maintain your own software's packages, please see [[maintain packages for my software|PackageTriageProcess#i-want-to-take-overhelp-with-package-maintenance-for-my-software]].

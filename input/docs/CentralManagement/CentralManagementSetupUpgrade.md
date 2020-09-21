@@ -1,3 +1,9 @@
+---
+Order: 40
+Title: Central Management Upgrade
+Description: How to upgrade CCM
+---
+
 # Chocolatey Central Mangement Upgrade
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 

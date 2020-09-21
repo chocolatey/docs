@@ -1,3 +1,9 @@
+---
+Order: 50
+Title: Getting Started
+Description: Introduction to Chocolatey
+---
+
 # Getting Started
 
 <!-- TOC -->

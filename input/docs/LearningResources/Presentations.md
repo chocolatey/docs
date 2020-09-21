@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Presentations
+Description: Presentations on Chocolatey
+---
+
 <!--remove <div id="RightNav"> remove-->
 <!-- TOC -->
 

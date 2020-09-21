@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Install/Upgrade a Package w/out running install scripts
+Description: Prevent the running of packaging scripts
+---
+
 # How To Install or Upgrade a Package Without Running Scripts
 
 So you've updated your applications manually or through some other means or you want to make Chocolatey aware of some previously installed applications without actually running the installation scripts.

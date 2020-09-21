@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Chocolatey GUI Known Issues
+Description: Current known issues regarding Chocolatey GUI
+---
+
 # Chocolatey GUI Known Issues
 
 <!-- TOC -->

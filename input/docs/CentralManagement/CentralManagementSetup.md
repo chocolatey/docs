@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Central Managment Setup
+Description: Information on how to setup CCM
+---
+
 # Chocolatey Central Mangement Setup
 
 Installing CCM takes a little more pre-thought than simply running the package installs.

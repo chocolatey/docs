@@ -1,3 +1,9 @@
+---
+Order: 70
+Title: Runtime Malware Protection (Pro+)
+Description: Virus checking via VirusTotal or Generic scanner
+---
+
 # Runtime Malware Protection / Virus Scanning (Licensed Editions Only)
 We are pleased to offer runtime malware protection for our [customers](https://chocolatey.org/pricing)! Virus checking is available in two flavors - VirusTotal and Generic malware verification.
 

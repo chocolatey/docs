@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Self Service/Background Mode (C4B)
+Description: Install packages as a non-administrator user
+---
+
 # Chocolatey Agent Service (Business Editions Only)
 
 ## Summary

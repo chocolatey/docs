@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: FAQs
+Description: Chocolatey frequently asked questions
+---
+
 # Frequently Asked Questions
 <!-- TOC insertAnchor:true -->
 

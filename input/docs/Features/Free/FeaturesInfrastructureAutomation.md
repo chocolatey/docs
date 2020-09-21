@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Integrates with everything
+Description: Information on how Chocolatey can integrate with almost every tool
+---
+
 # Configuration Management Integration  (Free / Open Source)
 
 Chocolatey integrates with several infrastructure automation tools!

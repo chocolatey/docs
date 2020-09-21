@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: How to install licensed edition
+Description: Techniques for how to install the licensed version of Chocolatey
+---
+
 # Install The Licensed Edition
 
 Congratulations on your recent purchase of a licensed edition of Chocolatey! If you are trialing, please pay particular attention to that section:

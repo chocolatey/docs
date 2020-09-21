@@ -1,3 +1,9 @@
+---
+Order: 120
+Title: Package Synchronizer (Pro+ Auto / C4B Sync Command)
+Description: Keep changes made to applications outside of Chocolatey in sync
+---
+
 # Synchronize with Programs And Features (Licensed Editions Only)
 
 Chocolatey maintains its own state of the world, while Windows maintains the state of Programs and Features. If an application is upgraded or uninstalled outside of Chocolatey, such as is the case with Google Chrome and its auto updating utility, Chocolatey open source doesn't know about the change. The synchronize features in licensed editions keep Chocolatey's state in sync with Programs and Features, removing possible system-installed state drift.

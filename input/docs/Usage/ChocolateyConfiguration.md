@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Configuration/chocolatey.config
+Description: Information on the different configuration options for Chocolatey
+---
+
 # Chocolatey Configuration
 
 There are settings and features that can customize the way that Chocolatey works for you. The following is a list of config settings and features and their default values.

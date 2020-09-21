@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Central Management Overview
+Description: What is CCM?
+---
+
 # Chocolatey Central Mangement (CCM)
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments. CCM is available with Chocolatey for Business only.

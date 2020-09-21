@@ -1,3 +1,9 @@
+---
+Order: 90
+Title: Create Custom Package Templates
+Description: How to create custom package templates
+---
+
 # Create Your Own Custom Package Templates
 
 As of [choco 0.9.9.9](https://github.com/chocolatey/choco/issues/76), you can create your own custom package templates when the built-in template is not enough.

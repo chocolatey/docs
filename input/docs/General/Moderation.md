@@ -1,3 +1,9 @@
+---
+Order: 40
+Title: Chocolatey.org Moderation
+Description: Information about the package moderation used on chocolatey.org
+---
+
 # Community Feed Moderation
 The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [[What is moderation|ChocolateyFAQs#what-is-moderation]] for more details. There are also [[trusted packages|ChocolateyFAQs#what-is-a-trusted-package]], which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
 

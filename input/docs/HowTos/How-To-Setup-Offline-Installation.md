@@ -1,3 +1,9 @@
+---
+Order: 130
+Title: Set up Chocolatey for Internal/organizational use
+Description: Full information on how to setup/use Chocolatey internally
+---
+
 # How To Set Up Chocolatey For Organizational/Internal Use
 
 > :memo: **NOTE**

@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Resources
+Description: Educational information for Chocolatey
+---
+
 <!--remove <div id="RightNav"> remove-->
 <!-- TOC -->
 

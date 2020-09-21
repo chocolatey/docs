@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Chocolatey GUI Overview
+Description: What is Chocolatey GUI
+---
+
 # Chocolatey GUI
 
 <!-- TOC -->

@@ -1,3 +1,9 @@
+---
+Order: 50
+Title: Automatic Packaging
+Description: Techniques for automatically updating Chocolatey packages when new version of application is released
+---
+
 # Automatic Packaging for Maintenance
 Automatic packaging is a process that **package maintainers can run on *their own* to keep the packages they maintain up to date**. It is not a required step for maintaining packages on the community feed (https://chocolatey.org/packages), but it is recommended you find a way to automate the delivery of packages to the community feed when there are updates if you are going to maintain more than 5 packages and you are not the software vendor for the packages you maintain.
 

@@ -1,3 +1,9 @@
+---
+Order: 120
+Title: Set up the Chocolatey.Server
+Description: How to setup Chocolatey.Server
+---
+
 # How To Setup the Chocolatey.Server Package
 
 <!-- TOC -->

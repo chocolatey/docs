@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Create Packages
+Description: How to start creating your own Chocolatey packages
+---
+
 # Creating Chocolatey Packages
 
 ## Summary

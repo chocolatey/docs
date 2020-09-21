@@ -1,3 +1,9 @@
+---
+Order: 30
+Title: Central Management Client Setup
+Description: How to setup client machines to report into CCM
+---
+
 # Chocolatey Central Mangement Client Setup
 This will guide us through getting an agent installed and configured to check into Central Management and to be set up for handling deployment tasks.
 

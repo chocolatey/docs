@@ -1,3 +1,9 @@
+---
+Order: 40
+Title: Package Builder (C4B)
+Description: Create fully ready to go software deployments for Windows in 5-10 seconds
+---
+
 # Package Builder - Create Packages Automatically From Installers (Business Editions Only)
 
 > Chocolatey's Package Builder allows you to create fully ready to go software deployments for Windows in 5-10 seconds! There is nothing faster than Chocolatey when it comes to preparing software for an unattended deployment across your organization.

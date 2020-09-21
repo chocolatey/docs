@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Quick Start
+Description: The quick start guide on creating Chocolatey packages
+---
+
 ## Creating Chocolatey Packages - TL;DR version
 
 Here's a TL;DR quick start version of the package creating tutorial. Follow these steps to create a simple package.

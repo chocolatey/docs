@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Chocolatey Central Management (C4B)
+Description: Centrally access information on all client machines in your environment
+---
+
 # Chocolatey Central Management (CCM) (Business Editions Only)
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments.

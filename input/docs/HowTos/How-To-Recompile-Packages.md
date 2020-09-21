@@ -1,3 +1,9 @@
+---
+Order: 50
+Title: Manually Recompile Packages, Embedding/Internalizing Remote Resources
+Description: How to recompile packages
+---
+
 # How To Internalize/Recompile Packages
 
 <!--remove <div id="RightNav"> remove-->

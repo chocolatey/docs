@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Use Chocolatey w/Proxy Server
+Description: Settings up Chocolatey to use locally configured proxy server
+---
+
 # Proxy Support For Chocolatey
 
 <!-- TOC -->

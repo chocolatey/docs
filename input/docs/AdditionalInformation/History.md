@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: History
+Description: Historical information about Chocolatey
+---
+
 # Where Chocolatey Comes From
 Chocolatey is like apt-get, but for Windows (with Windows comes limitations). It is a machine level package manager that is built on top of nuget command line and the nuget infrastructure.
 

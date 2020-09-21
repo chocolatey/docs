@@ -1,3 +1,9 @@
+---
+Order: 100
+Title: Ubiquitous Install Directory Option (Pro+)
+Description: Override the install directory for native installers
+---
+
 # Ubiquitous Install Directory Option (Licensed Editions Only)
 
 The ubiquitous install directory switch for [customers](https://chocolatey.org/pricing)! The only switch you will ever need for overriding the install directory for native installers! When working with packages that use native installers (software that actually installs on a machine), Chocolatey is able to override the default installation directory from a simple switch you pass to choco.

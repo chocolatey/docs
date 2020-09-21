@@ -1,3 +1,9 @@
+---
+Order: 140
+Title: Automate Package Internalizer (MSP/C4B)
+Description: How to setup internal package repository
+---
+
 # How To Use Package Internalizer To Create Internal Package Source (Business Editions Only)
 
 <!-- TOC -->

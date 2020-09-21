@@ -1,3 +1,9 @@
+---
+Order: 150
+Title: C4B Quick Start Guide
+Description: Get up and running quickly with Chocolatey for Business
+---
+
 # Chocolatey for Business Quick Start Implementation Guide
 
 Thank you for choosing Chocolatey as your partner in Windows software automation management. We are excited to help you dive in and successfully implement a deployment of all the necessary components.

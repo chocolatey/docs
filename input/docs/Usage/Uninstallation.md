@@ -1,3 +1,9 @@
+---
+Order: 40
+Title: How to uninstall
+Description: Information on how to uninstall Chocolatey
+---
+
 # Uninstalling Chocolatey
 
 Should you decide you don't like Chocolatey, you can uninstall it simply by removing the folder (and the environment variable(s) that it creates).  Since it is not actually installed in Programs and Features, you don't have to worry that it cluttered up your registry (however that's a different story for the applications that you installed with Chocolatey or manually).

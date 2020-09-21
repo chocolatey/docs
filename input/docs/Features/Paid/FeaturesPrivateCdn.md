@@ -1,3 +1,9 @@
+---
+Order: 80
+Title: Download CDN Cache (Pro+)
+Description: No more 404s!
+---
+
 # Customer CDN Download Cache (Licensed Editions Only)
 Chocolatey offers a customer CDN cache of download content for [customers](https://chocolatey.org/pricing)! The internet is unpredictable and sometimes sites go down, the cache ensures that the packages on the community repository are not broken by issues with the internet. We lovingly call this the "**No more 404s feature**".
 

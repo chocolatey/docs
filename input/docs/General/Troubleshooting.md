@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Troubleshooting
+Description: Having issues running Chocolatey, check here for solutions
+---
+
 # Troubleshooting
 
 There are some well-known things you may run into when you are using Chocolatey. We've tried to get some of the high level things you may run into into one document.

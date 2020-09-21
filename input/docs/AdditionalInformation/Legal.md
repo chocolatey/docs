@@ -1,3 +1,9 @@
+---
+Order: 10
+Title: Legal
+Description: Legal information about Chocolatey
+---
+
 # Legalities and Distributions
 
 <!-- TOC -->

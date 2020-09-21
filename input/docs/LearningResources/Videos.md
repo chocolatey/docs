@@ -1,3 +1,9 @@
+---
+Order: 20
+Title: Videos
+Description: Videos about Chocolatey
+---
+
 # Videos
 
 <!-- TOC -->

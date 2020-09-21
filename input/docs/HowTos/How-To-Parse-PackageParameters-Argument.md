@@ -1,3 +1,9 @@
+---
+Order: 70
+Title: Parse Package Parameters
+Description: How to parse the package parameters argument
+---
+
 # Package Parameters
 
 When installing a Chocolatey Package, it is possible to use a number of arguments to control how the package is installed.  Each one of these arguments is detailed [here](CommandsInstall).

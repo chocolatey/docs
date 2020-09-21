@@ -1,3 +1,9 @@
+---
+Order: 110
+Title: Deprecate a Package
+Description: How to deprecate a Chocolatey package
+---
+
 ## The Problem
 From time to time, a previously approved Chocolatey Package needs to be deprecated.  This could be for a number of reasons:
 
