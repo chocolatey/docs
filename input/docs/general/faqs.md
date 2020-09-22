@@ -2,6 +2,7 @@
 Order: 30
 Title: FAQs
 Description: Chocolatey frequently asked questions
+RedirectFrom: docs/chocolatey-faqs
 ---
 
 # Frequently Asked Questions

@@ -2,6 +2,7 @@
 Order: 20
 Title: Integrates with everything
 Description: Information on how Chocolatey can integrate with almost every tool
+RedirectFrom: docs/features-infrastructure-automation
 ---
 
 # Configuration Management Integration  (Free / Open Source)

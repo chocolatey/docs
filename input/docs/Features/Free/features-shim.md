@@ -2,6 +2,7 @@
 Order: 30
 Title: Package Shims
 Description: Information on how Chocolatey creates shims to installed executables
+RedirectFrom: docs/features-shim
 ---
 
 # Shimming - Automatically Add Executables to PATH (Free / Open Source)

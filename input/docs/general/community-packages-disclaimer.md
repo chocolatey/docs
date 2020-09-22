@@ -2,6 +2,7 @@
 Order: 50
 Title: Chocolatey.org Packages Disclaimer
 Description: When you should, and shouldn't, use chocolatey.org
+RedirectFrom: docs/community-package-disclaimer
 ---
 
 # Chocolatey.org Packages Disclaimer
