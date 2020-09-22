@@ -2,6 +2,7 @@
 Order: 10
 Title: Chocolatey GUI Overview
 Description: What is Chocolatey GUI
+RedirectFrom: docs/chocolatey-gui-overview
 ---
 
 # Chocolatey GUI

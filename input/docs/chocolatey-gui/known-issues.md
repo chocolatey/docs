@@ -2,6 +2,7 @@
 Order: 20
 Title: Chocolatey GUI Known Issues
 Description: Current known issues regarding Chocolatey GUI
+RedirectFrom: docs/chocolatey-gui-known-issues
 ---
 
 # Chocolatey GUI Known Issues
