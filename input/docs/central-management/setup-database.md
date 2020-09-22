@@ -3,7 +3,7 @@ Title: Central Management Database Setup
 Description: Information on how to setup the CCM Database
 RedirectFrom: docs/central-management-setup-database
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Chocolatey Central Management Database Setup

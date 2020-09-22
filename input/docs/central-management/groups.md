@@ -3,7 +3,7 @@ Title: Central Management Groups
 Description: Information on groups within CCM
 RedirectFrom: docs/central-management-groups
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Chocolatey Central Management - Groups

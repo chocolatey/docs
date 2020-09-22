@@ -3,7 +3,7 @@ Title: Central Management Service Setup
 Description: Information on how to setup the CCM Service
 RedirectFrom: docs/central-management-setup-service
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Central Management Windows Service(s) Setup

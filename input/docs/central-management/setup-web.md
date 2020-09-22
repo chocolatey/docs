@@ -3,7 +3,7 @@ Title: Central Management Website Setup
 Description: Information on how to setup the CCM Website
 RedirectFrom: docs/central-management-setup-web
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Central Management Website Setup

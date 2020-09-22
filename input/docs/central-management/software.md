@@ -3,7 +3,7 @@ Title: Central Management Software
 Description: Information on software within CCM
 RedirectFrom: docs/central-management-software
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Chocolatey Central Management - Software

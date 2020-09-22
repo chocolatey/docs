@@ -3,7 +3,7 @@ Title: Central Management Reports
 Description: Information on reports within CCM
 RedirectFrom: docs/central-management-reports
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Chocolatey Central Management Reports

@@ -3,7 +3,7 @@ Title: Central Management Computers
 Description: Information on computers within CCM
 RedirectFrom: docs/central-management-computers
 ShowInNavbar: false
-ShowInNavbar: false
+ShowInSidebar: false
 ---
 
 # Chocolatey Central Management - Computers
