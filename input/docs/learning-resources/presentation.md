@@ -2,13 +2,38 @@
 Order: 30
 Title: Presentations
 Description: Presentations on Chocolatey
+RedirectFrom: docs/presentations
 ---
 
 <!--remove <div id="RightNav"> remove-->
 <!-- TOC -->
 
-* [Presentations](#presentations)
-* [Podcasts](#podcasts)
+- [Presentations](#presentations)
+  - [2017](#2017)
+  - [2016](#2016)
+  - [2015](#2015)
+  - [2014](#2014)
+  - [2013](#2013)
+  - [2012](#2012)
+  - [2011](#2011)
+- [Podcasts](#podcasts)
+  - [2016](#2016-1)
+  - [2015](#2015-1)
+    - [August](#august)
+    - [June](#june)
+  - [2014](#2014-1)
+    - [November](#november)
+    - [September](#september)
+  - [2013](#2013-1)
+    - [October](#october)
+    - [July](#july)
+    - [January](#january)
+  - [2012](#2012-1)
+    - [September](#september-1)
+  - [2011](#2011-1)
+    - [December](#december)
+  - [2010](#2010)
+    - [August](#august-1)
 
 <!-- /TOC -->
 <!--remove </div> remove-->

@@ -2,6 +2,7 @@
 Order: 10
 Title: Resources
 Description: Educational information for Chocolatey
+RedirectFrom: docs/resources
 ---
 
 <!--remove <div id="RightNav"> remove-->
