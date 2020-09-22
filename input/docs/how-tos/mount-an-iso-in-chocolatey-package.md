@@ -2,6 +2,7 @@
 Order: 80
 Title: Mount Iso
 Description: How to mount an iso in Chocolatey package
+RedirectFrom: docs/how-to-mount-an-iso-in-chocolatey-package
 ---
 
 # Mount ISO image
@@ -9,10 +10,10 @@ Description: How to mount an iso in Chocolatey package
 <!-- TOC -->
 
 - [Mounting ISOs - The Problem](#mounting-isos---the-problem)
-- [chocolatey-isomount.extension](#chocolatey-isomount.extension)
-  - [Step 1: Get chocolatey-isomount.extension Package](#step-1--get-chocolatey-isomountextension-package)
-  - [Step 2: Add chocolatey-isomount.extension Dependency](#step-2--add-chocolatey-isomountextension-dependency)
-  - [Step 3: Add chocolatey-isomount.extension Code](#step-3--add-chocolatey-isomountextension-code)
+- [chocolatey-isomount.extension](#chocolatey-isomountextension)
+  - [Step 1: Get chocolatey-isomount.extension Package](#step-1-get-chocolatey-isomountextension-package)
+  - [Step 2: Add chocolatey-isomount.extension Dependency](#step-2-add-chocolatey-isomountextension-dependency)
+  - [Step 3: Add chocolatey-isomount.extension Code](#step-3-add-chocolatey-isomountextension-code)
     - [Embedded ISO or on a fileshare](#embedded-iso-or-on-a-fileshare)
     - [Download ISO from an URL](#download-iso-from-an-url)
 - [ImDisk](#imdisk)

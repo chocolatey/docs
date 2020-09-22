@@ -2,6 +2,7 @@
 Order: 40
 Title: Request Package Fixes/Updates
 Description: Information about the Chocolatey Community Package Repository triage process
+RedirectFrom: docs/package-triage-process
 ---
 
 # Package Questions, Requests, Updates, and/or Fixes For Community Feed - Triage Process

@@ -2,6 +2,7 @@
 Order: 110
 Title: Deprecate a Package
 Description: How to deprecate a Chocolatey package
+RedirectFrom: docs/how-to-deprecate-a-chocolatey-package
 ---
 
 ## The Problem

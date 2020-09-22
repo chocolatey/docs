@@ -2,6 +2,7 @@
 Order: 130
 Title: Set up Chocolatey for Internal/organizational use
 Description: Full information on how to setup/use Chocolatey internally
+RedirectFrom: docs/how-to-setup-offline-installation
 ---
 
 # How To Set Up Chocolatey For Organizational/Internal Use

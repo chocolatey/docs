@@ -2,6 +2,7 @@
 Order: 100
 Title: Extend Chocolatey With PowerSHell Modules (extensions)
 Description: Create your own custom extensions
+RedirectFrom: docs/how-to-create-extensions
 ---
 
 # Create Your Own Custom Extensions

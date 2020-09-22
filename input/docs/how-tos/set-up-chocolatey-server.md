@@ -2,6 +2,7 @@
 Order: 120
 Title: Set up the Chocolatey.Server
 Description: How to setup Chocolatey.Server
+RedirectFrom: docs/how-to-set-up-chocolatey-server
 ---
 
 # How To Setup the Chocolatey.Server Package
@@ -215,10 +216,10 @@ We are looking to add support for the package source to automatically handle thi
 If you are running the Simple Server next to a WSUS admin-site, you need to change some settings in the IIS-Configuration for making the Simple Server work correctly again.
 This is due to the fact that the WSUS admin-site installation registers two modules in the IIS root configuration, which will be passed down to all other sites running on that IIS instance, including the Chocolatey Simple Server site.
 
-To make the Chocolatey Simple Server work again, you will need to disable inheritance for these modules in order to remove them from the Chocolatey Simple Server site.  
+To make the Chocolatey Simple Server work again, you will need to disable inheritance for these modules in order to remove them from the Chocolatey Simple Server site.
 
-*Before making changes to your IIS configuration, read all steps carefully and make sure that you have a backup*  
-   
+*Before making changes to your IIS configuration, read all steps carefully and make sure that you have a backup*
+
 You can do this either by powershell:
 ``` powershell
 # Import WebAdministration
@@ -236,7 +237,7 @@ Disable-WebGlobalModule -PSPath 'IIS:\Sites\ChocolateyServer\' -Name StaticCompr
 Stop-Website -Name "ChocolateyServer"
 Start-Website -Name "ChocolateyServer"
 ```
-or manual:  
+or manual:
   1. Open the IIS Management Console
   2. Click on the server name on the upper left pane
   3. On the right pane doubleclick on `Modules`. All available modules will show up
@@ -248,7 +249,7 @@ or manual:
   9. Restart the Chocolatey Simple Server site
 
 The Chocolatey Simple Server should now be able to handle requests correctly again.
-   
+
 
 ## Common Errors and Resolutions
 

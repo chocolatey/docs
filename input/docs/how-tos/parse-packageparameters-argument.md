@@ -2,6 +2,7 @@
 Order: 70
 Title: Parse Package Parameters
 Description: How to parse the package parameters argument
+RedirectFrom: docs/how-to-parse-package-parameters-argument
 ---
 
 # Package Parameters

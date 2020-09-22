@@ -2,6 +2,7 @@
 Order: 150
 Title: C4B Quick Start Guide
 Description: Get up and running quickly with Chocolatey for Business
+RedirectFrom: docs/chocolatey-for-business-quick-start-guide
 ---
 
 # Chocolatey for Business Quick Start Implementation Guide
