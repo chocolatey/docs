@@ -2,6 +2,7 @@
 Order: 40
 Title: Chocolatey.org Moderation
 Description: Information about the package moderation used on chocolatey.org
+RedirectFrom: docs/moderation
 ---
 
 # Community Feed Moderation

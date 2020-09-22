@@ -2,6 +2,7 @@
 Order: 100
 Title: Ubiquitous Install Directory Option (Pro+)
 Description: Override the install directory for native installers
+RedirectFrom: docs/features-install-directory-override
 ---
 
 # Ubiquitous Install Directory Option (Licensed Editions Only)

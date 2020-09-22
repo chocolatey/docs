@@ -2,6 +2,7 @@
 Order: 10
 Title: Host packages internally
 Description: How to host your own Chocolatey packages, rather than use the Chocolatey Community Repository
+RedirectFrom: docs/how-to-host-feed
 ---
 
 # How To Host Your Own [Private/Internal/Public] Package Repository Server (aka Package Feed)

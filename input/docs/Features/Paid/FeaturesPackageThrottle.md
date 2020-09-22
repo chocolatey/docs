@@ -2,6 +2,7 @@
 Order: 110
 Title: Package Throttle (Pro+)
 Description: Use Chocolatey in low bandwidth environments
+RedirectFrom: docs/features-package-throttle
 ---
 
 # Package Throttle (Licensed Editions Only)

@@ -2,6 +2,7 @@
 Order: 30
 Title: Package Internalizer (C4B)
 Description: Automatically internalize/recompile existing packages
+RedirectFrom: docs/features-automatically-recompile-packages
 ---
 
 # Package Internalizer

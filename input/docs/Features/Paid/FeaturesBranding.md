@@ -2,6 +2,7 @@
 Order: 60
 Title: Branding Chocolatey Applications (C4B)
 Description: Brand Chocolatey applications with your own organisational icons
+RedirectFrom: docs/features-branding
 ---
 
 # Branding (Business Editions Only)

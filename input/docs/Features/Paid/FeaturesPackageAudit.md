@@ -2,6 +2,7 @@
 Order: 50
 Title: Package Audit (C4B)
 Description: Know who installed what package and when
+RedirectFrom: docs/features-package-audit
 ---
 
 # Package Audit (Business Editions Only)

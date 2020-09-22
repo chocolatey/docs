@@ -2,6 +2,7 @@
 Order: 80
 Title: Download CDN Cache (Pro+)
 Description: No more 404s!
+RedirectFrom: docs/features-private-cdn
 ---
 
 # Customer CDN Download Cache (Licensed Editions Only)

@@ -2,6 +2,7 @@
 Order: 90
 Title: Package Reducer (Pro+)
 Description: Reduce the size of your package installations automatically
+RedirectFrom: docs/features-private-cdn
 ---
 
 # Package Reducer (Licensed Editions Only)

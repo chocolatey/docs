@@ -2,6 +2,7 @@
 Order: 70
 Title: Runtime Malware Protection (Pro+)
 Description: Virus checking via VirusTotal or Generic scanner
+RedirectFrom: docs/features-virus-check
 ---
 
 # Runtime Malware Protection / Virus Scanning (Licensed Editions Only)

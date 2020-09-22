@@ -2,6 +2,7 @@
 Order: 120
 Title: Package Synchronizer (Pro+ Auto / C4B Sync Command)
 Description: Keep changes made to applications outside of Chocolatey in sync
+RedirectFrom: docs/features-synchronize
 ---
 
 # Synchronize with Programs And Features (Licensed Editions Only)
