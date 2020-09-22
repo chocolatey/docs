@@ -1,4 +1,12 @@
-﻿# Get-OSArchitectureWidth
+﻿---
+Title: Get-OSArchitectureWidth
+Description: Information on Get-OSArchitectureWidth function
+RedirectFrom: docs/helpers-get-osarchitecture-width
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-OSArchitectureWidth
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-OSArchitectureWidth.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -40,7 +48,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

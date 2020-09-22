@@ -1,4 +1,12 @@
-﻿# Start-ChocolateyWindowsService
+﻿---
+Title: Start-ChocolateyWindowsService
+Description: Information on Start-ChocolateyWindowsService function
+RedirectFrom: docs/helpers-start-chocolatey-windows-service
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Start-ChocolateyWindowsService
 
 **NOTE**: This function requires a Chocolatey for Business License to use.
 

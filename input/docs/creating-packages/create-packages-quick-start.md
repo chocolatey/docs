@@ -2,6 +2,7 @@
 Order: 20
 Title: Quick Start
 Description: The quick start guide on creating Chocolatey packages
+RedirectFrom: docs/create-packages-quick-start
 ---
 
 ## Creating Chocolatey Packages - TL;DR version

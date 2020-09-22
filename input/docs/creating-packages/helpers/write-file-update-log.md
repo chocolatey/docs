@@ -1,4 +1,12 @@
-﻿# Write-FileUpdateLog
+﻿---
+Title: Write-FileUpdateLog
+Description: Information on Write-FileUpdateLog function
+RedirectFrom: docs/helpers-write-file-update-log
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Write-FileUpdateLog
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Write-FileUpdateLog.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -45,54 +53,54 @@ The full path to where to write the log file.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -LocationToMonitor [&lt;String&gt;]
 The location to watch for changes at.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ScriptToRun [&lt;ScriptBlock&gt;]
 The script block of what to run and monitor changes.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ArgumentList [&lt;Object[]&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 5
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

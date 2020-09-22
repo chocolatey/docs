@@ -1,4 +1,12 @@
-﻿# Uninstall-ChocolateyPackage
+﻿---
+Title: Uninstall-ChocolateyPackage
+Description: Information on Uninstall-ChocolateyPackage function
+RedirectFrom: docs/helpers-uninstall-chocolatey-package
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Uninstall-ChocolateyPackage
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Uninstall-ChocolateyPackage.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -62,7 +70,7 @@ Uninstall-ChocolateyPackage -PackageName $packageName `
                                 -SilentArgs "$silentArgs" `
                                 -ValidExitCodes $validExitCodes `
                                 -File "$file"
-~~~ 
+~~~
 
 ## Inputs
 
@@ -80,12 +88,12 @@ recommended that it matches the package id.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -FileType [&lt;String&gt;]
 This is the extension of the file. This should be either exe or msi.
 
@@ -99,7 +107,7 @@ Required?              | false
 Position?              | 2
 Default Value          | exe
 Accept Pipeline Input? | false
- 
+
 ###  -SilentArgs [&lt;String[]&gt;]
 OPTIONAL - These are the parameters to pass to the native uninstaller,
 including any arguments to make the uninstaller silent/unattended.
@@ -119,45 +127,45 @@ for the package to be completely unattended.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -File [&lt;String&gt;]
 The full path to the native uninstaller to run.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ValidExitCodes [&lt;Object&gt;]
 Array of exit codes indicating success. Defaults to `@(0)`.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | @(0)
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

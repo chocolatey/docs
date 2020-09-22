@@ -1,4 +1,12 @@
-﻿# Get-ToolsLocation
+﻿---
+Title: Get-ToolsLocation
+Description: Information on Get-ToolsLocation function
+RedirectFrom: docs/helpers-get-tools-location
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-ToolsLocation
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-ToolsLocation.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -46,7 +54,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

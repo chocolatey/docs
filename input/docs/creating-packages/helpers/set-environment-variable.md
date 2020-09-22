@@ -1,4 +1,12 @@
-﻿# Set-EnvironmentVariable
+﻿---
+Title: Set-EnvironmentVariable
+Description: Information on Set-EnvironmentVariable function
+RedirectFrom: docs/helpers-set-environment-variable
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Set-EnvironmentVariable
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Set-EnvironmentVariable.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -43,44 +51,44 @@ None
 ###  -Name &lt;String&gt;
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Value [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Scope
 
 Valid options: Process, User, Machine
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

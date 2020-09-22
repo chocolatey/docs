@@ -1,4 +1,12 @@
-﻿# Install-ChocolateyEnvironmentVariable
+﻿---
+Title: Install-ChocolateyEnvironmentVariable
+Description: Information on Install-ChocolateyEnvironmentVariable function
+RedirectFrom: docs/helpers-install-chocolatey-environment-variable
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Install-ChocolateyEnvironmentVariable
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyEnvironmentVariable.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -66,7 +74,7 @@ Install-ChocolateyEnvironmentVariable `
 
 # Remove an environment variable
 Install-ChocolateyEnvironmentVariable -VariableName 'bob' -VariableValue $null
-~~~ 
+~~~
 
 ## Inputs
 
@@ -83,23 +91,23 @@ The name or key of the environment variable
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -VariableValue [&lt;String&gt;]
 A string value assigned to the above name.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -VariableType
 Specifies whether this variable is to be accesible at either the
 individual user level or at the Machine level.
@@ -109,23 +117,23 @@ Valid options: Process, User, Machine
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
 Default Value          | User
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

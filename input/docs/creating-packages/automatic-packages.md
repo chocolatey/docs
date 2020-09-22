@@ -2,6 +2,7 @@
 Order: 50
 Title: Automatic Packaging
 Description: Techniques for automatically updating Chocolatey packages when new version of application is released
+RedirectFrom: docs/automatic-packages
 ---
 
 # Automatic Packaging for Maintenance

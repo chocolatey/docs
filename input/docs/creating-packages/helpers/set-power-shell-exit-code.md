@@ -1,4 +1,12 @@
-﻿# Set-PowerShellExitCode
+﻿---
+Title: Set-PowerShellExitCode
+Description: Information on Set-PowerShellExitCode function
+RedirectFrom: docs/helpers-set-power-shell-exit-code
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Set-PowerShellExitCode
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Set-PowerShellExitCode.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -32,7 +40,7 @@ None
 ~~~powershell
 Set-PowerShellExitCode 3010
 
-~~~ 
+~~~
 
 ## Inputs
 
@@ -49,23 +57,23 @@ The exit code to set.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 1
 Default Value          | 0
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

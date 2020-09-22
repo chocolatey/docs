@@ -1,4 +1,12 @@
-﻿# Stop-ChocolateyWindowsService
+﻿---
+Title: Stop-ChocolateyWindowsService
+Description: Information on Stop-ChocolateyWindowsService function
+RedirectFrom: docs/helpers-stop-chocolatey-windows-service
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Stop-ChocolateyWindowsService
 
 **NOTE**: This function requires a Chocolatey for Business License to use.
 

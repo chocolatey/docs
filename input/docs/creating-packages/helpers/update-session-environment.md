@@ -1,4 +1,12 @@
-﻿# Update-SessionEnvironment
+﻿---
+Title: Update-SessionEnvironment
+Description: Information on Update-SessionEnvironment function
+RedirectFrom: docs/helpers-update-session-environment
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Update-SessionEnvironment
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Update-SessionEnvironment.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -47,7 +55,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

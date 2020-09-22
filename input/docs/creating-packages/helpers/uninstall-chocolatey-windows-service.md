@@ -1,4 +1,12 @@
-﻿# Uninstall-ChocolateyWindowsService
+﻿---
+Title: Uninstall-ChocolateyWindowsService
+Description: Information on Uninstall-ChocolateyWindowsService function
+RedirectFrom: docs/helpers-uninstall-chocolatey-windows-service
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Uninstall-ChocolateyWindowsService
 
 **NOTE**: This function requires a Chocolatey for Business License to use.
 

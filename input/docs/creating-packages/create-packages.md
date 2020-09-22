@@ -2,6 +2,7 @@
 Order: 10
 Title: Create Packages
 Description: How to start creating your own Chocolatey packages
+RedirectFrom: docs/create-packages
 ---
 
 # Creating Chocolatey Packages

@@ -1,4 +1,11 @@
-﻿# Install-ChocolateyVsixPackage
+﻿---
+Order: 50
+Title: Install-ChocolateyVsixPackage
+Description: Information on how to use the Install-ChocolateyVsixPackage function
+RedirectFrom: docs/helpers-install-chocolatey-vsix-package
+---
+
+# Install-ChocolateyVsixPackage
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyVsixPackage.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -63,7 +70,7 @@ Install-ChocolateyVsixPackage -PackageName "MyPackage" `
 Install-ChocolateyVsixPackage -PackageName "MyPackage" `
   -VsixUrl http://visualstudiogallery.msdn.microsoft.com/ea3a37c9-1c76-4628-803e-b10a109e7943/file/73131/1/AutoWrockTestable.vsix `
   -VsVersion 11
-~~~ 
+~~~
 
 ## Inputs
 
@@ -86,9 +93,9 @@ Property               | Value
 Aliases                | name
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -VsixUrl [&lt;String&gt;]
 The URL of the package to be installed.
 
@@ -101,9 +108,9 @@ Property               | Value
 Aliases                | url
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -VsVersion [&lt;Int32&gt;]
 The major version number of Visual Studio where the
 package should be installed. This is optional. If not
@@ -122,38 +129,38 @@ Required?              | false
 Position?              | 3
 Default Value          | 0
 Accept Pipeline Input? | false
- 
-###  -Checksum [&lt;String&gt;]
-The checksum hash value of the Url resource. This allows a checksum to 
-be validated for files that are not local. The checksum type is covered
-by ChecksumType. 
 
-**NOTE:** Checksums in packages are meant as a measure to validate the 
+###  -Checksum [&lt;String&gt;]
+The checksum hash value of the Url resource. This allows a checksum to
+be validated for files that are not local. The checksum type is covered
+by ChecksumType.
+
+**NOTE:** Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
-other steps in the process related to the [community repository](https://chocolatey.org/packages), it 
+other steps in the process related to the [community repository](https://chocolatey.org/packages), it
 ensures that the file a user receives is the same file a maintainer
-and a moderator (if applicable), plus any moderation review has 
-intended for you to receive with this package. If you are looking at a 
-remote source that uses the same url for updates, you will need to 
-ensure the package also stays updated in line with those remote 
-resource updates. You should look into [automatic packaging](https://chocolatey.org/docs/automatic-packages) 
+and a moderator (if applicable), plus any moderation review has
+intended for you to receive with this package. If you are looking at a
+remote source that uses the same url for updates, you will need to
+ensure the package also stays updated in line with those remote
+resource updates. You should look into [automatic packaging](https://chocolatey.org/docs/automatic-packages)
 to help provide that functionality.
 
-**NOTE:** To determine checksums, you can get that from the original 
-site if provided. You can also use the [checksum tool available on 
-the [community feed](https://chocolatey.org/packages)](https://chocolatey.org/packages/checksum) (`choco install checksum`) 
-and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you 
+**NOTE:** To determine checksums, you can get that from the original
+site if provided. You can also use the [checksum tool available on
+the [community feed](https://chocolatey.org/packages)](https://chocolatey.org/packages/checksum) (`choco install checksum`)
+and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you
 provide checksums for all remote resources used.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ChecksumType [&lt;String&gt;]
 The type of checkum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to 'md5'.
@@ -166,23 +173,23 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Options [&lt;Hashtable&gt;]
 OPTIONAL - Specify custom headers. Available in 0.9.10+.
 
 Property               | Value
 ---------------------- | --------------
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | @{Headers=@{}}
 Accept Pipeline Input? | false
- 
+
 ###  -File [&lt;String&gt;]
 Will be used for VsixUrl if VsixUrl is empty. Available in 0.10.7+.
 
@@ -194,20 +201,20 @@ Property               | Value
 Aliases                | fileFullPath
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

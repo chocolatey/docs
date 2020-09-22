@@ -1,4 +1,12 @@
-﻿# Get-UninstallRegistryKey
+﻿---
+Title: Get-UninstallRegistryKey
+Description: Information on Get-UninstallRegistryKey function
+RedirectFrom: docs/helpers-get-uninstall-registry-key
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-UninstallRegistryKey
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-UninstallRegistryKey.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -76,7 +84,7 @@ $key.UninstallString
 # Note that the similar software name "SketchUp Viewer" would not be matched.
 [array]$key = Get-UninstallRegistryKey -SoftwareName "SketchUp [0-9]*"
 $key.UninstallString
-~~~ 
+~~~
 
 ## Inputs
 
@@ -108,23 +116,23 @@ programs released by the same company.
 
 Property               | Value
 ---------------------- | --------------
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | true (ByValue)
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

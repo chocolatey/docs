@@ -1,4 +1,12 @@
-﻿# Get-EnvironmentVariableNames
+﻿---
+Title: Get-EnvironmentVariableNames
+Description: Information on Get-EnvironmentVariableNames function
+RedirectFrom: docs/helpers-get-environment-variable-names
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-EnvironmentVariableNames
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-EnvironmentVariableNames.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -32,7 +40,7 @@ None
 ~~~powershell
 Get-EnvironmentVariableNames -Scope Machine
 
-~~~ 
+~~~
 
 ## Inputs
 
@@ -43,7 +51,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 ## Links

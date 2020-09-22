@@ -1,4 +1,12 @@
-﻿# Get-ProcessorBits
+﻿---
+Title: Get-ProcessorBits
+Description: Information on Get-ProcessorBits function
+RedirectFrom: docs/helpers-get-processor-bits
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-ProcessorBits
 
 Get the system architecture address width.
 
@@ -33,7 +41,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

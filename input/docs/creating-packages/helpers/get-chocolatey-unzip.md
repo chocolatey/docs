@@ -1,4 +1,12 @@
-﻿# Get-ChocolateyUnzip
+﻿---
+Title: Get-ChocolateyUnzip
+Description: Information on Get-ChocolateyUnzip function
+RedirectFrom: docs/helpers-get-chocolatey-unzip
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-ChocolateyUnzip
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-ChocolateyUnzip.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -50,7 +58,7 @@ None
 # Path to the folder where the script is executing
 $toolsDir = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 Get-ChocolateyUnzip -FileFullPath "c:\someFile.zip" -Destination $toolsDir
-~~~ 
+~~~
 
 ## Inputs
 
@@ -77,51 +85,51 @@ Property               | Value
 Aliases                | file
 Required?              | false
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Destination &lt;String&gt;
 This is a directory where you would like the unzipped files to end up.
 If it does not exist, it will be created.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -SpecificFolder [&lt;String&gt;]
 OPTIONAL - This is a specific directory within zip file to extract.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -PackageName [&lt;String&gt;]
 OPTIONAL - This will faciliate logging unzip activity for subsequent
 uninstalls
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -FileFullPath64 [&lt;String&gt;]
 Full file path to a 64-bit native installer to run. Available in 0.10.4+.
 If embedding in the package, you can get it to the path with
 `"$(Split-Path -parent $MyInvocation.MyCommand.Definition)\\INSTALLER_FILE"`
 
 Provide this when you want to provide both 32-bit and 64-bit
-installers or explicitly only a 64-bit installer (which will cause a package 
+installers or explicitly only a 64-bit installer (which will cause a package
 install failure on 32-bit systems).
 
 Property               | Value
@@ -129,20 +137,20 @@ Property               | Value
 Aliases                | file64
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

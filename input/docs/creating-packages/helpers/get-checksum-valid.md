@@ -1,4 +1,12 @@
-﻿# Get-ChecksumValid
+﻿---
+Title: Get-ChecksumValid
+Description: Information on Get-ChecksumValid function
+RedirectFrom: docs/helpers-get-checksum-valid
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-ChecksumValid
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-ChecksumValid.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -71,7 +79,7 @@ None
 ~~~powershell
 Get-ChecksumValid -File $fileFullPath -CheckSum $checksum -ChecksumType $checksumType
 
-~~~ 
+~~~
 
 ## Inputs
 
@@ -89,12 +97,12 @@ passed Checksum parameter value.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Checksum [&lt;String&gt;]
 The expected checksum hash value of the File resource. The checksum
 type is covered by ChecksumType.
@@ -119,12 +127,12 @@ provide checksums for all remote resources used.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ChecksumType [&lt;String&gt;]
 The type of checkum that the file is validated with - 'md5', 'sha1',
 'sha256' or 'sha512' - defaults to 'md5'.
@@ -137,32 +145,32 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
 Default Value          | md5
 Accept Pipeline Input? | false
- 
+
 ###  -OriginalUrl [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

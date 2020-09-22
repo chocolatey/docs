@@ -1,4 +1,12 @@
-﻿# Test-ProcessAdminRights
+﻿---
+Title: Test-ProcessAdminRights
+Description: Information on Test-ProcessAdminRights function
+RedirectFrom: docs/helpers-test-process-admin-rights
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Test-ProcessAdminRights
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Test-ProcessAdminRights.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -35,7 +43,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

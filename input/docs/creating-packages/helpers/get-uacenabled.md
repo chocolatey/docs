@@ -1,4 +1,12 @@
-﻿# Get-UACEnabled
+﻿---
+Title: Get-UACEnabled
+Description: Information on Get-UACEnabled function
+RedirectFrom: docs/helpers-get-uacenabled
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Get-UACEnabled
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-UACEnabled.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -33,7 +41,7 @@ None
 None
 
 ## Parameters
- 
+
 
 
 

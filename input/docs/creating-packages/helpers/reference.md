@@ -1,4 +1,11 @@
-﻿# PowerShell Functions aka Helpers Reference
+﻿---
+Order: 10
+Title: Function and Variable Reference
+Description: PowerShell Functions aka Helpers Reference
+RedirectFrom: docs/helpers-reference
+---
+
+# PowerShell Functions aka Helpers Reference
 
 <!-- This documentation file is automatically generated from the files at $sourceFunctions using $($sourceLocation)GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 

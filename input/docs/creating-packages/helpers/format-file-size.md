@@ -1,4 +1,12 @@
-﻿# Format-FileSize
+﻿---
+Title: Format-FileSize
+Description: Information on Format-FileSize function
+RedirectFrom: docs/helpers-format-file-size
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Format-FileSize
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Format-FileSize.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
@@ -33,7 +41,7 @@ None
 ~~~powershell
 Format-FileSize -Size $fileSizeBytes
 
-~~~ 
+~~~
 
 ## Inputs
 
@@ -50,23 +58,23 @@ The size of a file in bytes.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
 Default Value          | 0
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

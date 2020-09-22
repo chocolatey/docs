@@ -1,4 +1,12 @@
-﻿# Install-ChocolateyWindowsService
+﻿---
+Title: Install-ChocolateyWindowsService
+Description: Information on Install-ChocolateyWindowsService function
+RedirectFrom: docs/helpers-install-chocolatey-windows-service
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
+# Install-ChocolateyWindowsService
 
 **NOTE**: This function requires a Chocolatey for Business License to use.
 

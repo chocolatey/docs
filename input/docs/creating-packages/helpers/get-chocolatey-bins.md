@@ -1,3 +1,11 @@
+---
+Title: Get-ChocolateyBins
+Description: Information on Get-ChocolateyBins function
+RedirectFrom: docs/helpers-get-chocolatey-bins
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Get-ChocolateyBins
 
 Creates batch files for all executables in `$packageFolder` in the Chocolatey bin folder (usually C:\ProgramData\Chocolatey\bin)
@@ -11,7 +19,7 @@ Get-ChocolateyBins $packageFolder
 ## Examples
 
 ```powershell
-$installDir = Split-Path -Parent (Get-ItemProperty ` 
+$installDir = Split-Path -Parent (Get-ItemProperty `
 HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Vim UninstallString).UninstallString
 # special batch files we want to create
 $diffExeIgnore = Join-Path $installDir "diff.exe.ignore"
