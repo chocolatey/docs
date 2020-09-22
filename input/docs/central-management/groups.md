@@ -1,3 +1,11 @@
+---
+Title: Central Management Groups
+Description: Information on groups within CCM
+RedirectFrom: docs/central-management-groups
+ShowInNavbar: false
+ShowInNavbar: false
+---
+
 # Chocolatey Central Management - Groups
 
 Central Management's Groups are the basis on which a given [[Deployment|CentralManagementDeployments]] operates.

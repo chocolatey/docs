@@ -1,3 +1,11 @@
+---
+Title: Central Management Website Setup
+Description: Information on how to setup the CCM Website
+RedirectFrom: docs/central-management-setup-web
+ShowInNavbar: false
+ShowInNavbar: false
+---
+
 # Central Management Website Setup
 
 This is the Central Management website that gives an API and a web layer to centrally manage information about your environment and manage endpoints with deployment tasks.

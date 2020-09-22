@@ -1,3 +1,11 @@
+---
+Title: Central Management Computers
+Description: Information on computers within CCM
+RedirectFrom: docs/central-management-computers
+ShowInNavbar: false
+ShowInNavbar: false
+---
+
 # Chocolatey Central Management - Computers
 Chocolatey Central Management gives you visibility into what's installed on a given computer, as well as their last check-in to Central Management and IP Address.
 

@@ -1,3 +1,11 @@
+---
+Title: Central Management Service Setup
+Description: Information on how to setup the CCM Service
+RedirectFrom: docs/central-management-setup-service
+ShowInNavbar: false
+ShowInNavbar: false
+---
+
 # Central Management Windows Service(s) Setup
 
 This is the service that the agents (chocolatey-agent) communicates with. You could install one or more of these depending on the size of your environment (not multiple on one machine though). The FQDN and certificate used determine what the URL will be for the agents to check into Central Management.

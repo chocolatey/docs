@@ -2,6 +2,7 @@
 Order: 30
 Title: Central Management Client Setup
 Description: How to setup client machines to report into CCM
+RedirectFrom: docs/central-management-setup-client
 ---
 
 # Chocolatey Central Management Client Setup

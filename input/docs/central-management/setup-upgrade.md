@@ -2,6 +2,7 @@
 Order: 40
 Title: Central Management Upgrade
 Description: How to upgrade CCM
+RedirectFrom: docs/central-management-setup-upgrade
 ---
 
 # Chocolatey Central Management Upgrade

@@ -2,6 +2,7 @@
 Order: 10
 Title: Central Management Overview
 Description: What is CCM?
+RedirectFrom: docs/central-management
 ---
 
 # Chocolatey Central Management (CCM)

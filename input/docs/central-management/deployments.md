@@ -2,6 +2,7 @@
 Order: 50
 Title: Central Management Deployments
 Description: How to deploy packages, and execute PowerShell, on client machines
+RedirectFrom: docs/central-management-deployments
 ---
 
 # Chocolatey Central Management Deployments
