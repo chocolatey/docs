@@ -1,3 +1,10 @@
+---
+Order: 50
+Title: Firewall Changes
+Description: How has the firewall on the QDE image been changed
+RedirectFrom: docs/quick-deployment-firewall-changes
+---
+
 # Quick Deployment Environment Firewall Setup
 
 > :memo: **Note**

@@ -1,3 +1,10 @@
+---
+Order: 20
+Title: Desktop Readme
+Description: Online copy of what ships on desktop of QDE v1 image
+RedirectFrom: docs/quick-deployment-desktop-readme-v1
+---
+
 # Thanks for trying Chocolatey For Business!
 
 > :memo: **NOTE**

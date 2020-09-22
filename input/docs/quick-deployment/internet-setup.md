@@ -1,3 +1,10 @@
+---
+Order: 70
+Title: Internet Setup
+Description: How to make QDE accessible from the internet
+RedirectFrom: docs/quick-deployment-internet-setup
+---
+
 # Internet-Accessible QDE Setup
 
 > :information_source: **Information**

@@ -1,3 +1,10 @@
+---
+Order: 10
+Title: Overview
+Description: High level information about QDE
+RedirectFrom: docs/quick-deployment-environment
+---
+
 # Chocolatey Quick Deployment Environment (QDE)
 
 ## Summary

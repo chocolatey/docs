@@ -1,3 +1,10 @@
+---
+Order: 10
+Title: Setup
+Description: How to setup QDE v1
+RedirectFrom: docs/quick-deployment-setup-v1
+---
+
 # Quick Deployment Environment Setup
 
 > :memo: **NOTE**

@@ -1,3 +1,10 @@
+---
+Order: 30
+Title: SSL Setup
+Description: How to setup QDE v1 to use SSL
+RedirectFrom: docs/quick-deployment-ssl-setup-v1
+---
+
 # Quick Deployment Environment SSL Setup
 
 > :memo: **NOTE**

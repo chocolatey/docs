@@ -2,6 +2,7 @@
 Order: 10
 Title: Development Environment
 Description: Set up a development environment using Chocolatey
+RedirectFrom: docs/development-environment-setup
 ---
 
 ## Set Up A Development Environment Using Chocolatey

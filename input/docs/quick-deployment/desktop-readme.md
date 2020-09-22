@@ -1,3 +1,10 @@
+---
+Order: 30
+Title: Desktop Readme
+Description: Online copy of what ships on desktop of QDE image
+RedirectFrom: docs/quick-deployment-desktop-readme
+---
+
 # Chocolatey Quick Deployment Environment README
 
 > :memo: **NOTE**

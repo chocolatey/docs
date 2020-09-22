@@ -1,3 +1,10 @@
+---
+Order: 50
+Title: Client Setup
+Description: How to setup a client machine to use QDE v1
+RedirectFrom: docs/quick-deployment-client-setup-v1
+---
+
 # Quick Deployment Client Setup
 
 > :memo: **NOTE**
