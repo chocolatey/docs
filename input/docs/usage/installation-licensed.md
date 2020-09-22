@@ -2,6 +2,7 @@
 Order: 20
 Title: How to install licensed edition
 Description: Techniques for how to install the licensed version of Chocolatey
+RedirectFrom: docs/installation-licensed
 ---
 
 # Install The Licensed Edition

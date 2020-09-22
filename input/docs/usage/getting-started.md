@@ -2,6 +2,7 @@
 Order: 50
 Title: Getting Started
 Description: Introduction to Chocolatey
+RedirectFrom: docs/getting-started
 ---
 
 # Getting Started

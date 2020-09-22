@@ -2,6 +2,7 @@
 Order: 40
 Title: How to uninstall
 Description: Information on how to uninstall Chocolatey
+RedirectFrom: docs/uninstallation
 ---
 
 # Uninstalling Chocolatey

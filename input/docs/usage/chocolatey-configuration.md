@@ -2,6 +2,7 @@
 Order: 30
 Title: Configuration/chocolatey.config
 Description: Information on the different configuration options for Chocolatey
+RedirectFrom: docs/chocolatey-configuration
 ---
 
 # Chocolatey Configuration

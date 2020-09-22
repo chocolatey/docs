@@ -2,6 +2,7 @@
 Order: 10
 Title: How to install
 Description: Techniques for how to install Chocolatey
+RedirectFrom: docs/installation
 ---
 
 <!--remove <div id="RightNav"> remove-->
