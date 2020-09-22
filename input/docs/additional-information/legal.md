@@ -2,6 +2,7 @@
 Order: 10
 Title: Legal
 Description: Legal information about Chocolatey
+RedirectFrom: docs/legal
 ---
 
 # Legalities and Distributions

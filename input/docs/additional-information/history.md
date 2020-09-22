@@ -2,6 +2,7 @@
 Order: 20
 Title: History
 Description: Historical information about Chocolatey
+RedirectFrom: docs/history
 ---
 
 # Where Chocolatey Comes From
