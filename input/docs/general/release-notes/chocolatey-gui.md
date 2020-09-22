@@ -1,3 +1,11 @@
+---
+Title: GUI
+Description: Release Notes for Chocolatey GUI
+RedirectFrom: docs/release-notes-chocolatey-gui
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Chocolatey GUI Release Notes - Open Source
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.

@@ -1,3 +1,11 @@
+---
+Title: Central Management
+Description: Release Notes for Chocolatey Central Management
+RedirectFrom: docs/release-notes-central-management
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Chocolatey Release Notes - Chocolatey Central Management
 ## Summary
 This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [[Chocolatey Central Management|CentralManagement]].

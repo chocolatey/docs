@@ -1,3 +1,11 @@
+---
+Title: CLI
+Description: Release Notes for Chocolatey CLI
+RedirectFrom: docs/release-notes-choco-cli
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Chocolatey Release Notes - Open Source
 
 This covers changes for the "chocolatey" and "chocolatey.lib" packages, which are available as FOSS.

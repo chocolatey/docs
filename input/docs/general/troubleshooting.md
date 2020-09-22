@@ -2,6 +2,7 @@
 Order: 20
 Title: Troubleshooting
 Description: Having issues running Chocolatey, check here for solutions
+RedirectFrom: docs/troubleshooting
 ---
 
 # Troubleshooting
@@ -14,40 +15,40 @@ There are some well-known things you may run into when you are using Chocolatey.
 
 - [General](#general)
 - [Chocolatey Installation](#chocolatey-installation)
-    - [The request was aborted: Could not create SSL/TLS secure channel](#the-request-was-aborted-could-not-create-ssltls-secure-channel)
-    - [The underlying connection was closed](#the-underlying-connection-was-closed)
-    - [I'm getting a 403 unauthorized issue attempting to install Chocolatey](#im-getting-a-403-unauthorized-issue-attempting-to-install-chocolatey)
-    - [I am having trouble with PowerShell to install Chocolatey](#i-am-having-trouble-with-powershell-to-install-chocolatey)
+  - [The request was aborted: Could not create SSL/TLS secure channel](#the-request-was-aborted-could-not-create-ssltls-secure-channel)
+  - [The underlying connection was closed](#the-underlying-connection-was-closed)
+  - [I'm getting a 403 unauthorized issue attempting to install Chocolatey](#im-getting-a-403-unauthorized-issue-attempting-to-install-chocolatey)
+  - [I am having trouble with PowerShell to install Chocolatey](#i-am-having-trouble-with-powershell-to-install-chocolatey)
 - [Licensed Installation and Issues](#licensed-installation-and-issues)
 - [Creating Packages](#creating-packages)
-    - [Install-ChocolateyPath doesn't seem to work.](#install-chocolateypath-doesnt-seem-to-work)
-    - [ERROR: Cannot bind parameter because parameter 'fileType' is specified more than once.](#error-cannot-bind-parameter-because-parameter-filetype-is-specified-more-than-once)
-    - [ERROR: This package does not support 64 bit architecture.](#error-this-package-does-not-support-64-bit-architecture)
-    - ["ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.](#error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary)
-    - [My package can't find dependencies](#my-package-cant-find-dependencies)
-    - [ERROR: A null key is not allowed in a hash literal.](#error-a-null-key-is-not-allowed-in-a-hash-literal)
+  - [Install-ChocolateyPath doesn't seem to work.](#install-chocolateypath-doesnt-seem-to-work)
+  - [ERROR: Cannot bind parameter because parameter 'fileType' is specified more than once.](#error-cannot-bind-parameter-because-parameter-filetype-is-specified-more-than-once)
+  - [ERROR: This package does not support 64 bit architecture.](#error-this-package-does-not-support-64-bit-architecture)
+  - ["ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.](#error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary)
+  - [My package can't find dependencies](#my-package-cant-find-dependencies)
+  - [ERROR: A null key is not allowed in a hash literal.](#error-a-null-key-is-not-allowed-in-a-hash-literal)
 - [Runtime](#runtime)
-    - [I can't get the PowerShell tab completion working.](#i-cant-get-the-powershell-tab-completion-working)
-    - [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me)
-    - [Microsoft.Powershell_profile.ps1 cannot be loaded. The file is not digitally signed.](#microsoftpowershell_profileps1-cannot-be-loaded-the-file-is-not-digitally-signed)
-    - [I'm getting a 403 unauthorized issue when attempting to use the community package repository.](#im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository)
-    - [I'm getting a 429 too many requests issue when attempting to use the community package repository.](#im-getting-a-429-too-many-requests-issue-when-attempting-to-use-the-community-package-repository)
-    - [I'm seeing Chocolatey / *application* / *tool* using 32 bit to run instead of x64. What is going on?](#im-seeing-chocolatey--application--tool-using-32-bit-to-run-instead-of-x64-what-is-going-on)
-    - [A package is broken for me](#a-package-is-broken-for-me)
-    - [The package install failed with 1603](#the-package-install-failed-with-1603)
-    - [Already referencing a newer version of 'packagename'](#already-referencing-a-newer-version-of-packagename)
-    - [Not recognized as the name of a cmdlet, function, script file, or operable program](#not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-    - [My PATH is not getting updated](#my-path-is-not-getting-updated)
-    - [RefreshEnv has no effect](#refreshenv-has-no-effect)
-    - [Options and/or parameters are not handled correctly](#options-andor-parameters-are-not-handled-correctly)
-    - [Chocolatey is selecting an older version of a dependency on upgrade](#chocolatey-is-selecting-an-older-version-of-a-dependency-on-upgrade)
-    - [Chocolatey is attempting to downgrade a package that is a dependency of another package on upgrade](#chocolatey-is-attempting-to-downgrade-a-package-that-is-a-dependency-of-another-package-on-upgrade)
-    - [Package not installed. An error occurred during installation: Unable to resolve dependency](#package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency)
-    - [Package not installed. The package was not found with the source(s) listed.](#package-not-installed-the-package-was-not-found-with-the-sources-listed)
-    - [Access to the path is denied.](#access-to-the-path-is-denied)
-    - [Root Element is missing error](#root-element-is-missing-error)
-    - [A corrupt registry file exists](#a-corrupt-registry-file-exists)
-    - [Powershell Output Stops](#powershell-output-stops)
+  - [I can't get the PowerShell tab completion working.](#i-cant-get-the-powershell-tab-completion-working)
+  - [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me)
+  - [Microsoft.Powershell_profile.ps1 cannot be loaded. The file is not digitally signed.](#microsoftpowershell_profileps1-cannot-be-loaded-the-file-is-not-digitally-signed)
+  - [I'm getting a 403 unauthorized issue when attempting to use the community package repository.](#im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository)
+  - [I'm getting a 429 too many requests issue when attempting to use the community package repository.](#im-getting-a-429-too-many-requests-issue-when-attempting-to-use-the-community-package-repository)
+  - [I'm seeing Chocolatey / *application* / *tool* using 32 bit to run instead of x64. What is going on?](#im-seeing-chocolatey--application--tool-using-32-bit-to-run-instead-of-x64-what-is-going-on)
+  - [A package is broken for me](#a-package-is-broken-for-me)
+  - [The package install failed with 1603](#the-package-install-failed-with-1603)
+  - [Already referencing a newer version of 'packagename'](#already-referencing-a-newer-version-of-packagename)
+  - [Not recognized as the name of a cmdlet, function, script file, or operable program](#not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
+  - [My PATH is not getting updated](#my-path-is-not-getting-updated)
+  - [RefreshEnv has no effect](#refreshenv-has-no-effect)
+  - [Options and/or parameters are not handled correctly](#options-andor-parameters-are-not-handled-correctly)
+  - [Chocolatey is selecting an older version of a dependency on upgrade](#chocolatey-is-selecting-an-older-version-of-a-dependency-on-upgrade)
+  - [Chocolatey is attempting to downgrade a package that is a dependency of another package on upgrade](#chocolatey-is-attempting-to-downgrade-a-package-that-is-a-dependency-of-another-package-on-upgrade)
+  - [Package not installed. An error occurred during installation: Unable to resolve dependency](#package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency)
+  - [Package not installed. The package was not found with the source(s) listed.](#package-not-installed-the-package-was-not-found-with-the-sources-listed)
+  - [Access to the path is denied.](#access-to-the-path-is-denied)
+  - [Root Element is missing error](#root-element-is-missing-error)
+  - [A corrupt registry file exists](#a-corrupt-registry-file-exists)
+  - [Powershell Output Stops](#powershell-output-stops)
 
 <!-- /TOC -->
 
@@ -468,17 +469,17 @@ begin {
             [String]
             $Package
         )
-    
+
         process {
-            
+
             #Get base path of nupkg
             $root = Split-Path -Path $Package -Parent
             $fileName = Split-Path -Path $Package -Leaf
-    
+
             #Copy nupkg as zip to base path
             Rename-Item "$root\$fileName" "$root\$($fileName -replace 'nupkg','zip')"
-    
-    
+
+
             #Open nuspec inside zip file, read it, output as xml object
             Add-Type -AssemblyName "System.Io.Compression.FileSystem"
             try {
@@ -494,12 +495,12 @@ begin {
                 $reader.Close()
                 $stream.Close()
                 $zip.Dispose()
-            
-                Rename-Item "$root\$($fileName -replace 'nupkg','zip')" "$root\$fileName" 
+
+                Rename-Item "$root\$($fileName -replace 'nupkg','zip')" "$root\$fileName"
             }
             #emit data
             $xmlData
-        
+
         }
     }
 
@@ -510,11 +511,11 @@ process {
 
     #Get all the nupkg and nuspec files
     $packages = Get-ChildItem $SearchLocation -Include *.nupkg, *.nuspec -Recurse
-    
+
     #Loop through each package we find
     Foreach ($package in $packages) {
         #Create an empty hashtable to store our data inside
-        $hash = @{} 
+        $hash = @{}
         $nuspecFile = $null
 
         switch ($package.Extension) {

@@ -1,3 +1,10 @@
+---
+Order: 20
+Title: Licensed
+Description: Release notes for the Licensed Chocolatey components
+RedirectFrom: docs/release-notes-licensed
+---
+
 # Chocolatey Release Notes - Commercial Editions
 
 **NOTE**: For commercial editions, refer to both this set of release notes and [[Open Source Release Notes|ReleaseNotes]].

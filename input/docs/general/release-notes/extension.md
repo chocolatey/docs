@@ -1,3 +1,11 @@
+---
+Title: Extension
+Description: Release Notes for Chocolatey Extension
+RedirectFrom: docs/release-notes-extension
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Chocolatey Release Notes - Chocolatey Licensed Extension
 ## Summary
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.

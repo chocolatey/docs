@@ -1,3 +1,11 @@
+---
+Title: Agent
+Description: Release Notes for Chocolatey Agent
+RedirectFrom: docs/release-notes-agent
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Chocolatey Release Notes - Chocolatey Agent Service
 ## Summary
 This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [[Chocolatey Agent Service|FeaturesAgentService]].
