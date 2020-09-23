@@ -1,6 +1,6 @@
 ---
 Order: 20
-Title: Central Managment Setup
+Title: Central Management Setup
 Description: Information on how to setup CCM
 RedirectFrom: docs/central-management-setup
 ---
