@@ -1,3 +1,10 @@
+---
+Title: Migrate Old Chocolatey Directory to ProgramData
+RedirectFrom: docs/migrate-old-chocolatey-directory-to-programdata
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 After an upgrade, you may see a message similar to the following:
 ```
 The default install location has been changed to 'C:\ProgramData\chocolatey'.

@@ -1,3 +1,10 @@
+---
+Title: Logo Use Policy
+RedirectFrom: docs/logo-use-policy
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 The Apache 2.0 license does not apply for the logos/marks.
 
 Chocolatey open source code falls under the Apache 2.0 license, which permits third parties to copy and redistribute the underlying software under the terms of the license. However, the Apache 2.0 license does not provide any license or right to use any of the Chocolatey marks, including logos. You may redistribute the applicable Chocolatey open source software under the terms of the Apache 2.0 license, but you may not use the Chocolatey marks in doing so without express written permission from RealDimensions Software, LLC.

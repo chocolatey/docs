@@ -1,3 +1,10 @@
+---
+Title: Roadmap
+RedirectFrom: docs/roadmap
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Roadmap
 Heading down a sweet road.
 

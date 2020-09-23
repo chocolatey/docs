@@ -1,3 +1,10 @@
+---
+Title: Story of Bob and Richard
+RedirectFrom: docs/chocolatey-story
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # Story of Bob and Richard
 
 Let’s start with a story. Two guys, Bob and Richard (whose names have been changed to protect the innocent) need to get their computers ready to do some development work with [Git](http://git-scm.org). Neither Bob or Richard have worked with Git before. This is a story about the process they each go through to get Git.

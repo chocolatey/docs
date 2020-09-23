@@ -1,3 +1,10 @@
+---
+Title: ChocolateyInstall PowerShell Script
+RedirectFrom: docs/chocolatey-install-ps1
+ShowInNavbar: false
+ShowInSidebar: false
+---
+
 # ChocolateyInstall PowerShell Script
 Chocolatey uses PowerShell as a package install provider and will look for this file in the package. If it finds it, it will execute the contents of the file, attaching the helper modules. Check out the [[Helper Reference|HelpersReference]] for more information on each of the helpers you can include.
 
