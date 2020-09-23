@@ -15,6 +15,7 @@ namespace Docs
             .AddSetting(Keys.LinkRoot, "/docs")
             .AddSetting(Keys.LinksUseHttps, true)
             .AddSetting(Constants.EditLink, ConfigureEditLink())
+            .AddSetting(WebKeys.GatherHeadingsLevel, 3)
             .ConfigureSite("chocolatey", "docs", "master")
             .ConfigureDeployment(deployBranch: "gh-pages")
             .AddShortcode("Children", typeof(ChildrenShortcode))
