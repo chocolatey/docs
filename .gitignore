@@ -2,3 +2,4 @@
 tools/
 BuildArtifacts/
 config.wyam.*
+.DS_Store
