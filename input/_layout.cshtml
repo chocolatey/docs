@@ -19,6 +19,7 @@
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/components/prism-core.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/prismjs@1.19.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/clipboard.min.js")"></script>
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/anchor.min.js")"></script>
 
         @{
             string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey - {Document.GetString(Keys.Title)}" : "Chocolatey";
@@ -202,6 +203,9 @@
             </div>
         </div>
         <script>
+            anchors.options.placement = 'left';
+            anchors.add();
+
             var snippets = document.querySelectorAll("pre > code");
             [].forEach.call(snippets, function(snippet) {
                 snippet.insertAdjacentHTML("beforebegin", "<button class='btn-copy' data-clipboard-snippet><img class='clippy' width=13 src='@Context.GetLink("/assets/images/clippy.svg")' alt='Copy to clipboard'></button>");
