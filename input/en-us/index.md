@@ -2,6 +2,9 @@
 Order: 10
 Title: Home
 Description: Chocolatey Documentation
+RedirectFrom:
+  - docs/home
+  -
 ---
 
 # Chocolatey - Software Management for Windows
