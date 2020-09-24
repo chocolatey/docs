@@ -19,8 +19,6 @@ namespace Docs
             .ConfigureSite("chocolatey", "docs", "master")
             .ConfigureDeployment(deployBranch: "gh-pages")
             .AddShortcode("Children", typeof(ChildrenShortcode))
-            .AddShortcode("ColorTable", typeof(ColorTableShortcode))
-            .AddShortcode("EmojiTable", typeof(EmojiTableShortcode))
             .AddPipelines()
             .RunAsync();
 

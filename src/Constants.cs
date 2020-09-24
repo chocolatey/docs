@@ -15,12 +15,6 @@ namespace Docs
       public const string Root = "EMOJIS_ROOT";
     }
 
-    public static class Colors
-    {
-      public const string Url = "https://raw.githubusercontent.com/spectresystems/spectre.console/main/resources/scripts/Generator/Data/colors.json";
-      public const string Root = "COLORS_ROOT";
-    }
-
     public static class Site
     {
       public const string Owner = "SITE_OWNER";
