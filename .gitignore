@@ -3,3 +3,6 @@ tools/
 BuildArtifacts/
 config.wyam.*
 .DS_Store
+output/
+bin/
+obj/
