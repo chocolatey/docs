@@ -11,8 +11,7 @@ namespace Docs
     public static async Task<int> Main(string[] args) =>
         await Bootstrapper.Factory
             .CreateWeb(args)
-            .AddSetting(Keys.Host, "chocolatey.github.io/")
-            .AddSetting(Keys.LinkRoot, "/docs")
+            .AddSetting(Keys.Host, "docs.chocolatey.org/")
             .AddSetting(Keys.LinksUseHttps, true)
             .AddSetting(Constants.EditLink, ConfigureEditLink())
             .AddSetting(WebKeys.GatherHeadingsLevel, 3)

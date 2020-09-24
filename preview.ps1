@@ -1,1 +1,1 @@
-dotnet run -- preview --virtual-dir "docs"
+dotnet run -- preview
