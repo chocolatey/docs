@@ -1,6 +1,6 @@
 ---
 Order: 10
-Title: Docs Home
+Title: Home
 Description: Chocolatey Documentation
 ---
 
