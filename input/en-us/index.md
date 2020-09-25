@@ -4,7 +4,7 @@ Title: Home
 Description: Chocolatey Documentation
 RedirectFrom:
   - docs/home
-  -
+  - docs/
 ---
 
 # Chocolatey - Software Management for Windows
