@@ -23,7 +23,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > :memo: **NOTE**
 >
-> If this seems like a lot to set up, you have the ability to get access to the [[Quick Deployment Environment (QDE)|QuickDeploymentEnvironment]]. It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [[Quick Deployment Environment (QDE)|QuickDeploymentEnvironment]].
+> If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](./quick-deployment). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](./quick-deployment).
 
 > :warning: **WARNING**
 >

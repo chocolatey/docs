@@ -156,12 +156,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Install-ChocolateyPackage|HelpersInstallChocolateyPackage]]
- * [[Install-ChocolateyInstallPackage|HelpersInstallChocolateyInstallPackage]]
- * [[Install-ChocolateyZipPackage|HelpersInstallChocolateyZipPackage]]
+ * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
+ * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-PackageParameters -Full`.
 

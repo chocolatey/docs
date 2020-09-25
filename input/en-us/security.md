@@ -70,11 +70,11 @@ Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has c
 1. Requires administrative permission to add to the Machine PATH environment variable. This reduces escalation of privilege attacks.
 1. Chocolatey by default will stop and ask you to confirm before changing state of the system, showing you the script it wants to execute.
 1. choco.exe supports a `--whatif` scenario (aka `--noop`) in 0.9.9+ so you can get a feel for what a package would do to your system.
-1. To reduce MITM (Man in the middle) attacks, package installs support [[checksums|HelpersInstallChocolateyPackage]], so that when downloading from a remote location, binaries are verified prior to acting on them. If the package downloads over non-secure urls/FTP, Chocolatey v0.10.0+ requires the package include checksums by default (can be overridden by the user).
+1. To reduce MITM (Man in the middle) attacks, package installs support [checksums](./creating-packages/helpers/install-chocolateypackage), so that when downloading from a remote location, binaries are verified prior to acting on them. If the package downloads over non-secure urls/FTP, Chocolatey v0.10.0+ requires the package include checksums by default (can be overridden by the user).
 1. Starting with v0.10.0, users can supply [runtime checksums](https://github.com/chocolatey/choco/issues/112) so they are not required to just trust what the package supplies (or in the case a package has missing or incorrect checksums).
 1. Starting with v0.10.1, Chocolatey will detect whether an SSL/TLS download is available and automatically switch to that for more security.
 1. Choco will not allow you to push to the community package repository without using SSL/TLS (HTTPS). This reduces DNS poisoning issues and discovery of your Community repository API key.
-1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [[What are Chocolatey Packages|GettingStarted#what-are-chocolatey-packages]] for more details.
+1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [What are Chocolatey Packages](./usage/getting-started#what-are-chocolatey-packages) for more details.
 1. Chocolatey is run by a US-based Delaware Corporation named Chocolatey Software.
 
 ## Chocolatey binaries and the Chocolatey package
@@ -161,7 +161,7 @@ It's important to keep the following in mind:
 
 > **"Chocolatey != Chocolatey.org Packages"**
 
-It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [[own private feed|How-To-Host-Feed]] where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
+It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](./features/free/how-to-host-feed) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
 
 ## Chocolatey.org Packages
 Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [[distribution rights|CommunityPackagesDisclaimer]], they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
@@ -179,12 +179,12 @@ Chocolatey.org has a community repository of packages known as the community fee
 1. Checksums of included binaries are shown on the community package page to allow for folks to perform independent verification. The community has moved to adding an additional VERIFICATION.txt file for verifying the binaries.
 
 ### Rigorous Moderation Process for Community Packages
-In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [[rigorous moderation process|Moderation]] prior to any public consumption:
+In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](./general/moderation) prior to any public consumption:
 
  * All package versions are run through an [automated validation process](https://github.com/chocolatey/package-validator/wiki) to determine quality.
  * All package versions are run through an [automated verification process](https://github.com/chocolatey/package-verifier/wiki) to determine if they work correctly (install, etc).
  * All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - https://chocolatey.org/packages/chocolatey#virus as an example). **NOTE:** Only en-US installers are tested by default via Chocolatey's Package Scanner.
- * A human [[reviews every package version|Moderation#reviewer--moderator-process]] that is not a [[trusted package|ChocolateyFAQs#what-is-a-trusted-package]]. This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
+ * A human [reviews every package version](./general/moderation#reviewer--moderator-process) that is not a [trusted package](./general/faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
  * We don't require cryptographically signing packages yet, that is a future enhancement
  * Checksumming is a requirement for non-secure scenarios, but is not yet a requirement in some scenarios, so keep reading the next section.
 

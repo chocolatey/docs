@@ -10,12 +10,12 @@ RedirectFrom: docs/commands-uninstall
 # Uninstall Command (choco uninstall)
 
 Uninstalls a package or a list of packages. Some may prefer to use
- `cuninst` as a shortcut for [[`choco uninstall`|Commandsuninstall]].
+ `cuninst` as a shortcut for [`choco uninstall`](./usage/commands/uninstall).
 
 **NOTE:** 100% compatible with older chocolatey client (0.9.8.32 and below)
  with options and switches. Add `-y` for previous behavior with no
  prompt. In most cases you can still pass options and switches with one
- dash (`-`). For more details, see [[how to pass arguments|CommandsReference#how-to-pass-options--switches]] (`choco -?`).
+ dash (`-`). For more details, see [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`).
 
 <!-- TOC -->
 
@@ -93,7 +93,7 @@ chocolatey without attempting to uninstall the program.
     choco uninstall ruby --version 1.8.7.37402
     choco uninstall nodejs.install --all-versions
 
-**NOTE:** See scripting in [[how to pass arguments|CommandsReference#how-to-pass-options--switches]] (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -133,7 +133,7 @@ In addition to the above exit codes, you may also see reboot exit codes
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [[default options/switches|CommandsReference#default-options-and-switches]] (included below for completeness).
+Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -339,7 +339,7 @@ Includes [[default options/switches|CommandsReference#default-options-and-switch
 
 ~~~
 
-[[Command Reference|CommandsReference]]
+[Command Reference](./usage/commands/reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco uninstall -h`.

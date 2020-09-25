@@ -7,7 +7,7 @@ RedirectFrom: docs/release-notes
 
 # Chocolatey Release Notes - Open Source
 
-**NOTE**: For commercial editions, please also refer to [[Licensed Release Notes|ReleaseNotesLicensed]].
+**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](./general/release-notes/licensed).
 
 * [[Chocolatey and Chocolatey.Lib Release Notes|ReleaseNotesChocoCli]]
 * [[Chocolatey GUI Release Notes|ReleaseNotesChocolateyGui]]

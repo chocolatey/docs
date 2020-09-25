@@ -46,7 +46,7 @@ There are settings and features that can customize the way that Chocolatey works
 
 ## Config Settings
 
-Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" --value="'<value>'"` and set back to default with `choco config unset --name="'<nameFromBelow>'"`. For more information see [[`choco config` command|CommandsConfig]] or run `choco config -?`.
+Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" --value="'<value>'"` and set back to default with `choco config unset --name="'<nameFromBelow>'"`. For more information see [`choco config` command](./usage/commands/config) or run `choco config -?`.
 
 ### General
 * `cacheLocation` = **' '** - Cache location if not TEMP folder. Replaces `$env:TEMP` value.  It is highly recommended this be set to make Chocolatey more deterministic in cleanup.
@@ -108,7 +108,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 ## Features
 
-Features are adjusted using `choco feature enable|disable --name="'<nameFromBelow>'"`. For more information see [[`choco feature` command|CommandsFeature]] or run `choco feature -?`.
+Features are adjusted using `choco feature enable|disable --name="'<nameFromBelow>'"`. For more information see [`choco feature` command](./usage/commands/feature) or run `choco feature -?`.
 
 A checkbox means this feature is turned on by default.
 

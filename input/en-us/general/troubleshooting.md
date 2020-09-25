@@ -57,7 +57,7 @@ There are some well-known things you may run into when you are using Chocolatey.
 
 If you are unable to find answers to your questions here, please see https://chocolatey.org/support (FOSS and Licensed) and https://chocolatey.org/bugs to learn more about how you can report issues and get things fixed if they are broken.
 
-Also consider the [[frequently asked questions|ChocolateyFAQs]].
+Also consider the [frequently asked questions](./general/faqs).
 
 <a id="markdown-chocolatey-installation" name="chocolatey-installation"></a>
 ## Chocolatey Installation
@@ -179,7 +179,7 @@ References:
 <a id="markdown-error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary" name="error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary"></a>
 ### "ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.
 
-This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [[PowerShell function reference|HelpersReference]].
+This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](./creating-packages/helpers/reference).
 
 Reference: https://groups.google.com/d/msgid/chocolatey/d11d8eb2-74b3-4c2c-b0bb-d1a1ed3df389%40googlegroups.com (you will need to join the group to see the message)
 

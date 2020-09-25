@@ -2,6 +2,7 @@
 Order: 20
 Title: Why Chocolatey?
 Description: Why should I use Chocolatey
+RedirectFrom: docs/why
 ---
 
 ## Why Chocolatey?
@@ -66,7 +67,7 @@ Yes, yes you can. Chocolatey works in a similar manner to how you would do thing
 
 ![Yes, yes](http://replygif.net/i/208.gif)
 
-Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([[installer packages|ChocolateyFAQs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application]] are the context here).
+Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](./general/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application]] are the context here).
 
 Let me start by saying that testing how a single package won't give you a warm and fuzzy about how it will work with all packages. Software installers in the wild world of Windows have many completely different ways of going about things, all of which are dependent on those creating the installers, none of which have a consistent standard (except maybe MSI). Welcome to Windows.
 
@@ -92,4 +93,4 @@ Believe me, I wanted there to be something existing on Windows that would fit th
 To date, Chocolatey does all of this (virtual packages is coming).
 
 ### Other questions?
-See the [[FAQs|ChocolateyFAQs]].
+See the [FAQs](./general/faqs).

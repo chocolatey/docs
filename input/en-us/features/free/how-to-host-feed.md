@@ -48,10 +48,10 @@ RedirectFrom: docs/how-to-host-feed
 
 <!-- /TOC -->
 
-**NOTE:** Refer to [[How To Set Up Chocolatey For Organizational/Internal Use|How-To-Setup-Offline-Installation]] in tandem with this article.
+**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./how-tos/setup-offline-installation) in tandem with this article.
 
 ## Why?
-Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the community package repository (https://chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
+Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the [community package repository](https://chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
 
 * [[Community package repository - organizational use|CommunityPackagesDisclaimer]]
 * [[Security and the community repository|Security#organizational-use-of-chocolatey]]
@@ -279,7 +279,7 @@ Most hosting options have great information on how to set up the package reposit
 
 ### Commercial Repository System Requirements
 
-For commercial options, we've compiled a list of recommended needs for your server repositories. For Chocolatey clients, please see [[client requirements|How-To-Setup-Offline-Installation]]. What you will see below are not the minimum values, you can typically get that at each of the links. These are what we typically recommend for use with Chocolatey. All of these options support High Availability (HA) options as well, so if you need something like that for a geographically diverse enterprise, there are options to meet those needs. Keep in mind pricing of each of these goes up based on your needs.
+For commercial options, we've compiled a list of recommended needs for your server repositories. For Chocolatey clients, please see [client requirements](./how-tos/setup-offline-installation). What you will see below are not the minimum values, you can typically get that at each of the links. These are what we typically recommend for use with Chocolatey. All of these options support High Availability (HA) options as well, so if you need something like that for a geographically diverse enterprise, there are options to meet those needs. Keep in mind pricing of each of these goes up based on your needs.
 
 #### Artifactory Pro
 

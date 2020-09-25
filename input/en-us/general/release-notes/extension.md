@@ -16,7 +16,7 @@ Please see [[Install the Licensed Edition|Installation-Licensed]] for informatio
 **NOTE**: Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
 
 ## Other Release Notes
-* Refer to [[Open Source Release Notes|ReleaseNotes]] as commercial editions build on top of open source.
+* Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [[Chocolatey Agent Release Notes|ReleaseNotesAgent]] and [[Chocolatey Central Management Release Notes|ReleaseNotesCentralManagement]].
 
 

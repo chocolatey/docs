@@ -16,9 +16,9 @@ RedirectFrom: docs/quick-deployment-internet-setup
 >
 > See the following QDE v2.0+ documents for more information on how to handle this setup or certificate renewals in newer versions:
 >
-> * [[QDE Desktop Readme|QuickDeploymentDesktopReadme]]
-> * [[QDE Firewall Changes|QuickDeploymentFirewallChanges]]
-> * [[QDE SSL Setup|QuickDeploymentSslSetup]]
+> * [QDE Desktop Readme](./quick-deployment/desktop-readme)
+> * [QDE Firewall Changes](./quick-deployment/firewall-changes)
+> * [QDE SSL Setup](./quick-deployment/ssl-setup)
 
 With an unprecedented amount of employees working from home, there is a much greater demand to serve their software lifecycle needs remotely. Thus, many organizations would like the option to make the Chocolatey Quick Deployment Environment (QDE) Internet-accessible. This document walks you through some options you will need to consider, if you choose this route.
 
@@ -61,7 +61,7 @@ In general, it is not required or may not be advisable to have these accessible 
 You can access these via a Remote Desktop session on the QDE server itself, or opening these ports up to your internal network.
 Again, we **strongly** advise against opening these ports up to the public Internet for security reasons.
 
-Further details on firewall changes can be found on the [[QDE Firewall Setup|QuickDeploymentFirewallChanges]] page.
+Further details on firewall changes can be found on the [QDE Firewall Setup](./quick-deployment/firewall-changes) page.
 
 ## SSL Certificate Setup
 

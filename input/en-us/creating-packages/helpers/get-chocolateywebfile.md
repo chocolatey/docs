@@ -322,13 +322,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Install-ChocolateyPackage|HelpersInstallChocolateyPackage]]
- * [[Get-WebFile|HelpersGetWebFile]]
- * [[Get-WebFileName|HelpersGetWebFileName]]
- * [[Get-FtpFile|HelpersGetFtpFile]]
+ * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
+ * [Get-WebFile](./creating-packages/helpers/get-webfile)
+ * [Get-WebFileName](./creating-packages/helpers/get-webfilename)
+ * [Get-FtpFile](./creating-packages/helpers/get-ftpfile)
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyWebFile -Full`.
 

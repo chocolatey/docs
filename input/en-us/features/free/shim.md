@@ -106,10 +106,10 @@ Yes! When a shim detects that elevation is required, it will automatically reque
 We tried using batch ("*.bat") files, and it mostly works, but when applications calling other applications expect the file name to be ".exe", a file named "*.bat" doesn't work. Batch files also don't work in all shells, and shims do.
 
 ### Have you thought about shimming in more places?
-Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [[Install-BinFile|HelpersInstallBinFile]].
+Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](./creating-packages/helpers/install-binfile).
 
 ### I need to shim a non-exe file.
-If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [[Install-BinFile|HelpersInstallBinFile]].
+If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](./creating-packages/helpers/install-binfile).
 
 ### I need to exclude a file from shimming.
 If you are creating a package and you want to skip creation of a shim for a particular file, you can create a "*.ignore" file.

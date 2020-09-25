@@ -515,12 +515,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
- * [[Install-ChocolateyInstallPackage|HelpersInstallChocolateyInstallPackage]]
- * [[Get-UninstallRegistryKey|HelpersGetUninstallRegistryKey]]
- * [[Install-ChocolateyZipPackage|HelpersInstallChocolateyZipPackage]]
+ * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
+ * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
+ * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPackage -Full`.
 

@@ -38,4 +38,4 @@ Remove-Item $diffExeIgnore,$uninstallExeIgnore,$gvimExeGui
 
     Example: `'c:\program files (x86)\vim\vim73\'`
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)

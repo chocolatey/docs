@@ -7,7 +7,7 @@ RedirectFrom: docs/release-notes-licensed
 
 # Chocolatey Release Notes - Commercial Editions
 
-**NOTE**: For commercial editions, refer to both this set of release notes and [[Open Source Release Notes|ReleaseNotes]].
+**NOTE**: For commercial editions, refer to both this set of release notes and [Open Source Release Notes](./general/release-notes/open-source).
 
 
 If you have Pro, MSP or Architect, please refer to the following:

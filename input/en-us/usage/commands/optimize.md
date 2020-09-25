@@ -62,7 +62,7 @@ Coming soon
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [[default options/switches|CommandsReference#default-options-and-switches]] (included below for completeness).
+Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -175,7 +175,7 @@ Includes [[default options/switches|CommandsReference#default-options-and-switch
 
 ~~~
 
-[[Command Reference|CommandsReference]]
+[Command Reference](./usage/commands/reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco optimize -h`.

@@ -281,12 +281,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
- * [[Install-ChocolateyInstallPackage|HelpersInstallChocolateyInstallPackage]]
- * [[Install-ChocolateyPackage|HelpersInstallChocolateyPackage]]
- * [[Install-ChocolateyZipPackage|HelpersInstallChocolateyZipPackage]]
+ * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
+ * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
+ * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPowershellCommand -Full`.
 

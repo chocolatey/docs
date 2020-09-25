@@ -141,12 +141,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
- * [[Get-FtpFile|HelpersGetFtpFile]]
- * [[Get-WebHeaders|HelpersGetWebHeaders]]
- * [[Get-WebFileName|HelpersGetWebFileName]]
+ * [Get-FtpFile](./creating-packages/helpers/get-ftpfile)
+ * [Get-WebHeaders](./creating-packages/helpers/get-webheaders)
+ * [Get-WebFileName](./creating-packages/helpers/get-webfilename)
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebFile -Full`.
 

@@ -15,7 +15,7 @@ RedirectFrom: docs/how-to-setup-offline-installation
 > Our goal is to get you up-and-running quickly, and testing out the feature set.
 > For a more complete reference of possible scenarios and solutions, please stick to this guide.
 >
-> Another thing we provide is a [[Quick Deployment Environment|QuickDeploymentEnvironment]] that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
+> Another thing we provide is a [Quick Deployment Environment](./quick-deployment) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
 > It, like the quick start implementation, provides a specific solution so you should read over the summary before you decide that is the right implementation for your needs (in about 80%+ of organizational use cases it is the correct solution).
 
 <!-- TOC -->
@@ -92,13 +92,13 @@ There may be some exercises in here that won't apply:
 
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
 * [[Licensed Install|Installation-Licensed]]
-* [[Host Your Own Package Server|How-To-Host-Feed]]
+* [Host Your Own Package Server](./features/free/how-to-host-feed)
 * [[Set up Chocolatey Server|How-To-Set-Up-Chocolatey-Server]]
 * [Security](https://chocolatey.org/security)
 * [[Community Package Repository Disclaimer|CommunityPackagesDisclaimer]]
 
 ## Requirements
-Please see  [[Requirements|GettingStarted#requirements]] for the most up to date version of this.
+Please see  [Requirements](./usage/getting-started#requirements) for the most up to date version of this.
 
 ### Chocolatey Clients
 With Chocolatey clients, we ensure that Chocolatey is going to run with low memory footprints because you will have all aspects of things you will need to manage and different space and memory available across all of those clients. Chocolatey has a very wide reach into where it can be installed.
@@ -259,7 +259,7 @@ Write-Warning "Check and adjust script at '$env:SystemDrive\choco-setup\files\Ch
 <a id="exercise-1-set-up-chocolatey-installation-on-a-machine-without-internet-access" name="#exercise-1-set-up-chocolatey-installation-on-a-machine-without-internet-access"></a>
 
 ## Exercise 1 (Optional): Set Up Chocolatey Installation On A Machine Without Network Access
-Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [[Other repository servers don't necessarily require Windows|How-To-Host-Feed]].
+Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](./features/free/how-to-host-feed).
 
 **NOTE:** If you are using the same machine from Exercise 0 for setting up your repository, you can skip this Exercise and go to Exercise 2 (in other words, your machine already has Chocolatey installed).
 
@@ -328,7 +328,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 ~~~
 
 ## Exercise 2: Set Up A Package Repository
-Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [[set up a package repository|How-To-Host-Feed]] to learn about the advantages and disadvantages of each.
+Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](./features/free/how-to-host-feed) to learn about the advantages and disadvantages of each.
 
 Pick one or more of the following paths:
 
@@ -387,7 +387,7 @@ Write-Warning "Follow the steps at https://chocolatey.org/docs/how-to-set-up-cho
 ### Exercise 2B: Set Up A Different Repository
 > Recommended for most organizational use cases
 
-If you are setting up something different than Chocolatey.Server, you may wish to read over [[How To Set Up an Internal Repository|How-To-Host-Feed]]. This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
+If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](./features/free/how-to-host-feed). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
 **NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [[internalize them|How-To-Recompile-Packages]]. The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [[manually internalize packages|How-To-Recompile-Packages]] you want to use from the community repository. More on [[why (community packages repository notes)|CommunityPackagesDisclaimer]].
 
@@ -577,7 +577,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. Open PowerShell.exe as an administrative shell. You can type "Windows Key + X + A" (Windows 8+ - when that comes up if it is cmd.exe, simply type `powershell` to get into it).
 1. If you need FIPS compliance, run `choco feature enable --name="'useFipsCompliantChecksums'"`.
 1. Run `choco source remove --name="'chocolatey'"` to remove the default community package repository.
-1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [[source command|CommandsSource]].
+1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [source command](./usage/commands/source).
 1. C4B / MSP / C4BTRIAL: Install the license package we've pushed - `choco upgrade chocolatey-license -y`. This may be a place you see an error if things are not configured correctly. If you run into an error, be sure that you have the source added properly with the right permissions (not api key - that is for pushes only).
 1. C4B / MSP / C4BTRIAL: Run `choco source disable --name="'chocolatey.licensed'"`. When the license is placed, Chocolatey automatically adds the license and we don't want to use that source. Note we can't remove the license because the existence of the license file will have Chocolatey adding it right back - so we just disable it. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and we are going to take care of that in the next step.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y --pre`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
@@ -726,7 +726,7 @@ If you've made it this far, you are ready to be quite successful with Chocolatey
 ## More Architecture Setup
 * [[Setup Central Management|CentralManagementSetup]]
 * [[Automate Internalization of Community Packages|FeaturesAutomaticallyRecompilePackages]] - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
-* [[Quick Deployment Environment|QuickDeploymentEnvironment]]
+* [Quick Deployment Environment](./quick-deployment)
 
 
 ## Next Steps

@@ -87,8 +87,8 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 
 ### Package sources:
 * Ninite - one at Ninite.com
-* Chocolatey - central community package repository at https://chocolatey.org/packages, create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [[Host Your Own Server|How-To-Host-Feed]] for options.
-* Chocolatey can also install from [[alternative sources|CommandsInstall#alternative-sources]] - choco install bash --source cygwin | choco isntall gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
+* Chocolatey - central community package repository at https://chocolatey.org/packages, create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](./features/free/how-to-host-feed) for options.
+* Chocolatey can also install from [alternative sources](./usage/commands/install#alternative-sources) - choco install bash --source cygwin | choco isntall gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
 
 ### Creating packages:
 * Ninite - no

@@ -8,7 +8,7 @@ RedirectFrom: docs/create-packages
 # Creating Chocolatey Packages
 
 ## Summary
-See [[What are Chocolatey Packages?|GettingStarted#what-are-chocolatey-packages]] first.
+See [What are Chocolatey Packages?](./usage/getting-started#what-are-chocolatey-packages) first.
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
@@ -20,18 +20,18 @@ First you should determine if you are making a self-contained package or (also) 
 #### Self-Contained?
 If you have a self-contained package, you can remove the automation scripts
 entirely and just include the runtime executables, they will automatically get shimmed,
-which puts them on the path. Ensure you have the [[legal right to distribute|Legal]]
+which puts them on the path. Ensure you have the [legal right to distribute](./additional-information/legal)
 the application though. You should read up on the Shim Generation section
 below though to familiarize yourself on what to do with GUI applications
 and/or ignoring shims (also known as batch redirects).
 
 #### Including the Software Installer in the Package
-Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [[legal right to distribute|Legal]] the software first if publishing to a public location (like the community package repository).
+Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [legal right to distribute](./additional-information/legal) the software first if publishing to a public location (like the community package repository).
 
 #### Automation Scripts
 You have a powerful use of Chocolatey, as you are using PowerShell. So you
-can do just about anything you need. Choco has some very handy [[built-in functions|HelpersReference]] that you can use, these are sometimes called
-[[helpers|HelpersReference]].
+can do just about anything you need. Choco has some very handy [built-in functions](./creating-packages/helpers/reference) that you can use, these are sometimes called
+[helpers](./creating-packages/helpers/reference).
 
 ## Table of Contents
 1. [[Rules|CreatePackages#rules-to-be-observed-before-publishing-packages]]
@@ -92,9 +92,9 @@ The main release of a product versions are usually sufficient. If there are also
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
 1. [Nuspec](CreatePackages#nuspec)
-1. [[chocolateyInstall.ps1|ChocolateyInstallPS1]] - check out the [[helper reference|HelpersReference]]
-1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [[distribute files|Legal]]). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
-1. chocolateyUninstall.ps1, for uninstalling your package. See [[helper reference|HelpersReference]] for functions available in your script.
+1. [[chocolateyInstall.ps1|ChocolateyInstallPS1]] - check out the [helper reference](./creating-packages/helpers/reference)
+1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](./additional-information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
+1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](./creating-packages/helpers/reference) for functions available in your script.
 
 **Note:** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
@@ -232,7 +232,7 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 ## Uninstalling
 
-Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [[chocolateyInstall.ps1|ChocolateyInstallPS1]]. All the usual [[helper reference|HelpersReference]] are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
+Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [[chocolateyInstall.ps1|ChocolateyInstallPS1]]. All the usual [helper reference](./creating-packages/helpers/reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
 
 ## Dependency Chaining
@@ -255,7 +255,7 @@ These guidelines are already commonly applied on packages for all major Linux di
 
 Note that a lot of packages in the Chocolatey Gallery don’t follow these guidelines. The simple reason is that the affected packages were created before the introduction of these guidelines.
 
-If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [[Portable vs Installable|ChocolateyFAQs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application]] and [[Install, Portable, and Meta/Virtual Packages|ChocolateyFAQs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and--ie-autohotkey]]
+If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](./general/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](./general/faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and--ie-autohotkey)
 
 ## Package description and release notes
 
@@ -335,7 +335,7 @@ Example: In the case of `Bob.exe` you would create a file named `Bob.exe.gui` an
 
 ## Build Your Package
 
-Open a command line in the directory where the nuspec is and type [[`choco pack`|CommandsPack]]. That's it.
+Open a command line in the directory where the nuspec is and type [`choco pack`](./usage/commands/pack). That's it.
 
 ## Testing Your Package
 
@@ -366,7 +366,7 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [[passing options with quotes|CommandsReference#how-to-pass-options--switches]]. **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
+`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](./usage/commands/reference#how-to-pass-options--switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
 You can also use the `-debug` switch on `choco install` to provide more information.
 
@@ -379,7 +379,7 @@ You can also type `choco install -fdv path/to/nuspec` and choco will build the n
 
 ## Push Your Package
 
-To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://chocolatey.org/` for chocolatey's community feed).  You must have an api key for https://chocolatey.org/ set. Take a look at [[choco push|CommandsPush]]
+To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://chocolatey.org/` for chocolatey's community feed).  You must have an api key for https://chocolatey.org/ set. Take a look at [choco push](./usage/commands/push)
 
 You can also log into chocolatey.org and upload your package from there (not recommended for packages over 2MB).
 

@@ -36,7 +36,7 @@ We normally recommend just calling the install as usual with no special switches
 
 However if you are sold on skipping the automation scripts and tricking Chocolatey into believing that a script is installed, then continue reading.
 
-If you wander over to [[install switches|CommandsInstall#options-and-switches]] you will see
+If you wander over to [install switches](./usage/commands/install#options-and-switches) you will see
 
 ~~~
 -n, --skippowershell, --skip-powershell
@@ -81,7 +81,7 @@ Your command could be:
 
 **Recommendation**: Ask the maintainer to update the package. Don't allow choco to know about an older version of a package. If the maintainer provides an update of 1.9.0 without also providing an update at or above your currently installed version, running upgrade later may put your installed software down to the version that is installed by the package. This is definitely not a situation you want to be in.
 
-Additional thoughts: You could install the older version of the package (with the `-n` argument) and promptly [[pin|CommandsPin]] that version until the newer version is available. If you don't already have the package installed though, it's better to wait for the newer version to become available.
+Additional thoughts: You could install the older version of the package (with the `-n` argument) and promptly [pin](./usage/commands/pin) that version until the newer version is available. If you don't already have the package installed though, it's better to wait for the newer version to become available.
 
 ## Upgrade a Package Without Running Scripts
 
@@ -92,13 +92,13 @@ Consider the following scenario:
 * Google Chrome self-updates
 * Choco version is out of sync with installed version
 
-**Recommendation**: You should [[pin|CommandsPin]] the package to suppress upgrades. The self-updating scenario is keeping you on the latest version and you want to stay up to date with the latest version that may have security fixes in addition to other things.
+**Recommendation**: You should [pin](./usage/commands/pin) the package to suppress upgrades. The self-updating scenario is keeping you on the latest version and you want to stay up to date with the latest version that may have security fixes in addition to other things.
 
 You should run
 
 `choco pin add -n=googlechrome`
 
-For more information see [[Pin Command|CommandsPin]].
+For more information see [Pin Command](./usage/commands/pin).
 
 ### The software was upgraded but not the package
 
@@ -126,7 +126,7 @@ Consider the following scenario:
 
 See [Community Feed has a version older than your version](#community-feed-has-a-package-older-than-your-version) - substitute `upgrade` for `install` if you must. Follow the recommendation.
 
-**Additional Recommendation**: You may also want to bump it to 1.8.0 using the skip argument (`-n`) and then promptly [[pin|CommandsPin]] the package until a newer version is available.
+**Additional Recommendation**: You may also want to bump it to 1.8.0 using the skip argument (`-n`) and then promptly [pin](./usage/commands/pin) the package until a newer version is available.
 
 ~~~
 choco upgrade firefox -n -y --version 1.8.0

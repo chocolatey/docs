@@ -61,7 +61,7 @@ To get QDE into your environment, please [reach out to us](https://chocolatey.or
 
 A lot of what is done in QDE condenses or completely eliminates the work found in these related articles:
 
-* [[Organizational Deployment Guide|How-To-Setup-Offline-Installation]]
+* [Organizational Deployment Guide](./how-tos/setup-offline-installation)
 * [Chocolatey Installation](https://chocolatey.org/install#organization)
 * [[Chocolatey Commercial Installation|Installation-Licensed]]
 * [[Automate Package Internalization|How-To-Setup-Internal-Package-Repository]]
@@ -71,11 +71,11 @@ The above articles document how that is done.
 
 ## Links
 
-* [[QDE Setup|QuickDeploymentSetup]]
-* [[QDE Desktop ReadMe File|QuickDeploymentDesktopReadme]] (included here for convenience)
-* [[QDE SSL/TLS Setup|QuickDeploymentSslSetup]]
-* [[QDE Firewall Changes|QuickDeploymentFirewallChanges]]
-* [[QDE Client Setup|QuickDeploymentClientSetup]] (setting up your client machines)
+* [QDE Setup](./quick-deployment/setup)
+* [QDE Desktop ReadMe File](./quick-deployment/desktop-readme) (included here for convenience)
+* [QDE SSL/TLS Setup](./quick-deployment/ssl-setup)
+* [QDE Firewall Changes](./quick-deployment/firewall-changes)
+* [QDE Client Setup](./quick-deployment/client-setup) (setting up your client machines)
 * [How do I upgrade QDE?](#how-do-i-upgrade-qde).
 
 ## FAQ

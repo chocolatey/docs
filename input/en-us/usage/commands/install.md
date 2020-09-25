@@ -11,12 +11,12 @@ RedirectFrom: docs/commands-install
 
 Installs a package or a list of packages (sometimes specified as a
  packages.config). Some may prefer to use `cinst` as a shortcut for
- [[`choco install`|Commandsinstall]].
+ [`choco install`](./usage/commands/install).
 
 **NOTE:** 100% compatible with older chocolatey client (0.9.8.32 and below)
  with options and switches. Add `-y` for previous behavior with no
  prompt. In most cases you can still pass options and switches with one
- dash (`-`). For more details, see [[how to pass arguments|CommandsReference#how-to-pass-options--switches]] (`choco -?`).
+ dash (`-`). For more details, see [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`).
 
 <!-- TOC -->
 
@@ -85,7 +85,7 @@ Install multiple versions of a package using -m (AllowMultiple versions)
     choco install ruby --version 2.0.0.59800 -my
     choco install ruby --version 2.1.5 -my
 
-What is `-my`? See option bundling in [[how to pass arguments|CommandsReference#how-to-pass-options--switches]]
+What is `-my`? See option bundling in [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches)
  (`choco -?`).
 
 **NOTE:** All of these will add to PATH variable. We'll be adding a special
@@ -94,7 +94,7 @@ What is `-my`? See option bundling in [[how to pass arguments|CommandsReference#
  (https://bitbucket.org/jonforums/uru) or pik
  (https://chocolatey.org/packages/pik) to switch between versions.
 
-**NOTE:** See scripting in [[how to pass arguments|CommandsReference#how-to-pass-options--switches]] (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -212,7 +212,7 @@ This specifies that the source is a Windows Feature and we should
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [[default options/switches|CommandsReference#default-options-and-switches]] (included below for completeness).
+Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -541,7 +541,7 @@ Includes [[default options/switches|CommandsReference#default-options-and-switch
 
 ~~~
 
-[[Command Reference|CommandsReference]]
+[Command Reference](./usage/commands/reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco install -h`.

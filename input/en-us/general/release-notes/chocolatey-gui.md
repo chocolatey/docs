@@ -10,7 +10,7 @@ ShowInSidebar: false
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.
 
-**NOTE**: For commercial editions, please also refer to [[Licensed Release Notes|ReleaseNotesLicensed]].
+**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](./general/release-notes/licensed).
 
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 

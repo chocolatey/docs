@@ -10,7 +10,7 @@ ShowInSidebar: false
 
 This covers changes for the "chocolatey" and "chocolatey.lib" packages, which are available as FOSS.
 
-**NOTE**: For commercial editions, please also refer to [[Licensed Release Notes|ReleaseNotesLicensed]].
+**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](./general/release-notes/licensed).
 
 ## [0.10.15](https://github.com/chocolatey/choco/issues?q=milestone%3A0.10.15+is%3Aclosed) (June 3, 2019)
 ### BUG FIXES

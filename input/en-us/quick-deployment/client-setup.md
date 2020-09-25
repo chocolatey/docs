@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-client-setup
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [[QDEv1 Client Setup page|QuickDeploymentClientSetupV1]].
+> If you're using an older version of QDE, please refer to the [QDEv1 Client Setup page](./quick-deployment/v1/client-setup).
 
 <!-- TOC depthFrom:2 -->
 
@@ -76,6 +76,6 @@ The `ClientSetup.ps1` script executed here will:
 
 > :memo: **NOTE**
 >
-> For internet enabled client setup please refer to [[Quick deployment Environment Internet Setup|QuickDeploymentEnvironmentInternetSetup]] for additional information.
+> For internet enabled client setup please refer to [Quick deployment Environment Internet Setup](./quick-deployment/internet-setup) for additional information.
 
-[[Quick Deployment Environment|QuickDeploymentEnvironment]]
+[Quick Deployment Environment](./quick-deployment)

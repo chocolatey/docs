@@ -122,7 +122,7 @@ See [[What is Chocolatey?|Why#what-is-chocolatey]]
 
 <a id="markdown-why-chocolatey" name="why-chocolatey"></a>
 ### Why Chocolatey?
-First a [[story|ChocolateyStory]]. Then [[Why Chocolatey?|Why]]
+First a [[story|ChocolateyStory]]. Then [Why Chocolatey](./why)
 
 <a id="markdown-can-i-use-chocolatey-at-my-organization" name="can-i-use-chocolatey-at-my-organization"></a>
 ### Can I use Chocolatey at my organization?
@@ -136,7 +136,7 @@ No. Packages on Chocolatey's community repository (https://chocolatey.org/packag
 
 To put it another way, Microsoft would be quite upset if the Office 365 packages on the community repository actually contained the Office 365 binaries. This is not something organizations would be subject to when hosting their own internal package.
 
-When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [[What are Chocolatey Packages|GettingStarted#what-are-chocolatey-packages]] for more details.
+When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](./usage/getting-started#what-are-chocolatey-packages) for more details.
 
 For more information on organizational cautions about the community package repository, see [[the community repository disclaimer|CommunityPackagesDisclaimer]].
 
@@ -155,7 +155,7 @@ As of version 0.9.8.24, binaries, libraries and Chocolatey components install in
 
 <a id="markdown-do-you-have-a-roadmap-i-can-see" name="do-you-have-a-roadmap-i-can-see"></a>
 ### Do you have a roadmap I can see?
-We do, take a look at the [[roadmap|Roadmap]]
+We do, take a look at the [roadmap](./roadmap)
 
 
 
@@ -172,7 +172,7 @@ tl;dr - Yes, completely possible. Use `-y` or turn on `allowGlobalConfirmation`.
 
 Also check out the help menus now - `choco -h`, `choco install -h`
 
-Longer answer, we've moved a little closer towards other package managers for security reasons, where by default we stop and confirm if you are okay with the state change. We always communicate changes in the [[release notes|ReleaseNotes]] / [Changelog](https://github.com/chocolatey/choco/blob/master/CHANGELOG.md), which also end up in the [nuspec file](https://chocolatey.org/packages/chocolatey#releasenotes), so we highly recommend folks scan at least one of those to see anything tagged breaking changes. Always scan from your current version up to the one you are upgrading to so that you catch all changes.
+Longer answer, we've moved a little closer towards other package managers for security reasons, where by default we stop and confirm if you are okay with the state change. We always communicate changes in the [release notes](./general/release-notes/open-source) / [Changelog](https://github.com/chocolatey/choco/blob/master/CHANGELOG.md), which also end up in the [nuspec file](https://chocolatey.org/packages/chocolatey#releasenotes), so we highly recommend folks scan at least one of those to see anything tagged breaking changes. Always scan from your current version up to the one you are upgrading to so that you catch all changes.
 
 The one that is the most important right now is the `x.y.z` release (in this case 0.9.9), once we reach v1 we will be fully SemVer compliant and breaking changes will constitute a major version bump (we're still SemVer in a less than v1), so you can scan breaking changes and major new features in an `x` release, new compatible features in a `.y` release, and `.z` releases will only contain compatible fixes for the current release.
 
@@ -217,7 +217,7 @@ Please see [licensed editions](#licensed-editions) section below.
 
 <a id="markdown-does-chocolatey-require-administrative-permissions-to-run" name="does-chocolatey-require-administrative-permissions-to-run"></a>
 ### Does Chocolatey require administrative permissions to run?
-It does by default - based on where it is installed. However there is an non-administrative installation for Chocolatey under More Options at [[installation|Installation]]. Do keep in mind that there is pass through to what packages are doing that makes a determination for whether the package needs administrative permissions, and Chocolatey works within the context of Windows permissions, so you are not going to get around that (aside from what is provided with self-service, see question below).
+It does by default - based on where it is installed. However there is an non-administrative installation for Chocolatey under More Options at [installation](./usage/installation). Do keep in mind that there is pass through to what packages are doing that makes a determination for whether the package needs administrative permissions, and Chocolatey works within the context of Windows permissions, so you are not going to get around that (aside from what is provided with self-service, see question below).
 
 <a id="markdown-i-would-like-to-be-able-to-offer-my-non-admin-desktop-users-an-option-for-self-service-type-of-installations" name="i-would-like-to-be-able-to-offer-my-non-admin-desktop-users-an-option-for-self-service-type-of-installations"></a>
 ### I would like to be able to offer my non-admin desktop users an option for self-service type of installations.
@@ -245,7 +245,7 @@ With most packages when you already have something installed, the Chocolatey pro
 
 <a id="markdown-can-i-override-the-installation-directory" name="can-i-override-the-installation-directory"></a>
 ### Can I override the installation directory?
-Yes you can, see [[Overriding install directory|GettingStarted#overriding-default-install-directory-or-other-advanced-install-concepts]] and [[Ubiquitous Install Directory Option|FeaturesInstallDirectoryOverride]].
+Yes you can, see [Overriding install directory](./usage/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [[Ubiquitous Install Directory Option|FeaturesInstallDirectoryOverride]].
 
 <a name="AppVsTool"></a>
 <a id="markdown-what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application" name="what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application"></a>
@@ -317,7 +317,7 @@ Speaking of POSIX environments, ever since we released 0.9.9 back in 2015, we've
 
 In fact we first showed it off at PuppetConf 2014 (prior to the official March 2015 release!) - https://www.youtube.com/watch?v=cZl_wKSciVk
 
-Do we have plans to support fully running on POSIX environments? We've discussed it, but have no official stance on it yet. Keep your eyes on the [[roadmap|Roadmap]]
+Do we have plans to support fully running on POSIX environments? We've discussed it, but have no official stance on it yet. Keep your eyes on the [roadmap](./roadmap)
 
 
 <a id="markdown-troubleshooting" name="troubleshooting"></a>
@@ -402,7 +402,7 @@ Check out the FAQ on the [pricing](https://chocolatey.org/pricing#faq). If it do
 
 <a id="markdown-what-can-a-chocolatey-package-consist-of" name="what-can-a-chocolatey-package-consist-of"></a>
 ### What can a Chocolatey Package consist of?
-See [[What are Chocolatey Packages?|GettingStarted#what-are-chocolatey-packages]]
+See [What are Chocolatey Packages?](./usage/getting-started#what-are-chocolatey-packages)
 
 <a id="markdown-tell-me-about-packaging" name="tell-me-about-packaging"></a>
 ### Tell me about packaging
@@ -469,7 +469,7 @@ Things to note:
 
 <a id="markdown-how-does-the-moderation-review-process-work" name="how-does-the-moderation-review-process-work"></a>
 ### How does the moderation review process work?
-See [[Review Process|Moderation#package-review-process]].
+See [Review Process](./general/moderation#package-review-process).
 
 <a id="markdown-what-is-a-trusted-package" name="what-is-a-trusted-package"></a>
 ### What is a trusted package?

@@ -78,7 +78,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [[Write-ChocolateyFailure|HelpersWriteChocolateyFailure]]
 
 
-[[Function Reference|HelpersReference]]
+[Function Reference](./creating-packages/helpers/reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-ChocolateySuccess -Full`.
 

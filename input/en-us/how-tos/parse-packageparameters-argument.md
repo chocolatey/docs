@@ -107,7 +107,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
     </description>
 ~~~
 
-**NOTE**: Package parameters can be passed as `--params`, but also as a few different ways including `--package-parameters`. See [[install options|CommandsInstall#options-and-switches]]:
+**NOTE**: Package parameters can be passed as `--params`, but also as a few different ways including `--package-parameters`. See [install options](./usage/commands/install#options-and-switches):
 
 ~~~sh
  --params, --parameters, --pkgparameters, --packageparameters, --package-parameters=VALUE
@@ -236,7 +236,7 @@ We've set up package parameters now for a package and have added information for
 
 The code samples above assume that there will be no PackageParameters passed into it by default and have set sensible defaults for the values. In this case, the `port`, the `edition`, the `additionalTools` and the `installationPath`.
 
-Once that is done, assuming that the PackageParameters contains "something", use a Regular Expression to parse each of the values into a dictionary.  Here, we are assuming that the package parameters will come through in a pre-defined format, such as `/Port:82 /Edition:LicenseKey1 /AdditionalTools /InstallationPath:'C:\temp\folder with spaces'` (note how you values with spaces is highly determined by your shell - cmd.exe and powershell.exe do it differently - see [[options with spaces|CommandsReference#how-to-pass-options--switches]].  Now, this format can be anything you want it to be.  What is shown here is just **one** way of doing it.  If you need to deviate from this sample structure, it is likely that you will need to update the regular expression to account for this.
+Once that is done, assuming that the PackageParameters contains "something", use a Regular Expression to parse each of the values into a dictionary.  Here, we are assuming that the package parameters will come through in a pre-defined format, such as `/Port:82 /Edition:LicenseKey1 /AdditionalTools /InstallationPath:'C:\temp\folder with spaces'` (note how you values with spaces is highly determined by your shell - cmd.exe and powershell.exe do it differently - see [options with spaces](./usage/commands/reference#how-to-pass-options--switches]].  Now, this format can be anything you want it to be.  What is shown here is just **one** way of doing it.  If you need to deviate from this sample structure, it is likely that you will need to update the regular expression to account for this.
 
 Having collected all the arguments into the dictionary, we can then inspect the values of each parameter that we are interested in.  If it exists in the dictionary, replace the corresponding default value, otherwise, continue to use the default value.
 
@@ -271,7 +271,7 @@ However, if we instead used:
 choco install <packageName> -d --package-parameters '/Port:82 /Edition:LicenseKey1 /InstallationPath:""C:\temp\folder with space"" /AdditionalTools'
 ~~~
 
-**NOTE:** How you pass options with spaces varies with shell (cmd.exe vs powershell.exe) and other related information with choco options is important to keep in mind here. See [[how to pass options/switches|CommandsReference#how-to-pass-options--switches]].
+**NOTE:** How you pass options with spaces varies with shell (cmd.exe vs powershell.exe) and other related information with choco options is important to keep in mind here. See [how to pass options/switches](./usage/commands/reference#how-to-pass-options--switches).
 
 The output would be:
 

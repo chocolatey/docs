@@ -97,7 +97,7 @@ When running `choco download` in the Business editions, pass the following:
        'internalizeAppendUseOriginalLocation' set to by default to 'False'.
 ~~~
 
-See [[download command|CommandsDownload]] for more information.
+See [download command](./usage/commands/download) for more information.
 
 ## Resources
 
