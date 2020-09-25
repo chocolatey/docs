@@ -11,7 +11,7 @@ namespace Docs.Pipelines
             Deployment = true;
             OutputModules = new ModuleList
             {
-                new DeployGitHubPages(
+                new PatriksDeployGitHubPages(
                     Config.FromSetting<string>(Constants.Site.Owner),
                     Config.FromSetting<string>(Constants.Site.Repository),
                     Config.FromSetting<string>(Constants.Deployment.GitHubToken))
