@@ -81,7 +81,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
- * [[Install-ChocolateyExplorerMenuItem|HelpersInstallChocolateyExplorerMenuItem]]
+ * [Install-ChocolateyExplorerMenuItem](./creating-packages/helpers/install-chocolateyexplorermenuitem)
 
 
 [Function Reference](./creating-packages/helpers/reference)

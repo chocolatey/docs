@@ -64,7 +64,7 @@ A lot of what is done in QDE condenses or completely eliminates the work found i
 * [Organizational Deployment Guide](./how-tos/setup-offline-installation)
 * [Chocolatey Installation](https://chocolatey.org/install#organization)
 * [Chocolatey Commercial Installation](./usage/installation-licensed)
-* [[Automate Package Internalization|How-To-Setup-Internal-Package-Repository]]
+* [Automate Package Internalization](./how-tos/setup-internal-package-repository)
 
 If you find that QDE is only good for a proof-of-concept in your environment due to having thousands of endpoints, you will want to understand how to scale out that infrastructure.
 The above articles document how that is done.

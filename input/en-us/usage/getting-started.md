@@ -93,7 +93,7 @@ For Chocolatey clients, you will need the following:
 #### Chocolatey Components
 * Chocolatey CLI aka choco (or choco.exe) is a client (not a Windows service) that provides the core of Chocolatey and the installation store for locally installed packages. This is important as Chocolatey manages packages, not Programs and Features directly - Programs and Features is limited only to software that has "installers" and Chocolatey treats all aspects of Windows software as first class citizens (zips, scripts, binaries, installers), thus it needs to track and manage those things separately.
 * Chocolatey GUI is an application that runs when a user runs it (also not a Windows Service).
-* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [[Self-Service Installation|FeaturesAgentService]] and Chocolatey Central Management.
+* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](./features/paid/agent-service) and Chocolatey Central Management.
 
 #### Space Requirements
 * Chocolatey CLI has an impact of 15 MB on default install plus the space the installed packages use up.
@@ -140,14 +140,14 @@ Let's install [Notepad++](http://notepad-plus-plus.org/).
 1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](./usage/commands/reference#how-to-pass-options--switches) for specifics on passing quoted values through.
 1. For example, Notepad++ uses the [NSIS](http://nsis.sourceforge.net/Main_Page) (NullSoft Scriptable Install System) installer. If we look at the silent options, we see that [/D](http://nsis.sourceforge.net/Docs/Chapter3.html#installerusagecommon) is how we influence the install directory. So we would pass `choco install notepadplusplus.install -ia "'/D=E:\SomeDirectory\somebody\npp'"` -note that we are looking at the specific package over the virtual (although you can do the same with notepadplusplus as well).
 
-Is there a better way? Absolutely, see [[ubiquitous install directory switch|FeaturesInstallDirectoryOverride]]!
+Is there a better way? Absolutely, see [ubiquitous install directory switch](./features/paid/install-directory-override)!
 
 ## Terminology
 
 Software and Package are not terms used interchangeably in the Chocolatey community. It's important to understand the distinction between them and how they are related.
 
 * **Chocolatey** - Windows package manager for software management, can also be considered a framework
-* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [[community feed disclaimer|CommunityPackagesDisclaimer]] to get a better understanding.
+* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [community feed disclaimer](./general/community-packages-disclaimer) to get a better understanding.
 * **NuGet** - Framework and .NET package manager for software libraries. Chocolatey uses the NuGet packaging framework
 * **Package** - See [What are Chocolatey Packages?](#what-are-chocolatey-packages). Packages can contain the software they represent and the final location of software may or may not be in the package.
 * **Software** - Software refers to the actual runtime software that a package represents. This can be installed to the system through native installers, or come from zip/archive files or just dropping the runtime software right into the package.
@@ -155,7 +155,7 @@ Software and Package are not terms used interchangeably in the Chocolatey commun
 * **Install Package** - packages that wrap native installers
 * **Portable Package** - packages that use zip or just contain the runtime software. Usually these packages do not require administrative privileges to install or run. See [Portable application](./general/faqs#portable-application--something-that-doesnt-require-a-system-install-to-use)
 * **Extension Package** - packages that provide extensions to Chocolatey's PowerShell module through additional PowerShell modules.
-* **Template Package** - packages that have packaging templates in them, used in package creation. See [[create your own package templates|How-To-Create-Custom-Package-Templates]].
+* **Template Package** - packages that have packaging templates in them, used in package creation. See [create your own package templates](./how-tos/create-custom-package-templates).
 * **Metapackage** - packages that only exist to take dependencies on other packages, usually as a way of providing one command to get a complete setup. Some metapackages exist to provide discoverability, such as "git" versus 'git.install." The git package just depends on git.install, so running the install for either package will result in the git software being installed on the machine.
 * **Virtual package** - a concept that a package can "provide" some functionality and any package that meets that provides will be considered a dependency met. For example, if you need to take a dependency on a pdf reader, you wouldn't want to take a hard dependency on AdobeReader, but instead you would hope that adobereader provides pdf as well as other packages like SumatraPDF and FoxitReader. Then you could take a dependency on pdf and if any of those packages are installed, the dependency is met. Otherwise an algorithm would determine which one to install. THIS IS NOT IMPLEMENTED AT THIS TIME WITH CHOCOLATEY.
 
@@ -201,7 +201,7 @@ How the heck does this all work?
 7. If everything is deleted from the package folder, the folder is also removed.
 
 
-When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See [[shimming|FeaturesShim]] for more information.
+When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See [shimming](./features/free/shim) for more information.
 When a package has a chocolateyInstall.ps1, it will run the script. The instructions in the file can be anything. This is limited only by the .NET framework and PowerShell.
 Most of the Chocolatey packages that take advantage of the PowerShell download an application installer and execute it silently.
 

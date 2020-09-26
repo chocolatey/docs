@@ -142,7 +142,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
  * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
  * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
- * [[Uninstall-ChocolateyPackage|HelpersUninstallChocolateyPackage]]
+ * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateypackage)
 
 
 [Function Reference](./creating-packages/helpers/reference)

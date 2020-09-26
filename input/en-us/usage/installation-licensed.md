@@ -421,7 +421,7 @@ To be able to install it, you must first have the licensed edition properly inst
 
 * `choco install chocolatey-agent <options>`
 
-For more on the agent service, please see [[Agent Service|FeaturesAgentService]].
+For more on the agent service, please see [Agent Service](./features/paid/agent-service).
 
 ### Ensure the Chocolatey Agent Service with Puppet
 

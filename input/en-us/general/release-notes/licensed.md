@@ -12,10 +12,10 @@ RedirectFrom: docs/release-notes-licensed
 
 If you have Pro, MSP or Architect, please refer to the following:
 
-* [[Chocolatey Licensed Extension Release Notes|ReleaseNotesExtension]]
+* [Chocolatey Licensed Extension Release Notes](./general/release-notes/extension)
 
 If you have Chocolatey for Business (C4B), please refer to the following:
 
-* [[Chocolatey Licensed Extension Release Notes|ReleaseNotesExtension]]
-* [[Chocolatey Agent Release Notes|ReleaseNotesAgent]]
-* [[Chocolatey Central Management Release Notes|ReleaseNotesCentralManagement]]
+* [Chocolatey Licensed Extension Release Notes](./general/release-notes/extension)
+* [Chocolatey Agent Release Notes](./general/release-notes/agent)
+* [Chocolatey Central Management Release Notes](./general/release-notes/central-management)

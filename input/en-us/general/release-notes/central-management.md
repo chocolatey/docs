@@ -17,7 +17,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ## Other Release Notes
 * Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [[Chocolatey Licensed Extension Release Notes|ReleaseNotesExtension]] and [[Chocolatey Agent Release Notes|ReleaseNotesAgent]].
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./general/release-notes/extension) and [Chocolatey Agent Release Notes](./general/release-notes/agent).
 
 ## Known Issues
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement

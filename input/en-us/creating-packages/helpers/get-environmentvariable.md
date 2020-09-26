@@ -121,7 +121,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [Get-EnvironmentVariableNames](./creating-packages/helpers/get-environmentvariablenames)
- * [[Set-EnvironmentVariable|HelpersSetEnvironmentVariable]]
+ * [Set-EnvironmentVariable](./creating-packages/helpers/set-environmentvariable)
 
 
 [Function Reference](./creating-packages/helpers/reference)

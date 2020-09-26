@@ -17,7 +17,7 @@ Please see [Install the Licensed Edition](./usage/installation-licensed) for inf
 
 ## Other Release Notes
 * Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [[Chocolatey Agent Release Notes|ReleaseNotesAgent]] and [[Chocolatey Central Management Release Notes|ReleaseNotesCentralManagement]].
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](./general/release-notes/agent) and [Chocolatey Central Management Release Notes](./general/release-notes/central-management).
 
 
 ## Known Issues

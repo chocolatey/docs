@@ -100,7 +100,7 @@ Feel free to reach out to us on [Gitter](https://gitter.im/chocolatey/choco) or 
 <a id="markdown-what-is-chocolatey" name="what-is-chocolatey"></a>
 ### What is Chocolatey?
 Chocolatey is kind of like apt-get, but for Windows (with Windows comes limitations). It is a machine level package manager that is built on top of nuget command line and the nuget infrastructure.
-[[More behind the name|History]]
+[More behind the name](./additional-information/history)
 
 "Okay, machine package manager, that's nice. What does that mean though?" It means you can simply install software with a few keystrokes and go get coffee while your co-workers are downloading and running an install manually (and I do mean something like an MSI).
 
@@ -113,16 +113,16 @@ Yes, in a nutshell that is what Chocolatey does. Nearly exactly what you may alr
 <a id="markdown-what-is-the-purpose-of-chocolatey" name="what-is-the-purpose-of-chocolatey"></a>
 ### What is the purpose of Chocolatey?
 
-Great question! See [[The purpose of Chocolatey|Why#what-is-the-purpose-of-chocolatey]]
+Great question! See [The purpose of Chocolatey](./why#what-is-the-purpose-of-chocolatey]
 
 <a id="markdown-how-does-chocolatey-work" name="how-does-chocolatey-work"></a>
 ### How does Chocolatey work?
 
-See [[What is Chocolatey?|Why#what-is-chocolatey]]
+See [What is Chocolatey?](./why#what-is-chocolatey]
 
 <a id="markdown-why-chocolatey" name="why-chocolatey"></a>
 ### Why Chocolatey?
-First a [[story|ChocolateyStory]]. Then [Why Chocolatey](./why)
+First a [story](./chocolatey-story). Then [Why Chocolatey](./why)
 
 <a id="markdown-can-i-use-chocolatey-at-my-organization" name="can-i-use-chocolatey-at-my-organization"></a>
 ### Can I use Chocolatey at my organization?
@@ -138,13 +138,13 @@ To put it another way, Microsoft would be quite upset if the Office 365 packages
 
 When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](./usage/getting-started#what-are-chocolatey-packages) for more details.
 
-For more information on organizational cautions about the community package repository, see [[the community repository disclaimer|CommunityPackagesDisclaimer]].
+For more information on organizational cautions about the community package repository, see [the community repository disclaimer](./general/community-packages-disclaimer).
 
 <a id="markdown-where-does-chocolatey-install-by-default" name="where-does-chocolatey-install-by-default"></a>
 ### Where does Chocolatey install by default?
 As of version 0.9.8.24, binaries, libraries and Chocolatey components install in ```C:\ProgramData\chocolatey``` (environment variable %ProgramData%) by default. This reduces the attack surface on a local installation of Chocolatey and limits who can make changes to the directory.
 
-**NOTE:** Historically, Chocolatey installed to ```C:\Chocolatey``` and currently, performing an update of Chocolatey doesn't change the installation location, except for when the install path is `C:\chocolatey`. It will upgrade that path and all variables automatically.  For more information about why Chocolatey used ```C:\Chocolatey``` as the default location, look here - [[Default Install Reasoning|DefaultChocolateyInstallReasoning]]
+**NOTE:** Historically, Chocolatey installed to ```C:\Chocolatey``` and currently, performing an update of Chocolatey doesn't change the installation location, except for when the install path is `C:\chocolatey`. It will upgrade that path and all variables automatically.  For more information about why Chocolatey used ```C:\Chocolatey``` as the default location, look here - [Default Install Reasoning](./default-chocolatey-install-reasoning)
 
 <a id="markdown-what-kind-of-package-types-does-chocolatey-support" name="what-kind-of-package-types-does-chocolatey-support"></a>
 ### What kind of package types does Chocolatey support?
@@ -164,7 +164,7 @@ We do, take a look at the [roadmap](./roadmap)
 
 <a id="markdown-is-chocolatey-secure" name="is-chocolatey-secure"></a>
 ### Is Chocolatey secure?
-Yes, it is. You can read more at [[security|Security]] to understand the important details.
+Yes, it is. You can read more at [security](./security) to understand the important details.
 
 <a id="markdown-why-do-i-have-to-confirm-packages-now-is-there-a-way-to-remove-this" name="why-do-i-have-to-confirm-packages-now-is-there-a-way-to-remove-this"></a>
 ### Why do I have to confirm packages now? Is there a way to remove this?
@@ -192,7 +192,7 @@ While we keep up with most security aspects, sometimes we miss things. Always fe
 
 <a id="markdown-i-have-other-security-questions" name="i-have-other-security-questions"></a>
 ### I have other security questions
-Please see [[security|Security]]. Please reach out to us if you cannot find answers to what you are looking for.
+Please see [security](./security). Please reach out to us if you cannot find answers to what you are looking for.
 
 
 
@@ -205,7 +205,7 @@ Yes, Chocolatey has some official clients, one of which is `choco.exe` and it is
 
 <a id="markdown-tab-completion" name="tab-completion"></a>
 ### Tab-completion?
-See the [[troubleshooting|Troubleshooting]] page if `choco <tab>` doesn't work for you when you are using PowerShell.
+See the [troubleshooting](./general/troubleshooting) page if `choco <tab>` doesn't work for you when you are using PowerShell.
 
 <a id="markdown-what-is-the-difference-between-open-source-chocolatey-chocolatey-pro-and-chocolatey-for-business" name="what-is-the-difference-between-open-source-chocolatey-chocolatey-pro-and-chocolatey-for-business"></a>
 ### What is the difference between Open Source Chocolatey, Chocolatey Pro, and Chocolatey for Business?
@@ -225,7 +225,7 @@ Yes, we absolutely support that scenario in Chocolatey for Business. See [Licens
 
 <a id="markdown-can-i-use-chocolatey-with-existing-installs" name="can-i-use-chocolatey-with-existing-installs"></a>
 ### Can I use Chocolatey with existing installs?
-Fantastic question, see [[Can I use Chocolatey with existing software?|Why#can-i-use-chocolatey-with-existing-software]]
+Fantastic question, see [Can I use Chocolatey with existing software?](./why#can-i-use-chocolatey-with-existing-software)
 
 <a id="markdown-what-is-the-default-package-source-repository-url-community-feed-url" name="what-is-the-default-package-source-repository-url-community-feed-url"></a>
 ### What is the default package source repository URL (community feed url)?
@@ -245,7 +245,7 @@ With most packages when you already have something installed, the Chocolatey pro
 
 <a id="markdown-can-i-override-the-installation-directory" name="can-i-override-the-installation-directory"></a>
 ### Can I override the installation directory?
-Yes you can, see [Overriding install directory](./usage/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [[Ubiquitous Install Directory Option|FeaturesInstallDirectoryOverride]].
+Yes you can, see [Overriding install directory](./usage/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [Ubiquitous Install Directory Option](./features/paid/install-directory-override).
 
 <a name="AppVsTool"></a>
 <a id="markdown-what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application" name="what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application"></a>
@@ -325,8 +325,7 @@ Do we have plans to support fully running on POSIX environments? We've discussed
 
 <a id="markdown-im-running-into-some-issue-with-chocolatey-packaging-or-something-else" name="im-running-into-some-issue-with-chocolatey-packaging-or-something-else"></a>
 ### I'm running into some issue with Chocolatey, packaging, or something else.
-See [[Troubleshooting|Troubleshooting]]
-
+See [Troubleshooting](./general/troubleshooting)
 
 
 <a id="markdown-organizational-use" name="organizational-use"></a>
@@ -340,7 +339,7 @@ Yes, it is. Chocolatey carries a FOSS Apache 2.0 license, which is extremely bus
 <a id="markdown-should-my-organization-depend-on-use-the-community-feed-httpschocolateyorgpackages" name="should-my-organization-depend-on-use-the-community-feed-httpschocolateyorgpackages"></a>
 ### Should my organization depend on (use) the community feed (https://chocolatey.org/packages)?
 
-For production-level scenarios, I couldn't justify giving up that level of control and trust to the internet in an organization. It's recommended that you copy and modify existing packages and/or create your own internal packages and host them internally. That way you can completely guarantee that an install/upgrade/uninstall will always work every time. See [[Security|Security#chocolateyorg-the-community-feed]] for more details.
+For production-level scenarios, I couldn't justify giving up that level of control and trust to the internet in an organization. It's recommended that you copy and modify existing packages and/or create your own internal packages and host them internally. That way you can completely guarantee that an install/upgrade/uninstall will always work every time. See [Security](./security#chocolateyorg-the-community-feed) for more details.
 
 If you are just setting up or updating developer workstations and can tolerate things breaking every once in awhile because internet/uncertainty, it's fine to use the community feed.
 
@@ -425,7 +424,7 @@ Well, if you are not creating packages for the community package repository, you
 * the actual install location if using an installer
 * MSI cache for MSIs - Windows caches the complete MSI binaries (and now you know where all that space went)
 
-If you are on a licensed edition of Chocolatey, you can turn on Package Reducer and the first two items above no longer take up any significant space. This can reduce space usage in the order of GBs for some installations of Chocolatey. See [[Package Reducer|FeaturesPackageReducer]] for more details.
+If you are on a licensed edition of Chocolatey, you can turn on Package Reducer and the first two items above no longer take up any significant space. This can reduce space usage in the order of GBs for some installations of Chocolatey. See [Package Reducer](./features/paid/package-reducer) for more details.
 
 
 
@@ -438,7 +437,7 @@ We have a documentation section of the site at https://chocolatey.org/docs
 
 <a id="markdown-do-you-have-any-references-or-videos-i-can-see" name="do-you-have-any-references-or-videos-i-can-see"></a>
 ### Do you have any references or videos I can see?
-Yes we do, take a look at [[videos|Videos]] and [[known posts, presentations, etc|Resources]].
+Yes we do, take a look at [videos](./learning-resources/videos) and [known posts, presentations, etc](learning-resources/resources).
 
 <a id="markdown-is-there-a-video-i-can-watch-to-show-me-chocolatey-in-action" name="is-there-a-video-i-can-watch-to-show-me-chocolatey-in-action"></a>
 ### Is there a video I can watch to show me Chocolatey in action?
@@ -453,7 +452,7 @@ There is! This is a long video due to slow internet connections, but watch the f
 
 <a id="markdown-i-just-took-over-as-the-primary-maintainer-of-a-package-what-do-i-need-to-do" name="i-just-took-over-as-the-primary-maintainer-of-a-package-what-do-i-need-to-do"></a>
 ### I just took over as the primary maintainer of a package. What do I need to do?
-See [[Package Maintainer Handover|PackageMaintainerHandover]]
+See [Package Maintainer Handover](./how-tos/package-maintainer-handover)
 
 <a id="markdown-what-is-moderation" name="what-is-moderation"></a>
 ### What is moderation?
@@ -542,11 +541,11 @@ All packages (and the binaries they contain or download at runtime) on community
 
 **NOTE**: Did you know that 60% or more of the sofware that is submitted to the community repository has its first scans by VirusTotal through Chocolatey's package scanner submissions? It's helped many of those anti-virus manufacturers get a clearer picture of heuristics and hopefully ends up in better anti-virus products with less false positives.
 
-**NOTE**: Need runtime malware protection? Learn more about [[runtime malware protection|]]
+**NOTE**: Need runtime malware protection? Learn more about [runtime malware protection](./features/paid/virus-check)
 
 <a id="markdown-what-is-the-package-cacher" name="what-is-the-package-cacher"></a>
 ### What is the package cacher?
-On the community repository, we have a CDN cache for those files that would be downloaded by packages - those remote urls are overridden by default in licensed editions of Chocolatey to use those cached binaries. This is to avoid 404 errors you would normally see if those urls changed or were removed. See [[Customer CDN Download Cache|FeaturesPrivateCdn]] for more details.
+On the community repository, we have a CDN cache for those files that would be downloaded by packages - those remote urls are overridden by default in licensed editions of Chocolatey to use those cached binaries. This is to avoid 404 errors you would normally see if those urls changed or were removed. See [Customer CDN Download Cache](.features/paid/private-cdn) for more details.
 
 
 
@@ -561,7 +560,7 @@ Use ChocolateyGet for now.
 
 <a id="markdown-how-is-chocolatey-different-than-ninite" name="how-is-chocolatey-different-than-ninite"></a>
 ### How is Chocolatey different than Ninite?
-Great question, see [[Chocolatey vs Ninite|ChocolateyVsNinite]].
+Great question, see [Chocolatey vs Ninite](./chocolatey-vs-ninite).
 
 <a id="markdown-how-is-chocolatey-different-than-nuget-andor-openwrap" name="how-is-chocolatey-different-than-nuget-andor-openwrap"></a>
 ### How is Chocolatey different than NuGet and/or OpenWrap?

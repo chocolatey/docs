@@ -75,7 +75,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Write-ChocolateyFailure|HelpersWriteChocolateyFailure]]
+ * [Write-ChocolateyFailure](./creating-packages/helpers/write-chocolateyfailure)
 
 
 [Function Reference](./creating-packages/helpers/reference)

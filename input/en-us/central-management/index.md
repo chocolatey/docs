@@ -95,7 +95,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ___
 ## Stay Up To Date
-* [[Release Notes Central Management|ReleaseNotesCentralManagement]]
+* [Release Notes Central Management](./general/release-notes/central-management)
 * [Release Announcements Only Mailing List](https://groups.google.com/group/chocolatey-announce)
 
 ___
@@ -167,7 +167,7 @@ Chocolatey Central Management is made up of a number of components, so there wil
 
 ### Where can I find the changelog or release notes for Chocolatey Central Management?
 
-Please see [[Release Notes Central Management|ReleaseNotesCentralManagement]].
+Please see [Release Notes Central Management](./general/release-notes/central-management).
 
 ### How do I get support?
 

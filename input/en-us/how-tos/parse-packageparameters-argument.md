@@ -120,7 +120,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 This is the recommended way to work with Package Parameters. For consistency and understanding, please only use this method when building packages.
 
 #### Built-In
-Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey - see the [[`Get-PackageParameters` documentation|HelpersGetPackageParameters]]. If you are using Chocolatey internally, you can use this without needing the community extension (below). If you are pushing packages externally (e.g. the community package repository), you must add the core extension as a polyfill for 6 months after release of Chocolatey v0.10.8. Follow the next section below.
+Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey - see the [`Get-PackageParameters` documentation](./creating-packages/helpers/get-packageparameters). If you are using Chocolatey internally, you can use this without needing the community extension (below). If you are pushing packages externally (e.g. the community package repository), you must add the core extension as a polyfill for 6 months after release of Chocolatey v0.10.8. Follow the next section below.
 
 #### Core Community extension
 
@@ -158,7 +158,7 @@ if ($pp['AdditionalTools'] -eq 'true') { $silentArgs += " /Additionaltools" }
 Write-Debug "This would be the Chocolatey Silent Arguments: $silentArgs"
 ~~~
 
-**NOTE**: In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [[Extensions|How-To-Create-Extensions]].
+**NOTE**: In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [Extensions](./how-tos/create-extensions).
 
 <a name="step-3-alternative---set-up-your-own-parsing"></a>
 ### Step 3 (alternative) - Set up Your Own Parsing [DEPRECATED]
@@ -236,7 +236,7 @@ We've set up package parameters now for a package and have added information for
 
 The code samples above assume that there will be no PackageParameters passed into it by default and have set sensible defaults for the values. In this case, the `port`, the `edition`, the `additionalTools` and the `installationPath`.
 
-Once that is done, assuming that the PackageParameters contains "something", use a Regular Expression to parse each of the values into a dictionary.  Here, we are assuming that the package parameters will come through in a pre-defined format, such as `/Port:82 /Edition:LicenseKey1 /AdditionalTools /InstallationPath:'C:\temp\folder with spaces'` (note how you values with spaces is highly determined by your shell - cmd.exe and powershell.exe do it differently - see [options with spaces](./usage/commands/reference#how-to-pass-options--switches]].  Now, this format can be anything you want it to be.  What is shown here is just **one** way of doing it.  If you need to deviate from this sample structure, it is likely that you will need to update the regular expression to account for this.
+Once that is done, assuming that the PackageParameters contains "something", use a Regular Expression to parse each of the values into a dictionary.  Here, we are assuming that the package parameters will come through in a pre-defined format, such as `/Port:82 /Edition:LicenseKey1 /AdditionalTools /InstallationPath:'C:\temp\folder with spaces'` (note how you values with spaces is highly determined by your shell - cmd.exe and powershell.exe do it differently - see [options with spaces](./usage/commands/reference#how-to-pass-options--switches).  Now, this format can be anything you want it to be.  What is shown here is just **one** way of doing it.  If you need to deviate from this sample structure, it is likely that you will need to update the regular expression to account for this.
 
 Having collected all the arguments into the dictionary, we can then inspect the values of each parameter that we are interested in.  If it exists in the dictionary, replace the corresponding default value, otherwise, continue to use the default value.
 

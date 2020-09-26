@@ -39,7 +39,7 @@ ___
 ___
 ## Setup
 ### Step 1: Install Chocolatey Agent
-First you need Chocolatey Agent installed. As there may be some steps involved with the install of the agent, please see [[Chocolatey Agent Setup|FeaturesAgentService#setup]].
+First you need Chocolatey Agent installed. As there may be some steps involved with the install of the agent, please see [Chocolatey Agent Setup](./features/paid/agent-service#setup).
 
 ___
 ### Step 2: Update Configuration
@@ -76,13 +76,13 @@ Please see config settings and features below for a full list.
 > :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 
-Also found at [[Chocolatey Configuration|ChocolateyConfiguration]].
+Also found at [Chocolatey Configuration](./usage/chocolatey-configuration).
 
 #### Features
 * [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See https://chocolatey.org/docs/features-chocolatey-central-management
 * [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See https://chocolatey.org/docs/features-chocolatey-central-management
 
-Also found at [[Chocolatey Configuration|ChocolateyConfiguration]].
+Also found at [Chocolatey Configuration](./usage/chocolatey-configuration).
 
 ___
 ### Step 3: Verify Installation

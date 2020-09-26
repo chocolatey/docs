@@ -31,9 +31,9 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 * You have Chocolatey installed.
 * You've read [What are Chocolatey Packages?](./usage/getting-started#what-are-chocolatey-packages) first.
 * You know how a package works
-  * A package contains a `nuspec` file. This defines the package. ([[Docs|CreatePackages#nuspec]])
+  * A package contains a `nuspec` file. This defines the package. ([Docs](./creating-packages/create-packages#nuspec))
   * A package may contain embedded software.
-  * A package may contain an installation script. This can be [[very simple|CreatePackagesQuickStart#examples]].
+  * A package may contain an installation script. This can be [very simple](./creating-packages/create-packages-quick-start#examples).
 
 ## Quick start guide
 

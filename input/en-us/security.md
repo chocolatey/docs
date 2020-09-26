@@ -2,6 +2,7 @@
 Order: 30
 Title: Security
 Description: Chocolatey takes security very seriously
+RedirectFrom: docs/security
 ---
 
 # Security
@@ -45,7 +46,7 @@ With Chocolatey (choco) client itself, these are the important things to know:
 * Commercial code is not open source - and it won't be open sourced. No need for discussion, there are many reasons we don't need to get into, mostly it protects our ability to ensure all infrastructure costs can be paid for.
 
 ### Chocolatey Community Package Repository
-Use of the community package repository is optional. Community package repository is the same thing as Chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [[DOES NOT RECOMMEND using the community repository either|CommunityPackagesDisclaimer]] for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
+Use of the community package repository is optional. Community package repository is the same thing as Chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [DOES NOT RECOMMEND using the community repository either](./general/community-packages-disclaimer) for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
 
 Here are some other important things to understand:
 
@@ -164,7 +165,7 @@ It's important to keep the following in mind:
 It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](./features/free/how-to-host-feed) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
 
 ## Chocolatey.org Packages
-Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [[distribution rights|CommunityPackagesDisclaimer]], they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
+Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [distribution rights](./general/community-packages-disclaimer), they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
 
 ### Security for the Community Package Repository:
 1. Every package submitted to the community package repository (https://chocolatey.org/packages) since October 2014 undergoes a rigorous moderation process before it becomes live. Yes, every package, every version of a package is moderated and approved before they become live. See "Rigorous Moderation Process" below.
@@ -205,7 +206,7 @@ For using Chocolatey, if you are using the community repository, you will need t
 
 For specific IP addresses to whitelist, please see the following: https://www.cloudflare.com/ips/
 
-If you are using the community package repository, you would also need to whitelist the official distribution location for **EVERY** package that you intend to manage (unless you had a licensed edition ***and*** the downloads have been cached on the Chocolatey customer CDN). This is due to distribution rights and the community repo being publicly available (discussed above at [Chocolatey.org Packages](#chocolateyorg-packages)), so those community packages are not able to embed binaries directly into the package and must download those resources at runtime. Licensed editions of Chocolatey take advantage of a [[CDN cache|FeaturesPrivateCdn]] of those downloaded resources, which is used instead of reaching out to those remote locations to ensure availability.
+If you are using the community package repository, you would also need to whitelist the official distribution location for **EVERY** package that you intend to manage (unless you had a licensed edition ***and*** the downloads have been cached on the Chocolatey customer CDN). This is due to distribution rights and the community repo being publicly available (discussed above at [Chocolatey.org Packages](#chocolateyorg-packages)), so those community packages are not able to embed binaries directly into the package and must download those resources at runtime. Licensed editions of Chocolatey take advantage of a [CDN cache](./features/paid/private-cdn) of those downloaded resources, which is used instead of reaching out to those remote locations to ensure availability.
 
 Keep in mind that the Chocolatey CDN can only download resources for packages that it has been able to cache. While it is currently able to cache 70% of the existing packages (https://chocolatey.org/stats for actuals - use PackagesCached divided by UniquePackages), we always recommend running `choco search pkgid` (or `choco info pkgid`) to determine if it has the "Downloads cached for licensed users" aspect, or look on the package page for the indicator that the packages are cached. If it does not, you would either need to go through the process of internalization for that package, or look to whitelisting whatever resources that package needed to download.
 

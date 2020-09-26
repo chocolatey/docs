@@ -510,7 +510,7 @@ Chocolatey doesn't stop unconfigured sources for install, it lets the agent do s
 The one exception is when someone calls `--run-actual` in their arguments. But there is no escalation of privilege here because they would be running that under their own user context and thus only have the permissions granted to them already.
 
 ### We want to set up the chocolatey agent service to use a domain account that will have local admin on each box. Can we do this?
-Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [[configuration|ChocolateyConfiguration#features]]) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
+Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [configuration](./usage/chocolatey-configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
 * `/Username:` - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user will need to be a member of local administrators due to the privileges needed for this service.
 * `/Password:` - optional password for the user.
@@ -607,7 +607,7 @@ This means you need to opt a source into self-service (new in Chocolatey Extensi
 
 This just involves ensuring a source is set so that it allows self-service. To do this you run `choco source add -n name -s location <--other details need repeated> --allow-self-service`. Editing a source happens when the name is the same in `choco source add`.
 
-To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [[Self-Service Feature Configuration|ChocolateyConfiguration#self-service-background-mode]]
+To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](./usage/chocolatey-configuration#self-service-background-mode)
 
 ### I'm having trouble seeing packages on a file share source
 Starting with Chocolatey Agent v0.8.0+, the service will default an install to a local administrative user `ChocolateyLocalAdmin`, but before that it installed as LocalSystem by default. These accounts may not have network access to UNC shares. We recommend changing the service to a named account that is a local admin that would also have network access (or setting machines into an active directory group and explicitly giving that group read permissions to the share and ACL). To specify your own user, you can do that at install time with [package parameters](#chocolatey-agent-install-options), or you can do that in the Service Manager properties for the service itself (future upgrades would need you to pass that user/pass at least the first time).

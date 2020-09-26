@@ -57,7 +57,7 @@ None
 ## Links
 
  * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
- * [[Set-EnvironmentVariable|HelpersSetEnvironmentVariable]]
+ * [Set-EnvironmentVariable](./creating-packages/helpers/set-environmentvariable)
 
 
 [Function Reference](./creating-packages/helpers/reference)

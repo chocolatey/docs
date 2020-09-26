@@ -305,9 +305,9 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [[Uninstall-ChocolateyPackage|HelpersUninstallChocolateyPackage]]
+ * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateypackage)
  * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
- * [[Start-ChocolateyProcessAsAdmin|HelpersStartChocolateyProcessAsAdmin]]
+ * [Start-ChocolateyProcessAsAdmin](./creating-packages/helpers/start-chocolateyprocessasadmin)
 
 
 [Function Reference](./creating-packages/helpers/reference)

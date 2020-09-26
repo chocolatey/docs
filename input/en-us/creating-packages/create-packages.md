@@ -12,7 +12,7 @@ See [What are Chocolatey Packages?](./usage/getting-started#what-are-chocolatey-
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
-First you should determine if you are making a self-contained package or (also) using automation scripts. You should also consider creating [[automatic packages|AutomaticPackages]] for the best maintainability over time.
+First you should determine if you are making a self-contained package or (also) using automation scripts. You should also consider creating [automatic packages](./creating-packages/automatic-packages) for the best maintainability over time.
 
 1. Run `choco new -h` to get a feel for what you can pass e.g `choco new bob` (to create a package named `bob`)
 1. Note all the rules below. This will help you, especially in publishing to the community feed (https://chocolatey.org)
@@ -34,22 +34,22 @@ can do just about anything you need. Choco has some very handy [built-in functio
 [helpers](./creating-packages/helpers/reference).
 
 ## Table of Contents
-1. [[Rules|CreatePackages#rules-to-be-observed-before-publishing-packages]]
-1. [[Encoding|CreatePackages#character-encoding]]
-1. Learning about NuGet (and Chocolatey) Packages in general - [[Information|CreatePackages#okay-how-do-i-create-packages]] and [[Nuspec|CreatePackages#nuspec]]
-1. [[Description/Release Notes Recommendations|CreatePackages#package-description-and-release-notes]]
-1. [[Limit Windows Versions|CreatePackages#install-only-on-some-versions-of-windows]]
-1. [[Install paths|CreatePackages#installation-paths]]
-1. [[Upgrading|CreatePackages#upgrading]] and [[Uninstalling|CreatePackages#uninstalling]]
-1. [[Naming your package|CreatePackages#naming-your-package]]
-1. [[Versioning|CreatePackages#versioning-recommendations]] (and [[package fix version notation|CreatePackages#package-fix-version-notation]])
-1. [[Icons|CreatePackages#package-icon-guidelines]]
-1. [[Exclude executables from shims|CreatePackages#how-do-i-exclude-executables-from-getting-batch-redirects]]
-1. [[Make shim for GUI application|CreatePackages#how-do-i-set-up-batch-redirects-for-applications-that-have-a-gui]]
-1. [[Localization|CreatePackages#internationalization-and-localization-of-packages]]
-1. [[Building|CreatePackages#build-your-package]] / [[Testing|CreatePackages#testing-your-package]] / [[Pushing|CreatePackages#push-your-package]]
-1. [[Maintainer magic - automatically updating packaging|AutomaticPackages]]
-1. [[Taking over existing package|PackageMaintainerHandover]]
+1. [Rules](#rules-to-be-observed-before-publishing-packages)
+1. [Encoding](#character-encoding)
+1. Learning about NuGet (and Chocolatey) Packages in general - [Information](#okay-how-do-i-create-packages) and [Nuspec](#nuspec)
+1. [Description/Release Notes Recommendations](#package-description-and-release-notes)
+1. [Limit Windows Versions](#install-only-on-some-versions-of-windows)
+1. [Install paths](#installation-paths)
+1. [Upgrading](#upgrading) and [Uninstalling](#uninstalling)
+1. [Naming your package](#naming-your-package)
+1. [Versioning](#versioning-recommendations) (and [package fix version notation](#package-fix-version-notation))
+1. [Icons](#package-icon-guidelines)
+1. [Exclude executables from shims](#how-do-i-exclude-executables-from-getting-batch-redirects)
+1. [Make shim for GUI application](#how-do-i-set-up-batch-redirects-for-applications-that-have-a-gui)
+1. [Localization](#internationalization-and-localization-of-packages)
+1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
+1. [Maintainer magic - automatically updating packaging](./creating-packages/automatic-packages)
+1. [Taking over existing package](./how-tos/package-maintainer-handover)
 
 ## Quick Start guide
 
@@ -68,7 +68,7 @@ There are a few rules that you have to follow before pushing packages to chocola
 1. **Don't package software that is already packaged**. Use the search function in the [Chocolatey.org gallery](http://chocolatey.org/packages) and look if there is already a package for the desired software. If you would like to improve the already existing  package or if you have suggestions, just contact the package maintainer or open a pull request at the maintainer’s package repository.
 1. **Don't include other required software if there's a package of it.** If a package requires other software of which there is already a package, the already existing package should be used as [dependency](http://docs.nuget.org/create/nuspec-reference#specifying-dependencies) instead.
 1. **Split dependencies into multiple packages.** Try to split up packages as much as possible. If for example a program comes with additional modules/installers that are optional, make different packages for them instead of including all the things into one package. This idea is already widely applied for Linux packages, because it leads to a more lightweight system and reduces potential issues and conflicts.
-1. **Use a simple intuitive lowercase name for the package**. See the [[package naming guidelines|CreatePackages#naming-your-package]] for details. (If you are a reviewer/moderator, this is considered a guideline).
+1. **Use a simple intuitive lowercase name for the package**. See the [package naming guidelines](#naming-your-package) for details. (If you are a reviewer/moderator, this is considered a guideline).
 
 Is your package unqualified for the Chocolatey feed, but you like to be able to install it through Chocolatey? One alternative would be to host your package on MyGet. See [Hosting Chocolatey Packages on MyGet](Hosting-Chocolatey-Packages-on-MyGet).
 
@@ -92,7 +92,7 @@ The main release of a product versions are usually sufficient. If there are also
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
 1. [Nuspec](CreatePackages#nuspec)
-1. [[chocolateyInstall.ps1|ChocolateyInstallPS1]] - check out the [helper reference](./creating-packages/helpers/reference)
+1. [chocolateyInstall.ps1](./chocolatey-install-ps1) - check out the [helper reference](./creating-packages/helpers/reference)
 1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](./additional-information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
 1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](./creating-packages/helpers/reference) for functions available in your script.
 
@@ -224,7 +224,7 @@ Example instructions:
 
 ## Upgrading
 
-Prior to choco version 0.9.10, there is no dedicated automation script for upgrade scenarios. Instead, your [[chocolateyInstall.ps1|ChocolateyInstallPS1]] script should support installing/upgrading on top of any previous versions of your package.
+Prior to choco version 0.9.10, there is no dedicated automation script for upgrade scenarios. Instead, your [chocolateyInstall.ps1](./chocolatey-install-ps1) script should support installing/upgrading on top of any previous versions of your package.
 
 More recent versions of choco (0.9.10+) give you the option of supplying a `chocolateyBeforeModify.ps1` script.
 If applicable, the version of this script from the currently installed package will be run before subsequent
@@ -232,7 +232,7 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 ## Uninstalling
 
-Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [[chocolateyInstall.ps1|ChocolateyInstallPS1]]. All the usual [helper reference](./creating-packages/helpers/reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
+Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](./chocolatey-install-ps1). All the usual [helper reference](./creating-packages/helpers/reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
 
 ## Dependency Chaining
@@ -384,7 +384,7 @@ To push your package after you have built and tested it, you type `choco push pa
 You can also log into chocolatey.org and upload your package from there (not recommended for packages over 2MB).
 
 ## Automatic packaging?
-Yes - [[Automatic Packaging|AutomaticPackages]]
+Yes - [Automatic Packaging](./creating-packages/automatic-packages)
 
 ## Becoming a primary maintainer of an existing package
-See [[Package Maintainer Handover|PackageMaintainerHandover]]
+See [Package Maintainer Handover](./how-tos/package-maintainer-handover)

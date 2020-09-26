@@ -62,7 +62,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Completely Offline Install</a>.
  * Installing the licensed edition? See [install licensed edition](./usage/installation-licensed).
- * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [[Troubleshooting|Troubleshooting]]
+ * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [Troubleshooting](./general/troubleshooting)
 
 #### Install with cmd.exe
 Run the following command: <!--remove <button class="btn btn-secondary btn-copy font-weight-bold" data-clipboard-text="@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot; [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; && SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;"><span class="fas fa-clipboard"></span> Copy Command Text</button> remove-->
@@ -699,7 +699,7 @@ Have a proxy? Try
 
 ### Installing behind an explicit proxy
 
-See [[Installing Chocolatey Behind a Proxy Server|Proxy-Settings-for-Chocolatey#installing-chocolatey-behind-a-proxy-server]]
+See [Installing Chocolatey Behind a Proxy Server](./how-tos/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
 
 ### Installing to a different location
 
@@ -715,7 +715,7 @@ See [[Installing Chocolatey Behind a Proxy Server|Proxy-Settings-for-Chocolatey#
 **NOTE**: There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
 If you are installing to another location, you will need to handle this yourself, i. e. restrict write access to Admins in case you so desire.
 This is due to alternative locations could have a range of permissions that should not be changed.
-See [[Why does Chocolatey install where it does|DefaultChocolateyInstallReasoning]] and https://github.com/chocolatey/choco/issues/398 for more details.
+See [Why does Chocolatey install where it does](./default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
 
 ### Installing a particular version of Chocolatey
 
@@ -882,10 +882,10 @@ See [uninstall](./usage/uninstallation).
 ## FAQs
 
 ### I'm having trouble installing Chocolatey
-Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [[Troubleshooting|Troubleshooting]]. If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [Troubleshooting](./general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
-This is addressed in [[Troubleshooting|Troubleshooting]].
+This is addressed in [Troubleshooting](./general/troubleshooting).
 
 ### Why isn't there an MSI?
 
