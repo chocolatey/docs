@@ -311,8 +311,8 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
- * [[Get-ChocolateyUnzip|HelpersGetChocolateyUnzip]]
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
+ * [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
 
 
 [Function Reference](./creating-packages/helpers/reference)

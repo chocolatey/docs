@@ -126,7 +126,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
  * [Get-WebFile](./creating-packages/helpers/get-webfile)
 
 [Function Reference](./creating-packages/helpers/reference)

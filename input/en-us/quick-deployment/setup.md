@@ -339,7 +339,7 @@ While we will continue to make improvements to the QDE, there is no upgrade path
 You can choose to start over with a newer version, but that would mean going through the entire setup process from the beginning once again.
 
 Instead, it is much easier to upgrade the components individually, and that is how we recommend upgrading aspects of QDE.
-Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [[Upgrade Central Management|CentralManagementSetupUpgrade]].
+Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](./central-management/setup-upgrade).
 
 ### Should I upgrade Jenkins?
 

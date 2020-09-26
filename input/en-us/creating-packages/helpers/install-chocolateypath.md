@@ -111,7 +111,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable)
- * [[Get-EnvironmentVariable|HelpersGetEnvironmentVariable]]
+ * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
  * [[Set-EnvironmentVariable|HelpersSetEnvironmentVariable]]
  * [[Get-ToolsLocation|HelpersGetToolsLocation]]
 

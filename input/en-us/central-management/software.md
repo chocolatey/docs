@@ -46,9 +46,9 @@ On the _Software Details_ page, you'll find a searchable list of all computers t
 ___
 ## Related Topics
 
-* [[Chocolatey Central Management|CentralManagement]]
-* [[Central Management - Computers|CentralManagementComputers]]
-* [[Central Management - Reports|CentralManagementReports]]
+* [Chocolatey Central Management](./central-management)
+* [Central Management - Computers](./central-management/computers)
+* [Central Management - Reports](./central-management/reports)
 
 ___
-[[Chocolatey Central Management|CentralManagement]]
+[Chocolatey Central Management](./central-management)

@@ -140,7 +140,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
  * [Get-FtpFile](./creating-packages/helpers/get-ftpfile)
  * [Get-WebHeaders](./creating-packages/helpers/get-webheaders)
  * [Get-WebFileName](./creating-packages/helpers/get-webfilename)

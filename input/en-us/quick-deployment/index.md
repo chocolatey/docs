@@ -63,7 +63,7 @@ A lot of what is done in QDE condenses or completely eliminates the work found i
 
 * [Organizational Deployment Guide](./how-tos/setup-offline-installation)
 * [Chocolatey Installation](https://chocolatey.org/install#organization)
-* [[Chocolatey Commercial Installation|Installation-Licensed]]
+* [Chocolatey Commercial Installation](./usage/installation-licensed)
 * [[Automate Package Internalization|How-To-Setup-Internal-Package-Repository]]
 
 If you find that QDE is only good for a proof-of-concept in your environment due to having thousands of endpoints, you will want to understand how to scale out that infrastructure.
@@ -98,7 +98,7 @@ While we will continue to make improvements to the QDE, there is no upgrade path
 You can choose to start over with a newer version, but that feels like the wrong way to go.
 
 It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE.
-Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [[Upgrade Central Management|CentralManagementSetupUpgrade]].
+Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](./central-management/setup-upgrade).
 
 ### What if we have a larger environment? (> 1k nodes)
 

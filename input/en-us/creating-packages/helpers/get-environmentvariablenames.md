@@ -56,7 +56,7 @@ None
 
 ## Links
 
- * [[Get-EnvironmentVariable|HelpersGetEnvironmentVariable]]
+ * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
  * [[Set-EnvironmentVariable|HelpersSetEnvironmentVariable]]
 
 

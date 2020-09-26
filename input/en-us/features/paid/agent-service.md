@@ -285,9 +285,9 @@ MSI repackaging is always preferred. At the end of creating that, you have somet
 ___
 ## Chocolatey Central Management
 
-Chocolatey for Business has centralized reporting and supports endpoint management through [[Chocolatey Central Management (CCM)|CentralManagement]]. On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
+Chocolatey for Business has centralized reporting and supports endpoint management through [Chocolatey Central Management (CCM)](./central-management). On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
 
-For more information on Central Management, please see [[Chocolatey Central Management|CentralManagement]].
+For more information on Central Management, please see [Chocolatey Central Management](./central-management).
 
 ___
 ## Setup
@@ -429,7 +429,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 ___
 ### Chocolatey Central Management Agent Setup
-Please see [[Central Management Client Setup|CentralManagementSetupClient]] for details.
+Please see [Central Management Client Setup](./central-management/setup-client) for details.
 
 > :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
@@ -458,7 +458,7 @@ Once you have the agent service installed and Chocolatey for Business configured
 The background service and Central Management UI Console will only be available in C4B (Chocolatey for Business).
 
 ### I have questions regarding Agent and Central Management
-Please see [[Central Management Client Setup|CentralManagementSetupClient]] as the FAQs related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](./central-management/setup-client) as the FAQs related to Central Management (CCM) are kept there.
 
 ### I have Puppet or some other configuration management tool (RMM tool, infrastructure automation tool, etc.) that also runs Chocolatey. Can I configure it to skip background mode?
 Yes! Add `--run-actual` to your install options. Most likely your tool won't need to be reconfigured though as it will just work with background mode. You will need Chocolatey v0.10.3+ installed across your environment so Chocolatey handles the unknown arguments appropriately.
@@ -595,7 +595,7 @@ The installation folder for `chocolatey-agent` is at `$env:ChocolateyInstall\lib
 ___
 ## Common Errors and Resolutions
 ### I have issues regarding Central Management
-Please see [[Central Management Client Setup|CentralManagementSetupClient]] as the common errors and resolutions related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](./central-management/setup-client) as the common errors and resolutions related to Central Management (CCM) are kept there.
 
 ### Installs from custom source locations are not allowed in background mode. Please remove custom source and try again using default (configured) package source locations.
 You can not pass custom source arguments to Chocolatey, it will error. You need to set up sources in the Chocolatey configuration and any that are marked as allowed for self-service will be passed by the background service.

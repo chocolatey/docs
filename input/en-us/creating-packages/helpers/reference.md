@@ -75,8 +75,8 @@ These are the functions from above as one list.
 * [[Install-ChocolateyPowershellCommand|HelpersInstallChocolateyPowershellCommand]]
 * [[Write-ChocolateySuccess|HelpersWriteChocolateySuccess]]
 * [[Write-ChocolateyFailure|HelpersWriteChocolateyFailure]]
-* [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
-* [[Get-ChocolateyUnzip|HelpersGetChocolateyUnzip]]
+* [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
+* [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
 * [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath) - when specifying user path
 * [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable) - when specifying user path
 * [[Install-ChocolateyDesktopLink|HelpersInstallChocolateyDesktopLink]] - **DEPRECATED** - see [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
@@ -88,11 +88,11 @@ These are the functions from above as one list.
 ## Complete List (alphabetical order)
 
  * [Format-FileSize](./creating-packages/helpers/format-filesize)
- * [[Get-ChecksumValid|HelpersGetChecksumValid]]
- * [[Get-ChocolateyUnzip|HelpersGetChocolateyUnzip]]
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
- * [[Get-EnvironmentVariable|HelpersGetEnvironmentVariable]]
- * [[Get-EnvironmentVariableNames|HelpersGetEnvironmentVariableNames]]
+ * [Get-ChecksumValid](./creating-packages/helpers/get-checksumvalid)
+ * [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
+ * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
+ * [Get-EnvironmentVariableNames](./creating-packages/helpers/get-environmentvariablenames)
  * [Get-FtpFile](./creating-packages/helpers/get-ftpfile)
  * [[Get-OSArchitectureWidth|HelpersGetOSArchitectureWidth]]
  * [[Get-PackageParameters|HelpersGetPackageParameters]]

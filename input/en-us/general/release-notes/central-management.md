@@ -8,10 +8,10 @@ ShowInSidebar: false
 
 # Chocolatey Release Notes - Chocolatey Central Management
 ## Summary
-This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [[Chocolatey Central Management|CentralManagement]].
+This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](./central-management).
 
-* Installation - [[Central Management Setup|CentralManagementSetup]]
-* Upgrade - [[Central Management Upgrade|CentralManagementSetupUpgrade]]
+* Installation - [Central Management Setup](./central-management/setup)
+* Upgrade - [Central Management Upgrade](./central-management/setup-upgrade)
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
@@ -35,7 +35,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## 0.2.0 (June 18, 2020)
 Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://chocolatey.org/blog/announcing-deployments). We've also overhauled the documentation to make it understandable and approachable. Please see https://chocolatey.org/docs/central-management.
 
-> :memo: **NOTE**: Log locations have changed. Please see [[Central Management FAQs|CentralManagement#faqs]] for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Central Management FAQs](./central-management#faqs) for more information.
 
 ### FEATURES
 * [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments):

@@ -20,7 +20,7 @@ Once installed and configured, you can use CCM to:
 >
 > The information on this page has been spead out to an entire section and multiple pages. Links still here are due to code pointing to these. Please follow the link below for the most up-to-date information on CCM.
 
-Please see [[Chocolatey Central Management|CentralManagement]].
+Please see [Chocolatey Central Management](./central-management).
 
 ___
 <!-- TOC depthTo:6 -->
@@ -33,14 +33,14 @@ ___
 ___
 ## Roadmap
 
-Please see [[Chocolatey Central Management|CentralManagement#roadmap]].
+Please see [Chocolatey Central Management](./central-management#roadmap).
 
 ___
 ## Setup
 
-Please see [[Central Management Setup|CentralManagementSetup]].
+Please see [Central Management Setup](./central-management/setup).
 
 ___
 ## FQDN Usage
 
-Please see [[Central Management Service Setup|CentralManagementSetupService#fqdn-usage]].
+Please see [Central Management Service Setup](./central-management/setup-service#fqdn-usage).

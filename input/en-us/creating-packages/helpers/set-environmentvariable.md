@@ -99,7 +99,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable)
  * [Uninstall-ChocolateyEnvironmentVariable](./creating-packages/helpers/uninstall-chocolateyenvironmentvariable)
  * [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath)
- * [[Get-EnvironmentVariable|HelpersGetEnvironmentVariable]]
+ * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
 
 
 [Function Reference](./creating-packages/helpers/reference)

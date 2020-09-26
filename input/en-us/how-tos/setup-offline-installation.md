@@ -91,7 +91,7 @@ There may be some exercises in here that won't apply:
 ## References
 
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
-* [[Licensed Install|Installation-Licensed]]
+* [Licensed Install](./usage/installation-licensed)
 * [Host Your Own Package Server](./features/free/how-to-host-feed)
 * [[Set up Chocolatey Server|How-To-Set-Up-Chocolatey-Server]]
 * [Security](https://chocolatey.org/security)
@@ -724,7 +724,7 @@ You can sign up for email delivery of new release announcements at [chocolatey-a
 If you've made it this far, you are ready to be quite successful with Chocolatey and Windows automation in your organization. If you are using open source Chocolatey, from time to time you might check in to see what we've been adding to the [commercial options](https://chocolatey.org/compare#compare). We are building a complete software management solution with Chocolatey for Business, above and beyond the package management that Chocolatey open source does.
 
 ## More Architecture Setup
-* [[Setup Central Management|CentralManagementSetup]]
+* [Setup Central Management](./central-management/setup)
 * [[Automate Internalization of Community Packages|FeaturesAutomaticallyRecompilePackages]] - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
 * [Quick Deployment Environment](./quick-deployment)
 

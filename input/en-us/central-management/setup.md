@@ -29,7 +29,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 >
 > All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-> :memo: **NOTE**: Looking for upgrade instructions? See [[Central Management Upgrade|CentralManagementSetupUpgrade]].
+> :memo: **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](./central-management/setup-upgrade).
 
 ___
 <!-- TOC depthFrom:2 depthTo:5 -->
@@ -62,7 +62,7 @@ ___
 
 > :memo: **NOTE**
 >
-> Make sure you have read over the [[CCM Compability Matrix|CentralManagement#ccm-component-compatibility-matrix]] prior to starting internalization as this will save you some headaches.
+> Make sure you have read over the [CCM Compability Matrix](./central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 The complete installation of CCM requires several packages that are available from the community repository. Let's get them internalized. We will internalize them to a `C:\packages` directory. It is highly recommended that you push the packages to an internal repository before continuing with other steps in this guide. Change the values in the first lines of this script to match what you need in your environment.
 
@@ -112,29 +112,29 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ___
 ## Step 2: Setup Central Management Database
-Please see [[Central Management Database Setup|CentralManagementSetupDatabase]].
+Please see [Central Management Database Setup](./central-management/setup-database).
 
 > :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 ___
 ## Step 3: Setup Central Management Windows Service(s)
-Please see [[Central Management Service Setup|CentralManagementSetupService]].
+Please see [Central Management Service Setup](./central-management/setup-service).
 
 > :memo: **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
 ___
 ## Step 4: Setup Central Management Website
-Please see [[Central Management Web Setup|CentralManagementSetupWeb]].
+Please see [Central Management Web Setup](./central-management/setup-web).
 
 > :memo: **NOTE**: If Step 1 or 2 is not succesful, do not move on to this step until you resolve issues with previous steps.
 
 ___
 ## Step 5: Setting up Agent Machines
-Please see [[Central Management Client Setup|CentralManagementSetupClient]].
+Please see [Central Management Client Setup](./central-management/setup-client).
 
 ___
 ## Upgrading?
-Looking for upgrade instructions? See [[Central Management Upgrade|CentralManagementSetupUpgrade]].
+Looking for upgrade instructions? See [Central Management Upgrade](./central-management/setup-upgrade).
 
 ___
 ## Common Errors and Resolutions
@@ -150,4 +150,4 @@ The logs are located at `$env:ChocolateyInstall\logs\ccm-service.log`. If you ar
 
 
 ___
-[[Chocolatey Central Management|CentralManagement]]
+[Chocolatey Central Management](./central-management)

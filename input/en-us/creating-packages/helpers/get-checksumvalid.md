@@ -178,7 +178,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
  * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
 
 

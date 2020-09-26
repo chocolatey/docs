@@ -60,7 +60,7 @@ ___
 ___
 ## Step 1: Complete Prerequisites
 
-* > :warning: The [[database|CentralManagementSetupDatabase]] must be setup and available, along with [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+* > :warning: The [database](./central-management/setup-database) must be setup and available, along with [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 3+
 * .NET Framework 4.6.1+
@@ -127,7 +127,7 @@ This includes (but may not be everything):
 ### Scenarios
 #### SQL Server Windows Authentication
 ##### Use Active Directory Domain Account
-Scenario 1: Active Directory - you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication).
+Scenario 1: Active Directory - you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication).
 
 ```powershell
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
@@ -136,7 +136,7 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
 
 ##### Use Local Windows Account to Local SQL Server
-Scenario 2: Monolithic - you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
+Scenario 2: Monolithic - you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
 
 * Specify User:
 
@@ -146,7 +146,7 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 
 > :warning: **WARNING**
 >
-> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 
 * Default User (`IIS APPPOOL\ChocolateyCentralManagement`)
 
@@ -156,7 +156,7 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 
 > :warning: **WARNING**
 >
-> Please ensure the user `IIS APPPOOL\ChocolateyCentralManagement` has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+> Please ensure the user `IIS APPPOOL\ChocolateyCentralManagement` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
 
@@ -176,7 +176,7 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 
 
 ##### Use Local Windows Account to Remote SQL Server
-Scenario 3: you have set up the [[database|CentralManagementSetupDatabase]] to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
+Scenario 3: you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
 > :warning: **WARNING**
 >
@@ -188,7 +188,7 @@ It's worth noting here that `ChocolateyLocalAdmin` on two boxes is NOT the same 
 
 #### SQL Server Account Authentication
 ##### Use SQL Server Authentication Locally
-Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [[database|CentralManagementSetupDatabase]] to use Mixed Mode Authentication.
+Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](./central-management/setup-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -196,7 +196,7 @@ choco install chocolatey-management-web -y --package-parameters-sensitive="'/Con
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 
 * SQL Server Express:
 
@@ -206,10 +206,10 @@ choco install chocolatey-management-web -y --package-parameters-sensitive="'/Con
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 
 ##### Use SQL Server Account to Remote SQL Server
-Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [[database|CentralManagementSetupDatabase]] to use Mixed Mode Authentication.
+Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](./central-management/setup-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -217,7 +217,7 @@ choco install chocolatey-management-web -y --package-parameters-sensitive="'/Con
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [[logins and access|CentralManagementSetupDatabase#step-2-set-up-sql-server-logins-and-access]].
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
 
 ___
 ## Step 3: Verify Installation
@@ -318,7 +318,7 @@ ___
 Currently no.  The Chocolatey Central Management Web Site expects to reside at the site level within IIS.
 
 ### What is the CCM compatibility matrix?
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [[CCM Component Compatibility Matrix|CentralManagement#ccm-component-compatibility-matrix]] for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](./central-management#ccm-component-compatibility-matrix) for details.
 
 
 ### I entered incorrect database details on install, do I need to reinstall to fix that?
@@ -465,4 +465,4 @@ If you see the app pool shutting down immediately when you start it.
 * Check for [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations).
 
 ___
-[[Central Management Setup|CentralManagementSetup]] | [[Chocolatey Central Management|CentralManagement]]
+[Central Management Setup](./central-management/setup) | [Chocolatey Central Management](./central-management)

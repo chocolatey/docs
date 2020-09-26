@@ -95,13 +95,13 @@ Please see [I'm getting a 403 unauthorized issue when attempting to use the comm
 <a id="markdown-i-am-having-trouble-with-powershell-to-install-chocolatey" name="i-am-having-trouble-with-powershell-to-install-chocolatey"></a>
 ### I am having trouble with PowerShell to install Chocolatey
 
-See the More Options section of [[installation|Installation#more-install-options]].
+See the More Options section of [installation](./usage/installation#more-install-options).
 
 
 <a id="markdown-licensed-installation-and-issues" name="licensed-installation-and-issues"></a>
 ## Licensed Installation and Issues
 
-See [[licensed installation|Installation-Licensed]]. If you are having issues, please see https://chocolatey.org/support for details on how to get support.
+See [licensed installation](./usage/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
 
 
 <a id="markdown-creating-packages" name="creating-packages"></a>

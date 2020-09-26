@@ -514,7 +514,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-ChocolateyWebFile|HelpersGetChocolateyWebFile]]
+ * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
  * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
  * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
  * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)

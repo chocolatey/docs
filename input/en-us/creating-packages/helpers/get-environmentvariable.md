@@ -120,7 +120,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [[Get-EnvironmentVariableNames|HelpersGetEnvironmentVariableNames]]
+ * [Get-EnvironmentVariableNames](./creating-packages/helpers/get-environmentvariablenames)
  * [[Set-EnvironmentVariable|HelpersSetEnvironmentVariable]]
 
 

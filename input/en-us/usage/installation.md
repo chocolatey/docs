@@ -61,7 +61,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 **NOTES**:
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Completely Offline Install</a>.
- * Installing the licensed edition? See [[install licensed edition|Installation-Licensed]].
+ * Installing the licensed edition? See [install licensed edition](./usage/installation-licensed).
  * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [[Troubleshooting|Troubleshooting]]
 
 #### Install with cmd.exe
@@ -441,7 +441,7 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 ### Install with Puppet
 
-**NOTE**: If you have the licensed edition, see [[Setting up Licensed Edition with Puppet|Installation-Licensed#set-up-licensed-edition-with-puppet]] instead. This only additionally contains some package examples and setting up tab completion.
+**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](./usage/installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
@@ -676,7 +676,7 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
  1. **NOTE**: This will not set Chocolatey as an installed package, so it may be a good idea to also call `choco upgrade chocolatey -y` and let it reinstall the same version, but at least it will be available for upgrades then.
 
 ### Install licensed edition
-Please see [[installation of licensed edition|Installation-Licensed]].
+Please see [installation of licensed edition](./usage/installation-licensed).
 
 ### Installing behind a proxy
 Have a proxy? Try

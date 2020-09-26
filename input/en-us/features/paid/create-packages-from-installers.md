@@ -212,4 +212,4 @@ Yes, as of Licensed version v1.6.0+. Use `--use-original-location`.
 ## Common Issues and Resolutions
 
 ### I get "Name is required. Please pass in a name for the new package."
-This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation|Installation-Licensed]] for more details.
+This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](./usage/installation-licensed) for more details.
