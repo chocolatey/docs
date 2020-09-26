@@ -30,7 +30,7 @@ use in package scripts. By default this will look at
 (`--package-parameters-sensitive="'/PASSWORD:value'"` in commercial
 editions).
 
-Learn more about using this at https://chocolatey.org/docs/how-to-parse-package-parameters-argument
+[Learn more](../../how-tos/parse-packageparameters-argument)
 
 ## Notes
 
@@ -39,7 +39,7 @@ take a dependency on the `chocolatey-core.extension` package which
 also provides this functionality. If you are pushing to the community
 package repository (https://chocolatey.org/packages), you are required
 to take a dependency on the core extension until January 2018. How to
-do this is explained at https://chocolatey.org/docs/how-to-parse-package-parameters-argument#step-3---use-core-community-extension.
+do this is explained in [the docs](../../how-tos/parse-packageparameters-argument#step-3---use-core-community-extension).
 
 The differences between this and the `chocolatey-core.extension` package
 functionality is that the extension function can only do one string at a
@@ -69,7 +69,7 @@ $pp = Get-PackageParameters
 
 ~~~powershell
 
-# see https://chocolatey.org/docs/how-to-parse-package-parameters-argument
+# see https://docs.chocolatey.org/en-us/how-tos/parse-packageparameters-argument
 # command line call: `choco install <pkg_id> --params "'/LICENSE:value'"`
 $pp = Get-PackageParameters
 # Read-Host, PromptForChoice, etc are not blocking calls with Chocolatey.

@@ -49,8 +49,7 @@ Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../how-tos/s
 * The email the license is sent to will automatically be subscribed to the customer advisory list. If there are other folks who need to be on that list for important notifications, please have them sign up at [Chocolatey Customers](http://eepurl.com/b6zpGv).
 * Please sign up for software announcements at [Chocolatey Announce](https://groups.google.com/d/forum/chocolatey-announce). Direct others to sign up for the list as well.
 * For support, remember to use the support email address (below).
-* Learn how to install below. Installation is also found at https://chocolatey.org/docs/installation-licensed.
-
+* Learn how to install below.
 
 ## How Do I Know When the License is Installed?
 
@@ -314,7 +313,7 @@ chocolateyfeature {'useRememberedArgumentsForUpgrades':
 }
 
 ## - LICENSED OPTIONS -
-### See https://chocolatey.org/docs/installation-licensed
+### See https://docs.chocolatey.org/en-us/usage/installation-licensed
 
 file { ['C:/ProgramData/chocolatey','C:/ProgramData/chocolatey/license']:
   ensure => directory,
@@ -372,7 +371,7 @@ chocolateyfeature {'virusCheck':
 }
 
 ## Package Internalizer enhancement
-## See https://chocolatey.org/docs/features-automatically-recompile-packages
+## See https://docs.chocolatey.org/en-us/features/paid/automatically-recompile-packages
 chocolateyfeature {'internalizeAppendUseOriginalLocation':
   ensure  => enabled,
   require => Package['chocolatey.extension'],
@@ -433,7 +432,7 @@ Here are some additional commands and scripts you will need for that setup:
 
 ~~~puppet
 ## - Chocolatey Agent (Additional optional Chocolatey for Business install) -
-## See https://chocolatey.org/docs/features-agent-service
+## See https://docs.chocolatey.org/en-us/features/paid/agent-service
 
 ## ensure we set the user up properly
 chocolateyfeature {'useLocalSystemForServiceInstalls':

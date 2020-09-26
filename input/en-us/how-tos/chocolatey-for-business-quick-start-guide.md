@@ -48,7 +48,7 @@ As illustrated in the diagram above, there are five main components to a default
 1. **Administrator Workstation**: This is the workstation of the implementer. Internet access, as well as running from an administrator-level user, are required.
 1. **Repository Server**: This is the application that will serve out the Nuget package (.nupkg) files internally. This guide will assume you'd like to use Sonatype [Nexus](https://www.sonatype.com/nexus-repository-oss), although Jfrog [Artifactory](https://jfrog.com/artifactory/) is an equally-suitable option. Further repository details are available at [repository options](../features/free/how-to-host-feed).
 1. **Deployment/Configuration Management Solution**: We are going to stick to PowerShell commands and scripts in this guide. However, it is _strongly_ recommended to use a full-featured configuration management solution to manage your package deployments. Some examples are Puppet, Chef, Ansible, and SaltStack. Read more about them on the [Infrastucture Automation page](../features/free/infrastructure-automation).
-1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](https://chocolatey.org/docs/central-management-setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
+1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](../central-management/setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
 1. **Clients/Nodes**: These are the workstation or server endpoints you wish to manage packages on, with Chocolatey. Every node requires a license.
 
 ## Requirements
@@ -248,7 +248,7 @@ Run this script in a PowerShell Administrator console, to create the license pac
 
 ### Central Management Server
 
-Again, the setup of the Chocolatey Central Management server is beyond the scope of this document (please read over and follow the detailed instructions on the [Chocolatey Central Management Setup page](https://chocolatey.org/docs/central-management-setup).
+Again, the setup of the Chocolatey Central Management server is beyond the scope of this document (please read over and follow the detailed instructions on the [Chocolatey Central Management Setup page](../central-management/setup).
 
 ### Conclusion
 

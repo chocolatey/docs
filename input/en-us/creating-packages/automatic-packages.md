@@ -19,7 +19,7 @@ Automatic packaging is a process that **package maintainers can run on *their ow
 - [Chocolatey Package Updater aka chocopkgup [DEPRECATED]](#chocolatey-package-updater-aka-chocopkgup-deprecated)
   - [Licensing](#licensing)
   - [Credits](#credits-1)
-  - [Requirements](#requirements-1)
+  - [Requirements](#requirements)
   - [Setup](#setup-1)
   - [Create an Automatic Package](#create-an-automatic-package)
     - [Create a package for automatic packaging](#create-a-package-for-automatic-packaging)
@@ -106,7 +106,7 @@ When you are creating packages, you should ensure you are on the latest version 
 
 1. Ensuring you are on the latest version of Chocolatey - `choco upgrade chocolatey`.
 1. Open PowerShell (or cmd.exe) and head to the automatic package folder you are using. This should be "repolocation\automatic".
-1. Run `choco new <name> --auto [options]`. You can use a different package template if you have those installed - see https://chocolatey.org/docs/commands-new for all options or run `choco new -?`. For package templates, see https://chocolatey.org/docs/how-to-create-custom-package-templates.
+1. Run `choco new <name> --auto [options]`. You can use a different package template if you have those installed - see [new command](./commands/new) for all options or run `choco new -?`. For package templates, see [how to create custom package templates](../how-tos/create-custom-package-templates).
 1. Inspect the output. Merge in your existing package logic if you have an existing package you are converting.
 1. Ensure that `checksumType` and `checksumType64` is `sha256` as this is the type the updater will generate.
 1. Make any adjustments you need to the package to prepare for packaging.

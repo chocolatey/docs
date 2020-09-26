@@ -32,7 +32,7 @@ Just pass `--install-directory=value` along and Chocolatey will determine what t
 
 ![choco install 1password --install-directory c:\1password](/assets/images/chocopro_features_installdirectory.png)
 
-![Install override - if you are on https://chocolatey.org/docs/features-install-directory-override, see commented html below for detailed description of image](/assets/images/features/features_override_install_directory.png)
+![Install override - if you are on https://docs.chocolatey.org/en-us/features/paid/install-directory-override, see commented html below for detailed description of image](/assets/images/features/features_override_install_directory.png)
 
 <!--
 Text in the image above:

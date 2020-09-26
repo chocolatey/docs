@@ -145,7 +145,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 ### Chocolatey Configuration
 
-* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See https://chocolatey.org/docs/central-management-setup-service#fqdn-usage. Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
+* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](../features/paid/chocolatey-central-management#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
 > :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
@@ -333,7 +333,7 @@ Unfortunately, it's not a supported scenario. If you are trying to load balance 
 > :memo: **NOTE:** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
 
 ### We want to set up the Chocolatey Central Management service to use a domain account that will have local admin on each box. Can we do this?
-Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature useRememberedArgumentsForUpgrades (see [configuration](https://chocolatey.org/docs/chocolatey-configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
+Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature useRememberedArgumentsForUpgrades (see [configuration](../usage/chocolatey-configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
 * `/Username`: - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user should be a local administrator.
 * `/Password`: - optional password for the user.

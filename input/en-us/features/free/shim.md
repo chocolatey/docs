@@ -56,7 +56,7 @@ Chocolatey ensures the folder `"$($env:ChocolateyInstall)\bin"` in the PATH envi
 
 ## See It In Action
 
-![Shimming - if you are on https://chocolatey.org/docs/features-shim, see commented html below for detailed description of image](/assets/images/features/features_shimgen.png)
+![Shimming - if you are on https://docs.chocolatey.org/en-us/features/free/shim, see commented html below for detailed description of image](/assets/images/features/features_shimgen.png)
 
 <!--
 Text in the image above:

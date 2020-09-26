@@ -53,7 +53,7 @@ Please note that nearly _all_ the commands need to be run from an administrative
 
 If you run into any issues as you set up your QDE and clients, please reach out to support at [REDACTED] and folks can set up a session to work with you on this.
 
-Additional information can be found in our [Online Documentation](https://chocolatey.org/docs/quick-deployment-environment).
+Additional information can be found in our [Online Documentation](../../).
 
 * [QDE Setup](./setup)
 * [QDE Desktop ReadMe File](./desktop-readme) (online version of the desktop readme, online is most up to date)
@@ -64,7 +64,7 @@ Additional information can be found in our [Online Documentation](https://chocol
 ___
 ## Step 0: Complete Prerequisites
 
-There are some steps you will have taken before you come to this readme. Please make sure you have taken those steps ahead of time. Please see the [Online Documentation](https://chocolatey.org/docs/quick-deployment-environment) for the most up to date information.
+There are some steps you will have taken before you come to this readme. Please make sure you have taken those steps ahead of time. Please see the [Online Documentation](../../) for the most up to date information.
 
 * [QDE Setup](./setup)
 
@@ -157,7 +157,7 @@ Consult the Nexus documentation or reach out to Chocolatey Support for more info
 * Username: admin
 * Password: [REDACTED] (credentials included on desktop readme)
 
-For using Jenkins, please refer to our documentation here: [https://chocolatey.org/docs/how-to-setup-internal-package-repository](https://chocolatey.org/docs/how-to-setup-internal-package-repository).
+For using Jenkins, please refer to our [documentation](../../how-tos/setup-internal-package-repository).
 At most, you will need to login to Jenkins, change the password (`By going to People on the Sidebar > Click on admin > Click Configure on the Sidebar, scroll down to change password section`), and enable the pre-configured jobs to run on the schedule of your choosing.
 Our documentation can assist with ensuring this is done correctly.
 

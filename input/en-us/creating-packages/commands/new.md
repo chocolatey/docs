@@ -21,7 +21,7 @@ Chocolatey [Licensed editions](https://chocolatey.org/compare) include some leve
    `--from-programs-and-features` to generate packages directly from
    Programs and Features!
 
-See https://chocolatey.org/docs/features-create-packages-from-installers
+See https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers
 
 # New Command (choco new)
 
@@ -228,7 +228,7 @@ Includes [default options/switches](../../usage/commands/reference#default-optio
        download first) to completely create a package with proper silent
        arguments! Can be 32-bit or 64-bit architecture.  Available in licensed
        editions only (licensed version 1.4.0+, url/zip starting in 1.6.0). See
-       https://chocolatey.org/docs/features-create-packages-from-installers
+       https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers
 
      --file64, --url64=VALUE
      Optional - used when specifying both a 32-bit and a 64-bit file. Can be

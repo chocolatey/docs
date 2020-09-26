@@ -116,7 +116,7 @@ This makes for happy users and happy admins as they are able to move quicker tow
 
 Consider the following image:
 
-![Attempting to install software as non-admin - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_installer.png)
+![Attempting to install software as non-admin - if you are on https://docs.chocolatey.org/en-us/features/paid/agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_installer.png)
 
 <!--
 Text in the image above:
@@ -130,7 +130,7 @@ This is the status quo for a non-administrative user. Can't install software wit
 
 Now, how does that change once we have background mode?
 
-![Installing software with Chocolatey's background mode from the command line. - if you are on https://chocolatey.org/docs/features-agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_selfservice.png)
+![Installing software with Chocolatey's background mode from the command line. - if you are on https://docs.chocolatey.org/en-us/features/paid/agent-service, see commented html below for detailed description of image](/assets/images/features/features_non_admin_selfservice.png)
 
 <!--
 Text in the image above:

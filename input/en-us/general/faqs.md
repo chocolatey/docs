@@ -433,7 +433,7 @@ If you are on a licensed edition of Chocolatey, you can turn on Package Reducer 
 
 <a id="markdown-where-can-i-learn-more" name="where-can-i-learn-more"></a>
 ### Where can I learn more?
-We have a documentation section of the site at https://chocolatey.org/docs
+We have a documentation section of the site at https://docs.chocolatey.org
 
 <a id="markdown-do-you-have-any-references-or-videos-i-can-see" name="do-you-have-any-references-or-videos-i-can-see"></a>
 ### Do you have any references or videos I can see?

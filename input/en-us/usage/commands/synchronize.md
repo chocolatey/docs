@@ -18,7 +18,7 @@ Synchronizes against the system installed software that are not
  software, baselines the packages against Chocolatey and makes the
  packages available to upload to source.
 
-See https://chocolatey.org/docs/features-synchronize
+See https://docs.chocolatey.org/en-us/features/paid/synchronize
 
 <!-- TOC -->
 

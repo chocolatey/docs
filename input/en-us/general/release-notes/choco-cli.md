@@ -166,7 +166,7 @@ We've also brought in the long desired logging with no colorization. You can set
 
 ## [0.10.8](https://github.com/chocolatey/choco/issues?q=milestone%3A0.10.8+is%3Aclosed) (August 30, 2017)
 
-With this release, Package Parameters are fully supported from both the user side and the packaging side. Check out [the documentation](https://chocolatey.org/docs/helpers-get-package-parameters) and check out the [walkthrough](https://chocolatey.org/docs/how-to-parse-package-parameters-argument) on how to use package parameters in your packaging. Note if you are pushing packages to the community repository, you must continue to take a dependency on the `chocolatey-core.extension` as a polyfill for older versions until at least six months after a new feature is released.
+With this release, Package Parameters are fully supported from both the user side and the packaging side. Check out [the documentation](https://docs.chocolatey.org/en-us/creating-packages/helpers/get-packageparameters) and check out the [walkthrough](../../how-tos/parse-packageparameters-argument) on how to use package parameters in your packaging. Note if you are pushing packages to the community repository, you must continue to take a dependency on the `chocolatey-core.extension` as a polyfill for older versions until at least six months after a new feature is released.
 
 What you can do with logging has greatly increased your ability to have more power over how it works and deeper output to determine errors (we've expanded `--trace` [#1379](https://github.com/chocolatey/choco/issues/1379)). This release also gives packagers and users more power when working with the AutoUninstaller - opt-out ([#1257](https://github.com/chocolatey/choco/issues/1257)) and passing arguments to the uninstaller ([#1133](https://github.com/chocolatey/choco/issues/1133)).
 
@@ -513,11 +513,11 @@ Checksums in package scripts are meant as a measure to validate the originally i
 **Can I shut this behavior off or opt out per package?**
 You can shut off the checksum requirement by enabling the feature `allowEmptyChecksums`. This will return Chocolatey to previous behavior. We strongly recommend against it.
 
-You can shut it off or turn it per package install/upgrade with `--allow-empty-checksums` and `--require-checksums`, respectively. See https://chocolatey.org/docs/commands-install / https://chocolatey.org/docs/commands-upgrade.
+You can shut it off or turn it per package install/upgrade with `--allow-empty-checksums` and `--require-checksums`, respectively. See https://docs.chocolatey.org/en-us/usage/commands/install / https://docs.chocolatey.org/en-us/usage/commands/upgrade.
 
 You can also disable the feature `allowEmptyChecksumsSecure` to enforce checksums for packages that download from secure locations (HTTPS).
 
-**Other things I should know?** Users also now have the ability to pass their own checksums and checksumtypes into the install. See https://chocolatey.org/docs/commands-install / https://chocolatey.org/docs/commands-upgrade.
+**Other things I should know?** Users also now have the ability to pass their own checksums and checksumtypes into the install. See https://docs.chocolatey.org/en-us/usage/commands/install / https://docs.chocolatey.org/en-us/usage/commands/upgrade.
 
 ### KNOWN ISSUES
 
@@ -667,8 +667,8 @@ This further restricts the default installation location by removing all permiss
  * Resolve sources by name - see [#356](https://github.com/chocolatey/choco/issues/356)
  * Uninstall-ChocolateyEnvironmentVariable function - see [#772](https://github.com/chocolatey/choco/issues/772)
  * Pro/Business - Ubiquitous Install Directory Switch - see [#258](https://github.com/chocolatey/choco/issues/258)
- * Pro/Business - Runtime Virus Scanning - see [virus scanning](https://chocolatey.org/docs/features-virus-check)
- * Pro/Business - Private CDN cache for downloads - see [private CDN cache](https://chocolatey.org/docs/features-private-cdn)
+ * Pro/Business - Runtime Virus Scanning - see [virus scanning](https://docs.chocolatey.org/en-us/features/paid/virus-check)
+ * Pro/Business - Private CDN cache for downloads - see [private CDN cache](https://docs.chocolatey.org/en-us/features/paid/private-cdn)
  * Pro/Business - Sync "choco installed status" with "Windows installed status" - see [#567](https://github.com/chocolatey/choco/issues/567)
 
 ### BUG FIXES

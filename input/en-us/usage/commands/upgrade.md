@@ -400,7 +400,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      Skip Download Cache - Use the original download even if a private CDN
        cache is available for a package. Overrides the default feature
        'downloadCache' set to 'True'. Available in 0.9.10+. [Licensed editions](https://chocolatey.org/compare)
-       only. See https://chocolatey.org/docs/features-private-cdn
+       only. See https://docs.chocolatey.org/en-us/features/paid/private-cdn
 
      --dc, --downloadcache, --download-cache, --use-download-cache
      Use Download Cache - Use private CDN cache if available for a package.
@@ -417,14 +417,14 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      --virus, --viruscheck, --virus-check
      Virus Check - check downloaded files for viruses. Overrides the default
        feature 'virusCheck' set to 'True'. Available in 0.9.10+. Licensed
-       editions only. See https://chocolatey.org/docs/features-virus-check
+       editions only. See https://docs.chocolatey.org/en-us/features/paid/virus-check
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
      Virus Check Minimum Scan Result Positives - the minimum number of scan
        result positives required to flag a package. Used when virusScannerType
        is VirusTotal. Overrides the default configuration value
        'virusCheckMinimumPositives' set to '5'. Available in 0.9.10+. Licensed
-       editions only. See https://chocolatey.org/docs/features-virus-check
+       editions only. See https://docs.chocolatey.org/en-us/features/paid/virus-check
 
      --install-arguments-sensitive=VALUE
      InstallArgumentsSensitive - Install Arguments to pass to the native
@@ -442,7 +442,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
        pass the appropriate arguments to override the install directory. The
        package must use Chocolatey install helpers and be installing an
        installer for software. Available in 0.9.10+. [Licensed editions](https://chocolatey.org/compare) only.
-       See https://chocolatey.org/docs/features-install-directory-override
+       See https://docs.chocolatey.org/en-us/features/paid/install-directory-override
 
      --bps, --maxdownloadrate, --max-download-rate, --maxdownloadbitspersecond, --max-download-bits-per-second, --maximumdownloadbitspersecond, --maximum-download-bits-per-second=VALUE
      Maximum Download Rate Bits Per Second - The maximum download rate in
@@ -462,14 +462,13 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone
        in the package. Overrides the default feature
        'reduceInstalledPackageSpaceUsage' set to 'True'. [Licensed editions](https://chocolatey.org/compare) only
-       (version 1.12.0+). See https://chocolatey.org/docs/features-package-
-       reducer
+       (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when
        using Package Reducer. Overrides the default feature
        'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only (version -
-       1.12.0+). See https://chocolatey.org/docs/features-package-reducer
+       1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
 
 ~~~
 

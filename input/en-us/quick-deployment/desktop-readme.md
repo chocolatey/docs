@@ -64,7 +64,7 @@ If you run into any issues as you set up your QDE and clients, please reach out 
 
 There are some initial steps you will need to have taken before you work through this document.
 Please make sure you have taken those steps ahead of time.
-See the [Online Documentation](https://chocolatey.org/docs/quick-deployment-setup#step-3-virtual-environment-setup) for the most up to date information.
+See the [Online Documentation](./setup#step-3-virtual-environment-setup) for the most up to date information.
 
 * [QDE Setup](./setup)
 
@@ -186,7 +186,7 @@ Consult the [Nexus documentation](https://help.sonatype.com/repomanager3) or rea
 | :---------------------: | :-----: | :-------------------: |
 | <http://localhost:8080> | `admin` | `{{JenkinsPassword}}` |
 
-For using Jenkins, please refer to our [online documentation](https://chocolatey.org/docs/how-to-setup-internal-package-repository).
+For using Jenkins, please refer to our [online documentation](../how-tos/setup-internal-package-repository).
 
 At most, you will need to:
 

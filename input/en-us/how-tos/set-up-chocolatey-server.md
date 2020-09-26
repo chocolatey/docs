@@ -155,7 +155,7 @@ choco install IIS-ASPNET45 --source windowsfeatures
 # Install Chocolatey.Server
 choco upgrade chocolatey.server -y
 
-# Step by step instructions here https://chocolatey.org/docs/how-to-set-up-chocolatey-server#setup-normally
+# Step by step instructions here https://docs.chocolatey.org/en-us/how-tos/set-up-chocolatey-server#setup-normally
 # Import the right modules
 Import-Module WebAdministration
 # Disable or remove the Default website

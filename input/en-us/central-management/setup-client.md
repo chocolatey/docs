@@ -63,7 +63,7 @@ Please see config settings and features below for a full list.
 > If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword` - see [Configuration](#configuration) below.
 
 #### Config Settings
-* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See https://chocolatey.org/docs/features-chocolatey-central-management#fqdn-usage. Defaults to '' (empty). Available in business editions v2.0.0+ only.
+* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](../features/paid/chocolatey-central-management#fqdn-usage). Defaults to '' (empty). Available in business editions v2.0.0+ only.
 * `centralManagementReportPackagesTimerIntervalInSeconds` = **'1800'** - Amount of time, in seconds, between each execution of the background service to report installed and outdated packages to Chocolatey Central Management. Defaults to '1800'. Available in business editions v2.0.0+ only.
 * `centralManagementReceiveTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to receive information from Chocolatey Central Management. Defaults to '30'. Available in business editions v2.0.0+ only.
 * `centralManagementSendTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to send information to Chocolatey Central Management. Defaults to '30'. Available in business editions v2.0.0+ only.
@@ -79,8 +79,8 @@ Please see config settings and features below for a full list.
 Also found at [Chocolatey Configuration](../usage/chocolatey-configuration).
 
 #### Features
-* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See https://chocolatey.org/docs/features-chocolatey-central-management
-* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See https://chocolatey.org/docs/features-chocolatey-central-management
+* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See [docs](../features/paid/chocolatey-central-management)
+* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See [docs](../features/paid/chocolatey-central-management)
 
 Also found at [Chocolatey Configuration](../usage/chocolatey-configuration).
 
