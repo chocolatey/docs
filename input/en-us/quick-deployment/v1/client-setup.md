@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-client-setup-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](./quick-deployment/client-setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../client-setup).
 
 <!-- TOC depthFrom:2 -->
 
@@ -62,7 +62,7 @@ What does this do?
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >
-> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](./quick-deployment/v1/ssl-setup) for options.
+> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](./ssl-setup) for options.
 >
 > Please contact support if you need help here.
 
@@ -77,4 +77,4 @@ The `ClientSetup.ps1` script will:
 * Configure Central Management check-in
 
 ___
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](../)

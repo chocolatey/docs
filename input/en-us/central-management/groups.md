@@ -93,7 +93,7 @@ As you can see from the text, it is meant to help you figure out the issue:
 
 > The computer has not opted in or a group contains computers that have not opted in for deployments by configuration. Please ensure the computer has at least chocolatey-agent v0.10.0+ installed and the feature "useChocolateyCentralManagementDeployments" has been set to enabled on the client computer.
 
-This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](./central-management/setup-client#features) for details on how to set it.
+This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](./setup-client#features) for details on how to set it.
 
 ### I have plenty of licenses, why do some machines show not opted in for deployments and also exceeds your current license count?
 Once you upgrade to at least CCM v0.2.0, every machine will show that until they check in the next time. Once they check in, that will go away. So it's basically normal to see that until those machines check in again.
@@ -107,9 +107,9 @@ Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on t
 ___
 ## Related Topics
 
-* [Chocolatey Central Management](./central-management)
-* [Central Management - Deployments](./central-management/deployments)
-* [Central Management - Computers](./central-management/computers)
+* [Chocolatey Central Management](./)
+* [Central Management - Deployments](./deployments)
+* [Central Management - Computers](./computers)
 
 ___
-[Chocolatey Central Management](./central-management)
+[Chocolatey Central Management](./)

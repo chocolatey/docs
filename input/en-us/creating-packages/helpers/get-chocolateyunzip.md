@@ -158,10 +158,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
+ * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyUnzip -Full`.
 

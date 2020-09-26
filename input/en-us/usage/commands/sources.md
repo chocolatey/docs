@@ -15,7 +15,7 @@ Chocolatey will allow you to interact with sources.
  below) with options and switches. When enabling, disabling or removing
  a source, use `-name` in front of the option now. In most cases you
  can still pass options and switches with one dash (`-`). For more
- details, see [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`).
+ details, see [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
 
 <!-- TOC -->
 
@@ -47,7 +47,7 @@ location. If it is a url, it will be a location you can go to in a browser and
 it returns OData with something that says Packages in the browser, similar to
 what you see when you go to https://chocolatey.org/api/v2/.
 
-**NOTE:** See scripting in [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -72,7 +72,7 @@ If you find other exit codes that we have not yet documented, please
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -221,7 +221,7 @@ Includes [default options/switches](./usage/commands/reference#default-options-a
 
 ~~~
 
-[Command Reference](./usage/commands/reference)
+[Command Reference](./reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco sources -h`.

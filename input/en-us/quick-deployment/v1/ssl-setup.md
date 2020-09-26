@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-ssl-setup-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE SSL Setup page](./quick-deployment/ssl-setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE SSL Setup page](../ssl-setup).
 
 All services have been protected with Self-Signed SSL certificates and are placed in the appropriate stores.
 Under the following situations you would want to run the script that follows:
@@ -49,9 +49,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-Ssl
 > tl;dr: Think long and hard before changing the QDE hostname
 >
 > Renaming the QDE host requires a lot of things and needs to be completed FIRST prior to ANYTHING that is done on the QDE box. It is strongly recommended **NOT** to rename unless you absolutely need to. The most important reason has to do with how a client installs from QDE - it must learn to trust the QDE certificate. Once renamed, the easy option that's provided for you goes away and you will need to provide a hosted solution with an already trusted certificate.
-> You can provide your own certificate that is already trusted on machines as part of the [SSL/TLS Setup](./quick-deployment/v1/ssl-setup). Your other option is to host the script to trust the certificate with an already trusted certificate. You will find a template that you will need to edit at `c:\choco_setup_files` (in the QDE) named `Import-ChocoServerCertificate.ps1`.
+> You can provide your own certificate that is already trusted on machines as part of the [SSL/TLS Setup](./ssl-setup). Your other option is to host the script to trust the certificate with an already trusted certificate. You will find a template that you will need to edit at `c:\choco_setup_files` (in the QDE) named `Import-ChocoServerCertificate.ps1`.
 >
 > Please contact support if you need help here.
 
 
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](../)

@@ -22,32 +22,32 @@ RedirectFrom: docs/commands-reference
 ## Commands
 This is a listing of all of the different things you can pass to choco.
 
- * [list](./usage/commands/list) - lists remote or local packages
- * [search](./usage/commands/search) - searches remote or local packages (alias for list)
- * [info](./usage/commands/info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
- * [install](./usage/commands/install) - installs packages from various sources
- * [pin](./usage/commands/pin) - suppress upgrades for a package
- * [outdated](./usage/commands/outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
- * [upgrade](./usage/commands/upgrade) - upgrades packages from various sources
- * [uninstall](./usage/commands/uninstall) - uninstalls a package
- * [pack](./usage/commands/pack) - packages up a nuspec to a compiled nupkg
- * [push](./usage/commands/push) - pushes a compiled nupkg
- * [new](./usage/commands/new) - generates files necessary for a chocolatey package from a template
- * [sources](./usage/commands/sources) - view and configure default sources (alias for source)
- * [source](./usage/commands/source) - view and configure default sources
- * [config](./usage/commands/config) - Retrieve and configure config file settings
- * [feature](./usage/commands/feature) - view and configure choco features
- * [features](./usage/commands/features) - view and configure choco features (alias for feature)
- * [setapikey](./usage/commands/setapikey) - retrieves or saves an apikey for a particular source (alias for apikey)
- * [apikey](./usage/commands/apikey) - retrieves or saves an apikey for a particular source
- * [unpackself](./usage/commands/unpackself) - have chocolatey set itself up
- * [version](./usage/commands/version) - [DEPRECATED] will be removed in v1 - use [`choco outdated`](./usage/commands/outdated) or `cup <pkg|all> -whatif` instead
- * [update](./usage/commands/update) - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)
- * [support](./usage/commands/support) - provides support information
- * [download](./usage/commands/download) - downloads packages - optionally internalizing all remote resources
- * [synchronize](./usage/commands/synchronize) - synchronizes against system installed software - generates missing packages
- * [sync](./usage/commands/sync) - synchronizes against system installed software - generates missing packages
- * [optimize](./usage/commands/optimize) - optimizes installation, reducing space usage
+ * [list](./list) - lists remote or local packages
+ * [search](./search) - searches remote or local packages (alias for list)
+ * [info](./info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
+ * [install](./install) - installs packages from various sources
+ * [pin](./pin) - suppress upgrades for a package
+ * [outdated](./outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
+ * [upgrade](./upgrade) - upgrades packages from various sources
+ * [uninstall](./uninstall) - uninstalls a package
+ * [pack](./pack) - packages up a nuspec to a compiled nupkg
+ * [push](./push) - pushes a compiled nupkg
+ * [new](./new) - generates files necessary for a chocolatey package from a template
+ * [sources](./sources) - view and configure default sources (alias for source)
+ * [source](./source) - view and configure default sources
+ * [config](./config) - Retrieve and configure config file settings
+ * [feature](./feature) - view and configure choco features
+ * [features](./features) - view and configure choco features (alias for feature)
+ * [setapikey](./setapikey) - retrieves or saves an apikey for a particular source (alias for apikey)
+ * [apikey](./apikey) - retrieves or saves an apikey for a particular source
+ * [unpackself](./unpackself) - have chocolatey set itself up
+ * [version](./version) - [DEPRECATED] will be removed in v1 - use [`choco outdated`](./outdated) or `cup <pkg|all> -whatif` instead
+ * [update](./update) - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)
+ * [support](./support) - provides support information
+ * [download](./download) - downloads packages - optionally internalizing all remote resources
+ * [synchronize](./synchronize) - synchronizes against system installed software - generates missing packages
+ * [sync](./sync) - synchronizes against system installed software - generates missing packages
+ * [optimize](./optimize) - optimizes installation, reducing space usage
 
 
 Please run chocolatey with `choco command -help` for specific help on
@@ -107,9 +107,9 @@ based on choco not receiving things you think you are passing to it.
  * For consistency, always use `choco`, not `choco.exe`. Never use
    shortcut commands like `cinst` or `cup`.
  * Always have the command as the first argument to `choco`. e.g.
-   [`choco install`](./usage/commands/install), where [`install`](./usage/commands/install) is the command.
+   [`choco install`](./install), where [`install`](./install) is the command.
  * If there is a subcommand, ensure that is the second argument. e.g.
-   `choco source list`, where `source` is the command and [`list`](./usage/commands/list) is the
+   `choco source list`, where `source` is the command and [`list`](./list) is the
    subcommand.
  * Typically the subject comes next. If installing packages, the
    subject would be the package names, e.g. `choco install pkg1 pkg2`.
@@ -144,8 +144,8 @@ based on choco not receiving things you think you are passing to it.
  * If you are building PowerShell scripts, you can most likely just
    simply use apostrophes surrounding option values, e.g.
    `--source='internal_server'`.
- * Prefer upgrade to install in scripts. You can't [`install`](./usage/commands/install) to a newer
-   version of something, but you can [`choco upgrade`](./usage/commands/upgrade) which will do both
+ * Prefer upgrade to install in scripts. You can't [`install`](./install) to a newer
+   version of something, but you can [`choco upgrade`](./upgrade) which will do both
    upgrade or install (unless switched off explicitly).
  * If you are sharing the script with others, pass `--source` to be
    explicit about where the package is coming from. Use full link and

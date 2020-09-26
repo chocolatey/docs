@@ -129,12 +129,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Uninstall-BinFile](./creating-packages/helpers/uninstall-binfile)
- * [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
- * [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath)
+ * [Uninstall-BinFile](./uninstall-binfile)
+ * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
+ * [Install-ChocolateyPath](./install-chocolateypath)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-BinFile -Full`.
 

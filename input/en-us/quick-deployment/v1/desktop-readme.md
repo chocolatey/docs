@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](./quick-deployment/desktop-readme).
+> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](../desktop-readme).
 
 This system has been pre-configured as a fully functioning C4B environment.
 
@@ -55,18 +55,18 @@ If you run into any issues as you set up your QDE and clients, please reach out 
 
 Additional information can be found in our [Online Documentation](https://chocolatey.org/docs/quick-deployment-environment).
 
-* [QDE Setup](./quick-deployment/v1/setup)
-* [QDE Desktop ReadMe File](./quick-deployment/v1/desktop-readme) (online version of the desktop readme, online is most up to date)
-* [QDE SSL/TLS Setup](./quick-deployment/v1/ssl-setup)
-* [QDE Firewall Changes](./quick-deployment/v1/firewall-changes)
-* [QDE Client Setup](./quick-deployment/v1/client-setup) (setting up your client machines)
+* [QDE Setup](./setup)
+* [QDE Desktop ReadMe File](./desktop-readme) (online version of the desktop readme, online is most up to date)
+* [QDE SSL/TLS Setup](./ssl-setup)
+* [QDE Firewall Changes](./firewall-changes)
+* [QDE Client Setup](./client-setup) (setting up your client machines)
 
 ___
 ## Step 0: Complete Prerequisites
 
 There are some steps you will have taken before you come to this readme. Please make sure you have taken those steps ahead of time. Please see the [Online Documentation](https://chocolatey.org/docs/quick-deployment-environment) for the most up to date information.
 
-* [QDE Setup](./quick-deployment/v1/setup)
+* [QDE Setup](./setup)
 
 ___
 ## Step 1: Expand Disk Size
@@ -95,7 +95,7 @@ This will create the licensed package at `C:\choco-setup\packages` and push it u
 ___
 ## Step 3: Regenerate SSL Certificates
 
-Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](./quick-deployment/ssl-setup) for more details.
+Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](../ssl-setup) for more details.
 
 > :memo: **NOTE**: Please run the below from an administrative PowerShell session.
 
@@ -238,7 +238,7 @@ What does this do?
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >
-> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](./quick-deployment/ssl-setup) for options.
+> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](../ssl-setup) for options.
 >
 > Please contact support if you need help here.
 
@@ -330,4 +330,4 @@ Stop-Process -Name explorer -Force
 ```
 
 ___
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](../)

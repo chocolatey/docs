@@ -23,7 +23,7 @@ The Community Feed (https://chocolatey.org/packages) has a collection of package
 ### Are you a Software Vendor?
 #### Does a Chocolatey package that installs my software violate distribution rights?
 
-In most cases no. Most packages you will find on the community feed, also known as https://chocolatey.org/packages use automation scripts to download the software from the [official distribution point](./additional-information/legal#distributions-aka-chocolatey-packages).
+In most cases no. Most packages you will find on the community feed, also known as https://chocolatey.org/packages use automation scripts to download the software from the [official distribution point](../additional-information/legal#distributions-aka-chocolatey-packages).
 
 If you visit the package page and slide down to the Files heading, you can see what is included in the package. Many times you will see only a chocolateyInstall.ps1 and a chocolateyUninstall.ps1. You can also see the contents of those files right here so you can review what they are doing (the language is PowerShell, but with most packages it is typically easy to follow what they are doing).
 
@@ -35,7 +35,7 @@ If you don't trust the package page (or if the package was published before July
 
 Many of the packages may look like they include binaries because of the result after an install, but that's just a fantastic effect of the automation scripts working smoothly and almost unnoticeably.
 
-We take distribution rights very seriously - see [legal](./additional-information/legal#distributions-aka-chocolatey-packages). If you do happen to find that the package ***is*** violating your distribution rights, please see the next section.
+We take distribution rights very seriously - see [legal](../additional-information/legal#distributions-aka-chocolatey-packages). If you do happen to find that the package ***is*** violating your distribution rights, please see the next section.
 
 #### The package IS violating distribution rights
 You've checked the previous section and it doesn't apply, and you've found that the package ***is*** violating distribution rights as it bundles software binaries without your permission and/or license doesn't allow for it.
@@ -59,7 +59,7 @@ Use the Contact Maintainers link on the package page of the community feed or th
 ![contact maintainers link](/assets/images/triage-maintainers.jpg)
 
 ### Package Request? Package Missing?
-If you are looking for packages to be added to the community feed (aka https://chocolatey.org/packages) - you are part of the community and we welcome your packages. It's super simple to create and maintain packages, see [Creating packages](./creating-packages/create-packages).
+If you are looking for packages to be added to the community feed (aka https://chocolatey.org/packages) - you are part of the community and we welcome your packages. It's super simple to create and maintain packages, see [Creating packages](../creating-packages/create-packages).
 
 When it comes to community packages, we really want folks who are using the software to be package maintainers versus folks who may not be using the software. So when you are asking for other folks to add packages, please consider that it may be better for you to keep the package up to date than someone else who may not be invested in ensuring it stays updated.
 

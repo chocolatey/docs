@@ -31,23 +31,23 @@ RedirectFrom: docs/helpers-reference
 
 ## Summary
 
-In your Chocolatey packaging, you have the ability to use these functions (and others with Chocolatey's [PowerShell Extensions](./how-tos/create-extensions)) to work with all aspects of software management. Keep in mind Chocolatey's automation scripts are just PowerShell, so you can do manage anything you want.
+In your Chocolatey packaging, you have the ability to use these functions (and others with Chocolatey's [PowerShell Extensions](../../how-tos/create-extensions)) to work with all aspects of software management. Keep in mind Chocolatey's automation scripts are just PowerShell, so you can do manage anything you want.
 
 **NOTE**: These scripts are for package scripts, not for use directly in PowerShell. This is in the create packages section, not the using Chocolatey section.
 
 ## Main Functions
 
-These functions call other functions and many times may be the only thing you need in your [chocolateyInstall.ps1 file](./chocolatey-install-ps1).
+These functions call other functions and many times may be the only thing you need in your [chocolateyInstall.ps1 file](../../chocolatey-install-ps1).
 
-* [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
-* [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
-* [Install-ChocolateyPowershellCommand](./creating-packages/helpers/install-chocolateypowershellcommand)
-* [Install-ChocolateyVsixPackage](./creating-packages/helpers/install-chocolateyvsixpackage)
+* [Install-ChocolateyPackage](./install-chocolateypackage)
+* [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+* [Install-ChocolateyPowershellCommand](./install-chocolateypowershellcommand)
+* [Install-ChocolateyVsixPackage](./install-chocolateyvsixpackage)
 
 ## Error / Success Functions
 
-* [Write-ChocolateySuccess](./creating-packages/helpers/write-chocolateysuccess) - **DEPRECATED**
-* [Write-ChocolateyFailure](./creating-packages/helpers/write-chocolateyfailure) - **DEPRECATED**
+* [Write-ChocolateySuccess](./write-chocolateysuccess) - **DEPRECATED**
+* [Write-ChocolateyFailure](./write-chocolateyfailure) - **DEPRECATED**
 
 You really don't need a try catch with Chocolatey PowerShell files anymore.
 
@@ -57,13 +57,13 @@ You really don't need a try catch with Chocolatey PowerShell files anymore.
 
 When creating packages that need to run one of the following commands below, one should add the tag `admin` to the nuspec.
 
-* [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
-* [Start-ChocolateyProcessAsAdmin](./creating-packages/helpers/start-chocolateyprocessasadmin)
-* [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
-* [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath) - when specifying machine path
-* [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable) - when specifying machine path
-* [Install-ChocolateyExplorerMenuItem](./creating-packages/helpers/install-chocolateyexplorermenuitem)
-* [Install-ChocolateyFileAssociation](./creating-packages/helpers/install-chocolateyfileassociation)
+* [Install-ChocolateyPackage](./install-chocolateypackage)
+* [Start-ChocolateyProcessAsAdmin](./start-chocolateyprocessasadmin)
+* [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+* [Install-ChocolateyPath](./install-chocolateypath) - when specifying machine path
+* [Install-ChocolateyEnvironmentVariable](./install-chocolateyenvironmentvariable) - when specifying machine path
+* [Install-ChocolateyExplorerMenuItem](./install-chocolateyexplorermenuitem)
+* [Install-ChocolateyFileAssociation](./install-chocolateyfileassociation)
 
 ### Non-Administrator Safe Functions
 
@@ -71,72 +71,72 @@ When you have a need to run Chocolatey without Administrative access required (n
 
 These are the functions from above as one list.
 
-* [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
-* [Install-ChocolateyPowershellCommand](./creating-packages/helpers/install-chocolateypowershellcommand)
-* [Write-ChocolateySuccess](./creating-packages/helpers/write-chocolateysuccess)
-* [Write-ChocolateyFailure](./creating-packages/helpers/write-chocolateyfailure)
-* [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
-* [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
-* [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath) - when specifying user path
-* [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable) - when specifying user path
-* [Install-ChocolateyDesktopLink](./creating-packages/helpers/install-chocolateydesktoplink) - **DEPRECATED** - see [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
-* [Install-ChocolateyPinnedTaskBarItem](./creating-packages/helpers/install-chocolateypinnedtaskbaritem)
-* [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut) - v0.9.9+
-* [Update-SessionEnvironment](./creating-packages/helpers/update-sessionenvironment)
-* [Get-PackageParameters](./creating-packages/helpers/get-packageparameters) - v0.10.8+
+* [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+* [Install-ChocolateyPowershellCommand](./install-chocolateypowershellcommand)
+* [Write-ChocolateySuccess](./write-chocolateysuccess)
+* [Write-ChocolateyFailure](./write-chocolateyfailure)
+* [Get-ChocolateyWebFile](./get-chocolateywebfile)
+* [Get-ChocolateyUnzip](./get-chocolateyunzip)
+* [Install-ChocolateyPath](./install-chocolateypath) - when specifying user path
+* [Install-ChocolateyEnvironmentVariable](./install-chocolateyenvironmentvariable) - when specifying user path
+* [Install-ChocolateyDesktopLink](./install-chocolateydesktoplink) - **DEPRECATED** - see [Install-ChocolateyShortcut](./install-chocolateyshortcut)
+* [Install-ChocolateyPinnedTaskBarItem](./install-chocolateypinnedtaskbaritem)
+* [Install-ChocolateyShortcut](./install-chocolateyshortcut) - v0.9.9+
+* [Update-SessionEnvironment](./update-sessionenvironment)
+* [Get-PackageParameters](./get-packageparameters) - v0.10.8+
 
 ## Complete List (alphabetical order)
 
- * [Format-FileSize](./creating-packages/helpers/format-filesize)
- * [Get-ChecksumValid](./creating-packages/helpers/get-checksumvalid)
- * [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
- * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
- * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
- * [Get-EnvironmentVariableNames](./creating-packages/helpers/get-environmentvariablenames)
- * [Get-FtpFile](./creating-packages/helpers/get-ftpfile)
- * [Get-OSArchitectureWidth](./creating-packages/helpers/get-osarchitecturewidth)
- * [Get-PackageParameters](./creating-packages/helpers/get-packageparameters)
- * [Get-ToolsLocation](./creating-packages/helpers/get-toolslocation)
- * [Get-UACEnabled](./creating-packages/helpers/get-uacenabled)
- * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
- * [Get-VirusCheckValid](./creating-packages/helpers/get-viruscheckvalid)
- * [Get-WebFile](./creating-packages/helpers/get-webfile)
- * [Get-WebFileName](./creating-packages/helpers/get-webfilename)
- * [Get-WebHeaders](./creating-packages/helpers/get-webheaders)
- * [Install-BinFile](./creating-packages/helpers/install-binfile)
- * [Install-ChocolateyDesktopLink](./creating-packages/helpers/install-chocolateydesktoplink)
- * [Install-ChocolateyEnvironmentVariable](./creating-packages/helpers/install-chocolateyenvironmentvariable)
- * [Install-ChocolateyExplorerMenuItem](./creating-packages/helpers/install-chocolateyexplorermenuitem)
- * [Install-ChocolateyFileAssociation](./creating-packages/helpers/install-chocolateyfileassociation)
- * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
- * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath)
- * [Install-ChocolateyPinnedTaskBarItem](./creating-packages/helpers/install-chocolateypinnedtaskbaritem)
- * [Install-ChocolateyPowershellCommand](./creating-packages/helpers/install-chocolateypowershellcommand)
- * [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
- * [Install-ChocolateyVsixPackage](./creating-packages/helpers/install-chocolateyvsixpackage)
- * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
- * [Install-Vsix](./creating-packages/helpers/install-vsix)
- * [Set-EnvironmentVariable](./creating-packages/helpers/set-environmentvariable)
- * [Set-PowerShellExitCode](./creating-packages/helpers/set-powershellexitcode)
- * [Start-ChocolateyProcessAsAdmin](./creating-packages/helpers/start-chocolateyprocessasadmin)
- * [Test-ProcessAdminRights](./creating-packages/helpers/test-processadminrights)
- * [Uninstall-BinFile](./creating-packages/helpers/uninstall-binfile)
- * [Uninstall-ChocolateyEnvironmentVariable](./creating-packages/helpers/uninstall-chocolateyenvironmentvariable)
- * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateypackage)
- * [Uninstall-ChocolateyZipPackage](./creating-packages/helpers/uninstall-chocolateyzippackage)
- * [Update-SessionEnvironment](./creating-packages/helpers/update-sessionenvironment)
- * [Write-ChocolateyFailure](./creating-packages/helpers/write-chocolateyfailure)
- * [Write-ChocolateySuccess](./creating-packages/helpers/write-chocolateysuccess)
- * [Write-FileUpdateLog](./creating-packages/helpers/write-fileupdatelog)
- * [Write-FunctionCallLogMessage](./creating-packages/helpers/write-functioncalllogmessage)
+ * [Format-FileSize](./format-filesize)
+ * [Get-ChecksumValid](./get-checksumvalid)
+ * [Get-ChocolateyUnzip](./get-chocolateyunzip)
+ * [Get-ChocolateyWebFile](./get-chocolateywebfile)
+ * [Get-EnvironmentVariable](./get-environmentvariable)
+ * [Get-EnvironmentVariableNames](./get-environmentvariablenames)
+ * [Get-FtpFile](./get-ftpfile)
+ * [Get-OSArchitectureWidth](./get-osarchitecturewidth)
+ * [Get-PackageParameters](./get-packageparameters)
+ * [Get-ToolsLocation](./get-toolslocation)
+ * [Get-UACEnabled](./get-uacenabled)
+ * [Get-UninstallRegistryKey](./get-uninstallregistrykey)
+ * [Get-VirusCheckValid](./get-viruscheckvalid)
+ * [Get-WebFile](./get-webfile)
+ * [Get-WebFileName](./get-webfilename)
+ * [Get-WebHeaders](./get-webheaders)
+ * [Install-BinFile](./install-binfile)
+ * [Install-ChocolateyDesktopLink](./install-chocolateydesktoplink)
+ * [Install-ChocolateyEnvironmentVariable](./install-chocolateyenvironmentvariable)
+ * [Install-ChocolateyExplorerMenuItem](./install-chocolateyexplorermenuitem)
+ * [Install-ChocolateyFileAssociation](./install-chocolateyfileassociation)
+ * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+ * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Install-ChocolateyPath](./install-chocolateypath)
+ * [Install-ChocolateyPinnedTaskBarItem](./install-chocolateypinnedtaskbaritem)
+ * [Install-ChocolateyPowershellCommand](./install-chocolateypowershellcommand)
+ * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
+ * [Install-ChocolateyVsixPackage](./install-chocolateyvsixpackage)
+ * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+ * [Install-Vsix](./install-vsix)
+ * [Set-EnvironmentVariable](./set-environmentvariable)
+ * [Set-PowerShellExitCode](./set-powershellexitcode)
+ * [Start-ChocolateyProcessAsAdmin](./start-chocolateyprocessasadmin)
+ * [Test-ProcessAdminRights](./test-processadminrights)
+ * [Uninstall-BinFile](./uninstall-binfile)
+ * [Uninstall-ChocolateyEnvironmentVariable](./uninstall-chocolateyenvironmentvariable)
+ * [Uninstall-ChocolateyPackage](./uninstall-chocolateypackage)
+ * [Uninstall-ChocolateyZipPackage](./uninstall-chocolateyzippackage)
+ * [Update-SessionEnvironment](./update-sessionenvironment)
+ * [Write-ChocolateyFailure](./write-chocolateyfailure)
+ * [Write-ChocolateySuccess](./write-chocolateysuccess)
+ * [Write-FileUpdateLog](./write-fileupdatelog)
+ * [Write-FunctionCallLogMessage](./write-functioncalllogmessage)
 
 ## Chocolatey for Business Functions
 
- * [Install-ChocolateyWindowsService](./creating-packages/helpers/install-chocolateywindowsservice)
- * [Start-ChocolateyWindowsService](./creating-packages/helpers/start-chocolateywindowsservice)
- * [Stop-ChocolateyWindowsService](./creating-packages/helpers/stop-chocolateywindowsservice)
- * [Uninstall-ChocolateyWindowsService](./creating-packages/helpers/uninstall-chocolateywindowsservice)
+ * [Install-ChocolateyWindowsService](./install-chocolateywindowsservice)
+ * [Start-ChocolateyWindowsService](./start-chocolateywindowsservice)
+ * [Stop-ChocolateyWindowsService](./stop-chocolateywindowsservice)
+ * [Uninstall-ChocolateyWindowsService](./uninstall-chocolateywindowsservice)
 
 ## Variables
 

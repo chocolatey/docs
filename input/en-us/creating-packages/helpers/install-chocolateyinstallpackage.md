@@ -304,13 +304,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateypackage)
- * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
- * [Start-ChocolateyProcessAsAdmin](./creating-packages/helpers/start-chocolateyprocessasadmin)
+ * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Uninstall-ChocolateyPackage](./uninstall-chocolateypackage)
+ * [Get-UninstallRegistryKey](./get-uninstallregistrykey)
+ * [Start-ChocolateyProcessAsAdmin](./start-chocolateyprocessasadmin)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyInstallPackage -Full`.
 

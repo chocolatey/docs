@@ -42,7 +42,7 @@ Congratulations on your recent purchase of a licensed edition of Chocolatey! If 
 <!-- /TOC -->
 
 ## Internal / Organizational Chocolatey Deployments
-Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./how-tos/setup-offline-installation) in tandem with this article.
+Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../how-tos/setup-offline-installation) in tandem with this article.
 
 ## Some Administrative Actions
 
@@ -101,11 +101,11 @@ Here's the whole process for installing your license and installing the licensed
 > :memo: **NOTE**
 >
 > **Organization?**
-> If you are an organization deploying the licensed edition, you may want to review [the organizational deployment guide](./how-tos/setup-offline-installation) in addition to this for options to deploy to more than one machine.
+> If you are an organization deploying the licensed edition, you may want to review [the organizational deployment guide](../how-tos/setup-offline-installation) in addition to this for options to deploy to more than one machine.
 >
 > When deploying the license file out to many machines it is recommended to wrap the license placement logic into a Chocolatey package, embedding the license into the package. This is super helpful when you [upgrade the license files](#how-do-i-upgrade-the-license-file) later when renewing or purchasing the full edition.
 >
-> Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./how-tos/setup-offline-installation) where we have a script you can run that will create the license package automagically.
+> Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../how-tos/setup-offline-installation) where we have a script you can run that will create the license package automagically.
 
 ### How Do I Install a Local nupkg File?
 
@@ -161,7 +161,7 @@ Your license automatically adds the licensed source.
 
 ### How Do I Upgrade the License File?
 
-You would simply place the new license file on top of the existing license file, overwriting it. This can be done in many ways, the recommended way is to create a package for the license itself. See [Create a license for the package](How-To-Setup-Offline-Installation#exercise-4-create-a-package-for-the-license) as part of [the organizational deployment guide](./how-tos/setup-offline-installation).
+You would simply place the new license file on top of the existing license file, overwriting it. This can be done in many ways, the recommended way is to create a package for the license itself. See [Create a license for the package](How-To-Setup-Offline-Installation#exercise-4-create-a-package-for-the-license) as part of [the organizational deployment guide](../how-tos/setup-offline-installation).
 
 ### How Do I Upgrade the Trial Edition?
 
@@ -421,7 +421,7 @@ To be able to install it, you must first have the licensed edition properly inst
 
 * `choco install chocolatey-agent <options>`
 
-For more on the agent service, please see [Agent Service](./features/paid/agent-service).
+For more on the agent service, please see [Agent Service](../features/paid/agent-service).
 
 ### Ensure the Chocolatey Agent Service with Puppet
 

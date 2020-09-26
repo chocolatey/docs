@@ -16,7 +16,7 @@ ShowInSidebar: false
  `choco list -lo`.
 
  If you want to know what has available upgrades, use
- `choco upgrade <pkg|all> -whatif` or [`choco outdated`](./usage/commands/outdated).
+ `choco upgrade <pkg|all> -whatif` or [`choco outdated`](./outdated).
 
 <!-- TOC -->
 
@@ -32,7 +32,7 @@ ShowInSidebar: false
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -145,7 +145,7 @@ Includes [default options/switches](./usage/commands/reference#default-options-a
 
 ~~~
 
-[Command Reference](./usage/commands/reference)
+[Command Reference](./reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco version -h`.

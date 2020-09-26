@@ -84,8 +84,8 @@ ____
 ## Getting CCM
 CCM is only available for Chocolatey for Business (C4B) customers. If you are a C4B customer, you can head to the install components section:
 
-* [Central Management Setup](./central-management/setup)
-* [Central Management Client Setup](./central-management/setup-client)
+* [Central Management Setup](./setup)
+* [Central Management Client Setup](./setup-client)
 
 If you are not a customer yet, you can [reach out for a trial](https://chocolatey.org/contact/trial).
 
@@ -95,36 +95,36 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ___
 ## Stay Up To Date
-* [Release Notes Central Management](./general/release-notes/central-management)
+* [Release Notes Central Management](../general/release-notes/central-management)
 * [Release Announcements Only Mailing List](https://groups.google.com/group/chocolatey-announce)
 
 ___
 ## Links
 
 ### Setup / Installation
-* [Central Management Setup](./central-management/setup)
-    * [Central Management Database Setup](./central-management/setup-database)
-    * [Central Management Service Setup](./central-management/setup-service)
-    * [Central Management Web Setup](./central-management/setup-web)
-* [Central Management Client Setup](./central-management/setup-client)
+* [Central Management Setup](./setup)
+    * [Central Management Database Setup](./setup-database)
+    * [Central Management Service Setup](./setup-service)
+    * [Central Management Web Setup](./setup-web)
+* [Central Management Client Setup](./setup-client)
 
 ### Setup / Upgrade
-* [Upgrading Central Management](./central-management/setup-upgrade)
+* [Upgrading Central Management](./setup-upgrade)
 
 ### Using Central Management
 
-* [CCM Computers](./central-management/computers)
-* [CCM Software](./central-management/software)
-* [CCM Groups](./central-management/groups)
-* [CCM Deployments](./central-management/deployments)
-* [CCM Reports](./central-management/reports)
+* [CCM Computers](./computers)
+* [CCM Software](./software)
+* [CCM Groups](./groups)
+* [CCM Deployments](./deployments)
+* [CCM Reports](./reports)
 
 ![CCM Overview](/assets/images/features/ccm/ccm_overview.jpg)
 
 ___
 ## Related Articles
 
-* [Quick Deployment Environment (QDE)](./quick-deployment)
+* [Quick Deployment Environment (QDE)](../quick-deployment)
 
 ___
 ## Roadmap
@@ -167,7 +167,7 @@ Chocolatey Central Management is made up of a number of components, so there wil
 
 ### Where can I find the changelog or release notes for Chocolatey Central Management?
 
-Please see [Release Notes Central Management](./general/release-notes/central-management).
+Please see [Release Notes Central Management](../general/release-notes/central-management).
 
 ### How do I get support?
 
@@ -175,7 +175,7 @@ Please run `choco support` from a licensed edition and follow the instructions.
 
 ### How do I set up Chocolatey Central Management?
 
-You can start from a pre-configured environment known as [Quick Deployment Environment (QDE)](./quick-deployment), or see [Setup / Installation](#setup--installation).
+You can start from a pre-configured environment known as [Quick Deployment Environment (QDE)](../quick-deployment), or see [Setup / Installation](#setup--installation).
 
 ### What is the CCM compatibility matrix?
 Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](#ccm-component-compatibility-matrix) for details.

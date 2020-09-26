@@ -285,9 +285,9 @@ MSI repackaging is always preferred. At the end of creating that, you have somet
 ___
 ## Chocolatey Central Management
 
-Chocolatey for Business has centralized reporting and supports endpoint management through [Chocolatey Central Management (CCM)](./central-management). On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
+Chocolatey for Business has centralized reporting and supports endpoint management through [Chocolatey Central Management (CCM)](../../central-management). On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
 
-For more information on Central Management, please see [Chocolatey Central Management](./central-management).
+For more information on Central Management, please see [Chocolatey Central Management](../../central-management).
 
 ___
 ## Setup
@@ -355,7 +355,7 @@ To set Chocolatey in background mode, you need to run the following:
 * `choco upgrade chocolatey-agent <options>` (see [agent install options](#chocolatey-agent-install-options))
 * `choco feature disable --name="'showNonElevatedWarnings'"` - requires Chocolatey v0.10.4+ to set.
 * `choco feature enable --name="'useBackgroundService'"`
-* You also need to opt in sources in for self-service packages. See [choco source](./usage/commands/source) (and `--allow-self-service`). You can also run `choco source -?` to get the help menu.
+* You also need to opt in sources in for self-service packages. See [choco source](../../usage/commands/source) (and `--allow-self-service`). You can also run `choco source -?` to get the help menu.
     * OPTIONAL (not recommended): Alternatively, you can allow any configured source to be used for self-service by running the following: `choco feature disable --name="'useBackgroundServiceWithSelfServiceSourcesOnly'"` (requires Chocolatey Extension v1.10.0+). We do not recommend this as it could be a security finding if you shut it off.
 * OPTIONAL (highly recommended): If you want self-service to apply only to non-administrators, run `choco feature enable --name="'useBackgroundServiceWithNonAdministratorsOnly'"` (requires Chocolatey Extension v1.11.1+). Do understand this means that a real non-administrator, not an administrator in a non-elevated UAC context (that scenario will go the normal route and will not go through background mode).
 * OPTIONAL (varied recommendations): If you want to configure custom commands (not just install/upgrade), use something like `choco config set backgroundServiceAllowedCommands "install,upgrade,pin,sync"` (with the commands you want to allow, requires Chocolatey Extension v1.12.4+). See [commands consideration](#command-customization-consideration) below.
@@ -429,7 +429,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 ___
 ### Chocolatey Central Management Agent Setup
-Please see [Central Management Client Setup](./central-management/setup-client) for details.
+Please see [Central Management Client Setup](../../central-management/setup-client) for details.
 
 > :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
@@ -458,7 +458,7 @@ Once you have the agent service installed and Chocolatey for Business configured
 The background service and Central Management UI Console will only be available in C4B (Chocolatey for Business).
 
 ### I have questions regarding Agent and Central Management
-Please see [Central Management Client Setup](./central-management/setup-client) as the FAQs related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](../../central-management/setup-client) as the FAQs related to Central Management (CCM) are kept there.
 
 ### I have Puppet or some other configuration management tool (RMM tool, infrastructure automation tool, etc.) that also runs Chocolatey. Can I configure it to skip background mode?
 Yes! Add `--run-actual` to your install options. Most likely your tool won't need to be reconfigured though as it will just work with background mode. You will need Chocolatey v0.10.3+ installed across your environment so Chocolatey handles the unknown arguments appropriately.
@@ -510,7 +510,7 @@ Chocolatey doesn't stop unconfigured sources for install, it lets the agent do s
 The one exception is when someone calls `--run-actual` in their arguments. But there is no escalation of privilege here because they would be running that under their own user context and thus only have the permissions granted to them already.
 
 ### We want to set up the chocolatey agent service to use a domain account that will have local admin on each box. Can we do this?
-Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [configuration](./usage/chocolatey-configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
+Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [configuration](../../usage/chocolatey-configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
 * `/Username:` - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user will need to be a member of local administrators due to the privileges needed for this service.
 * `/Password:` - optional password for the user.
@@ -595,7 +595,7 @@ The installation folder for `chocolatey-agent` is at `$env:ChocolateyInstall\lib
 ___
 ## Common Errors and Resolutions
 ### I have issues regarding Central Management
-Please see [Central Management Client Setup](./central-management/setup-client) as the common errors and resolutions related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](../../central-management/setup-client) as the common errors and resolutions related to Central Management (CCM) are kept there.
 
 ### Installs from custom source locations are not allowed in background mode. Please remove custom source and try again using default (configured) package source locations.
 You can not pass custom source arguments to Chocolatey, it will error. You need to set up sources in the Chocolatey configuration and any that are marked as allowed for self-service will be passed by the background service.
@@ -607,7 +607,7 @@ This means you need to opt a source into self-service (new in Chocolatey Extensi
 
 This just involves ensuring a source is set so that it allows self-service. To do this you run `choco source add -n name -s location <--other details need repeated> --allow-self-service`. Editing a source happens when the name is the same in `choco source add`.
 
-To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](./usage/chocolatey-configuration#self-service-background-mode)
+To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](../../usage/chocolatey-configuration#self-service-background-mode)
 
 ### I'm having trouble seeing packages on a file share source
 Starting with Chocolatey Agent v0.8.0+, the service will default an install to a local administrative user `ChocolateyLocalAdmin`, but before that it installed as LocalSystem by default. These accounts may not have network access to UNC shares. We recommend changing the service to a named account that is a local admin that would also have network access (or setting machines into an active directory group and explicitly giving that group read permissions to the share and ACL). To specify your own user, you can do that at install time with [package parameters](#chocolatey-agent-install-options), or you can do that in the Service Manager properties for the service itself (future upgrades would need you to pass that user/pass at least the first time).

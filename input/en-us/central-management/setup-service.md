@@ -75,7 +75,7 @@ ___
 ____
 ## Step 1: Complete Prerequisites
 
-* > :warning: The [database](./central-management/setup-database) must be setup and available, along with [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+* > :warning: The [database](./setup-database) must be setup and available, along with [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 4+
 * .NET Framework 4.6.1+
@@ -176,20 +176,20 @@ When Chocolatey manages the password for a local administrator, it creates a ver
 ### Scenarios
 #### SQL Server Windows Authentication
 ##### Use Active Directory Domain Account
-Scenario 1: Active Directory - you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication).
+Scenario 1: Active Directory - you have set up the [database](./setup-database) to use Windows Authentication (or Mixed Mode Authentication).
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
 ```
 > :warning: **WARNING**
 >
-> Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Local Windows Account to Local SQL Server
-Scenario 2: Monolithic - you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
+Scenario 2: Monolithic - you have set up the [database](./setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
 
 * Specify User:
 
@@ -199,7 +199,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :warning: **WARNING**
 >
-> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 * ChocolateyLocalAdmin User:
 
@@ -209,7 +209,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :warning: **WARNING**
 >
-> Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
@@ -229,7 +229,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 
 ##### Use Local Windows Account to Remote SQL Server
-Scenario 3: you have set up the [database](./central-management/setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
+Scenario 3: you have set up the [database](./setup-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
 > :warning: **WARNING**
 >
@@ -241,7 +241,7 @@ It's worth noting here that the local Windows user `ChocolateyLocalAdmin` on two
 
 #### SQL Server Account Authentication
 ##### Use SQL Server Authentication Locally
-Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](./central-management/setup-database) to use Mixed Mode Authentication.
+Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](./setup-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -249,7 +249,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 * SQL Server Express:
 
@@ -259,11 +259,11 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 
 ##### Use SQL Server Account to Remote SQL Server
-Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](./central-management/setup-database) to use Mixed Mode Authentication.
+Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](./setup-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -271,7 +271,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./central-management/setup-database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./setup-database#step-2-set-up-sql-server-logins-and-access).
 
 ___
 ## Step 3: Verify Installation
@@ -380,7 +380,7 @@ We are looking to do this in a future release. We may make the schedule configur
 Yes, absolutely. If you use C4B's PowerShell Windows Services code, you will be able to install services and have Chocolatey manage the password for those as well.
 
 ### What is the CCM compatibility matrix?
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](./central-management#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](./index#ccm-component-compatibility-matrix) for details.
 
 ### I entered incorrect database details on install, do I need to reinstall to fix that?
 It depends. You can simply go to the appsettings.json file and adjust the connection string to be plaintext. It will remain in plaintext though (at least until upgrade), so if you have actual password details you need to keep secure, you should do a force installation.
@@ -436,13 +436,13 @@ You may see messaging like the following in the chocolatey-agent.log:
  requirements, e.g. Message, Transport, None).
 ```
 
-This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Central Management to v0.2.0+ at your earliest convenience. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](./central-management#ccm-component-compatibility-matrix).
+This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Central Management to v0.2.0+ at your earliest convenience. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](./index#ccm-component-compatibility-matrix).
 
 ### Unable to check for deployments from CCM
-This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](./central-management#ccm-component-compatibility-matrix). You may need to be on at least v0.3.0 and agents on v0.11.0+ if you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
+This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](./index#ccm-component-compatibility-matrix). You may need to be on at least v0.3.0 and agents on v0.11.0+ if you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
 
 ### We are seeing the error "attempted to call report_computer_information with an improper passphrase" in the CCM Service log
-If you are in the CCM service logs, you may be seeing the above error. That is a bug that was found with the communication of CCM v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in CCM v0.3.0 and Chocolatey Agent v0.11.0. Please see the [CCM Component Compatibility Matrix](./central-management#ccm-component-compatibility-matrix) and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
+If you are in the CCM service logs, you may be seeing the above error. That is a bug that was found with the communication of CCM v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in CCM v0.3.0 and Chocolatey Agent v0.11.0. Please see the [CCM Component Compatibility Matrix](./index#ccm-component-compatibility-matrix) and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
 
 ### The client reports successful checkin, but nothing is showing up in CCM
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
@@ -526,4 +526,4 @@ You are attempting to set up a user that is not in the local Administrators grou
 
 
 ___
-[Central Management Setup](./central-management/setup) | [Chocolatey Central Management](./central-management)
+[Central Management Setup](./setup) | [Chocolatey Central Management](./)

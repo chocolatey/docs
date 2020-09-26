@@ -201,7 +201,7 @@ In over 70% of the cases it will, but not always. Even with this in mind, it sti
 Unfortunately, some installers out there are just a pain to work with. In the case of custom installers, you may be able to find the silent arguments for install and uninstall by searching online. If you can not find anything, consider unpacking the installer and putting the software binaries directly in the package.
 
 ### Does it create auto unattend files?
-Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](./features/paid/automatically-recompile-packages) to take advantage of thousands of existing packages without a need for internet access.
+Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](./automatically-recompile-packages) to take advantage of thousands of existing packages without a need for internet access.
 
 ### Does it work with zip archive?
 Yes, but somewhat naively. It will generate the packaging to unpack the archive for both 7z and zip files.
@@ -212,4 +212,4 @@ Yes, as of Licensed version v1.6.0+. Use `--use-original-location`.
 ## Common Issues and Resolutions
 
 ### I get "Name is required. Please pass in a name for the new package."
-This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](./usage/installation-licensed) for more details.
+This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](../../usage/installation-licensed) for more details.

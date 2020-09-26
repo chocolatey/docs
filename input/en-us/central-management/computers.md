@@ -36,7 +36,7 @@ Client computers (agents) will show up in Central Management automatically as lo
 1. The `centralManagementServiceUrl` is set correctly in the chocolatey configuration file (typically to `https://<FQDN_to_CCM_service_host>:24020/ChocolateyManagementService`)
 1. The client has access to the above URL (this may require opening the port in your firewall, etc.) so that it can resolve the SSL certificate necessary to communicate with the CCM service.
 
-Please see [Central Management Client Setup](./central-management/setup-client) for more details and setup.
+Please see [Central Management Client Setup](./setup-client) for more details and setup.
 
 ___
 ## Viewing Installed Software on a Computer
@@ -74,15 +74,15 @@ You need to check the CCM service logs. The agent will always report success whe
 
 The logs are located at `$env:ChocolateyInstall\logs\ccm-service.log`. If you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
-For more common errors related to checking in, see the [setup section (and component setup sub-sections)](./central-management/setup) as they dive deeper into common errors and resolutions related to things such as this.
+For more common errors related to checking in, see the [setup section (and component setup sub-sections)](./setup) as they dive deeper into common errors and resolutions related to things such as this.
 
 ___
 ## Related Topics
 
-* [Chocolatey Central Management](./central-management)
-* [Central Management - Software](./central-management/software)
-* [Central Management - Groups](./central-management/groups)
-* [Central Management - Reports](./central-management/reports)
+* [Chocolatey Central Management](./)
+* [Central Management - Software](./software)
+* [Central Management - Groups](./groups)
+* [Central Management - Reports](./reports)
 
 ___
-[Chocolatey Central Management](./central-management)
+[Chocolatey Central Management](./)

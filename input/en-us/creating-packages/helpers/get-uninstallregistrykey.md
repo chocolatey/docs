@@ -140,12 +140,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
- * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateypackage)
+ * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+ * [Uninstall-ChocolateyPackage](./uninstall-chocolateypackage)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-UninstallRegistryKey -Full`.
 

@@ -55,6 +55,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from licensed code.

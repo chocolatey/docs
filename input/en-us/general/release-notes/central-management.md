@@ -8,16 +8,16 @@ ShowInSidebar: false
 
 # Chocolatey Release Notes - Chocolatey Central Management
 ## Summary
-This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](./central-management).
+This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](../../central-management).
 
-* Installation - [Central Management Setup](./central-management/setup)
-* Upgrade - [Central Management Upgrade](./central-management/setup-upgrade)
+* Installation - [Central Management Setup](../../central-management/setup)
+* Upgrade - [Central Management Upgrade](../../central-management/setup-upgrade)
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./general/release-notes/extension) and [Chocolatey Agent Release Notes](./general/release-notes/agent).
+* Refer to [Open Source Release Notes](./open-source) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./extension) and [Chocolatey Agent Release Notes](./agent).
 
 ## Known Issues
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
@@ -35,7 +35,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## 0.2.0 (June 18, 2020)
 Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://chocolatey.org/blog/announcing-deployments). We've also overhauled the documentation to make it understandable and approachable. Please see https://chocolatey.org/docs/central-management.
 
-> :memo: **NOTE**: Log locations have changed. Please see [Central Management FAQs](./central-management#faqs) for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Central Management FAQs](../../central-management#faqs) for more information.
 
 ### FEATURES
 * [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments):
@@ -120,8 +120,8 @@ Initial preview release
 * Fix - Web Site - Ensure consistent Date/Time Formatting used everywhere
 * Fix - Web Site - Corrected duplicate display of search input box on some screens
 * Fix - Web Site - Error when attempting to sort by any column in table on Computer Details screen
-* Fix - Web Site - Erorr when attempting to sort by Name or Package Title column in table on Software screen
-* Fix - Web Site - Tab does not sort by oudated first on Software screen
+* Fix - Web Site - Error when attempting to sort by Name or Package Title column in table on Software screen
+* Fix - Web Site - Tab does not sort by outdated first on Software screen
 * Fix - Web Site - Timezone modification doesn't provide useful information to user
 * Fix - Web Site - Only show Software that is installed on at least one machine
 * Fix - Web Site - Excel Export generates errors when DateTime values are included
@@ -138,9 +138,9 @@ Initial preview release
 * Installation - Verify and usage persisted appsettings.json file during upgrade
 * Installation - Reduce issues unpacking web package by shortening paths in packaging
 * Uninstallation - Remove modifications that were done as part of installation
-* Database - Don't attempt to seed database tables everytime application starts
-* Packaging - Removed unneccessary files from package, making it much smaller
-* Packaging - Added requied dependencies to packages
+* Database - Don't attempt to seed database tables every time application starts
+* Packaging - Removed unnecessary files from package, making it much smaller
+* Packaging - Added required dependencies to packages
 * Packaging - Add information about available installation parameters to package description
 * Service - Allow modification of configuration settings without the need to restart Windows Service
 

@@ -173,13 +173,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
- * [Uninstall-ChocolateyZipPackage](./creating-packages/helpers/uninstall-chocolateyzippackage)
- * [Get-UninstallRegistryKey](./creating-packages/helpers/get-uninstallregistrykey)
+ * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+ * [Uninstall-ChocolateyZipPackage](./uninstall-chocolateyzippackage)
+ * [Get-UninstallRegistryKey](./get-uninstallregistrykey)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-ChocolateyPackage -Full`.
 

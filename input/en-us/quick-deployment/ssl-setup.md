@@ -10,13 +10,13 @@ RedirectFrom: docs/quick-deployment-ssl-setup
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 SSL Setup page](./quick-deployment/v1/ssl-setup).
+> If you're using an older version of QDE, please refer to the [QDEv1 SSL Setup page](./v1/ssl-setup).
 
 During normal setup, all required SSL certificates are retrieved or generated as needed.
 You will only need to run this script yourself in the following cases:
 
 * You want to expose this to the internet so clients can connect from outside your network, and you didn't set this up initially.
-  See [the Firewall Changes document](./quick-deployment/firewall-changes) document for more information and additional scripts to run in this case.
+  See [the Firewall Changes document](./firewall-changes) document for more information and additional scripts to run in this case.
 * If you change the hostname of the QDE server, or add it to a domain after having already completed setup.
 * If you would like to change/replace the initial SSL/TLS certificates that were provided or generated during setup, for example to replace an expiring certificate.
 
@@ -45,4 +45,4 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-Ssl
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates.
 > You will need make sure you have this correct, otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid.
 
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](./)

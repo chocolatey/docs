@@ -141,13 +141,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Uninstall-ChocolateyEnvironmentVariable](./creating-packages/helpers/uninstall-chocolateyenvironmentvariable)
- * [Get-EnvironmentVariable](./creating-packages/helpers/get-environmentvariable)
- * [Set-EnvironmentVariable](./creating-packages/helpers/set-environmentvariable)
- * [Install-ChocolateyPath](./creating-packages/helpers/install-chocolateypath)
+ * [Uninstall-ChocolateyEnvironmentVariable](./uninstall-chocolateyenvironmentvariable)
+ * [Get-EnvironmentVariable](./get-environmentvariable)
+ * [Set-EnvironmentVariable](./set-environmentvariable)
+ * [Install-ChocolateyPath](./install-chocolateypath)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyEnvironmentVariable -Full`.
 

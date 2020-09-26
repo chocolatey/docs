@@ -30,14 +30,14 @@ RedirectFrom: docs/how-to-set-up-chocolatey-server
 
 <!-- /TOC -->
 
-**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./how-tos/setup-offline-installation) in tandem with this article.
+**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./setup-offline-installation) in tandem with this article.
 
 ## Summary
 **tl;dr - Chocolatey.Server is not recommended for most organizational use cases. There are more robust options out there. However if you have a very simple use case or are conducting a POC, Chocolatey.Server may be good enough for your needs. If you don't find it robust enough, our recommendation is to look to something more robust like Artifactory, Nexus, or ProGet (two of which are also free to use).**
 
 The [Chocolatey.Server package](https://chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
 
-**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](./features/free/how-to-host-feed) for those options.
+**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](../features/free/how-to-host-feed) for those options.
 
 ## Links
 

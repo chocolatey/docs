@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](./quick-deployment/v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](./v1/desktop-readme).
 
 Thanks for trying Chocolatey for Business!
 This system has been pre-configured as a fully functioning C4B environment.
@@ -66,7 +66,7 @@ There are some initial steps you will need to have taken before you work through
 Please make sure you have taken those steps ahead of time.
 See the [Online Documentation](https://chocolatey.org/docs/quick-deployment-setup#step-3-virtual-environment-setup) for the most up to date information.
 
-* [QDE Setup](./quick-deployment/setup)
+* [QDE Setup](./setup)
 
 ## Step 1: Expand Disk Size
 
@@ -304,7 +304,7 @@ To do so:
 
 ## Step 5: Install and Configure Chocolatey On Clients
 
-Refer to [the Client Setup documentation](https://chocolatey.org/docs/quick-deployment-client-setup).
+Refer to [the Client Setup documentation](./client-setup).
 
 ## Step 6: License the QDE VM
 
@@ -327,7 +327,7 @@ slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [document for that version](./quick-deployment/v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [document for that version](./v1/desktop-readme).
 
 ### "Server Error" warning when resetting "admin" credential in Nexus
 
@@ -358,9 +358,9 @@ Stop-Process -Name explorer -Force
 
 ## See Also
 
-* [Quick Deployment Environment](./quick-deployment)
-* [QDE Setup](./quick-deployment/setup)
-* [QDE Desktop ReadMe File](./quick-deployment/desktop-readme)
-* [QDE SSL/TLS Setup](./quick-deployment/ssl-setup)
-* [QDE Firewall Changes](./quick-deployment/firewall-changes)
-* [QDE Client Setup](./quick-deployment/client-setup) (setting up your client machines)
+* [Quick Deployment Environment](./)
+* [QDE Setup](./setup)
+* [QDE Desktop ReadMe File](./desktop-readme)
+* [QDE SSL/TLS Setup](./ssl-setup)
+* [QDE Firewall Changes](./firewall-changes)
+* [QDE Client Setup](./client-setup) (setting up your client machines)

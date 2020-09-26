@@ -56,13 +56,13 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmdexe) or [powershell.exe](#install-with-powershellexe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
-1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](./usage/getting-started) for usage instructions.
+1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](./getting-started) for usage instructions.
 
 **NOTES**:
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Completely Offline Install</a>.
- * Installing the licensed edition? See [install licensed edition](./usage/installation-licensed).
- * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [Troubleshooting](./general/troubleshooting)
+ * Installing the licensed edition? See [install licensed edition](./installation-licensed).
+ * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [Troubleshooting](../general/troubleshooting)
 
 #### Install with cmd.exe
 Run the following command: <!--remove <button class="btn btn-secondary btn-copy font-weight-bold" data-clipboard-text="@&quot;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &quot; [System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))&quot; && SET &quot;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&quot;"><span class="fas fa-clipboard"></span> Copy Command Text</button> remove-->
@@ -441,7 +441,7 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 ### Install with Puppet
 
-**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](./usage/installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
+**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](./installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
@@ -676,7 +676,7 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
  1. **NOTE**: This will not set Chocolatey as an installed package, so it may be a good idea to also call `choco upgrade chocolatey -y` and let it reinstall the same version, but at least it will be available for upgrades then.
 
 ### Install licensed edition
-Please see [installation of licensed edition](./usage/installation-licensed).
+Please see [installation of licensed edition](./installation-licensed).
 
 ### Installing behind a proxy
 Have a proxy? Try
@@ -699,7 +699,7 @@ Have a proxy? Try
 
 ### Installing behind an explicit proxy
 
-See [Installing Chocolatey Behind a Proxy Server](./how-tos/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
+See [Installing Chocolatey Behind a Proxy Server](../how-tos/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
 
 ### Installing to a different location
 
@@ -715,7 +715,7 @@ See [Installing Chocolatey Behind a Proxy Server](./how-tos/proxy-settings-for-c
 **NOTE**: There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
 If you are installing to another location, you will need to handle this yourself, i. e. restrict write access to Admins in case you so desire.
 This is due to alternative locations could have a range of permissions that should not be changed.
-See [Why does Chocolatey install where it does](./default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
+See [Why does Chocolatey install where it does](../default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
 
 ### Installing a particular version of Chocolatey
 
@@ -877,15 +877,15 @@ choco upgrade chocolatey
 
 ## Uninstalling Chocolatey
 
-See [uninstall](./usage/uninstallation).
+See [uninstall](./uninstallation).
 
 ## FAQs
 
 ### I'm having trouble installing Chocolatey
-Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [Troubleshooting](./general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [Troubleshooting](../general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
-This is addressed in [Troubleshooting](./general/troubleshooting).
+This is addressed in [Troubleshooting](../general/troubleshooting).
 
 ### Why isn't there an MSI?
 

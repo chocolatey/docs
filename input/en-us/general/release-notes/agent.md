@@ -8,13 +8,13 @@ ShowInSidebar: false
 
 # Chocolatey Release Notes - Chocolatey Agent Service
 ## Summary
-This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](./features/paid/agent-service).
+This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](../../features/paid/agent-service).
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./general/release-notes/extension) and [Chocolatey Central Management Release Notes](./general/release-notes/central-management).
+* Refer to [Open Source Release Notes](./open-source) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./extension) and [Chocolatey Central Management Release Notes](./central-management).
 
 ## Known Issues
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
@@ -33,7 +33,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### BREAKING CHANGES
  * Chocolatey Agent v0.10.0 will only work with Central Management v0.2.0+. Please upgrade Central Management first if you are using CCM with the agent service.
 
-> :memo: **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](./features/paid/agent-service#log-file-location-for-chocolatey-agent) for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../../features/paid/agent-service#log-file-location-for-chocolatey-agent) for more information.
 
 ### FEATURES
  * Execution for Central Management Deployments

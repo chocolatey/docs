@@ -16,9 +16,9 @@ RedirectFrom: docs/quick-deployment-internet-setup
 >
 > See the following QDE v2.0+ documents for more information on how to handle this setup or certificate renewals in newer versions:
 >
-> * [QDE Desktop Readme](./quick-deployment/desktop-readme)
-> * [QDE Firewall Changes](./quick-deployment/firewall-changes)
-> * [QDE SSL Setup](./quick-deployment/ssl-setup)
+> * [QDE Desktop Readme](./desktop-readme)
+> * [QDE Firewall Changes](./firewall-changes)
+> * [QDE SSL Setup](./ssl-setup)
 
 With an unprecedented amount of employees working from home, there is a much greater demand to serve their software lifecycle needs remotely. Thus, many organizations would like the option to make the Chocolatey Quick Deployment Environment (QDE) Internet-accessible. This document walks you through some options you will need to consider, if you choose this route.
 
@@ -61,7 +61,7 @@ In general, it is not required or may not be advisable to have these accessible 
 You can access these via a Remote Desktop session on the QDE server itself, or opening these ports up to your internal network.
 Again, we **strongly** advise against opening these ports up to the public Internet for security reasons.
 
-Further details on firewall changes can be found on the [QDE Firewall Setup](./quick-deployment/firewall-changes) page.
+Further details on firewall changes can be found on the [QDE Firewall Setup](./firewall-changes) page.
 
 ## SSL Certificate Setup
 
@@ -331,7 +331,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
 > If you ran option 1 above ([Scripted Nexus Configuration](#option-1-scripted-nexus-configuration)), you can skip this step, as the configuration has already been applied to the server.
 
 QDE V1 does not currently include the most up-to-date version of the CCM packages (version 0.3.0, as of this writing).
-If you have already purchased your Chocolatey for Business (C4B) licenses, you can upgrade by following the [Central Management Upgrade](./central-management/setup-upgrade) documentation.
+If you have already purchased your Chocolatey for Business (C4B) licenses, you can upgrade by following the [Central Management Upgrade](../central-management/setup-upgrade) documentation.
 If you are a trial user, please reach out to your Sales representative for the appropriate packages and procedure for upgrading CCM.
 
 An additional mechanism of security that is highly recommended is the addition of salt additives to the encrypted communication between your endpoints and the CCM Service.
@@ -345,7 +345,7 @@ choco config set centralManagementClientCommunicationSaltAdditivePassword 'YourS
 choco config set centralManagementServerCommunicationSaltAdditivePassword 'YourSuperSecureSalt2'
 ```
 
-Further details on configuring CCM, and all available settings, can be found in the [Central Management Client Setup](./central-management/setup-client#config-settings) documentation.
+Further details on configuring CCM, and all available settings, can be found in the [Central Management Client Setup](../central-management/setup-client#config-settings) documentation.
 
 In the next section, you will need to incorporate both these salt additives into the script that helps you set up your endpoint clients.
 

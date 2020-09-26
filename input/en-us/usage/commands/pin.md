@@ -11,7 +11,7 @@ RedirectFrom: docs/commands-pin
 
 Pin a package to suppress upgrades.
 
-This is especially helpful when running [`choco upgrade`](./usage/commands/upgrade) for all
+This is especially helpful when running [`choco upgrade`](./upgrade) for all
  packages, as it will automatically skip those packages. Another
  alternative is `choco upgrade --except="pkg1,pk2"`.
 
@@ -36,7 +36,7 @@ This is especially helpful when running [`choco upgrade`](./usage/commands/upgra
     choco pin add -n=git --version 1.2.3
     choco pin remove --name git
 
-**NOTE:** See scripting in [how to pass arguments](./usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -61,7 +61,7 @@ If you find other exit codes that we have not yet documented, please
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -175,7 +175,7 @@ Includes [default options/switches](./usage/commands/reference#default-options-a
 
 ~~~
 
-[Command Reference](./usage/commands/reference)
+[Command Reference](./reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco pin -h`.

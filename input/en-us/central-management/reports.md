@@ -19,10 +19,10 @@ ShowInSidebar: false
 ___
 ## Related Topics
 
-* [Chocolatey Central Management](./central-management)
-* [Central Management - Software](./central-management/software)
-* [Central Management - Computers](./central-management/computers)
-* [Central Management - Deployments](./central-management/deployments)
+* [Chocolatey Central Management](./)
+* [Central Management - Software](./software)
+* [Central Management - Computers](./computers)
+* [Central Management - Deployments](./deployments)
 
 ___
-[Chocolatey Central Management](./central-management)
+[Chocolatey Central Management](./)

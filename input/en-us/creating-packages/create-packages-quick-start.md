@@ -29,11 +29,11 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 ## Prerequisites
 
 * You have Chocolatey installed.
-* You've read [What are Chocolatey Packages?](./usage/getting-started#what-are-chocolatey-packages) first.
+* You've read [What are Chocolatey Packages?](../usage/getting-started#what-are-chocolatey-packages) first.
 * You know how a package works
-  * A package contains a `nuspec` file. This defines the package. ([Docs](./creating-packages/create-packages#nuspec))
+  * A package contains a `nuspec` file. This defines the package. ([Docs](./create-packages#nuspec))
   * A package may contain embedded software.
-  * A package may contain an installation script. This can be [very simple](./creating-packages/create-packages-quick-start#examples).
+  * A package may contain an installation script. This can be [very simple](./create-packages-quick-start#examples).
 
 ## Quick start guide
 
@@ -75,7 +75,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 * `%ChocolateyInstall%` - Chocolatey installation directory
 * `%ChocolateyInstall%\lib\package-name` - Package directory
 * `%cd%` or `$pwd` - current directory
-* Environment variable reference available in the README when using `choco new` or [online](./creating-packages/helpers/reference#variables).
+* Environment variable reference available in the README when using `choco new` or [online](./helpers/reference#variables).
 
 ## Examples
 
@@ -110,7 +110,7 @@ Install-ChocolateyPackage $packageName $installerType $silentArgs $url $url64  -
 ```
 
 ### Parsing Package Parameters
-For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](./how-tos/parse-packageparameters-argument).
+For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](../how-tos/parse-packageparameters-argument).
 ## Tips
 
 * If you cannot find the installer silent mode, you can try an old tool called [Universal Silent Switch Finder 1.5.0.0](http://www.softpedia.com/progDownload/Universal-Silent-Switch-Finder-Download-180984.html) - `choco install ussf`.

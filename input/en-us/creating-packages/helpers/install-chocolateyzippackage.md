@@ -311,11 +311,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./creating-packages/helpers/get-chocolateywebfile)
- * [Get-ChocolateyUnzip](./creating-packages/helpers/get-chocolateyunzip)
+ * [Get-ChocolateyWebFile](./get-chocolateywebfile)
+ * [Get-ChocolateyUnzip](./get-chocolateyunzip)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyZipPackage -Full`.
 

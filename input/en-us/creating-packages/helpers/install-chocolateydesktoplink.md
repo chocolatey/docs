@@ -30,7 +30,7 @@ method as this has been deprecated.
 
 ## Notes
 
-Deprecated in favor of [`Install-ChocolateyShortcut`](./creating-packages/helpers/install-chocolateyshortcut).
+Deprecated in favor of [`Install-ChocolateyShortcut`](./install-chocolateyshortcut).
 If this errors, such as it will if being installed under the local
 SYSTEM account, it will display a warning instead of failing a package
 installation.
@@ -92,10 +92,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
+ * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyDesktopLink -Full`.
 

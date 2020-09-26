@@ -98,11 +98,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
- * [Uninstall-ChocolateyPackage](./creating-packages/helpers/uninstall-chocolateyzippackage)
+ * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+ * [Uninstall-ChocolateyPackage](./uninstall-chocolateyzippackage)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-ChocolateyZipPackage -Full`.
 

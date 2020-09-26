@@ -140,7 +140,7 @@ RedirectFrom: docs/resources
 
 ## Integrations
 
-See [Infrastructure automation](./features/free/infrastructure-automation)
+See [Infrastructure automation](../features/free/infrastructure-automation)
 
 ## Community
 

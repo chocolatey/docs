@@ -39,7 +39,7 @@ You will need to take a dependency on the [chocolatey-isomount.extension package
 1. FOSS: Download [chocolatey-isomount.extension](https://chocolatey.org/api/v2/package/chocolatey-isomount.extension)
 1. Deploy the package to your internal repository.
 
-**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](./features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
+**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](../features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add chocolatey-isomount.extension Dependency
 Open your package's nuspec up and add a dependency on `chocolatey-isomount.extension`. This will be inserted just above the closing "metadata" tag (`</metadata>`).
@@ -103,13 +103,13 @@ Install-ChocolateyIsoPackage @packageArgs
 The most compatible with all versions of Windows option is to use ImDisk. ImDisk Virtual Disk Driver (imdisk) is a software package that allows an ISO file to be mounted, but more importantly, it works for Windows NT/2000/XP/Vista/7/8/8.1 or Windows Server 2003/2008/2012/2016 (so basically, everything!). That means that you can use one, common, method, for mounting ISO files when required within your Chocolatey Packages.
 
 ### Step 1: Get ImDisk Package
-You will need to take a dependency on the [ImDisk package](https://chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](./how-tos/recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
+You will need to take a dependency on the [ImDisk package](https://chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](./recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download imdisk --internalize`
-1. FOSS: Download [imdisk](https://chocolatey.org/api/v2/package/imdisk) - [internalize manually](./how-tos/recompile-packages)
+1. FOSS: Download [imdisk](https://chocolatey.org/api/v2/package/imdisk) - [internalize manually](./recompile-packages)
 1. Deploy the package to your internal repository.
 
-**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](./features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
+**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](../features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add ImDisk Dependency
 Open your package's nuspec up and add a dependency on `imdisk`. This will be inserted just above the closing "metadata" tag (`</metadata>`).

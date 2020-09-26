@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-setup-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Setup page](./quick-deployment/setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE Setup page](../setup).
 
 This document contains instructions for importing the QuickDeploy appliance/VM, or creating a VM and attaching the QuickDeploy disk image to it.
 You will receive a download link via email for an archive of the VM image. Once you have this downloaded, it will be ready for extraction and import into your environment.
@@ -66,7 +66,7 @@ The following are points to keep in mind during initial setup:
 > tl;dr: Think long and hard before changing the QDE hostname
 >
 > Renaming the QDE host requires a lot of things and needs to be completed FIRST prior to ANYTHING that is done on the QDE box. It is strongly recommended **NOT** to rename unless you absolutely need to. The most important reason has to do with how a client installs from QDE - it must learn to trust the QDE certificate. Once renamed, the easy option that's provided for you goes away and you will need to provide a hosted solution with an already trusted certificate.
-> You can provide your own certificate that is already trusted on machines as part of the [SSL/TLS Setup](./quick-deployment/ssl-setup). Your other option is to host the script to trust the certificate with an already trusted certificate. You will find a template that you will need to edit at `c:\choco_setup_files` (in the QDE) named `Import-ChocoServerCertificate.ps1`.
+> You can provide your own certificate that is already trusted on machines as part of the [SSL/TLS Setup](./ssl-setup). Your other option is to host the script to trust the certificate with an already trusted certificate. You will find a template that you will need to edit at `c:\choco_setup_files` (in the QDE) named `Import-ChocoServerCertificate.ps1`.
 >
 > Please contact support if you need help here.
 
@@ -217,7 +217,7 @@ ___
 ## Step 3: Virtual Environment Setup
 
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
-A version of this readme file can be found in the [Quick Deployment Desktop Readme](./quick-deployment/desktop-readme).
+A version of this readme file can be found in the [Quick Deployment Desktop Readme](./desktop-readme).
 
 > :memo: **NOTE**: The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
 
@@ -235,7 +235,7 @@ Resize-Partition -DriveLetter C -Size ((Get-PartitionSupportedSize -DriveLetter 
 Alternatively, you can use the Disk Management utility to expand the disk, if a GUI is preferred.
 
 ### Step 3.2: Add License File to QDE
-In the [Quick Deployment Desktop Readme](./quick-deployment/desktop-readme), it is going to ask you to use the license file. That license file comes from an external location. It is best to copy/paste the file into QDE as a whole file, but you may have needed to set up any kind of extensions available for that.
+In the [Quick Deployment Desktop Readme](./desktop-readme), it is going to ask you to use the license file. That license file comes from an external location. It is best to copy/paste the file into QDE as a whole file, but you may have needed to set up any kind of extensions available for that.
 
 > :warning: **WARNING**
 >
@@ -244,7 +244,7 @@ In the [Quick Deployment Desktop Readme](./quick-deployment/desktop-readme), it 
 
 ### Step 3.3: Regenerate SSL Certificates
 
-See [QDE SSL/TLS Setup](./quick-deployment/ssl-setup).
+See [QDE SSL/TLS Setup](./ssl-setup).
 
 ### Step 3.4: Database Password Changes (Optional)
 
@@ -268,11 +268,11 @@ Choco install chocolatey-management-web -y --package-parameters-sensitive=”’
 
 ___
 ## Step 4: Firewall Changes
-See [QDE Firewall Changes](./quick-deployment/firewall-changes).
+See [QDE Firewall Changes](./firewall-changes).
 
 ___
 ## Step 5: Install and Configure Chocolatey on Clients
-See [QDE Client Setup](./quick-deployment/client-setup).
+See [QDE Client Setup](./client-setup).
 
 ___
 ## FAQ
@@ -282,4 +282,4 @@ While we will continue to make improvements to the QDE, there is no upgrade path
 It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE. Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](./central-management/setup-upgrade).
 
 ___
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](../)

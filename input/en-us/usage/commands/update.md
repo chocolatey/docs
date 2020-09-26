@@ -12,7 +12,7 @@ ShowInSidebar: false
 
 **NOTE:** Update has been deprecated and will be removed/replaced in version
  1.0.0 with something that performs the functions of updating package
- indexes.  Please use [`choco upgrade`](./usage/commands/upgrade) instead.
+ indexes.  Please use [`choco upgrade`](./upgrade) instead.
 
 <!-- TOC -->
 
@@ -28,7 +28,7 @@ ShowInSidebar: false
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -141,7 +141,7 @@ Includes [default options/switches](./usage/commands/reference#default-options-a
 
 ~~~
 
-[Command Reference](./usage/commands/reference)
+[Command Reference](./reference)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco update -h`.

@@ -9,15 +9,15 @@ ShowInSidebar: false
 # Chocolatey Release Notes - Chocolatey Licensed Extension
 ## Summary
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.
-Please see [Install the Licensed Edition](./usage/installation-licensed) for information on how to get and install the package.
+Please see [Install the Licensed Edition](../../usage/installation-licensed) for information on how to get and install the package.
 
 **NOTE**: This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
 
 **NOTE**: Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](./general/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](./general/release-notes/agent) and [Chocolatey Central Management Release Notes](./general/release-notes/central-management).
+* Refer to [Open Source Release Notes](./open-source) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](./agent) and [Chocolatey Central Management Release Notes](./central-management).
 
 
 ## Known Issues

@@ -227,12 +227,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyDesktopLink](./creating-packages/helpers/install-chocolateydesktoplink)
- * [Install-ChocolateyExplorerMenuItem](./creating-packages/helpers/install-chocolateyexplorermenuitem)
- * [Install-ChocolateyPinnedTaskBarItem](./creating-packages/helpers/install-chocolateypinnedtaskbaritem)
+ * [Install-ChocolateyDesktopLink](./install-chocolateydesktoplink)
+ * [Install-ChocolateyExplorerMenuItem](./install-chocolateyexplorermenuitem)
+ * [Install-ChocolateyPinnedTaskBarItem](./install-chocolateypinnedtaskbaritem)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyShortcut -Full`.
 

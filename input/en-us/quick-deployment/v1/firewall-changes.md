@@ -10,7 +10,7 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](./quick-deployment/firewall-changes).
+> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](../firewall-changes).
 
 <!-- TOC depthFrom:2 -->
 
@@ -59,4 +59,4 @@ The CCM service connection is authenticated over SSL, but our best practice reco
 With Central Management v0.3.0, more security has been put into allowing for checking in over internet connections as long as you follow guidance for additional settings.
 
 ___
-[Quick Deployment Environment](./quick-deployment)
+[Quick Deployment Environment](../)

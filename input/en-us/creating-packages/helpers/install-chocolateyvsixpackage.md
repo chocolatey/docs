@@ -222,12 +222,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./creating-packages/helpers/install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./creating-packages/helpers/install-chocolateyinstallpackage)
- * [Install-ChocolateyZipPackage](./creating-packages/helpers/install-chocolateyzippackage)
+ * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+ * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyVsixPackage -Full`.
 

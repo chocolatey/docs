@@ -147,10 +147,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyShortcut](./creating-packages/helpers/install-chocolateyshortcut)
+ * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
 
 
-[Function Reference](./creating-packages/helpers/reference)
+[Function Reference](./reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyExplorerMenuItem -Full`.
 

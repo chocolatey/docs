@@ -110,7 +110,7 @@ The original is [on github](https://gist.github.com/1107920).
 
 ## Getting the Source
 Create a package for your project and call it projectname*.dev*.  It should take a nuspec dependency on whatever source control you use. So in the case of git, a dependency on msysgit.
-Now, in [chocolateyInstall.ps1](./chocolatey-install-ps1), you just need something like the following:
+Now, in [chocolateyInstall.ps1](../chocolatey-install-ps1), you just need something like the following:
 
 ```powershell
 try {
