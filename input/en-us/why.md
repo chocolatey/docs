@@ -14,6 +14,7 @@ Chocolatey is software management automation.
 Chocolatey works with over 20+ installer technologies for Windows, but it can manage things you would normally xcopy deploy (like runtime binaries and zip files). You can also work with registry settings or managing files and configurations, or any combination. Since it uses PowerShell, if you can dream it, you can do it with Chocolatey.
 
 Chocolatey builds on technologies that are familiar:
+
 * PowerShell
 * Unattended installations
 
@@ -51,7 +52,7 @@ This may not seem very powerful at first, but imagine when you want to **upgrade
 1. Hope it didn't install any malware
 1. Now do it again for ***EVERY*** piece of software on your system.
 
-![chrisfarley-disbelief](https://cloud.githubusercontent.com/assets/63502/6924749/4e4e23d2-d7a0-11e4-9f4e-a44a02b227f6.gif)
+![chris-farley-disbelief](https://cloud.githubusercontent.com/assets/63502/6924749/4e4e23d2-d7a0-11e4-9f4e-a44a02b227f6.gif)
 
 Now contrast that with how you do the same with **Chocolatey**:
 
@@ -62,7 +63,9 @@ Now contrast that with how you do the same with **Chocolatey**:
 ![shia-labeouf-magic-gif](https://cloud.githubusercontent.com/assets/63502/6924713/14521f12-d7a0-11e4-819d-88c46e1a7bfa.gif)
 
 <a name="can-i-use-chocolatey-with-existing-software"></a>
+
 ### Can I use Chocolatey with existing installed software?
+
 Yes, yes you can. Chocolatey works in a similar manner to how you would do things if you downloaded and installed things yourself. Its design and infrastructure is built that way on purpose. It takes the pain of manually doing it yourself away (see previous section).
 
 ![Yes, yes](http://replygif.net/i/208.gif)
@@ -78,6 +81,7 @@ So when a package takes over the existing install, if the registry snapshot does
 The question I need to ask is whether you are worse off by adding choco into the mix? It handles upgrades for you. It brings about some level of consistency and a unifying interface to this madness that is the Windows installer infrastructure.
 
 ### Why not use an existing Windows package manager?
+
 Believe me, I wanted there to be something existing on Windows that would fit the bill. Package management is not a glorious job. Especially on Windows. It's taking all of the different native installers, archives, and straight executable downloads and making a simple interface for consumers to issue the same install command for all of them. Here are/were my needs:
 
 * Good CLI that is simple to use.
@@ -93,4 +97,5 @@ Believe me, I wanted there to be something existing on Windows that would fit th
 To date, Chocolatey does all of this (virtual packages is coming).
 
 ### Other questions?
+
 See the [FAQs](./general/faqs).

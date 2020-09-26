@@ -6,10 +6,10 @@ ShowInSidebar: false
 ---
 
 ## <span style="color:red;">NOTICE: As of 0.9.8.24, Chocolatey's default install location is C:\ProgramData\Chocolatey</span>
+
 This reduces the attack surface on a local installation of Chocolatey and limits who can make changes to the directory.
 
 You can install Chocolatey to Program Files if you feel that is a more appropriate place. Because Chocolatey has files that change with package installations and it doesn't actually install to Programs and Features (what we consider synonymous with Program Files), we didn't feel this was the appropriate location. Plus with logging currently all in the same location, it would mean you would need to run `choco` with administrative permissions every time, even if you are just doing things like searching for packages, finding out what is installed locally, etc.
-
 
 ## What about Program Files? Why not default to there?
 

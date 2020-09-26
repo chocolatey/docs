@@ -19,4 +19,4 @@ The moral of the story? Richard took 3-4 hours to get somewhat up to speed. Bob 
 
 References
 
- * http://lostechies.com/jimmybogard/2012/02/01/improving-the-git-windows-experience-downloads/
+* [http://lostechies.com/jimmybogard/2012/02/01/improving-the-git-windows-experience-downloads/](http://lostechies.com/jimmybogard/2012/02/01/improving-the-git-windows-experience-downloads/)
