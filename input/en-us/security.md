@@ -5,30 +5,6 @@ Description: Chocolatey takes security very seriously
 RedirectFrom: docs/security
 ---
 
-<!-- TOC -->
-
-- [TLDR](#tldr)
-  - [Chocolatey Client](#chocolatey-client)
-  - [Chocolatey Community Package Repository](#chocolatey-community-package-repository)
-- [Summary](#summary)
-- [Overall](#overall)
-- [Chocolatey binaries and the Chocolatey package](#chocolatey-binaries-and-the-chocolatey-package)
-- [Organizational Use of Chocolatey](#organizational-use-of-chocolatey)
-- [Chocolatey.org Packages](#chocolateyorg-packages)
-  - [Security for the Community Package Repository:](#security-for-the-community-package-repository)
-  - [Rigorous Moderation Process for Community Packages](#rigorous-moderation-process-for-community-packages)
-    - [Downloading Internet Resources Can Still Be An Issue](#downloading-internet-resources-can-still-be-an-issue)
-- [Chocolatey Pro / Chocolatey for Business](#chocolatey-pro--chocolatey-for-business)
-- [Servers / IP Addresses](#servers--ip-addresses)
-- [Future Chocolatey Enhancements](#future-chocolatey-enhancements)
-- [History](#history)
-  - [Past Security Concerns](#past-security-concerns)
-  - [What about a non-administrative installation of Chocolatey? Is it secure?](#what-about-a-non-administrative-installation-of-chocolatey-is-it-secure)
-  - [Security Scenarios to Keep in Mind / Avoid](#security-scenarios-to-keep-in-mind--avoid)
-- [Report Issue](#report-issue)
-
-<!-- /TOC -->
-
 ## TLDR
 
 Let's start here. We know you are going to read this entire document anyway. But to give you a high level of what to expect with Chocolatey.

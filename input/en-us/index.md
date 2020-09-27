@@ -7,24 +7,6 @@ RedirectFrom:
   - docs/
 ---
 
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC -->
-
-- [What is Chocolatey?](#what-is-chocolatey)
-- [Requirements](#requirements)
-- [Information](#information)
-- [Using Chocolatey](#using-chocolatey)
-- [Create Packages](#create-packages)
-- [Individuals](#individuals)
-- [Organizations](#organizations)
-- [Road Map](#road-map)
-  - [Important Reference Links](#important-reference-links)
-- [See It In Action](#see-it-in-action)
-- [Who Are We?](#who-are-we)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 ## What is Chocolatey?
 
 tl;dr Chocolatey is a software management solution that allows you to manage 100% of your software, anywhere you have Windows, with any endpoint management tool. No other solution (including newly announced solutions) reach this level of management - most only can manage to software in Programs and Features.

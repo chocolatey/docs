@@ -7,18 +7,6 @@ ShowInSidebar: false
 
 Heading down a sweet road.
 
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC -->
-
-- [Chocolatey](#chocolatey)
-- [Licensed Chocolatey](#licensed-chocolatey)
-- [Chocolatey.org](#chocolateyorg)
-- [Thoughts for future directions (undecided directions)](#thoughts-for-future-directions-undecided-directions)
-- [Legal](#legal)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 **NOTE:** This is not always going to be updated, one can take a look at the issues list here and in the chocolatey.org repositories.
 
 ## Chocolatey

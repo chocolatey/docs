@@ -7,26 +7,6 @@ ShowInSidebar: false
 
 A lot of folks out there are always wanting to point out that there is Ninite when someone mentions Chocolatey. That is fine, Ninite works but it only has like 90+ things you can install. They are limited by what Ninite can rebundle and redistribute. Both are solid solutions in their own right, but you need to understand the needs and what the two solutions provide to really make a choice on them.
 
-<!-- TOC -->
-
-- [Package Management Approach](#package-management-approach)
-  - [Ninite](#ninite)
-  - [Chocolatey](#chocolatey)
-    - [Packaging solution needs (that brought about Chocolatey in the first place)](#packaging-solution-needs-that-brought-about-chocolatey-in-the-first-place)
-- [Chocolatey and  Ninite : Compare and Contrast](#chocolatey-and--ninite--compare-and-contrast)
-  - [Interfaces:](#interfaces)
-  - [Packages:](#packages)
-  - [Package sources:](#package-sources)
-  - [Creating packages:](#creating-packages)
-  - [Available packages:](#available-packages)
-  - [Package updates:](#package-updates)
-  - [Package dependencies:](#package-dependencies)
-  - [Versioning/upgrades:](#versioningupgrades)
-- [Conclusion](#conclusion)
-
-<!-- /TOC -->
-
-
 ## Package Management Approach
 
 ### Ninite
