@@ -5,8 +5,6 @@ Description: Why should I use Chocolatey
 RedirectFrom: docs/why
 ---
 
-## Why Chocolatey?
-
 "You've never deployed software faster than you will with Chocolatey." -Rob Reynolds
 
 Chocolatey is software management automation.
@@ -26,7 +24,7 @@ You are going to find the simplicity and absolute power of Chocolatey reinvigora
 
 Chocolatey is the package manager for Windows.
 
-### What is the purpose of Chocolatey?
+## What is the purpose of Chocolatey?
 
 How many times do you hear about an awesome tool/application from your friends and want to try it out? How much effort do you go through to set a tool and all of its requirements up on your machine? Do you realize that all of this manual effort is a pain? It's a pain we are used to! It's something we just do and don't realize we are wasting time doing all of this manual process. And worse, when we install applications it's always... Next Next Next Finish.
 
@@ -36,7 +34,7 @@ Because Chocolatey is built on top of the NuGet infrastructure, that means you c
 
 [Tell me a story](./chocolatey-story)
 
-### What is Chocolatey?
+## What is Chocolatey?
 
 Chocolatey helps good developers and system administrators become outstanding developers/sysadmins. Chocolatey goes to *eleven*.
 
@@ -64,7 +62,7 @@ Now contrast that with how you do the same with **Chocolatey**:
 
 <a name="can-i-use-chocolatey-with-existing-software"></a>
 
-### Can I use Chocolatey with existing installed software?
+## Can I use Chocolatey with existing installed software?
 
 Yes, yes you can. Chocolatey works in a similar manner to how you would do things if you downloaded and installed things yourself. Its design and infrastructure is built that way on purpose. It takes the pain of manually doing it yourself away (see previous section).
 
@@ -80,7 +78,7 @@ So when a package takes over the existing install, if the registry snapshot does
 
 The question I need to ask is whether you are worse off by adding choco into the mix? It handles upgrades for you. It brings about some level of consistency and a unifying interface to this madness that is the Windows installer infrastructure.
 
-### Why not use an existing Windows package manager?
+## Why not use an existing Windows package manager?
 
 Believe me, I wanted there to be something existing on Windows that would fit the bill. Package management is not a glorious job. Especially on Windows. It's taking all of the different native installers, archives, and straight executable downloads and making a simple interface for consumers to issue the same install command for all of them. Here are/were my needs:
 
@@ -96,6 +94,6 @@ Believe me, I wanted there to be something existing on Windows that would fit th
 
 To date, Chocolatey does all of this (virtual packages is coming).
 
-### Other questions?
+## Other questions?
 
 See the [FAQs](./general/faqs).

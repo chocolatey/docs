@@ -5,8 +5,6 @@ Description: Chocolatey takes security very seriously
 RedirectFrom: docs/security
 ---
 
-# Security
-
 <!-- TOC -->
 
 - [TLDR](#tldr)

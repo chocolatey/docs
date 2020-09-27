@@ -5,8 +5,6 @@ ShowInNavbar: false
 ShowInSidebar: false
 ---
 
-# Story of Bob and Richard
-
 Let’s start with a story. Two guys, Bob and Richard (whose names have been changed to protect the innocent) need to get their computers ready to do some development work with [Git](http://git-scm.org). Neither Bob or Richard have worked with Git before. This is a story about the process they each go through to get Git.
 
 Richard goes off to research. After a while he learns the tool he wants to install for Windows is Git for Windows. He searches, downloads the latest version and goes to install it. He realizes he downloaded the wrong architecture and starts over.  He may not have his settings set up properly. So then he spends time trying to figure out what his settings should be. After a process of maybe a whole morning, he finally has Git installed and hopes he is set up properly. And Richard only knows about Git and not any other tools that may have helped him with using Git.

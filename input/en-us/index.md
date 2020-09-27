@@ -1,15 +1,11 @@
 ---
 Order: 10
-Title: Home
+Title: Chocolatey - Software Management for Windows
 Description: Chocolatey Documentation
 RedirectFrom:
   - docs/home
   - docs/
 ---
-
-# Chocolatey - Software Management for Windows
-
-![Chocolatey Logo](https://cdn.rawgit.com/chocolatey/choco/14a627932c78c8baaba6bef5f749ebfa1957d28d/docs/logo/chocolateyicon.gif "Chocolatey")
 
 <!--remove <div id="RightNav"> remove-->
 <!-- TOC -->
