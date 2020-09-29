@@ -1,0 +1,26 @@
+@if (OutputPages.GetChildrenOf(Document).Any())
+{
+<div class="box">
+	<div class="box-body no-padding">
+		<table class="table table-hover two-cols-alt table-responsive">
+			<tbody>
+				@foreach (IDocument child in OutputPages.GetChildrenOf(Document))
+				{
+					object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+					<tr>
+						<td><strong>@Html.DocumentLink(child)</strong></td>
+						<td>
+							@{
+								if(child.ContainsKey(WebKeys.Description))
+								{
+									<text>@(child.Get(WebKeys.Description))</text>
+								}
+							}
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
+}
