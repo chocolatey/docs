@@ -8,7 +8,7 @@ ShowInSidebar: false
 
 # Chocolatey Central Management Reports
 
-> :warning: **WARNING**: This is a Work in Progress. Please check back later.
+> ⚠️ **WARNING**: This is a Work in Progress. Please check back later.
 
 <!-- TOC depthFrom:2 -->
 

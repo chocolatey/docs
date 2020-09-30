@@ -34,7 +34,7 @@ to the bottom left corner of the application.
 
 ## Requirements for branding
 
-> :memo: **NOTE:** Branding of Chocolatey GUI is only available to our Business
+> 📝 **NOTE:** Branding of Chocolatey GUI is only available to our Business
 License customers, and requires the **Chocolatey GUI licensed extension**
 (chocolateygui.extension) to be installed, alongside Chocolatey GUI.  Currently,
 the chocolateygui.extension package is only available in a beta version, please
@@ -50,7 +50,7 @@ These have to be named exactly as the following:
 * splash_1250x540.png
 
 
-> :memo: **NOTE:** The reason that there are multiple splash screen images is because
+> 📝 **NOTE:** The reason that there are multiple splash screen images is because
 Chocolatey GUI makes a decision, based on the resolution of the screen, which
 splash screen image to display to the user.
 
@@ -117,18 +117,18 @@ In this GIF, we see branding being applied to the Chocolatey GUI application.
 Notice that the splash screen image has been replaced, as well as the logo at the
 top left of the application, and the icon in the taskbar.
 
-> :memo: **NOTE:** There is an open issue regarding the icon in the taskbar not
+> 📝 **NOTE:** There is an open issue regarding the icon in the taskbar not
 being correctly replaced, visit https://github.com/chocolatey/chocolatey-licensed-issues/issues/157
 for more information.
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 # Deploying Branding
 
 What follows is a suggestion on how a branded version of Chocolatey GUI can be
 deployed out to your environment.
 
-> :memo: **NOTE:** In order for the below to work, you must have the Chocolatey GUI licensed
+> 📝 **NOTE:** In order for the below to work, you must have the Chocolatey GUI licensed
 extension (chocolateygui.extension) installed.
 
 1. Follow the steps above to place the branding image assets into the correct location.

@@ -7,7 +7,7 @@ RedirectFrom: docs/central-management-deployments
 
 # Chocolatey Central Management Deployments
 
-> :warning: **WARNING**: This is a Work in Progress. Please check back later.
+> ⚠️ **WARNING**: This is a Work in Progress. Please check back later.
 >
 > Please see https://chocolatey.org/blog/announcing-deployments for now.
 

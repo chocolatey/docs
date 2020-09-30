@@ -12,24 +12,24 @@ While it is envisioned that CCM will be installed across multiple servers (split
 
 When setting up Central Management, currently, the CCM packages do not provision the SQL Server Database Permissions that are required for the CCM components to function.  It is assumed that the necessary permissions have already been provided (see the [FAQ](#how-can-i-add-sql-server-permissions-through-powershell) for one method of doing it).
 
-> :memo: **NOTE**
+> 📝 **NOTE**
 >
 > Please read through all of this prior to running installation as you could run into issues that require support to help you correct later.
 
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
-> :memo: **NOTE**
+> 📝 **NOTE**
 >
 > If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](../quick-deployment). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](../quick-deployment).
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-> :memo: **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](./setup-upgrade).
+> 📝 **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](./setup-upgrade).
 
 ___
 <!-- TOC depthFrom:2 depthTo:5 -->
@@ -60,7 +60,7 @@ Each package further defines dependencies that they include.
 ___
 ## Step 1: Internalize Packages
 
-> :memo: **NOTE**
+> 📝 **NOTE**
 >
 > Make sure you have read over the [CCM Compability Matrix](./index#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
@@ -108,25 +108,25 @@ choco download chocolatey-agent chocolatey.extension chocolatey-management-datab
 Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push $_.Fullname --source="'$YourInternalRepositoryPushUrl'" --api-key="'$YourInternalRepositoryApiKey'"}
 ```
 
-> :information_source: If you are on a TRIAL, you have a step in the script above that you are skipping - noted by "TRIAL?" This is because you don't have direct access to the licensed repository. You will have received an email with download links that contained your trial license file. Refer back to that for the downloads.
+> ℹ️ If you are on a TRIAL, you have a step in the script above that you are skipping - noted by "TRIAL?" This is because you don't have direct access to the licensed repository. You will have received an email with download links that contained your trial license file. Refer back to that for the downloads.
 
 ___
 ## Step 2: Setup Central Management Database
 Please see [Central Management Database Setup](./setup-database).
 
-> :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
+> 📝 **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 ___
 ## Step 3: Setup Central Management Windows Service(s)
 Please see [Central Management Service Setup](./setup-service).
 
-> :memo: **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
+> 📝 **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
 ___
 ## Step 4: Setup Central Management Website
 Please see [Central Management Web Setup](./setup-web).
 
-> :memo: **NOTE**: If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
+> 📝 **NOTE**: If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
 
 ___
 ## Step 5: Setting up Agent Machines

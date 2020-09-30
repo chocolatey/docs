@@ -112,7 +112,7 @@ This makes for happy users and happy admins as they are able to move quicker tow
 
 [![Chocolatey's Self-Service Installer - Part 2](/assets/images/features/features_selfservice_video2.jpg)](https://www.youtube.com/watch?v=BnnAwFftUwU "Chocolatey's Self-Service Installer - Part 2")
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 Consider the following image:
 
@@ -431,7 +431,7 @@ ___
 ### Chocolatey Central Management Agent Setup
 Please see [Central Management Client Setup](../../central-management/setup-client) for details.
 
-> :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
+> 📝 **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
 ### Log File Location For Chocolatey Agent
 The Chocolatey Agent log file is located at `$env:ChocolateyInstall\logs\chocolatey-agent.log`. If you are on a version of Chocolatey Agent prior to v0.10.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-agent\tools\service\logs\chocolatey-agent.log`.

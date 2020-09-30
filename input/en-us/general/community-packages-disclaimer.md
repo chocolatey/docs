@@ -122,7 +122,7 @@ If you have found that you have been rate limited, please see [How To Avoid Exce
 #### Special Requests on Rate Limiting
 If you have special needs and are being rate limited, please reach out to us as in special instances, we can whitelist your IP address for a small period of time. Do the following:
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > Rate limits are temporary and expire within an hour, but will trigger again if you go over the limits. You may not need to file a special request if you can determine alternative means of use or if you [implement best practices](#how-to-avoid-excessive-use).
 
