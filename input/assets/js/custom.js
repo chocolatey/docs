@@ -86,3 +86,13 @@ $(document).ready(function() {
         });
     }
 });
+
+// Style blockquotes with emojis
+$.each($('blockquote'), function () {
+    var warningEmoji = "⚠️";
+
+    if ($(this).text().indexOf(warningEmoji) >= 0) {
+        // Contains warning emoji
+        $(this).addClass('blockquote-warning');
+    }
+});
