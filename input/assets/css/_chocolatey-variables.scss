@@ -1,0 +1,63 @@
+// Variables
+$gray-100: #f8f9fa;
+$white: #ffffff;
+
+// Default Colors
+$blue: #5c9fd8;
+$red: #f4516c;
+$green: #36bc98;
+$gray-800: #202f3c; // dark
+$medium-light: #e9ecef;
+$medium: #2f6492;
+$medium-dark: #1a375a;
+
+// Body & Font
+$enable-responsive-font-sizes: true;
+$body-bg: $gray-100;
+$font-family-sans-serif: 'PT Sans', sans-serif;
+
+// Links
+$link-hover-decoration: none;
+
+// Buttons
+$input-btn-padding-y-sm: 0;
+$input-btn-padding-x-sm: 6px;
+$btn-font-weight: 700;
+
+// Tooltips
+$tooltip-bg: darken($blue, 15%);
+
+// Cards
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
+$card-border-width: 0;
+
+// Alerts
+$alert-border-radius: 0;
+$alert-border-width: 0;
+
+// Custom Select
+$custom-select-indicator: "";
+$input-border-color: $blue;
+$input-disabled-bg: $white;
+
+// Carousel
+$carousel-indicator-active-bg: $blue;
+$carousel-control-color: $blue;
+$carousel-control-opacity: 1;
+$carousel-control-hover-opacity: .7;
+
+// Breadcrumbs
+$breadcrumb-padding-y: 0;
+$breadcrumb-padding-x: 0;
+$breadcrumb-border-radius: 0;
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-bg: transparent;
+
+// Custom Select
+$custom-select-indicator: "";
+$input-border-color: $blue;
+$custom-control-indicator-size: 1.5rem;
+
+// Tabs
+$nav-tabs-link-active-bg: $white;
