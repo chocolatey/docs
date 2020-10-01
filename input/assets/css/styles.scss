@@ -311,41 +311,6 @@ $sections: map-merge(
     }
 }
 
-/* Mermaid */
-.mermaid {
-    overflow: hidden !important;
-    visibility: hidden !important;
-    margin-bottom: $spacer;
-    margin-top: $spacer;
-
-    &[data-processed="true"] {
-      visibility: visible !important;
-    }
-    min-height: 200px;
-
-    svg {
-      min-height: 200px;
-    }
-  }
-  .node rect,
-  .node circle,
-  .node ellipse,
-  .node polygon {
-    fill: lighten($primary, 50%) !important;
-    stroke: $dark !important;
-  }
-  .type-node rect,
-  .type-node circle,
-  .type-node ellipse,
-  .type-node polygon {
-    fill: lighten($primary, 30%) !important;
-    stroke: $dark !important;
-  }
-  .cluster rect {
-    fill: $gray-100 !important;
-    stroke: $gray-300 !important;
-  }
-
 /*Start of Custom SCSS*/
 /*Blockquotes/Callout*/
 blockquote {
