@@ -35,7 +35,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## 0.2.0 (June 18, 2020)
 Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://chocolatey.org/blog/announcing-deployments). We've also overhauled the documentation to make it understandable and approachable. Please see https://docs.chocolatey.org/en-us/central-management/.
 
-> :memo: **NOTE**: Log locations have changed. Please see [Central Management FAQs](../../central-management#faqs) for more information.
+> 📝 **NOTE**: Log locations have changed. Please see [Central Management FAQs](../../central-management#faqs) for more information.
 
 ### FEATURES
 * [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments):

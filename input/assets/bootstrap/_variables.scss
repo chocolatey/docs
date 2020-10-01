@@ -18,7 +18,6 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 $grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
   (
     "100": $gray-100,
@@ -34,20 +33,18 @@ $grays: map-merge(
   $grays
 );
 
-$blue:    #48bdfe !default;
-$indigo:  #bf4bff !default;
-$purple:  #bf4bff !default;
-$pink:    #ff5885 !default;
-$red:     #ff5885 !default;
-$orange:  #e98f00 !default;
-$yellow:  #e98f00 !default;
-$green:   #06c0af !default;
-$teal:    #06c0af !default;
-$cyan:    #06c0af !default;
-$chocolatey: #5C9FD8 !default;
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
 
 $colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $colors: map-merge(
   (
     "blue":       $blue,
@@ -60,7 +57,6 @@ $colors: map-merge(
     "green":      $green,
     "teal":       $teal,
     "cyan":       $cyan,
-    "chocolatey": $chocolatey,
     "white":      $white,
     "gray":       $gray-600,
     "gray-dark":  $gray-800
@@ -68,17 +64,16 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       darken($blue, 20%) !default;
-$secondary:     darken($purple, 20%) !default;
-$success:       darken($green, 20%) !default;
-$info:          darken($cyan, 20%) !default;
-$warning:       darken($yellow, 20%) !default;
-$danger:        darken($red, 20%) !default;
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 $theme-colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: map-merge(
   (
     "primary":    $primary,
@@ -105,9 +100,11 @@ $yiq-text-light:            $white !default;
 
 // Characters which are escaped by the escape-svg function
 $escaped-characters: (
-  ("<","%3c"),
-  (">","%3e"),
-  ("#","%23"),
+  ("<", "%3c"),
+  (">", "%3e"),
+  ("#", "%23"),
+  ("(", "%28"),
+  (")", "%29"),
 ) !default;
 
 
@@ -117,8 +114,8 @@ $escaped-characters: (
 
 $enable-caret:                                true !default;
 $enable-rounded:                              true !default;
-$enable-shadows:                              true !default;
-$enable-gradients:                            true !default;
+$enable-shadows:                              false !default;
+$enable-gradients:                            false !default;
 $enable-transitions:                          true !default;
 $enable-prefers-reduced-motion-media-query:   true !default;
 $enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
@@ -138,7 +135,6 @@ $enable-deprecation-messages:                 true !default;
 
 $spacer: 1rem !default;
 $spacers: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $spacers: map-merge(
   (
     0: 0,
@@ -153,7 +149,6 @@ $spacers: map-merge(
 
 // This variable affects the `.h-*` and `.w-*` classes.
 $sizes: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $sizes: map-merge(
   (
     25: 25%,
@@ -170,8 +165,8 @@ $sizes: map-merge(
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $gray-200 !default;
-$body-color:                $gray-600 !default;
+$body-bg:                   $white !default;
+$body-color:                $gray-900 !default;
 
 
 // Links
@@ -264,7 +259,6 @@ $transition-fade:             opacity .15s linear !default;
 $transition-collapse:         height .35s ease !default;
 
 $embed-responsive-aspect-ratios: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $embed-responsive-aspect-ratios: join(
   (
     (21 9),
@@ -280,8 +274,8 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Roboto', sans-serif !default;
-$font-family-monospace:       'Roboto Mono', monospace !default;
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
@@ -296,13 +290,13 @@ $font-weight-bold:            700 !default;
 $font-weight-bolder:          bolder !default;
 
 $font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.75 !default;
+$line-height-base:            1.5 !default;
 
-$h1-font-size:                $font-size-base * 1.75 !default;
-$h2-font-size:                $font-size-base * 1.5 !default;
-$h3-font-size:                $font-size-base * 1.35 !default;
-$h4-font-size:                $font-size-base * 1.25 !default;
-$h5-font-size:                $font-size-base * 1.15 !default;
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
@@ -546,7 +540,7 @@ $custom-control-label-disabled-color:           $gray-600 !default;
 $custom-control-indicator-checked-color:        $component-active-color !default;
 $custom-control-indicator-checked-bg:           $component-active-bg !default;
 $custom-control-indicator-checked-disabled-bg:  rgba(theme-color("primary"), .5) !default;
-$custom-control-indicator-checked-box-shadow:   none !default;
+$custom-control-indicator-checked-box-shadow:   null !default;
 $custom-control-indicator-checked-border-color: $custom-control-indicator-checked-bg !default;
 
 $custom-control-indicator-focus-box-shadow:     $input-focus-box-shadow !default;
@@ -554,7 +548,7 @@ $custom-control-indicator-focus-border-color:   $input-focus-border-color !defau
 
 $custom-control-indicator-active-color:         $component-active-color !default;
 $custom-control-indicator-active-bg:            lighten($component-active-bg, 35%) !default;
-$custom-control-indicator-active-box-shadow:    none !default;
+$custom-control-indicator-active-box-shadow:    null !default;
 $custom-control-indicator-active-border-color:  $custom-control-indicator-active-bg !default;
 
 $custom-checkbox-indicator-border-radius:       $border-radius !default;
@@ -563,7 +557,7 @@ $custom-checkbox-indicator-icon-checked:        url("data:image/svg+xml,<svg xml
 $custom-checkbox-indicator-indeterminate-bg:           $component-active-bg !default;
 $custom-checkbox-indicator-indeterminate-color:        $custom-control-indicator-checked-color !default;
 $custom-checkbox-indicator-icon-indeterminate:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path stroke='#{$custom-checkbox-indicator-indeterminate-color}' d='M0 2h4'/></svg>") !default;
-$custom-checkbox-indicator-indeterminate-box-shadow:   none !default;
+$custom-checkbox-indicator-indeterminate-box-shadow:   null !default;
 $custom-checkbox-indicator-indeterminate-border-color: $custom-checkbox-indicator-indeterminate-bg !default;
 
 $custom-radio-indicator-border-radius:          50% !default;
@@ -668,7 +662,6 @@ $form-feedback-icon-invalid-color:  $form-feedback-invalid-color !default;
 $form-feedback-icon-invalid:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='#{$form-feedback-icon-invalid-color}' viewBox='0 0 12 12'><circle cx='6' cy='6' r='4.5'/><path stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/><circle cx='6' cy='8.2' r='.6' fill='#{$form-feedback-icon-invalid-color}' stroke='none'/></svg>") !default;
 
 $form-validation-states: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
 $form-validation-states: map-merge(
   (
     "valid": (
@@ -788,6 +781,7 @@ $dropdown-item-padding-y:           .25rem !default;
 $dropdown-item-padding-x:           1.5rem !default;
 
 $dropdown-header-color:             $gray-600 !default;
+$dropdown-header-padding:           $dropdown-padding-y $dropdown-item-padding-x !default;
 
 
 // Pagination
@@ -1120,7 +1114,7 @@ $close-text-shadow:                 0 1px 0 $white !default;
 // Code
 
 $code-font-size:                    87.5% !default;
-$code-color:                        $secondary !default;
+$code-color:                        $pink !default;
 
 $kbd-padding-y:                     .2rem !default;
 $kbd-padding-x:                     .4rem !default;
@@ -1137,6 +1131,7 @@ $pre-scrollable-max-height:         340px !default;
 $displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
 $overflows: auto, hidden !default;
 $positions: static, relative, absolute, fixed, sticky !default;
+$user-selects: all, auto, none !default;
 
 
 // Printing

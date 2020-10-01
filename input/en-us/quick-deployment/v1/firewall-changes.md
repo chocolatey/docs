@@ -7,7 +7,7 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 
 # Quick Deployment Environment Firewall Setup
 
-> :memo: **NOTE**
+> 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
 > If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](../firewall-changes).
@@ -24,11 +24,11 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 ___
 ## External Ports
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > Performing this incorrectly could cause security issues and possibly cause you to be subjected to copyright law/redistribution.
 > Read all of this first.
-> Danger, Will Robinson! :robot:
+> Danger, Will Robinson! 🤖
 
 These are ports that are opened through the corporate firewall, in case users are **not** on VPN and need to install packages from anywhere.
 **NOTE:** You will have needed to done more to secure Nexus and the repositories ahead of this change.
@@ -36,7 +36,7 @@ See the warning below and contact support if you want to enable clients to conne
 
 * Nexus Web / API - Port 8443
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > DO NOT OPEN this port externally until you have locked down your repositories to user/pass access and updated the script in the raw client repository.
 > Please contact support for the right options on how to do this FIRST.

@@ -1,13 +1,11 @@
-@import "../bootstrap/functions";
-@import "../bootstrap/variables";
-@import "../bootstrap/mixins";
+@import "chocolatey-variables";
+@import "../bootstrap/bootstrap";
 
 html, body {
     overflow-x: hidden;
     width: 100%;
+    color: $dark;
 }
-
-$thebackground: $gray-200;
 
 .color-row {
     padding: 0px;
@@ -18,7 +16,7 @@ $thebackground: $gray-200;
     display: inline-block;
     width: 60px;
     height: 15px;
-    border: 2px solid #000000;
+    border: 2px solid $dark;
 }
 
 #topnav {
@@ -97,16 +95,14 @@ $thebackground: $gray-200;
 }
 
 .icon-theme {
-    --fa-primary-color: #5C9FD8
-    --fa-secondary-color: #5C9FD8;
+    --fa-primary-color: $primary;
+    --fa-secondary-color: $primary;
 }
 
 .icon-100 {
     width: 100% !important;
     height: auto !important;
 }
-
-$font-family-serif: 'Roboto Slab', serif !default;
 
 .font-size-lg {
     font-size: $font-size-lg;
@@ -120,20 +116,18 @@ $font-family-serif: 'Roboto Slab', serif !default;
 }
 
 h1, h2, h3, .display-1, .display-2, .display-3, .display-4, .h-section {
-    font-family: $font-family-serif;
     &:not(:first-child) {
         margin-top: $spacer * 1.5;
     }
 }
 
 h1 {
-    color: $primary;
     padding-bottom: $spacer * 0.5;
     margin-bottom: $spacer * 0.5;
 }
 
-h2, h3 {
-    color: lighten($primary, 20%);
+h1, h2, h3 {
+    color: $primary;
 }
 
 .h-section {
@@ -144,7 +138,7 @@ h2, h3 {
 }
 
 #topnav {
-    background: $thebackground linear-gradient(180deg, $white, $thebackground) repeat-x !important;
+    background: $body-bg linear-gradient(180deg, $white, $body-bg) repeat-x !important;
 }
 
 #logo {
@@ -166,7 +160,7 @@ h2, h3 {
 }
 
 .bg-body {
-    background-color: $thebackground;
+    background-color: $body-bg;
 }
 
 #nav-docs {
@@ -174,7 +168,7 @@ h2, h3 {
 }
 
 #hero {
-    background: $orange linear-gradient(180deg, darken($cyan, 5%),darken(#06c0af, 5%))
+    background: $orange linear-gradient(180deg, lighten($primary, 5%),darken($primary, 15%))
     repeat-x !important;
 }
 
@@ -194,7 +188,7 @@ h2, h3 {
 $sections: () !default;
 $sections: map-merge(
     (
-        "docs": $chocolatey
+        "docs": $primary
     ),
     $sections
 );
@@ -225,7 +219,6 @@ $sections: map-merge(
 
             .title {
                 line-height: 1.5em;
-                font-family: $font-family-serif;
                 font-size: $h1-font-size * 1.2;
             }
         }
@@ -245,7 +238,7 @@ $sections: map-merge(
         }
 
         .bg-section {
-            background-color: $thebackground;
+            background-color: $body-bg;
         }
 
         .sidebar-nav-item {
@@ -309,7 +302,7 @@ $sections: map-merge(
 }
 
 .page-box {
-    border: 1px solid $thebackground;
+    border: 1px solid $body-bg;
     @include box-shadow($btn-box-shadow);
     @include border-radius($border-radius, 0);
 
@@ -339,16 +332,45 @@ $sections: map-merge(
   .node ellipse,
   .node polygon {
     fill: lighten($primary, 50%) !important;
-    stroke: #000 !important;
+    stroke: $dark !important;
   }
   .type-node rect,
   .type-node circle,
   .type-node ellipse,
   .type-node polygon {
     fill: lighten($primary, 30%) !important;
-    stroke: #000 !important;
+    stroke: $dark !important;
   }
   .cluster rect {
     fill: $gray-100 !important;
     stroke: $gray-300 !important;
   }
+
+/*Start of Custom SCSS*/
+/*Blockquotes/Callout*/
+blockquote {
+    padding: 1rem;
+    background: $white;
+    box-shadow: $box-shadow-sm;
+    border-left: 6px solid $secondary;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    &.blockquote-warning {
+        border-color: $warning;
+    }
+
+    &.blockquote-danger {
+        border-color: $danger;
+    }
+
+    &.blockquote-primary {
+        border-color: $primary;
+    }
+
+    &.blockquote-success {
+        border-color: $success;
+    }
+}

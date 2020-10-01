@@ -102,7 +102,7 @@ The image shows an installation without and with package reducer. The difference
 
 -->
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 ### Options and Switches
 

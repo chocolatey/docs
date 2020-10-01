@@ -7,7 +7,7 @@ RedirectFrom: docs/quick-deployment-client-setup-v1
 
 # Quick Deployment Client Setup
 
-> :memo: **NOTE**
+> 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
 > If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../client-setup).
@@ -52,13 +52,13 @@ What does this do?
   This is only in the scope of this process and not permanent.
 * Calls Client setup script from the QDE environment (see below for what it does).
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > If your clients are air-gapped or you have changed the hostname, you will need to find a different means to import the QDE Certificate.
 >
 > Please reach out to support for options.
 
-> :warning: **WARNING**
+> ⚠️ **WARNING**
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >

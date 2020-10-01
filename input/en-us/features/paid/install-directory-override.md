@@ -50,7 +50,7 @@ The image shows installing 1password with Chocolatey for Business. The command p
 
 ![Directory override in action](/assets/images/gifs/chocopro_features_installdirectory.gif)
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 ## Options and Switches
 

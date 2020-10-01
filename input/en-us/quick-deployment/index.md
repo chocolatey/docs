@@ -12,7 +12,7 @@ RedirectFrom: docs/quick-deployment-environment
 This is an overview on the Chocolatey Quick Deployment Environment (QDE).
 It provides a single virtual machine appliance to be imported into your hypervisor-of-choice, which contains most of the various components of a Chocolatey organizational solution.
 
-> :warning: **Warning**
+> ⚠️ **Warning**
 >
 > This solution targets environments up to about **1000 nodes**.
 > If you need a solution for a larger environment, QDE is generally suitable only as a proof-of-concept.
@@ -53,7 +53,7 @@ The QDE appliance provides a unified architecture containing the following compo
 
 To get QDE into your environment, please [reach out to us](https://chocolatey.org/contact/quick-deployment) so we can work to get you set up.
 
-> :memo: **Note**
+> 📝 **Note**
 >
 > A QDE environment is a fully functional Chocolatey for Business (C4B) environment; as such, it will require a business or trial license.
 
