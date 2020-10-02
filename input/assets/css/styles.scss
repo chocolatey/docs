@@ -325,6 +325,13 @@ $sections: map-merge(
     background-color: rgba(0,0,0,.1)
 }
 
+/*Left sidebar navigation*/
+#leftSidebarNav {
+    .navbar-nav {
+        flex-direction: column;
+    }
+}
+
 /*Blockquotes/Callout*/
 blockquote {
     padding: 1rem;
