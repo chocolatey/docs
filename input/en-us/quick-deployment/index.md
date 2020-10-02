@@ -107,4 +107,4 @@ If you have a larger environment, we would strongly recommend taking the time to
 
 ### Can we brag about how fast we were able to get configured?
 
-Please do! :slightly_smiling_face:
+Please do! 🙂
