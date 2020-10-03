@@ -16,7 +16,7 @@ namespace Docs
             //.AddSetting("ValidateAbsoluteLinks", true)
             //.AddSetting("ValidateLinksAsError", true)
             .AddSetting(Constants.EditLink, ConfigureEditLink())
-            .AddSetting(WebKeys.GatherHeadingsLevel, 3)
+            .AddSetting(WebKeys.GatherHeadingsLevel, 5)
             .ConfigureSite("chocolatey", "docs", "master")
             .ConfigureDeployment(deployBranch: "gh-pages")
             .AddShortcode("Children", typeof(ChildrenShortcode))
