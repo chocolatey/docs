@@ -2,6 +2,11 @@
 anchors.options.placement = 'left';
 anchors.add();
 
+// Left navigation
+$.each($('.nav-link-collapse.active'), function () {
+    $($(this).attr('data-href')).collapse('show');
+});
+
 // Style blockquotes with emojis
 $.each($('blockquote'), function () {
     var warningEmoji = "⚠️";

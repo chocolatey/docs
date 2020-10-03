@@ -105,7 +105,7 @@
                                 }
                                 else
                                 {
-                                    <div class="sidebar col-md-3 col-lg-2 pt-2 bg-body">
+                                    <div class="col-md-3 col-lg-2">
                                         @if (IsSectionDefined(Constants.Sections.Sidebar))
                                         {
                                             @RenderSection(Constants.Sections.Sidebar, false)
@@ -113,43 +113,64 @@
                                         else
                                         {
                                             IDocument root = OutputPages["en-us/index.html"].First();
-                                            <div class="sidebar-nav-item @(Document.IdEquals(root) ? "active" : null)">
-                                                    @if(root.ShowLink())
-                                                    {
-                                                        @Html.DocumentLink(root)
-                                                    }
-                                                    else
-                                                    {
-                                                        @root.GetTitle()
-                                                    }
-                                            </div>
 
-                                            @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
-                                            {
-                                                DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
-                                                <div class="sidebar-nav-item @(Document.IdEquals(document) ? "active" : null) @(documentChildren.Any() ? "has-children" : null)">
-                                                    @if(document.ShowLink())
-                                                    {
-                                                        @Html.DocumentLink(document)
-                                                    }
-                                                    else
-                                                    {
-                                                        @document.GetTitle()
-                                                    }
+                                            <nav class="navbar navbar-light navbar-expand-sm p-0">
+                                                <button class="navbar-toggler w-100 border-0 rounded-0 bg-primary" type="button" data-toggle="collapse" data-target="#leftSidebarNav">Table of Contents</button>
+                                                <div class="collapse navbar-collapse" id="leftSidebarNav">
+                                                    <ul class="navbar-nav">
+                                                        <li class="nav-item @(Document.IdEquals(root) ? "active" : null)">
+                                                            @if(root.ShowLink())
+                                                            {
+                                                                <a class="nav-link" href="@root.GetLink()">@root.GetTitle()</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                @root.GetTitle()
+                                                            }
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
+                                                            {
+                                                                DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
+
+                                                                @if(documentChildren.Any()) {
+                                                                    <a class="nav-link nav-link-collapse @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null)" href="@document.GetLink()" data-href="#id-@document.Id">@document.GetTitle()</a>
+                                                                    <div class="collapse" id="id-@document.Id">
+                                                                        <ul class="navbar-nav">
+                                                                            @foreach (IDocument child in documentChildren.OnlyVisible())
+                                                                            {
+                                                                                <li class="nav-item">
+                                                                                    @if(OutputPages.GetChildrenOf(child).Any()) {
+                                                                                        <a class="nav-link nav-link-collapse @(Document.IdEquals(child) || OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null)" href="@child.GetLink()" data-href="#id-@child.Id" data-href="#id-@child.Id">@child.GetTitle()</a>
+                                                                                        <div class="collapse" id="id-@child.Id">
+                                                                                            <ul class="navbar-nav">
+                                                                                                 @foreach (IDocument childChild in OutputPages.GetChildrenOf(child).OnlyVisible())
+                                                                                                {
+                                                                                                    <li class="nav-item">
+                                                                                                        <a class="nav-link @(Document.IdEquals(childChild) ? "active" : null)" href="@childChild.GetLink()">@childChild.GetTitle()</a>
+                                                                                                    </li>
+                                                                                                }
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <a class="nav-link @(Document.IdEquals(child) ? "active" : null)" href="@child.GetLink()">@child.GetTitle()</a>
+                                                                                    } 
+                                                                                </li>
+                                                                            }
+                                                                        </ul>
+                                                                    </div>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <a class="nav-link @(Document.IdEquals(document) ? "active" : null)" href="@document.GetLink()">@document.GetTitle()</a>
+                                                                }
+                                                            }
+                                                        </li>
+                                                    </ul>
                                                 </div>
-
-                                                @if (documentChildren.OnlyVisible().Any())
-                                                {
-                                                    <div class="sidebar-nav-children @(Document.IdEquals(document) || documentChildren.Any(x => Document.IdEquals(x)) ? "active" : null)">
-                                                        @foreach (IDocument child in documentChildren.OnlyVisible())
-                                                        {
-                                                            <div class="sidebar-nav-child @(Document.IdEquals(child) ? "active" : null)">
-                                                                @Html.DocumentLink(child)
-                                                            </div>
-                                                        }
-                                                    </div>
-                                                }
-                                            }
+                                            </nav>
                                         }
                                     </div>
                                     <div class="col-md-9 col-lg-8 pt-4 pt-md-0 pb-4 px-4">
