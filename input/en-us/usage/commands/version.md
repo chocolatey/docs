@@ -18,12 +18,6 @@ ShowInSidebar: false
  If you want to know what has available upgrades, use
  `choco upgrade <pkg|all> -whatif` or [`choco outdated`](./outdated).
 
-<!-- TOC -->
-
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Options and Switches
 
 **NOTE:** Options and switches apply to all items passed, so if you are

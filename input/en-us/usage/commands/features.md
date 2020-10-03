@@ -12,15 +12,6 @@ ShowInSidebar: false
 
 Chocolatey will allow you to interact with features.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco feature [list]|disable|enable [<options/switches>]
@@ -34,7 +25,6 @@ Chocolatey will allow you to interact with features.
 
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Exit Codes
 

@@ -10,16 +10,6 @@ ShowInSidebar: false
 
 # Optimize Command (choco optimize)
 
-<!-- TOC -->
-
-  - [Package Optimizer](#package-optimizer)
-- [Usage](#usage)
-- [Examples](#examples)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ### Package Optimizer
 
 Chocolatey [Licensed editions](https://chocolatey.org/compare) starting at Chocolatey Licensed Extension v1.12.0.
@@ -38,8 +28,6 @@ The following file extensions are removed automatically:
 * msi / msu / msp
 * exe files if they are detected to be an installer
 
-
-
 ## Usage
 
     choco optimize [<options/switches>]
@@ -48,7 +36,6 @@ The following file extensions are removed automatically:
 
     choco optimize
     choco optimize --reduce-nupkg-only
-
 
 ## See It In Action
 

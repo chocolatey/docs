@@ -5,8 +5,6 @@ Description: Centrally access information on all client machines in your environ
 RedirectFrom: docs/features-chocolatey-central-management
 ---
 
-# Chocolatey Central Management (CCM) (Business Editions Only)
-
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments.
 
 Once installed and configured, you can use CCM to:
@@ -22,25 +20,14 @@ Once installed and configured, you can use CCM to:
 
 Please see [Chocolatey Central Management](../../central-management).
 
-___
-<!-- TOC depthTo:6 -->
-
-- [Roadmap](#roadmap)
-- [Setup](#setup)
-- [FQDN Usage](#fqdn-usage)
-
-<!-- /TOC -->
-___
 ## Roadmap
 
 Please see [Chocolatey Central Management](../../central-management#roadmap).
 
-___
 ## Setup
 
 Please see [Central Management Setup](../../central-management/setup).
 
-___
 ## FQDN Usage
 
 Please see [Central Management Service Setup](../../central-management/setup-service#fqdn-usage).

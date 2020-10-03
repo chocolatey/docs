@@ -5,8 +5,6 @@ Description: Create fully ready to go software deployments for Windows in 5-10 s
 RedirectFrom: docs/features-create-packages-from-installers
 ---
 
-# Package Builder - Create Packages Automatically From Installers (Business Editions Only)
-
 > Chocolatey's Package Builder allows you to create fully ready to go software deployments for Windows in 5-10 seconds! There is nothing faster than Chocolatey when it comes to preparing software for an unattended deployment across your organization.
 
 * Generate packages based on installers and zips
@@ -17,37 +15,10 @@ Creating packages is a pretty quick process as compared to manually installing s
 
 Chocolatey for Business is able to inspect an installer and determine silent arguments and complete packaging components for you, saving you hours of time in packaging and maintaining software!
 
-<!-- TOC depthTo:5 -->
-
-- [Usage](#usage)
-  - [Command Line](#command-line)
-  - [Package Builder UI](#package-builder-ui)
-- [See It In Action](#see-it-in-action)
-  - [Package Builder CLI and Scripts](#package-builder-cli-and-scripts)
-  - [Package Builder UI](#package-builder-ui-1)
-  - [Generate Packages from Programs and Features](#generate-packages-from-programs-and-features)
-  - [More business concepts](#more-business-concepts)
-- [Options and Switches](#options-and-switches)
-- [FAQ](#faq)
-  - [How do I take advantage of Package Builder?](#how-do-i-take-advantage-of-package-builder)
-  - [I'm a licensed customer, now what?](#im-a-licensed-customer-now-what)
-  - [Will this become available for lower editions of Chocolatey?](#will-this-become-available-for-lower-editions-of-chocolatey)
-  - [How does it work?](#how-does-it-work)
-  - [What types of extensions are supported?](#what-types-of-extensions-are-supported)
-  - [Will it catch all types of installers?](#will-it-catch-all-types-of-installers)
-  - [Does it always find the silent uninstall arguments?](#does-it-always-find-the-silent-uninstall-arguments)
-  - [This was unable to detect custom installer arguments.](#this-was-unable-to-detect-custom-installer-arguments)
-  - [Does it create auto unattend files?](#does-it-create-auto-unattend-files)
-  - [Does it work with zip archive?](#does-it-work-with-zip-archive)
-  - [Does this work with keeping the installer on a UNC share or elsewhere yet?](#does-this-work-with-keeping-the-installer-on-a-unc-share-or-elsewhere-yet)
-- [Common Issues and Resolutions](#common-issues-and-resolutions)
-  - [I get "Name is required. Please pass in a name for the new package."](#i-get-name-is-required-please-pass-in-a-name-for-the-new-package)
-
-<!-- /TOC -->
-
 ## Usage
 
 ### Command Line
+
 When calling `choco new`, just add `--file=value` to point to a native installer and Chocolatey for Business will automatically determine the silent arguments, create the packaging and wrap that all around the installer.
 
 ![Create Packages from Installers - if you are on https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers, see commented html below for detailed description of image](/assets/images/features/features_packages_from_installers.png)
@@ -112,12 +83,14 @@ As you see this script, it is doing the following:
 * Run choco new, but point it to the full path to the file (`& choco new --file "$($_.FullName)"`), ask it to attempt to build the package (`--build-package`) and have the output in present working directory (` --outputdirectory $pwd`)
 
 ### Package Builder UI
+
 Not every person is going to love the command line or may not be familiar with the command line and at Chocolatey we realize this. We've spent countless hours talking to customers and with their feedback we're introducing Package Builder UI. This also gives you an opportunity to transition from existing UI tools while taking advantage of powerful Chocolatey concepts!
 
 We've prepared a short video to show the power of the UI:
 [![Chocolatey's Package Builder - Package Builder UI](https://cloud.githubusercontent.com/assets/63502/20327926/f54ac81e-ab54-11e6-9cb1-60df170c338e.png)](https://www.youtube.com/watch?v=qJNKR_PEQqY&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=2 "Chocolatey's Package Builder - Package Builder UI")
 
 ### Generate Packages from Programs and Features
+
 Another way Package Builder can generate packages is based on looking at what is installed on a system in Programs and Features. This gives you lightning quick ramp up time in both package and automating your Windows software installations!
 
 [![Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!](https://cloud.githubusercontent.com/assets/63502/20327972/46c8ff3a-ab55-11e6-9c03-32b0f83540bb.png)](https://www.youtube.com/watch?v=Mw_ReipnskI&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=3 "Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!")
@@ -177,39 +150,51 @@ When running `choco new` in the Business editions, pass the following:
 ## FAQ
 
 ### How do I take advantage of Package Builder?
+
 You must have a [Business edition of Chocolatey](https://chocolatey.org/compare). Business editions are great for organizations that need to manage the total software lifecycle.
 
 ### I'm a licensed customer, now what?
+
 When you run `choco new`, you can add `--file` and point Chocolatey at the installer file and let Chocolatey figure out everything for creating a package and the silent arguments and wrap that around the installer.
 
 ### Will this become available for lower editions of Chocolatey?
+
 Package Builder will only be available in C4B (Chocolatey for Business).
 
 ### How does it work?
+
 It inspects the installer file using a series of rules that helps determine the installer type. From there it builds a package with the information it is able to extract from the installer.
 
 ### What types of extensions are supported?
+
 Package Builder supports `.exe`, `.msi`, `.msu`, `.msp`, `.7z`, and `.zip`.
 
 ### Will it catch all types of installers?
+
 It is able to detect 12 types of installers currently.
 
 ### Does it always find the silent uninstall arguments?
+
 In over 70% of the cases it will, but not always. Even with this in mind, it still removes 90% of the packaging work. When it can't create a fully unattended softare deployment, it will create a TODO file for you to complete. See the next question on how to handle cases where it can not.
 
 ### This was unable to detect custom installer arguments.
+
 Unfortunately, some installers out there are just a pain to work with. In the case of custom installers, you may be able to find the silent arguments for install and uninstall by searching online. If you can not find anything, consider unpacking the installer and putting the software binaries directly in the package.
 
 ### Does it create auto unattend files?
+
 Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](./automatically-recompile-packages) to take advantage of thousands of existing packages without a need for internet access.
 
 ### Does it work with zip archive?
+
 Yes, but somewhat naively. It will generate the packaging to unpack the archive for both 7z and zip files.
 
 ### Does this work with keeping the installer on a UNC share or elsewhere yet?
+
 Yes, as of Licensed version v1.6.0+. Use `--use-original-location`.
 
 ## Common Issues and Resolutions
 
 ### I get "Name is required. Please pass in a name for the new package."
+
 This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](../../usage/installation-licensed) for more details.

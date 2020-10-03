@@ -27,15 +27,6 @@ See https://docs.chocolatey.org/en-us/features/paid/create-packages-from-install
 
 Chocolatey will generate package specification files for a new package.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco new <name> [<options/switches>] [<property=value> <propertyN=valueN>]
@@ -71,7 +62,6 @@ Possible properties to pass:
 **NOTE:** See scripting in [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Exit Codes
 
 Exit codes that normally result from running this command.
@@ -83,7 +73,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

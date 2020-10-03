@@ -5,8 +5,6 @@ Description: Online copy of what ships on desktop of QDE v1 image
 RedirectFrom: docs/quick-deployment-desktop-readme-v1
 ---
 
-# Thanks for trying Chocolatey For Business!
-
 > 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
@@ -19,32 +17,6 @@ This system has been pre-configured as a fully functioning C4B environment.
 > Please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
 > 📝 **NOTE**: This is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see here, use this document.
-
-<!-- TOC depthFrom:2 -->
-
-- [Summary](#summary)
-- [Step 0: Complete Prerequisites](#step-0-complete-prerequisites)
-- [Step 1: Expand Disk Size](#step-1-expand-disk-size)
-- [Step 2: Create a License Package](#step-2-create-a-license-package)
-- [Step 3: Regenerate SSL Certificates](#step-3-regenerate-ssl-certificates)
-- [Step 4: Enable Central Management](#step-4-enable-central-management)
-- [Step 5: Review Server Information](#step-5-review-server-information)
-  - [Nexus Repository](#nexus-repository)
-  - [Jenkins](#jenkins)
-  - [Chocolatey Central Management](#chocolatey-central-management)
-  - [Firewall ports](#firewall-ports)
-  - [Browser considerations](#browser-considerations)
-- [Step 6: Change the API Key (Optional, Recommended)](#step-6-change-the-api-key-optional-recommended)
-    - [Choco Apikey Command](#choco-apikey-command)
-- [Step 7: Install and Configure Chocolatey On Clients](#step-7-install-and-configure-chocolatey-on-clients)
-- [Step 8: Turn On Package Internalization](#step-8-turn-on-package-internalization)
-- [Step 9: License the QDE VM](#step-9-license-the-qde-vm)
-- [Common Errors And Resolutions](#common-errors-and-resolutions)
-  - [Unable login to Jenkins website, after browsing to Nexus website](#unable-login-to-jenkins-website-after-browsing-to-nexus-website)
-  - ["Server Error" warning when resetting "admin" credential in Nexus](#server-error-warning-when-resetting-admin-credential-in-nexus)
-  - [Context menu items for Package Builder and Package Uploader not available](#context-menu-items-for-package-builder-and-package-uploader-not-available)
-
-<!-- /TOC -->
 
 ## Summary
 
@@ -61,14 +33,12 @@ Additional information can be found in our [Online Documentation](../../).
 * [QDE Firewall Changes](./firewall-changes)
 * [QDE Client Setup](./client-setup) (setting up your client machines)
 
-___
 ## Step 0: Complete Prerequisites
 
 There are some steps you will have taken before you come to this readme. Please make sure you have taken those steps ahead of time. Please see the [Online Documentation](../../) for the most up to date information.
 
 * [QDE Setup](./setup)
 
-___
 ## Step 1: Expand Disk Size
 
 On the machine, please check the size of the C drive. If it needs expanded, expand it to the space you've allocated for the machine.
@@ -78,7 +48,6 @@ On the machine, please check the size of the C drive. If it needs expanded, expa
 Resize-Partition -DriveLetter C -Size ((Get-PartitionSupportedSize -DriveLetter C).SizeMax)
 ```
 
-___
 ## Step 2: Create a License Package
 
 To leverage all of the features of C4B, copy the license file you received via email to `C:\ProgramData\chocolatey\license`.
@@ -92,7 +61,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . 'C:\choco-setup\files\Create
 
 This will create the licensed package at `C:\choco-setup\packages` and push it up to your Nexus repository for use.
 
-___
 ## Step 3: Regenerate SSL Certificates
 
 Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](../ssl-setup) for more details.
@@ -115,7 +83,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-Ssl
 
 Once complete, this script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them.
 
-___
 ## Step 4: Enable Central Management
 
 > 📝 **NOTE**
@@ -129,8 +96,8 @@ Run the following to turn on the Central Management services in an administrativ
 Set-ExecutionPolicy Bypass -Scope Process -Force; . 'C:\choco-setup\files\EnableCCM.ps1'
 ```
 
-___
 ## Step 5: Review Server Information
+
 ### Nexus Repository
 
 * Url: [https://chocoserver:8443](https://chocoserver:8443)
@@ -185,7 +152,6 @@ To allow access to all services firewall ports have been opened on QDE as follow
 
 We recommend you use Google Chrome to interact with all Web interfaces for the different services installed. You will find Google Chrome pre-installed in the environment.
 
-___
 ## Step 6: Change the API Key (Optional, Recommended)
 
 You may wish to change the API key before you start using things.
@@ -213,7 +179,6 @@ This will be encrypted. To setup, do the following:
 choco apikey add --key="'$YourApiKey'" --source="'https://chocoserver:8443/repository/ChocolateyInternal/'"
 ```
 
-___
 ## Step 7: Install and Configure Chocolatey On Clients
 
 This script, like all of the others here would need to be run in an administrative PowerShell context. However, this one is run from your client machines and not the QDE.
@@ -242,7 +207,6 @@ What does this do?
 >
 > Please contact support if you need help here.
 
-
 The ClientSetup.ps1 script will:
 
 * Install Chocolatey
@@ -253,7 +217,6 @@ The ClientSetup.ps1 script will:
 * Configure Self-Service mode
 * Configure Central Management check-in
 
-___
 ## Step 8: Turn On Package Internalization
 
 Chocolatey For Business includes the Package Internalizer feature, which takes a package from the Community Repository and rewrites the package to include all the binaries necessary to complete the installation of the application. You'll find in the C:\choco-setup\files directory a script named `Invoke-ChocolateyInternalizer.ps1` to help you with the process of internalizing additional packages into your environment.
@@ -268,7 +231,6 @@ Example Usage:
 
 > 📝 **NOTE**: Please run the above from an administrative PowerShell session.
 
-___
 ## Step 9: License the QDE VM
 
 This VM is running an **UNACTIVATED** Server 2019 Standard Operating System. If you plan to use this virtual machine long-term, you _will_ need to apply a license to the VM. If you use a KMS server in your environment, and have it configured on clients via Group Policy, you likely have nothing to do here, but verify.
@@ -281,9 +243,10 @@ If you rely on Retail or MAK licensing, you will need to apply the license using
 slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 ```
 
-___
 ## Common Errors And Resolutions
+
 ### Unable login to Jenkins website, after browsing to Nexus website
+
 On the QDE VM, once you browse to the Nexus website at `https://chocoserver:8443`, you will receive the following error when trying to browse to the Jenkins website at `http://chocoserver:8080`:
 
 ```
@@ -313,6 +276,7 @@ Restart-Service nexus
 After the Nexus service has completed restarting, you should now be able to browse to the Jenkins website at `http://chocoserver:8080`.
 
 ### "Server Error" warning when resetting "admin" credential in Nexus
+
 When attempting to reset the `admin` account credential in Nexus, you receive a "Server Error" warning in the top right corner of the page, as shown below:
 
 ![QDE Nexus pw error](/assets/images/quickdeploy/QDE-nexus-pw-error.png)
@@ -320,7 +284,8 @@ When attempting to reset the `admin` account credential in Nexus, you receive a 
 Though it may not be obvious, this is actually caused by Nexus not having enough disk space to function properly. We often see this occur if the `Expand disk size` step from above was missed. Please confirm that you have completed the [Step 1: Expand Disk Size](#step-1-expand-disk-size) step. Please keep in mind, this step is **NOT** the same as expanding the disk at the hypervisor level.
 
 ### Context menu items for Package Builder and Package Uploader not available
-When right-clicking an exe or msi file on QDE, you may notice that the context menu items for Package Builder are missing. As well, when right-clicking on a nupkg file, you may also see the Package Uploader context menu entry is missing. This feature can be controlled by passing a custom parameter when installing the Chocolatey Licensed Extension package, but can be restored to its default state quite simply.
+
+xsWhen right-clicking an exe or msi file on QDE, you may notice that the context menu items for Package Builder are missing. As well, when right-clicking on a nupkg file, you may also see the Package Uploader context menu entry is missing. This feature can be controlled by passing a custom parameter when installing the Chocolatey Licensed Extension package, but can be restored to its default state quite simply.
 
 Assuming the latest `chocolatey.extension.nupkg` is in your `C:\choco-setup\packages` folder, open up an Administrative PowerShell window and reinstall the Chocolatey Licensed Extension (and reset Explorer for your changes to take effect immediately):
 

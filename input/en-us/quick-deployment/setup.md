@@ -5,8 +5,6 @@ Description: How to setup QDE
 RedirectFrom: docs/quick-deployment-setup
 ---
 
-# Quick Deployment Environment Setup
-
 > 📝 **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
@@ -21,34 +19,6 @@ Once you have this downloaded, it will be ready for extraction and import into y
 > Please follow these steps in ***exact*** order.
 > These will be very important later when you are trying to use the environment.
 
-
-<!-- TOC depthFrom:2 -->
-
-- [Step 0: Setup Considerations](#step-0-setup-considerations)
-  - [Step 0.1: Changing the Hostname](#step-01-changing-the-hostname)
-- [Step 1: Import the Virtual Environment](#step-1-import-the-virtual-environment)
-  - [Platform: Azure](#platform-azure)
-    - [Prerequisites](#prerequisites)
-  - [Platform: Hyper-V](#platform-hyper-v)
-    - [Hyper-V Appliance](#hyper-v-appliance)
-    - [Hyper-V VHD](#hyper-v-vhd)
-  - [Platform: VMware / Other (OVF/OVA Template)](#platform-vmware--other-ovfova-template)
-  - [Platform: VMware (VMDK file)](#platform-vmware-vmdk-file)
-  - [Platform: Other](#platform-other)
-- [Step 2: Other Considerations](#step-2-other-considerations)
-  - [Step 2.1: DNS Settings](#step-21-dns-settings)
-- [Step 3: Virtual Environment Setup](#step-3-virtual-environment-setup)
-  - [Step 3.1: Expand Disk Size](#step-31-expand-disk-size)
-  - [Step 3.2: Add Chocolatey License File](#step-32-add-chocolatey-license-file)
-  - [Step 3.3: Follow README instructions to finish environment setup](#step-33-follow-readme-instructions-to-finish-environment-setup)
-  - [Step 3.4: Database Password Changes (Optional)](#step-34-database-password-changes-optional)
-- [Step 4: Firewall Changes](#step-4-firewall-changes)
-- [Step 5: Install and Configure Chocolatey on Clients](#step-5-install-and-configure-chocolatey-on-clients)
-- [FAQ](#faq)
-  - [How do I upgrade QDE?](#how-do-i-upgrade-qde)
-  - [Should I upgrade Jenkins?](#should-i-upgrade-jenkins)
-
-<!-- /TOC -->
 
 ## Step 0: Setup Considerations
 

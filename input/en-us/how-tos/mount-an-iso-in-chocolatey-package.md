@@ -5,34 +5,16 @@ Description: How to mount an iso in Chocolatey package
 RedirectFrom: docs/how-to-mount-an-iso-in-chocolatey-package
 ---
 
-# Mount ISO image
-
-<!-- TOC -->
-
-- [Mounting ISOs - The Problem](#mounting-isos---the-problem)
-- [chocolatey-isomount.extension](#chocolatey-isomountextension)
-  - [Step 1: Get chocolatey-isomount.extension Package](#step-1-get-chocolatey-isomountextension-package)
-  - [Step 2: Add chocolatey-isomount.extension Dependency](#step-2-add-chocolatey-isomountextension-dependency)
-  - [Step 3: Add chocolatey-isomount.extension Code](#step-3-add-chocolatey-isomountextension-code)
-    - [Embedded ISO or on a fileshare](#embedded-iso-or-on-a-fileshare)
-    - [Download ISO from an URL](#download-iso-from-an-url)
-- [ImDisk](#imdisk)
-  - [Step 1: Get ImDisk Package](#step-1-get-imdisk-package)
-  - [Step 2: Add ImDisk Dependency](#step-2-add-imdisk-dependency)
-  - [Step 3: Add ImDisk Code](#step-3-add-imdisk-code)
-- [Mount-DiskImage](#mount-diskimage)
-  - [Requirements](#requirements)
-  - [Step 1: Add Mount-DiskImage Code](#step-1-add-mount-diskimage-code)
-
-<!-- /TOC -->
-
 ## Mounting ISOs - The Problem
+
 There are times when using an installer file directly is not an option as what you need is contained in an ISO. In later versions of the Windows Operating System (defined in [Mount-DiskImage](#mount-diskimage) below), PowerShell provides the ability to mount this ISO file directly using the `Mount-DiskImage` cmdlet.  However, in earlier versions of Windows, this is not possible. In order to maintain backwards compatibility with older Operating Systems, when using an ISO file, you can use ImDisk Virtual Disk Driver.
 
 ## chocolatey-isomount.extension
+
 One of the community maintainers has created an extension package to automate the installation of software from inside an ISO file. This extension is based on the [Mount-DiskImage](#mount-diskimage) method below and therefore has the same [Requirements](#requirements).
 
 ### Step 1: Get chocolatey-isomount.extension Package
+
 You will need to take a dependency on the [chocolatey-isomount.extension package](https://chocolatey.org/packages/chocolatey-isomount.extension) If you are using Chocolatey in an organizational context, be sure to cache the chocolatey-isomount.extension package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download chocolatey-isomount.extension`
@@ -42,6 +24,7 @@ You will need to take a dependency on the [chocolatey-isomount.extension package
 **NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](../features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add chocolatey-isomount.extension Dependency
+
 Open your package's nuspec up and add a dependency on `chocolatey-isomount.extension`. This will be inserted just above the closing "metadata" tag (`</metadata>`).
 
 ~~~xml
@@ -53,6 +36,7 @@ Open your package's nuspec up and add a dependency on `chocolatey-isomount.exten
 **NOTE:** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
 ### Step 3: Add chocolatey-isomount.extension Code
+
 Now in your chocolateyInstall.ps1, you will want something similar to the following:
 
 #### Embedded ISO or on a fileshare
@@ -100,9 +84,11 @@ Install-ChocolateyIsoPackage @packageArgs
 ~~~
 
 ## ImDisk
+
 The most compatible with all versions of Windows option is to use ImDisk. ImDisk Virtual Disk Driver (imdisk) is a software package that allows an ISO file to be mounted, but more importantly, it works for Windows NT/2000/XP/Vista/7/8/8.1 or Windows Server 2003/2008/2012/2016 (so basically, everything!). That means that you can use one, common, method, for mounting ISO files when required within your Chocolatey Packages.
 
 ### Step 1: Get ImDisk Package
+
 You will need to take a dependency on the [ImDisk package](https://chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](./recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download imdisk --internalize`
@@ -112,6 +98,7 @@ You will need to take a dependency on the [ImDisk package](https://chocolatey.or
 **NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](../features/paid/automatically-recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add ImDisk Dependency
+
 Open your package's nuspec up and add a dependency on `imdisk`. This will be inserted just above the closing "metadata" tag (`</metadata>`).
 
 ~~~xml
@@ -123,6 +110,7 @@ Open your package's nuspec up and add a dependency on `imdisk`. This will be ins
 **NOTE:** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
 ### Step 3: Add ImDisk Code
+
 Now in your chocolateyInstall.ps1, you will want something similar to the following:
 
 ~~~powershell
@@ -145,16 +133,19 @@ imdisk -d -m w:
 ~~~
 
 ## Mount-DiskImage
+
 [Mount-DiskImage](https://docs.microsoft.com/en-us/powershell/module/storage/mount-diskimage)
 is an alternative that is built-in, so no package dependencies required. However it may need admin permission to perform (with VHDs it will) and is only available in certain versions of PowerShell/Windows.
 
 ### Requirements
+
 * PowerShell v3+
 * Windows 8+/Windows Server 2012+
 
 It is both an Operating System version dependency ***and*** a PowerShell version dependency (although by default those operating systems will have the right version of PowerShell already available). The great news is if you have that, it becomes as simple as the following code.
 
 ### Step 1: Add Mount-DiskImage Code
+
 In your chocolateyInstall.ps1, you will want something similar to the following:
 
 ~~~powershell

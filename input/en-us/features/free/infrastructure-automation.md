@@ -5,34 +5,14 @@ Description: Information on how Chocolatey can integrate with almost every tool
 RedirectFrom: docs/features-infrastructure-automation
 ---
 
-# Configuration Management Integration  (Free / Open Source)
-
 Chocolatey integrates with several infrastructure automation tools!
 
 With most of these tools, the interface you would interact with Chocolatey would be through the tool or through the interfaces of the tool, like in scripts.
 
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC depthTo:2 -->
-
-- [Summary](#summary)
-- [Ansible](#ansible)
-- [Boxstarter](#boxstarter)
-- [Chef](#chef)
-- [Octopus Deploy](#octopus-deploy)
-- [Otter](#otter)
-- [PowerShell DSC](#powershell-dsc)
-- [PowerShell PackageManagement](#powershell-packagemanagement)
-- [PSDeploy](#psdeploy)
-- [Puppet](#puppet)
-- [Saltstack](#saltstack)
-- [System Center Configuration Manager](#system-center-configuration-manager)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 ## Summary
 
 ### Chocolatey Integration Implementation with Common Configuration Managers
+
 For common integrations, it's handy to refer to the table below to know what configuration manager to choose. Most of the implementations below are written and managed by the companies behind the product. These implementations are typically open source and each part could be added by community contributions for those familiar with the code implementations. If you are unable to provide code implementations for adding necessary functionality to the integrations, we find it best if you create issues/tickets with those organizations if you are a customer as you will have more leverage into getting them implemented. **NOTE**: If you are a configuration manager company identified in the table and you have implemented anything in the below or you find our information is incorrect, please let us know so we can get it fixed.
 
 | Configuration Managers                   | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
@@ -217,14 +197,16 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
 [Read More...](https://bit.ly/choco_dsc)
 
 ## PowerShell PackageManagement
+
 **NOTE:** Chocolatey has a prototype provider for the built-in package manager on Windows 10/Windows Server 2016 that was created by Microsoft awhile back. It is not fully functional and it may have security issues. If you want to use Chocolatey with PackageManagement, we recommend using ChocolateyGet, which is a nice bridge until an official one is implemented. No ETA has been defined.
 
 [PowerShell PackageManagement (aka OneGet)](https://github.com/OneGet/oneget) is a package manager ***aggregator*** that depends on the existence of package managers as providers to work, one of which is Chocolatey. For a pretty comprehensive post about what PackageManagement is and what it is not, see the PackageManagement Blog post on [10 things about OneGet that are completely different than you think](https://blogs.technet.microsoft.com/packagemanagement/2015/05/05/10-things-about-oneget-that-are-completely-different-than-you-think/).
 
 ## PSDeploy
+
 PSDeploy is a quick and dirty module to simplify PowerShell based deployments.
 
-~~~powershell
+```powershell
 Deploy SingleChocolateyPackage {
     By Chocolatey {
         FromSource 'c:\ChocolateyPackages\examplepackage.0.1.1.nupkg'
@@ -235,11 +217,12 @@ Deploy SingleChocolateyPackage {
         }
     }
 }
-~~~
+```
 
 [Read More...](http://psdeploy.readthedocs.io/en/latest/Example-Chocolatey-Deployment/)
 
 ## Puppet
+
 Puppet has a [Supported module](https://forge.puppet.com/supported) for Chocolatey `puppetlabs/chocolatey`. Note that there is also a `chocolatey/chocolatey` module, the supported module is a drop in replacement for the `chocolatey/chocolatey` module - please use `puppetlabs/chocolatey` as it has full configuration of Chocolatey.
 
 ~~~puppet
@@ -275,6 +258,7 @@ salt '*' chocolatey.install git
 [Read More...](https://bit.ly/choco_salt)
 
 ## System Center Configuration Manager
+
 Chocolatey integrates with SCCM by handling the software management, and pointing to [distribution points](https://technet.microsoft.com/en-us/library/bb680614.aspx) as the source for packages. This allows folks to get packages and larger binaries out to their network without constraints and still take advantage of Chocolatey's fantastic abilities!
 
 To direct Chocolatey package installs, you can still write GPOs to ensure this.

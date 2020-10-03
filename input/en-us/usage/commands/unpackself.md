@@ -16,12 +16,6 @@ This will unpack files needed by choco. It will overwrite existing
 **NOTE:** This command should only be used when installing Chocolatey, not
  during normal operation.
 
-<!-- TOC -->
-
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Options and Switches
 
 **NOTE:** Options and switches apply to all items passed, so if you are

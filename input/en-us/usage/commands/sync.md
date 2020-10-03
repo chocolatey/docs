@@ -20,15 +20,6 @@ Synchronizes against the system installed software that are not
 
 See https://docs.chocolatey.org/en-us/features/paid/synchronize
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco sync [<options/switches>]

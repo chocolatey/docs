@@ -9,18 +9,8 @@ RedirectFrom: docs/development-environment-setup
 
 How many of you out there are rake fans? Getting developers to look at your source code can sometimes be an issue. Wouldn't it be nice if it was simple for them to get all set up? What about Ruby DevKit? It would be nice, right?
 
-<!-- TOC -->
-
-- [Set Up A Development Environment Using Chocolatey](#set-up-a-development-environment-using-chocolatey)
-- [Set up From the Source](#set-up-from-the-source)
-  - [setup.ps1:](#setupps1)
-  - [setup.cmd:](#setupcmd)
-- [Getting the Source](#getting-the-source)
-- [Setup A Full Environment Including Visual Studio Express, IIS Express and SQL Server Express (with Management Studio)](#setup-a-full-environment-including-visual-studio-express-iis-express-and-sql-server-express-with-management-studio)
-
-<!-- /TOC -->
-
 ## Set up From the Source
+
 This does the following:
 
 * downloads and installs Chocolatey
@@ -96,6 +86,7 @@ foreach ($nugetConfig in $nugetConfigs) {
 rake
 
 ```
+
 ### setup.cmd:
 
 ```
@@ -109,6 +100,7 @@ pause
 The original is [on github](https://gist.github.com/1107920).
 
 ## Getting the Source
+
 Create a package for your project and call it projectname*.dev*.  It should take a nuspec dependency on whatever source control you use. So in the case of git, a dependency on msysgit.
 Now, in [chocolateyInstall.ps1](../chocolatey-install-ps1), you just need something like the following:
 
@@ -134,6 +126,7 @@ Error Occurred: $($_.Exception.Message)
 The above is from [DropkicK.Dev](https://github.com/ferventcoder/chocolatey-packages/blob/master/manual/dropkick.dev/tools/chocolateyInstall.ps1)
 
 ## Setup A Full Environment Including Visual Studio Express, IIS Express and SQL Server Express (with Management Studio)
+
 The original [gist](https://gist.github.com/3825023)
 
 ```powershell

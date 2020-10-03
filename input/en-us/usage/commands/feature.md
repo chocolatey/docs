@@ -11,14 +11,6 @@ RedirectFrom: docs/commands-feature
 
 Chocolatey will allow you to interact with features.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
 ## Usage
 
     choco feature [list]|disable|enable [<options/switches>]

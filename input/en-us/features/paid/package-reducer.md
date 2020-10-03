@@ -5,42 +5,14 @@ Description: Reduce the size of your package installations automatically
 RedirectFrom: docs/features-package-reducer
 ---
 
-# Package Reducer (Licensed Editions Only)
 > Reduce the size of your package installations automatically!
 
 If you have a significant number of Chocolatey packages you manage, you may notice that you also may have a pretty significant space usage under the Chocolatey lib directory. Package reducer automatically decreases the size of nupkg files to around 5KB and removes installers and zips automatically from your package install directories. This may allow you to save GBs of usage for a large amount of packages being managed!
 
-<!-- TOC -->
-
-- [Automatic](#automatic)
-  - [Usage](#usage)
-    - [Requirements](#requirements)
-    - [Setup](#setup)
-  - [See It In Action](#see-it-in-action)
-  - [Options and Switches](#options-and-switches)
-  - [FAQ](#faq)
-    - [How do I take advantage of this feature?](#how-do-i-take-advantage-of-this-feature)
-    - [I'm a licensed customer, now what?](#im-a-licensed-customer-now-what)
-    - [How does it work?](#how-does-it-work)
-    - [How do I turn this feature on?](#how-do-i-turn-this-feature-on)
-    - [How do I turn this feature off?](#how-do-i-turn-this-feature-off)
-    - [Can I just deflate nupkg file sizes?](#can-i-just-deflate-nupkg-file-sizes)
-    - [Can I apply reducer to already installed packages?](#can-i-apply-reducer-to-already-installed-packages)
-- [Optimize Command](#optimize-command)
-  - [Usage](#usage-1)
-    - [Requirements](#requirements-1)
-  - [Examples](#examples)
-  - [See It In Action](#see-it-in-action-1)
-  - [Options and Switches](#options-and-switches-1)
-  - [FAQ](#faq-1)
-    - [How do I take advantage of this feature?](#how-do-i-take-advantage-of-this-feature-1)
-    - [I'm a licensed customer, now what?](#im-a-licensed-customer-now-what-1)
-    - [How does it work?](#how-does-it-work-1)
-
-<!-- /TOC -->
-
 ## Automatic
+
 ### Usage
+
 When you normally create packages that embed or download resources, the impact on a system includes the following:
 
 * A nupkg file size takes up some space - this is like a fancy zip file and may contain binaries
@@ -138,32 +110,37 @@ Global Config Setting:
 ### FAQ
 
 #### How do I take advantage of this feature?
+
 You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing) (Pro, MSP, or Business) and use the community package repository to install/upgrade packages. Pro is a personal, named license that costs about the price of a lunch outing per month and comes with several other features. Business editions are great for organizations that need to manage the total software management lifecycle. MSP editions are for managed service providers and contain the same features as Pro (minus VirusTotal integration).
 
 #### I'm a licensed customer, now what?
+
 Once you have set up the feature(s), it will automatically reduce the size of the packaging on install and upgrade.
 
 #### How does it work?
+
 It just works. When you install or upgrade a package, it will automatically reduce the size of the installation directory if you've set up Package Reducer properly.
 
 #### How do I turn this feature on?
+
 * Globally - `choco feature enable -n reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--reduce-package-size` with install/upgrade commands.
 
 #### How do I turn this feature off?
+
 * Globally - `choco feature disable -n reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--no-reduce-package-size` with install/upgrade commands.
 
 #### Can I just deflate nupkg file sizes?
+
 Yes!
 
 * Globally - `choco feature disable -n reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--reduce-nupkg-only` with install/upgrade commands.
 
 #### Can I apply reducer to already installed packages?
+
 See the next section, the `choco optimize` command.
-
-
 
 ## Optimize Command
 
@@ -231,10 +208,13 @@ This image shows a display of `choco optimize` reducing space for 34 existing in
 ### FAQ
 
 #### How do I take advantage of this feature?
+
 You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing) (Pro, MSP, or Business) and use the community package repository to install/upgrade packages. Pro is a personal, named license that costs about the price of a lunch outing per month and comes with several other features. Business editions are great for organizations that need to manage the total software management lifecycle. MSP editions are for managed service providers and contain the same features as Pro (minus VirusTotal integration).
 
 #### I'm a licensed customer, now what?
+
 You can just run `choco optimize`. Couple it with package reducer features to automatically ensure your Chocolatey installation stays very small.
 
 #### How does it work?
+
 It goes through all existing packages and removes unnecessary installers and zips. It also deflates nupkg files down to 5KB or less.

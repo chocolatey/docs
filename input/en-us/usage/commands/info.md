@@ -15,15 +15,6 @@ Chocolatey will perform a search for a package local or remote and provide
 
 **NOTE:** New as of 0.9.10.0.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco info [<options/switches>]
@@ -36,7 +27,6 @@ Chocolatey will perform a search for a package local or remote and provide
 
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Exit Codes
 
@@ -58,7 +48,6 @@ Enhanced:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

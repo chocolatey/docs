@@ -5,28 +5,6 @@ Description: How to setup internal package repository
 RedirectFrom: docs/how-to-setup-internal-package-repository
 ---
 
-# How To Use Package Internalizer To Create Internal Package Source (Business Editions Only)
-
-<!-- TOC -->
-
-- [Summary](#summary)
-- [Organizational Requirements](#organizational-requirements)
-  - [Architecture](#architecture)
-- [Building Your Internal Infrastructure](#building-your-internal-infrastructure)
-  - [Server Pre-Requisites](#server-pre-requisites)
-  - [Internal Package Repositories](#internal-package-repositories)
-    - [Install and Configure Chocolatey Server](#install-and-configure-chocolatey-server)
-  - [Install and Configure Jenkins Server](#install-and-configure-jenkins-server)
-    - [Script: `Get-UpdatedPackage.ps1`](#script-get-updatedpackageps1)
-    - [Script: `Update-ProdRepoFromTest.ps1`](#script-update-prodrepofromtestps1)
-    - [Script: `ConvertTo-ChocoObject.ps1`](#script-convertto-chocoobjectps1)
-    - [Create Jenkins Jobs](#create-jenkins-jobs)
-- [Test the Jenkins Automation (Exercises)](#test-the-jenkins-automation-exercises)
-  - [Submit a new package](#submit-a-new-package)
-  - [Updating a package from the Chocolatey Community Repository](#updating-a-package-from-the-chocolatey-community-repository)
-
-<!-- /TOC -->
-
 ## Summary
 
 When running within an organization it is beneficial to use your own, internally controlled, package repository. But that doesn't mean you have to create all packages from scratch. Chocolatey allows you to create packages easily using the [package builder](../features/paid/create-packages-from-installers) but it also allows you to take packages from the Chocolatey Community Repository and recompile them for internal use - this is a process known as [package internalization](../features/paid/automatically-recompile-packages). This guide shows you how to use that within your organization.

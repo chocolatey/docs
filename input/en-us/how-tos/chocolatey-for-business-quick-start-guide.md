@@ -5,8 +5,6 @@ Description: Get up and running quickly with Chocolatey for Business
 RedirectFrom: docs/chocolatey-for-business-quick-start-guide
 ---
 
-# Chocolatey for Business Quick Start Implementation Guide
-
 Thank you for choosing Chocolatey as your partner in Windows software automation management. We are excited to help you dive in and successfully implement a deployment of all the necessary components.
 
 > 📝 **NOTE**
@@ -19,25 +17,6 @@ Thank you for choosing Chocolatey as your partner in Windows software automation
 If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
 
 Let's get started!
-
-<!-- TOC depthFrom:2 -->
-
-- [Components](#components)
-- [Requirements](#requirements)
-  - [Administrator Workstation](#administrator-workstation)
-  - [Repository Server (Nexus):](#repository-server-nexus)
-  - [Deployment/Configuration Management Solution](#deploymentconfiguration-management-solution)
-  - [Central Management Server](#central-management-server)
-  - [Clients/Nodes:](#clientsnodes)
-- [Installation](#installation)
-  - [Preparation on Administrator Workstation](#preparation-on-administrator-workstation)
-  - [Repository Server Setup](#repository-server-setup)
-  - [Back on Administrative Workstation](#back-on-administrative-workstation)
-  - [Client Nodes](#client-nodes)
-  - [Central Management Server](#central-management-server-1)
-  - [Conclusion](#conclusion)
-
-<!-- /TOC -->
 
 ## Components
 
@@ -89,7 +68,6 @@ As with configuration managers, this is out-of-scope for this document. Generall
 * Windows 7+ / Windows Server 2003+ (ideally, Windows 10 / Windows Server 2016)
 * PowerShell v2+ (not PowerShell Core)
 * .NET Framework 4.6.1+ (minimum required version for Chocolatey Central Management access)
-
 
 ## Installation
 

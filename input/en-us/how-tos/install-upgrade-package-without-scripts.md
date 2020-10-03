@@ -5,26 +5,11 @@ Description: Prevent the running of packaging scripts
 RedirectFrom: docs/how-to-install-upgrade-package-without-scripts
 ---
 
-# How To Install or Upgrade a Package Without Running Scripts
-
 So you've updated your applications manually or through some other means or you want to make Chocolatey aware of some previously installed applications without actually running the installation scripts.
 
 **NOTE**: [Chocolatey Pro+](https://chocolatey.org/compare) has [automatic sync](../features/paid/synchronize) to handle this. [Chocolatey for Business](https://chocolatey.org/compare) also has `choco sync` that can generate packages on the fly and baseline them to the system. The [sync command](../features/paid/synchronize) is also able to link up installed packages that are installed through this manner so they track the package to the software (something you won't get without running the install script).
 
 **NOTE**: This is considered an advanced scenario - make sure you read and understand everything here before trying it. You may mess something up if you don't understand the full implication of what you are doing.
-
-<!-- TOC -->
-
-- [Installing a Package Without Running Install Script](#installing-a-package-without-running-install-script)
-  - [Community Feed has a package with your version](#community-feed-has-a-package-with-your-version)
-  - [Community feed has newer version than you](#community-feed-has-newer-version-than-you)
-  - [Community Feed has a package older than your version](#community-feed-has-a-package-older-than-your-version)
-- [Upgrade a Package Without Running Scripts](#upgrade-a-package-without-running-scripts)
-  - [Application is self-updating (like Google Chrome)](#application-is-self-updating-like-google-chrome)
-  - [The software was upgraded but not the package](#the-software-was-upgraded-but-not-the-package)
-  - [The software was upgraded but not the package and Community Feed is outdated](#the-software-was-upgraded-but-not-the-package-and-community-feed-is-outdated)
-
-<!-- /TOC -->
 
 ## Installing a Package Without Running Install Script
 
@@ -46,6 +31,7 @@ If you wander over to [install switches](../usage/commands/install#options-and-s
 This switch is going to be very important for you. Now we will go through some scenarios to help you make the best decision.
 
 ### Community Feed has a package with your version
+
 Consider the following scenario:
 
 * You have Firefox version 1.0.0 installed
@@ -59,6 +45,7 @@ Your command could be
 **Recommendation**: You should try to just install the package first and see what happens. In some cases the package may do additional things like update the path or do some helpful configuration for you (although this is not usually the case). If it fails or doesn't work, you can always fall back to skipping the install script as in the command above.
 
 ### Community feed has newer version than you
+
 Consider the following scenario:
 
 * You have Firefox version 1.0.0 installed.
@@ -68,6 +55,7 @@ Consider the following scenario:
 **Recommendation**: You should run the regular choco install (without the skip powershell argument) for Firefox and allow Chocolatey to upgrade the installed version. Check the package files first to be sure it is the same type of install (native installer versus zip archives). You can download the package and review the install script. You can also use `--noop` as part of your install arguments to see the script.
 
 ### Community Feed has a package older than your version
+
 Consider the following scenario:
 
 * You have Firefox version 2.0.0 installed.
@@ -86,6 +74,7 @@ Additional thoughts: You could install the older version of the package (with th
 ## Upgrade a Package Without Running Scripts
 
 ### Application is self-updating (like Google Chrome)
+
 Consider the following scenario:
 
 * You have installed Google Chrome from Chocolatey.org (package id is googlechrome)

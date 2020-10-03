@@ -5,22 +5,10 @@ Description: How to setup a client machine to use QDE
 RedirectFrom: docs/quick-deployment-client-setup
 ---
 
-# Quick Deployment Client Setup
-
 > 📝 **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Client Setup page](./v1/client-setup).
-
-<!-- TOC depthFrom:2 -->
-
-- [Summary](#summary)
-- [DNS](#dns)
-- [Client Installation](#client-installation)
-  - [Import Self-Signed Certificate from QDE Server](#import-self-signed-certificate-from-qde-server)
-  - [Run ClientSetup.ps1](#run-clientsetupps1)
-
-<!-- /TOC -->
 
 ## Summary
 

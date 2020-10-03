@@ -5,37 +5,14 @@ Description: Information on how Chocolatey creates shims to installed executable
 RedirectFrom: docs/features-shim
 ---
 
-# Shimming - Automatically Add Executables to PATH (Free / Open Source)
-
 Shimming is like symlinking, but it works much better. It's a form of redirection, where you create a "shim" that redirects input to the actual binary process and shares the output. It can also work to simply call the actual binary when it shims GUI applications.
 
 We like to call this "batch redirection that works".
 
 This also allows applications and tools to be on the "PATH" without cluttering up the PATH environment variable.
 
-<!-- TOC -->
-
-- [Benefits](#benefits)
-- [Usage](#usage)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-- [FAQ](#faq)
-  - [How do I take advantage of this feature?](#how-do-i-take-advantage-of-this-feature)
-  - [How does it work?](#how-does-it-work)
-  - [How is this better than symlinks?](#how-is-this-better-than-symlinks)
-  - [Does it require admin rights?](#does-it-require-admin-rights)
-  - [Does the shim work with UAC?](#does-the-shim-work-with-uac)
-  - [Why not simple batch redirection?](#why-not-simple-batch-redirection)
-  - [Have you thought about shimming in more places?](#have-you-thought-about-shimming-in-more-places)
-  - [I need to shim a non-exe file.](#i-need-to-shim-a-non-exe-file)
-  - [I need to exclude a file from shimming.](#i-need-to-exclude-a-file-from-shimming)
-  - [How can I ensure a GUI shim?](#how-can-i-ensure-a-gui-shim)
-  - [A package messed up and should have set up a shim as a GUI.](#a-package-messed-up-and-should-have-set-up-a-shim-as-a-gui)
-  - [An executable requires being run from the folder where it actually is.](#an-executable-requires-being-run-from-the-folder-where-it-actually-is)
-
-<!-- /TOC -->
-
 ## Benefits
+
 These are the benefits of creating a shim:
 
  * Provides an exe file that calls a target executable.
@@ -48,6 +25,7 @@ These are the benefits of creating a shim:
  * Does not require special privileges like creating symlinks (symbolic links) do. So you can create shims without administrative rights.
 
 ## Usage
+
 Chocolatey automatically shims executables in package folders that are not explicitly ignored, putting them into the `"$($env:ChocolateyInstall)\bin"` folder (and subsequently onto the PATH). This typically resolves to `C:\ProgramData\chocolatey\bin` unless you customized your install options or a non-administrator install.
 
 These executables can come as part of the package or downloaded to the package folder during the install script.
@@ -86,32 +64,41 @@ You pass these arguments to an executable that is a shim (e.g. executables in th
 ## FAQ
 
 ### How do I take advantage of this feature?
+
 This works with all versions of Chocolatey. Just use packages and when those packages have exe files, those are automatically shimmed so they are on the PATH.
 
 ### How does it work?
+
 Chocolatey uses a tool called ShimGen that inspects an executable and creates a small binary, known as a "shim", that simply calls the executable. Then it places that shim in the `"$($env:ChocolateyInstall)\bin"`. It creates the shim by generating it at runtime based on the actual binary's information.
 
 ### How is this better than symlinks?
+
 When you symlink a file on Windows, you must symlink all of its dependencies like dlls and config files. If you put that all into the `"$($env:ChocolateyInstall)\bin"` folder to take advantage of being on the PATH, you can quickly see that you will get into a form of "DLL hell" when other executables depend on different versions of the same DLL. You would also need to symlink folders and files for things like plugins, extensions, skins, and other things that are in the original directory. If you are trying to create a symlink to not add more locations to your PATH environment variable, then this particular shortcoming defeats that purpose entirely.
 
 Shimming by design does not run into this issue.
 
 ### Does it require admin rights?
+
 No, and this is another thing that sets it apart from symlinks. To create symlinks on Windows, you need to have `SeCreateSymbolicLinkPrivilege`, which is one of the privileges granted to Administrators.
 
 ### Does the shim work with UAC?
+
 Yes! When a shim detects that elevation is required, it will automatically request elevation.
 
 ### Why not simple batch redirection?
+
 We tried using batch ("*.bat") files, and it mostly works, but when applications calling other applications expect the file name to be ".exe", a file named "*.bat" doesn't work. Batch files also don't work in all shells, and shims do.
 
 ### Have you thought about shimming in more places?
+
 Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](../../creating-packages/helpers/install-binfile).
 
 ### I need to shim a non-exe file.
+
 If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](../../creating-packages/helpers/install-binfile).
 
 ### I need to exclude a file from shimming.
+
 If you are creating a package and you want to skip creation of a shim for a particular file, you can create a "*.ignore" file.
 
 Set an empty file next to the executable (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".ignore". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.ignore`" (pay attention to case - "`BOB.exe.ignore`" may not work with all versions of Chocolatey).
@@ -119,6 +106,7 @@ Set an empty file next to the executable (or where it will be downloaded/unpacke
 [Read more...](../../creating-packages/create-packages#how-do-i-exclude-executables-from-getting-shims)
 
 ### How can I ensure a GUI shim?
+
 Chocolatey 0.9.10+ will automatically detect GUI applications and adjust the shim accordingly. The detection may not always be accurate, and older versions of Chocolatey don't handle this, so it's best to create a "*.gui" file to direct the shim creation to be for a GUI application.
 
 If you are creating a package and want the shim to exit immediately after calling the application, create an empty "*.gui" file next to where the exe file is (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".gui". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.gui`" (pay attention to case - "`BOB.exe.gui`" may not work with all versions of Chocolatey).
@@ -126,7 +114,9 @@ If you are creating a package and want the shim to exit immediately after callin
 [Read more...](../../creating-packages/create-packages#how-do-i-set-up-shims-for-applications-that-have-a-gui)
 
 ### A package messed up and should have set up a shim as a GUI.
+
 Call the shim with `--shimgen-gui` to target the correct behavior.
 
 ### An executable requires being run from the folder where it actually is.
+
 Call the shim with `--shimgen-usetargetworkingdirectory`. There are badly behaved applications that don't run well from anywhere, and they require some extra help so they will run correctly.

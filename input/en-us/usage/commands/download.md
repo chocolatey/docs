@@ -9,17 +9,6 @@ RedirectFrom: docs/commands-download
 
 # Download Command (choco download)
 
-<!-- TOC -->
-
-- [Package Copy / Package Downloader](#package-copy--package-downloader)
-- [Package Internalizer](#package-internalizer)
-- [Usage](#usage)
-- [Examples](#examples)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Package Copy / Package Downloader
 
 [Chocolatey Professional](https://chocolatey.org/compare) and up (Pro+) starting in version 1.7.1.
@@ -37,7 +26,6 @@ Downloads a package from a source, optionally downloading remote
  requirement.
 
 See https://docs.chocolatey.org/en-us/features/paid/automatically-recompile-packages
-
 
 ## Usage
 

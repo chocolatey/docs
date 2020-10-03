@@ -13,16 +13,6 @@ Returns a list of outdated packages.
 
 **NOTE:** Available with 0.9.9.6+.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco outdated [<options/switches>]
@@ -39,7 +29,6 @@ If you use `--source=https://somewhere/out/there`, it is
 
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Exit Codes
 
@@ -62,11 +51,9 @@ If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
-
 ## See It In Action
 
 ![choco outdated](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_outdated.gif)
-
 
 ## Options and Switches
 

@@ -5,15 +5,6 @@ Description: What is Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-overview
 ---
 
-# Chocolatey GUI
-
-<!-- TOC -->
-
-- [What is Chocolatey GUI?](#what-is-chocolatey-gui)
-- [What functionality is offered by Chocolatey GUI?](#what-functionality-is-offered-by-chocolatey-gui)
-
-<!-- /TOC -->
-
 ## What is Chocolatey GUI?
 
 Chocolatey GUI is a WPF application that allows the installation, uninstallation, updating, and searching for Chocolatey Packages.  It is intended as a replacement for the Chocolatey CLI for those that prefer interacting with an application, rather than with commands.

@@ -5,8 +5,6 @@ Description: Information on how to setup CCM
 RedirectFrom: docs/central-management-setup
 ---
 
-# Chocolatey Central Management Setup
-
 Installing CCM takes a little more pre-thought than simply running the package installs.
 While it is envisioned that CCM will be installed across multiple servers (split installation), it is certainly possible to run CCM on a single server (monolithic).
 
@@ -15,7 +13,6 @@ When setting up Central Management, currently, the CCM packages do not provision
 > 📝 **NOTE**
 >
 > Please read through all of this prior to running installation as you could run into issues that require support to help you correct later.
-
 
 > ⚠️ **WARNING**
 >
@@ -31,24 +28,8 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > 📝 **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](./setup-upgrade).
 
-___
-<!-- TOC depthFrom:2 depthTo:5 -->
-
-- [High Level Requirements](#high-level-requirements)
-- [Step 1: Internalize Packages](#step-1-internalize-packages)
-- [Step 2: Setup Central Management Database](#step-2-setup-central-management-database)
-- [Step 3: Setup Central Management Windows Service(s)](#step-3-setup-central-management-windows-services)
-- [Step 4: Setup Central Management Website](#step-4-setup-central-management-website)
-- [Step 5: Setting up Agent Machines](#step-5-setting-up-agent-machines)
-- [Upgrading?](#upgrading)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - [Executable script code found in signature block](#executable-script-code-found-in-signature-block)
-  - [The client reports successful checkin, but nothing is showing up in CCM](#the-client-reports-successful-checkin-but-nothing-is-showing-up-in-ccm)
-
-<!-- /TOC -->
-
-____
 ## High Level Requirements
+
 Central Management packages require at a minimum:
 
 * Chocolatey for Business (C4B) Edition
@@ -57,7 +38,6 @@ Central Management packages require at a minimum:
 
 Each package further defines dependencies that they include.
 
-___
 ## Step 1: Internalize Packages
 
 > 📝 **NOTE**
@@ -65,7 +45,6 @@ ___
 > Make sure you have read over the [CCM Compability Matrix](./index#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 The complete installation of CCM requires several packages that are available from the community repository. Let's get them internalized. We will internalize them to a `C:\packages` directory. It is highly recommended that you push the packages to an internal repository before continuing with other steps in this guide. Change the values in the first lines of this script to match what you need in your environment.
-
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
@@ -110,44 +89,44 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 > ℹ️ If you are on a TRIAL, you have a step in the script above that you are skipping - noted by "TRIAL?" This is because you don't have direct access to the licensed repository. You will have received an email with download links that contained your trial license file. Refer back to that for the downloads.
 
-___
 ## Step 2: Setup Central Management Database
+
 Please see [Central Management Database Setup](./setup-database).
 
 > 📝 **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
-___
 ## Step 3: Setup Central Management Windows Service(s)
+
 Please see [Central Management Service Setup](./setup-service).
 
 > 📝 **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
-___
 ## Step 4: Setup Central Management Website
+
 Please see [Central Management Web Setup](./setup-web).
 
 > 📝 **NOTE**: If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
 
-___
 ## Step 5: Setting up Agent Machines
+
 Please see [Central Management Client Setup](./setup-client).
 
-___
 ## Upgrading?
+
 Looking for upgrade instructions? See [Central Management Upgrade](./setup-upgrade).
 
-___
 ## Common Errors and Resolutions
+
 ### Executable script code found in signature block
+
 When attempting to install some components of Chocolatey, you may have seen this error. This was a bug due to how the script at [Step 1: Internalize Packages](#step-1-internalize-packages) was exasperating a known issue at https://github.com/chocolatey/chocolatey-licensed-issues/issues/155.
 
 Please go back through Step 1 and re-internalize those packages. You may need to overwrite any you would have pushed up (many if it won't let you do a push). In Nexus, you can remove the existing items and then upload through there. In other repositories you may need to remove the existing package versions you deployed first.
 
 ### The client reports successful checkin, but nothing is showing up in CCM
+
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
 
 The logs are located at `$env:ChocolateyInstall\logs\ccm-service.log`. If you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
-
-___
 [Chocolatey Central Management](./)

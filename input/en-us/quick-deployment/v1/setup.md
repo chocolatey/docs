@@ -5,8 +5,6 @@ Description: How to setup QDE v1
 RedirectFrom: docs/quick-deployment-setup-v1
 ---
 
-# Quick Deployment Environment Setup
-
 > 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
@@ -19,33 +17,8 @@ You will receive a download link via email for an archive of the VM image. Once 
 >
 > Please follow these steps in ***exact*** order. These will be very important later when you are trying to use the environment.
 
-<!-- TOC depthFrom:2 -->
-
-- [Step 0: Setup Considerations](#step-0-setup-considerations)
-  - [Step 0.1: QDE Rename Considerations](#step-01-qde-rename-considerations)
-- [Step 1: Import Virtual Environment](#step-1-import-virtual-environment)
-  - [Platform: Azure](#platform-azure)
-  - [Platform: Hyper-V (Appliance)](#platform-hyper-v-appliance)
-  - [Platform: Hyper-V (VHD file)](#platform-hyper-v-vhd-file)
-  - [Platform: VMware (VMDK file)](#platform-vmware-vmdk-file)
-  - [Platform: VMware (OVF template)](#platform-vmware-ovf-template)
-  - [Platform: Other](#platform-other)
-- [Step 2: Other Considerations for Virtual Environment](#step-2-other-considerations-for-virtual-environment)
-  - [Step 2.1: DNS Settings](#step-21-dns-settings)
-- [Step 3: Virtual Environment Setup](#step-3-virtual-environment-setup)
-  - [Step 3.1: Expand Disk Size](#step-31-expand-disk-size)
-  - [Step 3.2: Add License File to QDE](#step-32-add-license-file-to-qde)
-  - [Step 3.3: Regenerate SSL Certificates](#step-33-regenerate-ssl-certificates)
-  - [Step 3.4: Database Password Changes (Optional)](#step-34-database-password-changes-optional)
-- [Step 4: Firewall Changes](#step-4-firewall-changes)
-- [Step 5: Install and Configure Chocolatey on Clients](#step-5-install-and-configure-chocolatey-on-clients)
-- [FAQ](#faq)
-  - [How do I upgrade QDE?](#how-do-i-upgrade-qde)
-
-<!-- /TOC -->
-
-___
 ## Step 0: Setup Considerations
+
 The following are points to keep in mind during initial setup:
 
 * You will need access to AWS to download the environment (specifically `s3.amazonaws.com`).
@@ -57,7 +30,6 @@ The following are points to keep in mind during initial setup:
 * The back-end database is configured with no outbound connections - if you plan to change this, please reach out to Support for assistance.
 * If you intend to use Nexus outside of your corporate network without the use of a VPN, you will be required to configure RBAC on the repositories housed inside of the repository server.
   This is to ensure that the packages stored on the server are not publicly accessible without authentication.
-
 
 ### Step 0.1: QDE Rename Considerations
 
@@ -77,7 +49,6 @@ If you rename the QDE Environment, here's a small list of things you'll need to 
 1. Deploy the Nexus SSL Certificate public key to the clients (there is a helper method that is used if the box is not renamed and is limited to that name for security purposes). See `c:\choco_setup_files\Import-ChocoServerCertificate.ps1` for an example of what we mean.
 1. There may be more places impacted. Check with support to ensure all is good to go.
 
-___
 ## Step 1: Import Virtual Environment
 
 Choose one of the following methods for what your hypervisor environment supports.
@@ -205,7 +176,6 @@ Video Summary:
 
 Most likely you are going to download the VMDK file and convert it to your platform. Please reach out to support to see what options are available.
 
-___
 ## Step 2: Other Considerations for Virtual Environment
 
 ### Step 2.1: DNS Settings
@@ -213,7 +183,6 @@ ___
 The QDE environment is configured by default to use DHCP for easier initial setup.
 You will likely need to reconfigure it with a static IP address depending on your organization's policies.
 
-___
 ## Step 3: Virtual Environment Setup
 
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
@@ -235,6 +204,7 @@ Resize-Partition -DriveLetter C -Size ((Get-PartitionSupportedSize -DriveLetter 
 Alternatively, you can use the Disk Management utility to expand the disk, if a GUI is preferred.
 
 ### Step 3.2: Add License File to QDE
+
 In the [Quick Deployment Desktop Readme](./desktop-readme), it is going to ask you to use the license file. That license file comes from an external location. It is best to copy/paste the file into QDE as a whole file, but you may have needed to set up any kind of extensions available for that.
 
 > ⚠️ **WARNING**
@@ -266,20 +236,20 @@ choco uninstall chocolatey-management-web -y
 Choco install chocolatey-management-web -y --package-parameters-sensitive=”’/ConnectionString=””Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=NewPassword;””’”
 ```
 
-___
 ## Step 4: Firewall Changes
+
 See [QDE Firewall Changes](./firewall-changes).
 
-___
 ## Step 5: Install and Configure Chocolatey on Clients
+
 See [QDE Client Setup](./client-setup).
 
-___
 ## FAQ
+
 ### How do I upgrade QDE?
+
 While we will continue to make improvements to the QDE, there is no upgrade path for the Virtual Machine itself. You can choose to start over with a newer version, but that feels like the wrong way to go.
 
 It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE. Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](./central-management/setup-upgrade).
 
-___
 [Quick Deployment Environment](../)

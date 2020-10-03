@@ -5,8 +5,6 @@ Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
 ---
 
-# Chocolatey Quick Deployment Environment (QDE)
-
 ## Summary
 
 This is an overview on the Chocolatey Quick Deployment Environment (QDE).
@@ -20,23 +18,6 @@ It provides a single virtual machine appliance to be imported into your hypervis
 > If you find yourself in need of a more scalable solution, please contact Support and we'll be more than happy to provide guidance for larger solutions.
 
 ![QDE Architecture](/assets/images/quickdeploy/QDE-architecture.gif)
-
-<!-- TOC depthFrom:2 -->
-
-- [Summary](#summary)
-- [QDE Components](#qde-components)
-- [Getting QDE](#getting-qde)
-- [Related Articles](#related-articles)
-- [Links](#links)
-- [FAQ](#faq)
-  - [How do we take advantage of QDE?](#how-do-we-take-advantage-of-qde)
-  - [How much time does this save?](#how-much-time-does-this-save)
-  - [What if we're already a C4B customer?](#what-if-were-already-a-c4b-customer)
-  - [How do we upgrade QDE?](#how-do-we-upgrade-qde)
-  - [What if we have a larger environment? (> 1k nodes)](#what-if-we-have-a-larger-environment--1k-nodes)
-  - [Can we brag about how fast we were able to get configured?](#can-we-brag-about-how-fast-we-were-able-to-get-configured)
-
-<!-- /TOC -->
 
 ## QDE Components
 

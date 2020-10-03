@@ -5,44 +5,8 @@ Description: Techniques for how to install Chocolatey
 RedirectFrom: docs/installation
 ---
 
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC -->
-
-- [Requirements](#requirements)
-- [Installing Chocolatey](#installing-chocolatey)
-    - [Install with cmd.exe](#install-with-cmdexe)
-    - [Install with PowerShell.exe](#install-with-powershellexe)
-    - [Additional considerations](#additional-considerations)
-- [More Install Options](#more-install-options)
-  - [Install from PowerShell v3+](#install-from-powershell-v3)
-  - [Completely offline install](#completely-offline-install)
-  - [Install with Puppet](#install-with-puppet)
-  - [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmdexe)
-  - [Install using NuGet Package Manager](#install-using-nuget-package-manager)
-  - [Install using NuGet.exe from PowerShell](#install-using-nugetexe-from-powershell)
-  - [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell)
-  - [Install licensed edition](#install-licensed-edition)
-  - [Installing behind a proxy](#installing-behind-a-proxy)
-  - [Installing behind an explicit proxy](#installing-behind-an-explicit-proxy)
-  - [Installing to a different location](#installing-to-a-different-location)
-  - [Installing a particular version of Chocolatey](#installing-a-particular-version-of-chocolatey)
-  - [Use Windows built-in compression instead of downloading 7zip](#use-windows-built-in-compression-instead-of-downloading-7zip)
-  - [Installing with restricted TLS](#installing-with-restricted-tls)
-    - [Option 1 - Host Internally](#option-1---host-internally)
-    - [Option 2 - Updated PowerShell and .NET](#option-2---updated-powershell-and-net)
-    - [Option 3 - Manual](#option-3---manual)
-  - [Non-Administrative install](#non-administrative-install)
-- [Upgrading Chocolatey](#upgrading-chocolatey)
-- [Uninstalling Chocolatey](#uninstalling-chocolatey)
-- [FAQs](#faqs)
-  - [I'm having trouble installing Chocolatey](#im-having-trouble-installing-chocolatey)
-  - [I'm getting a 403 attempting to install](#im-getting-a-403-attempting-to-install)
-  - [Why isn't there an MSI?](#why-isnt-there-an-msi)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 ## Requirements
+
 * Windows 7+ / Windows Server 2003+
 * PowerShell v2+ (Not PowerShell Core yet though)(minimum is v3 for install from this website due to [TLS 1.2 requirement](https://chocolatey.org/blog/remove-support-for-old-tls-versions))
 * .NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)(minimum is 4.5 for install from this website due to [TLS 1.2 requirement](https://chocolatey.org/blog/remove-support-for-old-tls-versions))
@@ -50,6 +14,7 @@ RedirectFrom: docs/installation
 That's it! All you need is choco.exe (that you get from the installation scripts) and you are good to go! No Visual Studio required.
 
 ## Installing Chocolatey
+
 Chocolatey installs in seconds. You are just a few steps from running choco right now!
 
 1. First, ensure that you are using an ***[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)*** - you can also install as a non-admin, check out <a href="#non-administrative-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Non-Administrative Installation</a>.
@@ -65,6 +30,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
  * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [Troubleshooting](../general/troubleshooting)
 
 #### Install with cmd.exe
+
 Run the following command:
 
 ~~~sh
@@ -74,6 +40,7 @@ Run the following command:
 ~~~
 
 #### Install with PowerShell.exe
+
 With PowerShell, there is an additional step. You must ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is not Restricted. We suggest using `Bypass` to bypass the policy to get things installed or `AllSigned` for quite a bit more security.
 
 * Run `Get-ExecutionPolicy`. If it returns `Restricted`, then run `Set-ExecutionPolicy AllSigned` or `Set-ExecutionPolicy Bypass -Scope Process`.
@@ -86,6 +53,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ~~~
 
 #### Additional considerations
+
 **NOTE:** Please inspect [https://chocolatey.org/install.ps1](https://chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of ***any*** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
 
 We take security very seriously. <a href="https://chocolatey.org/security">Learn more</a>.
@@ -128,6 +96,7 @@ remove-->
 * [Non-Administrative install](#non-administrative-install)
 
 ### Install from PowerShell v3+
+
 **NOTE:** The command for installing with PowerShell at the top of the page works for all versions of PowerShell from v2 on. This is provided as an additional note for folks who want a more terse command that is easier to remember.
 
 With PowerShell, there is an additional step or two. You must ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is not Restricted. We suggest using `Bypass` to bypass the policy to get things installed or `AllSigned` for quite a bit more security.
@@ -142,6 +111,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 ~~~
 
 ### Completely offline install
+
 With completely offline use of Chocolatey, you want to ensure you remove the default community package source (`choco source list` followed by `choco source remove -n chocolatey`, or however you would do that with a configuration manager [like Puppet](https://forge.puppet.com/puppetlabs/chocolatey#sources-configuration)).
 
 1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://chocolatey.org/packages/chocolatey and find a version you want.
@@ -649,6 +619,7 @@ Run `installChocolatey.cmd` from an elevated `cmd.exe` command prompt and it wil
 **NOTE**: To create and save a `.cmd` file, please use a text editor and nothing fancy like Microsoft Word or OneNote.
 
 ### Install using NuGet Package Manager
+
 When you have Visual Studio 2010+ and the NuGet extension installed (pre-installed on any newer versions of Visual Studio), you can simply type the following three commands and you will have Chocolatey installed on your machine.
 
  `Install-Package chocolatey`
@@ -656,6 +627,7 @@ When you have Visual Studio 2010+ and the NuGet extension installed (pre-install
  `Uninstall-Package chocolatey`
 
 ### Install using NuGet.exe from PowerShell
+
 You can also use NuGet command line to download Chocolatey:
 
  `nuget install chocolatey` or `nuget install chocolatey -pre`
@@ -665,6 +637,7 @@ Once you download it, open PowerShell (remote unsigned), navigate to the tools f
 `& .\chocolateyInstall.ps1`
 
 ### Install downloaded NuGet package from PowerShell
+
 You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy zip file):
 
  1. Download the [Chocolatey package](https://chocolatey.org/api/v2/package/chocolatey/).
@@ -676,9 +649,11 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
  1. **NOTE**: This will not set Chocolatey as an installed package, so it may be a good idea to also call `choco upgrade chocolatey -y` and let it reinstall the same version, but at least it will be available for upgrades then.
 
 ### Install licensed edition
+
 Please see [installation of licensed edition](./installation-licensed).
 
 ### Installing behind a proxy
+
 Have a proxy? Try
 
 * Cmd.exe:
@@ -783,12 +758,14 @@ At line:1 char:51
 It's possible that you are attempting to install from a server that needs to use TLS 1.1 or TLS 1.2 (has restricted the use of TLS 1.0 and SSL v3), you have some options. Chocolatey.org now requires TLS 1.2 at a minimum.
 
 #### Option 1 - Host Internally
+
 If you are an organization, this is your best option and it reduces issues with rate limiting that could occur later.
 
 See https://chocolatey.org/install#organization for details.
 
 
 #### Option 2 - Updated PowerShell and .NET
+
 Upgrade to the following:
 
 * PowerShell v3+
@@ -808,8 +785,8 @@ try {
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ~~~
 
-
 #### Option 3 - Manual
+
 You need to download and unzip the Chocolatey package, then call the PowerShell install script from there. See the [Download + PowerShell Method](#download--powershell-method) section below.
 
 
@@ -862,7 +839,6 @@ choco install notepadplusplus.commandline -y
 
 If you prefer or need cmd.exe example, please see https://gist.github.com/ferventcoder/78fa6b6f4d6e2b12c89680cbc0daec78
 
-
 <!--remove
 </div>
 remove-->
@@ -882,9 +858,11 @@ See [uninstall](./uninstallation).
 ## FAQs
 
 ### I'm having trouble installing Chocolatey
+
 Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [Troubleshooting](../general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
+
 This is addressed in [Troubleshooting](../general/troubleshooting).
 
 ### Why isn't there an MSI?

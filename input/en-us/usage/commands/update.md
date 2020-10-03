@@ -14,12 +14,6 @@ ShowInSidebar: false
  1.0.0 with something that performs the functions of updating package
  indexes.  Please use [`choco upgrade`](./upgrade) instead.
 
-<!-- TOC -->
-
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Options and Switches
 
 **NOTE:** Options and switches apply to all items passed, so if you are

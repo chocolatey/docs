@@ -23,15 +23,6 @@ Chocolatey will attempt to package a nuspec into a compiled nupkg. Some
 **NOTE:** `cpack` has been deprecated as it has a name collision with CMake. Please
  use `choco pack` instead. The shortcut will be removed in v1.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco pack [<path to nuspec>] [<options/switches>] [<property=value>]
@@ -47,7 +38,6 @@ Chocolatey will attempt to package a nuspec into a compiled nupkg. Some
 **NOTE:** See scripting in [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Exit Codes
 
 Exit codes that normally result from running this command.
@@ -59,7 +49,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

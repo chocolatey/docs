@@ -9,26 +9,6 @@ RedirectFrom: docs/helpers-reference
 
 <!-- This documentation file is automatically generated from the files at $sourceFunctions using $($sourceLocation)GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-<!-- TOC -->
-
-- [Summary](#summary)
-- [Main Functions](#main-functions)
-- [Error / Success Functions](#error--success-functions)
-- [More Functions](#more-functions)
-  - [Administrative Access Functions](#administrative-access-functions)
-  - [Non-Administrator Safe Functions](#non-administrator-safe-functions)
-- [Complete List (alphabetical order)](#complete-list-alphabetical-order)
-- [Chocolatey for Business Functions](#chocolatey-for-business-functions)
-- [Variables](#variables)
-  - [Environment Variables](#environment-variables)
-    - [Advanced Environment Variables](#advanced-environment-variables)
-    - [Set By Options and Configuration](#set-by-options-and-configuration)
-    - [Business Edition Variables](#business-edition-variables)
-    - [Experimental Environment Variables](#experimental-environment-variables)
-    - [Not Useful Or Anti-Pattern If Used](#not-useful-or-anti-pattern-if-used)
-
-<!-- /TOC -->
-
 ## Summary
 
 In your Chocolatey packaging, you have the ability to use these functions (and others with Chocolatey's [PowerShell Extensions](../../how-tos/create-extensions)) to work with all aspects of software management. Keep in mind Chocolatey's automation scripts are just PowerShell, so you can do manage anything you want.
@@ -143,6 +123,7 @@ These are the functions from above as one list.
 There are also a number of environment variables providing access to some values from the nuspec and other information that may be useful. They are accessed via `$env:variableName`.
 
 ### Environment Variables
+
 Chocolatey makes a number of environment variables available (You can access any of these with $env:TheVariableNameBelow):
 
  * TEMP/TMP - Overridden to the CacheLocation, but may be the same as the original TEMP folder
@@ -153,6 +134,7 @@ Chocolatey makes a number of environment variables available (You can access any
  * ChocolateyPackageFolder - The top level location of the package folder - the folder where Chocolatey has downloaded and extracted the NuGet package, typically `C:\ProgramData\chocolatey\lib\packageName`.
 
 #### Advanced Environment Variables
+
 The following are more advanced settings:
 
  * ChocolateyPackageParameters - Parameters to use with packaging, not the same as install arguments (which are passed directly to the native installer). Based on `--package-parameters`. (0.9.8.22+)
@@ -165,6 +147,7 @@ The following are more advanced settings:
  * ChocolateyToolsLocation - formerly 'ChocolateyBinRoot' ('ChocolateyBinRoot' will be removed with Chocolatey v2.0.0), this is where tools being installed outside of Chocolatey packaging will go. (0.9.10+)
 
 #### Set By Options and Configuration
+
 Some environment variables are set based on options that are passed, configuration and/or features that are turned on:
 
  * ChocolateyEnvironmentDebug - Was `--debug` passed? If using the built-in PowerShell host, this is always true (but only logs debug messages to console if `--debug` was passed) (0.9.10+)
@@ -183,6 +166,7 @@ Some environment variables are set based on options that are passed, configurati
  * ChocolateyLicenseType - What edition / type of the licensed edition is installed?
 
 #### Experimental Environment Variables
+
 The following are experimental or use not recommended:
 
  * OS_IS64BIT = This may not return correctly - it may depend on the process the app is running under (0.9.9+)

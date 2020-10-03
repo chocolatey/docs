@@ -5,27 +5,7 @@ Description: When you should, and shouldn't, use chocolatey.org
 RedirectFrom: docs/community-packages-disclaimer
 ---
 
-# Chocolatey.org Packages Disclaimer
-
 **Bottom line** - As an individual using Chocolatey, you are more likely okay if something breaks when setting up your personal machines - the Community Package Repository is typically fine for you. When it comes to using Chocolatey in an organizational context, you want reliability, control, and trust. You can gain trust over some packages on the community repository, and possibly some reliability if the binaries are included in the package. However there is a limiting factor with a public repository - distribution rights. This creates a large failure point that organizations just don't have when they are hosting their own internal packages.
-
-<!-- TOC depthFrom:2 -->
-
-- [Organizations](#organizations)
-  - [Summary](#summary)
-  - [Reliability](#reliability)
-  - [Trust / Control](#trust--control)
-  - [Distro-provided Repositories](#distro-provided-repositories)
-- [Excessive Use](#excessive-use)
-  - [How To Avoid Excessive Use](#how-to-avoid-excessive-use)
-  - [What To Do When You Are Blocked For Excessive Use](#what-to-do-when-you-are-blocked-for-excessive-use)
-  - [Rate Limiting](#rate-limiting)
-  - [What To Do When You Are Rate Limited](#what-to-do-when-you-are-rate-limited)
-    - [Special Requests on Rate Limiting](#special-requests-on-rate-limiting)
-- [Community Provided Packages Are Not Supported](#community-provided-packages-are-not-supported)
-- [Put It Another Way](#put-it-another-way)
-
-<!-- /TOC -->
 
 ## Organizations
 
@@ -55,6 +35,7 @@ There is another psychology aspect to this - Debian/RPM are nearly the ONLY way 
 However Windows doesn't have a distro-provided repo. Chocolatey Software does not support use of the community repo for organizational use that doesn't also benefit the community (providing and maintaining packages). Reliability plays a huge part in that. If something breaks within the context of a package, then Chocolatey gets blamed (even though it is not Chocolatey's fault).
 
 ## Excessive Use
+
 ***Please note that individuals (even organizations) using the community repository are unlikely to hit excessive use numbers under normal usage scenarios.***
 
 ***NOTE: If you do find you have been blocked / rate-limited, having commercial licenses will not have any effect the policies with the community package repository. These policies were put into place to ensure stability and availability for the entire community, not to try to get folks to pay for licensing.***
@@ -68,6 +49,7 @@ Another aspect to keep in mind is that the community package repository is meant
 **NOTE**: If you or your organization feels you will need to go over this limit with good reason and need whitelisted, please reach out at https://chocolatey.org/contact, choose "Blocked IP Address". As we have limited information, please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a ban. Once you have resolved any issues on your side, we can lift the ban.
 
 ### How To Avoid Excessive Use
+
 To avoid excessive use, please see our [organizational deployment guide](../how-tos/setup-offline-installation). Installation of Chocolatey itself and everything else should be from your internal repository and not directly from the community package repository. There are even ways to automate caching (see below) / [internalizing](../how-tos/recompile-packages) (caching and internalizing are entirely different concepts) packages so you still get a pretty good hands off experience.
 
 If you are not able to take advantage of [internalizing](../how-tos/recompile-packages) packages, you can still cache them locally (using package repository solutions like Artifactory, Nexus, ProGet, MyGet, etc), which will reduce your direct usage of the community repository. **NOTE:** Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](../how-tos/recompile-packages).
@@ -75,6 +57,7 @@ If you are not able to take advantage of [internalizing](../how-tos/recompile-pa
 For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the [organizational deployment guide](../how-tos/setup-offline-installation) (which takes about 1-2 hours). With 15-30 minutes, you can implement a [Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://chocolatey.org/packages/nexus-oss)) which automatically caches (but does not [internalize](../how-tos/recompile-packages)) packages from the community repository (`https://chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
 
 ### What To Do When You Are Blocked For Excessive Use
+
 **NOTE: A block will not automatically expire, you will need to contact our team to resolve the block.** Rate Limiting on the other hand does automatically expire after one hour. Please see [rate limiting](#rate-limiting) below.
 
 If you have found that you have gone over the limit and have been warned/blocked, please reach out at https://chocolatey.org/contact (send message to "Blocked IP Address" in the drop down - you may need to do this from a different IP address) or go to https://gitter.im/chocolatey/choco to contact the community team. As we have limited information (only an IP address), please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a block.
@@ -84,6 +67,7 @@ See the section above on avoiding excessive use - the expectation is that organi
 Once you have resolved any issues on your side, we can lift the block. A block will be reimplemented later if we find excessive use again.
 
 ### Rate Limiting
+
 ***NOTE: Purchasing licenses will not have any effect on rate limiting of the community package repository. Please read carefully below to understand why this was put in place and steps you can take to reduce issues if you run into it. HINT: It's not an attempt to get you to pay for commercial editions.***
 
 As a measure to increase site stability and prevent excessive use, the Chocolatey website uses rate limiting on requests for the community repository. Rate limiting was introduced in November 2018. Most folks typically won't hit rate limits unless they are automatically tagged for excessive use. If you do trigger the rate limit, you will see a `(429) Too Many Requests`. When attempting to install Chocolatey you will see the following:
@@ -112,6 +96,7 @@ You will start to see `429 Too Many Requests` if you have triggered the rate lim
 **NOTE:** Rate Limiting defaults are subject to change with or without notice as we find a good happy medium that ensures ease of use and stability for our community.
 
 ### What To Do When You Are Rate Limited
+
 **NOTE: A rate limit will automatically expire after an hour, but if you hit the limit again, it will block for another hour.**
 
 If you have found that you have been rate limited, please see [How To Avoid Excessive Use](#how-to-avoid-excessive-use). Implementing best practices for organizational use will limit chances of being rate limited again in the future.
@@ -120,6 +105,7 @@ If you have found that you have been rate limited, please see [How To Avoid Exce
 * Organizational use will be asked to set up best practices for Chocolatey deployments.
 
 #### Special Requests on Rate Limiting
+
 If you have special needs and are being rate limited, please reach out to us as in special instances, we can whitelist your IP address for a small period of time. Do the following:
 
 > ⚠️ **WARNING**
@@ -136,7 +122,6 @@ If you have special needs and are being rate limited, please reach out to us as 
 **NOTE: These are subjective, and special requests ONLY. Please ensure you [implement best practices](#how-to-avoid-excessive-use) so that you are not rate limited.**
 
 See the section above on avoiding excessive use - the expectation is that organizations would not use the community repository directly. As part of addressing any misconfigurations you might have, you will also need to see about addressing the previous section on "How To Avoid Excessive Use".
-
 
 ## Community Provided Packages Are Not Supported
 

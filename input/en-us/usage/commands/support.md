@@ -15,12 +15,6 @@ As a licensed customer, you can reach out to
  may reach out during the hours that are listed in your support
  contract. See https://chocolatey.org/support for details.
 
-<!-- TOC -->
-
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Options and Switches
 
 **NOTE:** Options and switches apply to all items passed, so if you are

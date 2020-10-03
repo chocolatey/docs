@@ -5,40 +5,8 @@ Description: Presentations on Chocolatey
 RedirectFrom: docs/presentations
 ---
 
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC -->
-
-- [Presentations](#presentations)
-  - [2017](#2017)
-  - [2016](#2016)
-  - [2015](#2015)
-  - [2014](#2014)
-  - [2013](#2013)
-  - [2012](#2012)
-  - [2011](#2011)
-- [Podcasts](#podcasts)
-  - [2016](#2016-1)
-  - [2015](#2015-1)
-    - [August](#august)
-    - [June](#june)
-  - [2014](#2014-1)
-    - [November](#november)
-    - [September](#september)
-  - [2013](#2013-1)
-    - [October](#october)
-    - [July](#july)
-    - [January](#january)
-  - [2012](#2012-1)
-    - [September](#september-1)
-  - [2011](#2011-1)
-    - [December](#december)
-  - [2010](#2010)
-    - [August](#august-1)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 ## Presentations
+
 ### 2017
 
 * [Modern Software Management on Windows with Chocolatey and Puppet](https://www.slideshare.net/ferventcoder/modern-software-management-on-windows-with-chocolatey-and-puppet) - [PuppetConf 2017](https://puppetconf.com) - Rob Reynolds, [October 12, 2017](https://puppetconf17.sched.com/event/B4xQ) - [Video](https://www.youtube.com/watch?v=6gQtcoLaMI0)
@@ -46,20 +14,24 @@ RedirectFrom: docs/presentations
 * [Life is like a Box of Chocolate(y)](https://ndcsydney.com/talk/life-is-like-a-box-of-chocolatey/) - [NDC Sydney 2017](https://ndcsydney.com/) - David Gardiner, [August 17, 2017](https://ndcsydney.com/talk/life-is-like-a-box-of-chocolatey/) - [Video](https://www.youtube.com/watch?v=sq2mqeIG2I4)
 
 ### 2016
+
 * [Easily Manage Software on Windows with Chocolatey](http://www.slideshare.net/ferventcoder/easily-manage-software-on-windows-with-chocolatey-puppetconf-2016) - [PuppetConf 2016](https://2016.puppetconf.com/) - Rob Reynolds, [October 21, 2016](http://sched.co/6fk5) - [Video](https://www.youtube.com/watch?v=K5jq35wezHI)
 
 ### 2015
+
 * Chocolatey - Windows Package Manager Lightning Talk - [DevOpsDC Meetup](http://www.meetup.com/DevOpsDC/events/226003653/) - Rob Reynolds, November 12, 2015
 * [Windows Just Got Chocolatey (Package Management)](http://www.slideshare.net/ferventcoder/windows-just-got-chocolatey-package-management-lisa15) - [USENIX LISA15](https://www.usenix.org/conference/lisa15) - Rob Reynolds, [November 12, 2015](https://www.usenix.org/conference/lisa15/conference-program/presentation/reynolds) - [Video](https://www.usenix.org/conference/lisa15/conference-program/presentation/reynolds)
 * [Chocolatey and Puppet: Managing Your Windows Software Since 2011](http://www.slideshare.net/ferventcoder/chocolatey-and-puppet-managing-your-windows-software-since-2011) - [PuppetConf 2015](https://2015.puppetconf.com/) - Rob Reynolds, [October 8, 2015](http://sched.co/3hM1) - [Video](https://www.youtube.com/watch?v=NNM2H4GsWYA)
 * [Chocolatey Goodness - From Fringe to Mainstream](http://www.slideshare.net/ferventcoder/chocolatey-goodness-from-fringe-to-mainstream-dotnetfringe) - [.NET Fringe](http://dotnetfringe.org/) - Rob Reynolds, [April 14, 2015](http://lanyrd.com/2015/dotnetfringe/sdkxkq/)
 
 ### 2014
+
 * [Plugging Chocolatey into your Puppet Infrastructure](http://www.slideshare.net/ferventcoder/chocolatey-puppet-conf2014) - [PuppetConf 2014](http://2014.puppetconf.com/) - Rob Reynolds, [September 23, 2014](http://sched.co/1kHU71L) - [Video](https://www.youtube.com/watch?v=cZl_wKSciVk)
 * [Managing Windows with Puppet and Chocolatey](http://www.slideshare.net/SethMcBean/managing-windows-with-puppet-and-chocolatey) - Seth McBean, July 30, 2014
 * [Chocolatey Overview](http://digitaldrummerj.me/ChocolateyTalk/#/) - Justin James - [Source/Demos](https://github.com/digitaldrummerj/ChocolateyTalk)
 
 ### 2013
+
 * [Using Chocolatey for Application Deployments](http://www.slideshare.net/perryofpeek/using-chocolatey-for-application-deployments) - Owain Perry, Sep 17, 2013
 * [Puppet on Windows: Now You're Getting Chocolatey](http://www.slideshare.net/ferventcoder/puppet-on-windows-now-youre-getting-chocolatey-puppetconf2013) - [PuppetConf 2013](http://2013.puppetconf.com) - Rob Reynolds, [August 23, 2013](http://sched.co/11MpBOE) - [Video](https://www.youtube.com/watch?v=Im30wziOrBs)
 * [Mmmm, Chocolatey Goodness](http://www.slideshare.net/gep13/mmmm-chocolatey-goodness) - Gary Park, March 28, 2013
@@ -134,5 +106,3 @@ RedirectFrom: docs/presentations
 #### August
 
 * http://herdingcode.com/herding-code-92-dru-sellers-and-rob-reynolds-on-nu/ (the predecessor to NuGet and ideas that later started Chocolatey in 2011).
-
-

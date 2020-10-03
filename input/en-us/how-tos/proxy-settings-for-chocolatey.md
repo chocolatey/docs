@@ -5,21 +5,6 @@ Description: Settings up Chocolatey to use locally configured proxy server
 RedirectFrom: docs/proxy-settings-for-chocolatey
 ---
 
-# Proxy Support For Chocolatey
-
-<!-- TOC -->
-
-- [Installing Chocolatey behind a proxy server](#installing-chocolatey-behind-a-proxy-server)
-  - [Troubleshooting Installation](#troubleshooting-installation)
-- [System Proxy Settings](#system-proxy-settings)
-- [Existing Proxy Environment Variables](#existing-proxy-environment-variables)
-- [Explicit Proxy Settings](#explicit-proxy-settings)
-  - [Example](#example)
-  - [Explicit Proxy Settings at Runtime](#explicit-proxy-settings-at-runtime)
-- [What to do if my proxy is socks?](#what-to-do-if-my-proxy-is-socks)
-
-<!-- /TOC -->
-
 ## Installing Chocolatey behind a proxy server
 
 When trying to install Chocolatey behind a proxy server, you may be faced with errors like
@@ -63,6 +48,7 @@ To access [packages.chocolatey.org](https://packages.chocolatey.org):
 * [AddTrust External CA Root](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/917/91/) (File: `addtrustexternalcaroot.crt`; Thumbprint: `02FAF3E291435468607857694DF5E45B68851868`)
 
 ## System Proxy Settings
+
 Chocolatey by default already supports system set proxy servers
 
 ![image](https://cloud.githubusercontent.com/assets/63502/10038284/454be026-6189-11e5-8f83-e29d1705995c.png)
@@ -70,6 +56,7 @@ Chocolatey by default already supports system set proxy servers
 **NOTE:** Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
 
 ## Existing Proxy Environment Variables
+
 Starting with Chocolatey v0.10.4, Chocolatey will automatically pick up the following environment variables if they are already set:
 
 * `http_proxy`
@@ -77,6 +64,7 @@ Starting with Chocolatey v0.10.4, Chocolatey will automatically pick up the foll
 * `no_proxy`
 
 ## Explicit Proxy Settings
+
 Chocolatey has explicit proxy support starting with 0.9.9.9.
 
 You can simply configure 1 up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.

@@ -17,15 +17,6 @@ Chocolatey will allow you to interact with sources.
  can still pass options and switches with one dash (`-`). For more
  details, see [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco source [list]|add|remove|disable|enable [<options/switches>]
@@ -50,7 +41,6 @@ what you see when you go to https://chocolatey.org/api/v2/.
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Exit Codes
 
 Exit codes that normally result from running this command.
@@ -62,7 +52,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

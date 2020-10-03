@@ -5,20 +5,8 @@ Description: How to recompile packages
 RedirectFrom: docs/how-to-recompile-packages
 ---
 
-# How To Internalize/Recompile Packages
-
-<!--remove <div id="RightNav"> remove-->
-<!-- TOC -->
-
-- [What is it? Why?](#what-is-it-why)
-- [Process of Internalization](#process-of-internalization)
-- [How to Internalize An Existing Package Automatically](#how-to-internalize-an-existing-package-automatically)
-- [How To Internalize/Recompile An Existing Package Manually](#how-to-internalizerecompile-an-existing-package-manually)
-
-<!-- /TOC -->
-<!--remove </div> remove-->
-
 ## What is it? Why?
+
 Sometimes creating packages from scratch can be an involved process. Not all software installers are created equal (and not all are easily automated either)! Thankfully there is already a tremendous resource you can use to make the process of getting your software all packaged up even smoother.
 
 On [chocolatey.org](https://chocolatey.org), you will find packages with all of the install logic you need to automatically install your software. However, many of these publicly available packages also rely on software that is available from official distribution points because they are subject to [software licensing and copyright law](https://en.wikipedia.org/wiki/Software_license). Unless you’re granted the right to distribute the software via the license, you can’t redistribute it publicly. These laws do not apply when you use internal packages, and that is a good thing!

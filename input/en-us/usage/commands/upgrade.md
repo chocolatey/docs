@@ -18,16 +18,6 @@ Upgrades a package or a list of packages. Some may prefer to use `cup`
  prompt. In most cases you can still pass options and switches with one
  dash (`-`). For more details, see [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco upgrade <pkg|all> [<pkg2> <pkgN>] [<options/switches>]
@@ -62,7 +52,6 @@ Skip upgrading certain packages with [`choco pin`](./pin) or with the option
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Exit Codes
 
 Exit codes that normally result from running this command.
@@ -94,7 +83,6 @@ In addition to the above exit codes, you may also see reboot exit codes
 
 ![choco upgrade](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_upgrade.gif)
 
-
 ## Options and Switches
 
 **NOTE:** Options and switches apply to all items passed, so if you are
@@ -106,8 +94,6 @@ In addition to the above exit codes, you may also see reboot exit codes
 Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
 
 ~~~
-
-
 
  -?, --help, -h
      Prints out the help menu.

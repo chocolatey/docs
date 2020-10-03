@@ -23,15 +23,6 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
  feeds, it has a requirement that it implements the proper OData
  endpoints required for NuGet packages.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Troubleshooting](#troubleshooting)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
 
 ## Usage
 
@@ -49,7 +40,6 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
 
 **NOTE:** See scripting in [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Troubleshooting
 
@@ -79,7 +69,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

@@ -5,25 +5,7 @@ Description: Create your own custom extensions
 RedirectFrom: docs/how-to-create-extensions
 ---
 
-# Create Your Own Custom Extensions
-
 For years Chocolatey has allowed you to extend Chocolatey with your own PowerShell modules and functions. These are known as extensions.
-
-<!-- TOC -->
-
-- [Overview](#overview)
-  - [Why Would I Create an Extension?](#why-would-i-create-an-extension)
-- [Creating a Chocolatey Extension](#creating-a-chocolatey-extension)
-- [Recommendations](#recommendations)
-  - [Naming Your Extension](#naming-your-extension)
-  - [PowerShell Modules](#powershell-modules)
-  - [Taking a Dependency on an Extension Package](#taking-a-dependency-on-an-extension-package)
-    - [Minimum Version Depdendencies](#minimum-version-depdendencies)
-    - [Avoid Version Ranges For Extensions](#avoid-version-ranges-for-extensions)
-    - [Avoid Exact Version Dependencies For Extensions at All Costs](#avoid-exact-version-dependencies-for-extensions-at-all-costs)
-    - [Version-less Dependencies](#version-less-dependencies)
-
-<!-- /TOC -->
 
 ## Overview
 

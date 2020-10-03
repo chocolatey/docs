@@ -15,16 +15,6 @@ This lists api keys that are set or sets an api key for a particular
 
 Anything that doesn't contain source and key will list api keys.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Connecting to Chocolatey.org (Community Package Repository)](#connecting-to-chocolateyorg-community-package-repository)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco apikey [<options/switches>]
@@ -55,7 +45,6 @@ https://bit.ly/nexus2apikey).
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Connecting to Chocolatey.org (Community Package Repository)
 
 In order to save your API key for https://push.chocolatey.org/,
@@ -64,7 +53,6 @@ In order to save your API key for https://push.chocolatey.org/,
  copy the API Key, and then use it in the following command:
 
     choco apikey -k <your key here> -s https://push.chocolatey.org/
-
 
 ## Exit Codes
 
@@ -77,7 +65,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

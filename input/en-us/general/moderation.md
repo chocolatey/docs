@@ -5,34 +5,9 @@ Description: Information about the package moderation used on chocolatey.org
 RedirectFrom: docs/moderation
 ---
 
-# Community Feed Moderation
 The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](../general/faqs#what-is-moderation) for more details. There are also [trusted packages](../general/faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
 
 By safety - we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain crapware/malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
-
-<!-- TOC -->
-
-- [Definitions](#definitions)
-- [Requirements and Guidelines](#requirements-and-guidelines)
-  - [Existing Packages](#existing-packages)
-    - [Requirements](#requirements)
-    - [Guidelines](#guidelines)
-- [Package Review Process](#package-review-process)
-  - [Moderation Workflow](#moderation-workflow)
-    - [First Time Go Workflow](#first-time-go-workflow)
-    - [Full Workflow](#full-workflow)
-    - [Trusted Package Workflow](#trusted-package-workflow)
-  - [Maintainer Process](#maintainer-process)
-  - [Reviewer / Moderator Process](#reviewer--moderator-process)
-    - [Moderator Review](#moderator-review)
-- [Roles](#roles)
-    - [Becoming a Maintainer](#becoming-a-maintainer)
-    - [Becoming a Reviewer](#becoming-a-reviewer)
-    - [Becoming a Moderator](#becoming-a-moderator)
-    - [Becoming an Admin](#becoming-an-admin)
-  - [New Reviewers / Moderators](#new-reviewers--moderators)
-
-<!-- /TOC -->
 
 ## Definitions
 
@@ -42,8 +17,8 @@ By safety - we check that the package scripts do not do anything devious and tha
 * the validator - The [package validation service](https://github.com/chocolatey/package-validator) checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
 * the verifier - The [package verifier service](https://github.com/chocolatey/package-verifier) checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (checking every two weeks that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It’s testing all the parts and ensuring everything is good.
 
-
 ## Requirements and Guidelines
+
 While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](https://github.com/chocolatey/package-validator/wiki) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
 
 **NOTE**: Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
@@ -51,9 +26,11 @@ While probably the most comprehensive, this list may not be fully up-to-date. Th
 **Note**: This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
 
 ### Existing Packages
+
 This section provides the requirements for packages that have had at least one released version approved or exempted. This includes any packages that existed prior to moderation being turned on (possibly an Unknown status).
 
 #### Requirements
+
 Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it ***must*** be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
 
 * ProjectUrl - it's required for the community feed
@@ -86,6 +63,7 @@ Requirements represent the minimum quality of a package that is acceptable. When
     * flag on "." in name (unless .portable/.install)
 
 #### Guidelines
+
 Guidelines are strong suggestions that improve the quality of a package version. These are considered something to fix for next time to increase the quality of the package. Over time Guidelines can become Requirements. A package version can be approved without addressing Guideline comments but will reduce the quality of the package.
 
 * Trial software should include the #trial tag. (will become a requirement in Feb 2016)
@@ -101,12 +79,14 @@ Guidelines are strong suggestions that improve the quality of a package version.
     * Are the commented lines from the template in there? Those should be cleaned up. It is not required to remove all comments, some comments are helpful. It’s a bit subjective on what is helpful and what is noise.
 * Something in the releaseNotes section would be great.
 
-
 ## Package Review Process
+
 When reviewing new and existing packages, a reviewer/moderator will have a few things left for review after the verifier and validator have verified a package.
 
 ### Moderation Workflow
+
 #### First Time Go Workflow
+
 When a good package is submitted, the normal flow of moderation works roughly like this:
 
 1. A maintainer submits a package. That puts the package in a "Pending" status (Pending automated review checks).
@@ -114,6 +94,7 @@ When a good package is submitted, the normal flow of moderation works roughly li
 1. If a moderator doesn't find any required changes, they move the package to an "Approved" status.
 
 #### Full Workflow
+
 The full normal workflow is like this:
 
 1. A maintainer submits a package. That puts the package in a "Pending" status (Pending automated review checks).
@@ -126,6 +107,7 @@ The full normal workflow is like this:
 1. If a moderator doesn't find any required changes, they move the package to an "Approved" status.
 
 #### Trusted Package Workflow
+
 This is the trusted package workflow:
 
 1. A maintainer submits a trusted package. That puts the package in a "Pending" status (Pending automated review checks).
@@ -139,6 +121,7 @@ This is the trusted package workflow:
 1. If a moderator must manually override the approval, they move the package to an "Approved" status.
 
 ### Maintainer Process
+
 **FYI:** Ensure that you can receive emails from Chocolatey.org so that you will receive email notifications when a package review is updated.
 
 The process of moderation review is an interactive process for both maintainers and moderators. As a maintainer you submit packages and they are reviewed to be sure they meet a minimum quality and correctness to be published on Chocolatey.org. It's an important distinction that while almost all valid packages are approved, a package can be rejected for a variety of reasons.
@@ -152,6 +135,7 @@ The cleanup automated check, aka the cleaner, checks packages that have been in 
 Moderators give you the benefit of the doubt and will work with you to help you get a package to an approved status. (This also includes the older review process based on email before the site allowed you to comment).
 
 ### Reviewer / Moderator Process
+
 Typically a package goes into the moderation queue when submitted.You can get to that by signing in and going to the packages page like you normally would.
 
  1. You should see a new drop down near the top that allows you to change your view. This is the moderation queue.
@@ -186,6 +170,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
  17. Once the package is updated, it will show up in the top of the queue. At that time, please review it and make sure the maintainers made all changes requested.
 
 #### Moderator Review
+
 You can only ever require a maintainer to make changes if there are findings from the requirements section. Guidelines are strong suggestions that will improve the quality of the package, but consider that a quality over time. A maintainer is NOT required to make changes based on guidelines/suggestions. This deserves to be said twice: **"A moderator cannot hold up a package based on guidelines/suggestions *alone*"**.
 
 The validator checks quite a few items (https://github.com/chocolatey/package-validator/wiki) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
@@ -193,6 +178,7 @@ The validator checks quite a few items (https://github.com/chocolatey/package-va
 With the exception of included binaries, a review that doesn't flag should take under a minute. If you are holding a package, you can refer the maintainer to this link to save time: https://github.com/chocolatey/choco/wiki/Moderation
 
 ##### Requirements
+
 Always be explicit that you are waiting on the maintainer to fix and resubmit the same version of the package so you can move the review process along.
 
 * Is the title appropriate?
@@ -216,6 +202,7 @@ Always be explicit that you are waiting on the maintainer to fix and resubmit th
     * flag on "." in name (unless .portable/.install)
 
 ##### Guidelines
+
 If a package is only flagging on guidelines, be sure to move forward on approval (this means no requirements flagged by you or the validator checks).
 
 * Trial software should include the #trial tag. (will become a requirement in Feb 2016)
@@ -225,15 +212,18 @@ If a package is only flagging on guidelines, be sure to move forward on approval
   * Do any scripts try to do anything that an existing Chocolatey function already covers? The maintainers would need a really good reason for diverging from that.
 
 ## Roles
+
 * Maintainer - A person that maintains packages. Maintainers are usually subject to the review process.
 * Reviewer - Able to review packages but not approve/reject them
 * Moderator - Able to set/remove package maintainers, review packages, approve/reject them, able to unlist packages.
 * Administrator - Has access to administrative sections of the site. Can perform all functions that a moderator can perform.
 
 #### Becoming a Maintainer
+
 To become a package maintainer, you must have an account on https://chocolatey.org and have at least one package on the site.
 
 #### Becoming a Reviewer
+
 TBD
 
 #### Becoming a Moderator
@@ -247,9 +237,11 @@ There is no set process for becoming a moderator yet. Usually it is having many 
 * Be friendly and customer service-oriented
 
 #### Becoming an Admin
+
 This is not an achievable status.
 
 ### New Reviewers / Moderators
+
 * Understand the package creation process and the current recommendations, written at https://github.com/chocolatey/choco/wiki/CreatePackages
 * Become familiar with the package guidelines and all of the different Chocolatey functions available. https://github.com/chocolatey/choco/wiki/HelpersReference
 * Join the [chocolatey-moderators at google groups dot com](https://groups.google.com/forum/#!forum/chocolatey-moderators) mailing list. This is necessary for communication with other moderators and receiving messages regarding changes in moderation.

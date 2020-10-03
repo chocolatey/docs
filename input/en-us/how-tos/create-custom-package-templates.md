@@ -5,24 +5,10 @@ Description: How to create custom package templates
 RedirectFrom: docs/how-to-create-custom-package-templates
 ---
 
-# Create Your Own Custom Package Templates
-
 As of [choco 0.9.9.9](https://github.com/chocolatey/choco/issues/76), you can create your own custom package templates when the built-in template is not enough.
 
-<!-- TOC -->
-
-- [Overview](#overview)
-  - [Where Do Templates Go?](#where-do-templates-go)
-  - [Can I replace the built-in template?](#can-i-replace-the-built-in-template)
-  - [What values can I template?](#what-values-can-i-template)
-- [Example](#example)
-  - [Manage as Templates as Packages](#manage-as-templates-as-packages)
-  - [Extending Templates](#extending-templates)
-  - [Are There Planned Enhancements?](#are-there-planned-enhancements)
-
-<!-- /TOC -->
-
 ## Overview
+
 A template is used for creating packages. Chocolatey (choco) has a built-in template that it uses when generating a new package from the command [`choco new`](../usage/commands/new).
 
 ### Where Do Templates Go?
@@ -33,12 +19,12 @@ If you drop a template into `$env:ChocolateyInstall\templates` folder, you can u
 
 You would call `choco new pkgname -t organization` and choco will use the template folder instead of the built-in template.
 
-
 ### Can I replace the built-in template?
 
 To replace the built-in template, you should put a folder in the template with the name of "default". Then choco will use that instead of the built-in template with no need to specify a template name.
 
 ### What values can I template?
+
 You can get the names by running `choco new -h`:
 
 ~~~

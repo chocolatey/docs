@@ -5,73 +5,26 @@ Description: Having issues running Chocolatey, check here for solutions
 RedirectFrom: docs/troubleshooting
 ---
 
-# Troubleshooting
-
 There are some well-known things you may run into when you are using Chocolatey. We've tried to get some of the high level things you may run into into one document.
 
 **NOTE**: This is a work in progress. It doesn't cover all of the troubleshooting steps that are known but it is attempting to cover quite a few.
 
-<!-- TOC depthFrom:2 insertAnchor:true -->
-
-- [General](#general)
-- [Chocolatey Installation](#chocolatey-installation)
-  - [The request was aborted: Could not create SSL/TLS secure channel](#the-request-was-aborted-could-not-create-ssltls-secure-channel)
-  - [The underlying connection was closed](#the-underlying-connection-was-closed)
-  - [I'm getting a 403 unauthorized issue attempting to install Chocolatey](#im-getting-a-403-unauthorized-issue-attempting-to-install-chocolatey)
-  - [I am having trouble with PowerShell to install Chocolatey](#i-am-having-trouble-with-powershell-to-install-chocolatey)
-- [Licensed Installation and Issues](#licensed-installation-and-issues)
-- [Creating Packages](#creating-packages)
-  - [Install-ChocolateyPath doesn't seem to work.](#install-chocolateypath-doesnt-seem-to-work)
-  - [ERROR: Cannot bind parameter because parameter 'fileType' is specified more than once.](#error-cannot-bind-parameter-because-parameter-filetype-is-specified-more-than-once)
-  - [ERROR: This package does not support 64 bit architecture.](#error-this-package-does-not-support-64-bit-architecture)
-  - ["ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.](#error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary)
-  - [My package can't find dependencies](#my-package-cant-find-dependencies)
-  - [ERROR: A null key is not allowed in a hash literal.](#error-a-null-key-is-not-allowed-in-a-hash-literal)
-- [Runtime](#runtime)
-  - [I can't get the PowerShell tab completion working.](#i-cant-get-the-powershell-tab-completion-working)
-  - [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me)
-  - [Microsoft.Powershell_profile.ps1 cannot be loaded. The file is not digitally signed.](#microsoftpowershell_profileps1-cannot-be-loaded-the-file-is-not-digitally-signed)
-  - [I'm getting a 403 unauthorized issue when attempting to use the community package repository.](#im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository)
-  - [I'm getting a 429 too many requests issue when attempting to use the community package repository.](#im-getting-a-429-too-many-requests-issue-when-attempting-to-use-the-community-package-repository)
-  - [I'm seeing Chocolatey / *application* / *tool* using 32 bit to run instead of x64. What is going on?](#im-seeing-chocolatey--application--tool-using-32-bit-to-run-instead-of-x64-what-is-going-on)
-  - [A package is broken for me](#a-package-is-broken-for-me)
-  - [The package install failed with 1603](#the-package-install-failed-with-1603)
-  - [Already referencing a newer version of 'packagename'](#already-referencing-a-newer-version-of-packagename)
-  - [Not recognized as the name of a cmdlet, function, script file, or operable program](#not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-  - [My PATH is not getting updated](#my-path-is-not-getting-updated)
-  - [RefreshEnv has no effect](#refreshenv-has-no-effect)
-  - [Options and/or parameters are not handled correctly](#options-andor-parameters-are-not-handled-correctly)
-  - [Chocolatey is selecting an older version of a dependency on upgrade](#chocolatey-is-selecting-an-older-version-of-a-dependency-on-upgrade)
-  - [Chocolatey is attempting to downgrade a package that is a dependency of another package on upgrade](#chocolatey-is-attempting-to-downgrade-a-package-that-is-a-dependency-of-another-package-on-upgrade)
-  - [Package not installed. An error occurred during installation: Unable to resolve dependency](#package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency)
-  - [Package not installed. The package was not found with the source(s) listed.](#package-not-installed-the-package-was-not-found-with-the-sources-listed)
-  - [Access to the path is denied.](#access-to-the-path-is-denied)
-  - [Root Element is missing error](#root-element-is-missing-error)
-  - [A corrupt registry file exists](#a-corrupt-registry-file-exists)
-  - [Powershell Output Stops](#powershell-output-stops)
-
-<!-- /TOC -->
-
-<a id="markdown-general" name="general"></a>
 ## General
 
 If you are unable to find answers to your questions here, please see https://chocolatey.org/support (FOSS and Licensed) and https://chocolatey.org/bugs to learn more about how you can report issues and get things fixed if they are broken.
 
 Also consider the [frequently asked questions](../general/faqs).
 
-<a id="markdown-chocolatey-installation" name="chocolatey-installation"></a>
 ## Chocolatey Installation
 
-<a id="markdown-the-request-was-aborted-could-not-create-ssltls-secure-channel" name="the-request-was-aborted-could-not-create-ssltls-secure-channel"></a>
 ### The request was aborted: Could not create SSL/TLS secure channel
 
 If you see the following: Exception calling "DownloadString" with "1" argument(s): "The request was aborted: Could not create SSL/TLS secure channel." then you are likely running an older machine that needs to be upgraded to be able to use TLS 1.2 at a minimum.
 
 Chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions. The post provides options if you have older clients that need to install Chocolatey.
 
-<a name="the-underlying-connection-was-closed"></a>
-<a id="markdown-the-underlying-connection-was-closed" name="the-underlying-connection-was-closed"></a>
 ### The underlying connection was closed
+
 If you see an error that looks similar to the following:
 
 ~~~sh
@@ -86,32 +39,24 @@ At line:1 char:1
 
 Chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions. The post provides options if you have older clients that need to install Chocolatey.
 
-<a id="im-getting-a-403-unauthorized-issue-when-attempting-to-install-chocolatey"></a>
-<a id="markdown-im-getting-a-403-unauthorized-issue-attempting-to-install-chocolatey" name="im-getting-a-403-unauthorized-issue-attempting-to-install-chocolatey"></a>
 ### I'm getting a 403 unauthorized issue attempting to install Chocolatey
 
 Please see [I'm getting a 403 unauthorized issue when attempting to use the community package repository.](#im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository)
 
-<a id="markdown-i-am-having-trouble-with-powershell-to-install-chocolatey" name="i-am-having-trouble-with-powershell-to-install-chocolatey"></a>
 ### I am having trouble with PowerShell to install Chocolatey
 
 See the More Options section of [installation](../usage/installation#more-install-options).
 
-
-<a id="markdown-licensed-installation-and-issues" name="licensed-installation-and-issues"></a>
 ## Licensed Installation and Issues
 
 See [licensed installation](../usage/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
 
-
-<a id="markdown-creating-packages" name="creating-packages"></a>
 ## Creating Packages
 
-<a id="markdown-install-chocolateypath-doesnt-seem-to-work" name="install-chocolateypath-doesnt-seem-to-work"></a>
 ### Install-ChocolateyPath doesn't seem to work.
+
 I added `Install-ChocolateyPath $binPath`, but after installing when I try to run the installed application I get "not recognized as the name of a cmdlet, function, script file, or operable program." Please see [My PATH is not getting updated](#my-path-is-not-getting-updated).
 
-<a id="markdown-error-cannot-bind-parameter-because-parameter-filetype-is-specified-more-than-once" name="error-cannot-bind-parameter-because-parameter-filetype-is-specified-more-than-once"></a>
 ### ERROR: Cannot bind parameter because parameter 'fileType' is specified more than once.
 
 This error is seen sometimes on versions of Chocolatey older than 0.10.6. The problem is likely you have the following in your packaging:
@@ -138,8 +83,8 @@ Typically, when you are installing locally, you likely want to use `Install-Choc
 
 Reference: https://groups.google.com/d/msgid/chocolatey/40736df7-7f3f-4be7-929d-1606be0e3a62%40googlegroups.com (you will need to join the group to see the message)
 
-<a id="markdown-error-this-package-does-not-support-64-bit-architecture" name="error-this-package-does-not-support-64-bit-architecture"></a>
 ### ERROR: This package does not support 64 bit architecture.
+
 This message is from https://github.com/chocolatey/choco/issues/527 - it is when the url value chosen is empty. This is common when you are creating a package and you forget to use splatting, instead passing the variable in as the first positional parameter to a function.
 
 This means you have set up your arguments for a function and then called something like `Install-ChocolateyPackage $packageArgs` instead of `Install-ChocolateyPackage @packageArgs`. Note `@` is for splatting, taking the values in the hash variable and using the key/values to pass those each as parameters to a function, where `$` just passes the entire hash as the first parameter of the function.
@@ -176,19 +121,16 @@ References:
 * https://groups.google.com/d/msgid/chocolatey/5c544e16-e1b2-4249-bad6-4591017df81b%40googlegroups.com (you will need to join the group to see the message)
 * https://github.com/chocolatey/chocolatey-coreteampackages/issues/439 (separate issue)
 
-<a id="markdown-error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary" name="error-this-package-does-not-support-64-bit-architecture-when-trying-to-install-from-a-local-or-included-binary"></a>
 ### "ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.
 
 This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](../creating-packages/helpers/reference).
 
 Reference: https://groups.google.com/d/msgid/chocolatey/d11d8eb2-74b3-4c2c-b0bb-d1a1ed3df389%40googlegroups.com (you will need to join the group to see the message)
 
-<a id="markdown-my-package-cant-find-dependencies" name="my-package-cant-find-dependencies"></a>
 ### My package can't find dependencies
 
 Please see [unable to resolve dependency](#package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency).
 
-<a id="markdown-error-a-null-key-is-not-allowed-in-a-hash-literal" name="error-a-null-key-is-not-allowed-in-a-hash-literal"></a>
 ### ERROR: A null key is not allowed in a hash literal.
 
 Typically you see this if you accidentally use a variable name on the left side of a hash:
@@ -204,14 +146,12 @@ Note the use of `$file` on the left side, which should be just `file`. Once you 
 
 * [Reference](https://stackoverflow.com/q/47438948/18475)
 
-<a id="markdown-runtime" name="runtime"></a>
 ## Runtime
 
-<a id="markdown-i-cant-get-the-powershell-tab-completion-working" name="i-cant-get-the-powershell-tab-completion-working"></a>
 ### I can't get the PowerShell tab completion working.
+
 See next question.
 
-<a id="markdown-why-does-choco-intab-not-work-for-me" name="why-does-choco-intab-not-work-for-me"></a>
 ### Why does choco in{tab} not work for me?
 
 This means the import failed during install/upgrade. Chocolatey does supply a warning when this happens in the install/upgrade log. Take a look there.
@@ -235,13 +175,12 @@ if (Test-Path($ChocolateyProfile)) {
 - If you don't see that, let's add it. Run `Write-Host $profile` - note the location and open it up in an editor (anything but plain old notepad.exe for the love of..., well your favorite editor).
   - Now let's add that text above to the profile. Save and close the file. Now type `. $profile` to update your current Shell. Give `choco in<tab>` a shot again. If it still doesn't work we'll need to examine something a bit more deeply about your environment. Please submit an issue so we can investigate.
 
-<a id="markdown-microsoftpowershell_profileps1-cannot-be-loaded-the-file-is-not-digitally-signed" name="microsoftpowershell_profileps1-cannot-be-loaded-the-file-is-not-digitally-signed"></a>
 ### Microsoft.Powershell_profile.ps1 cannot be loaded. The file is not digitally signed.
+
 If you are seeing this, your PowerShell execution policy is either `AllSigned` or `Restricted`. You could be seeing this due to the addition of the Chocolatey profile (above question) for tab completion. You need to authenticode sign the PowerShell profile file, rename it, or remove it.
 
 Reference: https://groups.google.com/d/msgid/chocolatey/58ef0ece-5e2a-4c2c-82a8-10e1711bdd3f%40googlegroups.com (you will need to join the group to see the message)
 
-<a id="markdown-im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository" name="im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository"></a>
 ### I'm getting a 403 unauthorized issue when attempting to use the community package repository.
 
 It could be one of a few things:
@@ -265,7 +204,6 @@ If you determine it is CloudFlare blocking your IP (which is the issue 98% of th
 
 Once this has been completed, you should have access to install Chocolatey and/or packages from the community repository.
 
-<a id="markdown-im-getting-a-429-too-many-requests-issue-when-attempting-to-use-the-community-package-repository" name="im-getting-a-429-too-many-requests-issue-when-attempting-to-use-the-community-package-repository"></a>
 ### I'm getting a 429 too many requests issue when attempting to use the community package repository.
 
 This means your IP address has been flagged for too many requests. Please see [Rate Limiting](./general/community-packages-disclaimer#rate-limiting) for details and actions.
@@ -274,20 +212,20 @@ Reference Errors:
 * `Exception calling "DownloadFile" with "2" argument(s): The remote server returned an error: (429) Too Many Requests`
 * `The remote server returned an error: (429) Too Many Requests. Too Many Requests`
 
-<a id="markdown-im-seeing-chocolatey--application--tool-using-32-bit-to-run-instead-of-x64-what-is-going-on" name="im-seeing-chocolatey--application--tool-using-32-bit-to-run-instead-of-x64-what-is-going-on"></a>
 ### I'm seeing Chocolatey / *application* / *tool* using 32 bit to run instead of x64. What is going on?
+
 The shims are generated as "Any CPU" programs, which depend on the `Enable64Bit` registry value to be set to `1`, which it is by default. A way to fix it is to issue the following command at the location where the prompt shows below:
 
     C:\Windows\Microsoft.NET\Framework64\v2.0.50727> Ldr64 set64
 
 [Any CPU 32-bit mode on 64 bit machine](http://stackoverflow.com/a/14857294)
 
-<a id="markdown-a-package-is-broken-for-me" name="a-package-is-broken-for-me"></a>
 ### A package is broken for me
+
 Depening on where you are installing this package from, we suggest you first look at your log files for more detailed output on the logs (based on the failure instructions).
 
-<a id="markdown-the-package-install-failed-with-1603" name="the-package-install-failed-with-1603"></a>
 ### The package install failed with 1603
+
 This is a generic MSI error code - you probably want to ensure you capture the log output from the MSI - if the package doesn't have it in the script, add it with `--install-arguments '"/l*v c:\msi_install.log"'` and then search the log file that is created for `Return Value 3`. This typically surrounds the actual error. Typically it can be anything from
 
 * The installer doesn't allow reinstalling the same version
@@ -296,8 +234,8 @@ This is a generic MSI error code - you probably want to ensure you capture the l
 * The installer doesn't allow installing an older version
 * etc - it's a generic error like we said
 
-<a id="markdown-already-referencing-a-newer-version-of-packagename" name="already-referencing-a-newer-version-of-packagename"></a>
-###  Already referencing a newer version of 'packagename'
+### Already referencing a newer version of 'packagename'
+
 So you are attempting to install or upgrade and you get this strange message. But you know you have a more up to date package than Chocolatey thinks you do, at least in this instance.
 
 This cryptic error typically means there is a stray nupkg somewhere in the structure. There is a tiny bug somewhere and rarely a nupkg will stick around when it should have been removed. Once we can determine where this happens we can fix it, until then we have a way to fix the issue manually.
@@ -326,14 +264,13 @@ Get-ChildItem -Path "$env:ChocolateyInstall\lib" -Recurse -Filter "*.nupkg" | Wh
 }
 ~~~
 
-
-<a id="markdown-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program" name="not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program"></a>
 ### Not recognized as the name of a cmdlet, function, script file, or operable program
+
 * With Chocolatey (choco) itself? Close and reopen the shell as the install didn't ensure the PATH was updated in the current shell.
 * With something you installed? See [My PATH is not getting updated](#my-path-is-not-getting-updated).
 
-<a id="markdown-my-path-is-not-getting-updated" name="my-path-is-not-getting-updated"></a>
 ### My PATH is not getting updated
+
 First let's understand the scopes of the PATH environment variable. There is Machine, Current User (User), and Process environment variables. Process is a special scope that applies to the command shell (cmd.exe/powershell.exe). Process gathers Machine and User scopes when it first loads up **AND *ONLY* when it first loads up**. Yes, you read that right. This is a limitation of Windows, shells were never given the ability to see changes to environment variables and act accordingly. You traditionally need to install something, then close and reopen your shell to see it updated. That is a pretty clunky experience.
 
 To understand this, open Powershell, then install something that updates the PATH, and run the following in that already open PowerShell command shell:
@@ -345,24 +282,24 @@ Contrast the two, notice there is a difference (there may be a lot of data to si
 
 When you update the Machine/User environment variables, you would also need to update the Process environment variables as it doesn't not see those changes. Fortunately, with Chocolatey, we have a tool called `refreshenv` that does this for you so you don't need to close and reopen the shell. If you run `refreshenv` and it doesn't have any effect, see [RefreshEnv has no effect](#refreshenv-has-no-effect).
 
-<a id="markdown-refreshenv-has-no-effect" name="refreshenv-has-no-effect"></a>
 ### RefreshEnv has no effect
+
 If you are in cmd.exe, it should just work. In PowerShell, you need to install the Chocolatey PowerShell profile first for the command to work.
 
 Take note of whether it says "refreshing environment variables for ***cmd.exe***" or "refreshing environment variables for ***powershell.exe***". If you are in PowerShell and you see "***cmd.exe***" when you run `refreshenv`, then you need to do some additional work to get things set up. see [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me).
 
-<a id="markdown-options-andor-parameters-are-not-handled-correctly" name="options-andor-parameters-are-not-handled-correctly"></a>
 ### Options and/or parameters are not handled correctly
+
 This problem is most likely to be seen if cutting and pasting Chocolatey commands from a document, instead of typing them in directly. Some documentation tools (notably Microsoft Word, but there are others) think they know best and automatically convert certain characters. The hyphen (-) character may become an en-dash (&ndash;) or em-dash (&mdash;). Similarly standard quotation marks (&quot;) may be converted into distinct open and close variants (&ldquo; &rdquo;). Visually, the converted characters look very similar to the correct ones, but they are not functionally equivalent. Instead of cutting and pasting, try typing the command manually at the command prompt.
 
 For example, if the hyphen for the `-y` (confirm all prompts) option had been converted into a visually similar character you would get the message  "&ndash;y not installed. The package was not found with the source(s) listed.", and would also be prompted for confirmation before running scripts. Similarly, if you were using the `--params` option to pass parameters to the package, and suffered the same kind of cut and paste error, an attempt might be made to process the parameters string as if it were a package name, potentially resulting in an error like "The given path's format is not supported."
 
-<a id="markdown-chocolatey-is-selecting-an-older-version-of-a-dependency-on-upgrade" name="chocolatey-is-selecting-an-older-version-of-a-dependency-on-upgrade"></a>
 ### Chocolatey is selecting an older version of a dependency on upgrade
+
 See next question
 
-<a id="markdown-chocolatey-is-attempting-to-downgrade-a-package-that-is-a-dependency-of-another-package-on-upgrade" name="chocolatey-is-attempting-to-downgrade-a-package-that-is-a-dependency-of-another-package-on-upgrade"></a>
 ### Chocolatey is attempting to downgrade a package that is a dependency of another package on upgrade
+
 There are some possible reasons this happens, sometimes it is due to an existing package restricting the dependency version. Try running the following:
 
 ~~~powershell
@@ -394,7 +331,6 @@ If you have done this and are still seeing issues, it is time to capture a trace
 
 Also take a look at [Already referencing a newer version of 'packagename'](#already-referencing-a-newer-version-of-packagename).
 
-<a id="markdown-package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency" name="package-not-installed-an-error-occurred-during-installation-unable-to-resolve-dependency"></a>
 ### Package not installed. An error occurred during installation: Unable to resolve dependency
 
 * Most Likely: This occurs when you have overridden default sources and/or have not specified enough sources explicitly.
@@ -416,7 +352,6 @@ Also take a look at [Already referencing a newer version of 'packagename'](#alre
 
 If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `-dv --noop` and see how it is setting sources, etc.
 
-<a id="markdown-package-not-installed-the-package-was-not-found-with-the-sources-listed" name="package-not-installed-the-package-was-not-found-with-the-sources-listed"></a>
 ###  Package not installed. The package was not found with the source(s) listed.
 
 * Look at the sources that were used.
@@ -431,7 +366,6 @@ If you have determined all of this is good to go, take a look at what Chocolatey
 
 If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `-dv --noop` and see how it is setting sources, etc.
 
-<a id="markdown-access-to-the-path-is-denied" name="access-to-the-path-is-denied"></a>
 ### Access to the path is denied.
 
 You may be attempting to use Chocolatey or upgrade a package and suddenly you are getting access denied errors starting mid-install/upgrade.
@@ -446,8 +380,6 @@ You may be attempting to use Chocolatey or upgrade a package and suddenly you ar
 
 Unfortunately, this is likely to cause your install to be unusable until you fix the issue.
 
-
-<a id="markdown-root-element-is-missing-error" name="root-element-is-missing-error"></a>
 ### Root Element is missing error
 
 You receive a `Root element is missing` error when attempting to use Chocolatey due to a corrupt package in your lib folder.
@@ -587,8 +519,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . ./Validate-ChocolateyMetada
 
 Once the script executes, look for any entries whose ValidXmlRoot/ValidPackageRoot columns which are marked false. These indicate a corrupt package, and can be manually removed by deleting the associated folder in `$env:ChocolateyInstall\lib`. Once removed, you may want to resinstall the package without running scripts (`--skip-automation-scripts`).
 
-<a id="a-corrupt-registry-file-exists" name="a-corrupt-registry-file-exists"></a>
-<a id="markdown-a-corrupt-registry-file-exists" name="a-corrupt-registry-file-exists"></a>
 ### A corrupt registry file exists
 
 You are receiving the following error when running Chocolatey commands:
@@ -645,7 +575,6 @@ A corrupt .registry file exists at C:\ProgramData\chocolatey\.chocolatey\$applic
     }#foreach
 ```
 
-<a id="markdown-powershell-output-stops" name="powershell-output-stops"></a>
 ### Powershell Output Stops
 
 By default powershell has "QuickEdit" mode and "Insert" mode enabled, which leads to the following behavior: if one clicks into a running powershell process, it will halt output until the user presses "Enter" again.

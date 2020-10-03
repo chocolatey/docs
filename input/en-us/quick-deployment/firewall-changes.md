@@ -5,21 +5,10 @@ Description: How has the firewall on the QDE image been changed
 RedirectFrom: docs/quick-deployment-firewall-changes
 ---
 
-# Quick Deployment Environment Firewall Setup
-
 > 📝 **Note**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Firewall Changes page](./v1/firewall-changes).
-
-<!-- TOC depthFrom:2 -->
-
-- [External Firewall Ports (Optional)](#external-firewall-ports-optional)
-- [Internal Firewall Ports](#internal-firewall-ports)
-- [FAQ](#faq)
-  - [Can I open up the CCM Service's port to allow machines to report in from anywhere?](#can-i-open-up-the-ccm-services-port-to-allow-machines-to-report-in-from-anywhere)
-
-<!-- /TOC -->
 
 ## External Firewall Ports (Optional)
 

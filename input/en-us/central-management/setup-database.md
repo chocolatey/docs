@@ -6,8 +6,6 @@ ShowInNavbar: false
 ShowInSidebar: false
 ---
 
-# Chocolatey Central Management Database Setup
-
 At the end of this, we should have a fully ready to go SQL Server:
 
 * Installed
@@ -19,40 +17,6 @@ At the end of this, we should have a fully ready to go SQL Server:
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
-___
-
-<!-- TOC depthFrom:2 depthTo:5 -->
-
-- [Step 1: Complete Prerequisites](#step-1-complete-prerequisites)
-  - [Step 1.1: Install SQL Server](#step-11-install-sql-server)
-    - [Install SQL Server Express](#install-sql-server-express)
-  - [Step 1.2: Prepare SQL Server](#step-12-prepare-sql-server)
-    - [Script to Prepare SQL Server Express](#script-to-prepare-sql-server-express)
-- [Step 2: Install Central Management Database Package](#step-2-install-central-management-database-package)
-  - [Package Parameters](#package-parameters)
-  - [Scenarios](#scenarios)
-    - [SQL Server Windows Authentication](#sql-server-windows-authentication)
-      - [Use Windows Authentication to Local SQL Server](#use-windows-authentication-to-local-sql-server)
-      - [Use Active Directory Account to Remote SQL Server](#use-active-directory-account-to-remote-sql-server)
-      - [Use Local Windows Account to Remote SQL Server](#use-local-windows-account-to-remote-sql-server)
-      - [Use Windows Account to Attach SQL Server](#use-windows-account-to-attach-sql-server)
-    - [SQL Server Account Authentication](#sql-server-account-authentication)
-      - [Use SQL Server Authentication to Local SQL Server](#use-sql-server-authentication-to-local-sql-server)
-      - [Use SQL Server Account to Remote SQL Server](#use-sql-server-account-to-remote-sql-server)
-- [Step 3: Set up SQL Server Logins And Access](#step-3-set-up-sql-server-logins-and-access)
-- [Step 4: Verify Installation](#step-4-verify-installation)
-- [FAQ](#faq)
-  - [Can I use MySQL (or PostgreSQL)?](#can-i-use-mysql-or-postgresql)
-  - [What is the CCM compatibility matrix?](#what-is-the-ccm-compatibility-matrix)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - [Chocolatey Central Management database package installs without error, but ChocolateyManagement database is not created](#chocolatey-central-management-database-package-installs-without-error-but-chocolateymanagement-database-is-not-created)
-  - [The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.](#the-term-install-chocolateyappsettingsjsonfile-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-  - [Cannot process command because of one or more missing mandatory parameters: FilePath](#cannot-process-command-because-of-one-or-more-missing-mandatory-parameters-filepath)
-  - [ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.](#error-the-term-install-settingsjsonfile-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-
-<!-- /TOC -->
-
-___
 ## Step 1: Complete Prerequisites
 
 * SQL Server
@@ -79,12 +43,12 @@ CCM will not install or take a dependency on a database engine install as there 
 >Unless you are an expert in hooking things up to SQL Server, its probably best to stick with SQL Server Mixed Mode Authentication.
 > See https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server
 
-
 ### Step 1.1: Install SQL Server
 
 You may need to install SQL Server as part of this. There are all kinds of ways to do that and different SKUs to choose from. If you already have SQL Server implemented and you simply want to add the Chocolatey Management Database to that, you can skip this step (and possibley 1.2 as well).
 
 #### Install SQL Server Express
+
 You may have other methods for getting SQL Server installed, but if you are looking for a quick way of installing SQL Server Express, you can use the Chocolatey packages we internalized earlier in this process.
 
 The quickest option to get going with the database is to use the Community Repository, or an internalized version of a sql server package from the community repository For SQL Server Express 2019, run the following:
@@ -118,7 +82,6 @@ The following is a script for SQL Server Express. You may be configuring a defau
 > ⚠️ **WARNING**
 >
 > This script is SQL Server version dependent! Please see the TODO in the script below and adjust accordingly.
-
 
 ```powershell
 # https://docs.microsoft.com/en-us/sql/tools/configuration-manager/tcp-ip-properties-ip-addresses-tab
@@ -171,7 +134,6 @@ netsh advfirewall firewall add rule name="SQL Server Browser 1434" dir=in action
 #New-NetFirewallRule -DisplayName "Allow inbound UDP Port 1434" –Direction inbound –LocalPort 1434 -Protocol UDP -Action Allow
 ```
 
-___
 ## Step 2: Install Central Management Database Package
 
 The Central Management Database package
@@ -196,8 +158,11 @@ The CCM database package will add or update a database to an existing SQL Server
 > 📝 **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Scenarios
+
 #### SQL Server Windows Authentication
+
 ##### Use Windows Authentication to Local SQL Server
+
 Scenario 1: You have set up the database to use Windows Authentication (or Mixed Mode Authentication). You are installing the database package on a single server, but connecting to an existing SQL Server in your environment.
 
 ```powershell
@@ -223,6 +188,7 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 > 📝 **NOTE**: The above warnings and notes apply here as well.
 
 ##### Use Active Directory Account to Remote SQL Server
+
 Scenario 2: You have set up the database to use Windows Authentication (or Mixed Mode Authentication). You are installing the database package on a different server than your existing SQL Server is located on.
 
 ```powershell
@@ -235,7 +201,6 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 >
 > We recommend keeping the package installations on the same machine that SQL Server is in. It will reduce confusion and increase the accuracy of reporting. Run the installs/upgrades on the machine they apply to, so this should be the same machine that contains SQL Server (if on Windows).
 >
-
 > ⚠️ **WARNING**
 >
 > **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
@@ -245,6 +210,7 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 > 📝 **NOTE**: This is not a normal scenario.
 
 ##### Use Local Windows Account to Remote SQL Server
+
 Scenario 3: you have set up the database to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
 > ⚠️ **WARNING**
@@ -254,7 +220,6 @@ Scenario 3: you have set up the database to use Windows Authentication (or Mixed
 > This is an invalid scenario and will not work. Please look at one of the other options. If you don't have LDAP, you will want to look at [SQL Server Account Authentication](#sql-server-account-authentication) below.
 
 We typically recommend you run installations and upgrades for the databse on the local machine anyway, so that the information is left with that machine, especially when checking in.
-
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -273,11 +238,11 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 > While it may work, it's a really bad idea. Please look at one of the other options.
 > It can also result in "Failed to generate a user instance of SQL Server due to failure in retrieving the user's local application data path."
 
-
 #### SQL Server Account Authentication
-##### Use SQL Server Authentication to Local SQL Server
-Scenario 5: The database has been setup to use Mixed Mode Authentication. Someone has already precreated the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been precreated. Now you want to install the package on the same machine where the sql server instance is located.
 
+##### Use SQL Server Authentication to Local SQL Server
+
+Scenario 5: The database has been setup to use Mixed Mode Authentication. Someone has already precreated the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been precreated. Now you want to install the package on the same machine where the sql server instance is located.
 
 ```powershell
 choco install chocolatey-management-database -y --package-parameters="'/SkipDatabasePermissionCheck'" --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -288,7 +253,6 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 > **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
 >
 > **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
-
 
 * SQL Server Express:
 
@@ -320,7 +284,6 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 >
 > **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
 
-___
 ## Step 3: Set up SQL Server Logins And Access
 
 Once we have the database, we can create logins and map those logins to users in the database.
@@ -336,7 +299,6 @@ Notes:
 
 - Grant `db_datareader` and `db_datawriter` to the accounts you create for the web and service.
 - You can share the same login for the two accounts, unless your internal best practices dictate using different passwords.
-
 
 ```powershell
 function Add-DatabaseUserAndRoles {
@@ -405,7 +367,6 @@ Add-DatabaseUserAndRoles -DatabaseName 'ChocolateyManagement' -Username "$(hostn
 Add-DatabaseUserAndRoles -DatabaseServer 'localhost' -DatabaseName 'ChocolateyManagement' -Username "<DomainName>\<Username>" -DatabaseRoles @('db_datareader', 'db_datawriter')
 ```
 
-___
 ## Step 4: Verify Installation
 
 The purpose of the `chocolatey-management-database` package is to create and deploy the schema for the database that is used by the CCM Service and Website.  This can be verified by using something like SQL Server Management Studio to connect to the SQL Server Instance and:
@@ -414,27 +375,32 @@ The purpose of the `chocolatey-management-database` package is to create and dep
 * That a set of tables have been created within this database
 * That permissions have been set for accounts
 
-___
 ## FAQ
+
 ### Can I use MySQL (or PostgreSQL)?
+
 Unfortunately only SQL Server SKUs work with Chocolatey Central Management at this time. You can use SQL Server Express in smaller shops without additional costs.
 
 ### What is the CCM compatibility matrix?
+
 Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](./index#ccm-component-compatibility-matrix) for details.
 
-___
 ## Common Errors and Resolutions
+
 ### Chocolatey Central Management database package installs without error, but ChocolateyManagement database is not created
+
 In the beta version of the Chocolatey Central Management database package, if there was an error during the creation of the database, no exit code was used.  As a result, the package could state that it was installed correctly, but the database would not have been created.  This has been corrected in the 0.1.0 release of Chocolatey Central Management.
 
 When this occurs, the problem is typically the connection string being used to connect to the database.  The advice is to verify that the connecting string is valid, and attempt the installation again.
 
 ### The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
+
 In the beta version of Chocolatey.Extension, there was a Cmdlet named Install-ChocolateyAppSettingsJsonFile and this was used in the 0.1.0-beta-20181009 release of the Chocolatey Central Management components. In the final released version of the Chocolatey.Extension, this was renamed to Install-AppSettingsJsonFile.
 
 As a result, the Chocolatey Central Management beta no longer works with the released version of Chocolatey.Extension. This will be corrected once the next release of the Chocolatey Central Management components is completed.
 
 ### Cannot process command because of one or more missing mandatory parameters: FilePath
+
 During the creation of Chocolatey Central Management, some additional PowerShell cmdlets were created, and these are installed as part of the Chocolatey Extension package.  These cmdlets went through a number of iterations, and as a result, different combinations of Chocolatey Central Management packages were incompatible with the Chocolatey Extension package, resulting in the error:
 
 `Cannot process command because of one or more missing mandatory parameters: FilePath`
@@ -442,11 +408,12 @@ During the creation of Chocolatey Central Management, some additional PowerShell
 The guidance in this case is either to pin to the specific version of the Chocolatey Extension package required by the version of Chocolatey Central Management being used, or, update to the latest versions of all packages, where the situation should be addressed.
 
 ### ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.
+
 This is https://github.com/chocolatey/chocolatey-licensed-issues/issues/161.
 
 There are two workarounds noted:
+
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-___
 [Central Management Setup](./setup)  [Chocolatey Central Management](./)

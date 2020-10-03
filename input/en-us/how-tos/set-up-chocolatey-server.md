@@ -5,34 +5,10 @@ Description: How to setup Chocolatey.Server
 RedirectFrom: docs/how-to-set-up-chocolatey-server
 ---
 
-# How To Setup the Chocolatey.Server Package
-
-<!-- TOC -->
-
-- [Summary](#summary)
-- [Links](#links)
-- [Requirements](#requirements)
-- [Setup](#setup)
-  - [Setup with Ansible](#setup-with-ansible)
-  - [Setup with Chef](#setup-with-chef)
-  - [Setup with Puppet](#setup-with-puppet)
-  - [Setup Manually](#setup-manually)
-  - [Setup with PowerShell Script](#setup-with-powershell-script)
-- [Additional Configuration](#additional-configuration)
-  - [Performance](#performance)
-    - [Future](#future)
-  - [Configure Simple Server alongside WSUS admin-site](#configure-simple-server-alongside-wsus-admin-site)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - [Error 404 on Push](#error-404-on-push)
-  - [Error 500](#error-500)
-  - [Error 500.19 - "The requested page cannot be accessed because the related configuration data for the page is invalid."](#error-50019---the-requested-page-cannot-be-accessed-because-the-related-configuration-data-for-the-page-is-invalid)
-  - [Other error](#other-error)
-
-<!-- /TOC -->
-
 **NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./setup-offline-installation) in tandem with this article.
 
 ## Summary
+
 **tl;dr - Chocolatey.Server is not recommended for most organizational use cases. There are more robust options out there. However if you have a very simple use case or are conducting a POC, Chocolatey.Server may be good enough for your needs. If you don't find it robust enough, our recommendation is to look to something more robust like Artifactory, Nexus, or ProGet (two of which are also free to use).**
 
 The [Chocolatey.Server package](https://chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
@@ -58,7 +34,9 @@ When you install it, it will install the website typically to `c:\tools\chocolat
 * If you can ensure your server is up to date with all of the Windows Updates, you will move through this process quite a bit quicker.
 
 ## Setup
+
 ### Setup with Ansible
+
 If you are using Ansible, you can use the [win_chocolatey_server](https://galaxy.ansible.com/jborean93/win_chocolatey_server) role to set up an Chocolatey.Server instance on a host running Windows Server 2008 R2 or newer.
 
 This Ansible role allows you to configure the following:
@@ -71,9 +49,11 @@ This Ansible role allows you to configure the following:
 * Automatically install the Chocolatey nupkg from a path or a URL
 
 ### Setup with Chef
+
 If you are using Chef, you can use [Galen Emery's POC](https://github.com/galenemery/chocolatey_server) as a starting point to set up a Chocolatey Simple Server.
 
 ### Setup with Puppet
+
 If you are using the Puppet module [chocolatey/chocolatey_server](https://forge.puppet.com/chocolatey/chocolatey_server), it will do all of the additional setup for this package and allow some customization. **NOTE: For now it may be best to look at the one in GitHub.**
 
 The module works with Windows Server 2008/2012.
@@ -87,6 +67,7 @@ For a simple `include chocolatey_server` it does the following automatically:
  * Ensures permissions for the site are set correctly.
 
 ### Setup Manually
+
  * If your Windows updates are not up to date, there are two required Windows updates you are going to need (heads up they take awhile)
     * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a ***very*** long time to install, just be patient
     * Restart your machine.
@@ -256,6 +237,7 @@ The Chocolatey Simple Server should now be able to handle requests correctly aga
 When you are attempting to install the Simple Server, you may run into some errors depending on your configuration. Here are some common ones we've seen that you may get when you browse to the the site.
 
 ### Error 404 on Push
+
 If you can do everything except push packages, it is likely your application pool is set to Classic mode and can't find directories. It needs to be "Integrated". Please change that to Integrated and then recycle the application pool. That should resolve the issue of pushing packages. Reference: https://stackoverflow.com/a/37702935/18475.
 
 ### Error 500

@@ -5,8 +5,6 @@ Description: Online copy of what ships on desktop of QDE image
 RedirectFrom: docs/quick-deployment-desktop-readme
 ---
 
-# Chocolatey Quick Deployment Environment README
-
 > 📝 **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
@@ -15,36 +13,6 @@ RedirectFrom: docs/quick-deployment-desktop-readme
 Thanks for trying Chocolatey for Business!
 This system has been pre-configured as a fully functioning C4B environment.
 To finish setting up QDE (Quick Deployment Environment), you'll need to closely follow the steps outlined in this document.
-
-<!-- TOC depthFrom:2 -->
-
-- [Summary](#summary)
-- [Step 0: Complete Prerequisites](#step-0-complete-prerequisites)
-- [Step 1: Expand Disk Size](#step-1-expand-disk-size)
-- [Step 2: Environment Setup](#step-2-environment-setup)
-  - [1. Add Your Chocolatey License](#1-add-your-chocolatey-license)
-  - [2. (Optional) Change the VM Hostname](#2-optional-change-the-vm-hostname)
-  - [3. Run the Set-QDEnvironment.ps1 Script](#3-run-the-set-qdenvironmentps1-script)
-    - [Option 1: Default Self-Signed Certificate](#option-1-default-self-signed-certificate)
-    - [Option 2: Custom Certificate](#option-2-custom-certificate)
-  - [4. Select Community Packages to Internalize](#4-select-community-packages-to-internalize)
-- [Step 3: Review & Configure Host Services](#step-3-review--configure-host-services)
-  - [Nexus Repository](#nexus-repository)
-  - [Jenkins](#jenkins)
-  - [Chocolatey Central Management](#chocolatey-central-management)
-  - [Firewall ports](#firewall-ports)
-  - [Browser Considerations](#browser-considerations)
-- [Step 4: Change the API Key (Recommended)](#step-4-change-the-api-key-recommended)
-  - [Choco Apikey Command](#choco-apikey-command)
-  - [Update pre-configured Jenkins jobs with the new API Key](#update-pre-configured-jenkins-jobs-with-the-new-api-key)
-- [Step 5: Install and Configure Chocolatey On Clients](#step-5-install-and-configure-chocolatey-on-clients)
-- [Step 6: License the QDE VM](#step-6-license-the-qde-vm)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - ["Server Error" warning when resetting "admin" credential in Nexus](#server-error-warning-when-resetting-admin-credential-in-nexus)
-  - [Context menu items for Package Builder and Package Uploader not available](#context-menu-items-for-package-builder-and-package-uploader-not-available)
-- [See Also](#see-also)
-
-<!-- /TOC -->
 
 ## Summary
 

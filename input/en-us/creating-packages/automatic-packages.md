@@ -5,31 +5,9 @@ Description: Techniques for automatically updating Chocolatey packages when new 
 RedirectFrom: docs/automatic-packages
 ---
 
-# Automatic Packaging for Maintenance
 Automatic packaging is a process that **package maintainers can run on *their own* to keep the packages they maintain up to date**. It is not a required step for maintaining packages on the community feed (https://chocolatey.org/packages), but it is recommended you find a way to automate the delivery of packages to the community feed when there are updates if you are going to maintain more than 5 packages and you are not the software vendor for the packages you maintain.
 
 **NOTE:** Not to be confused with the automatic package creation feature in [Chocolatey for Business](https://chocolatey.org/compare) - that feature creates packages directly from software installer files. This feature is for package maintenance of existing packages on the community feed.
-
-<!-- TOC -->
-
-- [Automatic update methods](#automatic-update-methods)
-- [Automatic Updater (AU)](#automatic-updater-au)
-  - [Credits](#credits)
-  - [Setup](#setup)
-- [Chocolatey Package Updater aka chocopkgup [DEPRECATED]](#chocolatey-package-updater-aka-chocopkgup-deprecated)
-  - [Licensing](#licensing)
-  - [Credits](#credits-1)
-  - [Requirements](#requirements)
-  - [Setup](#setup-1)
-  - [Create an Automatic Package](#create-an-automatic-package)
-    - [Create a package for automatic packaging](#create-a-package-for-automatic-packaging)
-    - [Ketarin](#ketarin)
-  - [Notes about tri-packages (meta/virtual aka *, *.install, and *.portable)](#notes-about-tri-packages-metavirtual-aka--install-and-portable)
-  - [Testing Ketarin/ChocoPkgUp:](#testing-ketarinchocopkgup)
-  - [Troubleshooting/Notes](#troubleshootingnotes)
-  - [Important notes for files hosted on SourceForge](#important-notes-for-files-hosted-on-sourceforge)
-
-<!-- /TOC -->
 
 ## Automatic update methods
 
@@ -37,7 +15,6 @@ There are currently two methods that can be used to maintain automatic packages:
 
 - RECOMMENDED - Using only Powershell via [Automatic Update module AU](https://github.com/majkinetor/au).
 - DEPRECATED - Using [Chocolatey Package Updater](https://chocolatey.org/packages/ChocolateyPackageUpdater) with 3rd party tool [Ketarin](https://chocolatey.org/packages/ketarin).
-
 
 ## Automatic Updater (AU)
 
@@ -54,17 +31,20 @@ Follow the instructions at the [AU Wiki](https://github.com/majkinetor/au/wiki).
 When creating packages, do not use `--auto` as AU doesn't use token replacement for updating packages, it replaces the xml elements and code directly.
 
 ## Chocolatey Package Updater aka chocopkgup [DEPRECATED]
+
 <a name="chocolatey-package-updater-aka-chocopkgup"></a>
 http://chocolatey.org/packages/ChocolateyPackageUpdater
 
 The tool that accomplishes this process is known as [chocopkgup](https://chocolatey.org/packages/ChocolateyPackageUpdater) (Chocolatey Package Updater). It is a free tool (unless you want to use it for uploads to somewhere other than chocolatey.org).
 
 ### Licensing
+
 Check the license at http://realdimensions.net/licenses/chocolateypackageupdater/license.txt to be sure that it applies to you.
 
 Basically it boils down to this: if you want to use chocopkgup privately, you will need to pay for it. As long as you are publishing to chocolatey.org, the tool is completely free! The license does expire every once in awhile, but if you are keeping up on your chocolatey updates locally, you won't even notice (`cup all`, remember?).
 
 ### Credits
+
 This tool makes use of [Ketarin](https://chocolatey.org/packages/ketarin). Ketarin is an awesome tool that helps chocopkgup accomplish its tasks.
 
 ### Requirements
@@ -99,9 +79,11 @@ This gets Ketarin all set up with a global command for all packages we create.
 *NOTE*: This has set up global commands for "Before updating an application" and "After updating an application". Those should not need adjusting, however if you do, please be sure to export the settings again.
 
 ### Create an Automatic Package
+
 Preferably you are taking an existing package that you have tested and converting it to an automatic package.
 
 #### Create a package for automatic packaging
+
 When you are creating packages, you should ensure you are on the latest version of Chocolatey. This means you have the latest fixes to packaging templates and latest and greatest in the way of automation.
 
 1. Ensuring you are on the latest version of Chocolatey - `choco upgrade chocolatey`.
@@ -132,7 +114,6 @@ When you are creating packages, you should ensure you are on the latest version 
 1. If you have a 64bit url you want to get, do the same for the url64 variable.
 1. When all of this is good, click **OK**.
 1. Click **OK** again.
-
 
 ### Notes about tri-packages (meta/virtual aka *, *.install, and *.portable)
 
@@ -173,6 +154,7 @@ In whichever job the meta package points to, you should add a command to that li
 * If the downloaded application/installer has not changed, the package will not be generated. Delete the files in the download location specified in [*Ketarin*](#ketarin) and try again.
 
 ### Important notes for files hosted on SourceForge
+
 Try this first:
 * In advanced settings, ensure the user agent is `chocolatey command line`. This will allow ketarin to behave similarly to how Chocolatey does.
 ![Ketarin Job Advanced Settings](https://cloud.githubusercontent.com/assets/63502/7350038/b1928aaa-ecc2-11e4-8abe-af9e7c65c82a.png)

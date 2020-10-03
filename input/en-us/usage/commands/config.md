@@ -13,16 +13,6 @@ Chocolatey will allow you to interact with the configuration file settings.
 
 **NOTE:** Available in 0.9.9.9+.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco config [list]|get|set|unset [<options/switches>]

@@ -17,17 +17,6 @@ Uninstalls a package or a list of packages. Some may prefer to use
  prompt. In most cases you can still pass options and switches with one
  dash (`-`). For more details, see [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
 
-<!-- TOC -->
-
-- [Details](#details)
-- [Usage](#usage)
-- [See It In Action](#see-it-in-action)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Details
 
 Choco 0.9.9+ automatically tracks registry changes for "Programs and
@@ -79,11 +68,9 @@ chocolatey without attempting to uninstall the program.
 **NOTE:** `all` is a special package keyword that will allow you to
  uninstall all packages.
 
-
 ## See It In Action
 
 ![choco uninstall](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_uninstall.gif)
-
 
 ## Examples
 
@@ -95,7 +82,6 @@ chocolatey without attempting to uninstall the program.
 
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Exit Codes
 

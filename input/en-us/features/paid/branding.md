@@ -5,18 +5,6 @@ Description: Brand Chocolatey applications with your own organisational icons
 RedirectFrom: docs/features-branding
 ---
 
-# Branding (Business Editions Only)
-
-<!-- TOC -->
-
-- [Requirements for branding](#requirements-for-branding)
-- [Location of branding files](#location-of-branding-files)
-  - [Default Location](#default-location)
-  - [Custom Location](#custom-location)
-- [ChocolateyGuiBranding.dll](#chocolateyguibrandingdll)
-
-<!-- /TOC -->
-
 We are aware that some of customers want to be able to brand Chocolatey GUI so
 that is "looks" like their own internal applications.  Out of the box, Chocolatey
 GUI's main screen looks like this:
@@ -103,7 +91,7 @@ Using a single ChocolateyGuiBranding.dll as the source of branding makes it very
 simple to generate and distribute this assembly to apply branding across your
 entire organisation.
 
-# Branding in action
+## Branding in action
 
 The below GIF shows the default opening of the Chocolatey GUI application when
 there is no branding applied.
@@ -123,7 +111,7 @@ for more information.
 
 > 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
-# Deploying Branding
+## Deploying Branding
 
 What follows is a suggestion on how a branded version of Chocolatey GUI can be
 deployed out to your environment.
@@ -138,7 +126,7 @@ extension (chocolateygui.extension) installed.
 1. Copy the generated `ChocolateyGuiBranding.dll` into this folder
 1. Copy the following xml into a file called `chocolateygui-branding.nuspec`.
 
-~~~xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -158,11 +146,11 @@ extension (chocolateygui.extension) installed.
     <file src="tools\**" target="tools" />
   </files>
 </package>
-~~~
+```
 
 `7.` Copy the following PowerShell into a file called `tools\chocolateyInstall.ps1`
 
-~~~powershell
+```powershell
   $toolsDir                      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   $helpersFile                   = Join-Path -Path $toolsDir -ChildPath 'helpers.ps1'
 
@@ -176,11 +164,11 @@ extension (chocolateygui.extension) installed.
   }
 
   Copy-Item -Path $chocolateyGuiBrandingAssembly -Destination $chocolateyGuiBrandingLocation
-~~~
+```
 
 `8.` Copy the following PowerShell into a file called `tools\chocolateyuninstall.ps1`
 
-~~~powershell
+```powershell
   $toolsDir                      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   $helpersFile                   = Join-Path -Path $toolsDir -ChildPath 'helpers.ps1'
 
@@ -190,11 +178,11 @@ extension (chocolateygui.extension) installed.
   $chocolateyGuiBrandingAssembly = Join-Path -Path $chocolateyGuiBrandingLocation -ChildPath 'ChocolateyGuiBranding.dll'
 
   Remove-Item -Path $chocolateyGuiBrandingAssembly -Force -ErrorAction Continue | Out-Null
-~~~
+```
 
 `9.` Copy the following PowerShell into a file called `tools\helpers.ps1`
 
-~~~powershell
+```powershell
   function Get-BrandingLocation {
     <#
     .SYNOPSIS
@@ -239,7 +227,7 @@ extension (chocolateygui.extension) installed.
 
       return $brandingLocation
       }
-~~~
+```
 
 `10.` Run the command `choco pack`
 

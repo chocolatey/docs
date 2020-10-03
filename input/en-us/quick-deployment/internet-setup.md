@@ -5,8 +5,6 @@ Description: How to make QDE accessible from the internet
 RedirectFrom: docs/quick-deployment-internet-setup
 ---
 
-# Internet-Accessible QDE Setup
-
 > ℹ️ **Information**
 >
 > This document was written primarily for QDE v1.0.
@@ -21,23 +19,6 @@ RedirectFrom: docs/quick-deployment-internet-setup
 > * [QDE SSL Setup](./ssl-setup)
 
 With an unprecedented amount of employees working from home, there is a much greater demand to serve their software lifecycle needs remotely. Thus, many organizations would like the option to make the Chocolatey Quick Deployment Environment (QDE) Internet-accessible. This document walks you through some options you will need to consider, if you choose this route.
-
-<!-- TOC depthFrom:2 -->
-
-- [Firewall Considerations](#firewall-considerations)
-- [SSL Certificate Setup](#ssl-certificate-setup)
-  - [SSL Certificate Scenarios](#ssl-certificate-scenarios)
-  - [Scenario 1: Domain Server Certificates](#scenario-1-domain-server-certificates)
-  - [Scenario 2: Purchased/Acquired Certificates from CA](#scenario-2-purchasedacquired-certificates-from-ca)
-  - [Scenario 3: Self-Signed SSL Certificates](#scenario-3-self-signed-ssl-certificates)
-- [Nexus Setup](#nexus-setup)
-  - [Option 1: Scripted Nexus Configuration](#option-1-scripted-nexus-configuration)
-  - [Option 2: Manual Configuration of Nexus](#option-2-manual-configuration-of-nexus)
-- [CCM Setup](#ccm-setup)
-- [Adjusting Scripts for Client Setup](#adjusting-scripts-for-client-setup)
-- [Jenkins](#jenkins)
-
-<!-- /TOC -->
 
 > 🔐 **Warning**
 >

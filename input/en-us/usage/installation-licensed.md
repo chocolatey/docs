@@ -5,43 +5,10 @@ Description: Techniques for how to install the licensed version of Chocolatey
 RedirectFrom: docs/installation-licensed
 ---
 
-# Install The Licensed Edition
-
 Congratulations on your recent purchase of a licensed edition of Chocolatey! If you are trialing, please pay particular attention to that section:
 
-<!-- TOC -->
-
-- [Internal / Organizational Chocolatey Deployments](#internal--organizational-chocolatey-deployments)
-- [Some Administrative Actions](#some-administrative-actions)
-- [How Do I Know When the License is Installed?](#how-do-i-know-when-the-license-is-installed)
-- [See It In Action](#see-it-in-action)
-- [How Do I Install The Licensed Edition?](#how-do-i-install-the-licensed-edition)
-  - [How Do I Install a Local nupkg File?](#how-do-i-install-a-local-nupkg-file)
-  - [How Do I Install The Trial Edition?](#how-do-i-install-the-trial-edition)
-    - [Notes on the Trial Version](#notes-on-the-trial-version)
-- [Install Options](#install-options)
-  - [Install Without Context Menus](#install-without-context-menus)
-- [Upgrading](#upgrading)
-  - [Upgrade the Extension](#upgrade-the-extension)
-  - [How Do I Upgrade the License File?](#how-do-i-upgrade-the-license-file)
-  - [How Do I Upgrade the Trial Edition?](#how-do-i-upgrade-the-trial-edition)
-  - [How Do I Upgrade the Trial License File?](#how-do-i-upgrade-the-trial-license-file)
-- [Installing / Upgrading In Secure Environments / Without Internet Access](#installing--upgrading-in-secure-environments--without-internet-access)
-- [Set Up Licensed Edition With Puppet](#set-up-licensed-edition-with-puppet)
-- [Install the Chocolatey Agent Service](#install-the-chocolatey-agent-service)
-  - [Ensure the Chocolatey Agent Service with Puppet](#ensure-the-chocolatey-agent-service-with-puppet)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - [Chocolatey doesn't recognize the license file](#chocolatey-doesnt-recognize-the-license-file)
-  - [Exception of type 'Rhino.Licensing.LicenseNotFoundException' was thrown.](#exception-of-type-rhinolicensinglicensenotfoundexception-was-thrown)
-  - [ERROR: The term 'Install-ChocolateyWindowsService' is not recognized as the name of a cmdlet, function, script file, or operable program.](#error-the-term-install-chocolateywindowsservice-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-  - [Unable to load licensed version extensions and commands.](#unable-to-load-licensed-version-extensions-and-commands)
-  - [Error when registering components](#error-when-registering-components)
-  - [Access to the path is denied.](#access-to-the-path-is-denied)
-  - [No longer able to double click a nuspec to create a package](#no-longer-able-to-double-click-a-nuspec-to-create-a-package)
-
-<!-- /TOC -->
-
 ## Internal / Organizational Chocolatey Deployments
+
 Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../how-tos/setup-offline-installation) in tandem with this article.
 
 ## Some Administrative Actions
@@ -70,6 +37,7 @@ Additionally:
 If you do not see the edition next to the name and version without an error, you need to check over your installation procedure again to ensure you've completed it properly. See below.
 
 ## See It In Action
+
 Here's the whole process for installing your license and installing the licensed code.
 
 ![install](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_install_pro.gif)
@@ -116,11 +84,9 @@ If you've received a trial license, you will also receive a link to download a r
 
 > 📝 **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
 
-
 > ⚠️ **WARNING**
 >
 > Order is ***VERY*** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
-
 
  1. Install a recent version of Chocolatey (0.10.8+) - `choco upgrade chocolatey` (due to a tight integration, `chocolatey.extension` may need a newer version than what is listed here).
  1. You received a license file in email. **That email also contains links to download licensed nupkgs.** If you received the license file from another party but not the email, please ask them to forward it over to you as you will need it.
@@ -133,7 +99,6 @@ If you've received a trial license, you will also receive a link to download a r
  1. Run this command: `choco`. You should not see any error message logged anymore (like you saw in the previous run asking you to install the licensed extension). If you do see an error message still, you may need to revisit these steps and determine what might have been missed or mistyped.
  1. That's it! You are good to go.
 
-
 See the difference between the trial install here and [a fully licensed edition](#how-do-i-install-the-licensed-edition) (also see the pictures above).
 
 #### Notes on the Trial Version
@@ -141,7 +106,9 @@ See the difference between the trial install here and [a fully licensed edition]
 Very little functionality if any is held back. With the movement forward on things like Central Management and GUI branding, those are now available with a trial as well.
 
 ## Install Options
+
 ### Install Without Context Menus
+
 As of Chocolatey Licensed Extension v1.12.2, you can install to client machines without the context menus (the "Right Click" menu). Add the following to your installation : `--params="'/NoContextMenu'"`. As of Chocolatey Licensed Extension v2.1.0, you can pass `--params="'/NoContextMenu'"` during upgrade as well to remove context menus if you have previously already deployed them. Example: `choco install chocolatey.extension -y --params="'/NoContextMenu'"`.
 
 ## Upgrading
@@ -169,7 +136,6 @@ You will not be able to upgrade through regular means - please reach back out to
 ### How Do I Upgrade the Trial License File?
 
 The same way you upgrade for the full edition. See [How Do I Upgrade the License File?](#how-do-i-upgrade-the-license-file)
-
 
 ## Installing / Upgrading In Secure Environments / Without Internet Access
 
@@ -604,4 +570,5 @@ You may be attempting to upgrade chocolatey.extension and see that the access to
 Unfortunately, this is likely to cause your install to be unusable until you fix the locking issue.
 
 ### No longer able to double click a nuspec to create a package
+
 In the Windows 10 1803, it may remove the file association. You can simply `choco install chocolatey.extension -y --force` to add it back in.

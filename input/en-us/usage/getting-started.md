@@ -5,37 +5,8 @@ Description: Introduction to Chocolatey
 RedirectFrom: docs/getting-started
 ---
 
-# Getting Started
-
-<!-- TOC -->
-
-- [What is Chocolatey?](#what-is-chocolatey)
-  - [Features](#features)
-  - [Common Thoughts](#common-thoughts)
-  - [Summary](#summary)
-  - [Already familiar with other package managers?](#already-familiar-with-other-package-managers)
-- [Requirements](#requirements)
-  - [Chocolatey Clients](#chocolatey-clients)
-    - [Chocolatey Components](#chocolatey-components)
-    - [Space Requirements](#space-requirements)
-    - [Memory Requirements](#memory-requirements)
-  - [Chocolatey Repository Servers](#chocolatey-repository-servers)
-  - [Chocolatey Central Management](#chocolatey-central-management)
-- [Using Chocolatey](#using-chocolatey)
-  - [Overriding default install directory or other advanced install concepts](#overriding-default-install-directory-or-other-advanced-install-concepts)
-- [Terminology](#terminology)
-- [What Are Chocolatey Packages?](#what-are-chocolatey-packages)
-- [How does Chocolatey work?](#how-does-chocolatey-work)
-  - [Installation](#installation)
-  - [Upgrade](#upgrade)
-  - [Uninstall](#uninstall)
-- [Where are Chocolatey packages installed to?](#where-are-chocolatey-packages-installed-to)
-- [How does Chocolatey work with Programs and Features? Existing installs?](#how-does-chocolatey-work-with-programs-and-features-existing-installs)
-- [Where does Chocolatey install packages from?](#where-does-chocolatey-install-packages-from)
-
-<!-- /TOC -->
-
 ## What is Chocolatey?
+
 Chocolatey is a software management solution unlike any you've ever experienced on Windows. Think of it like this - you create a software deployment package using a little PowerShell, then you can deploy it anywhere you have Windows with everything (like Puppet, SCCM, Altiris, Connectwise Automate, etc).
 
 > Write your deployment once for any software, then deploy it with any solution everywhere you have Windows.
@@ -61,6 +32,7 @@ You know those massively complicated, complex, and expensive software management
 * **Scale With Ease.** There are massive deployments of Chocolatey, even the open source edition, in large enterprises. Chocolatey is deployed in everything from small startups all the way up to those fortune 500 companies.
 
 ### Common Thoughts
+
 **"Some of the software I manage is extremely complex and difficult to install."** You mean like [Office](https://chocolatey.org/packages/Office365ProPlus), [SQL Server](https://github.com/DarwinJS/ChocolateyDesignPatterns/tree/af7896893de95bdd5c3c430a8cf7a1b6aa8f0983/mssqlserver-standard), or Oracle? How about MatLab? AutoCAD? All can be more easily managed with Chocolatey. Stop torturing yourself, give Chocolatey a shot. Trust us, you'll never go back to those earlier methods. Come into modern software management and automation. It's available, and it's for Windows!!
 
 **"I deal with software installers that don't install silently."** There are solutions for those badly behaved installers. If your team doesn't have the skillset for something like MSI repackaging, you can lean on our packaging support team that can whip those badly behaved installers into shape for a low cost (provided you are using a commerical edition of Chocolatey).
@@ -70,18 +42,21 @@ You know those massively complicated, complex, and expensive software management
 **"I like GUIs or my coworkers like GUIs."** We understand that aspect, that's why [our business edition offering](https://chocolatey.org/compare#compare) employs many more visual interfaces.
 
 ### Summary
+
 All we're saying is, it's time to step out of the dark ages and stop either doing things manually or stop killing yourself trying to work directly with those complex systems. Rub a little Chocolatey on them, stop powering through extra work at night, and go home to see your family in the evening because you use modern software automation and tools. Have confidence in your deployments and get the right information back to fix quickly when things go wrong. Chocolatey has been around for nearly ten years, thousands of companies and hundreds of thousands of people use it. Lean on a solution that has been proven to work over and over again. It will change your life, it may even get you a raise! You will get more done in the same amount of time, and your employer will take notice. Windows deserves better automation and so do you.
 
 ### Already familiar with other package managers?
+
 Chocolatey is like dpkg (Apt-Get)/RPM, but built with Windows in mind (there are differences and limitations). It can also do configuration tasks and anything that you can do with PowerShell. Another notable difference, it is really easy to create and maintain packages compared to those older, existing solutions for POSIX.
 
 Chocolatey manages packages (strictly nupkg files) and those packages manage software (could be installers, could be runtime binaries, could be zips or scripts).
 
 > Chocolatey is a software management tool that is also a package manager. It functions fantastically well when the runtime software is all included in the package and it doesn't make use of native installers. However to approach the Windows ecosystem a package manager also needs to know how to manage actual software installations, thus why Chocolatey does that as well. For publicly available packages, copyright keeps from having binaries embedded in packages, so Chocolatey is able to download from distribution points and checksum those binaries.
 
-
 ## Requirements
+
 ### Chocolatey Clients
+
 With Chocolatey clients, we ensure that Chocolatey is going to run with low memory footprints because you will have all aspects of things you will need to manage and different space and memory available across all of those clients. Chocolatey has a very wide reach into where it can be installed.
 
 For Chocolatey clients, you will need the following:
@@ -91,11 +66,13 @@ For Chocolatey clients, you will need the following:
 * .NET Framework 4.x+
 
 #### Chocolatey Components
+
 * Chocolatey CLI aka choco (or choco.exe) is a client (not a Windows service) that provides the core of Chocolatey and the installation store for locally installed packages. This is important as Chocolatey manages packages, not Programs and Features directly - Programs and Features is limited only to software that has "installers" and Chocolatey treats all aspects of Windows software as first class citizens (zips, scripts, binaries, installers), thus it needs to track and manage those things separately.
 * Chocolatey GUI is an application that runs when a user runs it (also not a Windows Service).
 * Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](../features/paid/agent-service) and Chocolatey Central Management.
 
 #### Space Requirements
+
 * Chocolatey CLI has an impact of 15 MB on default install plus the space the installed packages use up.
 * Chocolatey GUI takes up another 50-100 MB of space on default installation.
 * Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business - it has an impact of about 10 MB.
@@ -103,6 +80,7 @@ For Chocolatey clients, you will need the following:
 **RECOMMENDATION**: We recommend enough free space for the applications you will install plus another 1 GB for allowing Chocolatey to process that. You will want to turn on Package Reducer (commercial editions) if you have it to really reduce the impact of embedded packages, which bring reliability but also increase footprint (unless you have Package Reducer). If you don't have Package Reducer and you are embedding binaries into nupkgs, you will need 3 times the space of what you are installing unless you explicitly clean up the extracted installers/zips in your automated scripts - then you will need 2x the space when considering the nupkg will still contain embedded binaries (and the nupkg must stick around). Unfortunately, this is going to be a calculation to understand exact space requirements and it really depends on what you will install.
 
 #### Memory Requirements
+
 * Chocolatey CLI only runs when called. It falls into managed memory thus can work in environments with low amounts of memory provided that they have enough memory available to manage software installations.
 * Chocolatey GUI only runs when the application is open and is also in managed memory. It can work on systems with low amounts of memory.
 * Chocolatey Agent (aka chocolatey-agent) - it is always running but has a very low footprint unless it is processing something.
@@ -110,6 +88,7 @@ For Chocolatey clients, you will need the following:
 **RECOMMENDATION**: At least 2GB of RAM at a bare minimum, but recommend at least 8GB for managing installations.
 
 ### Chocolatey Repository Servers
+
 Unforunately it's harder to make recommendations here as it is really dependent on the repository that you choose and what requirements they have. It varies from a Windows deployment to Linux deployed repositories, from Java-based, to .NET-based, to PHP, and Rust-based repositories. The requirements vary wildly, plus you may use those repositories that address multiple types of packages and would need to figure out the space available for that.
 
 **SPACE RECOMMENDATION**: Have enough space for 10x the size of the installers and other software you will store. This will allow for some default growth. We would recommend 100 GB at a minimum.
@@ -117,10 +96,11 @@ Unforunately it's harder to make recommendations here as it is really dependent 
 We've compiled a list of requirements for [commercial repository options](../features/free/how-to-host-feed#commercial-repository-system-requirements). Chocolatey Simple Server (Chocolatey.Server) can be put on really minimum hardware that could be 1-2GB of RAM, low CPU, and as little as 5 GB of space (number of packages you store will drive this). You will just want the network transfer to be fast.
 
 ### Chocolatey Central Management
+
 Requirements coming soon. Just imagine normal recommendations for an ASP.NET IIS deployment, a SQL Server back end, and 1+ Windows Services (depending on scale).
 
-
 ## Using Chocolatey
+
 Now that you have Chocolatey on your machine ([need to install?](./installation)), you can run several commands.
 
 Take a look at the [command reference](./commands/reference). We are going to be using the [install command](./commands/install).
@@ -132,7 +112,6 @@ Let's install [Notepad++](http://notepad-plus-plus.org/).
 1. If you have UAC turned on or are not an administrator, Chocolatey is going to request administrative permission at some point (at least once during the process). Otherwise it will not be able to finish what it is doing successfully. If you don't have UAC turned on, it will just continue on without stopping to bother you.
 1. That's it. Pretty simple but powerful little concept!
 
-<a name="overriding-default-install-directory"></a>
 ### Overriding default install directory or other advanced install concepts
 
 1. Yes we support that through the use of install arguments - see [Install Arguments](./commands/install#installarguments)
@@ -170,6 +149,7 @@ Packages with everything embedded are much more deterministic and repeatable, th
 The closer the underlying software a package represents is to the package (as in executables and files included in the package), the more Chocolatey behaves like a package manager.
 
 ## How does Chocolatey work?
+
 How the heck does this all work?
 
 ### Installation
@@ -200,11 +180,9 @@ How the heck does this all work?
 6. If everything is successful so far, the files snapshot is used to determine what files can be removed from the package folder. If those files have not changed, they will be removed.
 7. If everything is deleted from the package folder, the folder is also removed.
 
-
 When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See [shimming](../features/free/shim) for more information.
 When a package has a chocolateyInstall.ps1, it will run the script. The instructions in the file can be anything. This is limited only by the .NET framework and PowerShell.
 Most of the Chocolatey packages that take advantage of the PowerShell download an application installer and execute it silently.
-
 
 ## Where are Chocolatey packages installed to?
 
@@ -219,6 +197,7 @@ There are also packages for which you can set a custom installation path. These 
 Many packages use native software installers, so Chocolatey allows the installer itself to handle install/upgrade/uninstall scenarios. This means it can work directly with already installed software just by using `choco install` to make Chocolatey aware of existing software. You can also use a specially crafted install command (skip powershell) to allow choco to install a package without installing the already installed native software.
 
 ## Where does Chocolatey install packages from?
+
 By default it installs packages from chocolatey.org (the community feed). But you can change this by adding default sources and/or using the  `--source` switch when running a command.
 
 When you [host internal packages](../features/free/how-to-host-feed), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](../creating-packages/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.

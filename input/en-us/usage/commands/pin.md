@@ -15,15 +15,6 @@ This is especially helpful when running [`choco upgrade`](./upgrade) for all
  packages, as it will automatically skip those packages. Another
  alternative is `choco upgrade --except="pkg1,pk2"`.
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco pin [list]|add|remove [<options/switches>]
@@ -39,7 +30,6 @@ This is especially helpful when running [`choco upgrade`](./upgrade) for all
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
-
 ## Exit Codes
 
 Exit codes that normally result from running this command.
@@ -51,7 +41,6 @@ Normal:
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
-
 
 ## Options and Switches
 

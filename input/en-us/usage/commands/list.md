@@ -17,19 +17,6 @@ Chocolatey will perform a search for a package local or remote. Some
  and switches  with one dash (`-`). For more details, see
  [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
 
-<!-- TOC -->
-
-- [Usage](#usage)
-- [Examples](#examples)
-- [Exit Codes](#exit-codes)
-- [See It In Action](#see-it-in-action)
-- [Alternative Sources](#alternative-sources)
-  - [WebPI](#webpi)
-  - [Windows Features](#windows-features)
-- [Options and Switches](#options-and-switches)
-
-<!-- /TOC -->
-
 ## Usage
 
     choco search <filter> [<options/switches>]
@@ -48,7 +35,6 @@ Chocolatey will perform a search for a package local or remote. Some
 
 **NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
  write proper scripts and integrations.
-
 
 ## Exit Codes
 
@@ -71,17 +57,16 @@ If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
-
 ## See It In Action
 
 ![choco search](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_search.gif)
-
 
 ## Alternative Sources
 
 Available in 0.9.10+.
 
 ### WebPI
+
 This specifies the source is Web PI (Web Platform Installer) and that
  we are searching for a WebPI product, such as IISExpress. If you do
  not have the Web PI command line installed, it will install that first
@@ -89,6 +74,7 @@ This specifies the source is Web PI (Web Platform Installer) and that
  e.g. `choco list --source webpi`
 
 ### Windows Features
+
 This specifies that the source is a Windows Feature and we should
  install via the Deployment Image Servicing and Management tool (DISM)
  on the local machine.

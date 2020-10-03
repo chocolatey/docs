@@ -5,28 +5,7 @@ Description: Virus checking via VirusTotal or Generic scanner
 RedirectFrom: docs/features-virus-check
 ---
 
-# Runtime Malware Protection / Virus Scanning (Licensed Editions Only)
 We are pleased to offer runtime malware protection for our [customers](https://chocolatey.org/pricing)! Virus checking is available in two flavors - VirusTotal and Generic malware verification.
-
-<!-- TOC -->
-
-- [Usage](#usage)
-  - [VirusTotal](#virustotal)
-  - [Generic](#generic)
-- [See It In Action](#see-it-in-action)
-- [Options And Switches](#options-and-switches)
-- [FAQ](#faq)
-  - [How do I take advantage of this feature?](#how-do-i-take-advantage-of-this-feature)
-  - [I'm a licensed customer, now what?](#im-a-licensed-customer-now-what)
-  - [How do I turn this feature on?](#how-do-i-turn-this-feature-on)
-  - [How do I turn this feature off?](#how-do-i-turn-this-feature-off)
-  - [How do I override the minium number of positives?](#how-do-i-override-the-minium-number-of-positives)
-  - [How does the VirusTotal integration work?](#how-does-the-virustotal-integration-work)
-  - [How does VirusTotal verify the binary?](#how-does-virustotal-verify-the-binary)
-  - [What if VirusTotal doesn't have results for a binary?](#what-if-virustotal-doesnt-have-results-for-a-binary)
-  - [Do you have plans to offer better integration with particular anti-virus scanners?](#do-you-have-plans-to-offer-better-integration-with-particular-anti-virus-scanners)
-
-<!-- /TOC -->
 
 ## Usage
 
@@ -36,8 +15,8 @@ When a binary is not flagged:
 When a binary is flagged:
 ![Virus scan failure](/assets/images/virus_scan_flagged.png)
 
-
 ### VirusTotal
+
 We've teamed up with the amazing [VirusTotal](https://virustotal.com/) to offer a second opinion to your built-in anti-virus solution. When your packages download content from the internet, Chocolatey Pro will automatically check the executables prior to running any content. If a certain number of positives have been identified (configurable), Chocolatey will fail the install automatically (but can be overridden).
 
 VirusTotal scans binaries against over 50 different anti-virus scanners. Chocolatey will use the information based on sending a SHA256 checksum of the binary to VirusTotal and determining what the scans have determined.
@@ -58,6 +37,7 @@ You can also adjust the default number of positives prior to flagging a binary w
 If you need to override the minimum number of positives just for one install/upgrade, you can do that by passing `--virus-positives-minimum=VALUE` with your install or upgrade commands.
 
 ### Generic
+
 If you are an organization and you do not want to reach out to the internet for virus scan verification, you will want to take advantage of hooking Chocolatey up to your existing AV solution.
 
 Chocolatey will just need to know the full path to the AV command line executable, the arguments to pass, and valid exit codes (comma separated).
@@ -106,13 +86,14 @@ The following options are added to install and upgrade commands.
        Licensed versions only.
 ~~~
 
-
 ## FAQ
 
 ### How do I take advantage of this feature?
+
 You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing) (Pro, Business, or MSP). Pro is a personal, named license that costs about the price of a lunch outing per month and comes with several other features. Business editions are great for organizations that need to manage the total software management lifecycle. MSP editions contain a subset of the Business edition features. MSPs are only able to use the Generic Virus Scanner.
 
 ### I'm a licensed customer, now what?
+
 When you install package that download content, those items will automatically be verified if the feature is turned on (it is automatically turned on for Pro users). We don't turn it on automatically in Business editions because many organizations are wary about reaching out to the internet and the generic virus scanner requires additional configuration.
 
 ### How do I turn this feature on?
@@ -133,6 +114,7 @@ You need to provide additional configuration if you are using the Generic virus 
 * Per command - use the option `--virus-positives-minimum=<value>` with install/upgrade commands.
 
 ### How does the VirusTotal integration work?
+
  * After a download, Chocolatey will check a file against Virus Total's scan engines to determine how safe the file is as a secondary check to the virus scanner you may already have running.
  * If there are existing scan results, it will determine based on the number of positives whether the file is likely safe or not (you can adjust the minimum positives number up or down).
  * If the number is over the minimum positives, it will require you to make the determination on the safety of the file. In other words, it will protect you by failing the install, but it will give you instructions on how to override Chocolatey.
@@ -141,10 +123,13 @@ You need to provide additional configuration if you are using the Generic virus 
  * A scan across all of the engines can take awhile, so it will fail with an error and notes on how you can move forward immediately if you trust the file. Virus scans can take up to 15 minutes so it will request you try again in about 15 minutes.
 
 ### How does VirusTotal verify the binary?
+
 Chocolatey gets the binary's signature by getting a SHA256 checksum of the binary. A SHA256 checksum is extremely secure and accurate, SHA256 has not been broken. It then submits that value to VirusTotal to see if there are pre-existing results. If there are, due to the checksum, the file is **the *exact* same binary**. Then Chocolatey inspects the results and determines if the file is safe or if it should fail.
 
 ### What if VirusTotal doesn't have results for a binary?
+
 Chocolatey will ask if you want the binary submitted to VirusTotal to be scanned (if the file is under 500MB). Then it will upload the binary their servers, ask you to try the install again in 15 minutes and fail the install. If this is running as a script, the question will timeout after 30 seconds and default to no upload.
 
 ### Do you have plans to offer better integration with particular anti-virus scanners?
+
 Yes! If you are considering or have a business edition of Chocolatey, please let us know what you need and we can get that scanner on the list. There are so many different virus checking solutions and a generic scanner provides the best opportunity to serve all of them.

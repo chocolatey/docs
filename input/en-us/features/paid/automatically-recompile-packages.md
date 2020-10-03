@@ -5,28 +5,11 @@ Description: Automatically internalize/recompile existing packages
 RedirectFrom: docs/features-automatically-recompile-packages
 ---
 
-# Package Internalizer
 Automatically Internalize/Recompile Existing Packages (Business and MSP Editions Only)
 
 There are thousands of existing packages on the [community repository](https://chocolatey.org/packages) that are a tremendous resource when it comes to creating packages that have software that can sometimes be tricky! Unfortunately you may be wary of using those packages without changes because many of those packages are subject to distribution rights and thus have an internet dependency (which creates both [trust and control issues](../../general/community-packages-disclaimer)). There is a process for downloading and internalizing packages to use internal or embedded locations for that software that is called **internalizing** (also known as recompiling).
 
 Chocolatey for Business is able to automatically download packages and resources, edit the scripts, and recompile packages to internalize and remove internet dependencies from those packages, saving you hours of time in [manually internalizing/recompiling packages](../../how-tos/recompile-packages)!
-
-<!-- TOC -->
-
-- [Usage](#usage)
-- [See It In Action](#see-it-in-action)
-- [Options and Switches](#options-and-switches)
-- [Resources](#resources)
-- [FAQ](#faq)
-  - [How do I take advantage of this feature?](#how-do-i-take-advantage-of-this-feature)
-  - [I'm a licensed customer, now what?](#im-a-licensed-customer-now-what)
-  - [How does it work?](#how-does-it-work)
-  - [Does it work with all types of packages?](#does-it-work-with-all-types-of-packages)
-  - [It was not able to download a resource. Why not?](#it-was-not-able-to-download-a-resource-why-not)
-  - [Are all packages guaranteed to be compatible?](#are-all-packages-guaranteed-to-be-compatible)
-
-<!-- /TOC -->
 
 ## Usage
 
@@ -110,21 +93,27 @@ Community posts that include Package Internalizer:
 ## FAQ
 
 ### How do I take advantage of this feature?
+
 You must have a [Business edition of Chocolatey](https://chocolatey.org/compare) or Chocolatey for MSP. Business editions are great for organizations that need to manage the total software management lifecycle.
 
 ### I'm a licensed customer, now what?
+
 You can run `choco download` and point it to an existing package name on any remote resource, typically folks point to `https://chocolatey.org/api/v2/` and let Chocolatey do all of the work of getting the package and remote resources to recompile the package.
 
 ### How does it work?
+
 It downloads a package locally. Then it looks at the install script to determine if there are remote resources, which are downloaded to a directory in the package (or with another switch will be placed on a file share or setup for an http location). Then it edits the install script to use the local resources instead and recompiles the package. The process takes about as long as it takes to download the remote resources.
 
 ### Does it work with all types of packages?
+
 Some packages are already internalized or don't have remote resources. In those cases it will just download the existing package and have it available for pushing to an internal repository.
 
 ### It was not able to download a resource. Why not?
+
 This feature is in preview, but is able to download/recompile quite a few packages. There are a few that it may have issues with, especially if variables with methods are used (e.g. `$(somevar).Replace(".","")`). In those cases it attempts to warn you ahead of time that it cannot handle those yet.
 
 Future versions of the licensed edition will support advanced scenarios such as these.
 
 ### Are all packages guaranteed to be compatible?
+
 Unfortunately not all packages on the community repository are created equal, even with the rigorous moderation process. A few packages do not use the built-in functions for acquiring files from the internet, so they don't lend well to automatic recompiling. Typically Chocolatey will let you know when this is the case and allow you to inspect the package to allow you to finish up the next steps of recompiling. As a future enhancement, it's possible this scenario would also be supported, although it is a very small subset of packages that are created in this way.

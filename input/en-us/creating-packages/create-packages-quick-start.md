@@ -11,21 +11,6 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 
 **Problem?** Read the detailed version: [Creating Chocolatey Packages](./creating-packages/create-packages)
 
-<!-- TOC -->
-
-- [Creating Chocolatey Packages - TL;DR version](#creating-chocolatey-packages---tldr-version)
-- [Prerequisites](#prerequisites)
-- [Quick start guide](#quick-start-guide)
-- [Common Mistakes](#common-mistakes)
-- [Environmental Variables](#environmental-variables)
-- [Examples](#examples)
-  - [chocolateyInstall.ps1 for .exe installer](#chocolateyinstallps1-for-exe-installer)
-  - [chocolateyInstall.ps1 for .msi installer](#chocolateyinstallps1-for-msi-installer)
-  - [Parsing Package Parameters](#parsing-package-parameters)
-- [Tips](#tips)
-
-<!-- /TOC -->
-
 ## Prerequisites
 
 * You have Chocolatey installed.
@@ -110,7 +95,9 @@ Install-ChocolateyPackage $packageName $installerType $silentArgs $url $url64  -
 ```
 
 ### Parsing Package Parameters
+
 For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](../how-tos/parse-packageparameters-argument).
+
 ## Tips
 
 * If you cannot find the installer silent mode, you can try an old tool called [Universal Silent Switch Finder 1.5.0.0](http://www.softpedia.com/progDownload/Universal-Silent-Switch-Finder-Download-180984.html) - `choco install ussf`.

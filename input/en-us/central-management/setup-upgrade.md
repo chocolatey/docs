@@ -5,7 +5,6 @@ Description: How to upgrade CCM
 RedirectFrom: docs/central-management-setup-upgrade
 ---
 
-# Chocolatey Central Management Upgrade
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
 > 📝 **NOTE**: Looking for installation instructions? See [Central Management Setup](./setup).
@@ -18,27 +17,6 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 >
 > All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-___
-<!-- TOC depthFrom:2 depthTo:5 -->
-
-- [Step 1: Download Latest Packages](#step-1-download-latest-packages)
-- [Step 2: Upgrade Central Management Database](#step-2-upgrade-central-management-database)
-- [Step 3: Setup Central Management Windows Service(s)](#step-3-setup-central-management-windows-services)
-- [Step 4: Setup Central Management Website](#step-4-setup-central-management-website)
-- [Step 5: Upgrade Agent Machines](#step-5-upgrade-agent-machines)
-  - [New Deployments Feature Example](#new-deployments-feature-example)
-- [FAQs](#faqs)
-  - [Can I simply upgrade all three CCM packages in the same command?](#can-i-simply-upgrade-all-three-ccm-packages-in-the-same-command)
-  - [If I update the license file, do I need to restart my services and web?](#if-i-update-the-license-file-do-i-need-to-restart-my-services-and-web)
-  - [Can I use Chocolatey Deployments to upgrade CCM based components?](#can-i-use-chocolatey-deployments-to-upgrade-ccm-based-components)
-- [Common Errors and Resolutions](#common-errors-and-resolutions)
-  - [ERROR: There was an error deserializing the requested JSON file: C:\ProgramData\chocolatey\lib\chocolatey-management-database\tools\app\appsettings.json Padding is invalid and cannot be removed.](#error-there-was-an-error-deserializing-the-requested-json-file-c\programdata\chocolatey\lib\chocolatey-management-database\tools\app\appsettingsjson-padding-is-invalid-and-cannot-be-removed)
-  - [When I upgrade the website, it wipes out any http port bindings I created](#when-i-upgrade-the-website-it-wipes-out-any-http-port-bindings-i-created)
-  - [ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.](#error-the-term-install-settingsjsonfile-is-not-recognized-as-the-name-of-a-cmdlet-function-script-file-or-operable-program)
-
-<!-- /TOC -->
-
-___
 ## Step 1: Download Latest Packages
 
 > 📝 **NOTE**
@@ -71,7 +49,6 @@ choco download chocolatey-agent chocolatey.extension chocolatey-management-datab
 Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push $_.Fullname --source="'$YourInternalRepositoryPushUrl'" --api-key="'$YourInternalRepositoryApiKey'"}
 ```
 
-___
 ## Step 2: Upgrade Central Management Database
 
 > 📝 **NOTE**: Please see [Central Management Database Setup](./setup-database) for details about all arguments that can be passed and set.
@@ -82,7 +59,6 @@ choco upgrade chocolatey-management-database -y
 
 > ⚠️ **WARNING** If you are using QDE and receive an error about deserializing and padding, see the resolution below.
 
-___
 ## Step 3: Setup Central Management Windows Service(s)
 
 > 📝 **NOTE**: Please see [Central Management Service Setup](./setup-service) for details about all arguments that can be passed and set.
@@ -108,7 +84,6 @@ choco upgrade chocolatey-management-service -y
 
 There may be additional (new) things you will want to configure. Please see [Central Management Service Setup](./setup-service) for details.
 
-___
 ## Step 4: Setup Central Management Website
 
 > 📝 **NOTE**: Please see [Central Management Web Setup](./setup-web) for details about all arguments that can be passed and set.
@@ -121,7 +96,6 @@ choco upgrade chocolatey-management-web -y
 >
 > You may need to adjust permissions/roles for your user if not using the default `ccmadmin` account. Please see the roles and permissions your account has versus what is available in `Administration -> Users`.
 
-___
 ## Step 5: Upgrade Agent Machines
 
 > 📝 **NOTE**: Please see [Central Management Client Setup](./setup-client) for details about all arguments that can be passed and set.
@@ -137,6 +111,7 @@ There may be additional (new) things you will want to configure. Please see [Cen
 > ⚠️ **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### New Deployments Feature Example
+
 As an example, configuring using Deployments would have the folllowing:
 
 ```powershell
@@ -150,10 +125,10 @@ choco feature enable --name="'useChocolateyCentralManagementDeployments'"
 > If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword`.
 > For more in-depth configuration options and settings for your endpoints, you can view the [CCM Client Setup page](./setup-client)
 
-
-___
 ## FAQs
+
 ### Can I simply upgrade all three CCM packages in the same command?
+
 We strongly advise against it as there is an explicit order that things must be upgraded in. Since CCM components can be installed on separate machines, there is no explicit dependency that can be taken. Just note that running
 
 ```powershell
@@ -164,6 +139,7 @@ We strongly advise against it as there is an explicit order that things must be 
 when you have everything on the same box may work, but it may not. Please follow the steps here for best success.
 
 ### If I update the license file, do I need to restart my services and web?
+
 Yes, you do need to restart the agents, the service, and the web to pick up the license. Here's a script to handle that:
 
 ```powershell
@@ -173,12 +149,13 @@ Get-Service chocolatey-* | Start-Service
 ```
 
 ### Can I use Chocolatey Deployments to upgrade CCM based components?
+
 Likely you absolutely can, just keep in mind that there may be a specific ordering in how you would upgrade everything and adhere to that order. In some instances, you may need to upgrade agents first, then CCM components as once CCM is upgraded it may not be able to talk to the agents. However agents will stop being able to talk to CCM for a small period of time while you are upgrading CCM, but then things will start working again.
 
-
-___
 ## Common Errors and Resolutions
+
 ### ERROR: There was an error deserializing the requested JSON file: C:\ProgramData\chocolatey\lib\chocolatey-management-database\tools\app\appsettings.json Padding is invalid and cannot be removed.
+
 This means that the Chocolatey Unique Machine GUID has been changed since you installed the database, as you might see with some versions of QDE (which might be corrected in a version you have.)
 
 In that case you should run the following script:
@@ -189,15 +166,17 @@ choco upgrade chocolatey-management-database -y --package-parameters="'/SqlServe
 ```
 
 ### When I upgrade the website, it wipes out any http port bindings I created
+
 This was an issue in releases prior to upgrading to CCM v0.3.0 - see  https://github.com/chocolatey/chocolatey-licensed-issues/issues/156.
 If you run into this, please recreate the bindings again.
 
 ### ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.
+
 This is https://github.com/chocolatey/chocolatey-licensed-issues/issues/161.
 
 There are two workarounds noted:
+
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-___
 [Central Management Setup](./setup) | [Chocolatey Central Management](./)

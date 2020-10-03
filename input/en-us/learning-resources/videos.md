@@ -5,24 +5,6 @@ Description: Videos about Chocolatey
 RedirectFrom: docs/videos
 ---
 
-# Videos
-
-<!-- TOC -->
-
-- [Training](#training)
-- [Community](#community)
-  - [2018](#2018)
-  - [2017](#2017)
-  - [2016](#2016)
-  - [2015](#2015)
-  - [2014](#2014)
-  - [2013](#2013)
-  - [2012](#2012)
-  - [2011](#2011)
-- [Case Studies](#case-studies)
-
-<!-- /TOC -->
-
 ## Training
 
 * https://www.pluralsight.com/courses/chocolatey-nuget-automation-pros
@@ -84,6 +66,7 @@ RedirectFrom: docs/videos
 * NDC Oslo - [DevOps Yourself: Fast-Track Your Windows Development Environment Setup with Chocolatey and Vagrant](https://vimeo.com/131640721) - Justin James
 
 ### 2014
+
 * [How to use Chocolatey - a Simple and Cool Machine Package Manager - 000abcdexxx Google](https://www.youtube.com/watch?v=nh3lPZssp7s) - November 1, 2014
 * [The Chocolatey Experience](https://vimeo.com/108866814) - October 14, 2014
 * [The New Chocolatey](https://www.youtube.com/watch?v=sm_U53sxt2c) - September 29, 2014
@@ -91,17 +74,19 @@ RedirectFrom: docs/videos
 * FOSDEM 2014 - [Is Distribution-Level Package Management Obsolete?](https://www.youtube.com/watch?v=FENKd8NT9cY&t=28m19s) / [Slides](http://www.slideshare.net/dberkholz/is-distributionlevel-package-management-obsolete/18) - If you go to 24m 56s, Donnie talks about how painful packaging is for folks across different platforms - Feb 11, 2014
 
 ### 2013
+
 * [Creating a Chocolatey Package Part 1 - Katherine Moss](https://www.youtube.com/watch?v=lLJA_OW0LlY) - Dec 22, 2013
 * PuppetConf 2013 - [Puppet on Windows: Now You're Getting Chocolatey](https://www.youtube.com/watch?v=Im30wziOrBs) - Rob Reynolds, August 23, 2013
 * [Chocolatey Introduction - Joe Maddalone](https://www.youtube.com/watch?v=yBk9DuAHNuc) - June 8, 2013
 
 ### 2012
+
 * LifeHacker - [Using the Chocolatey Command Line Package Manager in Windows](https://www.youtube.com/watch?v=ArwT8DtK7Cc) - September 11, 2012
 
 ### 2011
+
 * [Create a Chocolatey NuGet Package](https://www.youtube.com/watch?v=Wt_unjS_SUo) - April 26, 2011
 * [Chocolatey NuGet - The Power of apt-get for Windows](https://www.youtube.com/watch?v=N-hWOUL8roU) - April 26, 2011
-
 
 ## Case Studies
 
