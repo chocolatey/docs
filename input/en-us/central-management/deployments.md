@@ -67,6 +67,23 @@ Get-Service chocolatey-* | Start-Service
 
 Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
+### Using `choco` commands in a script deployment break if semicolons are used to separate the statements
+
+When constructing a PowerShell script for a deployment, all Chocolatey commands must be placed on separate lines.  It is not possible to do something like the following:
+
+```powershell
+choco list --local-only -r; exit $LASTEXITCODE
+```
+
+Instead, this should be written as:
+
+```powershell
+choco list --local-only -r
+exit $LASTEXITCODE
+```
+
+For more information on when this will be addressed, you can subscribe to the [GitHub issue](https://github.com/chocolatey/chocolatey-licensed-issues/issues/158).
+
 ## Related Topics
 
 * [Chocolatey Central Management](./)
