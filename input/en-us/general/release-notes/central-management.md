@@ -23,6 +23,20 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.3.1 (unreleased)
+### BUG FIXES
+ * Fix - Database - Upgrade fails when passing database parameters due to incorrect cmdlet name - see [Licensed #161](https://github.com/chocolatey/chocolatey-licensed-issues/issues/161)
+ * Fix - Service Install - Ensure that existing certificate is located in TrustedPeople certificate store
+ * Fix - Service Install - Netsh Entries Incorrectly Parsed ("Cannot index into a null array") when installing in different locales - see [Licensed #174](https://github.com/chocolatey/chocolatey-licensed-issues/issues/174)
+ * Fix - Web - Invalid LDAP credentials/URL should not prevent login for ccmadmin user
+ * Fix - Deployments - Start Date Time for Deployment Step is overwritten when Step is marked as inconclusive
+ * Fix - Deployments - Switching from Basic to Advanced script without providing package name causes validation errors - see [Licensed #164](https://github.com/chocolatey/chocolatey-licensed-issues/issues/164)
+
+### IMPROVEMENTS
+ * Service Install - Allow skipping certificate binding with package parameter /SkipCertificateBinding
+ * Include CreationTime property on Deployment Plan entity - useful when querying via CCM API
+ * Web - Deployments UI - Add Deployment Step modal window should default to basic view
+ 
 ## 0.3.0 (June 25, 2020)
 ### BREAKING CHANGES
  * Chocolatey Central Management v0.3.0 will only work with Chocolatey Agent v0.11.0+. Upgrade order doesn't matter as you'll need to be on CCM v0.3.0 and Agent v0.11.0 before things start working again. See https://docs.chocolatey.org/en-us/central-management/#ccm-component-compatibility-matrix.
