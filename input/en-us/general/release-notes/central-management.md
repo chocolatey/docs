@@ -23,7 +23,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
-## 0.3.1 (unreleased)
+## 0.3.1 (October 5, 2020)
 ### BUG FIXES
  * Fix - Database - Upgrade fails when passing database parameters due to incorrect cmdlet name - see [Licensed #161](https://github.com/chocolatey/chocolatey-licensed-issues/issues/161)
  * Fix - Service Install - Ensure that existing certificate is located in TrustedPeople certificate store
