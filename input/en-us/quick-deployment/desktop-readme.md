@@ -63,6 +63,9 @@ If you would like to change the hostname of this VM, please do so **before** goi
 >
 > When running the `Set-QDEnvironment` script ensure you are logged into the QDE VM with the _local admininistrator_ account.
 > This is necessary for SQL to work properly initially.
+>
+> Do _NOT_ attempt to run this script from the Powershell ISE. It will not work. Aspects of the script output
+> are treated as part of the error stream incorrectly when ran from ISE, which causes the script to terminate unexpectedly.
 
 First, you'll need to open PowerShell as Administrator.
 
