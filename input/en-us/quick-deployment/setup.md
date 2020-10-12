@@ -271,7 +271,9 @@ A version of this readme file can be found in the [Quick Deployment Desktop Read
 >
 > The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials).
 > If there are conflicts between the desktop readme and what you see online, prefer the online version.
-
+>
+> When running the `Set-QDEnvironment` script ensure you are logged into the QDE VM with the _local admininistrator_ account.
+> This is necessary for SQL to work properly initially.
 
 ### Step 3.4: Database Password Changes (Optional)
 

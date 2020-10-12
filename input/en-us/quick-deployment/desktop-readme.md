@@ -59,6 +59,11 @@ If you would like to change the hostname of this VM, please do so **before** goi
 
 ### 3. Run the Set-QDEnvironment.ps1 Script
 
+> 📝 **Note**
+>
+> When running the `Set-QDEnvironment` script ensure you are logged into the QDE VM with the _local admininistrator_ account.
+> This is necessary for SQL to work properly initially.
+
 First, you'll need to open PowerShell as Administrator.
 
 #### Option 1: Default Self-Signed Certificate
