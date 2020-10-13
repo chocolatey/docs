@@ -7,6 +7,16 @@ RedirectFrom: docs/presentations
 
 ## Presentations
 
+### 2020
+
+* [Microsoft Defender Advanced Threat Protection and Chocolatey](https://www.slideshare.net/slideshow/embed_code/key/GghOiJlFmVINOx) - [Windows Management User Group Netherlands](https://www.meetup.com/WMUG_NL/) - [Tim Hermie](https://www.cloud-boy.be) and [Jasper Bernaers](https://jasperbernaers.com/), [September 29, 2020](https://www.meetup.com/WMUG_NL/events/273266512/)
+
+### 2019
+
+* [Automating the Software Deployment Lifecycle in Azure with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190702-neaug/) - [North East Azure User Group](https://www.meetup.com/North-East-Azure-User-Group/) - [Paul Broadwith](https://pauby.com), [June 6th, 2019](https://www.meetup.com/North-East-Azure-User-Group/events/261825832/)
+* [Click Free Application Deployment with the Magic of PowerShell and Chocolatey](https://blog.pauby.com/presentation/20190607-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 7th, 2019 - [Video](https://www.youtube.com/watch?v=HAWRkWMnAus&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
+* [Automating the Software Deployment Lifecycle with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190606-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 6th, 2019 - [Video](https://www.youtube.com/watch?v=TvWl2VzGo5U&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
+
 ### 2017
 
 * [Modern Software Management on Windows with Chocolatey and Puppet](https://www.slideshare.net/ferventcoder/modern-software-management-on-windows-with-chocolatey-and-puppet) - [PuppetConf 2017](https://puppetconf.com) - Rob Reynolds, [October 12, 2017](https://puppetconf17.sched.com/event/B4xQ) - [Video](https://www.youtube.com/watch?v=6gQtcoLaMI0)
