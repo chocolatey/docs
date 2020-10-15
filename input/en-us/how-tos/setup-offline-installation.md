@@ -153,7 +153,7 @@ From the machine with internet access:
 1. C4B - Run the following additionally: `choco download chocolatey.extension chocolatey-agent --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. MSP - Run the following additionally: `choco download chocolatey.extension --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. Now we should have several packages in `c:\choco-setup\packages`. If not, type `start .` and go copy the files here to that location.
-1. Obtain the PowerShell script from https://chocolatey.org/install#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
+1. Obtain the PowerShell script from https://docs.chocolatey.org/en-us/usage/installation#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
 1. Open `c:\choco-setup\files\ChocolateyLocalInstall.ps1` in an editor like Notepad++ or Visual Studio Code (do not use Notepad.exe!!).
 1. Change this line `$localChocolateyPackageFilePath = 'c:\packages\chocolatey.0.10.0.nupkg'` to `$localChocolateyPackageFilePath = 'c:\choco-setup\packages\chocolatey.0.10.8.nupkg'` (adjust for the actual path to the Chocolatey package).
 1. Air Gapped Networks / Machines without Network Access: Get those files over to that air gapped network (USB key and sneakernet if you need to).
