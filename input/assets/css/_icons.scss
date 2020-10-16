@@ -1,0 +1,26 @@
+.nav-link-collapse, .btn-collapse {
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 600;
+        margin-right: $spacer / 2;
+    }
+
+    // Angle right
+    &.nav-link:not(.active), &.btn.collapsed {
+        &:before {
+            content: "\f105";
+        }
+    }
+
+    // Angle down
+    &.nav-link.active, &.btn:not(.collapsed) {
+        &:before {
+            content: "\f107";
+        }
+    }
+}

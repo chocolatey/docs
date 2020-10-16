@@ -1,0 +1,99 @@
+#leftSidebarNav {
+    top: -54px;
+    background: $white;
+    background: var(--background-light);
+    transition: $theme-transition;
+
+    .navbar {
+        .navbar-toggler {
+            position: absolute;
+            top: -55px;
+            right: 14px;
+            font-size: $font-size-base;
+            background: $gray-100;
+            background: var(--background);
+            border: 1px solid $gray-300;
+            border: 1px solid var(--border);
+            transition: $theme-transition;
+        }
+
+        .navbar-nav {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        > .navbar-collapse {
+            width: 100%;
+
+            .nav-link {
+                color: $gray-900;
+                color: var(--text);
+                padding: $spacer;
+                border-left: 6px solid transparent;
+
+                &.active, &:hover {
+                    border-color: $primary;
+                    color: $primary;
+                }
+                
+                &.active-page, &:hover {
+                    background: $primary-opacity;
+                }
+
+                &.active {
+                    font-weight: bold;
+                }
+            }
+
+            .collapse .nav-link:not(.active) {
+                border-left: 6px solid $primary;
+            }
+
+             > .navbar-nav {
+                 > .nav-item {
+                    > .nav-link {
+                        &:not(.nav-link-collapse) {
+                            padding-left: $spacer * 2;
+                        }
+                    }
+                    > .collapse {
+                        > .navbar-nav {
+                            > .nav-item {
+                                > .nav-link {
+                                    &.nav-link-collapse {
+                                        padding-left: $spacer * 2;
+                                    }
+
+                                    &:not(.nav-link-collapse) {
+                                        padding-left: $spacer * 3;
+                                    }
+                                }
+                                > .collapse {
+                                    > .navbar-nav {
+                                        > .nav-item {
+                                            > .nav-link {
+                                                &.nav-link-collapse {
+                                                    padding-left: $spacer * 3;
+                                                }
+
+                                                &:not(.nav-link-collapse) {
+                                                    padding-left: $spacer * 4;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #leftSidebarNav {
+        top: 0;
+    }
+}

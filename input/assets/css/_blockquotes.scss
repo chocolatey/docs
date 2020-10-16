@@ -1,0 +1,28 @@
+blockquote {
+    padding: $spacer;
+    background: $white;
+    background: var(--background-light);
+    box-shadow: $box-shadow-sm;
+    border-left: 6px solid $secondary;
+    transition: $theme-transition;
+
+    *:last-child {
+        margin-bottom: 0;
+    }
+
+    &.blockquote-warning {
+        border-color: $warning;
+    }
+
+    &.blockquote-danger {
+        border-color: $danger;
+    }
+
+    &.blockquote-primary {
+        border-color: $primary;
+    }
+
+    &.blockquote-success {
+        border-color: $success;
+    }
+}

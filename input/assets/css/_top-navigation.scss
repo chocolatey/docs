@@ -1,0 +1,136 @@
+#topNav {
+    padding: .5rem 0 0;
+    background: $white;
+    background: var(--background-light);
+    transition: $theme-transition;
+
+    .navbar-brand img {
+        height: 3rem;
+        padding-left: 1rem;
+    }
+
+    form[role="search"] {
+        margin: .5rem auto auto;
+        padding: .5rem 1rem;
+        width: 100%;
+        background: $gray-100;
+        background: var(--background);
+        border-bottom: 1px solid $gray-300;
+        border-bottom: 1px solid var(--border);
+        transition: $theme-transition;
+
+        .fa-search {
+            position: absolute;
+            left: 25px;
+            color: $primary-opacity;
+        }
+
+        .form-control {
+            width: 100%;
+            border-radius: 0;
+            border: 0;
+            padding-left: 35px;
+            border-bottom: 3px solid $primary-opacity;
+            background: var(--background-light);
+            color: var(--text);
+            transition: $theme-transition;
+
+            &:focus {
+                box-shadow: none;
+                border-color: $primary;
+            }
+        }
+
+        &.active {
+            .fa-search {
+                color: $primary;
+            }
+        }
+    }
+    .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        margin-right: 65px;
+
+        .nav-item {
+            &:not(:last-child) {
+                padding-right: $spacer;
+            }
+
+            &:last-child {
+                padding-right: .25rem;
+            }
+
+            .nav-link {
+                padding: 0;
+            }
+
+            .custom-switch:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #topNav {
+        padding-bottom: .5rem;
+
+        .navbar-brand img {
+            height: 5rem;
+        }
+    
+        form[role="search"] {
+            background: none;
+            border-bottom: none;
+            margin: auto;
+            padding: 0;
+            position: absolute;
+            left: 25%;
+            top: 0px;
+            bottom: 0px;
+            right: auto;
+            width: 40%;
+
+            .fa-search {
+               left: 0;
+            }
+
+            .form-control {
+                padding-left: 25px;
+            }
+        }
+
+        .navbar-nav {
+            margin-right: 0;
+
+            .nav-item {
+                &:not(:last-child) {
+                    padding-right: $spacer * 2;
+                }
+
+                &:last-child {
+                    padding-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #topNav {
+        form[role="search"] {
+            width: 45%;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #topNav {
+        form[role="search"] {
+            left: 0;
+            right: 0;
+            width: 700px;
+        }
+    }
+}
