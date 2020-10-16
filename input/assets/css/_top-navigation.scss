@@ -3,6 +3,7 @@
     background: $white;
     background: var(--background-light);
     transition: $theme-transition;
+    padding-bottom: .5rem; // TODO: Search- Remove this line when search box is added in
 
     .navbar-brand img {
         height: 3rem;

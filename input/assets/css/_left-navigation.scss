@@ -3,6 +3,7 @@
     background: $white;
     background: var(--background-light);
     transition: $theme-transition;
+    top: 0; // TODO: Search- Remove this line when search box is added in
 
     .navbar {
         .navbar-toggler {
