@@ -25,15 +25,19 @@ There are some environment variables that need to be adjusted or removed.
 ## Script
 There are no warranties on this script whatsoever, but here is something you can try:
 
-**WARNING!!** This will remove Chocolatey and all packages, software, and configurations in the Chocolatey Installation folder from your machine. Everything will be GONE. This is very destructive. DO NOT RUN this script unless you completely understand what the intention of this script is and are good with it. If you mess something up, we cannot help you fix it.
+> ⚠️ **WARNING!!**
+>
+> This will remove Chocolatey and all packages, software, and configurations in the Chocolatey Installation folder from your machine. Everything will be GONE. This is very destructive. DO NOT RUN this script unless you completely understand what the intention of this script is and are good with it. If you mess something up, we cannot help you fix it.
 
-***WARNING:*** Seriously, this script may destroy your machine and require a rebuild. It may have varied results on different machines in the same environment. Think twice before running this.
+> ⚠️ ***WARNING***
+>
+> Seriously, this script may destroy your machine and require a rebuild. It may have varied results on different machines in the same environment. Think twice before running this.
 
-<!--remove
 <p class="text-danger"><strong>Click the red button below to reveal the uninstall scripts.</strong></p>
-<button type="button" class="btn btn-danger btn-hide">Yes, I understand the dangers of running these scripts</button>
-<div id="uninstall-scripts" class="d-none">
-remove-->
+<button class="btn btn-danger btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#uninstallScripts" aria-expanded="false" aria-controls="uninstallScripts">Yes, I understand the dangers of running these scripts</button>
+<div id="uninstallScripts" class="collapse">
+<div class="pt-3">
+
 If you also intend to delete the Chocolatey directory, remove the `-WhatIf` switch from the `Remove-Item` call near the bottom:
 
 ~~~powershell
@@ -141,6 +145,5 @@ foreach ($scope in 'User', 'Machine') {
     [Environment]::SetEnvironmentVariable('ChocolateyToolsLocation', [string]::Empty, $scope)
 }
 ~~~
-<!--remove
 </div>
-remove-->
+</div>
