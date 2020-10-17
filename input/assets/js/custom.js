@@ -23,7 +23,7 @@ if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
     }
 
     // Detect system color scheme changes while user is on page
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    $(window.matchMedia('(prefers-color-scheme: dark)')).on('change', function(e) {
         const newThemePreference = e.matches ? "dark" : "light";
 
         if (newThemePreference == 'dark' && !localStorage.getItem('theme')) {
