@@ -1,0 +1,16 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    // TODO: Search- Uncomment this rule below when search box is added in
+    /*body > .container-fluid {
+        margin-top: 55px;
+    }*/
+
+    .sticky-top {
+        max-height: none;
+    }
+
+    @include media-breakpoint-up(md) {
+        body > .container-fluid {
+            margin-top: 0;
+        }
+    }
+}

@@ -17,17 +17,17 @@ That's it! All you need is choco.exe (that you get from the installation scripts
 
 Chocolatey installs in seconds. You are just a few steps from running choco right now!
 
-1. First, ensure that you are using an ***[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)*** - you can also install as a non-admin, check out <a href="#non-administrative-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Non-Administrative Installation</a>.
+1. First, ensure that you are using an ***[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)*** - you can also install as a non-admin, check out <a href="#non-administrative-install">Non-Administrative Installation</a>.
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmdexe) or [powershell.exe](#install-with-powershellexe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
 1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](./getting-started) for usage instructions.
 
 **NOTES**:
- * If you are behind a proxy, please see <a href="#installing-behind-a-proxy" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Installing behind a proxy</a>.
- * Need completely offline solution? See <a href="#completely-offline-install" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">Completely Offline Install</a>.
+ * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
+ * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
  * Installing the licensed edition? See [install licensed edition](./installation-licensed).
- * <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Options</a> / [Troubleshooting](../general/troubleshooting)
+ * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](../general/troubleshooting)
 
 #### Install with cmd.exe
 
@@ -69,15 +69,11 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 ## More Install Options
 
-<!--remove
+<p><strong>Troubleshooting? Proxy? Need more options?</strong></p>
 
-<p><strong>Troubleshooting? Proxy? Need more options?</strong><br />
+<button class="btn btn-success btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#moreInstallOptions" aria-expanded="false" aria-controls="moreInstallOptions">More Install Options</button>
 
-<a onclick="if ($(this).text() == 'Less Options') {$('#div-moreoptions').addClass('d-none');$(this).text('More Options');} else {$('#div-moreoptions').removeClass('d-none');$(this).text('Less Options');}">More Options</a>
-</p>
-
-<div id="div-moreoptions" class="hide">
-remove-->
+<div class="collapse" id="moreInstallOptions">
 
 * [Install from PowerShell v3+](#install-from-powershell-v3)
 * [Completely offline/internal install](#completely-offline-install)
@@ -839,9 +835,7 @@ choco install notepadplusplus.commandline -y
 
 If you prefer or need cmd.exe example, please see https://gist.github.com/ferventcoder/78fa6b6f4d6e2b12c89680cbc0daec78
 
-<!--remove
 </div>
-remove-->
 
 ## Upgrading Chocolatey
 
@@ -859,7 +853,7 @@ See [uninstall](./uninstallation).
 
 ### I'm having trouble installing Chocolatey
 
-Make sure you've reviewed <a href="#more-install-options" onclick="document.getElementById('div-moreoptions').classList.remove('d-none')">More Install Options</a> and looked over [Troubleshooting](../general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Install Options</a> and looked over [Troubleshooting](../general/troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
 
@@ -885,13 +879,4 @@ The installation actually ensures a couple of things:
 
   You are open to the concept of using packages. Some folks might say this means we are asking folks to learn to 'do things "our way" because we know better'. It's less about "knowing better" and more about learning that Chocolatey does things in a slightly different way. It does that because the world of software is not just installers. Software goes beyond Programs and Features and a system that can track all of that also needs to as well. Package management is not a new concept in the world of software, perhaps just newer to Windows. If folks are not open to that, then they are probably not going to be open to Chocolatey. And that's completely fine. Chocolatey is not for everyone. We may eventually get to more of a masses approach. Right now we are targeting a specific type of audience - those that are looking for better ways to manage software on Windows and open to looking for the best process of doing that.
 
-<!--remove
 <p>&nbsp;</p>
-
-<script language="javascript" type="text/javascript">
-  if (window.location.hash) {
-    document.getElementById("div-moreoptions").classList.remove("d-none");
-  }
-</script>
-
-remove-->

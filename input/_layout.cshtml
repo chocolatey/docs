@@ -1,218 +1,180 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="@Context.GetLink("/assets/css/styles.css")" rel="stylesheet" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
-
         @{
             string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey - {Document.GetString(Keys.Title)}" : "Chocolatey";
         }
+        <meta property="og:title" content="@title" />
+        <meta property="product:brand" content="Chocolatey" />
+        <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
+        <meta name="description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
+        <meta name="flattr:id" content="mqgjkp">
+        <meta property="DC.title" content="@title" />
+        <meta property="og:site_name" content="Chocolatey" />
+        <meta property="og:type" content="product" />
+        <meta property="product:category" content="software" />
+        <meta property="og:image" content="https://chocolatey.org/content/images/icon_slogan.png" />
+        <meta property="og:url" content="@Context.GetLink().TrimEnd('/')@Document.GetLink()" />
+        <meta property="copyright" content="Chocolatey is Copyright 2020 - @DateTime.UtcNow.Year Chocolatey Software,Inc." />
+
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
+        <link rel="stylesheet" href="@Context.GetLink("/assets/css/styles.css")" />
+        <link rel="stylesheet" href="@Context.GetLink("/assets/css/all.min.css")" />
+        <script>
+            if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+                const theme = localStorage.getItem('theme'), html = document.getElementsByTagName("html")[0];
+                if(theme){if(theme == 'dark') {html.setAttribute("data-user-color-scheme", "dark");}else{html.setAttribute("data-user-color-scheme", "light");}}
+            }
+        </script>
+        
         <title>@title</title>
     </head>
-    <body class="d-flex flex-column">
-        <div class="flex-grow-1 d-flex flex-column">
-
-            <nav id="topnav" class="navbar navbar-expand-lg navbar-light">
-                <div class="container py-3">
-                    <a class="navbar-brand" href="@Context.GetLink("/")"><img id="logo" src="@Context.GetLink("/assets/logo.svg")" alt="Chocolatey" /> Chocolatey</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                        </ul>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link font-weight-light font-size-lg" href="https://github.com/chocolatey/docs"><i class="fab fa-github"></i> GitHub</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            @if (IsSectionDefined(Constants.Sections.Splash))
-            {
-                @RenderSection(Constants.Sections.Splash, false)
-            }
-            @{
-                string section = "docs";
-            }
-
-            <div class="flex-grow-1 d-flex  bg-body flex-column @(section != null ? "section-" + section : null)">
-                @if(section != null)
-                {
-                    <div id="titlebar" class="py-4">
-                        <div class="container">
-                            <div class="row">
-                                @{
-                                    string titleBarClasses = Document.GetBool(Constants.NoSidebar) ? string.Empty : "offset-md-3 offset-lg-2";
-                                }
-                                <div class="@titleBarClasses px-3 px-md-0">
-                                    <div class="section text-uppercase">Chocolatey</div>
-                                    <div class="text-white m-0 title">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</div>
-                                    @if (IsSectionDefined(Constants.Sections.Subtitle))
-                                    {
-                                        @RenderSection(Constants.Sections.Subtitle, false)
-                                    }
-                                </div>
+    <body>
+        <nav id="topNav" class="navbar">
+            <a class="navbar-brand" href="@Context.GetLink("/")">
+                <img class="d-md-none" src="@Context.GetLink("/assets/logo.svg")" alt="Chocolatey" />
+                <img class="d-none d-md-block" src="@Context.GetLink("/assets/logo-square.svg")" alt="Chocolatey" />
+            </a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
+                </li>
+                <li class="nav-item">
+                    <label class="mb-0" for="themeToggle">
+                    <input id="themeToggle" class="toggle-checkbox" type="checkbox" aria-label="Toggle theme settings" />
+                        <div class="toggle-slot">
+                            <div class="sun-icon-wrapper">
+                                <div class="sun-icon fas fa-sun"></div>
+                            </div>
+                            <div class="toggle-button"></div>
+                            <div class="moon-icon-wrapper">
+                                <div class="moon-icon fas fa-moon"></div>
                             </div>
                         </div>
-                    </div>
-                    <div id="undertitle">
-                        <div class="container bg-body">
-                            <div class="row">
-                                @if (Document.GetBool(Constants.NoSidebar))
-                                {
-                                    <div class="col">
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="col-md-3 col-lg-2 bg-body">
-                                    </div>
-                                    <div class="col-md-9 col-lg-8 bg-white">
-                                    </div>
-                                }
-                                <div class="col-lg-2 d-none d-lg-block bg-section">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
-
-                <div class="flex-grow-1 d-flex flex-column bg-body">
-                    @if (Document.GetBool(Constants.NoContainer))
-                    {
-                        <div class="bg-white">
-                            @RenderBody()
-                        </div>
+                    </label>
+                </li>
+            </ul>
+            @* TODO: Search- Uncomment search box below *@
+            @*<form role="search" class="form-inline">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="search" class="form-control" placeholder="Search..."  aria-label="Search" />
+            </form>*@
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div id="leftSidebarNav" class="col-md-3 col-xl-2 p-0">
+                    <div class="loader-container"><div class="loader"></div></div>
+                    @{
+                        IDocument root = OutputPages["en-us/index.html"].First();
                     }
-                    else
-                    {
-                        <div class="container flex-grow-1 d-flex flex-column bg-white">
-                            <div class="row flex-grow-1 align-items-stretch">
-                                @if (Document.GetBool(Constants.NoSidebar))
-                                {
-                                    IgnoreSection(Constants.Sections.Sidebar);
+                    <nav class="navbar navbar-expand-md p-0">
+                        <button class="navbar-toggler btn px-3 py-2" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-ellipsis-v text-primary"></i></button>
+                        <div id="leftSidebar" class="collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    @if(root.ShowLink())
+                                    {
+                                        <a class="nav-link @(Document.IdEquals(root) ? "active active-page" : null)" href="@root.GetLink()">@root.GetTitle()</a>
+                                    }
+                                    else
+                                    {
+                                        @root.GetTitle()
+                                    }
+                                </li>
+                                <li class="nav-item">
+                                    @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
+                                    {
+                                        DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
 
-                                    <div class="col">
-                                        @RenderBody()
-                                    </div>
-                                }
-                                else
-                                {
-                                    <div class="col-md-3 col-lg-2">
-                                        @if (IsSectionDefined(Constants.Sections.Sidebar))
-                                        {
-                                            @RenderSection(Constants.Sections.Sidebar, false)
-                                        }
-                                        else
-                                        {
-                                            IDocument root = OutputPages["en-us/index.html"].First();
-
-                                            <nav class="navbar navbar-light navbar-expand-sm p-0">
-                                                <button class="navbar-toggler w-100 border-0 rounded-0 bg-primary" type="button" data-toggle="collapse" data-target="#leftSidebarNav">Table of Contents</button>
-                                                <div class="collapse navbar-collapse" id="leftSidebarNav">
-                                                    <ul class="navbar-nav">
-                                                        <li class="nav-item @(Document.IdEquals(root) ? "active" : null)">
-                                                            @if(root.ShowLink())
-                                                            {
-                                                                <a class="nav-link" href="@root.GetLink()">@root.GetTitle()</a>
+                                        @if(documentChildren.Any()) {
+                                            <a class="nav-link nav-link-collapse @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)" role="button" aria-expanded="false" href="@document.GetLink()" data-href="#id-@document.Id">@document.GetTitle()</a>
+                                            <div class="collapse" id="id-@document.Id">
+                                                <ul class="navbar-nav">
+                                                    @foreach (IDocument child in documentChildren.OnlyVisible())
+                                                    {
+                                                        <li class="nav-item">
+                                                            @if(OutputPages.GetChildrenOf(child).Any()) {
+                                                                <a class="nav-link nav-link-collapse @(Document.IdEquals(child) || OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)" role="button" aria-expanded="false" data-href="#id-@child.Id" href="@child.GetLink()" data-href="#id-@child.Id">@child.GetTitle()</a>
+                                                                <div class="collapse" id="id-@child.Id">
+                                                                    <ul class="navbar-nav">
+                                                                        @foreach (IDocument childChild in OutputPages.GetChildrenOf(child).OnlyVisible())
+                                                                        {
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link @(Document.IdEquals(childChild) ? "active active-page" : null)" href="@childChild.GetLink()">@childChild.GetTitle()</a>
+                                                                            </li>
+                                                                        }
+                                                                    </ul>
+                                                                </div>
                                                             }
                                                             else
                                                             {
-                                                                @root.GetTitle()
-                                                            }
+                                                                <a class="nav-link @(Document.IdEquals(child) ? "active active-page" : null)" href="@child.GetLink()">@child.GetTitle()</a>
+                                                            } 
                                                         </li>
-                                                        <li class="nav-item">
-                                                            @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
-                                                            {
-                                                                DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
-
-                                                                @if(documentChildren.Any()) {
-                                                                    <a class="nav-link nav-link-collapse @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null)" href="@document.GetLink()" data-href="#id-@document.Id">@document.GetTitle()</a>
-                                                                    <div class="collapse" id="id-@document.Id">
-                                                                        <ul class="navbar-nav">
-                                                                            @foreach (IDocument child in documentChildren.OnlyVisible())
-                                                                            {
-                                                                                <li class="nav-item">
-                                                                                    @if(OutputPages.GetChildrenOf(child).Any()) {
-                                                                                        <a class="nav-link nav-link-collapse @(Document.IdEquals(child) || OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null)" href="@child.GetLink()" data-href="#id-@child.Id" data-href="#id-@child.Id">@child.GetTitle()</a>
-                                                                                        <div class="collapse" id="id-@child.Id">
-                                                                                            <ul class="navbar-nav">
-                                                                                                 @foreach (IDocument childChild in OutputPages.GetChildrenOf(child).OnlyVisible())
-                                                                                                {
-                                                                                                    <li class="nav-item">
-                                                                                                        <a class="nav-link @(Document.IdEquals(childChild) ? "active" : null)" href="@childChild.GetLink()">@childChild.GetTitle()</a>
-                                                                                                    </li>
-                                                                                                }
-                                                                                            </ul>
-                                                                                        </div>
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        <a class="nav-link @(Document.IdEquals(child) ? "active" : null)" href="@child.GetLink()">@child.GetTitle()</a>
-                                                                                    } 
-                                                                                </li>
-                                                                            }
-                                                                        </ul>
-                                                                    </div>
-                                                                }
-                                                                else
-                                                                {
-                                                                    <a class="nav-link @(Document.IdEquals(document) ? "active" : null)" href="@document.GetLink()">@document.GetTitle()</a>
-                                                                }
-                                                            }
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </nav>
-                                        }
-                                    </div>
-                                    <div class="col-md-9 col-lg-8 pt-4 pt-md-0 pb-4 px-4">
-                                        @RenderBody()
-                                    </div>
-                                }
-                                <div class="col-lg-2 d-none d-lg-block bg-body pl-3 pt-3">
-                                    @{
-                                        IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
-                                        if (headings.Count > 0)
-                                        {
-                                            <div class="border-bottom mb-3">
-                                                <p class="small font-weight-bold">On This Page</p>
-                                                @foreach (IDocument heading in headings)
-                                                {
-                                                    <p class="small"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></p>
-                                                }
+                                                    }
+                                                </ul>
                                             </div>
                                         }
+                                        else
+                                        {
+                                            <a class="nav-link @(Document.IdEquals(document) ? "active active-page" : null)" href="@document.GetLink()">@document.GetTitle()</a>
+                                        }
                                     }
-                                    @if (Document.ContainsKey("EditLink"))
-                                    {
-                                        <p class="small font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fad fa-pencil"></i> Edit This Page</a></p>
-                                    }
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
                         </div>
-                    }
+                    </nav>
+                </div>
+                <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
+                    <h1 class="title ml-md-4 d-xl-none">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</h1>
+                    <div class="row">
+                        <div id="mainContent" class="col-xl-10 pl-md-5 order-2 order-xl-1">
+                             <h1 class="title d-none d-xl-block">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</h1>
+                            @RenderBody()
+                        </div>
+                        @{
+                            IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
+                            if (headings.Count > 1)
+                            {
+                                <div id="rightSidebarNav" class="col-xl-2 pl-md-5 pl-xl-3 order-1 order-xl-2">
+                                    <button class="btn btn-link btn-collapse font-weight-bold w-100 d-xl-none mb-2" type="button" data-toggle="collapse" data-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
+                                    <div id="rightSidebar" class="sticky-top collapse">
+                                        <div class="card card-body py-0 px-xl-0 mb-3">
+                                            <p class="font-weight-bold pt-3">On This Page</p>
+                                            <ul class="list-unstyled py-3">
+                                                @foreach (IDocument heading in headings)
+                                                {
+                                                    <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
+                                                }
+                                            </ul>
+                                            @if (Document.ContainsKey("EditLink"))
+                                            {
+                                                <p class="font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="footer" class="p-3 text-white font-size-sm">
-            <div class="container">
-                <div>
-                    <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
-                    <span class="float-right" style="color: #888888;">@VersionUtilities.GetVersion()</span>
-                </div>
-            </div>
+        <div id="cookieNoticeAlert" class="alert alert-dismissible fade show mb-0 text-center d-none" role="alert">
+            <p class="mb-0">docs.chocolatey.org uses cookies to enhance the user experience of the site.</p>
+            <button type="button" class="btn btn-light btn-sm" data-dismiss="alert" aria-label="Close">I accept</button>
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <footer class="p-3 small text-center">
+            <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
+            <span>@VersionUtilities.GetVersion()</span>
+        </footer>
+        
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/jquery.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/bootstrap.bundle.min.js")"></script>
-        <script src="https://kit.fontawesome.com/a1cad7ed9a.js" crossorigin="anonymous" data-no-mirror></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/prism.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/anchor.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/custom.js")"></script>

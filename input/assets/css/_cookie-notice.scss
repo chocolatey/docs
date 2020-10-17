@@ -1,0 +1,40 @@
+#cookieNoticeAlert {
+    z-index: 99999;
+    background: $primary;
+    color: $white;
+    font-weight: bold;
+    font-size: $small-font-size;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-right: 1.25rem;
+
+    button {
+        margin-top: $spacer;
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #cookieNoticeAlert {
+        button {
+            width: 50%;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #cookieNoticeAlert {
+        font-size: $font-size-base;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        button {
+            width: auto;
+            margin-top: 0;
+            margin-left: $spacer;
+        }
+    }
+}

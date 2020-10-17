@@ -1,0 +1,47 @@
+.card {
+    height: 100%;
+    background: var(--background-light);
+    transition: $theme-transition;
+
+    &.card-index {
+        margin-left: 15px;
+        border: 1px solid transparent;
+
+        .circle {
+            height: 35px;
+            width: 35px;
+            background: $primary;
+            background: var(--primary-25);
+            color: $white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            transition: $theme-transition;
+        }
+
+        .card-content {
+            color: var(--text);
+        }
+
+        :last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            border: 1px solid $gray-300;
+            border: 1px solid var(--border);
+            transition: $theme-transition;
+
+            .circle {
+                background: $primary-hover;
+                color: $white;
+                transition: $theme-transition;
+            }
+        }
+    }
+}

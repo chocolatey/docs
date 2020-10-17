@@ -20,7 +20,7 @@ Let's get started!
 
 ## Components
 
-![Implementation Diagram](/assets/images/C4B-implementation-diagram.jpg)<!--remove {.border style="max-width:820px;"} remove-->
+![Implementation Diagram](/assets/images/C4B-implementation-diagram.jpg)
 
 As illustrated in the diagram above, there are five main components to a default Chocolatey install, namely:
 
@@ -86,11 +86,12 @@ As with configuration managers, this is out-of-scope for this document. Generall
     choco install chocolatey-c4b-quickstart --source . -y --params "'/LicenseFile:<FULL_PATH_TO_LICENSE_FILE>'"
     ```
 
-    <!--remove {.list-style-type-disc} remove-->
     > 📝 **NOTE**: We have built this package to SIMPLIFY the initial setup greatly; it will perform the following:
-    > * Download appropriate ".nupkg" files needed to setup Chocolatey.
-    > * Install the license file in the correct directory
-    > * Download a script for Offline install of Chocolatey on endpoints
+    > <ul class="list-style-type-disc">
+    >   <li>Download appropriate ".nupkg" files needed to setup Chocolatey.</li>
+    >   <li>Install the license file in the correct directory</li>
+    >   <li>Download a script for Offline install of Chocolatey on endpoints</li>
+    > </ul>
 
 1. From an Administrator PowerShell Window, run the following command to install the `chocolatey.extension` package:
 
@@ -148,14 +149,15 @@ From an Administrator PowerShell Window, run the following command to install th
     choco install chocolatey-nexus-setup --source="'C:\choco-setup\packages'"
     ```
 
-    <!--remove {.list-style-type-disc} remove-->
-    >This package will do the following:
-    >- Remove unwanted demo repositories
-    >- Add a "choco-hosted" Nuget repository
-    >- Add a "choco-install" raw repository
-    >- Add an "Install.ps1" script to the "choco-install" raw repository
-    >- Enable the Nuget API key realm
-    >- Output the API key for the Nexus server (copy this key for a later step)
+    > This package will do the following:
+    > <ul class="list-style-type-disc">
+    >   <li>Remove unwanted demo repositories</li>
+    >   <li>Add a "choco-hosted" Nuget repository</li>
+    >   <li>Add a "choco-install" raw repository</li>
+    >   <li>Add an "Install.ps1" script to the "choco-install" raw repository</li>
+    >   <li>Enable the Nuget API key realm</li>
+    >   <li>Output the API key for the Nexus server (copy this key for a later step)</li>
+    > </ul>
 
 1. You will require Google Chrome in order to login to the Nexus web UI (site can appear unresponsive in IE). From an Administrator PowerShell console, run:
 

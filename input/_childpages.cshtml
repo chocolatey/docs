@@ -1,26 +1,26 @@
 @if (OutputPages.GetChildrenOf(Document).Any())
 {
-<div class="box">
-	<div class="box-body no-padding">
-		<table class="table table-hover two-cols-alt table-responsive">
-			<tbody>
-				@foreach (IDocument child in OutputPages.GetChildrenOf(Document))
-				{
-					object[] childTreePath = child.Get<object[]>(Keys.TreePath);
-					<tr>
-						<td><strong>@Html.DocumentLink(child)</strong></td>
-						<td>
-							@{
-								if(child.ContainsKey(WebKeys.Description))
-								{
-									<text>@(child.Get(WebKeys.Description))</text>
-								}
-							}
-						</td>
-					</tr>
-				}
-			</tbody>
-		</table>
-	</div>
+<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document))
+	{
+		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+
+		<div class="col-lg-6 col-xl-4 mb-4">
+			<a href="@child.GetLink()">
+			<div class="card card-body card-index shadow-sm">
+				<div class="circle">
+					<i class="fas fa-file" aria-hidden="true"></i>
+				</div>
+				<div class="d-flex flex-column pl-3">
+					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+					@if (child.ContainsKey(WebKeys.Description))
+					{
+						<p class="card-content">@(child.Get(WebKeys.Description))</p>
+					}
+				</div>
+			</div>
+			</a>
+		</div>
+	}
 </div>
 }

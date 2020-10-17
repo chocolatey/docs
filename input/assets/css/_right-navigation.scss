@@ -1,0 +1,81 @@
+#rightSidebarNav {
+    font-size: $small-font-size;
+    
+    .card.card-body {
+        background: $white;
+        background: var(--background-light);
+        transition: $theme-transition;
+
+        ul {
+            border-top: 1px solid $gray-300;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid $gray-300;
+            border-bottom: 1px solid var(--border);
+            transition: $theme-transition;
+
+            li {
+                &[class^="level"] {
+                    a {
+                        display: block;
+                        padding: 1rem 0 1rem .5rem;
+                        border-left: 3px solid transparent;
+
+                        &.active, &:hover {
+                            color: $primary;
+                            border-left: 3px solid $primary;
+                            background: $primary-opacity;
+                        }
+
+                        &.active {
+                            font-weight: bold;
+                        }
+                    }
+
+                    &:not(:last-child) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                &.level-1 {
+                    display: none;
+                }
+                
+                &.level-3 {
+                    margin-left: 1.5rem;
+                }
+                
+                &.level-4 {
+                    margin-left: 3rem;
+                }
+
+                &.level-5 {
+                    margin-left: 4.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #rightSidebarNav {
+        .card.card-body {
+            background: none;
+
+            ul {
+                border-top: 1px solid $gray-300;
+                border-top: 1px solid var(--border);
+                border-bottom: 1px solid $gray-300;
+                border-bottom: 1px solid var(--border);
+                transition: $theme-transition;
+    
+                li {
+                    &[class^="level"] {
+                        a {
+                            padding: .5rem 0 .5rem .5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
