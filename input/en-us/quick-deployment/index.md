@@ -1,6 +1,6 @@
 ---
-Order: 100
-Title: Quick Deployment Environment (QDE) Overview
+Order: 130
+Title: Quick Deployment Environment (QDE)
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
 ---

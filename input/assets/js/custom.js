@@ -50,6 +50,10 @@ if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
     themeToggle.attr('disabled', 'true').next().addClass('disabled');
 }
 
+if (!$('h2:first-of-type').hasClass('title-child')) {
+    $('.title-child').removeClass('d-none');
+}
+
 // Left navigation
 $.each($('.nav-link-collapse.active'), function () {
     $($(this).attr('data-href')).collapse('show');

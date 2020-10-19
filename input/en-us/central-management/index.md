@@ -1,6 +1,6 @@
 ---
-Order: 110
-Title: Central Management Overview
+Title: Central Management
+Order: 120
 Description: What is CCM?
 RedirectFrom: docs/central-management
 ---
