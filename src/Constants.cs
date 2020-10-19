@@ -9,6 +9,7 @@ namespace Docs
     public const string EditLink = nameof(EditLink);
     public const string Description = nameof(Description);
     public const string ShowInSidebar = nameof(ShowInSidebar);
+    public const string BreadcrumbTitle = nameof(BreadcrumbTitle);
 
     public static class Emojis
     {

@@ -31,6 +31,17 @@ h1, h2, h3 {
 
 h1, h2 {
     color: $primary;
+}
+
+.breadcrumb {
+    margin-bottom: $spacer;
+
+    .breadcrumb-item.active {
+        color: var(--text);
+    }
+}
+
+h1:not(.title), h2, .breadcrumb {
     padding-bottom: $spacer / 2;
     border-bottom: 3px solid $primary-opacity;
 }
@@ -75,7 +86,7 @@ img {
 }
 
 #mainContent {
-    h1 + h1 {
+    h1:not(.title):first-of-type {
         display: none;
     }
 
@@ -122,5 +133,9 @@ footer {
         h2:first-of-type {
             margin-top: $spacer * 2;
         }
+    }
+
+    .breadcrumb {
+        margin-bottom: $spacer * 2;
     }
 }
