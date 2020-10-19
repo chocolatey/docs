@@ -44,7 +44,7 @@ label[for="themeToggle"] {
             width: 1rem;
             border-radius: 50%;
             background-color: $yellow-opacity;
-            box-shadow: inset 0px 0px 0px 0.15rem $yellow;
+            border: 1px solid $yellow;
             transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
         }
 
