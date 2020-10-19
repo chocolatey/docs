@@ -130,10 +130,14 @@
                     </nav>
                 </div>
                 <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
-                    <h1 class="title ml-md-4 d-xl-none">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</h1>
+                    <div class="ml-md-4 d-xl-none">
+                        @Html.Partial("_breadcrumbs")
+                    </div>
                     <div class="row">
                         <div id="mainContent" class="col-xl-10 pl-md-5 order-2 order-xl-1">
-                             <h1 class="title d-none d-xl-block">@(Document.GetString(Keys.Title) ?? Document.GetTitle())</h1>
+                             <div class="d-none d-xl-block">
+                                @Html.Partial("_breadcrumbs")
+                             </div>
                             @RenderBody()
                         </div>
                         @{
