@@ -6,7 +6,7 @@ ShowInNavbar: false
 ShowInSidebar: false
 ---
 
-Central Management's Groups are the basis on which a given [Deployment](./central-management/deployments) operates.
+Central Management's Groups are the basis on which a given [Deployment](./deployments) operates.
 In Central Management, a Group may contain one or more computers and/or other groups.
 Currently, Central Management's groups are entirely self-contained, and cannot be directly mapped from Active Directory groups.
 

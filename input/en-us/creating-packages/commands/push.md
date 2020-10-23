@@ -45,7 +45,7 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
 
 To use this command, you must have your API key saved for the community
  feed (chocolatey.org) or the source you want to push to. Or you can
- explicitly pass the apikey to the command. See [`apikey`](../../usage/commands/apikey) command help
+ explicitly pass the apikey to the command. See [`apikey`](./api-key) command help
  for instructions on saving your key:
 
     choco apikey -?
