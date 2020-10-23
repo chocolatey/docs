@@ -65,7 +65,7 @@ If a Deployment is targeting ineligible groups, the deployment cannot be started
 
 ### Why do I see some machines have not opted in for Deployments?
 
-If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deploymens (Configuration)".
+If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deployments (Configuration)".
 
 ![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
 
