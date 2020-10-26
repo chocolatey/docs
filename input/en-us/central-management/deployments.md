@@ -14,9 +14,9 @@ RedirectFrom: docs/central-management-deployments
 Central Management's Deployments functionality allows for pre-defined actions to be executed across any Chocolatey-managed computers.
 Deployment actions can be defined as simple `choco` commands, or as fully-fledged PowerShell scripts.
 
-## Creating a Deployment Plan
+## Creating a Deployment
 
-To setup a new Deployment, you'll need to create a Deployment Plan which defines the steps for the deployment and the computers which will run them.
+To setup a new Deployment, you'll need to create a Deployment which defines the steps for the deployment and the computers which will run them.
 In order to get started, you'll need at least the `Create Deployment` and/or the `Create Advanced Deployment` permissions applied to your user account in CCM.
 You will also need to have at least one Group of computers already defined.
 
@@ -62,21 +62,21 @@ You will also need to have at least one Group of computers already defined.
 1. Continue to add steps until your deployment is complete.
 1. Select **:floppy_disk: Save** to save the changes to the deployment.
 
-## Deployment Plan States
+## Deployment States
 
 ### Draft
 
-A deployment plan is initially created in the `Draft` state, and will remain in this state until it is moved into the `Ready` state.
+A deployment is initially created in the `Draft` state, and will remain in this state until it is moved into the `Ready` state.
 While it is in the `Draft` state, it cannot be run, and scheduled deployment start times will be ignored.
 
 ### Ready
 
-Once the deployment plan enters the `Ready` state, it's eligible to be started.
+Once the deployment enters the `Ready` state, it's eligible to be started.
 Deployments in this state can be started manually or according to a schedule.
 
 > 📝 **Note**
 >
-> Any further modifications to a deployment plan in this state will revert it back to the `Draft` state.
+> Any further modifications to a deployment in this state will revert it back to the `Draft` state.
 
 ### Active
 
@@ -188,7 +188,7 @@ Additionally, any group that contains any of the following will be considered in
 
 ### How Can I Run Deployments in a Semi-Connected Environment?
 
-As of CCM v0.4.0, you are able to configure deployment plans to tolerate semi-connected environments.
+As of CCM v0.4.0, you are able to configure deployments to tolerate semi-connected environments.
 This effectively allows CCM deployments to simply wait until a machine is connected to the network before it begins a given deployment step.
 
 To configure this, you can set the `Machine Contact Timeout in Minutes` value in the Advanced settings of each individual Deployment Step to `0`.
