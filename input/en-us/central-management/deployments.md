@@ -9,7 +9,89 @@ RedirectFrom: docs/central-management-deployments
 >
 > Please see https://chocolatey.org/blog/announcing-deployments for now.
 
-***JOIN US FOR A WEBINAR on June 23rd, 2020 (or watch on demand after the fact)*** - https://chocolatey.org/events/chocolatey-deployments
+## Description
+
+Central Management's Deployments functionality allows for pre-defined actions to be executed across any Chocolatey-managed computers.
+Deployment actions can be defined as simple `choco` commands, or as fully-fledged PowerShell scripts.
+
+## Creating a Deployment Plan
+
+To setup a new Deployment, you'll need to create a Deployment Plan which defines the steps for the deployment and the computers which will run them.
+In order to get started, you'll need at least the `Create Deployment` and/or the `Create Advanced Deployment` permissions applied to your user account in CCM.
+You will also need to have at least one Group of computers already defined.
+
+1. From the Central Management dashboard, select `Deployments` from the left sidebar.
+   ![Central Management dashboard, arrow pointing to Deployments menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
+1. Select the **:heavy_plus_sign: Create New Deployment** button at the top of the page.
+   ![CCM Deployments page, arrow pointing to Create New Deployment button](/assets/images/deployments/ccm-deployments-new-deployment-button.png)
+1. (Optional) Give the deployment a custom name by clicking the edit icon displayed next to it and entering a new name.
+   Press **Enter** to save the new name.
+   ![CCM New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
+1. (Optional) Add a schedule by selecting the **:heavy_plus_sign: Add Schedule** button.
+   ![CCM New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
+   1. Enter a date and time, or click the :calendar: button to pick the date and time from a calendar UI.
+   ![CCM deployment schedule picker](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
+   1. (Optional) If you'd like to define a maintenance window for the deployment start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
+   ![CCM deployment maintenance window option](/assets/images/deployments/ccm-deployments-maintenance-window.png)
+1. Select **:heavy_plus_sign: Add Step** to add your first deployment step.
+   ![CCM deployment add step button](/assets/images/deployments/ccm-deployments-add-step.png)
+1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the deployment step.
+   ![CCM deployment new step modal](/assets/images/deployments/ccm-deployments-new-step-modal.png)
+1. Add the deployment step action:
+   * For _Basic_ deployment steps, select a `Script command` from the list, and one or more `Package name`(s) to install.
+     ![CCM deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
+   * For _Advanced_ deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
+     ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
+1. (Optional) Click **Show advanced options** to set one or more of the following options:
+   * `Execution timeout`.
+   * `Valid exit codes`.
+   * `Machine contact timeout`.
+   * `Fail overall deployment if not successful`.
+     Disabling this option will allow the overall deployment to be marked as successful even if the step fails.
+     By default, if any deployment step fails, the overall deployment is marked as Failed.
+   * `Only run other deployment steps if successful`.
+     Enabling this option will prevent subsequent deployment steps from starting if this step fails.
+     The overall deployment will be marked as Failed, and subsequent steps will be Cancelled.
+1. Select the **Select Target Groups** tab.
+   ![CCM deployment step Select Target Group tab](/assets/images/deployments/ccm-deployments-select-groups-tab.png)
+1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button.
+   You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
+   ![CCM deployment step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
+1. Click the **:floppy_disk: Save** button to save the step.
+   ![CCM deployment step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
+1. Continue to add steps until your deployment is complete.
+1. Select **:floppy_disk: Save** to save the changes to the deployment.
+
+## Deployment Plan States
+
+### Draft
+
+A deployment plan is initially created in the `Draft` state, and will remain in this state until it is moved into the `Ready` state.
+While it is in the `Draft` state, it cannot be run, and scheduled deployment start times will be ignored.
+
+### Ready
+
+Once the deployment plan enters the `Ready` state, it's eligible to be started.
+Deployments in this state can be started manually or according to a schedule.
+
+> 📝 **Note**
+>
+> Any further modifications to a deployment plan in this state will revert it back to the `Draft` state.
+
+### Active
+
+Deployments that are currently in progress will be in this state.
+
+### Succeeded / Failed
+
+Deployments that have finished running will be either the `Succeeded` or `Failed` state, depending on how the run went.
+
+### Archived
+
+Deployments that are in a completed state can also be `Archived` to hide them from the main Deployments screen.
+This is helpful if you'd like to reduce clutter on the main deployments screen without discarding the information the completed report contains.
+
+You can access archived deployments from the `Reports -> Deployments` page in the left sidebar of the CCM dashboard.
 
 ## FAQ
 
@@ -50,6 +132,65 @@ Likely you absolutely can, just keep in mind that there may be a specific orderi
 You may have seen `--run-actual` get attached to scripts where you are running choco commands - what is it?
 
 This is a switch that is passed to opt out of Chocolatey Self-Service. It's typically passed by the agent service back to choco to run a command for a user. You typically would not issue this, but the agent service will, so you are likely to see it in the logs if you are looking closely.
+
+### What Happens if More Than One Deployment is "Active" at the Same Time?
+
+This will depend a little bit on the version of Central Management you're running.
+Prior to v4.0.0, control of deployments was handled entirely on a per-deployment-_step_ basis.
+This means that if you have an active deployment with some of the computers in it idling (waiting for a later step in the deployment to begin, essentially), these machines will pick up available deployment steps from an unrelated deployment while they're waiting.
+
+As of v4.0.0 of Central Management, this has been fine tuned a little bit so that any computer which is acted on by a deployment will not pick up any steps from unrelated deployments until all its assigned steps in the first deployment are completed.
+
+This can get a bit confusing, so let's consider the following scenario:
+
+* Deployment A
+  * Step 1
+    * Computer A
+    * Computer B
+  * Step 2
+    * Computer B
+  * Step 3
+    * Computer A
+* Deployment B
+  * Step 1
+    * Computer A
+
+Let's say `Deployment A` is started first, and `Deployment B` starts while `Deployment A` is in either step 1 or step 2.
+When `Deployment A` reaches step 2, even though `Computer A` is not currently running any deployment steps, it will not start running steps from `Deployment B` because it still has a task to do in `Deployment A`.
+If you are running CCM 0.3.x, `Computer A` will instead pick up and run the step from `Deployment B` despite `Deployment A` still being in progress.
+
+### Why do My Computers or Groups Show as Ineligible for Deployments While They're Opted In?
+
+Computers can be considered ineligible for deployments based on two criteria:
+
+1. Is the computer licensed under your Chocolatey for Business license?
+1. Is the computer opted in for deployments based on the Chocolatey configuration?
+
+If **either** one of these two criteria is not met, that computer is considered ineligible for deployments.
+
+Additionally, any group that contains any of the following will be considered ineligible:
+
+* An ineligible computer
+* A group containing **any** ineligible computers
+* A group containing **any** ineligible groups
+
+### What Happens if a Computer / Group in a Deployment Becomes Ineligible?
+
+* For deployments that have not yet started:
+  * If the deployment is scheduled, it will not run until all computers/groups are eligible again.
+  * If the deployment is not scheduled, it cannot be started until all computers/groups are eligible again.
+
+  Once CCM has confirmed the problem computer(s)/group(s) are eligible again, the deployment can be started.
+  If the deployment was previously scheduled and it has not passed the maintenance window time (if set), it will start at that point.
+* For deployments that are currently `Active`
+  * As soon as CCM detects the ineligible computer, it will terminate the current deployment step.
+  * Then, all following deployment steps will be `Cancelled`.
+
+## Deployments Webinars
+
+Catch the recording of the Jun 32rd, 2020 webinar for a full showcase of the Chocolatey Central Management Deployments features:
+
+<https://chocolatey.org/events/chocolatey-deployments>
 
 ## Common Errors and Resolutions
 
