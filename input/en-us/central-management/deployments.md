@@ -186,6 +186,25 @@ Additionally, any group that contains any of the following will be considered in
   * As soon as CCM detects the ineligible computer, it will terminate the current deployment step.
   * Then, all following deployment steps will be `Cancelled`.
 
+### How Can I Run Deployments in a Semi-Connected Environment?
+
+As of CCM v0.4.0, you are able to configure deployment plans to tolerate semi-connected environments.
+This effectively allows CCM deployments to simply wait until a machine is connected to the network before it begins a given deployment step.
+
+To configure this, you can set the `Machine Contact Timeout in Minutes` value in the Advanced settings of each individual Deployment Step to `0`.
+This value must be positive, or zero (which is treated as infinite).
+You may want to configure this only for the first step of a deployment, or for multiple steps if you expect the target machines to be connected/disconnected over the course of the deployment.
+
+> 📝 **Note**
+>
+> If the deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first deployment step is ignored.
+> In this case, the maintenance window defines the contact timeout for the first step.
+Depending on your environment and expectations, you can also set the `Execution Timeout in Seconds` value of a deployment step to `0`.
+This has a similar effect, preventing any deployment step action from being marked as failed or inconclusive until the Chocolatey Agent from that particular machine reports back in.
+If you expect users to be moving devices in and out of your network frequently, you may need to configure the execution timeout value accordingly.
+
+Any positive value for this setting will be respected, and as with `Machine Contact Timeout`, a `0` value is treated as infinite.
+
 ## Deployments Webinars
 
 Catch the recording of the Jun 32rd, 2020 webinar for a full showcase of the Chocolatey Central Management Deployments features:
