@@ -217,7 +217,7 @@ You should received a notification similar to this:
 
 #### appsettings.json configuration
 
-**NOTE**: In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
+> 📝 **NOTE**: In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
 
 There is a requirement within the CCM site to send emails to end users of the application.  For example, when registering a new user, or resetting a password.  To ensure that these emails contain a properly clickable link a modification needs to be made to the `appsettings.json` file which is located in the `c:\tools\chocolatey-management-web` folder.
 
@@ -245,7 +245,33 @@ Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction
 
 And then try accessing the website again.  Any emails that are then sent from CCM should then contain valid links back to the site.
 
-### Step 4.3: Application Settings File
+### Step 4.3: LDAP Configuration
+
+> 📝 **Note**
+>
+> The Central Management Server must be joined to the Active Directory Domain.
+>
+
+1. Open the CCM Site in the browser.
+1. Login with the `ccmadmin` user.
+1. In the left hand menu click on `Administration` and then `Settings`.
+1. Click on the `User management` tab in the `Settings` screen.
+1. Under LDAP Setting click the `Enable LDAP Authentication` button.
+1. Fill in your FQDN for the `Domain name` field.
+1. Fill in the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
+1. Fill the `Password` field with the password for the active directory user name used above.
+1. Click the `Save All` button at the top right of the page to save your settings.
+
+> 📝 **Note**
+>
+> In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
+> an email address must be configured on the properties of the Active Directory user you are
+> attempting to use for login.
+>
+
+![CCM LDAP Setup](/assets/images/features/ccm/ccm_ldap_setup.png)
+
+### Step 4.4: Application Settings File
 
 Some application settings will require you to edit the `appsettings.json` file, which is located in the `c:\tools\chocolatey-management-web` folder.
 
