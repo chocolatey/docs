@@ -21,26 +21,36 @@ In order to get started, you'll need at least the `Create Deployment` and/or the
 You will also need to have at least one Group of computers already defined.
 
 1. From the Central Management dashboard, select `Deployments` from the left sidebar.
+
    ![Central Management dashboard, arrow pointing to Deployments menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
 1. Select the **:heavy_plus_sign: Create New Deployment** button at the top of the page.
+
    ![CCM Deployments page, arrow pointing to Create New Deployment button](/assets/images/deployments/ccm-deployments-new-deployment-button.png)
 1. (Optional) Give the deployment a custom name by clicking the edit icon displayed next to it and entering a new name.
    Press **Enter** to save the new name.
+
    ![CCM New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
 1. (Optional) Add a schedule by selecting the **:heavy_plus_sign: Add Schedule** button.
+
    ![CCM New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
    1. Enter a date and time, or click the :calendar: button to pick the date and time from a calendar UI.
+
    ![CCM deployment schedule picker](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
    1. (Optional) If you'd like to define a maintenance window for the deployment start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
+
    ![CCM deployment maintenance window option](/assets/images/deployments/ccm-deployments-maintenance-window.png)
 1. Select **:heavy_plus_sign: Add Step** to add your first deployment step.
+
    ![CCM deployment add step button](/assets/images/deployments/ccm-deployments-add-step.png)
 1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the deployment step.
+
    ![CCM deployment new step modal](/assets/images/deployments/ccm-deployments-new-step-modal.png)
 1. Add the deployment step action:
    * For _Basic_ deployment steps, select a `Script command` from the list, and one or more `Package name`(s) to install.
+
      ![CCM deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
    * For _Advanced_ deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
+
      ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
 1. (Optional) Click **Show advanced options** to set one or more of the following options:
    * `Execution timeout`.
@@ -53,11 +63,14 @@ You will also need to have at least one Group of computers already defined.
      Enabling this option will prevent subsequent deployment steps from starting if this step fails.
      The overall deployment will be marked as Failed, and subsequent steps will be Cancelled.
 1. Select the **Select Target Groups** tab.
+
    ![CCM deployment step Select Target Group tab](/assets/images/deployments/ccm-deployments-select-groups-tab.png)
 1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button.
    You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
+
    ![CCM deployment step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
 1. Click the **:floppy_disk: Save** button to save the step.
+
    ![CCM deployment step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
 1. Continue to add steps until your deployment is complete.
 1. Select **:floppy_disk: Save** to save the changes to the deployment.
