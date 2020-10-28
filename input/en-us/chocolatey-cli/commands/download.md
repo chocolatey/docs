@@ -24,7 +24,7 @@ Downloads a package from a source, optionally downloading remote
  takes an existing package and makes it available without any internet
  requirement.
 
-See https://docs.chocolatey.org/en-us/features/paid/automatically-recompile-packages
+See https://docs.chocolatey.org/en-us/guides/create/recompile-packages
 
 ## Usage
 
@@ -64,7 +64,7 @@ Coming soon
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -238,7 +238,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      Skip Download Cache - Use the original download url even if a private
        CDN cache is available for a package. Overrides the default feature
        'downloadCache' set to 'True'. Business editions only (licensed version
-       1.12.2+). See https://docs.chocolatey.org/en-us/features/paid/private-cdn
+       1.12.2+). See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --dc, --downloadcache, --download-cache, --use-download-cache
      Use Download Cache - Use private CDN cache if available for a package.
@@ -248,7 +248,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
 
 ~~~
 
-[Command Reference](./reference)
+[Command Reference](./)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco download -h`.

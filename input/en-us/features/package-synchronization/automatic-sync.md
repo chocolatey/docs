@@ -17,7 +17,7 @@ As commercial editions lean more towards software management, they have much bet
 
 ### Usage
 
-![Automatic Synchronize - if you are on https://docs.chocolatey.org/en-us/features/paid/synchronize, see commented html below for detailed description of image](/assets/images/features/features_synchronize.png)
+![Automatic Synchronize - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/assets/images/features/features_synchronize.png)
 
 In the image above, someone manually removed the 1Password software. On the next run of Chocolatey, auto sync sees the software has been removed, so it removes the package tracking to that software in response to those system changes.
 

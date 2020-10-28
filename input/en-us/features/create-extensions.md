@@ -1,6 +1,6 @@
 ---
 Order: 70
-Title: Extend Chocolatey With PowerSHell Modules (extensions)
+Title: Extend Chocolatey With PowerShell Modules (extensions)
 Description: Create your own custom extensions
 RedirectFrom: docs/how-to-create-extensions
 ---

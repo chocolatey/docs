@@ -14,16 +14,16 @@ This is a listing of all of the different things you can pass to choco.
  * [outdated](./outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
  * [upgrade](./upgrade) - upgrades packages from various sources
  * [uninstall](./uninstall) - uninstalls a package
- * [pack](./pack) - packages up a nuspec to a compiled nupkg
- * [push](./push) - pushes a compiled nupkg
- * [new](./new) - generates files necessary for a chocolatey package from a template
+ * [pack](../../create/commands/pack) - packages up a nuspec to a compiled nupkg
+ * [push](../../create/commands/push) - pushes a compiled nupkg
+ * [new](../../create/commands/new) - generates files necessary for a chocolatey package from a template
  * [sources](./sources) - view and configure default sources (alias for source)
  * [source](./source) - view and configure default sources
  * [config](./config) - Retrieve and configure config file settings
  * [feature](./feature) - view and configure choco features
  * [features](./features) - view and configure choco features (alias for feature)
  * [setapikey](./setapikey) - retrieves or saves an apikey for a particular source (alias for apikey)
- * [apikey](./apikey) - retrieves or saves an apikey for a particular source
+ * [apikey](./setapikey) - retrieves or saves an apikey for a particular source
  * [unpackself](./unpackself) - have chocolatey set itself up
  * [version](./version) - [DEPRECATED] will be removed in v1 - use [`choco outdated`](./outdated) or `cup <pkg|all> -whatif` instead
  * [update](./update) - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)

@@ -85,7 +85,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [Install-ChocolateyVsixPackage](./install-chocolateyvsixpackage)
 
 
-[Function Reference](./reference)
+[Function Reference](./)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-Vsix -Full`.
 

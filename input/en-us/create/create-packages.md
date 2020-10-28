@@ -8,7 +8,7 @@ RedirectFrom: docs/create-packages
 # Creating Chocolatey Packages
 
 ## Summary
-See [What are Chocolatey Packages?](../usage/getting-started#what-are-chocolatey-packages) first.
+See [What are Chocolatey Packages?](../chocolatey-cli/getting-started#what-are-chocolatey-packages) first.
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
@@ -20,18 +20,18 @@ First you should determine if you are making a self-contained package or (also) 
 #### Self-Contained?
 If you have a self-contained package, you can remove the automation scripts
 entirely and just include the runtime executables, they will automatically get shimmed,
-which puts them on the path. Ensure you have the [legal right to distribute](../additional-information/legal)
+which puts them on the path. Ensure you have the [legal right to distribute](../information/legal)
 the application though. You should read up on the Shim Generation section
 below though to familiarize yourself on what to do with GUI applications
 and/or ignoring shims (also known as batch redirects).
 
 #### Including the Software Installer in the Package
-Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [legal right to distribute](../additional-information/legal) the software first if publishing to a public location (like the community package repository).
+Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [legal right to distribute](../information/legal) the software first if publishing to a public location (like the community package repository).
 
 #### Automation Scripts
 You have a powerful use of Chocolatey, as you are using PowerShell. So you
-can do just about anything you need. Choco has some very handy [built-in functions](./helpers/reference) that you can use, these are sometimes called
-[helpers](./helpers/reference).
+can do just about anything you need. Choco has some very handy [built-in functions](./helpers) that you can use, these are sometimes called
+[helpers](./helpers).
 
 ## Table of Contents
 1. [Rules](#rules-to-be-observed-before-publishing-packages)
@@ -49,18 +49,18 @@ can do just about anything you need. Choco has some very handy [built-in functio
 1. [Localization](#internationalization-and-localization-of-packages)
 1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
 1. [Maintainer magic - automatically updating packaging](./automatic-packages)
-1. [Taking over existing package](../how-tos/package-maintainer-handover)
+1. [Taking over existing package](../community-packages/maintainers/package-maintainer-handover)
 
 ## Quick Start guide
 
-If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](CreatePackagesQuickStart) for you. **NOTE**: This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
+If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](../create/create-packages-quick-start) for you. **NOTE**: This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
 
 ## Rules to be observed before publishing packages
 
 There are a few rules that you have to follow before pushing packages to chocolatey.org:
 
 1. **Don't package illegal software.** Packages of software that is illegal in most countries in the world are prohibited to publish on Chocolatey.org. This applies in particular to software that violates the copyright, pirated software and activation cracks. Remember that this also affects software that is especially designed to accomplish software piracy.
-2. **Do not include software in a package that you don't have the right to distribute.** Please see [Distribution Rights](Legal#wiki-distributions-aka-chocolatey-packages) for more information. Any package found not in compliance with this will be removed immediately. Instead you can download binaries from official distribution locations at runtime.
+2. **Do not include software in a package that you don't have the right to distribute.** Please see [Distribution Rights](../information/legal#wiki-distributions-aka-chocolatey-packages) for more information. Any package found not in compliance with this will be removed immediately. Instead you can download binaries from official distribution locations at runtime.
 1. **Packaging commercial or trial software?** Clearly state this in the package description. Does it require an activation key? Is there a trial period if you don't have a key? How long is this trial period?
 1. **Only post publicly relevant packages.** You should consider whether this package is useful for others. If that is not the case, it shouldn't be published on Chocolatey.org. Reasons for that can be if the package would require a very customized configuration. You can host your personal packages on [MyGet](https://www.myget.org/) and still be able to install them with Chocolatey using the `-source` parameter.
 1. **Do not publish junk or malware** packages.
@@ -70,7 +70,7 @@ There are a few rules that you have to follow before pushing packages to chocola
 1. **Split dependencies into multiple packages.** Try to split up packages as much as possible. If for example a program comes with additional modules/installers that are optional, make different packages for them instead of including all the things into one package. This idea is already widely applied for Linux packages, because it leads to a more lightweight system and reduces potential issues and conflicts.
 1. **Use a simple intuitive lowercase name for the package**. See the [package naming guidelines](#naming-your-package) for details. (If you are a reviewer/moderator, this is considered a guideline).
 
-Is your package unqualified for the Chocolatey feed, but you like to be able to install it through Chocolatey? One alternative would be to host your package on MyGet. See [Hosting Chocolatey Packages on MyGet](Hosting-Chocolatey-Packages-on-MyGet).
+Is your package unqualified for the Chocolatey feed, but you like to be able to install it through Chocolatey? One alternative would be to host your package on MyGet. See [Hosting Chocolatey Packages on MyGet](../hosting-chocolatey-packages-on-myget).
 
 ## Character encoding
 
@@ -91,10 +91,10 @@ The main release of a product versions are usually sufficient. If there are also
 ## Okay, how do I create packages?
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
-1. [Nuspec](CreatePackages#nuspec)
-1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](./helpers/reference)
-1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](../additional-information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
-1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](./helpers/reference) for functions available in your script.
+1. [Nuspec](../create/create-packages#nuspec)
+1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](./helpers)
+1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](../information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
+1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](./helpers) for functions available in your script.
 
 **Note:** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
@@ -159,7 +159,7 @@ There is at least one noted exception to this and that is low-level packages tha
 
 ## Installation Paths
 
-As the package maintainer, you decide where the packaged application is installed or extracted to. Depending on your type of application (see *“What distinction does Chocolatey make between an installable and a portable application?”* at the bottom of the [FAQ](ChocolateyFAQs)) there are a couple of suitable locations (not listed in any particular order):
+As the package maintainer, you decide where the packaged application is installed or extracted to. Depending on your type of application (see *“What distinction does Chocolatey make between an installable and a portable application?”* at the bottom of the [FAQ](../faqs)) there are a couple of suitable locations (not listed in any particular order):
 
 ### 1. The default installation path of your .msi/.exe setup file
 
@@ -232,7 +232,7 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 ## Uninstalling
 
-Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](../chocolatey-install-ps1). All the usual [helper reference](./helpers/reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
+Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](../chocolatey-install-ps1). All the usual [helper reference](./helpers) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
 
 ## Dependency Chaining
@@ -255,7 +255,7 @@ These guidelines are already commonly applied on packages for all major Linux di
 
 Note that a lot of packages in the Chocolatey Gallery don’t follow these guidelines. The simple reason is that the affected packages were created before the introduction of these guidelines.
 
-If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](../general/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](../general/faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and--ie-autohotkey)
+If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](../faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](../faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and-ie-autohotkey)
 
 ## Package description and release notes
 
@@ -335,7 +335,7 @@ Example: In the case of `Bob.exe` you would create a file named `Bob.exe.gui` an
 
 ## Build Your Package
 
-Open a command line in the directory where the nuspec is and type [`choco pack`](../usage/commands/pack). That's it.
+Open a command line in the directory where the nuspec is and type [`choco pack`](./commands/pack). That's it.
 
 ## Testing Your Package
 
@@ -366,7 +366,7 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](../usage/commands/reference#how-to-pass-options--switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
+`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](../chocolatey-cli/commands#how-to-pass-options-switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
 You can also use the `-debug` switch on `choco install` to provide more information.
 
@@ -379,7 +379,7 @@ You can also type `choco install -fdv path/to/nuspec` and choco will build the n
 
 ## Push Your Package
 
-To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://chocolatey.org/` for chocolatey's community feed).  You must have an api key for https://chocolatey.org/ set. Take a look at [choco push](../usage/commands/push)
+To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://chocolatey.org/` for chocolatey's community feed).  You must have an api key for https://chocolatey.org/ set. Take a look at [choco push](./commands/push)
 
 You can also log into chocolatey.org and upload your package from there (not recommended for packages over 2MB).
 
@@ -387,4 +387,4 @@ You can also log into chocolatey.org and upload your package from there (not rec
 Yes - [Automatic Packaging](./automatic-packages)
 
 ## Becoming a primary maintainer of an existing package
-See [Package Maintainer Handover](../how-tos/package-maintainer-handover)
+See [Package Maintainer Handover](../community-packages/maintainers/package-maintainer-handover)

@@ -24,7 +24,7 @@ RedirectFrom: docs/commands-version
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -137,7 +137,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
 
 ~~~
 
-[Command Reference](./reference)
+[Command Reference](./)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco version -h`.

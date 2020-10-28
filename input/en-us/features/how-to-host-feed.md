@@ -5,14 +5,14 @@ Description: How to host your own Chocolatey packages, rather than use the Choco
 RedirectFrom: docs/how-to-host-feed
 ---
 
-**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../../how-tos/setup-offline-installation) in tandem with this article.
+**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](../guides/organizations/organizational-deployment-guide) in tandem with this article.
 
 ## Why?
 
 Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the [community package repository](https://chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
 
-* [Community package repository - organizational use](../../general/community-packages-disclaimer)
-* [Security and the community repository](../../security#organizational-use-of-chocolatey)
+* [Community package repository - organizational use](../community-packages/community-packages-disclaimer)
+* [Security and the community repository](../information/security#organizational-use-of-chocolatey)
 
 ## Host your own server
 
@@ -28,7 +28,7 @@ Some of these options also work from a non-Windows hosting perspective. See [Non
 
 * File Share\UNC share (below)
 * SCCM Distribution Points (when used as a file share)
-* [Chocolatey.Server](../../how-tos/set-up-chocolatey-server) (supported by Chocolatey Software with your Chocolatey for Business subscription)
+* [Chocolatey.Server](../guides/organizations/set-up-chocolatey-server) (supported by Chocolatey Software with your Chocolatey for Business subscription)
 * Sonatype Nexus - [Nexus2](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html) / [Nexus3](https://books.sonatype.com/nexus-book/3.0/reference/nuget.html#nuget-hosted)- Sonatype Nexus has a built-in simple server
 * [ProGet](http://inedo.com/proget/overview) - ProGet gives you a ready to go On-Premise option. Enterprise has replication
 * [Artifactory Pro](https://www.jfrog.com/artifactory/) - see [Artifactory NuGet Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
@@ -67,7 +67,7 @@ Perhaps the easiest to set up and recommended for testing quick and dirty scenar
 * Can manage PowerShell gallery type packages.
 * There is no limitation on package sizes (or rather, it can likely handle 100MB+ file sizes, maybe even GB sized packages). Don't create multiple GB sized packages, what is wrong with you?! ;)
 
-**NOTE**: If you must create large packages, see [Package Reducer](../paid/package-reducer) for keeping used space down on client machines.
+**NOTE**: If you must create large packages, see [Package Reducer](./package-reducer) for keeping used space down on client machines.
 
 ### Disadvantages
 
@@ -118,7 +118,7 @@ There is where the bulk of NuGet OData compatible servers fall (NuGet.Server, Ch
 
 ### Known Simple Server Options
 
-* [Chocolatey.Server](../../how-tos/set-up-chocolatey-server) (recommended)
+* [Chocolatey.Server](../guides/organizations/set-up-chocolatey-server) (recommended)
 * NuGet.Server
 * [TeamCity](https://www.jetbrains.com/teamcity/) has built-in Simple Server
 * [Visual Studio Team Services (NuGet v2 endpoints)](https://docs.microsoft.com/en-us/vsts/package/overview) - [Setup](https://docs.microsoft.com/en-us/vsts/package/get-started-nuget) (Remove the part of the url that is /v3/index.json and use /v2 instead) - you may also need to [setup a personal access token](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate).
@@ -158,7 +158,7 @@ The actual limit for package sizes varies depending on what each simple server c
 
 #### Chocolatey.Server Setup
 
-Please see [Set up the Chocolatey.Server](../../how-tos/set-up-chocolatey-server). More details below on what this option provides.
+Please see [Set up the Chocolatey.Server](../guides/organizations/set-up-chocolatey-server). More details below on what this option provides.
 
 [Chocolatey Simple Server](https://chocolatey.org/packages/chocolatey.server) is a simple Nuget.Server that is ready to rock and roll. It has already completed Steps 1-3 of NuGet's [host your own remote feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds). Some things to consider with Chocolatey.Server as compared to other options:
 
@@ -262,7 +262,7 @@ Most hosting options have great information on how to set up the package reposit
 
 ### Commercial Repository System Requirements
 
-For commercial options, we've compiled a list of recommended needs for your server repositories. For Chocolatey clients, please see [client requirements](../../how-tos/setup-offline-installation). What you will see below are not the minimum values, you can typically get that at each of the links. These are what we typically recommend for use with Chocolatey. All of these options support High Availability (HA) options as well, so if you need something like that for a geographically diverse enterprise, there are options to meet those needs. Keep in mind pricing of each of these goes up based on your needs.
+For commercial options, we've compiled a list of recommended needs for your server repositories. For Chocolatey clients, please see [client requirements](../guides/organizations/organizational-deployment-guide). What you will see below are not the minimum values, you can typically get that at each of the links. These are what we typically recommend for use with Chocolatey. All of these options support High Availability (HA) options as well, so if you need something like that for a geographically diverse enterprise, there are options to meet those needs. Keep in mind pricing of each of these goes up based on your needs.
 
 #### Artifactory Pro
 

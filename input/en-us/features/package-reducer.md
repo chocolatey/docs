@@ -59,7 +59,7 @@ To turn on Package Reducer, you need to run the following:
 
 ### See It In Action
 
-![Package Reducer - if you are on https://docs.chocolatey.org/en-us/features/paid/package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer.png)
+![Package Reducer - if you are on https://docs.chocolatey.org/en-us/features/package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer.png)
 
 <!--
 Text in the image above:
@@ -91,19 +91,19 @@ Global Config Setting:
        nupkg file to very small and remove extracted archives and installers.
        Overrides the default feature 'reduceInstalledPackageSpaceUsage' set to
        'False'. Licensed editions only (version 1.12.0+). See
-       https://docs.chocolatey.org/en-us/features/paid/package-reducer
+       https://docs.chocolatey.org/en-us/features/package-reducer
 
      --no-reduce, --no-reduce-package-size, --no-deflate, --no-deflate-package-size
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone
        in the package. Overrides the default feature
        'reduceInstalledPackageSpaceUsage' set to 'False'. Licensed editions
-       only (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
+       only (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when
        using Package Reducer. Overrides the default feature
        'reduceOnlyNupkgSize' set to 'False'. Licensed editions only (version -
-       1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
+       1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
 ~~~
 
 
@@ -180,7 +180,7 @@ choco optimize --reduce-nupkg-only
 
 ### See It In Action
 
-![choco optimize - if you are on https://docs.chocolatey.org/en-us/features/paid/package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer_optimize.png)
+![choco optimize - if you are on https://docs.chocolatey.org/en-us/features/package-reducer, see commented html below for detailed description of image](/assets/images/features/features_package_reducer_optimize.png)
 
 <!--
 Text in the image above:

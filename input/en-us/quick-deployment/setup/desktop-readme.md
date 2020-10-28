@@ -8,7 +8,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme
 > 📝 **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](./v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](../v1/desktop-readme).
 
 Thanks for trying Chocolatey for Business!
 This system has been pre-configured as a fully functioning C4B environment.
@@ -32,9 +32,9 @@ If you run into any issues as you set up your QDE and clients, please reach out 
 
 There are some initial steps you will need to have taken before you work through this document.
 Please make sure you have taken those steps ahead of time.
-See the [Online Documentation](./setup#step-3-virtual-environment-setup) for the most up to date information.
+See the [Online Documentation](./#step-3-virtual-environment-setup) for the most up to date information.
 
-* [QDE Setup](./setup)
+* [QDE Setup](./)
 
 ## Step 1: Expand Disk Size
 
@@ -162,7 +162,7 @@ Consult the [Nexus documentation](https://help.sonatype.com/repomanager3) or rea
 | :---------------------: | :-----: | :-------------------: |
 | <http://localhost:8080> | `admin` | `{{JenkinsPassword}}` |
 
-For using Jenkins, please refer to our [online documentation](../how-tos/setup-internal-package-repository).
+For using Jenkins, please refer to our [online documentation](../../guides/organizations/automate-package-internalization).
 
 At most, you will need to:
 
@@ -303,7 +303,7 @@ slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 > 📝 **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [document for that version](./v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [document for that version](../v1/desktop-readme).
 
 ### "Server Error" warning when resetting "admin" credential in Nexus
 
@@ -334,8 +334,8 @@ Stop-Process -Name explorer -Force
 
 ## See Also
 
-* [Quick Deployment Environment](./)
-* [QDE Setup](./setup)
+* [Quick Deployment Environment](../)
+* [QDE Setup](./)
 * [QDE Desktop ReadMe File](./desktop-readme)
 * [QDE SSL/TLS Setup](./ssl-setup)
 * [QDE Firewall Changes](./firewall-changes)

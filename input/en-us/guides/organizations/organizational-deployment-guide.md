@@ -13,7 +13,7 @@ RedirectFrom: docs/how-to-setup-offline-installation
 > Our goal is to get you up-and-running quickly, and testing out the feature set.
 > For a more complete reference of possible scenarios and solutions, please stick to this guide.
 >
-> Another thing we provide is a [Quick Deployment Environment](../quick-deployment) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
+> Another thing we provide is a [Quick Deployment Environment](../../quick-deployment) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
 > It, like the quick start implementation, provides a specific solution so you should read over the summary before you decide that is the right implementation for your needs (in about 80%+ of organizational use cases it is the correct solution).
 
 ## Summary
@@ -56,15 +56,15 @@ There may be some exercises in here that won't apply:
 ## References
 
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
-* [Licensed Install](../usage/installation-licensed)
-* [Host Your Own Package Server](../features/free/how-to-host-feed)
+* [Licensed Install](../../chocolatey-licensed-extension/installation-licensed)
+* [Host Your Own Package Server](../../features/how-to-host-feed)
 * [Set up Chocolatey Server](./set-up-chocolatey-server)
 * [Security](https://chocolatey.org/security)
-* [Community Package Repository Disclaimer](../general/community-packages-disclaimer)
+* [Community Package Repository Disclaimer](../../community-packages/community-packages-disclaimer)
 
 ## Requirements
 
-Please see  [Requirements](../usage/getting-started#requirements) for the most up to date version of this.
+Please see  [Requirements](../../chocolatey-cli/getting-started#requirements) for the most up to date version of this.
 
 ### Chocolatey Clients
 
@@ -80,7 +80,7 @@ For Chocolatey clients, you will need the following:
 
 * Chocolatey CLI aka choco (or choco.exe) is a client (not a Windows service) that provides the core of Chocolatey and the installation store for locally installed packages. This is important as Chocolatey manages packages, not Programs and Features directly - Programs and Features is limited only to software that has "installers" and Chocolatey treats all aspects of Windows software as first class citizens (zips, scripts, binaries, installers), thus it needs to track and manage those things separately.
 * Chocolatey GUI is an application that runs when a user runs it (also not a Windows Service).
-* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](../features/paid/agent-service) and Chocolatey Central Management.
+* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](../../features/self-service-anywhere) and Chocolatey Central Management.
 
 #### Space Requirements
 
@@ -121,7 +121,7 @@ From the machine with internet access:
 1. In `c:\choco-setup`, type `New-Item -Path "$env:SystemDrive\choco-setup\packages" -ItemType Directory -Force` and press enter.
 1. Type `cd packages` and press enter.
 1. NONADMIN (**only**): We'll need to redirect Chocolatey not to install to the default location. Run `$env:ChocolateyInstall="$env:ProgramData\chocoportable"` and press enter.
-1. Now run `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` (this will get Chocolatey installed and it is what you see at https://chocolatey.org/install). It also makes choco available in that current shell. If you run into proxy issues here, please see [installing Chocolatey behind a proxy server](./proxy-settings-for-chocolatey).
+1. Now run `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` (this will get Chocolatey installed and it is what you see at https://chocolatey.org/install). It also makes choco available in that current shell. If you run into proxy issues here, please see [installing Chocolatey behind a proxy server](../using/proxy-settings-for-chocolatey).
 1. C4B / MSP / C4BTRIAL: Obtain the `chocolatey.license.xml` from the email sent from the Chocolatey team and save the license file to `c:\choco-setup\files` so we can use it here and on the offline machines.
 1. C4BTRIAL: grab a copy of the two nupkgs from the email. If you don't have that email with the download links, request it from whoever provided you the trial license. Save those two packages to `c:\choco-setup\packages`.
 1. C4B / MSP / C4BTRIAL: Run this command `New-Item $env:ChocolateyInstall\license -ItemType Directory -Force` - this creates the license directory.
@@ -136,9 +136,9 @@ From the machine with internet access:
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../usage/chocolatey-configuration).
-1. C4B: Are we installing the [optional Chocolatey Agent Service as well](../features/paid/agent-service#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link in the first sentence for other settings you will need to configure.
-1. C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../features/paid/agent-service#setup)? If so, run `choco upgrade chocolatey-agent -y --pre --source c:\choco-setup\packages` (this is where you saved the nupkgs earlier). Then follow the link in the first sentence for other settings you will need to configure.
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. C4B: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link in the first sentence for other settings you will need to configure.
+1. C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre --source c:\choco-setup\packages` (this is where you saved the nupkgs earlier). Then follow the link in the first sentence for other settings you will need to configure.
 1. Download packages (choose one):
     * C4B / MSP / C4BTRIAL: - Run the following: `choco download chocolatey chocolatey.server dotnet4.6.1 chocolateygui --internalize`. This is going to take quite awhile.
     * FOSS only - download the following packages:
@@ -146,14 +146,14 @@ From the machine with internet access:
       * [Chocolatey GUI](https://chocolatey.org/api/v2/package/chocolateygui)
       * Download Chocolatey.Server package and dependencies:
         * [Chocolatey.Server](https://chocolatey.org/api/v2/package/chocolatey.server)
-        * [dotnet4.6](https://chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually](./recompile-packages)
-        * [dotnet4.6.1](https://chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](./recompile-packages)
-        * [KB2919355](https://chocolatey.org/api/v2/package/KB2919355) - [internalize manually](./recompile-packages)
-        * [KB2919442](https://chocolatey.org/api/v2/package/KB2919442) - [internalize manually](./recompile-packages)
+        * [dotnet4.6](https://chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually](../create/recompile-packages)
+        * [dotnet4.6.1](https://chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](../create/recompile-packages)
+        * [KB2919355](https://chocolatey.org/api/v2/package/KB2919355) - [internalize manually](../create/recompile-packages)
+        * [KB2919442](https://chocolatey.org/api/v2/package/KB2919442) - [internalize manually](../create/recompile-packages)
 1. C4B - Run the following additionally: `choco download chocolatey.extension chocolatey-agent --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. MSP - Run the following additionally: `choco download chocolatey.extension --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. Now we should have several packages in `c:\choco-setup\packages`. If not, type `start .` and go copy the files here to that location.
-1. Obtain the PowerShell script from https://docs.chocolatey.org/en-us/usage/installation#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
+1. Obtain the PowerShell script from https://docs.chocolatey.org/en-us/chocolatey-cli/installation#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
 1. Open `c:\choco-setup\files\ChocolateyLocalInstall.ps1` in an editor like Notepad++ or Visual Studio Code (do not use Notepad.exe!!).
 1. Change this line `$localChocolateyPackageFilePath = 'c:\packages\chocolatey.0.10.0.nupkg'` to `$localChocolateyPackageFilePath = 'c:\choco-setup\packages\chocolatey.0.10.8.nupkg'` (adjust for the actual path to the Chocolatey package).
 1. Air Gapped Networks / Machines without Network Access: Get those files over to that air gapped network (USB key and sneakernet if you need to).
@@ -194,16 +194,16 @@ Write-Host "If you see what looks like an error about a missing extension, that 
 choco config set cacheLocation $env:ALLUSERSPROFILE\choco-cache
 choco config set commandExecutionTimeoutSeconds 14400
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 # Set Licensed Configuration
 choco feature enable --name="'internalizeAppendUseOriginalLocation'"
 choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 #TODO: Are we installing the Chocolatey Agent Service? C4B Only
-# https://docs.chocolatey.org/en-us/features/paid/agent-service#setup
+# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
@@ -228,7 +228,7 @@ Write-Warning "Check and adjust script at '$env:SystemDrive\choco-setup\files\Ch
 
 ## Exercise 1 (Optional): Set Up Chocolatey Installation On A Machine Without Network Access
 
-Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](../features/free/how-to-host-feed).
+Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](../../features/how-to-host-feed).
 
 **NOTE:** If you are using the same machine from Exercise 0 for setting up your repository, you can skip this Exercise and go to Exercise 2 (in other words, your machine already has Chocolatey installed).
 
@@ -245,8 +245,8 @@ Now that we've finished the first exercise and have those files over on our offl
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../usage/chocolatey-configuration).
-1. C4B / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../features/paid/agent-service#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. C4B / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell
 # Ensure we can run everything
@@ -277,17 +277,17 @@ choco upgrade chocolatey.extension -y --pre
 choco config set cacheLocation $env:ALLUSERSPROFILE\choco-cache
 choco config set commandExecutionTimeoutSeconds 14400
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 # Set Licensed Configuration
 choco feature enable --name="'internalizeAppendUseOriginalLocation'"
 choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 
 #TODO: Are we installing the Chocolatey Agent Service? C4B Only
-# https://docs.chocolatey.org/en-us/features/paid/agent-service#setup
+# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
@@ -298,7 +298,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 ## Exercise 2: Set Up A Package Repository
 
-Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](../features/free/how-to-host-feed) to learn about the advantages and disadvantages of each.
+Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](../../features/how-to-host-feed) to learn about the advantages and disadvantages of each.
 
 Pick one or more of the following paths:
 
@@ -345,7 +345,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 # Install Chocolatey.Server
 choco upgrade chocolatey.server -y --pre
 
-Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/how-tos/set-up-chocolatey-server#setup-normally and  https://docs.chocolatey.org/en-us/how-tos/set-up-chocolatey-server#additional-configuration for now."
+Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally and  https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#additional-configuration for now."
 # more may be added later
 ~~~
 
@@ -360,9 +360,9 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/how-tos/set
 
 > Recommended for most organizational use cases
 
-If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](../features/free/how-to-host-feed). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
+If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](../../features/how-to-host-feed). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
-**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](./recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](./recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../general/community-packages-disclaimer).
+**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../../community-packages/community-packages-disclaimer).
 
 ### Exercise 2C: Set Up A File Share Repository
 
@@ -374,11 +374,11 @@ Setting up a file share repository is typically quite simple. You put your nupkg
 > * ACL/Share permissions should not let anyone put packages in the share
 > * ACLs control access to read permissions.
 > * Packages go into the share folder, not subfolders (Chocolatey is currently based in NuGet v2, which doesn't allow subfolders)
-> * Be very careful never to overwrite a version of a nupkg, especially if it has been deployed to any clients. See [package immutability](../features/free/how-to-host-feed#package-version-immutability)
+> * Be very careful never to overwrite a version of a nupkg, especially if it has been deployed to any clients. See [package immutability](../../features/how-to-host-feed#package-version-immutability)
 > * Bigger-sized packages will slow down queries, so explore a different option when you see that.
 > * Enough bigger packages will start timing out queries, so if you've hit this it's time to explore a different option.
 > * Migration to other repo formats is easy
-> * Set access properly if you need to connect from local machine accounts, Everyone share access does not give them network permission. See [local share permissions](../features/free/how-to-host-feed#local-folder-permissions).
+> * Set access properly if you need to connect from local machine accounts, Everyone share access does not give them network permission. See [local share permissions](../../features/how-to-host-feed#local-folder-permissions).
 
 **NOTE:** If you run into issues where Chocolatey can't see the packages, check the last point above.
 
@@ -556,7 +556,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. Open PowerShell.exe as an administrative shell. You can type "Windows Key + X + A" (Windows 8+ - when that comes up if it is cmd.exe, simply type `powershell` to get into it).
 1. If you need FIPS compliance, run `choco feature enable --name="'useFipsCompliantChecksums'"`.
 1. Run `choco source remove --name="'chocolatey'"` to remove the default community package repository.
-1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [source command](../usage/commands/source).
+1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [source command](../../chocolatey-cli/commands/source).
 1. C4B / MSP / C4BTRIAL: Install the license package we've pushed - `choco upgrade chocolatey-license -y`. This may be a place you see an error if things are not configured correctly. If you run into an error, be sure that you have the source added properly with the right permissions (not api key - that is for pushes only).
 1. C4B / MSP / C4BTRIAL: Run `choco source disable --name="'chocolatey.licensed'"`. When the license is placed, Chocolatey automatically adds the license and we don't want to use that source. Note we can't remove the license because the existence of the license file will have Chocolatey adding it right back - so we just disable it. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and we are going to take care of that in the next step.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y --pre`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
@@ -564,8 +564,8 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../usage/chocolatey-configuration).
-1. C4B / MSP / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../features/paid/agent-service#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. C4B / MSP / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell
 # This is a base url and should not include the "/chocolatey" (for Chocolatey.Server) or any url path to a NuGet/Chocolatey Packages API
@@ -599,7 +599,7 @@ iex ((New-Object System.Net.WebClient).DownloadString("$baseUrl/install.ps1"))
 choco source remove --name="'chocolatey'"
 
 # Sources - Add your internal repositories
-# This is Chocolatey.Server specific (add other options like auth/allow self service as needed - https://docs.chocolatey.org/en-us/usage/commands/source):
+# This is Chocolatey.Server specific (add other options like auth/allow self service as needed - https://docs.chocolatey.org/en-us/chocolatey-cli/commands/source):
 choco source add --name="'internal_server'" --source="'$baseUrl/$repositoryUrlPath'" --priority="'1'" --bypass-proxy
 #TODO: Add other sources here
 
@@ -617,16 +617,16 @@ choco upgrade chocolatey.extension -y --pre
 choco config set cacheLocation $env:ALLUSERSPROFILE\choco-cache
 choco config set commandExecutionTimeoutSeconds 14400
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 # Set Licensed Configuration
 choco feature enable --name="'internalizeAppendUseOriginalLocation'"
 choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 #TODO: Add other items you would configure here
-# https://docs.chocolatey.org/en-us/usage/chocolatey-configuration
+# https://docs.chocolatey.org/en-us/configuration
 
 #TODO: Are we installing the Chocolatey Agent Service?
-# https://docs.chocolatey.org/en-us/features/paid/agent-service#setup
+# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
@@ -639,7 +639,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 This is likely to vary somewhat wildly based on what you have set up. We recommend choosing a tool and then looking at what is available.
 
-We have [documentation for Puppet](../usage/installation-licensed#set-up-licensed-edition-with-puppet), with some great examples. What you would do to make that work with Ansible, Chef, Salt, or PowerShell DSC would be similar. All of the different options are covered at [Infrastructure Management Integration](../features/free/infrastructure-automation).
+We have [documentation for Puppet](../../chocolatey-licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet), with some great examples. What you would do to make that work with Ansible, Chef, Salt, or PowerShell DSC would be similar. All of the different options are covered at [Infrastructure Management Integration](../../features/infrastructure-automation).
 
 If you are using Chocolatey.Server, please login to that machine and check https://localhost for instructions specific to different infrastructure management tools in the admin section.
 
@@ -650,12 +650,12 @@ For common integrations, it's handy to refer to the table below to know what con
 | Configuration Managers                   | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
 |------------------------------------------|-------------------------|--------------------|----------------------------|-------------------|-------------------|---------------------|
 | Manage Packages                          | [x][ansible_main]       | [x][chef_main]     | [x][dsc_pkgs]              | [x][pp_pkgs]      | [x][salt_pkgs]    | [x][otter_pkgs]     |
-| [Install Chocolatey](Installation)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
+| [Install Chocolatey](../../chocolatey-cli/installation)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
 | Install Chocolatey from internal source  | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   |                   | [x][otter_install]  |
-| [Manage Sources](CommandsSource)         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
+| [Manage Sources](../../chocolatey-cli/commands/source)         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
 | Manage Source Type (Admin/Self-Service)  | [x][ansible_source]     |                    |                            | [x][pp_source]    |                   |                     |
-| [Manage Features](CommandsFeature)       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
-| [Manage Config Settings](CommandsConfig) | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
+| [Manage Features](../../chocolatey-cli/commands/feature)       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
+| [Manage Config Settings](../../chocolatey-cli/commands/config) | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
 
 **NOTE: Each *x* is linked to the specific feature documentation.**
 
@@ -708,9 +708,9 @@ If you've made it this far, you are ready to be quite successful with Chocolatey
 
 ## More Architecture Setup
 
-* [Setup Central Management](../central-management/setup)
-* [Automate Internalization of Community Packages](../features/paid/automatically-recompile-packages) - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
-* [Quick Deployment Environment](../quick-deployment)
+* [Setup Central Management](../../central-management/setup)
+* [Automate Internalization of Community Packages](../../guides/create/recompile-packages) - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
+* [Quick Deployment Environment](../../quick-deployment)
 
 ## Next Steps
 

@@ -34,7 +34,7 @@ Chocolatey ensures the folder `"$($env:ChocolateyInstall)\bin"` in the PATH envi
 
 ## See It In Action
 
-![Shimming - if you are on https://docs.chocolatey.org/en-us/features/free/shim, see commented html below for detailed description of image](/assets/images/features/features_shimgen.png)
+![Shimming - if you are on https://docs.chocolatey.org/en-us/features/shim, see commented html below for detailed description of image](/assets/images/features/features_shimgen.png)
 
 <!--
 Text in the image above:
@@ -91,11 +91,11 @@ We tried using batch ("*.bat") files, and it mostly works, but when applications
 
 ### Have you thought about shimming in more places?
 
-Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](../../creating-packages/helpers/install-binfile).
+Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](../create/helpers/install-binfile).
 
 ### I need to shim a non-exe file.
 
-If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](../../creating-packages/helpers/install-binfile).
+If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](../create/helpers/install-binfile).
 
 ### I need to exclude a file from shimming.
 
@@ -103,7 +103,7 @@ If you are creating a package and you want to skip creation of a shim for a part
 
 Set an empty file next to the executable (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".ignore". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.ignore`" (pay attention to case - "`BOB.exe.ignore`" may not work with all versions of Chocolatey).
 
-[Read more...](../../creating-packages/create-packages#how-do-i-exclude-executables-from-getting-shims)
+[Read more...](../create/create-packages#how-do-i-exclude-executables-from-getting-shims)
 
 ### How can I ensure a GUI shim?
 
@@ -111,7 +111,7 @@ Chocolatey 0.9.10+ will automatically detect GUI applications and adjust the shi
 
 If you are creating a package and want the shim to exit immediately after calling the application, create an empty "*.gui" file next to where the exe file is (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".gui". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.gui`" (pay attention to case - "`BOB.exe.gui`" may not work with all versions of Chocolatey).
 
-[Read more...](../../creating-packages/create-packages#how-do-i-set-up-shims-for-applications-that-have-a-gui)
+[Read more...](../create/create-packages#how-do-i-set-up-shims-for-applications-that-have-a-gui)
 
 ### A package messed up and should have set up a shim as a GUI.
 

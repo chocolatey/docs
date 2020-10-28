@@ -53,6 +53,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 
 
-[Function Reference](./reference)
+[Function Reference](./)
 
 ***NOTE:*** This documentation has been automatically generated from licensed code.

@@ -23,7 +23,7 @@ A good way to find what you need is to translate from Kbps to bits: [Google Kbps
 
 ## See It In Action
 
-![Package Throttle downloading a package and resources - - if you are on https://docs.chocolatey.org/en-us/features/paid/package-throttle, see commented html below for detailed description of image](/assets/images/features/features_package_throttle.png)
+![Package Throttle downloading a package and resources - - if you are on https://docs.chocolatey.org/en-us/features/package-throttle, see commented html below for detailed description of image](/assets/images/features/features_package_throttle.png)
 
 <!--
 Text in the image above:

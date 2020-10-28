@@ -7,7 +7,7 @@ RedirectFrom: docs/how-to-setup-internal-package-repository
 
 ## Summary
 
-When running within an organization it is beneficial to use your own, internally controlled, package repository. But that doesn't mean you have to create all packages from scratch. Chocolatey allows you to create packages easily using the [package builder](../features/paid/create-packages-from-installers) but it also allows you to take packages from the Chocolatey Community Repository and recompile them for internal use - this is a process known as [package internalization](../features/paid/automatically-recompile-packages). This guide shows you how to use that within your organization.
+When running within an organization it is beneficial to use your own, internally controlled, package repository. But that doesn't mean you have to create all packages from scratch. Chocolatey allows you to create packages easily using the [package builder](../../features/package-builder) but it also allows you to take packages from the Chocolatey Community Repository and recompile them for internal use - this is a process known as [package internalization](../create/recompile-packages). This guide shows you how to use that within your organization.
 
 ## Organizational Requirements
 
@@ -107,7 +107,7 @@ Before starting, make sure you install Chocolatey Server on separate servers.
   # Install Chocolatey.Server
   choco upgrade chocolatey.server -y
 
-  # Step by step instructions here https://docs.chocolatey.org/en-us/how-tos/set-up-chocolatey-server#setup-normally
+  # Step by step instructions here https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally
   # Import the right modules
   Import-Module WebAdministration
   # Disable or remove the Default website

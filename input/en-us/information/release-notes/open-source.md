@@ -9,5 +9,5 @@ RedirectFrom: docs/release-notes
 
 **NOTE**: For commercial editions, please also refer to [Licensed Release Notes](./licensed).
 
-* [Chocolatey and Chocolatey.Lib Release Notes](./choco-cli)
-* [Chocolatey GUI Release Notes](./chocolatey-gui)
+* [Chocolatey and Chocolatey.Lib Release Notes](../../chocolatey-cli/release-notes)
+* [Chocolatey GUI Release Notes](../../chocolatey-gui/release-notes)

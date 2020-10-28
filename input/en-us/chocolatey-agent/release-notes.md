@@ -7,13 +7,13 @@ RedirectFrom: docs/release-notes-agent
 
 # Chocolatey Release Notes - Chocolatey Agent Service
 ## Summary
-This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](../../features/paid/agent-service).
+This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](../features/self-service-anywhere).
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](./open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](./extension) and [Chocolatey Central Management Release Notes](./central-management).
+* Refer to [Open Source Release Notes](../information/release-notes/open-source) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](../chocolatey-licensed-extension/release-notes) and [Chocolatey Central Management Release Notes](../central-management/release-notes).
 
 ## Known Issues
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
@@ -36,7 +36,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### BREAKING CHANGES
  * Chocolatey Agent v0.10.0 will only work with Central Management v0.2.0+. Please upgrade Central Management first if you are using CCM with the agent service.
 
-> 📝 **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../../features/paid/agent-service#log-file-location-for-chocolatey-agent) for more information.
+> 📝 **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../features/self-service-anywhere#log-file-location-for-chocolatey-agent) for more information.
 
 ### FEATURES
  * Execution for Central Management Deployments
@@ -69,7 +69,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ## 0.9.0 (March 18, 2019)
 ### FEATURES
- * Central Management Reporting - Clients can now report into central management on a configurable basis. For more information, please see https://docs.chocolatey.org/en-us/features/paid/chocolatey-central-management
+ * Central Management Reporting - Clients can now report into central management on a configurable basis. For more information, please see https://docs.chocolatey.org/en-us/features/chocolatey-central-management
 
 ### BUG FIXES
  * Self-Service / Background Mode:

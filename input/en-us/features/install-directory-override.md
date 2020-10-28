@@ -7,7 +7,7 @@ RedirectFrom: docs/features-install-directory-override
 
 The ubiquitous install directory switch for [customers](https://chocolatey.org/pricing)! The only switch you will ever need for overriding the install directory for native installers! When working with packages that use native installers (software that actually installs on a machine), Chocolatey is able to override the default installation directory from a simple switch you pass to choco.
 
-It can be a pain determining the native installer type (MSI, NSIS, InnoSetup, etc) for a piece of software and then determining what the what the install directory argument should look like. While you [can change the installation directory without this switch even in Chocolatey open source](GettingStarted#overriding-default-install-directory), you will see that the ubiquitous switch makes it very easy and a low amount of work on your part.
+It can be a pain determining the native installer type (MSI, NSIS, InnoSetup, etc) for a piece of software and then determining what the what the install directory argument should look like. While you [can change the installation directory without this switch even in Chocolatey open source](../chocolatey-cli/getting-started#overriding-default-install-directory), you will see that the ubiquitous switch makes it very easy and a low amount of work on your part.
 
 With the ubiquitous switch, you are not only saving time, but also possible errors in passing the wrong arguments to an installer!
 
@@ -17,7 +17,7 @@ Just pass `--install-directory=value` along and Chocolatey will determine what t
 
 ![choco install 1password --install-directory c:\1password](/assets/images/chocopro_features_installdirectory.png)
 
-![Install override - if you are on https://docs.chocolatey.org/en-us/features/paid/install-directory-override, see commented html below for detailed description of image](/assets/images/features/features_override_install_directory.png)
+![Install override - if you are on https://docs.chocolatey.org/en-us/features/install-directory-override, see commented html below for detailed description of image](/assets/images/features/features_override_install_directory.png)
 
 <!--
 Text in the image above:

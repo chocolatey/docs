@@ -31,7 +31,7 @@ On the _Software Details_ page, you'll find a searchable list of all computers t
 
 ## Related Topics
 
-* [Chocolatey Central Management](./)
+* [Chocolatey Central Management](../)
 * [Central Management - Computers](./computers)
 * [Central Management - Reports](./reports)
 

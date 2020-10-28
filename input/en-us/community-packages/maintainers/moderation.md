@@ -5,7 +5,7 @@ Description: Information about the package moderation used on chocolatey.org
 RedirectFrom: docs/moderation
 ---
 
-The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](../general/faqs#what-is-moderation) for more details. There are also [trusted packages](../general/faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
+The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](../../faqs#what-is-moderation) for more details. There are also [trusted packages](../../faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
 
 By safety - we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain crapware/malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
 
@@ -151,10 +151,10 @@ Typically a package goes into the moderation queue when submitted.You can get to
  ![Package Testing Results](/assets/images/moderation-4.jpg)
  5. Check over the verifier logs to be sure everything looks good (follow the link from the button). If necessary, you can rerun the verifier.
  ![Rerun](/assets/images/moderation-5.jpg)
- 6. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](../general/moderation#requirements-and-guidelines) (see [Requirements and Guidelines](../general/moderation#requirements-and-guidelines) above).
+ 6. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](#requirements-and-guidelines) (see [Requirements and Guidelines](#requirements-and-guidelines) above).
  ![Review Notes](/assets/images/moderation-6.jpg)
  7. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
- 8. Check over the package based on [moderator review](../general/moderation#moderator-review) (below).
+ 8. Check over the package based on [moderator review](#moderator-review) (below).
  9. Review the previous comments if there are any.
  ![image](https://cloud.githubusercontent.com/assets/63502/7543258/c2c0abbc-f588-11e4-8cac-4c57b03671f8.png)
  10. Look through the package files

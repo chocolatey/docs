@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [Set-EnvironmentVariable](./set-environmentvariable)
 
 
-[Function Reference](./reference)
+[Function Reference](./)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-EnvironmentVariable -Full`.
 

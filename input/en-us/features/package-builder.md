@@ -21,7 +21,7 @@ Chocolatey for Business is able to inspect an installer and determine silent arg
 
 When calling `choco new`, just add `--file=value` to point to a native installer and Chocolatey for Business will automatically determine the silent arguments, create the packaging and wrap that all around the installer.
 
-![Create Packages from Installers - if you are on https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers, see commented html below for detailed description of image](/assets/images/features/features_packages_from_installers.png)
+![Create Packages from Installers - if you are on https://docs.chocolatey.org/en-us/features/package-builder, see commented html below for detailed description of image](/assets/images/features/features_packages_from_installers.png)
 
 <!--
 Text in the image above:
@@ -183,7 +183,7 @@ Unfortunately, some installers out there are just a pain to work with. In the ca
 
 ### Does it create auto unattend files?
 
-Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](./automatically-recompile-packages) to take advantage of thousands of existing packages without a need for internet access.
+Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](../guides/organizations/automate-package-internalization) to take advantage of thousands of existing packages without a need for internet access.
 
 ### Does it work with zip archive?
 
@@ -197,4 +197,4 @@ Yes, as of Licensed version v1.6.0+. Use `--use-original-location`.
 
 ### I get "Name is required. Please pass in a name for the new package."
 
-This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](../../usage/installation-licensed) for more details.
+This occurs when you are not running Chocolatey for Business or don't have your client properly licensed. Please see [licensed installation](../chocolatey-licensed-extension/installation-licensed) for more details.

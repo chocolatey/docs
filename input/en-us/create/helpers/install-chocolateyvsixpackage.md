@@ -143,7 +143,7 @@ and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
 remote source that uses the same url for updates, you will need to
 ensure the package also stays updated in line with those remote
-resource updates. You should look into [automatic packaging](../creating-packages/automatic-packages)
+resource updates. You should look into [automatic packaging](../automatic-packages)
 to help provide that functionality.
 
 **NOTE:** To determine checksums, you can get that from the original
@@ -226,7 +226,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
 
 
-[Function Reference](./reference)
+[Function Reference](./)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyVsixPackage -Full`.
 

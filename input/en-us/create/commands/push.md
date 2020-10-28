@@ -16,7 +16,7 @@ Chocolatey will attempt to push a compiled nupkg to a package feed.
  with options and switches. Default push location is deprecated and
  will be removed by v1. In most cases you can still pass options and
  switches with one dash (`-`). For more details, see
- [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`).
+ [how to pass arguments](../../chocolatey-cli/commands#how-to-pass-options-switches) (`choco -?`).
 
 A feed can be a local folder, a file share, the [community feed](https://chocolatey.org/packages)
  (https://push.chocolatey.org/), or a custom/private feed. For web
@@ -38,7 +38,7 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
     choco push --source "'https://chocolatey.org/'" -t 500
     choco push --source "'https://chocolatey.org/'" -k="'123-123123-123'"
 
-**NOTE:** See scripting in [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](../../chocolatey-cli/commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Troubleshooting
@@ -78,7 +78,7 @@ If you find other exit codes that we have not yet documented, please
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](../../usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](../../chocolatey-cli/commands#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -193,7 +193,7 @@ Includes [default options/switches](../../usage/commands/reference#default-optio
 
 ~~~
 
-[Command Reference](../../usage/commands/reference)
+[Command Reference](../../chocolatey-cli/commands)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco push -h`.

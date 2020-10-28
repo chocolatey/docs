@@ -9,16 +9,16 @@ RedirectFrom: docs/create-packages-quick-start
 
 Here's a TL;DR quick start version of the package creating tutorial. Follow these steps to create a simple package.
 
-**Problem?** Read the detailed version: [Creating Chocolatey Packages](./creating-packages/create-packages)
+**Problem?** Read the detailed version: [Creating Chocolatey Packages](./create-packages)
 
 ## Prerequisites
 
 * You have Chocolatey installed.
-* You've read [What are Chocolatey Packages?](../usage/getting-started#what-are-chocolatey-packages) first.
+* You've read [What are Chocolatey Packages?](../chocolatey-cli/getting-started#what-are-chocolatey-packages) first.
 * You know how a package works
   * A package contains a `nuspec` file. This defines the package. ([Docs](./create-packages#nuspec))
   * A package may contain embedded software.
-  * A package may contain an installation script. This can be [very simple](./create-packages-quick-start#examples).
+  * A package may contain an installation script. This can be [very simple](#examples).
 
 ## Quick start guide
 
@@ -30,7 +30,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
    * Edit the `package-name.nuspec` configuration file.
    * Edit the `./tools/chocolateyInstall.ps1` install script.
      * Make sure you figure out the installer's silent mode. Use [Universal Silent Switch Finder](http://unattended.sourceforge.net/installers.php), which is available as a Choco package: `choco install ussf`
-   * You __must__ save your files with _UTF-8_ character encoding without BOM. ([Details](CreatePackages#character-encoding))
+   * You __must__ save your files with _UTF-8_ character encoding without BOM. ([Details](./create-packages#character-encoding))
 * **Build the package**
    * Still in package directory
    * `choco pack`
@@ -60,7 +60,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 * `%ChocolateyInstall%` - Chocolatey installation directory
 * `%ChocolateyInstall%\lib\package-name` - Package directory
 * `%cd%` or `$pwd` - current directory
-* Environment variable reference available in the README when using `choco new` or [online](./helpers/reference#variables).
+* Environment variable reference available in the README when using `choco new` or [online](./helpers#variables).
 
 ## Examples
 
@@ -96,7 +96,7 @@ Install-ChocolateyPackage $packageName $installerType $silentArgs $url $url64  -
 
 ### Parsing Package Parameters
 
-For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](../how-tos/parse-packageparameters-argument).
+For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](../guides/create/parse-packageparameters-argument).
 
 ## Tips
 

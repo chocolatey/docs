@@ -30,7 +30,7 @@ We've prepared a short video to show sync in action:
 
 In the following image, sync is run on a system that has 18 applications installed and a base Chocolatey for Business install. Note after running sync, all software on the machine is now being managed by Chocolatey.
 
-![Chocolatey's Package Synchronizer Sync Command - if you are on https://docs.chocolatey.org/en-us/features/paid/synchronize, see commented html below for detailed description of image](/assets/images/features/features_choco_sync.png)
+![Chocolatey's Package Synchronizer Sync Command - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/assets/images/features/features_choco_sync.png)
 
 <!--
 Text in the image above:
@@ -49,7 +49,7 @@ This image shows running `choco sync`. It shows first a system that has 18 appli
 
 ### Options and Switches
 
-The following are available in the [choco sync](../../usage/commands/sync) command.
+The following are available in the [choco sync](../../chocolatey-cli/commands/sync) command.
 
 ~~~
      --id=VALUE

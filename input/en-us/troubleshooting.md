@@ -13,7 +13,7 @@ There are some well-known things you may run into when you are using Chocolatey.
 
 If you are unable to find answers to your questions here, please see https://chocolatey.org/support (FOSS and Licensed) and https://chocolatey.org/bugs to learn more about how you can report issues and get things fixed if they are broken.
 
-Also consider the [frequently asked questions](../general/faqs).
+Also consider the [frequently asked questions](./faqs).
 
 ## Chocolatey Installation
 
@@ -45,11 +45,11 @@ Please see [I'm getting a 403 unauthorized issue when attempting to use the comm
 
 ### I am having trouble with PowerShell to install Chocolatey
 
-See the More Options section of [installation](../usage/installation#more-install-options).
+See the More Options section of [installation](./chocolatey-cli/installation#more-install-options).
 
 ## Licensed Installation and Issues
 
-See [licensed installation](../usage/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
+See [licensed installation](./chocolatey-licensed-extension/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
 
 ## Creating Packages
 
@@ -123,7 +123,7 @@ References:
 
 ### "ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.
 
-This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](../creating-packages/helpers/reference).
+This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](./create/helpers).
 
 Reference: https://groups.google.com/d/msgid/chocolatey/d11d8eb2-74b3-4c2c-b0bb-d1a1ed3df389%40googlegroups.com (you will need to join the group to see the message)
 
@@ -189,7 +189,7 @@ It could be one of a few things:
 * It is being blocked in your organization
 * We broke something (this is the least likely reason)
 * **CloudFlare has blocked your IP [due to reasons](https://support.cloudflare.com/hc/en-us/articles/203366080-Why-do-I-see-a-captcha-or-challenge-page-Attention-Required-trying-to-visit-a-site-protected-by-Cloudflare-as-a-site-visitor-)** (99% of the time, this is the issue)
-* The Chocolatey Community Team may have blocked access due to excessive use - see [excessive use for details](../general/community-packages-disclaimer#excessive-use)
+* The Chocolatey Community Team may have blocked access due to excessive use - see [excessive use for details](./community-packages/community-packages-disclaimer#excessive-use)
 
 You can use a tool like [Fiddler](https://www.telerik.com/fiddler) to help determine what is going on.
 
@@ -206,7 +206,7 @@ Once this has been completed, you should have access to install Chocolatey and/o
 
 ### I'm getting a 429 too many requests issue when attempting to use the community package repository.
 
-This means your IP address has been flagged for too many requests. Please see [Rate Limiting](./general/community-packages-disclaimer#rate-limiting) for details and actions.
+This means your IP address has been flagged for too many requests. Please see [Rate Limiting](./community-packages/community-packages-disclaimer#rate-limiting) for details and actions.
 
 Reference Errors:
 * `Exception calling "DownloadFile" with "2" argument(s): The remote server returned an error: (429) Too Many Requests`

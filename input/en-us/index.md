@@ -13,63 +13,63 @@ tl;dr Chocolatey is a software management solution that allows you to manage 100
 
 Chocolatey is a software management solution unlike anything else you've ever experienced on Windows. It focuses on simplicity, security, and infinite scalability. You write a software deployment in PowerShell once for any software (not just installers), then you can deploy it everywhere you have Windows with any solution that can manage systems (configuration management, endpoint management, etc) and track and manage updates of that software over time. Manage software on-premise, in the "Cloud", or in [Docker containers](https://github.com/Microsoft/vsts-agent-docker/blob/f870fbf259a803c6a6d902e1c01f631936069d66/windows/servercore/10.0.14393/standard/VS2017/Dockerfile) with Chocolatey.
 
-Whew, that was a mouthful! For a bit more detail into what all of that means and more, see [What is Chocolatey?](./usage/getting-started#what-is-chocolatey)
+Whew, that was a mouthful! For a bit more detail into what all of that means and more, see [What is Chocolatey?](./chocolatey-cli/getting-started#what-is-chocolatey)
 
 ## Requirements
 
 - Windows 7+/Windows 2003+ (Server Core also, but not Windows Nano Server)
 - Windows PowerShell v2+ (not PowerShell Core aka PowerShell 6 yet)
 - .NET Framework 4.x+
-- See [Requirements](./usage/getting-started#requirements)
+- See [Requirements](./chocolatey-cli/getting-started#requirements)
 
 ## Information
 
-- [Frequently Asked Questions](./general/faqs)
+- [Frequently Asked Questions](./faqs)
 - [Why Chocolatey](./why)
-- [License Acceptance Terms](./additional-information/legal#package-license-acceptance-terms)
-- [Waiver of Responsibility](additional-information/legal#waiver-of-responsibility)
-- [Release Notes](./general/release-notes/open-source)
-- [Release Notes Commercial](./general/release-notes/licensed)
+- [License Acceptance Terms](./information/legal#package-license-acceptance-terms)
+- [Waiver of Responsibility](information/legal#waiver-of-responsibility)
+- [Release Notes](./information/release-notes/open-source)
+- [Release Notes Commercial](./information/release-notes/licensed)
 
 ## Using Chocolatey
 
-- [Installing Chocolatey](./usage/installation)
-- [Uninstalling Chocolatey](./usage/uninstallation)
-- [Getting Started](./usage/getting-started)
-- [Command Reference](./usage/commands/reference)
-- Use Chocolatey to set up [source code development environments](./use-cases/development-environment-setup)!
-- What distinction does Chocolatey make between an [installable and a portable application](./general/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
+- [Installing Chocolatey](./chocolatey-cli/installation)
+- [Uninstalling Chocolatey](./chocolatey-cli/uninstallation)
+- [Getting Started](./chocolatey-cli/getting-started)
+- [Command Reference](./chocolatey-cli/commands)
+- Use Chocolatey to set up [source code development environments](./guides/using/development-environment-setup)!
+- What distinction does Chocolatey make between an [installable and a portable application](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
 
 ## Create Packages
 
 The Chocolatey Community Repository versus for internal use has different needs. Keep that in mind as you read over the _TODO.txt you see when you run `choco new`.
 
-- [Creating packages](./creating-packages/create-packages)
-- [Package Function and Variable Reference](./creating-packages/helpers/reference)
-- [Parse PackageParameters Argument](./how-tos/parse-packageparameters-argument)
-- [Mount an Iso in Chocolatey Package](./how-tos/mount-an-iso-in-chocolatey-package)
-- [Deprecate a Chocolatey Package](./how-tos/deprecate-a-chocolatey-package)
+- [Creating packages](./create/create-packages)
+- [Package Function and Variable Reference](./create/helpers)
+- [Parse PackageParameters Argument](./guides/create/parse-packageparameters-argument)
+- [Mount an Iso in Chocolatey Package](./guides/create/mount-an-iso-in-chocolatey-package)
+- [Deprecate a Chocolatey Package](./community-packages/maintainers/deprecate-a-chocolatey-package)
 - [Chocolatey Community Repository](https://chocolatey.org/packages)
-  - Keep in Mind [Distribution Rights](./additional-information/legal#distributions-aka-chocolatey-packages)
-  - [Outdated packages? Triage process](./how-tos/package-triage-process)
-  - [Moderation Process](./general/moderation)
+  - Keep in Mind [Distribution Rights](./information/legal#distributions-aka-chocolatey-packages)
+  - [Outdated packages? Triage process](./community-packages/users/package-triage-process)
+  - [Moderation Process](./community-packages/maintainers/moderation)
 
 ## Individuals
 
 - [Installing Chocolatey for Personal Use](https://chocolatey.org/install#individual)
-- [Getting Started](./usage/getting-started)
-- [Command Reference](./usage/commands/reference)
+- [Getting Started](./chocolatey-cli/getting-started)
+- [Command Reference](./chocolatey-cli/commands)
 
 ## Organizations
 
 - [Installing Chocolatey For Organizations](https://chocolatey.org/install#organization)
 - [Quick Deployment Environment](./quick-deployment)
-- [Host Your Own Feed](./features/free/how-to-host-feed)
-- [Deploy Chocolatey in an Organization](./how-tos/setup-offline-installation)
-- [Creating packages](./creating-packages/create-packages)
-  - [Package Function and Variable Reference](./creating-packages/helpers/reference)
-- [Getting Started](./usage/getting-started)
-- [Command Reference](./usage/commands/reference)
+- [Host Your Own Feed](./features/how-to-host-feed)
+- [Deploy Chocolatey in an Organization](./guides/organizations/organizational-deployment-guide)
+- [Creating packages](./create/create-packages)
+  - [Package Function and Variable Reference](./create/helpers)
+- [Getting Started](./chocolatey-cli/getting-started)
+- [Command Reference](./chocolatey-cli/commands)
 
 ## Road Map
 

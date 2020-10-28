@@ -21,7 +21,7 @@ Chocolatey [Licensed editions](https://chocolatey.org/compare) include some leve
    `--from-programs-and-features` to generate packages directly from
    Programs and Features!
 
-See https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers
+See https://docs.chocolatey.org/en-us/features/package-builder
 
 # New Command (choco new)
 
@@ -59,7 +59,7 @@ Possible properties to pass:
     choco new bob silentargs="'/S'" url="'https://somewhere/out/there.msi'"
     choco new bob --outputdirectory Packages
 
-**NOTE:** See scripting in [how to pass arguments](../../usage/commands/reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](../../chocolatey-cli/commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -82,7 +82,7 @@ If you find other exit codes that we have not yet documented, please
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](../../usage/commands/reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](../../chocolatey-cli/commands#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -217,7 +217,7 @@ Includes [default options/switches](../../usage/commands/reference#default-optio
        download first) to completely create a package with proper silent
        arguments! Can be 32-bit or 64-bit architecture.  Available in licensed
        editions only (licensed version 1.4.0+, url/zip starting in 1.6.0). See
-       https://docs.chocolatey.org/en-us/features/paid/create-packages-from-installers
+       https://docs.chocolatey.org/en-us/features/package-builder
 
      --file64, --url64=VALUE
      Optional - used when specifying both a 32-bit and a 64-bit file. Can be
@@ -270,7 +270,7 @@ Includes [default options/switches](../../usage/commands/reference#default-optio
 
 ~~~
 
-[Command Reference](../../usage/commands/reference)
+[Command Reference](../../chocolatey-cli/commands)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco new -h`.

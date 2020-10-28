@@ -11,7 +11,7 @@ In C4B, you can flip a switch and see all packages in Programs and Features, eve
 
 ### Usage
 
-![All Packages in Programs And Features - if you are on https://docs.chocolatey.org/en-us/features/paid/synchronize, see commented html below for detailed description of image](/assets/images/features/features_packages_in_programs_and_features.png)
+![All Packages in Programs And Features - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/assets/images/features/features_packages_in_programs_and_features.png)
 
 <!--
 Text in the image above:

@@ -162,6 +162,7 @@ $('a')
     .not('[data-toggle="pill"]')
     .not('[data-slide="prev"]')
     .not('[data-slide="next"]')
+    .not('[href*="/"]')
     .click(function(e) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {

@@ -118,7 +118,7 @@ While you might be able to get things to work with CCM v0.2.x and Chocolatey Age
 
 ### What is the CCM compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](./#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](../#ccm-component-compatibility-matrix) for details.
 
 ### Why do I see some machines have not opted in for Deployments?
 
@@ -130,7 +130,7 @@ As you can see from the text, it is meant to help you figure out the issue:
 
 > The computer has not opted in or a group contains computers that have not opted in for deployments by configuration. Please ensure the computer has at least chocolatey-agent v0.10.0+ installed and the feature "useChocolateyCentralManagementDeployments" has been set to enabled on the client computer.
 
-This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](./setup-client#features) for details on how to set it.
+This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](../setup/client#features) for details on how to set it.
 
 ### I have plenty of licenses, why do some machines show not opted in for deployments and also exceeds your current license count?
 
@@ -259,7 +259,7 @@ For more information on when this will be addressed, you can subscribe to the [G
 
 ## Related Topics
 
-* [Chocolatey Central Management](./)
+* [Chocolatey Central Management](../)
 * [Central Management - Groups](./groups)
 * [Central Management - Computers](./computers)
 * [Central Management - Reports](./reports)

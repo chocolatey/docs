@@ -8,7 +8,7 @@ RedirectFrom: docs/quick-deployment-firewall-changes
 > 📝 **Note**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 Firewall Changes page](./v1/firewall-changes).
+> If you're using an older version of QDE, please refer to the [QDEv1 Firewall Changes page](../v1/firewall-changes).
 
 ## External Firewall Ports (Optional)
 
@@ -48,4 +48,4 @@ With Central Management v0.3.0, more security has been put into allowing for che
 As of QDE version 2.0, you can enable CCM (and Nexus) internet accessibility by using the `Set-QDEnvironmentInternetSecurity.ps1` script provided with the VM.
 If you run the `Set-QDEnvironment.ps1` script with the `-InternetEnabled` switch (which requires you to provide your own certificate), this will happen automatically.
 
-[Quick Deployment Environment](./)
+[Quick Deployment Environment](../)

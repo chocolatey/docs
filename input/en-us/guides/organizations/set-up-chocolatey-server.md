@@ -5,7 +5,7 @@ Description: How to setup Chocolatey.Server
 RedirectFrom: docs/how-to-set-up-chocolatey-server
 ---
 
-**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./setup-offline-installation) in tandem with this article.
+**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./organizational-deployment-guide) in tandem with this article.
 
 ## Summary
 
@@ -13,7 +13,7 @@ RedirectFrom: docs/how-to-set-up-chocolatey-server
 
 The [Chocolatey.Server package](https://chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
 
-**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](../features/free/how-to-host-feed) for those options.
+**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](../../features/how-to-host-feed) for those options.
 
 ## Links
 
@@ -136,7 +136,7 @@ choco install IIS-ASPNET45 --source windowsfeatures
 # Install Chocolatey.Server
 choco upgrade chocolatey.server -y
 
-# Step by step instructions here https://docs.chocolatey.org/en-us/how-tos/set-up-chocolatey-server#setup-normally
+# Step by step instructions here https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally
 # Import the right modules
 Import-Module WebAdministration
 # Disable or remove the Default website

@@ -14,7 +14,7 @@ Chocolatey will perform a search for a package local or remote. Some
 **NOTE:** 100% compatible with older Chocolatey client (0.9.8.x and below)
  with options and switches. In most cases you can still pass options
  and switches  with one dash (`-`). For more details, see
- [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
+ [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -32,7 +32,7 @@ Chocolatey will perform a search for a package local or remote. Some
     choco search git --source="'https://somewhere/out/there'"
     choco search bob -s "'https://somewhere/protected'" -u user -p pass
 
-**NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -87,7 +87,7 @@ This specifies that the source is a Windows Feature and we should
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -276,7 +276,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
 
 ~~~
 
-[Command Reference](./reference)
+[Command Reference](./)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco search -h`.

@@ -15,7 +15,7 @@ Upgrades a package or a list of packages. Some may prefer to use `cup`
 **NOTE:** 100% compatible with older Chocolatey client (0.9.8.x and below)
  with options and switches. Add `-y` for previous behavior with no
  prompt. In most cases you can still pass options and switches with one
- dash (`-`). For more details, see [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`).
+ dash (`-`). For more details, see [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -48,7 +48,7 @@ Skip upgrading certain packages with [`choco pin`](./pin) or with the option
     choco upgrade all
     choco upgrade all --except="'skype,conemu'"
 
-**NOTE:** See scripting in [how to pass arguments](./reference#how-to-pass-options--switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -90,7 +90,7 @@ In addition to the above exit codes, you may also see reboot exit codes
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./reference#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
 
 ~~~
 
@@ -385,7 +385,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      Skip Download Cache - Use the original download even if a private CDN
        cache is available for a package. Overrides the default feature
        'downloadCache' set to 'True'. Available in 0.9.10+. [Licensed editions](https://chocolatey.org/compare)
-       only. See https://docs.chocolatey.org/en-us/features/paid/private-cdn
+       only. See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --dc, --downloadcache, --download-cache, --use-download-cache
      Use Download Cache - Use private CDN cache if available for a package.
@@ -402,14 +402,14 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
      --virus, --viruscheck, --virus-check
      Virus Check - check downloaded files for viruses. Overrides the default
        feature 'virusCheck' set to 'True'. Available in 0.9.10+. Licensed
-       editions only. See https://docs.chocolatey.org/en-us/features/paid/virus-check
+       editions only. See https://docs.chocolatey.org/en-us/features/virus-check
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
      Virus Check Minimum Scan Result Positives - the minimum number of scan
        result positives required to flag a package. Used when virusScannerType
        is VirusTotal. Overrides the default configuration value
        'virusCheckMinimumPositives' set to '5'. Available in 0.9.10+. Licensed
-       editions only. See https://docs.chocolatey.org/en-us/features/paid/virus-check
+       editions only. See https://docs.chocolatey.org/en-us/features/virus-check
 
      --install-arguments-sensitive=VALUE
      InstallArgumentsSensitive - Install Arguments to pass to the native
@@ -427,7 +427,7 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
        pass the appropriate arguments to override the install directory. The
        package must use Chocolatey install helpers and be installing an
        installer for software. Available in 0.9.10+. [Licensed editions](https://chocolatey.org/compare) only.
-       See https://docs.chocolatey.org/en-us/features/paid/install-directory-override
+       See https://docs.chocolatey.org/en-us/features/install-directory-override
 
      --bps, --maxdownloadrate, --max-download-rate, --maxdownloadbitspersecond, --max-download-bits-per-second, --maximumdownloadbitspersecond, --maximum-download-bits-per-second=VALUE
      Maximum Download Rate Bits Per Second - The maximum download rate in
@@ -441,23 +441,23 @@ Includes [default options/switches](./reference#default-options-and-switches) (i
        nupkg file to very small and remove extracted archives and installers.
        Overrides the default feature 'reduceInstalledPackageSpaceUsage' set to
        'True'. [Licensed editions](https://chocolatey.org/compare) only (version 1.12.0+). See https://chocolate-
-       y.org/docs/features-package-reducer
+       y.org/docs/en-us/features/package-reducer
 
      --no-reduce, --no-reduce-package-size, --no-deflate, --no-deflate-package-size
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone
        in the package. Overrides the default feature
        'reduceInstalledPackageSpaceUsage' set to 'True'. [Licensed editions](https://chocolatey.org/compare) only
-       (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
+       (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when
        using Package Reducer. Overrides the default feature
        'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only (version -
-       1.12.0+). See https://docs.chocolatey.org/en-us/features/paid/package-reducer
+       1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
 
 ~~~
 
-[Command Reference](./reference)
+[Command Reference](./)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco upgrade -h`.

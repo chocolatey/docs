@@ -36,4 +36,4 @@ Remove-Item $diffExeIgnore,$uninstallExeIgnore,$gvimExeGui
 
     Example: `'c:\program files (x86)\vim\vim73\'`
 
-[Function Reference](./reference)
+[Function Reference](./)
