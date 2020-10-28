@@ -1,6 +1,6 @@
 ---
-Order: 100
-Title: Quick Deployment Environment (QDE) Overview
+Order: 130
+Title: Quick Deployment Environment (QDE)
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
 ---
@@ -42,10 +42,10 @@ To get QDE into your environment, please [reach out to us](https://chocolatey.or
 
 A lot of what is done in QDE condenses or completely eliminates the work found in these related articles:
 
-* [Organizational Deployment Guide](../how-tos/setup-offline-installation)
+* [Organizational Deployment Guide](../guides/organizations/organizational-deployment-guide)
 * [Chocolatey Installation](https://chocolatey.org/install#organization)
-* [Chocolatey Commercial Installation](../usage/installation-licensed)
-* [Automate Package Internalization](../how-tos/setup-internal-package-repository)
+* [Chocolatey Commercial Installation](../chocolatey-licensed-extension/installation-licensed)
+* [Automate Package Internalization](../guides/organizations/automate-package-internalization)
 
 If you find that QDE is only good for a proof-of-concept in your environment due to having thousands of endpoints, you will want to understand how to scale out that infrastructure.
 The above articles document how that is done.
@@ -53,10 +53,10 @@ The above articles document how that is done.
 ## Links
 
 * [QDE Setup](./setup)
-* [QDE Desktop ReadMe File](./desktop-readme) (included here for convenience)
-* [QDE SSL/TLS Setup](./ssl-setup)
-* [QDE Firewall Changes](./firewall-changes)
-* [QDE Client Setup](./client-setup) (setting up your client machines)
+* [QDE Desktop ReadMe File](./setup/desktop-readme) (included here for convenience)
+* [QDE SSL/TLS Setup](./setup/ssl-setup)
+* [QDE Firewall Changes](./setup/firewall-changes)
+* [QDE Client Setup](./setup/client-setup) (setting up your client machines)
 * [How do I upgrade QDE?](#how-do-i-upgrade-qde).
 
 ## FAQ
@@ -79,7 +79,7 @@ While we will continue to make improvements to the QDE, there is no upgrade path
 You can choose to start over with a newer version, but that feels like the wrong way to go.
 
 It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE.
-Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](../central-management/setup-upgrade).
+Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](../central-management/setup/upgrade).
 
 ### What if we have a larger environment? (> 1k nodes)
 

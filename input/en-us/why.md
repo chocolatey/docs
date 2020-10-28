@@ -18,7 +18,7 @@ Chocolatey builds on technologies that are familiar:
 
 We didn't try to reinvent the wheel with Chocolatey. We are building on technologies you know, technologies you may have been using for years. It's going to feel good knowing that time you have spent working with software deployment plugs right into Chocolatey in a much better and more manageable way. Welcome to sane software management. With those familiar technologies, Chocolatey brings the concepts of true package management to allow you to version things, manage dependencies and installation order, better inventory management, and other features.
 
-Chocolatey also integrates with [infrastructure management tools (like Puppet, Chef or SCCM)](./features/free/infrastructure-automation) and other remote administration tools (like LabTech or LANDesk).
+Chocolatey also integrates with [infrastructure management tools (like Puppet, Chef or SCCM)](./features/infrastructure-automation) and other remote administration tools (like LabTech or LANDesk).
 
 You are going to find the simplicity and absolute power of Chocolatey reinvigorating for Windows software deployments. Yes, we know that is a bold statement. Yes, we have hundreds of organizations and thousands of individuals that use Chocolatey that will back that statement up.
 
@@ -68,7 +68,7 @@ Yes, yes you can. Chocolatey works in a similar manner to how you would do thing
 
 ![Yes, yes](http://replygif.net/i/208.gif)
 
-Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](./general/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
+Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
 
 Let me start by saying that testing how a single package won't give you a warm and fuzzy about how it will work with all packages. Software installers in the wild world of Windows have many completely different ways of going about things, all of which are dependent on those creating the installers, none of which have a consistent standard (except maybe MSI). Welcome to Windows.
 
@@ -96,4 +96,4 @@ To date, Chocolatey does all of this (virtual packages is coming).
 
 ## Other questions?
 
-See the [FAQs](./general/faqs).
+See the [FAQs](./faqs).

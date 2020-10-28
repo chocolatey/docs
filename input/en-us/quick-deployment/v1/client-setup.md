@@ -8,7 +8,7 @@ RedirectFrom: docs/quick-deployment-client-setup-v1
 > 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../client-setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../setup/client-setup).
 
 ## Summary
 

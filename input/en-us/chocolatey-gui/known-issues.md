@@ -1,6 +1,6 @@
 ---
-Order: 20
-Title: Chocolatey GUI Known Issues
+Order: 30
+Title: Known Issues
 Description: Current known issues regarding Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-known-issues
 ---

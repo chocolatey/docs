@@ -8,7 +8,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme-v1
 > 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](../desktop-readme).
+> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](../setup/desktop-readme).
 
 This system has been pre-configured as a fully functioning C4B environment.
 
@@ -63,7 +63,7 @@ This will create the licensed package at `C:\choco-setup\packages` and push it u
 
 ## Step 3: Regenerate SSL Certificates
 
-Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](../ssl-setup) for more details.
+Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](./ssl-setup) for more details.
 
 > 📝 **NOTE**: Please run the below from an administrative PowerShell session.
 
@@ -124,7 +124,7 @@ Consult the Nexus documentation or reach out to Chocolatey Support for more info
 * Username: admin
 * Password: [REDACTED] (credentials included on desktop readme)
 
-For using Jenkins, please refer to our [documentation](../../how-tos/setup-internal-package-repository).
+For using Jenkins, please refer to our [documentation](../../guides/organizations/automate-package-internalization).
 At most, you will need to login to Jenkins, change the password (`By going to People on the Sidebar > Click on admin > Click Configure on the Sidebar, scroll down to change password section`), and enable the pre-configured jobs to run on the schedule of your choosing.
 Our documentation can assist with ensuring this is done correctly.
 
@@ -203,7 +203,7 @@ What does this do?
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >
-> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](../ssl-setup) for options.
+> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](./ssl-setup) for options.
 >
 > Please contact support if you need help here.
 

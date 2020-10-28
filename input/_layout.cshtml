@@ -138,7 +138,8 @@
                              <div class="d-none d-xl-block">
                                 @Html.Partial("_breadcrumbs")
                              </div>
-                            @RenderBody()
+                             @RenderBody()
+                             @Html.Partial("_childpages")
                         </div>
                         @{
                             IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);

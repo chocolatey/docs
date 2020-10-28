@@ -71,8 +71,8 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 ### Package sources:
 
 - Ninite - one at Ninite.com
-- Chocolatey - central community package repository at [https://chocolatey.org/packages](https://chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](./features/free/how-to-host-feed) for options.
-- Chocolatey can also install from [alternative sources](./usage/commands/install#alternative-sources) - choco install bash --source cygwin | choco install gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
+- Chocolatey - central community package repository at [https://chocolatey.org/packages](https://chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](./features/how-to-host-feed) for options.
+- Chocolatey can also install from [alternative sources](./chocolatey-cli/commands/install#alternative-sources) - choco install bash --source cygwin | choco install gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
 
 ### Creating packages:
 
@@ -81,14 +81,14 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 - Chocolatey is building on technologies you may already know:
   - PowerShell - take full advantage of PowerShell.
   - Unattended installations / Silent installation
-- Extend Chocolatey easily with PowerShell modules called [extension packages](./how-tos/create-extensions).
-- Use [Package Builder](./features/paid/create-packages-from-installers) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
-- Use [Package Internalizer](./features/paid/automatically-recompile-packages) to internalize existing community packages quickly.
+- Extend Chocolatey easily with PowerShell modules called [extension packages](./features/create-extensions).
+- Use [Package Builder](./features/package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
+- Use [Package Internalizer](./guides/create/recompile-packages) to internalize existing community packages quickly.
 
 ### Available packages:
 
 - Ninite - Handled by Ninite staff, so there's less chance of anything being broken.
-- Chocolatey (community repository) - Handled by the community, reviewed by moderators. Possibility of breakages unless using [licensed editions of Chocolatey](https://chocolatey.org/compare) due to [CDN Cache](./features/paid/private-cdn).
+- Chocolatey (community repository) - Handled by the community, reviewed by moderators. Possibility of breakages unless using [licensed editions of Chocolatey](https://chocolatey.org/compare) due to [CDN Cache](./features/private-cdn).
 - Chocolatey (internal repositories) - Handled by you, embedding software or using internal links you control. Zero chance of breakages that you don't control.
 
 ### Package updates:
@@ -110,7 +110,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 
 Chocolatey internal use is the best solution for an organization that has a low tolerance for breakages. There are no issues, you have a secure solution with complete control. You are building on top of technologies you know with a small amount of learning for packaging. Because it is PowerShell, you are not limited to just installers, and you can add additional logic before and after installations, and you are not limited to just "installing" software with packaging.
 
-Ninite is a solid solution if you don't mind not being able to script it and only install the applications that it has listed on the Ninite page. You are, however, possibly guaranteed that you have everything you need to install sheerly by having the Ninite Installer. In that way it may be better than using Chocolatey's community repository, which most packages require access to the internet to download installers that do not have distribution rights with them (Ninite may not incur this extra point of failure, but is quite limited in its offerings). Chocolatey community repository with [licensed editions of Chocolatey](https://chocolatey.org/compare) have almost no chance of breakages due to a [CDN Cache](./features/paid/private-cdn) of those downloads.
+Ninite is a solid solution if you don't mind not being able to script it and only install the applications that it has listed on the Ninite page. You are, however, possibly guaranteed that you have everything you need to install sheerly by having the Ninite Installer. In that way it may be better than using Chocolatey's community repository, which most packages require access to the internet to download installers that do not have distribution rights with them (Ninite may not incur this extra point of failure, but is quite limited in its offerings). Chocolatey community repository with [licensed editions of Chocolatey](https://chocolatey.org/compare) have almost no chance of breakages due to a [CDN Cache](./features/private-cdn) of those downloads.
 
 Chocolatey community repository has over 4,000 more packages than Ninite and a community that is driving to continually make it better. If you need to get to older versions of packages, many of the packages on the community repository allow for this. What Chocolatey community repository may lack in the possible guarantee that Ninite provides, it makes up for in features and options. Chocolatey can provide packages for non-free products, have multiple sources and folks can script the installations. Chocolatey is more than just an installer and with that does not require administrative privileges to use.
 

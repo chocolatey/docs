@@ -8,7 +8,7 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 > 📝 **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](../firewall-changes).
+> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](../setup/firewall-changes).
 
 ## External Ports
 

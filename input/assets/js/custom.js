@@ -50,6 +50,10 @@ if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
     themeToggle.attr('disabled', 'true').next().addClass('disabled');
 }
 
+if (!$('h2:first-of-type').hasClass('title-child')) {
+    $('.title-child').removeClass('d-none');
+}
+
 // Left navigation
 $.each($('.nav-link-collapse.active'), function () {
     $($(this).attr('data-href')).collapse('show');
@@ -158,6 +162,7 @@ $('a')
     .not('[data-toggle="pill"]')
     .not('[data-slide="prev"]')
     .not('[data-slide="next"]')
+    .not('[href*="/"]')
     .click(function(e) {
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {
