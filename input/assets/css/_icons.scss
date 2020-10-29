@@ -1,4 +1,4 @@
-.nav-link-collapse, .btn-collapse {
+.btn-collapse {
     &:before {
         font-family: "Font Awesome 5 Free";
         display: inline-block;
@@ -11,14 +11,14 @@
     }
 
     // Angle right
-    &.nav-link:not(.active), &.btn.collapsed {
+    &.btn.collapsed {
         &:before {
             content: "\f105";
         }
     }
 
     // Angle down
-    &.nav-link.active, &.btn:not(.collapsed) {
+    &.btn:not(.collapsed) {
         &:before {
             content: "\f107";
         }
