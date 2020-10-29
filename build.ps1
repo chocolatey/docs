@@ -1,1 +1,1 @@
-dotnet run --configuration Release -- build
+dotnet run --configuration Release
