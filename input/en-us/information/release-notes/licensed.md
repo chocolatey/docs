@@ -17,5 +17,5 @@ If you have Pro, MSP or Architect, please refer to the following:
 If you have Chocolatey for Business (C4B), please refer to the following:
 
 * [Chocolatey Licensed Extension Release Notes](../../licensed-extension/release-notes)
-* [Chocolatey Agent Release Notes](../../chocolatey-agent/release-notes)
+* [Chocolatey Agent Release Notes](../../agent/release-notes)
 * [Chocolatey Central Management Release Notes](../../central-management/release-notes)
