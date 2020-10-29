@@ -1,5 +1,5 @@
 ---
-Order: 20
+Order: 10
 Title: Database
 Description: Information on how to setup the CCM Database
 RedirectFrom: docs/central-management-setup-database

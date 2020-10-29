@@ -1,5 +1,5 @@
 ---
-Order: 30
+Order: 20
 Title: Service
 Description: Information on how to setup the CCM Service
 RedirectFrom: docs/central-management-setup-service

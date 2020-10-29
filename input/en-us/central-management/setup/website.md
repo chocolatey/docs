@@ -1,5 +1,5 @@
 ---
-Order: 40
+Order: 30
 Title: Website
 Description: Information on how to setup the CCM Website
 RedirectFrom: docs/central-management-setup-web
