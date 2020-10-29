@@ -29,29 +29,55 @@
             .nav-link {
                 color: $gray-900;
                 color: var(--text);
-                padding: $spacer;
+                padding: 0;
                 border-left: 6px solid transparent;
 
-                &.active, &:hover {
+                &.active, &:hover, &.nav-link-open {
                     border-color: $primary;
                     color: $primary;
+
+                    .btn-collapse:before, a {
+                        color: $primary;
+                    }
                 }
                 
-                &.active-page, &:hover {
+                &.active-page, &:hover, &.active-child {
                     background: $primary-opacity;
                 }
 
-                &.active {
+                &.active, &.active-child, &.nav-link-open {
                     font-weight: bold;
+                }
+
+                &:not(.nav-link-collapse) {
+                    padding: $spacer;
+                }
+
+                .btn-collapse {
+                    padding: $spacer 0 0 $spacer;
+
+                    &:before {
+                        color: $gray-900;
+                        color: var(--text);
+                        transition: $theme-transition;
+                    }
+                }
+            
+                a {
+                    width: 100%;
+                    padding: $spacer .25rem $spacer 0;
+                    color: $gray-900;
+                    color: var(--text);
+                    transition: $theme-transition;
                 }
             }
 
-            .collapse .nav-link:not(.active) {
+            .collapse .nav-link {
                 border-left: 6px solid $primary;
             }
 
-             > .navbar-nav {
-                 > .nav-item {
+            > .navbar-nav {
+                > .nav-item {
                     > .nav-link {
                         &:not(.nav-link-collapse) {
                             padding-left: $spacer * 2;
@@ -61,7 +87,7 @@
                         > .navbar-nav {
                             > .nav-item {
                                 > .nav-link {
-                                    &.nav-link-collapse {
+                                    &.nav-link-collapse .btn-collapse {
                                         padding-left: $spacer * 2;
                                     }
 
@@ -73,7 +99,7 @@
                                     > .navbar-nav {
                                         > .nav-item {
                                             > .nav-link {
-                                                &.nav-link-collapse {
+                                                &.nav-link-collapse .btn-collapse {
                                                     padding-left: $spacer * 3;
                                                 }
 

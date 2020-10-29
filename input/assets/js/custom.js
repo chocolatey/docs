@@ -55,8 +55,30 @@ if (!$('h2:first-of-type').hasClass('title-child')) {
 }
 
 // Left navigation
-$.each($('.nav-link-collapse.active'), function () {
-    $($(this).attr('data-href')).collapse('show');
+$.each(leftSidebarNav.find('.nav-link-collapse.active'), function (i, value) {
+    var showActiveNav = $($(this).find('.btn-collapse').attr('href'));
+    
+    showActiveNav.collapse('show');
+
+    // If the nav is collapsed, highlight the collapsed parent
+    $(this).find('.btn-collapse').click(function() {
+        $('.active-child').removeClass('active-child');
+
+        if (!$(this).hasClass('collapsed')) {
+            $(this).parent().addClass('active-child');
+        } else {
+            $($(this).attr('href')).find('.nav-link-collapse.active').addClass('active-child');
+        }
+    });
+});
+
+// When nav item is expanded, add class to parent for styling purposes
+leftSidebarNav.find('.btn-collapse').click(function() {
+    if ($(this).hasClass('collapsed')) {
+        $(this).parent().addClass('nav-link-open');
+    } else {
+        $(this).parent().removeClass('nav-link-open');
+    }
 });
 
 // Find new height for navigation scroll after collapse has shown/hidden
