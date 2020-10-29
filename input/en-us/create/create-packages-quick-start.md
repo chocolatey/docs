@@ -14,7 +14,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 ## Prerequisites
 
 * You have Chocolatey installed.
-* You've read [What are Chocolatey Packages?](../chocolatey-cli/getting-started#what-are-chocolatey-packages) first.
+* You've read [What are Chocolatey Packages?](../choco/getting-started#what-are-chocolatey-packages) first.
 * You know how a package works
   * A package contains a `nuspec` file. This defines the package. ([Docs](./create-packages#nuspec))
   * A package may contain embedded software.

@@ -64,7 +64,7 @@ There may be some exercises in here that won't apply:
 
 ## Requirements
 
-Please see  [Requirements](../../chocolatey-cli/getting-started#requirements) for the most up to date version of this.
+Please see  [Requirements](../../choco/getting-started#requirements) for the most up to date version of this.
 
 ### Chocolatey Clients
 
@@ -153,7 +153,7 @@ From the machine with internet access:
 1. C4B - Run the following additionally: `choco download chocolatey.extension chocolatey-agent --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. MSP - Run the following additionally: `choco download chocolatey.extension --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. Now we should have several packages in `c:\choco-setup\packages`. If not, type `start .` and go copy the files here to that location.
-1. Obtain the PowerShell script from https://docs.chocolatey.org/en-us/chocolatey-cli/installation#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
+1. Obtain the PowerShell script from https://docs.chocolatey.org/en-us/choco/installation#completely-offline-install and copy it to `c:\choco-setup\files` as "ChocolateyLocalInstall.ps1". We will need this to install Chocolatey on the airgapped box.
 1. Open `c:\choco-setup\files\ChocolateyLocalInstall.ps1` in an editor like Notepad++ or Visual Studio Code (do not use Notepad.exe!!).
 1. Change this line `$localChocolateyPackageFilePath = 'c:\packages\chocolatey.0.10.0.nupkg'` to `$localChocolateyPackageFilePath = 'c:\choco-setup\packages\chocolatey.0.10.8.nupkg'` (adjust for the actual path to the Chocolatey package).
 1. Air Gapped Networks / Machines without Network Access: Get those files over to that air gapped network (USB key and sneakernet if you need to).
@@ -556,7 +556,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. Open PowerShell.exe as an administrative shell. You can type "Windows Key + X + A" (Windows 8+ - when that comes up if it is cmd.exe, simply type `powershell` to get into it).
 1. If you need FIPS compliance, run `choco feature enable --name="'useFipsCompliantChecksums'"`.
 1. Run `choco source remove --name="'chocolatey'"` to remove the default community package repository.
-1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [source command](../../chocolatey-cli/commands/source).
+1. Run `choco source add --name="'internal_server'" --source="'$baseUrl/chocolatey'" --priority="'1'" <other options>`. Other options noted at [source command](../../choco/commands/source).
 1. C4B / MSP / C4BTRIAL: Install the license package we've pushed - `choco upgrade chocolatey-license -y`. This may be a place you see an error if things are not configured correctly. If you run into an error, be sure that you have the source added properly with the right permissions (not api key - that is for pushes only).
 1. C4B / MSP / C4BTRIAL: Run `choco source disable --name="'chocolatey.licensed'"`. When the license is placed, Chocolatey automatically adds the license and we don't want to use that source. Note we can't remove the license because the existence of the license file will have Chocolatey adding it right back - so we just disable it. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and we are going to take care of that in the next step.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y --pre`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
@@ -599,7 +599,7 @@ iex ((New-Object System.Net.WebClient).DownloadString("$baseUrl/install.ps1"))
 choco source remove --name="'chocolatey'"
 
 # Sources - Add your internal repositories
-# This is Chocolatey.Server specific (add other options like auth/allow self service as needed - https://docs.chocolatey.org/en-us/chocolatey-cli/commands/source):
+# This is Chocolatey.Server specific (add other options like auth/allow self service as needed - https://docs.chocolatey.org/en-us/choco/commands/source):
 choco source add --name="'internal_server'" --source="'$baseUrl/$repositoryUrlPath'" --priority="'1'" --bypass-proxy
 #TODO: Add other sources here
 
@@ -650,12 +650,12 @@ For common integrations, it's handy to refer to the table below to know what con
 | Configuration Managers                   | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
 |------------------------------------------|-------------------------|--------------------|----------------------------|-------------------|-------------------|---------------------|
 | Manage Packages                          | [x][ansible_main]       | [x][chef_main]     | [x][dsc_pkgs]              | [x][pp_pkgs]      | [x][salt_pkgs]    | [x][otter_pkgs]     |
-| [Install Chocolatey](../../chocolatey-cli/installation)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
+| [Install Chocolatey](../../choco/installation)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
 | Install Chocolatey from internal source  | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   |                   | [x][otter_install]  |
-| [Manage Sources](../../chocolatey-cli/commands/source)         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
+| [Manage Sources](../../choco/commands/source)         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
 | Manage Source Type (Admin/Self-Service)  | [x][ansible_source]     |                    |                            | [x][pp_source]    |                   |                     |
-| [Manage Features](../../chocolatey-cli/commands/feature)       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
-| [Manage Config Settings](../../chocolatey-cli/commands/config) | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
+| [Manage Features](../../choco/commands/feature)       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
+| [Manage Config Settings](../../choco/commands/config) | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
 
 **NOTE: Each *x* is linked to the specific feature documentation.**
 

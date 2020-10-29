@@ -512,11 +512,11 @@ Checksums in package scripts are meant as a measure to validate the originally i
 **Can I shut this behavior off or opt out per package?**
 You can shut off the checksum requirement by enabling the feature `allowEmptyChecksums`. This will return Chocolatey to previous behavior. We strongly recommend against it.
 
-You can shut it off or turn it per package install/upgrade with `--allow-empty-checksums` and `--require-checksums`, respectively. See https://docs.chocolatey.org/en-us/chocolatey-cli/commands/install / https://docs.chocolatey.org/en-us/chocolatey-cli/commands/upgrade.
+You can shut it off or turn it per package install/upgrade with `--allow-empty-checksums` and `--require-checksums`, respectively. See https://docs.chocolatey.org/en-us/choco/commands/install / https://docs.chocolatey.org/en-us/choco/commands/upgrade.
 
 You can also disable the feature `allowEmptyChecksumsSecure` to enforce checksums for packages that download from secure locations (HTTPS).
 
-**Other things I should know?** Users also now have the ability to pass their own checksums and checksumtypes into the install. See https://docs.chocolatey.org/en-us/chocolatey-cli/commands/install / https://docs.chocolatey.org/en-us/chocolatey-cli/commands/upgrade.
+**Other things I should know?** Users also now have the ability to pass their own checksums and checksumtypes into the install. See https://docs.chocolatey.org/en-us/choco/commands/install / https://docs.chocolatey.org/en-us/choco/commands/upgrade.
 
 ### KNOWN ISSUES
 

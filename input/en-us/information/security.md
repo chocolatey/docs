@@ -54,7 +54,7 @@ Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has c
 1. Starting with v0.10.0, users can supply [runtime checksums](https://github.com/chocolatey/choco/issues/112) so they are not required to just trust what the package supplies (or in the case a package has missing or incorrect checksums).
 1. Starting with v0.10.1, Chocolatey will detect whether an SSL/TLS download is available and automatically switch to that for more security.
 1. Choco will not allow you to push to the community package repository without using SSL/TLS (HTTPS). This reduces DNS poisoning issues and discovery of your Community repository API key.
-1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [What are Chocolatey Packages](../chocolatey-cli/getting-started#what-are-chocolatey-packages) for more details.
+1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [What are Chocolatey Packages](../choco/getting-started#what-are-chocolatey-packages) for more details.
 1. Chocolatey is run by a US-based Delaware Corporation named Chocolatey Software.
 
 ## Chocolatey binaries and the Chocolatey package

@@ -45,7 +45,7 @@ Please see [I'm getting a 403 unauthorized issue when attempting to use the comm
 
 ### I am having trouble with PowerShell to install Chocolatey
 
-See the More Options section of [installation](./chocolatey-cli/installation#more-install-options).
+See the More Options section of [installation](./choco/installation#more-install-options).
 
 ## Licensed Installation and Issues
 

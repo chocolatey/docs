@@ -7,7 +7,7 @@ RedirectFrom: docs/features-install-directory-override
 
 The ubiquitous install directory switch for [customers](https://chocolatey.org/pricing)! The only switch you will ever need for overriding the install directory for native installers! When working with packages that use native installers (software that actually installs on a machine), Chocolatey is able to override the default installation directory from a simple switch you pass to choco.
 
-It can be a pain determining the native installer type (MSI, NSIS, InnoSetup, etc) for a piece of software and then determining what the what the install directory argument should look like. While you [can change the installation directory without this switch even in Chocolatey open source](../chocolatey-cli/getting-started#overriding-default-install-directory), you will see that the ubiquitous switch makes it very easy and a low amount of work on your part.
+It can be a pain determining the native installer type (MSI, NSIS, InnoSetup, etc) for a piece of software and then determining what the what the install directory argument should look like. While you [can change the installation directory without this switch even in Chocolatey open source](../choco/getting-started#overriding-default-install-directory), you will see that the ubiquitous switch makes it very easy and a low amount of work on your part.
 
 With the ubiquitous switch, you are not only saving time, but also possible errors in passing the wrong arguments to an installer!
 
