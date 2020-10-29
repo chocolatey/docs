@@ -1,0 +1,1 @@
+dotnet run --configuraiton Release -a ValidateRelativeLinks=Error -a ValidateAbsoluteLinks=Error
