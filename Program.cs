@@ -13,8 +13,6 @@ namespace Docs
             .CreateWeb(args)
             .AddSetting(Keys.Host, "docs.chocolatey.org/")
             .AddSetting(Keys.LinksUseHttps, true)
-            .AddSetting("ValidateAbsoluteLinks", true)
-            .AddSetting("ValidateLinksAsError", true)
             .AddSetting(Constants.EditLink, ConfigureEditLink())
             .AddSetting(WebKeys.GatherHeadingsLevel, 5)
             .ConfigureSite("chocolatey", "docs", "master")
