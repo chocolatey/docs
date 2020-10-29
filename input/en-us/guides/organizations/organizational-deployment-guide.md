@@ -56,7 +56,7 @@ There may be some exercises in here that won't apply:
 ## References
 
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
-* [Licensed Install](../../chocolatey-licensed-extension/installation-licensed)
+* [Licensed Install](../../licensed-extension/installation-licensed)
 * [Host Your Own Package Server](../../features/how-to-host-feed)
 * [Set up Chocolatey Server](./set-up-chocolatey-server)
 * [Security](https://chocolatey.org/security)
@@ -639,7 +639,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 This is likely to vary somewhat wildly based on what you have set up. We recommend choosing a tool and then looking at what is available.
 
-We have [documentation for Puppet](../../chocolatey-licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet), with some great examples. What you would do to make that work with Ansible, Chef, Salt, or PowerShell DSC would be similar. All of the different options are covered at [Infrastructure Management Integration](../../features/infrastructure-automation).
+We have [documentation for Puppet](../../licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet), with some great examples. What you would do to make that work with Ansible, Chef, Salt, or PowerShell DSC would be similar. All of the different options are covered at [Infrastructure Management Integration](../../features/infrastructure-automation).
 
 If you are using Chocolatey.Server, please login to that machine and check https://localhost for instructions specific to different infrastructure management tools in the admin section.
 

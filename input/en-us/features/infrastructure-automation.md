@@ -240,7 +240,7 @@ Puppet has some great documentation on getting started with Chocolatey. Be sure 
 The Chocolatey team is most familiar with Puppet and has written some documentation for using Puppet with Chocolatey. Please see
 
 * [Install with Puppet](https://chocolatey.org/install#install-with-puppet)
-* [Chocolatey Licensed Editions Configuration/Setup with Puppet](../chocolatey-licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet)
+* [Chocolatey Licensed Editions Configuration/Setup with Puppet](../licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet)
 
 **Note:** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/choco-wiki.
 
