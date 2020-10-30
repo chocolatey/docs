@@ -49,7 +49,7 @@ Below are the recommended guidelines of what's required for this specific deploy
 * Windows Server 2012+ (ideally, Windows Server 2016)
 * 4+ CPU cores (more preferred)
 * 16 GB+ RAM (4GB of RAM reserved specifically for JRE)
-* 1 TB of free space for local artifact storage (details [here](https://help.sonatype.com/repomanager3/system-requirements))
+* 1 TB of free space for local artifact storage (details [here](https://help.sonatype.com/repomanager3/installation/system-requirements))
 * Internet access
 * Administrator user rights
 * All commands should be run from Administrator PowerShell window

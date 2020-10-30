@@ -122,7 +122,6 @@ There is where the bulk of NuGet OData compatible servers fall (NuGet.Server, Ch
 * NuGet.Server
 * [TeamCity](https://www.jetbrains.com/teamcity/) has built-in Simple Server
 * [Visual Studio Team Services (NuGet v2 endpoints)](https://docs.microsoft.com/en-us/vsts/package/overview) - [Setup](https://docs.microsoft.com/en-us/vsts/package/get-started-nuget) (Remove the part of the url that is /v3/index.json and use /v2 instead) - you may also need to [setup a personal access token](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate).
-* [JNuGet](https://bitbucket.org/aristar/jnuget/wiki/Home)
 * [NuGet.Java.Server](http://blog.jonnyzzz.name/2012/03/nuget-server-in-pure-java.html) ([NuGet Package](https://www.nuget.org/packages/NuGet.Java.Server)) - simple server (same tool used in TeamCity)
 * [PHP NuGet](http://www.kendar.org/?p=/dotnet/phpnuget)
 * [Hazel](https://github.com/MPIB/hazel)
@@ -309,7 +308,7 @@ See https://help.sonatype.com/repomanager2/system-requirements for more details.
 * Storage (HDD) - At least 2-5TB of free space for a local file store of artifacts. [How much space do you need?](https://blog.sonatype.com/2012/01/sizing-nexus-how-much-space-do-you-need/)
 * Chocolatey Repository Type: NuGet
 
-See https://help.sonatype.com/repomanager3/system-requirements for more details.
+See https://help.sonatype.com/repomanager3/installation/system-requirements for more details.
 
 **PRICING**: Starts at free (for Sonatype Nexus Repository Manager) - https://www.sonatype.com/nexus-product-pricing.
 
@@ -321,7 +320,7 @@ See https://help.sonatype.com/repomanager3/system-requirements for more details.
 * Load Balancer: Assume powerful - this will be software-based (such as nginx or HAProxy) or an appliance (such as F5 or Citrix).
 * Does not support cross-datacenter replication - only supports single datacenter.
 
-See https://help.sonatype.com/repomanager3/high-availability-introduction for details. It is very light on requirements, so assume similar to Artifactory's HA setup, minus a need for an external database.
+See https://help.sonatype.com/repomanager3/high-availability for details. It is very light on requirements, so assume similar to Artifactory's HA setup, minus a need for an external database.
 
 **PRICING**: Please see https://www.sonatype.com/nexus-product-pricing and contact Sonatype as it is not clear. You need at least 3 NXRM (Nexus Repository Manager) Pro licenses. There may be additional costs.
 
@@ -355,7 +354,6 @@ See https://inedo.com/support/documentation/proget/administration/high-availabil
 If you don't want to host on Windows you have only the following options (from least advanced to most advanced - these options typically also work on Windows):
 
 * CIFS share
-* [JNuGet](https://bitbucket.org/aristar/jnuget/wiki/Home) - a simple server
 * [NuGet.Java.Server](http://blog.jonnyzzz.name/2012/03/nuget-server-in-pure-java.html) ([NuGet Package](https://www.nuget.org/packages/NuGet.Java.Server)) - simple server (same tool used in TeamCity)
 * [TeamCity](https://www.jetbrains.com/teamcity/) - contains built-in simple server
 * [PHP NuGet](http://www.kendar.org/?p=/dotnet/phpnuget) - Simple server built in PHP

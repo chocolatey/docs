@@ -131,10 +131,6 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 * http://jkarger.de/2017/10/29/tile-banner-for-chocolateygui/
 * https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html (C4B)
 
-#### September
-
-* http://www.tomsitpro.com/articles/deploy-windows-software-puppet-chocolatey,1-3658.html
-
 #### August
 
 * http://www.winsysblog.com/2017/08/recompiling-chocolatey-packages.html (C4B)
@@ -165,7 +161,7 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 #### March
 
-* http://www.winsysblog.com/2017/03/creating-software-packages-with.html
+* https://winsysblog.com/2017/03/creating-software-packages-wi.html
 * https://brian.teeman.net/joomla/885-install-amp-on-windows-with-chocolatey
 
 #### February
@@ -177,7 +173,7 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 * https://channel9.msdn.com/Series/dotnetflix/Maintain-consistent-machine-configurations-using-PowerShell-DSC-and-Chocolatey
 * https://weblog.west-wind.com/posts/2017/Jan/29/Creating-a-portable-and-embedded-Chocolatey-Package
-* http://www.onitato.com/running-chocolatey-on-linux.html
+* https://www.onitato.com/post/running-chocolatey-on-linux/
 * https://www.pressreader.com/australia/maximum-pc/20170110/282982514605832 (Its actually in Maximum PC Magazine - January 2017 but this is the best link I could find)
 * https://community.spiceworks.com/topic/1961040-anyone-use-chocolatey
 * https://codehollow.com/2017/01/chocolatey-package-management-windows/
@@ -212,7 +208,6 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 #### September
 
-* http://www.winsysblog.com/2016/09/using-powershell-and-chocolatey-to.html
 * http://devopspecialist.co.uk/2016/09/21/a-big-bar-of-chocolatey/
 * http://devopspecialist.co.uk/2016/09/03/full-of-chocolatey-goodness/
 
@@ -226,7 +221,7 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 #### July
 
 * http://blogsprajeesh.blogspot.nl/2016/07/maintain-consistent-development.html (PowerShell DSC and Chocolatey)
-* https://digitalis.io/install-apache-cassandra-command-line-windows/
+* https://digitalis.io/blog/install-apache-cassandra-command-line-windows/
 * https://thesoftwaredudeblog.wordpress.com/2016/07/08/using-vagrant-with-sitecore-part-1-setup-chocolatey-vagrant-and-virtualbox
 * http://crosscuttingconcerns.com/Podcast-004---Calvin-Allen-on-Chocolatey-NuGet
 
@@ -252,9 +247,8 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 #### March
 
-* http://imallvirtual.com/azure-devtest-labs-chocolatey-artifacts-integration/
 * https://channel9.msdn.com/Shows/demooftheday/chocovm
-* http://techbutter.com/getting-started-with-chocolatey/
+* http://andymelton.net/2016/03/20/getting-started-with-chocolatey/
 * https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-cd-chocolatey/
 * http://tomow.de/general/chocolatey-a-sweet-package-manager-for-windows/
 
@@ -264,16 +258,13 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 * http://csi-windows.com/blog/all/74-powershell/463-getting-chocolatey-package-management-provider-working-on-windows-10
 * https://zimmergren.net/automating-software-installations-with-boxstarter-and-chocolatey/
 * https://www.chef.io/blog/2016/02/12/chef-client-12-7-released/
-* https://puppet.com/blog/chocolatey-using-chocolatey-puppet
 * http://blog.coultard.com/2016/02/salt-control-windows-minion.html
 
 #### January
 
-* https://puppet.com/blog/chocolatey-creating-your-own-chocolatey-packages
 * http://www.jamessturtevant.com/posts/How-to-install-elixir-using-chocolatey-on-windows/
 * https://stefanscherer.github.io/get-started-with-docker-on-windows-using-chocolatey/
 * http://codebetter.com/robreynolds/2016/01/16/chocolatey-community-update/
-* https://puppet.com/blog/chocolatey-hosting-your-own-server
 
 ### 2015
 
@@ -287,12 +278,10 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 * https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/
 * http://www.spjeff.com/2015/11/09/chocolately-at-work-and-home/
-* https://blog.turbo.net/create-a-turbo-vm-image-with-chocolatey/
-* https://blog.turbo.net/deploying-turbo-with-chocolatey/
 
 #### October
 
-* http://binford2k.com/content/2015/10/idempotence-not-just-big-scary-word
+* http://binford2k.com/zero/2015/10/17/idempotence/
 
 #### September
 
@@ -321,7 +310,6 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 #### May
 
 * http://benpiper.com/2015/05/windows-server-2012-using-puppet-chocolatey/
-* http://typicaltim.com/2015/05/21/creating-a-local-chocolatey-repository/
 
 #### April
 
@@ -392,7 +380,6 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 #### January
 
-* http://www.tzehon.com/2014/01/20/provisioning-a-windows-box-with-vagrant-chocolatey-and-puppet-part-1/
 * http://www.masterzen.fr/2014/01/11/bootstrapping-windows-servers-with-puppet/
 
 ### 2013
@@ -400,11 +387,9 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 #### December
 
 * https://thoughtworks.github.io/p2/issue07/cd-in-windows-part-2/
-* http://www.liamjbennett.me/post/2013-12-11-puppet-on-windows-part-2/
 
 #### October
 
-* http://www.liamjbennett.me/post/2013-10-06-puppet-on-windows-part-1/
 * http://www.software-innovators.nl/2013/10/03/from-continous-integration-through-continuous-deployment-to-continuous-delivery/
 
 #### August
@@ -463,7 +448,6 @@ See [Infrastructure automation](../../features/infrastructure-automation)
 
 * http://ferventcoder.com/archive/2011/10/07/letrsquos-get-chocolatey-kind-of-like-apt-get-for-windows.aspx
 * http://melkio.codiceplastico.com/technology/2011/10/06/chocolatey-un-package-manager-per-windows.html
-* http://elegantcode.com/2011/10/05/chocolatey-the-free-and-open-source-windows-app-store/
 
 #### September
 

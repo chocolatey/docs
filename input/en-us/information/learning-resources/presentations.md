@@ -21,7 +21,7 @@ RedirectFrom: docs/presentations
 
 * [Modern Software Management on Windows with Chocolatey and Puppet](https://www.slideshare.net/ferventcoder/modern-software-management-on-windows-with-chocolatey-and-puppet) - [PuppetConf 2017](https://puppetconf.com) - Rob Reynolds, [October 12, 2017](https://puppetconf17.sched.com/event/B4xQ) - [Video](https://www.youtube.com/watch?v=6gQtcoLaMI0)
 * [Chocolatey + DSC = Software Automation Sweeter](https://www.slideshare.net/ferventcoder/chocolatey-dsc-software-automation-sweeter-powershell-day-uk/) - [PowerShell Day UK (PSDay.UK)](https://psday.uk/) - Rob Reynolds, [September 21, 2017](https://psday.uk/#1499890705418-efb95a0a-2abb) - [Video](https://www.youtube.com/watch?v=KZzn_TurdPI)
-* [Life is like a Box of Chocolate(y)](https://ndcsydney.com/talk/life-is-like-a-box-of-chocolatey/) - [NDC Sydney 2017](https://ndcsydney.com/) - David Gardiner, [August 17, 2017](https://ndcsydney.com/talk/life-is-like-a-box-of-chocolatey/) - [Video](https://www.youtube.com/watch?v=sq2mqeIG2I4)
+* Life is like a Box of Chocolate(y) - [NDC Sydney 2017](https://ndcsydney.com/) - David Gardiner, August 17, 2017 - [Video](https://www.youtube.com/watch?v=sq2mqeIG2I4)
 
 ### 2016
 
@@ -38,17 +38,13 @@ RedirectFrom: docs/presentations
 
 * [Plugging Chocolatey into your Puppet Infrastructure](http://www.slideshare.net/ferventcoder/chocolatey-puppet-conf2014) - [PuppetConf 2014](http://2014.puppetconf.com/) - Rob Reynolds, [September 23, 2014](http://sched.co/1kHU71L) - [Video](https://www.youtube.com/watch?v=cZl_wKSciVk)
 * [Managing Windows with Puppet and Chocolatey](http://www.slideshare.net/SethMcBean/managing-windows-with-puppet-and-chocolatey) - Seth McBean, July 30, 2014
-* [Chocolatey Overview](http://digitaldrummerj.me/ChocolateyTalk/#/) - Justin James - [Source/Demos](https://github.com/digitaldrummerj/ChocolateyTalk)
+* Chocolatey Overview - Justin James - [Source/Demos](https://github.com/digitaldrummerj/ChocolateyTalk)
 
 ### 2013
 
 * [Using Chocolatey for Application Deployments](http://www.slideshare.net/perryofpeek/using-chocolatey-for-application-deployments) - Owain Perry, Sep 17, 2013
 * [Puppet on Windows: Now You're Getting Chocolatey](http://www.slideshare.net/ferventcoder/puppet-on-windows-now-youre-getting-chocolatey-puppetconf2013) - [PuppetConf 2013](http://2013.puppetconf.com) - Rob Reynolds, [August 23, 2013](http://sched.co/11MpBOE) - [Video](https://www.youtube.com/watch?v=Im30wziOrBs)
 * [Mmmm, Chocolatey Goodness](http://www.slideshare.net/gep13/mmmm-chocolatey-goodness) - Gary Park, March 28, 2013
-
-### 2012
-
-* [Puppet Provisioning on Windows](http://haf.github.io/presentations/puppet-provisioning-on-windows.html#/) - Henrik Feldt, February 26, 2012
 
 ### 2011
 

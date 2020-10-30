@@ -46,7 +46,7 @@ Others as noted at [https://github.com/chocolatey/chocolatey-licensed-issues](ht
 
 - ~~Adding back in search box~~ - completed Q1 2018
 - Converting rest of site
-- ~~Kickstarter backers~~ - [https://chocolatey.org/kickstarters](https://chocolatey.org/kickstarters)
+- ~~Kickstarter backers~~ - [https://chocolatey.org/kickstarter](https://chocolatey.org/kickstarter)
 - ~~Add blog~~ - [https://chocolatey.org/blog](https://chocolatey.org/blog)
 - ~~VirusTotal scans of all packages and downloaded binaries~~ - Completed Feb 2016
 - ~~Locking down non-secure downloads in packages (HTTP) without checksums~~ - completed Aug 2016

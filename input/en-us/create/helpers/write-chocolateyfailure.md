@@ -6,7 +6,7 @@ RedirectFrom: docs/helpers-write-chocolatey-failure
 
 # Write-ChocolateyFailure
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Write-ChocolateyFailure.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Write-ChocolateyFailure.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 DEPRECATED - DO NOT USE.
 
@@ -92,4 +92,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-ChocolateyFailure -Full`.
 
-View the source for [Write-ChocolateyFailure](https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Write-ChocolateyFailure.ps1)
+View the source for [Write-ChocolateyFailure](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Write-ChocolateyFailure.ps1)

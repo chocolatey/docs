@@ -6,7 +6,7 @@ RedirectFrom: docs/helpers-get-web-headers
 
 # Get-WebHeaders
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Gets the request/response headers for a url.
 
@@ -93,4 +93,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebHeaders -Full`.
 
-View the source for [Get-WebHeaders](https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1)
+View the source for [Get-WebHeaders](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1)

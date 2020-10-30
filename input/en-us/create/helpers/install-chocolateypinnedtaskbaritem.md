@@ -6,7 +6,7 @@ RedirectFrom: docs/helpers-install-chocolatey-pinned-task-bar-item
 
 # Install-ChocolateyPinnedTaskBarItem
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPinnedTaskBarItem.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPinnedTaskBarItem.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Creates an item in the task bar linking to the provided path.
 
@@ -86,4 +86,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPinnedTaskBarItem -Full`.
 
-View the source for [Install-ChocolateyPinnedTaskBarItem](https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPinnedTaskBarItem.ps1)
+View the source for [Install-ChocolateyPinnedTaskBarItem](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPinnedTaskBarItem.ps1)

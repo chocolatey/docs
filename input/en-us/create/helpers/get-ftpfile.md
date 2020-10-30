@@ -6,7 +6,7 @@ RedirectFrom: docs/helpers-get-ftp-file
 
 # Get-FtpFile
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-FtpFile.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-FtpFile.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Downloads a file from a File Transfter Protocol (FTP) location.
 
@@ -131,4 +131,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-FtpFile -Full`.
 
-View the source for [Get-FtpFile](https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Get-FtpFile.ps1)
+View the source for [Get-FtpFile](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-FtpFile.ps1)

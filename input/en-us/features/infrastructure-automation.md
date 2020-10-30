@@ -200,7 +200,7 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
 
 **NOTE:** Chocolatey has a prototype provider for the built-in package manager on Windows 10/Windows Server 2016 that was created by Microsoft awhile back. It is not fully functional and it may have security issues. If you want to use Chocolatey with PackageManagement, we recommend using ChocolateyGet, which is a nice bridge until an official one is implemented. No ETA has been defined.
 
-[PowerShell PackageManagement (aka OneGet)](https://github.com/OneGet/oneget) is a package manager ***aggregator*** that depends on the existence of package managers as providers to work, one of which is Chocolatey. For a pretty comprehensive post about what PackageManagement is and what it is not, see the PackageManagement Blog post on [10 things about OneGet that are completely different than you think](https://blogs.technet.microsoft.com/packagemanagement/2015/05/05/10-things-about-oneget-that-are-completely-different-than-you-think/).
+[PowerShell PackageManagement (aka OneGet)](https://github.com/OneGet/oneget) is a package manager ***aggregator*** that depends on the existence of package managers as providers to work, one of which is Chocolatey.
 
 ## PSDeploy
 
@@ -259,7 +259,7 @@ salt '*' chocolatey.install git
 
 ## System Center Configuration Manager
 
-Chocolatey integrates with SCCM by handling the software management, and pointing to [distribution points](https://technet.microsoft.com/en-us/library/bb680614.aspx) as the source for packages. This allows folks to get packages and larger binaries out to their network without constraints and still take advantage of Chocolatey's fantastic abilities!
+Chocolatey integrates with SCCM by handling the software management, and pointing to [distribution points](https://docs.microsoft.com/en-us/mem/configmgr/core/servers/deploy/configure/install-and-configure-distribution-points) as the source for packages. This allows folks to get packages and larger binaries out to their network without constraints and still take advantage of Chocolatey's fantastic abilities!
 
 To direct Chocolatey package installs, you can still write GPOs to ensure this.
 

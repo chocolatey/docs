@@ -6,7 +6,7 @@ RedirectFrom: docs/helpers-uninstall-chocolatey-environment-variable
 
 # Uninstall-ChocolateyEnvironmentVariable
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Uninstall-ChocolateyEnvironmentVariable.ps1 using https://github.com/chocolatey/choco/tree/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Uninstall-ChocolateyEnvironmentVariable.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 **NOTE:** Administrative Access Required when `-VariableType 'Machine'.`
 
@@ -123,4 +123,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-ChocolateyEnvironmentVariable -Full`.
 
-View the source for [Uninstall-ChocolateyEnvironmentVariable](https://github.com/chocolatey/choco/tree/stable/src/chocolatey.resources/helpers/functions/Uninstall-ChocolateyEnvironmentVariable.ps1)
+View the source for [Uninstall-ChocolateyEnvironmentVariable](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Uninstall-ChocolateyEnvironmentVariable.ps1)
