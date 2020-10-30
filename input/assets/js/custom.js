@@ -114,7 +114,7 @@ $.each($('blockquote'), function () {
 
 // Remove extra space from code blocks
 $.each($('code'), function () {
-    $(this).html($.trim($(this).text()));
+    $(this).html($.trim($(this).html()));
 });
 
 // Highlight code blocks
