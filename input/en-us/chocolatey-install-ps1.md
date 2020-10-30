@@ -14,7 +14,7 @@ It really is just PowerShell, so you can use regular PowerShell here and it shou
 If present in a package, the `ChocolateyInstall.ps1` script will be triggered at the following points:
 
 * When a package is installed for the first time, after the package contents have been extracted.
-* In an [Upgrade](./chocolatey-cli/commands/upgrade) scenario, the install script for the new package will be run after any `chocolateyBeforeModify.ps1` script associated with the previous version of the package.
+* In an [Upgrade](./choco/commands/upgrade) scenario, the install script for the new package will be run after any `chocolateyBeforeModify.ps1` script associated with the previous version of the package.
 
 ### Example?
 

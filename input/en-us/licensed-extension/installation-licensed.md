@@ -279,7 +279,7 @@ chocolateyfeature {'useRememberedArgumentsForUpgrades':
 }
 
 ## - LICENSED OPTIONS -
-### See https://docs.chocolatey.org/en-us/chocolatey-licensed-extension/installation-licensed
+### See https://docs.chocolatey.org/en-us/licensed-extension/installation-licensed
 
 file { ['C:/ProgramData/chocolatey','C:/ProgramData/chocolatey/license']:
   ensure => directory,

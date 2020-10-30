@@ -9,7 +9,7 @@ There are settings and features that can customize the way that Chocolatey works
 
 ## Config Settings
 
-Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" --value="'<value>'"` and set back to default with `choco config unset --name="'<nameFromBelow>'"`. For more information see [`choco config` command](./chocolatey-cli/commands/config) or run `choco config -?`.
+Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" --value="'<value>'"` and set back to default with `choco config unset --name="'<nameFromBelow>'"`. For more information see [`choco config` command](./choco/commands/config) or run `choco config -?`.
 
 ### General
 
@@ -76,7 +76,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 ## Features
 
-Features are adjusted using `choco feature enable|disable --name="'<nameFromBelow>'"`. For more information see [`choco feature` command](./chocolatey-cli/commands/feature) or run `choco feature -?`.
+Features are adjusted using `choco feature enable|disable --name="'<nameFromBelow>'"`. For more information see [`choco feature` command](./choco/commands/feature) or run `choco feature -?`.
 
 A checkbox means this feature is turned on by default.
 

@@ -8,7 +8,7 @@ RedirectFrom: docs/create-packages
 # Creating Chocolatey Packages
 
 ## Summary
-See [What are Chocolatey Packages?](../chocolatey-cli/getting-started#what-are-chocolatey-packages) first.
+See [What are Chocolatey Packages?](../choco/getting-started#what-are-chocolatey-packages) first.
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
@@ -366,7 +366,7 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](../chocolatey-cli/commands#how-to-pass-options-switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
+`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](../choco/commands#how-to-pass-options-switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
 You can also use the `-debug` switch on `choco install` to provide more information.
 

@@ -26,7 +26,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 **NOTES**:
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
- * Installing the licensed edition? See [install licensed edition](../chocolatey-licensed-extension/installation-licensed).
+ * Installing the licensed edition? See [install licensed edition](../licensed-extension/installation-licensed).
  * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](../troubleshooting)
 
 #### Install with cmd.exe
@@ -407,7 +407,7 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 ### Install with Puppet
 
-**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](../chocolatey-licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
+**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](../licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
@@ -646,7 +646,7 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
 
 ### Install licensed edition
 
-Please see [installation of licensed edition](../chocolatey-licensed-extension/installation-licensed).
+Please see [installation of licensed edition](../licensed-extension/installation-licensed).
 
 ### Installing behind a proxy
 
@@ -775,7 +775,7 @@ try {
   # installed (.NET 4.5 is an in-place upgrade).
   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
 } catch {
-  Write-Warning 'Unable to set PowerShell to use TLS 1.2. This is required for contacting Chocolatey as of 03 FEB 2020. https://chocolatey.org/blog/remove-support-for-old-tls-versions. If you see underlying connection closed or trust errors, you may need to do one or more of the following: (1) upgrade to .NET Framework 4.5+ and PowerShell v3+, (2) Call [System.Net.ServicePointManager]::SecurityProtocol = 3072; in PowerShell prior to attempting installation, (3) specify internal Chocolatey package location (set $env:chocolateyDownloadUrl prior to install or host the package internally), (4) use the Download + PowerShell method of install. See https://docs.chocolatey.org/en-us/chocolatey-cli/installation for all install options.'
+  Write-Warning 'Unable to set PowerShell to use TLS 1.2. This is required for contacting Chocolatey as of 03 FEB 2020. https://chocolatey.org/blog/remove-support-for-old-tls-versions. If you see underlying connection closed or trust errors, you may need to do one or more of the following: (1) upgrade to .NET Framework 4.5+ and PowerShell v3+, (2) Call [System.Net.ServicePointManager]::SecurityProtocol = 3072; in PowerShell prior to attempting installation, (3) specify internal Chocolatey package location (set $env:chocolateyDownloadUrl prior to install or host the package internally), (4) use the Download + PowerShell method of install. See https://docs.chocolatey.org/en-us/choco/installation for all install options.'
 }
 
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))

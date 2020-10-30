@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 40
 Title: Client
 Description: How to setup client machines to report into CCM
 RedirectFrom: docs/central-management-setup-client

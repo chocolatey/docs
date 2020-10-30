@@ -101,7 +101,7 @@ Requirements coming soon. Just imagine normal recommendations for an ASP.NET IIS
 
 ## Using Chocolatey
 
-Now that you have Chocolatey on your machine ([need to install?](../chocolatey-cli/installation)), you can run several commands.
+Now that you have Chocolatey on your machine ([need to install?](./installation)), you can run several commands.
 
 Take a look at the [command reference](./commands). We are going to be using the [install command](./commands/install).
 
