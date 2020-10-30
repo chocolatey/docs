@@ -264,8 +264,9 @@ And then try accessing the website again.  Any emails that are then sent from CC
 > 📝 **Note**
 >
 > In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
-> an email address must be configured on the properties of the Active Directory user you are
-> attempting to use for login.
+> an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are
+> attempting to use for login. If any of these fields are empty, errors will be encountered when attempting to login
+> to the Central Management application.
 >
 
 ![CCM LDAP Setup](/assets/images/features/ccm/ccm_ldap_setup.png)
