@@ -104,7 +104,7 @@
                                                             <li class="nav-item">
                                                                 <div class="nav-link nav-link-collapse d-flex @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
                                                                     <div class="btn btn-collapse pl-c2 collapsed" role="button" data-toggle="collapse" aria-expanded="false" href="#id-@child.Id"></div>
-                                                                    <a href="@document.GetLink()">@child.GetTitle()</a>
+                                                                    <a href="@child.GetLink()">@child.GetTitle()</a>
                                                                 </div>
                                                                 <div class="collapse" id="id-@child.Id">
                                                                     <ul class="navbar-nav">
