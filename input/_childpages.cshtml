@@ -2,7 +2,7 @@
 {
 <h2 class="title-child d-none">Child Pages</h2>
 <div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
-	@foreach (IDocument child in OutputPages.GetChildrenOf(Document))
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyVisible())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
 
