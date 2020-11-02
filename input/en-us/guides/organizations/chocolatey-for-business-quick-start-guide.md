@@ -7,7 +7,7 @@ RedirectFrom: docs/chocolatey-for-business-quick-start-guide
 
 Thank you for choosing Chocolatey as your partner in Windows software automation management. We are excited to help you dive in and successfully implement a deployment of all the necessary components.
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
 > It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
@@ -86,7 +86,7 @@ As with configuration managers, this is out-of-scope for this document. Generall
     choco install chocolatey-c4b-quickstart --source . -y --params "'/LicenseFile:<FULL_PATH_TO_LICENSE_FILE>'"
     ```
 
-    > 📝 **NOTE**: We have built this package to SIMPLIFY the initial setup greatly; it will perform the following:
+    > :memo: **NOTE**: We have built this package to SIMPLIFY the initial setup greatly; it will perform the following:
     > <ul class="list-style-type-disc">
     >   <li>Download appropriate ".nupkg" files needed to setup Chocolatey.</li>
     >   <li>Install the license file in the correct directory</li>
@@ -129,7 +129,7 @@ As recommended, we will assume you have access to the internet from this server.
     choco install nexus-repository -y --no-progress
     ```
 
-    > ⚠️ **WARNING**
+    > :warning: **WARNING**
     >
     > If you have already installed your Nexus repository, then the above step is not required.
     > This guide assumes you are starting form scratch. It may be easier, if you are following this verbatim and don't have anything in your repositoryyet, to simply run `choco uninstall nexus-repository -y` and then `choco install nexus-repository -y`.

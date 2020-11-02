@@ -45,7 +45,7 @@ This makes for happy users and happy admins as they are able to move quicker tow
 
 [![Chocolatey's Self-Service Installer - Part 2](/assets/images/features/features_selfservice_video2.jpg)](https://www.youtube.com/watch?v=BnnAwFftUwU "Chocolatey's Self-Service Installer - Part 2")
 
-> 📝 **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 Consider the following image:
 
@@ -363,7 +363,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 Please see [Central Management Client Setup](../central-management/setup/client) for details.
 
-> 📝 **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
+> :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
 ### Log File Location For Chocolatey Agent
 

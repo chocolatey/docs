@@ -12,7 +12,7 @@ At the end of this, we should have a fully ready to go SQL Server:
 * Database package deployed creating the database
 * Permissions added
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
@@ -20,7 +20,7 @@ At the end of this, we should have a fully ready to go SQL Server:
 
 * SQL Server
 
-> 📝 **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
+> :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 CCM will not install or take a dependency on a database engine install as there are different editions that could be installed and multiple packages out there. At this time, it is expected that you have this ready. This is required before you can continue to other steps.
 
@@ -28,7 +28,7 @@ CCM will not install or take a dependency on a database engine install as there 
 * SQL Server should support mixed mode for logins (unless you are going to use AD authentication). 98% of the time you are going to want mixed mode authentication for SQL Server unless you hit options.
 * You need to create the user access to the database (logins at the server level/users at the db level).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > SQL Server Mixed Mode Authentication is what you will want for ease of installation. If you decide you need to go Windows Authentication (aka integrated security), you ***will*** need to ensure the following addtional items:
 > * **You *must* have active directory** - Full stop. Local machine accounts can not authenticate to remote machines (nor SQL Server instances on remote machines).
@@ -37,7 +37,7 @@ CCM will not install or take a dependency on a database engine install as there 
 >    * ***!!Security!!*** - As part of installation, an account will be made a member of the `BUILTIN\Administrators` group on the machine where the service is installed. Ensure that is ***not*** the same machine where SQL Server is installed or that account will immediately be a member of the `sysadmin` role by default in SQL Server (until removed).
 > * **Central Management Web installation** - You'll need to use an Active Directory (LDAP) account. See the install options for how to pass that through to be set with the IIS Application Pool.
 >
-> 📝 Incorrect credentials to the database is 90% of support tickets related to Central Management.
+> :memo: Incorrect credentials to the database is 90% of support tickets related to Central Management.
 >
 >Unless you are an expert in hooking things up to SQL Server, its probably best to stick with SQL Server Mixed Mode Authentication.
 > See https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server
@@ -78,7 +78,7 @@ We've prepared a handy script (that may turn into a package later) to help you e
 
 The following is a script for SQL Server Express. You may be configuring a default instance. This should be run on the computer that has SQL Server Express installed as it will have the right binaries necessary for accessing SQL Server programmatically.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > This script is SQL Server version dependent! Please see the TODO in the script below and adjust accordingly.
 
@@ -141,11 +141,11 @@ The Central Management Database package
 * Migrates the database code (`DDL/DML`) to bring it up to the current version
 * That's it.
 
-> ⚠️ **WARNING**: CCM packages do ***NOT*** install SQL Server. You must take care of that in the prerequisites. Do not even start on central management installs until you have a SQL Server instance up and ready. I repeat, SQL Server engine must be already installed.
+> :warning: **WARNING**: CCM packages do ***NOT*** install SQL Server. You must take care of that in the prerequisites. Do not even start on central management installs until you have a SQL Server instance up and ready. I repeat, SQL Server engine must be already installed.
 
 The CCM database package will add or update a database to an existing SQL Server instance.
 
-> 📝 **NOTE**: When you run this package installation, you will want to do so as integrated security, or with Windows Authentication. When you run the other two package installations, you will want to do so providing a connection string.
+> :memo: **NOTE**: When you run this package installation, you will want to do so as integrated security, or with Windows Authentication. When you run the other two package installations, you will want to do so providing a connection string.
 
 ### Package Parameters
 
@@ -154,7 +154,7 @@ The CCM database package will add or update a database to an existing SQL Server
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 * `/SkipDatabasePermissionCheck` - By default, a check will be completed to ensure that the installing user has access to create a new database, based on the provided/computed connection string. If this check isn't required, for example, the database has already been created or permissions will error, this step can be skipped using this parameter. Available with CCM v0.2.0+.
 
-> 📝 **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
+> :memo: **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Scenarios
 
@@ -168,11 +168,11 @@ Scenario 1: You have set up the database to use Windows Authentication (or Mixed
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString=Server=Localhost;Database=ChocolateyManagement;Trusted_Connection=true;'"
 ```
 
-> 📝 **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running the process, whether that be a domain account or a local Windows account.
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running the process, whether that be a domain account or a local Windows account.
 
-> 📝 **NOTE**: You can use `--package-parameters` and/or `--package-parameters-sensitive` here, depending on whether you are specifying things that should not be logged (`--package-parameters-sensitve` is guaranteed to stay out of logs).
+> :memo: **NOTE**: You can use `--package-parameters` and/or `--package-parameters-sensitive` here, depending on whether you are specifying things that should not be logged (`--package-parameters-sensitve` is guaranteed to stay out of logs).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
 >
@@ -184,7 +184,7 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString=Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;'"
 ```
 
-> 📝 **NOTE**: The above warnings and notes apply here as well.
+> :memo: **NOTE**: The above warnings and notes apply here as well.
 
 ##### Use Active Directory Account to Remote SQL Server
 
@@ -194,25 +194,25 @@ Scenario 2: You have set up the database to use Windows Authentication (or Mixed
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString=Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=true;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > SLOW DOWN right here.
 >
 > We recommend keeping the package installations on the same machine that SQL Server is in. It will reduce confusion and increase the accuracy of reporting. Run the installs/upgrades on the machine they apply to, so this should be the same machine that contains SQL Server (if on Windows).
 >
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
 >
 > **Upgrades**: Please ensure the user running the package installation has been granted `db_owner` access to an existing database.
 
-> 📝 **NOTE**: This is not a normal scenario.
+> :memo: **NOTE**: This is not a normal scenario.
 
 ##### Use Local Windows Account to Remote SQL Server
 
 Scenario 3: you have set up the database to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here.
 >
@@ -222,7 +222,7 @@ We typically recommend you run installations and upgrades for the databse on the
 
 ##### Use Windows Account to Attach SQL Server
 
-> 📝 **NOTE**: This is not a normal scenario, and it is not a good idea.
+> :memo: **NOTE**: This is not a normal scenario, and it is not a good idea.
 
 Scenario 4: You are using AttachDBFile or User Instance in your Connection String. This is effectively asking to attach a database file to the User's Data directory.
 
@@ -230,7 +230,7 @@ Scenario 4: You are using AttachDBFile or User Instance in your Connection Strin
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString:Data Source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|SomeDbFile.mdf;User Instance=true;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here. This is an unsupported scenario.
 >
@@ -247,7 +247,7 @@ Scenario 5: The database has been setup to use Mixed Mode Authentication. Someon
 choco install chocolatey-management-database -y --package-parameters="'/SkipDatabasePermissionCheck'" --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
 >
@@ -259,11 +259,11 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 choco install chocolatey-management-database -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> 📝 **NOTE**: The above warnings and notes apply here as well.
+> :memo: **NOTE**: The above warnings and notes apply here as well.
 
 ##### Use SQL Server Account to Remote SQL Server
 
-> 📝 **NOTE**: This is not a normal scenario.
+> :memo: **NOTE**: This is not a normal scenario.
 
 Scenario 6: The database has been setup to use Mixed Mode Authentication. Someone has already precreated the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been precreated. Now you want to install the package on a different machine than where the sql server instance is located.
 
@@ -271,13 +271,13 @@ Scenario 6: The database has been setup to use Mixed Mode Authentication. Someon
 choco install chocolatey-management-database -y --package-parameters="'/SkipDatabasePermissionCheck'" --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > SLOW DOWN right here.
 >
 > We recommend keeping the package installations on the same machine that SQL Server is in. It will reduce confusion and increase the accuracy of reporting. Run the installs/upgrades on the machine they apply to, so this should be the same machine that contains SQL Server (if on Windows).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
 >
@@ -287,7 +287,7 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 
 Once we have the database, we can create logins and map those logins to users in the database.
 
-> ⚠️ **WARNING**: CCM packages do ***NOT*** configure SQL Server access either.
+> :warning: **WARNING**: CCM packages do ***NOT*** configure SQL Server access either.
 
 The difference between a login and a user when it comes to SQL Server accounts has long confused folks. Simply put:
 

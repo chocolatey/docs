@@ -5,7 +5,7 @@ Description: How to deploy packages, and execute PowerShell, on client machines
 RedirectFrom: docs/central-management-deployments
 ---
 
-> ⚠️ **WARNING**: This is a Work in Progress. Please check back later.
+> :warning: **WARNING**: This is a Work in Progress. Please check back later.
 >
 > Please see https://chocolatey.org/blog/announcing-deployments for now.
 
@@ -23,14 +23,14 @@ You will also need to have at least one Group of computers already defined.
 1. From the Central Management dashboard, select `Deployments` from the left sidebar.
 
    ![Central Management dashboard, arrow pointing to Deployments menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
-1. Select the **:heavy_plus_sign: Create New Deployment** button at the top of the page.
+1. Select the :heavy_plus_sign: **Create New Deployment** button at the top of the page.
 
    ![CCM Deployments page, arrow pointing to Create New Deployment button](/assets/images/deployments/ccm-deployments-new-deployment-button.png)
 1. (Optional) Give the deployment a custom name by clicking the edit icon displayed next to it and entering a new name.
    Press **Enter** to save the new name.
 
    ![CCM New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
-1. (Optional) Add a schedule by selecting the **:heavy_plus_sign: Add Schedule** button.
+1. (Optional) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
 
    ![CCM New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
    1. Enter a date and time, or click the :calendar: button to pick the date and time from a calendar UI.
@@ -39,7 +39,7 @@ You will also need to have at least one Group of computers already defined.
    1. (Optional) If you'd like to define a maintenance window for the deployment start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
 
    ![CCM deployment maintenance window option](/assets/images/deployments/ccm-deployments-maintenance-window.png)
-1. Select **:heavy_plus_sign: Add Step** to add your first deployment step.
+1. Select :heavy_plus_sign: **Add Step** to add your first deployment step.
 
    ![CCM deployment add step button](/assets/images/deployments/ccm-deployments-add-step.png)
 1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the deployment step.
@@ -69,11 +69,11 @@ You will also need to have at least one Group of computers already defined.
    You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
 
    ![CCM deployment step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
-1. Click the **:floppy_disk: Save** button to save the step.
+1. Click the :floppy_disk: **Save** button to save the step.
 
    ![CCM deployment step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
 1. Continue to add steps until your deployment is complete.
-1. Select **:floppy_disk: Save** to save the changes to the deployment.
+1. Select :floppy_disk: **Save** to save the changes to the deployment.
 
 ## Deployment States
 
@@ -87,7 +87,7 @@ While it is in the `Draft` state, it cannot be run, and scheduled deployment sta
 Once the deployment enters the `Ready` state, it's eligible to be started.
 Deployments in this state can be started manually or according to a schedule.
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > Any further modifications to a deployment in this state will revert it back to the `Draft` state.
 
@@ -208,7 +208,7 @@ To configure this, you can set the `Machine Contact Timeout in Minutes` value in
 This value must be positive, or zero (which is treated as infinite).
 You may want to configure this only for the first step of a deployment, or for multiple steps if you expect the target machines to be connected/disconnected over the course of the deployment.
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > If the deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first deployment step is ignored.
 > In this case, the maintenance window defines the contact timeout for the first step.

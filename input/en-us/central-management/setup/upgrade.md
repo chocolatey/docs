@@ -7,25 +7,25 @@ RedirectFrom: docs/central-management-setup-upgrade
 
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
-> 📝 **NOTE**: Looking for installation instructions? See [Central Management Setup](../setup).
+> :memo: **NOTE**: Looking for installation instructions? See [Central Management Setup](../setup).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
 ## Step 1: Download Latest Packages
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > Make sure you have read over the [CCM Compability Matrix](../#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 Similar to how we internalized in [Setup - Internalize Packages](../setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Complatibility Matrix](../#ccm-component-compatibility-matrix).
 
-> ⚠️ **TRIALS**: You need to ***first reach out*** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
+> :warning: **TRIALS**: You need to ***first reach out*** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
@@ -51,54 +51,54 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Upgrade Central Management Database
 
-> 📝 **NOTE**: Please see [Central Management Database Setup](./database) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Database Setup](./database) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-database -y
 ```
 
-> ⚠️ **WARNING** If you are using QDE and receive an error about deserializing and padding, see the resolution below.
+> :warning: **WARNING** If you are using QDE and receive an error about deserializing and padding, see the resolution below.
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-> 📝 **NOTE**: Please see [Central Management Service Setup](./service) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Service Setup](./service) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-service -y
 ```
 
-> ⚠️ **WARNING**: If you passed non-default options for any of the following:
+> :warning: **WARNING**: If you passed non-default options for any of the following:
 > * `/Username:` / `/Password:` / `/EnterPassword`
 > * `/PortNumber:`
 >
 > You ***will need to pass*** those items again for upgrades in current releases of CCM.
 
 
-> ⚠️ **WARNING**: If you passed a non-default option for the following:
+> :warning: **WARNING**: If you passed a non-default option for the following:
 > * `/CertificateDnsName:` / `/CertificateThumbprint:`
 >
 > You ***may need to pass*** those items again under the following conditions:
 > * Your certificate's DNS name does not match `<hostname>*`(a certficate that at least starts with the hostname).
 
-> 📝 **NOTE**: Database details that have not changed will not need to be passed.
+> :memo: **NOTE**: Database details that have not changed will not need to be passed.
 
 There may be additional (new) things you will want to configure. Please see [Central Management Service Setup](./service) for details.
 
 ## Step 4: Setup Central Management Website
 
-> 📝 **NOTE**: Please see [Central Management Web Setup](./website) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Web Setup](./website) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-web -y
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > You may need to adjust permissions/roles for your user if not using the default `ccmadmin` account. Please see the roles and permissions your account has versus what is available in `Administration -> Users`.
 
 ## Step 5: Upgrade Agent Machines
 
-> 📝 **NOTE**: Please see [Central Management Client Setup](./client) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Client Setup](./client) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-agent -y
@@ -106,9 +106,9 @@ choco upgrade chocolatey-agent -y
 
 There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](./client) for details.
 
-> 📝 **NOTE**: This could include the agent(s) on the CCM machine(s).
+> :memo: **NOTE**: This could include the agent(s) on the CCM machine(s).
 
-> ⚠️ **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### New Deployments Feature Example
 
@@ -119,7 +119,7 @@ As an example, configuring using Deployments would have the folllowing:
 choco feature enable --name="'useChocolateyCentralManagementDeployments'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > As these features have security considerations (it is enabling cross-machine communication), they must be turned on explicitly.
 > If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword`.

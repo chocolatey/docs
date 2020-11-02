@@ -35,7 +35,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
  * Service Install - Allow skipping certificate binding with package parameter /SkipCertificateBinding
  * Include CreationTime property on Deployment Plan entity - useful when querying via CCM API
  * Web - Deployments UI - Add Deployment Step modal window should default to basic view
- 
+
 ## 0.3.0 (June 25, 2020)
 ### BREAKING CHANGES
  * Chocolatey Central Management v0.3.0 will only work with Chocolatey Agent v0.11.0+. Upgrade order doesn't matter as you'll need to be on CCM v0.3.0 and Agent v0.11.0 before things start working again. See https://docs.chocolatey.org/en-us/central-management/#ccm-component-compatibility-matrix.
@@ -48,7 +48,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## 0.2.0 (June 18, 2020)
 Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://chocolatey.org/blog/announcing-deployments). We've also overhauled the documentation to make it understandable and approachable. Please see https://docs.chocolatey.org/en-us/central-management/.
 
-> 📝 **NOTE**: Log locations have changed. Please see [Central Management FAQs](./#faqs) for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Central Management FAQs](./#faqs) for more information.
 
 ### FEATURES
 * [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments):

@@ -25,7 +25,7 @@ Please see [Central Management Client Setup](../setup/client) for more details a
 ## Viewing Installed Software on a Computer
 
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
-Select the **⚙️ Actions** menu in the corresponding right-hand column, and click **Details**.
+Select the **:gear: Actions** menu in the corresponding right-hand column, and click **Details**.
 
 ![Finding a computer's details menu option](/assets/images/computers/ccm-computers-details-menu.png)
 
@@ -35,12 +35,12 @@ You will be presented with a list of the installed software packages for the mac
 
 ## Removing a Computer from Central Management
 
-> ℹ️ **NOTE**
+> :information_source: **NOTE**
 >
 > Unless you first uninstall (at minimum) the `chocolatey-agent` or disable Central Management by disabling the feature setting, the deleted computer will reappear when the Chocolatey Agent performs its next check-in.
 
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
-Select the **⚙️ Actions** menu in the corresponding right-hand column, and click **Delete**.
+Select the **:gear: Actions** menu in the corresponding right-hand column, and click **Delete**.
 
 ![Deleting a computer in Central Management](/assets/images/computers/ccm-computers-delete-menu.png)
 

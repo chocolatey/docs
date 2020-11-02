@@ -25,11 +25,11 @@ There are some environment variables that need to be adjusted or removed.
 ## Script
 There are no warranties on this script whatsoever, but here is something you can try:
 
-> ⚠️ **WARNING!!**
+> :warning: **WARNING!!**
 >
 > This will remove Chocolatey and all packages, software, and configurations in the Chocolatey Installation folder from your machine. Everything will be GONE. This is very destructive. DO NOT RUN this script unless you completely understand what the intention of this script is and are good with it. If you mess something up, we cannot help you fix it.
 
-> ⚠️ ***WARNING***
+> :warning: ***WARNING***
 >
 > Seriously, this script may destroy your machine and require a rebuild. It may have varied results on different machines in the same environment. Think twice before running this.
 

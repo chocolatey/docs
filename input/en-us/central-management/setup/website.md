@@ -7,13 +7,13 @@ RedirectFrom: docs/central-management-setup-web
 
 This is the Central Management website that gives an API and a web layer to centrally manage information about your environment and manage endpoints with deployment tasks.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
 ## Step 1: Complete Prerequisites
 
-* > ⚠️ The [database](./database) must be setup and available, along with [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+* > :warning: The [database](./database) must be setup and available, along with [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 3+
 * .NET Framework 4.6.1+
@@ -39,7 +39,7 @@ choco pin add --name="'dotnetcore-windowshosting'" --version="'2.2.7'" --reason=
 
 ## Step 2: Install Central Management Web Package
 
-> 📝 **NOTE**: At this time we don't recommend opening internet access to CCM web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
+> :memo: **NOTE**: At this time we don't recommend opening internet access to CCM web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
 
 ### Package Parameters
 
@@ -90,7 +90,7 @@ Scenario 1: Active Directory - you have set up the [database](./database) to use
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
 ```
 
-> 📝 **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
 
 ##### Use Local Windows Account to Local SQL Server
 
@@ -102,7 +102,7 @@ Scenario 2: Monolithic - you have set up the [database](./database) to use Windo
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<LocalWindowsAccount>'" --package-parameters-sensitive="'/Password:<Local account password>'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -112,11 +112,11 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the user `IIS APPPOOL\ChocolateyCentralManagement` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
-> 📝 **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -126,7 +126,7 @@ You are using AttachDBFile or User Instance in your Connection String. This is e
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Data Source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|SomeDbFile.mdf;User Instance=true;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here. This is an unsupported scenario.
 >
@@ -137,7 +137,7 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 
 Scenario 3: you have set up the [database](./database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here.
 > This is an invalid scenario and will not work. Please look at one of the other options. If you don't have LDAP, you will want to look at [SQL Server Account Authentication](#sql-server-account-authentication) below.
@@ -154,7 +154,7 @@ Scenario 4: Monolithic - you are installing the management service on the same m
 choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -164,7 +164,7 @@ choco install chocolatey-management-web -y --package-parameters-sensitive="'/Con
 choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -176,7 +176,7 @@ Scenario 5: Split - you are installing the management service(s) on a server, an
 choco install chocolatey-management-web -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -216,7 +216,7 @@ You should received a notification similar to this:
 
 #### appsettings.json configuration
 
-> 📝 **NOTE**: In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
+> :memo: **NOTE**: In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
 
 There is a requirement within the CCM site to send emails to end users of the application.  For example, when registering a new user, or resetting a password.  To ensure that these emails contain a properly clickable link a modification needs to be made to the `appsettings.json` file which is located in the `c:\tools\chocolatey-management-web` folder.
 
@@ -230,7 +230,7 @@ Open this file in a text editor, and add the following entry:
 
 * `URL_to_CCM` should be the accessible URL to access the CCM Website.  This will typically be the FQDN of the server that is hosting the CCM Web Site, but it will depend on your environments configuration.
 
-> 📝 **NOTE**: When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.  i.e. the end result needs to be a properly formatted JSON document.
+> :memo: **NOTE**: When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.  i.e. the end result needs to be a properly formatted JSON document.
 
 The end result should look something like this:
 
@@ -246,7 +246,7 @@ And then try accessing the website again.  Any emails that are then sent from CC
 
 ### Step 4.3: LDAP Configuration
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > The Central Management Server must be joined to the Active Directory Domain.
 >
@@ -261,7 +261,7 @@ And then try accessing the website again.  Any emails that are then sent from CC
 1. Fill the `Password` field with the password for the active directory user name used above.
 1. Click the `Save All` button at the top right of the page to save your settings.
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
 > an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are
@@ -292,7 +292,7 @@ Here is a copy of items that can be set. They are not required to be encrypted. 
 }
 ```
 
-> ⚠️ **WARNING**:
+> :warning: **WARNING**:
 >
 > Recaptcha is likely to require a publicly available CCM Web, and we currently have a strong recommendation to ***NOT*** open up the web to the internet. You likely do not want to set this or turn it on inside the Administration -> Settings section. However if you do, you will NEED the items set here in the appsettings.json as well.
 
@@ -327,7 +327,7 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 
 1. Then restart the website by running from admin powershell: `Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process`
 
-> ⚠️ **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
+> :warning: **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
 
 ### Where is the management website installed?
 

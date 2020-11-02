@@ -7,13 +7,13 @@ RedirectFrom: docs/central-management-setup-service
 
 This is the service that the agents (chocolatey-agent) communicates with. You could install one or more of these depending on the size of your environment (not multiple on one machine though). The FQDN and certificate used determine what the URL will be for the agents to check into Central Management.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
 ## Step 1: Complete Prerequisites
 
-* > ⚠️ The [database](./database) must be setup and available, along with [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+* > :warning: The [database](./database) must be setup and available, along with [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 4+
 * .NET Framework 4.6.1+
@@ -28,7 +28,7 @@ choco install dotnet4.6.1 -y
 
 By default the service will install as a local administrative user `ChocolateyLocalAdmin` (and manage the password as well). However you can specify your own user with package parameters (such as using a domain account). You will need to specify credentials to the database as we'll see in scenarios below.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates. You want to make sure you have this correct and good. Otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid. As the service package could generate an SSL certificate if you don't pass an existing thumbprint, its best to ensure that time synchronization is not an issue with the machine you are installing this on.
 
@@ -70,7 +70,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 * `/SqlServerInstance:` - Instance name of the SQL Server database to connect to. Alternative to passing full connection string with `/ConnectionString`. Uses `/Database` (below) to build a connection string. Defaults to `<LOCAL COMPUTER FQDN NAME>`.
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 
-> 📝 **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
+> :memo: **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Service Settings
 
@@ -84,7 +84,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 * `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](../../features/chocolatey-central-management#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
-> ⚠️ **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### Chocolatey Managed Password
 
@@ -122,11 +122,11 @@ Scenario 1: Active Directory - you have set up the [database](./database) to use
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
-> 📝 **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Local Windows Account to Local SQL Server
 
@@ -138,7 +138,7 @@ Scenario 2: Monolithic - you have set up the [database](./database) to use Windo
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<LocalWindowsAccount>'" --package-parameters-sensitive="'/Password:<Local account password>'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -148,11 +148,11 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
-> 📝 **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -162,7 +162,7 @@ You are using AttachDBFile or User Instance in your Connection String. This is e
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Data Source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|SomeDbFile.mdf;User Instance=true;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here. This is an unsupported scenario.
 >
@@ -173,7 +173,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 Scenario 3: you have set up the [database](./database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > STOP right here.
 > This is an invalid scenario and will not work. Please look at one of the other options. If you don't have LDAP, you will want to look at [SQL Server Account Authentication](#sql-server-account-authentication) below.
@@ -190,7 +190,7 @@ Scenario 4: Monolithic - you are installing the management service on the same m
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -200,7 +200,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -212,7 +212,7 @@ Scenario 5: Split - you are installing the management service(s) on a server, an
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
 
@@ -277,7 +277,7 @@ netsh http add sslcert ipport=0.0.0.0:<port_number> certhash=<certificate_thumbp
 
 Unfortunately, it's not a supported scenario. If you are trying to load balance requests to CCM service, you should install multiple instances on multiple machines and point clients explicitly to an instance so they can work together. If you are trying to load balance other things on a machine and CCM service just happens to be there (like with QDE), move CCM service to a different machine or allow direct connections to the box for CCM.
 
-> 📝 **NOTE:** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
+> :memo: **NOTE:** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
 
 ### We want to set up the Chocolatey Central Management service to use a domain account that will have local admin on each box. Can we do this?
 
@@ -358,7 +358,7 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 1. You may find it all on a single line in the file, and that is okay.
 1. Then restart the service by running the following from an admin powershell session: `Get-Service chocolatey-management-service | Stop-Service; Get-Service chocolatey-management-service | Start-Service`
 
-> ⚠️ **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
+> :warning: **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
 
 ### Can we use an account for the service that is not a local administrator?
 

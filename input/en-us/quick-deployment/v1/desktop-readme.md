@@ -5,18 +5,18 @@ Description: Online copy of what ships on desktop of QDE v1 image
 RedirectFrom: docs/quick-deployment-desktop-readme-v1
 ---
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
 > If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](../setup/desktop-readme).
 
 This system has been pre-configured as a fully functioning C4B environment.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
 
-> 📝 **NOTE**: This is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see here, use this document.
+> :memo: **NOTE**: This is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see here, use this document.
 
 ## Summary
 
@@ -65,19 +65,19 @@ This will create the licensed package at `C:\choco-setup\packages` and push it u
 
 Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](./ssl-setup) for more details.
 
-> 📝 **NOTE**: Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**: Please run the below from an administrative PowerShell session.
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1
 ```
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > This script will seemingly prompt for input, and have other strange output.
 > This is due to poor Java tooling and console output which cannot be suppressed.
 > Just let things happen, as things are working as expected.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates. You want to make sure you have this correct and good. Otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid.
 
@@ -85,7 +85,7 @@ Once complete, this script will generate new SSL certificates for all services a
 
 ## Step 4: Enable Central Management
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This step should _only_ be completed once the license package has been created in the step above.
 > All licensed features are already installed, but will not be functional without a valid license file.
@@ -109,7 +109,7 @@ When you first log in to Nexus, you will immediately be asked you change your pa
 You will then be asked if you'd like to enable Anonymous Access to the repositories.
 We typically recommend doing this, unless security requirements in your organization stipulate that RBAC controls be in place.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If you plan to allow clients to connect in from outside your network (over the internet), please contact support for the right options.
 > There will be more work you'll need to do to limit access to specific repositories.
@@ -134,7 +134,7 @@ Our documentation can assist with ensuring this is done correctly.
 * Username: ccmadmin
 * Default Password: 123qwe (You will be prompted to change this on first login)
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > You will see 2 packages (aspnetcore-runtimepackagestore and dotnetcore-windowshosting) listed as outdated at version 2.2.7.
 > These packages have been pinned to that version, as they are required at that level for the current version of CCM to function correctly.
@@ -173,7 +173,7 @@ To help make pushing packages easier, the `choco apikey` command is available.
 This will store your API key for a specific source as part of Chocolatey's configuration.
 This will be encrypted. To setup, do the following:
 
-> 📝 **NOTE**: Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**: Please run the below from an administrative PowerShell session.
 
 ```powershell
 choco apikey add --key="'$YourApiKey'" --source="'https://chocoserver:8443/repository/ChocolateyInternal/'"
@@ -194,12 +194,12 @@ What does this do?
 * Switches execution policy to bypass for the internal script. This is only in the scope of this process and not permanent.
 * Calls Client setup script from the QDE environment (see below for what it does).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If your clients are airgapped or you have changed the hostname, you will need to find a different means to import the QDE Certificate.
 > Please reach out to support for options.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >
@@ -229,7 +229,7 @@ Example Usage:
 . C:\choco-setup\files\Invoke-ChocolateyInternalizer.ps1 -Packages adobereader,vlc,vscode -RepositoryUrl https://chocoserver:8443/repository/ChocolateyTest/ -RemoteRepo https://chocolatey.org/api/v2 -LocalRepoApiKey [REDACTED_API_KEY]
 ```
 
-> 📝 **NOTE**: Please run the above from an administrative PowerShell session.
+> :memo: **NOTE**: Please run the above from an administrative PowerShell session.
 
 ## Step 9: License the QDE VM
 
@@ -237,7 +237,7 @@ This VM is running an **UNACTIVATED** Server 2019 Standard Operating System. If 
 
 If you rely on Retail or MAK licensing, you will need to apply the license using the following, replacing the x's with your actual product key:
 
-> 📝 **NOTE**: Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**: Please run the below from an administrative PowerShell session.
 
 ```powershell
 slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx

@@ -37,7 +37,7 @@ The following are all of the Chocolatey components required for Central Manageme
 
 Central Management has specific needs that are mostly handled by packaging aspects. As the Chocolatey Agent and Central Management communicate with each other, there are some versions that may not be compatible with each other due to mistakes or fixes that needed to be implemented. This serves as a means of capturing that for you.
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > Central Management packages (all three) are treated as a singular unit, meaning all three packages across one or more machines must all be on the same version. Using different versions of Central Management packages (db, service, web) is completely unsupported and likely will not even work properly.
 
@@ -57,7 +57,7 @@ CCM is only available for Chocolatey for Business (C4B) customers. If you are a 
 
 If you are not a customer yet, you can [reach out for a trial](https://chocolatey.org/contact/trial).
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > Trials are limited to organizations. If you are personally wanting to work with CCM and other C4B components, you can purchase a C4B starter pack - see [pricing](https://chocolatey.org/pricing).
 
@@ -188,7 +188,7 @@ Remove-ItemProperty -Path "HKLM:\Software\Chocolatey" -Name "UniqueId" -Force
 
 Once you've removed this, you'll need to restart the Agent Service to get it regenerated.
 
-> ℹ️ You may ***also*** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
+> :information_source: You may ***also*** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
 
 ### An Internal error occurred during your request
 

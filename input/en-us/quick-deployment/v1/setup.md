@@ -5,7 +5,7 @@ Description: How to setup QDE v1
 RedirectFrom: docs/quick-deployment-setup-v1
 ---
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
 > If you're using a newer version of QDE, please refer to the [newer QDE Setup page](../setup).
@@ -13,7 +13,7 @@ RedirectFrom: docs/quick-deployment-setup-v1
 This document contains instructions for importing the QuickDeploy appliance/VM, or creating a VM and attaching the QuickDeploy disk image to it.
 You will receive a download link via email for an archive of the VM image. Once you have this downloaded, it will be ready for extraction and import into your environment.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please follow these steps in ***exact*** order. These will be very important later when you are trying to use the environment.
 
@@ -33,7 +33,7 @@ The following are points to keep in mind during initial setup:
 
 ### Step 0.1: QDE Rename Considerations
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > tl;dr: Think long and hard before changing the QDE hostname
 >
@@ -161,7 +161,7 @@ Video Summary:
 
 ### Platform: VMware (OVF template)
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > The OVF import method can be tricky. Unless you have the **exact** same network settings as the host where the OVF was exported, you will likely run into failures on attempts to import it. You _could_ workaround this by creating your own VM first, exporting the OVF file, using the Network settings from this file to replace the 2 sections of Network settings in the OVF of QDE, and then attempt to import the OVF for QDE. However, we realize this process is cumbersome, and would **strongly** advise you utilize the VMDK import method above for greatest compatibility. We are working to improve this process, but as of right now, the OVF method is to be used at your own risk.
 
@@ -188,9 +188,9 @@ You will likely need to reconfigure it with a static IP address depending on you
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
 A version of this readme file can be found in the [Quick Deployment Desktop Readme](./desktop-readme).
 
-> 📝 **NOTE**: The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
+> :memo: **NOTE**: The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
 
-> ⚠️ **WARNING**: If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
+> :warning: **WARNING**: If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
 
 ### Step 3.1: Expand Disk Size
 
@@ -207,7 +207,7 @@ Alternatively, you can use the Disk Management utility to expand the disk, if a 
 
 In the [Quick Deployment Desktop Readme](./desktop-readme), it is going to ask you to use the license file. That license file comes from an external location. It is best to copy/paste the file into QDE as a whole file, but you may have needed to set up any kind of extensions available for that.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If you find that you need to copy the text and paste the license file text into a new file in QDE, the file format and name is extremely important to get right. If you don't have UTF-8 or there is a space inserted, Chocolatey will consider it invalid.
 > Please contact support if you need help here.

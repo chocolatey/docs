@@ -22,7 +22,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ## 0.11.1 (October 5, 2020)
 ### BUG FIXES
  * Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script
- 
+
 ## 0.11.0 (June 25, 2020)
 ### BREAKING CHANGES
  * Chocolatey Agent v0.11.0 will only work with Central Management v0.3.0+. Upgrade order doesn't matter as you'll need to be on CCM v0.3.0 and Agent v0.11.0 before things start working again. See https://docs.chocolatey.org/en-us/central-management/#ccm-component-compatibility-matrix.
@@ -36,7 +36,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### BREAKING CHANGES
  * Chocolatey Agent v0.10.0 will only work with Central Management v0.2.0+. Please upgrade Central Management first if you are using CCM with the agent service.
 
-> 📝 **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../features/self-service-anywhere#log-file-location-for-chocolatey-agent) for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../features/self-service-anywhere#log-file-location-for-chocolatey-agent) for more information.
 
 ### FEATURES
  * Execution for Central Management Deployments

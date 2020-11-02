@@ -5,18 +5,18 @@ Description: How has the firewall on the QDE image been changed
 RedirectFrom: docs/quick-deployment-firewall-changes
 ---
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Firewall Changes page](../v1/firewall-changes).
 
 ## External Firewall Ports (Optional)
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > * Performing this incorrectly could cause security issues and possibly cause you to be subjected to copyright law/redistribution.
 >   Read all of this first.
->   Danger, Will Robinson! 🤖
+>   Danger, Will Robinson! :robot:
 > * DO NOT OPEN these ports externally until you have locked down your repositories to user/pass access and updated the script in the raw client repository.
 >   In QDE version 2.0, this can be done with the `Set-QDEnvironmentInternetSecurity.ps1` script that is provided with the VM, if you did not initially setup your QDE instance as internet enabled.
 

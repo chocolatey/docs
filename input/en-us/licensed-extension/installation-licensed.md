@@ -44,10 +44,10 @@ Here's the whole process for installing your license and installing the licensed
 
 ## How Do I Install The Licensed Edition?
 
-> 📝 **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
+> :memo: **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
 
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Order is ***VERY*** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
 
@@ -65,7 +65,7 @@ Here's the whole process for installing your license and installing the licensed
 
   ![install/upgrade](https://cloud.githubusercontent.com/assets/63502/13052159/e6d1be92-d3c2-11e5-8856-d7580e51e3b6.png)
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > **Organization?**
 > If you are an organization deploying the licensed edition, you may want to review [the organizational deployment guide](../guides/organizations/organizational-deployment-guide) in addition to this for options to deploy to more than one machine.
@@ -82,9 +82,9 @@ See the next section - the logic is quite similar.
 
 If you've received a trial license, you will also receive a link to download a recent version of the `chocolatey.extension` package. ***You will not be able to install or upgrade the licensed edition through regular means. Chocolatey may add the licensed source, but your license will not be recognized on the server.***
 
-> 📝 **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
+> :memo: **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Order is ***VERY*** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
 
@@ -121,7 +121,7 @@ To upgrade the licensed edition just run the following code:
 
 Your license automatically adds the licensed source.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If your license expires or you remove licensing and then run choco, it may remove all of your licensed configuration settings, so be prepared to add those settings again once you have a valid license.
 
@@ -148,7 +148,7 @@ From a machine that will have access to do this you simply run:
 
 You can even script this or add it to a CI job that would automatically make the newer edition available.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > The licensed source that is automatically added can be disabled, but it cannot be removed. So just run `choco source disable -n chocolatey.licensed` to disable it or set that up in your configuration management solution scripts. Some of them, like Puppet, have a resource dedicated strictly to this:
 
@@ -549,7 +549,7 @@ If that is successful, you are good to go. If not, check for other processes loc
 
 If neither of these have resolved the issue, the following steps should remedy the situation:
 
-> ⚠️ **WARNING**: Running choco in an unlicensed sense will reset/remove all licensed configuration.
+> :warning: **WARNING**: Running choco in an unlicensed sense will reset/remove all licensed configuration.
 
 * Make a backup of the `chocolatey.config` (typically at "C:\ProgramData\chocolatey\config\chocolatey.config").
 * Remove the license file - rename the `license` folder to `licensed` (typically at "C:\ProgramData\chocolatey\license").

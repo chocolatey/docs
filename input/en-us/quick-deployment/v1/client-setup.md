@@ -5,7 +5,7 @@ Description: How to setup a client machine to use QDE v1
 RedirectFrom: docs/quick-deployment-client-setup-v1
 ---
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
 > If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../setup/client-setup).
@@ -42,13 +42,13 @@ What does this do?
   This is only in the scope of this process and not permanent.
 * Calls Client setup script from the QDE environment (see below for what it does).
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If your clients are air-gapped or you have changed the hostname, you will need to find a different means to import the QDE Certificate.
 >
 > Please reach out to support for options.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >

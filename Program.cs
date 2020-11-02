@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Docs.Shortcodes;
 using Statiq.App;
 using Statiq.Common;
+using Statiq.Markdown;
 using Statiq.Web;
 
 namespace Docs
@@ -17,6 +18,7 @@ namespace Docs
             .AddSetting(WebKeys.GatherHeadingsLevel, 5)
             .ConfigureSite("chocolatey", "docs", "master")
             .ConfigureDeployment(deployBranch: "gh-pages")
+            .ConfigureTemplates(templates => ((RenderMarkdown)templates[MediaTypes.Markdown].Module).UseExtension(new Markdig.Extensions.Emoji.EmojiExtension()))
             .AddShortcode("Children", typeof(ChildrenShortcode))
             .AddPipelines()
             .RunAsync();

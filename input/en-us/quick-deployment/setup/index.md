@@ -5,7 +5,7 @@ Description: How to setup QDE
 RedirectFrom: docs/quick-deployment-setup
 ---
 
-> 📝 **NOTE**
+> :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Setup page](../v1/setup).
@@ -14,7 +14,7 @@ This document contains instructions for importing the QuickDeploy appliance/VM, 
 You will receive a download link via email for an archive of the VM image.
 Once you have this downloaded, it will be ready for extraction and import into your environment.
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Please follow these steps in ***exact*** order.
 > These will be very important later when you are trying to use the environment.
@@ -35,7 +35,7 @@ Keep the following points in mind during initial setup:
 
 ### Step 0.1: Changing the Hostname
 
-> ⚠️ **WARNING**
+> :warning: **WARNING**
 >
 > Renaming the QDE host needs to be completed prior to ANYTHING that is done on the QDE box.
 > It is recommended to use the default hostname unless you really need to change it.
@@ -64,7 +64,7 @@ If you choose to use the scripts provided inside the 7zip archive, there are a n
 
 #### Prerequisites
 
-> 📝 **Note**
+> :memo: **Note**
 > Note that having both the `Az` and `AzureRm` PowerShell modules installed side by side is not [supported](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-4.3.0#install-the-azure-powershell-module).
 > You can see if you have `AzureRm` installed by running `Get-Module -Name AzureRm -ListAvailable`.
 > If there is no output, it is not installed.
@@ -86,7 +86,7 @@ If you choose to use the scripts provided inside the 7zip archive, there are a n
   To find out if you have `azcopy` installed and which version, run `azcopy --version`.
   * To install AzCopy v10 or later, using Chocolatey run `choco install azcopy10 -y` or see the [Microsoft Docs](https://docs.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10#download-and-install-azcopy).
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > The scripts provided with the QDE virtual machine disk image have defaults that you need to ensure you are comfortable with and extensive help.
 > You can see the help, and the default, by running `Get-Help <SCRIPT-NAME> -full`.
@@ -127,7 +127,7 @@ Steps to create a QDE virtual machine in Azure:
 
 ### Platform: Hyper-V
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > Windows 10 and Windows Server 2016/2019 version of Hyper-V now come with built-in support for Hyper-V Integration Services, so they automatically get pushed to guest VMs.
 > In older versions of Hyper-V, you should see an option to `Insert Integration Services Setup Disk`.
@@ -233,7 +233,7 @@ You will likely need to reconfigure it with a static IP address depending on you
 
 ## Step 3: Virtual Environment Setup
 
-> ⚠️ **Warning**
+> :warning: **Warning**
 >
 > If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
 
@@ -255,7 +255,7 @@ In the [Quick Deployment Desktop Readme](./desktop-readme), you will be instruct
 You should already have been given a license file prior to downloading QDE.
 We generally recommend you copy the file into the VM directly, if possible.
 
-> ⚠️ **Warning**
+> :warning: **Warning**
 >
 > If you find that you need to copy the file contents in order to get the license file text into a new file in QDE, the file format and name is extremely important to get right.
 > If you don't save the file in UTF-8 encoding or there is extra whitespace, Chocolatey will consider it invalid.
@@ -267,7 +267,7 @@ We generally recommend you copy the file into the VM directly, if possible.
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
 A version of this readme file can be found in the [Quick Deployment Desktop Readme](./desktop-readme).
 
-> 📝 **Note**
+> :memo: **Note**
 >
 > The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials).
 > If there are conflicts between the desktop readme and what you see online, prefer the online version.
