@@ -54,12 +54,20 @@
                 }
 
                 .btn-collapse {
-                    padding: $spacer 0 0 $spacer;
+                    padding: $spacer 0 $spacer $spacer;
 
                     &:before {
                         color: $gray-900;
                         color: var(--text);
                         transition: $theme-transition;
+                    }
+
+                    &:focus {
+                        box-shadow: none;
+
+                        &:before {
+                            color: $primary;
+                        }
                     }
                 }
             

@@ -91,8 +91,8 @@
 
                                     @if(documentChildren.Any()) {
                                         <li class="nav-item">
-                                            <div class="nav-link nav-link-collapse d-flex @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
-                                                <div class="btn btn-collapse collapsed" role="button" data-toggle="collapse" aria-expanded="false" href="#id-@document.Id"></div>
+                                            <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
+                                                <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@document.Id" aria-label="collapse or expand navigation" href="#id-@document.Id"></button>
                                                 <a href="@document.GetLink()">@document.GetTitle()</a>
                                             </div>
                                             <div class="collapse" id="id-@document.Id">
@@ -102,8 +102,8 @@
                                                         @if(OutputPages.GetChildrenOf(child).Any())
                                                         {
                                                             <li class="nav-item">
-                                                                <div class="nav-link nav-link-collapse d-flex @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
-                                                                    <div class="btn btn-collapse pl-c2 collapsed" role="button" data-toggle="collapse" aria-expanded="false" href="#id-@child.Id"></div>
+                                                                <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
+                                                                    <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
                                                                     <a href="@child.GetLink()">@child.GetTitle()</a>
                                                                 </div>
                                                                 <div class="collapse" id="id-@child.Id">
