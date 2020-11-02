@@ -1,0 +1,71 @@
+#cookieNoticeAlert {
+    z-index: 99999;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        color: color-yiq($value);
+
+        a {
+            color: color-yiq($value);
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.alert-dismissible-center {
+    display: block;
+    text-align: center;
+    font-size: $small-font-size;
+    padding: .5rem 2.5rem .5rem 15px;
+
+    &.alert-btn-center {
+        padding: 0.5rem 15px;
+    }
+
+    .close {
+        padding: .42rem 15px;
+    }
+
+    .btn {
+        margin-top: $spacer;
+        width: 100%;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .alert-dismissible-center {
+        padding: 0.5rem 15px;
+
+        .btn {
+            width: 50%;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .alert-dismissible-center {
+        text-align: center;
+        font-size: $font-size-base;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        .close {
+            padding: .55rem 15px;
+        }
+
+        .btn {
+            width: auto;
+            margin-top: 0;
+            margin-left: $spacer;
+        }
+    }
+}
