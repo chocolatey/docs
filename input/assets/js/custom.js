@@ -289,7 +289,7 @@ function getLeftSidebarNavHeight() {
                 topNoticeAlertHeight = 0;
             }
 
-            leftSidebarNavHeight = $(document).height() - (topNoticeAlertHeight + $('#topNav').outerHeight(true) + $('footer').outerHeight(true)) + 'px';
+            leftSidebarNavHeight = $(document).height() - (topNoticeAlertHeight + $('#globalNav').outerHeight(true) + $('#topNav').outerHeight(true) + $('footer').outerHeight(true)) + 'px';
 
             leftSidebarNav.css('height', leftSidebarNavHeight);
         }

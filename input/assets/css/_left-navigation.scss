@@ -1,5 +1,5 @@
 #leftSidebarNav {
-    top: -54px;
+    top: -54px; // TODO: Search- May need adjusted when search box is added in
     background: $white;
     background: var(--background-light);
     transition: $theme-transition;
@@ -8,17 +8,19 @@
     .navbar {
         .navbar-toggler {
             position: absolute;
-            top: -55px;
-            right: 14px;
-            font-size: $font-size-base;
+            top: -58.5px;
+            right: 15px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            padding: 0.375rem 0.75rem;
             background: $gray-100;
-            background: var(--background);
+            background: var(--background-light);
             border: 1px solid $gray-300;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-secondary);
             transition: $theme-transition;
         }
 
-        .navbar-nav {
+        .navbar-nav, .global-nav {
             flex-direction: column;
             width: 100%;
         }
@@ -124,6 +126,12 @@
                 }
             }
         }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #leftSidebarNav .global-nav {
+        display: none;
     }
 }
 

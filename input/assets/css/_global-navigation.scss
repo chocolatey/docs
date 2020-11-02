@@ -1,0 +1,41 @@
+#globalNav {
+    display: none;
+}
+
+@include media-breakpoint-up(sm) {
+    #globalNav {
+        display: flex;
+        padding: $spacer / 2 0;
+        background: $primary-opacity;
+        border-bottom: 1px solid $gray-300;
+        border-bottom: 1px solid var(--border);
+        transition: $theme-transition;
+
+        .global-nav {
+            justify-content: flex-end;
+
+            .nav-item {
+                .nav-link {
+                    font-weight: bold;
+                    padding: 0;
+                }
+
+                &:not(:last-child) {
+                    padding-right: $spacer;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    #globalNav {
+        .global-nav {
+            .nav-item {
+                &:not(:last-child) {
+                    padding-right: $spacer * 2;
+                }
+            }
+        }
+    }
+}
