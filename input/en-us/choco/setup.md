@@ -1,4 +1,5 @@
 ---
+xref: setup-choco
 Order: 20
 Title: Setup / How to install
 Description: Techniques for how to install Chocolatey

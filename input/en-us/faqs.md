@@ -123,7 +123,7 @@ Please see [licensed editions](#licensed-editions) section below.
 
 ### Does Chocolatey require administrative permissions to run?
 
-It does by default - based on where it is installed. However there is an non-administrative installation for Chocolatey under More Options at [installation](./choco/installation). Do keep in mind that there is pass through to what packages are doing that makes a determination for whether the package needs administrative permissions, and Chocolatey works within the context of Windows permissions, so you are not going to get around that (aside from what is provided with self-service, see question below).
+It does by default - based on where it is installed. However there is an non-administrative installation for Chocolatey under More Options at [installation](xref:setup-choco). Do keep in mind that there is pass through to what packages are doing that makes a determination for whether the package needs administrative permissions, and Chocolatey works within the context of Windows permissions, so you are not going to get around that (aside from what is provided with self-service, see question below).
 
 ### I would like to be able to offer my non-admin desktop users an option for self-service type of installations.
 

@@ -33,7 +33,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 
 ## Using Chocolatey
 
-- [Installing Chocolatey](./choco/installation)
+- [Installing Chocolatey](xref:setup-choco)
 - [Uninstalling Chocolatey](./choco/uninstallation)
 - [Getting Started](./choco/getting-started)
 - [Command Reference](./choco/commands)
