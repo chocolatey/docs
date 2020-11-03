@@ -81,7 +81,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 - Chocolatey is building on technologies you may already know:
   - PowerShell - take full advantage of PowerShell.
   - Unattended installations / Silent installation
-- Extend Chocolatey easily with PowerShell modules called [extension packages](./features/create-extensions).
+- Extend Chocolatey easily with PowerShell modules called [extension packages](xref:extensions).
 - Use [Package Builder](./features/package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
 - Use [Package Internalizer](./guides/create/recompile-packages) to internalize existing community packages quickly.
 
