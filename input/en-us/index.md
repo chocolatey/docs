@@ -37,7 +37,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 - [Uninstalling Chocolatey](./choco/uninstallation)
 - [Getting Started](./choco/getting-started)
 - [Command Reference](./choco/commands)
-- Use Chocolatey to set up [source code development environments](./guides/using/development-environment-setup)!
+- Use Chocolatey to set up [source code development environments](./guides/usage/development-environment-setup)!
 - What distinction does Chocolatey make between an [installable and a portable application](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
 
 ## Create Packages
