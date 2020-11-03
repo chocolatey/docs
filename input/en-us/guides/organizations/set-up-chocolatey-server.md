@@ -13,7 +13,7 @@ RedirectFrom: docs/how-to-set-up-chocolatey-server
 
 The [Chocolatey.Server package](https://chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
 
-**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](../../features/how-to-host-feed) for those options.
+**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](xref:host-packages-internally) for those options.
 
 ## Links
 
