@@ -1,4 +1,5 @@
 ---
+xref: integrations
 Order: 60
 Title: Integrates with everything
 Description: Information on how Chocolatey can integrate with almost every tool

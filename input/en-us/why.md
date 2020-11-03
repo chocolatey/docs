@@ -18,7 +18,7 @@ Chocolatey builds on technologies that are familiar:
 
 We didn't try to reinvent the wheel with Chocolatey. We are building on technologies you know, technologies you may have been using for years. It's going to feel good knowing that time you have spent working with software deployment plugs right into Chocolatey in a much better and more manageable way. Welcome to sane software management. With those familiar technologies, Chocolatey brings the concepts of true package management to allow you to version things, manage dependencies and installation order, better inventory management, and other features.
 
-Chocolatey also integrates with [infrastructure management tools (like Puppet, Chef or SCCM)](./features/infrastructure-automation) and other remote administration tools (like LabTech or LANDesk).
+Chocolatey also integrates with [infrastructure management tools (like Puppet, Chef or SCCM)](xref:integrations) and other remote administration tools (like LabTech or LANDesk).
 
 You are going to find the simplicity and absolute power of Chocolatey reinvigorating for Windows software deployments. Yes, we know that is a bold statement. Yes, we have hundreds of organizations and thousands of individuals that use Chocolatey that will back that statement up.
 

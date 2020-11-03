@@ -22,7 +22,7 @@ This is where internalizing/recompiling existing community packages comes in. In
 Internalizing a Chocolatey package at a high level involves:
 
  1. Downloading and unpacking the existing package as a zip file.
- 1. Downloading the resources the package has and putting them in the package or somewhere internal ([UNC, internal Http repository, DFS](xref:host-packages-internally), [SCCM Distribution point](../../features/infrastructure-automation), etc).
+ 1. Downloading the resources the package has and putting them in the package or somewhere internal ([UNC, internal Http repository, DFS](xref:host-packages-internally), [SCCM Distribution point](xref:integrations), etc).
  1. Editing the install script to point to the internal/embedded software.
  1. Packaging it back up (recompiling).
  1. Pushing it to your internal server.
