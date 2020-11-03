@@ -49,7 +49,7 @@ See the More Options section of [installation](./choco/installation#more-install
 
 ## Licensed Installation and Issues
 
-See [licensed installation](./licensed-extension/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
+See [licensed installation](xref:setup-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
 
 ## Creating Packages
 

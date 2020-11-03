@@ -1,4 +1,5 @@
 ---
+xref: setup-licensed
 Order: 20
 Title: Setup / How to install licensed edition
 Description: Techniques for how to install the licensed version of Chocolatey
@@ -279,7 +280,7 @@ chocolateyfeature {'useRememberedArgumentsForUpgrades':
 }
 
 ## - LICENSED OPTIONS -
-### See https://docs.chocolatey.org/en-us/licensed-extension/installation-licensed
+### See https://docs.chocolatey.org/en-us/licensed-extension/setup
 
 file { ['C:/ProgramData/chocolatey','C:/ProgramData/chocolatey/license']:
   ensure => directory,

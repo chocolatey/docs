@@ -8,7 +8,7 @@ RedirectFrom: docs/release-notes-extension
 # Chocolatey Release Notes - Chocolatey Licensed Extension
 ## Summary
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.
-Please see [Install the Licensed Edition](./installation-licensed) for information on how to get and install the package.
+Please see [Install the Licensed Edition](xref:setup-licensed) for information on how to get and install the package.
 
 **NOTE**: This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
 
