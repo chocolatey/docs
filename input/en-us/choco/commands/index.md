@@ -1,6 +1,6 @@
 ---
 Title: Commands
-Order: 50
+Order: 40
 RedirectFrom: docs/commands-reference
 ---
 

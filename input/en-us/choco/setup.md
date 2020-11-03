@@ -22,7 +22,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmdexe) or [powershell.exe](#install-with-powershellexe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
-1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](./getting-started) for usage instructions.
+1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
 
 **NOTES**:
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.

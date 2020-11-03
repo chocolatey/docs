@@ -1,5 +1,5 @@
 ---
-Order: 40
+Order: 70
 Title: Getting Started
 Description: Introduction to Chocolatey
 RedirectFrom: docs/getting-started
@@ -20,7 +20,7 @@ You know those massively complicated, complex, and expensive software management
 * **All Software Is a First Class Citizen.** You know how for most things, they only manage/report on the things installed in Add/Remove Programs (Programs and Features)? We count it all, because Windows software is more than just installers, and they all have security findings. So deploy your installers, your scripts, zips, runtime binaries, and yes, internal software all with one simple solution. Then lean on the reporting and inventory to be aware of all aspects of software you are managing.
 * **Packages are Independent and Portable.** When you deploy through multiple systems or want to migrate from one to another, you can take the work you've done with Chocolatey with you. How is that for some major time-savings?
 * **Test Your Deployments.** When's the last time you tested that deployment script you wrote for SCCM? Write it as a Chocolatey package instead and then you can test your infrastructure to be more comfortable when you push that change out to your constituents.
-* **Completely Offline and Secure.** Chocolatey has zero call home, requires no network access to use (although we recommend for ease of management, you at least have internal network access!). Chocolatey does come with a default source that is the community repository. Turn that off and set up your own sources (FOR FREE). See our [guide on organizational use](../guides/organizations/organizational-deployment-guide) to get started (it even has scripts!).
+* **Completely Offline and Secure.** Chocolatey has zero call home, requires no network access to use (although we recommend for ease of management, you at least have internal network access!). Chocolatey does come with a default source that is the community repository. Turn that off and set up your own sources (FOR FREE). See our [guide on organizational use](./guides/organizations/organizational-deployment-guide) to get started (it even has scripts!).
 * **Create Your Own Deployment Packages** (FOR FREE) and, get this, **use them internally** (FOR FREE). Get started as simply as `choco new <name>` and then check out the "just in time" documentation interweaved right into the output!
 * **PowerShell Automation.** You know those little scripts you've been writing for software deployments for years? Welcome to a breath of fresh air, you are going to love Chocolatey!
 * **Manage Dependencies With Ease.** You ever have a very complex, specific installation order? It becomes suddenly very easy when you are using a package manager like Chocolatey. Then you can concentrate on harder problems, like what flavor to add to your coffee today.
@@ -69,7 +69,7 @@ For Chocolatey clients, you will need the following:
 
 * Chocolatey CLI aka choco (or choco.exe) is a client (not a Windows service) that provides the core of Chocolatey and the installation store for locally installed packages. This is important as Chocolatey manages packages, not Programs and Features directly - Programs and Features is limited only to software that has "installers" and Chocolatey treats all aspects of Windows software as first class citizens (zips, scripts, binaries, installers), thus it needs to track and manage those things separately.
 * Chocolatey GUI is an application that runs when a user runs it (also not a Windows Service).
-* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](../features/self-service-anywhere) and Chocolatey Central Management.
+* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](./features/self-service-anywhere) and Chocolatey Central Management.
 
 #### Space Requirements
 
@@ -103,7 +103,7 @@ Requirements coming soon. Just imagine normal recommendations for an ASP.NET IIS
 
 Now that you have Chocolatey on your machine ([need to install?](xref:setup-choco)), you can run several commands.
 
-Take a look at the [command reference](./commands). We are going to be using the [install command](./commands/install).
+Take a look at the [command reference](./choco/commands). We are going to be using the [install command](./choco/commands/install).
 
 Let's install [Notepad++](http://notepad-plus-plus.org/).
 
@@ -114,27 +114,27 @@ Let's install [Notepad++](http://notepad-plus-plus.org/).
 
 ### Overriding default install directory or other advanced install concepts
 
-1. Yes we support that through the use of install arguments - see [Install Arguments](./commands/install#installarguments)
+1. Yes we support that through the use of install arguments - see [Install Arguments](./choco/commands/install#installarguments)
 1. If you wanted to pass native argument to the installer, like the install directory, you would need to know the silent argument passed to that particular installer and then you would specify it on the command line or in the packages.config.
-1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](./commands#how-to-pass-options-switches) for specifics on passing quoted values through.
+1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](./choco/commands#how-to-pass-options-switches) for specifics on passing quoted values through.
 1. For example, Notepad++ uses the [NSIS](http://nsis.sourceforge.net/Main_Page) (NullSoft Scriptable Install System) installer. If we look at the silent options, we see that [/D](http://nsis.sourceforge.net/Docs/Chapter3.html#installerusagecommon) is how we influence the install directory. So we would pass `choco install notepadplusplus.install -ia "'/D=E:\SomeDirectory\somebody\npp'"` -note that we are looking at the specific package over the virtual (although you can do the same with notepadplusplus as well).
 
-Is there a better way? Absolutely, see [ubiquitous install directory switch](../features/install-directory-override)!
+Is there a better way? Absolutely, see [ubiquitous install directory switch](./features/install-directory-override)!
 
 ## Terminology
 
 Software and Package are not terms used interchangeably in the Chocolatey community. It's important to understand the distinction between them and how they are related.
 
 * **Chocolatey** - Windows package manager for software management, can also be considered a framework
-* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [community feed disclaimer](../community-packages/community-packages-disclaimer) to get a better understanding.
+* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [community feed disclaimer](./community-packages/community-packages-disclaimer) to get a better understanding.
 * **NuGet** - Framework and .NET package manager for software libraries. Chocolatey uses the NuGet packaging framework
 * **Package** - See [What are Chocolatey Packages?](#what-are-chocolatey-packages). Packages can contain the software they represent and the final location of software may or may not be in the package.
 * **Software** - Software refers to the actual runtime software that a package represents. This can be installed to the system through native installers, or come from zip/archive files or just dropping the runtime software right into the package.
 * **Native Installer** - Actual installers that install software into Programs and Features, "natively" on a Windows machine. This is like MSI, InnoSetup (exe), NSIS (exe), InstallShield (exe/msi), etc. Windows has over 20 different installer formats.
 * **Install Package** - packages that wrap native installers
-* **Portable Package** - packages that use zip or just contain the runtime software. Usually these packages do not require administrative privileges to install or run. See [Portable application](../faqs#portable-application-something-that-doesnt-require-a-system-install-to-use)
+* **Portable Package** - packages that use zip or just contain the runtime software. Usually these packages do not require administrative privileges to install or run. See [Portable application](./faqs#portable-application-something-that-doesnt-require-a-system-install-to-use)
 * **Extension Package** - packages that provide extensions to Chocolatey's PowerShell module through additional PowerShell modules.
-* **Template Package** - packages that have packaging templates in them, used in package creation. See [create your own package templates](../guides/create/create-custom-package-templates).
+* **Template Package** - packages that have packaging templates in them, used in package creation. See [create your own package templates](./guides/create/create-custom-package-templates).
 * **Metapackage** - packages that only exist to take dependencies on other packages, usually as a way of providing one command to get a complete setup. Some metapackages exist to provide discoverability, such as "git" versus 'git.install." The git package just depends on git.install, so running the install for either package will result in the git software being installed on the machine.
 * **Virtual package** - a concept that a package can "provide" some functionality and any package that meets that provides will be considered a dependency met. For example, if you need to take a dependency on a pdf reader, you wouldn't want to take a hard dependency on AdobeReader, but instead you would hope that adobereader provides pdf as well as other packages like SumatraPDF and FoxitReader. Then you could take a dependency on pdf and if any of those packages are installed, the dependency is met. Otherwise an algorithm would determine which one to install. THIS IS NOT IMPLEMENTED AT THIS TIME WITH CHOCOLATEY.
 
@@ -142,9 +142,9 @@ Software and Package are not terms used interchangeably in the Chocolatey commun
 
 Chocolatey packages are known as nupkg files, which is a compiled NuSpec or a fancy zip file that knows about package metadata (including dependencies and versioning). These packages are an enhanced NuGet package, they have additional metadata that is specific to Chocolatey. Chocolatey is also compatible with vanilla NuGet packages. A Chocolatey package can contain embedded software and/or automation scripts.
 
-Chocolatey packages are not just something fancy on top of MSI/Exe installers. Chocolatey definitely supports that avenue and, with the addition of unzipping archives, it is the most widely used aspect of Chocolatey, especially when you see the packages on the community feed (https://chocolatey.org/packages aka dot org).  Chocolatey is about managing packages, and it works best when those packages contain all of the software instead of reaching out to external/internet resources for the software those packages represent. When you look at the community feed, you are seeing one representation of the way you can build packages, mostly driven by [distribution rights](../information/legal#distributions) that govern when packages can redistribute software or not. Those distribution rules do not govern private/internal packages, so the rules are a bit different. Packages internal to organizations are wide open to do quite a bit more. You can do software embedded packages where executables are automatically added to the path (shimmed) and/or PowerShell automation scripts to do pretty much anything, including running native installers that may be embedded or downloaded as part of the automation script (again, one of the most widely seen aspects on dot org).
+Chocolatey packages are not just something fancy on top of MSI/Exe installers. Chocolatey definitely supports that avenue and, with the addition of unzipping archives, it is the most widely used aspect of Chocolatey, especially when you see the packages on the community feed (https://chocolatey.org/packages aka dot org).  Chocolatey is about managing packages, and it works best when those packages contain all of the software instead of reaching out to external/internet resources for the software those packages represent. When you look at the community feed, you are seeing one representation of the way you can build packages, mostly driven by [distribution rights](./information/legal#distributions) that govern when packages can redistribute software or not. Those distribution rules do not govern private/internal packages, so the rules are a bit different. Packages internal to organizations are wide open to do quite a bit more. You can do software embedded packages where executables are automatically added to the path (shimmed) and/or PowerShell automation scripts to do pretty much anything, including running native installers that may be embedded or downloaded as part of the automation script (again, one of the most widely seen aspects on dot org).
 
-Packages with everything embedded are much more deterministic and repeatable, things most businesses require. You just won't see that as often on the community feed due to the aforementioned [distribution rights](../information/legal#distributions).
+Packages with everything embedded are much more deterministic and repeatable, things most businesses require. You just won't see that as often on the community feed due to the aforementioned [distribution rights](./information/legal#distributions).
 
 The closer the underlying software a package represents is to the package (as in executables and files included in the package), the more Chocolatey behaves like a package manager.
 
@@ -154,7 +154,7 @@ How the heck does this all work?
 
 ### Installation
 
-1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](./commands/sources) and [Source Repositories](xref:host-packages-internally).
+1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](./choco/commands/sources) and [Source Repositories](xref:host-packages-internally).
 2. The package is installed into `$env:ChocolateyInstall\lib\<pkgId>`. The package install location is not configurable - the package must install here for tracking, upgrade, and uninstall purposes. The software that may be installed later during this process ***is*** configurable. See [Terminology](#terminology) to understand the difference between "package" and "software" as the terms relate to Chocolatey.
 3. Choco determines if it is self-contained or has automation scripts - PowerShell scripts (*.ps1 files) and possibly other formats at a later date.
 4. Choco takes a registry snapshot for later comparison.
@@ -180,7 +180,7 @@ How the heck does this all work?
 6. If everything is successful so far, the files snapshot is used to determine what files can be removed from the package folder. If those files have not changed, they will be removed.
 7. If everything is deleted from the package folder, the folder is also removed.
 
-When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See [shimming](../features/shim) for more information.
+When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See [shimming](./features/shim) for more information.
 When a package has a chocolateyInstall.ps1, it will run the script. The instructions in the file can be anything. This is limited only by the .NET framework and PowerShell.
 Most of the Chocolatey packages that take advantage of the PowerShell download an application installer and execute it silently.
 
@@ -200,4 +200,4 @@ Many packages use native software installers, so Chocolatey allows the installer
 
 By default it installs packages from chocolatey.org (the community feed). But you can change this by adding default sources and/or using the  `--source` switch when running a command.
 
-When you [host internal packages](xref:host-packages-internally), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](../create/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.
+When you [host internal packages](xref:host-packages-internally), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](./create/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.

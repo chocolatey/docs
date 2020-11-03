@@ -48,7 +48,7 @@ No. Packages on Chocolatey's community repository (https://chocolatey.org/packag
 
 To put it another way, Microsoft would be quite upset if the Office 365 packages on the community repository actually contained the Office 365 binaries. This is not something organizations would be subject to when hosting their own internal package.
 
-When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](./choco/getting-started#what-are-chocolatey-packages) for more details.
+When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](xref:getting-started#what-are-chocolatey-packages) for more details.
 
 For more information on organizational cautions about the community package repository, see [the community repository disclaimer](./community-packages/community-packages-disclaimer).
 
@@ -151,7 +151,7 @@ With most packages when you already have something installed, the Chocolatey pro
 
 ### Can I override the installation directory?
 
-Yes you can, see [Overriding install directory](./choco/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [Ubiquitous Install Directory Option](./features/install-directory-override).
+Yes you can, see [Overriding install directory](xref:getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [Ubiquitous Install Directory Option](./features/install-directory-override).
 
 ### What distinction does Chocolatey make between an installable and a portable application?
 
@@ -293,7 +293,7 @@ Check out the FAQ on the [pricing](https://chocolatey.org/pricing#faq). If it do
 
 ### What can a Chocolatey Package consist of?
 
-See [What are Chocolatey Packages?](./choco/getting-started#what-are-chocolatey-packages)
+See [What are Chocolatey Packages?](xref:getting-started#what-are-chocolatey-packages)
 
 ### Tell me about packaging
 

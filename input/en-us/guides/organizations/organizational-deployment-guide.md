@@ -64,7 +64,7 @@ There may be some exercises in here that won't apply:
 
 ## Requirements
 
-Please see  [Requirements](../../choco/getting-started#requirements) for the most up to date version of this.
+Please see  [Requirements](xref:getting-started#requirements) for the most up to date version of this.
 
 ### Chocolatey Clients
 

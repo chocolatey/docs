@@ -1,5 +1,5 @@
 ---
-Order: 80
+Order: 90
 Title: Chocolatey GUI
 Description: What is Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-overview
