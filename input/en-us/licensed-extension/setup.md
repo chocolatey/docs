@@ -387,7 +387,7 @@ To be able to install it, you must first have the licensed edition properly inst
 
 * `choco install chocolatey-agent <options>`
 
-For more on the agent service, please see [Agent Service](../features/self-service-anywhere).
+For more on the agent service, please see [Agent Service](xref:setup-agent).
 
 ### Ensure the Chocolatey Agent Service with Puppet
 
@@ -399,7 +399,7 @@ Here are some additional commands and scripts you will need for that setup:
 
 ~~~puppet
 ## - Chocolatey Agent (Additional optional Chocolatey for Business install) -
-## See https://docs.chocolatey.org/en-us/features/self-service-anywhere
+## See https://docs.chocolatey.org/en-us/agent/setup
 
 ## ensure we set the user up properly
 chocolateyfeature {'useLocalSystemForServiceInstalls':

@@ -11,7 +11,7 @@ This will guide us through getting an agent installed and configured to check in
 
 ### Step 1: Install Chocolatey Agent
 
-First you need Chocolatey Agent installed. As there may be some steps involved with the install of the agent, please see [Chocolatey Agent Setup](../../features/self-service-anywhere#setup).
+First you need Chocolatey Agent installed. As there may be some steps involved with the install of the agent, please see [Chocolatey Agent Setup](xref:setup-agent).
 
 ### Step 2: Update Configuration
 

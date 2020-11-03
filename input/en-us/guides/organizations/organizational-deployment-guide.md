@@ -137,8 +137,8 @@ From the machine with internet access:
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
 1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
-1. C4B: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link in the first sentence for other settings you will need to configure.
-1. C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre --source c:\choco-setup\packages` (this is where you saved the nupkgs earlier). Then follow the link in the first sentence for other settings you will need to configure.
+1. C4B: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link in the first sentence for other settings you will need to configure.
+1. C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre --source c:\choco-setup\packages` (this is where you saved the nupkgs earlier). Then follow the link in the first sentence for other settings you will need to configure.
 1. Download packages (choose one):
     * C4B / MSP / C4BTRIAL: - Run the following: `choco download chocolatey chocolatey.server dotnet4.6.1 chocolateygui --internalize`. This is going to take quite awhile.
     * FOSS only - download the following packages:
@@ -203,7 +203,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 # https://docs.chocolatey.org/en-us/configuration
 
 #TODO: Are we installing the Chocolatey Agent Service? C4B Only
-# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
+# https://docs.chocolatey.org/en-us/agent/setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
@@ -246,7 +246,7 @@ Now that we've finished the first exercise and have those files over on our offl
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
 1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
-1. C4B / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
+1. C4B / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell
 # Ensure we can run everything
@@ -287,7 +287,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 
 #TODO: Are we installing the Chocolatey Agent Service? C4B Only
-# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
+# https://docs.chocolatey.org/en-us/agent/setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
@@ -565,7 +565,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
 1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
-1. C4B / MSP / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](../../features/self-service-anywhere#setup)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
+1. C4B / MSP / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell
 # This is a base url and should not include the "/chocolatey" (for Chocolatey.Server) or any url path to a NuGet/Chocolatey Packages API
@@ -626,7 +626,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 # https://docs.chocolatey.org/en-us/configuration
 
 #TODO: Are we installing the Chocolatey Agent Service?
-# https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup
+# https://docs.chocolatey.org/en-us/agent/setup
 # choco upgrade chocolatey-agent -y --pre
 #choco feature disable --name="'showNonElevatedWarnings'"
 #choco feature enable --name="'useBackgroundService'"
