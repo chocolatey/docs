@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @{
-            string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey - {Document.GetString(Keys.Title)}" : "Chocolatey";
+            string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey Software | {Document.GetString(Keys.Title)}" : "Chocolatey Software";
         }
         <meta property="og:title" content="@title" />
         <meta property="product:brand" content="Chocolatey" />
@@ -34,6 +34,25 @@
         <title>@title</title>
     </head>
     <body>
+        @{
+            @* To remove top notice alert, replace the string below with "" *@
+            string topNoticeText = "<a href='https://chocolatey.org/covid-19'>Here's how we're responding to COVID-19 plus resources to help</a>";
+
+            if (!string.IsNullOrEmpty(topNoticeText))
+            {
+                <div id="topNoticeAlert" class="alert alert-danger alert-dismissible alert-dismissible-center fade show d-none" role="alert">
+                    <p class="mb-0">@Html.Raw(topNoticeText)</p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+        }
+        <div id="globalNav">
+            <div class="container-fluid">
+                @Html.Partial("_globalnavigation")
+            </div>
+        </div>
         <nav id="topNav" class="navbar">
             <a class="navbar-brand" href="@Context.GetLink("/")">
                 <img class="d-md-none" src="@Context.GetLink("/assets/logo.svg")" alt="Chocolatey" />
@@ -72,8 +91,9 @@
                         IDocument root = OutputPages["en-us/index.html"].First();
                     }
                     <nav class="navbar navbar-expand-md p-0">
-                        <button class="navbar-toggler btn px-3 py-2" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-ellipsis-v text-primary"></i></button>
+                        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars text-primary"></i></button>
                         <div id="leftSidebar" class="collapse navbar-collapse">
+                            @Html.Partial("_globalnavigation")
                             <ul class="navbar-nav">
                                 <li class="nav-item">
                                     @if(root.ShowLink())
@@ -91,8 +111,8 @@
 
                                     @if(documentChildren.Any()) {
                                         <li class="nav-item">
-                                            <div class="nav-link nav-link-collapse d-flex @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
-                                                <div class="btn btn-collapse collapsed" role="button" data-toggle="collapse" aria-expanded="false" href="#id-@document.Id"></div>
+                                            <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
+                                                <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@document.Id" aria-label="collapse or expand navigation" href="#id-@document.Id"></button>
                                                 <a href="@document.GetLink()">@document.GetTitle()</a>
                                             </div>
                                             <div class="collapse" id="id-@document.Id">
@@ -102,8 +122,8 @@
                                                         @if(OutputPages.GetChildrenOf(child).Any())
                                                         {
                                                             <li class="nav-item">
-                                                                <div class="nav-link nav-link-collapse d-flex @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
-                                                                    <div class="btn btn-collapse pl-c2 collapsed" role="button" data-toggle="collapse" aria-expanded="false" href="#id-@child.Id"></div>
+                                                                <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
+                                                                    <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
                                                                     <a href="@child.GetLink()">@child.GetTitle()</a>
                                                                 </div>
                                                                 <div class="collapse" id="id-@child.Id">
@@ -180,8 +200,8 @@
                 </div>
             </div>
         </div>
-        <div id="cookieNoticeAlert" class="alert alert-dismissible fade show mb-0 text-center d-none" role="alert">
-            <p class="mb-0">docs.chocolatey.org uses cookies to enhance the user experience of the site.</p>
+        <div id="cookieNoticeAlert" class="alert alert-primary alert-dismissible alert-dismissible-center alert-btn-center fade show d-none" role="alert">
+            <p class="mb-0"><strong>docs.chocolatey.org uses cookies to enhance the user experience of the site.</strong></p>
             <button type="button" class="btn btn-light btn-sm" data-dismiss="alert" aria-label="Close">I accept</button>
         </div>
         <footer class="p-3 small text-center">

@@ -1,6 +1,8 @@
 const leftSidebarNav =  $('#leftSidebarNav')
       table = $('table'),
-      themeToggle = $('#themeToggle');
+      themeToggle = $('#themeToggle'),
+      topNoticeAlert = $('#topNoticeAlert'),
+      topNotice = window.sessionStorage.getItem('notice');
 
 // Anchor
 anchors.options.placement = 'left';
@@ -50,6 +52,18 @@ if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
     themeToggle.attr('disabled', 'true').next().addClass('disabled');
 }
 
+// Top notice alert
+if (topNotice) {
+    topNoticeAlert.remove();
+} else {
+    topNoticeAlert.removeClass('d-none');
+}
+
+topNoticeAlert.find('button').click(function() {
+    sessionStorage.setItem('notice', 'true');
+});
+
+// Show/hide child page title
 if (!$('h2:first-of-type').hasClass('title-child')) {
     $('.title-child').removeClass('d-none');
 }
@@ -124,7 +138,7 @@ Prism.highlightAll();
 
 // Cookie Notice
 const cookieNoticeAlert = $('#cookieNoticeAlert'),
-      cookieNotice = getCookie('cookieNotice');
+      cookieNotice = getCookie('chocolatey_hide_cookies_notice');
 
 if (cookieNotice) {
     cookieNoticeAlert.remove();
@@ -133,7 +147,7 @@ if (cookieNotice) {
 }
 
 cookieNoticeAlert.find('button').click(function() {
-    document.cookie = "cookieNotice" + "=true; path=/;";
+    document.cookie = "chocolatey_hide_cookies_notice" + "=true; path=/;";
 });
 
 // Search
@@ -269,7 +283,13 @@ function getLeftSidebarNavHeight() {
 
     if (window.innerWidth >= 768) {
         if ($(document).height() - $(window).height() >= 0) {
-            leftSidebarNavHeight = $(document).height() - ($('#topNav').outerHeight(true) + $('footer').outerHeight(true)) + 'px';
+            var topNoticeAlertHeight = topNoticeAlert.outerHeight(true);
+
+            if (!topNoticeAlertHeight) {
+                topNoticeAlertHeight = 0;
+            }
+
+            leftSidebarNavHeight = $(document).height() - (topNoticeAlertHeight + $('#globalNav').outerHeight(true) + $('#topNav').outerHeight(true) + $('footer').outerHeight(true)) + 'px';
 
             leftSidebarNav.css('height', leftSidebarNavHeight);
         }

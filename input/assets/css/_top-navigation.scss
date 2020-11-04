@@ -51,9 +51,12 @@
     .navbar-nav {
         flex-direction: row;
         align-items: center;
-        margin-right: 65px;
+        margin-right: 69px;
 
         .nav-item {
+            display: flex;
+            align-items: center;
+
             &:not(:last-child) {
                 padding-right: $spacer;
             }
@@ -76,9 +79,12 @@
 @include media-breakpoint-up(md) {
     #topNav {
         padding-bottom: .5rem;
+        height: 92px;
 
         .navbar-brand img {
-            height: 5rem;
+            height: 100px;
+            top: -25px;
+            position: absolute;
         }
     
         form[role="search"] {
