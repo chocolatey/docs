@@ -7,19 +7,25 @@
         @{
             string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey Software | {Document.GetString(Keys.Title)}" : "Chocolatey Software";
         }
-        <meta property="og:title" content="@title" />
-        <meta property="product:brand" content="Chocolatey" />
-        <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
         <meta name="description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
-        <meta name="flattr:id" content="mqgjkp">
-        <meta property="DC.title" content="@title" />
+        @* Twitter Card data *@
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@@chocolateynuget">
+        <meta name="twitter:title" content="@title">
+        <meta name="twitter:image" content="https://docs.chocolatey.org/assets/images/twitter-share.png">
+        @* Open Graph data *@
+        <meta property="og:title" content="@title" />
+        <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
         <meta property="og:site_name" content="Chocolatey" />
         <meta property="og:type" content="product" />
-        <meta property="product:category" content="software" />
         <meta property="og:image" content="https://chocolatey.org/content/images/icon_slogan.png" />
         <meta property="og:url" content="@Context.GetLink().TrimEnd('/')@Document.GetLink()" />
-        <meta property="copyright" content="Chocolatey is Copyright 2020 - @DateTime.UtcNow.Year Chocolatey Software,Inc." />
-
+        @* Additional data *@
+        <meta property="product:brand" content="Chocolatey" />
+        <meta property="product:category" content="software" />
+        <meta name="flattr:id" content="mqgjkp">
+        <meta property="DC.title" content="@title" />
+        <meta property="copyright" content="Chocolatey is Copyright 2020 - @DateTime.UtcNow.Year Chocolatey Software,Inc." />\
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/styles.css")" />
