@@ -8,7 +8,7 @@ RedirectFrom: docs/release-notes-extension
 # Chocolatey Release Notes - Chocolatey Licensed Extension
 ## Summary
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.
-Please see [Install the Licensed Edition](./installation-licensed) for information on how to get and install the package.
+Please see [Install the Licensed Edition](xref:setup-licensed) for information on how to get and install the package.
 
 **NOTE**: This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
 
@@ -174,7 +174,7 @@ When we first released package reducer, it was in a preview mode to allow for fo
 ### FEATURES
  * Run background service interactively - sometimes you install applications that are unattended but cannot be silent.
 
-If you want self-service to interactively manage installations, run `choco feature enable --name=useBackgroundServiceInteractively`. This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](https://docs.chocolatey.org/en-us/features/self-service-anywhere#interactive-self-service-consideration).
+If you want self-service to interactively manage installations, run `choco feature enable --name=useBackgroundServiceInteractively`. This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](https://docs.chocolatey.org/en-us/agent/setup#interactive-self-service-consideration).
 
 ### BUG FIXES
  * Windows Service Management Functions:
@@ -241,7 +241,7 @@ If you want self-service to interactively manage installations, run `choco featu
 
 ### IMPROVEMENTS
  * Self-Service / Background Mode:
-    * Allow commands to be configurable. Covered in more detail at https://docs.chocolatey.org/en-us/features/self-service-anywhere#setup.
+    * Allow commands to be configurable. Covered in more detail at https://docs.chocolatey.org/en-us/agent/setup.
 
 
 ## 1.12.3 (September 8, 2017)

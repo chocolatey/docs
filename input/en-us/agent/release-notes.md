@@ -7,7 +7,7 @@ RedirectFrom: docs/release-notes-agent
 
 # Chocolatey Release Notes - Chocolatey Agent Service
 ## Summary
-This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](../features/self-service-anywhere).
+This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](xref:setup-agent).
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
@@ -36,7 +36,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### BREAKING CHANGES
  * Chocolatey Agent v0.10.0 will only work with Central Management v0.2.0+. Please upgrade Central Management first if you are using CCM with the agent service.
 
-> :memo: **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](../features/self-service-anywhere#log-file-location-for-chocolatey-agent) for more information.
+> :memo: **NOTE**: Log locations have changed. Please see [Log File for Chocolatey Agent](xref:setup-agent#log-file-location-for-chocolatey-agent) for more information.
 
 ### FEATURES
  * Execution for Central Management Deployments

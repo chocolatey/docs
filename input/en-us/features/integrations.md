@@ -1,4 +1,5 @@
 ---
+xref: integrations
 Order: 60
 Title: Integrates with everything
 Description: Information on how Chocolatey can integrate with almost every tool
@@ -18,7 +19,7 @@ For common integrations, it's handy to refer to the table below to know what con
 | Configuration Managers                   | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
 |------------------------------------------|-------------------------|--------------------|----------------------------|-------------------|-------------------|---------------------|
 | Manage Packages                          | [x][ansible_main]       | [x][chef_main]     | [x][dsc_pkgs]              | [x][pp_pkgs]      | [x][salt_pkgs]    | [x][otter_pkgs]     |
-| [Install Chocolatey](../choco/installation)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
+| [Install Chocolatey](xref:setup-choco)       | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
 | Install Chocolatey from internal source  | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   |                   | [x][otter_install]  |
 | [Manage Sources](../choco/commands/source)         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
 | Manage Source Type (Admin/Self-Service)  | [x][ansible_source]     |                    |                            | [x][pp_source]    |                   |                     |
@@ -240,7 +241,7 @@ Puppet has some great documentation on getting started with Chocolatey. Be sure 
 The Chocolatey team is most familiar with Puppet and has written some documentation for using Puppet with Chocolatey. Please see
 
 * [Install with Puppet](https://chocolatey.org/install#install-with-puppet)
-* [Chocolatey Licensed Editions Configuration/Setup with Puppet](../licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet)
+* [Chocolatey Licensed Editions Configuration/Setup with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet)
 
 **Note:** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/choco-wiki.
 

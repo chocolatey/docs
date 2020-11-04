@@ -158,7 +158,7 @@ if ($pp['AdditionalTools'] -eq 'true') { $silentArgs += " /Additionaltools" }
 Write-Debug "This would be the Chocolatey Silent Arguments: $silentArgs"
 ~~~
 
-**NOTE**: In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [Extensions](../../features/create-extensions).
+**NOTE**: In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [Extensions](xref:extensions).
 
 <a name="step-3-alternative---set-up-your-own-parsing"></a>
 ### Step 3 (alternative) - Set up Your Own Parsing [DEPRECATED]

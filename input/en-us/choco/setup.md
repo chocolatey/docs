@@ -1,4 +1,5 @@
 ---
+xref: setup-choco
 Order: 20
 Title: Setup / How to install
 Description: Techniques for how to install Chocolatey
@@ -21,12 +22,12 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmdexe) or [powershell.exe](#install-with-powershellexe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
-1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](./getting-started) for usage instructions.
+1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
 
 **NOTES**:
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
- * Installing the licensed edition? See [install licensed edition](../licensed-extension/installation-licensed).
+ * Installing the licensed edition? See [install licensed edition](xref:setup-licensed).
  * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](../troubleshooting)
 
 #### Install with cmd.exe
@@ -407,7 +408,7 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 ### Install with Puppet
 
-**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](../licensed-extension/installation-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
+**NOTE**: If you have the licensed edition, see [Setting up Licensed Edition with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
@@ -646,7 +647,7 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
 
 ### Install licensed edition
 
-Please see [installation of licensed edition](../licensed-extension/installation-licensed).
+Please see [installation of licensed edition](xref:setup-licensed).
 
 ### Installing behind a proxy
 
@@ -670,7 +671,7 @@ Have a proxy? Try
 
 ### Installing behind an explicit proxy
 
-See [Installing Chocolatey Behind a Proxy Server](../guides/using/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
+See [Installing Chocolatey Behind a Proxy Server](../guides/usage/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
 
 ### Installing to a different location
 

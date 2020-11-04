@@ -35,7 +35,7 @@ RedirectFrom: docs/resources
 
 ## Integrations
 
-See [Infrastructure automation](../../features/infrastructure-automation)
+See [Infrastructure automation](xref:integrations)
 
 ## Community
 

@@ -45,11 +45,11 @@ Please see [I'm getting a 403 unauthorized issue when attempting to use the comm
 
 ### I am having trouble with PowerShell to install Chocolatey
 
-See the More Options section of [installation](./choco/installation#more-install-options).
+See the More Options section of [installation](xref:setup-choco#more-install-options).
 
 ## Licensed Installation and Issues
 
-See [licensed installation](./licensed-extension/installation-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
+See [licensed installation](xref:setup-licensed). If you are having issues, please see https://chocolatey.org/support for details on how to get support.
 
 ## Creating Packages
 

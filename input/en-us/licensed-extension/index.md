@@ -1,4 +1,4 @@
 ---
 Title: Chocolatey Licensed Extension
-Order: 100
+Order: 110
 ---

@@ -71,7 +71,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 ### Package sources:
 
 - Ninite - one at Ninite.com
-- Chocolatey - central community package repository at [https://chocolatey.org/packages](https://chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](./features/how-to-host-feed) for options.
+- Chocolatey - central community package repository at [https://chocolatey.org/packages](https://chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](xref:host-packages-internally) for options.
 - Chocolatey can also install from [alternative sources](./choco/commands/install#alternative-sources) - choco install bash --source cygwin | choco install gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
 
 ### Creating packages:
@@ -81,7 +81,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 - Chocolatey is building on technologies you may already know:
   - PowerShell - take full advantage of PowerShell.
   - Unattended installations / Silent installation
-- Extend Chocolatey easily with PowerShell modules called [extension packages](./features/create-extensions).
+- Extend Chocolatey easily with PowerShell modules called [extension packages](xref:extensions).
 - Use [Package Builder](./features/package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
 - Use [Package Internalizer](./guides/create/recompile-packages) to internalize existing community packages quickly.
 

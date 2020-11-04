@@ -8,7 +8,7 @@ RedirectFrom: docs/create-packages
 # Creating Chocolatey Packages
 
 ## Summary
-See [What are Chocolatey Packages?](../choco/getting-started#what-are-chocolatey-packages) first.
+See [What are Chocolatey Packages?](xref:getting-started#what-are-chocolatey-packages) first.
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 

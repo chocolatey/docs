@@ -1,5 +1,5 @@
 ---
-Order: 130
+Order: 140
 Title: Quick Deployment Environment (QDE)
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
@@ -44,7 +44,7 @@ A lot of what is done in QDE condenses or completely eliminates the work found i
 
 * [Organizational Deployment Guide](../guides/organizations/organizational-deployment-guide)
 * [Chocolatey Installation](https://chocolatey.org/install#organization)
-* [Chocolatey Commercial Installation](../licensed-extension/installation-licensed)
+* [Chocolatey Commercial Installation](xref:setup-licensed)
 * [Automate Package Internalization](../guides/organizations/automate-package-internalization)
 
 If you find that QDE is only good for a proof-of-concept in your environment due to having thousands of endpoints, you will want to understand how to scale out that infrastructure.

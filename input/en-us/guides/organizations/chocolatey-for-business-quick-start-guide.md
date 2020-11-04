@@ -25,8 +25,8 @@ Let's get started!
 As illustrated in the diagram above, there are five main components to a default Chocolatey install, namely:
 
 1. **Administrator Workstation**: This is the workstation of the implementer. Internet access, as well as running from an administrator-level user, are required.
-1. **Repository Server**: This is the application that will serve out the Nuget package (.nupkg) files internally. This guide will assume you'd like to use Sonatype [Nexus](https://www.sonatype.com/nexus-repository-oss), although Jfrog [Artifactory](https://jfrog.com/artifactory/) is an equally-suitable option. Further repository details are available at [repository options](../../features/how-to-host-feed).
-1. **Deployment/Configuration Management Solution**: We are going to stick to PowerShell commands and scripts in this guide. However, it is _strongly_ recommended to use a full-featured configuration management solution to manage your package deployments. Some examples are Puppet, Chef, Ansible, and SaltStack. Read more about them on the [Infrastucture Automation page](../../features/infrastructure-automation).
+1. **Repository Server**: This is the application that will serve out the Nuget package (.nupkg) files internally. This guide will assume you'd like to use Sonatype [Nexus](https://www.sonatype.com/nexus-repository-oss), although Jfrog [Artifactory](https://jfrog.com/artifactory/) is an equally-suitable option. Further repository details are available at [repository options](xref:host-packages-internally).
+1. **Deployment/Configuration Management Solution**: We are going to stick to PowerShell commands and scripts in this guide. However, it is _strongly_ recommended to use a full-featured configuration management solution to manage your package deployments. Some examples are Puppet, Chef, Ansible, and SaltStack. Read more about them on the [Infrastucture Automation page](xref:integrations).
 1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](../../central-management/setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
 1. **Clients/Nodes**: These are the workstation or server endpoints you wish to manage packages on, with Chocolatey. Every node requires a license.
 
@@ -56,7 +56,7 @@ Below are the recommended guidelines of what's required for this specific deploy
 
 ### Deployment/Configuration Management Solution
 
-Again, this is out of the scope of this document, but _highly_ recommended when scaling out deployments. Read more about configuration management solutions on the [Infrastructure Automation page](../../features/infrastructure-automation).
+Again, this is out of the scope of this document, but _highly_ recommended when scaling out deployments. Read more about configuration management solutions on the [Infrastructure Automation page](xref:integrations).
 
 ### Central Management Server
 
@@ -234,4 +234,4 @@ Again, the setup of the Chocolatey Central Management server is beyond the scope
 
 Congratulations! If you followed all the steps detailed above, you should now have a fully-functioning Chocolatey implementation deployed in your environment.
 
-It is worth mentioning that some customers may have a more bespoke environment, with the presence of proxies and additional configuration management applications. Chocolatey is engineered to be quite flexible, specifically to account for these scenarios. Please refer to the many options for installation referenced on the [Installation page](../../licensed-extension/installation-licensed#more-install-options). Again, If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
+It is worth mentioning that some customers may have a more bespoke environment, with the presence of proxies and additional configuration management applications. Chocolatey is engineered to be quite flexible, specifically to account for these scenarios. Please refer to the many options for installation referenced on the [Installation page](xref:setup-licensed#more-install-options). Again, If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.

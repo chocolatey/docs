@@ -54,7 +54,7 @@ Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has c
 1. Starting with v0.10.0, users can supply [runtime checksums](https://github.com/chocolatey/choco/issues/112) so they are not required to just trust what the package supplies (or in the case a package has missing or incorrect checksums).
 1. Starting with v0.10.1, Chocolatey will detect whether an SSL/TLS download is available and automatically switch to that for more security.
 1. Choco will not allow you to push to the community package repository without using SSL/TLS (HTTPS). This reduces DNS poisoning issues and discovery of your Community repository API key.
-1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [What are Chocolatey Packages](../choco/getting-started#what-are-chocolatey-packages) for more details.
+1. When hosting internal packages, those packages can embed software and/or point to internal shares. Non-public packages are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure. See [What are Chocolatey Packages](xref:getting-started#what-are-chocolatey-packages) for more details.
 1. Chocolatey is run by a US-based Delaware Corporation named Chocolatey Software.
 
 ## Chocolatey binaries and the Chocolatey package
@@ -142,7 +142,7 @@ It's important to keep the following in mind:
 
 > **"Chocolatey != Chocolatey.org Packages"**
 
-It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](../features/how-to-host-feed) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
+It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](xref:host-packages-internally) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
 
 ## Chocolatey.org Packages
 
