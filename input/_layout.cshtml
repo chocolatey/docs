@@ -24,13 +24,14 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/styles.css")" />
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/all.min.css")" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         <script>
             if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
                 const theme = localStorage.getItem('theme'), html = document.getElementsByTagName("html")[0];
                 if(theme){if(theme == 'dark') {html.setAttribute("data-user-color-scheme", "dark");}else{html.setAttribute("data-user-color-scheme", "light");}}
             }
         </script>
-        
+
         <title>@title</title>
     </head>
     <body>
@@ -77,11 +78,10 @@
                     </label>
                 </li>
             </ul>
-            @* TODO: Search- Uncomment search box below *@
-            @*<form role="search" class="form-inline">
+            <form role="search" class="form-inline">
                 <i class="fas fa-search" aria-hidden="true"></i>
-                <input type="search" class="form-control" placeholder="Search..."  aria-label="Search" />
-            </form>*@
+                <input type="search" class="form-control" id="search-query" placeholder="Search..." aria-label="Search" />
+            </form>
         </nav>
         <div class="container-fluid">
             <div class="row">
@@ -208,7 +208,7 @@
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
             <span>@VersionUtilities.GetVersion()</span>
         </footer>
-        
+
         <script type="text/javascript" src="@Context.GetLink("/assets/js/jquery.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/bootstrap.bundle.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/prism.min.js")"></script>
@@ -220,5 +220,14 @@
             };
         </script>
         <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+        <script type="text/javascript">
+            docsearch({
+                apiKey: '8148a7b5d009b8590bb85191c6f1823c',
+                indexName: 'chocolatey',
+                inputSelector: '#search-query',
+                debug: false // Set debug to true if you want to inspect the dropdown
+            });
+        </script>
     </body>
 </html>
