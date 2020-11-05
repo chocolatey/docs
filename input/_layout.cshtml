@@ -31,7 +31,7 @@
                 if(theme){if(theme == 'dark') {html.setAttribute("data-user-color-scheme", "dark");}else{html.setAttribute("data-user-color-scheme", "light");}}
             }
         </script>
-        
+
         <title>@title</title>
     </head>
     <body>
@@ -208,7 +208,7 @@
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
             <span>@VersionUtilities.GetVersion()</span>
         </footer>
-        
+
         <script type="text/javascript" src="@Context.GetLink("/assets/js/jquery.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/bootstrap.bundle.min.js")"></script>
         <script type="text/javascript" src="@Context.GetLink("/assets/js/prism.min.js")"></script>
