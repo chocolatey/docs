@@ -6,22 +6,38 @@ RedirectFrom: docs/release-notes-agent
 ---
 
 # Chocolatey Release Notes - Chocolatey Agent Service
+
 ## Summary
+
 This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](xref:setup-agent).
 
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
+
 * Refer to [Open Source Release Notes](../information/release-notes/open-source) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](../licensed-extension/release-notes) and [Chocolatey Central Management Release Notes](../central-management/release-notes).
 
 ## Known Issues
+
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 * Some issues may be held internally, please follow your support routes to learn more.
 
-## 0.11.1 (October 5, 2020)
+## 0.11.2 (November 5, 2020)
+
 ### BUG FIXES
- * Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script
+
+* Fix - Deployments - An execution timeout in seconds value of `0` for a deployment step is not treated as infinite
+
+### IMPROVEMENTS
+
+* Provide clarity in log messages when salt additive configuration values are misconfigured
+
+## 0.11.1 (October 5, 2020)
+
+### BUG FIXES
+
+* Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script
 
 ## 0.11.0 (June 25, 2020)
 ### BREAKING CHANGES
