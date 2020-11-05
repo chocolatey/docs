@@ -138,7 +138,8 @@ Prism.highlightAll();
 
 // Cookie Notice
 const cookieNoticeAlert = $('#cookieNoticeAlert'),
-      cookieNotice = getCookie('chocolatey_hide_cookies_notice');
+      cookieNoticeName = 'chocolatey_hide_cookies_notice',
+      cookieNotice = getCookie(cookieNoticeName);
 
 if (cookieNotice) {
     cookieNoticeAlert.remove();
@@ -147,7 +148,11 @@ if (cookieNotice) {
 }
 
 cookieNoticeAlert.find('button').click(function() {
-    document.cookie = "chocolatey_hide_cookies_notice" + "=true; path=/;";
+    if (~location.hostname.indexOf('chocolatey.org')) {
+        document.cookie = cookieNoticeName + '=true; path=/; domain=chocolatey.org;';
+    } else {
+        document.cookie = cookieNoticeName + '=true; path=/;';
+    }
 });
 
 // Search
