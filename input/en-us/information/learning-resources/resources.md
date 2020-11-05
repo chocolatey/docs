@@ -41,6 +41,10 @@ See [Infrastructure automation](xref:integrations)
 
 ### 2020
 
+#### November
+
+* [Configure team member’s machines with Chocolatey, PowerShell, and Octopus Runbooks](https://octopus.com/blog/chocolatey-powershell-and-runbooks)
+
 #### January
 
 * [Intune + Chocolatey: A Match Made In Heaven](https://www.thelazyadministrator.com/2020/02/05/intune-chocolatey-a-match-made-in-heaven/)
