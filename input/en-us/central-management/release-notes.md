@@ -22,6 +22,36 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.4.0 (November 6, 2020)
+### BREAKING CHANGES
+ * Deployments - Machine contact timeout now defaults to infinite (0) to allow for semi-connected environments
+
+Previously this value was set to a constant value of 20 and not configurable. To revert to previous behaviour, set the machine contact timeout in minutes value for a given deployment step to 20.
+
+### FEATURES
+ * Deployment Scheduling
+   * Scheduled Deployments allows for starting a deployment at some point in the future
+   * Maintenance Windows - Ability to specify date and time for when no more computers within a deployment can start
+ * API - Swagger UI allows visualization and interaction with all CCM API operations - see [Licensed #183](https://github.com/chocolatey/chocolatey-licensed-issues/issues/183)
+ * Long Running Deployments - Enables support for semi-connected computers
+
+### BUG FIXES
+ * Fix - Deployments - Computers marked unreachable should not be picked up in future steps in same deployment
+ * Fix - Deployments - Adding distinct groups that share computers to a deployment results in duplicated computers within deployment steps
+ * Fix - Web - Authentication of external user (i.e. LDAP) fails when no email address is configured for user - see [Licensed #181](https://github.com/chocolatey/chocolatey-licensed-issues/issues/181)
+ * Fix - Database - Unable to upgrade database when user specific permissions (i.e. instead of assigning a role to a user) for CCM are used for any user
+ * Fix - Deployments - Execution timeout of infinite (0) for a deployment step is not being respected when querying for timed out computers
+ * Fix - Deployments - Machine contact timeout for deployment step is not being respected, deployments incorrectly wait indefinitely (due to changes in v0.3.1)
+ * Fix - Web - Real time notifications never reach CCM Web UI
+ * Fix - Web - Notifications page has no way to see entire notification
+
+### IMPROVEMENTS
+ * Deployments - Handle deployment step activation order properly when the same computer is in multiple deployments that are active at the same time
+ * Service - Configuration - Provide clarity in log messages when salt additive configuration values are misconfigured
+ * Deployments - Round percentage complete values on report pages while deployment is in progress
+ * Deployments - Auto-refresh deployment report pages
+
+
 ## 0.3.1 (October 5, 2020)
 ### BUG FIXES
  * Fix - Database - Upgrade fails when passing database parameters due to incorrect cmdlet name - see [Licensed #161](https://github.com/chocolatey/chocolatey-licensed-issues/issues/161)
