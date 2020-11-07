@@ -18,8 +18,14 @@ label[for="themeToggle"] {
         border: 1px solid $gray-300;
         border: 1px solid var(--border-secondary);
         border-radius: 1em;
-        background-color: $white;
-        transition: background-color 250ms;
+        background: $white;
+        background: var(--theme-toggle-background);
+        transition: $theme-transition;
+
+        .fas {
+            position: absolute;
+            color: $yellow;
+        }
 
         .sun-icon-wrapper {
             position: absolute;
@@ -30,8 +36,6 @@ label[for="themeToggle"] {
             transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
 
             .sun-icon {
-                position: absolute;
-                color: $yellow;
                 font-size: 1.25rem;
             }
         }
@@ -42,7 +46,7 @@ label[for="themeToggle"] {
             height: 1rem;
             width: 1rem;
             border-radius: 50%;
-            background-color: $yellow-opacity;
+            background-color: var(--theme-toggle-btn-background);
             border: 1px solid $yellow;
             transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
         }
@@ -56,8 +60,6 @@ label[for="themeToggle"] {
             transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
 
             .moon-icon {
-                position: absolute;
-                color: $yellow;
                 font-size: 1rem;
             }
         }
@@ -75,12 +77,7 @@ label[for="themeToggle"] {
         }
     }
 
-    &:checked ~ .toggle-slot {
-        background-color: $primary-opacity;
-    }
-
     &:checked ~ .toggle-slot .toggle-button {
-        background-color: unset;
         transform: translate(0.7rem, 0.65em);
     }
 

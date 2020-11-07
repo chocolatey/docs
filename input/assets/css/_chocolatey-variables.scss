@@ -47,6 +47,8 @@ $border-dark:         lighten($gray-800, 7.5%);
     --red-color: #{$red};
     --primary-25: #{$primary-light};
     --theme-toggle-opacity: #{$yellow-opacity};
+    --theme-toggle-background: #{$white};
+    --theme-toggle-btn-background: #{$yellow-opacity};
     --modal-backdrop: 0.5;
 }
 
@@ -67,6 +69,8 @@ $border-dark:         lighten($gray-800, 7.5%);
       --red-color: #{$red-light};
       --primary-25: #{$primary-dark};
       --theme-toggle-opacity: #{$primary-opacity-50};
+      --theme-toggle-background: #{$primary-opacity};
+      --theme-toggle-btn-background: #{$primary-opacity};
       --modal-backdrop: 0.9;
     }
   }
@@ -83,6 +87,8 @@ $border-dark:         lighten($gray-800, 7.5%);
     --red-color: #{$red-light};
     --primary-25: #{$primary-dark};
     --theme-toggle-opacity: #{$primary-opacity-50};
+    --theme-toggle-background: #{$primary-opacity};
+    --theme-toggle-btn-background: #{$primary-opacity};
     --modal-backdrop: 0.9;
   }
 
