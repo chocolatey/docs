@@ -47,6 +47,7 @@ $border-dark:         lighten($gray-800, 7.5%);
     --red-color: #{$red};
     --primary-25: #{$primary-light};
     --theme-toggle-opacity: #{$yellow-opacity};
+    --modal-backdrop: 0.5;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -66,6 +67,7 @@ $border-dark:         lighten($gray-800, 7.5%);
       --red-color: #{$red-light};
       --primary-25: #{$primary-dark};
       --theme-toggle-opacity: #{$primary-opacity-50};
+      --modal-backdrop: 0.9;
     }
   }
   
@@ -81,6 +83,7 @@ $border-dark:         lighten($gray-800, 7.5%);
     --red-color: #{$red-light};
     --primary-25: #{$primary-dark};
     --theme-toggle-opacity: #{$primary-opacity-50};
+    --modal-backdrop: 0.9;
   }
 
 // Transition

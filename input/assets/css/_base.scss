@@ -113,6 +113,32 @@ img {
     padding-left: $spacer * 4 !important;
 }
 
+/*Modals*/
+.modal, .modal-open {
+    padding-right: 0 !important;
+}
+.modal-backdrop.show {
+    opacity: var(--modal-backdrop);
+}
+.modal-content {
+    background: var(--background-light);
+
+    .modal-header, .modal-footer {
+        border-color: var(--border)
+    }
+
+    .modal-header {
+        .close {
+            color: var(--text);
+        }
+    }
+}
+
+/*Badges*/
+.badge-key {
+    font-family: $font-family-monospace;
+}
+
 /*Gitter*/
 .gitter-chat-embed, .gitter-open-chat-button {
     z-index: 9999;

@@ -1,53 +1,14 @@
 #topNav {
-    padding: .5rem 0 0;
+    padding: .5rem 0;
     background: $white;
     background: var(--background-light);
     transition: $theme-transition;
-    padding-bottom: .5rem; // TODO: Search- Remove this line when search box is added in
 
     .navbar-brand img {
         height: 3rem;
         padding-left: 1rem;
     }
 
-    form[role="search"] {
-        margin: .5rem auto auto;
-        padding: .5rem 1rem;
-        width: 100%;
-        background: $gray-100;
-        background: var(--background);
-        border-bottom: 1px solid $gray-300;
-        border-bottom: 1px solid var(--border);
-        transition: $theme-transition;
-
-        .fa-search {
-            position: absolute;
-            left: 25px;
-            color: $primary-opacity;
-        }
-
-        .form-control {
-            width: 100%;
-            border-radius: 0;
-            border: 0;
-            padding-left: 35px;
-            border-bottom: 3px solid $primary-opacity;
-            background: var(--background-light);
-            color: var(--text);
-            transition: $theme-transition;
-
-            &:focus {
-                box-shadow: none;
-                border-color: $primary;
-            }
-        }
-
-        &.active {
-            .fa-search {
-                color: $primary;
-            }
-        }
-    }
     .navbar-nav {
         flex-direction: row;
         align-items: center;
@@ -69,8 +30,50 @@
                 padding: 0;
             }
 
-            .custom-switch:hover {
-                cursor: pointer;
+            .btn-search {
+                border: 1px solid var(--border-secondary);
+                color: $secondary;
+                font-weight: 400;
+
+                &:focus, &:hover {
+                    background: $primary;
+
+                    .fas {
+                        color: $white;
+                    }
+                }
+
+                .fas {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    #topNav {
+        .navbar-nav {
+            .nav-item {
+                .btn-search {
+                    border-color: $primary;
+                    width: 250px;
+                    font-size: $font-size-base;
+
+                    &:focus, &:hover {
+                        background: none;
+                        box-shadow: 0 0 0 0.2rem $primary-opacity;
+                        color: var(--text);
+    
+                        .fas {
+                            color: $primary;
+                        }
+                    }
+
+                    .fas {
+                        color: $primary-opacity-50;
+                    }
+                }
             }
         }
     }
@@ -86,27 +89,6 @@
             top: -25px;
             position: absolute;
         }
-    
-        form[role="search"] {
-            background: none;
-            border-bottom: none;
-            margin: auto;
-            padding: 0;
-            position: absolute;
-            left: 25%;
-            top: 0px;
-            bottom: 0px;
-            right: auto;
-            width: 40%;
-
-            .fa-search {
-               left: 0;
-            }
-
-            .form-control {
-                padding-left: 25px;
-            }
-        }
 
         .navbar-nav {
             margin-right: 0;
@@ -119,25 +101,11 @@
                 &:last-child {
                     padding-right: 1rem;
                 }
+
+                .btn-search {
+                    width: 300px;
+                }
             }
-        }
-    }
-}
-
-@include media-breakpoint-up(lg) {
-    #topNav {
-        form[role="search"] {
-            width: 45%;
-        }
-    }
-}
-
-@include media-breakpoint-up(xl) {
-    #topNav {
-        form[role="search"] {
-            left: 0;
-            right: 0;
-            width: 700px;
         }
     }
 }

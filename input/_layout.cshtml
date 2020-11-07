@@ -67,6 +67,20 @@
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
+                    <button type="button" class="btn btn-search" data-toggle="modal" data-target="#searchBox">
+                        <span class="d-flex justify-content-between align-items-center">
+                            <span>
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <span class="d-none d-sm-inline-block">Search...</span>
+                            </span>
+                            <span class="d-none d-md-block">
+                                <span class="badge badge-key badge-primary search-key"></span>
+                                <span class="badge badge-key badge-primary">k</span>
+                            </span>
+                        </span>
+                    </button>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
@@ -84,10 +98,6 @@
                     </label>
                 </li>
             </ul>
-            <form role="search" class="form-inline">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input type="search" class="form-control" id="search-query" placeholder="Search..." aria-label="Search" />
-            </form>
         </nav>
         <div class="container-fluid">
             <div class="row">
@@ -97,7 +107,7 @@
                         IDocument root = OutputPages["en-us/index.html"].First();
                     }
                     <nav class="navbar navbar-expand-md p-0">
-                        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars text-primary"></i></button>
+                        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
                         <div id="leftSidebar" class="collapse navbar-collapse">
                             @Html.Partial("_globalnavigation")
                             <ul class="navbar-nav">
@@ -210,6 +220,28 @@
             <p class="mb-0"><strong>docs.chocolatey.org uses cookies to enhance the user experience of the site.</strong></p>
             <button type="button" class="btn btn-light btn-sm" data-dismiss="alert" aria-label="Close">I accept</button>
         </div>
+        <div class="modal fade" id="searchBox" tabindex="-1" role="dialog" aria-labelledby="searchBox" aria-describedby="Search documentation" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search Documentation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <form role="search" class="active">
+                            <i class="fas fa-search fa-lg" aria-hidden="true"></i>
+                            <input type="search" class="form-control form-control-lg" id="searchQuery" placeholder="Search..." aria-label="Search" autofocus />
+                        </form>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-between">
+                        <a href="https://www.algolia.com/ref/docsearch/?utm_source=docsearch&utm_medium=link&utm_term=footer&utm_campaign=" target="_blank" rel="noreferrer"><div class="img-algolia"></div></a>
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="p-3 small text-center">
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
             <span>@VersionUtilities.GetVersion()</span>
@@ -231,7 +263,7 @@
             docsearch({
                 apiKey: '8148a7b5d009b8590bb85191c6f1823c',
                 indexName: 'chocolatey',
-                inputSelector: '#search-query',
+                inputSelector: '#searchQuery',
                 debug: false // Set debug to true if you want to inspect the dropdown
             });
         </script>
