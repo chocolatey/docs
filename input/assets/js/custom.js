@@ -2,7 +2,12 @@ const leftSidebarNav =  $('#leftSidebarNav')
       table = $('table'),
       themeToggle = $('#themeToggle'),
       topNoticeAlert = $('#topNoticeAlert'),
-      topNotice = window.sessionStorage.getItem('notice');
+      topNotice = window.sessionStorage.getItem('notice'),
+      searchQuery = $('#searchQuery'),
+      searchBox = $('#searchBox');
+
+var keys = {},
+    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 
 // Anchor
 anchors.options.placement = 'left';
@@ -110,6 +115,13 @@ toggleRightSidebarNav();
 toggleStickyTop();
 getLeftSidebarNavHeight();
 
+// Insert correct command key in search box based on OS
+if (isMac) {
+    $('.search-key').html('&#8984;');
+} else {
+    $('.search-key').text('ctrl');
+}
+
 // Style Tables
 $.each(table, function () {
     $(this).wrap('<div class="table-responsive"></div>');
@@ -156,12 +168,35 @@ cookieNoticeAlert.find('button').click(function() {
 });
 
 // Search
-$('#topNav form[role="search"] .form-control').focus(function() {
-    $(this).parent().addClass('active');
+searchBox.on('shown.bs.modal', function (e) {
+    searchQuery.focus();
 
-    $(this).blur(function() {
-        $(this).parent().removeClass('active');
+    searchQuery.focus(function() {
+        $(this).parentsUntil('form').parent().addClass('active');
     });
+    searchQuery.blur(function() {
+        $(this).parentsUntil('form').parent().removeClass('active');
+    });
+});
+
+// Open search box on key command
+$(document).keydown(function(e) {
+    keys[e.which] = true;
+
+    if (isMac) {
+        if (keys[91] && keys[75]) { // Ctrl + k
+            e.preventDefault();
+            searchBox.modal('show');
+        }
+    } else {
+        if (keys[17] && keys[75]) { // Cmd + k
+            e.preventDefault();
+            searchBox.modal('show');
+        }
+    }
+});
+$(document).keyup(function(e) {
+  delete keys[e.which];
 });
 
 //Highlight/ find active right sidebar nav links when scrolling/clicked
