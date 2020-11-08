@@ -127,6 +127,11 @@ img {
         border-color: var(--border)
     }
 
+    .modal-header, .modal-body, .modal-footer {
+        background: $white;
+        background: var(--background-light);
+    }
+
     .modal-header {
         .close {
             color: var(--text);
