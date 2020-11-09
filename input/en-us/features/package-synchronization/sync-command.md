@@ -1,4 +1,5 @@
 ---
+xref: sync-command
 Order: 20
 Title: Choco Sync Command (C4B)
 Description:
