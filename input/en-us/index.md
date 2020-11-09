@@ -64,7 +64,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 
 - [Installing Chocolatey For Organizations](https://chocolatey.org/install#organization)
 - [Quick Deployment Environment](./quick-deployment)
-- [Host Your Own Feed](xref:host-packages-internally)
+- [Host Your Own Feed](xref:host-packages)
 - [Deploy Chocolatey in an Organization](./guides/organizations/organizational-deployment-guide)
 - [Creating packages](./create/create-packages)
   - [Package Function and Variable Reference](./create/helpers)
