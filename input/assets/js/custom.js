@@ -111,6 +111,7 @@ $('.collapse').on('shown.bs.collapse', function () {
 showCollapsedHash();
 
 // Functions based on viewport
+getWindowVHHeight();
 toggleRightSidebarNav();
 toggleStickyTop();
 getLeftSidebarNavHeight();
@@ -284,6 +285,7 @@ $.each($('.btn-collapse-target'), function() {
 });
 
 $(window).on("resize", function () {
+    getWindowVHHeight();
     toggleRightSidebarNav();
     toggleStickyTop();
     getLeftSidebarNavHeight();
@@ -293,6 +295,11 @@ $(window).on("resize", function () {
 leftSidebarNav.find('.loader-container').fadeOut(3000, function () {
     $(this).remove();
 });
+
+function getWindowVHHeight() {
+    let vh = window.innerHeight * 0.01;
+    $('html').css('--vh', vh + 'px');
+}
 
 function toggleRightSidebarNav() {
     const rightSidebar =  $('#rightSidebar');

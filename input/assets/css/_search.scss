@@ -177,7 +177,8 @@
                 max-width: 100vw;
 
                 .modal-content {
-                    min-height: 100vh;
+                    height: 100vh; // Fallback
+                    height: calc(var(--vh, 1vh) * 100);
                     border-radius: 0;
                 }
             }
