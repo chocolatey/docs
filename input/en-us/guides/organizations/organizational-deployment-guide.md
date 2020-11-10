@@ -57,7 +57,7 @@ There may be some exercises in here that won't apply:
 
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
 * [Licensed Install](xref:setup-licensed)
-* [Host Your Own Package Server](xref:host-packages-internally)
+* [Host Your Own Package Server](xref:host-packages)
 * [Set up Chocolatey Server](./set-up-chocolatey-server)
 * [Security](https://chocolatey.org/security)
 * [Community Package Repository Disclaimer](../../community-packages/community-packages-disclaimer)
@@ -228,7 +228,7 @@ Write-Warning "Check and adjust script at '$env:SystemDrive\choco-setup\files\Ch
 
 ## Exercise 1 (Optional): Set Up Chocolatey Installation On A Machine Without Network Access
 
-Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](xref:host-packages-internally).
+Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](xref:host-packages).
 
 **NOTE:** If you are using the same machine from Exercise 0 for setting up your repository, you can skip this Exercise and go to Exercise 2 (in other words, your machine already has Chocolatey installed).
 
@@ -298,7 +298,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 ## Exercise 2: Set Up A Package Repository
 
-Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages-internally) to learn about the advantages and disadvantages of each.
+Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages) to learn about the advantages and disadvantages of each.
 
 Pick one or more of the following paths:
 
@@ -360,7 +360,7 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 > Recommended for most organizational use cases
 
-If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages-internally). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
+If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
 **NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../../community-packages/community-packages-disclaimer).
 
@@ -374,11 +374,11 @@ Setting up a file share repository is typically quite simple. You put your nupkg
 > * ACL/Share permissions should not let anyone put packages in the share
 > * ACLs control access to read permissions.
 > * Packages go into the share folder, not subfolders (Chocolatey is currently based in NuGet v2, which doesn't allow subfolders)
-> * Be very careful never to overwrite a version of a nupkg, especially if it has been deployed to any clients. See [package immutability](xref:host-packages-internally#package-version-immutability)
+> * Be very careful never to overwrite a version of a nupkg, especially if it has been deployed to any clients. See [package immutability](xref:host-packages#package-version-immutability)
 > * Bigger-sized packages will slow down queries, so explore a different option when you see that.
 > * Enough bigger packages will start timing out queries, so if you've hit this it's time to explore a different option.
 > * Migration to other repo formats is easy
-> * Set access properly if you need to connect from local machine accounts, Everyone share access does not give them network permission. See [local share permissions](xref:host-packages-internally#local-folder-permissions).
+> * Set access properly if you need to connect from local machine accounts, Everyone share access does not give them network permission. See [local share permissions](xref:host-packages#local-folder-permissions).
 
 **NOTE:** If you run into issues where Chocolatey can't see the packages, check the last point above.
 

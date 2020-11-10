@@ -93,7 +93,7 @@ Unforunately it's harder to make recommendations here as it is really dependent 
 
 **SPACE RECOMMENDATION**: Have enough space for 10x the size of the installers and other software you will store. This will allow for some default growth. We would recommend 100 GB at a minimum.
 
-We've compiled a list of requirements for [commercial repository options](xref:host-packages-internally#commercial-repository-system-requirements). Chocolatey Simple Server (Chocolatey.Server) can be put on really minimum hardware that could be 1-2GB of RAM, low CPU, and as little as 5 GB of space (number of packages you store will drive this). You will just want the network transfer to be fast.
+We've compiled a list of requirements for [commercial repository options](xref:host-packages#commercial-repository-system-requirements). Chocolatey Simple Server (Chocolatey.Server) can be put on really minimum hardware that could be 1-2GB of RAM, low CPU, and as little as 5 GB of space (number of packages you store will drive this). You will just want the network transfer to be fast.
 
 ### Chocolatey Central Management
 
@@ -154,7 +154,7 @@ How the heck does this all work?
 
 ### Installation
 
-1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](./choco/commands/sources) and [Source Repositories](xref:host-packages-internally).
+1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](./choco/commands/sources) and [Source Repositories](xref:host-packages).
 2. The package is installed into `$env:ChocolateyInstall\lib\<pkgId>`. The package install location is not configurable - the package must install here for tracking, upgrade, and uninstall purposes. The software that may be installed later during this process ***is*** configurable. See [Terminology](#terminology) to understand the difference between "package" and "software" as the terms relate to Chocolatey.
 3. Choco determines if it is self-contained or has automation scripts - PowerShell scripts (*.ps1 files) and possibly other formats at a later date.
 4. Choco takes a registry snapshot for later comparison.
@@ -200,4 +200,4 @@ Many packages use native software installers, so Chocolatey allows the installer
 
 By default it installs packages from chocolatey.org (the community feed). But you can change this by adding default sources and/or using the  `--source` switch when running a command.
 
-When you [host internal packages](xref:host-packages-internally), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](./create/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.
+When you [host internal packages](xref:host-packages), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](./create/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.

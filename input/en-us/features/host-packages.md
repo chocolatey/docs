@@ -1,4 +1,5 @@
 ---
+xref: host-packages
 Order: 50
 Title: Host packages internally
 Description: How to host your own Chocolatey packages, rather than use the Chocolatey Community Repository
