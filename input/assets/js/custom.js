@@ -162,9 +162,9 @@ if (cookieNotice) {
 
 cookieNoticeAlert.find('button').click(function() {
     if (~location.hostname.indexOf('chocolatey.org')) {
-        document.cookie = cookieNoticeName + '=true; path=/; domain=chocolatey.org;';
+        document.cookie = cookieNoticeName + '=true; ' + getCookieExpirationNever() + 'path=/; domain=chocolatey.org;';
     } else {
-        document.cookie = cookieNoticeName + '=true; path=/;';
+        document.cookie = cookieNoticeName + '=true;' + getCookieExpirationNever() + 'path=/;';
     }
 });
 
@@ -295,6 +295,13 @@ $(window).on("resize", function () {
 leftSidebarNav.find('.loader-container').fadeOut(3000, function () {
     $(this).remove();
 });
+
+function getCookieExpirationNever() {
+    var d = new Date();
+    // 100 years in milliseconds: 100 years * 365 days * 24 hours * 60 minutes * 60 seconds * 1000ms
+    d.setTime(d.getTime() + (100 * 365 * 24 * 60 * 60 * 1000));
+    return 'expires=' + d.toUTCString() + ';';
+}
 
 function getWindowVHHeight() {
     let vh = window.innerHeight * 0.01;
