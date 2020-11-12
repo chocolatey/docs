@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Remove="input\**" />
     <Compile Remove="sass\**" />
+    <Compile Remove="node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,9 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Include="sass\**">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="node_modules\**">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,0 +1,30 @@
+[
+    {
+      "outputFileName": "input/assets/css/chocolatey.bundle.css",
+      "inputFiles": [
+        "input/assets/css/chocolatey.css"
+      ]
+    },
+    {
+      "outputFileName": "input/assets/css/docsearch.css",
+      "inputFiles": [
+        "node_modules/docsearch.js/dist/cdn/docsearch.css"
+      ]
+    },
+    {
+      "outputFileName": "input/assets/js/docsearch.js",
+      "inputFiles": [
+        "node_modules/docsearch.js/dist/cdn/docsearch.js"
+      ]
+    },
+    {
+      "outputFileName": "input/assets/js/chocolatey.bundle.js",
+      "inputFiles": [
+        "node_modules/jquery/dist/jquery.js",
+        "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+        "node_modules/anchor-js/anchor.js",
+        "node_modules/choco-theme/js/prism.min.js",
+        "node_modules/choco-theme/js/chocolatey.js"
+      ]
+    }
+  ]
