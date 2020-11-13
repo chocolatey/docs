@@ -196,17 +196,18 @@
                                     <button class="btn btn-link btn-collapse font-weight-bold w-100 d-xl-none mb-2" type="button" data-toggle="collapse" data-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
                                     <div id="rightSidebar" class="sticky-top collapse">
                                         <div class="card card-body py-0 px-xl-0 mb-3">
+                                            @if (Document.ContainsKey("EditLink"))
+                                            {
+                                                <p class="font-weight-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
+                                                <hr class="m-0" />
+                                            }
                                             <p class="font-weight-bold pt-3">On This Page</p>
-                                            <ul class="list-unstyled py-3">
+                                            <ul class="list-unstyled pb-3">
                                                 @foreach (IDocument heading in headings)
                                                 {
                                                     <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
                                                 }
                                             </ul>
-                                            @if (Document.ContainsKey("EditLink"))
-                                            {
-                                                <p class="font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
-                                            }
                                         </div>
                                     </div>
                                 </div>
