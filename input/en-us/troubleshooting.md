@@ -123,7 +123,7 @@ References:
 
 ### "ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.
 
-This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](./create/helpers).
+This is similar to the above, the error is the same. In most cases it stems from setting up your package parameters for `Install-ChocolateyInstallPackage` but calling `Install-ChocolateyPackage` instead. Learn the differences at the [PowerShell function reference](xref:powershell-reference).
 
 Reference: https://groups.google.com/d/msgid/chocolatey/d11d8eb2-74b3-4c2c-b0bb-d1a1ed3df389%40googlegroups.com (you will need to join the group to see the message)
 
