@@ -45,7 +45,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 The Chocolatey Community Repository versus for internal use has different needs. Keep that in mind as you read over the _TODO.txt you see when you run `choco new`.
 
 - [Creating packages](./create/create-packages)
-- [Package Function and Variable Reference](./create/helpers)
+- [Package Function and Variable Reference](xref:powershell-reference)
 - [Parse PackageParameters Argument](./guides/create/parse-packageparameters-argument)
 - [Mount an Iso in Chocolatey Package](./guides/create/mount-an-iso-in-chocolatey-package)
 - [Deprecate a Chocolatey Package](./community-packages/maintainers/deprecate-a-chocolatey-package)
@@ -67,7 +67,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 - [Host Your Own Feed](xref:host-packages)
 - [Deploy Chocolatey in an Organization](./guides/organizations/organizational-deployment-guide)
 - [Creating packages](./create/create-packages)
-  - [Package Function and Variable Reference](./create/helpers)
+  - [Package Function and Variable Reference](xref:powershell-reference)
 - [Getting Started](xref:getting-started)
 - [Command Reference](./choco/commands)
 

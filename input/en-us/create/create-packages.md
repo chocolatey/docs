@@ -30,8 +30,8 @@ Sometimes called embedding the binaries, there are functions in the automation s
 
 #### Automation Scripts
 You have a powerful use of Chocolatey, as you are using PowerShell. So you
-can do just about anything you need. Choco has some very handy [built-in functions](./helpers) that you can use, these are sometimes called
-[helpers](./helpers).
+can do just about anything you need. Choco has some very handy [built-in functions](xref:powershell-reference) that you can use, these are sometimes called
+[helpers](xref:powershell-reference).
 
 ## Table of Contents
 1. [Rules](#rules-to-be-observed-before-publishing-packages)
@@ -92,9 +92,9 @@ The main release of a product versions are usually sufficient. If there are also
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
 1. [Nuspec](../create/create-packages#nuspec)
-1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](./helpers)
+1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](xref:powershell-reference)
 1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](../information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
-1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](./helpers) for functions available in your script.
+1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](xref:powershell-reference) for functions available in your script.
 
 **Note:** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
@@ -232,7 +232,7 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 ## Uninstalling
 
-Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](../chocolatey-install-ps1). All the usual [helper reference](./helpers) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
+Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](../chocolatey-install-ps1). All the usual [helper reference](xref:powershell-reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
 
 ## Dependency Chaining

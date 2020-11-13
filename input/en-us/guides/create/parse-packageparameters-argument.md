@@ -120,7 +120,7 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 This is the recommended way to work with Package Parameters. For consistency and understanding, please only use this method when building packages.
 
 #### Built-In
-Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey - see the [`Get-PackageParameters` documentation](../../create/helpers/get-packageparameters). If you are using Chocolatey internally, you can use this without needing the community extension (below). If you are pushing packages externally (e.g. the community package repository), you must add the core extension as a polyfill for 6 months after release of Chocolatey v0.10.8. Follow the next section below.
+Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey - see the [`Get-PackageParameters` documentation](../../create/functions/get-packageparameters). If you are using Chocolatey internally, you can use this without needing the community extension (below). If you are pushing packages externally (e.g. the community package repository), you must add the core extension as a polyfill for 6 months after release of Chocolatey v0.10.8. Follow the next section below.
 
 #### Core Community extension
 

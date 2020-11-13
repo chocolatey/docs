@@ -60,7 +60,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 * `%ChocolateyInstall%` - Chocolatey installation directory
 * `%ChocolateyInstall%\lib\package-name` - Package directory
 * `%cd%` or `$pwd` - current directory
-* Environment variable reference available in the README when using `choco new` or [online](./helpers#variables).
+* Environment variable reference available in the README when using `choco new` or [online](xref:powershell-reference#variables).
 
 ## Examples
 
