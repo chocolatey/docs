@@ -1,5 +1,5 @@
 #topNav {
-    padding: .5rem 0;
+    padding: $spacer / 2 0;
     background: $white;
     background: var(--background-light);
     transition: $theme-transition;
@@ -9,6 +9,43 @@
         padding-left: 1rem;
     }
 
+    form[role="search"] {
+        width: 80%;
+        transition: $theme-transition;
+        padding-left: 15px;
+
+        .fa-search {
+            position: absolute;
+            z-index: 1;
+            left: 25px;
+            top: 50%;
+            transform: translate(0, -50%);
+            color: $primary-opacity;
+            transition: $theme-transition;
+        }
+
+        .form-control {
+            width: 100%;
+            padding-left: 35px;
+            background: var(--background-light);
+            color: var(--text);
+            transition: $theme-transition;
+
+            &:focus, &:hover {
+                border-color: $primary;
+                box-shadow: 0 0 0 0.2rem $primary-opacity;
+                color: var(--text);
+            }
+        }
+
+        &.active, &:hover {
+            .fa-search {
+                color: $primary;
+                transition: $theme-transition;
+            }
+        }
+    }
+    
     .navbar-nav {
         flex-direction: row;
         align-items: center;
@@ -22,15 +59,12 @@
                 padding-right: $spacer;
             }
 
-            &:last-child {
-                padding-right: .25rem;
-            }
-
             .nav-link {
                 padding: 0;
             }
 
             .btn-search {
+                border: 1px solid $gray-300;
                 border: 1px solid var(--border-secondary);
                 color: $secondary;
                 font-weight: 400;
@@ -49,32 +83,21 @@
             }
         }
     }
+
+    .btn-search-close {
+        width: 20%;
+    }
 }
+
 
 @include media-breakpoint-up(sm) {
     #topNav {
-        .navbar-nav {
-            .nav-item {
-                .btn-search {
-                    border-color: $primary;
-                    width: 250px;
-                    font-size: $font-size-base;
-
-                    &:focus, &:hover {
-                        background: none;
-                        box-shadow: 0 0 0 0.2rem $primary-opacity;
-                        color: var(--text);
+        form[role="search"] {
+            width: 85%;
+        }
     
-                        .fas {
-                            color: $primary;
-                        }
-                    }
-
-                    .fas {
-                        color: $primary-opacity-50;
-                    }
-                }
-            }
+        .btn-search-close {
+            width: 15%;
         }
     }
 }
@@ -90,22 +113,69 @@
             position: absolute;
         }
 
+        form[role="search"] {
+            padding-left: 0;
+            position: absolute;
+            left: 25%;
+            top: 0px;
+            bottom: 0px;
+            right: auto;
+            width: 40%;
+
+            .fa-search {
+               left: 12px;
+            }
+
+            .form-control {
+                padding-left: 35px;
+                padding-right: 80px;
+            }
+
+            .search-key-container {
+                position: absolute;
+                right: 12px;
+                top: 50%;
+                transform: translate(0, -50%);
+
+                .badge-key:not(:last-child) {
+                    margin-right: $spacer / 4;
+                }
+            }
+        }
+
+
         .navbar-nav {
             margin-right: 0;
 
             .nav-item {
-                &:not(:last-child) {
+                &:not(:last-child), &:not(:nth-last-child(2)) {
                     padding-right: $spacer * 2;
                 }
 
-                &:last-child {
+                &:nth-last-child(2) {
                     padding-right: 1rem;
-                }
-
-                .btn-search {
-                    width: 300px;
                 }
             }
         }
     }
 }
+
+@include media-breakpoint-up(lg) {
+    #topNav {
+        form[role="search"] {
+            width: 45%;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    #topNav {
+        form[role="search"] {
+            left: 50%;
+            right: 50%;
+            transform: translate(-50%, 0);
+            z-index: 1;
+            width: 700px;
+        }
+    }
+} 

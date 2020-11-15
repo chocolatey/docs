@@ -1,10 +1,13 @@
-const leftSidebarNav =  $('#leftSidebarNav')
+const leftSidebarNav =  $('#leftSidebarNav'),
+      topNav = $('#topNav'),
       table = $('table'),
       themeToggle = $('#themeToggle'),
       topNoticeAlert = $('#topNoticeAlert'),
       topNotice = window.sessionStorage.getItem('notice'),
       searchQuery = $('#searchQuery'),
-      searchBox = $('#searchBox');
+      searchBox = $('#searchBox'),
+      btnSearch = topNav.find('.btn-search'),
+      btnSearchClose = topNav.find('.btn-search-close');
 
 var keys = {},
     isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
@@ -169,15 +172,11 @@ cookieNoticeAlert.find('button').click(function() {
 });
 
 // Search
-searchBox.on('shown.bs.modal', function (e) {
-    searchQuery.focus();
-
-    searchQuery.focus(function() {
-        $(this).parentsUntil('form').parent().addClass('active');
-    });
-    searchQuery.blur(function() {
-        $(this).parentsUntil('form').parent().removeClass('active');
-    });
+searchQuery.focus(function() {
+    $(this).parentsUntil('form').parent().addClass('active');
+});
+searchQuery.blur(function() {
+    $(this).parentsUntil('form').parent().removeClass('active');
 });
 
 // Open search box on key command
@@ -187,18 +186,38 @@ $(document).keydown(function(e) {
     if (isMac) {
         if (keys[91] && keys[75]) { // Ctrl + k
             e.preventDefault();
-            searchBox.modal('show');
+            searchQuery.focus();
         }
     } else {
         if (keys[17] && keys[75]) { // Cmd + k
             e.preventDefault();
-            searchBox.modal('show');
+            searchQuery.focus();
         }
     }
 });
 $(document).keyup(function(e) {
   delete keys[e.which];
 });
+
+// Mobile search
+btnSearch.click(function() {
+    var topNavHeight = topNav.outerHeight(true);
+
+    topNav.css('height', topNavHeight);
+    searchBox.add('.btn-search-close').removeClass('d-none');
+    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(leftSidebarNav.find('.navbar-toggler')).addClass('d-none');
+    searchQuery.focus();
+});
+
+btnSearchClose.click(function() {
+    closeMobileSearch();
+});
+
+function closeMobileSearch() {
+    topNav.css('height', '');
+    searchBox.add('.btn-search-close').addClass('d-none');
+    topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
+}
 
 //Highlight/ find active right sidebar nav links when scrolling/clicked
 $.each($('#rightSidebarNav li[class^="level"] a'), function() {
@@ -289,6 +308,7 @@ $(window).on("resize", function () {
     toggleRightSidebarNav();
     toggleStickyTop();
     getLeftSidebarNavHeight();
+    closeMobileSearch();
 });
 
 // Manually remove loader so it's not still playing animation in the background
@@ -343,7 +363,7 @@ function getLeftSidebarNavHeight() {
                 topNoticeAlertHeight = 0;
             }
 
-            leftSidebarNavHeight = $(document).height() - (topNoticeAlertHeight + $('#globalNav').outerHeight(true) + $('#topNav').outerHeight(true) + $('footer').outerHeight(true)) + 'px';
+            leftSidebarNavHeight = $(document).height() - (topNoticeAlertHeight + $('#globalNav').outerHeight(true) + topNav.outerHeight(true) + $('footer').outerHeight(true)) + 'px';
 
             leftSidebarNav.css('height', leftSidebarNavHeight);
         }

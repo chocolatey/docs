@@ -7,12 +7,6 @@
         transition: $theme-transition;
 
         ul {
-            border-top: 1px solid $gray-300;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid $gray-300;
-            border-bottom: 1px solid var(--border);
-            transition: $theme-transition;
-
             li {
                 &[class^="level"] {
                     a {
@@ -62,12 +56,6 @@
             background: none;
 
             ul {
-                border-top: 1px solid $gray-300;
-                border-top: 1px solid var(--border);
-                border-bottom: 1px solid $gray-300;
-                border-bottom: 1px solid var(--border);
-                transition: $theme-transition;
-    
                 li {
                     &[class^="level"] {
                         a {

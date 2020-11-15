@@ -67,20 +67,6 @@
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <button type="button" class="btn btn-search" data-toggle="modal" data-target="#searchBox">
-                        <span class="d-flex justify-content-between align-items-center">
-                            <span>
-                                <i class="fas fa-search" aria-hidden="true"></i>
-                                <span class="d-none d-sm-inline-block">Search...</span>
-                            </span>
-                            <span class="d-none d-md-block">
-                                <span class="badge badge-key badge-primary search-key"></span>
-                                <span class="badge badge-key badge-primary">k</span>
-                            </span>
-                        </span>
-                    </button>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
@@ -97,7 +83,21 @@
                         </div>
                     </label>
                 </li>
+                 <li class="nav-item d-md-none">
+                    <button type="button" aria-label="Search documentation" class="btn btn-search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                </li>
             </ul>
+            <form id="searchBox" class="form-inline d-none d-md-flex" role="search">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input type="search" class="form-control" id="searchQuery" placeholder="Search..." aria-label="Search" autofocus />
+                <span class="d-none d-md-flex search-key-container">
+                    <span class="badge badge-key badge-primary search-key"></span>
+                    <span class="badge badge-key badge-primary">k</span>
+                </span>
+            </form>
+            <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
         </nav>
         <div class="container-fluid">
             <div class="row">
@@ -196,17 +196,18 @@
                                     <button class="btn btn-link btn-collapse font-weight-bold w-100 d-xl-none mb-2" type="button" data-toggle="collapse" data-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
                                     <div id="rightSidebar" class="sticky-top collapse">
                                         <div class="card card-body py-0 px-xl-0 mb-3">
+                                            @if (Document.ContainsKey("EditLink"))
+                                            {
+                                                <p class="font-weight-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
+                                                <hr class="m-0" />
+                                            }
                                             <p class="font-weight-bold pt-3">On This Page</p>
-                                            <ul class="list-unstyled py-3">
+                                            <ul class="list-unstyled pb-3">
                                                 @foreach (IDocument heading in headings)
                                                 {
                                                     <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
                                                 }
                                             </ul>
-                                            @if (Document.ContainsKey("EditLink"))
-                                            {
-                                                <p class="font-weight-bold"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
-                                            }
                                         </div>
                                     </div>
                                 </div>
@@ -221,7 +222,7 @@
             <button type="button" class="btn btn-light btn-sm d-none d-md-inline-block" data-dismiss="alert" aria-label="Close">I accept</button>
             <button type="button" class="btn btn-light d-md-none" data-dismiss="alert" aria-label="Close">I accept</button>
         </div>
-        <div class="modal fade" id="searchBox" tabindex="-1" role="dialog" aria-labelledby="searchBox" aria-describedby="Search documentation" aria-hidden="true">
+        @*<div class="modal fade" id="searchBox" tabindex="-1" role="dialog" aria-labelledby="searchBox" aria-describedby="Search documentation" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -242,7 +243,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
         <footer class="p-3 small text-center">
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
             <span>@VersionUtilities.GetVersion()</span>
@@ -265,7 +266,7 @@
                 apiKey: '8148a7b5d009b8590bb85191c6f1823c',
                 indexName: 'chocolatey',
                 inputSelector: '#searchQuery',
-                debug: true // Set debug to true if you want to inspect the dropdown
+                debug: false // Set debug to true if you want to inspect the dropdown
             });
         </script>
     </body>
