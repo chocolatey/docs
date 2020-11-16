@@ -139,7 +139,7 @@
                                                         {
                                                             <li class="nav-item">
                                                                 <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
-                                                                    <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
+                                                                    <button class="btn btn-collapse collapsed pl-c175" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
                                                                     <a href="@child.GetLink()">@child.GetTitle()</a>
                                                                 </div>
                                                                 <div class="collapse" id="id-@child.Id">
@@ -150,7 +150,7 @@
                                                                             {
                                                                                 <li class="nav-item">
                                                                                     <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(grandChild) ||  OutputPages.GetDescendantsOf(grandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(grandChild) ? "active-page" : null)">
-                                                                                        <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
+                                                                                        <button class="btn btn-collapse collapsed pl-c275" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
                                                                                         <a href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
                                                                                     </div>
                                                                                     <div class="collapse" id="id-@grandChild.Id">
@@ -158,7 +158,7 @@
                                                                                             @foreach (IDocument greatGrandChild in OutputPages.GetChildrenOf(grandChild).OnlyVisible())
                                                                                             {
                                                                                                 <li class="nav-item">
-                                                                                                    <a class="nav-link pl-c4 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                    <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
                                                                                                 </li>
                                                                                             }
                                                                                         </ul>
