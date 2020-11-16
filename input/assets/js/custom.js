@@ -10,7 +10,8 @@ const leftSidebarNav =  $('#leftSidebarNav'),
       btnSearchClose = topNav.find('.btn-search-close');
 
 var keys = {},
-    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
+    windowWidth = $(window).width();
 
 // Anchor
 anchors.options.placement = 'left';
@@ -305,10 +306,13 @@ $.each($('.btn-collapse-target'), function() {
 
 $(window).on("resize", function () {
     getWindowVHHeight();
-    toggleRightSidebarNav();
     toggleStickyTop();
     getLeftSidebarNavHeight();
-    closeMobileSearch();
+
+    if($(window).width() != windowWidth) {
+        toggleRightSidebarNav();
+        closeMobileSearch();
+    }
 });
 
 // Manually remove loader so it's not still playing animation in the background

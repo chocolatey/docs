@@ -4,7 +4,7 @@
 
         .ds-dropdown-menu {
             box-shadow: $box-shadow !important;
-            z-index: 2000 !important;
+            z-index: 99999 !important;
 
             &:before {
                 background: var(--background);
@@ -170,9 +170,10 @@
     #searchBox {
         .algolia-autocomplete {
             .ds-dropdown-menu {
-                max-width: calc(100vw - 36px);
-                min-width: calc(100vw - 36px);
-                width: calc(100vw - 36px);
+                margin-top: 19px;
+                max-width: calc(100vw - 34px);
+                min-width: calc(100vw - 34px);
+                width: calc(100vw - 34px);
             }
             .algolia-docsearch-suggestion--content {
                 width: 100%;
