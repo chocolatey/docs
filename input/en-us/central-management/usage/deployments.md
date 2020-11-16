@@ -212,11 +212,10 @@ You may want to configure this only for the first step of a deployment, or for m
 >
 > If the deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first deployment step is ignored.
 > In this case, the maintenance window defines the contact timeout for the first step.
-Depending on your environment and expectations, you can also set the `Execution Timeout` value of a deployment step to `0`.
-This has a similar effect, preventing any deployment step action from being marked as failed or inconclusive until the Chocolatey Agent from that particular machine reports back in.
-If you expect users to be moving devices in and out of your network frequently, you may need to configure the execution timeout value accordingly.
-
+The `Execution Timeout` is the maximum allowed time for the Chocolatey Agent to execute the deployment step task.
 Any positive value for this setting will be respected, and as with `Machine Contact Timeout`, a `0` value is treated as infinite.
+However, if the execution timeout is infinite and a computer goes offline, that deployment step will not complete until that computer checks in again.
+Infinite execution timeouts are **not recommended** for this reason &mdash; deployment steps may end up seemingly stalling for long periods of time and/or require manual intervention to cancel them.
 
 ## Deployments Webinars
 
@@ -225,6 +224,14 @@ Catch the recording of the Jun 32rd, 2020 webinar for a full showcase of the Cho
 <https://chocolatey.org/events/chocolatey-deployments>
 
 ## Common Errors and Resolutions
+
+### A deployment step is stalled with infinite execution timeout
+
+The only way to resolve this currently is to cancel the deployment itself, which can be done from the main Deployments list.
+On the right-hand side of the Active Deployments table, click the Actions menu for the corresponding deployment, and select `Cancel`.
+You will be asked to confirm the cancellation.
+
+All remaining steps in the deployment will be cancelled, along with any still running or pending tasks.
 
 ### The updated license file is not being picked up in the website
 
