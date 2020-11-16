@@ -30,7 +30,7 @@ You will also need to have at least one Group of computers already defined.
    Press **Enter** to save the new name.
 
    ![CCM New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
-1. (Optional) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
+1. (Optional, Requires CCM v0.4.0+) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
 
    ![CCM New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
    1. Enter a date and time, or click the :calendar: button to pick the date and time from a calendar UI.
@@ -55,7 +55,7 @@ You will also need to have at least one Group of computers already defined.
 1. (Optional) Click **Show advanced options** to set one or more of the following options:
    * `Execution timeout`.
    * `Valid exit codes`.
-   * `Machine contact timeout`.
+   * `Machine contact timeout` (requires CCM v0.4.0+ to edit).
    * `Fail overall deployment if not successful`.
      Disabling this option will allow the overall deployment to be marked as successful even if the step fails.
      By default, if any deployment step fails, the overall deployment is marked as Failed.
@@ -214,7 +214,7 @@ You may want to configure this only for the first step of a deployment, or for m
 > In this case, the maintenance window defines the contact timeout for the first step.
 The `Execution Timeout` is the maximum allowed time for the Chocolatey Agent to execute the deployment step task.
 Any positive value for this setting will be respected, and as with `Machine Contact Timeout`, a `0` value is treated as infinite.
-However, if the execution timeout is infinite and a computer goes offline, that deployment step will not complete until that computer checks in again.
+However, if the execution timeout is infinite and a computer goes offline, that deployment step will not complete until that computer checks in again. If it errors three times attempting to provide the results, it will fail it at the client and that computer will not report results, and require manual intervention.
 Infinite execution timeouts are **not recommended** for this reason &mdash; deployment steps may end up seemingly stalling for long periods of time and/or require manual intervention to cancel them.
 
 ## Deployments Webinars
