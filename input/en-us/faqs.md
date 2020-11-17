@@ -26,11 +26,11 @@ Yes, in a nutshell that is what Chocolatey does. Nearly exactly what you may alr
 
 ### What is the purpose of Chocolatey?
 
-Great question! See [The purpose of Chocolatey](./why#what-is-the-purpose-of-chocolatey]
+Great question! See [The purpose of Chocolatey](./why#what-is-the-purpose-of-chocolatey)
 
 ### How does Chocolatey work?
 
-See [What is Chocolatey?](./why#what-is-chocolatey]
+See [What is Chocolatey?](./why#what-is-chocolatey)
 
 ### Why Chocolatey?
 
