@@ -267,8 +267,8 @@
             </div>
         </div>*@
         <footer class="p-3 small text-center">
-            <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span>
-            <span>@VersionUtilities.GetVersion()</span>
+            <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span><br />
+            <span>Deployed from <a href="https://github.com/chocolatey/docs/commit/@VersionUtilities.GetSha()">@VersionUtilities.GetCommit()</a></span>
         </footer>
 
         <script type="text/javascript" src="@Context.GetLink("/assets/js/jquery.min.js")"></script>

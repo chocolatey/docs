@@ -5,7 +5,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <DefaultItemExcludes>$(DefaultItemExcludes);output\**;.gitignore</DefaultItemExcludes>
-    <MinVerSkip Condition="'$(Configuration)' == 'Debug'">true</MinVerSkip>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,15 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="GitInfo" PrivateAssets="All" Version="2.1.2" />
     <PackageReference Include="Statiq.Web" Version="1.0.0-beta.12" />
-    <PackageReference Include="MinVer" PrivateAssets="All" Version="2.3.0" />
   </ItemGroup>
-
-  <Target Name="Versioning" BeforeTargets="MinVer">
-    <PropertyGroup Label="Build">
-      <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
-      <MinVerVerbosity>normal</MinVerVerbosity>
-    </PropertyGroup>
-  </Target>
-
 </Project>

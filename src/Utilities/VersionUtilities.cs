@@ -1,34 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Reflection;
-using System.Text;
-
 namespace Docs.Utilities
 {
     public static class VersionUtilities
     {
-        public static string GetVersion()
+        public static string GetSha()
         {
-            return GetVersion(typeof(VersionUtilities).Assembly);
+            return ThisAssembly.Git.Sha;
         }
 
-        private static string GetVersion(Assembly assembly)
+        public static string GetCommit()
         {
-            if (assembly == null)
-            {
-                return "?";
-            }
-
-            try
-            {
-                var info = FileVersionInfo.GetVersionInfo(assembly.Location);
-                return info.ProductVersion ?? "?";
-            }
-            catch
-            {
-                return "?";
-            }
+            return ThisAssembly.Git.Commit;
         }
     }
 }
