@@ -23,7 +23,7 @@ With Chocolatey (choco) client itself, these are the important things to know:
 
 ### Chocolatey Community Package Repository
 
-Use of the community package repository is optional. Community package repository is the same thing as Chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [DOES NOT RECOMMEND using the community repository either](../community-packages/community-packages-disclaimer) for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
+Use of the community package repository is optional. Community package repository is the same thing as Chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [DOES NOT RECOMMEND using the community repository either](../community-repository/community-packages-disclaimer) for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
 
 Here are some other important things to understand:
 
@@ -146,7 +146,7 @@ It goes without stating that if you are a business and you are using Chocolatey,
 
 ## Chocolatey.org Packages
 
-Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [distribution rights](../community-packages/community-packages-disclaimer), they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
+Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [distribution rights](../community-repository/community-packages-disclaimer), they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
 
 ### Security for the Community Package Repository:
 
@@ -163,12 +163,12 @@ Chocolatey.org has a community repository of packages known as the community fee
 
 ### Rigorous Moderation Process for Community Packages
 
-In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](../community-packages/maintainers/moderation) prior to any public consumption:
+In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](../community-repository/maintainers/moderation) prior to any public consumption:
 
 - All package versions are run through an [automated validation process](https://github.com/chocolatey/package-validator/wiki) to determine quality.
 - All package versions are run through an [automated verification process](https://github.com/chocolatey/package-verifier/wiki) to determine if they work correctly (install, etc).
 - All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://chocolatey.org/packages/chocolatey#virus](https://chocolatey.org/packages/chocolatey#virus) as an example). **NOTE:** Only en-US installers are tested by default via Chocolatey's Package Scanner.
-- A human [reviews every package version](../community-packages/maintainers/moderation#reviewer-moderator-process) that is not a [trusted package](../faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
+- A human [reviews every package version](../community-repository/maintainers/moderation#reviewer-moderator-process) that is not a [trusted package](../faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
 - We don't require cryptographically signing packages yet, that is a future enhancement
 - Checksumming is a requirement for non-secure scenarios, but is not yet a requirement in some scenarios, so keep reading the next section.
 

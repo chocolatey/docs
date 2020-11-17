@@ -50,7 +50,7 @@ To put it another way, Microsoft would be quite upset if the Office 365 packages
 
 When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](xref:getting-started#what-are-chocolatey-packages) for more details.
 
-For more information on organizational cautions about the community package repository, see [the community repository disclaimer](./community-packages/community-packages-disclaimer).
+For more information on organizational cautions about the community package repository, see [the community repository disclaimer](./community-repository/community-packages-disclaimer).
 
 ### Where does Chocolatey install by default?
 
@@ -337,7 +337,7 @@ There is! This is a long video due to slow internet connections, but watch the f
 ## Community Package Repository
 
 ### I just took over as the primary maintainer of a package. What do I need to do?
-See [Package Maintainer Handover](./community-packages/maintainers/package-maintainer-handover)
+See [Package Maintainer Handover](./community-repository/maintainers/package-maintainer-handover)
 
 ### What is moderation?
 
@@ -354,7 +354,7 @@ Things to note:
 
 ### How does the moderation review process work?
 
-See [Review Process](./community-packages/maintainers/moderation#package-review-process).
+See [Review Process](./community-repository/maintainers/moderation#package-review-process).
 
 ### What is a trusted package?
 

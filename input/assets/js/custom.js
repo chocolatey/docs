@@ -10,7 +10,8 @@ const leftSidebarNav =  $('#leftSidebarNav'),
       btnSearchClose = topNav.find('.btn-search-close');
 
 var keys = {},
-    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
+    isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0,
+    windowWidth = $(window).width();
 
 // Anchor
 anchors.options.placement = 'left';
@@ -219,6 +220,14 @@ function closeMobileSearch() {
     topNav.find('.navbar-brand').add(topNav.find('.navbar-nav')).add(leftSidebarNav.find('.navbar-toggler')).removeClass('d-none');
 }
 
+// Wraps markdown task list items for styling
+$.each($('.task-list-item [type="checkbox"]'), function () {
+    $(this)
+        .addClass('custom-control-input')
+        .wrap('<div class="custom-control custom-checkbox"></div>')
+        .after('<label class="custom-control-label"></label>');
+});
+
 //Highlight/ find active right sidebar nav links when scrolling/clicked
 $.each($('#rightSidebarNav li[class^="level"] a'), function() {
     var scrollHash = $(this).attr('href');
@@ -305,10 +314,13 @@ $.each($('.btn-collapse-target'), function() {
 
 $(window).on("resize", function () {
     getWindowVHHeight();
-    toggleRightSidebarNav();
     toggleStickyTop();
     getLeftSidebarNavHeight();
-    closeMobileSearch();
+
+    if($(window).width() != windowWidth) {
+        toggleRightSidebarNav();
+        closeMobileSearch();
+    }
 });
 
 // Manually remove loader so it's not still playing animation in the background

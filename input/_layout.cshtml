@@ -40,7 +40,7 @@
 
         <title>@title</title>
     </head>
-    <body>
+    <body class="chocolatey-docs">
         @{
             @* To remove top notice alert, replace the string below with "" *@
             string topNoticeText = "<a href='https://chocolatey.org/covid-19'>Here's how we're responding to COVID-19 plus resources to help</a>";
@@ -139,7 +139,7 @@
                                                         {
                                                             <li class="nav-item">
                                                                 <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
-                                                                    <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
+                                                                    <button class="btn btn-collapse collapsed pl-c175" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
                                                                     <a href="@child.GetLink()">@child.GetTitle()</a>
                                                                 </div>
                                                                 <div class="collapse" id="id-@child.Id">
@@ -150,7 +150,7 @@
                                                                             {
                                                                                 <li class="nav-item">
                                                                                     <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(grandChild) ||  OutputPages.GetDescendantsOf(grandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(grandChild) ? "active-page" : null)">
-                                                                                        <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
+                                                                                        <button class="btn btn-collapse collapsed pl-c275" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
                                                                                         <a href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
                                                                                     </div>
                                                                                     <div class="collapse" id="id-@grandChild.Id">
@@ -158,7 +158,7 @@
                                                                                             @foreach (IDocument greatGrandChild in OutputPages.GetChildrenOf(grandChild).OnlyVisible())
                                                                                             {
                                                                                                 <li class="nav-item">
-                                                                                                    <a class="nav-link pl-c4 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                    <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
                                                                                                 </li>
                                                                                             }
                                                                                         </ul>
@@ -244,28 +244,6 @@
             <button type="button" class="btn btn-light btn-sm d-none d-md-inline-block" data-dismiss="alert" aria-label="Close">I accept</button>
             <button type="button" class="btn btn-light d-md-none" data-dismiss="alert" aria-label="Close">I accept</button>
         </div>
-        @*<div class="modal fade" id="searchBox" tabindex="-1" role="dialog" aria-labelledby="searchBox" aria-describedby="Search documentation" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Search Documentation</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body p-0">
-                        <form role="search" class="active">
-                            <i class="fas fa-search fa-lg" aria-hidden="true"></i>
-                            <input type="search" class="form-control form-control-lg" id="searchQuery" placeholder="Search..." aria-label="Search" autofocus />
-                        </form>
-                    </div>
-                    <div class="modal-footer d-flex justify-content-between">
-                        <a href="https://www.algolia.com/ref/docsearch/?utm_source=docsearch&utm_medium=link&utm_term=footer&utm_campaign=" target="_blank" rel="noreferrer"><div class="img-algolia"></div></a>
-                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>*@
         <footer class="p-3 small text-center">
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span><br />
             <span>Deployed from <a href="https://github.com/chocolatey/docs/commit/@VersionUtilities.GetSha()">@VersionUtilities.GetCommit()</a></span>

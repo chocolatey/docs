@@ -105,12 +105,24 @@ img {
 }
 
 /*Utilities*/
+.pl-c175 {
+    padding-left: $spacer * 2 - $spacer / 4 !important;
+}
+
 .pl-c2 {
     padding-left: $spacer * 2 !important;
 }
 
+.pl-c275 {
+    padding-left: $spacer * 3 - $spacer / 4 !important;
+}
+
 .pl-c4 {
     padding-left: $spacer * 4 !important;
+}
+
+.pl-c5 {
+    padding-left: $spacer * 5 !important;
 }
 
 /*Modals*/

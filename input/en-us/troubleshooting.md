@@ -189,7 +189,7 @@ It could be one of a few things:
 * It is being blocked in your organization
 * We broke something (this is the least likely reason)
 * **CloudFlare has blocked your IP [due to reasons](https://support.cloudflare.com/hc/en-us/articles/203366080-Why-do-I-see-a-captcha-or-challenge-page-Attention-Required-trying-to-visit-a-site-protected-by-Cloudflare-as-a-site-visitor-)** (99% of the time, this is the issue)
-* The Chocolatey Community Team may have blocked access due to excessive use - see [excessive use for details](./community-packages/community-packages-disclaimer#excessive-use)
+* The Chocolatey Community Team may have blocked access due to excessive use - see [excessive use for details](./community-repository/community-packages-disclaimer#excessive-use)
 
 You can use a tool like [Fiddler](https://www.telerik.com/fiddler) to help determine what is going on.
 
@@ -206,7 +206,7 @@ Once this has been completed, you should have access to install Chocolatey and/o
 
 ### I'm getting a 429 too many requests issue when attempting to use the community package repository.
 
-This means your IP address has been flagged for too many requests. Please see [Rate Limiting](./community-packages/community-packages-disclaimer#rate-limiting) for details and actions.
+This means your IP address has been flagged for too many requests. Please see [Rate Limiting](./community-repository/community-packages-disclaimer#rate-limiting) for details and actions.
 
 Reference Errors:
 * `Exception calling "DownloadFile" with "2" argument(s): The remote server returned an error: (429) Too Many Requests`
