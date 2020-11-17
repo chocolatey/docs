@@ -27,6 +27,7 @@ jobs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        STATIQ_GITHUB_ACCESS_TOKEN: ${{ secrets.STATIQ_GITHUB_ACCESS_TOKEN }}
       run: |
         dotnet tool restore
         dotnet cake --target=Publish-Documentation
