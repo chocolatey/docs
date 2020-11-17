@@ -8,7 +8,7 @@ var deployRemote = "https://github.com/chocolatey/docs";
 var publishDirectory = MakeAbsolute(Directory("publish"));
 var outputDirectory = MakeAbsolute(Directory("output"));
 var deployBranch = "gh-pages";
-var accessToken = EnvironmentVariable("GITHUB_TOKEN");
+var accessToken = EnvironmentVariable("STATIQ_GITHUB_ACCESS_TOKEN");
 
 Task("Statiq-Preview")
    .Does(() =>
