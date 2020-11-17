@@ -1,1 +1,2 @@
-dotnet run -- preview
+dotnet tool restore
+dotnet cake

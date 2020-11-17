@@ -1,1 +1,2 @@
-dotnet run --configuration Release
+dotnet tool restore
+dotnet cake --target=Statiq-Build

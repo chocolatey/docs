@@ -1,1 +1,2 @@
-dotnet run --configuration Release -a ValidateRelativeLinks=Error -a ValidateAbsoluteLinks=Error
+dotnet tool restore
+dotnet cake --target=Statiq-LinkValidation

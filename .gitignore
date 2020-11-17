@@ -6,3 +6,4 @@ config.wyam.*
 output/
 bin/
 obj/
+publish/
