@@ -48,11 +48,11 @@ The Chocolatey Community Repository versus for internal use has different needs.
 - [Package Function and Variable Reference](xref:powershell-reference)
 - [Parse PackageParameters Argument](./guides/create/parse-packageparameters-argument)
 - [Mount an Iso in Chocolatey Package](./guides/create/mount-an-iso-in-chocolatey-package)
-- [Deprecate a Chocolatey Package](./community-packages/maintainers/deprecate-a-chocolatey-package)
+- [Deprecate a Chocolatey Package](./community-repository/maintainers/deprecate-a-chocolatey-package)
 - [Chocolatey Community Repository](https://chocolatey.org/packages)
   - Keep in Mind [Distribution Rights](./information/legal#distributions-aka-chocolatey-packages)
-  - [Outdated packages? Triage process](./community-packages/users/package-triage-process)
-  - [Moderation Process](./community-packages/maintainers/moderation)
+  - [Outdated packages? Triage process](./community-repository/users/package-triage-process)
+  - [Moderation Process](./community-repository/maintainers/moderation)
 
 ## Individuals
 

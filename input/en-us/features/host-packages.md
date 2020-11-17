@@ -12,7 +12,7 @@ RedirectFrom: docs/how-to-host-feed
 
 Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the [community package repository](https://chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
 
-* [Community package repository - organizational use](../community-packages/community-packages-disclaimer)
+* [Community package repository - organizational use](../community-repository/community-packages-disclaimer)
 * [Security and the community repository](../information/security#organizational-use-of-chocolatey)
 
 ## Host your own server

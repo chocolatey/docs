@@ -126,7 +126,7 @@ Is there a better way? Absolutely, see [ubiquitous install directory switch](./f
 Software and Package are not terms used interchangeably in the Chocolatey community. It's important to understand the distinction between them and how they are related.
 
 * **Chocolatey** - Windows package manager for software management, can also be considered a framework
-* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [community feed disclaimer](./community-packages/community-packages-disclaimer) to get a better understanding.
+* **Chocolatey.org** - Website that is one stop shop for Chocolatey information and contains a community maintained package repository. It is important to understand that Chocolatey and the community feed are not intertwined, they are not the same thing. See [community feed disclaimer](./community-repository/community-packages-disclaimer) to get a better understanding.
 * **NuGet** - Framework and .NET package manager for software libraries. Chocolatey uses the NuGet packaging framework
 * **Package** - See [What are Chocolatey Packages?](#what-are-chocolatey-packages). Packages can contain the software they represent and the final location of software may or may not be in the package.
 * **Software** - Software refers to the actual runtime software that a package represents. This can be installed to the system through native installers, or come from zip/archive files or just dropping the runtime software right into the package.

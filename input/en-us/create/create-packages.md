@@ -49,7 +49,7 @@ can do just about anything you need. Choco has some very handy [built-in functio
 1. [Localization](#internationalization-and-localization-of-packages)
 1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
 1. [Maintainer magic - automatically updating packaging](./automatic-packages)
-1. [Taking over existing package](../community-packages/maintainers/package-maintainer-handover)
+1. [Taking over existing package](../community-repository/maintainers/package-maintainer-handover)
 
 ## Quick Start guide
 
@@ -387,4 +387,4 @@ You can also log into chocolatey.org and upload your package from there (not rec
 Yes - [Automatic Packaging](./automatic-packages)
 
 ## Becoming a primary maintainer of an existing package
-See [Package Maintainer Handover](../community-packages/maintainers/package-maintainer-handover)
+See [Package Maintainer Handover](../community-repository/maintainers/package-maintainer-handover)

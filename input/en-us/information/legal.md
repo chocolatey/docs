@@ -22,7 +22,7 @@ Most Chocolatey packages on the community feed (https://chocolatey.org/packages 
 
 Because this is no different than what a human would do, and b/c a human kicks off this process, it's reasonable to determine that there is no violation of distribution rights.
 
-In the cases where you would package the actual software in the package, please ensure you have distribution rights. Any package that is found on the community feed not in compliance will be removed immediately. If you requested special permission to embed the software, make sure a copy of that permission is also in the package. If you are a software vendor that needs to report a violation, please see [a package is violating distribution rights](../community-packages/users/package-triage-process#the-package-is-violating-distribution-rights).
+In the cases where you would package the actual software in the package, please ensure you have distribution rights. Any package that is found on the community feed not in compliance will be removed immediately. If you requested special permission to embed the software, make sure a copy of that permission is also in the package. If you are a software vendor that needs to report a violation, please see [a package is violating distribution rights](../community-repository/users/package-triage-process#the-package-is-violating-distribution-rights).
 
 ## Licensing
 

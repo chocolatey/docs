@@ -60,7 +60,7 @@ There may be some exercises in here that won't apply:
 * [Host Your Own Package Server](xref:host-packages)
 * [Set up Chocolatey Server](./set-up-chocolatey-server)
 * [Security](https://chocolatey.org/security)
-* [Community Package Repository Disclaimer](../../community-packages/community-packages-disclaimer)
+* [Community Package Repository Disclaimer](../../community-repository/community-packages-disclaimer)
 
 ## Requirements
 
@@ -362,7 +362,7 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
-**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../../community-packages/community-packages-disclaimer).
+**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../../community-repository/community-packages-disclaimer).
 
 ### Exercise 2C: Set Up A File Share Repository
 
