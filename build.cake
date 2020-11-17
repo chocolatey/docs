@@ -9,6 +9,7 @@ var publishDirectory = MakeAbsolute(Directory("publish"));
 var outputDirectory = MakeAbsolute(Directory("output"));
 var deployBranch = "gh-pages";
 var accessToken = EnvironmentVariable("STATIQ_GITHUB_ACCESS_TOKEN");
+var projectPath = "./Docs.csproj";
 
 Task("Statiq-Preview")
    .Does(() =>
@@ -17,7 +18,7 @@ Task("Statiq-Preview")
       Configuration = "Release"
     };
 
-    DotNetCoreRun("./Docs.csproj", new ProcessArgumentBuilder().Append(string.Format("preview --output {0}", outputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("preview --output {0}", outputDirectory)), settings);
 });
 
 Task("Statiq-Build")
@@ -27,7 +28,7 @@ Task("Statiq-Build")
       Configuration = "Release"
     };
 
-    DotNetCoreRun("./Docs.csproj", new ProcessArgumentBuilder().Append(string.Format("--output {0}", outputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output {0}", outputDirectory)), settings);
 });
 
 Task("Statiq-LinkValidation")
@@ -38,7 +39,7 @@ Task("Statiq-LinkValidation")
       ArgumentCustomization = args => args.Append("-a ValidateRelativeLinks=Error -a ValidateAbsoluteLinks=Error")
     };
 
-    DotNetCoreRun("./Docs.csproj", new ProcessArgumentBuilder().Append(string.Format("--output {0}", outputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output {0}", outputDirectory)), settings);
 });
 
 Task("Publish-Documentation")
