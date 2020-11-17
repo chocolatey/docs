@@ -34,10 +34,14 @@ $red-light:           lighten($red, 15%);
 $yellow-opacity:      rgba($yellow, 0.25);
 $border-dark:         lighten($gray-800, 7.5%);
 
+// Custom Non Color Variables
+$disabled-opacity:  .8;
+
 :root {
     --color-mode: 'light';
     --background: #{$gray-100};
     --background-light: #{$white};
+    --background-disabled: #{$gray-300};
     --text: #{$gray-900};
     --text-code: #{$gray-800};
     --border: #{$gray-300};
@@ -60,6 +64,7 @@ $border-dark:         lighten($gray-800, 7.5%);
     :root:not([data-user-color-scheme]) {
       --background: #{$gray-900};
       --background-light: #{$gray-800};
+      --background-disabled: #{$gray-600};
       --text: #{$gray-400};
       --text-code: #{$gray-500};
       --border: #{$border-dark};
@@ -78,6 +83,7 @@ $border-dark:         lighten($gray-800, 7.5%);
   [data-user-color-scheme='dark'] {
     --background: #{$gray-900};
     --background-light: #{$gray-800};
+    --background-disabled: #{$gray-600};
     --text: #{$gray-400};
     --text-code: #{$gray-500};
     --border: #{$border-dark};
@@ -123,9 +129,6 @@ $card-border-width: 0;
 $alert-border-radius: 0;
 $alert-border-width: 0;
 
-// Custom Select
-$custom-select-indicator: "";
-
 // Carousel
 $carousel-indicator-active-bg: $primary;
 $carousel-control-color: $primary;
@@ -141,8 +144,14 @@ $breadcrumb-bg: transparent;
 
 // Custom Select
 $custom-select-indicator: "";
-$input-border-color: $primary;
 $custom-control-indicator-size: 1.5rem;
+$custom-select-disabled-bg: $gray-300;
+
+// Forms
+$input-border-color: $primary;
+$custom-control-indicator-border-color: $primary;
+$input-disabled-bg: $gray-300;
+$input-focus-border-color: $primary;
 
 // Tabs
 $nav-tabs-link-active-bg: $white;

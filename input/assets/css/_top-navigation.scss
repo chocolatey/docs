@@ -27,14 +27,10 @@
         .form-control {
             width: 100%;
             padding-left: 35px;
-            background: var(--background-light);
-            color: var(--text);
-            transition: $theme-transition;
 
-            &:focus, &:hover {
+            &:hover {
                 border-color: $primary;
                 box-shadow: 0 0 0 0.2rem $primary-opacity;
-                color: var(--text);
             }
         }
 

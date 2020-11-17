@@ -1,0 +1,87 @@
+// Inputs
+.form-control {
+    background: var(--background-light);
+    color: var(--text);
+    transition: $theme-transition;
+
+    &:focus {
+        background: var(--background-light);
+        border-color: $primary;
+        color: var(--text);
+    }
+
+    &:disabled, &[readonly] {
+        background: var(--background-disabled);
+        border-color: $gray-500;
+        opacity: $disabled-opacity;
+    }
+}
+
+// Custom checkboxes
+.custom-control.custom-checkbox {
+  .custom-control-label::before, .custom-control-label::after, .custom-control-input {
+      height: $spacer;
+      width: $spacer;
+      transform: translate(25%, 25%);
+  }
+
+  .custom-control-input {
+    transition: $theme-transition;
+
+      &:not(:checked) {
+          ~ .custom-control-label::before {
+              background: var(--background-light);
+          }
+
+          &[disabled], &:disabled {
+              ~ .custom-control-label::before {
+                  background: var(--background-disabled);
+                  border-color: $gray-500;
+                  opacity: $disabled-opacity;
+              }
+          }
+      }
+  }
+}
+
+// Custom select
+.custom-select {
+    color: var(--text);
+    background: var(--background-light);
+    transition: $theme-transition;
+
+    &:disabled {
+        color: var(--text);
+        background: var(--background-disabled);
+        border-color: $gray-500;
+        opacity: $disabled-opacity;
+    }
+}
+
+// Markdown task lists
+.task-list-item {
+  .custom-control.custom-checkbox {
+      display: inline-block;
+      min-height: $spacer;
+      margin-right: -$spacer / 2;
+
+      .custom-control-input {
+          &:not(:checked) {
+              &[disabled], &:disabled {
+                  ~ .custom-control-label::before {
+                      background: $white;
+                      background: var(--background-light);
+                      border-color: $primary;
+                      opacity: 1;
+                  }
+              }
+          }
+
+          &:checked {
+              ~ .custom-control-label::before {
+                  background: $primary;
+              }
+          }
+      }
+  }
+}
