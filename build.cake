@@ -2,6 +2,8 @@
 #tool dotnet:https://www.myget.org/F/cake-contrib/api/v3/index.json?package=KuduSync.Tool&version=1.5.4-g3916ad7218
 #addin nuget:?package=Cake.Git&version=0.22.0
 #addin nuget:?package=Cake.Kudu&version=0.11.0
+#addin nuget:?package=Cake.Npm&version=0.17.0
+#addin nuget:?package=Cake.Gulp&version=0.12.0
 
 var target = Argument("target", "Default");
 var deployRemote = "https://github.com/chocolatey/docs";
@@ -11,8 +13,43 @@ var deployBranch = "gh-pages";
 var accessToken = EnvironmentVariable("STATIQ_GITHUB_ACCESS_TOKEN");
 var projectPath = "./Docs.csproj";
 
+Task("Clean")
+    .Does(() =>
+{
+    var directoriesToClean = new []{
+        publishDirectory,
+        outputDirectory,
+        "./bin",
+        "./obj",
+        "./temp",
+        "./wwwroot"
+    };
+
+    CleanDirectories(directoriesToClean);
+});
+
+Task("Npm-Install")
+    .WithCriteria(() => FileExists("./package.json"), "package.json file not found in repository")
+    .IsDependentOn("Clean")
+    .Does(() =>
+{
+    var settings = new NpmInstallSettings();
+    settings.LogLevel = NpmLogLevel.Silent;
+    NpmInstall();
+});
+
+Task("Run-Gulp")
+    .WithCriteria(() => FileExists("./gulpfile.js"), "gulpfile.js file not found in repository")
+    .IsDependentOn("Npm-Install")
+    .Does(() =>
+{
+    Gulp.Local.Execute();
+});
+
+
 Task("Statiq-Preview")
-   .Does(() =>
+    .IsDependentOn("Run-Gulp")
+    .Does(() =>
 {
     var settings = new DotNetCoreRunSettings {
       Configuration = "Release"
@@ -22,6 +59,7 @@ Task("Statiq-Preview")
 });
 
 Task("Statiq-Build")
+    .IsDependentOn("Run-Gulp")
     .Does(() =>
 {
     var settings = new DotNetCoreRunSettings {
@@ -32,6 +70,7 @@ Task("Statiq-Build")
 });
 
 Task("Statiq-LinkValidation")
+    .IsDependentOn("Run-Gulp")
    .Does(() =>
 {
     var settings = new DotNetCoreRunSettings {
