@@ -27,7 +27,7 @@ jobs:
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        STATIQ_GITHUB_ACCESS_TOKEN: ${{ secrets.STATIQ_GITHUB_ACCESS_TOKEN }}
+        STATIQ_GITHUB_TOKEN: ${{ secrets.STATIQ_GITHUB_TOKEN }}
         STATIQ_DEPLOY_BRANCH: ${{ secrets.STATIQ_DEPLOY_BRANCH }}
         STATIQ_DEPLOY_REMOTE: ${{ secrets.STATIQ_DEPLOY_REMOTE }}
       run: |
