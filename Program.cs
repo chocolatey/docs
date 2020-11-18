@@ -20,7 +20,6 @@ namespace Docs
             .AddSetting(Constants.EditLink, ConfigureEditLink())
             .AddSetting(WebKeys.GatherHeadingsLevel, 5)
             .ConfigureSite("chocolatey", "docs", "master")
-            .ConfigureDeployment(deployBranch: "gh-pages")
             .ConfigureTemplates(templates => ((RenderMarkdown)templates[MediaTypes.Markdown].Module).UseExtension(new Markdig.Extensions.Emoji.EmojiExtension()))
             .AddShortcode("Children", typeof(ChildrenShortcode))
             .AddPipelines()
