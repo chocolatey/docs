@@ -11,6 +11,8 @@
     <Compile Remove="input\**" />
     <Compile Remove="sass\**" />
     <Compile Remove="node_modules\**" />
+    <Compile Remove="output\**" />
+    <Compile Remove="publish\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +23,12 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Include="node_modules\**">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="output\**">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="publish\**">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
