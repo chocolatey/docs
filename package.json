@@ -1,0 +1,20 @@
+{
+  "main": "gulpfile.js",
+  "scripts": {
+    "theme-update": "npm uninstall --no-save choco-theme && npm install choco-theme",
+    "theme-update-link": "npm uninstall --no-save choco-theme && npm install choco-theme && npm link choco-theme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocolatey/docs.git"
+  },
+  "author": "chocolatey",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/chocolatey/docs/issues"
+  },
+  "homepage": "https://github.com/chocolatey/docs#readme",
+  "devDependencies": {
+    "choco-theme": "github:chocolatey/choco-theme"
+  }
+}
