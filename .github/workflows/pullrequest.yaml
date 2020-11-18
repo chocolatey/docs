@@ -1,0 +1,31 @@
+name: Build Pull Request
+on:
+  pull_request:
+
+jobs:
+
+  ###################################################
+  # DOCS
+  ###################################################
+
+  build:
+    name: Build
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup dotnet
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.301' # SDK Version to use.
+
+    - name: Statiq-Build
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        dotnet tool restore
+        dotnet cake --target=Statiq-Build
