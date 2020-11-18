@@ -11,4 +11,4 @@ package-lock.json
 node_modules/
 input/assets/css/
 input/assets/js/
-input/assets/fonts/fontawesome-free/
+input/assets/fonts/
