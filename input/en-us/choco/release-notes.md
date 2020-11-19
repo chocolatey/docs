@@ -610,7 +610,7 @@ Here's one you probably never knew existed - extensions. Chocolatey has had the 
 
 We redesigned our `choco new` default packaging template and we've made managing templates as easy as managing packages.
 
-`choco search`/`choco list` has so many enhancements, you may not need to visit dot org again. [See it in action](./commands/list#see-it-in-action).
+`choco search`/`choco list` has so many enhancements, you may not need to visit dot org again. [See it in action](xref:choco-command-list#see-it-in-action).
 * [search -v provides moderation related information and a world of nuspec information](https://github.com/chocolatey/choco/issues/493)
 * [search by id only](https://github.com/chocolatey/choco/issues/663)
 * [search by id exact](https://github.com/chocolatey/choco/issues/453)
@@ -1071,13 +1071,13 @@ We'll try to capture everything here that you should know about. Please call `ch
 ### FEATURES
 
  * In app documentation! Use `choco -?`, `choco -h` or `choco commandName -?` to learn about each command, complete with examples!
- * WhatIf/Noop mode for all commands (`--noop` can also be specified as `-whatif`) - see [Chocolatey #263](https://github.com/chocolatey/chocolatey/issues/263) and [Default Options and Switches](./commands#default-options-and-switches)
+ * WhatIf/Noop mode for all commands (`--noop` can also be specified as `-whatif`) - see [Chocolatey #263](https://github.com/chocolatey/chocolatey/issues/263) and [Default Options and Switches](xref:choco-commands#default-options-and-switches)
  * Performs like a package manager, expect to see queries failing because of unmet dependency issues.
  * **New Commands:**
-   1. `pin` - Suppress upgrades. This allows you to 'pin' an install to a particular version - see [#1](https://github.com/chocolatey/choco/issues/1), [Chocolatey #5](https://github.com/chocolatey/chocolatey/issues/5) and [Pin Command](./commands/pin)
-   2. `apikey` - see [ApiKey Command](./commands/setapikey)
-   3. `new` - see [New Command](../create/commands/new) and [Chocolatey #157](https://github.com/chocolatey/chocolatey/issues/157)
- * New ways to pass arguments! See [How to Pass Options/Switches](./commands#how-to-pass-options-switches)
+   1. `pin` - Suppress upgrades. This allows you to 'pin' an install to a particular version - see [#1](https://github.com/chocolatey/choco/issues/1), [Chocolatey #5](https://github.com/chocolatey/chocolatey/issues/5) and [Pin Command](xref:choco-command-pin)
+   2. `apikey` - see [ApiKey Command](xref:choco-command-setapikey)
+   3. `new` - see [New Command](xref:choco-command-new) and [Chocolatey #157](https://github.com/chocolatey/chocolatey/issues/157)
+ * New ways to pass arguments! See [How to Pass Options/Switches](xref:choco-commands#how-to-pass-options-switches)
  * Did we mention there is a help menu that is actually helpful now? Shiny!
  * AutoUninstaller!!!! But it is not enabled by default this version. See [#15](https://github.com/chocolatey/choco/issues/15), [#9](https://github.com/chocolatey/choco/issues/9) and [Chocolatey #6](https://github.com/chocolatey/chocolatey/issues/6)
  * **New Helpers:**
@@ -1089,7 +1089,7 @@ Probably a lot of bug fixes that may not make it here, but here are the ones we 
 
  * Fix - Cannot upgrade from prerelease to same version released - see [Chocolatey #122](https://github.com/chocolatey/chocolatey/issues/122)
  * Fix - install `--force` should not use cache - see [Chocolatey #199](https://github.com/chocolatey/chocolatey/issues/199)
- * Fix - force dependencies as well - see [--force-dependencies](./commands/install) and [Chocolatey #199](https://github.com/chocolatey/chocolatey/issues/199)
+ * Fix - force dependencies as well - see [--force-dependencies](xref:choco-command-install) and [Chocolatey #199](https://github.com/chocolatey/chocolatey/issues/199)
  * Fix - Chocolatey should not stop on error - see [Chocolatey #192](https://github.com/chocolatey/chocolatey/issues/192)
  * Fix - Upgrading does not remove previous version - see [Chocolatey #259](https://github.com/chocolatey/chocolatey/issues/259)
  * Fix - Non-elevated shell message spills errors - see [Chocolatey #540](https://github.com/chocolatey/chocolatey/issues/540)
@@ -1115,7 +1115,7 @@ Probably a lot of bug fixes that may not make it here, but here are the ones we 
  * Add $env:CHOCOLATEY_VERSION - see [Chocolatey #251](https://github.com/chocolatey/chocolatey/issues/251)
  * Replace ascii cue with visual cues - see [Chocolatey #376](https://github.com/chocolatey/chocolatey/pull/376)
  * Uninstall all versions of an app - see [Chocolatey #389](https://github.com/chocolatey/chocolatey/issues/389)
- * Add parameters in packages.config files - see [Packages.config](./commands/install#packagesconfig), [Chocolatey #472](https://github.com/chocolatey/chocolatey/issues/472), and [#10](https://github.com/chocolatey/choco/issues/10)
+ * Add parameters in packages.config files - see [Packages.config](xref:choco-command-install#packagesconfig), [Chocolatey #472](https://github.com/chocolatey/chocolatey/issues/472), and [#10](https://github.com/chocolatey/choco/issues/10)
  * Choco pack should support `-version` - see [Chocolatey #526](https://github.com/chocolatey/chocolatey/issues/526)
  * Enhancements to Start-ChocolateyProcessAsAdmin - see [Chocolatey #564](https://github.com/chocolatey/chocolatey/pull/564)
  * Install-ChocolateyFileAssociation - add label to new file types - see [Chocolatey #564](https://github.com/chocolatey/chocolatey/pull/564)

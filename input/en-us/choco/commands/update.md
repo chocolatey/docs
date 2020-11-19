@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-update
 Title: Update
 Description: Update Command (choco update)
 RedirectFrom: docs/commands-update
@@ -10,7 +11,7 @@ RedirectFrom: docs/commands-update
 
 **NOTE:** Update has been deprecated and will be removed/replaced in version
  1.0.0 with something that performs the functions of updating package
- indexes.  Please use [`choco upgrade`](./upgrade) instead.
+ indexes.  Please use [`choco upgrade`](xref:choco-command-upgrade) instead.
 
 ## Options and Switches
 
@@ -20,7 +21,7 @@ RedirectFrom: docs/commands-update
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
 ~~~
 

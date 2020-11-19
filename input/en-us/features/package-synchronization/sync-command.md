@@ -50,7 +50,7 @@ This image shows running `choco sync`. It shows first a system that has 18 appli
 
 ### Options and Switches
 
-The following are available in the [choco sync](../../choco/commands/sync) command.
+The following are available in the [choco sync](xref:choco-command-sync) command.
 
 ~~~
      --id=VALUE

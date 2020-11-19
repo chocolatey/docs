@@ -36,7 +36,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 - [Installing Chocolatey](xref:setup-choco)
 - [Uninstalling Chocolatey](./choco/uninstallation)
 - [Getting Started](xref:getting-started)
-- [Command Reference](./choco/commands)
+- [Command Reference](xref:choco-commands)
 - Use Chocolatey to set up [source code development environments](./guides/usage/development-environment-setup)!
 - What distinction does Chocolatey make between an [installable and a portable application](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
 
@@ -58,7 +58,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 
 - [Installing Chocolatey for Personal Use](https://chocolatey.org/install#individual)
 - [Getting Started](xref:getting-started)
-- [Command Reference](./choco/commands)
+- [Command Reference](xref:choco-commands)
 
 ## Organizations
 
@@ -69,7 +69,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 - [Creating packages](./create/create-packages)
   - [Package Function and Variable Reference](xref:powershell-reference)
 - [Getting Started](xref:getting-started)
-- [Command Reference](./choco/commands)
+- [Command Reference](xref:choco-commands)
 
 ## Road Map
 

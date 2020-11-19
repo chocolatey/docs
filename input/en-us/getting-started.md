@@ -103,7 +103,7 @@ Requirements coming soon. Just imagine normal recommendations for an ASP.NET IIS
 
 Now that you have Chocolatey on your machine ([need to install?](xref:setup-choco)), you can run several commands.
 
-Take a look at the [command reference](./choco/commands). We are going to be using the [install command](./choco/commands/install).
+Take a look at the [command reference](xref:choco-commands). We are going to be using the [install command](xref:choco-command-install).
 
 Let's install [Notepad++](http://notepad-plus-plus.org/).
 
@@ -114,9 +114,9 @@ Let's install [Notepad++](http://notepad-plus-plus.org/).
 
 ### Overriding default install directory or other advanced install concepts
 
-1. Yes we support that through the use of install arguments - see [Install Arguments](./choco/commands/install#installarguments)
+1. Yes we support that through the use of install arguments - see [Install Arguments](xref:choco-command-install#installarguments)
 1. If you wanted to pass native argument to the installer, like the install directory, you would need to know the silent argument passed to that particular installer and then you would specify it on the command line or in the packages.config.
-1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](./choco/commands#how-to-pass-options-switches) for specifics on passing quoted values through.
+1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](xref:choco-commands#how-to-pass-options-switches) for specifics on passing quoted values through.
 1. For example, Notepad++ uses the [NSIS](http://nsis.sourceforge.net/Main_Page) (NullSoft Scriptable Install System) installer. If we look at the silent options, we see that [/D](http://nsis.sourceforge.net/Docs/Chapter3.html#installerusagecommon) is how we influence the install directory. So we would pass `choco install notepadplusplus.install -ia "'/D=E:\SomeDirectory\somebody\npp'"` -note that we are looking at the specific package over the virtual (although you can do the same with notepadplusplus as well).
 
 Is there a better way? Absolutely, see [ubiquitous install directory switch](./features/install-directory-override)!
@@ -154,7 +154,7 @@ How the heck does this all work?
 
 ### Installation
 
-1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](./choco/commands/sources) and [Source Repositories](xref:host-packages).
+1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see [Sources](xref:choco-command-sources) and [Source Repositories](xref:host-packages).
 2. The package is installed into `$env:ChocolateyInstall\lib\<pkgId>`. The package install location is not configurable - the package must install here for tracking, upgrade, and uninstall purposes. The software that may be installed later during this process ***is*** configurable. See [Terminology](#terminology) to understand the difference between "package" and "software" as the terms relate to Chocolatey.
 3. Choco determines if it is self-contained or has automation scripts - PowerShell scripts (*.ps1 files) and possibly other formats at a later date.
 4. Choco takes a registry snapshot for later comparison.

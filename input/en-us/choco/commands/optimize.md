@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-optimize
 Title: Optimize
 Description:  Optimize Command (choco optimize)
 RedirectFrom: docs/commands-optimize
@@ -47,7 +48,7 @@ Coming soon
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
 ~~~
 

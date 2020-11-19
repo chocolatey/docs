@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-support
 Title: Support
 Description: Support Command (choco support)
 RedirectFrom: docs/commands-support
@@ -21,7 +22,7 @@ As a licensed customer, you can reach out to
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
 ~~~
  -?, --help, -h

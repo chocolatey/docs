@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-upgrade
 Title: Upgrade
 Description: Upgrade Command (choco upgrade)
 RedirectFrom: docs/commands-upgrade
@@ -9,13 +10,13 @@ RedirectFrom: docs/commands-upgrade
 # Upgrade Command (choco upgrade)
 
 Upgrades a package or a list of packages. Some may prefer to use `cup`
- as a shortcut for [`choco upgrade`](./upgrade). If you do not have a package
+ as a shortcut for [`choco upgrade`]xref:choco-command-upgrade). If you do not have a package
  installed, upgrade will install it.
 
 **NOTE:** 100% compatible with older Chocolatey client (0.9.8.x and below)
  with options and switches. Add `-y` for previous behavior with no
  prompt. In most cases you can still pass options and switches with one
- dash (`-`). For more details, see [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`).
+ dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -25,7 +26,7 @@ Upgrades a package or a list of packages. Some may prefer to use `cup`
 **NOTE:** `all` is a special package keyword that will allow you to upgrade
  all currently installed packages.
 
-Skip upgrading certain packages with [`choco pin`](./pin) or with the option
+Skip upgrading certain packages with [`choco pin`](xref:choco-command-pin) or with the option
  `--except`.
 
 **NOTE:** [Chocolatey Pro](https://chocolatey.org/compare) / Business automatically synchronizes with
@@ -48,7 +49,7 @@ Skip upgrading certain packages with [`choco pin`](./pin) or with the option
     choco upgrade all
     choco upgrade all --except="'skype,conemu'"
 
-**NOTE:** See scripting in [how to pass arguments](./#how-to-pass-options-switches) (`choco -?`) for how to
+**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -90,7 +91,7 @@ In addition to the above exit codes, you may also see reboot exit codes
  try to install version 1.0.0 of every package passed. So please split
  out multiple package calls when wanting to pass specific options.
 
-Includes [default options/switches](./#default-options-and-switches) (included below for completeness).
+Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
 ~~~
 

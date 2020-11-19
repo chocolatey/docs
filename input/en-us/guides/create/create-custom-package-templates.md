@@ -9,7 +9,7 @@ As of [choco 0.9.9.9](https://github.com/chocolatey/choco/issues/76), you can cr
 
 ## Overview
 
-A template is used for creating packages. Chocolatey (choco) has a built-in template that it uses when generating a new package from the command [`choco new`](../../create/commands/new).
+A template is used for creating packages. Chocolatey (choco) has a built-in template that it uses when generating a new package from the command [`choco new`](xref:choco-command-new).
 
 ### Where Do Templates Go?
 
