@@ -59,7 +59,7 @@
                 @Html.Partial("_globalnavigation")
             </div>
         </div>
-        <nav id="topNav" class="navbar">
+        <nav id="topNav" class="navbar navbar-expand">
             <a class="navbar-brand" href="@Context.GetLink("/")">
                 <img class="d-md-none" src="@Context.GetLink("/assets/logo.svg")" alt="Chocolatey" />
                 <img class="d-none d-md-block" src="@Context.GetLink("/assets/logo-square.svg")" alt="Chocolatey" />
@@ -97,6 +97,7 @@
                 </span>
             </form>
             <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
+            <button type="button" class="navbar-toggler btn d-md-none" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
         </nav>
         <div class="container-fluid">
             <div class="row">
@@ -106,7 +107,6 @@
                         IDocument root = OutputPages["en-us/index.html"].First();
                     }
                     <nav class="navbar navbar-expand-md p-0">
-                        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
                         <div id="leftSidebar" class="collapse navbar-collapse">
                             @Html.Partial("_globalnavigation")
                             <ul class="navbar-nav">
