@@ -59,7 +59,7 @@ If you find other exit codes that we have not yet documented, please
 
 ## See It In Action
 
-![choco search](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_search.gif)
+![choco search](/assets/images/gifs/choco_search.gif)
 
 ## Alternative Sources
 

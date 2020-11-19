@@ -397,10 +397,10 @@ Related to the community package repository only (aka the default feed aka https
 
 If you are a maintainer of a package and you would like to self-reject an older version of a package that is failing verification or validation, we support that. If however you just want to reject a working package because it is older, we don't support that. Rejected != Obsolete. It's really about when the underlying software has the same download url for every release so the older versions do not apply. If you are using checksums to verify the download (and you should be), then your older versions should start failing.
 
-![image](https://cloud.githubusercontent.com/assets/63502/12429736/8c67689c-beb1-11e5-83e9-02fe1db91272.png)
+![image](/assets/images/faqs/package-moderation-reject-package.png)
 
 * Failing verification -
-![image](https://cloud.githubusercontent.com/assets/63502/12429697/509d2b94-beb1-11e5-9e1d-73a156117672.png)
+![image](/assets/images/faqs/email-from-validator.png)
 * Failing validation - a message from the validator telling you it failed validation.
 
 ### What is the validator?
@@ -413,7 +413,7 @@ What does the validator check? https://github.com/chocolatey/package-validator/w
 
 The [verifier](https://github.com/chocolatey/package-verifier) is a service that checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (currently checking once a month that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It's testing all the parts and ensuring everything is good. On the site, you can see the current status of a package based on a little colored ball next to the title. If the ball is green or red, the ball is a link to the results (only on the package page, not in the list screen).
 
-![Passing verification](https://cloud.githubusercontent.com/assets/63502/11872220/bf58f590-a499-11e5-84bb-6fcf6d320227.png)
+![Passing verification](/assets/images/faqs/verification-successful.png)
 
 * Green means good. The ball is a link to the results
 * Orange if still pending verification (has not yet run).

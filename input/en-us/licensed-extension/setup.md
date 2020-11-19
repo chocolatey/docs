@@ -41,7 +41,7 @@ If you do not see the edition next to the name and version without an error, you
 
 Here's the whole process for installing your license and installing the licensed code.
 
-![install](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_install_pro.gif)
+![install](/assets/images/gifs/choco_install_pro.gif)
 
 ## How Do I Install The Licensed Edition?
 
@@ -62,9 +62,9 @@ Here's the whole process for installing your license and installing the licensed
  1. Run this command: `choco`. You should not see any error message logged anymore (like you saw in the previous run asking you to install the licensed extension). If you do see an error message still, you may need to revisit these steps and determine what might have been missed or mistyped.
  1. That's it! You are good to go.
 
-  ![license](https://cloud.githubusercontent.com/assets/63502/12741281/84a3df8e-c940-11e5-8818-456801728cf5.png)
+  ![license](/assets/images/chocolatey-license.png)
 
-  ![install/upgrade](https://cloud.githubusercontent.com/assets/63502/13052159/e6d1be92-d3c2-11e5-8856-d7580e51e3b6.png)
+  ![install/upgrade](/assets/images/install-upgrade-chocolatey-extension.png)
 
 > :memo: **NOTE**
 >

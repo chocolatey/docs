@@ -44,7 +44,7 @@ Starting in version 1.8.0 of the licensed editions, you have access to the Packa
 
 Simply right click on an installer, executable, or zip type and select "Create Chocolatey Package..."
 
-![Package Builder UI](https://cloud.githubusercontent.com/assets/63502/20328042/bb944018-ab55-11e6-884f-0a45babce40a.png)
+![Package Builder UI](/assets/images/package-builder/package-builder-ui.png)
 
 Then just add in and fill out the requested information. It uses `choco new` under the covers allowing you to really ramp up fast, especially when you don't have a lot of command line experience.
 
@@ -55,7 +55,7 @@ Another way to bring up the ui is to call `packagebuilder` from the command line
 ### Package Builder CLI and Scripts
 
 We've prepared a short video going over the concepts:
-[![Chocolatey's Package Builder - Package Builder CLI and Scripting](https://cloud.githubusercontent.com/assets/63502/20327872/b0caf0d8-ab54-11e6-8c40-8bdeeb8eb13c.png)](https://www.youtube.com/watch?v=6TXY5Ie-3wg&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=1 "Chocolatey's Package Builder - Package Builder CLI and Scripting")
+[![Chocolatey's Package Builder - Package Builder CLI and Scripting](/assets/images/package-builder/package-builder-cli-video.png)](https://www.youtube.com/watch?v=6TXY5Ie-3wg&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=1 "Chocolatey's Package Builder - Package Builder CLI and Scripting")
 
 Quickly script out creating packages for your entire organization's cache of software, allowing you to completely automate your Windows installations in moments, not months. You can do that with a simple script:
 
@@ -87,13 +87,13 @@ As you see this script, it is doing the following:
 Not every person is going to love the command line or may not be familiar with the command line and at Chocolatey we realize this. We've spent countless hours talking to customers and with their feedback we're introducing Package Builder UI. This also gives you an opportunity to transition from existing UI tools while taking advantage of powerful Chocolatey concepts!
 
 We've prepared a short video to show the power of the UI:
-[![Chocolatey's Package Builder - Package Builder UI](https://cloud.githubusercontent.com/assets/63502/20327926/f54ac81e-ab54-11e6-9cb1-60df170c338e.png)](https://www.youtube.com/watch?v=qJNKR_PEQqY&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=2 "Chocolatey's Package Builder - Package Builder UI")
+[![Chocolatey's Package Builder - Package Builder UI](/assets/images/package-builder/package-builder-ui-video.png)](https://www.youtube.com/watch?v=qJNKR_PEQqY&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=2 "Chocolatey's Package Builder - Package Builder UI")
 
 ### Generate Packages from Programs and Features
 
 Another way Package Builder can generate packages is based on looking at what is installed on a system in Programs and Features. This gives you lightning quick ramp up time in both package and automating your Windows software installations!
 
-[![Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!](https://cloud.githubusercontent.com/assets/63502/20327972/46c8ff3a-ab55-11e6-9c03-32b0f83540bb.png)](https://www.youtube.com/watch?v=Mw_ReipnskI&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=3 "Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!")
+[![Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!](/assets/images/package-builder/package-builder-programs-features-video.png)](https://www.youtube.com/watch?v=Mw_ReipnskI&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=3 "Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!")
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

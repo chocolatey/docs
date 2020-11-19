@@ -53,7 +53,7 @@ If you find other exit codes that we have not yet documented, please
 
 ## See It In Action
 
-![choco outdated](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_outdated.gif)
+![choco outdated](/assets/images/gifs/choco_outdated.gif)
 
 ## Options and Switches
 

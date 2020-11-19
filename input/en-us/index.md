@@ -85,7 +85,7 @@ Where are [we](./roadmap)? Where are we [going](./roadmap)?
 
 ## See It In Action
 
-![Chocolatey Install](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_install.gif)
+![Chocolatey Install](/assets/images/gifs/choco_install.gif)
 
 ## Who Are We?
 

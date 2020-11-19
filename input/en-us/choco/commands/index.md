@@ -186,7 +186,7 @@ Following these scripting best practices will ensure your scripts work
 
 ## See Help Menu In Action
 
-![choco help in action](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_help.gif)
+![choco help in action](/assets/images/gifs/choco_help.gif)
 
 ## Default Options and Switches
 

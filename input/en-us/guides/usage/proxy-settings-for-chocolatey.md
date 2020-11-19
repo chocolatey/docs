@@ -51,7 +51,7 @@ To access [packages.chocolatey.org](https://packages.chocolatey.org):
 
 Chocolatey by default already supports system set proxy servers
 
-![image](https://cloud.githubusercontent.com/assets/63502/10038284/454be026-6189-11e5-8f83-e29d1705995c.png)
+![image](/assets/images/system-proxy-settings.png)
 
 **NOTE:** Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
 
@@ -90,7 +90,7 @@ choco config set proxyBypassOnLocal true #0.10.4 required
 ~~~
 
 Results in the following items being added to the config file:
-![image](https://cloud.githubusercontent.com/assets/63502/10038348/4205507c-618a-11e5-911b-122eb960bc53.png)
+![image](/assets/images/proxy-config-changes.png)
 
 ### Explicit Proxy Settings at Runtime
 

@@ -17,9 +17,9 @@ Once an admin makes you a maintainer you will need to click on the link in your 
 Once that is done you have several steps:
 
  * Obtain the source for the package. Look at the packageSourceUrl to see if it is filled out or not.
-![Package source link](https://cloud.githubusercontent.com/assets/63502/12520704/c124c60e-c10b-11e5-9de9-1127ce0c602e.png)
+![Package source link](/assets/images/maintainer-handover/package-source-link.png)
  * Look for the maintainer's profile to see if they have a GitHub repository for their packages.
-![maintainer profile with github repository link](https://cloud.githubusercontent.com/assets/63502/12520758/f755bf4e-c10b-11e5-831e-4da3a91c42c9.png)
+![maintainer profile with github repository link](/assets/images/maintainer-handover/github-repository-link.png)
  * If you don't find it there, attempt to find it on GitHub with some google-fu.
  * If all else fails, download the package from the website (use the Download link on the left side).
  * Use unzip to unpack the package and remove the files that are only used in packaging.

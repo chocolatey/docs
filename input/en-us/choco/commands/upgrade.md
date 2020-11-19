@@ -81,7 +81,7 @@ In addition to the above exit codes, you may also see reboot exit codes
 
 ## See It In Action
 
-![choco upgrade](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_upgrade.gif)
+![choco upgrade](/assets/images/gifs/choco_upgrade.gif)
 
 ## Options and Switches
 

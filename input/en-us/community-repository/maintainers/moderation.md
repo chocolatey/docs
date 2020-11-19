@@ -141,7 +141,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
  1. You should see a new drop down near the top that allows you to change your view. This is the moderation queue.
  ![Moderation Queue Dropdown](/assets/images/moderation-1.jpg)
  2. You will see items arranged in order based on reviewed and resubmitted at the top, items ready for review in order based on when they were submitted, and at the end of the queue, you will see items that are waiting for maintainer response.
- ![Moderation Queue](https://cloud.githubusercontent.com/assets/63502/7543076/58d5530c-f587-11e4-8d73-1325074d6e58.png)
+ ![Moderation Queue](/assets/images/moderation/moderation-queue.png)
  3. You grab a package and head in and review it based on the following items in the requirements and guidelines.
  4. Ensure package tests have ran. It will have both comments in the review and a colored ball up next to the title of the package. A package status box is present at the top of each package page with test results. The left side of the ball next to the package title represents verification testing, while the right side represents validation testing (see image below). Color of ball sections indicate:
     - **Green** if it is ready for review and approval.
@@ -156,7 +156,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
  7. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
  8. Check over the package based on [moderator review](#moderator-review) (below).
  9. Review the previous comments if there are any.
- ![image](https://cloud.githubusercontent.com/assets/63502/7543258/c2c0abbc-f588-11e4-8cac-4c57b03671f8.png)
+ ![image](/assets/images/moderation/moderation-previous-comments.png)
  10. Look through the package files
  ![Package Files](/assets/images/moderation-10.jpg)
  11. Leave comments in the review box ("Add to Review Comments" section) if you have any. Note that you can use markdown here.

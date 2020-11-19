@@ -157,7 +157,7 @@ In whichever job the meta package points to, you should add a command to that li
 
 Try this first:
 * In advanced settings, ensure the user agent is `chocolatey command line`. This will allow ketarin to behave similarly to how Chocolatey does.
-![Ketarin Job Advanced Settings](https://cloud.githubusercontent.com/assets/63502/7350038/b1928aaa-ecc2-11e4-8abe-af9e7c65c82a.png)
+![Ketarin Job Advanced Settings](/assets/images/automatic-packages/ketarin-jobs-advanced-settings.png)
 
 It isn’t uncommon that certain SorceForge mirrors go offline or are extremely slow because of overload. Thus it is not recommended to use direct mirror links (e.&nbsp;g. `http://heanet.dl.sourceforge.net/project/…`) in your `chocolateyInstall.ps1` file, because this will frequently break your package and makes it unreliable.
 To avoid this, use the following convention for files hosted on SourceForge:

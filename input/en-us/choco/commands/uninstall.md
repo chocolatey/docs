@@ -70,7 +70,7 @@ chocolatey without attempting to uninstall the program.
 
 ## See It In Action
 
-![choco uninstall](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_uninstall.gif)
+![choco uninstall](/assets/images/gifs/choco_uninstall.gif)
 
 ## Examples
 

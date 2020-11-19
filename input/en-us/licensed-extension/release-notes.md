@@ -361,7 +361,7 @@ This release brings Package Throttle, Package Synchronizer's "Show All Packages 
 
  * Package Synchronizer's Show All Packages In Programs and Features
 
-    This means packages that do not have an underlying installation can still show up in Programs and Features and be managed there as well, which allows for legacy inventory reporting systems to see all the software that is installed in the same way that Chocolatey is able to. A picture can probably best explain this feature, check out [All Package In Programs and Features](https://raw.githubusercontent.com/chocolatey/choco-wiki/e619d5d25018f9362d50749ee86554ebc4f4f04d/images/features/features_packages_in_programs_and_features.png)
+    This means packages that do not have an underlying installation can still show up in Programs and Features and be managed there as well, which allows for legacy inventory reporting systems to see all the software that is installed in the same way that Chocolatey is able to. A picture can probably best explain this feature, check out [All Package In Programs and Features](/assets/images/features/features_packages_in_programs_and_features.png)
 
     To turn this feature on, simply run the following command `choco feature enable -n showAllPackagesInProgramsAndFeatures`. For more details on the feature, see https://docs.chocolatey.org/en-us/configuration#package-synchronizer and https://docs.chocolatey.org/en-us/features/package-synchronization. This does require one additional run of `choco` to take affect (same when disabling the feature), hopefully we can remove that in the future.
 

@@ -25,7 +25,7 @@ At 1.9.0, sync is in preview. You need to turn it on by enabling the feature  `a
 ### See it in action
 
 We've prepared a short video to show sync in action:
-[![Chocolatey's Package Synchronizer - Sync Command](https://cloud.githubusercontent.com/assets/63502/22050108/ade28e5a-dcfd-11e6-8835-afc9f699e400.png)](https://youtu.be/tzSsYHYsjf4 "Chocolatey's Package Synchronizer - Sync Command")
+[![Chocolatey's Package Synchronizer - Sync Command](/assets/images/features/sync-command-video.png)](https://youtu.be/tzSsYHYsjf4 "Chocolatey's Package Synchronizer - Sync Command")
 
 > :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

@@ -49,7 +49,7 @@ If you find other exit codes that we have not yet documented, please
 
 ## See It In Action
 
-![Config shown in action](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_config.gif)
+![Config shown in action](/assets/images/gifs/choco_config.gif)
 
 
 ## Options and Switches

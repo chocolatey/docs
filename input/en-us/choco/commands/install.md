@@ -110,12 +110,12 @@ In addition to the above exit codes, you may also see reboot exit codes
 Chocolatey FOSS install showing tab completion and `refreshenv` (a way
  to update environment variables without restarting the shell).
 
-![FOSS install in action](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/choco_install.gif)
+![FOSS install in action](/assets/images/gifs/choco_install.gif)
 
 [Chocolatey Professional](https://chocolatey.org/compare) showing private download cache and virus scan
  protection.
 
-![Pro install in action](https://raw.githubusercontent.com/wiki/chocolatey/choco/images/gifs/chocopro_install_stopped.gif)
+![Pro install in action](/assets/images/gifs/chocopro_install_stopped.gif)
 
 ## Packages.config
 
