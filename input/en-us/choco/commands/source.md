@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-source
 Title: Source
 Description: Source Command (choco source)
 RedirectFrom: docs/commands-source

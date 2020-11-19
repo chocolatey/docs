@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-config
 Title: Config
 Description: Config Command (choco config)
 RedirectFrom: docs/commands-config

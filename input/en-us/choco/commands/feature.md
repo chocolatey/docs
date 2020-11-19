@@ -1,4 +1,5 @@
 ﻿---
+xref: choco-command-feature
 Title: Feature
 Description: Feature Command (choco feature)
 RedirectFrom: docs/commands-feature
