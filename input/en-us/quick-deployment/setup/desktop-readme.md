@@ -272,9 +272,9 @@ To do so:
 1. Login to Jenkins after completing the first-time setup (see [above](#jenkins))
 1. For each of the pre-existing jobs shown (e.g., `Internalize packages from the Community Repository`), do the following:
    1. Hover over the name of the job and select the drop-down arrow that shows up
-   1. Select **:gear: Configure**
+   1. Select :gear: **Configure**
    1. Scroll down until you see the **Password Parameter**; these will be named either `P_API_KEY`, `P_PROD_REPO_API_KEY`, or `P_LOCAL_REPO_API_KEY`, depending on the job you're editing
-   1. Select **Change Password** next to the **:lock: Concealed** Default Value
+   1. Select **Change Password** next to the :lock: **Concealed** Default Value
    1. Replace the contents of the field with the new API key
    1. Press the **Save** button at the bottom of the page
 

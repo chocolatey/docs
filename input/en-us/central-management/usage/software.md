@@ -20,7 +20,7 @@ The Software main page lists all installed software in any computers that have c
 
 ## Software Details
 
-In the rightmost column of the Software table (you may need to scroll) you will find an **:gear: Actions** menu which will display a **Details** option.
+In the rightmost column of the Software table (you may need to scroll) you will find an :gear: **Actions** menu which will display a **Details** option.
 Clicking this option will take you to the **Software Details** page.
 
 ![Finding the Details menu entry for a specific Software entry](/assets/images/software/ccm-software-details-menu.png)

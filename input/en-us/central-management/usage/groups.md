@@ -25,17 +25,17 @@ Then, select the computer(s) or existing group(s) you would like to include in t
 
 ![New Group Modal](/assets/images/groups/ccm-groups-modal-new.png)
 
-Click **:floppy_disk: Save** to close the modal and create the new group.
+Click :floppy_disk: **Save** to close the modal and create the new group.
 
 ## Editing a Group
 
 > :information_source: **NOTE**
 >
-> If you do not see the **Edit** menu entry or the **:gear: Actions** buttons, consult your administrator to determine if you have the Edit Groups role assigned.
+> If you do not see the **Edit** menu entry or the :gear: **Actions** buttons, consult your administrator to determine if you have the Edit Groups role assigned.
 
 On the main Groups page, find the group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
-Select the **:gear: Actions** button on the right-hand side of the group, and then select **Edit** to open the _Edit Group_ modal.
+Select the :gear: **Actions** button on the right-hand side of the group, and then select **Edit** to open the _Edit Group_ modal.
 
 ![Edit menu entry in group actions flyout menu](/assets/images/groups/ccm-groups-edit.png)
 
@@ -45,11 +45,11 @@ From the **Edit Group** modal, you can modify the group name and description, an
 
 > :information_source: **NOTE**
 >
-> If you do not see the **Delete** menu entry or the **:gear: Actions** buttons, consult your administrator to determine if you have the appropriate role assigned to your account.
+> If you do not see the **Delete** menu entry or the :gear: **Actions** buttons, consult your administrator to determine if you have the appropriate role assigned to your account.
 
 On the main Groups page, find the group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
-Similar to the [Edit Group](#editing-a-group) action, select the **:gear: Actions** button on the right-hand side of the group, and instead select **Delete**.
+Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the right-hand side of the group, and instead select **Delete**.
 You will be prompted to confirm the deletion.
 
 ## Eligibility for Deployments
