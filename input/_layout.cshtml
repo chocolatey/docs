@@ -12,13 +12,13 @@
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@@chocolateynuget">
         <meta name="twitter:title" content="@title">
-        <meta name="twitter:image" content="https://docs.chocolatey.org/assets/images/twitter-share.png">
+        <meta name="twitter:image" content="https://docs.chocolatey.org/assets/images/global-shared/twitter-share.png">
         @* Open Graph data *@
         <meta property="og:title" content="@title" />
         <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
         <meta property="og:site_name" content="Chocolatey" />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="https://chocolatey.org/content/images/icon_slogan.png" />
+        <meta property="og:image" content="https://docs.chocolatey.org/assets/images/global-shared/facebook-share.png" />
         <meta property="og:url" content="@Context.GetLink().TrimEnd('/')@Document.GetLink()" />
         @* Additional data *@
         <meta property="product:brand" content="Chocolatey" />
@@ -26,6 +26,17 @@
         <meta name="flattr:id" content="mqgjkp">
         <meta property="DC.title" content="@title" />
         <meta property="copyright" content="Chocolatey is Copyright 2020 - @DateTime.UtcNow.Year Chocolatey Software,Inc." />
+        @* Apple Touch and Favicon *@
+        <link rel="shortcut icon" href="@Context.GetLink("/favicon.ico")" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="@Context.GetLink("/apple-touch-icon.png")" />
+        <link rel="apple-touch-icon" sizes="57x57" href="@Context.GetLink("/apple-touch-icon-57x57.png")" />
+        <link rel="apple-touch-icon" sizes="72x72" href="@Context.GetLink("/apple-touch-icon-72x72.png")" />
+        <link rel="apple-touch-icon" sizes="76x76" href="@Context.GetLink("/apple-touch-icon-76x76.png")" />
+        <link rel="apple-touch-icon" sizes="114x114" href="@Context.GetLink("/apple-touch-icon-114x114.png")" />
+        <link rel="apple-touch-icon" sizes="120x120" href="@Context.GetLink("/apple-touch-icon-120x120.png")" />
+        <link rel="apple-touch-icon" sizes="144x144" href="@Context.GetLink("/apple-touch-icon-144x144.png")" />
+        <link rel="apple-touch-icon" sizes="152x152" href="@Context.GetLink("/apple-touch-icon-152x152.png")" />
+        <link rel="apple-touch-icon" sizes="180x180" href="@Context.GetLink("/apple-touch-icon-180x180.png")" />
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
@@ -59,10 +70,10 @@
                 @Html.Partial("_globalnavigation")
             </div>
         </div>
-        <nav id="topNav" class="navbar">
+        <nav id="topNav" class="navbar navbar-expand">
             <a class="navbar-brand" href="@Context.GetLink("/")">
-                <img class="d-md-none" src="@Context.GetLink("/assets/logo.svg")" alt="Chocolatey" />
-                <img class="d-none d-md-block" src="@Context.GetLink("/assets/logo-square.svg")" alt="Chocolatey" />
+                <img class="d-md-none" src="@Context.GetLink("/assets/images/global-shared/logo.svg")" alt="Chocolatey" />
+                <img class="d-none d-md-block" src="@Context.GetLink("/assets/images/global-shared/logo-square.svg")" alt="Chocolatey" />
             </a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -97,6 +108,7 @@
                 </span>
             </form>
             <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
+            <button type="button" class="navbar-toggler btn d-md-none" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
         </nav>
         <div class="container-fluid">
             <div class="row">
@@ -106,7 +118,6 @@
                         IDocument root = OutputPages["en-us/index.html"].First();
                     }
                     <nav class="navbar navbar-expand-md p-0">
-                        <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
                         <div id="leftSidebar" class="collapse navbar-collapse">
                             @Html.Partial("_globalnavigation")
                             <ul class="navbar-nav">

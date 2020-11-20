@@ -12,3 +12,6 @@ node_modules/
 input/assets/css/
 input/assets/js/
 input/assets/fonts/
+input/assets/images/global-shared/
+apple-touch-*.png
+favicon.ico

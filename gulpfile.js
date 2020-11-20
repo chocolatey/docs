@@ -23,7 +23,6 @@ const regex = {
 const paths = {
     input: 'input/',
     assets: 'input/assets/',
-    temp: 'input/assets/temp/',
     node_modules: 'node_modules/',
     theme: 'node_modules/choco-theme/'
 };
@@ -38,7 +37,8 @@ function del() {
     return src([
         paths.assets + 'css', 
         paths.assets + 'js', 
-        paths.assets + 'fonts'
+        paths.assets + 'fonts',
+        paths.assets + 'images/global-shared'
     ], { allowEmpty: true })
         .pipe(clean({ force: true }));
 }
@@ -47,10 +47,16 @@ function copyTheme() {
     var copyFontAwesome = src(paths.node_modules + '@fortawesome/fontawesome-free/webfonts/*.*')
         .pipe(dest(paths.assets + 'fonts/fontawesome-free'));
 
+    var copyImages = src(paths.theme + 'images/global-shared/*.*')
+        .pipe(dest(paths.assets + 'images/global-shared'));
+
+    var copyIcons = src(paths.theme + 'images/icons/*.*')
+        .pipe(dest(paths.input));
+
     /*var copyShared = src(paths.theme + 'shared/*.*')
         .pipe(dest(paths.input + 'shared'));*/
 
-    return merge(copyFontAwesome);
+    return merge(copyFontAwesome, copyImages, copyIcons);
 }
 
 function compileSass() {
