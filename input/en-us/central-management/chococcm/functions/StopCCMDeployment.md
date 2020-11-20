@@ -1,6 +1,6 @@
 ---
-Title: Stop-CCMDeployment
 Order: 330
+Title: Stop-CCMDeployment
 Description: Information about the Stop-CCMDeployment function
 RedirectFrom: docs/stop-ccmdeployment
 ---

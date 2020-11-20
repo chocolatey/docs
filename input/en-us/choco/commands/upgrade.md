@@ -1,4 +1,5 @@
 ﻿---
+Order: 200
 xref: choco-command-upgrade
 Title: Upgrade
 Description: Upgrade Command (choco upgrade)

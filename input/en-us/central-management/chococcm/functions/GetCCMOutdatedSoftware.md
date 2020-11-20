@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMOutdatedSoftware
 Order: 120
+Title: Get-CCMOutdatedSoftware
 Description: Information about the Get-CCMOutdatedSoftware function
 RedirectFrom: docs/get-ccmoutdated-software
 ---

@@ -1,4 +1,5 @@
 ﻿---
+Order: 90
 Title: Get-OSArchitectureWidth
 Description: Information on Get-OSArchitectureWidth function
 RedirectFrom: docs/helpers-get-osarchitecture-width

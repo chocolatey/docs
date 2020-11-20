@@ -1,6 +1,6 @@
 ﻿---
-xref: choco-command-push
 Order: 40
+xref: choco-command-push
 Title: Push
 Description: Push Command (choco push)
 RedirectFrom: docs/commands-push

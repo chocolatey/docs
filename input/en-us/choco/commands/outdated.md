@@ -1,4 +1,5 @@
 ﻿---
+Order: 80
 xref: choco-command-outdated
 Title: Outdated
 Description: Outdated Command (choco outdated)

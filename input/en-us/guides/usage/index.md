@@ -1,5 +1,6 @@
 ---
+Order: 10
 xref: usage-chocolatey
 Title: Using Chocolatey
-Order: 10
+Description: TODO
 ---

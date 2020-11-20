@@ -1,4 +1,5 @@
 ﻿---
+Order: 430
 Title: Uninstall-ChocolateyWindowsService
 Description: Information on Uninstall-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-uninstall-chocolatey-windows-service

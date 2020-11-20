@@ -1,6 +1,6 @@
 ---
-Title: Set-CCMDeploymentStep
 Order: 290
+Title: Set-CCMDeploymentStep
 Description: Information about the Set-CCMDeploymentStep function
 RedirectFrom: docs/set-ccmdeployment-step
 ---

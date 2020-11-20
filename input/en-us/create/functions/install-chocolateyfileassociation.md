@@ -1,4 +1,5 @@
 ﻿---
+Order: 230
 Title: Install-ChocolateyFileAssociation
 Description: Information on Install-ChocolateyFileAssociation function
 RedirectFrom: docs/helpers-install-chocolatey-file-association

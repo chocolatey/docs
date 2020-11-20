@@ -1,6 +1,6 @@
 ﻿---
-xref: choco-command-new
 Order: 10
+xref: choco-command-new
 Title: New
 Description: Package Builder Command (choco new)
 RedirectFrom: docs/commands-new

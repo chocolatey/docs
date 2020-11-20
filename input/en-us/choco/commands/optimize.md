@@ -1,4 +1,5 @@
 ﻿---
+Order: 70
 xref: choco-command-optimize
 Title: Optimize
 Description:  Optimize Command (choco optimize)

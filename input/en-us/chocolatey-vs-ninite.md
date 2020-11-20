@@ -1,5 +1,7 @@
 ---
+Order: 73
 Title: Chocolatey vs Ninite
+Description: TODO
 RedirectFrom: docs/chocolatey-vs-ninite
 ShowInNavbar: false
 ShowInSidebar: false

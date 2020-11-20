@@ -1,4 +1,5 @@
 ﻿---
+Order: 180
 xref: choco-command-unpackself
 Title: UnpackSelf
 Description: UnpackSelf Command (choco unpackself)

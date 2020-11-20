@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMGroupMember
 Order: 110
+Title: Get-CCMGroupMember
 Description: Information about the Get-CCMGroupMember function
 RedirectFrom: docs/get-ccmgroup-member
 ---

@@ -1,6 +1,6 @@
 ---
-Title: Connect-CCMServer
 Order: 30
+Title: Connect-CCMServer
 Description: Information about the Connect-CCMServer function
 RedirectFrom: docs/connect-ccmserver
 ---

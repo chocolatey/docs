@@ -1,5 +1,7 @@
 ---
+Order: 74
 Title: Default Chocolatey Install Reasoning
+Description: TODO
 RedirectFrom: docs/default-chocolatey-install-reasoning
 ShowInNavbar: false
 ShowInSidebar: false

@@ -1,6 +1,6 @@
 ---
-Title: Export-CCMDeploymentReport
 Order: 60
+Title: Export-CCMDeploymentReport
 Description: Information about the Export-CCMDeploymentReport function
 RedirectFrom: docs/export-ccmdeployment-report
 ---

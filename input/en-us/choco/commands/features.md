@@ -1,4 +1,5 @@
 ﻿---
+Order: 35
 xref: choco-command-features
 Title: Features
 Description: Feature Command (choco features)

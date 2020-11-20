@@ -1,4 +1,5 @@
 ---
-Title: Chocolatey Licensed Extension
 Order: 110
+Title: Chocolatey Licensed Extension
+Description: TODO
 ---

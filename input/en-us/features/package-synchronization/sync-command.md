@@ -1,8 +1,8 @@
 ---
-xref: sync-command
 Order: 20
+xref: sync-command
 Title: Choco Sync Command (C4B)
-Description:
+Description: TODO
 RedirectFrom: docs/features-synchronize
 ---
 

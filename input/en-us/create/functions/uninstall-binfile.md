@@ -1,4 +1,5 @@
 ﻿---
+Order: 400
 Title: Uninstall-BinFile
 Description: Information on Uninstall-BinFile function
 RedirectFrom: docs/helpers-uninstall-bin-file

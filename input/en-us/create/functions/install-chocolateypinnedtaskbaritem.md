@@ -1,4 +1,5 @@
 ﻿---
+Order: 270
 Title: Install-ChocolateyPinnedTaskBarItem
 Description: Information on Install-ChocolateyPinnedTaskBarItem function
 RedirectFrom: docs/helpers-install-chocolatey-pinned-task-bar-item

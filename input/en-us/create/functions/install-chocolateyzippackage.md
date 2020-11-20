@@ -1,4 +1,5 @@
 ﻿---
+Order: 320
 Title: Install-ChocolateyZipPackage
 Description: Information on how to use the Install-ChocolateyZipPackage function
 RedirectFrom: docs/helpers-install-chocolatey-zip-package

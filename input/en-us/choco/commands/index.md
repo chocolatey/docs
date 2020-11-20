@@ -1,7 +1,8 @@
 ---
+Order: 40
 xref: choco-commands
 Title: Commands
-Order: 40
+Description: TODO
 RedirectFrom: docs/commands-reference
 ---
 

@@ -1,5 +1,7 @@
 ---
+Order: 76
 Title: Logo Use Policy
+Description: TODO
 RedirectFrom: docs/logo-use-policy
 ShowInNavbar: false
 ShowInSidebar: false

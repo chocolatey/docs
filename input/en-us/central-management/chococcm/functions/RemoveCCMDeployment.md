@@ -1,6 +1,6 @@
 ---
-Title: Remove-CCMDeployment
 Order: 240
+Title: Remove-CCMDeployment
 Description: Information about the Remove-CCMDeployment function
 RedirectFrom: docs/remove-ccmdeployment
 ---

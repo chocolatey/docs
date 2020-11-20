@@ -1,4 +1,5 @@
 ﻿---
+Order: 150
 xref: choco-command-sync
 Title: Sync
 Description: Sync Command (choco sync)

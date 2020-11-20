@@ -1,4 +1,5 @@
 ﻿---
+Order: 40
 xref: choco-command-info
 Title: Info
 Description: Info Command (choco info)

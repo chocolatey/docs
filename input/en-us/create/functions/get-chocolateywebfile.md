@@ -1,4 +1,5 @@
 ﻿---
+Order: 50
 Title: Get-ChocolateyWebFile
 Description: Information on how to use the Get-ChocolateyWebFile function
 RedirectFrom: docs/helpers-get-chocolatey-web-file

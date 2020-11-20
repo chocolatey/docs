@@ -1,6 +1,6 @@
 ---
-Title: Remove-CCMDeploymentStep
 Order: 250
+Title: Remove-CCMDeploymentStep
 Description: Information about the Remove-CCMDeploymentStep function
 RedirectFrom: docs/remove-ccmdeployment-step
 ---

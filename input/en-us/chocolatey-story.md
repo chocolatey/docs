@@ -1,5 +1,7 @@
 ---
+Order: 72
 Title: Story of Bob and Richard
+Description: TODO
 RedirectFrom: docs/chocolatey-story
 ShowInNavbar: false
 ShowInSidebar: false

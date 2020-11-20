@@ -1,6 +1,6 @@
 ---
-Title: Remove-CCMGroup
 Order: 260
+Title: Remove-CCMGroup
 Description: Information about the Remove-CCMGroup function
 RedirectFrom: docs/remove-ccmgroup
 ---

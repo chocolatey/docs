@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMGroup
 Order: 100
+Title: Get-CCMGroup
 Description: Information about the Get-CCMGroup function
 RedirectFrom: docs/get-ccmgroup
 ---

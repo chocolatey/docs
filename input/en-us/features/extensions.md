@@ -1,6 +1,6 @@
 ---
-xref: extensions
 Order: 70
+xref: extensions
 Title: Extend Chocolatey With PowerShell Modules (extensions)
 Description: Create your own custom extensions
 RedirectFrom: docs/how-to-create-extensions

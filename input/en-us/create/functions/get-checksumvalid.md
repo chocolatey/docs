@@ -1,4 +1,5 @@
 ﻿---
+Order: 20
 Title: Get-ChecksumValid
 Description: Information on Get-ChecksumValid function
 RedirectFrom: docs/helpers-get-checksum-valid

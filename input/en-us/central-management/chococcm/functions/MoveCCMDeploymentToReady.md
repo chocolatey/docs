@@ -1,6 +1,6 @@
 ---
-Title: Move-CCMDeploymentToReady
 Order: 200
+Title: Move-CCMDeploymentToReady
 Description: Information about the Move-CCMDeploymentToReady function
 RedirectFrom: docs/move-ccmdeployment-to-ready
 ---

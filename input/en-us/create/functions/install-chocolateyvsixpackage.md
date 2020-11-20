@@ -1,4 +1,5 @@
 ﻿---
+Order: 300
 Title: Install-ChocolateyVsixPackage
 Description: Information on how to use the Install-ChocolateyVsixPackage function
 RedirectFrom: docs/helpers-install-chocolatey-vsix-package

@@ -1,4 +1,5 @@
 ﻿---
+Order: 490
 Title: Write-FunctionCallLogMessage
 Description: Information on Write-FunctionCallLogMessage function
 RedirectFrom: docs/helpers-write-function-call-log-message

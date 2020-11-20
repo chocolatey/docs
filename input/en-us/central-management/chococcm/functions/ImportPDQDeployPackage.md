@@ -1,6 +1,6 @@
 ---
-Title: Import-PDQDeployPackage
 Order: 190
+Title: Import-PDQDeployPackage
 Description: Information about the Import-PDQDeployPackage function
 RedirectFrom: docs/import-pdqdeploy-package
 ---

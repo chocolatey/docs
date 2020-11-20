@@ -1,4 +1,5 @@
 ﻿---
+Order: 90
 xref: choco-command-pin
 Title: Pin
 Description: Pin Command (choco pin)

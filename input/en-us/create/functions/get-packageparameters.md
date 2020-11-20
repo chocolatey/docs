@@ -1,4 +1,5 @@
 ﻿---
+Order: 100
 Title: Get-PackageParameters
 Description: Information on Get-PackageParameters function
 RedirectFrom: docs/helpers-get-package-parameters

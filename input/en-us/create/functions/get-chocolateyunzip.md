@@ -1,4 +1,5 @@
 ﻿---
+Order: 40
 Title: Get-ChocolateyUnzip
 Description: Information on Get-ChocolateyUnzip function
 RedirectFrom: docs/helpers-get-chocolatey-unzip

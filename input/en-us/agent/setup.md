@@ -1,6 +1,6 @@
 ---
-xref: setup-agent
 Order: 20
+xref: setup-agent
 Title: Setup
 Description: Information on how to setup Chocolatey Agent
 ---

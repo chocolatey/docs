@@ -1,4 +1,5 @@
 ﻿---
+Order: 310
 Title: Install-ChocolateyWindowsService
 Description: Information on Install-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-install-chocolatey-windows-service

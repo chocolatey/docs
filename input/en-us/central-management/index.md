@@ -1,6 +1,6 @@
 ---
-Title: Chocolatey Central Management (CCM)
 Order: 130
+Title: Chocolatey Central Management (CCM)
 Description: What is CCM?
 RedirectFrom: docs/central-management
 ---

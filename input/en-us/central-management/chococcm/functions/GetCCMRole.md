@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMRole
 Order: 160
+Title: Get-CCMRole
 Description: Information about the Get-CCMRole function
 RedirectFrom: docs/get-ccmrole
 ---

@@ -1,4 +1,5 @@
 ﻿---
+Order: 410
 Title: Uninstall-ChocolateyEnvironmentVariable
 Description: Information on Uninstall-ChocolateyEnvironmentVariable function
 RedirectFrom: docs/helpers-uninstall-chocolatey-environment-variable

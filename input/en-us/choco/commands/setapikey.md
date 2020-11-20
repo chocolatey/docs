@@ -1,4 +1,5 @@
 ﻿---
+Order: 110
 xref: choco-command-setapikey
 Title: ApiKey
 Description: ApiKey Command (choco setapikey)

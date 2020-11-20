@@ -1,4 +1,5 @@
 ﻿---
+Order: 10
 Title: Format-FileSize
 Description: Information on Format-FileSize function
 RedirectFrom: docs/helpers-format-file-size

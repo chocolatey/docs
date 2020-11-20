@@ -1,4 +1,5 @@
 ﻿---
+Order: 420
 Title: Uninstall-ChocolateyPackage
 Description: Information on Uninstall-ChocolateyPackage function
 RedirectFrom: docs/helpers-uninstall-chocolatey-package

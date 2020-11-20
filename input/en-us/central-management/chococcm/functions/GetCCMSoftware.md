@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMSoftware
 Order: 170
+Title: Get-CCMSoftware
 Description: Information about the Get-CCMSoftware function
 RedirectFrom: docs/get-ccmsoftware
 ---

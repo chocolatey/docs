@@ -1,4 +1,5 @@
 ﻿---
+Order: 170
 xref: choco-command-uninstall
 Title: Uninstall
 Description: Uninstall Command (choco uninstall)

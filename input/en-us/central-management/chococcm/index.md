@@ -1,5 +1,5 @@
 ---
-Title: ChocoCCM
 Order: 40
-Description:
+Title: ChocoCCM
+Description: TODO
 ---

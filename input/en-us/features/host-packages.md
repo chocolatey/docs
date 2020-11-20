@@ -1,6 +1,6 @@
 ---
-xref: host-packages
 Order: 50
+xref: host-packages
 Title: Host packages internally
 Description: How to host your own Chocolatey packages, rather than use the Chocolatey Community Repository
 RedirectFrom: docs/how-to-host-feed

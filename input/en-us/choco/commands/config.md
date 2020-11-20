@@ -1,4 +1,5 @@
 ﻿---
+Order: 10
 xref: choco-command-config
 Title: Config
 Description: Config Command (choco config)

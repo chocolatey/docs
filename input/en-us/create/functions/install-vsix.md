@@ -1,4 +1,5 @@
 ﻿---
+Order: 330
 Title: Install-Vsix
 Description: Information on Install-Vsix function
 RedirectFrom: docs/helpers-install-vsix

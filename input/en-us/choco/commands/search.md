@@ -1,4 +1,5 @@
 ﻿---
+Order: 100
 xref: choco-command-search
 Title: Search
 Description: Search Command (choco search)

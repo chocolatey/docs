@@ -1,4 +1,5 @@
 ﻿---
+Order: 50
 xref: choco-command-install
 Title: Install
 Description: Install Command (choco install)

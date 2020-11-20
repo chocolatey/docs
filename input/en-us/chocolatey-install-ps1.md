@@ -1,5 +1,7 @@
 ---
+Order: 71
 Title: ChocolateyInstall PowerShell Script
+Description: TODO
 RedirectFrom: docs/chocolatey-install-ps1
 ShowInNavbar: false
 ShowInSidebar: false

@@ -1,7 +1,7 @@
 ---
 Order: 10
 Title: Automatic Sync (Pro+)
-Description:
+Description: TODO
 RedirectFrom: docs/features-synchronize
 ---
 

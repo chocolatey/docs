@@ -1,6 +1,6 @@
 ---
-Title: Remove-CCMGroupMember
 Order: 270
+Title: Remove-CCMGroupMember
 Description: Information about the Remove-CCMGroupMember function
 RedirectFrom: docs/remove-ccmgroup-member
 ---

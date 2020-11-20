@@ -1,6 +1,6 @@
 ---
-Title: Export-CCMOutdatedSoftwareReport
 Order: 70
+Title: Export-CCMOutdatedSoftwareReport
 Description: Information about the Export-CCMOutdatedSoftwareReport function
 RedirectFrom: docs/export-ccmoutdated-software-report
 ---

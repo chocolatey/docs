@@ -1,4 +1,5 @@
 ﻿---
+Order: 210
 xref: choco-command-version
 Title: Version
 Description: Version Command (choco version)

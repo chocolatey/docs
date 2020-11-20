@@ -1,4 +1,5 @@
 ﻿---
+Order: 450
 Title: Update-SessionEnvironment
 Description: Information on Update-SessionEnvironment function
 RedirectFrom: docs/helpers-update-session-environment

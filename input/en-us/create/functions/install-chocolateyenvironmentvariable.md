@@ -1,4 +1,5 @@
 ﻿---
+Order: 210
 Title: Install-ChocolateyEnvironmentVariable
 Description: Information on Install-ChocolateyEnvironmentVariable function
 RedirectFrom: docs/helpers-install-chocolatey-environment-variable

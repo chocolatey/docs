@@ -1,4 +1,5 @@
 ﻿---
+Order: 160
 xref: choco-command-synchronize
 Title: Synchronize
 Description: Synchronize Command (choco synchronize)

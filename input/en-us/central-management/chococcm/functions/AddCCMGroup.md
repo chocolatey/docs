@@ -1,6 +1,6 @@
 ---
-Title: Add-CCMGroup
 Order: 10
+Title: Add-CCMGroup
 Description: Information about the Add-CCMGroup function
 RedirectFrom: docs/add-ccmgroup
 ---

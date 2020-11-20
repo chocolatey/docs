@@ -1,4 +1,5 @@
 ﻿---
+Order: 380
 Title: Stop-ChocolateyWindowsService
 Description: Information on Stop-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-stop-chocolatey-windows-service

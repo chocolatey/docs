@@ -1,4 +1,5 @@
 ﻿---
+Order: 150
 Title: Get-VirusCheckValid
 Description: Information on Get-VirusCheckValid function
 RedirectFrom: docs/helpers-get-virus-check-valid

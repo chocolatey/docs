@@ -1,4 +1,5 @@
 ﻿---
+Order: 460
 Title: Write-ChocolateyFailure
 Description: Information on Write-ChocolateyFailure function
 RedirectFrom: docs/helpers-write-chocolatey-failure

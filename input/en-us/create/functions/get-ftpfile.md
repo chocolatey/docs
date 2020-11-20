@@ -1,4 +1,5 @@
 ﻿---
+Order: 80
 Title: Get-FtpFile
 Description: Information on Get-FtpFile function
 RedirectFrom: docs/helpers-get-ftp-file

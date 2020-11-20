@@ -1,4 +1,5 @@
 ﻿---
+Order: 440
 Title: Uninstall-ChocolateyZipPackage
 Description: Information on Uninstall-ChocolateyZipPackage function
 RedirectFrom: docs/helpers-uninstall-chocolatey-zip-package

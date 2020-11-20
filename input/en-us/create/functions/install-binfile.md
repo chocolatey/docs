@@ -1,4 +1,5 @@
 ﻿---
+Order: 190
 Title: Install-BinFile
 Description: Information on Install-BinFile function
 RedirectFrom: docs/helpers-install-bin-file

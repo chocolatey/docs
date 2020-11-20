@@ -1,4 +1,5 @@
 ﻿---
+Order: 260
 Title: Install-ChocolateyPath
 Description: Information on Install-ChocolateyPath function
 RedirectFrom: docs/helpers-install-chocolatey-path

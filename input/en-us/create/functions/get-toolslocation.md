@@ -1,4 +1,5 @@
 ﻿---
+Order: 120
 Title: Get-ToolsLocation
 Description: Information on Get-ToolsLocation function
 RedirectFrom: docs/helpers-get-tools-location

@@ -1,4 +1,5 @@
 ﻿---
+Order: 350
 Title: Set-PowerShellExitCode
 Description: Information on Set-PowerShellExitCode function
 RedirectFrom: docs/helpers-set-power-shell-exit-code

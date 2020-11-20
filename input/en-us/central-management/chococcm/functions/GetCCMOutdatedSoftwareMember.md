@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMOutdatedSoftwareMember
 Order: 130
+Title: Get-CCMOutdatedSoftwareMember
 Description: Information about the Get-CCMOutdatedSoftwareMember function
 RedirectFrom: docs/get-ccmoutdated-software-member
 ---

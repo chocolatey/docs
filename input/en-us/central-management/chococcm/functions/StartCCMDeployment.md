@@ -1,6 +1,6 @@
 ---
-Title: Start-CCMDeployment
 Order: 320
+Title: Start-CCMDeployment
 Description: Information about the Start-CCMDeployment function
 RedirectFrom: docs/set-ccmdeployment
 ---

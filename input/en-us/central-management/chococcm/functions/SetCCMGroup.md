@@ -1,6 +1,6 @@
 ---
-Title: Set-CCMGroup
 Order: 300
+Title: Set-CCMGroup
 Description: Information about the Set-CCMGroup function
 RedirectFrom: docs/set-ccmgroup
 ---

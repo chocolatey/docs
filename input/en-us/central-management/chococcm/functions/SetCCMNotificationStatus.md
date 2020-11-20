@@ -1,6 +1,6 @@
 ---
-Title: Set-CCMNotificationStatus
 Order: 310
+Title: Set-CCMNotificationStatus
 Description: Information about the Set-CCMNotificationStatus function
 RedirectFrom: docs/set-cmmnotification-status
 ---

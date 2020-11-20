@@ -1,4 +1,5 @@
 ﻿---
+Order: 130
 xref: choco-command-sources
 Title: Source/Sources
 Description: Source Command (choco sources)

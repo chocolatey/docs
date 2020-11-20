@@ -1,4 +1,5 @@
 ﻿---
+Order: 240
 Title: Install-ChocolateyInstallPackage
 Description: Information on how to use the Install-ChocolateyInstallPackage function
 RedirectFrom: docs/helpers-install-chocolatey-install-package

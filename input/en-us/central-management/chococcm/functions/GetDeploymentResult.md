@@ -1,6 +1,6 @@
 ---
-Title: Get-DeploymentResult
 Order: 180
+Title: Get-DeploymentResult
 Description: Information about the Get-DeploymentResult function
 RedirectFrom: docs/get-deployment-result
 ---

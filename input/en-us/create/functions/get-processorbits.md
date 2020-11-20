@@ -1,4 +1,5 @@
 ﻿---
+Order: 110
 Title: Get-ProcessorBits
 Description: Information on Get-ProcessorBits function
 RedirectFrom: docs/helpers-get-processor-bits

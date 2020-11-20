@@ -1,6 +1,6 @@
 ---
-xref: setup-licensed
 Order: 20
+xref: setup-licensed
 Title: Setup / How to install licensed edition
 Description: Techniques for how to install the licensed version of Chocolatey
 RedirectFrom: docs/installation-licensed

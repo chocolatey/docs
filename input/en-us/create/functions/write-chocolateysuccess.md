@@ -1,4 +1,5 @@
 ﻿---
+Order: 470
 Title: Write-ChocolateySuccess
 Description: Information on Write-ChocolateySuccess function
 RedirectFrom: docs/helpers-write-chocolatey-success

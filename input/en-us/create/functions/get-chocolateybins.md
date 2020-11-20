@@ -1,4 +1,5 @@
 ---
+Order: 30
 Title: Get-ChocolateyBins
 Description: Information on Get-ChocolateyBins function
 RedirectFrom: docs/helpers-get-chocolatey-bins

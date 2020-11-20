@@ -1,6 +1,6 @@
 ﻿---
-xref: choco-command-pack
 Order: 20
+xref: choco-command-pack
 Title: Pack
 Description: Pack Command (choco pack)
 RedirectFrom: docs/commands-pack

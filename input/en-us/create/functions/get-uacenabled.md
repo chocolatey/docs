@@ -1,4 +1,5 @@
 ﻿---
+Order: 130
 Title: Get-UACEnabled
 Description: Information on Get-UACEnabled function
 RedirectFrom: docs/helpers-get-uacenabled

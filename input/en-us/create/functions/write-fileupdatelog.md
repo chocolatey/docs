@@ -1,4 +1,5 @@
 ﻿---
+Order: 480
 Title: Write-FileUpdateLog
 Description: Information on Write-FileUpdateLog function
 RedirectFrom: docs/helpers-write-file-update-log

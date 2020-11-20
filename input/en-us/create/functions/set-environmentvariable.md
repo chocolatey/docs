@@ -1,4 +1,5 @@
 ﻿---
+Order: 340
 Title: Set-EnvironmentVariable
 Description: Information on Set-EnvironmentVariable function
 RedirectFrom: docs/helpers-set-environment-variable

@@ -1,4 +1,5 @@
 ﻿---
+Order: 370
 Title: Start-ChocolateyWindowsService
 Description: Information on Start-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-start-chocolatey-windows-service

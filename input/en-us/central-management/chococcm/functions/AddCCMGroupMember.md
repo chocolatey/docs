@@ -1,6 +1,6 @@
 ---
-Title: Add-CCMGroupMember
 Order: 20
+Title: Add-CCMGroupMember
 Description: Information about the Add-CCMGroupMember function
 RedirectFrom: docs/add-ccmgroup-member
 ---

@@ -1,4 +1,5 @@
 ﻿---
+Order: 390
 Title: Test-ProcessAdminRights
 Description: Information on Test-ProcessAdminRights function
 RedirectFrom: docs/helpers-test-process-admin-rights

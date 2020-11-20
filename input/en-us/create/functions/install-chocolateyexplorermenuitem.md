@@ -1,4 +1,5 @@
 ﻿---
+Order: 220
 Title: Install-ChocolateyExplorerMenuItem
 Description: Information on Install-ChocolateyExplorerMenuItem function
 RedirectFrom: docs/helpers-install-chocolatey-explorer-menu-item

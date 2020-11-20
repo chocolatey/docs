@@ -1,4 +1,5 @@
 ﻿---
+Order: 290
 Title: Install-ChocolateyShortcut
 Description: Information on Install-ChocolateyShortcut function
 RedirectFrom: docs/helpers-install-chocolatey-shortcut

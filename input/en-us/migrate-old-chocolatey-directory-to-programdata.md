@@ -1,5 +1,7 @@
 ---
+Order: 77
 Title: Migrate Old Chocolatey Directory to ProgramData
+Description: TODO
 RedirectFrom: docs/migrate-old-chocolatey-directory-to-programdata
 ShowInNavbar: false
 ShowInSidebar: false

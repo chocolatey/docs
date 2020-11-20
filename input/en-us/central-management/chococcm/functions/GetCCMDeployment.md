@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMDeployment
 Order: 90
+Title: Get-CCMDeployment
 Description: Information about the Get-CCMDeployment function
 RedirectFrom: docs/get-ccmdeployment
 ---

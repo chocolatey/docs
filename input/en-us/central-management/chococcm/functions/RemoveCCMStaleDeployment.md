@@ -1,6 +1,6 @@
 ---
-Title: Remove-CCMStaleDeployment
 Order: 280
+Title: Remove-CCMStaleDeployment
 Description: Information about the Remove-CCMStaleDeployment function
 RedirectFrom: docs/remove-ccmstale-deployment
 ---

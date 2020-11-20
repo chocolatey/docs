@@ -1,4 +1,5 @@
 ﻿---
+Order: 140
 Title: Get-UninstallRegistryKey
 Description: Information on Get-UninstallRegistryKey function
 RedirectFrom: docs/helpers-get-uninstall-registry-key

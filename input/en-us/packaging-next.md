@@ -1,5 +1,7 @@
 ---
+Order: 78
 Title: Packaging Next
+Description: TODO
 RedirectFrom: docs/packaging-next
 ShowInNavbar: false
 ShowInSidebar: false

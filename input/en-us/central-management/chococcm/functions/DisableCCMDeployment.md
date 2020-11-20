@@ -1,6 +1,6 @@
 ---
-Title: Disable-CCMDeployment
 Order: 40
+Title: Disable-CCMDeployment
 Description: Information about the Disable-CCMDeployment function
 RedirectFrom: docs/disable-ccmdeployment
 ---

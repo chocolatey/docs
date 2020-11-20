@@ -1,4 +1,5 @@
 ﻿---
+Order: 360
 Title: Start-ChocolateyProcessAsAdmin
 Description: Information on Start-ChocolateyProcessAsAdmin function
 RedirectFrom: docs/helpers-start-chocolatey-process-as-admin

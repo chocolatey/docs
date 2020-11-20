@@ -1,6 +1,6 @@
 ---
-Title: Get-CCMComputer
 Order: 80
+Title: Get-CCMComputer
 Description: Information about the Get-CCMComputer function
 RedirectFrom: docs/get-ccmcomputer
 ---

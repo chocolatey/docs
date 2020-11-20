@@ -1,4 +1,5 @@
 ﻿---
+Order: 280
 Title: Install-ChocolateyPowerShellCommand
 Description: Information on how to use the Install-ChocolateyPowerShellCommand function
 RedirectFrom: docs/helpers-install-chocolatey-powershell-command

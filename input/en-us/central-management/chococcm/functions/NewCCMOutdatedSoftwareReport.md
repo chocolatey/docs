@@ -1,6 +1,6 @@
 ---
-Title: New-CCMOutdatedSoftwareReport
 Order: 230
+Title: New-CCMOutdatedSoftwareReport
 Description: Information about the New-CCMOutdatedSoftwareReport function
 RedirectFrom: docs/new-ccmoutdated-software-report
 ---
