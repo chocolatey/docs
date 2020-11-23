@@ -1,10 +1,7 @@
-using System.Linq;
 using System.Threading.Tasks;
-using AngleSharp.Html.Dom;
 using Docs.Shortcodes;
 using Statiq.App;
 using Statiq.Common;
-using Statiq.Core;
 using Statiq.Markdown;
 using Statiq.Web;
 
@@ -23,26 +20,6 @@ namespace Docs
             .ConfigureTemplates(templates => ((RenderMarkdown)templates[MediaTypes.Markdown].Module).UseExtension(new Markdig.Extensions.Emoji.EmojiExtension()))
             .AddShortcode("Children", typeof(ChildrenShortcode))
             .AddPipelines()
-            .ModifyPipeline(
-              nameof(Statiq.Web.Pipelines.Content),
-              pipeline => pipeline.ProcessModules.Add(
-                new ExecuteConfig(Config.FromDocument(async doc =>
-                {
-                  var headings = doc.GetDocumentList(Statiq.Html.HtmlKeys.Headings).ToList();
-                  if (headings?.Count > 0)
-                  {
-                    for (int i = 0; i < headings.Count; i++)
-                    {
-                      IHtmlDocument htmlDocument = await Statiq.Html.HtmlHelper.ParseHtmlAsync(headings[i]);
-                      headings[i] = await headings[i].CloneAsync(htmlDocument.Body.TextContent);
-                    }
-                    return doc.Clone(new MetadataItems
-                      {
-                        { Statiq.Html.HtmlKeys.Headings, headings }
-                      });
-                  }
-                  return doc;
-                }))))
             .RunAsync();
 
     private static Config<string> ConfigureEditLink()
