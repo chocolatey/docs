@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: chocolateygui-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey GUI
 RedirectFrom: docs/release-notes-chocolatey-gui
@@ -9,7 +10,7 @@ RedirectFrom: docs/release-notes-chocolatey-gui
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.
 
-**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](../licensed-extension/release-notes).
+**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes).
 
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 

@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: ccm-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey Central Management
 RedirectFrom: docs/release-notes-central-management
@@ -15,8 +16,8 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 **NOTE**: This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](../information/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](../licensed-extension/release-notes) and [Chocolatey Agent Release Notes](../agent/release-notes).
+* Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes) and [Chocolatey Agent Release Notes](xref:agent-release-notes).
 
 ## Known Issues
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement

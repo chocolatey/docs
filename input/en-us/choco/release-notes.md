@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: choco-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey CLI
 RedirectFrom: docs/release-notes-choco-cli

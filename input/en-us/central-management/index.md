@@ -63,7 +63,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ## Stay Up To Date
 
-* [Release Notes Central Management](./release-notes)
+* [Release Notes Central Management](xref:ccm-release-notes)
 * [Release Announcements Only Mailing List](https://groups.google.com/group/chocolatey-announce)
 
 ## Links
@@ -139,7 +139,7 @@ Chocolatey Central Management is made up of a number of components, so there wil
 
 ### Where can I find the changelog or release notes for Chocolatey Central Management?
 
-Please see [Release Notes Central Management](./release-notes).
+Please see [Release Notes Central Management](xref:ccm-release-notes).
 
 ### How do I get support?
 

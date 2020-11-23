@@ -28,8 +28,8 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 - [Why Chocolatey](./why)
 - [License Acceptance Terms](./information/legal#package-license-acceptance-terms)
 - [Waiver of Responsibility](information/legal#waiver-of-responsibility)
-- [Release Notes](./information/release-notes/open-source)
-- [Release Notes Commercial](./information/release-notes/licensed)
+- [Release Notes](xref:floss-release-notes)
+- [Release Notes Commercial](xref:licensed-release-notes)
 
 ## Using Chocolatey
 

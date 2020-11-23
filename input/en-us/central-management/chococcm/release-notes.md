@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: chococcm-release-notes
 Title: Release Notes
 Description: Release Notes for ChocoCCM
 ---

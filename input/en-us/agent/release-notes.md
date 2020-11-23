@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: agent-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey Agent
 RedirectFrom: docs/release-notes-agent
@@ -15,8 +16,8 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ## Other Release Notes
 
-* Refer to [Open Source Release Notes](../information/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](../licensed-extension/release-notes) and [Chocolatey Central Management Release Notes](../central-management/release-notes).
+* Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
 ## Known Issues
 

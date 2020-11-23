@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: licensed-extension-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey Extension
 RedirectFrom: docs/release-notes-extension
@@ -15,8 +16,8 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 **NOTE**: Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](../information/release-notes/open-source) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](../agent/release-notes) and [Chocolatey Central Management Release Notes](../central-management/release-notes).
+* Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
+* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
 
 ## Known Issues
