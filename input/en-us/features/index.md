@@ -1,5 +1,5 @@
 ---
 Order: 30
 Title: Features
-Description: TODO
+Description: Information about the different features that Chocolatey has
 ---

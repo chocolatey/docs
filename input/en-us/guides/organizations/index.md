@@ -1,5 +1,5 @@
 ---
 Order: 30
 Title: Organizations
-Description: TODO
+Description: Information on how Organizations should use Chocolatey
 ---

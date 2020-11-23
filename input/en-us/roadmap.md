@@ -1,7 +1,7 @@
 ---
 Order: 79
 Title: Roadmap
-Description: TODO
+Description: Information about what is on the roadmap for Chocolatey
 RedirectFrom: docs/roadmap
 ShowInNavbar: false
 ShowInSidebar: false

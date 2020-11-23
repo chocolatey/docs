@@ -1,7 +1,7 @@
 ---
 Order: 10
 Title: Automatic Sync (Pro+)
-Description: TODO
+Description: Ensure that any operation on an application, i.e. it is uninstalled, or upgraded, is tracked within Chocolatey as well
 RedirectFrom: docs/features-synchronize
 ---
 

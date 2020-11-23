@@ -1,5 +1,5 @@
 ---
 Order: 160
 Title: Guides
-Description: TODO
+Description: Information on the best practice usage of Chocolatey
 ---

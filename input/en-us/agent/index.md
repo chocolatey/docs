@@ -1,5 +1,5 @@
 ---
 Order: 120
 Title: Chocolatey Agent
-Description: TODO
+Description: This is a Windows Services which Chocolatey uses to perform Self-Service installs, as well as to communicate with Chocolatey Central Management
 ---

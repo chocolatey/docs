@@ -2,5 +2,5 @@
 Order: 10
 xref: usage-chocolatey
 Title: Using Chocolatey
-Description: TODO
+Description: Information on how to go about using Chocolatey
 ---

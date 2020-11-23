@@ -1,7 +1,7 @@
 ---
 Order: 76
 Title: Logo Use Policy
-Description: TODO
+Description: Usage information regarding the Chocolatey Logo
 RedirectFrom: docs/logo-use-policy
 ShowInNavbar: false
 ShowInSidebar: false

@@ -1,5 +1,5 @@
 ---
 Order: 20
 Title: Package Creation
-Description: TODO
+Description: Information on how to create packages using Chocolatey
 ---

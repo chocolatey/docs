@@ -2,7 +2,7 @@
 Order: 40
 xref: choco-commands
 Title: Commands
-Description: TODO
+Description: Full list of all available Chocolatey commands
 RedirectFrom: docs/commands-reference
 ---
 

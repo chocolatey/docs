@@ -1,7 +1,7 @@
 ---
 Order: 77
 Title: Migrate Old Chocolatey Directory to ProgramData
-Description: TODO
+Description: When upgrading from older versions of Chocolatey, so additional steps need to be completed
 RedirectFrom: docs/migrate-old-chocolatey-directory-to-programdata
 ShowInNavbar: false
 ShowInSidebar: false

@@ -1,7 +1,7 @@
 ---
 Order: 71
 Title: ChocolateyInstall PowerShell Script
-Description: TODO
+Description: Information about the chocolateyinstall.ps1 file which is used to by Chocolatey to install the package contents
 RedirectFrom: docs/chocolatey-install-ps1
 ShowInNavbar: false
 ShowInSidebar: false

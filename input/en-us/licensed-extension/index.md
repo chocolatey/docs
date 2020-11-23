@@ -1,5 +1,5 @@
 ---
 Order: 110
 Title: Chocolatey Licensed Extension
-Description: TODO
+Description: This is a Chocolatey extension that enables the licensed features of Chocolatey, depending on what license you have available
 ---

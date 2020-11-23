@@ -1,7 +1,7 @@
 ---
 Order: 72
 Title: Story of Bob and Richard
-Description: TODO
+Description: Background information about where the idea for Chocolatey came from
 RedirectFrom: docs/chocolatey-story
 ShowInNavbar: false
 ShowInSidebar: false

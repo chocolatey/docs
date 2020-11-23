@@ -1,7 +1,7 @@
 ---
 Order: 74
 Title: Default Chocolatey Install Reasoning
-Description: TODO
+Description: Background information on why Chocolatey installs where it does by default
 RedirectFrom: docs/default-chocolatey-install-reasoning
 ShowInNavbar: false
 ShowInSidebar: false

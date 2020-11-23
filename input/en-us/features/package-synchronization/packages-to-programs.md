@@ -1,7 +1,7 @@
 ---
 Order: 30
 Title: Packages to Programs (C4B)
-Description: TODO
+Description: Add an entry into Add/Remove programs for every package that is under Chocolatey management
 RedirectFrom: docs/features-synchronize
 ---
 

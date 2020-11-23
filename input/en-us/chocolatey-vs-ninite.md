@@ -1,7 +1,7 @@
 ---
 Order: 73
 Title: Chocolatey vs Ninite
-Description: TODO
+Description: A comparison between Chocolatey and Ninite
 RedirectFrom: docs/chocolatey-vs-ninite
 ShowInNavbar: false
 ShowInSidebar: false

@@ -1,7 +1,7 @@
 ---
 Order: 78
 Title: Packaging Next
-Description: TODO
+Description: What's on the roadmap for Chocolatey in terms of Packaging
 RedirectFrom: docs/packaging-next
 ShowInNavbar: false
 ShowInSidebar: false

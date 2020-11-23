@@ -2,7 +2,7 @@
 Order: 20
 xref: sync-command
 Title: Choco Sync Command (C4B)
-Description: TODO
+Description: Use choco sync to bring already installed applications under Chocolatey management
 RedirectFrom: docs/features-synchronize
 ---
 
