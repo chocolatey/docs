@@ -24,6 +24,7 @@
         "node_modules/bootstrap/dist/js/bootstrap.bundle.js",
         "node_modules/anchor-js/anchor.js",
         "node_modules/choco-theme/js/prism.min.js",
+        "node_modules/mousetrap/mousetrap.js",
         "node_modules/choco-theme/js/chocolatey.js"
       ]
     }
