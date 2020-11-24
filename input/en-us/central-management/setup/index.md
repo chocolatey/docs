@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: ccm-setup
 Title: Setup
 Description: Information on how to setup CCM
 RedirectFrom: docs/central-management-setup
@@ -26,7 +27,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 >
 > All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-> :memo: **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](./upgrade).
+> :memo: **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgrade).
 
 ## High Level Requirements
 
@@ -91,29 +92,29 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Setup Central Management Database
 
-Please see [Central Management Database Setup](./database).
+Please see [Central Management Database Setup](xref:ccm-database).
 
 > :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-Please see [Central Management Service Setup](./service).
+Please see [Central Management Service Setup](xref:ccm-service).
 
 > :memo: **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
 ## Step 4: Setup Central Management Website
 
-Please see [Central Management Web Setup](./website).
+Please see [Central Management Web Setup](xref:ccm-website).
 
 > :memo: **NOTE**: If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
 
 ## Step 5: Setting up Agent Machines
 
-Please see [Central Management Client Setup](./client).
+Please see [Central Management Client Setup](xref:ccm-client).
 
 ## Upgrading?
 
-Looking for upgrade instructions? See [Central Management Upgrade](./upgrade).
+Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgrade).
 
 ## Common Errors and Resolutions
 

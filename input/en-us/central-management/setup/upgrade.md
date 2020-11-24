@@ -1,5 +1,6 @@
 ---
 Order: 50
+xref: ccm-upgrade
 Title: Upgrade
 Description: How to upgrade CCM
 RedirectFrom: docs/central-management-setup-upgrade
@@ -7,7 +8,7 @@ RedirectFrom: docs/central-management-setup-upgrade
 
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
-> :memo: **NOTE**: Looking for installation instructions? See [Central Management Setup](../setup).
+> :memo: **NOTE**: Looking for installation instructions? See [Central Management Setup](xref:ccm-setup).
 
 > :warning: **WARNING**
 >
@@ -23,7 +24,7 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 >
 > Make sure you have read over the [CCM Compability Matrix](../#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
-Similar to how we internalized in [Setup - Internalize Packages](../setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Complatibility Matrix](../#ccm-component-compatibility-matrix).
+Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Complatibility Matrix](../#ccm-component-compatibility-matrix).
 
 > :warning: **TRIALS**: You need to ***first reach out*** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
 
@@ -51,7 +52,7 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Upgrade Central Management Database
 
-> :memo: **NOTE**: Please see [Central Management Database Setup](./database) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-database -y
@@ -61,7 +62,7 @@ choco upgrade chocolatey-management-database -y
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-> :memo: **NOTE**: Please see [Central Management Service Setup](./service) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-service -y
@@ -82,11 +83,11 @@ choco upgrade chocolatey-management-service -y
 
 > :memo: **NOTE**: Database details that have not changed will not need to be passed.
 
-There may be additional (new) things you will want to configure. Please see [Central Management Service Setup](./service) for details.
+There may be additional (new) things you will want to configure. Please see [Central Management Service Setup](xref:ccm-service) for details.
 
 ## Step 4: Setup Central Management Website
 
-> :memo: **NOTE**: Please see [Central Management Web Setup](./website) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-web -y
@@ -98,13 +99,13 @@ choco upgrade chocolatey-management-web -y
 
 ## Step 5: Upgrade Agent Machines
 
-> :memo: **NOTE**: Please see [Central Management Client Setup](./client) for details about all arguments that can be passed and set.
+> :memo: **NOTE**: Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-agent -y
 ```
 
-There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](./client) for details.
+There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](xref:ccm-client) for details.
 
 > :memo: **NOTE**: This could include the agent(s) on the CCM machine(s).
 
@@ -123,7 +124,7 @@ choco feature enable --name="'useChocolateyCentralManagementDeployments'"
 >
 > As these features have security considerations (it is enabling cross-machine communication), they must be turned on explicitly.
 > If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword`.
-> For more in-depth configuration options and settings for your endpoints, you can view the [CCM Client Setup page](./client)
+> For more in-depth configuration options and settings for your endpoints, you can view the [CCM Client Setup page](xref:ccm-client)
 
 ## FAQs
 
@@ -179,4 +180,4 @@ There are two workarounds noted:
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-[Central Management Setup](../setup) | [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](../)

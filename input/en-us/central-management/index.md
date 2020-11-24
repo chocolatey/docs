@@ -52,8 +52,8 @@ Central Management has specific needs that are mostly handled by packaging aspec
 
 CCM is only available for Chocolatey for Business (C4B) customers. If you are a C4B customer, you can head to the install components section:
 
-* [Central Management Setup](./setup)
-* [Central Management Client Setup](./setup/client)
+* [Central Management Setup](xref:ccm-setup)
+* [Central Management Client Setup](xref:ccm-client)
 
 If you are not a customer yet, you can [reach out for a trial](https://chocolatey.org/contact/trial).
 
@@ -70,23 +70,23 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ### Setup / Installation
 
-* [Central Management Setup](./setup)
-  * [Central Management Database Setup](./setup/database)
-  * [Central Management Service Setup](./setup/service)
-  * [Central Management Web Setup](./setup/website)
-* [Central Management Client Setup](./setup/client)
+* [Central Management Setup](xref:ccm-setup)
+  * [Central Management Database Setup](xref:ccm-database)
+  * [Central Management Service Setup](xref:ccm-service)
+  * [Central Management Web Setup](xref:ccm-website)
+* [Central Management Client Setup](xref:ccm-client)
 
 ### Setup / Upgrade
 
-* [Upgrading Central Management](./setup/upgrade)
+* [Upgrading Central Management](xref:ccm-upgrade)
 
 ### Using Central Management
 
-* [CCM Computers](./usage/computers)
-* [CCM Software](./usage/software)
-* [CCM Groups](./usage/groups)
-* [CCM Deployments](./usage/deployments)
-* [CCM Reports](./usage/reports)
+* [CCM Computers](xref:ccm-computers)
+* [CCM Software](xref:ccm-software)
+* [CCM Groups](xref:ccm-groups)
+* [CCM Deployments](xref:ccm-deployments)
+* [CCM Reports](xref:ccm-reports)
 
 ![CCM Overview](/assets/images/features/ccm/ccm_overview.jpg)
 

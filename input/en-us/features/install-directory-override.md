@@ -1,5 +1,6 @@
 ---
 Order: 180
+xref: install-directory-override
 Title: Ubiquitous Install Directory Option (Pro+)
 Description: Override the install directory for native installers
 RedirectFrom: docs/features-install-directory-override

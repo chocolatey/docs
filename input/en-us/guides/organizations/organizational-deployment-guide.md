@@ -59,8 +59,8 @@ There may be some exercises in here that won't apply:
 * [Licensed Install](xref:setup-licensed)
 * [Host Your Own Package Server](xref:host-packages)
 * [Set up Chocolatey Server](./set-up-chocolatey-server)
-* [Security](https://chocolatey.org/security)
-* [Community Package Repository Disclaimer](../../community-repository/community-packages-disclaimer)
+* [Security](xref:security)
+* [Community Package Repository Disclaimer](xref:community-packages-disclaimer)
 
 ## Requirements
 
@@ -80,7 +80,7 @@ For Chocolatey clients, you will need the following:
 
 * Chocolatey CLI aka choco (or choco.exe) is a client (not a Windows service) that provides the core of Chocolatey and the installation store for locally installed packages. This is important as Chocolatey manages packages, not Programs and Features directly - Programs and Features is limited only to software that has "installers" and Chocolatey treats all aspects of Windows software as first class citizens (zips, scripts, binaries, installers), thus it needs to track and manage those things separately.
 * Chocolatey GUI is an application that runs when a user runs it (also not a Windows Service).
-* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](../../features/self-service-anywhere) and Chocolatey Central Management.
+* Chocolatey Agent (aka chocolatey-agent) is a Windows service available in Chocolatey for Business. It is used for [Self-Service Installation](xref:self-service-anywhere) and Chocolatey Central Management.
 
 #### Space Requirements
 
@@ -136,7 +136,7 @@ From the machine with internet access:
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](xref:configuration).
 1. C4B: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link in the first sentence for other settings you will need to configure.
 1. C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre --source c:\choco-setup\packages` (this is where you saved the nupkgs earlier). Then follow the link in the first sentence for other settings you will need to configure.
 1. Download packages (choose one):
@@ -245,7 +245,7 @@ Now that we've finished the first exercise and have those files over on our offl
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](xref:configuration).
 1. C4B / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell
@@ -362,7 +362,7 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
-**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](../../community-repository/community-packages-disclaimer).
+**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](xref:community-packages-disclaimer).
 
 ### Exercise 2C: Set Up A File Share Repository
 
@@ -564,7 +564,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. Run `choco config set commandExecutionTimeoutSeconds 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
-1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](../../configuration).
+1. Set proxy configuration, virus scan configuration, or other configuration as described at [Chocolatey configuration](xref:configuration).
 1. C4B / MSP / C4BTRIAL: Are we installing the [optional Chocolatey Agent Service as well](xref:setup-agent)? If so, run `choco upgrade chocolatey-agent -y --pre` and then follow the link for other settings you will need to configure.
 
 ~~~powershell

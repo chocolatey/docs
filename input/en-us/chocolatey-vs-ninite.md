@@ -84,13 +84,13 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
   - PowerShell - take full advantage of PowerShell.
   - Unattended installations / Silent installation
 - Extend Chocolatey easily with PowerShell modules called [extension packages](xref:extensions).
-- Use [Package Builder](./features/package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
-- Use [Package Internalizer](./guides/create/recompile-packages) to internalize existing community packages quickly.
+- Use [Package Builder](xref:package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
+- Use [Package Internalizer](xref:guides-recompile-packages) to internalize existing community packages quickly.
 
 ### Available packages:
 
 - Ninite - Handled by Ninite staff, so there's less chance of anything being broken.
-- Chocolatey (community repository) - Handled by the community, reviewed by moderators. Possibility of breakages unless using [licensed editions of Chocolatey](https://chocolatey.org/compare) due to [CDN Cache](./features/private-cdn).
+- Chocolatey (community repository) - Handled by the community, reviewed by moderators. Possibility of breakages unless using [licensed editions of Chocolatey](https://chocolatey.org/compare) due to [CDN Cache](xref:private-cdn).
 - Chocolatey (internal repositories) - Handled by you, embedding software or using internal links you control. Zero chance of breakages that you don't control.
 
 ### Package updates:
@@ -112,7 +112,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 
 Chocolatey internal use is the best solution for an organization that has a low tolerance for breakages. There are no issues, you have a secure solution with complete control. You are building on top of technologies you know with a small amount of learning for packaging. Because it is PowerShell, you are not limited to just installers, and you can add additional logic before and after installations, and you are not limited to just "installing" software with packaging.
 
-Ninite is a solid solution if you don't mind not being able to script it and only install the applications that it has listed on the Ninite page. You are, however, possibly guaranteed that you have everything you need to install sheerly by having the Ninite Installer. In that way it may be better than using Chocolatey's community repository, which most packages require access to the internet to download installers that do not have distribution rights with them (Ninite may not incur this extra point of failure, but is quite limited in its offerings). Chocolatey community repository with [licensed editions of Chocolatey](https://chocolatey.org/compare) have almost no chance of breakages due to a [CDN Cache](./features/private-cdn) of those downloads.
+Ninite is a solid solution if you don't mind not being able to script it and only install the applications that it has listed on the Ninite page. You are, however, possibly guaranteed that you have everything you need to install sheerly by having the Ninite Installer. In that way it may be better than using Chocolatey's community repository, which most packages require access to the internet to download installers that do not have distribution rights with them (Ninite may not incur this extra point of failure, but is quite limited in its offerings). Chocolatey community repository with [licensed editions of Chocolatey](https://chocolatey.org/compare) have almost no chance of breakages due to a [CDN Cache](xref:private-cdn) of those downloads.
 
 Chocolatey community repository has over 4,000 more packages than Ninite and a community that is driving to continually make it better. If you need to get to older versions of packages, many of the packages on the community repository allow for this. What Chocolatey community repository may lack in the possible guarantee that Ninite provides, it makes up for in features and options. Chocolatey can provide packages for non-free products, have multiple sources and folks can script the installations. Chocolatey is more than just an installer and with that does not require administrative privileges to use.
 

@@ -1,5 +1,6 @@
 ---
 Order: 50
+xref: v2-internet-setup
 Title: Internet Setup
 Description: How to make QDE accessible from the internet
 RedirectFrom: docs/quick-deployment-internet-setup
@@ -14,9 +15,9 @@ RedirectFrom: docs/quick-deployment-internet-setup
 >
 > See the following QDE v2.0+ documents for more information on how to handle this setup or certificate renewals in newer versions:
 >
-> * [QDE Desktop Readme](./desktop-readme)
-> * [QDE Firewall Changes](./firewall-changes)
-> * [QDE SSL Setup](./ssl-setup)
+> * [QDE Desktop Readme](xref:v2-desktop-readme)
+> * [QDE Firewall Changes](xref:v2-firewall-changes)
+> * [QDE SSL Setup](xref:v2-ssl-setup)
 
 With an unprecedented amount of employees working from home, there is a much greater demand to serve their software lifecycle needs remotely. Thus, many organizations would like the option to make the Chocolatey Quick Deployment Environment (QDE) Internet-accessible. This document walks you through some options you will need to consider, if you choose this route.
 

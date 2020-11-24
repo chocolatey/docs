@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: why
 Title: Why Chocolatey?
 Description: Why should I use Chocolatey
 RedirectFrom: docs/why
@@ -32,7 +33,7 @@ There is a better way! Once you start to use Chocolatey to silently install appl
 
 Because Chocolatey is built on top of the NuGet infrastructure, that means you can install packages from Chocolatey.org, NuGet.org, MyGet.org, file shares, directories, custom feeds and from private feeds. That means you can set up your own server (even private) and your own internal packages with more company specific packages.
 
-[Tell me a story](./chocolatey-story)
+[Tell me a story](xref:chocolatey-story)
 
 ## What is Chocolatey?
 
@@ -68,7 +69,7 @@ Yes, yes you can. Chocolatey works in a similar manner to how you would do thing
 
 ![Yes, yes](http://replygif.net/i/208.gif)
 
-Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
+Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
 
 Let me start by saying that testing how a single package won't give you a warm and fuzzy about how it will work with all packages. Software installers in the wild world of Windows have many completely different ways of going about things, all of which are dependent on those creating the installers, none of which have a consistent standard (except maybe MSI). Welcome to Windows.
 
@@ -96,4 +97,4 @@ To date, Chocolatey does all of this (virtual packages is coming).
 
 ## Other questions?
 
-See the [FAQs](./faqs).
+See the [FAQs](xref:faqs).

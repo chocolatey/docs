@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: faqs
 Title: FAQs
 Description: Chocolatey frequently asked questions
 RedirectFrom: docs/chocolatey-faqs
@@ -14,7 +15,7 @@ Feel free to reach out to us on [Gitter](https://gitter.im/chocolatey/choco) or 
 ### What is Chocolatey?
 
 Chocolatey is kind of like apt-get, but for Windows (with Windows comes limitations). It is a machine level package manager that is built on top of nuget command line and the nuget infrastructure.
-[More behind the name](./information/history)
+[More behind the name](xref:history)
 
 "Okay, machine package manager, that's nice. What does that mean though?" It means you can simply install software with a few keystrokes and go get coffee while your co-workers are downloading and running an install manually (and I do mean something like an MSI).
 
@@ -26,15 +27,15 @@ Yes, in a nutshell that is what Chocolatey does. Nearly exactly what you may alr
 
 ### What is the purpose of Chocolatey?
 
-Great question! See [The purpose of Chocolatey](./why#what-is-the-purpose-of-chocolatey)
+Great question! See [The purpose of Chocolatey](xref:why#what-is-the-purpose-of-chocolatey)
 
 ### How does Chocolatey work?
 
-See [What is Chocolatey?](./why#what-is-chocolatey)
+See [What is Chocolatey?](xref:why#what-is-chocolatey)
 
 ### Why Chocolatey?
 
-First a [story](./chocolatey-story). Then [Why Chocolatey](./why)
+First a [story](xref:chocolatey-story). Then [Why Chocolatey](xref:why)
 
 ### Can I use Chocolatey at my organization?
 
@@ -50,13 +51,13 @@ To put it another way, Microsoft would be quite upset if the Office 365 packages
 
 When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights, thus you can create packages that are more reliable, offline, and secure. See [What are Chocolatey Packages](xref:getting-started#what-are-chocolatey-packages) for more details.
 
-For more information on organizational cautions about the community package repository, see [the community repository disclaimer](./community-repository/community-packages-disclaimer).
+For more information on organizational cautions about the community package repository, see [the community repository disclaimer](xref:community-packages-disclaimer).
 
 ### Where does Chocolatey install by default?
 
 As of version 0.9.8.24, binaries, libraries and Chocolatey components install in ```C:\ProgramData\chocolatey``` (environment variable %ProgramData%) by default. This reduces the attack surface on a local installation of Chocolatey and limits who can make changes to the directory.
 
-**NOTE:** Historically, Chocolatey installed to ```C:\Chocolatey``` and currently, performing an update of Chocolatey doesn't change the installation location, except for when the install path is `C:\chocolatey`. It will upgrade that path and all variables automatically.  For more information about why Chocolatey used ```C:\Chocolatey``` as the default location, look here - [Default Install Reasoning](./default-chocolatey-install-reasoning)
+**NOTE:** Historically, Chocolatey installed to ```C:\Chocolatey``` and currently, performing an update of Chocolatey doesn't change the installation location, except for when the install path is `C:\chocolatey`. It will upgrade that path and all variables automatically.  For more information about why Chocolatey used ```C:\Chocolatey``` as the default location, look here - [Default Install Reasoning](xref:default-chocolatey-install-reasoning)
 
 ### What kind of package types does Chocolatey support?
 
@@ -67,13 +68,13 @@ As of version 0.9.8.24, binaries, libraries and Chocolatey components install in
 
 ### Do you have a roadmap I can see?
 
-We do, take a look at the [roadmap](./roadmap)
+We do, take a look at the [roadmap](xref:roadmap)
 
 ## Security
 
 ### Is Chocolatey secure?
 
-Yes, it is. You can read more at [security](./information/security) to understand the important details.
+Yes, it is. You can read more at [security](xref:security) to understand the important details.
 
 ### Why do I have to confirm packages now? Is there a way to remove this?
 
@@ -101,7 +102,7 @@ While we keep up with most security aspects, sometimes we miss things. Always fe
 
 ### I have other security questions
 
-Please see [security](./information/security). Please reach out to us if you cannot find answers to what you are looking for.
+Please see [security](xref:security). Please reach out to us if you cannot find answers to what you are looking for.
 
 ## Using Chocolatey
 
@@ -111,7 +112,7 @@ Yes, Chocolatey has some official clients, one of which is `choco.exe` and it is
 
 ### Tab-completion?
 
-See the [troubleshooting](./troubleshooting) page if `choco <tab>` doesn't work for you when you are using PowerShell.
+See the [troubleshooting](xref:troubleshooting) page if `choco <tab>` doesn't work for you when you are using PowerShell.
 
 ### What is the difference between Open Source Chocolatey, Chocolatey Pro, and Chocolatey for Business?
 
@@ -131,7 +132,7 @@ Yes, we absolutely support that scenario in Chocolatey for Business. See [Licens
 
 ### Can I use Chocolatey with existing installs?
 
-Fantastic question, see [Can I use Chocolatey with existing software?](./why#can-i-use-chocolatey-with-existing-software)
+Fantastic question, see [Can I use Chocolatey with existing software?](xref:why#can-i-use-chocolatey-with-existing-software)
 
 ### What is the default package source repository URL (community feed url)?
 
@@ -151,7 +152,7 @@ With most packages when you already have something installed, the Chocolatey pro
 
 ### Can I override the installation directory?
 
-Yes you can, see [Overriding install directory](xref:getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [Ubiquitous Install Directory Option](./features/install-directory-override).
+Yes you can, see [Overriding install directory](xref:getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) and [Ubiquitous Install Directory Option](xref:install-directory-override).
 
 ### What distinction does Chocolatey make between an installable and a portable application?
 
@@ -221,13 +222,13 @@ Speaking of POSIX environments, ever since we released 0.9.9 back in 2015, we've
 
 In fact we first showed it off at PuppetConf 2014 (prior to the official March 2015 release!) - https://www.youtube.com/watch?v=cZl_wKSciVk
 
-Do we have plans to support fully running on POSIX environments? We've discussed it, but have no official stance on it yet. Keep your eyes on the [roadmap](./roadmap)
+Do we have plans to support fully running on POSIX environments? We've discussed it, but have no official stance on it yet. Keep your eyes on the [roadmap](xref:roadmap)
 
 ## Troubleshooting
 
 ### I'm running into some issue with Chocolatey, packaging, or something else.
 
-See [Troubleshooting](./troubleshooting)
+See [Troubleshooting](xref:troubleshooting)
 
 ## Organizational Use
 
@@ -237,7 +238,7 @@ Yes, it is. Chocolatey carries a FOSS Apache 2.0 license, which is extremely bus
 
 ### Should my organization depend on (use) the community feed (https://chocolatey.org/packages)?
 
-For production-level scenarios, I couldn't justify giving up that level of control and trust to the internet in an organization. It's recommended that you copy and modify existing packages and/or create your own internal packages and host them internally. That way you can completely guarantee that an install/upgrade/uninstall will always work every time. See [Security](./information/security#chocolateyorg-the-community-feed) for more details.
+For production-level scenarios, I couldn't justify giving up that level of control and trust to the internet in an organization. It's recommended that you copy and modify existing packages and/or create your own internal packages and host them internally. That way you can completely guarantee that an install/upgrade/uninstall will always work every time. See [Security](xref:security#chocolateyorg-the-community-feed) for more details.
 
 If you are just setting up or updating developer workstations and can tolerate things breaking every once in awhile because internet/uncertainty, it's fine to use the community feed.
 
@@ -316,7 +317,7 @@ Well, if you are not creating packages for the community package repository, you
 * the actual install location if using an installer
 * MSI cache for MSIs - Windows caches the complete MSI binaries (and now you know where all that space went)
 
-If you are on a licensed edition of Chocolatey, you can turn on Package Reducer and the first two items above no longer take up any significant space. This can reduce space usage in the order of GBs for some installations of Chocolatey. See [Package Reducer](./features/package-reducer) for more details.
+If you are on a licensed edition of Chocolatey, you can turn on Package Reducer and the first two items above no longer take up any significant space. This can reduce space usage in the order of GBs for some installations of Chocolatey. See [Package Reducer](xref:package-reducer) for more details.
 
 ## Videos / Reference
 
@@ -428,11 +429,11 @@ All packages (and the binaries they contain or download at runtime) on community
 
 **NOTE**: Did you know that 60% or more of the sofware that is submitted to the community repository has its first scans by VirusTotal through Chocolatey's package scanner submissions? It's helped many of those anti-virus manufacturers get a clearer picture of heuristics and hopefully ends up in better anti-virus products with less false positives.
 
-**NOTE**: Need runtime malware protection? Learn more about [runtime malware protection](./features/virus-check)
+**NOTE**: Need runtime malware protection? Learn more about [runtime malware protection](xref:virus-check)
 
 ### What is the package cacher?
 
-On the community repository, we have a CDN cache for those files that would be downloaded by packages - those remote urls are overridden by default in licensed editions of Chocolatey to use those cached binaries. This is to avoid 404 errors you would normally see if those urls changed or were removed. See [Customer CDN Download Cache](./features/private-cdn) for more details.
+On the community repository, we have a CDN cache for those files that would be downloaded by packages - those remote urls are overridden by default in licensed editions of Chocolatey to use those cached binaries. This is to avoid 404 errors you would normally see if those urls changed or were removed. See [Customer CDN Download Cache](xref:private-cdn) for more details.
 
 ## Comparison
 

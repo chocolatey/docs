@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: guides-recompile-packages
 Title: Manually Recompile Packages, Embedding/Internalizing Remote Resources
 Description: How to recompile packages
 RedirectFrom: docs/how-to-recompile-packages

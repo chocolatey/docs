@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: ccm-software
 Title: Software
 Description: Information on software within CCM
 RedirectFrom: docs/central-management-software

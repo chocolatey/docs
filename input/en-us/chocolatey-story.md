@@ -1,5 +1,6 @@
 ---
 Order: 72
+xref: chocolatey-story
 Title: Story of Bob and Richard
 Description: Background information about where the idea for Chocolatey came from
 RedirectFrom: docs/chocolatey-story

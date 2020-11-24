@@ -1,5 +1,6 @@
 ---
 Order: 160
+xref: virus-check
 Title: Runtime Malware Protection (Pro+)
 Description: Virus checking via VirusTotal or Generic scanner
 RedirectFrom: docs/features-virus-check

@@ -22,7 +22,7 @@ Chocolatey [Licensed editions](https://chocolatey.org/compare) include some leve
    `--from-programs-and-features` to generate packages directly from
    Programs and Features!
 
-See https://docs.chocolatey.org/en-us/features/package-builder
+See more information about [Package Builder features](xref:package-builder)
 
 # New Command (choco new)
 

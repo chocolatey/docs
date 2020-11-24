@@ -238,7 +238,7 @@ The one exception is when someone calls `--run-actual` in their arguments. But t
 
 ### We want to set up the chocolatey agent service to use a domain account that will have local admin on each box. Can we do this?
 
-Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [configuration](../configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
+Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature `useRememberedArgumentsForUpgrades` (see [configuration](xref:configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
 * `/Username:` - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user will need to be a member of local administrators due to the privileges needed for this service.
 * `/Password:` - optional password for the user.
@@ -350,7 +350,7 @@ This means you need to opt a source into self-service (new in Chocolatey Extensi
 
 This just involves ensuring a source is set so that it allows self-service. To do this you run `choco source add -n name -s location <--other details need repeated> --allow-self-service`. Editing a source happens when the name is the same in `choco source add`.
 
-To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](../configuration#self-service-background-mode)
+To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](xref:configuration#self-service-background-mode)
 
 ### I'm having trouble seeing packages on a file share source
 

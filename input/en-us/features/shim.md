@@ -1,5 +1,6 @@
 ---
 Order: 80
+xref: shim
 Title: Executable shimming (like symlinks but better)
 Description: Information on how Chocolatey creates shims to installed executables
 RedirectFrom: docs/features-shim

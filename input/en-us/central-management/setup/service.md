@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: ccm-service
 Title: Service
 Description: Information on how to setup the CCM Service
 RedirectFrom: docs/central-management-setup-service
@@ -13,7 +14,7 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 
 ## Step 1: Complete Prerequisites
 
-* > :warning: The [database](./database) must be setup and available, along with [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+* > :warning: The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 4+
 * .NET Framework 4.6.1+
@@ -82,7 +83,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 ### Chocolatey Configuration
 
-* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](../../features/chocolatey-central-management#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
+* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
 > :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
@@ -116,7 +117,7 @@ When Chocolatey manages the password for a local administrator, it creates a ver
 
 ##### Use Active Directory Domain Account
 
-Scenario 1: Active Directory - you have set up the [database](./database) to use Windows Authentication (or Mixed Mode Authentication).
+Scenario 1: Active Directory - you have set up the [database](xref:ccm-database) to use Windows Authentication (or Mixed Mode Authentication).
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
@@ -124,13 +125,13 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :warning: **WARNING**
 >
-> Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Local Windows Account to Local SQL Server
 
-Scenario 2: Monolithic - you have set up the [database](./database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
+Scenario 2: Monolithic - you have set up the [database](xref:ccm-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
 
 * Specify User:
 
@@ -140,7 +141,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :warning: **WARNING**
 >
-> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 * ChocolateyLocalAdmin User:
 
@@ -150,7 +151,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :warning: **WARNING**
 >
-> Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 > :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
@@ -171,7 +172,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 ##### Use Local Windows Account to Remote SQL Server
 
-Scenario 3: you have set up the [database](./database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
+Scenario 3: you have set up the [database](xref:ccm-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to a remote database (on another computer).
 
 > :warning: **WARNING**
 >
@@ -184,7 +185,7 @@ It's worth noting here that the local Windows user `ChocolateyLocalAdmin` on two
 
 ##### Use SQL Server Authentication Locally
 
-Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](./database) to use Mixed Mode Authentication.
+Scenario 4: Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](xref:ccm-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -192,7 +193,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 * SQL Server Express:
 
@@ -202,11 +203,11 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 ##### Use SQL Server Account to Remote SQL Server
 
-Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](./database) to use Mixed Mode Authentication.
+Scenario 5: Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](xref:ccm-database) to use Mixed Mode Authentication.
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -214,7 +215,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 
 > :warning: **WARNING**
 >
-> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](./database#step-2-set-up-sql-server-logins-and-access).
+> Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
 ## Step 3: Verify Installation
 
@@ -281,7 +282,7 @@ Unfortunately, it's not a supported scenario. If you are trying to load balance 
 
 ### We want to set up the Chocolatey Central Management service to use a domain account that will have local admin on each box. Can we do this?
 
-Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature useRememberedArgumentsForUpgrades (see [configuration](../../configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
+Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature useRememberedArgumentsForUpgrades (see [configuration](xref:configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
 * `/Username`: - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user should be a local administrator.
 * `/Password`: - optional password for the user.
@@ -496,4 +497,4 @@ You are attempting to set up a user that is not in the local Administrators grou
 * Ensure the user has `Logon as Batch` privilege
 * Run `netsh http add urlacl url=https://+:24020/ChocolateyManagementService user=<DOMAIN\USERNAME>` from an elevated shell (replacing `<DOMAIN\USERNAME>` with the account)
 
-[Central Management Setup](../setup) | [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](../)

@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: ccm-database
 Title: Database
 Description: Information on how to setup the CCM Database
 RedirectFrom: docs/central-management-setup-database
@@ -415,4 +416,4 @@ There are two workarounds noted:
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-[Central Management Setup](../setup)  [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup)  [Chocolatey Central Management](../)

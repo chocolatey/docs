@@ -60,7 +60,7 @@ Again, this is out of the scope of this document, but _highly_ recommended when 
 
 ### Central Management Server
 
-As with configuration managers, this is out-of-scope for this document. Generally, though, enough resources to host an ASP.NET IIS deployment and a SQL Server back end are recommended. Requirements for this server are detailed [here](../../features/chocolatey-central-management#requirements).
+As with configuration managers, this is out-of-scope for this document. Generally, though, enough resources to host an ASP.NET IIS deployment and a SQL Server back end are recommended. Requirements for this server are detailed [here](xref:ccm#requirements).
 
 ### Clients/Nodes:
 

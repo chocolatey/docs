@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: ccm-client
 Title: Client
 Description: How to setup client machines to report into CCM
 RedirectFrom: docs/central-management-setup-client
@@ -36,7 +37,7 @@ Please see config settings and features below for a full list.
 
 #### Config Settings
 
-* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](../../features/chocolatey-central-management#fqdn-usage). Defaults to '' (empty). Available in business editions v2.0.0+ only.
+* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). Available in business editions v2.0.0+ only.
 * `centralManagementReportPackagesTimerIntervalInSeconds` = **'1800'** - Amount of time, in seconds, between each execution of the background service to report installed and outdated packages to Chocolatey Central Management. Defaults to '1800'. Available in business editions v2.0.0+ only.
 * `centralManagementReceiveTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to receive information from Chocolatey Central Management. Defaults to '30'. Available in business editions v2.0.0+ only.
 * `centralManagementSendTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to send information to Chocolatey Central Management. Defaults to '30'. Available in business editions v2.0.0+ only.
@@ -48,14 +49,14 @@ Please see config settings and features below for a full list.
 
 > :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
-Also found at [Chocolatey Configuration](../../configuration).
+Also found at [Chocolatey Configuration](xref:configuration).
 
 #### Features
 
-* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See [docs](../../features/chocolatey-central-management)
-* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See [docs](../../features/chocolatey-central-management)
+* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See [docs](xref:ccm)
+* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See [docs](xref:ccm)
 
-Also found at [Chocolatey Configuration](../../configuration).
+Also found at [Chocolatey Configuration](xref:configuration).
 
 ### Step 3: Verify Installation
 
@@ -192,4 +193,4 @@ Get-Service chocolatey-* | Stop-Service
 Get-Service chocolatey-* | Start-Service
 ```
 
-[Central Management Setup](../setup) | [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](../)

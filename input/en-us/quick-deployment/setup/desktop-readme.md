@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: v2-desktop-readme
 Title: Desktop Readme
 Description: Online copy of what ships on desktop of QDE image
 RedirectFrom: docs/quick-deployment-desktop-readme
@@ -334,9 +335,9 @@ Stop-Process -Name explorer -Force
 
 ## See Also
 
-* [Quick Deployment Environment](../)
+* [Quick Deployment Environment](xref:v2-qde)
 * [QDE Setup](./)
-* [QDE Desktop ReadMe File](./desktop-readme)
-* [QDE SSL/TLS Setup](./ssl-setup)
-* [QDE Firewall Changes](./firewall-changes)
-* [QDE Client Setup](./client-setup) (setting up your client machines)
+* [QDE Desktop ReadMe File](xref:v2-desktop-readme)
+* [QDE SSL/TLS Setup](xref:v2-ssl-setup)
+* [QDE Firewall Changes](xref:v2-firewall-changes)
+* [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)

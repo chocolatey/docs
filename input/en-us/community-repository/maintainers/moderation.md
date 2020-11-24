@@ -5,7 +5,7 @@ Description: Information about the package moderation used on chocolatey.org
 RedirectFrom: docs/moderation
 ---
 
-The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](../../faqs#what-is-moderation) for more details. There are also [trusted packages](../../faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
+The community feed, which is found at https://chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](xref:faqs#what-is-moderation) for more details. There are also [trusted packages](xref:faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
 
 By safety - we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain crapware/malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
 

@@ -1,5 +1,6 @@
 ---
 Order: 90
+xref: self-service-anywhere
 Title: Self Service Anywhere (C4B) - Support modern workforce
 Description: Install packages as a non-administrator user
 RedirectFrom: docs/features-agent-service

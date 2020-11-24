@@ -1,5 +1,6 @@
 ---
 Order: 100
+xref: ccm
 Title: Chocolatey Central Management (C4B) - Endpoint Management
 Description: Centrally access information on all client machines in your environment
 RedirectFrom: docs/features-chocolatey-central-management

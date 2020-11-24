@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: v2-ssl-setup
 Title: SSL Setup
 Description: How to setup QDE to use SSL
 RedirectFrom: docs/quick-deployment-ssl-setup
@@ -10,7 +11,7 @@ RedirectFrom: docs/quick-deployment-ssl-setup
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 SSL Setup page](../v1/ssl-setup).
+> If you're using an older version of QDE, please refer to the [QDEv1 SSL Setup page](xref:v1-ssl-setup).
 
 During normal setup, all required SSL certificates are retrieved or generated as needed.
 You will only need to run this script yourself in the following cases:
@@ -45,4 +46,4 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-Ssl
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates.
 > You will need make sure you have this correct, otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid.
 
-[Quick Deployment Environment](../)
+[Quick Deployment Environment](xref:v2-qde)

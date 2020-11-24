@@ -1,5 +1,6 @@
 ---
 Order: 50
+xref: v1-client-setup
 Title: Client Setup
 Description: How to setup a client machine to use QDE v1
 RedirectFrom: docs/quick-deployment-client-setup-v1
@@ -8,7 +9,7 @@ RedirectFrom: docs/quick-deployment-client-setup-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](../setup/client-setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](xref:v1-client-setup).
 
 ## Summary
 
@@ -52,7 +53,7 @@ What does this do?
 >
 > If the QDE hostname has been changed, the above script most likely will fail.
 >
-> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](./ssl-setup) for options.
+> You won't be able to use the above script, and you will need to host your own script somewhere that is trusted so that the QDE certificates can be trusted. Please see [SSL/TLS Setup](xref:v1-ssl-setup) for options.
 >
 > Please contact support if you need help here.
 

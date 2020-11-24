@@ -24,8 +24,8 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 
 ## Information
 
-- [Frequently Asked Questions](./faqs)
-- [Why Chocolatey](./why)
+- [Frequently Asked Questions](xref:faqs)
+- [Why Chocolatey](xref:why)
 - [License Acceptance Terms](./information/legal#package-license-acceptance-terms)
 - [Waiver of Responsibility](information/legal#waiver-of-responsibility)
 - [Release Notes](xref:floss-release-notes)
@@ -38,7 +38,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 - [Getting Started](xref:getting-started)
 - [Command Reference](xref:choco-commands)
 - Use Chocolatey to set up [source code development environments](./guides/usage/development-environment-setup)!
-- What distinction does Chocolatey make between an [installable and a portable application](./faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
+- What distinction does Chocolatey make between an [installable and a portable application](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
 
 ## Create Packages
 
@@ -73,7 +73,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 
 ## Road Map
 
-Where are [we](./roadmap)? Where are we [going](./roadmap)?
+Where are [we](xref:roadmap)? Where are we [going](xref:roadmap)?
 
 ### Important Reference Links
 

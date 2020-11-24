@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: community-packages-disclaimer
 Title: Chocolatey.org Packages Disclaimer
 Description: When you should, and shouldn't, use chocolatey.org
 RedirectFrom: docs/community-packages-disclaimer

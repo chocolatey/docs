@@ -159,7 +159,7 @@ There is at least one noted exception to this and that is low-level packages tha
 
 ## Installation Paths
 
-As the package maintainer, you decide where the packaged application is installed or extracted to. Depending on your type of application (see *“What distinction does Chocolatey make between an installable and a portable application?”* at the bottom of the [FAQ](../faqs)) there are a couple of suitable locations (not listed in any particular order):
+As the package maintainer, you decide where the packaged application is installed or extracted to. Depending on your type of application (see *“What distinction does Chocolatey make between an installable and a portable application?”* at the bottom of the [FAQ](xref:faqs)) there are a couple of suitable locations (not listed in any particular order):
 
 ### 1. The default installation path of your .msi/.exe setup file
 
@@ -255,7 +255,7 @@ These guidelines are already commonly applied on packages for all major Linux di
 
 Note that a lot of packages in the Chocolatey Gallery don’t follow these guidelines. The simple reason is that the affected packages were created before the introduction of these guidelines.
 
-If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](../faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](../faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and-ie-autohotkey)
+If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](xref:faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and-ie-autohotkey)
 
 ## Package description and release notes
 

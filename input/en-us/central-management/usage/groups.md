@@ -1,11 +1,12 @@
 ---
 Order: 30
+xref: ccm-groups
 Title: Groups
 Description: Information on groups within CCM
 RedirectFrom: docs/central-management-groups
 ---
 
-Central Management's Groups are the basis on which a given [Deployment](./deployments) operates.
+Central Management's Groups are the basis on which a given [Deployment](xref:ccm-deployments) operates.
 In Central Management, a Group may contain one or more computers and/or other groups.
 Currently, Central Management's groups are entirely self-contained, and cannot be directly mapped from Active Directory groups.
 
@@ -72,7 +73,7 @@ As you can see from the text, it is meant to help you figure out the issue:
 
 > The computer has not opted in or a group contains computers that have not opted in for deployments by configuration. Please ensure the computer has at least chocolatey-agent v0.10.0+ installed and the feature "useChocolateyCentralManagementDeployments" has been set to enabled on the client computer.
 
-This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](../setup/client#features) for details on how to set it.
+This is telling you that you need to ensure you set the client to allow for the the use of Deployments. As it is a security consideration, it requires an explicit opt-in on client machines. See [Client Setup - Features](xref:ccm-client#features) for details on how to set it.
 
 ### I have plenty of licenses, why do some machines show not opted in for deployments and also exceeds your current license count?
 
@@ -87,5 +88,5 @@ Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on t
 ## Related Topics
 
 * [Chocolatey Central Management](../)
-* [Central Management - Deployments](./deployments)
-* [Central Management - Computers](./computers)
+* [Central Management - Deployments](xref:ccm-deployments)
+* [Central Management - Computers](xref:ccm-computers)

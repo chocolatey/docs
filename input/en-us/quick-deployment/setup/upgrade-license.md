@@ -1,5 +1,6 @@
 ---
 Order: 60
+xref: v2-upgrade-license
 Title: Upgrade License
 Description: How to upgrade and deploy the Chocolatey License package
 RedirectFrom: docs/quick-deployment-upgrade-license

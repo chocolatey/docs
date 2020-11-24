@@ -1,5 +1,6 @@
 ---
 Order: 130
+xref: package-audit
 Title: Package Audit (C4B)
 Description: Know who installed what package and when
 RedirectFrom: docs/features-package-audit

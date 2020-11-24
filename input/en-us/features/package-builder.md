@@ -1,5 +1,6 @@
 ---
 Order: 120
+xref: package-builder
 Title: Package Builder (C4B)
 Description: Create fully ready to go software deployments for Windows in 5-10 seconds
 RedirectFrom: docs/features-create-packages-from-installers

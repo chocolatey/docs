@@ -1,5 +1,6 @@
 ---
 Order: 140
+xref: package-reducer
 Title: Package Reducer (Pro+)
 Description: Reduce the size of your package installations automatically
 RedirectFrom: docs/features-package-reducer

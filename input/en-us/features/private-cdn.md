@@ -1,5 +1,6 @@
 ---
 Order: 170
+xref: private-cdn
 Title: CDN Download Cache (Pro+)
 Description: No more 404s!
 RedirectFrom: docs/features-private-cdn

@@ -28,7 +28,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
  * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
  * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
  * Installing the licensed edition? See [install licensed edition](xref:setup-licensed).
- * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](../troubleshooting)
+ * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](xref:troubleshooting)
 
 #### Install with cmd.exe
 
@@ -57,7 +57,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 **NOTE:** Please inspect [https://chocolatey.org/install.ps1](https://chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of ***any*** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
 
-We take security very seriously. <a href="https://chocolatey.org/security">Learn more</a>.
+We take security very seriously. [Learn more](xref:security).
 
 > "Why do I need to enable TLS 1.2 in PowerShell? Shouldn't it be on by default when I load PowerShell?"
 
@@ -687,7 +687,7 @@ See [Installing Chocolatey Behind a Proxy Server](../guides/usage/proxy-settings
 **NOTE**: There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
 If you are installing to another location, you will need to handle this yourself, i. e. restrict write access to Admins in case you so desire.
 This is due to alternative locations could have a range of permissions that should not be changed.
-See [Why does Chocolatey install where it does](../default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
+See [Why does Chocolatey install where it does](xref:default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
 
 ### Installing a particular version of Chocolatey
 
@@ -854,11 +854,11 @@ See [uninstall](./uninstallation).
 
 ### I'm having trouble installing Chocolatey
 
-Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Install Options</a> and looked over [Troubleshooting](../troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Install Options</a> and looked over [Troubleshooting](xref:troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
 
-This is addressed in [Troubleshooting](../troubleshooting).
+This is addressed in [Troubleshooting](xref:troubleshooting).
 
 ### Why isn't there an MSI?
 

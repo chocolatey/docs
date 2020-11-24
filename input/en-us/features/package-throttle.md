@@ -1,5 +1,6 @@
 ---
 Order: 190
+xref: package-throttle
 Title: Package Throttle (Pro+)
 Description: Use Chocolatey in low bandwidth environments
 RedirectFrom: docs/features-package-throttle

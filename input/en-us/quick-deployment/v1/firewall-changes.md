@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: v1-firewall-changes
 Title: Firewall Changes
 Description: How has the firewall on the QDE v1 image been changed
 RedirectFrom: docs/quick-deployment-firewall-changes-v1
@@ -8,7 +9,7 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](../setup/firewall-changes).
+> If you're using a newer version of QDE, please refer to the [newer QDE Firewall Changes page](xref:v1-firewall-changes).
 
 ## External Ports
 
