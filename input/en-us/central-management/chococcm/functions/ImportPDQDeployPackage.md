@@ -1,5 +1,6 @@
 ---
 Order: 190
+xref: import-pdqdeploypackage
 Title: Import-PDQDeployPackage
 Description: Information about the Import-PDQDeployPackage function
 RedirectFrom: docs/import-pdqdeploy-package

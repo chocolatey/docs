@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: add-ccmgroup
 Title: Add-CCMGroup
 Description: Information about the Add-CCMGroup function
 RedirectFrom: docs/add-ccmgroup

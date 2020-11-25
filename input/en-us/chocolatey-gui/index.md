@@ -1,5 +1,6 @@
 ---
 Order: 90
+xref: chocolateygui
 Title: Chocolatey GUI
 Description: What is Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-overview

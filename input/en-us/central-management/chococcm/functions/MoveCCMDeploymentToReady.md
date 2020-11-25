@@ -1,5 +1,6 @@
 ---
 Order: 200
+xref: move-ccmdeploymenttoready
 Title: Move-CCMDeploymentToReady
 Description: Information about the Move-CCMDeploymentToReady function
 RedirectFrom: docs/move-ccmdeployment-to-ready

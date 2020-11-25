@@ -1,5 +1,6 @@
 ---
 Order: 260
+xref: remove-ccmgroup
 Title: Remove-CCMGroup
 Description: Information about the Remove-CCMGroup function
 RedirectFrom: docs/remove-ccmgroup

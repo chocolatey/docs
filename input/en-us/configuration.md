@@ -1,5 +1,6 @@
 ---
 Order: 60
+xref: configuration
 Title: Configuration
 Description: Information on the different configuration options for Chocolatey
 RedirectFrom: docs/chocolatey-configuration

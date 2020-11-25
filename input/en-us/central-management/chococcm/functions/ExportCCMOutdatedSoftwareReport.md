@@ -1,5 +1,6 @@
 ---
 Order: 70
+xref: export-ccmoutdatedsoftwarereport
 Title: Export-CCMOutdatedSoftwareReport
 Description: Information about the Export-CCMOutdatedSoftwareReport function
 RedirectFrom: docs/export-ccmoutdated-software-report

@@ -1,5 +1,6 @@
 ---
 Order: 80
+xref: get-ccmcomputer
 Title: Get-CCMComputer
 Description: Information about the Get-CCMComputer function
 RedirectFrom: docs/get-ccmcomputer

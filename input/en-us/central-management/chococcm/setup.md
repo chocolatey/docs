@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: chococcm-setup
 Title: Setup
 Description: How to setup the ChocoCCM PowerShell Module
 ---

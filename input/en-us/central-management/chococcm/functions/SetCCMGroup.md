@@ -1,5 +1,6 @@
 ---
 Order: 300
+xref: set-ccmgroup
 Title: Set-CCMGroup
 Description: Information about the Set-CCMGroup function
 RedirectFrom: docs/set-ccmgroup

@@ -1,5 +1,6 @@
 ---
 Order: 130
+xref: get-ccmoutdatedsoftwaremember
 Title: Get-CCMOutdatedSoftwareMember
 Description: Information about the Get-CCMOutdatedSoftwareMember function
 RedirectFrom: docs/get-ccmoutdated-software-member

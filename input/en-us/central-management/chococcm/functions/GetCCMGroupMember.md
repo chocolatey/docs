@@ -1,5 +1,6 @@
 ---
 Order: 110
+xref: get-ccmgroupmember
 Title: Get-CCMGroupMember
 Description: Information about the Get-CCMGroupMember function
 RedirectFrom: docs/get-ccmgroup-member

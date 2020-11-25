@@ -1,5 +1,6 @@
 ---
 Order: 230
+xref: new-ccmoutdatedsoftwarereport
 Title: New-CCMOutdatedSoftwareReport
 Description: Information about the New-CCMOutdatedSoftwareReport function
 RedirectFrom: docs/new-ccmoutdated-software-report

@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: chocolateygui-setup
 Title: Setup
 Description: Information on how to setup Chocolatey GUI
 ---

@@ -1,5 +1,6 @@
 ---
 Order: 79
+xref: roadmap
 Title: Roadmap
 Description: Information about what is on the roadmap for Chocolatey
 RedirectFrom: docs/roadmap

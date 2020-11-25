@@ -1,5 +1,6 @@
 ---
 Order: 110
+xref: package-internalizer
 Title: Package Internalizer (C4B)
 Description: Automatically internalize/recompile existing packages
 RedirectFrom: docs/features-automatically-recompile-packages

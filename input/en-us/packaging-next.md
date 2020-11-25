@@ -1,5 +1,6 @@
 ---
 Order: 78
+xref: packaging-next
 Title: Packaging Next
 Description: What's on the roadmap for Chocolatey in terms of Packaging
 RedirectFrom: docs/packaging-next

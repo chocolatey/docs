@@ -1,5 +1,6 @@
 ---
 Order: 50
+xref: troubleshooting
 Title: Troubleshooting
 Description: Having issues running Chocolatey, check here for solutions
 RedirectFrom: docs/troubleshooting

@@ -1,5 +1,6 @@
 ---
 Order: 150
+xref: get-ccmoutdatedsoftwarereportdetail
 Title: Get-CCMOutdatedSoftwareReportDetail
 Description: Information about the Get-CCMOutdatedSoftwareReportDetail function
 RedirectFrom: docs/get-ccmoutdated-software-report-detail

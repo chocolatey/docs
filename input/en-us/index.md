@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: home
 Title: Chocolatey - Software Management for Windows
 Description: Chocolatey Documentation
 RedirectFrom:

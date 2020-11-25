@@ -1,5 +1,6 @@
 ---
 Order: 280
+xref: remove-ccmstaledeployment
 Title: Remove-CCMStaleDeployment
 Description: Information about the Remove-CCMStaleDeployment function
 RedirectFrom: docs/remove-ccmstale-deployment

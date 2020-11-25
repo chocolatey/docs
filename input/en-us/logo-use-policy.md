@@ -1,5 +1,6 @@
 ---
 Order: 76
+xref: logo-use-policy
 Title: Logo Use Policy
 Description: Usage information regarding the Chocolatey Logo
 RedirectFrom: docs/logo-use-policy

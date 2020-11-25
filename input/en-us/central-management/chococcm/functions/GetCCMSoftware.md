@@ -1,5 +1,6 @@
 ---
 Order: 170
+xref: get-ccmsoftware
 Title: Get-CCMSoftware
 Description: Information about the Get-CCMSoftware function
 RedirectFrom: docs/get-ccmsoftware

@@ -1,5 +1,6 @@
 ﻿---
 Order: 200
+xref: install-chocolateydesktoplink
 Title: Install-ChocolateyDesktopLink
 Description: Information on Install-ChocolateyDesktopLink function
 RedirectFrom: docs/helpers-install-chocolatey-desktop-link

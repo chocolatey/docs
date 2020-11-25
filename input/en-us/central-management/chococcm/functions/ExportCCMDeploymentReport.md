@@ -1,5 +1,6 @@
 ---
 Order: 60
+xref: export-ccmdeploymentreport
 Title: Export-CCMDeploymentReport
 Description: Information about the Export-CCMDeploymentReport function
 RedirectFrom: docs/export-ccmdeployment-report

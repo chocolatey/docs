@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: chocolateygui-known-issues
 Title: Known Issues
 Description: Current known issues regarding Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-known-issues

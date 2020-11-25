@@ -1,5 +1,6 @@
 ---
 Order: 74
+xref: default-chocolatey-install-reasoning
 Title: Default Chocolatey Install Reasoning
 Description: Background information on why Chocolatey installs where it does by default
 RedirectFrom: docs/default-chocolatey-install-reasoning

@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: qde-release-notes
 Title: Release Notes
 Description: Release Notes for QDE
 ---
