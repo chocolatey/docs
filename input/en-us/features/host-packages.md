@@ -68,7 +68,7 @@ Perhaps the easiest to set up and recommended for testing quick and dirty scenar
 * Can manage PowerShell gallery type packages.
 * There is no limitation on package sizes (or rather, it can likely handle 100MB+ file sizes, maybe even GB sized packages). Don't create multiple GB sized packages, what is wrong with you?! ;)
 
-**NOTE**: If you must create large packages, see [Package Reducer](./package-reducer) for keeping used space down on client machines.
+**NOTE**: If you must create large packages, see [Package Reducer](xref:package-reducer) for keeping used space down on client machines.
 
 ### Disadvantages
 

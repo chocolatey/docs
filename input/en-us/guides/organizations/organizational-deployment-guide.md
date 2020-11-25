@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: organizational-deployment-guide
 Title: Set up Chocolatey for Internal/organizational use
 Description: Full information on how to setup/use Chocolatey internally
 RedirectFrom: docs/how-to-setup-offline-installation
@@ -7,13 +8,13 @@ RedirectFrom: docs/how-to-setup-offline-installation
 
 > :memo: **NOTE**
 >
-> As an alternative to this long-form guide, we also have a [Quick-Start Implementation Guide](./chocolatey-for-business-quick-start-guide).
+> As an alternative to this long-form guide, we also have a [Quick-Start Implementation Guide](xref:c4b-quick-start-guide).
 > This is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
 > It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
 > Our goal is to get you up-and-running quickly, and testing out the feature set.
 > For a more complete reference of possible scenarios and solutions, please stick to this guide.
 >
-> Another thing we provide is a [Quick Deployment Environment](../../quick-deployment) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
+> Another thing we provide is a [Quick Deployment Environment](xref:qde) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
 > It, like the quick start implementation, provides a specific solution so you should read over the summary before you decide that is the right implementation for your needs (in about 80%+ of organizational use cases it is the correct solution).
 
 ## Summary
@@ -58,7 +59,7 @@ There may be some exercises in here that won't apply:
 * [Offline Chocolatey Install](https://chocolatey.org/install#completely-offline-install)
 * [Licensed Install](xref:setup-licensed)
 * [Host Your Own Package Server](xref:host-packages)
-* [Set up Chocolatey Server](./set-up-chocolatey-server)
+* [Set up Chocolatey Server](xref:set-up-chocolatey-server)
 * [Security](xref:security)
 * [Community Package Repository Disclaimer](xref:community-packages-disclaimer)
 
@@ -321,8 +322,8 @@ Pick one or more of the following paths:
 Since we put the items on this machine in the previous exercise, we can just pick up where we left off.
 
 1. Finish Exercise 0/1 on a machine you will set up as a server.
-1. Follow the [steps](./set-up-chocolatey-server#setup-normally)
-1. Follow the [steps](./set-up-chocolatey-server#additional-configuration)
+1. Follow the [steps](xref:set-up-chocolatey-server#setup-normally)
+1. Follow the [steps](xref:set-up-chocolatey-server#additional-configuration)
 1. Open a web browser and navigate to http://localhost. Read over the site and take notes.
 1. Change the API key in the web.config file following the instructions at http://localhost. If localhost doesn't resolve to the site, make sure the bindings include "All Unassigned". This could be a temporary change if you need it to be, but it's important to access this to see additional setup instructions. **NOTE**: Use a real editor, like Notepad++ when working with text files like the web.config. Do NOT, I repeat, DO NOT use notepad.exe.
 1. You may wish to install an SSL certificate.

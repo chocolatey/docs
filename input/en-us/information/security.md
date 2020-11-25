@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: security
 Title: Security
 Description: Chocolatey takes security very seriously
 RedirectFrom: docs/security

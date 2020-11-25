@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: install-upgrade-package-without-scripts
 Title: Install/Upgrade a Package w/out running install scripts
 Description: Prevent the running of packaging scripts
 RedirectFrom: docs/how-to-install-upgrade-package-without-scripts

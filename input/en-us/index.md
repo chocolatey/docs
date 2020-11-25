@@ -26,18 +26,18 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 
 - [Frequently Asked Questions](xref:faqs)
 - [Why Chocolatey](xref:why)
-- [License Acceptance Terms](./information/legal#package-license-acceptance-terms)
-- [Waiver of Responsibility](information/legal#waiver-of-responsibility)
+- [License Acceptance Terms](xref:legal#package-license-acceptance-terms)
+- [Waiver of Responsibility](xref:legal#waiver-of-responsibility)
 - [Release Notes](xref:floss-release-notes)
 - [Release Notes Commercial](xref:licensed-release-notes)
 
 ## Using Chocolatey
 
 - [Installing Chocolatey](xref:setup-choco)
-- [Uninstalling Chocolatey](./choco/uninstallation)
+- [Uninstalling Chocolatey](xref:choco-uninstallation)
 - [Getting Started](xref:getting-started)
 - [Command Reference](xref:choco-commands)
-- Use Chocolatey to set up [source code development environments](./guides/usage/development-environment-setup)!
+- Use Chocolatey to set up [source code development environments](xref:development-environment-setup)!
 - What distinction does Chocolatey make between an [installable and a portable application](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application)?
 
 ## Create Packages
@@ -46,13 +46,13 @@ The Chocolatey Community Repository versus for internal use has different needs.
 
 - [Creating packages](xref:create-packages)
 - [Package Function and Variable Reference](xref:powershell-reference)
-- [Parse PackageParameters Argument](./guides/create/parse-packageparameters-argument)
-- [Mount an Iso in Chocolatey Package](./guides/create/mount-an-iso-in-chocolatey-package)
-- [Deprecate a Chocolatey Package](./community-repository/maintainers/deprecate-a-chocolatey-package)
+- [Parse PackageParameters Argument](xref:parse-package-parameters)
+- [Mount an Iso in Chocolatey Package](xref:mount-an-iso)
+- [Deprecate a Chocolatey Package](xref:deprecate-a-package)
 - [Chocolatey Community Repository](https://chocolatey.org/packages)
-  - Keep in Mind [Distribution Rights](./information/legal#distributions-aka-chocolatey-packages)
-  - [Outdated packages? Triage process](./community-repository/users/package-triage-process)
-  - [Moderation Process](./community-repository/maintainers/moderation)
+  - Keep in Mind [Distribution Rights](xref:legal#distributions-aka-chocolatey-packages)
+  - [Outdated packages? Triage process](xref:package-triage-process)
+  - [Moderation Process](xref:moderation)
 
 ## Individuals
 
@@ -63,9 +63,9 @@ The Chocolatey Community Repository versus for internal use has different needs.
 ## Organizations
 
 - [Installing Chocolatey For Organizations](https://chocolatey.org/install#organization)
-- [Quick Deployment Environment](./quick-deployment)
+- [Quick Deployment Environment](xref:qde)
 - [Host Your Own Feed](xref:host-packages)
-- [Deploy Chocolatey in an Organization](./guides/organizations/organizational-deployment-guide)
+- [Deploy Chocolatey in an Organization](xref:organizational-deployment-guide)
 - [Creating packages](xref:create-packages)
   - [Package Function and Variable Reference](xref:powershell-reference)
 - [Getting Started](xref:getting-started)

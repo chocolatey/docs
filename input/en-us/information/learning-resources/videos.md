@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: videos
 Title: Videos
 Description: Videos about Chocolatey
 RedirectFrom: docs/videos

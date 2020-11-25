@@ -848,7 +848,7 @@ choco upgrade chocolatey
 
 ## Uninstalling Chocolatey
 
-See [uninstall](./uninstallation).
+See [uninstall](xref:choco-uninstallation).
 
 ## FAQs
 

@@ -43,7 +43,7 @@ In general, it is not required or may not be advisable to have these accessible 
 You can access these via a Remote Desktop session on the QDE server itself, or opening these ports up to your internal network.
 Again, we **strongly** advise against opening these ports up to the public Internet for security reasons.
 
-Further details on firewall changes can be found on the [QDE Firewall Setup](./firewall-changes) page.
+Further details on firewall changes can be found on the [QDE Firewall Setup](xref:v2-firewall-changes) page.
 
 ## SSL Certificate Setup
 

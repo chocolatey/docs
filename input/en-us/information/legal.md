@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: legal
 Title: Legal
 Description: Legal information about Chocolatey
 RedirectFrom: docs/legal

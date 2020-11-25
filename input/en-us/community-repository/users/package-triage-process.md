@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: package-triage-process
 Title: Request Package Fixes/Updates
 Description: Information about the Chocolatey Community Package Repository triage process
 RedirectFrom: docs/package-triage-process

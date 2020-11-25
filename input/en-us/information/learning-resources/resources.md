@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: resources
 Title: Resources
 Description: Educational information for Chocolatey
 RedirectFrom: docs/resources

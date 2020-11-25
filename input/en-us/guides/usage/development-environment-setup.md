@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: development-environment-setup
 Title: Set up a Development Environment
 Description: Set up a development environment using Chocolatey
 RedirectFrom: docs/development-environment-setup

@@ -1,5 +1,6 @@
 ---
 Order: 73
+xref: chocolatey-vs-ninite
 Title: Chocolatey vs Ninite
 Description: A comparison between Chocolatey and Ninite
 RedirectFrom: docs/chocolatey-vs-ninite
@@ -85,7 +86,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
   - Unattended installations / Silent installation
 - Extend Chocolatey easily with PowerShell modules called [extension packages](xref:extensions).
 - Use [Package Builder](xref:package-builder) to point Chocolatey to an installer and have it auto-detect and generate a full software deployment.
-- Use [Package Internalizer](xref:guides-recompile-packages) to internalize existing community packages quickly.
+- Use [Package Internalizer](xref:recompile-packages) to internalize existing community packages quickly.
 
 ### Available packages:
 

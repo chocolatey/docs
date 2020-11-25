@@ -1,11 +1,12 @@
 ---
 Order: 40
+xref: set-up-chocolatey-server
 Title: Set up the Chocolatey.Server
 Description: How to setup Chocolatey.Server
 RedirectFrom: docs/how-to-set-up-chocolatey-server
 ---
 
-**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](./organizational-deployment-guide) in tandem with this article.
+**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](xref:organizational-deployment-guide) in tandem with this article.
 
 ## Summary
 

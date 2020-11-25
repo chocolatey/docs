@@ -13,7 +13,7 @@ See [What are Chocolatey Packages?](xref:getting-started#what-are-chocolatey-pac
 
 **Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
-First you should determine if you are making a self-contained package or (also) using automation scripts. You should also consider creating [automatic packages](./automatic-packages) for the best maintainability over time.
+First you should determine if you are making a self-contained package or (also) using automation scripts. You should also consider creating [automatic packages](xref:automatic-packaging) for the best maintainability over time.
 
 1. Run `choco new -h` to get a feel for what you can pass e.g `choco new bob` (to create a package named `bob`)
 1. Note all the rules below. This will help you, especially in publishing to the community feed (https://chocolatey.org)
@@ -49,7 +49,7 @@ can do just about anything you need. Choco has some very handy [built-in functio
 1. [Make shim for GUI application](#how-do-i-set-up-batch-redirects-for-applications-that-have-a-gui)
 1. [Localization](#internationalization-and-localization-of-packages)
 1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
-1. [Maintainer magic - automatically updating packaging](./automatic-packages)
+1. [Maintainer magic - automatically updating packaging](xref:automatic-packaging)
 1. [Taking over existing package](../community-repository/maintainers/package-maintainer-handover)
 
 ## Quick Start guide
@@ -385,7 +385,7 @@ To push your package after you have built and tested it, you type `choco push pa
 You can also log into chocolatey.org and upload your package from there (not recommended for packages over 2MB).
 
 ## Automatic packaging?
-Yes - [Automatic Packaging](./automatic-packages)
+Yes - [Automatic Packaging](xref:automatic-packaging)
 
 ## Becoming a primary maintainer of an existing package
-See [Package Maintainer Handover](../community-repository/maintainers/package-maintainer-handover)
+See [Package Maintainer Handover](xref:package-maintainer-handover)

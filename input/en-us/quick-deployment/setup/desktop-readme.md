@@ -33,7 +33,7 @@ If you run into any issues as you set up your QDE and clients, please reach out 
 
 There are some initial steps you will need to have taken before you work through this document.
 Please make sure you have taken those steps ahead of time.
-See the [Online Documentation](./#step-3-virtual-environment-setup) for the most up to date information.
+See the [Online Documentation](#step-3-virtual-environment-setup) for the most up to date information.
 
 * [QDE Setup](xref:v2-qde)
 
@@ -281,7 +281,7 @@ To do so:
 
 ## Step 5: Install and Configure Chocolatey On Clients
 
-Refer to [the Client Setup documentation](./client-setup).
+Refer to [the Client Setup documentation](xref:v2-client-setup).
 
 ## Step 6: License the QDE VM
 

@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: change-download-cache
 Title: Change Download Cache Location aka Don't use TEMP for downloads
 Description: How to change the download folder
 RedirectFrom: docs/how-to-change-cache

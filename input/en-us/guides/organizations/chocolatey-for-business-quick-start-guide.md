@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: c4b-quick-start-guide
 Title: C4B Quick Start Guide
 Description: Get up and running quickly with Chocolatey for Business
 RedirectFrom: docs/chocolatey-for-business-quick-start-guide
@@ -12,7 +13,7 @@ Thank you for choosing Chocolatey as your partner in Windows software automation
 > This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
 > It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
 > Our goal is to get you up-and-running quickly, and testing out the feature set.
-> For a more complete reference of possible scenarios and solutions, please refer to the [Organizational Deployment Documentation](./organizational-deployment-guide).
+> For a more complete reference of possible scenarios and solutions, please refer to the [Organizational Deployment Documentation](xref:organizational-deployment-guide).
 
 If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
 
@@ -27,7 +28,7 @@ As illustrated in the diagram above, there are five main components to a default
 1. **Administrator Workstation**: This is the workstation of the implementer. Internet access, as well as running from an administrator-level user, are required.
 1. **Repository Server**: This is the application that will serve out the Nuget package (.nupkg) files internally. This guide will assume you'd like to use Sonatype [Nexus](https://www.sonatype.com/nexus-repository-oss), although Jfrog [Artifactory](https://jfrog.com/artifactory/) is an equally-suitable option. Further repository details are available at [repository options](xref:host-packages).
 1. **Deployment/Configuration Management Solution**: We are going to stick to PowerShell commands and scripts in this guide. However, it is _strongly_ recommended to use a full-featured configuration management solution to manage your package deployments. Some examples are Puppet, Chef, Ansible, and SaltStack. Read more about them on the [Infrastucture Automation page](xref:integrations).
-1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](../../central-management/setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
+1. **Central Management Server**: This is a standalone server that hosts the Chocolatey Central Management web interface, as well as the back-end database on which it relies. Currently, this interface provides reporting on packages installed on endpoints. In future, a feature will be added to enable deployments of packages and updates from this web console, as well. Installation of this component is not detailed in the scope of this guide, but the current documentation can be found on the the [Chocolatey Central Management Setup page](xref:ccm-setup). Your Chocolatey for Business license (including trial) does entitle you to this feature.
 1. **Clients/Nodes**: These are the workstation or server endpoints you wish to manage packages on, with Chocolatey. Every node requires a license.
 
 ## Requirements
@@ -177,7 +178,7 @@ Copy this password out of the above file, and use it for the next step.
 
 ### Back on Administrative Workstation
 
-1. Download the script from [Exercise 4 here](./organizational-deployment-guide#exercise-4-create-a-package-for-the-license), and save it in your `choco-setup\files` folder as `Add-LicensePackage.ps1`.
+1. Download the script from [Exercise 4 here](xref:organizational-deployment-guide#exercise-4-create-a-package-for-the-license), and save it in your `choco-setup\files` folder as `Add-LicensePackage.ps1`.
 Run this script in a PowerShell Administrator console, to create the license package.
 1. Ensure the chocolatey nupkg itself is in the C:\choco-setup\packages directory. The following code accomplishes this:
 

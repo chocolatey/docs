@@ -65,6 +65,6 @@ The `ClientSetup.ps1` script executed here will:
 
 > :memo: **NOTE**
 >
-> For internet enabled client setup please refer to [Quick deployment Environment Internet Setup](./internet-setup) for additional information.
+> For internet enabled client setup please refer to [Quick deployment Environment Internet Setup](xref:v2-internet-setup) for additional information.
 
 [Quick Deployment Environment](../)

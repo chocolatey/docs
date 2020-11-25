@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: proxy-settings
 Title: Use Chocolatey w/Proxy Server
 Description: Settings up Chocolatey to use locally configured proxy server
 RedirectFrom: docs/proxy-settings-for-chocolatey

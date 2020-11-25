@@ -75,7 +75,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Write-ChocolateyFailure](./write-chocolateyfailure)
+ * [Write-ChocolateyFailure](xref:write-chocolateyfailure)
 
 
 [Function Reference](xref:powershell-reference)

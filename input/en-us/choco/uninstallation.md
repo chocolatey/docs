@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: choco-uninstallation
 Title: How to uninstall
 Description: Information on how to uninstall Chocolatey
 RedirectFrom: docs/uninstallation

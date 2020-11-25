@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: automate-package-internalization
 Title: Automate Package Internalizer (MSP/C4B)
 Description: How to setup internal package repository
 RedirectFrom: docs/how-to-setup-internal-package-repository
@@ -37,7 +38,7 @@ Let's break down the diagram:
 
 While it's not explicitly specified the glue that holds all of this together is automation using a self-hosted CI / CD tool such as [Jenkins](https://chocolatey.org/packages/jenkins), [GoCD](https://chocolatey.org/packages/gocdserver), [TeamCity](https://chocolatey.org/packages/teamcity) etc. While it may be possible to do this with externally hosted solutions using local build agents (such as [VSTS](https://visualstudio.microsoft.com/team-services/)) your mileage may vary.
 
-**NOTE:** The Chocolatey Architecture Diagram shows the services separated. But don't mistake the services for servers. All of these services, package internalizer, source control and package repositories can all be run on one server. There is a caveat however. [Chocolatey Server](./set-up-chocolatey-server) can only run one package source per server, so if you use this with a test and production repository source, as we recommend, you will need to run each on separate servers. This limitation does not apply to [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype), [Artifactory](https://jfrog.com/artifactory/), [ProGet](https://inedo.com/proget) and others.
+**NOTE:** The Chocolatey Architecture Diagram shows the services separated. But don't mistake the services for servers. All of these services, package internalizer, source control and package repositories can all be run on one server. There is a caveat however. [Chocolatey Server](xref:set-up-chocolatey-server) can only run one package source per server, so if you use this with a test and production repository source, as we recommend, you will need to run each on separate servers. This limitation does not apply to [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype), [Artifactory](https://jfrog.com/artifactory/), [ProGet](https://inedo.com/proget) and others.
 
 ## Building Your Internal Infrastructure
 
@@ -53,9 +54,9 @@ When creating each server follow these steps:
 
 ### Internal Package Repositories
 
-For this guide we have chosen to use [Chocolatey Server](./set-up-chocolatey-server) to host our internal package repository. However as we noted earlier this has the limitation of hosting only one repository per server. For anything more than a simple environment, we recommend you use [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype), [Artifactory Pro](https://jfrog.com/download-artifactory-pro/) or [ProGet](https://inedo.com/proget).
+For this guide we have chosen to use [Chocolatey Server](xref:set-up-chocolatey-server) to host our internal package repository. However as we noted earlier this has the limitation of hosting only one repository per server. For anything more than a simple environment, we recommend you use [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype), [Artifactory Pro](https://jfrog.com/download-artifactory-pro/) or [ProGet](https://inedo.com/proget).
 
-The repositories to setup are for _test_ and _production_ which we will call `testrepo-srv` and `prodrepo-srv`. There are full [instructions for setting up Chocolatey server](./set-up-chocolatey-server#setup-normally) but to make sure we end up with the same result we list specific instructions here. Follow these instructions for each server, `testrepo-srv` and `prodrepo-srv`:
+The repositories to setup are for _test_ and _production_ which we will call `testrepo-srv` and `prodrepo-srv`. There are full [instructions for setting up Chocolatey server](xref:set-up-chocolatey-server#setup-normally) but to make sure we end up with the same result we list specific instructions here. Follow these instructions for each server, `testrepo-srv` and `prodrepo-srv`:
 
 #### Install and Configure Chocolatey Server
 

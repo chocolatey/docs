@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: parse-package-parameters
 Title: Parse Package Parameters
 Description: How to parse the package parameters argument
 RedirectFrom: docs/how-to-parse-package-parameters-argument

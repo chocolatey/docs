@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: presentations
 Title: Presentations
 Description: Presentations on Chocolatey
 RedirectFrom: docs/presentations

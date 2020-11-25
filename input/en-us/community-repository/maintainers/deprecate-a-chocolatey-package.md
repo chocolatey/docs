@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: deprecate-a-package
 Title: Deprecate a Package
 Description: How to deprecate a Chocolatey package
 RedirectFrom: docs/how-to-deprecate-a-chocolatey-package

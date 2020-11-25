@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: package-maintainer-handover
 Title: Take Over Package Maintenance Exclusively
 Description: Package maintainer handover
 RedirectFrom: docs/package-maintainer-handover

@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: create-custom-package-templates
 Title: Create Custom Package Templates
 Description: How to create custom package templates
 RedirectFrom: docs/how-to-create-custom-package-templates

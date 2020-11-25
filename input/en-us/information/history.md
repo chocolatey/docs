@@ -1,5 +1,6 @@
 ---
 Order: 40
+xref: history
 Title: History
 Description: Historical information about Chocolatey
 RedirectFrom: docs/history

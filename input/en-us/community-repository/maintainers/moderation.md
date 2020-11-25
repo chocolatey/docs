@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: moderation
 Title: Chocolatey.org Moderation
 Description: Information about the package moderation used on chocolatey.org
 RedirectFrom: docs/moderation

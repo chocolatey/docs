@@ -327,7 +327,7 @@ We have a documentation section of the site at https://docs.chocolatey.org
 
 ### Do you have any references or videos I can see?
 
-Yes we do, take a look at [videos](./information/learning-resources/videos) and [known posts, presentations, etc](./information/learning-resources/resources).
+Yes we do, take a look at [videos](xref:videos) and [known posts, presentations, etc](xref:resources).
 
 ### Is there a video I can watch to show me Chocolatey in action?
 
@@ -338,7 +338,7 @@ There is! This is a long video due to slow internet connections, but watch the f
 ## Community Package Repository
 
 ### I just took over as the primary maintainer of a package. What do I need to do?
-See [Package Maintainer Handover](./community-repository/maintainers/package-maintainer-handover)
+See [Package Maintainer Handover](xref:package-maintainer-handover)
 
 ### What is moderation?
 
@@ -355,7 +355,7 @@ Things to note:
 
 ### How does the moderation review process work?
 
-See [Review Process](./community-repository/maintainers/moderation#package-review-process).
+See [Review Process](xref:moderation#package-review-process).
 
 ### What is a trusted package?
 
@@ -445,7 +445,7 @@ Use ChocolateyGet for now.
 
 ### How is Chocolatey different than Ninite?
 
-Great question, see [Chocolatey vs Ninite](./chocolatey-vs-ninite).
+Great question, see [Chocolatey vs Ninite](xref:chocolatey-vs-ninite).
 
 ### How is Chocolatey different than NuGet and/or OpenWrap?
 

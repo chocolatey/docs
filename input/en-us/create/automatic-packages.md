@@ -1,5 +1,6 @@
 ---
 Order: 50
+xref: automatic-packaging
 Title: Automatic Packaging
 Description: Techniques for automatically updating Chocolatey packages when new version of application is released
 RedirectFrom: docs/automatic-packages
