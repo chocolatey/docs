@@ -1,5 +1,6 @@
 ﻿---
 Order: 270
+xref: install-chocolateypinnedtaskbaritem
 Title: Install-ChocolateyPinnedTaskBarItem
 Description: Information on Install-ChocolateyPinnedTaskBarItem function
 RedirectFrom: docs/helpers-install-chocolatey-pinned-task-bar-item
@@ -79,11 +80,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
- * [Install-ChocolateyExplorerMenuItem](./install-chocolateyexplorermenuitem)
+ * [Install-ChocolateyShortcut](xref:install-chocolateyshortcut)
+ * [Install-ChocolateyExplorerMenuItem](xref:install-chocolateyexplorermenuitem)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPinnedTaskBarItem -Full`.
 

@@ -1,5 +1,6 @@
 ﻿---
 Order: 60
+xref: get-environmentvariable
 Title: Get-EnvironmentVariable
 Description: Information on Get-EnvironmentVariable function
 RedirectFrom: docs/helpers-get-environment-variable
@@ -119,11 +120,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-EnvironmentVariableNames](./get-environmentvariablenames)
- * [Set-EnvironmentVariable](./set-environmentvariable)
+ * [Get-EnvironmentVariableNames](xref:get-environmentvariablenames)
+ * [Set-EnvironmentVariable](xref:set-environmentvariable)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-EnvironmentVariable -Full`.
 

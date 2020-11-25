@@ -1,5 +1,6 @@
 ﻿---
 Order: 490
+xref: write-functioncalllogmessage
 Title: Write-FunctionCallLogMessage
 Description: Information on Write-FunctionCallLogMessage function
 RedirectFrom: docs/helpers-write-function-call-log-message
@@ -93,7 +94,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-FunctionCallLogMessage -Full`.
 

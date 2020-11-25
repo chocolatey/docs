@@ -1,5 +1,6 @@
 ﻿---
 Order: 70
+xref: get-environmentvariablenames
 Title: Get-EnvironmentVariableNames
 Description: Information on Get-EnvironmentVariableNames function
 RedirectFrom: docs/helpers-get-environment-variable-names
@@ -55,11 +56,11 @@ None
 
 ## Links
 
- * [Get-EnvironmentVariable](./get-environmentvariable)
- * [Set-EnvironmentVariable](./set-environmentvariable)
+ * [Get-EnvironmentVariable](xref:get-environmentvariable)
+ * [Set-EnvironmentVariable](xref:set-environmentvariable)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-EnvironmentVariableNames -Full`.
 

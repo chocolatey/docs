@@ -519,7 +519,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
 ~~~
 
-[Command Reference](./)
+[Command Reference](xref:choco-commands)
 
 
 ***NOTE:*** This documentation has been automatically generated from `choco install -h`.

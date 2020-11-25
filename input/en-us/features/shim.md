@@ -104,7 +104,7 @@ If you are creating a package and you want to skip creation of a shim for a part
 
 Set an empty file next to the executable (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".ignore". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.ignore`" (pay attention to case - "`BOB.exe.ignore`" may not work with all versions of Chocolatey).
 
-[Read more...](../create/create-packages#how-do-i-exclude-executables-from-getting-shims)
+[Read more...](xref:create-packages#how-do-i-exclude-executables-from-getting-shims)
 
 ### How can I ensure a GUI shim?
 
@@ -112,7 +112,7 @@ Chocolatey 0.9.10+ will automatically detect GUI applications and adjust the shi
 
 If you are creating a package and want the shim to exit immediately after calling the application, create an empty "*.gui" file next to where the exe file is (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".gui". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.gui`" (pay attention to case - "`BOB.exe.gui`" may not work with all versions of Chocolatey).
 
-[Read more...](../create/create-packages#how-do-i-set-up-shims-for-applications-that-have-a-gui)
+[Read more...](xref:create-packages#how-do-i-set-up-shims-for-applications-that-have-a-gui)
 
 ### A package messed up and should have set up a shim as a GUI.
 

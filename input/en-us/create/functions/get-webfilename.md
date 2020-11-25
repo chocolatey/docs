@@ -1,5 +1,6 @@
 ﻿---
 Order: 170
+xref: get-webfilename
 Title: Get-WebFileName
 Description: Information on Get-WebFileName function
 RedirectFrom: docs/helpers-get-web-file-name
@@ -116,11 +117,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-WebHeaders](./get-webheaders)
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
+ * [Get-WebHeaders](xref:get-webheaders)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebFileName -Full`.
 

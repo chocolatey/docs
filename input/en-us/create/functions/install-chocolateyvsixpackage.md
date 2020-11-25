@@ -1,5 +1,6 @@
 ﻿---
 Order: 300
+xref: install-chocolateyvsixpackage
 Title: Install-ChocolateyVsixPackage
 Description: Information on how to use the Install-ChocolateyVsixPackage function
 RedirectFrom: docs/helpers-install-chocolatey-vsix-package
@@ -222,12 +223,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
- * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
+ * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyVsixPackage -Full`.
 

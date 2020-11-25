@@ -1,5 +1,6 @@
 ﻿---
 Order: 80
+xref: get-ftpfile
 Title: Get-FtpFile
 Description: Information on Get-FtpFile function
 RedirectFrom: docs/helpers-get-ftp-file
@@ -125,10 +126,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
- * [Get-WebFile](./get-webfile)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
+ * [Get-WebFile](xref:get-webfile)
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-FtpFile -Full`.
 

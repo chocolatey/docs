@@ -1,5 +1,6 @@
 ﻿---
 Order: 40
+xref: get-chocolateyunzip
 Title: Get-ChocolateyUnzip
 Description: Information on Get-ChocolateyUnzip function
 RedirectFrom: docs/helpers-get-chocolatey-unzip
@@ -157,10 +158,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+ * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyUnzip -Full`.
 

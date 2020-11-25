@@ -1,5 +1,6 @@
 ﻿---
 Order: 50
+xref: get-chocolateywebfile
 Title: Get-ChocolateyWebFile
 Description: Information on how to use the Get-ChocolateyWebFile function
 RedirectFrom: docs/helpers-get-chocolatey-web-file
@@ -322,13 +323,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Get-WebFile](./get-webfile)
- * [Get-WebFileName](./get-webfilename)
- * [Get-FtpFile](./get-ftpfile)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Get-WebFile](xref:get-webfile)
+ * [Get-WebFileName](xref:get-webfilename)
+ * [Get-FtpFile](xref:get-ftpfile)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyWebFile -Full`.
 

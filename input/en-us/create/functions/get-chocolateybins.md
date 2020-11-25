@@ -1,5 +1,6 @@
 ---
 Order: 30
+xref: get-chocolateybins
 Title: Get-ChocolateyBins
 Description: Information on Get-ChocolateyBins function
 RedirectFrom: docs/helpers-get-chocolatey-bins
@@ -37,4 +38,4 @@ Remove-Item $diffExeIgnore,$uninstallExeIgnore,$gvimExeGui
 
     Example: `'c:\program files (x86)\vim\vim73\'`
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)

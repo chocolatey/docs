@@ -1,5 +1,6 @@
 ﻿---
 Order: 20
+xref: get-checksumvalid
 Title: Get-ChecksumValid
 Description: Information on Get-ChecksumValid function
 RedirectFrom: docs/helpers-get-checksum-valid
@@ -177,11 +178,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
- * [Install-ChocolateyPackage](./install-chocolateypackage)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChecksumValid -Full`.
 

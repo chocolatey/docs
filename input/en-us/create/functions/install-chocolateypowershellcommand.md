@@ -1,5 +1,6 @@
 ﻿---
 Order: 280
+xref: install-chocolateypowershellcommand
 Title: Install-ChocolateyPowerShellCommand
 Description: Information on how to use the Install-ChocolateyPowerShellCommand function
 RedirectFrom: docs/helpers-install-chocolatey-powershell-command
@@ -280,13 +281,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
- * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Install-ChocolateyZipPackage](./install-chocolateyzippackage)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
+ * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPowershellCommand -Full`.
 

@@ -1,5 +1,6 @@
 ﻿---
 Order: 390
+xref: test-processadminrights
 Title: Test-ProcessAdminRights
 Description: Information on Test-ProcessAdminRights function
 RedirectFrom: docs/helpers-test-process-admin-rights
@@ -46,7 +47,7 @@ None
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Test-ProcessAdminRights -Full`.
 

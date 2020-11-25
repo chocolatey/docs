@@ -1,5 +1,6 @@
 ﻿---
 Order: 400
+xref: uninstall-binfile
 Title: Uninstall-BinFile
 Description: Information on Uninstall-BinFile function
 RedirectFrom: docs/helpers-uninstall-bin-file
@@ -92,10 +93,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-BinFile](./install-binfile)
+ * [Install-BinFile](xref:install-binfile)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-BinFile -Full`.
 

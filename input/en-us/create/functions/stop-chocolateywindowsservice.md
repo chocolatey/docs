@@ -1,5 +1,6 @@
 ﻿---
 Order: 380
+xref: stop-chocolateywindowsservice
 Title: Stop-ChocolateyWindowsService
 Description: Information on Stop-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-stop-chocolatey-windows-service
@@ -54,6 +55,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from licensed code.

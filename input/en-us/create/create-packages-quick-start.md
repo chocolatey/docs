@@ -1,5 +1,6 @@
 ---
 Order: 20
+xref: create-packages-quick-start
 Title: Quick Start
 Description: The quick start guide on creating Chocolatey packages
 RedirectFrom: docs/create-packages-quick-start
@@ -9,14 +10,14 @@ RedirectFrom: docs/create-packages-quick-start
 
 Here's a TL;DR quick start version of the package creating tutorial. Follow these steps to create a simple package.
 
-**Problem?** Read the detailed version: [Creating Chocolatey Packages](./create-packages)
+**Problem?** Read the detailed version: [Creating Chocolatey Packages](xref:create-packages)
 
 ## Prerequisites
 
 * You have Chocolatey installed.
 * You've read [What are Chocolatey Packages?](xref:getting-started#what-are-chocolatey-packages) first.
 * You know how a package works
-  * A package contains a `nuspec` file. This defines the package. ([Docs](./create-packages#nuspec))
+  * A package contains a `nuspec` file. This defines the package. ([Docs](xref:create-packages#nuspec))
   * A package may contain embedded software.
   * A package may contain an installation script. This can be [very simple](#examples).
 
@@ -30,7 +31,7 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
    * Edit the `package-name.nuspec` configuration file.
    * Edit the `./tools/chocolateyInstall.ps1` install script.
      * Make sure you figure out the installer's silent mode. Use [Universal Silent Switch Finder](http://unattended.sourceforge.net/installers.php), which is available as a Choco package: `choco install ussf`
-   * You __must__ save your files with _UTF-8_ character encoding without BOM. ([Details](./create-packages#character-encoding))
+   * You __must__ save your files with _UTF-8_ character encoding without BOM. ([Details](xref:create-packages#character-encoding))
 * **Build the package**
    * Still in package directory
    * `choco pack`

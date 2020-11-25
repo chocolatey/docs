@@ -8,7 +8,7 @@ RedirectFrom: docs/release-notes-central-management
 
 # Chocolatey Release Notes - Chocolatey Central Management
 ## Summary
-This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](./).
+This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](xref:central-management).
 
 * Installation - [Central Management Setup](xref:ccm-setup)
 * Upgrade - [Central Management Upgrade](xref:ccm-upgrade)

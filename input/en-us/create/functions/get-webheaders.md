@@ -1,5 +1,6 @@
 ﻿---
 Order: 180
+xref: get-webheaders
 Title: Get-WebHeaders
 Description: Information on Get-WebHeaders function
 RedirectFrom: docs/helpers-get-web-headers
@@ -85,12 +86,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
- * [Get-WebFileName](./get-webfilename)
- * [Get-WebFile](./get-webfile)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
+ * [Get-WebFileName](xref:get-webfilename)
+ * [Get-WebFile](xref:get-webfile)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebHeaders -Full`.
 

@@ -1,5 +1,6 @@
 ﻿---
 Order: 140
+xref: get-uninstallregistrykey
 Title: Get-UninstallRegistryKey
 Description: Information on Get-UninstallRegistryKey function
 RedirectFrom: docs/helpers-get-uninstall-registry-key
@@ -139,12 +140,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
- * [Uninstall-ChocolateyPackage](./uninstall-chocolateypackage)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
+ * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateypackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-UninstallRegistryKey -Full`.
 

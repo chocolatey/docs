@@ -1,5 +1,6 @@
 ﻿---
 Order: 370
+xref: start-chocolateywindowsservice
 Title: Start-ChocolateyWindowsService
 Description: Information on Start-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-start-chocolatey-windows-service
@@ -52,6 +53,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from licensed code.

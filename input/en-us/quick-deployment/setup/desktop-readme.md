@@ -35,7 +35,7 @@ There are some initial steps you will need to have taken before you work through
 Please make sure you have taken those steps ahead of time.
 See the [Online Documentation](./#step-3-virtual-environment-setup) for the most up to date information.
 
-* [QDE Setup](./)
+* [QDE Setup](xref:v2-qde)
 
 ## Step 1: Expand Disk Size
 
@@ -335,8 +335,8 @@ Stop-Process -Name explorer -Force
 
 ## See Also
 
-* [Quick Deployment Environment](xref:v2-qde)
-* [QDE Setup](./)
+* [Quick Deployment Environment](xref:qde)
+* [QDE Setup](xref:v2-qde)
 * [QDE Desktop ReadMe File](xref:v2-desktop-readme)
 * [QDE SSL/TLS Setup](xref:v2-ssl-setup)
 * [QDE Firewall Changes](xref:v2-firewall-changes)

@@ -1,5 +1,6 @@
 ﻿---
 Order: 420
+xref: uninstall-chocolateypackage
 Title: Uninstall-ChocolateyPackage
 Description: Information on Uninstall-ChocolateyPackage function
 RedirectFrom: docs/helpers-uninstall-chocolatey-package
@@ -172,13 +173,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
- * [Uninstall-ChocolateyZipPackage](./uninstall-chocolateyzippackage)
- * [Get-UninstallRegistryKey](./get-uninstallregistrykey)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
+ * [Uninstall-ChocolateyZipPackage](xref:uninstall-chocolateyzippackage)
+ * [Get-UninstallRegistryKey](xref:get-uninstallregistrykey)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-ChocolateyPackage -Full`.
 

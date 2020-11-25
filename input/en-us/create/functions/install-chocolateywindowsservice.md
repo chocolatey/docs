@@ -1,5 +1,6 @@
 ﻿---
 Order: 310
+xref: install-chocolateywindowsservice
 Title: Install-ChocolateyWindowsService
 Description: Information on Install-ChocolateyWindowsService function
 RedirectFrom: docs/helpers-install-chocolatey-windows-service
@@ -260,6 +261,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from licensed code.

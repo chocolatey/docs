@@ -1,5 +1,6 @@
 ﻿---
 Order: 90
+xref: get-osarchitecturewidth
 Title: Get-OSArchitectureWidth
 Description: Information on Get-OSArchitectureWidth function
 RedirectFrom: docs/helpers-get-osarchitecture-width
@@ -51,7 +52,7 @@ None
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-OSArchitectureWidth -Full`.
 

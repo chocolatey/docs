@@ -1,5 +1,6 @@
 ﻿---
 Order: 480
+xref: write-fileupdatelog
 Title: Write-FileUpdateLog
 Description: Information on Write-FileUpdateLog function
 RedirectFrom: docs/helpers-write-file-update-log
@@ -106,7 +107,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-FileUpdateLog -Full`.
 

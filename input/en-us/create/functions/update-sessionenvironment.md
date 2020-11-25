@@ -1,5 +1,6 @@
 ﻿---
 Order: 450
+xref: update-sessionenvironment
 Title: Update-SessionEnvironment
 Description: Information on Update-SessionEnvironment function
 RedirectFrom: docs/helpers-update-session-environment
@@ -58,7 +59,7 @@ None
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Update-SessionEnvironment -Full`.
 

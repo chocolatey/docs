@@ -10,7 +10,7 @@ RedirectFrom: docs/central-management-reports
 
 ## Related Topics
 
-* [Chocolatey Central Management](../)
-* [Central Management - Software](./software)
-* [Central Management - Computers](./computers)
-* [Central Management - Deployments](./deployments)
+* [Chocolatey Central Management](xref:central-management)
+* [Central Management - Software](xref:ccm-software)
+* [Central Management - Computers](xref:ccm-computers)
+* [Central Management - Deployments](xref:ccm-deployments)

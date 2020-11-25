@@ -1,5 +1,6 @@
 ---
 Order: 10
+xref: create-packages
 Title: Create Packages
 Description: How to start creating your own Chocolatey packages
 RedirectFrom: docs/create-packages
@@ -53,7 +54,7 @@ can do just about anything you need. Choco has some very handy [built-in functio
 
 ## Quick Start guide
 
-If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](../create/create-packages-quick-start) for you. **NOTE**: This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
+If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](xref:create-packages-quick-start) for you. **NOTE**: This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
 
 ## Rules to be observed before publishing packages
 
@@ -91,7 +92,7 @@ The main release of a product versions are usually sufficient. If there are also
 ## Okay, how do I create packages?
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
-1. [Nuspec](../create/create-packages#nuspec)
+1. [Nuspec](xref:create-packages#nuspec)
 1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](xref:powershell-reference)
 1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](../information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
 1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](xref:powershell-reference) for functions available in your script.

@@ -1,5 +1,6 @@
 ﻿---
 Order: 360
+xref: start-chocolateyprocessasadmin
 Title: Start-ChocolateyProcessAsAdmin
 Description: Information on Start-ChocolateyProcessAsAdmin function
 RedirectFrom: docs/helpers-start-chocolatey-process-as-admin
@@ -222,11 +223,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Install-ChocolateyInstallPackage](./install-chocolateyinstallpackage)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Start-ChocolateyProcessAsAdmin -Full`.
 

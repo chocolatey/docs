@@ -267,7 +267,7 @@ For more information on when this will be addressed, you can subscribe to the [G
 
 ## Related Topics
 
-* [Chocolatey Central Management](../)
-* [Central Management - Groups](./groups)
-* [Central Management - Computers](./computers)
-* [Central Management - Reports](./reports)
+* [Chocolatey Central Management](xref:central-management)
+* [Central Management - Groups](xref:ccm-groups)
+* [Central Management - Computers](xref:ccm-computers)
+* [Central Management - Reports](xref:ccm-reports)

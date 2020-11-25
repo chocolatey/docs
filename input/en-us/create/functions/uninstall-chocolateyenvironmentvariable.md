@@ -1,5 +1,6 @@
 ﻿---
 Order: 410
+xref: uninstall-chocolateyenvironmentvariable
 Title: Uninstall-ChocolateyEnvironmentVariable
 Description: Information on Uninstall-ChocolateyEnvironmentVariable function
 RedirectFrom: docs/helpers-uninstall-chocolatey-environment-variable
@@ -115,12 +116,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyEnvironmentVariable](./install-chocolateyenvironmentvariable)
- * [Set-EnvironmentVariable](./set-environmentvariable)
- * [Install-ChocolateyPath](./install-chocolateypath)
+ * [Install-ChocolateyEnvironmentVariable](xref:install-chocolateyenvironmentvariable)
+ * [Set-EnvironmentVariable](xref:set-environmentvariable)
+ * [Install-ChocolateyPath](xref:install-chocolateypath)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Uninstall-ChocolateyEnvironmentVariable -Full`.
 

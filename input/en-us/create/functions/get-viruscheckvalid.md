@@ -1,5 +1,6 @@
 ﻿---
 Order: 150
+xref: get-viruscheckvalid
 Title: Get-VirusCheckValid
 Description: Information on Get-VirusCheckValid function
 RedirectFrom: docs/helpers-get-virus-check-valid
@@ -84,7 +85,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-VirusCheckValid -Full`.
 

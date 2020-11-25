@@ -1,5 +1,6 @@
 ﻿---
 Order: 320
+xref: install-chocolateyzippackage
 Title: Install-ChocolateyZipPackage
 Description: Information on how to use the Install-ChocolateyZipPackage function
 RedirectFrom: docs/helpers-install-chocolatey-zip-package
@@ -311,11 +312,11 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-ChocolateyWebFile](./get-chocolateywebfile)
- * [Get-ChocolateyUnzip](./get-chocolateyunzip)
+ * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
+ * [Get-ChocolateyUnzip](xref:get-chocolateyunzip)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyZipPackage -Full`.
 

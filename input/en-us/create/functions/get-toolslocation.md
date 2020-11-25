@@ -1,5 +1,6 @@
 ﻿---
 Order: 120
+xref: get-toolslocation
 Title: Get-ToolsLocation
 Description: Information on Get-ToolsLocation function
 RedirectFrom: docs/helpers-get-tools-location
@@ -57,7 +58,7 @@ None
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ToolsLocation -Full`.
 

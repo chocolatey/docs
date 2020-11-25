@@ -1,5 +1,6 @@
 ﻿---
 Order: 10
+xref: format-filesize
 Title: Format-FileSize
 Description: Information on Format-FileSize function
 RedirectFrom: docs/helpers-format-file-size
@@ -81,10 +82,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Get-WebFile](./get-webfile)
+ * [Get-WebFile](xref:get-webfile)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Format-FileSize -Full`.
 

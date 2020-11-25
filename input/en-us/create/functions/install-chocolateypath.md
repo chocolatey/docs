@@ -1,5 +1,6 @@
 ﻿---
 Order: 260
+xref: install-chocolateypath
 Title: Install-ChocolateyPath
 Description: Information on Install-ChocolateyPath function
 RedirectFrom: docs/helpers-install-chocolatey-path
@@ -109,13 +110,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyEnvironmentVariable](./install-chocolateyenvironmentvariable)
- * [Get-EnvironmentVariable](./get-environmentvariable)
- * [Set-EnvironmentVariable](./set-environmentvariable)
- * [Get-ToolsLocation](./get-toolslocation)
+ * [Install-ChocolateyEnvironmentVariable](xref:install-chocolateyenvironmentvariable)
+ * [Get-EnvironmentVariable](xref:get-environmentvariable)
+ * [Set-EnvironmentVariable](xref:set-environmentvariable)
+ * [Get-ToolsLocation](xref:get-toolslocation)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPath -Full`.
 

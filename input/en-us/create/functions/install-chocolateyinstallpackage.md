@@ -1,5 +1,6 @@
 ﻿---
 Order: 240
+xref: install-chocolateyinstallpackage
 Title: Install-ChocolateyInstallPackage
 Description: Information on how to use the Install-ChocolateyInstallPackage function
 RedirectFrom: docs/helpers-install-chocolatey-install-package
@@ -304,13 +305,13 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyPackage](./install-chocolateypackage)
- * [Uninstall-ChocolateyPackage](./uninstall-chocolateypackage)
- * [Get-UninstallRegistryKey](./get-uninstallregistrykey)
- * [Start-ChocolateyProcessAsAdmin](./start-chocolateyprocessasadmin)
+ * [Install-ChocolateyPackage](xref:install-chocolateypackage)
+ * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateypackage)
+ * [Get-UninstallRegistryKey](xref:get-uninstallregistrykey)
+ * [Start-ChocolateyProcessAsAdmin](xref:start-chocolateyprocessasadmin)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyInstallPackage -Full`.
 

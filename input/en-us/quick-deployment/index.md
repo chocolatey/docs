@@ -1,5 +1,6 @@
 ---
 Order: 140
+xref: qde
 Title: Quick Deployment Environment (QDE)
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment

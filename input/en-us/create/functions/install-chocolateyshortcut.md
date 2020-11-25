@@ -1,5 +1,6 @@
 ﻿---
 Order: 290
+xref: install-chocolateyshortcut
 Title: Install-ChocolateyShortcut
 Description: Information on Install-ChocolateyShortcut function
 RedirectFrom: docs/helpers-install-chocolatey-shortcut
@@ -226,12 +227,12 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyDesktopLink](./install-chocolateydesktoplink)
- * [Install-ChocolateyExplorerMenuItem](./install-chocolateyexplorermenuitem)
- * [Install-ChocolateyPinnedTaskBarItem](./install-chocolateypinnedtaskbaritem)
+ * [Install-ChocolateyDesktopLink](xref:install-chocolateydesktoplink)
+ * [Install-ChocolateyExplorerMenuItem](xref:install-chocolateyexplorermenuitem)
+ * [Install-ChocolateyPinnedTaskBarItem](xref:install-chocolateypinnedtaskbaritem)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyShortcut -Full`.
 

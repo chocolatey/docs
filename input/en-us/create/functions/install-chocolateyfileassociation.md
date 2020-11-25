@@ -1,5 +1,6 @@
 ﻿---
 Order: 230
+xref: install-chocolateyfileassociation
 Title: Install-ChocolateyFileAssociation
 Description: Information on Install-ChocolateyFileAssociation function
 RedirectFrom: docs/helpers-install-chocolatey-file-association
@@ -99,7 +100,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyFileAssociation -Full`.
 

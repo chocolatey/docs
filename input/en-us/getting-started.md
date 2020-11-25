@@ -200,4 +200,4 @@ Many packages use native software installers, so Chocolatey allows the installer
 
 By default it installs packages from chocolatey.org (the community feed). But you can change this by adding default sources and/or using the  `--source` switch when running a command.
 
-When you [host internal packages](xref:host-packages), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](./create/create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.
+When you [host internal packages](xref:host-packages), those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can [create packages](xref:create-packages) that are more reliable and secure.  See [What are Chocolatey Packages](#what-are-chocolatey-packages) for more details.

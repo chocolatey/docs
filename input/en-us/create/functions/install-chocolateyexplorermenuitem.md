@@ -1,5 +1,6 @@
 ﻿---
 Order: 220
+xref: install-chocolateyexplorermenuitem
 Title: Install-ChocolateyExplorerMenuItem
 Description: Information on Install-ChocolateyExplorerMenuItem function
 RedirectFrom: docs/helpers-install-chocolatey-explorer-menu-item
@@ -146,10 +147,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyShortcut](./install-chocolateyshortcut)
+ * [Install-ChocolateyShortcut](xref:install-chocolateyshortcut)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyExplorerMenuItem -Full`.
 

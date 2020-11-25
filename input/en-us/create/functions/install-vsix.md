@@ -1,5 +1,6 @@
 ﻿---
 Order: 330
+xref: install-vsix
 Title: Install-Vsix
 Description: Information on Install-Vsix function
 RedirectFrom: docs/helpers-install-vsix
@@ -83,10 +84,10 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyVsixPackage](./install-chocolateyvsixpackage)
+ * [Install-ChocolateyVsixPackage](xref:install-chocolateyvsixpackage)
 
 
-[Function Reference](./)
+[Function Reference](xref:powershell-reference)
 
 ***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-Vsix -Full`.
 
