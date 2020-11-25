@@ -173,7 +173,7 @@ and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
 remote source that uses the same url for updates, you will need to
 ensure the package also stays updated in line with those remote
-resource updates. You should look into [automatic packaging](../automatic-packages)
+resource updates. You should look into [automatic packaging](xref:automatic-packaging)
 to help provide that functionality.
 
 Property               | Value
@@ -216,7 +216,7 @@ and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
 remote source that uses the same url for updates, you will need to
 ensure the package also stays updated in line with those remote
-resource updates. You should look into [automatic packaging](../automatic-packages)
+resource updates. You should look into [automatic packaging](xref:automatic-packaging)
 to help provide that functionality.
 
 **NOTE:** To determine checksums, you can get that from the original

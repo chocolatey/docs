@@ -305,7 +305,7 @@ Currently no.  The Chocolatey Central Management Web Site expects to reside at t
 
 ### What is the CCM compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](../#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
 ### I entered incorrect database details on install, do I need to reinstall to fix that?
 
@@ -452,4 +452,4 @@ If you see the app pool shutting down immediately when you start it.
 * Turn on stdout logging in the config at `c:\tools\chocolatey-management-web\web.config` if it is not already on. The attribute is named `stdoutLogEnabled` (set it to true). This will allow logging to `c:\tools\chocolatey-management-web\App_Data\Logs`. Permissions will play a role in this so ensure [the user has the right access](#non-default-app-pool-user-considerations).
 * Check for [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations).
 
-[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)

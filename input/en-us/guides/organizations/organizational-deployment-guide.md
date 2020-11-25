@@ -122,7 +122,7 @@ From the machine with internet access:
 1. In `c:\choco-setup`, type `New-Item -Path "$env:SystemDrive\choco-setup\packages" -ItemType Directory -Force` and press enter.
 1. Type `cd packages` and press enter.
 1. NONADMIN (**only**): We'll need to redirect Chocolatey not to install to the default location. Run `$env:ChocolateyInstall="$env:ProgramData\chocoportable"` and press enter.
-1. Now run `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` (this will get Chocolatey installed and it is what you see at https://chocolatey.org/install). It also makes choco available in that current shell. If you run into proxy issues here, please see [installing Chocolatey behind a proxy server](../usage/proxy-settings-for-chocolatey).
+1. Now run `Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` (this will get Chocolatey installed and it is what you see at https://chocolatey.org/install). It also makes choco available in that current shell. If you run into proxy issues here, please see [installing Chocolatey behind a proxy server](xref:proxy-settings).
 1. C4B / MSP / C4BTRIAL: Obtain the `chocolatey.license.xml` from the email sent from the Chocolatey team and save the license file to `c:\choco-setup\files` so we can use it here and on the offline machines.
 1. C4BTRIAL: grab a copy of the two nupkgs from the email. If you don't have that email with the download links, request it from whoever provided you the trial license. Save those two packages to `c:\choco-setup\packages`.
 1. C4B / MSP / C4BTRIAL: Run this command `New-Item $env:ChocolateyInstall\license -ItemType Directory -Force` - this creates the license directory.
@@ -147,10 +147,10 @@ From the machine with internet access:
       * [Chocolatey GUI](https://chocolatey.org/api/v2/package/chocolateygui)
       * Download Chocolatey.Server package and dependencies:
         * [Chocolatey.Server](https://chocolatey.org/api/v2/package/chocolatey.server)
-        * [dotnet4.6](https://chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually](../create/recompile-packages)
-        * [dotnet4.6.1](https://chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](../create/recompile-packages)
-        * [KB2919355](https://chocolatey.org/api/v2/package/KB2919355) - [internalize manually](../create/recompile-packages)
-        * [KB2919442](https://chocolatey.org/api/v2/package/KB2919442) - [internalize manually](../create/recompile-packages)
+        * [dotnet4.6](https://chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually]xref:recompile-packages)
+        * [dotnet4.6.1](https://chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](xref:recompile-packages)
+        * [KB2919355](https://chocolatey.org/api/v2/package/KB2919355) - [internalize manually](xref:recompile-packages)
+        * [KB2919442](https://chocolatey.org/api/v2/package/KB2919442) - [internalize manually](xref:recompile-packages)
 1. C4B - Run the following additionally: `choco download chocolatey.extension chocolatey-agent --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. MSP - Run the following additionally: `choco download chocolatey.extension --internalize`. C4BTRIAL - you should already have placed these nupkgs in the folder earlier.
 1. Now we should have several packages in `c:\choco-setup\packages`. If not, type `start .` and go copy the files here to that location.
@@ -363,7 +363,7 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet. **NOTE**: Some repository server options don't require Windows.
 
-**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](../create/recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](../create/recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](xref:community-packages-disclaimer).
+**NOTE:** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely ***DO NOT WANT*** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - ***cached* is not the same concept as *internalized***. To reuse packages from the community repository in a reliable way, you need to [internalize them](xref:recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at ***runtime***. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](xref:recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](xref:community-packages-disclaimer).
 
 ### Exercise 2C: Set Up A File Share Repository
 
@@ -660,9 +660,9 @@ If you've made it this far, you are ready to be quite successful with Chocolatey
 
 ## More Architecture Setup
 
-* [Setup Central Management](../../central-management/setup)
-* [Automate Internalization of Community Packages](../../guides/create/recompile-packages) - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
-* [Quick Deployment Environment](../../quick-deployment)
+* [Setup Central Management](xref:ccm-setup)
+* [Automate Internalization of Community Packages](xref:recompile-packages) - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
+* [Quick Deployment Environment](xref:qde)
 
 ## Next Steps
 

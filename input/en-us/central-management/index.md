@@ -93,7 +93,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ## Related Articles
 
-* [Quick Deployment Environment (QDE)](../quick-deployment)
+* [Quick Deployment Environment (QDE)](xref:qde)
 
 ## Roadmap
 
@@ -148,11 +148,11 @@ Please run `choco support` from a licensed edition and follow the instructions.
 
 ### How do I set up Chocolatey Central Management?
 
-You can start from a pre-configured environment known as [Quick Deployment Environment (QDE)](../quick-deployment), or see [Setup / Installation](#setup-installation).
+You can start from a pre-configured environment known as [Quick Deployment Environment (QDE)](xref:qde), or see [Setup / Installation](#setup-installation).
 
 ### What is the CCM compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
 ### If I update the license file, do I need to restart my services and web?
 

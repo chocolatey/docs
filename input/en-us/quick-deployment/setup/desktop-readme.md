@@ -9,7 +9,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](../v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](xref:v1-desktop-readme).
 
 Thanks for trying Chocolatey for Business!
 This system has been pre-configured as a fully functioning C4B environment.
@@ -163,7 +163,7 @@ Consult the [Nexus documentation](https://help.sonatype.com/repomanager3) or rea
 | :---------------------: | :-----: | :-------------------: |
 | <http://localhost:8080> | `admin` | `{{JenkinsPassword}}` |
 
-For using Jenkins, please refer to our [online documentation](../../guides/organizations/automate-package-internalization).
+For using Jenkins, please refer to our [online documentation](xref:automate-package-internalization).
 
 At most, you will need to:
 
@@ -304,7 +304,7 @@ slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 > :memo: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
-> If you're using an older version of QDE, please refer to the [document for that version](../v1/desktop-readme).
+> If you're using an older version of QDE, please refer to the [document for that version](xref:v1-desktop-readme).
 
 ### "Server Error" warning when resetting "admin" credential in Nexus
 

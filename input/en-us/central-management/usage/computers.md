@@ -60,7 +60,7 @@ For more common errors related to checking in, see the [setup section (and compo
 
 ## Related Topics
 
-* [Chocolatey Central Management](../)
+* [Chocolatey Central Management](xref:central-management)
 * [Central Management - Software](xref:ccm-software)
 * [Central Management - Groups](xref:ccm-groups)
 * [Central Management - Reports](xref:ccm-reports)

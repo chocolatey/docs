@@ -21,13 +21,13 @@ First you should determine if you are making a self-contained package or (also) 
 #### Self-Contained?
 If you have a self-contained package, you can remove the automation scripts
 entirely and just include the runtime executables, they will automatically get shimmed,
-which puts them on the path. Ensure you have the [legal right to distribute](../information/legal)
+which puts them on the path. Ensure you have the [legal right to distribute](xref:legal)
 the application though. You should read up on the Shim Generation section
 below though to familiarize yourself on what to do with GUI applications
 and/or ignoring shims (also known as batch redirects).
 
 #### Including the Software Installer in the Package
-Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [legal right to distribute](../information/legal) the software first if publishing to a public location (like the community package repository).
+Sometimes called embedding the binaries, there are functions in the automation scripts you can call that will use the installers directly from the package instead of downloading first. This makes for the most reliable and deterministic packages, but ensure you have the [legal right to distribute](xref:legal) the software first if publishing to a public location (like the community package repository).
 
 #### Automation Scripts
 You have a powerful use of Chocolatey, as you are using PowerShell. So you
@@ -50,7 +50,7 @@ can do just about anything you need. Choco has some very handy [built-in functio
 1. [Localization](#internationalization-and-localization-of-packages)
 1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
 1. [Maintainer magic - automatically updating packaging](xref:automatic-packaging)
-1. [Taking over existing package](../community-repository/maintainers/package-maintainer-handover)
+1. [Taking over existing package](xref:package-maintainer-handover)
 
 ## Quick Start guide
 
@@ -61,7 +61,7 @@ If you think you got what it takes and just want to know the basic steps to get 
 There are a few rules that you have to follow before pushing packages to chocolatey.org:
 
 1. **Don't package illegal software.** Packages of software that is illegal in most countries in the world are prohibited to publish on Chocolatey.org. This applies in particular to software that violates the copyright, pirated software and activation cracks. Remember that this also affects software that is especially designed to accomplish software piracy.
-2. **Do not include software in a package that you don't have the right to distribute.** Please see [Distribution Rights](../information/legal#wiki-distributions-aka-chocolatey-packages) for more information. Any package found not in compliance with this will be removed immediately. Instead you can download binaries from official distribution locations at runtime.
+2. **Do not include software in a package that you don't have the right to distribute.** Please see [Distribution Rights](xref:legal#wiki-distributions-aka-chocolatey-packages) for more information. Any package found not in compliance with this will be removed immediately. Instead you can download binaries from official distribution locations at runtime.
 1. **Packaging commercial or trial software?** Clearly state this in the package description. Does it require an activation key? Is there a trial period if you don't have a key? How long is this trial period?
 1. **Only post publicly relevant packages.** You should consider whether this package is useful for others. If that is not the case, it shouldn't be published on Chocolatey.org. Reasons for that can be if the package would require a very customized configuration. You can host your personal packages on [MyGet](https://www.myget.org/) and still be able to install them with Chocolatey using the `-source` parameter.
 1. **Do not publish junk or malware** packages.
@@ -71,7 +71,7 @@ There are a few rules that you have to follow before pushing packages to chocola
 1. **Split dependencies into multiple packages.** Try to split up packages as much as possible. If for example a program comes with additional modules/installers that are optional, make different packages for them instead of including all the things into one package. This idea is already widely applied for Linux packages, because it leads to a more lightweight system and reduces potential issues and conflicts.
 1. **Use a simple intuitive lowercase name for the package**. See the [package naming guidelines](#naming-your-package) for details. (If you are a reviewer/moderator, this is considered a guideline).
 
-Is your package unqualified for the Chocolatey feed, but you like to be able to install it through Chocolatey? One alternative would be to host your package on MyGet. See [Hosting Chocolatey Packages on MyGet](../hosting-chocolatey-packages-on-myget).
+Is your package unqualified for the Chocolatey feed, but you like to be able to install it through Chocolatey? One alternative would be to host your package on MyGet. See [Hosting Chocolatey Packages on MyGet](xref:hosting-chocolatey-packages-on-myget).
 
 ## Character encoding
 
@@ -93,8 +93,8 @@ The main release of a product versions are usually sufficient. If there are also
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
 
 1. [Nuspec](xref:create-packages#nuspec)
-1. [chocolateyInstall.ps1](../chocolatey-install-ps1) - check out the [helper reference](xref:powershell-reference)
-1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](../information/legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
+1. [chocolateyInstall.ps1](xref:chocolatey-install-ps1) - check out the [helper reference](xref:powershell-reference)
+1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](xref:legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
 1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](xref:powershell-reference) for functions available in your script.
 
 **Note:** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
@@ -225,7 +225,7 @@ Example instructions:
 
 ## Upgrading
 
-Prior to choco version 0.9.10, there is no dedicated automation script for upgrade scenarios. Instead, your [chocolateyInstall.ps1](../chocolatey-install-ps1) script should support installing/upgrading on top of any previous versions of your package.
+Prior to choco version 0.9.10, there is no dedicated automation script for upgrade scenarios. Instead, your [chocolateyInstall.ps1](xref:chocolatey-install-ps1) script should support installing/upgrading on top of any previous versions of your package.
 
 More recent versions of choco (0.9.10+) give you the option of supplying a `chocolateyBeforeModify.ps1` script.
 If applicable, the version of this script from the currently installed package will be run before subsequent
@@ -233,7 +233,7 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 ## Uninstalling
 
-Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](../chocolatey-install-ps1). All the usual [helper reference](xref:powershell-reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
+Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](xref:chocolatey-install-ps1). All the usual [helper reference](xref:powershell-reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
 
 ## Dependency Chaining

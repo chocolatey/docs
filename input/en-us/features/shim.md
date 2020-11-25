@@ -92,11 +92,11 @@ We tried using batch ("*.bat") files, and it mostly works, but when applications
 
 ### Have you thought about shimming in more places?
 
-Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](../create/functions/install-binfile).
+Yes, but we have not decided whether shimming Program Files is a good idea yet or not. Packages can explicitly enforce shims with [Install-BinFile](xref:install-binfile).
 
 ### I need to shim a non-exe file.
 
-If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](../create/functions/install-binfile).
+If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at [Install-BinFile](xref:install-binfile).
 
 ### I need to exclude a file from shimming.
 

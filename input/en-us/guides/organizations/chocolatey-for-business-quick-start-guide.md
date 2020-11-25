@@ -229,7 +229,7 @@ Run this script in a PowerShell Administrator console, to create the license pac
 
 ### Central Management Server
 
-Again, the setup of the Chocolatey Central Management server is beyond the scope of this document (please read over and follow the detailed instructions on the [Chocolatey Central Management Setup page](../../central-management/setup).
+Again, the setup of the Chocolatey Central Management server is beyond the scope of this document (please read over and follow the detailed instructions on the [Chocolatey Central Management Setup page](xref:ccm-setup).
 
 ### Conclusion
 

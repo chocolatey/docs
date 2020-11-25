@@ -251,6 +251,6 @@ See [QDE Client Setup](xref:v1-client-setup).
 
 While we will continue to make improvements to the QDE, there is no upgrade path for the Virtual Machine itself. You can choose to start over with a newer version, but that feels like the wrong way to go.
 
-It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE. Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](../../central-management/setup/upgrade).
+It is simple to upgrade the components and that it how we recommend upgrading aspects of QDE. Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](xref:ccm-upgrade).
 
 [Quick Deployment Environment](xref:v1-qde)

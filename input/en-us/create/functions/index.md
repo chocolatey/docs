@@ -18,7 +18,7 @@ In your Chocolatey packaging, you have the ability to use these functions (and o
 
 ## Main Functions
 
-These functions call other functions and many times may be the only thing you need in your [chocolateyInstall.ps1 file](../../chocolatey-install-ps1).
+These functions call other functions and many times may be the only thing you need in your [chocolateyInstall.ps1 file](xref:chocolatey-install-ps1).
 
 * [Install-ChocolateyPackage](xref:install-chocolateypackage)
 * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)

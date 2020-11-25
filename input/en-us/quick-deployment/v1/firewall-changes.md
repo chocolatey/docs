@@ -48,4 +48,4 @@ The CCM service connection is authenticated over SSL, but our best practice reco
 
 With Central Management v0.3.0, more security has been put into allowing for checking in over internet connections as long as you follow guidance for additional settings.
 
-[Quick Deployment Environment](../)
+[Quick Deployment Environment](xref:qde)

@@ -216,6 +216,6 @@ MSI repackaging is always preferred. At the end of creating that, you have somet
 
 ## Chocolatey Central Management
 
-Chocolatey for Business has centralized reporting and supports endpoint management through [Chocolatey Central Management (CCM)](../central-management). On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
+Chocolatey for Business has centralized reporting and supports endpoint management through [Chocolatey Central Management (CCM)](xref:central-management). On machines that will take advantage of CCM, you will need the Chocolatey Agent installed and properly configured to manage them centrally.
 
-For more information on Central Management, please see [Chocolatey Central Management](../central-management).
+For more information on Central Management, please see [Chocolatey Central Management](xref:central-management).

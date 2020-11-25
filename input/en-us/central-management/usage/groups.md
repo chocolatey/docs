@@ -87,6 +87,6 @@ Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on t
 
 ## Related Topics
 
-* [Chocolatey Central Management](../)
+* [Chocolatey Central Management](xref:central-management)
 * [Central Management - Deployments](xref:ccm-deployments)
 * [Central Management - Computers](xref:ccm-computers)

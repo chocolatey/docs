@@ -8,7 +8,7 @@ RedirectFrom: docs/how-to-setup-internal-package-repository
 
 ## Summary
 
-When running within an organization it is beneficial to use your own, internally controlled, package repository. But that doesn't mean you have to create all packages from scratch. Chocolatey allows you to create packages easily using the [package builder](xref:package-builder) but it also allows you to take packages from the Chocolatey Community Repository and recompile them for internal use - this is a process known as [package internalization](../create/recompile-packages). This guide shows you how to use that within your organization.
+When running within an organization it is beneficial to use your own, internally controlled, package repository. But that doesn't mean you have to create all packages from scratch. Chocolatey allows you to create packages easily using the [package builder](xref:package-builder) but it also allows you to take packages from the Chocolatey Community Repository and recompile them for internal use - this is a process known as [package internalization](xref:recompile-packages). This guide shows you how to use that within your organization.
 
 ## Organizational Requirements
 

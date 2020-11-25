@@ -383,7 +383,7 @@ Unfortunately only SQL Server SKUs work with Chocolatey Central Management at th
 
 ### What is the CCM compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](../#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
 ## Common Errors and Resolutions
 
@@ -416,4 +416,4 @@ There are two workarounds noted:
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-[Central Management Setup](xref:ccm-setup)  [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup)  [Chocolatey Central Management](xref:central-management)

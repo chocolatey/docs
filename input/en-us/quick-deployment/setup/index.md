@@ -312,7 +312,7 @@ While we will continue to make improvements to the QDE, there is no upgrade path
 You can choose to start over with a newer version, but that would mean going through the entire setup process from the beginning once again.
 
 Instead, it is much easier to upgrade the components individually, and that is how we recommend upgrading aspects of QDE.
-Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](../../central-management/setup/upgrade).
+Should you want to upgrade say Central Management, you can follow the Central Management steps for upgrade at [Upgrade Central Management](xref:ccm-upgrade).
 
 ### Should I upgrade Jenkins?
 
@@ -342,4 +342,4 @@ If you would like to upgrade Jenkins to a newer version using the installer, ple
 Some or all of the complexities in the upgrade process will likely be made automatic in the Chocolatey package as we're able to test and verify that the upgrade path works.
 Until then, approach with caution and follow the Jenkins documentation closely when attempting an upgrade.
 
-[Quick Deployment Environment](../)
+[Quick Deployment Environment](xref:qde)

@@ -67,4 +67,4 @@ The `ClientSetup.ps1` script will:
 * Configure Self-Service mode
 * Configure Central Management check-in
 
-[Quick Deployment Environment](../)
+[Quick Deployment Environment](xref:qde)

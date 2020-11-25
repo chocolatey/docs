@@ -97,7 +97,7 @@ Install-ChocolateyPackage $packageName $installerType $silentArgs $url $url64  -
 
 ### Parsing Package Parameters
 
-For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](../guides/create/parse-packageparameters-argument).
+For a complete example of how you can use the PackageParameters argument of the ```choco install``` command, see this [How-To](xref:parse-package-parameters).
 
 ## Tips
 

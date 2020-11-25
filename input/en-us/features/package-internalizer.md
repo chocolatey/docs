@@ -9,7 +9,7 @@ Automatically Internalize/Recompile Existing Packages (Business and MSP Editions
 
 There are thousands of existing packages on the [community repository](https://chocolatey.org/packages) that are a tremendous resource when it comes to creating packages that have software that can sometimes be tricky! Unfortunately you may be wary of using those packages without changes because many of those packages are subject to distribution rights and thus have an internet dependency (which creates both [trust and control issues](xref:community-packages-disclaimer)). There is a process for downloading and internalizing packages to use internal or embedded locations for that software that is called **internalizing** (also known as recompiling).
 
-Chocolatey for Business is able to automatically download packages and resources, edit the scripts, and recompile packages to internalize and remove internet dependencies from those packages, saving you hours of time in [manually internalizing/recompiling packages](../guides/create/recompile-packages)!
+Chocolatey for Business is able to automatically download packages and resources, edit the scripts, and recompile packages to internalize and remove internet dependencies from those packages, saving you hours of time in [manually internalizing/recompiling packages](xref:recompile-packages)!
 
 ## Usage
 

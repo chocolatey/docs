@@ -1,5 +1,6 @@
 ---
 Order: 75
+xref: hosting-chocolatey-packages-on-myget
 Title: Host on MyGet
 Description: What to do with packages that aren't suitable for the Community Repository
 RedirectFrom: docs/hosting-chocolatey-packages-on-myget

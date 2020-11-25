@@ -21,7 +21,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > :memo: **NOTE**
 >
-> If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](../../quick-deployment). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](../../quick-deployment).
+> If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](xref:qde). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](xref:qde).
 
 > :warning: **WARNING**
 >
@@ -43,7 +43,7 @@ Each package further defines dependencies that they include.
 
 > :memo: **NOTE**
 >
-> Make sure you have read over the [CCM Compability Matrix](../#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
+> Make sure you have read over the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 The complete installation of CCM requires several packages that are available from the community repository. Let's get them internalized. We will internalize them to a `C:\packages` directory. It is highly recommended that you push the packages to an internal repository before continuing with other steps in this guide. Change the values in the first lines of this script to match what you need in your environment.
 
@@ -130,4 +130,4 @@ You need to check the CCM service logs. The agent will always report success whe
 
 The logs are located at `$env:ChocolateyInstall\logs\ccm-service.log`. If you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
-[Chocolatey Central Management](../)
+[Chocolatey Central Management](xref:central-management)

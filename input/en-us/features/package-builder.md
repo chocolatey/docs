@@ -184,7 +184,7 @@ Unfortunately, some installers out there are just a pain to work with. In the ca
 
 ### Does it create auto unattend files?
 
-Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](../guides/organizations/automate-package-internalization) to take advantage of thousands of existing packages without a need for internet access.
+Unfortunately, it is not able to do this. See the [automatic internalize and recompile packages feature](xref:automate-package-internalization) to take advantage of thousands of existing packages without a need for internet access.
 
 ### Does it work with zip archive?
 

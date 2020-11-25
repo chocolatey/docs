@@ -51,7 +51,7 @@ Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has c
 1. Requires administrative permission to add to the Machine PATH environment variable. This reduces escalation of privilege attacks.
 1. Chocolatey by default will stop and ask you to confirm before changing state of the system, showing you the script it wants to execute.
 1. choco.exe supports a `--whatif` scenario (aka `--noop`) in 0.9.9+ so you can get a feel for what a package would do to your system.
-1. To reduce MITM (Man in the middle) attacks, package installs support [checksums](../create/functions/install-chocolateypackage), so that when downloading from a remote location, binaries are verified prior to acting on them. If the package downloads over non-secure urls/FTP, Chocolatey v0.10.0+ requires the package include checksums by default (can be overridden by the user).
+1. To reduce MITM (Man in the middle) attacks, package installs support [checksums](xref:install-chocolateypackage), so that when downloading from a remote location, binaries are verified prior to acting on them. If the package downloads over non-secure urls/FTP, Chocolatey v0.10.0+ requires the package include checksums by default (can be overridden by the user).
 1. Starting with v0.10.0, users can supply [runtime checksums](https://github.com/chocolatey/choco/issues/112) so they are not required to just trust what the package supplies (or in the case a package has missing or incorrect checksums).
 1. Starting with v0.10.1, Chocolatey will detect whether an SSL/TLS download is available and automatically switch to that for more security.
 1. Choco will not allow you to push to the community package repository without using SSL/TLS (HTTPS). This reduces DNS poisoning issues and discovery of your Community repository API key.
@@ -164,12 +164,12 @@ Chocolatey.org has a community repository of packages known as the community fee
 
 ### Rigorous Moderation Process for Community Packages
 
-In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](../community-repository/maintainers/moderation) prior to any public consumption:
+In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](xref:moderation) prior to any public consumption:
 
 - All package versions are run through an [automated validation process](https://github.com/chocolatey/package-validator/wiki) to determine quality.
 - All package versions are run through an [automated verification process](https://github.com/chocolatey/package-verifier/wiki) to determine if they work correctly (install, etc).
 - All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://chocolatey.org/packages/chocolatey#virus](https://chocolatey.org/packages/chocolatey#virus) as an example). **NOTE:** Only en-US installers are tested by default via Chocolatey's Package Scanner.
-- A human [reviews every package version](../community-repository/maintainers/moderation#reviewer-moderator-process) that is not a [trusted package](xref:faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
+- A human [reviews every package version](xref:moderation#reviewer-moderator-process) that is not a [trusted package](xref:faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
 - We don't require cryptographically signing packages yet, that is a future enhancement
 - Checksumming is a requirement for non-secure scenarios, but is not yet a requirement in some scenarios, so keep reading the next section.
 

@@ -180,7 +180,7 @@ This specifies that the source is a Windows Feature and we should
 
 ## Resources
 
- * How-To: A [complete example](../../guides/create/parse-packageparameters-argument) of how you can use the PackageParameters argument
+ * How-To: A [complete example](xref:parse-package-parameters) of how you can use the PackageParameters argument
    when creating a Chocolatey Package
  * One may want to [override the default installation directory](xref:getting-started#overriding-default-install-directory-or-other-advanced-install-concepts) of a
    piece of software.

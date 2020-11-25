@@ -119,7 +119,7 @@ While you might be able to get things to work with CCM v0.2.x and Chocolatey Age
 
 ### What is the CCM compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](../#ccm-component-compatibility-matrix) for details.
+Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
 ### Why do I see some machines have not opted in for Deployments?
 

@@ -671,7 +671,7 @@ Have a proxy? Try
 
 ### Installing behind an explicit proxy
 
-See [Installing Chocolatey Behind a Proxy Server](../guides/usage/proxy-settings-for-chocolatey#installing-chocolatey-behind-a-proxy-server)
+See [Installing Chocolatey Behind a Proxy Server](xref:proxy-settings#installing-chocolatey-behind-a-proxy-server)
 
 ### Installing to a different location
 

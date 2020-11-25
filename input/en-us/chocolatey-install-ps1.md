@@ -1,5 +1,6 @@
 ---
 Order: 71
+xref: chocolatey-install-ps1
 Title: ChocolateyInstall PowerShell Script
 Description: Information about the chocolateyinstall.ps1 file which is used to by Chocolatey to install the package contents
 RedirectFrom: docs/chocolatey-install-ps1

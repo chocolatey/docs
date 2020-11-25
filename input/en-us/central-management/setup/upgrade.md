@@ -22,9 +22,9 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 
 > :memo: **NOTE**
 >
-> Make sure you have read over the [CCM Compability Matrix](../#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
+> Make sure you have read over the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
-Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Complatibility Matrix](../#ccm-component-compatibility-matrix).
+Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Complatibility Matrix](xref:central-management#ccm-component-compatibility-matrix).
 
 > :warning: **TRIALS**: You need to ***first reach out*** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
 
@@ -180,4 +180,4 @@ There are two workarounds noted:
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
-[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](../)
+[Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)

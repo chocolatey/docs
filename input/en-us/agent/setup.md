@@ -145,7 +145,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 ## Chocolatey Central Management Agent Setup
 
-Please see [Central Management Client Setup](../central-management/setup/client) for details.
+Please see [Central Management Client Setup](xref:ccm-client) for details.
 
 > :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
@@ -178,7 +178,7 @@ The background service and Central Management UI Console will only be available 
 
 ### I have questions regarding Agent and Central Management
 
-Please see [Central Management Client Setup](../central-management/setup/client) as the FAQs related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](xref:ccm-client) as the FAQs related to Central Management (CCM) are kept there.
 
 ### I have Puppet or some other configuration management tool (RMM tool, infrastructure automation tool, etc.) that also runs Chocolatey. Can I configure it to skip background mode?
 
@@ -336,7 +336,7 @@ The installation folder for `chocolatey-agent` is at `$env:ChocolateyInstall\lib
 
 ### I have issues regarding Central Management
 
-Please see [Central Management Client Setup](../central-management/setup/client) as the common errors and resolutions related to Central Management (CCM) are kept there.
+Please see [Central Management Client Setup](xref:ccm-client) as the common errors and resolutions related to Central Management (CCM) are kept there.
 
 ### Installs from custom source locations are not allowed in background mode. Please remove custom source and try again using default (configured) package source locations.
 
