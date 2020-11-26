@@ -65,93 +65,91 @@ Before starting, make sure you install Chocolatey Server on separate servers.
 1. [Create a server and ensure you have the pre-requisites](#server-pre-requisites) before continuing.
 1. To install and configure Chocolatey Server, run the following PowerShell code (see the comments in the code for more information) in an **elevated Administrator session**:
 
-~~~powershell
-  $siteName = 'ChocolateyServer'
-  $appPoolName = 'ChocolateyServerAppPool'
-  $sitePath = 'c:\tools\chocolatey.server'
+        $siteName = 'ChocolateyServer'
+       $appPoolName = 'ChocolateyServerAppPool'
+       $sitePath = 'c:\tools\chocolatey.server'
 
-  function Add-Acl {
-      [CmdletBinding()]
-      Param (
-          [string]$Path,
-          [System.Security.AccessControl.FileSystemAccessRule]$AceObject
-      )
+       function Add-Acl {
+           [CmdletBinding()]
+           Param (
+               [string]$Path,
+               [System.Security.AccessControl.FileSystemAccessRule]$AceObject
+           )
 
-      Write-Verbose "Retrieving existing ACL from $Path"
-      $objACL = Get-ACL -Path $Path
-      $objACL.AddAccessRule($AceObject)
-      Write-Verbose "Setting ACL on $Path"
-      Set-ACL -Path $Path -AclObject $objACL
-  }
+           Write-Verbose "Retrieving existing ACL from $Path"
+           $objACL = Get-ACL -Path $Path
+           $objACL.AddAccessRule($AceObject)
+           Write-Verbose "Setting ACL on $Path"
+           Set-ACL -Path $Path -AclObject $objACL
+       }
 
-  function New-AclObject {
-      [CmdletBinding()]
-      Param (
-          [string]$SamAccountName,
-          [System.Security.AccessControl.FileSystemRights]$Permission,
-          [System.Security.AccessControl.AccessControlType]$AccessControl = 'Allow',
-          [System.Security.AccessControl.InheritanceFlags]$Inheritance = 'None',
-          [System.Security.AccessControl.PropagationFlags]$Propagation = 'None'
-      )
+       function New-AclObject {
+           [CmdletBinding()]
+           Param (
+               [string]$SamAccountName,
+               [System.Security.AccessControl.FileSystemRights]$Permission,
+               [System.Security.AccessControl.AccessControlType]$AccessControl = 'Allow',
+               [System.Security.AccessControl.InheritanceFlags]$Inheritance = 'None',
+               [System.Security.AccessControl.PropagationFlags]$Propagation = 'None'
+           )
 
-      New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule($SamAccountName, $Permission, $Inheritance, $Propagation, $AccessControl)
-  }
+           New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule($SamAccountName, $Permission, $Inheritance, $Propagation, $AccessControl)
+       }
 
-  if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
-      Write-Warning "Chocolatey not installed. Cannot install standard packages."
-      Exit 1
-  }
-  # Install Chocolatey.Server prereqs
-  choco install IIS-WebServer --source windowsfeatures
-  choco install IIS-ASPNET45 --source windowsfeatures
+       if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
+           Write-Warning "Chocolatey not installed. Cannot install standard packages."
+           Exit 1
+       }
 
-  # Install Chocolatey.Server
-  choco upgrade chocolatey.server -y
+       # Install Chocolatey.Server prereqs
+       choco install IIS-WebServer --source windowsfeatures
+       choco install IIS-ASPNET45 --source windowsfeatures
 
-  # Step by step instructions here https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally
-  # Import the right modules
-  Import-Module WebAdministration
-  # Disable or remove the Default website
-  Get-Website -Name 'Default Web Site' | Stop-Website
-  Set-ItemProperty "IIS:\Sites\Default Web Site" serverAutoStart False    # disables website
+       # Install Chocolatey.Server
+       choco upgrade chocolatey.server -y
 
-  # Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is v4.0 (or some version of 4). Ensure it is "Integrated" and not "Classic".
-  New-WebAppPool -Name $appPoolName -Force
-  Set-ItemProperty IIS:\AppPools\$appPoolName enable32BitAppOnWin64 True       # Ensure 32-bit is enabled
-  Set-ItemProperty IIS:\AppPools\$appPoolName managedRuntimeVersion v4.0       # managed runtime version is v4.0
-  Set-ItemProperty IIS:\AppPools\$appPoolName managedPipelineMode Integrated   # Ensure it is "Integrated" and not "Classic"
-  Restart-WebAppPool -Name $appPoolName   # likely not needed ... but just in case
+       # Step by step instructions here https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally
+       # Import the right modules
+       Import-Module WebAdministration
+       # Disable or remove the Default website
+       Get-Website -Name 'Default Web Site' | Stop-Website
+       Set-ItemProperty "IIS:\Sites\Default Web Site" serverAutoStart False    # disables website
 
-  # Set up an IIS website pointed to the install location and set it to use the app pool.
-  New-Website -Name $siteName -ApplicationPool $appPoolName -PhysicalPath $sitePath
+       # Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is v4.0 (or some version of 4). Ensure it is "Integrated" and not "Classic".
+       New-WebAppPool -Name $appPoolName -Force
+       Set-ItemProperty IIS:\AppPools\$appPoolName enable32BitAppOnWin64 True       # Ensure 32-bit is enabled
+       Set-ItemProperty IIS:\AppPools\$appPoolName managedRuntimeVersion v4.0       # managed runtime version is v4.0
+       Set-ItemProperty IIS:\AppPools\$appPoolName managedPipelineMode Integrated   # Ensure it is "Integrated" and not "Classic"
+       Restart-WebAppPool -Name $appPoolName   # likely not needed ... but just in case
 
-  # Add permissions to c:\tools\chocolatey.server:
-  'IIS_IUSRS', 'IUSR', "IIS APPPOOL\$appPoolName" | ForEach-Object {
-      $obj = New-AclObject -SamAccountName $_ -Permission 'ReadAndExecute' -Inheritance 'ContainerInherit','ObjectInherit'
-      Add-Acl -Path $sitePath -AceObject $obj
-  }
+       # Set up an IIS website pointed to the install location and set it to use the app pool.
+       New-Website -Name $siteName -ApplicationPool $appPoolName -PhysicalPath $sitePath
 
-  # Add the permissions to the App_Data subfolder:
-  $appdataPath = Join-Path -Path $sitePath -ChildPath 'App_Data'
-  'IIS_IUSRS', "IIS APPPOOL\$appPoolName" | ForEach-Object {
-      $obj = New-AclObject -SamAccountName $_ -Permission 'Modify' -Inheritance 'ContainerInherit', 'ObjectInherit'
-      Add-Acl -Path $appdataPath -AceObject $obj
-  }
-~~~
+       # Add permissions to c:\tools\chocolatey.server:
+       'IIS_IUSRS', 'IUSR', "IIS APPPOOL\$appPoolName" | ForEach-Object {
+           $obj = New-AclObject -SamAccountName $_ -Permission 'ReadAndExecute' -Inheritance 'ContainerInherit','ObjectInherit'
+           Add-Acl -Path $sitePath -AceObject $obj
+       }
 
-`4.` We shouldn't need to reboot the server but let's do it so we know everything is ready to go;
-`5.` From the server, open the browser and visit `https://localhost` - you will see some instructions but you need to note the password near the bottom. As this is a test environment we don't need to change this however **for a production environment follow the instructions to change the password**;
-`6.` Finally test the Chocolatey Server is working. From the server use the command `choco list --source http://localhost/chocolatey`;
+       # Add the permissions to the App_Data subfolder:
+       $appdataPath = Join-Path -Path $sitePath -ChildPath 'App_Data'
+       'IIS_IUSRS', "IIS APPPOOL\$appPoolName" | ForEach-Object {
+           $obj = New-AclObject -SamAccountName $_ -Permission 'Modify' -Inheritance 'ContainerInherit', 'ObjectInherit'
+           Add-Acl -Path $appdataPath -AceObject $obj
+       }
+
+1. We shouldn't need to reboot the server but let's do it so we know everything is ready to go;
+1. From the server, open the browser and visit `https://localhost` - you will see some instructions but you need to note the password near the bottom. As this is a test environment we don't need to change this however **for a production environment follow the instructions to change the password**;
+1. Finally test the Chocolatey Server is working. From the server use the command `choco list --source http://localhost/chocolatey`;
 
 Once this is done for both servers, you will have two repositories:
 
 1. Test Repository:
-  * Name: `testrepo-srv`
-  * push URL: `https://testrepo-srv/chocolatey`
-
-`2.` Production Repository:
-  * Name: `prodrepo-srv`
-  * Push URL: `https://prodrepo-srv/chocolatey`
+   * Name: `testrepo-srv`
+   * push URL: `https://testrepo-srv/chocolatey`
+1. Production Repository:
+   * Name: `prodrepo-srv`
+   * Push URL: `https://prodrepo-srv/chocolatey`
 
 ### Install and Configure Jenkins Server
 
@@ -162,22 +160,22 @@ To install and configure Jenkins:
 1. [Create a server and ensure you have the pre-requisites](#server-pre-requisites) before continuing.
 1. Install Jenkins using Chocolatey: `choco install jenkins -y`
 1. Once Jenkins is installed it will open a web browser and take you to the configuration web page (if it does not open for any reason, open the web browser and browse to `http://localhost:8080`
-  * The first page will refresh once Jenkins is installed. If it does not click `ENABLE AUTO REFRESH` in the top left hand corner;
-  * Unlock Jenkins by following the instructions on the page (you need to open the file it specifies, with Notepad), finding the password and pasting it into the box and click **Continue**;
-  * For this guide, click **Install Suggested Plugins** and wait for them to install;
-  * On the _Create First Admin_ page, click **Continue as admin**;
-  * On the _Instance Configuration_ page, click **Save and Finish**;
-  * On the _Jenkins is ready!_ page, click **Start using Jenkins**;
+   * The first page will refresh once Jenkins is installed. If it does not click `ENABLE AUTO REFRESH` in the top left hand corner;
+   * Unlock Jenkins by following the instructions on the page (you need to open the file it specifies, with Notepad), finding the password and pasting it into the box and click **Continue**;
+   * For this guide, click **Install Suggested Plugins** and wait for them to install;
+   * On the _Create First Admin_ page, click **Continue as admin**;
+   * On the _Instance Configuration_ page, click **Save and Finish**;
+   * On the _Jenkins is ready!_ page, click **Start using Jenkins**;
 1. As the code we will be running in the Jenkins jobs is PowerShell, we need to add the PowerShell plugin.
-  * On the home page, click **Manage Jenkins**
-  * Click **Manage Plugins**;
+   * On the home page, click **Manage Jenkins**
+   * Click **Manage Plugins**;
 
-  ![Jenkins PowerShell Plugin](/assets/images/internalizer/jenkins-ps-plugin.png)
+   ![Jenkins PowerShell Plugin](/assets/images/internalizer/jenkins-ps-plugin.png)
 
-  * Click the **Available** tab;
-  * In the _Filter_ box type `PowerShell`;
-  * Tick the _PowerShell_ plugin and click **Install without Restart**;
-  * Click **Go back to the top page**;
+   * Click the **Available** tab;
+   * In the _Filter_ box type `PowerShell`;
+   * Tick the _PowerShell_ plugin and click **Install without Restart**;
+   * Click **Go back to the top page**;
 1. Copy your Chocolatey Business license to `ProgramData\chocolatey\license` in the root of the system drive;
 1. Run the command `choco install chocolatey.extension -y`;
 
@@ -521,46 +519,38 @@ Before submitting a new package lets make sure we have no packages in our test o
 
 1. To check the test repository, enter this at the command line `choco list --source http://testrepo-srv/chocolatey`. You should get this returned (note that the actual version of Chocolatey you see may be different):
 
-``` powershell
-  PS> choco list --source http://testrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  0 packages found.
-```
+        PS> choco list --source http://testrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       0 packages found.
 
-`2.` To check the production repository, enter this at the command line `choco list --source http://prodrepo-srv/chocolatey`. You should get this returned (note that the actual version of Chocolatey you see may be different):
+1. To check the production repository, enter this at the command line `choco list --source http://prodrepo-srv/chocolatey`. You should get this returned (note that the actual version of Chocolatey you see may be different):
 
-```powershell
-  PS> choco list --source http://prodrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  0 packages found.
-```
+        PS> choco list --source http://prodrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       0 packages found.
 
-Follow these steps to add a new package:
+   Follow these steps to add a new package:
 
 1. On the Jenkins homepage, click the little drop down arrow to the right of the **Internalize packages from the Community Repository** job and click **Build with Parameters**;
 1. In the parameters page enter `adobereader` in the **P_PKG_LIST** and click the **Build** button;
 
-You can check the progress of the job by click on the **Last build (#..** link under _Permalinks_ on that page and see the output by clicking on **Console Output** on the right hand side of that page;
+   You can check the progress of the job by click on the **Last build (#..** link under _Permalinks_ on that page and see the output by clicking on **Console Output** on the right hand side of that page;
 
-This Jenkins job will run and then, if it is successful will trigger the job named **Update production repository** which will update the production repository with any new or updated packages in the test repository, in this case the `adobereader` package we just added. To see this:
+   This Jenkins job will run and then, if it is successful will trigger the job named **Update production repository** which will update the production repository with any new or updated packages in the test repository, in this case the `adobereader` package we just added. To see this:
 
 1. To check the test repository, enter this at the command line `choco list --source http://testrepo-srv/chocolatey`. You should get this returned (note that the actual version of `adobereader` and Chocolatey you see may be different):
 
-```powershell
-  PS> choco list --source http://testrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  adobereader 2015.007.20033.02
-  1 packages found.
-```
+        PS> choco list --source http://testrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       adobereader 2015.007.20033.02
+       1 packages found.
 
-`2.` To check the production repository, enter this at the command line `choco list --source http://prodrepo-srv/chocolatey`. You should get this returned (note that the actual version of `adobereader` and Chocolatey you see may be different):
+1. To check the production repository, enter this at the command line `choco list --source http://prodrepo-srv/chocolatey`. You should get this returned (note that the actual version of `adobereader` and Chocolatey you see may be different):
 
-```powershell
-  PS> choco list --source http://prodrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  adobereader 2015.007.20033.02
-  1 packages found.
-```
+        PS> choco list --source http://prodrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       adobereader 2015.007.20033.02
+       1 packages found.
 
 ### Updating a package from the Chocolatey Community Repository
 
@@ -571,33 +561,27 @@ As packages get out of date in your test repository you need to update them from
 1. Go back to Jenkins and run the job **Update production repository** with default parameters. This will test the `putty.install` package and push it to the production repository.
 1. Go to the command line and run `choco list --source http://prodrepo-srv/chocolatey` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list):
 
-```powershell
-  PS> choco list --source http://prodrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  adobereader 2015.007.20033.02
-  putty.install 0.70
-  2 packages found.
-```
+        PS> choco list --source http://prodrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       adobereader 2015.007.20033.02
+       putty.install 0.70
+       2 packages found.
 
-`5.` Go back to Jenkins and run the job **Update test repository from Chocolatey Community Repository** with default parameters. This will check the test repository against the Chocolatey Community Repository and update the `putty.install` package;
-`6.` Go to the command line and run `choco list --source http://testrepo-srv/chocolatey --all-versions` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list and the latest version of `putty.install` may be different):
+1. Go back to Jenkins and run the job **Update test repository from Chocolatey Community Repository** with default parameters. This will check the test repository against the Chocolatey Community Repository and update the `putty.install` package;
+1. Go to the command line and run `choco list --source http://testrepo-srv/chocolatey --all-versions` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list and the latest version of `putty.install` may be different):
 
-```powershell
-  PS> choco list --source http://testrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  adobereader 2015.007.20033.02
-  putty.install 0.70.0.20171219
-  putty.install 0.70
-  3 packages found.
-```
+        PS> choco list --source http://testrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       adobereader 2015.007.20033.02
+       putty.install 0.70.0.20171219
+       putty.install 0.70
+       3 packages found.
 
-`7.` As the Jenkins job **Update test repository from Chocolatey Community Repository** we ran earlier triggers the job **Update production repository**, the `putty.install` package will be automatically tested and pushed to the production repository. To check this, run the following on the command line `choco list --source http://prodrepo-srv/chocolatey --all-versions` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list and the latest version of `putty.install` may be different)
+1. As the Jenkins job **Update test repository from Chocolatey Community Repository** we ran earlier triggers the job **Update production repository**, the `putty.install` package will be automatically tested and pushed to the production repository. To check this, run the following on the command line `choco list --source http://prodrepo-srv/chocolatey --all-versions` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list and the latest version of `putty.install` may be different)
 
-```powershell
-  PS> choco list --source http://prodrepo-srv/chocolatey
-  Chocolatey v0.10.11 Business
-  adobereader 2015.007.20033.02
-  putty.install 0.70.0.20171219
-  putty.install 0.70
-  3 packages found.
-```
+        PS> choco list --source http://prodrepo-srv/chocolatey
+       Chocolatey v0.10.11 Business
+       adobereader 2015.007.20033.02
+       putty.install 0.70.0.20171219
+       putty.install 0.70
+       3 packages found.

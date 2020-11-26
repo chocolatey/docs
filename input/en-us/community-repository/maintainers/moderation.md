@@ -139,36 +139,54 @@ Moderators give you the benefit of the doubt and will work with you to help you 
 
 Typically a package goes into the moderation queue when submitted.You can get to that by signing in and going to the packages page like you normally would.
 
- 1. You should see a new drop down near the top that allows you to change your view. This is the moderation queue.
- ![Moderation Queue Dropdown](/assets/images/moderation-1.jpg)
- 2. You will see items arranged in order based on reviewed and resubmitted at the top, items ready for review in order based on when they were submitted, and at the end of the queue, you will see items that are waiting for maintainer response.
- ![Moderation Queue](/assets/images/moderation/moderation-queue.png)
- 3. You grab a package and head in and review it based on the following items in the requirements and guidelines.
- 4. Ensure package tests have ran. It will have both comments in the review and a colored ball up next to the title of the package. A package status box is present at the top of each package page with test results. The left side of the ball next to the package title represents verification testing, while the right side represents validation testing (see image below). Color of ball sections indicate:
+1. You should see a new drop down near the top that allows you to change your view. This is the moderation queue.
+
+   ![Moderation Queue Dropdown](/assets/images/moderation-1.jpg)
+
+1. You will see items arranged in order based on reviewed and resubmitted at the top, items ready for review in order based on when they were submitted, and at the end of the queue, you will see items that are waiting for maintainer response.
+
+   ![Moderation Queue](/assets/images/moderation/moderation-queue.png)
+
+1. You grab a package and head in and review it based on the following items in the requirements and guidelines.
+1. Ensure package tests have ran. It will have both comments in the review and a colored ball up next to the title of the package. A package status box is present at the top of each package page with test results. The left side of the ball next to the package title represents verification testing, while the right side represents validation testing (see image below). Color of ball sections indicate:
     - **Green** if it is ready for review and approval.
     - **Yellow** if still pending verification/validation (has not yet run).
     - **Red** if it failed verification/validation. The maintainer needs to fix or respond. If you find a package needs to skip verification, please contact an admin to do so. If you see a network issue from the log, you can rerun verification (see how in the next step).
     - **Grey** if a package skips verification/validation for some reason (which will be listed by the admin that flagged the package to skip testing). If possible, you will need to run the install/uninstall yourself.
- ![Package Testing Results](/assets/images/moderation-4.jpg)
- 5. Check over the verifier logs to be sure everything looks good (follow the link from the button). If necessary, you can rerun the verifier.
- ![Rerun](/assets/images/moderation-5.jpg)
- 6. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](#requirements-and-guidelines) (see [Requirements and Guidelines](#requirements-and-guidelines) above).
- ![Review Notes](/assets/images/moderation-6.jpg)
- 7. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
- 8. Check over the package based on [moderator review](#moderator-review) (below).
- 9. Review the previous comments if there are any.
- ![Review previous comments for other package versions](/assets/images/moderation/moderation-previous-comments.png)
- 10. Look through the package files
- ![Package Files](/assets/images/moderation-10.jpg)
- 11. Leave comments in the review box ("Add to Review Comments" section) if you have any. Note that you can use markdown here.
- ![Review box](/assets/images/moderation-11.jpg)
- 12. If you are approving the package, change Package Status to Approved. If you are Rejecting a package, change the status to Rejected. Otherwise leave the status as is (likely in Submitted).
- 13. If you are making a comment or doing another action, but don't want to flag/hold the package for the maintainer to take action, uncheck the "require maintainer to make changes?" box. This is not required to be unchecked if you are approving the package.
- ![Require maintainers to make changes?](/assets/images/moderation-13.jpg)
- 14. If you are doing an action that doesn't need to notify the maintainer, uncheck "Send Maintainer email?".
- 15. Click Save. You should get a message that the message was sent successfully.
- 16. The maintainers receive an email noting the comments. They will follow up on the package page with their comments.
- 17. Once the package is updated, it will show up in the top of the queue. At that time, please review it and make sure the maintainers made all changes requested.
+
+   ![Package Testing Results](/assets/images/moderation-4.jpg)
+
+1. Check over the verifier logs to be sure everything looks good (follow the link from the button). If necessary, you can rerun the verifier.
+
+   ![Rerun](/assets/images/moderation-5.jpg)
+
+1. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](#requirements-and-guidelines) (see [Requirements and Guidelines](#requirements-and-guidelines) above).
+
+   ![Review Notes](/assets/images/moderation-6.jpg)
+
+1. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
+1. Check over the package based on [moderator review](#moderator-review) (below).
+1. Review the previous comments if there are any.
+
+   ![Review previous comments for other package versions](/assets/images/moderation/moderation-previous-comments.png)
+
+1. Look through the package files
+
+   ![Package Files](/assets/images/moderation-10.jpg)
+
+1. Leave comments in the review box ("Add to Review Comments" section) if you have any. Note that you can use markdown here.
+
+   ![Review box](/assets/images/moderation-11.jpg)
+
+1. If you are approving the package, change Package Status to Approved. If you are Rejecting a package, change the status to Rejected. Otherwise leave the status as is (likely in Submitted).
+1. If you are making a comment or doing another action, but don't want to flag/hold the package for the maintainer to take action, uncheck the "require maintainer to make changes?" box. This is not required to be unchecked if you are approving the package.
+
+   ![Require maintainers to make changes?](/assets/images/moderation-13.jpg)
+
+1. If you are doing an action that doesn't need to notify the maintainer, uncheck "Send Maintainer email?".
+1. Click Save. You should get a message that the message was sent successfully.
+1. The maintainers receive an email noting the comments. They will follow up on the package page with their comments.
+1. Once the package is updated, it will show up in the top of the queue. At that time, please review it and make sure the maintainers made all changes requested.
 
 #### Moderator Review
 

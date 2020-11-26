@@ -73,7 +73,8 @@ This tool makes use of [Ketarin](https://chocolatey.org/packages/ketarin). Ketar
 1. Now Click Import...
 1. Choose [setup/KetarinSettings.xml](https://github.com/chocolatey/chocolatey-packages-template/blob/master/setup/KetarinSettings.xml) from the repo folder. This is going to add everything in that you will need for settings.
 1. Click on Global Variables. Ensure all of the variables are set appropriately.
-![Ketarin Global Variables](/assets/images/chocopkgup/KetarinGlobalVariables.png)
+
+  ![Ketarin Global Variables](/assets/images/chocopkgup/KetarinGlobalVariables.png)
 
 This gets Ketarin all set up with a global command for all packages we create.
 
@@ -101,13 +102,19 @@ When you are creating packages, you should ensure you are on the latest version 
 1. Answer the questions. This will create a new job for Ketarin to check.
 1. One important thing to keep in mind is that **the name of the job needs to match the name of the package folder and nuspec *exactly*.**
 1. Right click on that new job and select `Edit`. Take a look at the following:
-![Ketarin Job Main](/assets/images/chocopkgup/KetarinMain.png "Ketarin Job Main")
+
+  ![Ketarin Job Main](/assets/images/chocopkgup/KetarinMain.png "Ketarin Job Main")
+
 1. Click on `Variables` on the right of URL
-![Ketarin Job Variables](/assets/images/chocopkgup/KetarinSetVariables.png "Ketarin Job Variables")
+
+  ![Ketarin Job Variables](/assets/images/chocopkgup/KetarinSetVariables.png "Ketarin Job Variables")
+
 1. On the left side you should see a variable for **version** and one for **url64**. Click on **version**.
 1. Choose the appropriate method for you. Here I’ve chosen **Content from URL (start/end)**.
 1. Enter the URL for versioning information.
-![Ketarin Job Variables](/assets/images/chocopkgup/KetarinVariables.png "Ketarin Job Variables")
+
+  ![Ketarin Job Variables](/assets/images/chocopkgup/KetarinVariables.png "Ketarin Job Variables")
+
 1. In the contents itself, highlight enough good information before a version to be able to select it uniquely during updates (but not so much it doesn’t work every time as the page changes). Click on **Use selection as start**.
 1. Now observe that it didn’t jump back too far.
 1. Do the same with the ending part, keeping in mind that this side doesn’t need to be too much because it is found AFTER the start. Once selected click on **Use selection as end**.
@@ -125,7 +132,9 @@ When you have the three packages, you should set up only two jobs, one for *.ins
 In whichever job the meta package points to, you should add a command to that like you did for the settings for all jobs in ketarin.
 
 1. Click on the **Commands Tab** and set **Edit command for event** to “Before updating an application”.
-![Ketarin Settings](/assets/images/chocopkgup/KetarinJobSettings.png "Ketarin Settings")
+
+  ![Ketarin Settings](/assets/images/chocopkgup/KetarinJobSettings.png "Ketarin Settings")
+
 1. Add the following text (replace `name` with the actual name of the meta package folder):
 
     ~~~cmd
@@ -134,7 +143,8 @@ In whichever job the meta package points to, you should add a command to that li
     ~~~
 
 1. Check the bottom of this section to be sure it set to **Command**.
-![Ketarin Settings Command](/assets/images/chocopkgup/KetarinCustomCommand.png "Ketarin Settings Command")
+
+  ![Ketarin Settings Command](/assets/images/chocopkgup/KetarinCustomCommand.png "Ketarin Settings Command")
 
 ### Testing Ketarin/ChocoPkgUp:
 
@@ -158,10 +168,11 @@ In whichever job the meta package points to, you should add a command to that li
 
 Try this first:
 * In advanced settings, ensure the user agent is `chocolatey command line`. This will allow ketarin to behave similarly to how Chocolatey does.
-![Ketarin Job Advanced Settings](/assets/images/automatic-packages/ketarin-jobs-advanced-settings.png)
 
-It isn’t uncommon that certain SorceForge mirrors go offline or are extremely slow because of overload. Thus it is not recommended to use direct mirror links (e.&nbsp;g. `http://heanet.dl.sourceforge.net/project/…`) in your `chocolateyInstall.ps1` file, because this will frequently break your package and makes it unreliable.
-To avoid this, use the following convention for files hosted on SourceForge:
+  ![Ketarin Job Advanced Settings](/assets/images/automatic-packages/ketarin-jobs-advanced-settings.png)
+
+  It isn’t uncommon that certain SorceForge mirrors go offline or are extremely slow because of overload. Thus it is not recommended to use direct mirror links (e.&nbsp;g. `http://heanet.dl.sourceforge.net/project/…`) in your `chocolateyInstall.ps1` file, because this will frequently break your package and makes it unreliable.
+  To avoid this, use the following convention for files hosted on SourceForge:
 * Don’t use `{{DownloadUrl}}` and `{{DownloadUrlx64}}` in your `chocolateyInstall.ps1` file, but use this instead (example of the app nomacs):
 `$url = 'http://sourceforge.net/projects/nomacs/files/nomacs-{{PackageVersion}}/nomacs-setup-{{PackageVersion}}-x86.exe/download'`
 and

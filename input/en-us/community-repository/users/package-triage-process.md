@@ -78,19 +78,26 @@ Be sure of four things:
 1. The newer version that is cross platform is available for Windows. Sometimes the release of the Windows version may lag behind availability on other platforms.
 1. It has been at least a day since the new release. Sometimes the package automatically updates - check to see if the package is an automatically updating package in the description of the package. Typically if it has been more than 48 hours since the updated version is available, it's a good time to let the maintainers know they should update the package.
 1. The package doesn't already have a newer version in moderation. The maintainer(s) may already be actively working towards getting a newer version up on the community feed.
-![versions awaiting moderation](/assets/images/triage-waiting.jpg)
+
+  ![versions awaiting moderation](/assets/images/triage-waiting.jpg)
 
 ## The Triage Process
 So a package needs fixed or updated. You have reached out to the maintainer or Disqus already and are curious what the next steps are. We will elaborate on all of the steps here, including contacting the maintainers.
 
 1. The first step is to contact the maintainers.
 1. If you are able to provide a fix, that's even better. Look for the maintainer's package source. Please look for package source url information on the package page.
-![Package source link](/assets/images/triage-packagesource.jpg)
+
+  ![Package source link](/assets/images/triage-packagesource.jpg)
+
 1. If you are still looking for a way to provide a fix, but don't find a package source link on the package itself, you can try to find it in one of the maintainer's profiles (this is an older method of finding your way to a maintainer's packages source).
-![maintainers are links](/assets/images/triage-maintainerlinks.jpg)
-![maintainer profile with github repository link](/assets/images/triage-maintainerrepository.jpg)
+
+  ![maintainers are links](/assets/images/triage-maintainerlinks.jpg)
+  ![maintainer profile with github repository link](/assets/images/triage-maintainerrepository.jpg)
+
 1. If the maintainer(s) do[es] not respond within a few days, it's possible they haven't received your message or don't watch the repository. It's also possible they are on holiday. Use the contact site admins link to contact the site curators, who will attempt to triage the situation.
-![Contact admins link](/assets/images/triage-siteadmins.jpg)
+
+  ![Contact admins link](/assets/images/triage-siteadmins.jpg)
+
 1. If you don't hear anything back from the curators within 2 days (usually same day response), then you send a message to the Chocolatey google group (https://groups.google.com/group/chocolatey) and we work to contact the maintainers.
 1. If the maintainer(s) are unresponsive after a period of time (determined by the admins), the package is considered abandoned. The curators will TOS the package and new folks can be added as maintainers. The moderators will ask if you would like to become a maintainer of the package. If you choose to become a new maintainer, see the next section.  If you choose not to become a maintainer, please create a RFM (request for maintainership) issue at [Chocolatey Package Requests (https://github.com/chocolatey/chocolatey-package-requests)](https://github.com/chocolatey/chocolatey-package-requests).
 

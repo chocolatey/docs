@@ -56,6 +56,7 @@ Another way to bring up the ui is to call `packagebuilder` from the command line
 ### Package Builder CLI and Scripts
 
 We've prepared a short video going over the concepts:
+
 [![Chocolatey's Package Builder - Package Builder CLI and Scripting](/assets/images/package-builder/package-builder-cli-video.png)](https://www.youtube.com/watch?v=6TXY5Ie-3wg&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=1 "Chocolatey's Package Builder - Package Builder CLI and Scripting")
 
 Quickly script out creating packages for your entire organization's cache of software, allowing you to completely automate your Windows installations in moments, not months. You can do that with a simple script:
