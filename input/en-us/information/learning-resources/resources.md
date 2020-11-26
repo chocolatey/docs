@@ -74,7 +74,7 @@ See [Infrastructure automation](xref:integrations)
 #### January
 
 * https://www.gep13.co.uk/blog/what-are-all-the-chocolatey-repositories-for
-* https://www.tech2tech.fr/chocolatey-votre-gestionnaire-de-paquets-sous-windows/ - **NOTE:** In French
+* https://www.tech2tech.fr/chocolatey-votre-gestionnaire-de-paquets-sous-windows/ - **NOTE** In French
 
 ### 2018
 

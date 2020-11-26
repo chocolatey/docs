@@ -48,7 +48,7 @@ You can pass options and switches in the following ways:
  * **Option Bundling / Bundled Options**: One character switches can be
    bundled. e.g. `-d` (debug), `-f` (force), `-v` (verbose), and `-y`
    (confirm yes) can be bundled as `-dfvy`.
- * **NOTE:** If `debug` or `verbose` are bundled with local options
+     > :memo: **NOTE** If `debug` or `verbose` are bundled with local options
    (not the global ones above), some logging may not show up until after
    the local options are parsed.
  * **Use Equals**: You can also include or not include an equals sign
@@ -137,9 +137,8 @@ based on choco not receiving things you think you are passing to it.
    not source name ('https://chocolatey.org/api/v2' versus
    'chocolatey').
  * If parsing output, you might want to use `--limit-output`/`-r` to
-   get output in a more machine parseable format. **NOTE:** Not all
-   commands handle return of information in an easily digestible
-   output.
+   get output in a more machine parseable format.
+     > :memo: **NOTE** Not all    commands handle return of information in an easily digestible output.
  * Use exit codes to determine status. Chocolatey exits with 0 when
    everything worked appropriately and other exits codes like 1 when
    things error. There are package specific exit codes that are
@@ -191,11 +190,11 @@ Following these scripting best practices will ensure your scripts work
 
 ## Default Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 ~~~
 
@@ -299,4 +298,4 @@ Following these scripting best practices will ensure your scripts work
 
 
 
-***NOTE:*** This documentation has been automatically generated from `choco -h`.
+> :memo: **NOTE** This documentation has been automatically generated from `choco -h`.

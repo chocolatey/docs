@@ -10,7 +10,7 @@ ShowInSidebar: false
 
 Heading down a sweet road.
 
-**NOTE:** This is not always going to be updated, one can take a look at the issues list here and in the chocolatey.org repositories.
+> :memo: **NOTE** This is not always going to be updated, one can take a look at the issues list here and in the chocolatey.org repositories.
 
 ## Chocolatey
 

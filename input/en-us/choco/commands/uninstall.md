@@ -13,10 +13,10 @@ RedirectFrom: docs/commands-uninstall
 Uninstalls a package or a list of packages. Some may prefer to use
  `cuninst` as a shortcut for [`choco uninstall`](xref:choco-command-uninstall).
 
-**NOTE:** 100% compatible with older chocolatey client (0.9.8.32 and below)
- with options and switches. Add `-y` for previous behavior with no
- prompt. In most cases you can still pass options and switches with one
- dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+> :memo: **NOTE** 100% compatible with older chocolatey client (0.9.8.32 and below)
+> with options and switches. Add `-y` for previous behavior with no
+> prompt. In most cases you can still pass options and switches with one
+> dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Details
 
@@ -41,33 +41,33 @@ With auto uninstaller turned off, a chocolateyUninstall.ps1 is required
  Chocolatey but does not remove the software from your system (unless
  in the package directory).
 
-**NOTE:** A package with a failing uninstall can be removed with the
-`-n --skipautouninstaller` flags. This will remove the package from
-chocolatey without attempting to uninstall the program.
+> :memo: **NOTE** A package with a failing uninstall can be removed with the
+>`-n --skipautouninstaller` flags. This will remove the package from
+>chocolatey without attempting to uninstall the program.
 
-**NOTE:** Starting in 0.9.10+, the Automatic Uninstaller (AutoUninstaller)
- is turned on by default. To turn it off, run the following command:
+> :memo: **NOTE** Starting in 0.9.10+, the Automatic Uninstaller (AutoUninstaller)
+> is turned on by default. To turn it off, run the following command:
 
     choco feature disable -n autoUninstaller
 
-**NOTE:** [Chocolatey Pro](https://chocolatey.org/compare) / Business automatically synchronizes with
- Programs and Features, ensuring manually removed apps are
- automatically removed from Chocolatey's repository.
+> :memo: **NOTE** [Chocolatey Pro](https://chocolatey.org/compare) / Business automatically synchronizes with
+> Programs and Features, ensuring manually removed apps are
+> automatically removed from Chocolatey's repository.
 
-**NOTE:** Synchronizer and AutoUninstaller enhancements in licensed
- versions of Chocolatey ensure that Autouninstaller is up to 95%
- effective at removing software without an uninstall script. This is
- because synchronizer ensures the registry snapshot stays up to date
- and licensed enhancements have the ability to inspect more locations
- to determine how to automatically uninstall software.
+> :memo: **NOTE** Synchronizer and AutoUninstaller enhancements in licensed
+> versions of Chocolatey ensure that Autouninstaller is up to 95%
+> effective at removing software without an uninstall script. This is
+> because synchronizer ensures the registry snapshot stays up to date
+> and licensed enhancements have the ability to inspect more locations
+> to determine how to automatically uninstall software.
 
 ## Usage
 
     choco uninstall <pkg|all> [pkg2 pkgN] [options/switches]
     cuninst <pkg|all> [pkg2 pkgN] [options/switches]
 
-**NOTE:** `all` is a special package keyword that will allow you to
- uninstall all packages.
+> :memo: **NOTE** `all` is a special package keyword that will allow you to
+> uninstall all packages.
 
 ## See It In Action
 
@@ -81,8 +81,8 @@ chocolatey without attempting to uninstall the program.
     choco uninstall ruby --version 1.8.7.37402
     choco uninstall nodejs.install --all-versions
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
- write proper scripts and integrations.
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> write proper scripts and integrations.
 
 ## Exit Codes
 
@@ -114,11 +114,11 @@ In addition to the above exit codes, you may also see reboot exit codes
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -329,5 +329,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco uninstall -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco uninstall -h`.

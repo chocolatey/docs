@@ -17,7 +17,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > :warning: **WARNING**
 >
-> Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
+> Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 
 > :memo: **NOTE**
 >
@@ -25,9 +25,9 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > :warning: **WARNING**
 >
-> All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
+> All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-> :memo: **NOTE**: Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgrade).
+> :memo: **NOTE** Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgrade).
 
 ## High Level Requirements
 
@@ -94,19 +94,19 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 Please see [Central Management Database Setup](xref:ccm-database).
 
-> :memo: **NOTE**: While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
+> :memo: **NOTE** While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 ## Step 3: Setup Central Management Windows Service(s)
 
 Please see [Central Management Service Setup](xref:ccm-service).
 
-> :memo: **NOTE**: If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
+> :memo: **NOTE** If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
 ## Step 4: Setup Central Management Website
 
 Please see [Central Management Web Setup](xref:ccm-website).
 
-> :memo: **NOTE**: If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
+> :memo: **NOTE** If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
 
 ## Step 5: Setting up Agent Machines
 

@@ -10,7 +10,7 @@ RedirectFrom: docs/helpers-install-chocolatey-path
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPath.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-**NOTE:** Administrative Access Required when `-PathType 'Machine'.`
+> :memo: **NOTE** Administrative Access Required when `-PathType 'Machine'.`
 
 This puts a directory to the PATH environment variable.
 
@@ -118,6 +118,6 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPath -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPath -Full`.
 
 View the source for [Install-ChocolateyPath](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPath.ps1)

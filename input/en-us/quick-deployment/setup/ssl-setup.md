@@ -21,7 +21,7 @@ You will only need to run this script yourself in the following cases:
 * If you change the hostname of the QDE server, or add it to a domain after having already completed setup.
 * If you would like to change/replace the initial SSL/TLS certificates that were provided or generated during setup, for example to replace an expiring certificate.
 
-> :warning: **Warning**
+> :warning: **WARNING**
 >
 > * This script will seemingly prompt for input, and have other strange output.
 >   This is due to poor Java tooling and console output which cannot be suppressed.
@@ -41,7 +41,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-Ssl
 | `-Thumbprint` | The thumbprint of the certificate to retrieve from the local machine store. Ignored if -Subject is also provided.                                      |
 | `-Hostname`   | The hostname of the QDE instance. Only required if you want to generate self-signed certificates.                                                      |
 
-> :warning: **Warning**
+> :warning: **WARNING**
 >
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates.
 > You will need make sure you have this correct, otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid.

@@ -8,7 +8,7 @@ RedirectFrom: docs/release-notes
 
 # Chocolatey Release Notes - Open Source
 
-**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-release-notes).
+> :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-release-notes).
 
 * [Chocolatey and Chocolatey.Lib Release Notes](xref:choco-release-notes)
 * [Chocolatey GUI Release Notes](xref:chocolateygui-release-notes)

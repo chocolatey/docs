@@ -22,9 +22,9 @@ By safety - we check that the package scripts do not do anything devious and tha
 
 While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](https://github.com/chocolatey/package-validator/wiki) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
 
-**NOTE**: Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
+> :memo: **NOTE** Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
 
-**Note**: This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
+> :memo: **NOTE** This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
 
 ### Existing Packages
 
@@ -32,7 +32,7 @@ This section provides the requirements for packages that have had at least one r
 
 #### Requirements
 
-Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it ***must*** be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
+Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it **must** be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
 
 * ProjectUrl - it's required for the community feed
 * The authors field (software author/vendor) is not being used for the maintainers field (exception: when the maintainer is also the author)
@@ -58,7 +58,7 @@ Requirements represent the minimum quality of a package that is acceptable. When
     * If the package is a portable package (downloads a zip file or non-install archive, many times carries the .portable name), does it try to put that in Program Files? This is a no no because Program Files requires admin permissions to write to and is typically the place for natively installed software.
 * Does the package install correctly?
 * Does the package uninstall correctly? (this means the package, not the underlying software. We'd like to have that as well but it's more a guideline at the moment than a requirement. Patience, we will get there).
-* Brand New Packages ***ONLY*** (no approved or existing version in history, prereleases do not count)
+* Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
   * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See https://github.com/chocolatey/choco/wiki/CreatePackages#naming-your-package
     * suggest the id split if over 25 chars with no "-" in the id
     * flag on "." in name (unless .portable/.install)
@@ -129,7 +129,7 @@ The process of moderation review is an interactive process for both maintainers 
 
 Packages go through three automated checks: validation, verification, and cleanup. There is about a 30 minute lag time from submission until automatic review kicks off - this allows the CDN to recheck and pull a newer version of the package up (in the case of resubmission), so that the package version being verified is the one you submitted and not a stale copy.
 
-When you receive emails that require you to take action, you should review what is requested and make the changes. If a package is flagged and needs changes based on requirements, the process is for you to make the required changes and resubmit the ***exact*** same version. The faster you respond to the review process, the faster your package can get approved.
+When you receive emails that require you to take action, you should review what is requested and make the changes. If a package is flagged and needs changes based on requirements, the process is for you to make the required changes and resubmit the **exact** same version. The faster you respond to the review process, the faster your package can get approved.
 
 The cleanup automated check, aka the cleaner, checks packages that have been in a 'waiting' (waiting for maintainer to take action) status with no action/response within 20 days and follows up with a final reminder. If after 15 more days nothing has been done, the package will automatically be rejected on non-response. We feel that 35 days prior to automatic close is ample time for a maintainer to move the ball forward (even one going on holiday). If a package gets rejected, it doesn't mean that we don't value your contributions, just that we can not continue to hold packages versions in a waiting status that have possibly been abandoned. The rejected status is also reversible in case a maintainer wants to pick it back up within a year.
 
@@ -196,8 +196,9 @@ Always be explicit that you are waiting on the maintainer to fix and resubmit th
   * If the package downloads anything, is it getting downloads from the proper location? Follow the projectUrl to the project site to see where it is downloading from - it should match the scripts. If not there needs to be a really, really good reason for not doing so.
   * Does the download version match the package version?
   * Does the download include both x86 and x64 urls if available?
-* Not a package duplicating another existing package ***NOTE***: December 2015: Do not look for duplicate packages at this time. The validator will start handling that after the backlog is manageable.
-* Brand New Packages ***ONLY*** (no approved or existing version in history, prereleases do not count)
+* Not a package duplicating another existing package
+    > :memo: **NOTE**: December 2015: Do not look for duplicate packages at this time. The validator will start handling that after the backlog is manageable.
+* Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
   * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See https://github.com/chocolatey/choco/wiki/CreatePackages#naming-your-package
     * suggest the id split if over 25 chars with no "-" in the id
     * flag on "." in name (unless .portable/.install)

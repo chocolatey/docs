@@ -28,6 +28,6 @@ When deprecating a Chocolatey Package, the following steps should be followed:
 * **Remove all files** except the `.nuspec` from the Chocolatey Package.
 * Replace `<files>...</files>` section in `.nuspec` with `<files />` tag to prevent any file from being included with the package.
 * **Remove the iconUrl**.
-* **Unlist all versions** from the package gallery, ***except*** the final deprecated version. The final deprecated version is required so that there is an update path to the new package.
+* **Unlist all versions** from the package gallery, **except** the final deprecated version. The final deprecated version is required so that there is an update path to the new package.
 
 By following this process, any existing users who try to update the old package will automatically get the new package, as it will be installed as a dependency.

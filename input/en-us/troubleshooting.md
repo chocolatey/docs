@@ -8,7 +8,7 @@ RedirectFrom: docs/troubleshooting
 
 There are some well-known things you may run into when you are using Chocolatey. We've tried to get some of the high level things you may run into into one document.
 
-**NOTE**: This is a work in progress. It doesn't cover all of the troubleshooting steps that are known but it is attempting to cover quite a few.
+> :memo: **NOTE** This is a work in progress. It doesn't cover all of the troubleshooting steps that are known but it is attempting to cover quite a few.
 
 ## General
 
@@ -115,7 +115,7 @@ Install-ChocolateyPackage $packageArgs # this is incorrect and will pass the ent
 #           -ValidExitCodes @(0, 3010, 1641)
 ~~~
 
-**NOTE**: It is helpful to always use `choco new` when creating packages, it has this correct and you never run into this error.
+> :memo: **NOTE** It is helpful to always use `choco new` when creating packages, it has this correct and you never run into this error.
 
 References:
 * https://github.com/majkinetor/au/issues/70
@@ -199,8 +199,8 @@ Cloudflare uses Project Honeypot to determine if your IP address is flagged, suc
 If you determine it is CloudFlare blocking your IP (which is the issue 98% of the time), we may be able to get you whitelisted for Chocolatey:
 
 * Go to https://chocolatey.org/contact (NOTE: If you are completely blocked from accessing the site, contact us through [Gitter](https://gitter.im/chocolatey/choco) instead)
-* Select ***Blocked IP Address*** in "Send message to" drop down (this is important to get it routed to the right folks)
-* **IMPORTANT**: Let us know what's going on along with your IP address so we can talk about whitelisting options and get you moving forward.
+* Select **Blocked IP Address** in "Send message to" drop down (this is important to get it routed to the right folks)
+* :exclamation: **IMPORTANT**: Let us know what's going on along with your IP address so we can talk about whitelisting options and get you moving forward.
 * Oh, and be sure to run some antivirus scans and remove any found malware (and maybe find a better antivirus scanner).
 
 Once this has been completed, you should have access to install Chocolatey and/or packages from the community repository.
@@ -287,7 +287,7 @@ When you update the Machine/User environment variables, you would also need to u
 
 If you are in cmd.exe, it should just work. In PowerShell, you need to install the Chocolatey PowerShell profile first for the command to work.
 
-Take note of whether it says "refreshing environment variables for ***cmd.exe***" or "refreshing environment variables for ***powershell.exe***". If you are in PowerShell and you see "***cmd.exe***" when you run `refreshenv`, then you need to do some additional work to get things set up. see [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me).
+Take note of whether it says "refreshing environment variables for **cmd.exe**" or "refreshing environment variables for **powershell.exe**". If you are in PowerShell and you see "**cmd.exe**" when you run `refreshenv`, then you need to do some additional work to get things set up. see [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me).
 
 ### Options and/or parameters are not handled correctly
 
@@ -336,7 +336,7 @@ Also take a look at [Already referencing a newer version of 'packagename'](#alre
 
 * Most Likely: This occurs when you have overridden default sources and/or have not specified enough sources explicitly.
 
-  If you are installing from a local folder, you have likely passed in **an explicit source** (`-s|--source`), which ***overrides all default sources***. So that dependency needs to be either already installed or sitting in one of the sources you explicitly specified.
+  If you are installing from a local folder, you have likely passed in **an explicit source** (`-s|--source`), which **overrides all default sources**. So that dependency needs to be either already installed or sitting in one of the sources you explicitly specified.
 
   **Fix:** If you are testing a package you may push to the community repository later, you may want to ensure you specify the source like this: `--source="'.;https://chocolatey.org/api/v2'"`.
 

@@ -14,7 +14,7 @@ We do this by caching a copy of the content on our private CDN. This content als
 
 When our customers download content from you, we may cache a copy of that content on our customer CDN to ensure that later our licensed customers will be able to access that content again. This allows predictable and reliable installations of packages. Like most CDNs, no changes are made, we are simply ensuring the content stays available for our private customers. We are not modifying, selling, renting, leasing, lending, or sub-licensing this content in any way.
 
-This private content cache is ***only*** available as a service for our [licensed customers](https://chocolatey.org/pricing).
+This private content cache is **only** available as a service for our [licensed customers](https://chocolatey.org/pricing).
 
 If you have questions or **prefer to opt out**, please [contact us](https://chocolatey.org/contact) and select "Software Vendor Opt Out" (vendor requests only please).
 

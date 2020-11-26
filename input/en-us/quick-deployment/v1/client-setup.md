@@ -37,7 +37,7 @@ What does this do?
 * Sets the execution policy for this script run to remote signed scripts.
   This is only in the scope of this process and not permanent.
 * Imports the SSL Certificate from the Quick Deploy Environment.
-  **NOTE**: This is a signed script that is used to import a certificate.
+    > :memo: **NOTE** This is a signed script that is used to import a certificate.
   Due to how it works and security considerations, there are very few options allowed.
 * Switches execution policy to bypass for the internal script.
   This is only in the scope of this process and not permanent.

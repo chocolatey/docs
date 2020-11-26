@@ -6,7 +6,7 @@ Description: How to setup Chocolatey.Server
 RedirectFrom: docs/how-to-set-up-chocolatey-server
 ---
 
-**NOTE:** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](xref:organizational-deployment-guide) in tandem with this article.
+> :memo: **NOTE** Refer to [How To Set Up Chocolatey For Organizational/Internal Use](xref:organizational-deployment-guide) in tandem with this article.
 
 ## Summary
 
@@ -14,7 +14,7 @@ RedirectFrom: docs/how-to-set-up-chocolatey-server
 
 The [Chocolatey.Server package](https://chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
 
-**NOTE**: This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](xref:host-packages) for those options.
+> :memo: **NOTE** This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See [hosting your own server](xref:host-packages) for those options.
 
 ## Links
 
@@ -55,7 +55,9 @@ If you are using Chef, you can use [Galen Emery's POC](https://github.com/galene
 
 ### Setup with Puppet
 
-If you are using the Puppet module [chocolatey/chocolatey_server](https://forge.puppet.com/chocolatey/chocolatey_server), it will do all of the additional setup for this package and allow some customization. **NOTE: For now it may be best to look at the one in GitHub.**
+If you are using the Puppet module [chocolatey/chocolatey_server](https://forge.puppet.com/chocolatey/chocolatey_server), it will do all of the additional setup for this package and allow some customization.
+
+> :memo: **NOTE: For now it may be best to look at the one in GitHub.**
 
 The module works with Windows Server 2008/2012.
 For a simple `include chocolatey_server` it does the following automatically:
@@ -70,7 +72,7 @@ For a simple `include chocolatey_server` it does the following automatically:
 ### Setup Manually
 
  * If your Windows updates are not up to date, there are two required Windows updates you are going to need (heads up they take awhile)
-    * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a ***very*** long time to install, just be patient
+    * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a **very** long time to install, just be patient
     * Restart your machine.
     * Install KB2919442 - `choco install KB2919442 -y` (IIRC this is the one that takes forever...) -
     * Reboot that machine again

@@ -62,7 +62,7 @@ In `genericVirusScannerValidExitCodes`, these are exit codes that indicate that 
 
 ![Pro install in action](/assets/images/gifs/chocopro_install_stopped.gif)
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> :memo: **NOTE** To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 ## Options And Switches
 

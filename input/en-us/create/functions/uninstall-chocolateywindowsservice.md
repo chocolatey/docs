@@ -8,7 +8,7 @@ RedirectFrom: docs/helpers-uninstall-chocolatey-windows-service
 
 # Uninstall-ChocolateyWindowsService
 
-**NOTE**: This function requires a Chocolatey for Business License to use.
+> :memo: **NOTE** This function requires a Chocolatey for Business License to use.
 
 Uninstalls a Windows Service.
 
@@ -55,4 +55,4 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from licensed code.
+> :memo: **NOTE** This documentation has been automatically generated from licensed code.

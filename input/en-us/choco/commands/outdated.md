@@ -12,7 +12,7 @@ RedirectFrom: docs/commands-outdated
 
 Returns a list of outdated packages.
 
-**NOTE:** Available with 0.9.9.6+.
+> :memo: **NOTE** Available with 0.9.9.6+.
 
 ## Usage
 
@@ -28,8 +28,8 @@ If you use `--source=https://somewhere/out/there`, it is
  going to look for outdated packages only based on that source, so
  you may want to add `--ignore-unfound` to your options.
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
- write proper scripts and integrations.
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> write proper scripts and integrations.
 
 ## Exit Codes
 
@@ -44,9 +44,9 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: outdated packages have been found
 
-**NOTE:** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
- turned on, then choco will provide enhanced exit codes that allow
- better integration and scripting.
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+> turned on, then choco will provide enhanced exit codes that allow
+> better integration and scripting.
 
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
@@ -58,11 +58,11 @@ If you find other exit codes that we have not yet documented, please
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -199,5 +199,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco outdated -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco outdated -h`.

@@ -49,6 +49,6 @@ None
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Test-ProcessAdminRights -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Test-ProcessAdminRights -Full`.
 
 View the source for [Test-ProcessAdminRights](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Test-ProcessAdminRights.ps1)

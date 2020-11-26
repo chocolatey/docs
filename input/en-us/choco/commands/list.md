@@ -13,10 +13,10 @@ RedirectFrom: docs/commands-list
 Chocolatey will perform a search for a package local or remote. Some
  may prefer to use [`clist`](xref:choco-command-list) as a shortcut for [`choco list`](xref:choco-command-list).
 
-**NOTE:** 100% compatible with older Chocolatey client (0.9.8.x and below)
- with options and switches. In most cases you can still pass options
- and switches  with one dash (`-`). For more details, see
- [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+> :memo: **NOTE** 100% compatible with older Chocolatey client (0.9.8.x and below)
+> with options and switches. In most cases you can still pass options
+> and switches  with one dash (`-`). For more details, see
+> [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -34,7 +34,7 @@ Chocolatey will perform a search for a package local or remote. Some
     choco search git --source="'https://somewhere/out/there'"
     choco search bob -s "'https://somewhere/protected'" -u user -p pass
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -50,7 +50,7 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: no results (enhanced)
 
-**NOTE:** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
  turned on, then choco will provide enhanced exit codes that allow
  better integration and scripting.
 
@@ -83,11 +83,11 @@ This specifies that the source is a Windows Feature and we should
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -281,5 +281,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco list -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco list -h`.

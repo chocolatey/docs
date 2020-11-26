@@ -10,7 +10,7 @@ RedirectFrom: docs/release-notes-choco-cli
 
 This covers changes for the "chocolatey" and "chocolatey.lib" packages, which are available as FOSS.
 
-**NOTE**: For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
+> :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
 ## [0.10.15](https://github.com/chocolatey/choco/issues?q=milestone%3A0.10.15+is%3Aclosed) (June 3, 2019)
 ### BUG FIXES
@@ -1048,7 +1048,8 @@ We'll try to capture everything here that you should know about. Please call `ch
 
 ### BREAKING CHANGES
 
- * [Security] **Prompt for confirmation**: For security reasons, we now stop for confirmation before changing the state of the system on most commands. You can pass `-y` to confirm any prompts **or set a value in the config that will globally confirm and behave like older versions of Chocolatey** - see [#52](https://github.com/chocolatey/choco/issues/52) (**NOTE**: This is one of those additional switches we were talking about)
+ * [Security] **Prompt for confirmation**: For security reasons, we now stop for confirmation before changing the state of the system on most commands. You can pass `-y` to confirm any prompts **or set a value in the config that will globally confirm and behave like older versions of Chocolatey** - see [#52](https://github.com/chocolatey/choco/issues/52)
+     > :memo: **NOTE** This is one of those additional switches we were talking about)
  * [Security] If your default installation is still at `c:\Chocolatey`, this version will force a move to ProgramData and update the environment settings - see [#7](https://github.com/chocolatey/choco/issues/7)
  * **Configuration Breaking Changes:**
    1. You now have one config file to interact with in %ChocolateyInstall%\config - your user config is no longer valid and can be removed once you migrate settings to the config.
@@ -1059,7 +1060,7 @@ We'll try to capture everything here that you should know about. Please call `ch
    1. Choco now installs packages without version numbers on folders. This means quite a few things...
    2. Upgrading packages doesn't install a new version next to an old version, it actually upgrades.
    3. Dependencies resolve at highest available version, not the minimum version as before - see [Chocolatey #415](https://github.com/chocolatey/chocolatey/issues/415)
-   4. `install` versus `upgrade` - Use `upgrade` on existing packages instead of install. A `-force` reinstall will reinstall the ***same*** version you already have installed.
+   4. `install` versus `upgrade` - Use `upgrade` on existing packages instead of install. A `-force` reinstall will reinstall the **same** version you already have installed.
  * **Package Maintenance Changes**:
    1. Read the above about apikey changes
    2. Read above about dependency resolution changes.

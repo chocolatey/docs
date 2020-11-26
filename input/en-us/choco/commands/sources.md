@@ -12,11 +12,11 @@ RedirectFrom: docs/commands-sources
 
 Chocolatey will allow you to interact with sources.
 
-**NOTE:** Mostly compatible with older chocolatey client (0.9.8.x and
- below) with options and switches. When enabling, disabling or removing
- a source, use `-name` in front of the option now. In most cases you
- can still pass options and switches with one dash (`-`). For more
- details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+> :memo: **NOTE** Mostly compatible with older chocolatey client (0.9.8.x and
+> below) with options and switches. When enabling, disabling or removing
+> a source, use `-name` in front of the option now. In most cases you
+> can still pass options and switches with one dash (`-`). For more
+> details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -39,7 +39,7 @@ location. If it is a url, it will be a location you can go to in a browser and
 it returns OData with something that says Packages in the browser, similar to
 what you see when you go to https://chocolatey.org/api/v2/.
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -56,7 +56,7 @@ If you find other exit codes that we have not yet documented, please
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
  running a command like install that allows installing multiple
  packages, and you use `--version=1.0.0`, it is going to look for and
  try to install version 1.0.0 of every package passed. So please split
@@ -214,5 +214,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco sources -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco sources -h`.

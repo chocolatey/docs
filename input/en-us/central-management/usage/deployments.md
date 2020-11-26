@@ -6,7 +6,7 @@ Description: How to deploy packages, and execute PowerShell, on client machines
 RedirectFrom: docs/central-management-deployments
 ---
 
-> :warning: **WARNING**: This is a Work in Progress. Please check back later.
+> :warning: **WARNING** This is a Work in Progress. Please check back later.
 >
 > Please see https://chocolatey.org/blog/announcing-deployments for now.
 
@@ -88,7 +88,7 @@ While it is in the `Draft` state, it cannot be run, and scheduled deployment sta
 Once the deployment enters the `Ready` state, it's eligible to be started.
 Deployments in this state can be started manually or according to a schedule.
 
-> :memo: **Note**
+> :memo: **NOTE**
 >
 > Any further modifications to a deployment in this state will revert it back to the `Draft` state.
 
@@ -209,7 +209,7 @@ To configure this, you can set the `Machine Contact Timeout` value in the Advanc
 This value must be positive, or zero (which is treated as infinite).
 You may want to configure this only for the first step of a deployment, or for multiple steps if you expect the target machines to be connected/disconnected over the course of the deployment.
 
-> :memo: **Note**
+> :memo: **NOTE**
 >
 > If the deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first deployment step is ignored.
 > In this case, the maintenance window defines the contact timeout for the first step.

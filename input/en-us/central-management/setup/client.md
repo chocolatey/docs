@@ -25,7 +25,7 @@ choco feature enable --name="'useChocolateyCentralManagement'"
 choco feature enable --name="'useChocolateyCentralManagementDeployments'"
 ```
 
-> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 
 Please see config settings and features below for a full list.
@@ -47,7 +47,7 @@ Please see config settings and features below for a full list.
 * `centralManagementClientCommunicationSaltAdditivePassword` = **' '** - Chocolatey Central Management Client Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication from an agent TO an instance of Central Management Service (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions v2.1.0+ only. Requires Chocolatey Agent v0.10.0+ and Central Management 0.2.0+. IMPORTANT: If this value is set, agents less than v0.10.0 will be unable to contact Central Management to report in.
 * `centralManagementServiceCommunicationSaltAdditivePassword` = **' '** - Chocolatey Central Management Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication FROM an instance of Central Management Service to an agent (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions v2.1.0+ only. Requires Chocolatey Agent v0.10.0+ and Central Management 0.2.0+.
 
-> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 Also found at [Chocolatey Configuration](xref:configuration).
 
@@ -106,7 +106,7 @@ Remove-ItemProperty -Path "HKLM:\Software\Chocolatey" -Name "UniqueId" -Force
 
 Once you've removed this, you'll need to restart the Agent Service to get it regenerated.
 
-> :information_source: You may ***also*** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
+> :information_source: You may **also** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
 
 ### What is the CCM compatibility matrix?
 
@@ -182,7 +182,7 @@ Remove-ItemProperty -Path "HKLM:\Software\Chocolatey" -Name "UniqueId" -Force
 
 Once you've removed this, you'll need to restart the Agent Service to get it regenerated.
 
-> :information_source: You may ***also*** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
+> :information_source: You may **also** need to remove the ChocolateyLocalAdmin user (if you are using it for services) and reinstall the Agent service (and CCM service if on this machine) to get that password corrected.
 
 ### The agent services are not picking up the new license
 

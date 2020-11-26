@@ -5,4 +5,4 @@ Title: Create your own packages
 Description: Information on how to create your own Chocolatey package
 ---
 
-> :warning: **WARNING**: This is a Work in Progress. Please check back later.
+> :warning: **WARNING** This is a Work in Progress. Please check back later.

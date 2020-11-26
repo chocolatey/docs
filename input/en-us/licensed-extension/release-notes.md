@@ -11,9 +11,9 @@ RedirectFrom: docs/release-notes-extension
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.
 Please see [Install the Licensed Edition](xref:setup-licensed) for information on how to get and install the package.
 
-**NOTE**: This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
+> :memo: **NOTE** This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
 
-**NOTE**: Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
+> :memo: **NOTE** Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
 
 ## Other Release Notes
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
@@ -24,7 +24,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/LicensedExtension
 * Some issues may be held internally, please follow your support routes to learn more.
 
-* **NOTE:** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
+> :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
 ## 2.1.1 (July 3, 2020)
 ### BUG FIXES
@@ -142,7 +142,8 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 
 ## 1.12.11 (February 1, 2018)
-**NOTE**: We've identified an issue with Self-Service interactive and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details.
+
+> :memo: **NOTE** We've identified an issue with Self-Service interactive and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details.
 
 A few nice things going into this release with Package Reducer/Optimize coming out of preview, Package Internalizer allowing you to specify variable overrides
 

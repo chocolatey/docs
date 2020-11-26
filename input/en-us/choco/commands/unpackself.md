@@ -13,16 +13,16 @@ RedirectFrom: docs/commands-unpackself
 This will unpack files needed by choco. It will overwrite existing
  files only if --force is specified.
 
-**NOTE:** This command should only be used when installing Chocolatey, not
- during normal operation.
+> :memo: **NOTE** This command should only be used when installing Chocolatey, not
+> during normal operation.
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -129,5 +129,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco unpackself -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco unpackself -h`.

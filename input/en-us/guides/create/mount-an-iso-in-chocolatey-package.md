@@ -22,7 +22,7 @@ You will need to take a dependency on the [chocolatey-isomount.extension package
 1. FOSS: Download [chocolatey-isomount.extension](https://chocolatey.org/api/v2/package/chocolatey-isomount.extension)
 1. Deploy the package to your internal repository.
 
-**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
+> :memo: **NOTE** MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add chocolatey-isomount.extension Dependency
 
@@ -34,7 +34,7 @@ Open your package's nuspec up and add a dependency on `chocolatey-isomount.exten
   </dependencies>
 ~~~
 
-**NOTE:** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
+> :memo: **NOTE** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
 ### Step 3: Add chocolatey-isomount.extension Code
 
@@ -96,7 +96,7 @@ You will need to take a dependency on the [ImDisk package](https://chocolatey.or
 1. FOSS: Download [imdisk](https://chocolatey.org/api/v2/package/imdisk) - [internalize manually](xref:recompile-packages)
 1. Deploy the package to your internal repository.
 
-**NOTE**: MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
+> :memo: **NOTE** MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
 ### Step 2: Add ImDisk Dependency
 
@@ -108,7 +108,7 @@ Open your package's nuspec up and add a dependency on `imdisk`. This will be ins
   </dependencies>
 ~~~
 
-**NOTE:** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
+> :memo: **NOTE** The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
 ### Step 3: Add ImDisk Code
 
@@ -143,7 +143,7 @@ is an alternative that is built-in, so no package dependencies required. However
 * PowerShell v3+
 * Windows 8+/Windows Server 2012+
 
-It is both an Operating System version dependency ***and*** a PowerShell version dependency (although by default those operating systems will have the right version of PowerShell already available). The great news is if you have that, it becomes as simple as the following code.
+It is both an Operating System version dependency **and** a PowerShell version dependency (although by default those operating systems will have the right version of PowerShell already available). The great news is if you have that, it becomes as simple as the following code.
 
 ### Step 1: Add Mount-DiskImage Code
 
@@ -173,4 +173,4 @@ Dismount-DiskImage -ImagePath $iso
 
 ~~~
 
-**NOTE:** Code sample was taken from this [package](https://chocolatey.org/packages/WindowsSDK2008/6.0.6001), thanks to [dave42](https://chocolatey.org/profiles/dave42) for sharing.
+> :memo: **NOTE** Code sample was taken from this [package](https://chocolatey.org/packages/WindowsSDK2008/6.0.6001), thanks to [dave42](https://chocolatey.org/profiles/dave42) for sharing.

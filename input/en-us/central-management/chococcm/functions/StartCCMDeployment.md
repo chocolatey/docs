@@ -73,4 +73,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:chococcm-functions)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Start-CCMDeployment -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Start-CCMDeployment -Full`.

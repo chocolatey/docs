@@ -10,7 +10,7 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 
 > :warning: **WARNING**
 >
-> Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
+> Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 
 ## Step 1: Complete Prerequisites
 
@@ -71,7 +71,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 * `/SqlServerInstance:` - Instance name of the SQL Server database to connect to. Alternative to passing full connection string with `/ConnectionString`. Uses `/Database` (below) to build a connection string. Defaults to `<LOCAL COMPUTER FQDN NAME>`.
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 
-> :memo: **NOTE**: Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
+> :memo: **NOTE** Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Service Settings
 
@@ -85,7 +85,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 * `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
-> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### Chocolatey Managed Password
 
@@ -100,7 +100,7 @@ When Chocolatey manages the password for a local administrator, it creates a ver
 ### Chocolatey Central Management Service Windows Account Considerations
 
 * Windows Account (required, defaults to `ChocolateyLocalAdmin`)
-  * The Chocolatey Central Management Service requires ***an*** administrative account, whether that is a domain account or a local account - it just needs to be a local admin (a member of the Administrators group).
+  * The Chocolatey Central Management Service requires **an** administrative account, whether that is a domain account or a local account - it just needs to be a local admin (a member of the Administrators group).
   * The Chocolatey Central Management Service doesn't specifically require the `ChocolateyLocalAdmin` account, any Windows account can be used. The `ChocolateyLocalAdmin` is used as the default if one is not specified.
   * Upon use of an account during installation, it will make that account a member of the Administrators account.
   * The account used will also be granted LogonAsService and LogonAsBatch privileges.
@@ -127,7 +127,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 >
 > Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Local Windows Account to Local SQL Server
 
@@ -153,7 +153,7 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 >
 > Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-> :memo: **NOTE**: Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -262,7 +262,7 @@ If you need to remove a netsh binding, you can do that using the following comma
 netsh http delete sslcert ipport=0.0.0.0:<port_number>
 ```
 
-**NOTE:** Here `<port_number>` should be replaced with the Port Number that has been registered
+> :memo: **NOTE** Here `<port_number>` should be replaced with the Port Number that has been registered
 
 ### Can we manually create an SSL binding?
 
@@ -272,13 +272,13 @@ If required, it is possible to manually create a netsh binding.  This is done us
 netsh http add sslcert ipport=0.0.0.0:<port_number> certhash=<certificate_thumbprint> appid={<random_guid>}
 ```
 
-**NOTE:** Here, `<port_number>` should be replaced with the Port Number to be used for the registration.  `<certifcate_thumbprint>` should be replaced with the thumbprint for the certificate that is to be used for the registration.  `<random_guid>` should be replaced with a random guid in the following format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+> :memo: **NOTE** Here, `<port_number>` should be replaced with the Port Number to be used for the registration.  `<certifcate_thumbprint>` should be replaced with the thumbprint for the certificate that is to be used for the registration.  `<random_guid>` should be replaced with a random guid in the following format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
 
 ### Can we install Central Management Service behind a load balancer?
 
 Unfortunately, it's not a supported scenario. If you are trying to load balance requests to CCM service, you should install multiple instances on multiple machines and point clients explicitly to an instance so they can work together. If you are trying to load balance other things on a machine and CCM service just happens to be there (like with QDE), move CCM service to a different machine or allow direct connections to the box for CCM.
 
-> :memo: **NOTE:** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
+> :memo: **NOTE** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
 
 ### We want to set up the Chocolatey Central Management service to use a domain account that will have local admin on each box. Can we do this?
 
@@ -359,7 +359,7 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 1. You may find it all on a single line in the file, and that is okay.
 1. Then restart the service by running the following from an admin powershell session: `Get-Service chocolatey-management-service | Stop-Service; Get-Service chocolatey-management-service | Start-Service`
 
-> :warning: **WARNING**: Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
+> :warning: **WARNING** Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
 
 ### Can we use an account for the service that is not a local administrator?
 

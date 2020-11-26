@@ -151,9 +151,9 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
 
 ## PowerShell PackageManagement
 
-**NOTE:** Chocolatey has a prototype provider for the built-in package manager on Windows 10/Windows Server 2016 that was created by Microsoft awhile back. It is not fully functional and it may have security issues. If you want to use Chocolatey with PackageManagement, we recommend using ChocolateyGet, which is a nice bridge until an official one is implemented. No ETA has been defined.
+> :memo: **NOTE** Chocolatey has a prototype provider for the built-in package manager on Windows 10/Windows Server 2016 that was created by Microsoft awhile back. It is not fully functional and it may have security issues. If you want to use Chocolatey with PackageManagement, we recommend using ChocolateyGet, which is a nice bridge until an official one is implemented. No ETA has been defined.
 
-[PowerShell PackageManagement (aka OneGet)](https://github.com/OneGet/oneget) is a package manager ***aggregator*** that depends on the existence of package managers as providers to work, one of which is Chocolatey.
+[PowerShell PackageManagement (aka OneGet)](https://github.com/OneGet/oneget) is a package manager **aggregator** that depends on the existence of package managers as providers to work, one of which is Chocolatey.
 
 ## PSDeploy
 
@@ -195,7 +195,7 @@ The Chocolatey team is most familiar with Puppet and has written some documentat
 * [Install with Puppet](https://chocolatey.org/install#install-with-puppet)
 * [Chocolatey Licensed Editions Configuration/Setup with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet)
 
-**Note:** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/choco-wiki.
+> :memo: **NOTE** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/choco-wiki.
 
 [Read More...](https://forge.puppet.com/puppetlabs/chocolatey)
 

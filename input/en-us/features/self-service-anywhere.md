@@ -28,7 +28,7 @@ When an administrator installs the agent, they can configure Chocolatey to use b
 Why this is desirable:
 
 * Users do not need to be administrators but are still empowered to install and upgrade software (functions are configurable with Chocolatey Extension v1.12.4+)
-* Users can ***only*** run install and upgrade in an administrative context by default. This is configurable to other commands as of Chocolatey Licensed Extension 1.12.4+..
+* Users can **only** run install and upgrade in an administrative context by default. This is configurable to other commands as of Chocolatey Licensed Extension 1.12.4+..
 * Shortcuts, desktop icons, etc created through Chocolatey functions will end up with the proper user (still coming).
 * Users can only install approved software based on admin configured sources.
 * This frees up precious IT bandwidth to work on other engagements.
@@ -46,7 +46,7 @@ This makes for happy users and happy admins as they are able to move quicker tow
 
 [![Chocolatey's Self-Service Installer - Part 2](/assets/images/features/features_selfservice_video2.jpg)](https://www.youtube.com/watch?v=BnnAwFftUwU "Chocolatey's Self-Service Installer - Part 2")
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> :memo: **NOTE** To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 Consider the following image:
 
@@ -174,7 +174,7 @@ The best way to handle installers that do not play nice is called MSI repackagin
 * No examples to look at - read more below.
 * Produced binaries still subject to distribution rights - however if you are keeping everything internal, you never need to worry about this. You just can't share what you've done on something like the community repository as it is public.
 
-**NOTE**: Unfortunately you are unlikely to find any packages on the Chocolatey Community Repository that are able to take advantage of MSI repackaging - this is due to both distribution rights and verification/security.
+> :memo: **NOTE** Unfortunately you are unlikely to find any packages on the Chocolatey Community Repository that are able to take advantage of MSI repackaging - this is due to both distribution rights and verification/security.
 
 * Redistribution of installation media often requires permission - that would include anything that mimics what is done (like the produced MSI).
 * Then verification and security - even if redistribution is allowed, you step into trust and verification of this unknown binary that moderators and the community at large are unlikely to trust. When you are doing MSI repackaging internally and housing the bits on your internal repo, you can typically more fully trust what you are doing there versus some random maintainer on the internet doing similar.

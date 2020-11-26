@@ -16,7 +16,7 @@ You will receive a download link via email for an archive of the VM image. Once 
 
 > :warning: **WARNING**
 >
-> Please follow these steps in ***exact*** order. These will be very important later when you are trying to use the environment.
+> Please follow these steps in **exact** order. These will be very important later when you are trying to use the environment.
 
 ## Step 0: Setup Considerations
 
@@ -145,11 +145,12 @@ Video Summary:
 3. Create a new VM.
 4. When prompted for OS type, choose `Windows Server 2019` (if available), or `Windows Server 2016 or later`.
 5. If prompted for boot firmware, choose `Legacy BIOS` (**not** UEFI).
-6. When asked to create a new disk or attach, delete the default disk, select attach, and browse to the VMDK you uploaded. **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the “Controller Location” setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
+6. When asked to create a new disk or attach, delete the default disk, select attach, and browse to the VMDK you uploaded. :exclamation: **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the “Controller Location” setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
 7. Adjust the hardware specifications of the VM. For a performant system, the following are recommended:
     - 4 vCPUs
     - 8 GB RAM
-8. Once you click Finish, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed). **NOTE**: likely you will need to allocate the additional space to the C drive.
+8. Once you click Finish, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
+    > :memo: **NOTE** likely you will need to allocate the additional space to the C drive.
 9. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
 
 Video Summary:
@@ -189,9 +190,9 @@ You will likely need to reconfigure it with a static IP address depending on you
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
 A version of this readme file can be found in the [Quick Deployment Desktop Readme](xref:v1-desktop-readme).
 
-> :memo: **NOTE**: The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
+> :memo: **NOTE** The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
 
-> :warning: **WARNING**: If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
+> :warning: **WARNING** If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
 
 ### Step 3.1: Expand Disk Size
 

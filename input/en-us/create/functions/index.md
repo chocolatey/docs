@@ -14,7 +14,7 @@ RedirectFrom: docs/helpers-reference
 
 In your Chocolatey packaging, you have the ability to use these functions (and others with Chocolatey's [PowerShell Extensions](xref:extensions)) to work with all aspects of software management. Keep in mind Chocolatey's automation scripts are just PowerShell, so you can do manage anything you want.
 
-**NOTE**: These scripts are for package scripts, not for use directly in PowerShell. This is in the create packages section, not the using Chocolatey section.
+> :memo: **NOTE** These scripts are for package scripts, not for use directly in PowerShell. This is in the create packages section, not the using Chocolatey section.
 
 ## Main Functions
 

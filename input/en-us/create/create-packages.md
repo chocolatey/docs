@@ -11,7 +11,7 @@ RedirectFrom: docs/create-packages
 ## Summary
 See [What are Chocolatey Packages?](xref:getting-started#what-are-chocolatey-packages) first.
 
-**Note:** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
+> :memo: **NOTE** When you host internal packages, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can create packages that are more reliable and secure.
 
 First you should determine if you are making a self-contained package or (also) using automation scripts. You should also consider creating [automatic packages](xref:automatic-packaging) for the best maintainability over time.
 
@@ -54,7 +54,9 @@ can do just about anything you need. Choco has some very handy [built-in functio
 
 ## Quick Start guide
 
-If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](xref:create-packages-quick-start) for you. **NOTE**: This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
+If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](xref:create-packages-quick-start) for you.
+
+> :memo: **NOTE** This doesn't exempt you from observing the rules, requirements and guidelines (noted below).
 
 ## Rules to be observed before publishing packages
 
@@ -84,10 +86,12 @@ Is your package unqualified for the Chocolatey feed, but you like to be able to 
     * [Geany](http://chocolatey.org/packages/geany)
 * Use this **XML declaration**: `<?xml version="1.0" encoding="utf-8"?>`.
 
-**Note:** There is a lot of confusion in the world of character encodings: For example, `ANSI` is an incorrect term for the internal Windows character encodings, e.&nbsp;g. `Windows-1252`. But you should not use this encoding family anyway.
+> :memo: **NOTE** There is a lot of confusion in the world of character encodings: For example, `ANSI` is an incorrect term for the internal Windows character encodings, e.&nbsp;g. `Windows-1252`. But you should not use this encoding family anyway.
 
 ## What version of the software should I package?
-The main release of a product versions are usually sufficient. If there are also beta versions available and you would rather have that, then please create both the official release and the beta (and set the beta as a prerelease when pushing the item to chocolatey.org). Regular users of packages may want to use official releases only and not betas. **NOTE**: Both of these have the SAME package id, just different versions.
+The main release of a product versions are usually sufficient. If there are also beta versions available and you would rather have that, then please create both the official release and the beta (and set the beta as a prerelease when pushing the item to chocolatey.org). Regular users of packages may want to use official releases only and not betas.
+
+> :memo: **NOTE** Both of these have the SAME package id, just different versions.
 
 ## Okay, how do I create packages?
 There are three main elements to a Chocolatey package. Only the nuspec is required (#1 below).
@@ -97,7 +101,7 @@ There are three main elements to a Chocolatey package. Only the nuspec is requir
 1. any application files to include (it is highly suggested that you are the author in this case or you have the right to [distribute files](xref:legal)). EXE files in the package/downloaded to package folder from chocolateyInstall.ps1 will get a link to the command line.
 1. chocolateyUninstall.ps1, for uninstalling your package. See [helper reference](xref:powershell-reference) for functions available in your script.
 
-**Note:** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
+> :memo: **NOTE** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
 There is a video showing the creation of a package: [http://www.youtube.com/watch?v=Wt_unjS_SUo](http://www.youtube.com/watch?v=Wt_unjS_SUo)
 The video is a bit outdated in showing the contents of the chocolateyInstall.ps1. Have a look at what the [chocolateyInstall.ps1](https://github.com/ferventcoder/chocolatey-packages/blob/master/manual/windirstat/tools/chocolateyInstall.ps1) looks like now:
@@ -120,7 +124,7 @@ chocolateyBeforeModify.ps1                     |         | Yes     | Yes
 chocolateyInstall.ps1                          | Yes     | Yes     |
 chocolateyUninstall.ps1                        |         |         | Yes
 
-**Note:** In the upgrade scenario, the chocolateyInstall.ps1 script will be the one included in the new package. The chocolateyBeforeModify.ps1 script will be the one from the previously installed package.
+> :memo: **NOTE** In the upgrade scenario, the chocolateyInstall.ps1 script will be the one included in the new package. The chocolateyBeforeModify.ps1 script will be the one from the previously installed package.
 
 The chocolateyBeforeModify.ps1 script will only be executed if using choco version 0.9.10 or later.
 
@@ -132,7 +136,7 @@ The `Nuspec` contains basic information such as the version, license, maintainer
 
 ```choco new testpackage```
 
-**Note:** If your package uses recently introduced functionality, you might want to include `chocolatey` as a dependency with the version being the lowest version that has the introduced functionality. Otherwise the installation could fail for users with an older version of `Chocolatey` installed.
+> :memo: **NOTE** If your package uses recently introduced functionality, you might want to include `chocolatey` as a dependency with the version being the lowest version that has the introduced functionality. Otherwise the installation could fail for users with an older version of `Chocolatey` installed.
 
 You can indicate the `Chocolatey` dependency like any other dependency. E.g.:
 ```xml
@@ -156,7 +160,7 @@ Right now if the software the package installs is only supported on particular v
 
 There is at least one noted exception to this and that is low-level packages that are meant as dependencies that need to be present even if they do not install anything. These are things like KBs that only need to be installed on some versions of Windows. If the package failed and it was a dependency of a higher level package that installed software, it would cause issues attempting to install that software on different versions of Windows. Since about 5% of the packages apply to this exception, stick with the above thoughts for packages.
 
-**NOTE**: We will ultimately enhance the nuspec and take care of this for you automatically. Until we get there, follow the above avenue.
+> :memo: **NOTE** We will ultimately enhance the nuspec and take care of this for you automatically. Until we get there, follow the above avenue.
 
 ## Installation Paths
 
@@ -276,7 +280,7 @@ If the 4th segment is used, some folks like to drop the segment altogether and u
 
 Package fix version notation ONLY applies when you are making a fix to the package because the existing version of a package is incorrect in some way. So if the software is `1.1.0`, in a normal scenario the package version should be `1.1.0`. If you find that the `1.1.0` package has an issue and you need to fix the package but keep the same version of the software, that is where package fix version notation comes into play. You would end up with both a `1.1.0` package and a `1.1.0.YYYYMMDD` version of the package.
 
-***NOTE: This doesn't apply to packages on the community feed (aka https://chocolatey.org/packages) that are still under review (not yet approved). Please read the instructions given in email for resubmitting the same version.***
+> :memo: **NOTE: This doesn't apply to packages on the community feed (aka https://chocolatey.org/packages) that are still under review (not yet approved). Please read the instructions given in email for resubmitting the same version.**
 
 If you need to fix an approved package for some reason, you can use the fourth version element (aka segment) for a package fix notation. There are two recommended methods of package fix version notation:
 
@@ -287,7 +291,9 @@ Date Package Fix Version Notation is recommended because one can ascertain what 
 
 Package fix version notation is only acceptable in the fourth segment. Do not use any of the other segments for package fix notation. If an application only uses 1 or 2 version segments, add zeros into the other segments until you get to the 4th segment (i.e. 1.0.0.20120627).
 
-When the fourth segment is already used, it is recommended to add two zeroes (00) to the end of the version. Then when you need to fix, you just increment that number. So if the package was ruby and the version was 2.0.0-p353, the package is 2.0.0.35300 (adding the two zeroes at the end). Then a fix would be 2.0.0.35301 and so on. **WARNING**: If you decide to add a secondary set of numbers to the fourth segment, you MUST ALWAYS include that secondary set of numbers while the other three version segments are the same. The reason - if you fix `.1` to `.100`, then release `.2`, `.100` is greater than `.2` because versioning doesn't look at the ".", only the number in the element. So `100` is greater than `2`.
+When the fourth segment is already used, it is recommended to add two zeroes (00) to the end of the version. Then when you need to fix, you just increment that number. So if the package was ruby and the version was 2.0.0-p353, the package is 2.0.0.35300 (adding the two zeroes at the end). Then a fix would be 2.0.0.35301 and so on.
+
+> :warning: **WARNING** If you decide to add a secondary set of numbers to the fourth segment, you MUST ALWAYS include that secondary set of numbers while the other three version segments are the same. The reason - if you fix `.1` to `.100`, then release `.2`, `.100` is greater than `.2` because versioning doesn't look at the ".", only the number in the element. So `100` is greater than `2`.
 
 ## Internationalization and localization of packages
 For Chocolatey, internationalization and localization of packages is very important, because it has users from all over the world. Many applications support multiple languages, but they use several different methods to achieve that. Therefore, there is no standard how internationalization/localization has to be integrated into packages. However, here are a few examples of packages that use various techniques. You can use them as inspiration for new packages:
@@ -340,9 +346,9 @@ Open a command line in the directory where the nuspec is and type [`choco pack`]
 
 ## Testing Your Package
 
-**NOTE**: We strongly suggest the following should be performed in a VM and not on your machine.
+> :memo: **NOTE** We strongly suggest the following should be performed in a VM and not on your machine.
 
-**NOTE**: Testing your package can be done in the same way as the verifier - take a look at [Chocolatey Verifier Testing](https://github.com/chocolatey/package-verifier-vagrant).
+> :memo: **NOTE** Testing your package can be done in the same way as the verifier - take a look at [Chocolatey Verifier Testing](https://github.com/chocolatey/package-verifier-vagrant).
 
 To test the package you just built, open a command line shell and navigate to the directory where the `*.nupkg` file is located. Then type:
 
@@ -352,9 +358,9 @@ choco install packageName -dv -s .
 
 This will install the package right out of your source. As you find things you may need to fix, using `--force` (`-f`) will remove and reinstall the package from the updated `*.nupkg`. If you are specifically testing `chocolateyBeforeModify.ps1`, you need to be testing upgrade and uninstall scenarios. You need to install a version of the package with this file **first** as before modify is like uninstall, it runs from the installed package, not the package you are installing (like `chocolateyInstall.ps1` does).
 
-**NOTE:** Using Force `--force` (`-f`) should only be done in subsequent testing where you are reinstalling the same package that you've changed and should NOT be used in regular use scenarios. It should definitely not be in scripts.
+> :memo: **NOTE** Using Force `--force` (`-f`) should only be done in subsequent testing where you are reinstalling the same package that you've changed and should NOT be used in regular use scenarios. It should definitely not be in scripts.
 
-**NOTE:** If you are using a Semver dash in your package version (such as 1.0.0-beta), you will need to use the `-pre` switch or else you will get *Unable to find package* errors from `choco install`.  You can also specify `-version 1.0.0-beta` to try to install that exact version.
+> :memo: **NOTE** If you are using a Semver dash in your package version (such as 1.0.0-beta), you will need to use the `-pre` switch or else you will get *Unable to find package* errors from `choco install`.  You can also specify `-version 1.0.0-beta` to try to install that exact version.
 
 `.` points to the current directory. You can specify multiple directories separated by a semicolon;
 
@@ -367,16 +373,18 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches). **Note:** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
+`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
+
+> :memo: **NOTE** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
 You can also use the `-debug` switch on `choco install` to provide more information.
 
-**NOTE:** Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `-s "'.;https://chocolatey.org/api/v2/'"`. Call `choco install dude -s "'.;https://chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg -s "'.;https://chocolatey.org/api/v2/'"`.
+> :memo: **NOTE** Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `-s "'.;https://chocolatey.org/api/v2/'"`. Call `choco install dude -s "'.;https://chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg -s "'.;https://chocolatey.org/api/v2/'"`.
 
 ### Alternative testing strategy
 You can also type `choco install -fdv path/to/nuspec` and choco will build the nupkg and attempt to install it.
 
-**NOTE:** This is not recommended if you are passing install arguments or package parameters due to some weirdness, and definitely does not work with passed sources as it need to override that with the local folder once it builds the package. Most likely you will want to stick with the recommended strategy.
+> :memo: **NOTE** This is not recommended if you are passing install arguments or package parameters due to some weirdness, and definitely does not work with passed sources as it need to override that with the local folder once it builds the package. Most likely you will want to stick with the recommended strategy.
 
 ## Push Your Package
 

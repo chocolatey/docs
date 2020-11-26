@@ -45,12 +45,12 @@ Here's the whole process for installing your license and installing the licensed
 
 ## How Do I Install The Licensed Edition?
 
-> :memo: **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
+> :memo: **NOTE** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
 
 
 > :warning: **WARNING**
 >
-> Order is ***VERY*** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
+> Order is **VERY** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
 
  1. Install a recent version of Chocolatey (0.10.8+) - `choco upgrade chocolatey` (due to a tight integration, `chocolatey.extension` may need a newer version than what is listed here). TRIAL? You need to do more as your license key will not be known by the server. See [Install the Trial Edition](#how-do-i-install-the-trial-edition).
  1. You received a license file in email.
@@ -81,13 +81,13 @@ See the next section - the logic is quite similar.
 
 ### How Do I Install The Trial Edition?
 
-If you've received a trial license, you will also receive a link to download a recent version of the `chocolatey.extension` package. ***You will not be able to install or upgrade the licensed edition through regular means. Chocolatey may add the licensed source, but your license will not be recognized on the server.***
+If you've received a trial license, you will also receive a link to download a recent version of the `chocolatey.extension` package. **You will not be able to install or upgrade the licensed edition through regular means. Chocolatey may add the licensed source, but your license will not be recognized on the server.**
 
-> :memo: **NOTE:** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
+> :memo: **NOTE** Prior to install, see if there are any parameters (like turning off context menus) that you may want to set. See [install options](#install-options).
 
 > :warning: **WARNING**
 >
-> Order is ***VERY*** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
+> Order is **VERY** important here. You need license file placed, then `chocolatey.extension`, then any other licensed components. Expect issues if you don't follow this order exactly.
 
  1. Install a recent version of Chocolatey (0.10.8+) - `choco upgrade chocolatey` (due to a tight integration, `chocolatey.extension` may need a newer version than what is listed here).
  1. You received a license file in email. **That email also contains links to download licensed nupkgs.** If you received the license file from another party but not the email, please ask them to forward it over to you as you will need it.
@@ -96,7 +96,8 @@ If you've received a trial license, you will also receive a link to download a r
  1. In PowerShell, run `New-Item $env:ChocolateyInstall\license -Type Directory -Force` - this creates the license directory. Alternatively, you can put the license in your user profile directory, e.g. `"C:\Users\YourUserName\chocolatey.license.xml"`, however we only recommend you do this for Professional licenses as for other licensing you may need it to be recognized by multiple users.
  1. Now place that license file in that license folder. You can do this manually, or you can adapt this PowerShell command - `Copy-Item <c:\path\>chocolatey.license.xml $env:ChocolateyInstall\license\chocolatey.license.xml -Force`. (See image below)
  1. Verify the license file is set properly. In PowerShell, run `type $env:ChocolateyInstall\license\chocolatey.license.xml.` If that returns something, it means you are good to go. If not, something is misspelled or misplaced somewhere.
- 1. Run this command: `choco upgrade chocolatey.extension --pre --source c:\folder\where\downloaded\nupkg\resides` (or you can use `install` instead of `upgrade`). **Note**: Source location is not `--source c:\downloads\chocolatey.extension.1.8.1.nupkg`, it is `--source c:\downloads`. You will see an error you can safely ignore.
+ 1. Run this command: `choco upgrade chocolatey.extension --pre --source c:\folder\where\downloaded\nupkg\resides` (or you can use `install` instead of `upgrade`).
+     > :memo: **NOTE** Source location is not `--source c:\downloads\chocolatey.extension.1.8.1.nupkg`, it is `--source c:\downloads`. You will see an error you can safely ignore.
  1. Run this command: `choco`. You should not see any error message logged anymore (like you saw in the previous run asking you to install the licensed extension). If you do see an error message still, you may need to revisit these steps and determine what might have been missed or mistyped.
  1. That's it! You are good to go.
 
@@ -550,7 +551,7 @@ If that is successful, you are good to go. If not, check for other processes loc
 
 If neither of these have resolved the issue, the following steps should remedy the situation:
 
-> :warning: **WARNING**: Running choco in an unlicensed sense will reset/remove all licensed configuration.
+> :warning: **WARNING** Running choco in an unlicensed sense will reset/remove all licensed configuration.
 
 * Make a backup of the `chocolatey.config` (typically at "C:\ProgramData\chocolatey\config\chocolatey.config").
 * Remove the license file - rename the `license` folder to `licensed` (typically at "C:\ProgramData\chocolatey\license").

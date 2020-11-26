@@ -32,7 +32,7 @@ $env:chocolateyProxyLocation = 'https://local/proxy/server'
 # install script
 ~~~
 
-**NOTE:** This will only work with the installation methods that call https://chocolatey.org/install.ps1 (or use a similar script, like Puppet/Chef scripts do) as part of the install.
+> :memo: **NOTE** This will only work with the installation methods that call https://chocolatey.org/install.ps1 (or use a similar script, like Puppet/Chef scripts do) as part of the install.
 
 ### Troubleshooting Installation
 
@@ -54,7 +54,7 @@ Chocolatey by default already supports system set proxy servers
 
 ![Two screenshots showing the Internet Explorer settings for System Level Proxy configuration](/assets/images/system-proxy-settings.png)
 
-**NOTE:** Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
+> :memo: **NOTE** Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
 
 ## Existing Proxy Environment Variables
 

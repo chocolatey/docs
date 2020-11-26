@@ -42,7 +42,7 @@ user name and password specified as 'user:password' for the API key. Please see
 your repository's documentation (for Nexus, please see
 https://bit.ly/nexus2apikey).
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Connecting to Chocolatey.org (Community Package Repository)
@@ -68,11 +68,11 @@ If you find other exit codes that we have not yet documented, please
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -190,4 +190,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
 [Command Reference](xref:choco-commands)
 
-***NOTE:*** This documentation has been automatically generated from `choco apikey -h`.
+> :memo: **NOTE** This documentation has been automatically generated from `choco apikey -h`.

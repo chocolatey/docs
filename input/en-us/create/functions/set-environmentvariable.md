@@ -10,7 +10,7 @@ RedirectFrom: docs/helpers-set-environment-variable
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Set-EnvironmentVariable.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-**NOTE:** Administrative Access Required when `-Scope 'Machine'.`
+> :memo: **NOTE** Administrative Access Required when `-Scope 'Machine'.`
 
 DO NOT USE. Not part of the public API. Use
 `Install-ChocolateyEnvironmentVariable` instead.
@@ -104,6 +104,6 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Set-EnvironmentVariable -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Set-EnvironmentVariable -Full`.
 
 View the source for [Set-EnvironmentVariable](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Set-EnvironmentVariable.ps1)

@@ -20,7 +20,7 @@ For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Lice
 
 Starting with Chocolatey Agent v0.8.0+, the service will install as a local administrative user `ChocolateyLocalAdmin` by default (and manage the password as well). However you can specify your own user with package parameters (or have it use `LocalSystem`). Using a local administrator account allows for more things to be installed without issues. It also will allow easier shortcuts and other items to be put back on the correct user (the original requestor). You can specify a domain account as well. Prior to `v0.8.0`, Chocolatey Agent would install as LocalSystem (`SYSTEM`) and would require additional customization.
 
-**NOTE:** If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
+> :memo: **NOTE** If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
 
 ## Package Parameters
 
@@ -47,7 +47,7 @@ See [FAQ](#faq) below for more discussion on security aspects.
 ### Chocolatey Agent Service Windows Account Considerations
 
 * Windows Account (required, defaults to `ChocolateyLocalAdmin`)
-   * The Chocolatey Agent Service requires ***an*** administrative account, whether that is a domain account or a local account - it just needs to be a local admin (a member of the Administrators group).
+   * The Chocolatey Agent Service requires **an** administrative account, whether that is a domain account or a local account - it just needs to be a local admin (a member of the Administrators group).
    * The agent service doesn't specifically require the `ChocolateyLocalAdmin` account, any Windows account can be used. The `ChocolateyLocalAdmin` is used as the default if one is not specified.
    * Upon use of an account during installation, it will make that account a member of the Administrators account.
    * The account used will also be granted LogonAsService and LogonAsBatch privileges.
@@ -77,7 +77,7 @@ To set Chocolatey in background mode, you need to run the following:
 * OPTIONAL (highly recommended): For use with Chocolatey GUI, you need Chocolatey Extension v1.12.4+, and at least Chocolatey GUI v0.15.0. **Uninstall any version of the GUI you already have installed first**, then run `choco upgrade chocolateygui -y --allow-downgrade` (you will also need at least .NET 4.5.2 installed)
 * DOES NOT WORK WITH UAC, DO NOT USE UNTIL [FIX IS ANNOUNCED](https://groups.google.com/group/chocolatey-announce)! OPTIONAL (recommended if you use installers that are not completely silent): If you want self-service to interactively manage installations, run `choco feature enable --name="'useBackgroundServiceInteractively'"` (requires Chocolatey Extension v1.12.10+). This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](#interactive-self-service-consideration).
 
-**NOTE**: Once you are all setup, please review the [Common Errors and Resolutions](#common-errors-and-resolutions) section so you will be familiar if you run into any issues with working with sources.
+> :memo: **NOTE** Once you are all setup, please review the [Common Errors and Resolutions](#common-errors-and-resolutions) section so you will be familiar if you run into any issues with working with sources.
 
 An example script:
 
@@ -147,7 +147,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE**: This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
+> :memo: **NOTE** This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
 ## Log File Location For Chocolatey Agent
 
@@ -278,7 +278,7 @@ So you've seen from above that
 * Due to the way that it is generated, it is completely unguessable.
 * No one at Chocolatey Software could even tell you what the password is for a particular machine without local access.
 
-Chocolatey uses something unique about each system, along with an encrypted value in the licensed code base to generate base password, then it makes some other changes to ensure that the password meets complexity requirements. We won't give you the full algorithm of how the password is generated as knowing the algorithm would be a security issue - like having a partial picture of a key, you could start working on how to break in. Unlike a picture of a key, even knowing the full algorithm doesn't get you everything you need as you would need local access to each box to determine the password for ***each*** machine.
+Chocolatey uses something unique about each system, along with an encrypted value in the licensed code base to generate base password, then it makes some other changes to ensure that the password meets complexity requirements. We won't give you the full algorithm of how the password is generated as knowing the algorithm would be a security issue - like having a partial picture of a key, you could start working on how to break in. Unlike a picture of a key, even knowing the full algorithm doesn't get you everything you need as you would need local access to each box to determine the password for **each** machine.
 
 ### Is the managed password stored or logged anywhere?
 
@@ -292,7 +292,7 @@ No, it is different for every machine it is deployed to.
 
 ### How would someone potentially get access to the managed password?
 
-The Chocolatey licensed code base is encrypted, so only people that work at Chocolatey Software would be able to determine the password for a particular box (just that one) ***IF*** they have local access to that box. Even with all of the information and the algorithm, it's still going to take our folks a while to determine the password. That gets them access to one machine. Of course, Chocolatey folks are not going to do this for obvious reasons.
+The Chocolatey licensed code base is encrypted, so only people that work at Chocolatey Software would be able to determine the password for a particular box (just that one) **IF** they have local access to that box. Even with all of the information and the algorithm, it's still going to take our folks a while to determine the password. That gets them access to one machine. Of course, Chocolatey folks are not going to do this for obvious reasons.
 
 So let's realize this to its full potential - If someone were able to hack the Chocolatey licensed codebase, they would be able to determine the full password algorithm. Then they'd also need to hack into your infrastructure and get local access to every box that they wanted to get the Chocolatey-managed password so they could get admin access to just that box. Taking this out a bit further, it's reasonable to assume that if someone has hacked into your infrastructure, it's highly unlikely they are going to be using a non-administrator account to get local access to a box so they can get the password for an administrator account for just that one box. It's more likely they would would already have a local admin account for the boxes they are attacking, and are likely to seek other attack vectors that are much less sophisticated.
 
@@ -342,7 +342,7 @@ Please see [Central Management Client Setup](xref:ccm-client) as the common erro
 
 You can not pass custom source arguments to Chocolatey, it will error. You need to set up sources in the Chocolatey configuration and any that are marked as allowed for self-service will be passed by the background service.
 
-**NOTE:** If you have run `choco feature disable -n useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
+> :memo: **NOTE** If you have run `choco feature disable -n useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
 
 ### I'm getting the following: "There are no sources enabled for packages and none were passed as arguments."
 
@@ -370,7 +370,7 @@ A way to do this with LocalSystem:
 1. Add this group to the share permissions with "Read" Access
 1. Add this group to the NTFS permissions with "Read" Access
 
-**Note**:  You'll need to add this group itself and not nest it inside of another one.
+> :memo: **NOTE**  You'll need to add this group itself and not nest it inside of another one.
 
 ### The agent service is not picking up the new license
 

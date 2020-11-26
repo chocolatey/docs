@@ -30,7 +30,7 @@ Click :floppy_disk: **Save** to close the modal and create the new group.
 
 ## Editing a Group
 
-> :information_source: **NOTE**
+> :memo: **NOTE**
 >
 > If you do not see the **Edit** menu entry or the :gear: **Actions** buttons, consult your administrator to determine if you have the Edit Groups role assigned.
 
@@ -44,7 +44,7 @@ From the **Edit Group** modal, you can modify the group name and description, an
 
 ## Deleting a Group
 
-> :information_source: **NOTE**
+> :memo: **NOTE**
 >
 > If you do not see the **Delete** menu entry or the :gear: **Actions** buttons, consult your administrator to determine if you have the appropriate role assigned to your account.
 

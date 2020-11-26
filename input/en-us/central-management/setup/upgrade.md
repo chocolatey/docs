@@ -8,15 +8,15 @@ RedirectFrom: docs/central-management-setup-upgrade
 
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
-> :memo: **NOTE**: Looking for installation instructions? See [Central Management Setup](xref:ccm-setup).
+> :memo: **NOTE** Looking for installation instructions? See [Central Management Setup](xref:ccm-setup).
 
 > :warning: **WARNING**
 >
-> Unless otherwise noted, please follow these steps in ***exact*** order. These steps build on each other and need to be completed in order.
+> Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 
 > :warning: **WARNING**
 >
-> All deployed components of the CCM packages should **always** be the ***SAME VERSION***. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
+> All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
 ## Step 1: Download Latest Packages
 
@@ -26,7 +26,7 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 
 Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix).
 
-> :warning: **TRIALS**: You need to ***first reach out*** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
+> :warning: **TRIALS**: You need to **first reach out** to your sales representative to get the latest binaries - your trial license won't have direct access to the licensed repository.
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
@@ -52,7 +52,7 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Upgrade Central Management Database
 
-> :memo: **NOTE**: Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
+> :memo: **NOTE** Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-database -y
@@ -62,32 +62,32 @@ choco upgrade chocolatey-management-database -y
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-> :memo: **NOTE**: Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
+> :memo: **NOTE** Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-service -y
 ```
 
-> :warning: **WARNING**: If you passed non-default options for any of the following:
+> :warning: **WARNING** If you passed non-default options for any of the following:
 > * `/Username:` / `/Password:` / `/EnterPassword`
 > * `/PortNumber:`
 >
-> You ***will need to pass*** those items again for upgrades in current releases of CCM.
+> You **will need to pass** those items again for upgrades in current releases of CCM.
 
 
-> :warning: **WARNING**: If you passed a non-default option for the following:
+> :warning: **WARNING** If you passed a non-default option for the following:
 > * `/CertificateDnsName:` / `/CertificateThumbprint:`
 >
-> You ***may need to pass*** those items again under the following conditions:
+> You **may need to pass** those items again under the following conditions:
 > * Your certificate's DNS name does not match `<hostname>*`(a certficate that at least starts with the hostname).
 
-> :memo: **NOTE**: Database details that have not changed will not need to be passed.
+> :memo: **NOTE** Database details that have not changed will not need to be passed.
 
 There may be additional (new) things you will want to configure. Please see [Central Management Service Setup](xref:ccm-service) for details.
 
 ## Step 4: Setup Central Management Website
 
-> :memo: **NOTE**: Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
+> :memo: **NOTE** Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-web -y
@@ -99,7 +99,7 @@ choco upgrade chocolatey-management-web -y
 
 ## Step 5: Upgrade Agent Machines
 
-> :memo: **NOTE**: Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
+> :memo: **NOTE** Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-agent -y
@@ -107,9 +107,9 @@ choco upgrade chocolatey-agent -y
 
 There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE**: This could include the agent(s) on the CCM machine(s).
+> :memo: **NOTE** This could include the agent(s) on the CCM machine(s).
 
-> :warning: **WARNING**: The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### New Deployments Feature Example
 

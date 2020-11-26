@@ -14,7 +14,7 @@ Chocolatey will perform a search for a package local or remote and provide
  detailed information about that package. This is a synonym for
  `choco search <pkgname> --exact --detailed`.
 
-**NOTE:** New as of 0.9.10.0.
+> :memo: **NOTE** New as of 0.9.10.0.
 
 ## Usage
 
@@ -26,7 +26,7 @@ Chocolatey will perform a search for a package local or remote and provide
     choco info googlechrome
     choco info powershell
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
@@ -42,9 +42,9 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: no results (enhanced)
 
-**NOTE:** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
- turned on, then choco will provide enhanced exit codes that allow
- better integration and scripting.
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+> turned on, then choco will provide enhanced exit codes that allow
+> better integration and scripting.
 
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
@@ -52,11 +52,11 @@ If you find other exit codes that we have not yet documented, please
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> running a command like install that allows installing multiple
+> packages, and you use `--version=1.0.0`, it is going to look for and
+> try to install version 1.0.0 of every package passed. So please split
+> out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
@@ -190,5 +190,4 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco info -h`.
-
+> :memo: **NOTE** This documentation has been automatically generated from `choco info -h`.

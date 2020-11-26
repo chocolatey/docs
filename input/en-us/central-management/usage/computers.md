@@ -36,7 +36,7 @@ You will be presented with a list of the installed software packages for the mac
 
 ## Removing a Computer from Central Management
 
-> :information_source: **NOTE**
+> :memo: **NOTE**
 >
 > Unless you first uninstall (at minimum) the `chocolatey-agent` or disable Central Management by disabling the feature setting, the deleted computer will reappear when the Chocolatey Agent performs its next check-in.
 

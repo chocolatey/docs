@@ -1,4 +1,6 @@
-For common integrations, it's handy to refer to the table below to know what configuration manager to choose. Most of the implementations below are written and managed by the companies behind the product. These implementations are typically open source and each part could be added by community contributions for those familiar with the code implementations. If you are unable to provide code implementations for adding necessary functionality to the integrations, we find it best if you create issues/tickets with those organizations if you are a customer as you will have more leverage into getting them implemented. **NOTE**: If you are a configuration manager company identified in the table and you have implemented anything in the below or you find our information is incorrect, please let us know so we can get it fixed.
+For common integrations, it's handy to refer to the table below to know what configuration manager to choose. Most of the implementations below are written and managed by the companies behind the product. These implementations are typically open source and each part could be added by community contributions for those familiar with the code implementations. If you are unable to provide code implementations for adding necessary functionality to the integrations, we find it best if you create issues/tickets with those organizations if you are a customer as you will have more leverage into getting them implemented.
+
+> :memo: **NOTE** If you are a configuration manager company identified in the table and you have implemented anything in the below or you find our information is incorrect, please let us know so we can get it fixed.
 
 | Configuration Managers                              | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
 |-----------------------------------------------------|-------------------------|--------------------|----------------------------|-------------------|-------------------|---------------------|
@@ -10,7 +12,7 @@ For common integrations, it's handy to refer to the table below to know what con
 | [Manage Features](xref:choco-command-feature)       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
 | [Manage Config Settings](xref:choco-command-config) | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
 
-**NOTE: Each *x* is linked to the specific feature documentation.**
+> :memo: **NOTE: Each *x* is linked to the specific feature documentation.**
 
 For most of these, those configuration managers have some sort of exec you could use to manage those additional aspects, but it would be best if they supported all aspects of configuration of Chocolatey as part of the provider implementations.
 

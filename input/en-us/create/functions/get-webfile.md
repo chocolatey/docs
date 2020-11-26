@@ -148,6 +148,6 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebFile -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebFile -Full`.
 
 View the source for [Get-WebFile](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-WebFile.ps1)

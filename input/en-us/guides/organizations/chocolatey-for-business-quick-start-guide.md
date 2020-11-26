@@ -87,7 +87,7 @@ As with configuration managers, this is out-of-scope for this document. Generall
     choco install chocolatey-c4b-quickstart --source . -y --params "'/LicenseFile:<FULL_PATH_TO_LICENSE_FILE>'"
     ```
 
-    > :memo: **NOTE**: We have built this package to SIMPLIFY the initial setup greatly; it will perform the following:
+    > :memo: **NOTE** We have built this package to SIMPLIFY the initial setup greatly; it will perform the following:
     > <ul class="list-style-type-disc">
     >   <li>Download appropriate ".nupkg" files needed to setup Chocolatey.</li>
     >   <li>Install the license file in the correct directory</li>

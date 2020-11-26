@@ -12,13 +12,13 @@ RedirectFrom: docs/commands-config
 
 Chocolatey will allow you to interact with the configuration file settings.
 
-**NOTE:** Available in 0.9.9.9+.
+> :memo: **NOTE** Available in 0.9.9.9+.
 
 ## Usage
 
     choco config [list]|get|set|unset [<options/switches>]
 
-**NOTE:** `Unset` subcommand available in 0.9.10+.
+> :memo: **NOTE** `Unset` subcommand available in 0.9.10+.
 
 ## Examples
 
@@ -31,7 +31,7 @@ Chocolatey will allow you to interact with the configuration file settings.
     choco config unset proxy
     choco config unset --name proxy
 
-**NOTE:** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -55,7 +55,7 @@ If you find other exit codes that we have not yet documented, please
 
 ## Options and Switches
 
-**NOTE:** Options and switches apply to all items passed, so if you are
+> :memo: **NOTE** Options and switches apply to all items passed, so if you are
  running a command like install that allows installing multiple
  packages, and you use `--version=1.0.0`, it is going to look for and
  try to install version 1.0.0 of every package passed. So please split
@@ -174,5 +174,5 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 [Command Reference](xref:choco-commands)
 
 
-***NOTE:*** This documentation has been automatically generated from `choco config -h`.
+> :memo: **NOTE** This documentation has been automatically generated from `choco config -h`.
 

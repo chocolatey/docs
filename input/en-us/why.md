@@ -41,7 +41,7 @@ Chocolatey helps good developers and system administrators become outstanding de
 
 Chocolatey is something **you need if you've ever installed, upgraded, or removed software on Windows**. It is an **existing, proven**, project that was started [in 2011](https://github.com/ferventcoder/nugetpackages/commit/d16ed7ac675395b3bb8ecee90fb13efb03d4b619). For those familiar with \*nix package managers, it is a binary package manager, sort of like yum or apt-get, but for Windows. The words "binary package manager" can be confusing for those who don't know what that means, but bear with me for a few minutes. Chocolatey is a tool that automates all the mundane getting and installing software work for you. You just select what you want installed and within a few minutes, Chocolatey has downloaded and installed (or upgraded) that software without need for further input from you. So **while Chocolatey does the hard work, you can go get some coffee**. Or **sleep**. Or do other more important things.
 
-This may not seem very powerful at first, but imagine when you want to **upgrade all** of the software on your system to the latest, most secure versions, how do you do that now? Right. ***Manually***:
+This may not seem very powerful at first, but imagine when you want to **upgrade all** of the software on your system to the latest, most secure versions, how do you do that now? Right. **Manually**:
 
 1. Search for most recent version
 1. Pick (hopefully) the right download
@@ -49,7 +49,7 @@ This may not seem very powerful at first, but imagine when you want to **upgrade
 1. Unblock it
 1. Install it manually (next, next, next anyone?)
 1. Hope it didn't install any malware
-1. Now do it again for ***EVERY*** piece of software on your system.
+1. Now do it again for **EVERY** piece of software on your system.
 
 ![chris-farley-disbelief](/assets/images/gifs/chris-farley-disbelief.gif)
 
@@ -69,7 +69,7 @@ Yes, yes you can. Chocolatey works in a similar manner to how you would do thing
 
 ![Yes, yes](http://replygif.net/i/208.gif)
 
-Now, Chocolatey ***can*** take over existing installs and be able to handle uninstalls in most cases. ***Can*** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
+Now, Chocolatey **can** take over existing installs and be able to handle uninstalls in most cases. **Can** is very dependent on packaging and the underlying software installer that is used for the install ([installer packages](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) are the context here).
 
 Let me start by saying that testing how a single package won't give you a warm and fuzzy about how it will work with all packages. Software installers in the wild world of Windows have many completely different ways of going about things, all of which are dependent on those creating the installers, none of which have a consistent standard (except maybe MSI). Welcome to Windows.
 

@@ -10,7 +10,7 @@ RedirectFrom: docs/helpers-install-chocolatey-install-package
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyInstallPackage.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-**NOTE:** Administrative Access Required.
+> :memo: **NOTE** Administrative Access Required.
 
 Installs software into "Programs and Features". Use
 Install-ChocolateyPackage when software must be downloaded first.
@@ -313,6 +313,6 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyInstallPackage -Full`.
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyInstallPackage -Full`.
 
 View the source for [Install-ChocolateyInstallPackage](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyInstallPackage.ps1)

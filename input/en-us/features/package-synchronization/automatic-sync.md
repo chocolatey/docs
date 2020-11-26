@@ -8,7 +8,7 @@ RedirectFrom: docs/features-synchronize
 
 ## Automatic Synchronize
 
-In all licensed editions, Chocolatey syncs the state of ***already installed Chocolatey packages*** (nupkg files) to the state of the software they are linked up with - so if the software is uninstalled or upgraded outside of Chocolatey, it removes the package or notes the upgrade. This behavior is known as automatic synchronization or autosync for short. There is also choco sync, which is different and is covered in [Sync Command](#sync-command) below.
+In all licensed editions, Chocolatey syncs the state of **already installed Chocolatey packages** (nupkg files) to the state of the software they are linked up with - so if the software is uninstalled or upgraded outside of Chocolatey, it removes the package or notes the upgrade. This behavior is known as automatic synchronization or autosync for short. There is also choco sync, which is different and is covered in [Sync Command](#sync-command) below.
 
 There is an important distinction between packages and software to understand with Chocolatey. Chocolatey manages packages (nupkg files), and packages manage software. Many packages are what we call "installer packages" - packages that manage an installer and an installation into Programs and Features. Once that software is in Programs and Features, it could be manipulated outside of Chocolatey. If it is removed without the command going through Chocolatey, open source Chocolatey will still have the package installed (which is technically correct from a package manager state, but incorrect based on expectations). With open source you end up with a disconnect if you are not careful. Licensed editions of Chocolatey are able to see system state and correct this discrepancy with autosync by updating the state of the package based on what has occurred outside of Chocolatey.
 
@@ -59,7 +59,7 @@ If the software is an MSI, the Product Guid is used for managing uninstalls. Gue
 
 ![auto package creation/synchronize](/assets/images/gifs/choco_business_features.gif)
 
-> :memo: **NOTE**: To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> :memo: **NOTE** To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 ### Options and Switches
 
