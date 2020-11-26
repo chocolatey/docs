@@ -398,10 +398,12 @@ Related to the community package repository only (aka the default feed aka https
 
 If you are a maintainer of a package and you would like to self-reject an older version of a package that is failing verification or validation, we support that. If however you just want to reject a working package because it is older, we don't support that. Rejected != Obsolete. It's really about when the underlying software has the same download url for every release so the older versions do not apply. If you are using checksums to verify the download (and you should be), then your older versions should start failing.
 
-![image](/assets/images/faqs/package-moderation-reject-package.png)
+![Reject package checkbox is only visible if the package has failed automated review](/assets/images/faqs/package-moderation-reject-package.png)
 
 * Failing verification -
-![image](/assets/images/faqs/email-from-validator.png)
+
+![An example email which is sent to maintainer of package when an automated check has failed](/assets/images/faqs/email-from-validator.png)
+
 * Failing validation - a message from the validator telling you it failed validation.
 
 ### What is the validator?

@@ -16,7 +16,7 @@ A template is used for creating packages. Chocolatey (choco) has a built-in temp
 
 If you drop a template into `$env:ChocolateyInstall\templates` folder, you can use `-t name_of_template` to generate a choco template based on that. So for:
 
-![image](/assets/images/features/choco-templates-location.png)
+![Windows Explorer showing the installation location for a new template with the name of Organization](/assets/images/features/choco-templates-location.png)
 
 You would call `choco new pkgname -t organization` and choco will use the template folder instead of the built-in template.
 

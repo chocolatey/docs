@@ -157,7 +157,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
  7. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
  8. Check over the package based on [moderator review](#moderator-review) (below).
  9. Review the previous comments if there are any.
- ![image](/assets/images/moderation/moderation-previous-comments.png)
+ ![Review previous comments for other package versions](/assets/images/moderation/moderation-previous-comments.png)
  10. Look through the package files
  ![Package Files](/assets/images/moderation-10.jpg)
  11. Leave comments in the review box ("Add to Review Comments" section) if you have any. Note that you can use markdown here.

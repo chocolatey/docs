@@ -52,7 +52,7 @@ To access [packages.chocolatey.org](https://packages.chocolatey.org):
 
 Chocolatey by default already supports system set proxy servers
 
-![image](/assets/images/system-proxy-settings.png)
+![Two screenshots showing the Internet Explorer settings for System Level Proxy configuration](/assets/images/system-proxy-settings.png)
 
 **NOTE:** Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
 
@@ -91,7 +91,8 @@ choco config set proxyBypassOnLocal true #0.10.4 required
 ~~~
 
 Results in the following items being added to the config file:
-![image](/assets/images/proxy-config-changes.png)
+
+![Shows the encrypted proxy configuration information that is stored in the chocolatey.config file](/assets/images/proxy-config-changes.png)
 
 ### Explicit Proxy Settings at Runtime
 
