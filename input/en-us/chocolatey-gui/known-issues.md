@@ -1,5 +1,5 @@
 ---
-Order: 30
+Order: 70
 xref: chocolateygui-known-issues
 Title: Known Issues
 Description: Current known issues regarding Chocolatey GUI
