@@ -174,9 +174,31 @@
                                                                                         <ul class="navbar-nav">
                                                                                             @foreach (IDocument greatGrandChild in OutputPages.GetChildrenOf(grandChild).OnlyVisible())
                                                                                             {
-                                                                                                <li class="nav-item">
-                                                                                                    <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
-                                                                                                </li>
+                                                                                                @if(OutputPages.GetChildrenOf(greatGrandChild).Any())
+                                                                                                {
+                                                                                                    <li class="nav-item">
+                                                                                                        <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(greatGrandChild) ||  OutputPages.GetDescendantsOf(greatGrandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(greatGrandChild) ? "active-page" : null)">
+                                                                                                            <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@greatGrandChild.Id" aria-label="collapse or expand navigation" href="#id-@greatGrandChild.Id"></button>
+                                                                                                            <a href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                        </div>
+                                                                                                        <div class="collapse" id="id-@greatGrandChild.Id">
+                                                                                                            <ul class="navbar-nav">
+                                                                                                                @foreach (IDocument greatGreatGrandChild in OutputPages.GetChildrenOf(greatGrandChild).OnlyVisible())
+                                                                                                                {
+                                                                                                                    <li class="nav-item">
+                                                                                                                        <a class="nav-link pl-c5 @(Document.IdEquals(greatGreatGrandChild) ? "active active-page" : null)" href="@greatGreatGrandChild.GetLink()">@greatGreatGrandChild.GetTitle()</a>
+                                                                                                                    </li>
+                                                                                                                }
+                                                                                                            </ul>
+                                                                                                        </div>
+                                                                                                    </li>
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    <li class="nav-item">
+                                                                                                        <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                    </li>
+                                                                                                }
                                                                                             }
                                                                                         </ul>
                                                                                     </div>
