@@ -11,12 +11,9 @@ requested, the information is instead fetched from the local cache.  The length 
 information is kept can be controlled via this configuration parameter.  The default is 60 minutes, which can be
 increased as required.
 
-:::{.alert .alert-info}
-**NOTE:**
-
-Any time a package operation is completed, i.e. install/uninstall/upgrade, the outdated package information cache will
-be invalidated.
-:::
+> :memo: **NOTE**
+>
+> Any time a package operation is completed, i.e. install/uninstall/upgrade, the outdated package information cache will be invalidated.
 
 ## Example
 

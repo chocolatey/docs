@@ -17,11 +17,9 @@ When this setting is turned off, a non-admin user will no longer be able to acce
 
 ![Access to Settings screen removed](/assets/images/chocolatey-gui/access_to_settings_removed.png "Access to Settings screen removed")
 
-:::{.alert .alert-info}
-**NOTE:**
-
-Regardless of this setting, an administrator user will always be able to access the Settings screen.
-:::
+> :memo: **NOTE**
+>
+> Regardless of this setting, an administrator user will always be able to access the Settings screen.
 
 ## Resources
 

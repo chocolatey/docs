@@ -23,11 +23,9 @@ following:
 
 ![Hide Package Download Count Enabled 2](/assets/images/chocolatey-gui/feature_hide_package_download_count_enabled_2.png "Hide Package Download Count Enabled 2")
 
-:::{.alert .alert-info}
-**NOTE:**
-
-It is currently not possible to configure showing/hiding the package download count for individual feeds
-:::
+> :memo: **NOTE**
+>
+> It is currently not possible to configure showing/hiding the package download count for individual feeds
 
 ## Resources
 

@@ -17,12 +17,9 @@ similar to the following:
 
 ![Show Aggregated Source Enabled](/assets/images/chocolatey-gui/feature_show_aggregated_source_enabled.png "Show Aggregated Source Enabled")
 
-:::{.alert .alert-info}
-**NOTE:**
-
-When first enabling this feature, it will be necessary to close and re-open Chocolatey GUI in order to see the new source
-view.
-:::
+> :memo: **NOTE**
+>
+>When first enabling this feature, it will be necessary to close and re-open Chocolatey GUI in order to see the new source view.
 
 ## Resources
 
