@@ -178,7 +178,7 @@
                                                                                                 {
                                                                                                     <li class="nav-item">
                                                                                                         <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(greatGrandChild) ||  OutputPages.GetDescendantsOf(greatGrandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(greatGrandChild) ? "active-page" : null)">
-                                                                                                            <button class="btn btn-collapse pl-c2 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@greatGrandChild.Id" aria-label="collapse or expand navigation" href="#id-@greatGrandChild.Id"></button>
+                                                                                                            <button class="btn btn-collapse pl-c375 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@greatGrandChild.Id" aria-label="collapse or expand navigation" href="#id-@greatGrandChild.Id"></button>
                                                                                                             <a href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
                                                                                                         </div>
                                                                                                         <div class="collapse" id="id-@greatGrandChild.Id">
@@ -186,7 +186,7 @@
                                                                                                                 @foreach (IDocument greatGreatGrandChild in OutputPages.GetChildrenOf(greatGrandChild).OnlyVisible())
                                                                                                                 {
                                                                                                                     <li class="nav-item">
-                                                                                                                        <a class="nav-link pl-c5 @(Document.IdEquals(greatGreatGrandChild) ? "active active-page" : null)" href="@greatGreatGrandChild.GetLink()">@greatGreatGrandChild.GetTitle()</a>
+                                                                                                                        <a class="nav-link pl-c6 @(Document.IdEquals(greatGreatGrandChild) ? "active active-page" : null)" href="@greatGreatGrandChild.GetLink()">@greatGreatGrandChild.GetTitle()</a>
                                                                                                                     </li>
                                                                                                                 }
                                                                                                             </ul>
@@ -243,9 +243,9 @@
                     </div>
                     <div class="row">
                         <div id="mainContent" class="col-xl-10 pl-md-5 order-2 order-xl-1">
-                             <div class="d-none d-xl-block">
+                            <div class="d-none d-xl-block">
                                 @Html.Partial("_breadcrumbs")
-                             </div>
+                            </div>
                              @RenderBody()
                              @Html.Partial("_childpages")
                         </div>
@@ -263,7 +263,7 @@
                                                 <hr class="m-0" />
                                             }
                                             <p class="font-weight-bold pt-3">On This Page</p>
-                                            <ul class="list-unstyled pb-3">
+                                            <ul class="list-unstyled pb-xl-3">
                                                 @foreach (IDocument heading in headings)
                                                 {
                                                     <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
