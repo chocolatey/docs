@@ -25,7 +25,9 @@ When this setting is turned off, a non-admin user will no longer be able to acce
 
 Below is a short video which shows this feature in action:
 
-<iframe width="700" height="506" src="https://www.youtube.com/embed/VCTHWo7cgW0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-700by506">
+    <iframe class="embed-responsive-item" width="700" height="506" src="https://www.youtube.com/embed/VCTHWo7cgW0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
 
 ## Example
 

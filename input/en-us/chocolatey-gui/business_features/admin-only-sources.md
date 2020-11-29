@@ -17,4 +17,6 @@ If this setting has been set to true on a source, Chocolatey GUI will no longer 
 
 Below is a short video which shows this feature in action:
 
-<iframe width="700" height="506" src="https://www.youtube.com/embed/MBXnFdNMG28" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-700by506">
+    <iframe class="embed-responsive-item" width="700" height="506" src="https://www.youtube.com/embed/MBXnFdNMG28" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
