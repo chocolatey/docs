@@ -6,6 +6,7 @@ Description: Chocolatey Documentation
 RedirectFrom:
   - docs/home
   - docs/
+  - index.html
 ---
 
 ## What is Chocolatey?
