@@ -37,7 +37,7 @@ Under the following situations you would want to run the script that follows:
 Once complete, this script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them.
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1
 ```
 > :warning: **WARNING**
 >

@@ -58,7 +58,7 @@ Some additional common reasons for this change are:
 Essentially, in any scenario where the **fully-qualified domain name (FQDN)** of the QDE server has been modified, you will need to ensure that the "Subject/Common Name" attribute on the SSL certificates matches this FQDN.
 If you are making any of the above changes, please generate new SSL certificates **_after_** any changes to the FQDN have been completed.
 
-The `New-SslCertificates.ps1` script in the "C:\choco-setup\files" folder on the QDE VM will:
+The `New-SSLCertificate.ps1` script in the "C:\choco-setup\files" folder on the QDE VM will:
 
 * Generate new SSL certificates for your Nexus and CCM Service applications
 * Move these certificates to the appropriate certificate stores
@@ -66,18 +66,18 @@ The `New-SslCertificates.ps1` script in the "C:\choco-setup\files" folder on the
 
 > : exclamation: **IMPORTANT**
 >
-> If you are running QDE v1.0, there is a good chance that the current version of the `New-SslCertificates.ps1` script in the "C:\choco-setup\files" folder on your QDE VM is out-of-date, as we have made numerous updates to it over the past few months.
+> If you are running QDE v1.0, there is a good chance that the current version of the `New-SSLCertificate.ps1` script in the "C:\choco-setup\files" folder on your QDE VM is out-of-date, as we have made numerous updates to it over the past few months.
 > Please use the following command to update your version of this file (to be run in a PowerShell Administrator window):
 >
 > ```powershell
-> Invoke-WebRequest -Uri 'https://ch0.co/newssl' -OutFile "$env:SystemDrive\choco-setup\files\New-SslCertificates.ps1"
+> Invoke-WebRequest -Uri 'https://ch0.co/newssl' -OutFile "$env:SystemDrive\choco-setup\files\New-SSLCertificate.ps1"
 > ```
 
 This script can be utilized in multiple certificate scenarios outlined below. Any time this script is run, please be mindful of the warnings below.
 
 > :warning: **WARNING**
 >
-> * The `New-SslCertificates.ps1` script will appear to prompt for input, and also display some misleading output.
+> * The `New-SSLCertificate.ps1` script will appear to prompt for input, and also display some misleading output.
 >   This is due to the nature of the Java tooling by which the script interacts with Nexus.
 >   Please ignore any spurious prompts and output.
 > * If you provide your own SSL certificate, your **private key** needs to be **exportable** so that the script can export that key into Nexus' Java keystore.
@@ -121,11 +121,11 @@ Once you have your new valid and resolvable FQDN for QDE, you will now want to e
 1. Under the "Personal" store, you should see a server certificate matching the FQDN of your QDE server.
    Double-click on the certificate to open it, and under the details tab, copy out the `Thumbprint` value of the certificate.
    You will need this for later steps.
-1. Now, you can run the `New-SslCertificates.ps1` script and pass the thumbprint you copied above using the `-Thumbprint` parameter.
+1. Now, you can run the `New-SSLCertificate.ps1` script and pass the thumbprint you copied above using the `-Thumbprint` parameter.
    Please run the below command from a PowerShell Administrator window:
 
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1 -Thumbprint '<YOUR_CERT_THUMBPRINT_HERE>'
+    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1 -Thumbprint '<YOUR_CERT_THUMBPRINT_HERE>'
     ```
 
 1. **(Optional)** If some endpoints are not on the domain, or on a different domain, you will need to ensure that the Nexus and CCM certificates of QDE are copied to the `Local Computer\Trusted People\Certificates` store on those endpoints as well.
@@ -147,11 +147,11 @@ The steps involved in this scenario are similar to the Domain certificates above
    Double-check to ensure that the SSL certificate you have purchased is placed in the correct stores, otherwise this process will not succeed.
 1. Under the "Personal" store, you should see a server certificate matching the FQDN of the certificate your QDE server.
    Double-click on the certificate to open it, and under the details tab, copy out the `Thumbprint` value of the certificate.
-1. Run the `New-SslCertificates.ps1` script and pass the thumbprint you copied above using the `-Thumbprint` parameter.
+1. Run the `New-SSLCertificate.ps1` script and pass the thumbprint you copied above using the `-Thumbprint` parameter.
    Please run the below command from a PowerShell Administrator window:
 
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1 -Thumbprint '<YOUR_CERT_THUMBPRINT_HERE>'
+    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1 -Thumbprint '<YOUR_CERT_THUMBPRINT_HERE>'
     ```
 
 1. **(Optional)** Assuming you've acquired your SSL certificate from an already-trusted Certificate Authority, your endpoints should trust this certificate natively.
@@ -159,16 +159,16 @@ The steps involved in this scenario are similar to the Domain certificates above
 
 ### Scenario 3: Self-Signed SSL Certificates
 
-If you are planning to use self-signed SSL certificates to secure your communication with Nexus and CCM on QDE, then you will be required to run the `New-SslCertificates.ps1` script using the command above _at least once_.
+If you are planning to use self-signed SSL certificates to secure your communication with Nexus and CCM on QDE, then you will be required to run the `New-SSLCertificate.ps1` script using the command above _at least once_.
 As you will be exposing these two services via the Internet, you must make sure your certificates are unique and not the default certificates provided by the QDE image.
 
 1. Ensure you have a valid DNS record for the `CHOCOSERVER` hostname of the QDE VM, that resolves to the external IP of QDE.
    If not, create a host record for the hostname `CHOCOSERVER` in your Windows HOSTS file on your endpoints.
    This is located at: `“C:\Windows\System32\drivers\etc\hosts”`.
-1. Run the `New-SslCertificates.ps1` script, from a PowerShell Administrator window:
+1. Run the `New-SSLCertificate.ps1` script, from a PowerShell Administrator window:
 
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1
+    Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1
     ```
 
 This scenario is the least desirable for an Internet-accessible setup, as you will likely have to perform steps manually on every endpoint.
@@ -181,7 +181,7 @@ It is also less secure, and thus **not recommended** for a server that is Intern
 
 ## Nexus Setup
 
-The `New-SslCertificates.ps1` mentioned above will create a Java KeyStore (JKS) version of an SSL certificate, that can be used to secure communication between your endpoints and your Nexus repositories.
+The `New-SSLCertificate.ps1` mentioned above will create a Java KeyStore (JKS) version of an SSL certificate, that can be used to secure communication between your endpoints and your Nexus repositories.
 As mentioned in the section above, this certificate will need to be trusted by your endpoints.
 
 Additionally, when logging in and resetting your administrative credential in the Nexus web UI, there is a checkbox to allow “Anonymous” access.

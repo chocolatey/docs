@@ -69,7 +69,7 @@ Under almost all circumstances for security purposes, you are going to want to c
 > :memo: **NOTE** Please run the below from an administrative PowerShell session.
 
 ```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SslCertificates.ps1
+Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1
 ```
 
 > :warning: **WARNING**
