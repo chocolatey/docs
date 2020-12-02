@@ -219,10 +219,12 @@ From a completely fresh CCM instance with at least one computer checking into Ce
 - Start the deployment.
 
 The process involves a couple of intermediary steps as well, since we're using the raw REST API endpoints here (see below).
+We're also assuming as part of this example that you've already [Authenticated to the CCM API](#authentication) and have a `$Session` variable created as in that example.
 
 #### 1. Get All CCM-Managed Computers
 
 ```powershell
+$CcmServerHostname = 'chocoserver'
 $params = @{
     Uri        = "https://$CCmServerHostname/api/services/app/Computers/GetAll"
     Method     = 'GET'
@@ -322,4 +324,90 @@ $params = @{
     Body        = @{ id = $deployment.Id } | ConvertTo-Json
 }
 $null = Invoke-RestMethod @params
+```
+
+### Create a Recurring Scheduled Task to run Recurring Deployments
+
+This example uses the concepts in the previous example and streamlines the process of creating a scheduled task on Windows to create a recurring deployment task.
+In this example, we set the trigger to run daily, but you could configure it to run as needed for your use case.
+
+```powershell
+$recurringDeploymentScript = {
+    # Fill in the CCM Server name as well as the Group ID that the deployment will target
+    $CcmServerHostname = 'chocoserver'
+    $GroupId = 1
+
+    # Authenticate to API
+    # NOTE: This is an example only; it's never a great idea to store your credentials in a script or scheduled task.
+    # Instead, store the credentials securely and retrieve them during the scheduled task script.
+    $body = @{
+        usernameOrEmailAddress = 'ccmadmin'
+        password               = 'ch0c0R0cks'
+    }
+
+    $null = Invoke-WebRequest -Uri "https://$CcmServerHostname/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop
+
+    # Create New Deployment
+    $params = @{
+        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
+        Method      = "POST"
+        WebSession  = $Session
+        ContentType = 'application/json'
+        Body        = @{ name = "Upgrade Chocolatey-Managed Applications [$(Get-Date)]" } | ConvertTo-Json
+    }
+    $deployment = (Invoke-RestMethod @params).result
+
+    # Add Deployment Step
+    $params = @{
+        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentSteps/CreateOrEdit"
+        Method      = "POST"
+        WebSession  = $Session
+        ContentType = 'application/json'
+        Body        = @{
+            deploymentPlanId               = $deployment.Id
+            name                           = "Choco Upgrade All"
+            validExitCodes                 = "0, 1605, 1614, 1641, 3010"
+            executionTimeoutInSeconds      = 14400
+            machineContactTimeoutInMinutes = "0"
+            failOnError                    = $true
+            requireSuccessOnAllComputers   = $false
+            deploymentStepGroups           = @(
+                @{ groupId = $GroupId }
+            )
+            script                         = "upgrade|all"
+        } | ConvertTo-Json
+    }
+    $null = Invoke-RestMethod @params
+
+    # Move Deployment to Ready & Start the Deployment
+    $params = @{
+        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
+        Method      = "POST"
+        WebSession  = $Session
+        ContentType = 'application/json'
+        Body        = @{ id = $deployment.Id } | ConvertTo-Json
+    }
+    $null = Invoke-RestMethod @params
+
+    $params = @{
+        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/Start"
+        Method      = "POST"
+        WebSession  = $Session
+        ContentType = 'application/json'
+        Body        = @{ id = $deployment.Id } | ConvertTo-Json
+    }
+    $null = Invoke-RestMethod @params
+}
+
+$argumentString = '-NoProfile -WindowStyle Hidden -Command "& {{ {0} }}"' -f $recurringDeploymentScript
+
+$taskParams = @{
+    Action      = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument $argumentString
+    # Fill in the requirements for the repeating scheduled task; here, it will trigger once a day @ 6 PM
+    Trigger     = New-ScheduledTaskTrigger -Daily -At 6pm
+    TaskName    = 'Repeat - Choco Update Deployment'
+    Description = "Create and start a CCM deployment which will trigger all computers in the group '$groupName' to update their Chocolatey-managed applications."
+}
+
+Register-ScheduledTask @taskParams
 ```
