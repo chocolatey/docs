@@ -1,9 +1,8 @@
 ---
-Order: 70
+Order: 10
 xref: ccm-api-examples
 Title: Examples
 Description: CCM API usage examples
-RedirectFrom: docs/central-management-api/examples
 ---
 
 ## Creating An _All Computers_ Group and Deploy Application Upgrades
