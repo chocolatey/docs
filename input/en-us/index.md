@@ -7,6 +7,7 @@ RedirectFrom:
   - docs/home
   - docs/
   - index.html
+  - docs/index.html
 ---
 
 ## What is Chocolatey?
