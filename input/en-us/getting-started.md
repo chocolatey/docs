@@ -3,7 +3,7 @@ Order: 70
 xref: getting-started
 Title: Getting Started
 Description: Introduction to Chocolatey
-RedirectFrom
+RedirectFrom:
   - docs/getting-started
   - docs/gettingstarted
 ---
