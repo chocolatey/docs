@@ -71,9 +71,20 @@ Task("Npm-Install")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    var settings = new NpmInstallSettings();
-    settings.LogLevel = NpmLogLevel.Silent;
-    NpmInstall();
+    if (BuildSystem.IsLocalBuild)
+    {
+        Information("Running npm install...");
+        var settings = new NpmInstallSettings();
+        settings.LogLevel = NpmLogLevel.Silent;
+        NpmInstall(settings);
+    }
+    else
+    {
+        Information("Running npm ci...");
+        var settings = new NpmCiSettings();
+        settings.LogLevel = NpmLogLevel.Silent;
+        NpmCi(settings);
+    }
 });
 
 Task("Run-Gulp")
