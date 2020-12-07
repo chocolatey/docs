@@ -4,8 +4,8 @@ xref: deprecate-a-package
 Title: Deprecate a Package
 Description: How to deprecate a Chocolatey package
 RedirectFrom:
-  - docs/how-to-deprecate-a-chocolatey-package
   - docs/How-To-Deprecate-A-Chocolatey-Package
+  - docs/how-to-deprecate-a-chocolatey-package
 ---
 
 ## The Problem
