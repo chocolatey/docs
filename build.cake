@@ -109,7 +109,7 @@ Task("Statiq-Build")
 
 Task("Statiq-LinkValidation")
     .IsDependentOn("Run-Gulp")
-   .Does<BuildData>((context, buildData) =>
+    .Does<BuildData>((context, buildData) =>
 {
     var settings = new DotNetCoreRunSettings {
       Configuration = configuration,
