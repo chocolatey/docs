@@ -3,7 +3,9 @@ Order: 40
 xref: powershell-reference
 Title: PowerShell Reference
 Description: PowerShell Functions aka Helpers Reference
-RedirectFrom: docs/helpers-reference
+RedirectFrom:
+  - docs/helpers-reference
+  - docs/HelpersReference
 ---
 
 # PowerShell Functions aka Helpers Reference

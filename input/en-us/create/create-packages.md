@@ -3,7 +3,9 @@ Order: 10
 xref: create-packages
 Title: Create Packages
 Description: How to start creating your own Chocolatey packages
-RedirectFrom: docs/create-packages
+RedirectFrom:
+  - docs/create-packages
+  - docs/CreatePackages
 ---
 
 # Creating Chocolatey Packages
