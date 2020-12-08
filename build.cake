@@ -16,8 +16,8 @@
 
 #addin nuget:?package=Cake.Git&version=0.22.0
 #addin nuget:?package=Cake.Kudu&version=0.11.0
-#addin nuget:?package=Cake.Npm&version=0.17.0
 #addin nuget:?package=Cake.Gulp&version=0.12.0
+#addin nuget:?package=Cake.Yarn&version=0.4.6
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scripts
@@ -66,30 +66,26 @@ Task("Clean")
     CleanDirectories(directoriesToClean);
 });
 
-Task("Npm-Install")
+Task("Yarn-Install")
     .WithCriteria(() => FileExists("./package.json"), "package.json file not found in repository")
     .IsDependentOn("Clean")
     .Does(() =>
 {
     if (BuildSystem.IsLocalBuild)
     {
-        Information("Running npm install...");
-        var settings = new NpmInstallSettings();
-        settings.LogLevel = NpmLogLevel.Silent;
-        NpmInstall(settings);
+        Information("Running yarn install...");
+        Yarn.Install();
     }
     else
     {
-        Information("Running npm ci...");
-        var settings = new NpmCiSettings();
-        settings.LogLevel = NpmLogLevel.Silent;
-        NpmCi(settings);
+        Information("Running yarn install --frozen-lockfile...");
+        Yarn.Install(settings => settings.WithFrozenLockfile());
     }
 });
 
 Task("Run-Gulp")
     .WithCriteria(() => FileExists("./gulpfile.js"), "gulpfile.js file not found in repository")
-    .IsDependentOn("Npm-Install")
+    .IsDependentOn("Yarn-Install")
     .Does(() =>
 {
     Gulp.Local.Execute();
