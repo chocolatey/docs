@@ -8,12 +8,11 @@ ShowInNavbar: false
 ShowInSidebar: false
 ---
 
-Heading down a sweet road.
+> :warning: **WARNING** This does not represent a complete listing. Links are provided for more detailed set of backlog items. Some items will not be shared publicly. 
 
-> :memo: **NOTE** This is not always going to be updated, one can take a look at the issues list here and in the chocolatey.org repositories.
+## Community
 
-## Chocolatey
-
+### Chocolatey CLI (choco)
 - Validation on choco pack (subset of the package-validator)
 - GPG package signing for traceability
 - Authenticode package signing
@@ -22,30 +21,23 @@ Heading down a sweet road.
 - Nuspec enhancements - supported versions of Windows, etc
 - Packaging enhancements - like package version, architecture
 - [Virtual packages](https://github.com/chocolatey/chocolatey/issues/7)
-- WSA / AppX / MSIX Support
-- Windows Nano Support - on hold, waiting for official stance from Microsoft
-- Official support for OneGet/PackageManagement - on hold, waiting on OneGet to support upgrades
+- WSA / AppX / MSIX direct Support
 
-Other items as noted at [https://github.com/chocolatey/choco](https://github.com/chocolatey/choco) - be sure to check the milestone for estimated release version.
+Other tickets as noted at [https://github.com/chocolatey/choco](https://github.com/chocolatey/choco) - be sure to check the milestone for estimated release version.
 
-## Licensed Chocolatey
+Release Notes / Changelog at [Chocolatey CLI Release Notes](xref:choco-release-notes).
 
-- ~~[Self-Service Installs (Non-Admins)](xref:self-service-anywhere)~~ released in Jan 2017
-- ~~[Chocolatey Central Management Console](xref:ccm)~~ - reporting aspect released May 2019
-- ~~Package Throttle - reduce download speeds for low bandwidth areas~~ - released in Q1 2017 (March)
-- Package Modernizer
-- Package Sync command:
-  - finding existing packages
-  - ~~building packages on the fly with sync (business edition)~~ released in Jan 2017
-- ~~Package Builder - [create packages from Programs and Features](xref:package-builder#generate-packages-from-programs-and-features)~~ - released in Q3 2016
-- ~~Right Click `Create Chocolatey Package...` (business editions)~~ - released in Q3 2016
-- ~~[Package Builder UI](xref:package-builder#package-builder-ui) (business edition)~~ - released in Q3 2016
-- ~~Package Builder UI (pro edition without the auto detection)~~ - released Q1 2017
-- Possibly a business edition gallery with features specific to business needs.
 
-Others as noted at [https://github.com/chocolatey/chocolatey-licensed-issues](https://github.com/chocolatey/chocolatey-licensed-issues).
+### Chocolatey GUI
+- Dark Mode - est Q1 2021
+- WCAG compliance - est. H2 2021
 
-## Chocolatey.org
+Other tickets as noted at [https://github.com/chocolatey/ChocolateyGUI/issues](https://github.com/chocolatey/ChocolateyGUI/issues) - be sure to check the milestone for estimated release version.
+
+Release Notes / Changelog at [Chocolatey GUI Release Notes](xref:chocolateygui-release-notes).
+
+
+### Chocolatey Community Repository aka Chocolatey.org
 
 - ~~Adding back in search box~~ - completed Q1 2018
 - Converting rest of site
@@ -55,11 +47,49 @@ Others as noted at [https://github.com/chocolatey/chocolatey-licensed-issues](ht
 - ~~Locking down non-secure downloads in packages (HTTP) without checksums~~ - completed Aug 2016
 - Locking down secure downloads in packages (HTTPS) without checksums
 
-Others as noted at [https://github.com/chocolatey/chocolatey.org/issues](https://github.com/chocolatey/chocolatey.org/issues).
+Other tickets as noted at [https://github.com/chocolatey/chocolatey.org/issues](https://github.com/chocolatey/chocolatey.org/issues).
 
-## Thoughts for future directions (undecided directions)
 
-- Pluggable compositional model
+## Commercial
+
+- ~~[Chocolatey Central Management Console](xref:ccm)~~ - reporting aspect released May 2019 / Deployments released June 2020
+- ~~[Self-Service Installs (Non-Admins)](xref:self-service-anywhere)~~ released in Jan 2017
+
+Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-issues](https://github.com/chocolatey/chocolatey-licensed-issues).
+
+### Chocolatey Licensed Extension
+
+- ~~Package Throttle - reduce download speeds for low bandwidth areas~~ - released in Q1 2017 (March)
+- Package Modernizer
+- Package Sync command:
+  - finding existing packages
+  - ~~building packages on the fly with sync (business edition)~~ released in Jan 2017
+- ~~Package Builder - [create packages from Programs and Features](xref:package-builder#generate-packages-from-programs-and-features)~~ - released in Q3 2016
+- ~~Right Click `Create Chocolatey Package...` (business editions)~~ - released in Q3 2016
+- ~~[Package Builder UI](xref:package-builder#package-builder-ui) (business edition)~~ - released in Q3 2016
+- ~~Package Builder UI (pro edition without the auto detection)~~ - released Q1 2017
+
+Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-issues/labels/LicensedExtension](https://github.com/chocolatey/chocolatey-licensed-issues/labels/LicensedExtension).
+
+Release Notes / Changelog at [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes).
+
+
+### Chocolatey Central Management
+- ~~Reporting~~ - released May 2019
+- ~~Deployments~~ - released June 2020
+  - ~~Scheduled Deployments~~ - released November 2020
+  - ~~Maintenance Windows~~ - released November 2020
+  - ~~Semi-connected environments~~ - released November 2020
+  - Recurring Deployments - est. H1 2021
+  - Retry - est. H1 2021
+  - Templates - est. H1 2021
+- Groups Active Directory Integration (Auto-groups) - est. H2 2021
+- WCAG compliance - est. H2 2021
+
+Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
+
+Release Notes / Changelog at [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
+
 
 ## Legal
 
