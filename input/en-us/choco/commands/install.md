@@ -4,6 +4,7 @@ xref: choco-command-install
 Title: Install
 Description: Install Command (choco install)
 RedirectFrom:
+  - docs/commandsinstall
   - docs/commands-install
   - docs/CommandsInstall
 ---
