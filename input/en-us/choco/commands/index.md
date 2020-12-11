@@ -3,7 +3,9 @@ Order: 40
 xref: choco-commands
 Title: Commands
 Description: Full list of all available Chocolatey commands
-RedirectFrom: docs/commands-reference
+RedirectFrom:
+  - docs/commandsreference
+  - docs/commands-reference
 ---
 
 This is a listing of all of the different things you can pass to choco.

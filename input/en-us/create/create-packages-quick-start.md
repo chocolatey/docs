@@ -3,7 +3,9 @@ Order: 20
 xref: create-packages-quick-start
 Title: Quick Start
 Description: The quick start guide on creating Chocolatey packages
-RedirectFrom: docs/create-packages-quick-start
+RedirectFrom:
+  - docs/createpackagesquickstart
+  - docs/create-packages-quick-start
 ---
 
 ## Creating Chocolatey Packages - TL;DR version

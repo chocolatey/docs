@@ -3,7 +3,9 @@ Order: 20
 xref: setup-choco
 Title: Setup / Install
 Description: Techniques for how to install Chocolatey
-RedirectFrom: docs/installation
+RedirectFrom:
+  - en-US/choco/setup
+  - docs/installation
 ---
 
 ## Requirements

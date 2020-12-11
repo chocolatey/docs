@@ -3,7 +3,9 @@ Order: 35
 xref: choco-command-features
 Title: Features
 Description: Feature Command (choco features)
-RedirectFrom: docs/commands-features
+RedirectFrom:
+  - docs/commandsfeatures
+  - docs/commands-features
 ShowInNavbar: false
 ShowInSidebar: false
 ---
