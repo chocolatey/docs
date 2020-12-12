@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @{
-            string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey Software | {Document.GetString(Keys.Title)}" : "Chocolatey Software";
+            string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey Software Docs| {Document.GetString(Keys.Title)}" : "Chocolatey Software Docs";
         }
         <meta name="description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
         @* Twitter Card data *@
@@ -16,12 +16,12 @@
         @* Open Graph data *@
         <meta property="og:title" content="@title" />
         <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
-        <meta property="og:site_name" content="Chocolatey" />
+        <meta property="og:site_name" content="Chocolatey Software" />
         <meta property="og:type" content="product" />
         <meta property="og:image" content="https://docs.chocolatey.org/assets/images/global-shared/facebook-share.png" />
         <meta property="og:url" content="@Context.GetLink().TrimEnd('/')@Document.GetLink()" />
         @* Additional data *@
-        <meta property="product:brand" content="Chocolatey" />
+        <meta property="product:brand" content="Chocolatey Software" />
         <meta property="product:category" content="software" />
         <meta name="flattr:id" content="mqgjkp">
         <meta property="DC.title" content="@title" />
@@ -37,7 +37,7 @@
         <link rel="apple-touch-icon" sizes="144x144" href="@Context.GetLink("/apple-touch-icon-144x144.png")" />
         <link rel="apple-touch-icon" sizes="152x152" href="@Context.GetLink("/apple-touch-icon-152x152.png")" />
         <link rel="apple-touch-icon" sizes="180x180" href="@Context.GetLink("/apple-touch-icon-180x180.png")" />
-
+        @* CSS and JS *@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
@@ -47,8 +47,6 @@
                 if(theme){if(theme == 'dark') {html.setAttribute("data-user-color-scheme", "dark");}else{html.setAttribute("data-user-color-scheme", "light");}}
             }
         </script>
-
-        <title>@title</title>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2743882-12"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -56,6 +54,7 @@
             gtag('js', new Date());
             gtag('config', 'UA-2743882-12');
         </script>
+        <title>@title</title>
     </head>
     <body class="chocolatey-docs">
         @{
