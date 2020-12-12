@@ -3,6 +3,7 @@ Order: 10
 xref: install-gui
 Title: Install Chocolatey GUI
 Description: Instructions on how to install Chocolatey GUI
+RedirectFrom: en-us/chocolatey-gui/setup/installation/chocolateygui
 ---
 
 The easiest way to install Chocolatey GUI is to use Chocolatey.  Use the
