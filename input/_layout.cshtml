@@ -57,226 +57,230 @@
         <title>@title</title>
     </head>
     <body class="chocolatey-docs">
-        @{
-            @* To remove top notice alert, replace the string below with "" *@
-            string topNoticeText = "<a href='https://chocolatey.org/events/12-days-of-chocolatey'>Join us for The 12 Days of Chocolatey Livestream!</a>";
+        <header>
+            @{
+                @* To remove top notice alert, replace the string below with "" *@
+                string topNoticeText = "<a href='https://chocolatey.org/events/12-days-of-chocolatey'>Join us for The 12 Days of Chocolatey Livestream!</a>";
 
-            if (!string.IsNullOrEmpty(topNoticeText))
-            {
-                <div id="topNoticeAlert" class="alert alert-success alert-dismissible alert-dismissible-center fade show d-none" role="alert">
-                    <p class="mb-0">@Html.Raw(topNoticeText)</p>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+                if (!string.IsNullOrEmpty(topNoticeText))
+                {
+                    <div id="topNoticeAlert" class="alert alert-success alert-dismissible alert-dismissible-center fade show d-none" role="alert">
+                        <p class="mb-0">@Html.Raw(topNoticeText)</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                }
             }
-        }
-        <div id="globalNav">
-            <div class="container-fluid">
-                @Html.Partial("_globalnavigation")
+            <div id="globalNav">
+                <div class="container-fluid">
+                    @Html.Partial("_globalnavigation")
+                </div>
             </div>
-        </div>
-        <nav id="topNav" class="navbar navbar-expand">
-            <a class="navbar-brand" href="@Context.GetLink("/")">
-                <img class="d-md-none" src="@Context.GetLink("/assets/images/global-shared/logo.svg")" alt="Chocolatey" />
-                <img class="d-none d-md-block" src="@Context.GetLink("/assets/images/global-shared/logo-square.svg")" alt="Chocolatey" />
-            </a>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
-                </li>
-                <li class="nav-item">
-                    <label class="mb-0" for="themeToggle">
-                    <input id="themeToggle" class="toggle-checkbox" type="checkbox" aria-label="Toggle theme settings" />
-                        <div class="toggle-slot">
-                            <div class="sun-icon-wrapper">
-                                <div class="sun-icon fas fa-sun"></div>
+            <nav id="topNav" class="navbar navbar-expand">
+                <a class="navbar-brand" href="@Context.GetLink("/")">
+                    <img class="d-md-none" src="@Context.GetLink("/assets/images/global-shared/logo.svg")" alt="Chocolatey" />
+                    <img class="d-none d-md-block" src="@Context.GetLink("/assets/images/global-shared/logo-square.svg")" alt="Chocolatey" />
+                </a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <label class="mb-0" for="themeToggle">
+                        <input id="themeToggle" class="toggle-checkbox" type="checkbox" aria-label="Toggle theme settings" />
+                            <div class="toggle-slot">
+                                <div class="sun-icon-wrapper">
+                                    <div class="sun-icon fas fa-sun"></div>
+                                </div>
+                                <div class="toggle-button"></div>
+                                <div class="moon-icon-wrapper">
+                                    <div class="moon-icon fas fa-moon"></div>
+                                </div>
                             </div>
-                            <div class="toggle-button"></div>
-                            <div class="moon-icon-wrapper">
-                                <div class="moon-icon fas fa-moon"></div>
-                            </div>
-                        </div>
-                    </label>
-                </li>
-                 <li class="nav-item d-md-none">
-                    <button type="button" aria-label="Search documentation" class="btn btn-search">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </button>
-                </li>
-            </ul>
-            <form id="searchBox" class="form-inline d-none d-md-flex" role="search">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input type="search" class="form-control" id="searchQuery" placeholder="Search..." aria-label="Search" />
-                <span class="d-none d-md-flex search-key-container">
-                    <span class="badge badge-key badge-primary search-key"></span>
-                    <span class="badge badge-key badge-primary">k</span>
-                </span>
-            </form>
-            <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
-            <button type="button" class="navbar-toggler btn d-md-none" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-        </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div id="leftSidebarNav" class="col-md-3 col-xl-2 p-0">
-                    <div class="loader-container"><div class="loader"></div></div>
-                    @{
-                        IDocument root = OutputPages["en-us/index.html"].First();
-                    }
-                    <nav class="navbar navbar-expand-md p-0">
-                        <div id="leftSidebar" class="collapse navbar-collapse">
-                            @Html.Partial("_globalnavigation")
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    @if(root.ShowLink())
+                        </label>
+                    </li>
+                    <li class="nav-item d-md-none">
+                        <button type="button" aria-label="Search documentation" class="btn btn-search">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </li>
+                </ul>
+                <form id="searchBox" class="form-inline d-none d-md-flex" role="search">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input type="search" class="form-control" id="searchQuery" placeholder="Search..." aria-label="Search" />
+                    <span class="d-none d-md-flex search-key-container">
+                        <span class="badge badge-key badge-primary search-key"></span>
+                        <span class="badge badge-key badge-primary">k</span>
+                    </span>
+                </form>
+                <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
+                <button type="button" class="navbar-toggler btn d-md-none" data-toggle="collapse" data-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            </nav>
+        </header>
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="leftSidebarNav" class="col-md-3 col-xl-2 p-0">
+                        <div class="loader-container"><div class="loader"></div></div>
+                        @{
+                            IDocument root = OutputPages["en-us/index.html"].First();
+                        }
+                        <nav class="navbar navbar-expand-md p-0">
+                            <div id="leftSidebar" class="collapse navbar-collapse">
+                                @Html.Partial("_globalnavigation")
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        @if(root.ShowLink())
+                                        {
+                                            <a class="nav-link pl-c2 @(Document.IdEquals(root) ? "active active-page" : null)" href="@root.GetLink()">@root.GetTitle()</a>
+                                        }
+                                        else
+                                        {
+                                            @root.GetTitle()
+                                        }
+                                    </li>
+                                    @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
                                     {
-                                        <a class="nav-link pl-c2 @(Document.IdEquals(root) ? "active active-page" : null)" href="@root.GetLink()">@root.GetTitle()</a>
-                                    }
-                                    else
-                                    {
-                                        @root.GetTitle()
-                                    }
-                                </li>
-                                @foreach (IDocument document in OutputPages.GetChildrenOf(root).OnlyVisible())
-                                {
-                                    DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
+                                        DocumentList<IDocument> documentChildren = OutputPages.GetChildrenOf(document);
 
-                                    @if(documentChildren.Any()) {
-                                        <li class="nav-item">
-                                            <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
-                                                <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@document.Id" aria-label="collapse or expand navigation" href="#id-@document.Id"></button>
-                                                <a href="@document.GetLink()">@document.GetTitle()</a>
-                                            </div>
-                                            <div class="collapse" id="id-@document.Id">
-                                                <ul class="navbar-nav">
-                                                    @foreach (IDocument child in documentChildren.OnlyVisible())
+                                        @if(documentChildren.Any()) {
+                                            <li class="nav-item">
+                                                <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(document) ||  OutputPages.GetDescendantsOf(document).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(document) ? "active-page" : null)">
+                                                    <button class="btn btn-collapse collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@document.Id" aria-label="collapse or expand navigation" href="#id-@document.Id"></button>
+                                                    <a href="@document.GetLink()">@document.GetTitle()</a>
+                                                </div>
+                                                <div class="collapse" id="id-@document.Id">
+                                                    <ul class="navbar-nav">
+                                                        @foreach (IDocument child in documentChildren.OnlyVisible())
+                                                        {
+                                                            @if(OutputPages.GetChildrenOf(child).Any())
+                                                            {
+                                                                <li class="nav-item">
+                                                                    <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
+                                                                        <button class="btn btn-collapse collapsed pl-c175" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
+                                                                        <a href="@child.GetLink()">@child.GetTitle()</a>
+                                                                    </div>
+                                                                    <div class="collapse" id="id-@child.Id">
+                                                                        <ul class="navbar-nav">
+                                                                            @foreach (IDocument grandChild in OutputPages.GetChildrenOf(child).OnlyVisible())
+                                                                            {
+                                                                                @if(OutputPages.GetChildrenOf(grandChild).Any())
+                                                                                {
+                                                                                    <li class="nav-item">
+                                                                                        <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(grandChild) ||  OutputPages.GetDescendantsOf(grandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(grandChild) ? "active-page" : null)">
+                                                                                            <button class="btn btn-collapse collapsed pl-c275" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
+                                                                                            <a href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
+                                                                                        </div>
+                                                                                        <div class="collapse" id="id-@grandChild.Id">
+                                                                                            <ul class="navbar-nav">
+                                                                                                @foreach (IDocument greatGrandChild in OutputPages.GetChildrenOf(grandChild).OnlyVisible())
+                                                                                                {
+                                                                                                    @if(OutputPages.GetChildrenOf(greatGrandChild).Any())
+                                                                                                    {
+                                                                                                        <li class="nav-item">
+                                                                                                            <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(greatGrandChild) ||  OutputPages.GetDescendantsOf(greatGrandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(greatGrandChild) ? "active-page" : null)">
+                                                                                                                <button class="btn btn-collapse pl-c375 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@greatGrandChild.Id" aria-label="collapse or expand navigation" href="#id-@greatGrandChild.Id"></button>
+                                                                                                                <a href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                            </div>
+                                                                                                            <div class="collapse" id="id-@greatGrandChild.Id">
+                                                                                                                <ul class="navbar-nav">
+                                                                                                                    @foreach (IDocument greatGreatGrandChild in OutputPages.GetChildrenOf(greatGrandChild).OnlyVisible())
+                                                                                                                    {
+                                                                                                                        <li class="nav-item">
+                                                                                                                            <a class="nav-link pl-c6 @(Document.IdEquals(greatGreatGrandChild) ? "active active-page" : null)" href="@greatGreatGrandChild.GetLink()">@greatGreatGrandChild.GetTitle()</a>
+                                                                                                                        </li>
+                                                                                                                    }
+                                                                                                                </ul>
+                                                                                                            </div>
+                                                                                                        </li>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <li class="nav-item">
+                                                                                                            <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
+                                                                                                        </li>
+                                                                                                    }
+                                                                                                }
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                    </li>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <li class="nav-item">
+                                                                                        <a class="nav-link pl-c4 @(Document.IdEquals(grandChild) ? "active active-page" : null)" href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
+                                                                                    </li>
+                                                                                }
+                                                                            }
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            }
+                                                            else
+                                                            {
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link pl-5 @(Document.IdEquals(child) ? "active active-page" : null)" href="@child.GetLink()">@child.GetTitle()</a>
+                                                                </li>
+                                                            }
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="nav-item">
+                                                <a class="nav-link pl-c2 @(Document.IdEquals(document) ? "active active-page" : null)" href="@document.GetLink()">@document.GetTitle()</a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
+                        <div class="ml-md-4 d-xl-none">
+                            @Html.Partial("_breadcrumbs")
+                        </div>
+                        <div class="row">
+                            <div id="mainContent" class="col-xl-10 pl-md-5 order-2 order-xl-1">
+                                <div class="d-none d-xl-block">
+                                    @Html.Partial("_breadcrumbs")
+                                </div>
+                                @RenderBody()
+                                @Html.Partial("_childpages")
+                            </div>
+                            @{
+                                IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
+                                if (headings.Count > 1)
+                                {
+                                    <div id="rightSidebarNav" class="col-xl-2 pl-md-5 pl-xl-3 order-1 order-xl-2">
+                                        <button class="btn btn-link btn-collapse font-weight-bold w-100 d-xl-none mb-2" type="button" data-toggle="collapse" data-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
+                                        <div id="rightSidebar" class="sticky-top collapse">
+                                            <div class="card card-body py-0 px-xl-0 mb-3 border-0">
+                                                @if (Document.ContainsKey("EditLink"))
+                                                {
+                                                    <p class="font-weight-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
+                                                    <hr class="m-0" />
+                                                }
+                                                <p class="font-weight-bold pt-3">On This Page</p>
+                                                <ul class="list-unstyled pb-xl-3">
+                                                    @foreach (IDocument heading in headings)
                                                     {
-                                                        @if(OutputPages.GetChildrenOf(child).Any())
-                                                        {
-                                                            <li class="nav-item">
-                                                                <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(child) ||  OutputPages.GetDescendantsOf(child).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(child) ? "active-page" : null)">
-                                                                    <button class="btn btn-collapse collapsed pl-c175" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@child.Id" aria-label="collapse or expand navigation" href="#id-@child.Id"></button>
-                                                                    <a href="@child.GetLink()">@child.GetTitle()</a>
-                                                                </div>
-                                                                <div class="collapse" id="id-@child.Id">
-                                                                    <ul class="navbar-nav">
-                                                                        @foreach (IDocument grandChild in OutputPages.GetChildrenOf(child).OnlyVisible())
-                                                                        {
-                                                                            @if(OutputPages.GetChildrenOf(grandChild).Any())
-                                                                            {
-                                                                                <li class="nav-item">
-                                                                                    <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(grandChild) ||  OutputPages.GetDescendantsOf(grandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(grandChild) ? "active-page" : null)">
-                                                                                        <button class="btn btn-collapse collapsed pl-c275" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@grandChild.Id" aria-label="collapse or expand navigation" href="#id-@grandChild.Id"></button>
-                                                                                        <a href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
-                                                                                    </div>
-                                                                                    <div class="collapse" id="id-@grandChild.Id">
-                                                                                        <ul class="navbar-nav">
-                                                                                            @foreach (IDocument greatGrandChild in OutputPages.GetChildrenOf(grandChild).OnlyVisible())
-                                                                                            {
-                                                                                                @if(OutputPages.GetChildrenOf(greatGrandChild).Any())
-                                                                                                {
-                                                                                                    <li class="nav-item">
-                                                                                                        <div class="nav-link nav-link-collapse d-flex align-items-start @(Document.IdEquals(greatGrandChild) ||  OutputPages.GetDescendantsOf(greatGrandChild).Any(x => Document.IdEquals(x)) ? "active" : null) @(Document.IdEquals(greatGrandChild) ? "active-page" : null)">
-                                                                                                            <button class="btn btn-collapse pl-c375 collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="id-@greatGrandChild.Id" aria-label="collapse or expand navigation" href="#id-@greatGrandChild.Id"></button>
-                                                                                                            <a href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
-                                                                                                        </div>
-                                                                                                        <div class="collapse" id="id-@greatGrandChild.Id">
-                                                                                                            <ul class="navbar-nav">
-                                                                                                                @foreach (IDocument greatGreatGrandChild in OutputPages.GetChildrenOf(greatGrandChild).OnlyVisible())
-                                                                                                                {
-                                                                                                                    <li class="nav-item">
-                                                                                                                        <a class="nav-link pl-c6 @(Document.IdEquals(greatGreatGrandChild) ? "active active-page" : null)" href="@greatGreatGrandChild.GetLink()">@greatGreatGrandChild.GetTitle()</a>
-                                                                                                                    </li>
-                                                                                                                }
-                                                                                                            </ul>
-                                                                                                        </div>
-                                                                                                    </li>
-                                                                                                }
-                                                                                                else
-                                                                                                {
-                                                                                                    <li class="nav-item">
-                                                                                                        <a class="nav-link pl-c5 @(Document.IdEquals(greatGrandChild) ? "active active-page" : null)" href="@greatGrandChild.GetLink()">@greatGrandChild.GetTitle()</a>
-                                                                                                    </li>
-                                                                                                }
-                                                                                            }
-                                                                                        </ul>
-                                                                                    </div>
-                                                                                </li>
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                <li class="nav-item">
-                                                                                    <a class="nav-link pl-c4 @(Document.IdEquals(grandChild) ? "active active-page" : null)" href="@grandChild.GetLink()">@grandChild.GetTitle()</a>
-                                                                                </li>
-                                                                            }
-                                                                        }
-                                                                    </ul>
-                                                                </div>
-                                                            </li>
-                                                        }
-                                                        else
-                                                        {
-                                                            <li class="nav-item">
-                                                                <a class="nav-link pl-5 @(Document.IdEquals(child) ? "active active-page" : null)" href="@child.GetLink()">@child.GetTitle()</a>
-                                                            </li>
-                                                        }
+                                                        <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
                                                     }
                                                 </ul>
                                             </div>
-                                        </li>
-                                    }
-                                    else
-                                    {
-                                        <li class="nav-item">
-                                            <a class="nav-link pl-c2 @(Document.IdEquals(document) ? "active active-page" : null)" href="@document.GetLink()">@document.GetTitle()</a>
-                                        </li>
-                                    }
-                                }
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-                <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
-                    <div class="ml-md-4 d-xl-none">
-                        @Html.Partial("_breadcrumbs")
-                    </div>
-                    <div class="row">
-                        <div id="mainContent" class="col-xl-10 pl-md-5 order-2 order-xl-1">
-                            <div class="d-none d-xl-block">
-                                @Html.Partial("_breadcrumbs")
-                            </div>
-                             @RenderBody()
-                             @Html.Partial("_childpages")
-                        </div>
-                        @{
-                            IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
-                            if (headings.Count > 1)
-                            {
-                                <div id="rightSidebarNav" class="col-xl-2 pl-md-5 pl-xl-3 order-1 order-xl-2">
-                                    <button class="btn btn-link btn-collapse font-weight-bold w-100 d-xl-none mb-2" type="button" data-toggle="collapse" data-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
-                                    <div id="rightSidebar" class="sticky-top collapse">
-                                        <div class="card card-body py-0 px-xl-0 mb-3">
-                                            @if (Document.ContainsKey("EditLink"))
-                                            {
-                                                <p class="font-weight-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
-                                                <hr class="m-0" />
-                                            }
-                                            <p class="font-weight-bold pt-3">On This Page</p>
-                                            <ul class="list-unstyled pb-xl-3">
-                                                @foreach (IDocument heading in headings)
-                                                {
-                                                    <li class="level-@heading.GetString(Statiq.Html.HtmlKeys.Level)"><a href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
-                                                }
-                                            </ul>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             }
-                        }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </main>
         <footer class="p-3 small text-center">
             <span>© @DateTime.Today.Year Chocolatey Software, Inc.</span><br />
             <span>Deployed from <a href="https://github.com/chocolatey/docs/commit/@VersionUtilities.GetSha()">@VersionUtilities.GetCommit()</a></span><br />
