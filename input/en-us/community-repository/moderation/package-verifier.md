@@ -18,7 +18,7 @@ The verifier is a service that checks the correctness (that the package actually
 
 ## Specifications
 
-**NOTE**: We currently run against only one system. This was chosen as it will install almost all Chocolatey packages. We will be adding multiple systems in the future.
+> :memo: **NOTE** We currently run against only one system. This was chosen as it will install almost all Chocolatey packages. We will be adding multiple systems in the future.
 
 The systems we run against:
 * Windows Server 2012 R2 x64
