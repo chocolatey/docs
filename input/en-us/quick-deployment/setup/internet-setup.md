@@ -377,7 +377,7 @@ $credential = [pscredential]::new($user, $securePassword)
 $downloader = [System.Net.WebClient]::new()
 $downloader.Credentials = $credential
 
-$script =  $downloader.DownloadString("https://$fqdn:8443/repository/choco-install/ClientSetup.ps1")
+$script =  $downloader.DownloadString("https://$($fqdn):8443/repository/choco-install/ClientSetup.ps1")
 
 $params = @{
     Credential      = $credential
