@@ -25,5 +25,25 @@ namespace Docs
         {
             return source.Where(x => x.IsVisible());
         }
+
+        public static IEnumerable<IDocument> OnlyRequirements(this IEnumerable<IDocument> source)
+        {
+            return source.Where(x => x.GetString("RuleType", string.Empty) == "Requirement");
+        }
+
+        public static IEnumerable<IDocument> OnlyGuidelines(this IEnumerable<IDocument> source)
+        {
+            return source.Where(x => x.GetString("RuleType", string.Empty) == "Guideline");
+        }
+
+        public static IEnumerable<IDocument> OnlySuggestions(this IEnumerable<IDocument> source)
+        {
+            return source.Where(x => x.GetString("RuleType", string.Empty) == "Suggestion");
+        }
+
+        public static IEnumerable<IDocument> OnlyNotes(this IEnumerable<IDocument> source)
+        {
+            return source.Where(x => x.GetString("RuleType", string.Empty) == "Note");
+        }
     }
 }

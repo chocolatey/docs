@@ -255,7 +255,10 @@
                                         @Html.Partial("_breadcrumbs")
                                     </div>
                                     @RenderBody()
-                                    @Html.Partial("_childpages")
+                                    @if (!Document.GetBool("HideChildPages", false))
+                                    {
+                                        @Html.Partial("_childpages")
+                                    }
                                 </div>
                                 @{
                                     IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);

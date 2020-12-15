@@ -1,0 +1,109 @@
+---
+Order: 10
+xref: package-validator-rules
+Title: Package Validator Rules
+Description: Information on the Package Validator rules
+HideChildPages: true
+---
+
+There are 4 different types of Package Validator rules:
+
+<h2 class="title-child">Requirements</h2>
+<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyRequirements())
+	{
+		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+
+		<div class="col-lg-6 col-xl-4 mb-4">
+			<a href="@child.GetLink()">
+			<div class="card card-body card-index">
+				<div class="circle">
+					<i class="fas fa-file" aria-hidden="true"></i>
+				</div>
+				<div class="d-flex flex-column pl-3">
+					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+					@if (child.ContainsKey(WebKeys.Description))
+					{
+						<p class="card-content">@(child.Get(WebKeys.Description))</p>
+					}
+				</div>
+			</div>
+			</a>
+		</div>
+	}
+</div>
+
+<h2 class="title-child">Guidelines</h2>
+<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyGuidelines())
+	{
+		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+
+		<div class="col-lg-6 col-xl-4 mb-4">
+			<a href="@child.GetLink()">
+			<div class="card card-body card-index">
+				<div class="circle">
+					<i class="fas fa-file" aria-hidden="true"></i>
+				</div>
+				<div class="d-flex flex-column pl-3">
+					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+					@if (child.ContainsKey(WebKeys.Description))
+					{
+						<p class="card-content">@(child.Get(WebKeys.Description))</p>
+					}
+				</div>
+			</div>
+			</a>
+		</div>
+	}
+</div>
+
+<h2 class="title-child">Suggestions</h2>
+<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlySuggestions())
+	{
+		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+
+		<div class="col-lg-6 col-xl-4 mb-4">
+			<a href="@child.GetLink()">
+			<div class="card card-body card-index">
+				<div class="circle">
+					<i class="fas fa-file" aria-hidden="true"></i>
+				</div>
+				<div class="d-flex flex-column pl-3">
+					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+					@if (child.ContainsKey(WebKeys.Description))
+					{
+						<p class="card-content">@(child.Get(WebKeys.Description))</p>
+					}
+				</div>
+			</div>
+			</a>
+		</div>
+	}
+</div>
+
+<h2 class="title-child">Notes</h2>
+<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyNotes())
+	{
+		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
+
+		<div class="col-lg-6 col-xl-4 mb-4">
+			<a href="@child.GetLink()">
+			<div class="card card-body card-index">
+				<div class="circle">
+					<i class="fas fa-file" aria-hidden="true"></i>
+				</div>
+				<div class="d-flex flex-column pl-3">
+					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+					@if (child.ContainsKey(WebKeys.Description))
+					{
+						<p class="card-content">@(child.Get(WebKeys.Description))</p>
+					}
+				</div>
+			</div>
+			</a>
+		</div>
+	}
+</div>
