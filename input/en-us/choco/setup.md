@@ -4,8 +4,8 @@ xref: setup-choco
 Title: Setup / Install
 Description: Techniques for how to install Chocolatey
 RedirectFrom:
-  - en-US/choco/setup
   - docs/installation
+  - docs/install
 ---
 
 ## Requirements

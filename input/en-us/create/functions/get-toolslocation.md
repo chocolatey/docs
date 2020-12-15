@@ -3,7 +3,9 @@ Order: 120
 xref: get-toolslocation
 Title: Get-ToolsLocation
 Description: Information on Get-ToolsLocation function
-RedirectFrom: docs/helpers-get-tools-location
+RedirectFrom:
+  - docs/helpers-get-tools-location
+  - docs/helpersgettoolslocation
 ---
 
 # Get-ToolsLocation
