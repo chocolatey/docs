@@ -6,9 +6,19 @@ Description: Information on the Package Validator rules
 HideChildPages: true
 ---
 
-There are 4 different types of Package Validator rules:
+<p>There are 4 different types of Package Validator rules:</p>
+
+<ul>
+	<li><a href="#requirements">Requirements</a></li>
+	<li><a href="#guidelines">Guidelines</a></li>
+	<li><a href="#suggestions">Suggestions</a></li>
+	<li><a href="#notes">Notes</a></li>
+</ul>
 
 <h2 class="title-child">Requirements</h2>
+
+<p>Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it must be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.</p>
+
 <div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyRequirements())
 	{
@@ -34,6 +44,9 @@ There are 4 different types of Package Validator rules:
 </div>
 
 <h2 class="title-child">Guidelines</h2>
+
+<p>Guidelines are strong suggestions that improve the quality of a package version. These are considered something to fix for next time to increase the quality of the package. Over time Guidelines can become Requirements. A package version can be approved without addressing Guideline comments but will reduce the quality of the package.</p>
+
 <div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyGuidelines())
 	{
@@ -59,6 +72,9 @@ There are 4 different types of Package Validator rules:
 </div>
 
 <h2 class="title-child">Suggestions</h2>
+
+<p>Suggestions are either newly introduced items that will later become Guidelines or items that are don't carry enough weight to become a Guideline. Either way they should be considered. A package version can be approved without addressing Suggestion comments.</p>
+
 <div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlySuggestions())
 	{
@@ -84,6 +100,9 @@ There are 4 different types of Package Validator rules:
 </div>
 
 <h2 class="title-child">Notes</h2>
+
+<p>Notes typically flag things for both you and the reviewer to go over. Sometimes this is the use of things that may or may not be necessary given the constraints of what you are trying to do and/or are harder for automation to flag for other reasons. Items found in Notes might be Requirements depending on the context. A package version can be approved without addressing Note comments.</p>
+
 <div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyNotes())
 	{
