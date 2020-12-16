@@ -111,7 +111,7 @@ You can also call `Get-Help C:\choco-setup\files\Set-QDEnvironment.ps1 -Full` fo
 
 | Parameter Name           | Description                                                                                                                                                                          |
 | :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-NexusApiKey`           | The api key for your nexus installation.                                                                                                                                             |
+| `-NexusApiKey`           | The api key for your nexus installation. This can be found in the Readme file on the desktop of your QDE.                                                                            |
 | `-CertificateThumbprint` | If using a thumbprint, specify it with this parameter.                                                                                                                               |
 | `-CertificateSubject`    | If using a subject name for your certificate, specify it with this parameter (**NOTE** this does not include the 'CN=' portion of the subject returned by the certificate provider). |
 | `-CertificateDnsName`    | If using a wildcard certificate this _must_ be included with either `-CertificateThumbprint` or `-CertificateSubject`.                                                               |
@@ -262,7 +262,7 @@ This will be encrypted. To setup, do the following:
 > In that case, substitute the hostname for the new FQDN.
 
 ```powershell
-choco apikey add --key="'{{NexusApiKey}}'" --source="'https://chocoserver:8443/repository/ChocolateyInternal/'"
+choco apikey add --key="'{{NugetApiKey}}'" --source="'https://chocoserver:8443/repository/ChocolateyInternal/'"
 ```
 
 ### Update pre-configured Jenkins jobs with the new API Key
