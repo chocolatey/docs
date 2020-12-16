@@ -105,7 +105,12 @@ function purgeCss() {
                 paths.assets + 'js/*.*',
                 paths.theme + 'scss/_search.scss'
             ],
-            safelist: ['::-webkit-scrollbar', '::-webkit-scrollbar-thumb']
+            safelist: [
+                '::-webkit-scrollbar', 
+                '::-webkit-scrollbar-thumb', 
+                'gitter-chat-embed', 
+                'gitter-open-chat-button'
+            ]
         }))
         .pipe(dest(paths.assets + 'css/'));
 }
