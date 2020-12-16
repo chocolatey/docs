@@ -10,8 +10,10 @@ const gulp = require('gulp'),
     purgecss = require('gulp-purgecss'),
     rename = require('gulp-rename'),
     merge = require('merge-stream'),
+    injectstring = require('gulp-inject-string'),
     bundleconfig = require('./bundleconfig.json');
 
+const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
 const { series, parallel, src, dest, watch } = require('gulp');
 sass.compiler = require('node-sass');
 
@@ -23,6 +25,7 @@ const regex = {
 const paths = {
     input: 'input/',
     assets: 'input/assets/',
+    partials: 'input/global-partials',
     node_modules: 'node_modules/',
     theme: 'node_modules/choco-theme/'
 };
@@ -38,7 +41,8 @@ function del() {
         paths.assets + 'css', 
         paths.assets + 'js', 
         paths.assets + 'fonts',
-        paths.assets + 'images/global-shared'
+        paths.assets + 'images/global-shared',
+        paths.partials
     ], { allowEmpty: true })
         .pipe(clean({ force: true }));
 }
@@ -53,10 +57,12 @@ function copyTheme() {
     var copyIcons = src(paths.theme + 'images/icons/*.*')
         .pipe(dest(paths.input));
 
-    /*var copyShared = src(paths.theme + 'shared/*.*')
-        .pipe(dest(paths.input + 'shared'));*/
+    var copyPartials = src([paths.theme + 'partials/*.*', '!'+ paths.theme + 'partials/svgstyles.txt'])
+        .pipe(injectstring.prepend('@* ' + editFilePartial + ' *@\n'))
+        .pipe(rename({ prefix: "_", extname: '.cshtml' }))
+        .pipe(dest(paths.partials));
 
-    return merge(copyFontAwesome, copyImages, copyIcons);
+    return merge(copyFontAwesome, copyImages, copyIcons, copyPartials);
 }
 
 function compileSass() {
