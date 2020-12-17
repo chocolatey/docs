@@ -1319,7 +1319,7 @@ chalk@^2.0.0, chalk@^2.3.0:
 
 "choco-theme@github:chocolatey/choco-theme":
   version "0.1.0"
-  resolved "https://codeload.github.com/chocolatey/choco-theme/tar.gz/7a0edac9903606d32a0cd9c98ceccc3bda686f89"
+  resolved "https://codeload.github.com/chocolatey/choco-theme/tar.gz/c243e61fa3bcf190e8228d399d3588d147d92844"
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/preset-env" "^7.12.1"
