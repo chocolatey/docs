@@ -13,6 +13,13 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 
 > :memo: **NOTE** This PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
 
+## 0.1.1 (December 4, 2020)
+
+### BUG FIXES
+
+* Fix - New-CCMDeploymentStep Throws HTTP 400 Error
+* Fix - Not all functions are returning all objects by default
+
 ## 0.1.0 (November 13, 2020)
 
 Initial preview release
