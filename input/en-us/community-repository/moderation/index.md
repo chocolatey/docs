@@ -20,7 +20,7 @@ By safety - we check that the package scripts do not do anything devious and tha
 
 ## Requirements and Guidelines
 
-While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](https://github.com/chocolatey/package-validator/wiki) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
+While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](xref:package-validator) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
 
 > :memo: **NOTE** Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
 
@@ -192,7 +192,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
 
 You can only ever require a maintainer to make changes if there are findings from the requirements section. Guidelines are strong suggestions that will improve the quality of the package, but consider that a quality over time. A maintainer is NOT required to make changes based on guidelines/suggestions. This deserves to be said twice: **"A moderator cannot hold up a package based on guidelines/suggestions *alone*"**.
 
-The validator checks quite a few items (https://github.com/chocolatey/package-validator/wiki) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
+The validator checks quite a few items ([validator rules](xref:package-validator)) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
 
 With the exception of included binaries, a review that doesn't flag should take under a minute. If you are holding a package, you can refer the maintainer to this link to save time: https://github.com/chocolatey/choco/wiki/Moderation
 

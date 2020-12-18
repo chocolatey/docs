@@ -169,8 +169,8 @@ Chocolatey.org has a community repository of packages known as the community fee
 
 In October 2014, the community repository had moderation turned on. All community packages (every version of a package) go through a [rigorous moderation process](xref:moderation) prior to any public consumption:
 
-- All package versions are run through an [automated validation process](https://github.com/chocolatey/package-validator/wiki) to determine quality.
 - All package versions are run through an [automated verification process](https://github.com/chocolatey/package-verifier/wiki) to determine if they work correctly (install, etc).
+- All package versions are run through an [automated validation process](xref:package-validator) to determine quality.
 - All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://chocolatey.org/packages/chocolatey#virus](https://chocolatey.org/packages/chocolatey#virus) as an example).
     > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
 - A human [reviews every package version](xref:moderation#reviewer-moderator-process) that is not a [trusted package](xref:faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
