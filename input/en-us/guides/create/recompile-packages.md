@@ -90,7 +90,7 @@ To make the existing package local, use these steps.
            <authors>Don Ho</authors>
            <owners>Rob Reynolds</owners>
            <projectUrl>https://notepad-plus-plus.org/</projectUrl>
-           <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/02c21bebe5abb495a56747cbb9b4b5415c933fc0/icons/notepadplusplus.png</iconUrl>
+           <iconUrl>https://cdn.statically.io/gh/ferventcoder/chocolatey-packages/02c21bebe5abb495a56747cbb9b4b5415c933fc0/icons/notepadplusplus.png</iconUrl>
            <requireLicenseAcceptance>false</requireLicenseAcceptance>
            <description>Notepad++ is a ... </description>
            <summary>Notepad++ is a free (as in "free speech" and also as in "free beer") source code editor and Notepad replacement that supports several languages. </summary>
