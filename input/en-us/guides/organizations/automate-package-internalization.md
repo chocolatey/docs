@@ -15,7 +15,7 @@ When running within an organization it is beneficial to use your own, internally
 When distributing software across your organization you need confidence and control of your package source. We do not recommend an organization use the [Chocolatey Community Repository](https://chocolatey.org "Chocolatey Community Repository") for the following reasons:
 
 * Trust.
-    When using packages within your organization you need to be sure that you can trust the creators and maintainers of those packages. While every package going through the Chocolatey Community Repository undergoes a [moderation process](https://github.com/chocolatey/choco/wiki/Moderation), the creators and maintainers are strangers to your organization.
+    When using packages within your organization you need to be sure that you can trust the creators and maintainers of those packages. While every package going through the Chocolatey Community Repository undergoes a [moderation process](xref:moderation), the creators and maintainers are strangers to your organization.
 * Stability.
     You need a stable and reliable connection to wherever your packages are stored and it needs to be always available during your business hours.
 * Control.
