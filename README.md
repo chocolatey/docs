@@ -6,6 +6,10 @@ https://docs.chocolatey.org/en-us/
 
 This site is built using [Statiq](https://statiq.dev/).
 
+## Thanks
+
+The original template that was used to create this docs site came from the work that was done by [Patrik Svensson](https://github.com/patriksvensson), on his [Spectre.Console](https://spectresystems.github.io/spectre.console/) and [Spectre.Cli](https://spectresystems.github.io/spectre.cli/) docs sites. Huge thank you to Patrik for all his help!
+
 ## Building the site
 
 ### Setup
