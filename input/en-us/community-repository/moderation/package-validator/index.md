@@ -5,7 +5,7 @@ Title: Package Validator Moderation Service
 Description: Information on the Package Validator Moderation Service
 ---
 
-Here you will find a collection of more information and resources for when things fail validation. A comprehensive set of how items are reviewed is found at https://github.com/chocolatey/choco/wiki/Moderation#requirements
+Here you will find a collection of more information and resources for when things fail validation. A comprehensive set of how items are reviewed is found at [the moderation docs](xref:moderation#requirements).
 
 NOTE: If you find you are getting flagged for many of these items, you should consider using choco new to generate and adapt updated templates that have all of the latest recommendations.
 

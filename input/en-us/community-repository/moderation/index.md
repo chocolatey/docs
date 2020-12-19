@@ -20,7 +20,7 @@ By safety - we check that the package scripts do not do anything devious and tha
 
 ## Requirements and Guidelines
 
-While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](https://github.com/chocolatey/package-validator/wiki) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
+While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](xref:package-validator) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
 
 > :memo: **NOTE** Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
 
@@ -59,7 +59,7 @@ Requirements represent the minimum quality of a package that is acceptable. When
 * Does the package install correctly?
 * Does the package uninstall correctly? (this means the package, not the underlying software. We'd like to have that as well but it's more a guideline at the moment than a requirement. Patience, we will get there).
 * Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
-  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See https://github.com/chocolatey/choco/wiki/CreatePackages#naming-your-package
+  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See [Naming your package](xref:create-packages#naming-your-package)
     * suggest the id split if over 25 chars with no "-" in the id
     * flag on "." in name (unless .portable/.install)
 
@@ -192,9 +192,9 @@ Typically a package goes into the moderation queue when submitted.You can get to
 
 You can only ever require a maintainer to make changes if there are findings from the requirements section. Guidelines are strong suggestions that will improve the quality of the package, but consider that a quality over time. A maintainer is NOT required to make changes based on guidelines/suggestions. This deserves to be said twice: **"A moderator cannot hold up a package based on guidelines/suggestions *alone*"**.
 
-The validator checks quite a few items (https://github.com/chocolatey/package-validator/wiki) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
+The validator checks quite a few items ([validator rules](xref:package-validator)) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
 
-With the exception of included binaries, a review that doesn't flag should take under a minute. If you are holding a package, you can refer the maintainer to this link to save time: https://github.com/chocolatey/choco/wiki/Moderation
+With the exception of included binaries, a review that doesn't flag should take under a minute. If you are holding a package, you can refer the maintainer to this link to save time: https://docs.chocolatey.org/en-us/community-repository/moderation
 
 ##### Requirements
 
@@ -217,7 +217,7 @@ Always be explicit that you are waiting on the maintainer to fix and resubmit th
 * Not a package duplicating another existing package
     > :memo: **NOTE** December 2015: Do not look for duplicate packages at this time. The validator will start handling that after the backlog is manageable.
 * Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
-  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See https://github.com/chocolatey/choco/wiki/CreatePackages#naming-your-package
+  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See [Naming your package](xref:create-packages#naming-your-package)
     * suggest the id split if over 25 chars with no "-" in the id
     * flag on "." in name (unless .portable/.install)
 
@@ -262,7 +262,7 @@ This is not an achievable status.
 
 ### New Reviewers / Moderators
 
-* Understand the package creation process and the current recommendations, written at https://github.com/chocolatey/choco/wiki/CreatePackages
-* Become familiar with the package guidelines and all of the different Chocolatey functions available. https://github.com/chocolatey/choco/wiki/HelpersReference
+* Understand the package creation process and the current recommendations, written at [create packages](xref:create-packages).
+* Become familiar with the package guidelines and all of the different Chocolatey functions available. [Helper reference](xref:powershell-reference)
 * Join the [chocolatey-moderators at google groups dot com](https://groups.google.com/forum/#!forum/chocolatey-moderators) mailing list. This is necessary for communication with other moderators and receiving messages regarding changes in moderation.
 * Join Gitter and hang out in the [Chocolatey.org Gitter](https://gitter.im/chocolatey/chocolatey.org) and [Choco Gitter](https://gitter.im/chocolatey/choco) rooms from time to time.
