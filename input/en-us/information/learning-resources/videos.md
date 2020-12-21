@@ -57,7 +57,7 @@ RedirectFrom: docs/videos
 * GoogleChromeDevelopers - [Totally Tooling Tips: Windows Command-line Tooling](https://www.youtube.com/watch?v=msCUKTdBzg4&t=4m19s) - November 11, 2015
 * PuppetConf 2015 - [Chocolatey and Puppet - Managing your Windows Software Since 2011](https://www.youtube.com/watch?v=NNM2H4GsWYA) - Rob Reynolds, October 8, 2015
 * ITPro TV - [What's New Windows 10 - OneGet Package Manager](https://www.youtube.com/watch?v=yDkjf8EOU2Q) - July 15, 2015
-* [Tutorial: Usando o Chocolatey (apt-get/yum para Windows) - Carlos Alberto Castelo Elias Filho (Espanol)](https://www.youtube.com/watch?v=OWgADNDHJzg) - June 29, 2015
+* [Tutorial: Usando o Chocolatey (apt-get/yum para Windows) - Carlos Alberto Castelo Elias Filho (Português Brasileiro)](https://www.youtube.com/watch?v=OWgADNDHJzg) - June 29, 2015
 * devGeeK - [MongoDb Tutorial (Shout out)](https://www.youtube.com/watch?v=W-WihPoEbR4&feature=youtu.be&t=48m45s) - June 17, 2015
 * GEEKBLOGTV - [Chocolatey - A Windows Package Manager Like Apt-Get](https://www.youtube.com/watch?v=nH6jRB5kigc) - May 18, 2015
 * Docker - [Installing Docker Client for Windows from Chocolatey](https://www.youtube.com/watch?v=l026hqjhLRU) - April 1, 2015
