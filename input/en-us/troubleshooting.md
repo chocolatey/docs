@@ -153,7 +153,7 @@ Note the use of `$file` on the left side, which should be just `file`. Once you 
 
 See next question.
 
-### Why does choco in{tab} not work for me?
+### Why does choco in\{tab\} not work for me?
 
 This means the import failed during install/upgrade. Chocolatey does supply a warning when this happens in the install/upgrade log. Take a look there.
 
