@@ -195,7 +195,7 @@ The Chocolatey team is most familiar with Puppet and has written some documentat
 * [Install with Puppet](https://chocolatey.org/install#install-with-puppet)
 * [Chocolatey Licensed Editions Configuration/Setup with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet)
 
-> :memo: **NOTE** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/choco-wiki.
+> :memo: **NOTE** if anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/docs.
 
 [Read More...](https://forge.puppet.com/puppetlabs/chocolatey)
 

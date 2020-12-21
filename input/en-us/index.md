@@ -53,7 +53,7 @@ The Chocolatey Community Repository versus for internal use has different needs.
 - [Mount an Iso in Chocolatey Package](xref:mount-an-iso)
 - [Deprecate a Chocolatey Package](xref:deprecate-a-package)
 - [Chocolatey Community Repository](https://chocolatey.org/packages)
-  - Keep in Mind [Distribution Rights](xref:legal#distributions-aka-chocolatey-packages)
+  - Keep in Mind [Distribution Rights](xref:legal#distributions)
   - [Outdated packages? Triage process](xref:package-triage-process)
   - [Moderation Process](xref:moderation)
 
