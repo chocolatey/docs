@@ -45,8 +45,8 @@ Normal:
 
 Below is a short video which shows this in action:
 
-<div class="embed-responsive embed-responsive-700by506">
-     <iframe  class="embed-responsive-item" width="700" height="506" src="https://www.youtube.com/embed/_AkDNQFoCtc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div class="ratio ratio-700x506">
+     <iframe width="700" height="506" src="https://www.youtube.com/embed/_AkDNQFoCtc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
 ## Feature Options

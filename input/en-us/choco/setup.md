@@ -30,7 +30,7 @@ Chocolatey installs in seconds. You are just a few steps from running choco righ
 > * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
 > * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
 > * Installing the licensed edition? See [install licensed edition](xref:setup-licensed).
-> * <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Options</a> / [Troubleshooting](xref:troubleshooting)
+> * <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Options</a> / [Troubleshooting](xref:troubleshooting)
 
 #### Install with cmd.exe
 
@@ -74,16 +74,16 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 <p><strong>Troubleshooting? Proxy? Need more options?</strong></p>
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#moreInstallOptions" aria-expanded="false" aria-controls="moreInstallOptions">More Install Options</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moreInstallOptions" aria-expanded="false" aria-controls="moreInstallOptions">More Install Options</button>
 
 <div class="collapse" id="moreInstallOptions">
 
 * [Install from PowerShell v3+](#install-from-powershell-v3)
 * [Completely offline/internal install](#completely-offline-install)
 * [Install with Puppet](#install-with-puppet)
-* [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmdexe)
+* [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmd.exe)
 * [Install using NuGet Package Manager](#install-using-nuget-package-manager)
-* [Install using NuGet.exe from PowerShell](#install-using-nugetexe-from-powershell)
+* [Install using NuGet.exe from PowerShell](#install-using-nuget.exe-from-powershell)
 * [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell)
 * [Install licensed edition](#install-licensed-edition)
 * [Installing behind a proxy](#installing-behind-a-proxy)
@@ -856,7 +856,7 @@ See [uninstall](xref:choco-uninstallation).
 
 ### I'm having trouble installing Chocolatey
 
-Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-href="#moreInstallOptions">More Install Options</a> and looked over [Troubleshooting](xref:troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Install Options</a> and looked over [Troubleshooting](xref:troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
 

@@ -15,11 +15,11 @@ HideChildPages: true
 	<li><a href="#notes">Notes</a></li>
 </ul>
 
-<h2 class="title-child">Requirements</h2>
+<h2>Requirements</h2>
 
 <p>Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it must be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.</p>
 
-<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+<div class="row mt-3 mt-md-4 ms-md-n5 ms-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyRequirements())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
@@ -30,8 +30,8 @@ HideChildPages: true
 				<div class="circle">
 					<i class="fas fa-file" aria-hidden="true"></i>
 				</div>
-				<div class="d-flex flex-column pl-3">
-					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+				<div class="d-flex flex-column ps-3">
+					<p class="h5 fw-bold card-title">@child.GetTitle()</p>
 					@if (child.ContainsKey(WebKeys.Description))
 					{
 						<p class="card-content">@(child.Get(WebKeys.Description))</p>
@@ -43,11 +43,11 @@ HideChildPages: true
 	}
 </div>
 
-<h2 class="title-child">Guidelines</h2>
+<h2>Guidelines</h2>
 
 <p>Guidelines are strong suggestions that improve the quality of a package version. These are considered something to fix for next time to increase the quality of the package. Over time Guidelines can become Requirements. A package version can be approved without addressing Guideline comments but will reduce the quality of the package.</p>
 
-<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+<div class="row mt-3 mt-md-4 ms-md-n5 ms-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyGuidelines())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
@@ -58,8 +58,8 @@ HideChildPages: true
 				<div class="circle">
 					<i class="fas fa-file" aria-hidden="true"></i>
 				</div>
-				<div class="d-flex flex-column pl-3">
-					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+				<div class="d-flex flex-column ps-3">
+					<p class="h5 fw-bold card-title">@child.GetTitle()</p>
 					@if (child.ContainsKey(WebKeys.Description))
 					{
 						<p class="card-content">@(child.Get(WebKeys.Description))</p>
@@ -71,11 +71,11 @@ HideChildPages: true
 	}
 </div>
 
-<h2 class="title-child">Suggestions</h2>
+<h2>Suggestions</h2>
 
 <p>Suggestions are either newly introduced items that will later become Guidelines or items that are don't carry enough weight to become a Guideline. Either way they should be considered. A package version can be approved without addressing Suggestion comments.</p>
 
-<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+<div class="row mt-3 mt-md-4 ms-md-n5 ms-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlySuggestions())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
@@ -86,8 +86,8 @@ HideChildPages: true
 				<div class="circle">
 					<i class="fas fa-file" aria-hidden="true"></i>
 				</div>
-				<div class="d-flex flex-column pl-3">
-					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+				<div class="d-flex flex-column ps-3">
+					<p class="h5 fw-bold card-title">@child.GetTitle()</p>
 					@if (child.ContainsKey(WebKeys.Description))
 					{
 						<p class="card-content">@(child.Get(WebKeys.Description))</p>
@@ -99,11 +99,11 @@ HideChildPages: true
 	}
 </div>
 
-<h2 class="title-child">Notes</h2>
+<h2>Notes</h2>
 
 <p>Notes typically flag things for both you and the reviewer to go over. Sometimes this is the use of things that may or may not be necessary given the constraints of what you are trying to do and/or are harder for automation to flag for other reasons. Items found in Notes might be Requirements depending on the context. A package version can be approved without addressing Note comments.</p>
 
-<div class="row mt-3 mt-md-4 ml-md-n5 ml-xl-n3">
+<div class="row mt-3 mt-md-4 ms-md-n5 ms-xl-n3">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyNotes())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
@@ -114,8 +114,8 @@ HideChildPages: true
 				<div class="circle">
 					<i class="fas fa-file" aria-hidden="true"></i>
 				</div>
-				<div class="d-flex flex-column pl-3">
-					<p class="h5 font-weight-bold card-title">@child.GetTitle()</p>
+				<div class="d-flex flex-column ps-3">
+					<p class="h5 fw-bold card-title">@child.GetTitle()</p>
 					@if (child.ContainsKey(WebKeys.Description))
 					{
 						<p class="card-content">@(child.Get(WebKeys.Description))</p>
