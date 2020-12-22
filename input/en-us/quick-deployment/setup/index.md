@@ -193,18 +193,20 @@ Steps to create a QDE virtual machine in Azure:
 ### Platform: VMware (VMDK file)
 
 1. Download VMDK from provided link, and unzip it to the directory you wish to store it.
-2. For ESX/ESXi, open vSphere and upload the downloaded VMDK to your datastore.
-3. Create a new VM.
-4. When prompted for OS type, choose `Windows Server 2019` (if available), or `Windows Server 2016 or later`.
-5. If prompted for boot firmware, choose `Legacy BIOS` (**not** UEFI).
-6. When asked to create a new disk or attach, delete the default disk, select attach, and browse to the VMDK you uploaded.
-    > :exclamation: **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the "Controller Location" setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
-7. Adjust the hardware specifications of the VM. For a performant system, the following are recommended:
+1. For ESX/ESXi, open vSphere and upload the downloaded VMDK to your datastore.
+1. Create a new VM.
+1. When prompted for OS type, choose `Windows Server 2019` (if available), or `Windows Server 2016 or later`.
+1. Adjust the hardware specifications of the VM. For a performant system, the following are recommended:
     - 4 vCPUs
     - 8 GB RAM
-8. Once you click Finish, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
+1. Use the "x" icon at the far right of `Hard disk 1` to remove it.
+1. In the `VM Options` tab, and under the `Boot Options` dropdown, set your `Firmware` to `BIOS` (**not** UEFI). Click `Next`, then `Finish`.
+1. Now go back into the VM configuration using the `Edit Settings` context menu.
+1. Click the `Add hard disk` button, select `Existing hard disk`, and browse to the VMDK you uploaded. Once slected, expand the `New hard disk` dropdown, and set the `Controller location` to `IDE controller 0`, or whichever IDE controllers you have available. Click `Save`.
+    > :exclamation: **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the "Controller Location" setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
+1. Once again, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
     > :memo: **NOTE** likely you will need to allocate the additional space to the C drive.
-9. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
+1. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
 
 <details>
     <summary>Click to show animated summary (ESX/i)</summary>
