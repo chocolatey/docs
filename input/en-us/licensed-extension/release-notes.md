@@ -207,12 +207,12 @@ If you want self-service to interactively manage installations, run `choco featu
  * Package Builder (Choco New):
     * Show Install Arguments in Nuspec with MSI Properties.
     * Extract icon from Programs and Features.
-    * Extract icon from exe files.
+    * Extract icon from exe files. 
 
 
 ## 1.12.8 (October 25, 2017)
 ### BUG FIXES
- * Fix - "The registered delegate for type IEnumerable threw an exception. Unable to find suitable location for change.exe."
+ * Fix - "The registered delegate  for type IEnumerable threw an exception. Unable to find suitable location for change.exe."
 
 
 ## 1.12.7 (October 25, 2017)
