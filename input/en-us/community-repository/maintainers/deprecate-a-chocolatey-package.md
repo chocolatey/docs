@@ -24,7 +24,7 @@ When a package needs to be deprecated, it needs to be handled in such a way that
 When deprecating a Chocolatey Package, the following steps should be followed:
 
 * Create a **[new version](xref:create-packages#package-fix-version-notation)** of the deprecated Chocolatey Package.
-* Prepend **[Deprecated]** to the **title** of the package (e.g. `<title="[Deprecated] Software Title" />`
+* Prepend **[Deprecated]** to the **title** of the package (e.g. `<title>[Deprecated] Software Title</title>`
 * Update the package **description**: Why is the package being deprecated?
 * Add a **[dependency](http://docs.nuget.org/docs/reference/nuspec-reference#Specifying_Dependencies) on the other package** (if the package is being superseded).
 * **Remove all files** except the `.nuspec` from the Chocolatey Package.
