@@ -35,7 +35,7 @@ There are no warranties on this script whatsoever, but here is something you can
 > Seriously, this script may destroy your machine and require a rebuild. It may have varied results on different machines in the same environment. Think twice before running this.
 
 <p class="text-danger"><strong>Click the red button below to reveal the uninstall scripts.</strong></p>
-<button class="btn btn-danger btn-collapse collapsed" type="button" data-toggle="collapse" data-target="#uninstallScripts" aria-expanded="false" aria-controls="uninstallScripts">Yes, I understand the dangers of running these scripts</button>
+<button class="btn btn-danger btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uninstallScripts" aria-expanded="false" aria-controls="uninstallScripts">Yes, I understand the dangers of running these scripts</button>
 <div id="uninstallScripts" class="collapse">
 <div class="pt-3">
 

@@ -75,9 +75,16 @@ function compileJs() {
     var tasks = getBundles(regex.js).map(function (bundle) {
 
         return gulp.src(bundle.inputFiles, { base: '.' })
-            /*.pipe(babel({
-                presets: ['@babel/env']
-            }))*/
+            .pipe(babel({
+                "sourceType": "unambiguous",
+                "presets": [
+                    ["@babel/preset-env", { 
+                        "targets": {
+                            "ie": "10"
+                        }
+                    }
+                  ]]
+            }))
             .pipe(concat(bundle.outputFileName))
             .pipe(dest('.'));
     });

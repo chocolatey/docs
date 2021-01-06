@@ -8,7 +8,7 @@
                 <h5><a href="@Context.GetLink(post)">@post.GetString("Title")</a></h5>
                 <div class="small text-black-50">
                     @post.GetDateTime("Published").ToLongDateString() in
-                    <a href="@(topicDocument.GetLink())"><span class="badge badge-light">@topicDocument.GetTitle()</span></a>
+                    <a href="@(topicDocument.GetLink())"><span class="badge bg-primary">@topicDocument.GetTitle()</span></a>
                 </div>
                 @if (!string.IsNullOrEmpty(excerpt))
                 {
