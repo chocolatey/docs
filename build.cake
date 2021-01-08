@@ -100,7 +100,7 @@ Task("Statiq-Preview")
       Configuration = configuration
     };
 
-    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("preview --output {0}", buildData.OutputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("preview --output \"{0}\"", buildData.OutputDirectory)), settings);
 });
 
 Task("Statiq-Build")
@@ -111,7 +111,7 @@ Task("Statiq-Build")
       Configuration = configuration
     };
 
-    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output {0}", buildData.OutputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output \"{0}\"", buildData.OutputDirectory)), settings);
 });
 
 Task("Statiq-LinkValidation")
@@ -123,7 +123,7 @@ Task("Statiq-LinkValidation")
       ArgumentCustomization = args => args.Append("-a ValidateRelativeLinks=Error -a ValidateAbsoluteLinks=Error")
     };
 
-    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output {0}", buildData.OutputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("--output \"{0}\"", buildData.OutputDirectory)), settings);
 });
 
 Task("Publish-Documentation")
