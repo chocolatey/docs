@@ -35,6 +35,6 @@
 
   <ItemGroup>
     <PackageReference Include="GitInfo" PrivateAssets="All" Version="2.1.2" />
-    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.14" />
+    <PackageReference Include="Statiq.Web" Version="1.0.0-beta.18" />
   </ItemGroup>
 </Project>
