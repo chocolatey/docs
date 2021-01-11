@@ -42,7 +42,7 @@
         "node_modules/choco-theme/js/chocolatey-code.js",
         "node_modules/choco-theme/js/chocolatey-tables.js",
         "node_modules/choco-theme/js/chocolatey-markdown.js",
-        "node_modules/choco-theme/js/chocolatey-algolia.js",
+        "node_modules/choco-theme/js/chocolatey-search.js",
         "node_modules/choco-theme/js/chocolatey-scrollspy.js"
       ]
     }
