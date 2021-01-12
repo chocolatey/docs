@@ -38,8 +38,6 @@ You really don't need a try catch with Chocolatey PowerShell files anymore.
 
 ### Administrative Access Functions
 
-When creating packages that need to run one of the following commands below, one should add the tag `admin` to the nuspec.
-
 * [Install-ChocolateyPackage](xref:install-chocolateypackage)
 * [Start-ChocolateyProcessAsAdmin](xref:start-chocolateyprocessasadmin)
 * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
