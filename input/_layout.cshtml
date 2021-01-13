@@ -72,10 +72,8 @@
                     </div>
                 }
             }
-            <div id="globalNav">
-                <div class="container-fluid">
-                    @Html.Partial("global-partials/_globalnavigation")
-                </div>
+            <div class="d-none d-sm-flex">
+                @Html.Partial("global-partials/_globalnavigation")
             </div>
             <nav id="topNav" class="navbar navbar-expand">
                 <a class="navbar-brand" href="@Context.GetLink("/")">
@@ -83,10 +81,10 @@
                     <img class="d-none d-md-block" src="@Context.GetLink("/assets/images/global-shared/logo-square.svg")" alt="Chocolatey" />
                 </a>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                    <li class="nav-item me-2 me-md-3">
                         <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item me-2 me-md-3">
                         <label class="mb-0" for="themeToggle">
                         <input id="themeToggle" class="toggle-checkbox" type="checkbox" aria-label="Toggle theme settings" />
                             <div class="toggle-slot">
@@ -100,22 +98,24 @@
                             </div>
                         </label>
                     </li>
-                    <li class="nav-item d-md-none">
-                        <button type="button" aria-label="Search documentation" class="btn btn-search">
+                    <li class="nav-item d-md-none me-2">
+                        <button type="button" aria-label="Search documentation" class="btn btn-search btn-top-nav">
                             <i class="fas fa-search" aria-hidden="true"></i>
                         </button>
                     </li>
                 </ul>
-                <form id="searchBox" class="form-inline d-none d-md-flex" role="search">
-                    <i class="fas fa-search" aria-hidden="true"></i>
-                    <input type="search" class="form-control" id="searchQuery" placeholder="Search..." aria-label="Search" />
-                    <span class="d-none d-md-flex search-key-container">
-                        <span class="badge badge-key bg-primary search-key"></span>
-                        <span class="badge badge-key bg-primary">k</span>
-                    </span>
+                <form class="ms-3 ms-md-0 search-box search-d-none-submit" role="search">
+                    <div class="flex-grow-1">
+                        <input type="search" class="form-control search-input" id="searchQuery" placeholder="Search..." aria-label="Search" />
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <span class="d-none d-md-flex search-key-container">
+                            <span class="badge badge-key bg-primary search-key"></span>
+                            <span class="badge badge-key bg-primary">k</span>
+                        </span>
+                    </div>
+                    <button type="button" aria-label="Close search" class="btn btn-search-close btn-outline-primary ms-2 me-3 me-md-0 d-md-none"><i class="fas fa-times" aria-hidden="true"></i></button>
                 </form>
-                <button type="button" aria-label="Close search" class="btn btn-search-close btn-link d-none">Close</button>
-                <button type="button" class="navbar-toggler btn d-md-none" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <button type="button" class="navbar-toggler btn btn-top-nav d-md-none me-3" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             </nav>
         </header>
         @if (Document.GetBool(Constants.NoSidebar))
@@ -134,7 +134,9 @@
                                 }
                                 <nav class="navbar navbar-expand-md p-0">
                                     <div id="leftSidebar" class="collapse navbar-collapse">
-                                        @Html.Partial("global-partials/_globalnavigation")
+                                        <div class="d-sm-none">
+                                            @Html.Partial("global-partials/_globalnavigation")
+                                        </div>
                                         <ul class="navbar-nav">
                                             <li class="nav-item">
                                                 @if(root.ShowLink())
