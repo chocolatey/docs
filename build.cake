@@ -143,6 +143,11 @@ Task("Publish-Documentation")
         Information("Cloning repository using username and password...");
         GitClone(buildData.DeployRemote, publishFolder, buildData.GitHubUserName, buildData.GitHubPassword, new GitCloneSettings{ BranchName = buildData.DeployBranch });
     }
+    else if (!string.IsNullOrWhiteSpace(buildData.GitHubToken))
+    {
+        Information("Cloning repository using token...");
+        GitClone(buildData.DeployRemote, publishFolder, buildData.GitHubToken, "x-oauth-basic", new GitCloneSettings{ BranchName = buildData.DeployBranch });
+    }
     else
     {
         Information("Cloning repository anonymously...");
