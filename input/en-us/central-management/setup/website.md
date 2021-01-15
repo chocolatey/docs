@@ -337,6 +337,10 @@ The default installation folder for `chocolatey-management-web` is at `c:\tools\
 
 ## Common Errors and Resolutions
 
+### Configure Central Management alongside WSUS admin site
+
+<?! Include "../../../shared/iis-wsus-chocolatey.txt" /?>
+
 ### The specified path, file name, or both are too long
 
 This error can occur when installing the `chocolatey-management-web` package.  Due to the nested folder structure contained within this package, when extracting to the default cache location, the path can become too long.  This problem is known is occur in the 0.1.0-beta-20181009 release of this package, and it should be corrected in subsequent releases.  As a workaround, adding the following parameters to the install command should allow the installation to complete successfully:
