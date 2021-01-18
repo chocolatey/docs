@@ -162,7 +162,7 @@ The warning may look like: `"Not setting tab completion: Profile file does not e
 Once you've looked at your log to determine what it said, here are some followup steps:
 - If this is the same shell that the upgrade occurred in, the message states you need to update your profile - run `. $profile`. Try that first, then try restarting your shell and see if it takes hold.
 - If it still doesn't work, it means there was a failure setting the profile with the module.
-- This could be due to PowerShell Execution Policy settings. Run `Get-ExecutionPolicy` - if it is set to `Restricted` you need to adjust that to something like `RemoteSigned`. See about execution policies (link)
+- This could be due to PowerShell Execution Policy settings. Run `Get-ExecutionPolicy` - if it is set to `Restricted` you need to adjust that to something like `RemoteSigned`. To learn more about execution policies see the [link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).
 - If that is fine, then we need to look at your "$profile". Run `type $profile`. Examine the output. You should have something like this in the file:
 
 ~~~powershell
