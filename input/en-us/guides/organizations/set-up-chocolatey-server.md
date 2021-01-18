@@ -197,43 +197,7 @@ We are looking to add support for the package source to automatically handle thi
 
 ### Configure Simple Server alongside WSUS admin-site
 
-If you are running the Simple Server next to a WSUS admin-site, you need to change some settings in the IIS-Configuration for making the Simple Server work correctly again.
-This is due to the fact that the WSUS admin-site installation registers two modules in the IIS root configuration, which will be passed down to all other sites running on that IIS instance, including the Chocolatey Simple Server site.
-
-To make the Chocolatey Simple Server work again, you will need to disable inheritance for these modules in order to remove them from the Chocolatey Simple Server site.
-
-*Before making changes to your IIS configuration, read all steps carefully and make sure that you have a backup*
-
-You can do this either by powershell:
-``` powershell
-# Import WebAdministration
-Import-Module WebAdministration
-
-# Remove locks from modules
-Remove-WebConfigurationLock -Filter "system.webServer/modules/add[@name='DynamicCompressionModule']" -PSPath IIS:\
-Remove-WebConfigurationLock -Filter "system.webServer/modules/add[@name='StaticCompressionModule']" -PSPath IIS:\
-
-# Remove modules from the Chocolatey Simple Server site
-Disable-WebGlobalModule -PSPath 'IIS:\Sites\ChocolateyServer\' -Name DynamicCompressionModule
-Disable-WebGlobalModule -PSPath 'IIS:\Sites\ChocolateyServer\' -Name StaticCompressionModule
-
-# Restart website
-Stop-Website -Name "ChocolateyServer"
-Start-Website -Name "ChocolateyServer"
-```
-or manual:
-  1. Open the IIS Management Console
-  2. Click on the server name on the upper left pane
-  3. On the right pane doubleclick on `Modules`. All available modules will show up
-  4. Search for `DynamicCompressionModule`, right-click it and choose `Unlock`
-  5. Do the same for `StaticCompressionModule`
-  6. Under `Sites` on the left pane click on the site for your Chocolatey Simple Server, most likely `ChocolateyServer`
-  7. Again, search for `Modules` on the right pane and doubleclick it
-  8. Search for `DynamicCompressionModule`, right-click it and choose `Remove`
-  9. Restart the Chocolatey Simple Server site
-
-The Chocolatey Simple Server should now be able to handle requests correctly again.
-
+<?! Include "../../../shared/iis-wsus-chocolatey.txt" /?>
 
 ## Common Errors and Resolutions
 
