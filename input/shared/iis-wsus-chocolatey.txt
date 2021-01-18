@@ -1,5 +1,5 @@
 If you are running Chocolatey Products, namely Simple Server or Central Management, next to a WSUS admin-site, you need to change some settings in the IIS-Configuration for making the Simple Server/Central Management Web interface work correctly again.
-This is due to the fact that the WSUS admin-site installation registers two modules in the IIS root configuration, which will be passed down to all other sites running on that IIS instance, including the Chocolatey Simple Server site.
+This is due to the fact that the WSUS admin-site installation registers two modules in the IIS root configuration, which will be passed down to all other sites running on that IIS instance, including the Simple Server and Central Management sites.
 
 To make things work again, you will need to disable inheritance for these modules in order to remove them from the Chocolatey product site you are working with.
 
