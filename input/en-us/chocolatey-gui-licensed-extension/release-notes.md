@@ -16,7 +16,7 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
-## 0.1.0 (Unreleased)
+## 0.1.0 (January 22, 2021)
 
 Initial preview release
 
