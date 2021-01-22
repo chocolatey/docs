@@ -1,13 +1,13 @@
 ---
-Order: 40
-xref: v2-client-setup
-Title: Upgrade Nexus in Quick Deploy Environment
-Description: How to upgrade nexus in QDE
+Order: 70
+xref: v2-upgrade-nexus-qde
+Title: Upgrade Nexus
+Description: How to upgrade Nexus installed on QDE
 ---
 
 # Upgrade Nexus in Quick Deploy Environment
 
-This document outlines the process for upgrading Nexus running inside our Quick Deployment Enviornment.
+This document outlines the process for upgrading Nexus running inside our Quick Deployment Environment.
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
