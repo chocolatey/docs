@@ -19,4 +19,4 @@ If you have Chocolatey for Business (C4B), please refer to the following:
 * [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes)
 * [Chocolatey Agent Release Notes](xref:agent-release-notes)
 * [Chocolatey Central Management Release Notes](xref:ccm-release-notes)
-* [Chocolatey GUI Licensed Extension Release Notes](chocolatey-gui-licensed-extension-release-notes)
+* [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes)
