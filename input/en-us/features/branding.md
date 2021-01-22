@@ -25,9 +25,7 @@ to the bottom left corner of the application.
 
 > :memo: **NOTE** Branding of Chocolatey GUI is only available to our Business
 License customers, and requires the **Chocolatey GUI licensed extension**
-(chocolateygui.extension) to be installed, alongside Chocolatey GUI.  Currently,
-the chocolateygui.extension package is only available in a beta version, please
-reach out to support via the normal channels to get access to the package.
+(chocolateygui.extension) to be installed, alongside Chocolatey GUI.
 
 In order for branding to work, there are a number of image files that are required.
 These have to be named exactly as the following:
