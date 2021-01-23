@@ -109,19 +109,42 @@ Steps to create a QDE virtual machine in Azure:
    * `New-QDEAzureVM.ps1`
 1. While the scripts will do the majority of the hard work needed to create a QDE virtual machine in Azure, we do need to setup a resource group.
    The default resource group that the scripts will use is `qdeserver-resgrp`; if you prefer, you can supply an existing resource group using the `-ResourceGroupName <YOUR-RESOURCEGROUPNAME>` parameter.
-   To create a resource group run `New-AzResourceGroup -Name <RESOURCEGROUPNAME> -Location <YOUR-AZURE-LOCATION>`.
+   To create a resource group run:
+   
+   ```powershell
+   New-AzResourceGroup -Name <RESOURCEGROUPNAME> -Location <YOUR-AZURE-LOCATION>
+   ```
+
 1. We need convert the disk you have downloaded to the size required, and then upload it to Azure so we can attach it to the QDE virtual machine we will create in the following steps.
    Note that the script we are about to run contains defaults that should work for the majority of users.
    However, please run `Get-Help Set-QDEAzureDisk.ps1 -Full` to get help on the parameters you can provide and the defaults that have been set.
-   Once you are comfortable, in the directory you extracted the files to, run `.\Set-QDEAzureDisk.ps1 -Verbose <PARAMETERS>` (where `<PARAMETERS>` is any additional parameters you want to provide).
+   Once you are comfortable, in the directory you extracted the files to, run:
+   
+   ```powershell
+   .\Set-QDEAzureDisk.ps1 -Verbose <PARAMETERS>
+   # where `<PARAMETERS>` is any additional parameters you want to provide
+   ```
+
    Providing the `-Verbose` switch produces output on the screen.
    Note that the processes of converting the disk and uploading it can take a long time.
 1. Before we connect to the QDE virtual machine in Azure we must reset the password.
-   To create a password we can provide to the next script, run `$qdePwd = '<YOUR-PASSWORD> | ConvertTo-SecureString -AsPlainText -Force` (where `<YOUR-PASSWORD>` is the password you want to set **and is longer than 12 characters**).
+   To create a password we can provide to the next script, run
+   
+   ```powershell
+   $qdePwd = <YOUR-PASSWORD> | ConvertTo-SecureString -AsPlainText -Force
+   # where <YOUR-PASSWORD> is the password you want to set AND is longer than 12 characters
+   ```
+
 1. Once the disk has been uploaded, we need to create the QDE virtual machine in Azure and attach the disk we uploaded as the operating system disk.
    Note that the script we are about to run contains defaults that should work for the majority of users.
    However, please run `Get-Help New-QDEAzureVM.ps1 -full` to get help on the parameters you can provide and the defaults that have been set.
-   Once you are comfortable, in the directory you extracted the files to, run `.\New-QDEAzureVM.ps1 -Verbose -AdministratorComplexPassword $qdePwd <PARAMETERS>` (where `<PARAMETERS>` is any parameters you want to provide and `$qdePwd` is the password we created in the previous step).
+   Once you are comfortable, in the directory you extracted the files to, run:
+   
+   ```powershell
+   .\New-QDEAzureVM.ps1 -Verbose -AdministratorComplexPassword $qdePwd <PARAMETERS>
+   # where <PARAMETERS> is any parameters you want to provide and $qdePwd is the password we created in the previous step
+   ```
+
    You can provide the  `-Verbose` switch to display a summary of actions being taken.
 1. Once this is complete the script will output the command you can run to connect to the virtual machine, including the IP address (if you are using the `-Verbose` switch).
    Use `mstsc.exe /v:<IP-ADDRESS>` to connect and login with the password you created in a previous step.
@@ -147,11 +170,15 @@ Steps to create a QDE virtual machine in Azure:
     Resize-VHD -Path C:\path\to\QuickDeploy Environment.vhd -Size 500GB
     ```
 
-<details>
-    <summary>Cick to show animated summary</summary>
+#### See it in Action
 
-![QDE Hyper-V Appliance Import](/assets/images/quickdeploy/QDE-hypervapp.gif)
-</details>
+<p>
+<div class="ratio ratio-700x506">
+    <iframe src="https://www.youtube.com/embed/A2pm_e75qfo?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 #### Hyper-V VHD
 
@@ -175,11 +202,15 @@ Steps to create a QDE virtual machine in Azure:
     * 4 vCPUs
     * 8 GB RAM
 
-<details>
-    <summary>Cick to show animated summary</summary>
+#### See it in Action
 
-![QDE Hyper-V VHD](/assets/images/quickdeploy/QDE-hyperv.gif)
-</details>
+<p>
+<div class="ratio ratio-700x506">
+    <iframe src="https://www.youtube.com/embed/A2pm_e75qfo?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ### Platform: VMware / Other (OVF/OVA Template)
 
@@ -208,17 +239,23 @@ Steps to create a QDE virtual machine in Azure:
     > :memo: **NOTE** likely you will need to allocate the additional space to the C drive.
 1. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
 
-<details>
-    <summary>Click to show animated summary (ESX/i)</summary>
+#### See it in Action
 
-![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-esx.gif)
-</details>
+<p>
+<div class="ratio ratio-700x506">
+    <iframe src="https://www.youtube.com/embed/UbEWgHNXPW8?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
-<details>
-    <summary>Click to show animated summary (VMware Fusion, OSX)</summary>
-
-![QDE VMware VMDK](/assets/images/quickdeploy/QDE-vmdk-fusion.gif)
-</details>
+<p>
+<div class="ratio ratio-700x506">
+    <iframe src="https://www.youtube.com/embed/H--woorTI2U?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ### Platform: Other
 
