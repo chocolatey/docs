@@ -173,7 +173,7 @@ Steps to create a QDE virtual machine in Azure:
 #### See it in Action
 
 <p>
-<div class="ratio ratio-700x506">
+<div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/A2pm_e75qfo?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
@@ -205,7 +205,7 @@ Steps to create a QDE virtual machine in Azure:
 #### See it in Action
 
 <p>
-<div class="ratio ratio-700x506">
+<div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/A2pm_e75qfo?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
@@ -242,7 +242,7 @@ Steps to create a QDE virtual machine in Azure:
 #### See it in Action
 
 <p>
-<div class="ratio ratio-700x506">
+<div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/UbEWgHNXPW8?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
@@ -250,7 +250,7 @@ Steps to create a QDE virtual machine in Azure:
 </p>
 
 <p>
-<div class="ratio ratio-700x506">
+<div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/H--woorTI2U?list=PL84yg23i9GBirbiuF9tAn3aZxsAEw5x1W" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
