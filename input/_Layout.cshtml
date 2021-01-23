@@ -249,17 +249,17 @@
                         </div>
                         <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
                             <div class="ms-md-4 d-xl-none">
-                                @Html.Partial("_breadcrumbs")
+                                @Html.Partial("_Breadcrumbs")
                             </div>
                             <div class="row">
                                 <div id="mainContent" class="col-xl-10 ps-md-5 order-2 order-xl-1">
                                     <div class="d-none d-xl-block">
-                                        @Html.Partial("_breadcrumbs")
+                                        @Html.Partial("_Breadcrumbs")
                                     </div>
                                     @RenderBody()
                                     @if (!Document.GetBool("HideChildPages", false))
                                     {
-                                        @Html.Partial("_childpages")
+                                        @Html.Partial("_ChildPages")
                                     }
                                 </div>
                                 @{
@@ -296,7 +296,7 @@
                                                                     break;
                                                                 default:
                                                                     level = level;
-                                                                    break;                   
+                                                                    break;
                                                             }
                                                             <li class="nav-item"><a class="nav-link @level" href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
                                                         }
