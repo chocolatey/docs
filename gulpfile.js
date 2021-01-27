@@ -110,13 +110,12 @@ function purgeCss() {
                 paths.input + '**/*.cshtml',
                 paths.input + '**/*.md',
                 paths.assets + 'js/*.*',
-                paths.theme + 'scss/_algolia.scss'
+                paths.theme + 'scss/_algolia.scss',
+                paths.theme + 'scss/_gitter.scss'
             ],
             safelist: [
                 '::-webkit-scrollbar', 
-                '::-webkit-scrollbar-thumb', 
-                'gitter-chat-embed', 
-                'gitter-open-chat-button'
+                '::-webkit-scrollbar-thumb'
             ]
         }))
         .pipe(dest(paths.assets + 'css/'));
