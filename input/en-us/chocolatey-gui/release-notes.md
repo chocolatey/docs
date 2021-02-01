@@ -18,11 +18,35 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 * Chocolatey GUI doesn't always shows the right list of software - see [#807](https://github.com/chocolatey/ChocolateyGUI/issues/807)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/SAob-HgTf2Q?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 
 ### BUGS
 
 * Ensure earlier versions of Chocolatey GUI assemblies can be resolved when using an older version of Chocolatey GUI extension - see [#785](https://github.com/chocolatey/ChocolateyGUI/issues/785)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/DGpdtcby9N4?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.17.1](https://github.com/chocolatey/ChocolateyGUI/milestone/20?closed=1) (June 11, 2020)
 
@@ -30,6 +54,18 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 * Language localization files are missing in 0.17.0  - see [#778](https://github.com/chocolatey/ChocolateyGUI/issues/778)
 * Chocolatey GUI runs as a 32 bit process when running on a 64 bit machine - see [#779](https://github.com/chocolatey/ChocolateyGUI/issues/779)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/1wSwRMbds1k?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.17.0](https://github.com/chocolatey/ChocolateyGUI/milestone/18?closed=1) (March 26, 2020)
 
