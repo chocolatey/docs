@@ -10,7 +10,8 @@ RedirectFrom: docs/release-notes-chocolatey-gui
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.
 
-> :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
+> :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
+
 
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 
