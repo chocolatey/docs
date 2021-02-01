@@ -25,3 +25,15 @@ Initial preview release
 * Provide ability to restrict access to Chocolatey GUI settings to only machine administrators
 * Packaging - Extension is deployable in the same way as the Chocolatey Licensed Extension
 * Provide visual indication in Chocolatey GUI when the Chocolatey GUI Licensed Extension is being used
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/kypWt1UyVwg?list=PL84yg23i9GBjSzAEmtCqSLf2us_LLIDwZ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
