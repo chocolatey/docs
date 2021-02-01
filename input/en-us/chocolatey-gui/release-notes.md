@@ -12,6 +12,11 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.17.3](https://github.com/chocolatey/ChocolateyGUI/milestone/22?closed=1) (February 1, 2021)
+
+### BUGS
+
+* Chocolatey GUI doesn't always shows the right list of software - see [#807](https://github.com/chocolatey/ChocolateyGUI/issues/807)
 
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 
