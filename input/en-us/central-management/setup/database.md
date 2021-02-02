@@ -416,4 +416,19 @@ There are two workarounds noted:
 * Delete the appsettings.json file prior to upgrade
 * Do not pass database details if they have not changed during upgrade.
 
+### ERROR: System.Data.SqlClient.SqlException: Could not allocate space for object 'dbo.AbpAuditLogs'.'PK_AbpAuditLogs' in database 'ChocolateyManagement' because the 'PRIMARY' filegroup is full. Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup, or setting autogrowth on for existing files in the filegroup.
+
+This occurs when the ChocolateyManagement database has reached its maximimum configured size. The following SQL query resolves the issue by increasing the database size to 200MB. You can increase this value up to 10GB (in MB notation) if using SQL EXPRESS, or higher if using a licensed edition of SQL Servver. Just ensure you have the free space available to support whatever maximum you decide upon.
+
+```sql
+USE master;
+GO
+ALTER DATABASE ChocolateyManagement
+MODIFY FILE
+    (NAME = ChocolateyManagement,
+    SIZE = 200MB);
+GO
+```
+
+
 [Central Management Setup](xref:ccm-setup)  [Chocolatey Central Management](xref:central-management)
