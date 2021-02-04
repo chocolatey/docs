@@ -96,7 +96,7 @@ You can read more about [Custom SSL Certificates](xref:v2-desktop-readme#option-
 
 ### We use a reverse proxy or a load balancer in front of our Internet-facing servers. Can QDE and your Support Team help with that?
 
-As outlined in this section of the [Central Management Service Setup](xref:ccm-service#can-we-install-central-management-service-behind-a-load-balancer) page, usage of a reverse proxy or load balancer in front of CCM is a more complex installation scenario, and therefore unsupported. As such, if you have a through understanding of X509 certificates and SSL termination, and are able to setup working SSL-encrypted communication, by all means proceed in that manner. However, if you run into complications, we ask that you move to a supported topology in order for our Support folks to help.
+As outlined in this section of the [Central Management Service Setup](xref:ccm-service#can-we-install-central-management-service-behind-a-load-balancer) page, usage of a reverse proxy or load balancer in front of CCM is a more complex installation scenario, and therefore unsupported. As such, if you have a thorough understanding of X509 certificates and SSL termination, and are able to setup working SSL-encrypted communication, by all means proceed in that manner. However, if you run into complications, we ask that you move to a supported topology in order for our Support folks to help.
 
 ### How much time does this save?
 
