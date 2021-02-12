@@ -28,10 +28,9 @@ Use of the community package repository is optional. Community package repositor
 
 Here are some other important things to understand:
 
-- The community repository is [open source](https://github.com/chocolatey/chocolatey.org).
 - Every version of every package submitted must pass through [a rigorous moderation review process](#rigorous-moderation-process-for-community-packages) **before they become publicly available** (includes checks for quality, consistency, installation, and validations against VirusTotal).
     > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
-- Data Collection / Telemetry - IP address, package, and a timestamp - this provides statistics for install counts for community folks. Google analytics for site usage.
+- Data Collection / Telemetry - IP address, package, and a timestamp - this provides statistics for install counts for community folks. Google analytics for site usage. For more information on what is automatically collected for the Community Repository, see our [Privacy Policy](https://chocolatey.org/privacy#what-information-do-we-collect)
 - No 3rd party advertising - That's right, we don't have any advertising on the site. We don't agree with the ideas behind ad-based income (but others might and that is fine). People should never be the product and we don't want to waste your time. If you see any of the tools we use (like Disqus) put up advertisements on our pages, please notify us immediately as we might have missed a policy change with them and will need to seek alternatives.
 
 ## Summary
