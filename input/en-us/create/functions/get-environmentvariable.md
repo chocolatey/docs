@@ -65,7 +65,7 @@ None
 ## Parameters
 
 ###  -Name &lt;String&gt;
-The environemnt variable you want to get the value from.
+The environment variable you want to get the value from.
 
 Property               | Value
 ---------------------- | -----
@@ -76,7 +76,7 @@ Default Value          |
 Accept Pipeline Input? | false
 
 ###  -Scope
-The environemnt variable target scope. This is `Process`, `User`, or
+The environment variable target scope. This is `Process`, `User`, or
 `Machine`.
 
 

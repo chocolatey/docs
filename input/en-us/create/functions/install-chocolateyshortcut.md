@@ -138,7 +138,7 @@ Default Value          |
 Accept Pipeline Input? | false
 
 ###  -Arguments [&lt;String&gt;]
-OPTIONAL - Additonal arguments that should be passed along to the new
+OPTIONAL - Additional arguments that should be passed along to the new
 shortcut.
 
 Property               | Value

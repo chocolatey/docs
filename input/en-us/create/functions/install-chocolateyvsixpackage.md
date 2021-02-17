@@ -1,4 +1,4 @@
----
+﻿---
 Order: 300
 xref: install-chocolateyvsixpackage
 Title: Install-ChocolateyVsixPackage
@@ -163,7 +163,7 @@ Default Value          |
 Accept Pipeline Input? | false
 
 ###  -ChecksumType [&lt;String&gt;]
-The type of checkum that the file is validated with - valid
+The type of checksum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to 'md5'.
 
 MD5 is not recommended as certain organizations need to use FIPS

@@ -112,7 +112,7 @@ Default Value          |
 Accept Pipeline Input? | false
 
 ###  -PackageName [&lt;String&gt;]
-OPTIONAL - This will faciliate logging unzip activity for subsequent
+OPTIONAL - This will facilitate logging unzip activity for subsequent
 uninstalls
 
 Property               | Value
