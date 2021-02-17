@@ -99,7 +99,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)
- * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateyzippackage)
+ * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateypackage)
 
 
 [Function Reference](xref:powershell-reference)
