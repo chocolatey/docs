@@ -2,7 +2,7 @@
 Order: 50
 xref: get-chocolateywebfile
 Title: Get-ChocolateyWebFile
-Description: Information on how to use the Get-ChocolateyWebFile function
+Description: Information on Get-ChocolateyWebFile function
 RedirectFrom: docs/helpers-get-chocolatey-web-file
 ---
 
