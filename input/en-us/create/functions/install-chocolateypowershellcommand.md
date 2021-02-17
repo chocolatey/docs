@@ -2,7 +2,7 @@
 Order: 280
 xref: install-chocolateypowershellcommand
 Title: Install-ChocolateyPowerShellCommand
-Description: Information on how to use the Install-ChocolateyPowerShellCommand function
+Description: Information on Install-ChocolateyPowerShellCommand function
 RedirectFrom: docs/helpers-install-chocolatey-powershell-command
 ---
 

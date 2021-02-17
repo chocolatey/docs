@@ -2,7 +2,7 @@
 Order: 240
 xref: install-chocolateyinstallpackage
 Title: Install-ChocolateyInstallPackage
-Description: Information on how to use the Install-ChocolateyInstallPackage function
+Description: Information on Install-ChocolateyInstallPackage function
 RedirectFrom: docs/helpers-install-chocolatey-install-package
 ---
 

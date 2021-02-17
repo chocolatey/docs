@@ -2,7 +2,7 @@
 Order: 300
 xref: install-chocolateyvsixpackage
 Title: Install-ChocolateyVsixPackage
-Description: Information on how to use the Install-ChocolateyVsixPackage function
+Description: Information on Install-ChocolateyVsixPackage function
 RedirectFrom: docs/helpers-install-chocolatey-vsix-package
 ---
 
