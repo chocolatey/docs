@@ -95,7 +95,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
  * [Install-ChocolateyShortcut](xref:install-chocolateyshortcut)
 
 
-[Function Reference]()
+[Function Reference](xref:powershell-reference)
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyDesktopLink -Full`.
 
