@@ -176,7 +176,8 @@ Accept Pipeline Input? | false
 
 ###  -WorkingDirectory [&lt;String&gt;]
 The working directory for the running process. Defaults to
-`Get-Location`.
+`Get-Location`. If current location is a UNC path, uses
+`$env:TEMP` for default as of 0.10.14.
 
 Available in 0.10.1+.
 
