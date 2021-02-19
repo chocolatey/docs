@@ -1,4 +1,4 @@
----
+﻿---
 Order: 10
 xref: choco-command-new
 Title: New
@@ -260,6 +260,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Generate Packages From Installed Software - Generate packages from the
        installed software on a system (does not handle dependencies). Available
        in Business editions only (licensed version 1.8.0+).
+
+     --for-public, --for-community, --generate-for-community
+     Generate the Package for Community - Generate the package for community
+       use. Available in Business editions only (licensed version 1.9.0+).
 
      --removearchitecture, --removearchitecturefromname, --remove-architecture, --remove-architecture-from-name
      Remove Architecture From Name - Remove x86, x64, 64-bit, etc from the
