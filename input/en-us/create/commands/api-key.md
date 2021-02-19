@@ -1,6 +1,6 @@
----
+﻿---
 Order: 30
-xref: choco-command-api-key
+xref: choco-command-apikey
 Title: ApiKey
 Description: ApiKey Command (choco apikey)
 RedirectFrom:
