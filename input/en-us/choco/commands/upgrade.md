@@ -1,4 +1,4 @@
----
+﻿---
 Order: 200
 xref: choco-command-upgrade
 Title: Upgrade
@@ -13,7 +13,7 @@ RedirectFrom:
 # Upgrade Command (choco upgrade)
 
 Upgrades a package or a list of packages. Some may prefer to use `cup`
- as a shortcut for [`choco upgrade`]xref:choco-command-upgrade). If you do not have a package
+ as a shortcut for [`choco upgrade`](xref:choco-command-upgrade). If you do not have a package
  installed, upgrade will install it.
 
 > :memo: **NOTE** 100% compatible with older Chocolatey client (0.9.8.x and below)
