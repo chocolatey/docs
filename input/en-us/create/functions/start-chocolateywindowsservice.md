@@ -1,5 +1,5 @@
 ﻿---
-Order: 370
+Order: 333
 xref: start-chocolateywindowsservice
 Title: Start-ChocolateyWindowsService
 Description: Information on Start-ChocolateyWindowsService function

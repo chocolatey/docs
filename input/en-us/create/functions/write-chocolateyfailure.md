@@ -1,5 +1,5 @@
 ﻿---
-Order: 460
+Order: 400
 xref: write-chocolateyfailure
 Title: Write-ChocolateyFailure
 Description: Information on Write-ChocolateyFailure function

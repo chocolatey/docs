@@ -1,5 +1,5 @@
 ﻿---
-Order: 430
+Order: 375
 xref: uninstall-chocolateywindowsservice
 Title: Uninstall-ChocolateyWindowsService
 Description: Information on Uninstall-ChocolateyWindowsService function

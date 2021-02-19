@@ -1,5 +1,5 @@
 ﻿---
-Order: 380
+Order: 336
 xref: stop-chocolateywindowsservice
 Title: Stop-ChocolateyWindowsService
 Description: Information on Stop-ChocolateyWindowsService function

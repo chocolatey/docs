@@ -1,5 +1,5 @@
 ﻿---
-Order: 140
+Order: 120
 xref: get-uninstallregistrykey
 Title: Get-UninstallRegistryKey
 Description: Information on Get-UninstallRegistryKey function

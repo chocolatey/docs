@@ -1,5 +1,5 @@
 ﻿---
-Order: 470
+Order: 410
 xref: write-chocolateysuccess
 Title: Write-ChocolateySuccess
 Description: Information on Write-ChocolateySuccess function

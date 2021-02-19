@@ -1,5 +1,5 @@
 ﻿---
-Order: 130
+Order: 110
 xref: get-uacenabled
 Title: Get-UACEnabled
 Description: Information on Get-UACEnabled function

@@ -1,5 +1,5 @@
 ﻿---
-Order: 480
+Order: 420
 xref: write-fileupdatelog
 Title: Write-FileUpdateLog
 Description: Information on Write-FileUpdateLog function

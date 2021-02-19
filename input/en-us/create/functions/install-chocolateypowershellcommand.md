@@ -1,5 +1,5 @@
----
-Order: 280
+﻿---
+Order: 260
 xref: install-chocolateypowershellcommand
 Title: Install-ChocolateyPowershellCommand
 Description: Information on Install-ChocolateyPowershellCommand function

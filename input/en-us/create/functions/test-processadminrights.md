@@ -1,5 +1,5 @@
 ﻿---
-Order: 390
+Order: 340
 xref: test-processadminrights
 Title: Test-ProcessAdminRights
 Description: Information on Test-ProcessAdminRights function

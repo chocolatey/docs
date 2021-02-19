@@ -1,5 +1,5 @@
 ﻿---
-Order: 260
+Order: 240
 xref: install-chocolateypath
 Title: Install-ChocolateyPath
 Description: Information on Install-ChocolateyPath function

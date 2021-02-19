@@ -1,5 +1,5 @@
 ﻿---
-Order: 120
+Order: 100
 xref: get-toolslocation
 Title: Get-ToolsLocation
 Description: Information on Get-ToolsLocation function

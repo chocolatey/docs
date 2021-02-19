@@ -1,5 +1,5 @@
 ﻿---
-Order: 450
+Order: 390
 xref: update-sessionenvironment
 Title: Update-SessionEnvironment
 Description: Information on Update-SessionEnvironment function

@@ -1,5 +1,5 @@
 ﻿---
-Order: 150
+Order: 130
 xref: get-viruscheckvalid
 Title: Get-VirusCheckValid
 Description: Information on Get-VirusCheckValid function

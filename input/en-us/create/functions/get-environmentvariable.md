@@ -1,5 +1,5 @@
 ﻿---
-Order: 60
+Order: 50
 xref: get-environmentvariable
 Title: Get-EnvironmentVariable
 Description: Information on Get-EnvironmentVariable function

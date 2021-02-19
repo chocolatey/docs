@@ -1,5 +1,5 @@
 ﻿---
-Order: 310
+Order: 285
 xref: install-chocolateywindowsservice
 Title: Install-ChocolateyWindowsService
 Description: Information on Install-ChocolateyWindowsService function

@@ -1,5 +1,5 @@
 ﻿---
-Order: 400
+Order: 350
 xref: uninstall-binfile
 Title: Uninstall-BinFile
 Description: Information on Uninstall-BinFile function

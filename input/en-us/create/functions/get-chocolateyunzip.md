@@ -1,5 +1,5 @@
 ﻿---
-Order: 40
+Order: 30
 xref: get-chocolateyunzip
 Title: Get-ChocolateyUnzip
 Description: Information on Get-ChocolateyUnzip function

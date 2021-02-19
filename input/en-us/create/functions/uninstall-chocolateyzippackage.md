@@ -1,5 +1,5 @@
 ﻿---
-Order: 440
+Order: 380
 xref: uninstall-chocolateyzippackage
 Title: Uninstall-ChocolateyZipPackage
 Description: Information on Uninstall-ChocolateyZipPackage function

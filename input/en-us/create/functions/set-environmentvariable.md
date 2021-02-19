@@ -1,5 +1,5 @@
 ﻿---
-Order: 340
+Order: 310
 xref: set-environmentvariable
 Title: Set-EnvironmentVariable
 Description: Information on Set-EnvironmentVariable function

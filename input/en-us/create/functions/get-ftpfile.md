@@ -1,5 +1,5 @@
 ﻿---
-Order: 80
+Order: 70
 xref: get-ftpfile
 Title: Get-FtpFile
 Description: Information on Get-FtpFile function

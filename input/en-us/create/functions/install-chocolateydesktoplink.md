@@ -1,5 +1,5 @@
 ﻿---
-Order: 200
+Order: 180
 xref: install-chocolateydesktoplink
 Title: Install-ChocolateyDesktopLink
 Description: Information on Install-ChocolateyDesktopLink function

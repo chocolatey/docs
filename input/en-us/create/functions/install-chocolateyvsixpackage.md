@@ -1,5 +1,5 @@
 ﻿---
-Order: 300
+Order: 280
 xref: install-chocolateyvsixpackage
 Title: Install-ChocolateyVsixPackage
 Description: Information on Install-ChocolateyVsixPackage function
