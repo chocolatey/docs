@@ -16,10 +16,10 @@ Chocolatey will attempt to push a compiled nupkg to a package feed.
  Some may prefer to use `cpush` as a shortcut for `choco push`.
 
 > :memo: **NOTE** 100% compatible with older chocolatey client (0.9.8.32 and below)
-> with options and switches. Default push location is deprecated and
-> will be removed by v1. In most cases you can still pass options and
-> switches with one dash (`-`). For more details, see
-> [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+ with options and switches. Default push location is deprecated and
+ will be removed by v1. In most cases you can still pass options and
+ switches with one dash (`-`). For more details, see
+ [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 A feed can be a local folder, a file share, the [community feed](https://chocolatey.org/packages)
  (https://push.chocolatey.org/), or a custom/private feed. For web
@@ -33,7 +33,7 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
     cpush [<path to nupkg>] [<options/switches>]
 
 > :memo: **NOTE** If there is more than one nupkg file in the folder, the command
-> will require specifying the path to the file.
+ will require specifying the path to the file.
 
 ## Examples
 
@@ -42,13 +42,13 @@ A feed can be a local folder, a file share, the [community feed](https://chocola
     choco push --source "'https://chocolatey.org/'" -k="'123-123123-123'"
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
-> write proper scripts and integrations.
+ write proper scripts and integrations.
 
 ## Troubleshooting
 
 To use this command, you must have your API key saved for the community
  feed (chocolatey.org) or the source you want to push to. Or you can
- explicitly pass the apikey to the command. See [`apikey`](xref:choco-command-api-key) command help
+ explicitly pass the apikey to the command. See [`apikey`](xref:choco-command-apikey) command help
  for instructions on saving your key:
 
     choco apikey -?
@@ -76,10 +76,10 @@ If you find other exit codes that we have not yet documented, please
 ## Options and Switches
 
 > :memo: **NOTE** Options and switches apply to all items passed, so if you are
-> running a command like install that allows installing multiple
-> packages, and you use `--version=1.0.0`, it is going to look for and
-> try to install version 1.0.0 of every package passed. So please split
-> out multiple package calls when wanting to pass specific options.
+ running a command like install that allows installing multiple
+ packages, and you use `--version=1.0.0`, it is going to look for and
+ try to install version 1.0.0 of every package passed. So please split
+ out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
