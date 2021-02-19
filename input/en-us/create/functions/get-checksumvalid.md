@@ -134,7 +134,7 @@ Default Value          |
 Accept Pipeline Input? | false
 
 ###  -ChecksumType [&lt;String&gt;]
-The type of checkum that the file is validated with - 'md5', 'sha1',
+The type of checksum that the file is validated with - 'md5', 'sha1',
 'sha256' or 'sha512' - defaults to 'md5'.
 
 MD5 is not recommended as certain organizations need to use FIPS
