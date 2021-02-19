@@ -1,4 +1,4 @@
-﻿---
+---
 Order: 200
 xref: choco-command-upgrade
 Title: Upgrade
@@ -17,9 +17,9 @@ Upgrades a package or a list of packages. Some may prefer to use `cup`
  installed, upgrade will install it.
 
 > :memo: **NOTE** 100% compatible with older Chocolatey client (0.9.8.x and below)
-> with options and switches. Add `-y` for previous behavior with no
-> prompt. In most cases you can still pass options and switches with one
-> dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+ with options and switches. Add `-y` for previous behavior with no
+ prompt. In most cases you can still pass options and switches with one
+ dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -27,14 +27,14 @@ Upgrades a package or a list of packages. Some may prefer to use `cup`
     cup <pkg|all> [<pkg2> <pkgN>] [<options/switches>]
 
 > :memo: **NOTE** `all` is a special package keyword that will allow you to upgrade
-> all currently installed packages.
+ all currently installed packages.
 
 Skip upgrading certain packages with [`choco pin`](xref:choco-command-pin) or with the option
  `--except`.
 
 > :memo: **NOTE** [Chocolatey Pro](https://chocolatey.org/compare) / Business automatically synchronizes with
-> Programs and Features, ensuring automatically updating apps' versions
-> (like Chrome) are up to date in Chocolatey's repository.
+ Programs and Features, ensuring automatically updating apps' versions
+ (like Chrome) are up to date in Chocolatey's repository.
 
 ## Examples
 
@@ -53,7 +53,7 @@ Skip upgrading certain packages with [`choco pin`](xref:choco-command-pin) or wi
     choco upgrade all --except="'skype,conemu'"
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
-> write proper scripts and integrations.
+ write proper scripts and integrations.
 
 ## Exit Codes
 
@@ -89,10 +89,10 @@ In addition to the above exit codes, you may also see reboot exit codes
 ## Options and Switches
 
 > :memo: **NOTE** Options and switches apply to all items passed, so if you are
-> running a command like install that allows installing multiple
-> packages, and you use `--version=1.0.0`, it is going to look for and
-> try to install version 1.0.0 of every package passed. So please split
-> out multiple package calls when wanting to pass specific options.
+ running a command like install that allows installing multiple
+ packages, and you use `--version=1.0.0`, it is going to look for and
+ try to install version 1.0.0 of every package passed. So please split
+ out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 

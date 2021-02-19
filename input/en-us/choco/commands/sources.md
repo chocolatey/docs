@@ -15,10 +15,10 @@ RedirectFrom:
 Chocolatey will allow you to interact with sources.
 
 > :memo: **NOTE** Mostly compatible with older chocolatey client (0.9.8.x and
-> below) with options and switches. When enabling, disabling or removing
-> a source, use `-name` in front of the option now. In most cases you
-> can still pass options and switches with one dash (`-`). For more
-> details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+ below) with options and switches. When enabling, disabling or removing
+ a source, use `-name` in front of the option now. In most cases you
+ can still pass options and switches with one dash (`-`). For more
+ details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 

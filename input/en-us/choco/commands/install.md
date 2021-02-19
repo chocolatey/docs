@@ -17,9 +17,9 @@ Installs a package or a list of packages (sometimes specified as a
  [`choco install`](xref:choco-command-install).
 
 > :memo: **NOTE** 100% compatible with older chocolatey client (0.9.8.32 and below)
-> with options and switches. Add `-y` for previous behavior with no
-> prompt. In most cases you can still pass options and switches with one
-> dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
+ with options and switches. Add `-y` for previous behavior with no
+ prompt. In most cases you can still pass options and switches with one
+ dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
 
@@ -27,20 +27,20 @@ Installs a package or a list of packages (sometimes specified as a
     cinst <pkg|packages.config> [<pkg2> <pkgN>] [<options/switches>]
 
 > :memo: **NOTE** `all` is a special package keyword that will allow you to install
-> all packages from a custom feed. Will not work with Chocolatey default
-> feed. THIS IS NOT YET REIMPLEMENTED.
+ all packages from a custom feed. Will not work with Chocolatey default
+ feed. THIS IS NOT YET REIMPLEMENTED.
 
 > :memo: **NOTE** Any package name ending with .config is considered a
-> 'packages.config' file. Please see https://bit.ly/packages_config
+ 'packages.config' file. Please see https://bit.ly/packages_config
 
 > :memo: **NOTE** [Chocolatey Pro](https://chocolatey.org/compare) / Business builds on top of a great open source
-> experience with quite a few features that enhance the your use of the
-> community package repository (when using Pro), and really enhance the
-> Chocolatey experience all around. If you are an organization looking
-> for a better ROI, look no further than Business - automatic package
-> creation from installer files, automatic recompile support, runtime
-> malware protection, private CDN download cache, synchronize with
-> Programs and Features, etc - https://chocolatey.org/compare.
+ experience with quite a few features that enhance the your use of the
+ community package repository (when using Pro), and really enhance the
+ Chocolatey experience all around. If you are an organization looking
+ for a better ROI, look no further than Business - automatic package
+ creation from installer files, automatic recompile support, runtime
+ malware protection, private CDN download cache, synchronize with
+ Programs and Features, etc - https://chocolatey.org/compare.
 
 ## Examples
 
@@ -73,13 +73,13 @@ What is `-my`? See option bundling in [how to pass arguments](xref:choco-command
  (`choco -?`).
 
 > :memo: **NOTE** All of these will add to PATH variable. We'll be adding a special
-> option to not allow PATH changes. Until then you will need to manually
-> go modify Path to just one Ruby and then use something like uru
-> (https://bitbucket.org/jonforums/uru) or pik
-> (https://chocolatey.org/packages/pik) to switch between versions.
+ option to not allow PATH changes. Until then you will need to manually
+ go modify Path to just one Ruby and then use something like uru
+ (https://bitbucket.org/jonforums/uru) or pik
+ (https://chocolatey.org/packages/pik) to switch between versions.
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
-> write proper scripts and integrations.
+write proper scripts and integrations.
 
 ## Exit Codes
 
@@ -190,10 +190,10 @@ This specifies that the source is a Windows Feature and we should
 ## Options and Switches
 
 > :memo: **NOTE** Options and switches apply to all items passed, so if you are
-> running a command like install that allows installing multiple
-> packages, and you use `--version=1.0.0`, it is going to look for and
-> try to install version 1.0.0 of every package passed. So please split
-> out multiple package calls when wanting to pass specific options.
+ running a command like install that allows installing multiple
+ packages, and you use `--version=1.0.0`, it is going to look for and
+ try to install version 1.0.0 of every package passed. So please split
+ out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 

@@ -45,8 +45,8 @@ Enhanced:
  - 2: no results (enhanced)
 
 > :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
-> turned on, then choco will provide enhanced exit codes that allow
-> better integration and scripting.
+ turned on, then choco will provide enhanced exit codes that allow
+ better integration and scripting.
 
 If you find other exit codes that we have not yet documented, please
  file a ticket so we can document it at
@@ -55,10 +55,10 @@ If you find other exit codes that we have not yet documented, please
 ## Options and Switches
 
 > :memo: **NOTE** Options and switches apply to all items passed, so if you are
-> running a command like install that allows installing multiple
-> packages, and you use `--version=1.0.0`, it is going to look for and
-> try to install version 1.0.0 of every package passed. So please split
-> out multiple package calls when wanting to pass specific options.
+ running a command like install that allows installing multiple
+ packages, and you use `--version=1.0.0`, it is going to look for and
+ try to install version 1.0.0 of every package passed. So please split
+ out multiple package calls when wanting to pass specific options.
 
 Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
 
