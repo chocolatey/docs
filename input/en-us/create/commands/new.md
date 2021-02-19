@@ -1,4 +1,4 @@
-﻿---
+---
 Order: 10
 xref: choco-command-new
 Title: New
@@ -14,13 +14,13 @@ RedirectFrom:
 
 Chocolatey [Licensed editions](https://chocolatey.org/compare) include some level of Package Builder.
 
- - Professional / MSP editions (commercial editions v1.9.0+) can take advantage of
+ - Professional (licensed edition v1.9.0+) can take advantage of
    Package Builder UI minus the auto-detection
- - Business / Architect (commercial editions v1.4.0+) can use `--file` or Package
+ - Business (licensed edition v1.4.0+) can use `--file` or Package
    Builder UI to generate a fully ready to go unattended software
    deployment in seconds. So easy a 7 year old can do it. Right Click
    'Create Package...'
- - Business / Architect (commercial editions v1.8.0+) can use
+ - Business (licensed edition v1.8.0+) can use
    `--from-programs-and-features` to generate packages directly from
    Programs and Features!
 
