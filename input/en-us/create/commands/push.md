@@ -157,8 +157,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --proxy-user=VALUE
      Proxy User Name - Explicit proxy user (optional). Requires explicity
        proxy (`--proxy` or config setting). Overrides the default proxy user of
-       '123'. Available for config settings in 0.9.9.9+, this CLI option
-       available in 0.10.4+.
+       ''. Available for config settings in 0.9.9.9+, this CLI option available
+       in 0.10.4+.
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with
