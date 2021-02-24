@@ -30,7 +30,7 @@ method as this has been deprecated.
 
 ## Notes
 
-Deprecated in favor of [`Install-ChocolateyShortcut`](xref:install-chocolateyshortcut).
+Deprecated in favor of https://docs.chocolatey.org/en-us/create/functions/install-chocolateyshortcut.
 If this errors, such as it will if being installed under the local
 SYSTEM account, it will display a warning instead of failing a package
 installation.

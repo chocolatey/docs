@@ -210,7 +210,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      ForceX86 - Force x86 (32bit) installation on 64 bit systems. Defaults to
        false.
 
-     --ia, --installargs, --installarguments, --install-arguments=VALUE
+     --ia, --installargs, --install-args, --installarguments, --install-arguments=VALUE
      InstallArguments - Install Arguments to pass to the native installer in
        the package. Defaults to unspecified.
 
@@ -337,7 +337,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --except=VALUE
      Except - a comma-separated list of package names that should not be
-       upgraded when upgrading 'all'. Defaults to empty. Available in 0.9.10+.
+       upgraded when upgrading 'all'. Overrides the configuration setting
+       'upgradeAllExceptions' set to ''. Available in 0.9.10+.
 
      --stoponfirstfailure, --stop-on-first-failure, --stop-on-first-package-failure
      Stop On First Package Failure - stop running install, upgrade or
@@ -385,6 +386,15 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        the default feature 'exitOnRebootDetected' set to 'False'.  Available in
        0.10.12+.
 
+     --disable-repository-optimizations, --disable-package-repository-optimizations
+     Disable Package Repository Optimizations - Do not use optimizations for
+       reducing bandwidth with repository queries during package
+       install/upgrade/outdated operations. Should not generally be used,
+       unless a repository needs to support older methods of query. When
+       disabled, this makes queries similar to the way they were done in
+       Chocolatey v0.10.11 and before. Overrides the default feature
+       'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
+
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download even if a private CDN
        cache is available for a package. Overrides the default feature
@@ -399,20 +409,20 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --svc, --skipvirus, --skip-virus, --skipviruscheck, --skip-virus-check
      Skip Virus Check - Skip the virus check for downloaded files on this ru-
-       n. Overrides the default feature 'virusCheck' set to 'True'. Available
+       n. Overrides the default feature 'virusCheck' set to 'False'. Available
        in 0.9.10+. [Licensed editions](https://chocolatey.org/compare) only. See https://chocolate-
        y.org/docs/features-virus-check
 
      --virus, --viruscheck, --virus-check
      Virus Check - check downloaded files for viruses. Overrides the default
-       feature 'virusCheck' set to 'True'. Available in 0.9.10+. Licensed
+       feature 'virusCheck' set to 'False'. Available in 0.9.10+. Licensed
        editions only. See https://docs.chocolatey.org/en-us/features/virus-check
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
      Virus Check Minimum Scan Result Positives - the minimum number of scan
        result positives required to flag a package. Used when virusScannerType
        is VirusTotal. Overrides the default configuration value
-       'virusCheckMinimumPositives' set to '5'. Available in 0.9.10+. Licensed
+       'virusCheckMinimumPositives' set to '4'. Available in 0.9.10+. Licensed
        editions only. See https://docs.chocolatey.org/en-us/features/virus-check
 
      --install-arguments-sensitive=VALUE

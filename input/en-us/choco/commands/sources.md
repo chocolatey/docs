@@ -1,8 +1,8 @@
 ﻿---
 Order: 130
 xref: choco-command-sources
-Title: Source/Sources
-Description: Source Command (choco sources)
+Title: Sources
+Description: Sources Command (choco sources)
 RedirectFrom:
   - docs/commandssources
   - docs/commands-sources

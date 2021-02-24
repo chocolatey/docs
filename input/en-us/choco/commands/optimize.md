@@ -2,7 +2,7 @@
 Order: 70
 xref: choco-command-optimize
 Title: Optimize
-Description:  Optimize Command (choco optimize)
+Description: Optimize Command (choco optimize)
 RedirectFrom:
   - docs/commandsoptimize
   - docs/commands-optimize

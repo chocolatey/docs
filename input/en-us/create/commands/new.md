@@ -2,7 +2,7 @@
 Order: 10
 xref: choco-command-new
 Title: New
-Description: Package Builder Command (choco new)
+Description: New Command (choco new)
 RedirectFrom:
   - docs/commandsnew
   - docs/commands-new
@@ -190,7 +190,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -t, --template, --template-name=VALUE
      TemplateName - Use a named template in
-       C:\ProgramData\chocolatey\templates\templatename instead of built-in
+       c:\ProgramData\chocolatey\templates\templatename instead of built-in
        template. Available in 0.9.9.9+. Manage templates as packages in 0.9.10+.
 
      --name=VALUE

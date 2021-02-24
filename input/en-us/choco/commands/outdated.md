@@ -186,6 +186,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Certificate Password - the client certificate's password to the source.
        Defaults to empty. Available in 0.9.10+.
 
+     --pre, --prerelease
+     Prerelease - Include Prereleases? Defaults to false. Available in 0.1-
+       0.14+.
+
      --ignore-pinned
      Ignore Pinned - Ignore pinned packages. Defaults to false. Available in
        0.10.6+.
@@ -195,6 +199,15 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        sources used (or the defaults). Overrides the default feature
        'ignoreUnfoundPackagesOnUpgradeOutdated' set to 'False'. Available in -
        0.10.9+.
+
+     --disable-repository-optimizations, --disable-package-repository-optimizations
+     Disable Package Repository Optimizations - Do not use optimizations for
+       reducing bandwidth with repository queries during package
+       install/upgrade/outdated operations. Should not generally be used,
+       unless a repository needs to support older methods of query. When
+       disabled, this makes queries similar to the way they were done in
+       Chocolatey v0.10.11 and before. Overrides the default feature
+       'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
 
 ~~~
 

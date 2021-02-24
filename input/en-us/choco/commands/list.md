@@ -195,7 +195,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Source - Source location for install. Can use special 'webpi' or
        'windowsfeatures' sources. Defaults to sources.
 
- -l, --lo, --localonly, --local-only
+ -l, --lo, --local, --localonly, --local-only
      LocalOnly - Only search against local machine items.
 
      --idonly, --id-only
@@ -273,6 +273,15 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --detail, --detailed
      Detailed - Alias for verbose. Available in 0.9.10+.
+
+     --disable-repository-optimizations, --disable-package-repository-optimizations
+     Disable Package Repository Optimizations - Do not use optimizations for
+       reducing bandwidth with repository queries during package
+       install/upgrade/outdated operations. Should not generally be used,
+       unless a repository needs to support older methods of query. When
+       disabled, this makes queries similar to the way they were done in
+       Chocolatey v0.10.11 and before. Overrides the default feature
+       'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
 
      --audit, --showaudit, --show-audit, --show-audit-info
      Show Audit Information - Display auditing information for a package.

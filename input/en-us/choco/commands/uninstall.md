@@ -20,8 +20,6 @@ Uninstalls a package or a list of packages. Some may prefer to use
  prompt. In most cases you can still pass options and switches with one
  dash (`-`). For more details, see [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
-## Details
-
 Choco 0.9.9+ automatically tracks registry changes for "Programs and
  Features" of the underlying software's native installers when
  installing packages. The "Automatic Uninstaller" (auto uninstaller)
