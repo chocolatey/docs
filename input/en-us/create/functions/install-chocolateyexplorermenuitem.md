@@ -3,7 +3,9 @@ Order: 200
 xref: install-chocolateyexplorermenuitem
 Title: Install-ChocolateyExplorerMenuItem
 Description: Information on Install-ChocolateyExplorerMenuItem function
-RedirectFrom: docs/helpers-install-chocolatey-explorer-menu-item
+RedirectFrom:
+  - docs/helpers-install-chocolatey-explorer-menu-item
+  - docs/helpersinstallchocolateyexplorermenuitem
 ---
 
 # Install-ChocolateyExplorerMenuItem

@@ -3,7 +3,9 @@ Order: 360
 xref: uninstall-chocolateyenvironmentvariable
 Title: Uninstall-ChocolateyEnvironmentVariable
 Description: Information on Uninstall-ChocolateyEnvironmentVariable function
-RedirectFrom: docs/helpers-uninstall-chocolatey-environment-variable
+RedirectFrom:
+  - docs/helpers-uninstall-chocolatey-environment-variable
+  - docs/helpersuninstallchocolateyenvironmentvariable
 ---
 
 # Uninstall-ChocolateyEnvironmentVariable

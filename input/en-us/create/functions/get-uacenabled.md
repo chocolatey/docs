@@ -3,7 +3,9 @@ Order: 110
 xref: get-uacenabled
 Title: Get-UACEnabled
 Description: Information on Get-UACEnabled function
-RedirectFrom: docs/helpers-get-uacenabled
+RedirectFrom:
+  - docs/helpers-get-uac-enabled
+  - docs/helpersgetuacenabled
 ---
 
 # Get-UACEnabled

@@ -3,7 +3,9 @@ Order: 370
 xref: uninstall-chocolateypackage
 Title: Uninstall-ChocolateyPackage
 Description: Information on Uninstall-ChocolateyPackage function
-RedirectFrom: docs/helpers-uninstall-chocolatey-package
+RedirectFrom:
+  - docs/helpers-uninstall-chocolatey-package
+  - docs/helpersuninstallchocolateypackage
 ---
 
 # Uninstall-ChocolateyPackage

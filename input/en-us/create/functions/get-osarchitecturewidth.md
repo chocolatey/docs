@@ -3,7 +3,9 @@ Order: 80
 xref: get-osarchitecturewidth
 Title: Get-OSArchitectureWidth
 Description: Information on Get-OSArchitectureWidth function
-RedirectFrom: docs/helpers-get-osarchitecture-width
+RedirectFrom:
+  - docs/helpers-get-os-architecture-width
+  - docs/helpersgetosarchitecturewidth
 ---
 
 # Get-OSArchitectureWidth

@@ -3,7 +3,9 @@ Order: 310
 xref: set-environmentvariable
 Title: Set-EnvironmentVariable
 Description: Information on Set-EnvironmentVariable function
-RedirectFrom: docs/helpers-set-environment-variable
+RedirectFrom:
+  - docs/helpers-set-environment-variable
+  - docs/helperssetenvironmentvariable
 ---
 
 # Set-EnvironmentVariable

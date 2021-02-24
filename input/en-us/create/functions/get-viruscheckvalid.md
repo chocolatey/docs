@@ -3,7 +3,9 @@ Order: 130
 xref: get-viruscheckvalid
 Title: Get-VirusCheckValid
 Description: Information on Get-VirusCheckValid function
-RedirectFrom: docs/helpers-get-virus-check-valid
+RedirectFrom:
+  - docs/helpers-get-virus-check-valid
+  - docs/helpersgetviruscheckvalid
 ---
 
 # Get-VirusCheckValid

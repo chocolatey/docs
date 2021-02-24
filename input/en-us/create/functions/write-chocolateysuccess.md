@@ -3,7 +3,9 @@ Order: 410
 xref: write-chocolateysuccess
 Title: Write-ChocolateySuccess
 Description: Information on Write-ChocolateySuccess function
-RedirectFrom: docs/helpers-write-chocolatey-success
+RedirectFrom:
+  - docs/helpers-write-chocolatey-success
+  - docs/helperswritechocolateysuccess
 ---
 
 # Write-ChocolateySuccess

@@ -3,7 +3,9 @@ Order: 320
 xref: set-powershellexitcode
 Title: Set-PowerShellExitCode
 Description: Information on Set-PowerShellExitCode function
-RedirectFrom: docs/helpers-set-power-shell-exit-code
+RedirectFrom:
+  - docs/helpers-set-power-shell-exit-code
+  - docs/helperssetpowershellexitcode
 ---
 
 # Set-PowerShellExitCode

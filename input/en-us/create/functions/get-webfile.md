@@ -3,7 +3,9 @@ Order: 140
 xref: get-webfile
 Title: Get-WebFile
 Description: Information on Get-WebFile function
-RedirectFrom: docs/helpers-get-web-file
+RedirectFrom:
+  - docs/helpers-get-web-file
+  - docs/helpersgetwebfile
 ---
 
 # Get-WebFile

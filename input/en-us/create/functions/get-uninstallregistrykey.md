@@ -3,7 +3,9 @@ Order: 120
 xref: get-uninstallregistrykey
 Title: Get-UninstallRegistryKey
 Description: Information on Get-UninstallRegistryKey function
-RedirectFrom: docs/helpers-get-uninstall-registry-key
+RedirectFrom:
+  - docs/helpers-get-uninstall-registry-key
+  - docs/helpersgetuninstallregistrykey
 ---
 
 # Get-UninstallRegistryKey

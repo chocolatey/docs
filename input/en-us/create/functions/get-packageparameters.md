@@ -3,7 +3,9 @@ Order: 90
 xref: get-packageparameters
 Title: Get-PackageParameters
 Description: Information on Get-PackageParameters function
-RedirectFrom: docs/helpers-get-package-parameters
+RedirectFrom:
+  - docs/helpers-get-package-parameters
+  - docs/helpersgetpackageparameters
 ---
 
 # Get-PackageParameters

@@ -3,7 +3,9 @@ Order: 290
 xref: install-chocolateyzippackage
 Title: Install-ChocolateyZipPackage
 Description: Information on Install-ChocolateyZipPackage function
-RedirectFrom: docs/helpers-install-chocolatey-zip-package
+RedirectFrom:
+  - docs/helpers-install-chocolatey-zip-package
+  - docs/helpersinstallchocolateyzippackage
 ---
 
 # Install-ChocolateyZipPackage

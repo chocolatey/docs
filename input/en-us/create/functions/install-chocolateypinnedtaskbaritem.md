@@ -3,7 +3,9 @@ Order: 250
 xref: install-chocolateypinnedtaskbaritem
 Title: Install-ChocolateyPinnedTaskBarItem
 Description: Information on Install-ChocolateyPinnedTaskBarItem function
-RedirectFrom: docs/helpers-install-chocolatey-pinned-task-bar-item
+RedirectFrom:
+  - docs/helpers-install-chocolatey-pinned-task-bar-item
+  - docs/helpersinstallchocolateypinnedtaskbaritem
 ---
 
 # Install-ChocolateyPinnedTaskBarItem

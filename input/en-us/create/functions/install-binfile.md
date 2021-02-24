@@ -3,7 +3,9 @@ Order: 170
 xref: install-binfile
 Title: Install-BinFile
 Description: Information on Install-BinFile function
-RedirectFrom: docs/helpers-install-bin-file
+RedirectFrom:
+  - docs/helpers-install-bin-file
+  - docs/helpersinstallbinfile
 ---
 
 # Install-BinFile

@@ -3,7 +3,9 @@ Order: 10
 xref: format-filesize
 Title: Format-FileSize
 Description: Information on Format-FileSize function
-RedirectFrom: docs/helpers-format-file-size
+RedirectFrom:
+  - docs/helpers-format-file-size
+  - docs/helpersformatfilesize
 ---
 
 # Format-FileSize

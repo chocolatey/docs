@@ -3,7 +3,9 @@ Order: 300
 xref: install-vsix
 Title: Install-Vsix
 Description: Information on Install-Vsix function
-RedirectFrom: docs/helpers-install-vsix
+RedirectFrom:
+  - docs/helpers-install-vsix
+  - docs/helpersinstallvsix
 ---
 
 # Install-Vsix

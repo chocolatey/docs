@@ -3,7 +3,9 @@ Order: 60
 xref: get-environmentvariablenames
 Title: Get-EnvironmentVariableNames
 Description: Information on Get-EnvironmentVariableNames function
-RedirectFrom: docs/helpers-get-environment-variable-names
+RedirectFrom:
+  - docs/helpers-get-environment-variable-names
+  - docs/helpersgetenvironmentvariablenames
 ---
 
 # Get-EnvironmentVariableNames

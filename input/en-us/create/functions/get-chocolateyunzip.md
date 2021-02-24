@@ -3,7 +3,9 @@ Order: 30
 xref: get-chocolateyunzip
 Title: Get-ChocolateyUnzip
 Description: Information on Get-ChocolateyUnzip function
-RedirectFrom: docs/helpers-get-chocolatey-unzip
+RedirectFrom:
+  - docs/helpers-get-chocolatey-unzip
+  - docs/helpersgetchocolateyunzip
 ---
 
 # Get-ChocolateyUnzip

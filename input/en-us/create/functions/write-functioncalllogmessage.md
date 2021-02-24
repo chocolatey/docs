@@ -3,7 +3,9 @@ Order: 430
 xref: write-functioncalllogmessage
 Title: Write-FunctionCallLogMessage
 Description: Information on Write-FunctionCallLogMessage function
-RedirectFrom: docs/helpers-write-function-call-log-message
+RedirectFrom:
+  - docs/helpers-write-function-call-log-message
+  - docs/helperswritefunctioncalllogmessage
 ---
 
 # Write-FunctionCallLogMessage

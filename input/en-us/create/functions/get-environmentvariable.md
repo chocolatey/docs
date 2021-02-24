@@ -3,7 +3,9 @@ Order: 50
 xref: get-environmentvariable
 Title: Get-EnvironmentVariable
 Description: Information on Get-EnvironmentVariable function
-RedirectFrom: docs/helpers-get-environment-variable
+RedirectFrom:
+  - docs/helpers-get-environment-variable
+  - docs/helpersgetenvironmentvariable
 ---
 
 # Get-EnvironmentVariable

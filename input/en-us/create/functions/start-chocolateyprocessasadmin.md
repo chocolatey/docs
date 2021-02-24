@@ -3,7 +3,9 @@ Order: 330
 xref: start-chocolateyprocessasadmin
 Title: Start-ChocolateyProcessAsAdmin
 Description: Information on Start-ChocolateyProcessAsAdmin function
-RedirectFrom: docs/helpers-start-chocolatey-process-as-admin
+RedirectFrom:
+  - docs/helpers-start-chocolatey-process-as-admin
+  - docs/helpersstartchocolateyprocessasadmin
 ---
 
 # Start-ChocolateyProcessAsAdmin

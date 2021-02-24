@@ -3,7 +3,9 @@ Order: 350
 xref: uninstall-binfile
 Title: Uninstall-BinFile
 Description: Information on Uninstall-BinFile function
-RedirectFrom: docs/helpers-uninstall-bin-file
+RedirectFrom:
+  - docs/helpers-uninstall-bin-file
+  - docs/helpersuninstallbinfile
 ---
 
 # Uninstall-BinFile

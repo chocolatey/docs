@@ -3,7 +3,9 @@ Order: 270
 xref: install-chocolateyshortcut
 Title: Install-ChocolateyShortcut
 Description: Information on Install-ChocolateyShortcut function
-RedirectFrom: docs/helpers-install-chocolatey-shortcut
+RedirectFrom:
+  - docs/helpers-install-chocolatey-shortcut
+  - docs/helpersinstallchocolateyshortcut
 ---
 
 # Install-ChocolateyShortcut

@@ -3,7 +3,9 @@ Order: 210
 xref: install-chocolateyfileassociation
 Title: Install-ChocolateyFileAssociation
 Description: Information on Install-ChocolateyFileAssociation function
-RedirectFrom: docs/helpers-install-chocolatey-file-association
+RedirectFrom:
+  - docs/helpers-install-chocolatey-file-association
+  - docs/helpersinstallchocolateyfileassociation
 ---
 
 # Install-ChocolateyFileAssociation

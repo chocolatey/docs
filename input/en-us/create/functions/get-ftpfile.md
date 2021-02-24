@@ -3,7 +3,9 @@ Order: 70
 xref: get-ftpfile
 Title: Get-FtpFile
 Description: Information on Get-FtpFile function
-RedirectFrom: docs/helpers-get-ftp-file
+RedirectFrom:
+  - docs/helpers-get-ftp-file
+  - docs/helpersgetftpfile
 ---
 
 # Get-FtpFile

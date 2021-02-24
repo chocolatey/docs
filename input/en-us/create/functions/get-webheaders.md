@@ -3,7 +3,9 @@ Order: 160
 xref: get-webheaders
 Title: Get-WebHeaders
 Description: Information on Get-WebHeaders function
-RedirectFrom: docs/helpers-get-web-headers
+RedirectFrom:
+  - docs/helpers-get-web-headers
+  - docs/helpersgetwebheaders
 ---
 
 # Get-WebHeaders

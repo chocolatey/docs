@@ -3,7 +3,9 @@ Order: 390
 xref: update-sessionenvironment
 Title: Update-SessionEnvironment
 Description: Information on Update-SessionEnvironment function
-RedirectFrom: docs/helpers-update-session-environment
+RedirectFrom:
+  - docs/helpers-update-session-environment
+  - docs/helpersupdatesessionenvironment
 ---
 
 # Update-SessionEnvironment

@@ -3,7 +3,9 @@ Order: 190
 xref: install-chocolateyenvironmentvariable
 Title: Install-ChocolateyEnvironmentVariable
 Description: Information on Install-ChocolateyEnvironmentVariable function
-RedirectFrom: docs/helpers-install-chocolatey-environment-variable
+RedirectFrom:
+  - docs/helpers-install-chocolatey-environment-variable
+  - docs/helpersinstallchocolateyenvironmentvariable
 ---
 
 # Install-ChocolateyEnvironmentVariable

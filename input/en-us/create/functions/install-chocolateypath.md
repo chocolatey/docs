@@ -3,7 +3,9 @@ Order: 240
 xref: install-chocolateypath
 Title: Install-ChocolateyPath
 Description: Information on Install-ChocolateyPath function
-RedirectFrom: docs/helpers-install-chocolatey-path
+RedirectFrom:
+  - docs/helpers-install-chocolatey-path
+  - docs/helpersinstallchocolateypath
 ---
 
 # Install-ChocolateyPath

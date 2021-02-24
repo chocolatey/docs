@@ -3,7 +3,9 @@ Order: 420
 xref: write-fileupdatelog
 Title: Write-FileUpdateLog
 Description: Information on Write-FileUpdateLog function
-RedirectFrom: docs/helpers-write-file-update-log
+RedirectFrom:
+  - docs/helpers-write-file-update-log
+  - docs/helperswritefileupdatelog
 ---
 
 # Write-FileUpdateLog

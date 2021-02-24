@@ -3,7 +3,9 @@ Order: 220
 xref: install-chocolateyinstallpackage
 Title: Install-ChocolateyInstallPackage
 Description: Information on Install-ChocolateyInstallPackage function
-RedirectFrom: docs/helpers-install-chocolatey-install-package
+RedirectFrom:
+  - docs/helpers-install-chocolatey-install-package
+  - docs/helpersinstallchocolateyinstallpackage
 ---
 
 # Install-ChocolateyInstallPackage

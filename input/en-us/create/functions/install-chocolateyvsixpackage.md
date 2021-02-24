@@ -3,7 +3,9 @@ Order: 280
 xref: install-chocolateyvsixpackage
 Title: Install-ChocolateyVsixPackage
 Description: Information on Install-ChocolateyVsixPackage function
-RedirectFrom: docs/helpers-install-chocolatey-vsix-package
+RedirectFrom:
+  - docs/helpers-install-chocolatey-vsix-package
+  - docs/helpersinstallchocolateyvsixpackage
 ---
 
 # Install-ChocolateyVsixPackage

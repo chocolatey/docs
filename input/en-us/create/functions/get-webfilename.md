@@ -3,7 +3,9 @@ Order: 150
 xref: get-webfilename
 Title: Get-WebFileName
 Description: Information on Get-WebFileName function
-RedirectFrom: docs/helpers-get-web-file-name
+RedirectFrom:
+  - docs/helpers-get-web-file-name
+  - docs/helpersgetwebfilename
 ---
 
 # Get-WebFileName

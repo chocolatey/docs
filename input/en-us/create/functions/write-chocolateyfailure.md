@@ -3,7 +3,9 @@ Order: 400
 xref: write-chocolateyfailure
 Title: Write-ChocolateyFailure
 Description: Information on Write-ChocolateyFailure function
-RedirectFrom: docs/helpers-write-chocolatey-failure
+RedirectFrom:
+  - docs/helpers-write-chocolatey-failure
+  - docs/helperswritechocolateyfailure
 ---
 
 # Write-ChocolateyFailure

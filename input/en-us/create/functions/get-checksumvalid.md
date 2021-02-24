@@ -3,7 +3,9 @@ Order: 20
 xref: get-checksumvalid
 Title: Get-ChecksumValid
 Description: Information on Get-ChecksumValid function
-RedirectFrom: docs/helpers-get-checksum-valid
+RedirectFrom:
+  - docs/helpers-get-checksum-valid
+  - docs/helpersgetchecksumvalid
 ---
 
 # Get-ChecksumValid
