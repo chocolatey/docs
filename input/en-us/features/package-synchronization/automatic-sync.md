@@ -78,3 +78,14 @@ It just works.
 #### How does it work?
 
 Chocolatey tracks applications that it installs, so it is able to keep up with those applications as they are upgraded and uninstalled, even outside of Chocolatey.
+
+#### Sync is not tracking upgrades to applications
+
+Currently, AutoSync does not support upgrades of the underlying synced Chocolatey Package to reflect new versions of synced software being installed.
+Software installers have the following mechanisms to display their information, with no consistent standard:
+
+- Display Version in the registry (which isn't required and quite a few apps don't populate the field at all)
+- Display Name as shown in Programs and Features
+- Version field in the uninstaller registry
+
+Due to the fact that an installer version doesn't have to match the software version (Google's msi is a great example), and the consistency issues with where the information can potentially come from, Chocolatey cannot _reliably_ track application upgrades.
