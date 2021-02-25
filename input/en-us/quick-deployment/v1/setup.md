@@ -190,9 +190,13 @@ You will likely need to reconfigure it with a static IP address depending on you
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
 A version of this readme file can be found in the [Quick Deployment Desktop Readme](xref:v1-desktop-readme).
 
-> :memo: **NOTE** The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
+> :memo: **NOTE**
+>
+> The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see online, prefer the online version.
 
-> :warning: **WARNING** If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
+> :warning: **WARNING**
+>
+> If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
 
 ### Step 3.1: Expand Disk Size
 

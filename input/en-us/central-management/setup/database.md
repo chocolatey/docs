@@ -142,7 +142,9 @@ The Central Management Database package
 * Migrates the database code (`DDL/DML`) to bring it up to the current version
 * That's it.
 
-> :warning: **WARNING** CCM packages do **NOT** install SQL Server. You must take care of that in the prerequisites. Do not even start on central management installs until you have a SQL Server instance up and ready. I repeat, SQL Server engine must be already installed.
+> :warning: **WARNING**
+>
+> CCM packages do **NOT** install SQL Server. You must take care of that in the prerequisites. Do not even start on central management installs until you have a SQL Server instance up and ready. I repeat, SQL Server engine must be already installed.
 
 The CCM database package will add or update a database to an existing SQL Server instance.
 
@@ -288,7 +290,9 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 
 Once we have the database, we can create logins and map those logins to users in the database.
 
-> :warning: **WARNING** CCM packages do **NOT** configure SQL Server access either.
+> :warning: **WARNING**
+>
+> CCM packages do **NOT** configure SQL Server access either.
 
 The difference between a login and a user when it comes to SQL Server accounts has long confused folks. Simply put:
 

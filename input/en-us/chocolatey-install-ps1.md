@@ -12,7 +12,9 @@ Chocolatey uses PowerShell as a package install provider and will look for this 
 
 It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
 
-> :memo: **NOTE** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
+> :memo: **NOTE**
+>
+> Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
 ## When is the script triggered?
 

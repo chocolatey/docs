@@ -551,7 +551,9 @@ If that is successful, you are good to go. If not, check for other processes loc
 
 If neither of these have resolved the issue, the following steps should remedy the situation:
 
-> :warning: **WARNING** Running choco in an unlicensed sense will reset/remove all licensed configuration.
+> :warning: **WARNING**
+>
+> Running choco in an unlicensed sense will reset/remove all licensed configuration.
 
 * Make a backup of the `chocolatey.config` (typically at "C:\ProgramData\chocolatey\config\chocolatey.config").
 * Remove the license file - rename the `license` folder to `licensed` (typically at "C:\ProgramData\chocolatey\license").

@@ -14,7 +14,10 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 
 ## Step 1: Complete Prerequisites
 
-* > :warning: The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
+> :warning: **WARNING**
+>
+> The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
+
 * Windows Server 2012+
 * PowerShell 4+
 * .NET Framework 4.6.1+
@@ -85,7 +88,9 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 * `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
-> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING**
+>
+> The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### Chocolatey Managed Password
 
@@ -359,7 +364,9 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 1. You may find it all on a single line in the file, and that is okay.
 1. Then restart the service by running the following from an admin powershell session: `Get-Service chocolatey-management-service | Stop-Service; Get-Service chocolatey-management-service | Start-Service`
 
-> :warning: **WARNING** Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
+> :warning: **WARNING**
+>
+> Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
 
 ### Can we use an account for the service that is not a local administrator?
 

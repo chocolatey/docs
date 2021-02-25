@@ -295,7 +295,9 @@ Package fix version notation is only acceptable in the fourth segment. Do not us
 
 When the fourth segment is already used, it is recommended to add two zeroes (00) to the end of the version. Then when you need to fix, you just increment that number. So if the package was ruby and the version was 2.0.0-p353, the package is 2.0.0.35300 (adding the two zeroes at the end). Then a fix would be 2.0.0.35301 and so on.
 
-> :warning: **WARNING** If you decide to add a secondary set of numbers to the fourth segment, you MUST ALWAYS include that secondary set of numbers while the other three version segments are the same. The reason - if you fix `.1` to `.100`, then release `.2`, `.100` is greater than `.2` because versioning doesn't look at the ".", only the number in the element. So `100` is greater than `2`.
+> :warning: **WARNING**
+>
+> If you decide to add a secondary set of numbers to the fourth segment, you MUST ALWAYS include that secondary set of numbers while the other three version segments are the same. The reason - if you fix `.1` to `.100`, then release `.2`, `.100` is greater than `.2` because versioning doesn't look at the ".", only the number in the element. So `100` is greater than `2`.
 
 ## Internationalization and localization of packages
 For Chocolatey, internationalization and localization of packages is very important, because it has users from all over the world. Many applications support multiple languages, but they use several different methods to achieve that. Therefore, there is no standard how internationalization/localization has to be integrated into packages. However, here are a few examples of packages that use various techniques. You can use them as inspiration for new packages:

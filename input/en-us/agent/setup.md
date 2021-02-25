@@ -20,7 +20,9 @@ For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Lice
 
 Starting with Chocolatey Agent v0.8.0+, the service will install as a local administrative user `ChocolateyLocalAdmin` by default (and manage the password as well). However you can specify your own user with package parameters (or have it use `LocalSystem`). Using a local administrator account allows for more things to be installed without issues. It also will allow easier shortcuts and other items to be put back on the correct user (the original requestor). You can specify a domain account as well. Prior to `v0.8.0`, Chocolatey Agent would install as LocalSystem (`SYSTEM`) and would require additional customization.
 
-> :memo: **NOTE** If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
+> :memo: **NOTE**
+>
+> If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
 
 ## Package Parameters
 
@@ -77,7 +79,9 @@ To set Chocolatey in background mode, you need to run the following:
 * OPTIONAL (highly recommended): For use with Chocolatey GUI, you need Chocolatey Extension v1.12.4+, and at least Chocolatey GUI v0.15.0. **Uninstall any version of the GUI you already have installed first**, then run `choco upgrade chocolateygui -y --allow-downgrade` (you will also need at least .NET 4.5.2 installed)
 * DOES NOT WORK WITH UAC, DO NOT USE UNTIL [FIX IS ANNOUNCED](https://groups.google.com/group/chocolatey-announce)! OPTIONAL (recommended if you use installers that are not completely silent): If you want self-service to interactively manage installations, run `choco feature enable --name="'useBackgroundServiceInteractively'"` (requires Chocolatey Extension v1.12.10+). This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](#interactive-self-service-consideration).
 
-> :memo: **NOTE** Once you are all setup, please review the [Common Errors and Resolutions](#common-errors-and-resolutions) section so you will be familiar if you run into any issues with working with sources.
+> :memo: **NOTE**
+>
+> Once you are all setup, please review the [Common Errors and Resolutions](#common-errors-and-resolutions) section so you will be familiar if you run into any issues with working with sources.
 
 An example script:
 
@@ -147,7 +151,9 @@ If you must run in the context of working with "unattended", non-silent installa
 
 Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE** This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
+> :memo: **NOTE**
+>
+> This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
 ## Log File Location For Chocolatey Agent
 
@@ -342,7 +348,9 @@ Please see [Central Management Client Setup](xref:ccm-client) as the common erro
 
 You can not pass custom source arguments to Chocolatey, it will error. You need to set up sources in the Chocolatey configuration and any that are marked as allowed for self-service will be passed by the background service.
 
-> :memo: **NOTE** If you have run `choco feature disable -n useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
+> :memo: **NOTE**
+>
+> If you have run `choco feature disable -n useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
 
 ### I'm getting the following: "There are no sources enabled for packages and none were passed as arguments."
 
@@ -370,7 +378,9 @@ A way to do this with LocalSystem:
 1. Add this group to the share permissions with "Read" Access
 1. Add this group to the NTFS permissions with "Read" Access
 
-> :memo: **NOTE**  You'll need to add this group itself and not nest it inside of another one.
+> :memo: **NOTE**
+>
+> You'll need to add this group itself and not nest it inside of another one.
 
 ### The agent service is not picking up the new license
 

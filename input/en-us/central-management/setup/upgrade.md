@@ -58,7 +58,9 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 choco upgrade chocolatey-management-database -y
 ```
 
-> :warning: **WARNING** If you are using QDE and receive an error about deserializing and padding, see the resolution below.
+> :warning: **WARNING**
+>
+> If you are using QDE and receive an error about deserializing and padding, see the resolution below.
 
 ## Step 3: Setup Central Management Windows Service(s)
 
@@ -68,14 +70,18 @@ choco upgrade chocolatey-management-database -y
 choco upgrade chocolatey-management-service -y
 ```
 
-> :warning: **WARNING** If you passed non-default options for any of the following:
+> :warning: **WARNING**
+>
+> If you passed non-default options for any of the following:
 > * `/Username:` / `/Password:` / `/EnterPassword`
 > * `/PortNumber:`
 >
 > You **will need to pass** those items again for upgrades in current releases of CCM.
 
 
-> :warning: **WARNING** If you passed a non-default option for the following:
+> :warning: **WARNING**
+>
+> If you passed a non-default option for the following:
 > * `/CertificateDnsName:` / `/CertificateThumbprint:`
 >
 > You **may need to pass** those items again under the following conditions:
@@ -107,9 +113,13 @@ choco upgrade chocolatey-agent -y
 
 There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE** This could include the agent(s) on the CCM machine(s).
+> :memo: **NOTE**
+>
+> This could include the agent(s) on the CCM machine(s).
 
-> :warning: **WARNING** The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
+> :warning: **WARNING**
+>
+> The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
 ### New Deployments Feature Example
 

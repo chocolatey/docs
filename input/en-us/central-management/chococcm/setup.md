@@ -5,7 +5,9 @@ Title: Setup
 Description: How to setup the ChocoCCM PowerShell Module
 ---
 
-> :memo: **NOTE** The ChocoCCM PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
+> :memo: **NOTE**
+>
+> The ChocoCCM PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
 
 ## Installation
 

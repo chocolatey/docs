@@ -7,4 +7,6 @@ ShowInNavBar: false
 ShowInSideBar: false
 ---
 
-> :warning: **WARNING** This is a Work in Progress. Please check back later.
+> :warning: **WARNING**
+>
+> This is a Work in Progress. Please check back later.

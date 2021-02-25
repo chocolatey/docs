@@ -20,6 +20,8 @@ You may use Chocolatey marks/logos, without a license, provided such use complie
 
 ### Plain Speak
 
-> :memo: **NOTE** This section ("Plain Speak") in no way changes what is written in the rest of this document. This only attempts to provide some clarity. If there is a conflict with another section, the other section applies.
+> :memo: **NOTE**
+>
+> This section ("Plain Speak") in no way changes what is written in the rest of this document. This only attempts to provide some clarity. If there is a conflict with another section, the other section applies.
 
 Without an express written agreement, you cannot use the Chocolatey logos as part of your brand/product.
