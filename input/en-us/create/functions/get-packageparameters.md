@@ -71,7 +71,7 @@ $pp = Get-PackageParameters
 
 ~~~powershell
 
-# see https://docs.chocolatey.org/en-us/guides/create/parse-packageparameters-argument
+# see https://chocolatey.org/docs/how-to-parse-package-parameters-argument
 # command line call: `choco install <pkg_id> --params "'/LICENSE:value'"`
 $pp = Get-PackageParameters
 # Read-Host, PromptForChoice, etc are not blocking calls with Chocolatey.
@@ -103,7 +103,7 @@ if (!$pp['Password']) { throw "Package needs Password to install, that must be p
 Get-PackageParameters -Parameters "/Shortcut /InstallDir:'c:\program files\xyz' /NoStartup" | set r
 if ($r.Shortcut) {... }
 Write-Host $r.InstallDir
-~~~
+~~~ 
 
 ## Inputs
 
@@ -136,21 +136,21 @@ Property               | Value
 Aliases                | params
 Required?              | false
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply and future expansion.
 Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

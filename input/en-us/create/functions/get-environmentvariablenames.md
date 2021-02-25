@@ -42,7 +42,7 @@ None
 ~~~powershell
 Get-EnvironmentVariableNames -Scope Machine
 
-~~~
+~~~ 
 
 ## Inputs
 
@@ -53,7 +53,7 @@ None
 None
 
 ## Parameters
-
+ 
 
 
 ## Links

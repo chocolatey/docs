@@ -66,12 +66,12 @@ The name of the redirect file, will have .exe appended to it.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Path &lt;String&gt;
 The path to the original file. Can be relative from
 `$($env:ChocolateyInstall)\bin` back to your file or a full path to the
@@ -79,12 +79,12 @@ file.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -UseStart
 This should be passed if the shim should not wait on the action to
 complete. This is usually the case with GUI apps, you don't want the
@@ -97,7 +97,7 @@ Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -Command [&lt;String&gt;]
 OPTIONAL - This is any additional command arguments you want passed
 every time to the command. This is not normally used, but may be
@@ -107,23 +107,23 @@ JAR file plus any other options to start Java appropriately.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

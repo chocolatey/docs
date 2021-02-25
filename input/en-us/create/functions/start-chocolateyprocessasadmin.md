@@ -93,7 +93,7 @@ $cmdBatch = "/c `"$appPath\bin\installmyappservice.bat`""
 Start-ChocolateyProcessAsAdmin $cmdBatch cmd
 # or more explicitly
 Start-ChocolateyProcessAsAdmin -Statements $cmdBatch -ExeToRun "cmd.exe"
-~~~
+~~~ 
 
 ## Inputs
 
@@ -111,23 +111,23 @@ run.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ExeToRun [&lt;String&gt;]
 The executable/application/installer to run. Defaults to `'powershell'`.
 
 Property               | Value
 ---------------------- | ----------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 2
 Default Value          | powershell
 Accept Pipeline Input? | false
-
+ 
 ###  -Elevated
 Indicate whether the process should run elevated.
 
@@ -135,47 +135,47 @@ Available in 0.10.2+.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | True
 Accept Pipeline Input? | false
-
+ 
 ###  -Minimized
 Switch indicating if a Windows pops up (if not called with a silent
 argument) that it should be minimized.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -NoSleep
 Used only when calling PowerShell - indicates the window that is opened
 should return instantly when it is complete.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -ValidExitCodes [&lt;Object&gt;]
 Array of exit codes indicating success. Defaults to `@(0)`.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | @(0)
 Accept Pipeline Input? | false
-
+ 
 ###  -WorkingDirectory [&lt;String&gt;]
 The working directory for the running process. Defaults to
 `Get-Location`. If current location is a UNC path, uses
@@ -190,7 +190,7 @@ Required?              | false
 Position?              | named
 Default Value          | $(Get-Location)
 Accept Pipeline Input? | false
-
+ 
 ###  -SensitiveStatements [&lt;String&gt;]
 Arguments to pass to  `ExeToRun` that are not logged.
 
@@ -202,23 +202,23 @@ Available in 0.10.1+.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

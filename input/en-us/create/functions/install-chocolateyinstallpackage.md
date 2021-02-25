@@ -150,7 +150,7 @@ Install-ChocolateyInstallPackage -PackageName 'bob' -FileType 'exe' `
   -SilentArgs '/S' `
   -File "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)\bob.exe" `
   -ValidExitCodes @(0)
-~~~
+~~~ 
 
 ## Inputs
 
@@ -168,12 +168,12 @@ recommended that it matches the package id.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -FileType [&lt;String&gt;]
 This is the extension of the file. This can be 'exe', 'msi', or 'msu'.
 [Licensed editions](https://chocolatey.org/compare) of Chocolatey use this to automatically determine
@@ -187,7 +187,7 @@ Required?              | false
 Position?              | 2
 Default Value          | exe
 Accept Pipeline Input? | false
-
+ 
 ###  -SilentArgs [&lt;String[]&gt;]
 OPTIONAL - These are the parameters to pass to the native installer,
 including any arguments to make the installer silent/unattended.
@@ -225,12 +225,12 @@ and `$silentArgs = "/S"`.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 3
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -File [&lt;String&gt;]
 Full file path to native installer to run. If embedding in the package,
 you can get it to the path with
@@ -246,9 +246,9 @@ Property               | Value
 Aliases                | fileFullPath
 Required?              | false
 Position?              | 4
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -File64 [&lt;String&gt;]
 Full file path to a 64-bit native installer to run. Available in 0.10.4+.
 If embedding in the package, you can get it to the path with
@@ -263,20 +263,20 @@ Property               | Value
 Aliases                | fileFullPath64
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ValidExitCodes [&lt;Object&gt;]
 Array of exit codes indicating success. Defaults to `@(0)`.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | @(0)
 Accept Pipeline Input? | false
-
+ 
 ###  -UseOnlyPackageSilentArguments
 Do not allow choco to provide/merge additional silent arguments and
 only use the ones available with the package. Available in 0.9.10+.
@@ -288,18 +288,18 @@ Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

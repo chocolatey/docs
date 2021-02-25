@@ -103,7 +103,7 @@ $options =
 }
 
 Get-ChocolateyWebFile -PackageName 'package' -FileFullPath "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)\thefile.exe" -Url 'https://somelocation.com/thefile.exe' -Options $options
-~~~
+~~~ 
 
 ## Inputs
 
@@ -121,23 +121,23 @@ recommended that it matches the package id.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -FileFullPath &lt;String&gt;
 This is the full path of the resulting file name.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Url [&lt;String&gt;]
 This is the 32 bit url to download the resource from. This resource can
 be used on 64 bit systems when a package has both a Url and Url64bit
@@ -150,12 +150,12 @@ Prefer HTTPS when available. Can be HTTP, FTP, or File URIs.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 3
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Url64bit [&lt;String&gt;]
 OPTIONAL - If there is a 64 bit resource available, use this
 parameter. Chocolatey will automatically determine if the user is
@@ -174,9 +174,9 @@ Property               | Value
 Aliases                | url64
 Required?              | false
 Position?              | 4
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Checksum [&lt;String&gt;]
 The checksum hash value of the Url resource. This allows a checksum to
 be validated for files that are not local. The checksum type is covered
@@ -196,12 +196,12 @@ to help provide that functionality.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ChecksumType [&lt;String&gt;]
 The type of checksum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to 'md5'.
@@ -214,12 +214,12 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Checksum64 [&lt;String&gt;]
 OPTIONAL if no Url64bit - The checksum hash value of the Url64bit
 resource. This allows a checksum to be validated for files that are not
@@ -245,12 +245,12 @@ provide checksums for all remote resources used.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ChecksumType64 [&lt;String&gt;]
 OPTIONAL - The type of checksum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to
@@ -264,35 +264,35 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | $checksumType
 Accept Pipeline Input? | false
-
+ 
 ###  -Options [&lt;Hashtable&gt;]
 OPTIONAL - Specify custom headers. Available in 0.9.10+.
 
 Property               | Value
 ---------------------- | --------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | @{Headers=@{}}
 Accept Pipeline Input? | false
-
+ 
 ###  -GetOriginalFileName
 OPTIONAL switch to allow Chocolatey to determine the original file name
 from the url resource. Available in 0.9.10+.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -ForceDownload
 OPTIONAL switch to force download of file every time, even if the file
 already exists.
@@ -301,23 +301,23 @@ Available in 0.10.1+.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

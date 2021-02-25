@@ -80,7 +80,7 @@ Install-ChocolateyZipPackage -PackageName 'sysinternals' `
  -Url 'http://download.sysinternals.com/Files/SysinternalsSuite.zip' `
  -UnzipLocation "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)" `
  -Url64 'http://download.sysinternals.com/Files/SysinternalsSuitex64.zip'
-~~~
+~~~ 
 
 ## Inputs
 
@@ -98,12 +98,12 @@ recommended that it matches the package id.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Url [&lt;String&gt;]
 This is the 32 bit url to download the resource from. This resource can
 be used on 64 bit systems when a package has both a Url and Url64bit
@@ -116,12 +116,12 @@ Prefer HTTPS when available. Can be HTTP, FTP, or File URIs.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -UnzipLocation &lt;String&gt;
 This is the full path to a location to unzip the contents to, most
 likely your script folder. If unzipping to your package folder, the path
@@ -133,9 +133,9 @@ Property               | Value
 Aliases                | destination
 Required?              | true
 Position?              | 3
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Url64bit [&lt;String&gt;]
 OPTIONAL - If there is a 64 bit resource available, use this
 parameter. Chocolatey will automatically determine if the user is
@@ -152,18 +152,18 @@ Property               | Value
 Aliases                | url64
 Required?              | false
 Position?              | 4
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -SpecificFolder [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Checksum [&lt;String&gt;]
 The checksum hash value of the Url resource. This allows a checksum to
 be validated for files that are not local. The checksum type is covered
@@ -189,12 +189,12 @@ provide checksums for all remote resources used.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ChecksumType [&lt;String&gt;]
 The type of checksum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to 'md5'.
@@ -207,12 +207,12 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Checksum64 [&lt;String&gt;]
 OPTIONAL if no Url64bit - The checksum hash value of the Url64bit
 resource. This allows a checksum to be validated for files that are not
@@ -232,12 +232,12 @@ to help provide that functionality.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -ChecksumType64 [&lt;String&gt;]
 OPTIONAL - The type of checksum that the file is validated with - valid
 values are 'md5', 'sha1', 'sha256' or 'sha512' - defaults to
@@ -251,23 +251,23 @@ The recommendation is to use at least SHA256.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Options [&lt;Hashtable&gt;]
 OPTIONAL - Specify custom headers. Available in 0.9.10+.
 
 Property               | Value
 ---------------------- | --------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | @{Headers=@{}}
 Accept Pipeline Input? | false
-
+ 
 ###  -File [&lt;String&gt;]
 Will be used for Url if Url is empty. Available in 0.10.7+.
 
@@ -279,9 +279,9 @@ Property               | Value
 Aliases                | fileFullPath
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -File64 [&lt;String&gt;]
 Will be used for Url64bit if Url64bit is empty. Available in 0.10.7+.
 
@@ -293,20 +293,20 @@ Property               | Value
 Aliases                | fileFullPath64
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

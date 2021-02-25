@@ -54,7 +54,7 @@ None
 ~~~powershell
 Get-WebFileName -Url $url -DefaultName $originalFileName
 
-~~~
+~~~ 
 
 ## Inputs
 
@@ -71,47 +71,47 @@ This is the url to a file that will be possibly downloaded.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -DefaultName &lt;String&gt;
 The name of the file to use when not able to determine the file name
 from the url response.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -UserAgent [&lt;String&gt;]
 The user agent to use as part of the request. Defaults to 'chocolatey
 command line'.
 
 Property               | Value
 ---------------------- | -----------------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | chocolatey command line
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

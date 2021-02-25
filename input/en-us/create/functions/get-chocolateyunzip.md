@@ -60,7 +60,7 @@ None
 # Path to the folder where the script is executing
 $toolsDir = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 Get-ChocolateyUnzip -FileFullPath "c:\someFile.zip" -Destination $toolsDir
-~~~
+~~~ 
 
 ## Inputs
 
@@ -87,44 +87,44 @@ Property               | Value
 Aliases                | file
 Required?              | false
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -Destination &lt;String&gt;
 This is a directory where you would like the unzipped files to end up.
 If it does not exist, it will be created.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | true
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -SpecificFolder [&lt;String&gt;]
 OPTIONAL - This is a specific directory within zip file to extract.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 3
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -PackageName [&lt;String&gt;]
 OPTIONAL - This will facilitate logging unzip activity for subsequent
 uninstalls
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 4
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -FileFullPath64 [&lt;String&gt;]
 Full file path to a 64-bit native installer to run. Available in 0.10.4+.
 If embedding in the package, you can get it to the path with
@@ -139,20 +139,20 @@ Property               | Value
 Aliases                | file64
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

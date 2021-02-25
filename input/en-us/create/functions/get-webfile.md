@@ -60,12 +60,12 @@ This is the url to download the file from. Prefer HTTPS when available.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 1
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -FileName [&lt;String&gt;]
 This is the full path to the file to create. If downloading to the
 package folder next to the install script, the path will be like
@@ -73,68 +73,68 @@ package folder next to the install script, the path will be like
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 2
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ###  -UserAgent [&lt;String&gt;]
 The user agent to use as part of the request. Defaults to 'chocolatey
 command line'.
 
 Property               | Value
 ---------------------- | -----------------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | 3
 Default Value          | chocolatey command line
 Accept Pipeline Input? | false
-
+ 
 ###  -Passthru
 DO NOT USE - holdover from original function.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -Quiet
 Silences the progress output.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
-
+ 
 ###  -Options [&lt;Hashtable&gt;]
 OPTIONAL - Specify custom headers. Available in 0.9.10+.
 
 Property               | Value
 ---------------------- | --------------
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
 Default Value          | @{Headers=@{}}
 Accept Pipeline Input? | false
-
+ 
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Allows splatting with arguments that do not apply. Do not use directly.
 
 Property               | Value
 ---------------------- | -----
-Aliases                |
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          |
+Default Value          | 
 Accept Pipeline Input? | false
-
+ 
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
