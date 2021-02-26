@@ -39,6 +39,8 @@ Central Management packages require at a minimum:
 
 Each package further defines dependencies that they include.
 
+Additionally, the Chocolatey Central Management components should be installed onto servers having a static IP address assigned, in addition to an appropriately configured DNS A record. Failure to ensure this configuration is applied could lead to unexpected errors with agent check-in and deployment operations.
+
 ## Step 1: Internalize Packages
 
 > :memo: **NOTE**
