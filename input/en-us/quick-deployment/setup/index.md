@@ -110,7 +110,7 @@ Steps to create a QDE virtual machine in Azure:
 1. While the scripts will do the majority of the hard work needed to create a QDE virtual machine in Azure, we do need to setup a resource group.
    The default resource group that the scripts will use is `qdeserver-resgrp`; if you prefer, you can supply an existing resource group using the `-ResourceGroupName <YOUR-RESOURCEGROUPNAME>` parameter.
    To create a resource group run:
-   
+
    ```powershell
    New-AzResourceGroup -Name <RESOURCEGROUPNAME> -Location <YOUR-AZURE-LOCATION>
    ```
@@ -119,7 +119,7 @@ Steps to create a QDE virtual machine in Azure:
    Note that the script we are about to run contains defaults that should work for the majority of users.
    However, please run `Get-Help Set-QDEAzureDisk.ps1 -Full` to get help on the parameters you can provide and the defaults that have been set.
    Once you are comfortable, in the directory you extracted the files to, run:
-   
+
    ```powershell
    .\Set-QDEAzureDisk.ps1 -Verbose <PARAMETERS>
    # where `<PARAMETERS>` is any additional parameters you want to provide
@@ -129,7 +129,7 @@ Steps to create a QDE virtual machine in Azure:
    Note that the processes of converting the disk and uploading it can take a long time.
 1. Before we connect to the QDE virtual machine in Azure we must reset the password.
    To create a password we can provide to the next script, run
-   
+
    ```powershell
    $qdePwd = <YOUR-PASSWORD> | ConvertTo-SecureString -AsPlainText -Force
    # where <YOUR-PASSWORD> is the password you want to set AND is longer than 12 characters
@@ -139,7 +139,7 @@ Steps to create a QDE virtual machine in Azure:
    Note that the script we are about to run contains defaults that should work for the majority of users.
    However, please run `Get-Help New-QDEAzureVM.ps1 -full` to get help on the parameters you can provide and the defaults that have been set.
    Once you are comfortable, in the directory you extracted the files to, run:
-   
+
    ```powershell
    .\New-QDEAzureVM.ps1 -Verbose -AdministratorComplexPassword $qdePwd <PARAMETERS>
    # where <PARAMETERS> is any parameters you want to provide and $qdePwd is the password we created in the previous step
@@ -272,6 +272,7 @@ However, once you have the image running in your hypervisor, our support team wi
 
 The QDE environment is configured by default to use DHCP for easier initial setup.
 You will likely need to reconfigure it with a static IP address depending on your organization's policies.
+Also check the additional [high level requirements for CCM](xref:ccm-setup#high-level-requirements) if making changes to DNS settings.
 
 ## Step 3: Virtual Environment Setup
 
