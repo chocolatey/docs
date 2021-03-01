@@ -390,9 +390,7 @@ You can also type `choco install -fdv path/to/nuspec` and choco will build the n
 
 ## Push Your Package
 
-To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://chocolatey.org/` for chocolatey's community feed).  You must have an api key for https://chocolatey.org/ set. Take a look at [choco push](xref:choco-command-push)
-
-You can also log into chocolatey.org and upload your package from there (not recommended for packages over 2MB).
+To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://push.chocolatey.org/` for chocolatey's community feed).  You must have an API key for https://push.chocolatey.org/ set. Take a look at [choco push](xref:choco-command-push)
 
 ## Automatic packaging?
 Yes - [Automatic Packaging](xref:automatic-packaging)
