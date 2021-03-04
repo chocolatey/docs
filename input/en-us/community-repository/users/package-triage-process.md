@@ -105,11 +105,8 @@ Please include details of how and when you attempted to contact the Maintainer(s
 
 1. Wait for a response from the Moderators. Assuming that the Moderators agree that the package is abandoned, it is at this point that a new person can be added as a maintainer. 
 
-    If you specified in the previous step that you would like to become a new maintainer, see the next section for new Maintainers. 
+    If you specified in the previous step that you would like to become a new maintainer, please follow the instructions for a [Package Maintainer Handover/Switch](xref:package-maintainer-handover).
 
     Otherwise, if you specified that you would not like to become a maintainer, please create a RFM (Request For Maintainer) issue at [Chocolatey Package Requests (https://github.com/chocolatey/chocolatey-package-requests)](https://github.com/chocolatey/chocolatey-package-requests).
 
 > :memo: **NOTE** We don't have non-maintainer uploads in the community feed and we haven't needed them yet.
-
-### New Maintainers
-Sometimes this results in new maintainers. You can be a maintainer updating the project at a central location that multiple maintainers share. However, if you became maintainer because the package was deemed abandoned, you will want to follow the instructions for a [Package Maintainer Handover/Switch](xref:package-maintainer-handover).
