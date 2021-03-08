@@ -76,7 +76,7 @@ This is the standard method of setup, and will initialize all the services using
 Enter the following command:
 
 ```powershell
-& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "{{NugetApiKey}}"
+& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "INSERT_NUGET_API_KEY_HERE"
 ```
 
 #### Option 2: Custom Certificate
@@ -100,10 +100,10 @@ You will need either the certificate thumbprint or the subject in order to use t
 
 ```powershell
 # If you have the thumbprint, run:
-& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "{{NugetApiKey}}" -CertificateThumbprint "INSERT_CERTIFICATE_THUMBPRINT_HERE" -CertificateDnsName "INSERT_DNS_NAME_HERE"
+& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "INSERT_NUGET_API_KEY_HERE" -CertificateThumbprint "INSERT_CERTIFICATE_THUMBPRINT_HERE" -CertificateDnsName "INSERT_DNS_NAME_HERE"
 
 # If you have the subject instead, run:
-& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "{{NugetApiKey}}" -CertificateSubject "INSERT_CERTIFICATE_SUBJECT_HERE" -CertificateDnsName "INSERT_DNS_NAME_HERE"
+& C:\choco-setup\files\Set-QDEnvironment.ps1 -NexusApiKey "INSERT_NUGET_API_KEY_HERE" -CertificateSubject "INSERT_CERTIFICATE_SUBJECT_HERE" -CertificateDnsName "INSERT_DNS_NAME_HERE"
 ```
 
 Parameter descriptions are provided below for your convenience.
