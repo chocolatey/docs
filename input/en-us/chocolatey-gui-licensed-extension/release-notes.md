@@ -16,6 +16,17 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+## 0.2.0 (March 9, 2021)
+
+### BREAKING CHANGES
+* Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601)
+
+### FEATURES
+* Provide ability for Chocolatey GUI to respect the background service allowed commands configuration option
+* Add a feature to toggle on/off a read only view for installed packages - see [licensed #201](https://github.com/chocolatey/chocolatey-licensed-issues/issues/201)
+* Add a feature to toggle on/off the option to not attempt to download icons for packages - see [licensed #199](https://github.com/chocolatey/chocolatey-licensed-issues/issues/199)
+* Add a configuration option to specify a default for a particular source when application loads - see [licensed #198](https://github.com/chocolatey/chocolatey-licensed-issues/issues/198)
+
 ## 0.1.0 (January 22, 2021)
 
 Initial preview release
