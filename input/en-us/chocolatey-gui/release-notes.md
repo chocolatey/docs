@@ -12,6 +12,49 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.18.0](https://github.com/chocolatey/ChocolateyGUI/milestone/19?closed=1) (March 9, 2021)
+
+### BREAKING CHANGES
+
+* Update the default value for tile view for local and remote source to be true - see [#820](https://github.com/chocolatey/ChocolateyGUI/issues/820)
+* Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601)
+
+### FEATURES
+
+* Add a feature to toggle on/off the option to not attempt to download icons for packages - see [#811](https://github.com/chocolatey/ChocolateyGUI/issues/811)
+* Add a feature to toggle on/off a read only view for installed packages - see [#780](https://github.com/chocolatey/ChocolateyGUI/issues/780)
+* Add a feature to toggle on/off the checking for outdated packages automatically - see [#769](https://github.com/chocolatey/ChocolateyGUI/issues/769)
+* Add a feature to toggle on/off the preloading of packages when switching to remote views - see [#706](https://github.com/chocolatey/ChocolateyGUI/issues/706)
+* Add a feature to toggle on/off dark mode for application UI - see [#685](https://github.com/chocolatey/ChocolateyGUI/issues/685)
+* Add a configuration option to specify a default for a particular source when application loads - see [#808](https://github.com/chocolatey/ChocolateyGUI/issues/808)
+* Provide ability to control which UI operations are allowed to be executed - see [#757](https://github.com/chocolatey/ChocolateyGUI/issues/757)
+* Provide ability to set configuration at the machine level, rather than just at user level - see [#602](https://github.com/chocolatey/ChocolateyGUI/issues/602)
+* Enable text search within local and remove views - when not using Tile View - see [#688](https://github.com/chocolatey/ChocolateyGUI/issues/688)
+
+### BUGS
+
+* Option to only show packages with updates doesn't work correctly when automated outdated check is enabled - see [#821](https://github.com/chocolatey/ChocolateyGUI/issues/821)
+* Configuration option to default to tile view for remote source is not respected - see [#782](https://github.com/chocolatey/ChocolateyGUI/issues/782)
+* Using the UseDelayedSearch package parameter during installation doesn't work - see [#749](https://github.com/chocolatey/ChocolateyGUI/issues/749)
+* Ensure that all features/config can be set via parameters during installation of package - see [#741](https://github.com/chocolatey/ChocolateyGUI/issues/741)
+
+### IMPROVEMENTS
+
+* Add keybinding for navigating between sources - see [#513](https://github.com/chocolatey/ChocolateyGUI/issues/513)
+* Improve readability of settings description by wrapping text within cell - see [#813](https://github.com/chocolatey/ChocolateyGUI/issues/813)
+* Improve how package icons with an svg extension are rendered - see [#756](https://github.com/chocolatey/ChocolateyGUI/issues/756)
+* Improve how package icons with an ico extension are rendered - see [#739](https://github.com/chocolatey/ChocolateyGUI/issues/739)
+* Improve order and spacing of context menu items to make it easier to use - see [#745](https://github.com/chocolatey/ChocolateyGUI/issues/745)
+* Update wording of context menu items to make it clearer what they refer to - see [#730](https://github.com/chocolatey/ChocolateyGUI/issues/730)
+* Update Svg.Skia and SkiaSharp dependencies - see [#812](https://github.com/chocolatey/ChocolateyGUI/pull/812)
+* Update LiteDB to v5.0.5 - see [#763](https://github.com/chocolatey/ChocolateyGUI/pull/763)
+* Update Automapper to v7.0.1 - see [#760](https://github.com/chocolatey/ChocolateyGUI/pull/760)
+
+### DOCUMENTATION
+
+* Add link to wixtoolset Visual Studio integration - see [#792](https://github.com/chocolatey/ChocolateyGUI/pull/792)
+* Update credits to include all 3rd party dependencies that are being used - see [#761](https://github.com/chocolatey/ChocolateyGUI/issues/761)
+
 ## [0.17.3](https://github.com/chocolatey/ChocolateyGUI/milestone/22?closed=1) (February 1, 2021)
 
 ### BUGS
