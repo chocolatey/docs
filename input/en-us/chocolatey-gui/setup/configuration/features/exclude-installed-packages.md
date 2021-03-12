@@ -1,5 +1,5 @@
 ---
-Order: 50
+Order: 70
 xref: exclude-installed-packages
 Title: Exclude Installed Packages
 Description: Do not show packages that are already installed when viewing sources.

@@ -1,5 +1,5 @@
 ---
-Order: 60
+Order: 80
 xref: show-aggregated-source-view
 Title: Show Aggregated Source
 Description: Show additional source combining all sources in one place.

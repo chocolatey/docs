@@ -1,5 +1,5 @@
 ---
-Order: 90
+Order: 110
 xref: use-keyboard-bindings
 Title: Use Keyboard Bindings
 Description: Allows keyboard bindings to be used to interact with different areas of the Chocolatey GUI User Interface

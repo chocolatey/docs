@@ -1,5 +1,5 @@
 ---
-Order: 70
+Order: 90
 xref: show-additional-package-information
 Title: Show Additional Package Information
 Description: Show additional package information on Local and Remote views.

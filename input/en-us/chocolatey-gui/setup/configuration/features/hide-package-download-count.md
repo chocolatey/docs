@@ -1,5 +1,5 @@
 ---
-Order: 100
+Order: 120
 xref: hide-package-download-count
 Title: Hide Package Download Count
 Description: Allows control over whether package download count is displayed on remote source views.

@@ -1,5 +1,5 @@
 ---
-Order: 80
+Order: 100
 xref: allow-non-admin-access-to-settings
 Title: Allow Non Admin Access to Settings
 Description: Controls whether or not a non-administrator user can access the Settings Screen.  NOTE - This feature will only work when using the licensed extension for Chocolatey and Chocolatey GUI.
