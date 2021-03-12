@@ -5,9 +5,9 @@ Title: Switch Tile/List View
 Description: Information about changing how packages are displayed
 ---
 
-Choco GUI provides the ability to toggle between tile view (the default selection) and a list view for both local and remote sources within the application.
+Chocolatey GUI provides the ability to toggle between tile view (the default selection) and a list view for both local and remote sources within the application.
 
-The following screenshot illustrate where the buttons to toggle between one view and the other are located:
+The following screenshot illustrates where the buttons to toggle between one view and the other are located:
 
 ![Show where the tile/list view toggle is located within the User Interface](/assets/images/chocolatey-gui/user_interface_main-window_action_switch_display_1.png "Show where the tile/list view toggle is located within the User Interface")
 
