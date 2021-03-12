@@ -2,17 +2,17 @@
 Order: 30
 xref: default-to-tile-view-for-remote-source
 Title: Default to Tile View for Remote Source
-Description: Default to tile instead of list view. It is still possible to switch during use.
+Description: How to configure whether the tile or list view is used by default.
 ---
 
-By default, Chocolatey GUI uses a list view to show all of the packages that are currently available on the remote
+By default (starting with version 0.18.0), Chocolatey GUI uses a tile view to show all of the packages that are currently available on the remote
 sources that have been configured.  As a result, you will see a screen similar to the following when first
 starting the application and clicking on a remote source:
 
 ![Default to Tile View for Remote Source Disabled](/assets/images/chocolatey-gui/feature_default_tile_view_remote_disabled.png "Default to Tile View for Remote Source Disabled")
 
 It is possible to toggle between the list view and a tile view for the packages that are availalbe on a remote source
-using the buttons at the top right hand corner of the application, but it you prefer to see the tile view by default,
+using the buttons at the top right hand corner of the application, but it you prefer to see the list view by default,
 then you can enable it with this feature.  As a result, you will see something like the following when first starting
 the application and clicking on a remote source:
 

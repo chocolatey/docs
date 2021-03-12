@@ -2,17 +2,17 @@
 Order: 20
 xref: default-to-tile-view-for-local-source
 Title: Default to Tile View for Local Source
-Description: Default to tile instead of list view. It is still possible to switch during use.
+Description: How to configure whether the tile or list view is used by default.
 ---
 
-By default, Chocolatey GUI uses a list view to show all of the packages that are currently installed locally on the
+By default (starting with version 0.18.0), Chocolatey GUI uses a tile view to show all of the packages that are currently installed locally on the
 machine that is executing Chocolatey GUI.  As a result, you will see a screen similar to the following when first
 starting the application:
 
 ![Default to Tile View for Local Source Disabled](/assets/images/chocolatey-gui/feature_default_tile_view_local_disabled.png "Default to Tile View for Local Source Disabled")
 
 It is possible to toggle between the list view and a tile view for the packages that are installed locally using the
-buttons at the top right hand corner of the application, but it you prefer to see the tile view by default, then you
+buttons at the top right hand corner of the application, but it you prefer to see the list view by default, then you
 can enable it with this feature.  As a result, you will see something like the following when first starting the
 application:
 
