@@ -53,7 +53,7 @@ chocolateyguicli feature disable --name="'AllowNonAdminAccessToSettings'" --glob
 
 ## Default Value
 
-The default value for this feature is disabled.
+As of version 0.18.0 of Chocolatey GUI and Chocolatey GUI Licensed Extension, the default value for this feature is disabled.
 
 ## Availability
 

@@ -46,7 +46,7 @@ chocolateyguicli feature disable --name="'DefaultToTileViewForRemoteSource'" --g
 
 ## Default Value
 
-The default value for this feature is disabled.
+As of version 0.18.0 of Chocolatey GUI, the default value for this feature is enabled.
 
 ## Availability
 
