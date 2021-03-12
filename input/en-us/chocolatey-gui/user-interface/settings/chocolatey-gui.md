@@ -16,17 +16,8 @@ For more information about the individual features and settings, see the corresp
 
 ## Features
 
-- [Allow Non Admin Access to Settings](xref:allow-non-admin-access-to-settings)
-- [Default to Tile View for Local Source](xref:default-to-tile-view-for-local-source)
-- [Default to Tile VIew for Remote Source](xref:default-to-tile-view-for-remote-source)
-- [Exclude Installed Packages](xref:exclude-installed-packages)
-- [Hide Package Download Count](xref:hide-package-download-count)
-- [Show Additional Package Information](xref:show-additional-package-information)
-- [Show Aggregated Source](xref:show-aggregated-source-view)
-- [Show Console Output](xref:show-console-output)
-- [Use Delayed Search](xref:use-delayed-search)
-- [Use Keyboard Bindings](xref:use-keyboard-bindings)
+<?! Include "../../../../shared/available-features.txt" /?>
 
 ## Settings
 
-- [Outdated Packages Cache Duration In Minutes](xref:outdated-packages-cache-duration-in-minutes)
+<?! Include "../../../../shared/available-settings.txt" /?>

@@ -53,4 +53,4 @@ Below is a short video which shows this in action:
 
 The available items that can be configured are:
 
-- [outdatedPackagesCacheDurationInMinutes](xref:outdated-packages-cache-duration-in-minutes)
+<?! Include "../../../shared/available-settings.txt" /?>
