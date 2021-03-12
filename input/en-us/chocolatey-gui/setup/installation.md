@@ -1,9 +1,11 @@
 ---
 Order: 10
-xref: install-gui
-Title: Install Chocolatey GUI
+xref: gui-installation
+Title: Installation
 Description: Instructions on how to install Chocolatey GUI
-RedirectFrom: en-us/chocolatey-gui/setup/installation/chocolateygui
+RedirectFrom:
+  - en-us/chocolatey-gui/setup/installation/chocolateygui
+  - en-us/chocolatey-gui/setup/installation/chocolatey-gui
 ---
 
 The easiest way to install Chocolatey GUI is to use Chocolatey.  Use the
@@ -30,5 +32,5 @@ are interested in using the very latest version of Chocolatey GUI, you can use
 the following command to install it:
 
 ```powershell
-choco upgrade chocolateygui --pre --source="'https://myget.org/f/chocolateygui
+choco upgrade chocolateygui --pre --source="'https://myget.org/f/chocolateygui'"
 ```

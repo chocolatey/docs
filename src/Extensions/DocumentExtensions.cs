@@ -13,6 +13,11 @@ namespace Docs
 
         public static bool IsVisible(this IDocument document)
         {
+            if (document.GetContentStringAsync().GetAwaiter().GetResult().Contains("<title>Redirected</title>"))
+            {
+                return false;
+            }
+
             return document.GetBool(Constants.ShowInSidebar, true);
         }
 
