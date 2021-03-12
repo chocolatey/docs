@@ -38,11 +38,18 @@ Normal:
 -?, --help, -h
      Prints out the help menu.
 
+-r, --limitoutput, --limit-output
+     Limit the output to essential information
+
     --name=VALUE
      Name - the name of the config setting. Required with some actions.
 
     --value=VALUE
      Value - the value of the config setting.  Required with some actions.
+
+-g, --global
+     Should the command be applied to the global (machine) level?  Defaults
+       to false.
 ```
 
 ## Resources

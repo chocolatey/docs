@@ -37,8 +37,15 @@ Normal:
 -?, --help, -h
      Prints out the help menu.
 
+-r, --limitoutput, --limit-output
+     Limit the output to essential information
+
 -n, --name=VALUE
      Name - the name of the feature. Required with some actions. Defaults to empty.
+
+-g, --global
+     Should the command be applied to the global (machine) level?  Defaults
+       to false.
 ```
 
 ## Resources
