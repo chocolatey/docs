@@ -11,7 +11,7 @@ starting the application and clicking on a remote source:
 
 ![Default to Tile View for Remote Source Disabled](/assets/images/chocolatey-gui/feature_default_tile_view_remote_disabled.png "Default to Tile View for Remote Source Disabled")
 
-It is possible to toggle between the list view and a tile view for the packages that are availalbe on a remote source
+It is possible to toggle between the list view and a tile view for the packages that are available on a remote source
 using the buttons at the top right hand corner of the application, but it you prefer to see the list view by default,
 then you can enable it with this feature.  As a result, you will see something like the following when first starting
 the application and clicking on a remote source:

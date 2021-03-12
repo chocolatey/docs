@@ -6,7 +6,7 @@ Description: Do not show packages that are already installed when viewing source
 ---
 
 By default, when viewing remote sources, such as the Chocolatey Community Repository, Chocolatey GUI will show you all
-availalbe packages, even if you already have them installed.  Installed packages will be marked with a green banner,
+available packages, even if you already have them installed.  Installed packages will be marked with a green banner,
 indicating that they are currently installed.  As a result, you may see something like the following:
 
 ![Exclude Installed Packages Disabled](/assets/images/chocolatey-gui/feature_exclude_installed_packages_disabled.png "Exclude Installed Packages Disabled")
