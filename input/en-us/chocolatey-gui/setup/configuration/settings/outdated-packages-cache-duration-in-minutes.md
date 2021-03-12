@@ -17,10 +17,16 @@ increased as required.
 
 ## Example
 
-To set this configuration parameter you can run the following:
+To set this configuration parameter, for the currently logged in user, you can run the following:
 
 ```powershell
-chocolateyguicli config set --name="'outdatedPackagesCacheDurationInMinutes'" --value="'120'"
+chocolateyguicli config set --name="'OutdatedPackagesCacheDurationInMinutes'" --value="'120'"
+```
+
+Or to set it globally at the machine level, run the following:
+
+```powershell
+chocolateyguicli config set --name="'OutdatedPackagesCacheDurationInMinutes'" --value="'120'" --global
 ```
 
 ## Default Value

@@ -31,16 +31,24 @@ Below is a short video which shows this feature in action:
 
 ## Example
 
-This feature can be enabled by running the following command:
+This feature can be enabled, for the currently logged in user, by running the following command:
 
 ```powershell
 chocolateyguicli feature enable --name="'AllowNonAdminAccessToSettings'"
 ```
 
-This feaure can be disabled by running the following command:
+This feature can be disabled, for the currently logged in user, by running the following command:
 
 ```powershell
 chocolateyguicli feature disable --name="'AllowNonAdminAccessToSettings'"
+```
+
+Or, to enable/disable it globally at the machine level, run the following commands:
+
+```powershell
+chocolateyguicli feature enable --name="'AllowNonAdminAccessToSettings'" --global
+
+chocolateyguicli feature disable --name="'AllowNonAdminAccessToSettings'" --global
 ```
 
 ## Default Value

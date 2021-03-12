@@ -10,7 +10,7 @@ keyboard.  In the screenshot below, it is possible to navigate to the `chocolate
 then back to the `This PC` feed using `CTRL + 1`.  It is also possible to navigate to the `chocolatey` feed using
 `CTRL + 2`.
 
-![Use Keyyboard Bindings](/assets/images/chocolatey-gui/feature_use_keyboard_bindings.png "Use Keyboard Bindings")
+![Use Keyboard Bindings](/assets/images/chocolatey-gui/feature_use_keyboard_bindings.png "Use Keyboard Bindings")
 
 Disabling this feature will stop these navigations from being possible using these keyboard shortcuts, but they can
 still be navigated to using the mouse in the normal way.
@@ -25,16 +25,24 @@ Below is a short video which shows this feature in action:
 
 ## Example
 
-This feature can be enabled by running the following command:
+This feature can be enabled, for the currently logged in user, by running the following command:
 
 ```powershell
 chocolateyguicli feature enable --name="'UseKeyboardBindings'"
 ```
 
-This feaure can be disabled by running the following command:
+This feature can be disabled, for the currently logged in user, by running the following command:
 
 ```powershell
 chocolateyguicli feature disable --name="'UseKeyboardBindings'"
+```
+
+Or, to enable/disable it globally at the machine level, run the following commands:
+
+```powershell
+chocolateyguicli feature enable --name="'UseKeyboardBindings'" --global
+
+chocolateyguicli feature disable --name="'UseKeyboardBindings'" --global
 ```
 
 ## Default Value
