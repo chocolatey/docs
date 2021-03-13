@@ -352,7 +352,7 @@ Open a command line in the directory where the nuspec is and type [`choco pack`]
 
 > :memo: **NOTE** We strongly suggest the following should be performed in a VM and not on your machine.
 
-> :memo: **NOTE** Testing your package can be done in the same way as the verifier - take a look at [Chocolatey Verifier Testing](https://github.com/chocolatey/package-verifier-vagrant).
+> :memo: **NOTE** Testing your package can be done in the same way as the verifier - take a look at [Chocolatey Verifier Testing](https://github.com/chocolatey-community/chocolatey-test-environment).
 
 To test the package you just built, open a command line shell and navigate to the directory where the `*.nupkg` file is located. Then type:
 
