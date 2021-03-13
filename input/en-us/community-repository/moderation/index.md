@@ -15,7 +15,7 @@ By safety - we check that the package scripts do not do anything devious and tha
 * package - The Chocolatey/NuGet package
 * software - The underlying software that the package assists in installing
 * installer - The native installer, usually packaged as MSI, NSIS, InstallShield, Wise, Squirrel, or some other flavor.
-* the validator - The [package validation service](https://github.com/chocolatey/package-validator) checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
+* the validator - The [package validation service](xref:package-validator) checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
 * the verifier - The [package verifier service](https://github.com/chocolatey/package-verifier) checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (checking every two weeks that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It’s testing all the parts and ensuring everything is good.
 
 ## Requirements and Guidelines
