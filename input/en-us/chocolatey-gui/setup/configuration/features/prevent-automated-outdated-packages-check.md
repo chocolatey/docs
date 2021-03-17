@@ -13,7 +13,7 @@ Depending on the number of packages that you currently have installed, and the n
 
 Once enabled, if you want to manually check the outdated status of packages that you have installed, you can still trigger this check using this button:
 
-![Showing where the manual check for outdated packages is locatedn](/assets/images/chocolatey-gui/feature_prevent_automated_outdated_packages_check_2.png "Showing where the manual check for outdated packages is located")
+![Showing where the manual check for outdated packages is located](/assets/images/chocolatey-gui/feature_prevent_automated_outdated_packages_check_2.png "Showing where the manual check for outdated packages is located")
 
 In addition, Chocolatey GUI does cache the information about which packages are outdated.  The length of time that this information is cached can be controlled via the [OutdatedPackagesCacheDurationInMinutes](xref:outdated-packages-cache-duration-in-minutes) option.
 

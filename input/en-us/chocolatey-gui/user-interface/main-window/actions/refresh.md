@@ -5,4 +5,6 @@ Title: Refresh
 Description: Information on refreshing the current packages list
 ---
 
-Put something here...
+> :memo: **NOTE**
+>
+> This button exists when looking at both local and remote sources

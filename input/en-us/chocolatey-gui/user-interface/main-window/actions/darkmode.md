@@ -20,3 +20,7 @@ This is what the User Interface looks like when dark mode is selected:
 ![Show what the User Interface looks like when dark mode is selected](/assets/images/chocolatey-gui/user_interface_main-window_action_toggle_mode_3.png "Show what the User Interface looks like when dark mode is selected")
 
 If required, the [default selection for light/dark mode](xref:default-to-dark-mode) can be modified to your personal liking.
+
+> :memo: **NOTE**
+>
+> This button exists when using the entire application

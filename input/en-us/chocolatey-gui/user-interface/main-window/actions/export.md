@@ -26,3 +26,7 @@ It would then be possible to take this file onto another machine and then run th
 ```powershell
 choco install <path-to-exported-file>
 ```
+
+> :memo: **NOTE**
+>
+> This button only exists when browsing the local source, i.e. `This PC`

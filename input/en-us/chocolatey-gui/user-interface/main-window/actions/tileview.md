@@ -20,3 +20,7 @@ This is what the User Interface looks like when the list view is selected:
 ![Show what the User Interface looks like when list view is selected](/assets/images/chocolatey-gui/user_interface_main-window_action_switch_display_3.png "Show what the User Interface looks like when list view is selected")
 
 If required, the [default selection for local sources](xref:default-to-tile-view-for-local-source) and the [default selection for remote sources](xref:default-to-tile-view-for-remote-source) can be modified to your personal liking.
+
+> :memo: **NOTE**
+>
+> This button exists when looking at both local and remote sources

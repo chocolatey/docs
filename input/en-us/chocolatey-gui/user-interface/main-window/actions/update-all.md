@@ -5,4 +5,6 @@ Title: Update All
 Description: Information about updating all Chocolatey Packages
 ---
 
-Put something here...
+> :memo: **NOTE**
+>
+> This button only exists when browsing the local source, i.e. `This PC`
