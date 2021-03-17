@@ -1,5 +1,5 @@
 ---
-Order: 60
+Order: 70
 xref: gui-darkmode
 Title: Toggle Light/Dark Mode
 Description: Information about changing between light and dark mode

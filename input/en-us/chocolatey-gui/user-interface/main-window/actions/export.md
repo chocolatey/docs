@@ -1,5 +1,5 @@
 ---
-Order: 40
+Order: 50
 xref: gui-export
 Title: Export
 Description: Information about exporting the currently installed packages

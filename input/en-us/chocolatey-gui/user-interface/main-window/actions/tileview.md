@@ -1,5 +1,5 @@
 ---
-Order: 50
+Order: 60
 xref: gui-tileview
 Title: Switch Tile/List View
 Description: Information about changing how packages are displayed
