@@ -5,6 +5,14 @@ Title: Update All
 Description: Information about updating all Chocolatey Packages
 ---
 
+By default, when Chocolatey GUI first opens it will check for all currently outdated packages based on the currently configured sources (this can be configured via the [Prevent Automated Outdated Packages Check](xref:prevent-automated-outdated-packages-check) feature).  Once identified as outdated, you have the option of right clicking on an individual package to update it, or you can go into the details page for the package and click the update button that is located there.  However, if you want to update all outdated packages at the same time, you can use the update all button:
+
+![Show where the update all button is located within the User Interface](/assets/images/chocolatey-gui/user_interface_main-window_action_update-all_1.png "Show where the update all button is located within the User Interface")
+
+When there are no packages that are currently outdated, the button will be disabled and will show a message in the tooltip that this operation cannot currently be performed:
+
+![Show the update all button being disabled as no action can be taken](/assets/images/chocolatey-gui/user_interface_main-window_action_update-all_2.png "Show the update all button being disabled as no action can be taken")
+
 > :memo: **NOTE**
 >
 > This button only exists when browsing the local source, i.e. `This PC`
