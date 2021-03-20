@@ -55,6 +55,18 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 * Add link to wixtoolset Visual Studio integration - see [#792](https://github.com/chocolatey/ChocolateyGUI/pull/792)
 * Update credits to include all 3rd party dependencies that are being used - see [#761](https://github.com/chocolatey/ChocolateyGUI/issues/761)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/eKXPDmqO-hs?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## [0.17.3](https://github.com/chocolatey/ChocolateyGUI/milestone/22?closed=1) (February 1, 2021)
 
 ### BUGS
