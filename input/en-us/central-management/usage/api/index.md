@@ -1,5 +1,5 @@
 ---
-Order: 60
+Order: 30
 xref: ccm-api
 Title: API
 Description: Information on using the CCM API

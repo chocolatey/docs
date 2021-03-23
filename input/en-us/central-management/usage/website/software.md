@@ -3,7 +3,9 @@ Order: 20
 xref: ccm-software
 Title: Software
 Description: Information on software within CCM
-RedirectFrom: docs/central-management-software
+RedirectFrom:
+  - docs/central-management-software
+  - en-us/central-management/usage/software
 ---
 
 Chocolatey Central Management gives you direct visibility into the software packages in use in your organization, making it easy to see which machines are out of date and may need packages updated.
