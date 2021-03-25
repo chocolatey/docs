@@ -50,11 +50,15 @@ Normal:
 
 ## Resources
 
-Below is a short video which shows this in action:
+Below is a short video which shows how to use the feature command of the chocolateyguicli:
 
-<div class="ratio ratio-700x506">
-     <iframe width="700" height="506" src="https://www.youtube.com/embed/_AkDNQFoCtc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/Zsyr51jr4QY?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
 </div>
+<br>
+</p>
 
 ## Feature Options
 
