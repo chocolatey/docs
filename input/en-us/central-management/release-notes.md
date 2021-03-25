@@ -25,6 +25,18 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.5.0 (March 25, 2021)
+### BREAKING CHANGES
+ * Deployments - Provide better resiliency when handling large numbers of computers within a deployment - see [Licensed #212](https://github.com/chocolatey/chocolatey-licensed-issues/issues/212)
+
+Previously, while not recommended, the CCM Service could be run as a user with non-administrative rights on the machine, as long as certain permissions were provided to the user.  Going forward, there is now a strict requiremnt that the user that is running the CCM Service has administrative rights on the machine.  This is needed to ensure reliability of messages delivered into the CCM Service.
+
+### BUG FIXES
+ * Fix - Web - No data is returned when logged into the website with FIPS compliant checksums enabled on the hosting server - see [Licensed #167](https://github.com/chocolatey/chocolatey-licensed-issues/issues/167)
+
+### IMPROVEMENTS
+ * Installation - CCM Chocolatey Package scripts have been authenticode signed
+
 ## 0.4.0 (November 6, 2020)
 ### BREAKING CHANGES
  * Deployments - Machine contact timeout now defaults to infinite (0) to allow for semi-connected environments
