@@ -15,6 +15,18 @@ increased as required.
 >
 > Any time a package operation is completed, i.e. install/uninstall/upgrade, the outdated package information cache will be invalidated.
 
+## Resources
+
+Below is a short video which shows this configuration setting in action:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/q_oZ_-0HIzI?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## Example
 
 To set this configuration parameter, for the currently logged in user, you can run the following:
