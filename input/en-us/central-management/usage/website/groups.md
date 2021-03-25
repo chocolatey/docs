@@ -3,7 +3,9 @@ Order: 30
 xref: ccm-groups
 Title: Groups
 Description: Information on groups within CCM
-RedirectFrom: docs/central-management-groups
+RedirectFrom:
+  - docs/central-management-groups
+   en-us/central-management/usage/groups
 ---
 
 Central Management's Groups are the basis on which a given [Deployment](xref:ccm-deployments) operates.

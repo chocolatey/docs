@@ -12,6 +12,10 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 >
 > Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 
+> :warning: **WARNING**
+>
+> In order to run the CCM Service a user with Administrator access is required.  By default, a new user named `ChocolateyLocalAdmin` will be created and configured to run the CCM Service.  In addition, `Logon as Service` and `Logon as Batch` privileges will be asserted for this user.  If attempting to run the CCM Service as a different user, these permissions will be required.
+
 ## Step 1: Complete Prerequisites
 
 > :warning: **WARNING**
@@ -62,7 +66,7 @@ choco config set --name="'centralManagementServiceUrl'" --value="'https://<acces
 
 Note items with "`:`" mean a value should be provided, items without are simply switches.
 
-* `/Username:` - Username to run the service under. Defaults to `ChocolateyLocalAdmin`. This should be a local administrator - this is typically ensured during installation. `Logon as Service` and `Logon as Batch` privileges are also ensured.
+* `/Username:` - Username to run the service under. Defaults to `ChocolateyLocalAdmin`. This should be a local Administrator - this is typically ensured during installation. `Logon as Service` and `Logon as Batch` privileges are also ensured.
 * `/Password:` - Password for the user. Default is the [Chocolatey Managed Password](#chocolatey-managed-password).
 * `/EnterPassword` - Receive the password at runtime as a secure string. Requires input at runtime whe installing/upgrading the package.
 * `/NoRestartService` - Do not shut down and restart the service. You will need to restart later to take advantage of new service information.
@@ -84,7 +88,13 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 * Service Startup:                      **Automatic**
 * Service Username:                     **ChocolateyLocalAdmin** or '`/Username:`'
 
+### Chocolatey Central Management Service Configuration
+
+For most installations, the default values for the Chocolatey Central Management Service configuration should be all that is required.  However, if you need to modify this configuration, then full details of what can be controlled is detailed on the [Chocolatey Central Management Service configuration page](xref:ccm-usage-service-configuration#chocolatey-configuration-file).
+
 ### Chocolatey Configuration
+
+There are a number of different Chocolatey Configuration values that can be set for the Chocolatey Central Management Service.  The main setting that _has_ to be set is detailed below, and you can find a complete list on the [Chocolatey Central Management Service configuration page](xref:ccm-usage-service-configuration#chocolatey-configuration-file).
 
 * `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
@@ -94,7 +104,7 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 
 ### Chocolatey Managed Password
 
-When Chocolatey manages the password for a local administrator, it creates a very complex password:
+When Chocolatey manages the password for a local Administrator, it creates a very complex password:
 
 * It is 32 characters long.
 * It uses uppercase, lowercase, numbers, and symbols to meet very stringent complexity requirements.
@@ -289,7 +299,7 @@ Unfortunately, it's not a supported scenario. If you are trying to load balance 
 
 Yes, absolutely. You will pass those credentials through at install/upgrade time, and you will also want to turn on the feature useRememberedArgumentsForUpgrades (see [configuration](xref:configuration#features)) so that future upgrades will have that information available. The remembered arguments are stored encrypted on the box (that encryption is reversible so you may opt to pass that information each time).
 
-* `/Username`: - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user should be a local administrator.
+* `/Username`: - provide username - instead of using the default 'ChocolateyLocalAdmin' user. This user should be a local Administrator.
 * `/Password`: - optional password for the user.
 * `/EnterPassword` - receive the password at runtime as a secure string
 
@@ -331,7 +341,7 @@ No, it is different for every machine it is deployed to.
 
 The Chocolatey licensed code base is encrypted, so only people that work at Chocolatey Software would be able to determine the password for a particular box (just that one) **IF** they have local access to that box. Even with all of the information and the algorithm, it's still going to take our folks a while to determine the password. That gets them access to one machine. Of course, Chocolatey folks are not going to do this for obvious reasons.
 
-So let's realize this to its full potential - If someone were able to hack the Chocolatey licensed codebase, they would be able to determine the full password algorithm. Then they'd also need to hack into your infrastructure and get local access to every box that they wanted to get the Chocolatey-managed password so they could get admin access to just that box. Taking this out a bit further, it's reasonable to assume that if someone has hacked into your infrastructure, it's highly unlikely they are going to be using a non-administrator account to get local access to a box so they can get the password for an administrator account for just that one box. It's more likely they would would already have a local admin account for the boxes they are attacking, and are likely to seek other attack vectors that are much less sophisticated.
+So let's realize this to its full potential - If someone were able to hack the Chocolatey licensed codebase, they would be able to determine the full password algorithm. Then they'd also need to hack into your infrastructure and get local access to every box that they wanted to get the Chocolatey-managed password so they could get admin access to just that box. Taking this out a bit further, it's reasonable to assume that if someone has hacked into your infrastructure, it's highly unlikely they are going to be using a non-Administrator account to get local access to a box so they can get the password for an Administrator account for just that one box. It's more likely they would would already have a local admin account for the boxes they are attacking, and are likely to seek other attack vectors that are much less sophisticated.
 
 ### Do you rotate the managed password on a schedule?
 
@@ -368,15 +378,9 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 >
 > Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
 
-### Can we use an account for the service that is not a local administrator?
+### Can we use an account for the service that is not a local Administrator?
 
-This is not a supported scenario, especially considering the installation will attempt to ensure that the user becomes an administrator if they are not, in addition to `Logon as Service` and `Logon as Batch` privileges.
-
-If you would like to attempt this scenario, please do the following:
-
-* Ensure the user has `Logon As Service` privilege
-* Ensure the user has `Logon as Batch` privilege
-* Run `netsh http add urlacl url=https://+:24020/ChocolateyManagementService user=<DOMAIN\USERNAME>` from an elevated shell (replacing `<DOMAIN\USERNAME>` with the account)
+This is not a supported scenario, especially considering the installation will attempt to ensure that the user becomes an Administrator if they are not, in addition to `Logon as Service` and `Logon as Batch` privileges.
 
 ### Where is the management service installed?
 

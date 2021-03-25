@@ -3,10 +3,14 @@ Order: 40
 xref: ccm-deployments
 Title: Deployments
 Description: How to deploy packages, and execute PowerShell, on client machines
-RedirectFrom: docs/central-management-deployments
+RedirectFrom:
+  - docs/central-management-deployments
+  - en-us/central-management/usage/deployments
 ---
 
-> :warning: **WARNING** This is a Work in Progress. Please check back later.
+> :warning: **WARNING**
+>
+> This is a Work in Progress. Please check back later.
 >
 > Please see https://chocolatey.org/blog/announcing-deployments for now.
 

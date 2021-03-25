@@ -3,7 +3,9 @@ Order: 10
 xref: ccm-computers
 Title: Computers
 Description: Information on computers within CCM
-RedirectFrom: docs/central-management-computers
+RedirectFrom:
+  - docs/central-management-computers
+  - en-us/central-management/usage/computers
 ---
 
 Chocolatey Central Management gives you visibility into what's installed on a given computer, as well as their last check-in to Central Management and IP Address.
