@@ -21,6 +21,14 @@ In addition, Chocolatey GUI does cache the information about which packages are 
 
 Below is a short video which shows this feature in action:
 
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/PnFWc5p5I6E?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## Example
 
 This feature can be enabled, for the currently logged in user, by running the following command:
