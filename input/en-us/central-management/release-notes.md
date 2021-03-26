@@ -37,6 +37,18 @@ Previously, while not recommended, the CCM Service could be run as a user with n
 ### IMPROVEMENTS
  * Installation - CCM Chocolatey Package scripts have been authenticode signed
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## 0.4.0 (November 6, 2020)
 ### BREAKING CHANGES
  * Deployments - Machine contact timeout now defaults to infinite (0) to allow for semi-connected environments
