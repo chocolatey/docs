@@ -55,7 +55,7 @@ if(Test-Path C:\nexusbackup\jetty-https.xml){
 }
 
 #Restart the nexus service to apply the configuration
-Start-Service nexus
+Restart-Service nexus
 
 #Cleanup backup folder
 Remove-Item C:\nexusbackup -Recurse -Force
