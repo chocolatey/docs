@@ -16,6 +16,11 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+## 0.2.1 (March 29, 2021)
+
+### BUGS
+* Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209)
+
 ## 0.2.0 (March 9, 2021)
 
 ### BREAKING CHANGES

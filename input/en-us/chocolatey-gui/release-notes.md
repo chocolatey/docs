@@ -12,6 +12,18 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.18.1](https://github.com/chocolatey/ChocolateyGUI/milestone/24?closed=1) (March 29, 2021)
+
+### BUGS
+
+* Chocolatey GUI fails to start in certain circumstances when running as a non-administrator user - [#829](https://github.com/chocolatey/ChocolateyGUI/issues/829)
+* Ensure that transactions are persisted to configuration databases when making changes to Chocolatey GUI settings/features - see [#832](https://github.com/chocolatey/ChocolateyGUI/issues/832)
+* Chocolatey GUI incorrectly reverts to list view after making a change in settings screen - see [#830](https://github.com/chocolatey/ChocolateyGUI/issues/830)
+
+### DOCUMENTATION
+
+* Fix incorrect quoting of parameter in package nuspec - [#831](https://github.com/chocolatey/ChocolateyGUI/issues/831)
+
 ## [0.18.0](https://github.com/chocolatey/ChocolateyGUI/milestone/19?closed=1) (March 9, 2021)
 
 ### BREAKING CHANGES
