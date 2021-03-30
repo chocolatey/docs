@@ -210,7 +210,7 @@ Always be explicit that you are waiting on the maintainer to fix and resubmit th
 * Automation scripts (the `ps1`/`psm1` files such as `chocolateyInstall.ps1`)
   * Do the scripts try to do anything malicious? This is almost always immediate grounds for banning the maintainer and deleting their packages.
   * Do the scripts set good defaults for silent args? A package should almost ALWAYS install completely silently by default. If a maintainer makes the argument that it is so folks can choose what to pass, remind them this already exists through install arguments (CommandsInstall#options-and-switches) and if they want to add package parameters (How-To-Parse-PackageParameters-Argument), they can also do that (and add them to the description).
-  * Is there anything in the scripts that would not work with POSH v2? (We are working on making this automatically checked by the validator - see https://github.com/chocolatey/package-validator/issues/1)
+  * Is there anything in the scripts that would not work with POSH v2? (We are working on making this automatically checked by the validator - see https://github.com/chocolatey/home/issues/34)
   * If the package downloads anything, is it getting downloads from the proper location? Follow the projectUrl to the project site to see where it is downloading from - it should match the scripts. If not there needs to be a really, really good reason for not doing so.
   * Does the download version match the package version?
   * Does the download include both x86 and x64 urls if available?
