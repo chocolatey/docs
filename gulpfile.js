@@ -11,7 +11,8 @@ const gulp = require('gulp'),
     rename = require('gulp-rename'),
     merge = require('merge-stream'),
     injectstring = require('gulp-inject-string'),
-    bundleconfig = require('./bundleconfig.json');
+    bundleconfig = require('./bundleconfig.json'),
+    fs = require('fs');
 
 const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
 const { series, parallel, src, dest, watch } = require('gulp');
@@ -57,8 +58,9 @@ function copyTheme() {
     var copyIcons = src(paths.theme + 'images/icons/*.*')
         .pipe(dest(paths.input));
 
-    var copyPartials = src([paths.theme + 'partials/*.*', '!'+ paths.theme + 'partials/svgstyles.txt'])
+    var copyPartials = src([paths.theme + 'partials/*.*', '!' + paths.theme + 'partials/svgstyles.txt', '!' + paths.theme + 'partials/AlertText.txt'])
         .pipe(injectstring.prepend('@* ' + editFilePartial + ' *@\n'))
+        .pipe(injectstring.replace(/topNoticeText = \"\"/, 'topNoticeText = "' + fs.readFileSync(paths.theme + 'partials/AlertText.txt', 'utf8') + '"'))
         .pipe(rename({ prefix: "_", extname: '.cshtml' }))
         .pipe(dest(paths.partials));
 
