@@ -21,6 +21,18 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 ### BUGS
 * Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/t4h3Y9GMIrc?list=PL84yg23i9GBjSzAEmtCqSLf2us_LLIDwZ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>>
+
 ## 0.2.0 (March 9, 2021)
 
 ### BREAKING CHANGES
