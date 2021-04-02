@@ -14,6 +14,10 @@ To install the Chocolatey Agent service, you need to install the `chocolatey-age
 * Chocolatey Licensed Extension (`chocolatey.extension` package) v1.8.4+. For chocolatey-agent v0.5.0+, licensed extension v1.9.0+. For `chocolatey-agent` v0.7.0+, licensed extension v1.11.0+.
 * Chocolatey Agent Service (`chocolatey-agent` package) - 0.7.0+ is recommended.
 
+> :memo: **NOTE**
+>
+> The Chocolatey Agent Service requires Log On As Service and Log On As Batch rights. We attempt to set these rights on the user at the time of installation via Local Policy, but if you have a restrictive Group Policy that will be applied to the system, please ensure that the user account you are attempting to use (or ChocolateyLocalAdmin as the default) has the correct permissions applied in your Group Policy.
+
 For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Licensed Extension v1.11.0+, and Chocolatey Agent v0.7.0+.
 
 ## Chocolatey Agent Install Options

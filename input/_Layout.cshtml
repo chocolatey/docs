@@ -58,20 +58,7 @@
     </head>
     <body class="chocolatey-docs">
         <header>
-            @{
-                @* To remove top notice alert, replace the string below with "" *@
-                string topNoticeText = "";
-
-                if (!string.IsNullOrEmpty(topNoticeText))
-                {
-                    <div id="topNoticeAlert" class="alert alert-success alert-dismissible alert-dismissible-center fade show d-none" role="alert">
-                        <p class="mb-0">@Html.Raw(topNoticeText)</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                            <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                    </div>
-                }
-            }
+            @Html.Partial("global-partials/_TopAlertBanner")
             <div class="d-none d-sm-flex">
                 @Html.Partial("global-partials/_globalnavigation")
             </div>

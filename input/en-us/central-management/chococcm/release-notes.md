@@ -15,6 +15,22 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 >
 > This PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
 
+## 0.2.0 (April 1, 2021)
+
+### BUG FIXES
+
+* Fix - Add-CCMGroup throws `HTTP 400` error
+* Fix - Add-CCMGroupMember throws `HTTP 400` error
+* Fix - Fetching Deployment by ID fails when Deployment is not in Draft or Ready state
+* Fix - Get-CCMGroupMember has incorrect URL
+* Fix - Export-CCMDeploymentReport is not exported by the module
+
+## IMPROVEMENTS
+
+* Added a new Remove-CCMGroup cmdlet to allow removal of a group
+* Added a new Remove-CCMGroupMember cmdlet to allow removal a computer or group from a CCM group
+* Added functionally to the Get-CCMDeploymentStep cmdlet to allow retrieval of deployment steps, results, and logs from a deployment step and its computers
+
 ## 0.1.1 (December 4, 2020)
 
 ### BUG FIXES
