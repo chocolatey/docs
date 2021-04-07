@@ -221,6 +221,10 @@ Steps to create a QDE virtual machine in Azure:
 1. Once the import completes, go into the VM's hardware settings and expand the main disk to at least 500GB.
 1. Boot up the VM, and (if needed) install any software required / recommended for your hypervisor.
 
+>:memo: *NOTE*
+>Upon first booting the environment in ESXi 6.7 the mouse will not be available to the VM when using the HTML modal console control. You will need to use rather RDP or VMRC (VMWare Remote Console) to access the VM and install VMWare Tools.
+>Once VMWare Tools is installed, the mouse and other advanced VM functionality will be made available to the VM.
+
 ### Platform: VMware (VMDK file)
 
 1. Download VMDK from provided link, and unzip it to the directory you wish to store it.
