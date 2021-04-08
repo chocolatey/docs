@@ -17,36 +17,37 @@ This release of QDE includes a refresh of the core components, most notably bein
 
 This version of QDE shipped with the following packages installed:
 
- Name                               | Version             |
-|------------------------------------|---------------------|
-| AdoptOpenJDKjre                    | 15.0.1.900          |
-| aspnetcore-runtimepackagestore     | 2.2.7               |
-| chocolatey                         | 0.10.15             |
-| chocolatey-agent                   | 0.11.2              |
-| chocolatey-core.extension          | 1.3.5.1             |
-| chocolatey-licensed.lib            | 2.1.1               |
-| chocolatey-management-database     | 0.5.0               |
-| chocolatey-management-service      | 0.5.0               |
-| chocolatey-management-web          | 0.5.0               |
-| chocolatey-nexus-setup             | 0.1.1               |
-| chocolatey-windowsupdate.extension | 1.0.4               |
-| chocolatey.extension               | 2.1.1               |
-| DotNet4.6.1                        | 4.6.01055.20170308  |
-| dotnetcore-windowshosting          | 2.2.7               |
-| GoogleChrome                       | 86.0.4240.198       |
-| jenkins                            | 2.222.4             |
-| KB2533623                          | 2.0.0               |
-| KB2919335                          | 1.0.20160915        |
-| KB2919442                          | 1.0.20160915        |
-| KB2999226                          | 1.0.20181019        |
-| KB3033929                          | 1.0.5               |
-| KB3035131                          | 1.0.3               |
-| KB3063858                          | 1.0.0               |
-| nexus-repository                   | 3.30.0.01           |
-| sql-server-express                 | 2019.20200409       |
-| sql-server-management-studio       | 15.0.18358.0        |
-| vcredist140                        | 14.28.29325.2       |
-| vcredist2015                       | 14.0.24215.20170201 |
+|Name|Version|
+|--- |--- |
+|AdoptOpenJDKjre|16.0.0.3600|
+|aspnetcore-runtimepackagestore|2.2.7|
+|chocolatey|0.10.15|
+|chocolatey-core.extension|1.3.5.1|
+|chocolatey-licensed.lib|2.1.1|
+|chocolatey-management-database|0.5.0|
+|chocolatey-management-service|0.5.0|
+|chocolatey-management-web|0.5.0|
+|chocolatey-nexus-setup|0.1.1|
+|chocolatey-windowsupdate.extension|1.0.4|
+|chocolatey.extension|2.1.1|
+|DotNet4.6.1|4.6.01055.20170308|
+|dotnetcore-windowshosting|2.2.7|
+|GoogleChrome|89.0.4389.90|
+|jenkins|2.222.4|
+|KB2533623|2.0.0|
+|KB2919355|1.0.20160915|
+|KB2919442|1.0.20160915|
+|KB2999226|1.0.20181019|
+|KB3033929|1.0.5|
+|KB3035131|1.0.3|
+|KB3063858|1.0.0|
+|nexus-repository|3.29.2.02|
+|sql-server-express|2019.20200409|
+|sql-server-management-studio|15.0.18369.0|
+|vcredist140|14.28.29913|
+|vcredist2015|14.0.24215.20170201|
+
+
 
 ### Enhancements
 
