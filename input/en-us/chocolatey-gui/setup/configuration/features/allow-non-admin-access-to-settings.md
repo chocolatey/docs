@@ -25,9 +25,13 @@ When this setting is turned off, a non-admin user will no longer be able to acce
 
 Below is a short video which shows this feature in action:
 
-<div class="ratio ratio-700x506">
-    <iframe width="700" height="506" src="https://www.youtube.com/embed/VCTHWo7cgW0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/37xgLXJc2tc?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
 </div>
+<br>
+</p>
 
 ## Example
 
