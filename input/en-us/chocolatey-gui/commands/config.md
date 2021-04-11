@@ -54,7 +54,15 @@ Normal:
 
 ## Resources
 
-Below is a short video which shows this in action:
+Below is a short video which shows how to use the config command of the chocolateyguicli:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/aRBrhn9-OCg?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## Configuration Options
 
