@@ -223,7 +223,8 @@ Steps to create a QDE virtual machine in Azure:
 
 > :memo: **NOTE**
 >
-> Upon first booting the environment in ESXi 6.7 the mouse will not be available to the VM when using the HTML modal console control. You will need to use rather RDP or VMRC (VMWare Remote Console) to access the VM and install VMWare Tools.
+> Upon first booting the environment in ESXi with the HTML modal console control, the mouse will not be available to the VM.
+> We recommend you use either RDP or VMRC (VMWare Remote Console) to access the VM initially and install VMWare Tools.
 > Once VMWare Tools is installed, the mouse and other advanced VM functionality will be made available to the VM.
 
 ### Platform: VMware (VMDK file)
