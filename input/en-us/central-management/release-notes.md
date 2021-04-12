@@ -25,6 +25,10 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.5.1 (April 12th, 2021)
+### BUG FIXES
+ * Fix - Service - Unable to process deployment report messages that contain invalid XML characters - see [Licensed #216](https://github.com/chocolatey/chocolatey-licensed-issues/issues/216)
+
 ## 0.5.0 (March 25, 2021)
 ### BREAKING CHANGES
  * Deployments - Provide better resiliency when handling large numbers of computers within a deployment - see [Licensed #212](https://github.com/chocolatey/chocolatey-licensed-issues/issues/212)
