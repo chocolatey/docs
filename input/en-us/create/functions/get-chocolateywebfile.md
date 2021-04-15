@@ -42,7 +42,7 @@ It returns the filepath to the downloaded file when it is complete.
 Chocolatey works best when the packages contain the software it is
 managing and doesn't require downloads. However most software in the
 Windows world requires redistribution rights and when sharing packages
-publicly (like on the [community feed](https://chocolatey.org/packages)), maintainers may not have those
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
 aforementioned rights. Chocolatey understands how to work with that,
 hence this function. You are not subject to this limitation with
 internal packages.
@@ -185,7 +185,7 @@ by ChecksumType.
 > :memo: **NOTE** Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
-other steps in the process related to the [community repository](https://chocolatey.org/packages), it
+other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
 ensures that the file a user receives is the same file a maintainer
 and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
@@ -228,7 +228,7 @@ local. The checksum type is covered by ChecksumType64.
 > :memo: **NOTE** Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
-other steps in the process related to the [community repository](https://chocolatey.org/packages), it
+other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
 ensures that the file a user receives is the same file a maintainer
 and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
@@ -239,7 +239,7 @@ to help provide that functionality.
 
 > :memo: **NOTE** To determine checksums, you can get that from the original
 site if provided. You can also use the [checksum tool available on
-the community feed](https://chocolatey.org/packages/checksum) (`choco install checksum`)
+the community feed](https://community.chocolatey.org/packages/checksum) (`choco install checksum`)
 and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you
 provide checksums for all remote resources used.
 

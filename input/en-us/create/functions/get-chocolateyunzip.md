@@ -40,7 +40,7 @@ If extraction fails, an exception is thrown.
 
 If you are embedding files into a package, ensure that you have the
 rights to redistribute those files if you are sharing this package
-publicly (like on the [community feed](https://chocolatey.org/packages)). Otherwise, please use
+publicly (like on the [community feed](https://community.chocolatey.org/packages)). Otherwise, please use
 Install-ChocolateyZipPackage to download those resources from their
 official distribution points.
 

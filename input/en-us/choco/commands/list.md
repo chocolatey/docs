@@ -260,7 +260,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --approved-only
      ApprovedOnly - Only return approved packages - this option will filter 
-       out results not from the [community repository](https://chocolatey.org/packages). Available in 0.9.10+.
+       out results not from the [community repository](https://comminty.chocolatey.org/packages). Available in 0.9.10+.
 
      --download-cache, --download-cache-only
      DownloadCacheAvailable - Only return packages that have a download cache 
@@ -269,7 +269,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --not-broken
      NotBroken - Only return packages that are not failing testing - this 
-       option only filters out failing results from the [community feed](https://chocolatey.org/packages). It will 
+       option only filters out failing results from the [community feed](https://comminty.chocolatey.org/packages). It will
        not filter against other sources. Available in 0.9.10+.
 
      --detail, --detailed

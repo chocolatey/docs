@@ -101,7 +101,7 @@ based on choco not receiving things you think you are passing to it.
 
  * For consistency, always use `choco`, not `choco.exe`. Never use 
    shortcut commands like `cinst` or `cup`.
- * Always have the command as the first argument to `choco. e.g.
+ * Always have the command as the first argument to `choco`. e.g.
    [`choco install`](xref:choco-command-install), where [`install`](xref:choco-command-install) is the command.
  * If there is a subcommand, ensure that is the second argument. e.g.
    `choco source list`, where `source` is the command and [`list`](xref:choco-command-list) is the
@@ -144,7 +144,7 @@ based on choco not receiving things you think you are passing to it.
    upgrade or install (unless switched off explicitly).
  * If you are sharing the script with others, pass `--source` to be 
    explicit about where the package is coming from. Use full link and 
-   not source name ('https://chocolatey.org/api/v2' versus 
+   not source name ('https://community.chocolatey.org/api/v2/' versus
    'chocolatey').
  * If parsing output, you might want to use `--limit-output`/`-r` to 
    get output in a more machine parseable format. > :memo: **NOTE** Not all 
@@ -167,7 +167,7 @@ Now here is that example written with best practices (again line
  breaks added for readability - there are not line continuations 
  for choco):
 
-  `choco upgrade pkg1 -y --source="'https://chocolatey.org/api/v2'" 
+  `choco upgrade pkg1 -y --source="'https://community.chocolatey.org/api/v2/'"
    --package-parameters="'/Option:Value /Option2:value with spaces'"
    --c4b-option="'Yaass'" --option-that-is-new="'dude upgrade'"`
 

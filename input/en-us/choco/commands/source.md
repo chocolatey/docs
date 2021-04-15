@@ -39,7 +39,7 @@ Chocolatey will allow you to interact with sources.
 When it comes to the source location, this can be a folder/file share or an http
 location. If it is a url, it will be a location you can go to in a browser and 
 it returns OData with something that says Packages in the browser, similar to 
-what you see when you go to https://chocolatey.org/api/v2/.
+what you see when you go to https://community.chocolatey.org/api/v2/.
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
  write proper scripts and integrations.
@@ -174,8 +174,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Source - The source. This can be a folder/file share or an http locatio-
        n. If it is a url, it will be a location you can go to in a browser and 
        it returns OData with something that says Packages in the browser, 
-       similar to what you see when you go to https://chocolatey.org/api/v2/. 
-       Required with add action. Defaults to empty.
+       similar to what you see when you go to https://community.chocolate-
+       y.org/api/v2/. Required with add action. Defaults to empty.
 
  -u, --user=VALUE
      User - used with authenticated feeds. Defaults to empty.

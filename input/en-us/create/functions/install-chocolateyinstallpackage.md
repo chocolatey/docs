@@ -41,7 +41,7 @@ This command will assert UAC/Admin privileges on the machine.
 
 If you are embedding files into a package, ensure that you have the
 rights to redistribute those files if you are sharing this package
-publicly (like on the [community feed](https://chocolatey.org/packages)). Otherwise, please use
+publicly (like on the [community feed](https://community.chocolatey.org/packages)). Otherwise, please use
 Install-ChocolateyPackage to download those resources from their
 official distribution points.
 
@@ -202,7 +202,7 @@ installer with out any arguments. That means a nonsilent installer.
 
 Please include the `notSilent` tag in your Chocolatey package if you
 are not setting up a silent/unattended package. Please note that if you
-are submitting to the [community repository](https://chocolatey.org/packages), it is nearly a requirement
+are submitting to the [community repository](https://community.chocolatey.org/packages), it is nearly a requirement
 for the package to be completely unattended.
 
 When you are using this with an MSI, it will set up the arguments as

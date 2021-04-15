@@ -40,7 +40,7 @@ editions).
 Available in 0.10.8+. If you need compatibility with older versions,
 take a dependency on the `chocolatey-core.extension` package which
 also provides this functionality. If you are pushing to the community
-package repository (https://chocolatey.org/packages), you are required
+package repository (https://community.chocolatey.org/packages), you are required
 to take a dependency on the core extension until January 2018. How to
 do this is explained in [the docs](xref:parse-package-parameters#step-3-use-core-community-extension).
 
@@ -72,7 +72,7 @@ $pp = Get-PackageParameters
 
 ~~~powershell
 
-# see https://chocolatey.org/docs/how-to-parse-package-parameters-argument
+# see https://docs.chocolatey.org/en-us/guides/create/parse-packageparameters-argument
 # command line call: `choco install <pkg_id> --params "'/LICENSE:value'"`
 $pp = Get-PackageParameters
 # Read-Host, PromptForChoice, etc are not blocking calls with Chocolatey.

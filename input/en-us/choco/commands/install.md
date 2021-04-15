@@ -77,7 +77,7 @@ What is `-my`? See option bundling in [how to pass arguments](xref:choco-command
  option to not allow PATH changes. Until then you will need to manually
  go modify Path to just one Ruby and then use something like uru
  (https://bitbucket.org/jonforums/uru) or pik
- (https://chocolatey.org/packages/pik) to switch between versions.
+ (https://community.chocolatey.org/packages/pik) to switch between versions.
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
  write proper scripts and integrations.
@@ -183,10 +183,10 @@ This specifies that the source is a Windows Feature and we should
 
  * How-To: A complete example of how you can use the PackageParameters argument
    when creating a Chocolatey Package can be seen at
-   https://chocolatey.org/docs/how-to-parse-package-parameters-argument
+   https://docs.chocolatey.org/en-us/guides/create/parse-packageparameters-argument
  * One may want to override the default installation directory of a
    piece of software. See
-   https://chocolatey.org/docs/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts.
+   https://docs.chocolatey.org/en-us/getting-started#overriding-default-install-directory-or-other-advanced-install-concepts.
 
 
 ## Options and Switches

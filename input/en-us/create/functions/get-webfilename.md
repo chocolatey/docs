@@ -38,7 +38,7 @@ Falls back to DefaultName when the name cannot be determined.
 Chocolatey works best when the packages contain the software it is
 managing and doesn't require downloads. However most software in the
 Windows world requires redistribution rights and when sharing packages
-publicly (like on the [community feed](https://chocolatey.org/packages)), maintainers may not have those
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
 aforementioned rights. Chocolatey understands how to work with that,
 hence this function. You are not subject to this limitation with
 internal packages.

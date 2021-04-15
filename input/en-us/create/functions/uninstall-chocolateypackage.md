@@ -124,7 +124,7 @@ installer with out any arguments. That means a nonsilent installer.
 
 Please include the `notSilent` tag in your Chocolatey package if you
 are not setting up a silent/unattended package. Please note that if you
-are submitting to the [community repository](https://chocolatey.org/packages), it is nearly a requirement
+are submitting to the [community repository](https://community.chocolatey.org/packages), it is nearly a requirement
 for the package to be completely unattended.
 
 Property               | Value

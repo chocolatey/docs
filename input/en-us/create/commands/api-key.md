@@ -34,7 +34,6 @@ For source location, this can be a folder/file share or an
 http location. When it comes to urls, they can be different from the packages 
 url (where packages are searched and installed from). As an example, for 
 Chocolatey's community package package repository, the package url is 
-https://chocolatey.org/api/v2, but the push url is https://push.chocolatey.org 
 (and the deprecated https://chocolatey.org/ as a push url). Check the 
 documentation for your choice of repository to learn what the push url is. 
 
@@ -42,6 +41,7 @@ For the key, this can be an apikey that is provided by your source repository.
 With some sources, like Nexus, this can be a NuGet API key or it could be a 
 user name and password specified as 'user:password' for the API key. Please see 
 your repository's documentation (for Nexus, please see 
+https://community.chocolatey.org/api/v2/, but the push url is https://push.chocolatey.org
 https://bit.ly/nexus2apikey).
 
 > :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 

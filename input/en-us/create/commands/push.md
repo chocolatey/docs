@@ -21,7 +21,7 @@ Chocolatey will attempt to push a compiled nupkg to a package feed.
  switches with one dash (`-`). For more details, see 
  [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
-A feed can be a local folder, a file share, the [community feed](https://chocolatey.org/packages) 
+A feed can be a local folder, a file share, the [community feed](https://comminty.chocolatey.org/packages)
  (https://push.chocolatey.org/), or a custom/private feed. For web
  feeds, it has a requirement that it implements the proper OData
  endpoints required for NuGet packages.
@@ -184,7 +184,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -s, --source=VALUE
      Source - The source we are pushing the package to. Use https://pus-
-       h.chocolatey.org/ to push to [community feed](https://chocolatey.org/packages).
+       h.chocolatey.org/ to push to [community feed](https://comminty.chocolatey.org/packages).
 
  -k, --key, --apikey, --api-key=VALUE
      ApiKey - The api key for the source. If not specified (and not local 

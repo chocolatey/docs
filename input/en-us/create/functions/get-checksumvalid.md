@@ -53,7 +53,7 @@ to what is expected.
 ## Notes
 
 This uses the checksum.exe tool available separately at
-https://chocolatey.org/packages/checksum.
+https://community.chocolatey.org/packages/checksum.
 
 Options that affect checksum verification:
 
@@ -112,7 +112,7 @@ type is covered by ChecksumType.
 > :memo: **NOTE** Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
-other steps in the process related to the [community repository](https://chocolatey.org/packages), it
+other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
 ensures that the file a user receives is the same file a maintainer
 and a moderator (if applicable), plus any moderation review has
 intended for you to receive with this package. If you are looking at a
@@ -123,7 +123,7 @@ to help provide that functionality.
 
 > :memo: **NOTE** To determine checksums, you can get that from the original
 site if provided. You can also use the [checksum tool available on
-the community feed](https://chocolatey.org/packages/checksum) (`choco install checksum`)
+the community feed](https://community.chocolatey.org/packages/checksum) (`choco install checksum`)
 and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you
 provide checksums for all remote resources used.
 
