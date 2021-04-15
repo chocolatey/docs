@@ -6,6 +6,7 @@ Description: Information on Get-PackageParameters function
 RedirectFrom:
   - docs/helpers-get-package-parameters
   - docs/helpersgetpackageparameters
+  - docs/helpers-get-packageparameters
 ---
 
 # Get-PackageParameters

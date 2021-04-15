@@ -6,6 +6,7 @@ Description: Information on Get-OSArchitectureWidth function
 RedirectFrom:
   - docs/helpers-get-os-architecture-width
   - docs/helpersgetosarchitecturewidth
+  - docs/helpers-get-o-s-architecture-width
 ---
 
 # Get-OSArchitectureWidth
