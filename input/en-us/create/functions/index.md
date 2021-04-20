@@ -148,6 +148,7 @@ The following are more advanced settings:
  * OS_NAME - The reported name of the OS. (0.9.9+)
  * IS_PROCESSELEVATED = Is the process elevated? (0.9.9+)
  * ChocolateyToolsLocation - formerly 'ChocolateyBinRoot' ('ChocolateyBinRoot' will be removed with Chocolatey v2.0.0), this is where tools being installed outside of Chocolatey packaging will go. (0.9.10+)
+ * ChocolateyPackageInstallLocation - Install location of the software that the package installs. Displayed at the end of the package install. (0.9.10+)
 
 #### Set By Options and Configuration
 
