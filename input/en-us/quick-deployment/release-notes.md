@@ -51,7 +51,7 @@ This version of QDE shipped with the following packages installed:
 
 ### Enhancements
 
-- Running `Set-QDEnvironment.psq` is now idempotent
+- Running `Set-QDEnvironment.ps1` is now idempotent
 - Nexus no longer has a hard-coded wait value
 - VMWare OVF now cleanly imports into ESXi
 - VMWare VMDK file now cleanly imports into ESXi
