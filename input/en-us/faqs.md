@@ -327,13 +327,13 @@ If you are on a licensed edition of Chocolatey, you can turn on Package Reducer 
 
 ### The install location displayed is incorrect or missing.
 
-For packages that run installers, this can be be caused by installer for the software not setting it's install location.
+For packages that run installers, this can be be caused by the installer not setting its install location.
 For portable packages, it can be caused by not using the built in archive PowerShell helpers (e.g. because the software is not inside an archive) or by moving the extracted files after using an archive helper.
 
 The install location which is displayed can be manually set in the `ChocolateyInstall.ps1` with the `$Env:ChocolateyPackageInstallLocation` environment variable.
 
 If you are setting this variable in an installer package, do not hard code it, but instead get the location via checking the uninstall keys in the registry or similar. 
-The problem is that if this is hard coded for a package that runs an installer, it will display an incorrect location if the install location is changed manually by install arguments or via the licensed ubiquitous install directory switch.
+If this is hard coded for a package that runs an installer, it may display an incorrect location if the install location is changed manually, by install arguments, or via the licensed ubiquitous install directory switch.
 
 ## Videos / Reference
 
