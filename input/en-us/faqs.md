@@ -325,6 +325,16 @@ Well, if you are not creating packages for the community package repository, you
 
 If you are on a licensed edition of Chocolatey, you can turn on Package Reducer and the first two items above no longer take up any significant space. This can reduce space usage in the order of GBs for some installations of Chocolatey. See [Package Reducer](xref:package-reducer) for more details.
 
+### The install location displayed is incorrect or missing.
+
+For packages that run installers, this can be be caused by the installer not setting its install location.
+For portable packages, it can be caused by not using the built in archive PowerShell helpers (e.g. because the software is not inside an archive) or by moving the extracted files after using an archive helper.
+
+The install location which is displayed can be manually set in the `ChocolateyInstall.ps1` with the `$Env:ChocolateyPackageInstallLocation` environment variable.
+
+If you are setting this variable in an installer package, do not hard code it, but instead get the location via checking the uninstall keys in the registry or similar. 
+If this is hard coded for a package that runs an installer, it may display an incorrect location if the install location is changed manually, by install arguments, or via the licensed ubiquitous install directory switch.
+
 ## Videos / Reference
 
 ### Where can I learn more?
