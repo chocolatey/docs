@@ -50,6 +50,10 @@ auto uninstaller.
 May not be required. Starting in 0.9.10+, the Automatic Uninstaller
 (AutoUninstaller) is turned on by default.
 
+If your script performs full uninstallation by itself and would like
+to avoid warnings by auto installer, you can disable it for the
+package by creating a special file named `tools/.skipAutoUninstall`.
+
 ## Aliases
 
 None
