@@ -47,17 +47,6 @@ This version of QDE shipped with the following packages installed:
 |vcredist140                         | 14.28.29914         |
 |vcredist2015                        | 14.0.24215.20170201 |
 
-
-
-
-### Enhancements
-
-- Running `Set-QDEnvironment.ps1` is now idempotent
-- Nexus no longer has a hard-coded wait value
-- VMWare OVF now cleanly imports into ESXi
-- VMWare VMDK file now cleanly imports into ESXi
-- You can now run `Set-QDEInternetSecurity.ps1` independent of setup if you wish to do so later after initial setup
-
 ## 2.1.138 (November 17, 2020)
 
 This release of QDE included a refresh of all core components, most notably, the 0.4.0 version of Chocolatey Central Management.
