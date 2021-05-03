@@ -24,6 +24,10 @@ For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Lice
 
 Starting with Chocolatey Agent v0.8.0+, the service will install as a local administrative user `ChocolateyLocalAdmin` by default (and manage the password as well). However you can specify your own user with package parameters (or have it use `LocalSystem`). Using a local administrator account allows for more things to be installed without issues. It also will allow easier shortcuts and other items to be put back on the correct user (the original requestor). You can specify a domain account as well. Prior to `v0.8.0`, Chocolatey Agent would install as LocalSystem (`SYSTEM`) and would require additional customization.
 
+> :warning: **WARNING**
+>
+> Chocolatey Agent should **not** be installed on a machine that is acting as a domain controller. Doing so is not a supported configuration. Domain controllers do not have local accounts other than the LocalSystem (`SYSTEM`) account. Any other local administrator account, such as the default `ChocolateyLocalAdmin` account, used to install Chocolatey Agent on a domain controller will by default become a domain administrator account.
+
 > :memo: **NOTE**
 >
 > If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
