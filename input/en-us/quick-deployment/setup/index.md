@@ -390,4 +390,36 @@ If you would like to upgrade Jenkins to a newer version using the installer, ple
 Some or all of the complexities in the upgrade process will likely be made automatic in the Chocolatey package as we're able to test and verify that the upgrade path works.
 Until then, approach with caution and follow the Jenkins documentation closely when attempting an upgrade.
 
+### What are the requirements for installing Chocolatey on a TLS1.2 hardened endpoint using ClientSetup.ps1 script?
+
+The following TLS Ciphers will need to be applied:
+
+* TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+* TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+* TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+
+In addition, the following registry keys will need to be applied:
+
+**[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v2.0.50727]**
+
+* _SystemDefaultTlsVersions_ = `dword:00000001`
+* _SchUseStrongCrypto_ = `dword:00000001`
+
+**[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319]**
+
+* _SystemDefaultTlsVersions_ = `dword:00000001`
+* _SchUseStrongCrypto_ = `dword:00000001`
+
+The following PowerShell code will set these items appropriately:
+
+```powershell
+# set strong cryptography on 64 bit .Net Framework (version 4 and above)
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\.NetFramework\v2.0.50727' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
+
+# set strong cryptography on 32 bit .Net Framework (version 4 and above)
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v2.0.50727' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
+Set-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\.NetFramework\v4.0.30319' -Name 'SchUseStrongCrypto' -Value '1' -Type DWord
+```
+
 [Quick Deployment Environment](xref:qde)
