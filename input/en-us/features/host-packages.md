@@ -220,11 +220,12 @@ These are simple servers that have more advanced options and authentication scen
 
 #### Commercial Options
 
-* [Cloudsmith](https://cloudsmith.com/nuget-feed/) ([NuGet Documentation](https://help.cloudsmith.io/docs/nuget-feed))
-* Sonatype Nexus - [Nexus2](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html) / [Nexus3](https://books.sonatype.com/nexus-book/3.0/reference/nuget.html#nuget-hosted)
-* [ProGet](http://inedo.com/support/documentation/proget/installation/installation-guide)
 * [Artifactory Pro](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
+* [Cloudsmith](https://cloudsmith.com/nuget-feed/) ([NuGet Documentation](https://help.cloudsmith.io/docs/nuget-feed))
+* [Feedz.io](https://feedz.io/docs/package-types/chocolatey)
+* [Nexus2](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html) / [Nexus3](https://books.sonatype.com/nexus-book/3.0/reference/nuget.html#nuget-hosted)
 * [MyGet](https://www.myget.org/)
+* [ProGet](http://inedo.com/support/documentation/proget/installation/installation-guide)
 
 If the option you've chosen is not listed, take a look at [known hosting options](#known-hosting-options) and follow the link from there to see what the vendor provides in the way of documentation.
 
