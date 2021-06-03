@@ -176,7 +176,13 @@ This specifies the source is Python and that we are installing a python
 This specifies that the source is a Windows Feature and we should
  install via the Deployment Image Servicing and Management tool (DISM)
  on the local machine.
- e.g. `choco install IIS-WebServerRole --source windowsfeatures`
+ e.g. `choco install IIS-WebServerRole --source windowsfeatures`.
+ 
+Note: due to a bug, Chocolatey doesn't currently support `windowsfeatures` as a source
+ when this is specified in the packages.config file. As a workoround, you can create a
+ separate config file and specify the sources in the install command instead,
+ e.g. `choco install "packages.config" --yes --source="'windowsfeatures'"`.
+ See this [issue](https://github.com/chocolatey/choco/issues/877) on GitHub for more information.
 
 
 ## Resources
