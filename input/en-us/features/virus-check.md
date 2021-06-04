@@ -58,6 +58,16 @@ In `genericVirusScannerArgs`, these are the arguments that Chocolatey will pass 
 
 In `genericVirusScannerValidExitCodes`, these are exit codes that indicate that a binary is okay. This defaults to `0`, but you can configure this with as many exit codes as necessary by adding them to the configuration as comma separated values.
 
+#### Windows Defender Example Configuration
+
+```powershell
+choco config set virusScannerType Generic
+choco config set genericVirusScannerPath "C:\Program Files\Windows Defender\MpCmdRun.exe"
+choco config set genericVirusScannerArgs "-Scan -ScanType 3 -File [[FILE]]"
+choco config set genericVirusScannerValidExitCodes "0"
+choco feature enable -n virusCheck
+```
+
 ## See It In Action
 
 ![Pro install in action](/assets/images/gifs/chocopro_install_stopped.gif)
