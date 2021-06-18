@@ -27,11 +27,11 @@ The CCM Website is built on ASP.Net Core, and as such we need to ensure that it 
 ### Script for some prerequisites
 
 ```powershell
-choco install dotnet4.6.1 -y
-choco install IIS-WebServer -s windowsfeatures -y
-choco install IIS-ApplicationInit -s windowsfeatures -y
-choco install aspnetcore-runtimepackagestore --version 2.2.7 -y
-choco install dotnetcore-windowshosting --version 2.2.7 -y
+choco install dotnet4.6.1 --no-progress -y
+choco install IIS-WebServer -s windowsfeatures --no-progress -y
+choco install IIS-ApplicationInit -s windowsfeatures --no-progress -y
+choco install aspnetcore-runtimepackagestore --version 2.2.7 --no-progress -y
+choco install dotnetcore-windowshosting --version 2.2.7 --no-progress -y
 
 choco pin add --name="'aspnetcore-runtimepackagestore'" --version="'2.2.7'" --reason="'Required for CCM website'"
 choco pin add --name="'dotnetcore-windowshosting'" --version="'2.2.7'" --reason="'Required for CCM website'"
