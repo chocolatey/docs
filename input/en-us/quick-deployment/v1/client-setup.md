@@ -9,7 +9,7 @@ RedirectFrom: docs/quick-deployment-client-setup-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](xref:v1-client-setup).
+> If you're using a newer version of QDE, please refer to the [newer QDE Client Setup page](xref:v2-client-setup).
 
 ## Summary
 
