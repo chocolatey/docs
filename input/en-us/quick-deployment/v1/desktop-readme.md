@@ -9,7 +9,7 @@ RedirectFrom: docs/quick-deployment-desktop-readme-v1
 > :memo: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
-> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](xref:v1-desktop-readme).
+> If you're using a newer version of QDE, please refer to the [newer QDE Desktop Readme page](xref:v2-desktop-readme).
 
 This system has been pre-configured as a fully functioning C4B environment.
 
