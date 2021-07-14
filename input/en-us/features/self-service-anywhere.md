@@ -98,7 +98,7 @@ If you are managing something like SQL Server, Office, or Autodesk, you may alre
 
 #### Option 1 - Binary/Raw Repository
 
-You can store big binaries in a raw/binary repository that comes with the following repository servers: Nexus, Artifactory, and ProGet. You could also just put things on a web host that gives bare downloads when accessed.
+You can store big binaries in a raw/binary repository that comes with the following repository servers: Nexus, Artifactory, ProGet, and Cloudsmith. You could also just put things on a web host that gives bare downloads when accessed.
 
 **Pros:**
 * Very reliable - once files are in the binary/raw repository, moving them around would require being very intentional. Since the binary/raw repository sits directly next to the Chocolatey package repositories, they are going to work well together.
@@ -106,7 +106,7 @@ You can store big binaries in a raw/binary repository that comes with the follow
 * Could be accessed anywhere - aside from open credentials being necessary right now, once that is adjusted in Chocolatey itself, this would allow you to get to the installation media from anywhere in the world if you chose to open it up that way.
 
 **Cons:**
-* Initial setup - it will take a moment to get this setup, but it can be done really fast if you already followed Chocolatey recommendations on using Nexus, Artifactory, or ProGet for your repository needs.
+* Initial setup - it will take a moment to get this setup, but it can be done really fast if you already followed Chocolatey recommendations on using Nexus, Artifactory, ProGet, or Cloudsmith for your repository needs.
 * No credentials on binary/raw repository - The Chocolatey built-in functions like `Get-ChocolateyWebFile` don't have the ability to directly pass credentials yet.
 * Requires a local download - if the installation media is big enough, you may prefer installing from a network share and not want to download the components first to each machine.
 

@@ -118,7 +118,7 @@ Now in your chocolateyInstall.ps1, you will want something similar to the follow
 # Internal use:
 # - Option 1: If the ISO is smaller than 1GB, embed the binary directly into the package for the most reliable use skip this
 # - Option 2: Store ISO on a file share and skip this
-# - Option 3: Download from internal sources, like a binary (raw) repository in Artifactory, Nexus, or ProGet.
+# - Option 3: Download from internal sources, like a binary (raw) repository in Artifactory, Cloudsmith, Nexus, or ProGet.
 # Community repo: Download the ISO file from the internet if you don't have distribution rights or the file is larger than 250MB.
 Get-ChocolateyWebFile 'WindowsSDK2008' "$env:temp\winsdk2008.iso" 'http://download.microsoft.com/download/f/e/6/fe6eb291-e187-4b06-ad78-bb45d066c30f/6.0.6001.18000.367-KRMSDK_EN.iso'
 
@@ -153,7 +153,7 @@ In your chocolateyInstall.ps1, you will want something similar to the following:
 # Internal use:
 # - Option 1: If the ISO is smaller than 1GB, embed the binary directly into the package for the most reliable use skip this
 # - Option 2: Store ISO on a file share and skip this
-# - Option 3: Download from internal sources, like a binary (raw) repository in Artifactory, Nexus, or ProGet.
+# - Option 3: Download from internal sources, like a binary (raw) repository in Artifactory, Cloudsmith, Nexus, or ProGet.
 # Community repo: Download the ISO file from the internet if you don't have distribution rights or the file is larger than 250MB.
 Get-ChocolateyWebFile 'WindowsSDK2008' "$env:temp\winsdk2008.iso" 'http://download.microsoft.com/download/f/e/6/fe6eb291-e187-4b06-ad78-bb45d066c30f/6.0.6001.18000.367-KRMSDK_EN.iso'
 

@@ -123,7 +123,7 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
 1. Then you would run a script similar to the below to address that local install. If it is on a repository somewhere, you will need to enhance the below script to get that file  (the Chocolatey Puppet provider install script shows that).
 
 ~~~powershell
-# Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
+# Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Cloudsmith, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
 # This is where you see the top level API - with xml to Packages - should look nearly the same as https://chocolatey.org/api/v2/
 # If you are using Nexus, always add the trailing slash or it won't work
 # === EDIT HERE ===

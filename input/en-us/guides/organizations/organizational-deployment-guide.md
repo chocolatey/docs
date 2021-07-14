@@ -294,7 +294,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 ## Exercise 2: Set Up A Package Repository
 
-Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages) to learn about the advantages and disadvantages of each.
+Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro, Cloudsmith, and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages) to learn about the advantages and disadvantages of each.
 
 Pick one or more of the following paths:
 
@@ -306,11 +306,11 @@ Pick one or more of the following paths:
 > Recommended Option:
 > * [Set Up A Different Repository](#exercise-2b-set-up-a-different-repository)
 >
-> The current recommendations for most organizational use cases are Artifactory, Nexus, or ProGet. All are quite robust, and two of those options can be used without cost.
+> The current recommendations for most organizational use cases are Artifactory, Cloudsmith, Nexus, or ProGet. All are quite robust, and two of those options can be used without cost.
 
 ### Exercise 2A: Set Up Chocolatey.Server
 
-> Not recommended for most organizational use cases. Please look to set up Artifactory, Nexus, or ProGet as they are much more robust (and two do can be used without cost).
+> Not recommended for most organizational use cases. Please look to set up Artifactory, Cloudsmith, Nexus, or ProGet as they are much more robust (and two do can be used without cost).
 
 > :memo: **NOTE** If you have an IIS site for WSUS administration, Chocolatey.Server website will not come up at all, even if everything looks right. We have not yet been able to determine the issue, but believe it is related to ASP.NET 4.6+. Installing all of the required components for Chocolatey.Server may also affect your WSUS admin site. Please seek a different box.
 
@@ -333,7 +333,7 @@ Since we put the items on this machine in the previous exercise, we can just pic
 > * Use SSL if accessible from the internet
 > * Store the Chocolatey nupkg and other packages from Chocolatey Software on this server (next exercise covers this)
 
-> :memo: **NOTE** Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
+> :memo: **NOTE** Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Cloudsmith, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
 
 ~~~powershell
 # Ensure we can run everything
@@ -357,7 +357,7 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 > Recommended for most organizational use cases
 
-If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet.
+If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Cloudsmith, Nexus, and ProGet.
 
 > :memo: **NOTE** Some repository server options don't require Windows.
 
@@ -365,7 +365,7 @@ If you are setting up something different than Chocolatey.Server, you may wish t
 
 ### Exercise 2C: Set Up A File Share Repository
 
-> Not recommended for most organizational use cases. Please look to set up Artifactory, Nexus, or ProGet as they are much more robust (and two do can be used without cost). Please see notes below on file share limitations.
+> Not recommended for most organizational use cases. Please look to set up Artifactory, Cloudsmith, Nexus, or ProGet as they are much more robust (and two do can be used without cost). Please see notes below on file share limitations.
 
 Setting up a file share repository is typically quite simple. You put your nupkgs into a flat folder structure (no subfolders currently) and then can access them wherever you can reach the file share. However there are a couple of things to keep in mind and be careful with when it comes to file shares as repositories. File shares can be UNC, DFS, SMB, etc, as long as it supports Windows ACL permissions.
 
@@ -385,7 +385,7 @@ While setting up a file share is the quickest way to get started, you may find y
 
 ### Exercise 3D: Set Up An SCCM Distribution Point As A Chocolatey Source
 
-> Not recommended for most organizational use cases. Please look to set up Artifactory, Nexus, or ProGet as they are much more robust (and two do can be used without cost).
+> Not recommended for most organizational use cases. Please look to set up Artifactory, Cloudsmith, Nexus, or ProGet as they are much more robust (and two do can be used without cost).
 
 We won't go into how to set up a distribution point, as you have places to learn how to set those up. To enable a distribution point, you are going to add a file share to it. Follow the previous exercise.
 
