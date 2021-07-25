@@ -79,7 +79,11 @@ Here's the whole process for installing your license and installing the licensed
 
 ### How Do I Install a Local nupkg File?
 
-See the next section - the logic is quite similar.
+Here is an example of installing the licensed extension nupkg from a local file directory. `choco install chocolatey.extension --pre --source C:\folder\where\downloaded\nupkg\resides`
+
+> :memo: **NOTE**
+>
+> Please refrence the [choco install command documentation](xref:choco-command-install) for more information regarding the `--pre` & `--source` switches used in this command.
 
 ### How Do I Install The Trial Edition?
 
