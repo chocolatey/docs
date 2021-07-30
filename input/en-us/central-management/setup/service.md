@@ -24,13 +24,6 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 
 * Windows Server 2012+
 * PowerShell 4+
-* .NET Framework 4.6.1+
-
-### Script for some prerequisites
-
-```powershell
-choco install dotnet4.6.1 -y
-```
 
 ## Step 2: Install Central Management Service Package
 
@@ -269,6 +262,8 @@ By default, the installation of the `chocolatey-management-service` package will
 netsh http show sslcert
 ```
 
+<?! Include "../../../shared/netsh-bindings-note.txt" /?>
+
 ### How can we remove a netsh binding that has been created
 
 If you need to remove a netsh binding, you can do that using the following command:
@@ -279,6 +274,8 @@ netsh http delete sslcert ipport=0.0.0.0:<port_number>
 
 > :memo: **NOTE** Here `<port_number>` should be replaced with the Port Number that has been registered
 
+<?! Include "../../../shared/netsh-bindings-note.txt" /?>
+
 ### Can we manually create an SSL binding?
 
 If required, it is possible to manually create a netsh binding.  This is done using the following command:
@@ -288,6 +285,8 @@ netsh http add sslcert ipport=0.0.0.0:<port_number> certhash=<certificate_thumbp
 ```
 
 > :memo: **NOTE** Here, `<port_number>` should be replaced with the Port Number to be used for the registration.  `<certifcate_thumbprint>` should be replaced with the thumbprint for the certificate that is to be used for the registration.  `<random_guid>` should be replaced with a random guid in the following format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+
+<?! Include "../../../shared/netsh-bindings-note.txt" /?>
 
 ### Can we install Central Management Service behind a load balancer?
 
@@ -507,5 +506,7 @@ You are attempting to set up a user that is not in the local Administrators grou
 * Ensure the user has `Logon As Service` privilege
 * Ensure the user has `Logon as Batch` privilege
 * Run `netsh http add urlacl url=https://+:24020/ChocolateyManagementService user=<DOMAIN\USERNAME>` from an elevated shell (replacing `<DOMAIN\USERNAME>` with the account)
+
+<?! Include "../../../shared/netsh-bindings-note.txt" /?>
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)

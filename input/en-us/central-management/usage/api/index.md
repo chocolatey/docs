@@ -12,6 +12,10 @@ As of CCM v0.4.0, the API for Chocolatey Central Management is exposed via Swagg
 The API documentation and examples can be reached from your CCM dashboard by selecting the :gear: **API** option on the left sidebar.
 The information contained there is referenced here, but you can additionally try out the various API endpoints directly from the Swagger API page for your own CCM environment.
 
+> :warning: **WARNING**
+>
+> The Swagger UI does not work in Internet Explorer. Please use another browser.
+
 ## ChocoCCM
 
 The [ChocoCCM](xref:chococcm) PowerShell module is available from the PowerShell Gallery for use with CCM v0.4.0 and later.

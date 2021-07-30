@@ -17,25 +17,19 @@ This is the Central Management website that gives an API and a web layer to cent
 * > :warning: The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 3+
-* .NET Framework 4.6.1+
 * IIS Set up and available
-* aspnetcore-runtimepackagestore version 2.2.7
-* dotnetcore-windowshosting version 2.2.7
+* aspnetcore-runtimepackagestore version 3.1.16
+* dotnetcore-windowshosting version 3.1.16
 
-The CCM Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note, that the codebase is currently locked to version `2.2.7` of these packages, and it is critical that you install these right, otherwise you will encounter errors.
+The CCM Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note, that the codebase is currently locked to version `3.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages is 3.1.16.
 
 ### Script for some prerequisites
 
 ```powershell
-choco install dotnet4.6.1 --no-progress -y
 choco install IIS-WebServer -s windowsfeatures --no-progress -y
 choco install IIS-ApplicationInit -s windowsfeatures --no-progress -y
-choco install aspnetcore-runtimepackagestore --version 2.2.7 --no-progress -y
-choco install dotnetcore-windowshosting --version 2.2.7 --no-progress -y
-
-choco pin add --name="'aspnetcore-runtimepackagestore'" --version="'2.2.7'" --reason="'Required for CCM website'"
-choco pin add --name="'dotnetcore-windowshosting'" --version="'2.2.7'" --reason="'Required for CCM website'"
-# "reason" only available in commercial editions
+choco install aspnetcore-runtimepackagestore --version 3.1.16 --no-progress -y
+choco install dotnetcore-windowshosting --version 3.1.16 --no-progress -y
 ```
 
 ## Step 2: Install Central Management Web Package
@@ -298,6 +292,38 @@ Here is a copy of items that can be set. They are not required to be encrypted. 
 >
 > Recaptcha is likely to require a publicly available CCM Web, and we currently have a strong recommendation to **NOT** open up the web to the internet. You likely do not want to set this or turn it on inside the Administration -> Settings section. However if you do, you will NEED the items set here in the appsettings.json as well.
 
+### Step 4.5: Audit Retention
+
+> :warning: **WARNING**
+>
+> **BREAKING CHANGE**
+>
+> This feature was added, as a breaking change, in version 0.6.0 of Chocolatey Central Management.  Audit Retention is enabled by default, and will immediately start truncating the audit log table as soon as it is installed.
+
+In an attempt to control the size of the Chocolatey Central Management database, it is possible to control the retention policy for the audit logs table within the application.
+
+By default, Audit Retention is enabled, and any logs that are older than 30 days will automatically be removed.
+
+![Audit Retention Settings Tab](/assets/images/ccm/setup/website/audit-retention-tab.png)
+
+If you want to change these settings, follow these steps:
+
+1. Open the CCM Site in the browser.
+1. Login with the `ccmadmin` user.
+1. In the left hand menu click on `Administration` and then `Settings`.
+1. Click on the `Audit Retention` tab
+1. Modify the settings as required (either disable audit retention by unchecking the checkbox, or modify the length of time that logs are retained)
+1. Click the `Save All` button at the top right of the page to save your settings.
+
+As noted in the User Interface, any modifications to this section of the settings will require the Web Application to be restarted.  This can be completed by doing the following:
+
+1. Get direct access to the machine that is hosting the CCM Web Application
+1. Open an administrative PowerShell session
+1. Run the following command:
+```powershell
+Get-Process "ChocolateySoftware.ChocolateyManagement.Web.Mvc" | Stop-Process -Force
+```
+
 ## FAQ
 
 ### Can I install the Chocolatey Central Management Web Site under a Virtual Directory in IIS?
@@ -458,5 +484,15 @@ If you see the app pool shutting down immediately when you start it.
 * Check the event log first. It's very helpful in seeing what the actual issues are
 * Turn on stdout logging in the config at `c:\tools\chocolatey-management-web\web.config` if it is not already on. The attribute is named `stdoutLogEnabled` (set it to true). This will allow logging to `c:\tools\chocolatey-management-web\App_Data\Logs`. Permissions will play a role in this so ensure [the user has the right access](#non-default-app-pool-user-considerations).
 * Check for [Non-Default App Pool User Considerations](#non-default-app-pool-user-considerations).
+
+### Errors when attempting to communicate with SignalR
+
+Within the CCM Website, [SignalR](https://dotnet.microsoft.com/apps/aspnet/signalr) is used to enable real time communications for notifications.  It has been found that the following errors can be shown within the Developer Tools sections of some browsers:
+
+* Error: Connection disconnected with error 'Error: Cannot send until the transport is connected'
+* The connection to ... was interrupted while the page was loading.  Error: Connection disconnected with error 'Error: Error occurred'
+* Error: failed to start the connection: Error: Unable to connect to the server with any of the available transports. ServerSentEvents failed: Error: 'ServerSentEvents' is disabled by the client. LongPolling failed: Error: 'LongPolling' is disabled by the client.
+
+In all of these cases, we haven't seen any drop in functionality for the notifications that are sent from the CCM Application.  Our suspicion is that there is a timing issue when attempting to make the connection to the SignalR Hub, which is almost immediately rectified.  Due to the fact that SignalR is a 3rd party integration, we do not believe that there is anything that can be done to resolve this problem, and since the functionality continues to work as expected, these errors in the JavaScript console can safely be ignored.
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
