@@ -5,7 +5,7 @@ const gulp = require('gulp'),
     concat = require('gulp-concat'),
     cleancss = require('gulp-clean-css'),
     uglify = require('gulp-uglify-es').default,
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('node-sass')),
     clean = require('gulp-clean'),
     purgecss = require('gulp-purgecss'),
     rename = require('gulp-rename'),
@@ -16,7 +16,6 @@ const gulp = require('gulp'),
 
 const editFilePartial = 'Edit this file at https://github.com/chocolatey/choco-theme/partials';
 const { series, parallel, src, dest, watch } = require('gulp');
-sass.compiler = require('node-sass');
 
 const regex = {
     css: /\.css$/,
