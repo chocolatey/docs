@@ -16,5 +16,9 @@
   "homepage": "https://github.com/chocolatey/docs#readme",
   "devDependencies": {
     "choco-theme": "github:chocolatey/choco-theme"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "yargs-parser": "^20.2.9"
   }
 }
