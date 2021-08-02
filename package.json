@@ -1,9 +1,5 @@
 {
   "main": "gulpfile.js",
-  "scripts": {
-    "theme-update": "npm uninstall --no-save choco-theme && npm install choco-theme",
-    "theme-update-link": "npm uninstall --no-save choco-theme && npm install choco-theme && npm link choco-theme"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/docs.git"
