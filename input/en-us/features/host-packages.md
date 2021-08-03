@@ -39,6 +39,7 @@ Some of these options also work from a non-Windows hosting perspective. See [Non
 * [NuGet Gallery](https://github.com/NuGet/NuGetGallery/wiki/Hosting-the-NuGet-Gallery-Locally-in-IIS)
 * Chocolatey Gallery
 * Visual Studio Team Services (use NuGet v2 urls)
+* [Cloudsmith](https://cloudsmith.com) - Cloudsmith is a universal, cloud-native package management solution for Deployment or Distribution. All your packages, in any format, including Chocolatey, NuGet and Powershell, in one location and accessible across the organization.
 
 #### Others
 
@@ -221,7 +222,7 @@ These are simple servers that have more advanced options and authentication scen
 #### Commercial Options
 
 * [Artifactory Pro](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
-* [Cloudsmith](https://cloudsmith.com/nuget-feed/) ([NuGet Documentation](https://help.cloudsmith.io/docs/nuget-feed))
+* [Cloudsmith](https://cloudsmith.com/nuget-feed/) ([Chocolatey Documentation](https://help.cloudsmith.io/docs/chocolatey-repository), [NuGet Documentation](https://help.cloudsmith.io/docs/nuget-feed))
 * [Feedz.io](https://feedz.io/docs/package-types/chocolatey)
 * [Nexus2](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html) / [Nexus3](https://books.sonatype.com/nexus-book/3.0/reference/nuget.html#nuget-hosted)
 * [MyGet](https://www.myget.org/)
@@ -233,7 +234,7 @@ If the option you've chosen is not listed, take a look at [known hosting options
 
 * Setup can be really simple - just a website, IIS, and a local database or file to store configuration.
 * May have free tier available (Artifactory is the only known option that does not have a free tier).
-* Windows is not required for Nexus and Artifactory.
+* Windows is not required for Nexus, Artifactory, or Cloudsmith.
 * Push over HTTP / HTTPS/TLS.
 * API key for pushing packages.
 * No direct access to packages so security can be locked down to just modify through push or upload.
@@ -352,6 +353,13 @@ See https://inedo.com/support/documentation/proget/administration/high-availabil
 
 **PRICING**: Starts at $9,995 (for ProGet Enterprise) - https://inedo.com/proget/pricing.
 
+#### Cloudsmith
+
+* Cloudsmith is a universal, cloud native package management solution. It is cloud hosted so no infrastructure requirements are required.
+* Chocolatey Repository Type: NuGet https://help.cloudsmith.io/docs/chocolatey-repository
+
+**PRICING**: A range of tiers are available, to suit all sizes of teams, for internal and external distribution, public and private - https://cloudsmith.com/product/pricing/.
+
 ## Non-Windows Hosting
 
 If you don't want to host on Windows you have only the following options (from least advanced to most advanced - these options typically also work on Windows):
@@ -361,6 +369,7 @@ If you don't want to host on Windows you have only the following options (from l
 * [TeamCity](https://www.jetbrains.com/teamcity/) - contains built-in simple server
 * [PHP NuGet](http://www.kendar.org/?p=/dotnet/phpnuget) - Simple server built in PHP
 * [Hazel](https://github.com/MPIB/hazel) - Simple server built in Rust
+* [Cloudsmith](https://cloudsmith.com) - see [Cloudsmith NuGet Repositories](https://help.cloudsmith.io/docs/nuget-feed)
 * [Artifactory Pro](https://www.jfrog.com/artifactory/) - see [Artifactory NuGet Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
 * [Sonatype Nexus](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html)
 

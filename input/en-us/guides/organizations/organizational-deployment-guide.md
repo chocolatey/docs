@@ -294,7 +294,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 
 ## Exercise 2: Set Up A Package Repository
 
-Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages) to learn about the advantages and disadvantages of each.
+Now we have a machine where we have Chocolatey installed and configured, and we have the setup files we gathered in Exercise 0. So now we are going to set up a package repository for use for all of our clients - this is where you will push packages and get packages from with your Chocolatey clients. Some repositories do not require Windows as part of their setup (Artifactory Pro, Cloudsmith, and Nexus come to mind, but there are others). In choosing what you will use, it's good to read over [set up a package repository](xref:host-packages) to learn about the advantages and disadvantages of each.
 
 Pick one or more of the following paths:
 
@@ -333,7 +333,7 @@ Since we put the items on this machine in the previous exercise, we can just pic
 > * Use SSL if accessible from the internet
 > * Store the Chocolatey nupkg and other packages from Chocolatey Software on this server (next exercise covers this)
 
-> :memo: **NOTE** Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
+> :memo: **NOTE** Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Cloudsmith, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
 
 ~~~powershell
 # Ensure we can run everything

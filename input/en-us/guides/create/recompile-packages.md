@@ -16,7 +16,7 @@ Why? Downloading software from the internet creates a failure point because it m
 
 This is where internalizing/recompiling existing community packages comes in. Internalizing a package lets you take an existing package and internalize all of the resources to embedded/internal resources so you can reuse the install logic without the hassle of downloading files from the internet. This guarantees complete control, trust, reliability, and repeatability of a package for organizations that have a low tolerance for production issues.
 
-> :memo: **NOTE: Internalizing a package is not the same thing as caching the nupkg files like Artifactory, Nexus, ProGet, etc can do.**
+> :memo: **NOTE: Internalizing a package is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.**
 
 ## Process of Internalization
 

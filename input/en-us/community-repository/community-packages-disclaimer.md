@@ -22,7 +22,7 @@ A huge thing in Windows ecosystem is copyright law and how it plays into distrib
 
 You can build a 100% reliable pipeline/workflow within the Chocolatey framework, just not with the community package repository. Building a reliable pipeline is huge. If you are a Windows admin wanting to trust a framework like Chocolatey, you are not going to use the Community Package Repository. Not when your reputation/job is on the line for picking the best options.
 
-> :memo: **NOTE** You can also achieve reliability when reusing community packages, as long as you [internalize](xref:recompile-packages) them. **Internalizing is not the same thing as caching the nupkg files like Artifactory, Nexus, ProGet, etc can do.**
+> :memo: **NOTE** You can also achieve reliability when reusing community packages, as long as you [internalize](xref:recompile-packages) them. **Internalizing is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.**
 
 ### Trust / Control
 Windows admins typically need to do everything internally with no outside internet access. There is quite a bit more hush-hush, non-use of publicly available things without bringing it internal for absolute control and trust. There is a huge (semi-healthy, but maybe even unhealthy) lack of trust for anything reaching out to the internet. I'm not saying this is exclusive to Windows admins, but it is very much the norm. So using the community package repository is a non-starter for these kinds of folks.
@@ -53,7 +53,7 @@ Another aspect to keep in mind is that the community package repository is meant
 
 To avoid excessive use, please see our [organizational deployment guide](xref:organizational-deployment-guide). Installation of Chocolatey itself and everything else should be from your internal repository and not directly from the community package repository. There are even ways to automate caching (see below) / [internalizing](xref:recompile-packages) (caching and internalizing are entirely different concepts) packages so you still get a pretty good hands off experience.
 
-If you are not able to take advantage of [internalizing](xref:recompile-packages) packages, you can still cache them locally (using package repository solutions like Artifactory, Nexus, ProGet, MyGet, etc), which will reduce your direct usage of the community repository.
+If you are not able to take advantage of [internalizing](xref:recompile-packages) packages, you can still cache them locally (using package repository solutions like Artifactory, Cloudsmith, Nexus, ProGet, MyGet, etc), which will reduce your direct usage of the community repository.
 
 > :memo: **NOTE** Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](xref:recompile-packages).
 
