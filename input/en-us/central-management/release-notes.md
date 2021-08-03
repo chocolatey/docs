@@ -45,7 +45,7 @@ A short video explaining what is included in this release can be found here:
 ### BREAKING CHANGES
  * Deployments - Provide better resiliency when handling large numbers of computers within a deployment - see [Licensed #212](https://github.com/chocolatey/chocolatey-licensed-issues/issues/212)
 
-Previously, while not recommended, the CCM Service could be run as a user with non-administrative rights on the machine, as long as certain permissions were provided to the user.  Going forward, there is now a strict requiremnt that the user that is running the CCM Service has administrative rights on the machine.  This is needed to ensure reliability of messages delivered into the CCM Service.
+Previously, while not recommended, the CCM Service could be run as a user with non-administrative rights on the machine, as long as certain permissions were provided to the user.  Going forward, there is now a strict requirement that the user that is running the CCM Service has administrative rights on the machine.  This is needed to ensure reliability of messages delivered into the CCM Service.
 
 ### BUG FIXES
  * Fix - Web - No data is returned when logged into the website with FIPS compliant checksums enabled on the hosting server - see [Licensed #167](https://github.com/chocolatey/chocolatey-licensed-issues/issues/167)
