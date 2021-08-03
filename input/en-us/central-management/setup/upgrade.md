@@ -163,6 +163,30 @@ Get-Service chocolatey-* | Start-Service
 
 Likely you absolutely can, just keep in mind that there may be a specific ordering in how you would upgrade everything and adhere to that order. In some instances, you may need to upgrade agents first, then CCM components as once CCM is upgraded it may not be able to talk to the agents. However agents will stop being able to talk to CCM for a small period of time while you are upgrading CCM, but then things will start working again.
 
+### Why does the chocolatey-management-web package upgrade when I upgrade the chocolatey-management-database package?
+
+When you run the upgrade of the chocolatey-management-database package from a computer that has all the CCM packages installed, you may not expect the chocolatey-management-web package to also be upgraded.
+
+This happens due to the bounded version numbers that are in place for the database and web packages.  Starting with 0.6.0, all the CCM package have the following dependencies:
+
+```xml
+    <dependency id="aspnetcore-runtimepackagestore" version="[3.1.16, 4.0.0)" />
+    <dependency id="dotnetcore-windowshosting" version="[3.1.16, 4.0.0)" />
+```
+
+Prior to 0.6.0, only the chocolatey-management-web package had the following dependencies:
+
+```xml
+    <dependency id="aspnetcore-runtimepackagestore" version="[2.1.5, 3.0.0)" />
+    <dependency id="dotnetcore-windowshosting" version="[2.1.5, 3.0.0)" />
+```
+
+You will notice that there is an upper bounded version number of 3.0.0, meaning that Chocolatey won't allow a version higher than 3.0.0 of these dependencies to be installed.
+
+In the new 0.6.0 packages for CCM, the upper bounded version number has changed to 4.0.0.  As a result, when running the upgrade command for the chocolatey-management-database package, Chocolatey will also want to install a 4.x.x version of the dependencies, but this _isn't_ allowed due to the constraints on the installed earlier version of the chocolatey-management-web package.  To remedy this, Chocolatey is able to find a newer version of the chocolatey-management-web package which does fit within these new constraints, and therefore the chocolatey-management-web package is also upgraded.
+
+The chocolatey-management-service package isn't upgraded due to those dependency constraints not being in place on earlier versions of this package.
+
 ## Common Errors and Resolutions
 
 ### ERROR: There was an error deserializing the requested JSON file: C:\ProgramData\chocolatey\lib\chocolatey-management-database\tools\app\appsettings.json Padding is invalid and cannot be removed.

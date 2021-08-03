@@ -34,7 +34,6 @@ When setting up Central Management, currently, the CCM packages do not provision
 Central Management packages require at a minimum:
 
 * Chocolatey for Business (C4B) Edition
-* .NET Framework 4.6.1+
 * Windows Server 2012+
 
 Each package further defines dependencies that they include.
@@ -67,7 +66,7 @@ if(!(Test-Path C:\packages)){
 choco download chocolatey chocolateygui --force --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # This is for other Community Related Items
-choco download dotnet4.5.2 dotnet4.6.1 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 
 # This is for SQL Server Express
@@ -76,9 +75,9 @@ choco download dotnet4.5.2 dotnet4.6.1 --force --internalize --internalize-all-u
   choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# We must use the 2.2.7 versions of these packages, so we need to download/internalize these specific items
+# We must use the 3.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 3.1.16.
 @('aspnetcore-runtimepackagestore','dotnetcore-windowshosting') | Foreach-Object {
-  choco download $_ --version 2.2.7 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+  choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
 # Download Licensed Packages
