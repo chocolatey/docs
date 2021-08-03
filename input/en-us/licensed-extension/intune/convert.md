@@ -28,6 +28,26 @@ Make sure that all dependencies of that package are also located in the same dir
 For convenience, a new context menu entry has been added when you right click a file with the extension of `.nupkg`.
 Instead of using the Command Line directly, right clicking such a file and selecting `Convert Chocolatey Package to Intune` may be used.
 
+### Dependency Resolving
+
+Resolving the dependencies of packages happens in a similar fashion, but not necessarily the exact same as when installing/upgrading Chocolatey packages.
+When we see a dependency being referenced by a package, we will look in the same directory of that package to see if the local dependency
+downloaded will satisfy the version criteria specified in the `.nuspec` metadata file.
+When there are multiple files that will satisfy the specified criteria, we will convert the highest version found.
+
+> :warning: **WARNING**
+>
+> If a child dependency specifies a more restrictive version criteria than other packages,
+> then all other packages in the same dependency chain will use that version criteria for
+> the created Intune package, instead of the original version criteria specified.
+
+> :warning: **WARNING**
+>
+> Be careful of circular dependencies, while measures have been taken to minimize
+> the risk of circular dependencies failing to convert, there is no guarantee that
+> the command will not stop working, and may result in broken packages being created
+> for Intune.
+
 ## FAQ
 
 ### Do I need to call convert for all dependencies of a package?

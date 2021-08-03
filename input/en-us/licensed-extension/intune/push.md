@@ -25,6 +25,20 @@ This will push the wanted package, and any dependencies that do not already exis
 For convenience, a new entry to the context menu has been added when you right click a file with the extension of `.intunewin`.
 Just select **Upload/Push Intune Package...**, or double click the file to upload it and all dependencies to the Intune tenant.
 
+### Dependency Resolving
+
+When resolving package dependencies that are specified in the converted `.intunewin` file, we first do a search on the Intune tenant
+for a package that was previously uploaded that matches the same identifier, and is within the same version criteria constructed during
+the convertion of the package.
+If no package matching the mentioned criterias are found in the Intune tenant, we will fall back to looking in the same directory as the original
+`.intunewin` file that were passed to the `push` command, and check for the same criterias there.
+If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
+
+The exception to the above handling are for our automatic references (`chocolatey`, `chocolatey-license` and `chocolatey.extension`).
+Unless these were explicitly set as a dependency before converting a Chocolatey package to an Intune package, then only the presence
+of these packages are considered, with an additional handling for the `chocolatey.extension` package to see if it has version equal to
+or higher than the version in current use together with Chocolatey CLI.
+
 ## FAQ
 
 ### Can I push my own custom version of chocolatey-license?
