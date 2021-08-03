@@ -58,3 +58,16 @@ No, if a package have dependencies we will go through each dependency of the pac
 
 While it recommended to have all dependencies available when converting a package, the step that handles dependency convertion can be skipped by using the `--ignore-dependencies` argument when calling `choco convert`.
 Be mindful that some functionality may be lost when ignoring dependencies, and you may not be able to push your package if dependencies do not already exist locally, or in Intune.
+
+### I am getting a message that The use of .nupkg or .nuspec in package name or source is known to cause issues.
+
+This is a warning message from Chocolatey itself which do not know of the new `convert` command.
+The warning message can safely be ignored, and will be removed in a future version of Chocolatey.
+
+### I get an error message about `convert` not being available
+
+The `convert` command is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled.
+This feature can be easily enabled by running
+~~~sh
+choco feature enable --name=allowPreviewFeatures
+~~~
