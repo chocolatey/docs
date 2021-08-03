@@ -25,6 +25,16 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.6.0 (August 3rd, 2021)
+### BREAKING CHANGES
+ * Audit Retention
+   * By default, Audit Logs generated within CCM will now be kept for 30 days, after which they will be removed
+   * This can be [changed](https://docs.chocolatey.org/en-us/central-management/setup/website#step-4.5-audit-retention) within the Administration | Settings screen of the CCM Web Application
+   * If you wish to retain all your current audit logs, we recommend that you back up the AbpAuditLogs table prior to upgrading to this release
+
+### ENHANCEMENTS
+ * All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
+
 ## 0.5.1 (April 12th, 2021)
 ### BUG FIXES
  * Fix - Service - Unable to process deployment report messages that contain invalid XML characters - see [Licensed #216](https://github.com/chocolatey/chocolatey-licensed-issues/issues/216)
