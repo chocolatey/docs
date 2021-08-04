@@ -1,5 +1,5 @@
 ---
-Order: 161
+Order: 10
 xref: intune-prerequisites
 Title: Prerequisites for Intune functionality
 ---

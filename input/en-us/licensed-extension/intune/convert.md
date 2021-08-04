@@ -1,5 +1,5 @@
 ---
-Order: 162
+Order: 30
 xref: intune-convert
 Title: Converting Chocolatey Packages to Intune Packages
 ---

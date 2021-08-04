@@ -1,4 +1,5 @@
 ---
+Order: 20
 xref: intune-configuration
 Title: Intune Configuration
 Description: Intune specific configuration available for available commands

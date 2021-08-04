@@ -1,5 +1,5 @@
 ---
-Order: 163
+Order: 40
 xref: intune-push
 Title: Pushing Converted Intune Packages
 ---

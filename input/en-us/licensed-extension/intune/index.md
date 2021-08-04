@@ -1,5 +1,5 @@
 ---
-Order: 160
+Order: 30
 xref: intune
 Title: Intune
 Description: Intune documentation
