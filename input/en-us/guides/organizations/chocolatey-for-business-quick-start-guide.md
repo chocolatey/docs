@@ -77,7 +77,7 @@ As with configuration managers, this is out-of-scope for this document. Generall
 1. From an Administrator PowerShell Window, run the following command to install Chocolatey:
 
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     ```
 
 1. Download the `chocolatey.license.xml.txt` file that was attached your trial e-mail. Also, download the `chocolatey-c4b-quickstart.nupkg` file from the link in that same email. Save both the files to the administrator workstation, and make note of the **full file path** for the next step.
@@ -108,7 +108,7 @@ As recommended, we will assume you have access to the internet from this server.
 1. From an Administrator PowerShell Window, run the following command to install Chocolatey:
 
     ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     ```
 
 1. From an Administrator PowerShell Window, run the following command to copy the license into the correct directory:

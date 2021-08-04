@@ -38,7 +38,7 @@ Run the following command:
 
 ~~~sh
 
-@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 ~~~
 
@@ -51,13 +51,13 @@ With PowerShell, there is an additional step. You must ensure [Get-ExecutionPoli
 
 ~~~powershell
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 ~~~
 
 #### Additional considerations
 
-> :memo: **NOTE** Please inspect [https://chocolatey.org/install.ps1](https://chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of **any** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
+> :memo: **NOTE** Please inspect [https://community.chocolatey.org/install.ps1](https://community.chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of **any** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
 
 We take security very seriously. [Learn more](xref:security).
 
@@ -105,7 +105,7 @@ With PowerShell, there is an additional step or two. You must ensure [Get-Execut
 
 ~~~powershell
 
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 ~~~
 
@@ -604,14 +604,14 @@ Create a file named `installChocolatey.cmd` with the following:
 SET DIR=%~dp0%
 
 ::download install.ps1
-%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "((new-object net.webclient).DownloadFile('https://chocolatey.org/install.ps1','%DIR%install.ps1'))"
+%systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "((new-object net.webclient).DownloadFile('https://community.chocolatey.org/install.ps1','%DIR%install.ps1'))"
 ::run installer
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%install.ps1' %*"
 ~~~
 
 You can also get to this file by going to [https://chocolatey.org/installChocolatey.cmd](https://chocolatey.org/installChocolatey.cmd).
 
-If you prefer to have the install.ps1 file already, comment out the download line in the batch file and download the [`install.ps1`](https://chocolatey.org/install.ps1) from [chocolatey.org](https://chocolatey.org/install.ps1) and save it as `install.ps1` next to the `installChocolatey.cmd` file.
+If you prefer to have the install.ps1 file already, comment out the download line in the batch file and download the [`install.ps1`](https://community.chocolatey.org/install.ps1) from [community.chocolatey.org](https://community.chocolatey.org/install.ps1) and save it as `install.ps1` next to the `installChocolatey.cmd` file.
 
 Run `installChocolatey.cmd` from an elevated `cmd.exe` command prompt and it will install the latest version of Chocolatey. You can not run this from `powershell.exe` without making changes to your execution policy.
 
@@ -659,7 +659,7 @@ Have a proxy? Try
 
 ~~~sh
 
-@powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH="%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET PATH="%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 ~~~
 
@@ -667,7 +667,7 @@ Have a proxy? Try
 
 ~~~powershell
 
-[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 ~~~
 
@@ -704,7 +704,7 @@ $env:chocolateyVersion = '0.9.9.12'
 # install script
 ~~~
 
-> :memo: **NOTE** This will only work with the installation methods that call https://chocolatey.org/install.ps1 as part of the install.
+> :memo: **NOTE** This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
 
 ### Use Windows built-in compression instead of downloading 7zip
 
@@ -719,7 +719,7 @@ $env:chocolateyUseWindowsCompression = 'true'
 # install script
 ~~~
 
-> :memo: **NOTE** This will only work with the installation methods that call https://chocolatey.org/install.ps1 as part of the install.
+> :memo: **NOTE** This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
 
 ### Installing with restricted TLS
 
@@ -781,7 +781,7 @@ try {
   Write-Warning 'Unable to set PowerShell to use TLS 1.2. This is required for contacting Chocolatey as of 03 FEB 2020. https://chocolatey.org/blog/remove-support-for-old-tls-versions. If you see underlying connection closed or trust errors, you may need to do one or more of the following: (1) upgrade to .NET Framework 4.5+ and PowerShell v3+, (2) Call [System.Net.ServicePointManager]::SecurityProtocol = 3072; in PowerShell prior to attempting installation, (3) specify internal Chocolatey package location (set $env:chocolateyDownloadUrl prior to install or host the package internally), (4) use the Download + PowerShell method of install. See https://docs.chocolatey.org/en-us/choco/installation for all install options.'
 }
 
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ~~~
 
 #### Option 3 - Manual
@@ -816,7 +816,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 
 # All install options - offline, proxy, etc at
 # https://chocolatey.org/install
-iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ~~~
 
 Examples of packages you can install:
