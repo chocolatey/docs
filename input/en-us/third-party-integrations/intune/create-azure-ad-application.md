@@ -5,13 +5,7 @@ Title: Create an Azure AD Application
 Description: Information about creating an application in Azure AD for Chocolatey to access the Intune APIs.
 ---
 
-> :warning: **WARNING**
->
-> This solution is planned to be released together with the v3.0.0 release of Chocolatey license, and is thus not yet available.
-
-> :memo: **NOTE**
->
-> Intune functionality will require a business or trial license.
+<?! Include "../../../shared/intune-note.txt" /?>
 
 ## Summary
 

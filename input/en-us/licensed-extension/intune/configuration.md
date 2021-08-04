@@ -4,6 +4,8 @@ Title: Intune Configuration
 Description: Intune specific configuration available for available commands
 ---
 
+<?! Include "../../../shared/intune-note.txt" /?>
+
 ## Summary
 
 This document contains information about the configuration values available through the use of
