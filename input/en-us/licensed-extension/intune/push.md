@@ -95,3 +95,11 @@ You have two ways you may use to achieve updating the packages.
    - Replace everything in the `Notes` section of the package with a non-whitespace character (*This will cause the package note to be picked up by `choco push`*).
    - Push the package to Intune as you would typically do.
    - Navigate once again to the Intune tenant, and update the dependencies for `Chocolatey Licensed Extension` to point to the new package (*remember to remove the dependence on the old package*).
+
+### I get an error message about my file not being found of not a `nupkg` file
+
+The command to `push` an `intunewin` file is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled.
+This feature can be enabled by running
+~~~sh
+choco feature enable --name=allowPreviewFeatures
+~~~
