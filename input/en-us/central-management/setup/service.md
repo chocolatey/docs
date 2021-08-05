@@ -410,11 +410,11 @@ You may see messaging like the following in the chocolatey-agent.log:
  requirements, e.g. Message, Transport, None).
 ```
 
-This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Central Management to v0.2.0+ at your earliest convenience. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix).
+This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Central Management to v0.2.0+ at your earliest convenience. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix).
 
 ### Unable to check for deployments from CCM
 
-This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix). You may need to be on at least v0.3.0 and agents on v0.11.0+ if you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
+This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix). You may need to be on at least v0.3.0 and agents on v0.11.0+ if you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
 
 ### We are seeing the error "attempted to call report_computer_information with an improper passphrase" in the CCM Service log
 

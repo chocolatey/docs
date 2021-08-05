@@ -44,7 +44,7 @@ Additionally, the Chocolatey Central Management components should be installed o
 
 > :memo: **NOTE**
 >
-> Make sure you have read over the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
+> Make sure you have read over the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 The complete installation of CCM requires several packages that are available from the community repository. Let's get them internalized. We will internalize them to a `C:\packages` directory. It is highly recommended that you push the packages to an internal repository before continuing with other steps in this guide. Change the values in the first lines of this script to match what you need in your environment.
 

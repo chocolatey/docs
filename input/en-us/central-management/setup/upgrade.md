@@ -22,7 +22,7 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 
 > :memo: **NOTE**
 >
-> Make sure you have read over the [CCM Compability Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
+> Make sure you have read over the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
 Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#step-1-internalize-packages), we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the [Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix).
 
