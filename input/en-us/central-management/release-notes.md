@@ -25,6 +25,10 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.6.1 (August 5th, 2021)
+### BUG FIXES
+ * Fix - Service - Unable to install chocolatey-management-service package under certain conditions - see [Licensed #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242)
+
 ## 0.6.0 (August 3rd, 2021)
 ### BREAKING CHANGES
  * Audit Retention
