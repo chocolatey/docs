@@ -18,7 +18,7 @@ or
 
 Steps to help address this:
 
-1. Copy the [install.ps1](https://chocolatey.org/install.ps1) file locally.
+1. Copy the [install.ps1](https://community.chocolatey.org/install.ps1) file locally.
 2. Open a PowerShell command line.
 3. Set the following environment variables - `$env:chocolateyProxyLocation` (with proxyserver:proxyport), `$env:chocolateyProxyUser` (if it is a domain account, ensure you have the appropriate domain prefix for the account, e.g. `AD\UserName` or `UserName`), and `$env:chocolateyProxyPassword` with your password.
 4. With that same shell open where the environment variables are set, run the downloaded script to install Chocolatey.
@@ -32,7 +32,7 @@ $env:chocolateyProxyLocation = 'https://local/proxy/server'
 # install script
 ~~~
 
-> :memo: **NOTE** This will only work with the installation methods that call https://chocolatey.org/install.ps1 (or use a similar script, like Puppet/Chef scripts do) as part of the install.
+> :memo: **NOTE** This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 (or use a similar script, like Puppet/Chef scripts do) as part of the install.
 
 ### Troubleshooting Installation
 
