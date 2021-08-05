@@ -388,6 +388,12 @@ The installation folder for `chocolatey-management-service` is at `$env:Chocolat
 ___
 ## Common Errors and Resolutions
 
+### Cannot convert the "System.Object[]" value of type "System.Object[]" to type "System.Int32"
+
+You may see this error message when attempting to install version 0.6.0 of the `chocolatey-management-service` package.
+
+Please see [Licensed Issue #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242) for details on a workaround that can be used.  This bug will be addressed in the 0.6.1 release of Chocolatey Central Management.
+
 ### Chocolatey Agent Service is unable to communicate with Chocolatey Central Management Service
 
 There is a known issue with the beta release of Chocolatey Central Management where an inconsistent Port Number is used between these two services.  One used 24020 and the other used 24040.  The correct default Port Number is 24020, and this is used in the 0.1.0 release of Chocolatey Central Management.  If required, the Port Number can be explicitly set during the installation of the Chocolatey Central Management packages using the following option when installing `chocolatey-management-service`:
