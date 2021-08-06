@@ -9,26 +9,24 @@ Title: Converting Chocolatey Packages to Intune Packages
 ## Summary
 
 Converting from Chocolatey packages to Intune packages that can be later pushed using `choco push` has been added to a new command called `convert`.
-This feature allows a single package to be passed to the command, converting the specified package, and its dependencies to Intune packages.
+This command allows a single package to be passed and Chocolatey will then convert it, and its dependencies, to Chocolatey Intune packages.
 
 ## Usage
 
+### Prerequisites
+
+Ensure that the Chocolatey the package you want to convert and it's depedencies, are present in the current directory before running the `convert` command. You can do this with `choco download <PACKAGE NAME> --internalize`.
 ### Command Line
 
-When calling `choco convert`, add the path to the `.nupkg` file you want to convert to an Intune package.
-Ensure that all package dependencies are also located in the same directory as the passed in `.nupkg` file.
+Provide the path to the Chocolatey package file (`.nupkg`) you want to convert to a Chocolatey Intune package.
 
 ### Context Menu
 
-For convenience, a new context menu entry has been added when you right-click a file with the extension of `.nupkg`.
-Instead of using the Command Line directly, right-clicking such a file and selecting `Convert Chocolatey Package to Intune` may be used.
+For convenience, a new context menu entry **Convert Chocolatey Package** has been added when you right-click a file with the extension of `.nupkg`.
 
 ### Dependency Resolving
 
-Resolving the dependencies of packages happens similarly, but not necessarily the same as when installing/upgrading Chocolatey packages.
-When we see a dependency being referenced by a package, we will look in the same directory of that package to see if the local dependency
-downloaded will satisfy the version criteria specified in the `.nuspec` metadata file.
-When multiple files satisfy the specified criteria, we will convert the highest version found.
+When Chocolatey looks to resolve dependencies, it will look in the folder that the package being converted is in (e.g. Chocolatey will look in `c:\packages` if you run `choco convert c:\packages\mypackage.1.0.0.nupkg`). It will find and convert the highest version found that satisfies the version criteria specified in the converted package `.nuspec` metadata file.
 
 > :warning: **WARNING**
 >
