@@ -9,7 +9,7 @@ Description: High level information about QDE in Azure
 
 This is an overview of the Chocolatey Quick Deployment Environment (QDE) in Azure.
 
-It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management, a package repository (Nexus OSS), and an automation engine (Jenkins).
+It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
 > :memo: **NOTE**
 >
@@ -64,7 +64,7 @@ Fill your intended domain name in, select and upload your PFX certificate, and e
 
 > :memo: **NOTE**
 >
-> The PFX certificate must contain the exportable private key, and should be protected with a password.  
+> The PFX certificate must contain the exportable private key, and should be protected with a password.
 > Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#SslCertificate).
 
 ### Internalize Packages
@@ -114,7 +114,7 @@ Get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName | Select-Object -Exp
 
 ### Creating a CNAME record
 
-You should now create a CNAME record for this FQDN. The exact method for this will vary depending on your domain registrar.  
+You should now create a CNAME record for this FQDN. The exact method for this will vary depending on your domain registrar.
 Please see the table below for links to help from some popular registrars:
 
 | Registrar  | Documentation |
@@ -131,7 +131,7 @@ If you need help with another registrar, we recommend searching for their docume
 
 > :warning: **WARNING**
 >
-> You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).  
+> You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).
 > You can log in to CCM using the credentials provided in the KeyVault (see [Accessing Services](#accessing-services), below).
 
 ## Accessing Services
@@ -292,3 +292,19 @@ We have seen an occasional issue with IISReset that cannot be replicated. This r
 > the remote computer or to the domain administrator global group.
 
 If you see this error, you should redeploy the resource.
+
+### CCM Service responds with BadGateway
+
+We have found that `.dev` domain names currently have trouble routing to the Chocolatey Central Management service.
+This means that clients, including the CCM Server itself, are unable to check in.
+
+You can check the routing status by testing the FQDN.
+
+```powershell
+if (-not $FQDN) {$FQDN = Read-Host 'Enter the Fully Qualified Domain Name, e.g. choco.example.com'}
+Invoke-RestMethod -Uri "https://$($FQDN):24020/ChocolateyManagementService"
+```
+
+The expected response is `500 (Internal Server Error)`, and an issue is indicated by `502 (Bad Gateway)`.
+
+Currently it is not possible to fix this issue. If you run into it, you should redeploy with a FQDN which does not end in `.dev`.
