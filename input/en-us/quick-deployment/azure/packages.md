@@ -7,7 +7,7 @@ Description: A summary of the package offerings for QDE in Azure
 
 ## Summary
 
-When deploying QDE in Azure, you are prompted to select [packages to internalize](xref:qdeazure#internalize-packages).  
+When deploying QDE in Azure, you are prompted to select [packages to internalize](xref:qdeazure#internalize-packages).
 
 This page shows the packages we bundle as recommendations, and discusses how to source other packages to automatically publish to your new QDE environment.
 
@@ -41,7 +41,13 @@ nexus-repository, notepadplusplus, sublimetext3
 
 You can download and internalize packages after the deployment of your environment.
 
-To do so, log into Jenkins at `https://\<FQDN\>/jenkins`, and click the `Schedule a Build...` icon on the right of the `Internalize packages from the Community Repository` job. This will take you to a screen where you can add Package IDs (as above) to the `P_PKG_LIST` parameter, before clicking `Build`.
+To do so, log into Jenkins at `https://<FQDN>/jenkins`, and click the `Schedule a Build...` icon on the right of the `Internalize packages from the Community Repository` job. This will take you to a screen where you can add Package IDs as a semicolon-separated list to the `P_PKG_LIST` parameter, e.g.
+
+```text
+nexus-repository; notepadplusplus; sublimetext3
+```
+
+Start the internalize job by clicking `Build`.
 
 The specified packages will then be downloaded and pushed to your ChocolateyTest repository, ready for testing, and then be promoted to the ChocolateyInternal repository either by you or by the `Update production repository` job.
 
