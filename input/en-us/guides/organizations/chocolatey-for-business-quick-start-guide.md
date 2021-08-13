@@ -1,19 +1,19 @@
 ---
 Order: 30
 xref: c4b-quick-start-guide
-Title: Chocolatey for Business (C4B) Quick Start Guide
+Title: C4B Quick Start Guide
 Description: Get up and running quickly with Chocolatey for Business
 RedirectFrom: docs/chocolatey-for-business-quick-start-guide
 ---
 
-Thank you for choosing Chocolatey as your partner in Windows software automation management. We are excited to help you dive in and successfully implement a deployment of all the necessary components.
+Welcome to the Chocolatey of Business (C4B) Quick-Start Guide! This guide will walk you through the basics of configuring a C4B Server on your VM infrastructure of choice. This includes the Chocolatey Licensed components, a NuGet V2 Repository (Nexus), Chocolatey Central Management (CCM), and an Automation Pipeline (Jenkins).
 
 > :memo: **NOTE**
 >
 > This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
-> It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
-> Our goal is to get you up-and-running quickly, and testing out the feature set.
-> For a more complete reference of possible scenarios and solutions, please refer to the [Organizational Deployment Documentation](xref:organizational-deployment-guide).
+> It is **opinionated**, and thus illustrates only one method of setting up your Chocolatey environment. 
+> Our goal is to get you up-and-running smoothly and efficiently in order to fully test out the feature set.
+> For a more exhaustive reference of possible setup scenarios, you may refer to the [Organizational Deployment Documentation](xref:organizational-deployment-guide).
 
 If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
 
@@ -21,7 +21,7 @@ Let's get started!
 
 ## Components
 
-![Chocolatey for Business Server Components](/assets/images/c4b-server.png)
+<img src="/assets/images/c4b-server.png" alt="Chocolatey for Business Server Components" width="600"/>
 
 As illustrated in the diagram above, there are four main components to a Chocolatey For Business installation; namely:
 
@@ -66,24 +66,26 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 ### Step 1: Begin C4B Setup
 
+> :warning:**DISCLAIMER**: This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence to review this code and ensure it meets your Organizational requirements.
+
 1. Open a PowerShell console with the `Run as Administrator` option, and paste and run the following code:
 
     ```powershell
     Set-ExecutionPolicy Bypass -Scope Process -Force
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::tls12
-    $QuickStart = 'https://raw.githubusercontent.com/chocolatey/choco-quickstart-scripts/main/Start-C4BSetup.ps1'
+    $QuickStart = 'https://raw.githubusercontent.com/chocolatey/choco-quickstart-scripts/main/Start-C4bSetup.ps1'
     Invoke-Expression -Command ((New-Object System.Net.WebClient).DownloadString($QuickStart))
     ```
 
     > <details>
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
-    > <li>Install of Chocolatey from https://chocolatey.org</li>
-    > <li>Prompt for your C4B license file location, with validation</li>
-    > <li>Script to help turn your C4B license into a Chocolatey package</li>
-    > <li>Setup of local `choco-setup` directories</li>
-    > <li>Download of setup files from "choco-quickstart-scripts" GitHub repo</li>
-    > <li>Download of Chocolatey packages required for setup)</li>
+    > <li>Installs Chocolatey client from https://chocolatey.org</li>
+    > <li>Prompts for your C4B license file location, with validation</li>
+    > <li>Converts your C4B license into a Chocolatey package</li>
+    > <li>Sets up of local "choco-setup" directories</li>
+    > <li>Downloads setup files from "choco-quickstart-scripts" GitHub repo</li>
+    > <li>Downloads Chocolatey packages required for setup</li>
     > </ul>
     > </details>
 
@@ -93,20 +95,19 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
     ```powershell
     Set-Location "$env:SystemDrive\choco-setup\files"
-    .\Start-C4BNexusSetup.ps1
+    .\Start-C4bNexusSetup.ps1
     ```
 
     > <details>
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
     > <li>Installs Sonatype Nexus Repository Manager OSS instance</li>
-    > <li>Prompt for your C4B license file location, with validation</li>
     > <li>Cleans up all demo repositories on Nexus</li>
-    > <li>Creates a `ChocolateyInternal` NuGet repository</li>
-    > <li>Creates a `ChocolateyTest` NuGet repository</li>
-    > <li>Creates a `choco-install` raw repository</li>
-    > <li>Sets up `ChocolateyInternal` on C4B Server as source, with API key</li>
-    > <li>Sets up firewall rule for repository access</li>
+    > <li>Creates a "ChocolateyInternal" NuGet repository</li>
+    > <li>Creates a "ChocolateyTest" NuGet repository</li>
+    > <li>Creates a "choco-install" raw repository</li>
+    > <li>Sets up "ChocolateyInternal" on C4B Server as source, with API key</li>
+    > <li>Adds firewall rule for repository access</li>
     > <li>Installs MS Edge, and disable first-run experience</li>
     > <li>Outputs data to JSON to pass between scripts</li>
     > </ul>
@@ -125,11 +126,20 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
     > <li>Installs MS SQL Express</li>
-    > <li>Creates `ChocolateyManagement` database, and adds appropriate `ChocoUser` permissions</li>
-    > <li>Installs all 3 CCM packages (`database, service, web`), with correct parameters</li>
+    > <li>Creates "ChocolateyManagement" database, and adds appropriate `ChocoUser` permissions</li>
+    > <li>Installs all 3 CCM packages (database, service, web), with correct parameters</li>
     > <li>Outputs data to JSON to pass between scripts</li>
     > </ul>
     > </details>
+
+    <br>
+
+    > :warning:**WARNING**: **Only if** you choose to run this on a **Windows Server 2016** VM, you will **require** a **reboot** before IIS is completely installed. The script above will notify you of this. Once the reboot is complete and you log back in, you will also have to paste and run the following code in a PowerShell Administrator console:
+
+    > ```powershell
+    > Set-Location "$env:SystemDrive\choco-setup\files\scripts"
+    > .\Start-C4bCcmSetup2.ps1
+    > ```
 
 ### Step 4: SSL Setup
 
@@ -140,11 +150,17 @@ Below are the minimum requirements for setting up your C4B server via this guide
     .\Set-SslSecurity.ps1
     ```
 
+    **OR**, if you have your own custom SSL certificate (purchased/acquired, or from your Domain CA), you can paste and run the following script with the `Thumbprint` value of your SSL certificate specified:
+
+    ```powershell
+    Set-Location "$env:SystemDrive\choco-setup\files"
+    .\Set-SslSecurity.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>'
+    ```
+
     > <details>
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
-    > <li>Adds SSL certificate configuration for Nexus and CCM Web</li>
-    > <li>Outputs data to JSON to pass between scripts</li>
+    > <li>Adds SSL certificate configuration for Nexus and CCM web portals</li>
     > <li>Generates a `Register-C4bEndpoint.ps1` script for you to easily set up endpoint clients</li>
     > <li>Outputs data to JSON to pass between scripts</li>
     > </ul>
@@ -166,10 +182,13 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <li>Updates Jenkins plugins</li>
     > <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation</li>
     > <li>Sets up pre-defined Jenkins jobs for the scripts above</li>
-    > <li>Auto-opens web portals for CCM, Nexus, and Jenkins in your web browser</li>
-    > <li>Outputs data to JSON to pass between scripts</li>
+    > <li>Writes README to Public Desktop with account information for C4B services</li>
+    > <li>Auto-opens README, CCM, Nexus, and Jenkins in your web browser</li>
+    > <li>Removes temporary JSON files used during provisioning</li>
     > </ul>
     > </details>
+
+    > :mag: **FYI**: A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser. 
 
 ### Step 6: Setting up Endpoints
 
@@ -186,14 +205,14 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <details>
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
-    > <li>Installs Chocolatey client (`chocolatey`), using a script from your raw "`choco-install`" repository</li>
-    > <li>Runs the `ClientSetup.ps1` script from your raw "`choco-install`" repository, which does the following:</li>
-    > <li>- Licenses Chocolatey by installing the license package (`chocolatey-license`) created during QDE setup</li>
-    > <li>- Installs the Chocolatey Licensed Extension (`chocolatey.extension`) without context menus</li>
-    > <li>- Configures ChocolateyInternal source</li>
-    > <li>- Disables access to the `chocolatey` public Chocolatey Community Repository (CCR)</li>
-    > <li>- Configures Self-Service mode and installs Chocolatey GUI (`chocolateygui`)</li>
-    > <li>- - Configures Central Management (CCM) check-in, and opts endpoints into CCM Deployments</li>
+    > <li>Installs Chocolatey client (chocolatey), using a script from your raw "choco-install" repository</li>
+    > <li>Runs the "ClientSetup.ps1" script from your raw "choco-install" repository, which does the following:</li>
+    > <li>Licenses Chocolatey by installing the license package (chocolatey-license) created during QDE setup</li>
+    > <li>Installs the Chocolatey Licensed Extension (chocolatey.extension) without context menus</li>
+    > <li>Configures "ChocolateyInternal" source</li>
+    > <li>Disables access to the "chocolatey" public Chocolatey Community Repository (CCR)</li>
+    > <li>Configures Self-Service mode and installs Chocolatey GUI (chocolateygui)</li>
+    > <li>Configures Central Management (CCM) check-in, and opts endpoints into CCM Deployments</li>
     > </ul>
     > </details>
 
@@ -202,3 +221,14 @@ Below are the minimum requirements for setting up your C4B server via this guide
 Congratulations! If you followed all the steps detailed above, you should now have a fully-functioning Chocolatey for Business implementation deployed in your environment.
 
 It is worth mentioning that some customers may have a more bespoke environment, with the presence of proxies and additional configuration management applications. Chocolatey is engineered to be quite flexible, specifically to account for these scenarios. Please refer to the many options for installation referenced on the [Installation page](xref:setup-licensed#more-install-options). Again, If you have any questions or would like to discuss more involved implementations, please feel free to reach out to your Chocolatey representative.
+
+### See it in Action
+
+If you'd prefer to watch and follow along, we ran through this guide live on our Twitch stream:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/qbIclPMEgig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+</p>
