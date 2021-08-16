@@ -28,5 +28,4 @@ These configuration values are for pushing packages to your Intune tenant, and m
 ## API Keys
 
 When pushing packages to an Intune tenant, a combination of a Client ID and Client Secret is needed. These can be obtained from the [Azure AD Portal](https://aad.portal.azure.com/) where the Client ID is the value for **Application ID** and the **Secret** is the Client Secret.
-These can be set similarly as regular pushes of Chocolatey packages, where the source argument is the GUID or FQDN of the tenant,
-and the source argument is in the format of `<CLIENT ID>:<CLIENT SECRET>`, which is separated by a colon.
+You can use these on the command line when running the `choco push` command by using the `--source=<INTUNE TENANT GUID>` argument and the `--api-key=<CLIENT ID>:<CLIENT SECRET>` argument
