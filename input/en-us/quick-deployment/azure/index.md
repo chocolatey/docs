@@ -1,19 +1,19 @@
 ---
 Order: 25
 xref: qdeazure
-Title: QDE in Azure
-Description: High level information about QDE in Azure
+Title: Chocolatey for Business QDE Azure Environment
+Description: High level information about the Chocolatey for Business QDE Azure Environment
 ---
 
 ## Summary
 
-This is an overview of the Chocolatey Quick Deployment Environment (QDE) in Azure.
+This is an overview of the Chocolatey for Business QDE (Quick Deployment Environment) Azure Environment.
 
-It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management, a package repository (Nexus OSS), and an automation engine (Jenkins).
+It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
 > :memo: **NOTE**
 >
-> A QDE environment is a fully functional Chocolatey for Business (C4B) environment; as such, it will require a business or trial license.
+> A Chocolatey for Business QDE Azure Environment is a fully functional C4B environment; as such, it will require a business or trial license.
 
 ## QDE Components / Overview
 
@@ -21,20 +21,20 @@ For an overview of QDE, please refer to the existing [QDE Documentation](xref:qd
 
 ## Prerequisites
 
-Currently, to deploy QDE in Azure you will need:
+Currently, to deploy the Chocolatey for Business QDE Azure Environment you will need:
 
 * A Chocolatey for Business License, or Trial License
 * An account with [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor) access to an Azure subscription
 * The ability to create a CNAME DNS record for your chosen FQDN
 * A valid certificate for your chosen FQDN, in PFX format, with exportable private key
 
-For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed QDE to as we will use this with the PowerShell code snippets below.
+For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed the Chocolatey for Business QDE Azure Environment to as we will use this with the PowerShell code snippets below.
 
-## Deploying QDE in Azure
+## Deploying the Chocolatey for Business QDE Azure Environment
 
-QDE is available as a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde).
+The Chocolatey for Business QDE Azure Environment is available as a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde).
 
-Find the [Chocolatey For Business Azure Environment](https://portal.azure.com/#blade/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/chocolateysoftwareinc1605695330527.c4b_azure_qde) resource, and click `Create`. You will be taken to the `Create Chocolatey For Business Azure Environment` page.
+Find the [Chocolatey for Business QDE Azure Environment](https://portal.azure.com/#blade/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/chocolateysoftwareinc1605695330527.c4b_azure_qde) resource, and click `Create`. You will be taken to the `Create Chocolatey for Business QDE Azure Environment` page.
 
 ### Basics
 
@@ -56,7 +56,7 @@ For the environment to deploy successfully, you must have a valid Chocolatey for
 
 ### Domain Configuration
 
-In order to connect to your new QDE instance, you will need to select a DNS name. Though you can connect to the Microsoft provided FQDN, there would be additional work involved in trusting the self-signed certificate used (i.e. adding the Public IP addresses' FQDN to a self-signed certificate, and ensuring this certificate was in the `Trusted Root Certification Authorities` store).
+In order to connect to your new Chocolatey for Business QDE Azure Environment, you will need to select a DNS name. Though you can connect to the Microsoft provided FQDN, there would be additional work involved in trusting the self-signed certificate used (i.e. adding the Public IP addresses' FQDN to a self-signed certificate, and ensuring this certificate was in the `Trusted Root Certification Authorities` store).
 
 Fill your intended domain name in, select and upload your PFX certificate, and enter the password for the certificate.
 
@@ -192,7 +192,7 @@ if ($KeyVault.AccessPolicies.Where{$_.DisplayName -like "*$CurrentUser*"}.Permis
     Set-AzKeyVaultAccessPolicy -VaultName $KeyVault.VaultName -UserPrincipalName $CurrentUser -PermissionsToSecrets @('get')
 }
 
-Write-Host "QDE Passwords for '$($KeyVault.ResourceGroupName)':"
+Write-Host "Chocolatey for Business QDE Azure Environment Passwords for '$($KeyVault.ResourceGroupName)':"
 @{
     CCM     = Get-AzKeyVaultSecret -VaultName $KeyVault.VaultName -Name ccmPassword -AsPlainText
     Nexus   = Get-AzKeyVaultSecret -VaultName $KeyVault.VaultName -Name nexusPassword -AsPlainText
@@ -233,20 +233,20 @@ You can quickly generate a self-signed certificate on any recent Windows compute
 1. Run code similar to the following, modifying the filepath if necessary:
 
 ```PowerShell
-$Domain   = Read-Host "Enter the FQDN you plan to use to access the QDE sites"
+$Domain   = Read-Host "Enter the FQDN you plan to use to access the Chocolatey for Business QDE Azure Environment sites"
 $Password = Read-Host "Enter a password to use for the PFX" -AsSecureString
 
 $Cert = New-SelfSignedCertificate -DnsName $Domain -CertStoreLocation cert:\LocalMachine\My
 $Cert | Export-PfxCertificate -FilePath ~\Desktop\$($Domain).pfx -Password $Password
 ```
 
-You can then use this generated file and the password you set to deploy QDE in Azure.
+You can then use this generated file and the password you set to deploy your Chocolatey for Business QDE Azure Environment.
 
 You can also use a Microsoft Azure KeyVault to create a self-signed certificate by following the steps in Microsoft's documentation using the [Portal](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-portal) or [Azure PowerShell](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-powershell).
 
 > :memo: **NOTE**
 >
-> Your browser will display warnings when accessing the QDE sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on machines used to access the QDE management sites.
+> Your browser will display warnings when accessing the Chocolatey for Business QDE Azure Environment sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on machines used to access the management sites.
 
 #### Purchased/Acquired Certificates from CA
 
@@ -260,7 +260,7 @@ You can also use a Microsoft Azure KeyVault and one of the [partnered CA Provide
 
 ### Status Message: Exist soft deleted vault with the same name.  (Code:ConflictError)
 
-This can happen when you've deployed QDE in Azure, deleted the Resource Group, and then redeployed it with the same name.
+This can happen when you've deployed a Chocolatey for Business QDE Azure Environment, deleted the Resource Group, and then redeployed it with the same name.
 
 You can either purge the KeyVault in the GUI, or use the PowerShell Az modules as follows:
 
