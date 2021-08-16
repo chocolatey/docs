@@ -61,11 +61,11 @@ In `genericVirusScannerValidExitCodes`, these are exit codes that indicate that 
 #### Windows Defender Example Configuration
 
 ```powershell
-choco config set virusScannerType Generic
-choco config set genericVirusScannerPath "C:\Program Files\Windows Defender\MpCmdRun.exe"
-choco config set genericVirusScannerArgs "-Scan -ScanType 3 -File [[FILE]]"
-choco config set genericVirusScannerValidExitCodes "0"
-choco feature enable -n virusCheck
+choco config set --name="'virusScannerType'" --value="'Generic'"
+choco config set --name="'genericVirusScannerPath'" --value="'C:\Program Files\Windows Defender\MpCmdRun.exe'"
+choco config set --name="'genericVirusScannerArgs'" --value="'-Scan -ScanType 3 -File [[FILE]]'"
+choco config set --name="'genericVirusScannerValidExitCodes'" --value="'0'"
+choco feature enable --name="'virusCheck'"
 ```
 
 ## See It In Action
