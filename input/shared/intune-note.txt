@@ -4,4 +4,4 @@
 
 > :memo: **NOTE**
 >
-> The Chocolatey Intune integration requires a valid Chocolatey For Business or Chocolatey For Business Trial license.
+> The Chocolatey Intune integration requires a valid Chocolatey for Business or Chocolatey for Business Trial license.
