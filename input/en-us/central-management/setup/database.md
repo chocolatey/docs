@@ -170,6 +170,32 @@ The CCM database package will add or update a database to an existing SQL Server
 
 ### Scenarios
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="scenario-one-tab" data-bs-toggle="tab" href="#scenario-one" role="tab" aria-controls="scenario-one" aria-selected="true">Scenario 1</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="scenario-two-tab" data-bs-toggle="tab" href="#scenario-two" role="tab" aria-controls="scenario-two" aria-selected="false">Scenario 2</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="scenario-three-tab" data-bs-toggle="tab" href="#scenario-three" role="tab" aria-controls="scenario-three" aria-selected="false">Scenario 3</a>
+    </li>
+</ul>
+
+::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+:::{.tab-pane .fade .show .active #scenario-one role=tabpanel aria-labelledby=scenario-one-tab}
+## Scenario 1
+
+Markdown can be added here!
+:::
+:::{.tab-pane .fade #scenario-two role=tabpanel aria-labelledby=scenario-two-tab}
+## Scenario 2
+:::
+:::{.tab-pane .fade #scenario-three role=tabpanel aria-labelledby=scenario-three-tab}
+## Scenario 3
+:::
+::::
+
 #### SQL Server Windows Authentication
 
 ##### Use Windows Authentication to Local SQL Server
