@@ -38,6 +38,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ### ENHANCEMENTS
  * All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
+ * Due to this update, the CCM Website now uses the in-process hosting model within IIS. This is enabled by [default starting with ASP.NET Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0#enable-in-process-hosting).
 
 ## 0.5.1 (April 12th, 2021)
 ### BUG FIXES
