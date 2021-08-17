@@ -7,7 +7,7 @@ Description: High level information about the Chocolatey for Business QDE Azure 
 
 ## Summary
 
-This is an overview of the Chocolatey for Business QDE (Quick Deployment Environment) Azure Environment.
+This is an overview of the Chocolatey for Business QDE Azure Environment.
 
 It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
