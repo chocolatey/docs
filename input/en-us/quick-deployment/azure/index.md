@@ -13,7 +13,7 @@ It is a deployable resource in the Microsoft Azure Marketplace, allowing for the
 
 > :memo: **NOTE**
 >
-> A Chocolatey for Business QDE Azure Environment is a fully functional C4B environment; as such, it will require a business or trial license.
+> A Chocolatey for Business QDE Azure Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
 
 ## QDE Components / Overview
 
