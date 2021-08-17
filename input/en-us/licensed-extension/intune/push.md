@@ -14,8 +14,7 @@ The ability to push Chocolatey Intune packages (packages with the extension `.in
 
 ### Command Line
 
-When calling `choco push`, add the path to the `.intunewin` file previously converted using the [`convert`](xref:intune-convert) command.
-This will push the wanted package and any dependencies that do not already exist on the Intune tenant.
+When using the `push` command the package path provided must be an `.intunewin` file that was previously converted to a Chocolatey Intune package using the [`convert`](xref:intune-convert) command. This will push the Chocolatey Intune package, and its dependencies if they do not already exist there, to the Intune tenant.
 
 ### Context Menu
 
@@ -49,9 +48,7 @@ Once that is done you can push the package as normal:
 choco push firefox.86.0.intunewin
 ~~~
 
-Similar to the [`convert`](xref:intune-convert) command, no additional arguments are needed if the package in question is a pre-release.
-By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies.
-However, you cannot depend on a pre-release if the package passed in is a stable release.
+By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are pushing can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are pushing is a stable release. This is the same behaviour as the [`convert`](xref:intune-convert) command.
 
 > :warning: **WARNING**
 >
