@@ -82,3 +82,11 @@ The command to `push` a Chocolatey Intune package (a package with the `intunewin
 ~~~sh
 choco feature enable --name=allowPreviewFeatures
 ~~~
+
+### What can I do if I receive an error about the format of the URI could not be determined?
+
+The command to `push` a Chocolatey Intune package (a package with the `intunewin` extension) is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled by running:
+
+~~~sh
+choco feature enable --name=allowPreviewFeatures
+~~~
