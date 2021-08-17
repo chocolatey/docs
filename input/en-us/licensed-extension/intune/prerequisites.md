@@ -23,10 +23,10 @@ The Intune commands need to know what your Intune tenant is, and here are two op
 
 ### Chocolatey Packages
 
-To push packages for the first time, you will need `chocolatey` and `chocolatey.extension` to be in the same directory as the Chocolatey package you want to push. If you don't already have `chocolatey` downloaded, you can download it to the current directory with the command:
+To push packages for the first time, you will need `chocolatey` and `chocolatey.extension` to be in the same directory as the Chocolatey package you want to push. If you don't already have these downloaded, you can download it to the current directory with the command:
 
 ~~~sh
-choco download chocolatey --internalize
+choco download chocolatey chocolatey.extension --internalize
 ~~~
 
 Additionally, it is recommended to have already installed the Chocolatey packages `intunewinapputil` and `azcopy10` before converting or pushing other Chocolatey packages.
