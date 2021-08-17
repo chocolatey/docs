@@ -10,7 +10,7 @@ Description: Information about creating an application in Azure AD for Chocolate
 ## Summary
 
 To allow Chocolatey to access the Intune tenant and work with packages, a user with the Global Administrator or Privileged Role Administrator permissions must create an Azure AD Application in your Azure tenant. See the [Microsoft Graph API documentation](https://docs.microsoft.com/en-us/graph/auth-v2-service) for further information.
- 
+
 _The steps and screenshots below are current as of July 2021._
 
 ## Create Azure AD Application
@@ -41,11 +41,10 @@ _The steps and screenshots below are current as of July 2021._
 ## Create a secret for your Azure AD Application
 
 > :warning: **WARNING**
-> 
+>
 > It's important to note down the secret generated below as you cannot retrieve it again. If you forget the secret you will need to generate another one.
 
-Once you’ve created your AzureAD Application, you need to generate a secret for it.
-The secret is what Chocolatey will use to authenticate with the Microsoft Graph API and should be protected like any other password.
+Once you’ve created your AzureAD Application, you need to generate a secret for it. The secret is what Chocolatey will use to authenticate with the Microsoft Graph API and should be protected like any other password.
 
 1. In the Application overview for your Application, select **Certificates & secrets**.
 ![Certificates & Secrets](/assets/images/intune/certificates-and-secrets.png)

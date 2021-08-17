@@ -29,5 +29,4 @@ To push packages for the first time, you will need `chocolatey` and `chocolatey.
 choco download chocolatey chocolatey.extension --internalize
 ~~~
 
-Additionally, it is recommended to have already installed the Chocolatey packages `intunewinapputil` and `azcopy10` before converting or pushing other Chocolatey packages.
-If these do not exist, Chocolatey will try to install them from available sources.
+Additionally, it is recommended to have already installed the Chocolatey packages `intunewinapputil` and `azcopy10` before converting or pushing other Chocolatey packages. If these do not exist, Chocolatey will try to install them from available sources.

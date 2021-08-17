@@ -8,8 +8,7 @@ Title: Converting Chocolatey Packages to Intune Packages
 
 ## Summary
 
-Converting from Chocolatey packages to Intune packages that can be later pushed using `choco push` has been added to a new command called `convert`.
-This command allows a single package to be passed and Chocolatey will then convert it, and its dependencies, to Chocolatey Intune packages.
+Converting from Chocolatey packages to Intune packages that can be later pushed using `choco push` has been added to a new command called `convert`. This command allows a single package to be passed and Chocolatey will then convert it, and its dependencies, to Chocolatey Intune packages.
 
 ## Usage
 
@@ -38,9 +37,7 @@ When Chocolatey looks to resolve dependencies, it will look in the folder that t
 
 ### Examples
 
-To start converting Chocolatey packages to the Chocolatey Intune package format, you first need to download the packages.
-The location can be the Chocolatey Community Repository, your own internal repository, or any other valid Chocolatey source.
-As an example, to download version `86.0` of the `firefox` Chocolatey package and convert it to a Chocolatey Intune package along with its dependencies:
+To start converting Chocolatey packages to the Chocolatey Intune package format, you first need to download the packages. The location can be the Chocolatey Community Repository, your own internal repository, or any other valid Chocolatey source. As an example, to download version `86.0` of the `firefox` Chocolatey package and convert it to a Chocolatey Intune package along with its dependencies:
 
 ~~~sh
 choco download firefox --version 86.0 --internalize
@@ -73,19 +70,16 @@ If a Chocolatey package has dependencies, Chocolatey will convert each of them t
 
 ### Must I have all Chocolatey package dependencies already downloaded?
 
-You may skip the handling of dependencies when converting a package by using the `--ignore-dependencies` argument.
-However, it is recommended not to skip dependency handling as the package may not install or upgrade, and some software functionality may be lost.
-Be mindful that you may be prevented from pushing the Chocolatey package to your Intune tenant if the dependencies do not already exist locally or in Intune.
+You may skip the handling of dependencies when converting a package by using the `--ignore-dependencies` argument. However, it is recommended not to skip dependency handling as the package may not install or upgrade, and some software functionality may be lost. Be mindful that you may be prevented from pushing the Chocolatey package to your Intune tenant if the dependencies do not already exist locally or in Intune.
 
 ### I am getting a warning that 'The use of .nupkg or .nuspec in package name or source is known to cause issues'.
 
-This warning message comes from Chocolatey itself and is due to the program not knowing about the new `convert` command.
-The warning message can safely be ignored and will be removed in a future version of Chocolatey.
+This warning message comes from Chocolatey itself and is due to the program not knowing about the new `convert` command. The warning message can safely be ignored and will be removed in a future version of Chocolatey.
 
 ### I get an error message about `convert` not being available
 
-The `convert` command is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled.
-This feature can be enabled by running:
+The `convert` command is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled. This feature can be enabled by running:
+
 ~~~sh
 choco feature enable --name=allowPreviewFeatures
 ~~~

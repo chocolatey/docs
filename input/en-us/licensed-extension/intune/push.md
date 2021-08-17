@@ -22,12 +22,7 @@ When you right-click on a Chocolatey Intune package (which is a package with the
 
 ### Dependency Resolving
 
-When resolving package dependencies that are specified in the converted `.intunewin` file, we first search the Intune tenant
-for a package that was previously uploaded that matches the same identifier and is within the same version criteria constructed during
-the conversion of the package.
-If no package matching the mentioned criteria are found in the Intune tenant, we will fall back to looking in the same directory as the original
-`.intunewin` file passed to the `push` command, and check for the same criteria there.
-If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
+When resolving package dependencies that are specified in the converted `.intunewin` file, we first search the Intune tenant for a package that was previously uploaded that matches the same identifier and is within the same version criteria constructed during the conversion of the package. If no package matching the mentioned criteria are found in the Intune tenant, we will fall back to looking in the same directory as the original `.intunewin` file passed to the `push` command, and check for the same criteria there. If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
 
 ### Examples
 
@@ -52,9 +47,7 @@ By specifying the path to a pre-release package, pre-release support will be ena
 
 > :warning: **WARNING**
 >
-> If this is the first time pushing a package to your Intune tenant, make sure that you also
-> have the converted packages of `chocolatey` and `chocolatey.extension` available in the same
-> directory as the package you want to push.
+> If this is the first time pushing a package to your Intune tenant, make sure that you also have the converted packages of `chocolatey` and `chocolatey.extension` available in the same directory as the package you want to push.
 
 > :memo: **NOTE**
 >
