@@ -144,9 +144,16 @@ when you have everything on the same box may work, but it may not. Please follow
 Yes, you do need to restart the agents, the service, and the web to pick up the license. Here's a script to handle that:
 
 ```powershell
-Get-Service chocolatey-* | Stop-Service
-Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
-Get-Service chocolatey-* | Start-Service
+# For CCM versions older than v0.6.0
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+# For CCM v0.6.0 and up
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# Restart Chocolatey Agent and/or CCM service (all versions)
+Get-Service chocolatey-* | Restart-Service
 ```
 
 ### Can I use Chocolatey Deployments to upgrade CCM based components?
@@ -205,3 +212,23 @@ There are two workarounds noted:
 * Do not pass database details if they have not changed during upgrade.
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
+
+### When upgrading the CCM website, Chocolatey reports a lot of errors about files being locked, and the CCM website does not function after the upgrade
+
+This is a known issue for v0.6.0 and v0.6.1 releases, and is resolved as of v0.6.2.
+The IIS hosting model changed as of v0.6.0 to use the in-process model, which alters how the website needs to be shut down and restarted.
+
+A quick workaround is to stop the CCM website manually before running the upgrade by running the following in an administrative Windows PowerShell session:
+
+```powershell
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
+Stop-Website -Name ChocolateyCentralManagement
+Stop-WebAppPool -Name ChocolateyCentralManagement
+```
+
+Once the upgrade process has completed, you can ensure the website is properly restarted by running:
+
+```powershell
+Start-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+```

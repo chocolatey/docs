@@ -412,6 +412,23 @@ Unfortunately only SQL Server SKUs work with Chocolatey Central Management at th
 
 Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
+### What is the minimum required configuration for the appsettings.json file?
+
+For the database package, only the connection string is required.
+As of CCM v0.6.2, the default settings in the `appsettings.json` for the database package are:
+
+```json
+{
+  "ConnectionStrings": {
+    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+  }
+}
+```
+
+> **NOTE**
+>
+> This file will usually be condensed into a single line, with the values encrypted.
+
 ## Common Errors and Resolutions
 
 ### Chocolatey Central Management database package installs without error, but ChocolateyManagement database is not created

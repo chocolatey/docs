@@ -237,6 +237,26 @@ The `chocolatey-management-service` is responsible for making a number of change
 
 ## FAQ
 
+### What is the minimum required configuration for the appsettings.json file?
+
+As of CCM v0.6.2, the default configuration values in the `appsettings.json` for the CCM service are:
+
+```json
+{
+  "ConnectionStrings": {
+    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+  },
+  "CertificateThumbprint": "3edebdfee63b57b0a0a12a079ed8da791da03ba7"
+}
+```
+
+> **NOTE**
+>
+> This file will usually be condensed into a single line, with the values encrypted.
+
+If these values are removed or incorrect, the CCM website may fail to start.
+To correct this, ensure all configuration is present and correct and then restart the CCM website.
+
 ### How can we increase the level of logging for Chocolatey Central Management?
 
 This can be done by changing the level value, which should be currently INFO, to use DEBUG, as per the following:
@@ -398,6 +418,50 @@ ___
 You may see this error message when attempting to install version 0.6.0 of the `chocolatey-management-service` package.
 
 Please see [Licensed Issue #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242) for details on a workaround that can be used.  This bug will be addressed in the 0.6.1 release of Chocolatey Central Management.
+
+### Agents are unable to communicate with Chocolatey Central Management Service, CCM service log shows "Unable to start Kestrel"
+
+This is an known possible issue with CCM v0.6.0 and v0.6.1 due to changes in how the CCM service is hosted.
+`netsh` bindings are no longer required for the CCM service, and you may also notice the bindings for the CCM service removed during upgrade.
+The identifying symptom of this issue is the following in the CCM service log file:
+
+```log
+[FATAL] Microsoft.AspNetCore.Server.Kestrel (0): Unable to start Kestrel
+```
+
+In these versions, the best workaround is to ensure that your `LocalMachine\TrustedPeople` certificate store contains only one certificate with a DNS name that matches the CCM service URL setting in your `chocolatey.config` file, and that this certificate has the `ServerAuthentication` usage applied to it.
+
+Starting in v0.6.2, it is possible to configure the CCM service to select a specific certificate to use.
+The CCM service log file error will also now contain slightly more information, looking something like this:
+
+```powershell
+[FATAL] ChocolateyServiceManagementTask: Microsoft.AspNetCore.Server.Kestrel [0]
+Unable to start Kestrel.
+System.InvalidOperationException: Certificate 3edebdfee63b57b0a0a12a079ed8da791da03ba7 cannot be used as an SSL server certificate. It has an Extended Key Usage extension but the usages do not include Server Authentication (OID 1.3.6.1.5.5.7.3.1).
+```
+
+You may also receive a differently-worded error if the certificate used by the CCM service in the `LocalMachine\TrustedPeople` store is removed.
+
+Starting in CCM v0.6.2, the CCM Service package will attempt to select an appropriate certificate during installation, and store the thumbprint in the `appsettings.json` file.
+You can also specify the thumbprint for the certificate to use as the `/CertificateThumbprint` package parameter during installation or upgrade.
+
+If you need to change the certificate you're using after installation, you can modify the entry in the `appsettings.json` file for the CCM service, which looks like this:
+
+```json
+{
+  "ConnectionStrings": {
+    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+  },
+  "CertificateThumbprint": "3edebdfee63b57b0a0a12a079ed8da791da03ba7"
+}
+```
+
+Altering the `CertificateThumbprint` value will cause the CCM service to select the corresponding certificate from the `LocalMachine\TrustedPeople` store instead.
+You will need to restart the CCM service after changing this value for it to take effect:
+
+```powershell
+Get-Service -Name chocolatey-central-management | Restart-Service
+```
 
 ### Chocolatey Agent Service is unable to communicate with Chocolatey Central Management Service
 
