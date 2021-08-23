@@ -125,7 +125,7 @@ When attempting to install some components of Chocolatey, you may have seen this
 
 Please go back through Step 1 and re-internalize those packages. You may need to overwrite any you would have pushed up (many if it won't let you do a push). In Nexus, you can remove the existing items and then upload through there. In other repositories you may need to remove the existing package versions you deployed first.
 
-### The client reports successful checkin, but nothing is showing up in CCM
+### The client reports successful check-in, but nothing is showing up in CCM
 
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
 

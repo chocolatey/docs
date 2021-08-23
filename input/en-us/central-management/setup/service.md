@@ -35,7 +35,7 @@ By default the service will install as a local administrative user `ChocolateyLo
 
 ### FQDN Usage
 
-When installing the CCM Service, the default is to use the Fully Qualified Domain Name (FQDN) of the machine that it is being installed on.  As a result, there is an expectation that the certificate (either the self signed certificate that is created during installation, or the existing certificate which is configured with the [CertifcateThumbprint](#package-parameters-1) parameter) that is used to secure the transport layer of this service, also uses the same FQDN.
+When installing the CCM Service, the default is to use the Fully Qualified Domain Name (FQDN) of the machine that it is being installed on.  As a result, there is an expectation that the certificate (either the self signed certificate that is created during installation, or the existing certificate which is configured with the [CertificateThumbprint](#package-parameters-1) parameter) that is used to secure the transport layer of this service, also uses the same FQDN.
 
 ```powershell
 # Find FDQN for current machine
@@ -49,7 +49,7 @@ if(-Not $hostName.endswith($domainName)) {
 choco config set --name="'centralManagementServiceUrl'" --value="'https://$($hostname):24020/ChocolateyManagementService'"
 ```
 
-If this is not the case, it will be necessary to provide the information to the package about the actual name for the machine that is being used.  When using a self signed certificate, this can be specified using the `CertifcateDnsName`, and when using an existing certificate, no additional parameters are required.  In both cases, it will be necessary to also set the `centralManagementServiceUrl` [configuration parameter](#centralmanagementserviceurl).  This can be done using the following command:
+If this is not the case, it will be necessary to provide the information to the package about the actual name for the machine that is being used.  When using a self signed certificate, this can be specified using the `CertificateDnsName`, and when using an existing certificate, no additional parameters are required.  In both cases, it will be necessary to also set the `centralManagementServiceUrl` [configuration parameter](#centralmanagementserviceurl).  This can be done using the following command:
 
 ```powershell
 choco config set --name="'centralManagementServiceUrl'" --value="'https://<accessible_url>:24020/ChocolateyManagementService'"
@@ -71,7 +71,9 @@ Note items with "`:`" mean a value should be provided, items without are simply 
 * `/SqlServerInstance:` - Instance name of the SQL Server database to connect to. Alternative to passing full connection string with `/ConnectionString`. Uses `/Database` (below) to build a connection string. Defaults to `<LOCAL COMPUTER FQDN NAME>`.
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 
-> :memo: **NOTE** Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
+> :memo: **NOTE**
+>
+> Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Service Settings
 
@@ -89,7 +91,7 @@ For most installations, the default values for the Chocolatey Central Management
 
 There are a number of different Chocolatey Configuration values that can be set for the Chocolatey Central Management Service.  The main setting that _has_ to be set is detailed below, and you can find a complete list on the [Chocolatey Central Management Service configuration page](xref:ccm-usage-service-configuration#chocolatey-configuration-file).
 
-* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
+* `centralManagementServiceUrl` = **' '** (empty) - The URL that should be used to communicate with Chocolatey Central Management. It should look something like `https://servicemachineFQDN:24020/ChocolateyManagementService`. See [FQDN usage](xref:ccm#fqdn-usage). Defaults to '' (empty). NOTE: Chocolatey Agent and CCM Service share this value on a machine that contains both. If blank, the CCM Service will construct a URL based on defaults of the machine, but is required to be set for Agents.
 
 > :warning: **WARNING**
 >
@@ -284,7 +286,9 @@ If required, it is possible to manually create a netsh binding.  This is done us
 netsh http add sslcert ipport=0.0.0.0:<port_number> certhash=<certificate_thumbprint> appid={<random_guid>}
 ```
 
-> :memo: **NOTE** Here, `<port_number>` should be replaced with the Port Number to be used for the registration.  `<certifcate_thumbprint>` should be replaced with the thumbprint for the certificate that is to be used for the registration.  `<random_guid>` should be replaced with a random guid in the following format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
+> :memo: **NOTE**
+>
+> Here, `<port_number>` should be replaced with the Port Number to be used for the registration.  `<certificate_thumbprint>` should be replaced with the thumbprint for the certificate that is to be used for the registration.  `<random_guid>` should be replaced with a random guid in the following format `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
 
 <?! Include "../../../shared/netsh-bindings-note.txt" /?>
 
@@ -386,6 +390,7 @@ This is not a supported scenario, especially considering the installation will a
 The installation folder for `chocolatey-management-service` is at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service`.
 
 ___
+
 ## Common Errors and Resolutions
 
 ### Cannot convert the "System.Object[]" value of type "System.Object[]" to type "System.Int32"
@@ -426,7 +431,7 @@ This will provide similar messaging as the above. The fix is the same, upgrade C
 
 If you are in the CCM service logs, you may be seeing the above error. That is a bug that was found with the communication of CCM v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in CCM v0.3.0 and Chocolatey Agent v0.11.0. Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
 
-### The client reports successful checkin, but nothing is showing up in CCM
+### The client reports successful check-in, but nothing is showing up in CCM
 
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
 
@@ -481,7 +486,7 @@ When reporting a larger number of packages (approximately 200), this error may b
 
 This error can be reported when installing the Chocolatey Central Management Service.  This can happen depending on the netsh binding that are currently present on the machine that is being installed on.  If for example, you have enabled SNI on a website on the machine that you are installing onto, then this error may occur.  This has been identified as a [bug](https://github.com/chocolatey/chocolatey-licensed-issues/issues/96), which is due to be corrected in version 0.1.1 of Chocolatey Central Management.
 
-This could also be when you are providing an existing certificate - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/143. This was fixed in v0.2.0.
+This could also be when you are providing an existing certificate - see <https://github.com/chocolatey/chocolatey-licensed-issues/issues/143>. This was fixed in v0.2.0.
 
 There is a known issue with CCM v.0.3.0 affecting at least French machines. Please reach out to support if you are experiencing this (run `choco support` for options).
 
@@ -505,7 +510,7 @@ This could also mean that there is something wrong with your connection strings 
 
 ### System.ServiceModel.AddressAccessDeniedException HTTP could not register URL
 
-You may see the following: "System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL https://+:24020/ChocolateyManagementService/. Your process does not have access rights to this namespace (see http://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied"
+You may see the following: `System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL https://+:24020/ChocolateyManagementService/. Your process does not have access rights to this namespace (see http://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied`
 
 You are attempting to set up a user that is not in the local Administrators group with the Central Management Service. While this is not officially supported, you can use the following to ensure all is good:
 
