@@ -80,6 +80,9 @@ choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls
   choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
+# Starting with version 0.6.2, CCM Database backage uses dotnetcore-sdk so that it may be installed on a system without requiring IIS. At the time of publishing, the most recent version of this package is 3.1.412
+choco download dotnetcore-sdk --version 3.1.412 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+
 # Download Licensed Packages
 # TRIAL? You have download links, download the files - then place them in the c:\packages folder. Comment out this section
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155
