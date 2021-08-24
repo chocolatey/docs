@@ -162,12 +162,12 @@ chocolateysource {'chocolatey.licensed':
 Most organizations using Chocolatey and Puppet are going to do so with zero internet access.
 
 * Set up a local licensed edition of Chocolatey and run the following commands:
-* `choco download chocolatey --source https://chocolatey.org/api/v2/`
-* `choco download chocolatey.server --source https://chocolatey.org/api/v2/`
+* `choco download chocolatey --source https://community.chocolatey.org/api/v2/`
+* `choco download chocolatey.server --source https://community.chocolatey.org/api/v2/`
 * `choco download chocolatey.extension --source https://licensedpackages.chocolatey.org/api/v2/ --ignore-dependencies`
 * `choco download chocolatey-agent --source https://licensedpackages.chocolatey.org/api/v2/ --ignore-dependencies`
 * Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg -s http://internal_repo/ -k abc123`)
-* Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://chocolatey.org/api/v2/package/chocolatey
+* Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
 
 Here is what a completely offline use of Chocolatey looks like (complete with a Chocolatey.Server instance):
 
@@ -181,7 +181,7 @@ Here is what a completely offline use of Chocolatey looks like (complete with a 
 ## Note: `chocolatey_download_url is completely different than normal
 ##  source locations. This is directly to the bare download url for the
 ##  chocolatey.nupkg, similar to what you see when you browse to
-##  https://chocolatey.org/api/v2/package/chocolatey
+##  https://community.chocolatey.org/api/v2/package/chocolatey
 class {'chocolatey':
   chocolatey_download_url => 'https://<internalurl/to>/chocolatey.nupkg',
   use_7zip                => false,
@@ -224,7 +224,7 @@ chocolateyconfig {'commandExecutionTimeoutSeconds':
 ## Remove the default community package repository source
 chocolateysource {'chocolatey':
   ensure   => absent,
-  location => 'https://chocolatey.org/api/v2/',
+  location => 'https://community.chocolatey.org/api/v2/',
 }
 
 ## Disable the licensed source, it can't be removed

@@ -43,7 +43,7 @@ if(Test-Path C:\ProgramData\nexus\etc\jetty\jetty-https.xml){
 Remove-Item C:\ProgramData\nexus -Recurse -Force -ErrorAction SilentlyContinue
 
 #Upgrade the package
-choco upgrade nexus-repository -y -f -s "'https://chocolatey.org/api/v2/'" --no-progress
+choco upgrade nexus-repository -y -f -s "'https://community.chocolatey.org/api/v2/'" --no-progress
 
 #Restore SSL Configuration
 if(Test-Path C:\nexusbackup\keystore.jks){

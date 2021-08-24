@@ -138,7 +138,7 @@ Fantastic question, see [Can I use Chocolatey with existing software?](xref:why#
 
 ### What is the default package source repository URL (community feed url)?
 
-That would be https://chocolatey.org/api/v2/ aka the Community Package Repository.
+That would be https://community.chocolatey.org/api/v2/ aka the Community Package Repository.
 
 ### What can I install?
 

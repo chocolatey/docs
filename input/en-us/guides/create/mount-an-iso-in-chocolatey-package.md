@@ -19,7 +19,7 @@ One of the community maintainers has created an extension package to automate th
 You will need to take a dependency on the [chocolatey-isomount.extension package](https://chocolatey.org/packages/chocolatey-isomount.extension) If you are using Chocolatey in an organizational context, be sure to cache the chocolatey-isomount.extension package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download chocolatey-isomount.extension`
-1. FOSS: Download [chocolatey-isomount.extension](https://chocolatey.org/api/v2/package/chocolatey-isomount.extension)
+1. FOSS: Download [chocolatey-isomount.extension](https://community.chocolatey.org/api/v2/package/chocolatey-isomount.extension)
 1. Deploy the package to your internal repository.
 
 > :memo: **NOTE** MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
@@ -93,7 +93,7 @@ The most compatible with all versions of Windows option is to use ImDisk. ImDisk
 You will need to take a dependency on the [ImDisk package](https://chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](xref:recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download imdisk --internalize`
-1. FOSS: Download [imdisk](https://chocolatey.org/api/v2/package/imdisk) - [internalize manually](xref:recompile-packages)
+1. FOSS: Download [imdisk](https://community.chocolatey.org/api/v2/package/imdisk) - [internalize manually](xref:recompile-packages)
 1. Deploy the package to your internal repository.
 
 > :memo: **NOTE** MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.

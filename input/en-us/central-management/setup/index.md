@@ -63,25 +63,25 @@ if(!(Test-Path C:\packages)){
 }
 
 # Download Chocolatey community related items, no internalization necessary
-choco download chocolatey chocolateygui --force --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+choco download chocolatey chocolateygui --force --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # This is for other Community Related Items
-choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 
 # This is for SQL Server Express
 # Not necessary if you already have SQL Server
 @('sql-server-express','sql-server-management-studio') | Foreach-Object {
-  choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+  choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
 # We must use the 3.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 3.1.16.
 @('aspnetcore-runtimepackagestore','dotnetcore-windowshosting') | Foreach-Object {
-  choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+  choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
 # Starting with version 0.6.2, CCM Database backage uses dotnetcore-sdk so that it may be installed on a system without requiring IIS. At the time of publishing, the most recent version of this package is 3.1.412
-choco download dotnetcore-sdk --version 3.1.412 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+choco download dotnetcore-sdk --version 3.1.412 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 # TRIAL? You have download links, download the files - then place them in the c:\packages folder. Comment out this section

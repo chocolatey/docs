@@ -118,13 +118,13 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
 
   ![download chocolatey.nupkg visual](/assets/images/DownloadChocolateyPackage.png)
 
-1. You can also download [the latest version directly](https://chocolatey.org/api/v2/package/chocolatey).
+1. You can also download [the latest version directly](https://community.chocolatey.org/api/v2/package/chocolatey).
 1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/puppetlabs/chocolatey#manage-chocolatey-installation
 1. Then you would run a script similar to the below to address that local install. If it is on a repository somewhere, you will need to enhance the below script to get that file  (the Chocolatey Puppet provider install script shows that).
 
 ~~~powershell
 # Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
-# This is where you see the top level API - with xml to Packages - should look nearly the same as https://chocolatey.org/api/v2/
+# This is where you see the top level API - with xml to Packages - should look nearly the same as https://community.chocolatey.org/api/v2/
 # If you are using Nexus, always add the trailing slash or it won't work
 # === EDIT HERE ===
 $packageRepo = '<INSERT ODATA REPO URL>'
@@ -414,10 +414,10 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
-* Download the chocolatey.nupkg from the community repository - [download the latest chocolatey nupkg](https://chocolatey.org/api/v2/package/chocolatey) or see [Completely offline install](#completely-offline-install) to get an older version.
-* Optionally download the chocolatey.server package from the community repository - [download the latest chocolatey.server nupkg](https://chocolatey.org/api/v2/package/chocolatey.server).
+* Download the chocolatey.nupkg from the community repository - [download the latest chocolatey nupkg](https://community.chocolatey.org/api/v2/package/chocolatey) or see [Completely offline install](#completely-offline-install) to get an older version.
+* Optionally download the chocolatey.server package from the community repository - [download the latest chocolatey.server nupkg](https://community.chocolatey.org/api/v2/package/chocolatey.server).
 * Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg -s http://internal_repo/ -k abc123`)
-* Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://chocolatey.org/api/v2/package/chocolatey
+* Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
 
 
 ~~~puppet
@@ -441,7 +441,7 @@ case $operatingsystem {
 ## Note: `chocolatey_download_url is completely different than normal
 ##  source locations. This is directly to the bare download url for the
 ##  chocolatey.nupkg, similar to what you see when you browse to
-##  https://chocolatey.org/api/v2/package/chocolatey
+##  https://community.chocolatey.org/api/v2/package/chocolatey
 class {'chocolatey':
   chocolatey_download_url => 'https://<internalurl/to>/chocolatey.nupkg',
   use_7zip                => false,
@@ -484,7 +484,7 @@ chocolateyconfig {'commandExecutionTimeoutSeconds':
 ## Remove the default community package repository source
 chocolateysource {'chocolatey':
   ensure   => absent,
-  location => 'https://chocolatey.org/api/v2/',
+  location => 'https://community.chocolatey.org/api/v2/',
 }
 
 ## Add default sources for your internal repositories
@@ -579,12 +579,12 @@ package {['virustotaluploader',
           'nodejs',
           ]:
   ensure => latest,
-  source => 'https://chocolatey.org/api/v2/',
+  source => 'https://community.chocolatey.org/api/v2/',
 }
 
 package {'screentogif':
   ensure => '2.2.160907',
-  source => 'https://chocolatey.org/api/v2/',
+  source => 'https://community.chocolatey.org/api/v2/',
 }
 
 package {'dotnet4.5.2':
@@ -639,7 +639,7 @@ Once you download it, open PowerShell (remote unsigned), navigate to the tools f
 
 You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy zip file):
 
- 1. Download the [Chocolatey package](https://chocolatey.org/api/v2/package/chocolatey/).
+ 1. Download the [Chocolatey package](https://community.chocolatey.org/api/v2/package/chocolatey/).
  1. Ensure the downloaded nupkg is not blocked.
  1. Unzip it using any application that supports `zip` format.
  1. Open a PowerShell command shell and navigate into the unzipped package's tools folder.

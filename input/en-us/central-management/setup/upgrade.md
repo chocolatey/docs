@@ -36,11 +36,11 @@ $YourInternalRepositoryApiKey = '<YOUR API KEY HERE>'
 $YourBusinessLicenseGuid = '<INSERT NON-TRIAL C4B LICENSE GUID HERE>'
 
 # Download Chocolatey community related items, no internalization necessary
-choco download chocolatey chocolateygui --force --source="'https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+choco download chocolatey chocolateygui --force --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155
-choco download chocolatey-agent chocolatey.extension chocolatey-management-database chocolatey-management-service chocolatey-management-web --force --source="'https://licensedpackages.chocolatey.org/api/v2/;https://chocolatey.org/api/v2/'" --output-directory="'C:\packages'"  --user="'user'" --password="'$YourBusinessLicenseGuid'"
+choco download chocolatey-agent chocolatey.extension chocolatey-management-database chocolatey-management-service chocolatey-management-web --force --source="'https://licensedpackages.chocolatey.org/api/v2/;https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"  --user="'user'" --password="'$YourBusinessLicenseGuid'"
 
 # Push all downloaded packages to your internal repository
 Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push $_.Fullname --source="'$YourInternalRepositoryPushUrl'" --api-key="'$YourInternalRepositoryApiKey'"}

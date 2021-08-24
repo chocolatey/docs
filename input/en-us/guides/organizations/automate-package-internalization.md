@@ -362,7 +362,7 @@ Below are the details for the Jenkins job to update the test repository from the
 
     * _Parameter Type_: **String parameter**
     * _Name_: **P_REMOTE_REPO_URL**
-    * _Default Value_: https://chocolatey.org/api/v2/
+    * _Default Value_: https://community.chocolatey.org/api/v2/
     * _Description_: **Remote repository containing updated package versions.**
     * _Options_: Tick **Trim the string**
 
@@ -429,7 +429,7 @@ Below are the details for the Jenkins job to update the test repository from the
           $null = New-Item -Path $temp -ItemType Directory
           Write-Output "Created temporary directory '$temp'."
           ($env:P_PKG_LIST).split(';') | ForEach-Object {
-              choco download $_ --no-progress --internalize --force --internalize-all-urls --append-use-original-location --output-directory=$temp --source='https://chocolatey.org/api/v2/'
+              choco download $_ --no-progress --internalize --force --internalize-all-urls --append-use-original-location --output-directory=$temp --source='https://community.chocolatey.org/api/v2/'
               if ($LASTEXITCODE -eq 0) {
                   (Get-Item -Path (Join-Path -Path $temp -ChildPath "*.nupkg")).fullname | ForEach-Object {
                       choco push $_ --source "$($env:P_DST_URL)" --api-key "$($env:P_API_KEY)" --force
@@ -556,7 +556,7 @@ Before submitting a new package lets make sure we have no packages in our test o
 
 As packages get out of date in your test repository you need to update them from the Chocolatey Community Repository. Before we start let's add an older version of a package.
 
-1. Download and internalize the `putty.install` package to the current directory by entering this on the command line: `choco download putty.install --version 0.70 --internalize --force --internalize-all-urls --append-use-original-location --output-directory . --source https://chocolatey.org/api/v2/`;
+1. Download and internalize the `putty.install` package to the current directory by entering this on the command line: `choco download putty.install --version 0.70 --internalize --force --internalize-all-urls --append-use-original-location --output-directory . --source https://community.chocolatey.org/api/v2/`;
 1. Submit the internalized package to the test repository by entering this on the command line: `choco push putty.install.0.70.nupkg --source http://testrepo-srv/chocolatey --api-key chocolateyrocks -force`
 1. Go back to Jenkins and run the job **Update production repository** with default parameters. This will test the `putty.install` package and push it to the production repository.
 1. Go to the command line and run `choco list --source http://prodrepo-srv/chocolatey` and you should see these results (note that if you didn't follow the [exercise above](#submit-a-new-package) then `adobereader` will not be in the list):
