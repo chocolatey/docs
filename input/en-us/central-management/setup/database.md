@@ -414,13 +414,12 @@ Central Management has specific compatibility requirements with quite a few movi
 
 ### What is the minimum required configuration for the appsettings.json file?
 
-For the database package, only the connection string is required.
 As of CCM v0.6.2, the default settings in the `appsettings.json` for the database package are:
 
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   }
 }
 ```

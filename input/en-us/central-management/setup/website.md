@@ -249,7 +249,13 @@ Once this change has been added, save the file, and then run the following to en
 # For CCM versions older than v0.6.0
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# For CCM v0.6.0 and up
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
 Stop-Website -Name ChocolateyCentralManagement
 Restart-WebAppPool -Name ChocolateyCentralManagement
 Start-Website -Name ChocolateyCentralManagement
@@ -287,15 +293,15 @@ And then try accessing the website again.  Any emails that are then sent from CC
 
 Some application settings will require you to edit the `appsettings.json` file, which is located in the `c:\tools\chocolatey-management-web` folder.
 
-Here is a copy of items that can be set. They are not required to be encrypted. Any item that is encrypted can be replaced by a non-encrypted value. During package install/upgrade, Chocolatey will encrypt certain settings (even if they were previously plain text).
+Here is a copy of items that can be set. They are not required to be encrypted. Any item that is encrypted can be replaced by a non-encrypted value. During package install/upgrade, Chocolatey will encrypt the settings (even if they were previously plain text).
 
 ```json
 {
   "ConnectionStrings": {
-        "Default": "Server=localhost; Database=ChocolateyManagement; Trusted_Connection=True;"
+        "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
   "App": {
-    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
   },
   "Recaptcha": {
     "SiteKey": "<INSERT SITE KEY HERE>",
@@ -349,10 +355,10 @@ As of CCM v0.6.2, the default settings in the `appsettings.json` for the website
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
   "App": {
-    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
   }
 }
 ```
@@ -363,6 +369,12 @@ As of CCM v0.6.2, the default settings in the `appsettings.json` for the website
 
 If these values are removed or incorrect, the CCM website may fail to start.
 To correct this, ensure all configuration is present and correct and then restart the CCM website.
+
+```powershell
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+```
 
 ### Can I install the Chocolatey Central Management Web Site under a Virtual Directory in IIS?
 
@@ -383,10 +395,10 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
   "App": {
-    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
   }
 }
 ```
@@ -397,7 +409,13 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
    # For CCM versions older than v0.6.0
    Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-   # For CCM v0.6.0 and up
+   # For CCM version 0.6.0 and 0.6.1
+   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+   Stop-Website -Name ChocolateyCentralManagement
+   Restart-WebAppPool -Name ChocolateyCentralManagement
+   Start-Website -Name ChocolateyCentralManagement
+
+   # For CCM v0.6.2 and up
    Stop-Website -Name ChocolateyCentralManagement
    Restart-WebAppPool -Name ChocolateyCentralManagement
    Start-Website -Name ChocolateyCentralManagement
@@ -428,7 +446,13 @@ Ensure all [required configuration values][required-config] are present, then re
 # For CCM versions older than v0.6.0
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# For CCM v0.6.0 and up
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
 Stop-Website -Name ChocolateyCentralManagement
 Restart-WebAppPool -Name ChocolateyCentralManagement
 Start-Website -Name ChocolateyCentralManagement
@@ -488,7 +512,7 @@ These errors happen very early in the application execution, and as a result, ar
 1. Change this to true, and save the file
 1. Check to see if there is a running process called `ChocolateySoftware.ChocolateyManagement.Web.Mvc.exe`.  If there is, stop it.
 1. Restart the CCM app pool and website in IIS.
-1. Attempt to access the website again.  An additional log file will be created in the `App_Data\Logs\stdout` folder. In CCM v0.6.0 and v0.6.1, this may be located in `Logs\stdout` instead.
+1. Attempt to access the website again.  An additional log file will be created in the `App_Data\Logs\stdout` folder. In CCM v0.6.0 and v0.6.1, this may be incorrectly located in the `Logs\stdout` folder.
 1. Review this log for additional error information
 1. Ensure that you set the `stdoutLogEnabled` attribute back to false
 
@@ -553,7 +577,13 @@ Once this change has been added, save the file, and then run the following to en
 # For CCM versions older than v0.6.0
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# For CCM v0.6.0 and up
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
 Stop-Website -Name ChocolateyCentralManagement
 Restart-WebAppPool -Name ChocolateyCentralManagement
 Start-Website -Name ChocolateyCentralManagement
@@ -569,7 +599,13 @@ You need to restart the web executable currently. We are looking to have it auto
 # For CCM versions older than v0.6.0
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# For CCM v0.6.0 and up
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
 Stop-Website -Name ChocolateyCentralManagement
 Restart-WebAppPool -Name ChocolateyCentralManagement
 Start-Website -Name ChocolateyCentralManagement

@@ -244,9 +244,9 @@ As of CCM v0.6.2, the default configuration values in the `appsettings.json` for
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
-  "CertificateThumbprint": "3edebdfee63b57b0a0a12a079ed8da791da03ba7"
+  "CertificateThumbprint": "<THUMBPRINT_OF_CERTIFICATE_FOUND_DURING_INSTALLATION>"
 }
 ```
 
@@ -254,8 +254,12 @@ As of CCM v0.6.2, the default configuration values in the `appsettings.json` for
 >
 > This file will usually be condensed into a single line, with the values encrypted.
 
-If these values are removed or incorrect, the CCM website may fail to start.
-To correct this, ensure all configuration is present and correct and then restart the CCM website.
+If these values are removed or incorrect, the CCM service may fail to start.
+To correct this, ensure all configuration is present and correct and then restart the CCM service.
+
+```powershell
+Get-Service -Name chocolatey-central-management | Restart-Service
+```
 
 ### How can we increase the level of logging for Chocolatey Central Management?
 
@@ -389,7 +393,7 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 ```json
 {
   "ConnectionStrings": {
-        "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+        "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   }
 }
 ```
@@ -421,7 +425,7 @@ Please see [Licensed Issue #242](https://github.com/chocolatey/chocolatey-licens
 
 ### Agents are unable to communicate with Chocolatey Central Management Service, CCM service log shows "Unable to start Kestrel"
 
-This is an known possible issue with CCM v0.6.0 and v0.6.1 due to changes in how the CCM service is hosted.
+This is a known issue with CCM v0.6.0 and v0.6.1 due to changes in how the CCM service is hosted.
 `netsh` bindings are no longer required for the CCM service, and you may also notice the bindings for the CCM service removed during upgrade.
 The identifying symptom of this issue is the following in the CCM service log file:
 
@@ -450,9 +454,9 @@ If you need to change the certificate you're using after installation, you can m
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
-  "CertificateThumbprint": "3edebdfee63b57b0a0a12a079ed8da791da03ba7"
+  "CertificateThumbprint": "<THUMBPRINT_OF_CERTIFICATE_FOUND_DURING_INSTALLATION>"
 }
 ```
 

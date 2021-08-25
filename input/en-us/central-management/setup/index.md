@@ -75,13 +75,13 @@ choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls
   choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# We must use the 3.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 3.1.16.
+# We must use the 3.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 3.1.16, but later package versions (within the 3.x.x release) are expected to work.
 @('aspnetcore-runtimepackagestore','dotnetcore-windowshosting') | Foreach-Object {
   choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# Starting with version 0.6.2, CCM Database backage uses dotnetcore-sdk so that it may be installed on a system without requiring IIS. At the time of publishing, the most recent version of this package is 3.1.412
-choco download dotnetcore-sdk --version 3.1.412 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# Starting with v0.6.2 of the CCM Database package, it uses dotnetcore-sdk so that it may be installed on a system without requiring IIS. At the time of publishing, the most recent version of this package is 3.1.410, but later package versions (within the 3.x.x release) are expected to work
+choco download dotnetcore-sdk --version 3.1.410 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 # TRIAL? You have download links, download the files - then place them in the c:\packages folder. Comment out this section

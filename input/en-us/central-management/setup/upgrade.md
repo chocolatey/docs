@@ -147,7 +147,13 @@ Yes, you do need to restart the agents, the service, and the web to pick up the 
 # For CCM versions older than v0.6.0
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 
-# For CCM v0.6.0 and up
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
 Stop-Website -Name ChocolateyCentralManagement
 Restart-WebAppPool -Name ChocolateyCentralManagement
 Start-Website -Name ChocolateyCentralManagement
