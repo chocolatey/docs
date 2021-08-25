@@ -120,7 +120,8 @@ You would simply place the new license file on top of the existing license file,
 
 ### How Do I Upgrade the Trial Edition?
 
-You will not be able to upgrade through regular means - please reach back out to the Chocolatey Software folks to get an updated edition (and possibly an extended trial license).
+You can upgrade your licensed components as long as your Trial license is still valid.
+Please reach back out to your Chocolatey Software contact to request an extension if necessary.
 
 ### How Do I Upgrade the Trial License File?
 

@@ -27,13 +27,12 @@ Similar to how we internalized in [Setup - Internalize Packages](xref:ccm-setup#
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
-# - TRIALS are fine, but there are modifications noted in the script.
 
 # Update the values and remove the < >
 $YourInternalRepositoryPushUrl = '<INSERT REPOSITORY URL HERE>'
 $YourInternalRepositoryApiKey = '<YOUR API KEY HERE>'
 # You get this from the chocolatey.license.xml file:
-$YourBusinessLicenseGuid = '<INSERT NON-TRIAL C4B LICENSE GUID HERE>'
+$YourBusinessLicenseGuid = '<INSERT C4B LICENSE GUID HERE>'
 
 # Download Chocolatey community related items, no internalization necessary
 choco download chocolatey chocolateygui --force --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"

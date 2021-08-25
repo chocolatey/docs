@@ -50,13 +50,12 @@ The complete installation of CCM requires several packages that are available fr
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
-# - TRIALS are fine, but there are modifications noted in the script.
 
 # Update the values and remove the < >
 $YourInternalRepositoryPushUrl = '<INSERT REPOSITORY URL HERE>'
 $YourInternalRepositoryApiKey = '<YOUR API KEY HERE>'
 # You get this from the chocolatey.license.xml file:
-$YourBusinessLicenseGuid = '<INSERT NON-TRIAL C4B LICENSE GUID HERE>'
+$YourBusinessLicenseGuid = '<INSERT C4B LICENSE GUID HERE>'
 
 if(!(Test-Path C:\packages)){
   $null = New-Item C:\packages -ItemType Directory
@@ -84,15 +83,12 @@ choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls
 choco download dotnetcore-sdk --version 3.1.410 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
-# TRIAL? You have download links, download the files - then place them in the c:\packages folder. Comment out this section
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155
 choco download chocolatey-agent chocolatey.extension chocolatey-management-database chocolatey-management-service chocolatey-management-web --force --source="'https://licensedpackages.chocolatey.org/api/v2/'" --ignore-dependencies --output-directory="'C:\packages'"  --user="'user'" --password="'$YourBusinessLicenseGuid'"
 
 # Push all downloaded packages to your internal repository
 Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push $_.Fullname --source="'$YourInternalRepositoryPushUrl'" --api-key="'$YourInternalRepositoryApiKey'"}
 ```
-
-> :information_source: If you are on a TRIAL, you have a step in the script above that you are skipping - noted by "TRIAL?" This is because you don't have direct access to the licensed repository. You will have received an email with download links that contained your trial license file. Refer back to that for the downloads.
 
 ## Step 2: Setup Central Management Database
 

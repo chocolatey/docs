@@ -313,8 +313,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
 > If you ran option 1 above ([Scripted Nexus Configuration](#option-1-scripted-nexus-configuration)), you can skip this step, as the configuration has already been applied to the server.
 
 QDE V1 does not currently include the most up-to-date version of the CCM packages (version 0.3.0, as of this writing).
-If you have already purchased your Chocolatey for Business (C4B) licenses, you can upgrade by following the [Central Management Upgrade](xref:ccm-upgrade) documentation.
-If you are a trial user, please reach out to your Sales representative for the appropriate packages and procedure for upgrading CCM.
+If you have already purchased your Chocolatey for Business (C4B) license, or have a current trial license, you can upgrade by following the [Central Management Upgrade](xref:ccm-upgrade) documentation.
 
 An additional mechanism of security that is highly recommended is the addition of salt additives to the encrypted communication between your endpoints and the CCM Service.
 As we know, communication from the endpoints to CCM occurs over port 24020, and is secured by SSL certificates.
