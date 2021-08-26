@@ -70,7 +70,7 @@ Also found at [Chocolatey Configuration](xref:configuration).
 * There should be messages of connecting to the ccm server and checking in. It will be similar to this:
   ![Agent Setup For CCM](/assets/images/features/ccm/agent_ccm_setup_good.png)
   Connection to report in:
-  ![Agent Checkin to CCM](/assets/images/features/ccm/agent_ccm_communication.png)
+  ![Agent Check-in to CCM](/assets/images/features/ccm/agent_ccm_communication.png)
 
 ## FAQ
 
@@ -152,7 +152,7 @@ This will provide similar messaging as the above. The fix is the same, upgrade C
 
 If you are in the CCM service logs, you may be seeing the above error. That is a bug that was found with the communication of CCM v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in CCM v0.3.0 and Chocolatey Agent v0.11.0. Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
 
-### The client reports successful checkin, but nothing is showing up in CCM
+### The client reports successful check-in, but nothing is showing up in CCM
 
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
 

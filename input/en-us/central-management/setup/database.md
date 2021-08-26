@@ -31,21 +31,22 @@ CCM will not install or take a dependency on a database engine install as there 
 
 > :warning: **WARNING**
 >
-> SQL Server Mixed Mode Authentication is what you will want for ease of installation. If you decide you need to go Windows Authentication (aka integrated security), you **will** need to ensure the following addtional items:
+> SQL Server Mixed Mode Authentication is what you will want for ease of installation. If you decide you need to go Windows Authentication (aka integrated security), you **will** need to ensure the following additional items:
+>
 > * **You *must* have active directory** - Full stop. Local machine accounts can not authenticate to remote machines (nor SQL Server instances on remote machines).
 > * **SQL Server machine security** - ensure the domain accounts being used for the service and web are not local administrators (members of the `BUILTIN\Administrators`) group on the machine that contains the SQL Server instance, or they will have `sysadmin` privileges by default to the SQL Server instance (until removed).
 > * **Central Management Service installation** - You'll need to use an Active Directory (LDAP) account. See the install options for how to pass that through.
->    * **!!Security!!** - As part of installation, an account will be made a member of the `BUILTIN\Administrators` group on the machine where the service is installed. Ensure that is **not** the same machine where SQL Server is installed or that account will immediately be a member of the `sysadmin` role by default in SQL Server (until removed).
+>   * **!!Security!!** - As part of installation, an account will be made a member of the `BUILTIN\Administrators` group on the machine where the service is installed. Ensure that is **not** the same machine where SQL Server is installed or that account will immediately be a member of the `sysadmin` role by default in SQL Server (until removed).
 > * **Central Management Web installation** - You'll need to use an Active Directory (LDAP) account. See the install options for how to pass that through to be set with the IIS Application Pool.
 >
 > :memo: Incorrect credentials to the database is 90% of support tickets related to Central Management.
 >
->Unless you are an expert in hooking things up to SQL Server, its probably best to stick with SQL Server Mixed Mode Authentication.
-> See https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server
+> Unless you are an expert in hooking things up to SQL Server, its probably best to stick with SQL Server Mixed Mode Authentication.
+> See <https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server>
 
 ### Step 1.1: Install SQL Server
 
-You may need to install SQL Server as part of this. There are all kinds of ways to do that and different SKUs to choose from. If you already have SQL Server implemented and you simply want to add the Chocolatey Management Database to that, you can skip this step (and possibley 1.2 as well).
+You may need to install SQL Server as part of this. There are all kinds of ways to do that and different SKUs to choose from. If you already have SQL Server implemented and you simply want to add the Chocolatey Management Database to that, you can skip this step (and possibly 1.2 as well).
 
 #### Install SQL Server Express
 
@@ -85,11 +86,11 @@ The following is a script for SQL Server Express. You may be configuring a defau
 
 ```powershell
 # https://docs.microsoft.com/en-us/sql/tools/configuration-manager/tcp-ip-properties-ip-addresses-tab
-Write-Output "SQL Server: Configuring Remote Acess on SQL Server Express."
+Write-Output "SQL Server: Configuring Remote Access on SQL Server Express."
 $assemblyList = 'Microsoft.SqlServer.Management.Common', 'Microsoft.SqlServer.Smo', 'Microsoft.SqlServer.SqlWmiManagement', 'Microsoft.SqlServer.SmoExtended'
 
 foreach ($assembly in $assemblyList) {
-  $assembly = [System.Reflection.Assembly]::LoadWithPartialName($assembly)
+    $assembly = [System.Reflection.Assembly]::LoadWithPartialName($assembly)
 }
 
 $wmi = New-Object Microsoft.SqlServer.Management.Smo.Wmi.ManagedComputer # connects to localhost by default
@@ -138,7 +139,7 @@ netsh advfirewall firewall add rule name="SQL Server Browser 1434" dir=in action
 
 The Central Management Database package
 
-* will create the `ChocolateyManagement` database if it does not exist
+* Will create the `ChocolateyManagement` database if it does not exist
 * Migrates the database code (`DDL/DML`) to bring it up to the current version
 * That's it.
 
@@ -171,13 +172,17 @@ Scenario 1: You have set up the database to use Windows Authentication (or Mixed
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString=Server=Localhost;Database=ChocolateyManagement;Trusted_Connection=true;'"
 ```
 
-> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running the process, whether that be a domain account or a local Windows account.
+> :memo: **NOTE**
+>
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running the process, whether that be a domain account or a local Windows account.
 
-> :memo: **NOTE** You can use `--package-parameters` and/or `--package-parameters-sensitive` here, depending on whether you are specifying things that should not be logged (`--package-parameters-sensitve` is guaranteed to stay out of logs).
+> :memo: **NOTE**
+>
+> You can use `--package-parameters` and/or `--package-parameters-sensitive` here, depending on whether you are specifying things that should not be logged (`--package-parameters-sensitive` is guaranteed to stay out of logs).
 
 > :warning: **WARNING**
 >
-> **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
+> **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
 >
 > **Upgrades**: Please ensure the user running the package installation has been granted `db_owner` access to an existing database.
 
@@ -187,7 +192,9 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 choco install chocolatey-management-database -y --package-parameters="'/ConnectionString=Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;'"
 ```
 
-> :memo: **NOTE** The above warnings and notes apply here as well.
+> :memo: **NOTE**
+>
+> The above warnings and notes apply here as well.
 
 ##### Use Active Directory Account to Remote SQL Server
 
@@ -203,13 +210,13 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 >
 > We recommend keeping the package installations on the same machine that SQL Server is in. It will reduce confusion and increase the accuracy of reporting. Run the installs/upgrades on the machine they apply to, so this should be the same machine that contains SQL Server (if on Windows).
 >
-> :warning: **WARNING**
->
-> **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
+> **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
 >
 > **Upgrades**: Please ensure the user running the package installation has been granted `db_owner` access to an existing database.
 
-> :memo: **NOTE** This is not a normal scenario.
+> :memo: **NOTE**
+>
+> This is not a normal scenario.
 
 ##### Use Local Windows Account to Remote SQL Server
 
@@ -221,7 +228,7 @@ Scenario 3: you have set up the database to use Windows Authentication (or Mixed
 >
 > This is an invalid scenario and will not work. Please look at one of the other options. If you don't have LDAP, you will want to look at [SQL Server Account Authentication](#sql-server-account-authentication) below.
 
-We typically recommend you run installations and upgrades for the databse on the local machine anyway, so that the information is left with that machine, especially when checking in.
+We typically recommend you run installations and upgrades for the database on the local machine anyway, so that the information is left with that machine, especially when checking in.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -244,7 +251,7 @@ choco install chocolatey-management-database -y --package-parameters="'/Connecti
 
 ##### Use SQL Server Authentication to Local SQL Server
 
-Scenario 5: The database has been setup to use Mixed Mode Authentication. Someone has already precreated the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been precreated. Now you want to install the package on the same machine where the sql server instance is located.
+Scenario 5: The database has been setup to use Mixed Mode Authentication. Someone has already pre-created the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been pre-created. Now you want to install the package on the same machine where the sql server instance is located.
 
 ```powershell
 choco install chocolatey-management-database -y --package-parameters="'/SkipDatabasePermissionCheck'" --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -252,7 +259,7 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 
 > :warning: **WARNING**
 >
-> **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
+> **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
 >
 > **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
 
@@ -262,13 +269,15 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 choco install chocolatey-management-database -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
 ```
 
-> :memo: **NOTE** The above warnings and notes apply here as well.
+> :memo: **NOTE**
+>
+> The above warnings and notes apply here as well.
 
 ##### Use SQL Server Account to Remote SQL Server
 
 > :memo: **NOTE** This is not a normal scenario.
 
-Scenario 6: The database has been setup to use Mixed Mode Authentication. Someone has already precreated the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been precreated. Now you want to install the package on a different machine than where the sql server instance is located.
+Scenario 6: The database has been setup to use Mixed Mode Authentication. Someone has already pre-created the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been pre-created. Now you want to install the package on a different machine than where the sql server instance is located.
 
 ```powershell
 choco install chocolatey-management-database -y --package-parameters="'/SkipDatabasePermissionCheck'" --package-parameters-sensitive="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -282,7 +291,7 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 
 > :warning: **WARNING**
 >
-> **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was precreated).
+> **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
 >
 > **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
 
@@ -306,67 +315,81 @@ Notes:
 
 ```powershell
 function Add-DatabaseUserAndRoles {
-  param(
-   [parameter(Mandatory=$true)][string] $Username,
-   [parameter(Mandatory=$true)][string] $DatabaseName,
-   [parameter(Mandatory=$false)][string] $DatabaseServer = 'localhost\SQLEXPRESS',
-   [parameter(Mandatory=$false)] $DatabaseRoles = @('db_datareader'),
-   [parameter(Mandatory=$false)][string] $DatabaseServerPermissionsOptions = 'Trusted_Connection=true;',
-   [parameter(Mandatory=$false)][switch] $CreateSqlUser,
-   [parameter(Mandatory=$false)][string] $SqlUserPassword
-  )
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        [string] $Username,
 
+        [Parameter(Mandatory=$true)]
+        [string] $DatabaseName,
 
-  $LoginOptions = "FROM WINDOWS WITH DEFAULT_DATABASE=[$DatabaseName]"
-  if ($CreateSqlUser) {
-    $LoginOptions = "WITH PASSWORD='$SqlUserPassword', DEFAULT_DATABASE=[$DatabaseName], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF"
-  }
+        [Parameter(Mandatory=$false)]
+        [string] $DatabaseServer = 'localhost\SQLEXPRESS',
 
-  $addUserSQLCommand = @"
+        [Parameter(Mandatory=$false)]
+        [string[]] $DatabaseRoles = @('db_datareader'),
+
+        [Parameter(Mandatory=$false)]
+        [string] $DatabaseServerPermissionsOptions = 'Trusted_Connection=true;',
+
+        [Parameter(Mandatory=$false)]
+        [switch] $CreateSqlUser,
+
+        [Parameter(Mandatory=$false)]
+        [string] $SqlUserPassword
+    )
+
+    $LoginOptions = "FROM WINDOWS WITH DEFAULT_DATABASE=[$DatabaseName]"
+    if ($CreateSqlUser) {
+        $LoginOptions = "WITH PASSWORD='$SqlUserPassword', DEFAULT_DATABASE=[$DatabaseName], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF"
+    }
+
+    $addUserSQLCommand = @"
 USE [master]
 IF EXISTS(SELECT * FROM msdb.sys.syslogins WHERE UPPER([name]) = UPPER('$Username'))
-  BEGIN
+BEGIN
     DROP LOGIN [$Username]
-  END
+END
 
 CREATE LOGIN [$Username] $LoginOptions
 
 USE [$DatabaseName]
 IF EXISTS(SELECT * FROM sys.sysusers WHERE UPPER([name]) = UPPER('$Username'))
-  BEGIN
+BEGIN
     DROP USER [$Username]
-  END
+END
 
 CREATE USER [$Username] FOR LOGIN [$Username]
 
 "@
 
-  foreach ($DatabaseRole in $DatabaseRoles) {
-    $addUserSQLCommand += @"
+    foreach ($DatabaseRole in $DatabaseRoles) {
+        $addUserSQLCommand += @"
 
 ALTER ROLE [$DatabaseRole] ADD MEMBER [$Username]
 "@
-  }
+    }
 
-  Write-Output "Adding $UserName to $DatabaseName with the following permissions: $($DatabaseRoles -Join ', ')"
-  Write-Debug "running the following: \n $addUserSQLCommand"
+    Write-Output "Adding $UserName to $DatabaseName with the following permissions: $($DatabaseRoles -Join ', ')"
+    Write-Debug "running the following: \n $addUserSQLCommand"
 
 
-  $Connection = New-Object System.Data.SQLClient.SQLConnection
-  $Connection.ConnectionString = "server='$DatabaseServer';database='master';$DatabaseServerPermissionsOptions"
-  $Connection.Open()
-  $Command = New-Object System.Data.SQLClient.SQLCommand
-  $Command.CommandText = $addUserSQLCommand
-  $Command.Connection = $Connection
-  $Command.ExecuteNonQuery()
-  $Connection.Close()
-
+    $Connection = New-Object System.Data.SQLClient.SQLConnection
+    $Connection.ConnectionString = "server='$DatabaseServer';database='master';$DatabaseServerPermissionsOptions"
+    $Connection.Open()
+    $Command = New-Object System.Data.SQLClient.SQLCommand
+    $Command.CommandText = $addUserSQLCommand
+    $Command.Connection = $Connection
+    $Command.ExecuteNonQuery()
+    $Connection.Close()
 }
 
 # Add Sql Server Login / User:
 Add-DatabaseUserAndRoles -DatabaseName 'ChocolateyManagement' -Username 'ChocoUser' -SqlUserPassword '<SUPER HARD PASSWORD>' -CreateSqlUser  -DatabaseRoles @('db_datareader', 'db_datawriter')
+
 # Add Local Windows User:
 Add-DatabaseUserAndRoles -DatabaseName 'ChocolateyManagement' -Username "$(hostname)\ChocolateyLocalAdmin" -DatabaseRoles @('db_datareader', 'db_datawriter')
+
 # Add Active Directory Domain User to a default instance of SQL Server:
 Add-DatabaseUserAndRoles -DatabaseServer 'localhost' -DatabaseName 'ChocolateyManagement' -Username "<DomainName>\<Username>" -DatabaseRoles @('db_datareader', 'db_datawriter')
 ```
@@ -388,6 +411,22 @@ Unfortunately only SQL Server SKUs work with Chocolatey Central Management at th
 ### What is the CCM compatibility matrix?
 
 Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
+
+### What is the minimum required configuration for the appsettings.json file?
+
+As of CCM v0.6.2, the default settings in the `appsettings.json` for the database package are:
+
+```json
+{
+  "ConnectionStrings": {
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
+  }
+}
+```
+
+> **NOTE**
+>
+> This file will usually be condensed into a single line, with the values encrypted.
 
 ## Common Errors and Resolutions
 
@@ -413,7 +452,7 @@ The guidance in this case is either to pin to the specific version of the Chocol
 
 ### ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.
 
-This is https://github.com/chocolatey/chocolatey-licensed-issues/issues/161.
+This is <https://github.com/chocolatey/chocolatey-licensed-issues/issues/161>.
 
 There are two workarounds noted:
 
@@ -422,7 +461,7 @@ There are two workarounds noted:
 
 ### ERROR: System.Data.SqlClient.SqlException: Could not allocate space for object 'dbo.AbpAuditLogs'.'PK_AbpAuditLogs' in database 'ChocolateyManagement' because the 'PRIMARY' filegroup is full. Create disk space by deleting unneeded files, dropping objects in the filegroup, adding additional files to the filegroup, or setting autogrowth on for existing files in the filegroup.
 
-This occurs when the ChocolateyManagement database has reached its maximimum configured size. The following SQL query resolves the issue by increasing the database size to 200MB. You can increase this value up to 10GB (in MB notation) if using SQL EXPRESS, or higher if using a licensed edition of SQL Servver. Just ensure you have the free space available to support whatever maximum you decide upon.
+This occurs when the ChocolateyManagement database has reached its maximum configured size. The following SQL query resolves the issue by increasing the database size to 200MB. You can increase this value up to 10GB (in MB notation) if using SQL EXPRESS, or higher if using a licensed edition of SQL Server. Just ensure you have the free space available to support whatever maximum you decide upon.
 
 ```sql
 USE master;
@@ -433,6 +472,5 @@ MODIFY FILE
     SIZE = 200MB);
 GO
 ```
-
 
 [Central Management Setup](xref:ccm-setup)  [Chocolatey Central Management](xref:central-management)

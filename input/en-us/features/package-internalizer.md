@@ -99,7 +99,7 @@ You must have a [Business edition of Chocolatey](https://chocolatey.org/compare)
 
 ### I'm a licensed customer, now what?
 
-You can run `choco download` and point it to an existing package name on any remote resource, typically folks point to `https://chocolatey.org/api/v2/` and let Chocolatey do all of the work of getting the package and remote resources to recompile the package.
+You can run `choco download` and point it to an existing package name on any remote resource, typically folks point to `https://community.chocolatey.org/api/v2/` and let Chocolatey do all of the work of getting the package and remote resources to recompile the package.
 
 ### How does it work?
 

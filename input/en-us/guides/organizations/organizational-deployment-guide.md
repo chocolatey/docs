@@ -141,14 +141,14 @@ From the machine with internet access:
 1. Download packages (choose one):
     * C4B / MSP / C4BTRIAL: - Run the following: `choco download chocolatey chocolatey.server dotnet4.6.1 chocolateygui --internalize`. This is going to take quite awhile.
     * FOSS only - download the following packages:
-      * [Chocolatey](https://chocolatey.org/api/v2/package/chocolatey)
-      * [Chocolatey GUI](https://chocolatey.org/api/v2/package/chocolateygui)
+      * [Chocolatey](https://community.chocolatey.org/api/v2/package/chocolatey)
+      * [Chocolatey GUI](https://community.chocolatey.org/api/v2/package/chocolateygui)
       * Download Chocolatey.Server package and dependencies:
-        * [Chocolatey.Server](https://chocolatey.org/api/v2/package/chocolatey.server)
-        * [dotnet4.6](https://chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually]xref:recompile-packages)
-        * [dotnet4.6.1](https://chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](xref:recompile-packages)
-        * [KB2919355](https://chocolatey.org/api/v2/package/KB2919355) - [internalize manually](xref:recompile-packages)
-        * [KB2919442](https://chocolatey.org/api/v2/package/KB2919442) - [internalize manually](xref:recompile-packages)
+        * [Chocolatey.Server](https://community.chocolatey.org/api/v2/package/chocolatey.server)
+        * [dotnet4.6](https://community.chocolatey.org/api/v2/package/DotNet4.6) - [internalize manually]xref:recompile-packages)
+        * [dotnet4.6.1](https://community.chocolatey.org/api/v2/package/DotNet4.6.1) - [internalize manually](xref:recompile-packages)
+        * [KB2919355](https://community.chocolatey.org/api/v2/package/KB2919355) - [internalize manually](xref:recompile-packages)
+        * [KB2919442](https://community.chocolatey.org/api/v2/package/KB2919442) - [internalize manually](xref:recompile-packages)
 1. C4B / C4BTRIAL - Run the following additionally: `choco download chocolatey.extension chocolatey-agent --internalize`.
 1. MSP - Run the following additionally: `choco download chocolatey.extension --internalize`.
 1. Now we should have several packages in `c:\choco-setup\packages`. If not, type `start .` and go copy the files here to that location.
@@ -209,7 +209,7 @@ choco feature enable --name="'reduceInstalledPackageSpaceUsage'"
 #TODO: Also make sure you set your sources to allow for self-service
 
 # Download and internalize packages.
-choco download chocolatey chocolatey.server dotnet4.6.1 chocolateygui --internalize --output-directory="$env:SystemDrive\choco-setup\packages" --source="'https://chocolatey.org/api/v2/'"
+choco download chocolatey chocolatey.server dotnet4.6.1 chocolateygui --internalize --output-directory="$env:SystemDrive\choco-setup\packages" --source="'https://community.chocolatey.org/api/v2/'"
 # C4B / C4BTRIAL - use this
 choco download chocolatey.extension chocolatey-agent --internalize --output-directory="$env:SystemDrive\choco-setup\packages" --source="'https://licensedpackages.chocolatey.org/api/v2/'"
 # MSP - use this

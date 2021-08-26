@@ -14,7 +14,7 @@ This is the Central Management website that gives an API and a web layer to cent
 
 ## Step 1: Complete Prerequisites
 
-* > :warning: The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
+* > :warning: **WARNING** The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 * Windows Server 2012+
 * PowerShell 3+
 * IIS Set up and available
@@ -34,7 +34,9 @@ choco install dotnetcore-windowshosting --version 3.1.16 --no-progress -y
 
 ## Step 2: Install Central Management Web Package
 
-> :memo: **NOTE** At this time we don't recommend opening internet access to CCM web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
+> :memo: **NOTE**
+>
+> At this time we don't recommend opening internet access to CCM web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
 
 ### Package Parameters
 
@@ -60,7 +62,7 @@ This package creates the CCM Website and Application Pool with the following def
   * processModel.idleTimeout:             **0**
   * recycling.periodicRestart.schedule:   **Disabled**
   * recycling.periodicRestart.time:       **0**
-* Website Name:                             **ChocolateyCentralManagement**
+* Website Name:                           **ChocolateyCentralManagement**
   * PortBinding:                          **80**
   * applicationDefaults.preloadEnabled:   **True**
 
@@ -70,9 +72,9 @@ If you've used a specific username for the app pool, specified by `/Username:` o
 
 This includes (but may not be everything):
 
-  * User needs granted "Logon as batch"  in local security policy.
-  * User needs to be given explicit Read/Execute rights (ACLs) to `c:\tools\chocolatey-management-web`.
-  * User needs to be given explicit Modify rights (ACLs) to `c:\tools\chocolatey-management-web\App_Data`.
+* User needs granted "Logon as batch"  in local security policy.
+* User needs to be given explicit Read/Execute rights (ACLs) to `c:\tools\chocolatey-management-web`.
+* User needs to be given explicit Modify rights (ACLs) to `c:\tools\chocolatey-management-web\App_Data`.
 
 ### Scenarios
 
@@ -86,7 +88,9 @@ Scenario 1: Active Directory - you have set up the [database](xref:ccm-database)
 choco install chocolatey-management-web -y --package-parameters="'/ConnectionString:Server=<RemoteSqlHost>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<DomainAccount>'" --package-parameters-sensitive="'/Password:<domain account password>'"
 ```
 
-> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
+> :memo: **NOTE**
+>
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. In this case, whatever is running the IIS Application Pool is the user you need to ensure has access to the database.
 
 ##### Use Local Windows Account to Local SQL Server
 
@@ -112,7 +116,9 @@ choco install chocolatey-management-web -y --package-parameters="'/ConnectionStr
 >
 > Please ensure the user `IIS APPPOOL\ChocolateyCentralManagement` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
+> :memo: **NOTE**
+>
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password. Whatever is running the IIS Application Pool is the user you need to ensure is in the database.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -212,7 +218,9 @@ You should received a notification similar to this:
 
 #### appsettings.json configuration
 
-> :memo: **NOTE** In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
+> :memo: **NOTE**
+>
+> In version 0.2.0+ of CCM, this configuration will likely be automatically applied during installation and will use defaults, but be encrypted. If the value is incorrect, you can simply set it as shown here as encryption is not necessary for this value.
 
 There is a requirement within the CCM site to send emails to end users of the application.  For example, when registering a new user, or resetting a password.  To ensure that these emails contain a properly clickable link a modification needs to be made to the `appsettings.json` file which is located in the `c:\tools\chocolatey-management-web` folder.
 
@@ -224,9 +232,12 @@ Open this file in a text editor, and add the following entry:
     }
 ```
 
-* `URL_to_CCM` should be the accessible URL to access the CCM Website.  This will typically be the FQDN of the server that is hosting the CCM Web Site, but it will depend on your environments configuration.
-
-> :memo: **NOTE** When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.  i.e. the end result needs to be a properly formatted JSON document.
+> :memo: **NOTE**
+>
+> - `URL_to_CCM` should be the accessible URL to access the CCM Website.
+>   This will typically be the FQDN of the server that is hosting the CCM Web Site, but it will depend on your environments configuration.
+> - When adding this entry, be sure to include a `,` either before or after the entry, depending on where you add it in the file.
+>   In other words, the end result needs to be a properly formatted JSON document.
 
 The end result should look something like this:
 
@@ -235,7 +246,19 @@ The end result should look something like this:
 Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
 
 ```powershell
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
+# For CCM versions older than v0.6.0
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
 ```
 
 And then try accessing the website again.  Any emails that are then sent from CCM should then contain valid links back to the site.
@@ -263,7 +286,6 @@ And then try accessing the website again.  Any emails that are then sent from CC
 > an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are
 > attempting to use for login. If any of these fields are empty, errors will be encountered when attempting to login
 > to the Central Management application.
->
 
 ![CCM LDAP Setup](/assets/images/features/ccm/ccm_ldap_setup.png)
 
@@ -271,15 +293,15 @@ And then try accessing the website again.  Any emails that are then sent from CC
 
 Some application settings will require you to edit the `appsettings.json` file, which is located in the `c:\tools\chocolatey-management-web` folder.
 
-Here is a copy of items that can be set. They are not required to be encrypted. Any item that is encrypted can be replaced by a non-encrypted value. During package install/upgrade, Chocolatey will encrypt certain settings (even if they were previously plain text).
+Here is a copy of items that can be set. They are not required to be encrypted. Any item that is encrypted can be replaced by a non-encrypted value. During package install/upgrade, Chocolatey will encrypt the settings (even if they were previously plain text).
 
 ```json
 {
   "ConnectionStrings": {
-        "Default": "Server=localhost; Database=ChocolateyManagement; Trusted_Connection=True;"
+        "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
   "App": {
-    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
   },
   "Recaptcha": {
     "SiteKey": "<INSERT SITE KEY HERE>",
@@ -326,6 +348,34 @@ Get-Process "ChocolateySoftware.ChocolateyManagement.Web.Mvc" | Stop-Process -Fo
 
 ## FAQ
 
+### What is the minimum required configuration for the appsettings.json file?
+
+As of CCM v0.6.2, the default settings in the `appsettings.json` for the website package are:
+
+```json
+{
+  "ConnectionStrings": {
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
+  },
+  "App": {
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
+  }
+}
+```
+
+> **NOTE**
+>
+> This file will usually be condensed into a single line, with the values encrypted.
+
+If these values are removed or incorrect, the CCM website may fail to start.
+To correct this, ensure all configuration is present and correct and then restart the CCM website.
+
+```powershell
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+```
+
 ### Can I install the Chocolatey Central Management Web Site under a Virtual Directory in IIS?
 
 Currently no.  The Chocolatey Central Management Web Site expects to reside at the site level within IIS.
@@ -345,15 +395,31 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 ```json
 {
   "ConnectionStrings": {
-        "Default": "Server=Localhost\\SQLEXPRESS; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
   },
   "App": {
-    "WebSiteRootAddress": "http://<FQDN OR Binding HERE>"
+    "WebSiteRootAddress": "http://<FQDN_OR_BINDING_HERE>"
   }
 }
 ```
 
-1. Then restart the website by running from admin powershell: `Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process`
+1. Then restart the website by running from admin powershell:
+
+   ```powershell
+   # For CCM versions older than v0.6.0
+   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+   # For CCM version 0.6.0 and 0.6.1
+   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+   Stop-Website -Name ChocolateyCentralManagement
+   Restart-WebAppPool -Name ChocolateyCentralManagement
+   Start-Website -Name ChocolateyCentralManagement
+
+   # For CCM v0.6.2 and up
+   Stop-Website -Name ChocolateyCentralManagement
+   Restart-WebAppPool -Name ChocolateyCentralManagement
+   Start-Website -Name ChocolateyCentralManagement
+   ```
 
 > :warning: **WARNING**
 >
@@ -364,6 +430,61 @@ It depends. You can simply go to the appsettings.json file and adjust the connec
 The default installation folder for `chocolatey-management-web` is at `c:\tools\chocolatey-management-web`. However, this is configurable based on `$env:ChocolateyToolsLocation`. We would not suggest changing that value once you have installed anything that makes use of it as permissions and other things will be pointing to that set of folders.
 
 ## Common Errors and Resolutions
+
+### Central Management Website fails to start, showing "An error occurred while starting the application."
+
+You may also see the following entry in the CCM website log file:
+
+```log
+System.ArgumentNullException: Value cannot be null. (Parameter 'str')
+```
+
+This indicates some of the [required configuration values][required-config] for the CCM website to function are not present.
+Ensure all [required configuration values][required-config] are present, then restart the CCM website:
+
+```powershell
+# For CCM versions older than v0.6.0
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+```
+
+### Central Management Website fails to load with a `500.21` error code
+
+This error code indicates that IIS failed to start the website due to a misconfiguration.
+By default, CCM uses the `AspNetCoreModuleV2` in IIS, however the initial versions of CCM initially used `AspNetCoreModule` instead.
+Due to how the upgrade logic has worked prior to v0.6.2, this old configuration value may be kept during upgrade.
+
+As of v0.6.0, the IIS webhost can no longer run the website using the `AspNetCoreModule` as 0.6.x is running on .NET Core 3.1, and the structure of the `web.config` file has changed.
+If you encounter this issue, you will need to update your `web.config` file to match the new format.
+The default `web.config` file structure as of v0.6.0 is as follows:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <location path="." inheritInChildApplications="false">
+    <system.webServer>
+      <handlers>
+        <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+      </handlers>
+      <aspNetCore processPath="dotnet" arguments=".\ChocolateySoftware.ChocolateyManagement.Web.Mvc.dll" stdoutLogEnabled="false" stdoutLogFile=".\App_Data\logs\stdout" hostingModel="inprocess" />
+    </system.webServer>
+  </location>
+</configuration>
+```
+
+As of v0.6.2, the `chocolatey-management-website` package upgrade process will inform you during upgrade if your `web.config` file is not usable.
+If it is not, the installer will show a large warning message, indicating where the existing `web.config` file has been backed up to.
+After the installation completes, you will need to replicate any customisations you have made to the `web.config` file into the new file manually.
 
 ### Configure Central Management alongside WSUS admin site
 
@@ -379,7 +500,7 @@ This error can occur when installing the `chocolatey-management-web` package.  D
 
 ### HTTP Error when trying to access Chocolatey Central Management Website
 
-When you try to access the Chocolatey Central Management Website (by default, this is hosted on http://localhost), errors messages similar to the following may be returned:
+When you try to access the Chocolatey Central Management Website (by default, this is hosted on `http://localhost`), errors messages similar to the following may be returned:
 
 `HTTP Error 500.19 - Internal Server Error`
 
@@ -390,7 +511,8 @@ These errors happen very early in the application execution, and as a result, ar
 1. Locate the `stdoutLogEnabled` attribute, which will be set to false by default
 1. Change this to true, and save the file
 1. Check to see if there is a running process called `ChocolateySoftware.ChocolateyManagement.Web.Mvc.exe`.  If there is, stop it.
-1. Attempt to access the website again.  An additional log file will be created in the `App_Data\Logs\stdout` folder
+1. Restart the CCM app pool and website in IIS.
+1. Attempt to access the website again.  An additional log file will be created in the `App_Data\Logs\stdout` folder. In CCM v0.6.0 and v0.6.1, this may be incorrectly located in the `Logs\stdout` folder.
 1. Review this log for additional error information
 1. Ensure that you set the `stdoutLogEnabled` attribute back to false
 
@@ -452,7 +574,19 @@ The end result should look something like this:
 Once this change has been added, save the file, and then run the following to ensure that the process running the CCM Website is stopped:
 
 ```powershell
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
+# For CCM versions older than v0.6.0
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
 ```
 
 And then try accessing the website again.  Any emails that are then sent from CCM should then contain valid links back to the site.
@@ -462,9 +596,22 @@ And then try accessing the website again.  Any emails that are then sent from CC
 You need to restart the web executable currently. We are looking to have it automatically picked up in future releases. Here's a script to handle that:
 
 ```powershell
-Get-Service chocolatey-* | Stop-Service
-Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
-Get-Service chocolatey-* | Start-Service
+# For CCM versions older than v0.6.0
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+
+# For CCM version 0.6.0 and 0.6.1
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# For CCM v0.6.2 and up
+Stop-Website -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
+
+# Restart Chocolatey Agent and/or CCM service (all versions)
+Get-Service chocolatey-* | Restart-Service
 ```
 
 ### A computer or group is not showing as available for deployments but I have plenty of available licenses
@@ -496,3 +643,5 @@ Within the CCM Website, [SignalR](https://dotnet.microsoft.com/apps/aspnet/signa
 In all of these cases, we haven't seen any drop in functionality for the notifications that are sent from the CCM Application.  Our suspicion is that there is a timing issue when attempting to make the connection to the SignalR Hub, which is almost immediately rectified.  Due to the fact that SignalR is a 3rd party integration, we do not believe that there is anything that can be done to resolve this problem, and since the functionality continues to work as expected, these errors in the JavaScript console can safely be ignored.
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
+
+[required-config]: #what-is-the-minimum-required-configuration-for-the-appsettingsjson-file

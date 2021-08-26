@@ -377,13 +377,13 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
+`-source "'.;https://community.chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
 
 > :memo: **NOTE** If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
 You can also use the `-debug` switch on `choco install` to provide more information.
 
-> :memo: **NOTE** Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `-s "'.;https://chocolatey.org/api/v2/'"`. Call `choco install dude -s "'.;https://chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg -s "'.;https://chocolatey.org/api/v2/'"`.
+> :memo: **NOTE** Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `-s "'.;https://community.chocolatey.org/api/v2/'"`. Call `choco install dude -s "'.;https://community.chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg -s "'.;https://community.chocolatey.org/api/v2/'"`.
 
 ### Alternative testing strategy
 You can also type `choco install -fdv path/to/nuspec` and choco will build the nupkg and attempt to install it.

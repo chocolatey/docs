@@ -25,6 +25,19 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.6.2 (August 26th, 2021)
+### BUG FIXES
+ * Fix - Service - Method to determine correct SSL certificate to use between CCM Service installation script and execution is inconsistent
+ * Fix - Service - Exceptions thrown during CCM Service startup do not halt internal service tasks
+ * Fix - Service - CCM Service log file does not contain full error information - see [Licensed #247](https://github.com/chocolatey/chocolatey-licensed-issues/issues/247)
+ * Fix - Service - Unnecessary/unhelpful log messages are added to the CCM Service log file
+ * Fix - Web - Upgrading CCM Website package doesn't complete successfully due to locked files
+ * Fix - Web - Upgrading CCM Website package doesn't ensure creation of required configuration in appsettings.json file
+ * Fix - Web - Upgrading CCM Website package doesn't ensure creation of required configuration in web.config file
+ * Fix - Web - Unable to "see" newly created Outdated Software Report when there are greater than 10 reports
+ * Fix - Web - Incorrect total number of Outdated Software Reports displayed
+ * Fix - Database - Unable to install 0.6.0/0.6.1 database package when IIS is not installed - see [Licensed #248](https://github.com/chocolatey/chocolatey-licensed-issues/issues/248)
+
 ## 0.6.1 (August 5th, 2021)
 ### BUG FIXES
  * Fix - Service - Unable to install chocolatey-management-service package under certain conditions - see [Licensed #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242)
