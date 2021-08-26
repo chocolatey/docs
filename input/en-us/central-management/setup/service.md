@@ -237,6 +237,13 @@ The `chocolatey-management-service` is responsible for making a number of change
 
 ## FAQ
 
+### Why is the CCM Service not marked as 'Stopped' when there is an error during its execution?
+
+By default, all exceptions that occur within the CCM Service are logged to the applications log file (ccm-service.log), however, these exceptions do not result in actually physically stopping the service.
+In other words, if an exception is thrown within the application, if you checked the CCM Service in the Windows Services snap-in, you would still see that the service is running.
+Due to the nature of how exceptions occur within the CCM Service, this is normally perfectly fine, since operations are attempted again at a later date.
+However, there are occasions, for example when something in the appsettings.json file has been misconfigured, that an exception can be thrown, and the service doesn't start up correctly, but it is still marked as Running.
+This situation can occur with any version of CCM up to and including v0.6.2, but it is something that we are looking to address in a future release.
 ### What is the minimum required configuration for the appsettings.json file?
 
 As of CCM v0.6.2, the default configuration values in the `appsettings.json` for the CCM service are:
