@@ -17,7 +17,7 @@
 #addin nuget:?package=Cake.Git&version=0.22.0
 #addin nuget:?package=Cake.Kudu&version=0.11.0
 #addin nuget:?package=Cake.Gulp&version=0.12.0
-#addin nuget:?package=Cake.Yarn&version=0.4.6
+#addin nuget:?package=Cake.Yarn&version=0.4.8
 
 ///////////////////////////////////////////////////////////////////////////////
 // Scripts
