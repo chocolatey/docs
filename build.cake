@@ -8,7 +8,7 @@
 // Addins
 ///////////////////////////////////////////////////////////////////////////////
 
-#addin nuget:?package=Cake.Git&version=1.1.0
+#addin nuget:?package=Cake.Git&version=1.0.0
 #addin nuget:?package=Cake.Kudu&version=1.0.1
 #addin nuget:?package=Cake.Gulp&version=1.0.0
 #addin nuget:?package=Cake.Yarn&version=0.4.8
