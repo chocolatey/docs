@@ -37,6 +37,11 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
  * Fix - Package Builder UI: adding appending silent arguments does not add a space at the beginning
  * Fix - Proxy bypass ignored on licensed extension when downloading packages - see [licensed #235](https://github.com/chocolatey/chocolatey-licensed-issues/issues/235)
 
+### IMPROVEMENTS
+ * [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #252](https://github.com/chocolatey/chocolatey-licensed-issues/issues/252)
+ * Self-Service / Background Mode: Filter sources to only those allowed when running an non-administrator user
+ * Package Reducer: Allow packages to control the level of reduction of files that happens after installation
+
 
 ## 2.1.1 (July 3, 2020)
 ### BUG FIXES
