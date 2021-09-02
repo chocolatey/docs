@@ -12,6 +12,13 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.18.2](https://github.com/chocolatey/ChocolateyGUI/milestone/25?closed=1) (September 2, 2021)
+
+### BUGS
+
+* When running Chocolatey GUI, ensure installed Chocolatey assembly is used, rather than locally referenced assembly - [#857](https://github.com/chocolatey/ChocolateyGUI/issues/857)
+
+
 ## [0.18.1](https://github.com/chocolatey/ChocolateyGUI/milestone/24?closed=1) (March 29, 2021)
 
 ### BUGS
