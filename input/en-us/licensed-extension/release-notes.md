@@ -26,6 +26,18 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 2.2.0 (September 2, 2021)
+
+**NOTE**: The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI 0.11.0.
+
+### BUG FIXES
+ * Self-Service / Background Mode:
+   * Fix - choco pin command does not work when running through Chocolatey Agent
+   * Fix - Prevent invalid configuration value for commandExecutionTimeout
+ * Fix - Package Builder UI: adding appending silent arguments does not add a space at the beginning
+ * Fix - Proxy bypass ignored on licensed extension when downloading packages - see [licensed #235](https://github.com/chocolatey/chocolatey-licensed-issues/issues/235)
+
+
 ## 2.1.1 (July 3, 2020)
 ### BUG FIXES
  * Self-Service / Background Mode:
