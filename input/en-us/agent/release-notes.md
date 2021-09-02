@@ -26,6 +26,16 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.12.0 (September 2, 2021)
+
+**NOTE**: The dependencies of the chocolatey-agent package have changed in this release, and it now requires chocolatey.extension 2.2.0.
+
+### BUG FIXES
+ * Central Management
+   * Fix - Second and subsequent deployments to an agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237)
+   * Fix - Deployments - Log does not contain all information under error circumstances
+
+
 ## 0.11.2 (November 5, 2020)
 
 ### BUG FIXES
