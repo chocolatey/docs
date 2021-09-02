@@ -35,6 +35,9 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
    * Fix - Second and subsequent deployments to an agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237)
    * Fix - Deployments - Log does not contain all information under error circumstances
 
+### IMPROVEMENTS
+ * [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #253](https://github.com/chocolatey/chocolatey-licensed-issues/issues/253)
+
 
 ## 0.11.2 (November 5, 2020)
 
