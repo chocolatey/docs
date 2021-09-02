@@ -12,6 +12,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+## [0.11.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.1) (September 2nd, 2021)
+### BUG FIXES
+ * Fix - Chocolatey Licensed Extension is not loaded into PowerShell process when using v0.11.0 - see [#2340](https://github.com/chocolatey/choco/issues/2340)
+
 ## [0.11.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.0) (September 2nd, 2021)
 ### BREAKING CHANGES
  * Disable importing / loading of DLL in the extension folder - see [#2333](https://github.com/chocolatey/choco/issues/2333)
