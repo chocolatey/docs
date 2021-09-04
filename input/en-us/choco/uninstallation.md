@@ -74,7 +74,7 @@ if (-not (Test-Path $env:ChocolateyInstall)) {
 $userKey = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment')
 $userPath = $userKey.GetValue('PATH', [string]::Empty, 'DoNotExpandEnvironmentNames').ToString()
 
-$machineKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\ControlSet001\Control\Session Manager\Environment\')
+$machineKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\ControlSet001\Control\Session Manager\Environment\', $true)
 $machinePath = $machineKey.GetValue('PATH', [string]::Empty, 'DoNotExpandEnvironmentNames').ToString()
 
 $backupPATHs = @(
