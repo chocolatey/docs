@@ -14,6 +14,8 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 ## [0.19.0](https://github.com/chocolatey/ChocolateyGUI/milestone/26?closed=1) (September 6, 2021)
 
+**NOTE:** The dependencies of the chocolateygui package have changed in this release, and it now requires Chocolatey CLI 0.11.1.
+
 ### IMPROVEMENTS
 
 * [Security] XML External Entity attack in log4net (CVE-2018-1285) - [#869](https://github.com/chocolatey/ChocolateyGUI/issues/869)
