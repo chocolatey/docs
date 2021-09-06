@@ -12,6 +12,13 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.19.0](https://github.com/chocolatey/ChocolateyGUI/milestone/26?closed=1) (September 6, 2021)
+
+### IMPROVEMENTS
+
+* [Security] XML External Entity attack in log4net (CVE-2018-1285) - [#869](https://github.com/chocolatey/ChocolateyGUI/issues/869)
+* Make use of Chocolatey CLI Export command - [#882](https://github.com/chocolatey/ChocolateyGUI/issues/882) 
+
 ## [0.18.2](https://github.com/chocolatey/ChocolateyGUI/milestone/25?closed=1) (September 2, 2021)
 
 ### BUGS
