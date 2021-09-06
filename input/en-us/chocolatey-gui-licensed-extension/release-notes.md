@@ -16,6 +16,15 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+## 0.3.0 (September 6, 2021)
+
+### FEATURES
+* Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228)
+* Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240)
+
+### IMPROVEMENTS
+* [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254)
+
 ## 0.2.1 (March 29, 2021)
 
 ### BUGS
