@@ -18,6 +18,10 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 ## 0.3.0 (September 6, 2021)
 
+> :warning: **WARNING**
+>
+> The dependencies of the chocolateygui.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.1 and Chocolatey GUI v0.19.0.
+
 ### FEATURES
 * Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228)
 * Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240)
