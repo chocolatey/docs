@@ -17,6 +17,11 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
  * Fix - Chocolatey Licensed Extension is not loaded into PowerShell process when using v0.11.0 - see [#2340](https://github.com/chocolatey/choco/issues/2340)
 
 ## [0.11.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.0) (September 2nd, 2021)
+
+> :warning: **WARNING**
+>
+> If you use Chocolatey Licensed Extension then in order to use all the new functions that have been added to Chocolatey CLI, when you install v0.11.0, you will also need to install v2.2.0 of Chocolatey Licensed Extension.
+
 ### BREAKING CHANGES
  * Disable importing / loading of DLL in the extension folder - see [#2333](https://github.com/chocolatey/choco/issues/2333)
  * choco list -e -a returns pre-releases even when --pre is not passed - see [#2304](https://github.com/chocolatey/choco/issues/2304)

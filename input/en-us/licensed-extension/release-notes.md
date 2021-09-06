@@ -28,7 +28,9 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ## 2.2.0 (September 2, 2021)
 
-**NOTE**: The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI 0.11.0.
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.0.
 
 ### BUG FIXES
  * Self-Service / Background Mode:

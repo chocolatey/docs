@@ -28,7 +28,9 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ## 0.12.0 (September 2, 2021)
 
-**NOTE**: The dependencies of the chocolatey-agent package have changed in this release, and it now requires chocolatey.extension 2.2.0.
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey-agent package have changed in this release, and it now requires chocolatey.extension v2.2.0.
 
 ### BUG FIXES
  * Central Management
