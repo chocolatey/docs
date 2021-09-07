@@ -1,5 +1,5 @@
 ﻿---
-Order: 130
+Order: 150
 xref: choco-command-sources
 Title: Sources
 Description: Sources Command (choco sources)
@@ -37,11 +37,11 @@ Chocolatey will allow you to interact with sources.
     choco source remove -n=bob
 
 When it comes to the source location, this can be a folder/file share or an http
-location. If it is a url, it will be a location you can go to in a browser and 
-it returns OData with something that says Packages in the browser, similar to 
+location. If it is a url, it will be a location you can go to in a browser and
+it returns OData with something that says Packages in the browser, similar to
 what you see when you go to https://community.chocolatey.org/api/v2/.
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -53,8 +53,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -147,9 +147,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE

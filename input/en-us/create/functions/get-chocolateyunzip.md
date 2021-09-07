@@ -95,15 +95,16 @@ This is a directory where you would like the unzipped files to end up.
 If it does not exist, it will be created.
 
 Property               | Value
----------------------- | -----
-Aliases                | 
+---------------------- | -------------
+Aliases                | unzipLocation
 Required?              | true
 Position?              | 2
 Default Value          | 
 Accept Pipeline Input? | false
  
 ###  -SpecificFolder [&lt;String&gt;]
-OPTIONAL - This is a specific directory within zip file to extract.
+OPTIONAL - This is a specific directory within zip file to extract. The
+folder and its contents will be extracted to the destination.
 
 Property               | Value
 ---------------------- | -----

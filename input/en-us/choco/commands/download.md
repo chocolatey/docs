@@ -154,9 +154,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE
@@ -268,6 +268,23 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        Overrides the default feature 'downloadCache' set to 'True'. Business 
        editions only (licensed version 1.12.2+). See https://chocolate-
        y.org/docs/features-private-cdn 
+
+     --svc, --skipvirus, --skip-virus, --skipviruscheck, --skip-virus-check
+     Skip Virus Check - Skip the virus check for downloaded files on this ru-
+       n. Overrides the default feature 'virusCheck' set to 'False'. Licensed 
+       editions 2.1.0+. See https://docs.chocolatey.org/en-us/features/virus-check 
+
+     --virus, --viruscheck, --virus-check
+     Virus Check - check downloaded files for viruses. Overrides the default 
+       feature 'virusCheck' set to 'False'. [Licensed editions](https://chocolatey.org/compare) 2.1.0+. See 
+       https://docs.chocolatey.org/en-us/features/virus-check 
+
+     --viruspositivesmin, --virus-positives-minimum=VALUE
+     Virus Check Minimum Scan Result Positives - the minimum number of scan 
+       result positives required to flag a package. Used when virusScannerType 
+       is VirusTotal. Overrides the default configuration value 
+       'virusCheckMinimumPositives' set to '4'. [Licensed editions](https://chocolatey.org/compare) 2.1.0+. See 
+       https://docs.chocolatey.org/en-us/features/virus-check 
 
 ~~~
 

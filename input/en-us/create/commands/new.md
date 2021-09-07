@@ -169,9 +169,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE
@@ -194,7 +194,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -t, --template, --template-name=VALUE
      TemplateName - Use a named template in 
-       c:\ProgramData\chocolatey\templates\templatename instead of built-in 
+       C:\ProgramData\chocolatey\templates\templatename instead of built-in 
        template. Available in 0.9.9.9+. Manage templates as packages in 0.9.10+.
 
      --name=VALUE

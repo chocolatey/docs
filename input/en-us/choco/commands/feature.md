@@ -1,5 +1,5 @@
 ﻿---
-Order: 30
+Order: 40
 xref: choco-command-feature
 Title: Feature
 Description: Feature Command (choco feature)
@@ -131,9 +131,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE

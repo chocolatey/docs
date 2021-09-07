@@ -1,5 +1,5 @@
 ﻿---
-Order: 60
+Order: 80
 xref: choco-command-list
 Title: List/Search
 Description: List/Search Command (choco list)
@@ -173,9 +173,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE
@@ -269,7 +269,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --not-broken
      NotBroken - Only return packages that are not failing testing - this 
-       option only filters out failing results from the [community feed](https://comminty.chocolatey.org/packages). It will
+       option only filters out failing results from the [community feed](https://comminty.chocolatey.org/packages). It will 
        not filter against other sources. Available in 0.9.10+.
 
      --detail, --detailed

@@ -1,5 +1,5 @@
 ﻿---
-Order: 50
+Order: 70
 xref: choco-command-install
 Title: Install
 Description: Install Command (choco install)
@@ -52,7 +52,7 @@ Installs a package or a list of packages (sometimes specified as a
     choco install git -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'"
     choco install git -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'" --install-arguments="'/DIR=C:\git'"
     # Params are package parameters, passed to the package
-    # Install args are installer arguments, appended to the silentArgs 
+    # Install args are installer arguments, appended to the silentArgs
     #  in the package for the installer itself
     choco install nodejs.install --version 0.10.35
     choco install git -s "'https://somewhere/out/there'"
@@ -79,7 +79,7 @@ What is `-my`? See option bundling in [how to pass arguments](xref:choco-command
  (https://bitbucket.org/jonforums/uru) or pik
  (https://community.chocolatey.org/packages/pik) to switch between versions.
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -176,13 +176,7 @@ This specifies the source is Python and that we are installing a python
 This specifies that the source is a Windows Feature and we should
  install via the Deployment Image Servicing and Management tool (DISM)
  on the local machine.
- e.g. `choco install IIS-WebServerRole --source windowsfeatures`.
- 
-> :memo: **NOTE** Due to a bug, Chocolatey doesn't currently support `windowsfeatures` as a source
- when this is specified in the packages.config file. As a workoround, you can create a
- separate config file and specify the sources in the install command instead,
- e.g. `choco install "packages.config" --yes --source="'windowsfeatures'"`.
- See this [issue](https://github.com/chocolatey/choco/issues/877) on GitHub for more information.
+ e.g. `choco install IIS-WebServerRole --source windowsfeatures`
 
 
 ## Resources
@@ -286,9 +280,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE

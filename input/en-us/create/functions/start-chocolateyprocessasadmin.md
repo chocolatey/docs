@@ -184,11 +184,11 @@ The working directory for the running process. Defaults to
 Available in 0.10.1+.
 
 Property               | Value
----------------------- | ---------------
-Aliases                |
+---------------------- | -----
+Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          | $(Get-Location)
+Default Value          | 
 Accept Pipeline Input? | false
  
 ###  -SensitiveStatements [&lt;String&gt;]

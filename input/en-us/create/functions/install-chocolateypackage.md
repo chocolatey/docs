@@ -41,6 +41,7 @@ Install-ChocolateyPackage `
   [-File64 <String>] `
   [-UseOnlyPackageSilentArguments] `
   [-UseOriginalLocation] `
+  [-BeforeInstall <ScriptBlock>] `
   [-IgnoredArguments <Object[]>] [<CommonParameters>]
 ~~~
 
@@ -497,6 +498,15 @@ Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -BeforeInstall [&lt;ScriptBlock&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
 Accept Pipeline Input? | false
  
 ###  -IgnoredArguments [&lt;Object[]&gt;]

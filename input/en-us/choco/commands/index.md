@@ -25,8 +25,8 @@ This is a listing of all of the different things you can pass to choco.
  * [outdated](xref:choco-command-outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
  * [upgrade](xref:choco-command-upgrade) - upgrades packages from various sources
  * [uninstall](xref:choco-command-uninstall) - uninstalls a package
- * [pack](xref:choco-command-pack) - packages up a nuspec to a compiled nupkg
- * [push](xref:choco-command-push) - pushes a compiled nupkg
+ * [pack](xref:choco-command-pack) - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
+ * [push](xref:choco-command-push) - pushes a compiled nupkg to a source
  * [new](xref:choco-command-new) - generates files necessary for a chocolatey package from a template
  * [source](xref:choco-command-source) - view and configure default sources
  * [sources](xref:choco-command-sources) - view and configure default sources (alias for source)
@@ -35,10 +35,12 @@ This is a listing of all of the different things you can pass to choco.
  * [features](xref:choco-command-features) - view and configure choco features (alias for feature)
  * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
  * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an apikey for a particular source
- * [unpackself](xref:choco-command-unpackself) - have chocolatey set itself up
+ * [unpackself](xref:choco-command-unpackself) - re-installs Chocolatey base files
  * [version](xref:choco-command-version) - [DEPRECATED] will be removed in v1 - use [`choco outdated`](xref:choco-command-outdated) or `cup <pkg|all> -whatif` instead
  * [update](xref:choco-command-update) - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)
  * [support](xref:choco-command-support) - provides support information
+ * [help](xref:choco-command-help) - displays top level help information for choco
+ * [export](xref:choco-command-export) - exports list of currently installed packages
  * [download](xref:choco-command-download) - downloads packages - optionally internalizing all remote resources
  * [synchronize](xref:choco-command-synchronize) - synchronizes against system installed software - generates missing packages
  * [sync](xref:choco-command-sync) - synchronizes against system installed software - generates missing packages
@@ -91,32 +93,32 @@ You can pass options and switches in the following ways:
 When writing scripts, such as PowerShell scripts passing options and
 switches, there are some best practices to follow to ensure that you
 don't run into issues later. This also applies to integrations that
-are calling Chocolatey and parsing output. Chocolatey **uses** 
+are calling Chocolatey and parsing output. Chocolatey **uses**
 PowerShell, but it is an exe, so it cannot return PowerShell objects.
 
-Following these practices ensures both readability of your scripts AND 
-compatibility across different versions and editions of Chocolatey. 
-Following this guide will ensure your experience is not frustrating 
+Following these practices ensures both readability of your scripts AND
+compatibility across different versions and editions of Chocolatey.
+Following this guide will ensure your experience is not frustrating
 based on choco not receiving things you think you are passing to it.
 
- * For consistency, always use `choco`, not `choco.exe`. Never use 
+ * For consistency, always use `choco`, not `choco.exe`. Never use
    shortcut commands like `cinst` or `cup`.
  * Always have the command as the first argument to `choco`. e.g.
    [`choco install`](xref:choco-command-install), where [`install`](xref:choco-command-install) is the command.
  * If there is a subcommand, ensure that is the second argument. e.g.
    `choco source list`, where `source` is the command and [`list`](xref:choco-command-list) is the
    subcommand.
- * Typically the subject comes next. If installing packages, the 
+ * Typically the subject comes next. If installing packages, the
    subject would be the package names, e.g. `choco install pkg1 pkg2`.
  * Never use 'nupkg' or point directly to a nupkg file UNLESS using
    'choco push'. Use the source folder instead, e.g. `choco install
-   <package id> --source="'c:\folder\with\package'"` instead of 
-   `choco install DoNotDoThis.1.0.nupkg` or `choco install DoNotDoThis 
+   <package id> --source="'c:\folder\with\package'"` instead of
+   `choco install DoNotDoThis.1.0.nupkg` or `choco install DoNotDoThis
     --source="'c:\folder\with\package\DoNotDoThis.1.0.nupkg'"`.
- * Switches and parameters are called simply options. Options come 
+ * Switches and parameters are called simply options. Options come
    after the subject. e.g. `choco install pkg1 --debug --verbose`.
  * Never use the force option (`--force`/`-f`) in scripts (or really
-   otherwise as a default mode of use). Force is an override on 
+   otherwise as a default mode of use). Force is an override on
    Chocolatey behavior. If you are wondering why Chocolatey isn't doing
    something like the documentation says it should, it's likely because
    you are using force. Stop.
@@ -124,60 +126,60 @@ based on choco not receiving things you think you are passing to it.
    full option is `--name`, use `--name`. The only acceptable short
    option for use in scripts is `-y`. Find option names in help docs
    online or through `choco -?` /`choco [Command Name] -?`.
- * For scripts that are running automated, always use `-y`. Do note 
+ * For scripts that are running automated, always use `-y`. Do note
    that even with `-y` passed, some things / state issues detected will
-   temporarily stop for input - the key here is temporarily. They will 
+   temporarily stop for input - the key here is temporarily. They will
    continue without requiring any action after the temporary timeout
    (typically 30 seconds).
- * Full option names are prepended with two dashes, e.g. `--` or 
+ * Full option names are prepended with two dashes, e.g. `--` or
    `--debug --verbose --ignore-proxy`.
- * When setting a value to an option, always put an equals (`=`) 
+ * When setting a value to an option, always put an equals (`=`)
    between the name and the setting, e.g. `--source="'local'"`.
- * When setting a value to an option, always surround the value 
-   properly with double quotes bookending apostrophes, e.g. 
+ * When setting a value to an option, always surround the value
+   properly with double quotes bookending apostrophes, e.g.
    `--source="'internal_server'"`.
- * If you are building PowerShell scripts, you can most likely just 
-   simply use apostrophes surrounding option values, e.g. 
+ * If you are building PowerShell scripts, you can most likely just
+   simply use apostrophes surrounding option values, e.g.
    `--source='internal_server'`.
  * Prefer upgrade to install in scripts. You can't [`install`](xref:choco-command-install) to a newer
    version of something, but you can [`choco upgrade`](xref:choco-command-upgrade) which will do both
    upgrade or install (unless switched off explicitly).
- * If you are sharing the script with others, pass `--source` to be 
-   explicit about where the package is coming from. Use full link and 
-   not source name ('https://community.chocolatey.org/api/v2/' versus
+ * If you are sharing the script with others, pass `--source` to be
+   explicit about where the package is coming from. Use full link and
+   not source name ('https://community.chocolatey.org/api/v2' versus
    'chocolatey').
- * If parsing output, you might want to use `--limit-output`/`-r` to 
-   get output in a more machine parseable format. > :memo: **NOTE** Not all 
-   commands handle return of information in an easily digestible 
+ * If parsing output, you might want to use `--limit-output`/`-r` to
+   get output in a more machine parseable format. > :memo: **NOTE** Not all
+   commands handle return of information in an easily digestible
    output.
- * Use exit codes to determine status. Chocolatey exits with 0 when 
-   everything worked appropriately and other exits codes like 1 when 
-   things error. There are package specific exit codes that are 
+ * Use exit codes to determine status. Chocolatey exits with 0 when
+   everything worked appropriately and other exits codes like 1 when
+   things error. There are package specific exit codes that are
    recommended to be used and reboot indicating exit codes as well. To
-   check exit code when using PowerShell, immediately call 
+   check exit code when using PowerShell, immediately call
    `$exitCode = $LASTEXITCODE` to get the value choco exited with.
 
-Here's an example following bad practices (line breaks added for 
+Here's an example following bad practices (line breaks added for
  readability):
 
-  `choco install pkg1 -y -params '/Option:Value /Option2:value with 
+  `choco install pkg1 -y -params '/Option:Value /Option2:value with
    spaces' --c4b-option 'Yaass' --option-that-is-new 'dude upgrade'`
 
-Now here is that example written with best practices (again line 
- breaks added for readability - there are not line continuations 
+Now here is that example written with best practices (again line
+ breaks added for readability - there are not line continuations
  for choco):
 
-  `choco upgrade pkg1 -y --source="'https://community.chocolatey.org/api/v2/'"
+  `choco upgrade pkg1 -y --source="'https://community.chocolatey.org/api/v2'"
    --package-parameters="'/Option:Value /Option2:value with spaces'"
    --c4b-option="'Yaass'" --option-that-is-new="'dude upgrade'"`
 
-Note the differences between the two: 
- * Which is more self-documenting? 
- * Which will allow for the newest version of something installed or 
+Note the differences between the two:
+ * Which is more self-documenting?
+ * Which will allow for the newest version of something installed or
    upgraded to (which allows for more environmental consistency on
    packages and versions)?
  * Which may throw an error on a badly passed option?
- * Which will throw errors on unknown option values? See explanation 
+ * Which will throw errors on unknown option values? See explanation
    below.
 
 Chocolatey ignores options it doesn't understand, but it can only
@@ -186,8 +188,8 @@ Chocolatey ignores options it doesn't understand, but it can only
  If you roll off of a commercial edition or someone with older version
  attempts to run the badly crafted script `--c4b-option 'Yaass'
  --option-that-is-new 'dude upgrade'`, they are likely to see errors on
- 'Yaass' and 'dude upgrade' because they are not explicitly tied to the 
- option they are written after. Now compare that to the other script. 
+ 'Yaass' and 'dude upgrade' because they are not explicitly tied to the
+ option they are written after. Now compare that to the other script.
  Choco will ignore `--c4b-option="'Yaass'"` and
  `--option-that-is-new="'dude upgrade'"` as a whole when it doesn't
  register the options. This means that your script doesn't error.
@@ -287,9 +289,9 @@ Following these scripting best practices will ensure your scripts work
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE

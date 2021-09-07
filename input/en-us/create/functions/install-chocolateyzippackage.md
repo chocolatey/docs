@@ -156,6 +156,9 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -SpecificFolder [&lt;String&gt;]
+OPTIONAL - This is a specific directory within zip file to extract. The
+folder and its contents will be extracted to the destination.
+
 Property               | Value
 ---------------------- | -----
 Aliases                | 

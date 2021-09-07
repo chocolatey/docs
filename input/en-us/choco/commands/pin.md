@@ -1,5 +1,5 @@
 ﻿---
-Order: 90
+Order: 110
 xref: choco-command-pin
 Title: Pin
 Description: Pin Command (choco pin)
@@ -12,10 +12,10 @@ RedirectFrom:
 
 # Pin Command (choco pin)
 
-Pin a package to suppress upgrades. 
+Pin a package to suppress upgrades.
 
-This is especially helpful when running [`choco upgrade`](xref:choco-command-upgrade) for all 
- packages, as it will automatically skip those packages. Another 
+This is especially helpful when running [`choco upgrade`](xref:choco-command-upgrade) for all
+ packages, as it will automatically skip those packages. Another
  alternative is `choco upgrade --except="pkg1,pk2"`.
 
 ## Usage
@@ -26,11 +26,12 @@ This is especially helpful when running [`choco upgrade`](xref:choco-command-upg
 
     choco pin
     choco pin list
-    choco pin add -n=git
-    choco pin add -n=git --version 1.2.3
-    choco pin remove --name git
+    choco pin add -n git
+    choco pin add --name="'git'" --version="'1.2.3'"
+    choco pin add --name="'git'" --version="'1.2.3'" --reason="'reasons available in business editions only'"
+    choco pin remove --name="'git'"
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -42,8 +43,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -136,9 +137,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE

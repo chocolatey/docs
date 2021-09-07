@@ -12,7 +12,7 @@ RedirectFrom:
 
 # ApiKey Command (choco apikey)
 
-This lists api keys that are set or sets an api key for a particular   
+This lists api keys that are set or sets an api key for a particular
  source so it doesn't need to be specified every time.
 
 Anything that doesn't contain source and key will list api keys.
@@ -30,29 +30,29 @@ Anything that doesn't contain source and key will list api keys.
     choco apikey -s "https://push.chocolatey.org/" -k="123-123123-123"
     choco apikey -s "http://internal_nexus" -k="user:password"
 
-For source location, this can be a folder/file share or an 
-http location. When it comes to urls, they can be different from the packages 
-url (where packages are searched and installed from). As an example, for 
-Chocolatey's community package package repository, the package url is 
-(and the deprecated https://chocolatey.org/ as a push url). Check the 
-documentation for your choice of repository to learn what the push url is. 
-
-For the key, this can be an apikey that is provided by your source repository. 
-With some sources, like Nexus, this can be a NuGet API key or it could be a 
-user name and password specified as 'user:password' for the API key. Please see 
-your repository's documentation (for Nexus, please see 
+For source location, this can be a folder/file share or an
+http location. When it comes to urls, they can be different from the packages
+url (where packages are searched and installed from). As an example, for
+Chocolatey's community package package repository, the package url is
 https://community.chocolatey.org/api/v2/, but the push url is https://push.chocolatey.org
+(and the deprecated https://chocolatey.org/ as a push url). Check the
+documentation for your choice of repository to learn what the push url is.
+
+For the key, this can be an apikey that is provided by your source repository.
+With some sources, like Nexus, this can be a NuGet API key or it could be a
+user name and password specified as 'user:password' for the API key. Please see
+your repository's documentation (for Nexus, please see
 https://bit.ly/nexus2apikey).
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
 ## Connecting to Chocolatey.org (Community Package Repository)
 
-In order to save your API key for https://push.chocolatey.org/, 
+In order to save your API key for https://push.chocolatey.org/,
  log in (or register, confirm and then log in) to
- https://push.chocolatey.org/, go to https://push.chocolatey.org/account, 
+ https://push.chocolatey.org/, go to https://push.chocolatey.org/account,
  copy the API Key, and then use it in the following command:
 
     choco apikey -k <your key here> -s https://push.chocolatey.org/
@@ -66,8 +66,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -160,9 +160,9 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and 
-       user name.  Overrides the default proxy password (encrypted in settings 
-       if set). Available for config settings in 0.9.9.9+, this CLI option 
+       username. Requires explicit proxy (`--proxy` or config setting) and user 
+       name.  Overrides the default proxy password (encrypted in settings if 
+       set). Available for config settings in 0.9.9.9+, this CLI option 
        available in 0.10.4+.
 
      --proxy-bypass-list=VALUE
