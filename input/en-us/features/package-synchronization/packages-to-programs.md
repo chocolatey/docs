@@ -3,7 +3,6 @@ Order: 30
 xref: packages-to-programs
 Title: Packages to Programs (C4B)
 Description: Add an entry into Add/Remove programs for every package that is under Chocolatey management
-RedirectFrom: docs/features-synchronize
 ---
 
 ## All Packages in Programs and Features

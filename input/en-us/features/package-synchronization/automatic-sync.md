@@ -3,7 +3,6 @@ Order: 10
 xref: automatic-sync
 Title: Automatic Sync (Pro+)
 Description: Ensure that any operation on an application, i.e. it is uninstalled, or upgraded, is tracked within Chocolatey as well
-RedirectFrom: docs/features-synchronize
 ---
 
 ## Automatic Synchronize
