@@ -11,7 +11,7 @@ Community Repository feed, you will see the following:
 
 ![Hide Package Download Count Disabled 1](/assets/images/chocolatey-gui/feature_hide_package_download_count_disabled_1.png "Hide Package Download Count Disabled 1")
 
-However, when using a feed that doesn't support package download statisics, you can be shown the following which isn't
+However, when using a feed that doesn't support package download statistics, you can be shown the following which isn't
 as useful:
 
 ![Hide Package Download Count Disabled 2](/assets/images/chocolatey-gui/feature_hide_package_download_count_disabled_2.png "Hide Package Download Count Disabled 2")
