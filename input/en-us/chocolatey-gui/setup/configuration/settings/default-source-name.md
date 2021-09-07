@@ -7,13 +7,9 @@ Description: Information on how to use the Default Source Name setting
 
 By default, when Chocolatey GUI opens it will show the "This PC" source, showing all of the locally installed packages.  Depending on your usage of Chocolatey GUI, it may make more sense to default to showing a different source when the application first loads.  By setting this configuration option to the name of a configured source, Chocolatey GUI will show this by default when it first opens.  If the value of the DefaultSourceName setting doesn't match the name of a configured source, then the "This PC" source will be shown.
 
-> :memo: **NOTE**
->
-> This is a Chocolatey for Business feature, and will require install of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension)
+<?! Include "../../../../../shared/require-chocolatey-gui-licensed-extension-note.txt" /?>
 
-> :memo: **NOTE**
->
-> In order for this setting to take effect, it will be necessary to close and open Chocolatey GUI.
+<?! Include "../../../../../shared/restart-required-warning.txt" /?>
 
 ## Resources
 

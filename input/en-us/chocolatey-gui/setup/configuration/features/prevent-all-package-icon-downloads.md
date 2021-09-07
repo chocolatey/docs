@@ -13,9 +13,7 @@ With the PreventAllPackageIconDownloads feature enabled, no attempt will be made
 
 ![Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled](/assets/images/chocolatey-gui/feature_prevent_all_package_icon_downloads_2.png "Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled")
 
-> :memo: **NOTE**
->
-> This is a Chocolatey for Business feature, and will require install of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension)
+<?! Include "../../../../../shared/require-chocolatey-gui-licensed-extension-note.txt" /?>
 
 > :memo: **NOTE**
 >

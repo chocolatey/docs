@@ -1,0 +1,3 @@
+> :memo: **NOTE**
+>
+> This is a Chocolatey for Business feature, and will require install of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension).

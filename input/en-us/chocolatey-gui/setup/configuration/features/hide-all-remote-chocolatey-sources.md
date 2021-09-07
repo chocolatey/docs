@@ -15,13 +15,11 @@ to only showing a single "This PC" source:
 
 Notice that the `ChocolateyInternal` and `chocolatey.licensed` sources are no longer displayed.
 
-> :memo: **NOTE**
->
-> This is a Chocolatey for Business feature, and will require install of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension)
+<?! Include "../../../../../shared/require-chocolatey-gui-licensed-extension-note.txt" /?>
 
-> :memo: **NOTE**
->
-> After enabling this feature through the Chocolatey GUI User Interface, it will be necessary to close and open the application again in order to make use of it
+<?! Include "../../../../../shared/restart-required-warning.txt" /?>
+
+<?! Include "../../../../../shared/hiding-sources.txt" /?>
 
 ## Resources
 

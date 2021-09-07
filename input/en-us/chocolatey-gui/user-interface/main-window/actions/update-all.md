@@ -16,3 +16,7 @@ When there are no packages that are currently outdated, the button will be disab
 > :memo: **NOTE**
 >
 > This button only exists when browsing the local source, i.e. `This PC`
+
+> :memo: **NOTE**
+>
+> If required, it is possible to remove the Update All button via the [PreventUsageOfUpdateAllButton](xref:prevent-usage-of-update-all-button) feature.

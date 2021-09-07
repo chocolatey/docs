@@ -1,0 +1,3 @@
+> :warning: **WARNING**
+>
+> In order for this change to take effect, it will be necessary to close and re-open Chocolatey GUI.
