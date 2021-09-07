@@ -62,6 +62,6 @@ Below is a short video which shows how to use the feature command of the chocola
 
 ## Feature Options
 
-The available feautres that can be configured are:
+The available features that can be configured are:
 
 <?! Include "../../../shared/available-features.txt" /?>
