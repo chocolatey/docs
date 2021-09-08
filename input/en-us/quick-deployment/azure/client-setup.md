@@ -21,7 +21,7 @@ To do that, you'll need to do the following on the clients:
 
 ## DNS
 
-Ensure that you have [configured DNS](https://docs.chocolatey.org/en-us/quick-deployment/azure/#dns-configuration) to direct clients to your deployed environment.
+Ensure that you have [configured DNS](xref:qdeazure#dns-configuration) to direct clients to your deployed environment.
 
 Once you've added the required CNAME record, clients should be able to access it.
 
@@ -60,12 +60,12 @@ To on-board clients, you run the `ClientSetup.ps1` script provided with your Cho
 You will need the following values ready when running this script:
 
 * `FQDN`: The fully qualified domain name used to access your environment.
-* `ccmClientCommunicationSalt`: This is the client-side salt additive. More information about this can be found in the [C4B Config Settings](https://docs.chocolatey.org/en-us/central-management/setup/client#config-settings) docs.
-* `ccmServiceCommunicationSalt`: This is the server-side salt additive. More information about this can be found in the [C4B Config Settings](https://docs.chocolatey.org/en-us/central-management/setup/client#config-settings) docs.
+* `ccmClientCommunicationSalt`: This is the client-side salt additive. More information about this can be found in the [C4B Config Settings](xref:ccm-client#config-settings) docs.
+* `ccmServiceCommunicationSalt`: This is the server-side salt additive. More information about this can be found in the [C4B Config Settings](xref:ccm-client#config-settings) docs.
 * `ChocoUserPassword`: The password for the `chocouser` account which is used by the client to access your environment's Nexus component.
 
 Except for the `FQDN`, all of these values are available in your deployed environment's Azure Key Vault.
-See [Accessing Services](https://docs.chocolatey.org/en-us/quick-deployment/azure/#accessing-services) for more information about retrieving values from the Vault.
+See [Accessing Services](xref:qdeazure#accessing-services) for more information about retrieving values from the Vault.
 
 When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell console:
 
