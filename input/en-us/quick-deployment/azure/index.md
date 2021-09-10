@@ -65,7 +65,7 @@ Fill your intended domain name in, select and upload your PFX certificate, and e
 > :memo: **NOTE**
 >
 > The PFX certificate must contain the exportable private key, and should be protected with a password.  
-> Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#SslCertificate).
+> Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#ssl-certificate).
 
 ### Internalize Packages
 
