@@ -50,18 +50,17 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ## 0.11.2 (November 5, 2020)
 
 ### BUG FIXES
-
 * Fix - Deployments - An execution timeout in seconds value of `0` for a deployment step is not treated as infinite
 
 ### IMPROVEMENTS
-
 * Provide clarity in log messages when salt additive configuration values are misconfigured
+
 
 ## 0.11.1 (October 5, 2020)
 
 ### BUG FIXES
-
 * Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script
+
 
 ## 0.11.0 (June 25, 2020)
 ### BREAKING CHANGES
