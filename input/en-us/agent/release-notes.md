@@ -26,6 +26,12 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.12.1 (September 14, 2021)
+
+### BUG FIXES
+ * [Security] - Deployments - Sensitive arguments are included in log file when advanced deployments are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255)
+
+
 ## 0.12.0 (September 2, 2021)
 
 > :warning: **WARNING**
