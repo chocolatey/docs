@@ -256,6 +256,18 @@ If you have a preferred vendor for certificates, you should refer to their docum
 
 You can also use a Microsoft Azure KeyVault and one of the [partnered CA Providers](https://docs.microsoft.com/en-us/azure/key-vault/certificates/create-certificate#partnered-ca-providers) to create and fulfil a certificate request, though this may require additional configuration for your environment.
 
+### How much does it cost?
+
+A ballpark estimate comes to around $170 per month for the deployed infrastructure.
+
+Using methods such as [Azure Reservations](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations), [Hybrid Benefit](https://azure.microsoft.com/en-gb/pricing/hybrid-benefit/), or [Dev-Test Subscriptions](https://azure.microsoft.com/en-gb/pricing/dev-test/#overview) can cut this cost significantly.
+
+This is based on:
+
+* Using a `Standard D2s v3` VM size
+* Deploying to a standard Pay-As-You-Go subscription
+* Deploying to the `East US` location
+
 ## Common Errors and Resolutions
 
 ### Status Message: Exist soft deleted vault with the same name.  (Code:ConflictError)
