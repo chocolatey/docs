@@ -212,11 +212,11 @@ Steps to create a QDE virtual machine in Azure:
 <br>
 </p>
 
-### Platform: VMware / Other (OVF/OVA Template)
+### Platform: VMware / Other (OVF Template)
 
-1. Download either the OVF or OVA from the provided link, and unzip to the directory you'd like to store it.
+1. Download the OVF from the provided link, and unzip to the directory you'd like to store it.
 1. Import the template into your hypervisor of choice.
-   You can typically directly import the OVA or OVF template file, and most settings should be pre-configured for you.
+   You can typically directly import the OVF template file, and most settings should be pre-configured for you.
     * Instructions on doing this for VMware are [here](https://docs.vmware.com/en/VMware-vSphere/6.0/com.vmware.vsphere.html.hostclient.doc/GUID-FBEED81C-F9D9-4193-BDCC-CC4A60C20A4E_copy.html).
 1. Once the import completes, go into the VM's hardware settings and expand the main disk to at least 500GB.
 1. Boot up the VM, and (if needed) install any software required / recommended for your hypervisor.
