@@ -645,3 +645,15 @@ In all of these cases, we haven't seen any drop in functionality for the notific
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
 
 [required-config]: #what-is-the-minimum-required-configuration-for-the-appsettingsjson-file
+
+### Current user did not login to the application!
+
+After upgrading to v0.6.0/0.6.1/0.6.2 of the Chocolatey Central Management Website, you may see the error message:
+
+> Current user did not login to the application!
+
+when you attempt to login to the application, and you will be immediately logged out again.
+
+Full details of this problem can be found in the [GitHub issue](https://github.com/chocolatey/chocolatey-licensed-issues/issues/260), including a workaround for the problem.
+
+This issue has been addressed in v0.6.3.
