@@ -11,6 +11,43 @@ Description: Release Notes for QDE
 
 This covers the release notes for the Chocolatey Quick Deployment Environment, which is available via our Sales Team for existing and trial customers.  For more information, configuration options, setup instructions, etc, please refer to [QDE](xref:qde).
 
+## 3.1.0 (September 20, 2021)
+
+This release of QDE includes a refresh of the core components, primary the Chocolatey Central Management 0.6.2 packages.
+
+The following packages are installed in QDE v3.1.0:
+
+| Name                               | Version             |
+| ---------------------------------- | ------------------- |
+| aspnetcore-runtimepackagestore     | 3.1.16              |
+| chocolatey                         | 0.11.1              |
+| chocolatey-core.extension          | 1.3.5.1             |
+| chocolatey-licensed.lib            | 2.2.0               |
+| chocolatey-management-database     | 0.6.2               |
+| chocolatey-management-service      | 0.6.2               |
+| chocolatey-management-web          | 0.6.2               |
+| chocolatey-nexus-setup             | 0.1.1               |
+| chocolatey-windowsupdate.extension | 1.0.4               |
+| chocolatey.extension               | 2.2.0               |
+| DotNet4.6.1                        | 4.6.01055.20170308  |
+| dotnetcore-sdk                     | 3.1.412             |
+| dotnetcore-windowshosting          | 3.1.16              |
+| GoogleChrome                       | 89.0.4389.90        |
+| jenkins                            | 2.222.4             |
+| KB2533623                          | 2.0.0               |
+| KB2919355                          | 1.0.20160915        |
+| KB2919442                          | 1.0.20160915        |
+| KB2999226                          | 1.0.20181019        |
+| KB3033929                          | 1.0.5               |
+| KB3035131                          | 1.0.3               |
+| KB3063858                          | 1.0.0               |
+| nexus-repository                   | 3.34.0.01           |
+| sql-server-express                 | 2019.20200409       |
+| sql-server-management-studio       | 15.0.18386.0        |
+| Temurinjre                         | 11.0.12.700         |
+| vcredist140                        | 14.29.30133         |
+| vcredist2015                       | 14.0.24215.20170201 |
+
 ## 3.0.0 (April 27, 2021)
 
 This release of QDE includes a refresh of the core components, most notably being Chocolatey Central Management 0.5.1
