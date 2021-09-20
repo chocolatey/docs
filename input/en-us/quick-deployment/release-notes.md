@@ -13,7 +13,7 @@ This covers the release notes for the Chocolatey Quick Deployment Environment, w
 
 ## 3.1.0 (September 20, 2021)
 
-This release of QDE includes a refresh of the core components, primary the Chocolatey Central Management 0.6.2 packages.
+This release of QDE includes a refresh of the core components, primarily the Chocolatey Central Management 0.6.2 packages.
 
 The following packages are installed in QDE v3.1.0:
 
