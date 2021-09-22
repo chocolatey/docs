@@ -28,7 +28,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ## 2.2.1 (September 22, 2021)
 ### BUG FIXES
- * Fix - Filtering of sources doesn't return correct list when useBackgroundServiceWithSelfServiceSourcesOnly is disabled - see [licensed #262](https://github.com/chocolatey/chocolatey-licensed-issues/issues/263)
+ * Fix - Filtering of sources doesn't return correct list when useBackgroundServiceWithSelfServiceSourcesOnly is disabled - see [licensed #263](https://github.com/chocolatey/chocolatey-licensed-issues/issues/263)
 
 
 ## 2.2.0 (September 2, 2021)
