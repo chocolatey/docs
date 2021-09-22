@@ -26,6 +26,11 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 2.2.1 (September 22, 2021)
+### BUG FIXES
+ * Fix - Filtering of sources doesn't return correct list when useBackgroundServiceWithSelfServiceSourcesOnly is disabled - see [licensed #262](https://github.com/chocolatey/chocolatey-licensed-issues/issues/263)
+
+
 ## 2.2.0 (September 2, 2021)
 
 > :warning: **WARNING**
