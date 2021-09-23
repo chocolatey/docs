@@ -25,6 +25,16 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.6.3 (September 23rd, 2021)
+### BUG FIXES
+ * Fix - Processing of message queue does not complete when an invalid XML file is located - see [Licensed #266](https://github.com/chocolatey/chocolatey-licensed-issues/issues/266)
+ * Fix - When the "Only one concurrent login per user" setting is enabled, users are locked out of CCM Web UI - see [Licensed #260](https://github.com/chocolatey/chocolatey-licensed-issues/issues/260)
+ * Fix - Error shown when navigating to certain pages within the CCM Web UI - see [Licensed #262](https://github.com/chocolatey/chocolatey-licensed-issues/issues/262)
+ * Fix - Users are unable to change IsOutdated status for software entries within CCM Web UI - see [Licensed #264](https://github.com/chocolatey/chocolatey-licensed-issues/issues/264)
+ * Fix - Users are unable to delete a piece of software within CCM Web UI - see [Licensed #261](https://github.com/chocolatey/chocolatey-licensed-issues/issues/261)
+ * Fix - Incorrect total number of affected instances within Outdated Software Details Report Details - see [Licensed #265](https://github.com/chocolatey/chocolatey-licensed-issues/issues/265)
+
+
 ## 0.6.2 (August 26th, 2021)
 ### BUG FIXES
  * Fix - Service - Method to determine correct SSL certificate to use between CCM Service installation script and execution is inconsistent
