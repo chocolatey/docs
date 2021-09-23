@@ -571,7 +571,7 @@ You need to restart services and CCM web to pick up the license. Here's a handy 
 
 ```powershell
 Get-Service chocolatey-* | Stop-Service
-Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process
 Get-Service chocolatey-* | Start-Service
 ```
 

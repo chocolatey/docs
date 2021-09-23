@@ -321,6 +321,7 @@ Here is a copy of items that can be set. They are not required to be encrypted. 
 > **BREAKING CHANGE**
 >
 > This feature was added, as a breaking change, in version 0.6.0 of Chocolatey Central Management.  Audit Retention is enabled by default, and will immediately start truncating the audit log table as soon as it is installed.
+> If you require to keep all audit logs, we would recommend that you first back up the CCM database before applying the new version.
 
 In an attempt to control the size of the Chocolatey Central Management database, it is possible to control the retention policy for the audit logs table within the application.
 
@@ -341,9 +342,11 @@ As noted in the User Interface, any modifications to this section of the setting
 
 1. Get direct access to the machine that is hosting the CCM Web Application
 1. Open an administrative PowerShell session
-1. Run the following command:
+1. Run the following commands:
 ```powershell
-Get-Process "ChocolateySoftware.ChocolateyManagement.Web.Mvc" | Stop-Process -Force
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
+Stop-Website -Name ChocolateyCentralManagement
+Stop-WebAppPool -Name ChocolateyCentralManagement
 ```
 
 ## FAQ

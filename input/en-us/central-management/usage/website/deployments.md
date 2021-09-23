@@ -244,7 +244,7 @@ You need to restart the web executable currently. We are looking to have it auto
 
 ```powershell
 Get-Service chocolatey-* | Stop-Service
-Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process
 Get-Service chocolatey-* | Start-Service
 ```
 

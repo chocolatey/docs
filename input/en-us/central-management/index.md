@@ -160,7 +160,7 @@ Yes, you do need to restart the agents, the service, and the web to pick up the 
 
 ```powershell
 Get-Service chocolatey-* | Stop-Service
-Get-Process ChocolateySoftware.ChocolateyManagement.Web.Mvc | Stop-Process
+Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process
 Get-Service chocolatey-* | Start-Service
 ```
 
