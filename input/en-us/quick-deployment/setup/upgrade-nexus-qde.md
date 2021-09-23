@@ -11,58 +11,28 @@ This document outlines the process for upgrading Nexus running inside our Quick 
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
+>:warning:
+>
+> The instructions on this page use parameters available to the nexus-repository package to conserve SSL configuration. If you have arrived here,
+> and do not have a Nexus instance configured with SSL, leave off the package parameters.
+> 
+> This command will backup the SSL configuration to the root of your User Profile in a NexusBackup folder.
 # Instructions
 
 1. Internalize the nexus-repository package and push to your internal repo
-2. Stop the nexus service
-3. Backup any SSL configuration if it exists
-4. Remove the C:\ProgramData\nexus folder recursively
-5. choco upgrade the nexus-repository package
-6. Restore the SSL configuration if it exists
-7. Restart the nexus service
+2. choco upgrade the nexus-repository package (Example command provided below, which preserves SSL Configuration)
 
-## Complete Script:
+## Example Upgrade Command:
+
+>:note:
+>
+> The following command assumes your nexus instance is available at nexus.example.com. Use your actual FQDN instead
 
 ```powershell
-Stop-Service nexus
-
-#Backup SSL Configuration
-if(-not (Test-Path C:\nexusbackup)){
-  New-Item C:\nexusbackup -ItemType Directory
-}
-
-if(Test-Path C:\ProgramData\nexus\etc\ssl\keystore.jks){
-  Copy-Item C:\ProgramData\nexus\etc\ssl\keystore.jks C:\nexusbackup
-}
-
-if(Test-Path C:\ProgramData\nexus\etc\jetty\jetty-https.xml){
-  Copy-Item C:\ProgramData\nexus\etc\jetty\jetty-https.xml C:\nexusbackup
-}
-
-#Remove the current Nexus folder
-Remove-Item C:\ProgramData\nexus -Recurse -Force -ErrorAction SilentlyContinue
-
-#Upgrade the package
-choco upgrade nexus-repository -y -f -s "'https://community.chocolatey.org/api/v2/'" --no-progress
-
-#Restore SSL Configuration
-if(Test-Path C:\nexusbackup\keystore.jks){
-  Copy-Item C:\nexusbackup\keystore.jks C:\ProgramData\nexus\etc\ssl
-}
-
-if(Test-Path C:\nexusbackup\jetty-https.xml){
-  Copy-Item C:\nexusbackup\jetty-https.xml C:\ProgramData\nexus\etc\jetty
-}
-
-#Restart the nexus service to apply the configuration
-Restart-Service nexus
-
-#Cleanup backup folder
-Remove-Item C:\nexusbackup -Recurse -Force
+choco upgrade nexus-repository -y --package-parameters="'/Port:8443 /Fqdn:""nexus.example.com"" /BackupSslConfig'"
 ```
 
-:memo: **NOTE**
-
-If you are upgrading from Nexus V 3.22.0.02+ to a newer version you may need to make the following change to the jetty-https.xml file.
-
-Change `class="org.eclipse.jetty.util.ssl.SslContextFactory">` to `class="org.eclipse.jetty.util.ssl.SslContextFactory$Server">`
+>:memo: **NOTE**
+>
+>If you are upgrading from Nexus V 3.22.0.02+ to a newer version you may need to make the following change to the jetty-https.xml file.
+>Change `class="org.eclipse.jetty.util.ssl.SslContextFactory">` to `class="org.eclipse.jetty.util.ssl.SslContextFactory$Server">`
