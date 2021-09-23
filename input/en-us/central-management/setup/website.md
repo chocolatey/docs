@@ -346,7 +346,8 @@ As noted in the User Interface, any modifications to this section of the setting
 ```powershell
 Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
 Stop-Website -Name ChocolateyCentralManagement
-Stop-WebAppPool -Name ChocolateyCentralManagement
+Restart-WebAppPool -Name ChocolateyCentralManagement
+Start-Website -Name ChocolateyCentralManagement
 ```
 
 ## FAQ
