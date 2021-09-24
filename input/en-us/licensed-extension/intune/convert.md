@@ -14,7 +14,7 @@ Converting from Chocolatey packages to Intune packages that can be later pushed 
 
 ### Prerequisites
 
-Ensure that the Chocolatey the package you want to convert and it's depedencies, are present in the current directory before running the `convert` command. You can do this with `choco download <PACKAGE NAME> --internalize`.
+Ensure that the Chocolatey package you want to convert, and it's depedencies, are present in the current directory before running the `convert` command. You can do this with `choco download <PACKAGE NAME> --internalize`.
 ### Command Line
 
 Provide the path to the Chocolatey package file (`.nupkg`) you want to convert to a Chocolatey Intune package.
