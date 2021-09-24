@@ -65,7 +65,7 @@ Fill your intended domain name in, select and upload your PFX certificate, and e
 > :memo: **NOTE**
 >
 > The PFX certificate must contain the exportable private key, and should be protected with a password.  
-> Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#SslCertificate).
+> Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#ssl-certificate).
 
 ### Internalize Packages
 
@@ -255,6 +255,18 @@ As mentioned before, you will need to ensure that the "Subject/Common Name" attr
 If you have a preferred vendor for certificates, you should refer to their documentation for best practices in acquiring a certificate.
 
 You can also use a Microsoft Azure KeyVault and one of the [partnered CA Providers](https://docs.microsoft.com/en-us/azure/key-vault/certificates/create-certificate#partnered-ca-providers) to create and fulfil a certificate request, though this may require additional configuration for your environment.
+
+### How much does it cost?
+
+A ballpark estimate comes to around $170 per month for the deployed infrastructure.
+
+Using methods such as [Azure Reservations](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations), [Hybrid Benefit](https://azure.microsoft.com/en-gb/pricing/hybrid-benefit/), or [Dev-Test Subscriptions](https://azure.microsoft.com/en-gb/pricing/dev-test/#overview) can cut this cost significantly.
+
+This is based on:
+
+* Using a `Standard D2s v3` VM size
+* Deploying to a standard Pay-As-You-Go subscription
+* Deploying to the `East US` location
 
 ## Common Errors and Resolutions
 
