@@ -30,7 +30,7 @@ choco upgrade nexus-repository -fy --params "'/BackupSslConfig'" -s "'https://co
 
 Regardless of above, it would be advisable to backup your SSL config (see below).
 
-## Manual upgrade:
+## Manual Upgrade
 ⚠️ With this method your nexus server might not start up after upgrading and will not register nexus-repository as installed package on your QDE instance.
 
 ```powershell
