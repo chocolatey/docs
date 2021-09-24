@@ -8,7 +8,7 @@ Title: Converting Chocolatey Packages to Intune Packages
 
 ## Summary
 
-Converting from Chocolatey packages to Intune packages that can be later pushed using `choco push` has been added to a new command called `convert`. This command allows a single package to be passed and Chocolatey will then convert it, and its dependencies, to Chocolatey Intune packages.
+Converting from Chocolatey packages to Intune packages that can be later pushed using `choco push` has been added to a new command called `convert`. This command allows the file path of a single package to be passed and Chocolatey will then convert it, and its dependencies, to Chocolatey Intune packages.
 
 ## Usage
 

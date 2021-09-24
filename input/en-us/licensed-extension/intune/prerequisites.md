@@ -19,7 +19,7 @@ Title: Prerequisites for Intune functionality
 The Intune commands need to know what your Intune tenant is, and here are two options:
 
 1. Specify the tenant each time you push a package using the `--source` switch;
-2. Store the tenant information in the Chocolatey configuration using the command `choco config set --name=intuneTenantGUID --value=<INTUNE TENANT GUID>`.
+2. Store the tenant information in the Chocolatey configuration using the command `choco config set --name=intuneTenantGUID --value=<INTUNE TENANT GUID>`. The GUID is available on the [Azure AD Application page](https://aad.portal.azure.com/).
 
 ### Chocolatey Packages
 

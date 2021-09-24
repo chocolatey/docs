@@ -24,4 +24,4 @@ Several new configuration values can be set/updated for the new Intune functiona
 
 ## API Keys
 
-When pushing packages to an Intune tenant, a combination of a Client ID and Client Secret is needed. These can be obtained from the [Azure AD Portal](https://aad.portal.azure.com/) where the Client ID is the value for **Application ID** and the **Secret** is the Client Secret. You can use these on the command line when running the `choco push` command by using the `--source=<INTUNE TENANT GUID>` argument and the `--api-key=<CLIENT ID>:<CLIENT SECRET>` argument
+When pushing packages to an Intune tenant, a combination of a Client ID and Client Secret is needed. These can be obtained from the [Azure AD Portal](https://aad.portal.azure.com/) where the Client ID is the value for **Application ID** and the **Secret** is the Client Secret. You can use these on the command line when running the `choco push` command by using the `--source=<INTUNE TENANT GUID>` argument with the `--api-key=<CLIENT ID>:<CLIENT SECRET>` argument.

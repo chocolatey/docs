@@ -8,7 +8,7 @@ Title: Pushing Converted Intune Packages
 
 ## Summary
 
-The ability to push Chocolatey Intune packages (packages with the extension `.intunewin`) has been added to the `push` command. The command will push the specified Chocolatey Intune package, any dependencies specified for the package along with the core Chocolatey Intune packages of  `chocolatey`, `chocolatey-license` and `chocolatey.extension` when the packages do not already exist on the Intune tenant. The `chocolatey-license` package will be automatically generated using the Chocolatey for Business license, from the local computer running the `push` command, if it does not exist in the Intune tenant.
+The ability to push Chocolatey Intune packages (packages with the extension `.intunewin`) has been added to the `push` command. The command will push the specified Chocolatey Intune package, any dependencies specified for the package along with the core Chocolatey Intune packages of  `chocolatey`, `chocolatey-license` and `chocolatey.extension` when the packages do not already exist on the Intune tenant. The `chocolatey-license` package will be automatically generated using the Chocolatey for Business license that is present on the local computer running the `push` command, if it does not exist in the Intune tenant.
 
 ## Usage
 
@@ -22,7 +22,7 @@ When you right-click on a Chocolatey Intune package (which is a package with the
 
 ### Dependency Resolving
 
-When resolving package dependencies that are specified in the converted `.intunewin` file, we first search the Intune tenant for a package that was previously uploaded that matches the same identifier and is within the same version criteria constructed during the conversion of the package. If no package matching the mentioned criteria are found in the Intune tenant, we will fall back to looking in the same directory as the original `.intunewin` file passed to the `push` command, and check for the same criteria there. If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
+When resolving package dependencies that are specified in the converted `.intunewin` file, we first search the Intune tenant for a package that was previously uploaded that matches the same ID and is within the same version criteria constructed during the conversion of the package. If no package matching the mentioned criteria are found in the Intune tenant, we will fall back to looking in the same directory as the original `.intunewin` file passed to the `push` command, and check for the same criteria there. If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
 
 ### Examples
 
@@ -51,7 +51,7 @@ By specifying the path to a pre-release package, pre-release support will be ena
 
 > :memo: **NOTE**
 >
-> If a package for `chocolatey-license` does not already exist on the specified Intune tenant, a new package will be created using the Chocolatey for Business license on the local computer the command is run from.
+> If a package for `chocolatey-license` does not already exist on the specified Intune tenant, a new package will be created using the Chocolatey for Business license that is present on the local computer the command is run from.
 
 ## FAQ
 
@@ -67,12 +67,10 @@ Yes, but there are a few things to know before doing so.
 
 Updates to Intune packages through Chocolatey is not currently supported. There is a manual process that you can follow to do this within Intune:
 
-You have two ways you may use to achieve updating the packages.
-
 1. Ensure the local computer that you will run the Chocolatey commands on has the new license applied to it.
 1. Login to the Intune tenant and locate the `Chocolatey License` package.
 1. Replace `Notes` section of the Intune package with a non-whitespace character (for example, the letter A). This will cause the Intune package not to be found by Chocolatey in the next step.
- 1. Push a package to Intune as you would normally do. This will result in Chocolatey not finding a `chocolatey-license` package within the Intune tenant, and therefore automatically generating a new one using the Chocolatey for Business license of the local computer running the `push` command.
+ 1. Push a package to Intune as you would normally do. This will result in Chocolatey not finding a `chocolatey-license` package within the Intune tenant, and therefore automatically generating a new one using the Chocolatey for Business license package using the license present on the local computer running the `push` command.
 1. Locate the `Chocolatey Licensed Extension` package in the Intune tenant and add the new `Chocolatey License` package as a dependency and remove the previous `Chocolatey License` package as a dependency.
 
 ### What can I do if I receive an error about my file not being found or not being a `nupkg` file?
