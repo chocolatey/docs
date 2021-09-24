@@ -11,7 +11,7 @@ This document outlines the process for upgrading Nexus running inside our Quick 
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
-# Instructions
+# Upgrade outline
 
 1. Internalize the nexus-repository package and push to your internal repo
 2. Stop the nexus service
@@ -21,7 +21,17 @@ If your server is restricted then internalize the package to your internal repos
 6. Restore the SSL configuration if it exists
 7. Restart the nexus service
 
-## Complete Script:
+## Automatic upgrade:
+:memo: With newer versions of nexus-repository (3.30.0.01 and up) use ```/BackupSslConfig``` parameter to automatically backup and restore SSL config.
+
+```
+choco upgrade nexus-repository -fy --params "'/BackupSslConfig'" -s "'https://community.chocolatey.org/api/v2/'" --no-progress
+```
+
+Regardless of above, it would be advisable to backup your SSL config (see below).
+
+## Manual upgrade:
+⚠️ With this method your nexus server might not start up after upgrading and will not register nexus-repository as installed package on your QDE instance.
 
 ```powershell
 Stop-Service nexus
