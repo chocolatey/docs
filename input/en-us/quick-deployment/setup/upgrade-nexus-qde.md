@@ -21,7 +21,7 @@ If your server is restricted then internalize the package to your internal repos
 6. Restore the SSL configuration if it exists
 7. Restart the nexus service
 
-## Automatic upgrade:
+## Automatic Upgrade
 :memo: With newer versions of nexus-repository (3.30.0.01 and up) use ```/BackupSslConfig``` parameter to automatically backup and restore SSL config.
 
 ```
