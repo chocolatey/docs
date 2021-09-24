@@ -57,7 +57,9 @@ choco download firefox --version 86.0 --internalize --ignore-dependencies
 choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 ~~~
 
-By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are converting can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are converting is a stable release.
+> :warning: **WARNING**
+> 
+> By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are converting can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are converting is a stable release. This is the same behaviour as the [`push`](xref:intune-push) command.
 
 > :memo: **NOTE**
 >

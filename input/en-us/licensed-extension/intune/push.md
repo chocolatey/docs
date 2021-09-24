@@ -47,7 +47,9 @@ Once that is done you can push the package as normal:
 choco push firefox.86.0.intunewin
 ~~~
 
-By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are pushing can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are pushing is a stable release. This is the same behaviour as the [`convert`](xref:intune-convert) command.
+> :warning: **WARNING**
+> 
+> By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are pushing can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are pushing is a stable release. This is the same behaviour as the [`convert`](xref:intune-convert) command.
 
 > :warning: **WARNING**
 >
