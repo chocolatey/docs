@@ -77,10 +77,6 @@ If a Chocolatey package has dependencies, Chocolatey will convert each of them t
 
 You may skip the handling of dependencies when converting a package by using the `--ignore-dependencies` argument. However, it is recommended not to skip dependency handling as the package may not install or upgrade, and some software functionality may be lost. Be mindful that you may be prevented from pushing the Chocolatey package to your Intune tenant if the dependencies do not already exist locally or in Intune.
 
-### I am getting a warning that 'The use of .nupkg or .nuspec in package name or source is known to cause issues'.
-
-This warning message comes from Chocolatey itself and is due to the program not knowing about the new `convert` command. The warning message can safely be ignored and will be removed in a future version of Chocolatey.
-
 ### I get an error message about `convert` not being available
 
 The `convert` command is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled. This feature can be enabled by running:
