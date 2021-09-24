@@ -14,6 +14,10 @@ The ability to push Chocolatey Intune packages (packages with the extension `.in
 
 ### Command Line
 
+~~~sh
+choco push <path to intune pkg> [<options/switches>]
+~~~
+
 When using the `push` command the package path provided must be an `.intunewin` file that was previously converted to a Chocolatey Intune package using the [`convert`](xref:intune-convert) command. This will push the Chocolatey Intune package, and its dependencies if they do not already exist there, to the Intune tenant.
 
 ### Context Menu
