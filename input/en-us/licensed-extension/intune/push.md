@@ -26,7 +26,12 @@ When you right-click on a Chocolatey Intune package (which is a package with the
 
 ### Dependency Resolving
 
-When resolving package dependencies that are specified in the converted `.intunewin` file, we first search the Intune tenant for a package that was previously uploaded that matches the same ID and is within the same version criteria constructed during the conversion of the package. If no package matching the mentioned criteria are found in the Intune tenant, we will fall back to looking in the same directory as the original `.intunewin` file passed to the `push` command, and check for the same criteria there. If no packages are found in either of the places, the `push` command will fail with an error mentioning the missing package.
+When resolving dependencies for the Chocolatey Intune package, Chocolatey will look for the dependency package(s), with the same ID and within the version range, in order in the locations below:
+
+1. The Intune tenant.
+2. The path of the package you want to push.
+
+If no packages are found in these locations, the `push` command will fail, and the error will state the dependency package that cannot be found.
 
 ### Examples
 
