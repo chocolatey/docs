@@ -103,3 +103,5 @@ choco feature enable --name=allowPreviewFeatures
 ### What can I do if I keep getting a message that a package is not in Intune?
 
 If you receive a message that certain packages are not in Intune over and over, you have likely created a circular dependency. Neither Chocolatey, nor Intune support circular dependencies and so you won't be able to push these to Intune.
+
+![Example of message when there are circular dependencies](/assets/images/intune/push-circular-dependency.png)
