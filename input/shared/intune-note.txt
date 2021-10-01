@@ -1,0 +1,7 @@
+> :warning: **WARNING**
+>
+> The Chocolatey Intune integration is planned for an upcoming release of Chocolatey Licensed Extension and may not yet be available..
+
+> :memo: **NOTE**
+>
+> The Chocolatey Intune integration requires a valid Chocolatey for Business or Chocolatey for Business Trial license.
