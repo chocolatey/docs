@@ -11,7 +11,11 @@ This document outlines the process for upgrading Nexus running inside our Quick 
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
+<<<<<<< HEAD
 > :warning: **WARNING**
+=======
+> :warning:
+>>>>>>> (maint) Fix markdown callouts on Upgrade Nexus documentation.
 >
 > The instructions on this page use parameters available to the nexus-repository package to conserve SSL configuration. If you have arrived here,
 > and do not have a Nexus instance configured with SSL, leave off the package parameters.
@@ -24,7 +28,11 @@ If your server is restricted then internalize the package to your internal repos
 
 ## Example Upgrade Command:
 
+<<<<<<< HEAD
 > :memo: **NOTE**
+=======
+> :note:
+>>>>>>> (maint) Fix markdown callouts on Upgrade Nexus documentation.
 >
 > The following command assumes your nexus instance is available at nexus.example.com. Use your actual FQDN instead
 
