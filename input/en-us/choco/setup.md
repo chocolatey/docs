@@ -11,8 +11,8 @@ RedirectFrom:
 ## Requirements
 
 * Windows 7+ / Windows Server 2003+
-* PowerShell v2+ (Not PowerShell Core yet though)(minimum is v3 for install from this website due to [TLS 1.2 requirement](https://chocolatey.org/blog/remove-support-for-old-tls-versions))
-* .NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)(minimum is 4.5 for install from this website due to [TLS 1.2 requirement](https://chocolatey.org/blog/remove-support-for-old-tls-versions))
+* PowerShell v2+ (Not PowerShell Core yet though)(minimum is v3 for install from this website due to [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/))
+* .NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)(minimum is 4.5 for install from this website due to [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/))
 
 That's it! All you need is choco.exe (that you get from the installation scripts) and you are good to go! No Visual Studio required.
 
@@ -21,7 +21,7 @@ That's it! All you need is choco.exe (that you get from the installation scripts
 Chocolatey installs in seconds. You are just a few steps from running choco right now!
 
 1. First, ensure that you are using an **[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)** - you can also install as a non-admin, check out <a href="#non-administrative-install">Non-Administrative Installation</a>.
-1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmdexe) or [powershell.exe](#install-with-powershellexe).
+1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmd.exe) or [powershell.exe](#install-with-powershell.exe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
 1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
