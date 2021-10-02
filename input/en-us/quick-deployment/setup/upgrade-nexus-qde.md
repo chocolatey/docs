@@ -11,7 +11,7 @@ This document outlines the process for upgrading Nexus running inside our Quick 
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
-# Upgrade outline
+# Instructions
 
 1. Internalize the nexus-repository package and push to your internal repo
 2. Stop the nexus service
