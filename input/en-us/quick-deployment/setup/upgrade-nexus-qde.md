@@ -27,7 +27,7 @@ If your server is restricted then internalize the package to your internal repos
 >  With newer versions of nexus-repository (3.30.0.01 and up) use ```/BackupSslConfig``` parameter to automatically backup and restore SSL config.
 
 ```
-choco upgrade nexus-repository -fy --params "'/BackupSslConfig'" -s "'https://community.chocolatey.org/api/v2/'" --no-progress
+choco upgrade nexus-repository --params "'/BackupSslConfig'" --source "'https://community.chocolatey.org/api/v2/'" --no-progress --force --yes
 ```
 
 Regardless of above, it would be advisable to backup your SSL config (see below).
