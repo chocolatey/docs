@@ -30,6 +30,17 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 ### BUG FIXES
  * Fix - Filtering of sources doesn't return correct list when useBackgroundServiceWithSelfServiceSourcesOnly is disabled - see [licensed #263](https://github.com/chocolatey/chocolatey-licensed-issues/issues/263)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/p8m2nnSO7bw?list=PL84yg23i9GBgflAg7JGRLWh7tqTX7F5-z" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 2.2.0 (September 2, 2021)
 
@@ -49,6 +60,17 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
  * Self-Service / Background Mode: Filter sources to only those allowed when running an non-administrator user
  * Package Reducer: Allow packages to control the level of reduction of files that happens after installation
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/yohhvgtwxiM?list=PL84yg23i9GBgflAg7JGRLWh7tqTX7F5-z" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 2.1.1 (July 3, 2020)
 ### BUG FIXES
