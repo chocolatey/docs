@@ -27,12 +27,35 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 * [Security] XML External Entity attack in log4net (CVE-2018-1285) - [#869](https://github.com/chocolatey/ChocolateyGUI/issues/869)
 * Make use of Chocolatey CLI Export command - [#882](https://github.com/chocolatey/ChocolateyGUI/issues/882)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/6EJKPy4cCKI?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## [0.18.2](https://github.com/chocolatey/ChocolateyGUI/milestone/25?closed=1) (September 2, 2021)
 
 ### BUGS
 
 * When running Chocolatey GUI, ensure installed Chocolatey assembly is used, rather than locally referenced assembly - [#857](https://github.com/chocolatey/ChocolateyGUI/issues/857)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/PC00qA4rlkY?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.18.1](https://github.com/chocolatey/ChocolateyGUI/milestone/24?closed=1) (March 29, 2021)
 
@@ -52,7 +75,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/LzMKMZX_ja4s?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/LzMKMZX_ja4?list=PL84yg23i9GBggcdl08xpJxOdikIvd3-3V" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
