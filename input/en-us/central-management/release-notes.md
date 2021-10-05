@@ -34,6 +34,17 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
  * Fix - Users are unable to delete a piece of software within CCM Web UI - see [Licensed #261](https://github.com/chocolatey/chocolatey-licensed-issues/issues/261)
  * Fix - Incorrect total number of affected instances within Outdated Software Details Report Details - see [Licensed #265](https://github.com/chocolatey/chocolatey-licensed-issues/issues/265)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/D3z4w3O6w8Q?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 0.6.2 (August 26th, 2021)
 ### BUG FIXES
@@ -48,9 +59,33 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
  * Fix - Web - Incorrect total number of Outdated Software Reports displayed
  * Fix - Database - Unable to install 0.6.0/0.6.1 database package when IIS is not installed - see [Licensed #248](https://github.com/chocolatey/chocolatey-licensed-issues/issues/248)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/UF3Z9PVh2K0?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## 0.6.1 (August 5th, 2021)
 ### BUG FIXES
  * Fix - Service - Unable to install chocolatey-management-service package under certain conditions - see [Licensed #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/pbgpxeRQ-V4?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 0.6.0 (August 3rd, 2021)
 ### BREAKING CHANGES
@@ -62,6 +97,18 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ### ENHANCEMENTS
  * All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
  * Due to this update, the CCM Website now uses the in-process hosting model within IIS. This is enabled by [default starting with ASP.NET Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0#enable-in-process-hosting).
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/i5_42euUABY?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 0.5.1 (April 12th, 2021)
 ### BUG FIXES
