@@ -29,6 +29,18 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 ### IMPROVEMENTS
 * [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/O0fyUHe2pb8?list=PL84yg23i9GBjSzAEmtCqSLf2us_LLIDwZ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## 0.2.1 (March 29, 2021)
 
 ### BUGS
@@ -44,7 +56,7 @@ A short video explaining what is included in this release can be found here:
     </iframe>
 </div>
 <br>
-</p>>
+</p>
 
 ## 0.2.0 (March 9, 2021)
 
