@@ -16,11 +16,33 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 ### BUG FIXES
  * Fix - Setting of Authorization header in Get-WebFile cmdlet does not work - see [#2374](https://github.com/chocolatey/choco/issues/2374)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.11.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.1) (September 2nd, 2021)
 ### BUG FIXES
  * Fix - Chocolatey Licensed Extension is not loaded into PowerShell process when using v0.11.0 - see [#2340](https://github.com/chocolatey/choco/issues/2340)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.11.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.0) (September 2nd, 2021)
 
@@ -71,6 +93,17 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
  * Terminology improvements in choco.exe help output - see [#1861](https://github.com/chocolatey/choco/issues/1861)
  * Wrong error message shown when using Get-ChocolateyWebFile and forcex86 - see [#1859](https://github.com/chocolatey/choco/issues/1859)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.10.15](https://github.com/chocolatey/choco/issues?q=milestone%3A0.10.15+is%3Aclosed) (June 3, 2019)
 ### BUG FIXES
