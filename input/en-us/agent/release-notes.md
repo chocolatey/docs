@@ -31,6 +31,17 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### BUG FIXES
  * [Security] - Deployments - Sensitive arguments are included in log file when advanced deployments are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/EoliKrC_MBA?list=PL84yg23i9GBhOSL0YVuJV2bG5fTOijsD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 0.12.0 (September 2, 2021)
 
@@ -46,6 +57,17 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### IMPROVEMENTS
  * [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #253](https://github.com/chocolatey/chocolatey-licensed-issues/issues/253)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/Uv59msxXzeg?list=PL84yg23i9GBhOSL0YVuJV2bG5fTOijsD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## 0.11.2 (November 5, 2020)
 
