@@ -63,7 +63,7 @@ In `genericVirusScannerValidExitCodes`, these are exit codes that indicate that 
 ```powershell
 choco config set --name="'virusScannerType'" --value="'Generic'"
 choco config set --name="'genericVirusScannerPath'" --value="'C:\Program Files\Windows Defender\MpCmdRun.exe'"
-choco config set --name="'genericVirusScannerArgs'" --value="'-Scan -ScanType 3 -File [[FILE]]'"
+choco config set --name="'genericVirusScannerArgs'" --value="-Scan -ScanType 3 -File '[[File]]'"
 choco config set --name="'genericVirusScannerValidExitCodes'" --value="'0'"
 choco feature enable --name="'virusCheck'"
 ```
