@@ -28,7 +28,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 ### Timeouts
 
 * `commandExecutionTimeoutSeconds` = **'2700'** - Default timeout for command execution. '0' for infinite (starting in 0.10.4). It is recommended that organizations bump this up to at least 4 hours (14400).
-* `webRequestTimeoutSeconds` = **'45'** - Default timeout for web requests. Available in 0.9.10+.
+* `webRequestTimeoutSeconds` = **'30'** - Default timeout for web requests. Available in 0.9.10+.
 
 ### Other
 
