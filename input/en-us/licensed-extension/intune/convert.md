@@ -36,10 +36,6 @@ When Chocolatey looks to resolve dependencies, it will look in the folder that t
 >
 > If a child package is found in the dependency chain, that has a more restrictive dependency version criteria than the Chocolatey package you want to convert, then this more restrictive version criteria will be used when the Chocolatey Intune package is created.
 
-> :warning: **WARNING**
->
-> While measures have been taken to minimize the risk of circular dependencies, there is no guarantee that the `convert` command will convert them successfully and may result in corrupt Chocolatey Intune packages. Please ensure any packages you create do not have a dependency chain that includes packages that depend on each other.
-
 ### Examples
 
 To start converting Chocolatey packages to the Chocolatey Intune package format, you first need to download the packages. The location can be your own internal repository, or any other valid Chocolatey source. You can also use the Chocolatey Community Repository but be aware of [organizational use recommendations and limitations](https://docs.chocolatey.org/en-us/community-repository/community-packages-disclaimer). As an example, to download version `86.0` of the `firefox` Chocolatey package and convert it to a Chocolatey Intune package along with its dependencies:
