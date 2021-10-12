@@ -111,7 +111,7 @@ To manage a template as a package, create a new package with the name "templaten
 
 Then create a templates folder. This is where the template goes. the only thing to remember is that the nuspec file created here must end in ".template" as a Chocolatey package allows only one nuspec file.
 
-Here's an example: https://chocolatey.org/packages/zip.template. The source is at https://github.com/ferventcoder/chocolatey-packages/tree/master/manual/zip.template
+Here's an example: https://community.chocolatey.org/packages/zip.template. The source is at https://github.com/ferventcoder/chocolatey-packages/tree/master/manual/zip.template
 
 Yes, it is really that easy. Enjoy!
 

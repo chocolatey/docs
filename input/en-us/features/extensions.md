@@ -29,7 +29,7 @@ The name of the package should be "extensionname.extension". The name of the pac
 * When those functions are loaded by Chocolatey, they will already be available when your scripts run so you won't need to load up the files again in your install scripts - the functions will already be available!
 
 
-Here's an example: https://chocolatey.org/packages/chocolatey-core.extension. The source is at https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/extensions
+Here's an example: https://community.chocolatey.org/packages/chocolatey-core.extension. The source is at https://github.com/chocolatey/chocolatey-coreteampackages/tree/master/extensions
 
 Yes, it is really that easy. Enjoy!
 

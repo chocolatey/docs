@@ -10,7 +10,7 @@ RedirectFrom: docs/how-to-recompile-packages
 
 Sometimes creating packages from scratch can be an involved process. Not all software installers are created equal (and not all are easily automated either)! Thankfully there is already a tremendous resource you can use to make the process of getting your software all packaged up even smoother.
 
-On [chocolatey.org](https://chocolatey.org), you will find packages with all of the install logic you need to automatically install your software. However, many of these publicly available packages also rely on software that is available from official distribution points because they are subject to [software licensing and copyright law](https://en.wikipedia.org/wiki/Software_license). Unless you’re granted the right to distribute the software via the license, you can’t redistribute it publicly. These laws do not apply when you use internal packages, and that is a good thing!
+On [community.chocolatey.org](https://community.chocolatey.org), you will find packages with all of the install logic you need to automatically install your software. However, many of these publicly available packages also rely on software that is available from official distribution points because they are subject to [software licensing and copyright law](https://en.wikipedia.org/wiki/Software_license). Unless you’re granted the right to distribute the software via the license, you can’t redistribute it publicly. These laws do not apply when you use internal packages, and that is a good thing!
 
 Why? Downloading software from the internet creates a failure point because it may not be available, the software vendor site could go down, etc. With internal packages, you don’t have to worry about any of that. You can create internal packages and embed the software directly in the package and/or use internal file shares.
 
@@ -47,11 +47,11 @@ Package Internalizer can be hooked up to continuous integration automation or sc
 
 ## How To Internalize/Recompile An Existing Package Manually
 
-Chocolatey's [community feed](https://chocolatey.org/packages) has quite a few packages but they are geared towards community and use the internet for downloading from official distribution sites due to copyright law and a publicly offered repository. However, they are attractive as they have everything necessary to install a piece of software on your machine. Through the internalization process, by which you take a community package and bring all of the bits internal and/or embed them into the package, you can convert an existing package to be 100% offline and reliable and host it on an internal Chocolatey repository. This gives you complete control over a package and removes the aforementioned production trust and control issues.
+Chocolatey's [community feed](https://community.chocolatey.org/packages) has quite a few packages but they are geared towards community and use the internet for downloading from official distribution sites due to copyright law and a publicly offered repository. However, they are attractive as they have everything necessary to install a piece of software on your machine. Through the internalization process, by which you take a community package and bring all of the bits internal and/or embed them into the package, you can convert an existing package to be 100% offline and reliable and host it on an internal Chocolatey repository. This gives you complete control over a package and removes the aforementioned production trust and control issues.
 
 To make the existing package local, use these steps.
 
-1. Download the package from Chocolatey's community feed by going to the [package page](https://chocolatey.org/packages/notepadplusplus.commandline) and clicking the download link.
+1. Download the package from Chocolatey's community feed by going to the [package page](https://community.chocolatey.org/packages/notepadplusplus.commandline) and clicking the download link.
 
    ![Download Link](/assets/images/recompile/choco_npp_download.png)
 

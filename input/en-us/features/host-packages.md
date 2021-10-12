@@ -10,7 +10,7 @@ RedirectFrom: docs/how-to-host-feed
 
 ## Why?
 
-Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the [community package repository](https://chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
+Chocolatey has had the ability to be able to work with packages from one or more sources since its inception back in 2011. With that, Chocolatey comes with a default package repository configured - the [community package repository](https://community.chocolatey.org/packages). However due to the community repository being publicly available and subject to distribution rights, it has a failure point in that it can not be 100% reliable (most packages can't contain software and must download at runtime). It's not something an organization hosting their own package repository would be subject to, so we recommend organizational use of Chocolatey should include an internal package repository. Organizations looking to use Chocolatey should review the following topics to learn more:
 
 * [Community package repository - organizational use](xref:community-packages-disclaimer)
 * [Security and the community repository](xref:security#organizational-use-of-chocolatey)
@@ -161,7 +161,7 @@ The actual limit for package sizes varies depending on what each simple server c
 
 Please see [Set up the Chocolatey.Server](xref:set-up-chocolatey-server). More details below on what this option provides.
 
-[Chocolatey Simple Server](https://chocolatey.org/packages/chocolatey.server) is a simple Nuget.Server that is ready to rock and roll. It has already completed Steps 1-3 of NuGet's [host your own remote feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds). Some things to consider with Chocolatey.Server as compared to other options:
+[Chocolatey Simple Server](https://community.chocolatey.org/packages/chocolatey.server) is a simple Nuget.Server that is ready to rock and roll. It has already completed Steps 1-3 of NuGet's [host your own remote feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds). Some things to consider with Chocolatey.Server as compared to other options:
 
 * Uses same enhanced NuGet that Chocolatey uses so you can see more information in search if you choose to use those things.
 * Allows packages up to 2GB. Package size can be controlled through [maxAllowedContentLength](https://msdn.microsoft.com/en-us/library/ms689462(v=vs.90).aspx) and [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx).
@@ -183,7 +183,7 @@ Some notable references:
 
 ## Package Gallery
 
-This is like what https://chocolatey.org (the community feed runs on). It is the most advanced, having both a file store for packages and a database for tracking all sorts of information.
+This is like what https://community.chocolatey.org (the community feed runs on). It is the most advanced, having both a file store for packages and a database for tracking all sorts of information.
 
 ### Advantages
 

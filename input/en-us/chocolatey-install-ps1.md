@@ -25,7 +25,7 @@ If present in a package, the `ChocolateyInstall.ps1` script will be triggered at
 
 ### Example?
 
-This is what it takes to install [StExBar](https://chocolatey.org/packages/stexbar):
+This is what it takes to install [StExBar](https://community.chocolatey.org/packages/stexbar):
 
 ```powershell
 $name   = 'StExBar'

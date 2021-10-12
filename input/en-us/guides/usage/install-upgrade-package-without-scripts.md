@@ -37,7 +37,7 @@ Consider the following scenario:
 
 * You have Firefox version 1.0.0 installed
 * You do not have a package installed for Firefox.
-* You see Chocolatey.org (the community feed) has a version of Firefox 1.0.0 (package id is firefox). It may or may not be the latest version.
+* You see community.chocolatey.org (the community feed) has a version of Firefox 1.0.0 (package id is firefox). It may or may not be the latest version.
 
 Your command could be
 
@@ -51,7 +51,7 @@ Consider the following scenario:
 
 * You have Firefox version 1.0.0 installed.
 * You do not have a package installed for Firefox.
-* You see Chocolatey.org (the community feed) has a newer version of Firefox 2.0.0 (package id is firefox) as the latest version.
+* You see community.chocolatey.org (the community feed) has a newer version of Firefox 2.0.0 (package id is firefox) as the latest version.
 
 **Recommendation**: You should run the regular choco install (without the skip powershell argument) for Firefox and allow Chocolatey to upgrade the installed version. Check the package files first to be sure it is the same type of install (native installer versus zip archives). You can download the package and review the install script. You can also use `--noop` as part of your install arguments to see the script.
 
@@ -61,7 +61,7 @@ Consider the following scenario:
 
 * You have Firefox version 2.0.0 installed.
 * You do not have a package installed for Firefox.
-* You see Chocolatey.org (the community feed) has a latest version of Firefox 1.8.0 (package id is firefox).
+* You see community.chocolatey.org (the community feed) has a latest version of Firefox 1.8.0 (package id is firefox).
 * There is no newer version than this available.
 
 Your command could be:
@@ -78,7 +78,7 @@ Additional thoughts: You could install the older version of the package (with th
 
 Consider the following scenario:
 
-* You have installed Google Chrome from Chocolatey.org (package id is googlechrome)
+* You have installed Google Chrome from community.chocolatey.org (package id is googlechrome)
 * Google Chrome self-updates
 * Choco version is out of sync with installed version
 
@@ -99,7 +99,7 @@ Consider the following scenario:
 * You have Firefox version 1.0.0 installed.
 * The install came from installing the firefox 1.0.0 package.
 * You upgraded Firefox manually to 2.0.0 (ignore for a second that real-world Firefox auto-upgrades, this is an example for pete's sake ;) )
-* Chocolatey.org also has 2.0.0.
+* community.chocolatey.org also has 2.0.0.
 
 See [Install when community feed has a package with your version](#community-feed-has-a-package-with-your-version) - substitute `upgrade` for `install` if you must. Follow the recommendation.
 
@@ -112,7 +112,7 @@ Consider the following scenario:
 * You have Firefox version 1.0.0 installed.
 * The install came from installing the firefox 1.0.0 package.
 * You upgraded Firefox manually to 2.0.0 (ignore for a second that real-world Firefox auto-upgrades, this is an example for pete's sake ;) )
-* Chocolatey.org only has up to 1.8.0.
+* community.chocolatey.org only has up to 1.8.0.
 
 See [Community Feed has a version older than your version](#community-feed-has-a-package-older-than-your-version) - substitute `upgrade` for `install` if you must. Follow the recommendation.
 

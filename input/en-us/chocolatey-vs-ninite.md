@@ -31,7 +31,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 - Main purpose: Chocolatey is a global PowerShell execution engine that knows about a packaging format.
 - Decentralized with a central community package repository.
 - Multiple sources including private sources.
-- Packages on [https://chocolatey.org/packages](https://chocolatey.org/packages) (the Chocolatey Community Package Repository) are created by the community and reviewed by moderators.
+- Packages on [https://community.chocolatey.org/packages](https://community.chocolatey.org/packages) (the Chocolatey Community Package Repository) are created by the community and reviewed by moderators.
 - Packages can embed software, use UNC paths or download software from another location (like the official distribution locations).
 - Allows for community contributions.
 - Allows for pay for apps to be included as packages.
@@ -74,7 +74,7 @@ A lot of folks out there are always wanting to point out that there is Ninite wh
 ### Package sources:
 
 - Ninite - one at Ninite.com
-- Chocolatey - central community package repository at [https://chocolatey.org/packages](https://chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [chocolatey.org] and/or myget.org). See [Host Your Own Server](xref:host-packages) for options.
+- Chocolatey - central community package repository at [https://community.chocolatey.org/packages](https://community.chocolatey.org/packages), create and use public/private sources (folder, network share, OData feed like nuget.org, [community.chocolatey.org] and/or myget.org). See [Host Your Own Server](xref:host-packages) for options.
 - Chocolatey can also install from [alternative sources](xref:choco-command-install#alternative-sources) - choco install bash --source cygwin | choco install gemcutter --source ruby | choco install sphynx --source python | choco install IISExpress --source webpi
 
 ### Creating packages:

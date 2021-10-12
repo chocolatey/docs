@@ -8,7 +8,7 @@ RedirectFrom: docs/package-triage-process
 
 # Package Questions, Requests, Updates, and/or Fixes For Community Feed - Triage Process
 
-The Community Feed (https://chocolatey.org/packages) has a collection of packages provided and maintained by the community. You may have come across a package and found you have questions about it or you have found it outdated or broken.
+The Community Feed (https://community.chocolatey.org/packages) has a collection of packages provided and maintained by the community. You may have come across a package and found you have questions about it or you have found it outdated or broken.
 
 > :memo: **NOTE** If you are a **software vendor** wanting to maintain your own software's packages, please see the [vendors maintaining packages](#i-want-to-take-overhelp-with-package-maintenance-for-my-software) below.
 
@@ -24,7 +24,7 @@ The Community Feed (https://chocolatey.org/packages) has a collection of package
 ### Are you a Software Vendor?
 #### Does a Chocolatey package that installs my software violate distribution rights?
 
-In most cases no. Most packages you will find on the community feed, also known as https://chocolatey.org/packages use automation scripts to download the software from the [official distribution point](xref:legal#distributions).
+In most cases no. Most packages you will find on the community feed, also known as https://community.chocolatey.org/packages use automation scripts to download the software from the [official distribution point](xref:legal#distributions).
 
 If you visit the package page and slide down to the Files heading, you can see what is included in the package. Many times you will see only a chocolateyInstall.ps1 and a chocolateyUninstall.ps1. You can also see the contents of those files right here so you can review what they are doing (the language is PowerShell, but with most packages it is typically easy to follow what they are doing).
 
@@ -60,7 +60,7 @@ Use the Contact Maintainers link on the package page of the community feed or th
 ![contact maintainers link](/assets/images/triage-maintainers.jpg)
 
 ### Package Request? Package Missing?
-If you are looking for packages to be added to the community feed (aka https://chocolatey.org/packages) - you are part of the community and we welcome your packages. It's super simple to create and maintain packages, see [Creating packages](xref:create-packages).
+If you are looking for packages to be added to the community feed (aka https://community.chocolatey.org/packages) - you are part of the community and we welcome your packages. It's super simple to create and maintain packages, see [Creating packages](xref:create-packages).
 
 When it comes to community packages, we really want folks who are using the software to be package maintainers versus folks who may not be using the software. So when you are asking for other folks to add packages, please consider that it may be better for you to keep the package up to date than someone else who may not be invested in ensuring it stays updated.
 
@@ -103,7 +103,7 @@ Please include details of how and when you attempted to contact the Maintainer(s
    ![Contact admins link](/assets/images/triage-siteadmins.jpg)
 
 
-1. Wait for a response from the Moderators. Assuming that the Moderators agree that the package is abandoned, it is at this point that a new person can be added as a maintainer. 
+1. Wait for a response from the Moderators. Assuming that the Moderators agree that the package is abandoned, it is at this point that a new person can be added as a maintainer.
 
     If you specified in the previous step that you would like to become a new maintainer, please follow the instructions for a [Package Maintainer Handover/Switch](xref:package-maintainer-handover).
 

@@ -16,7 +16,7 @@ With Chocolatey (choco) client itself, these are the important things to know:
 
 - Chocolatey is [Open source](https://github.com/chocolatey/choco).
 - On release, everything is authenticode signed. [Binaries and PowerShell scripts](#chocolatey-binaries-and-the-chocolatey-package).
-- Chocolatey is also verified against [VirusTotal - 60-70 amped up anti-virus scanners](https://chocolatey.org/packages/chocolatey#virus).
+- Chocolatey is also verified against [VirusTotal - 60-70 amped up anti-virus scanners](https://community.chocolatey.org/packages/chocolatey#virus).
 - Completely offline - By default choco is installed with the community package repository as a source, but that is easily adjusted to internal repositories.
 - No Data Collection / Telemetry - No call home, not even in our commercial options (license tracking is honor-based) and there are organizations (or internal processes) that verify/validate (and karma) that will adjust any abuses of licensing.
 - No 3rd party advertising - We do feel that our commercial options make sense for anyone that can afford them, so you will see we lean folks to that.
@@ -24,7 +24,7 @@ With Chocolatey (choco) client itself, these are the important things to know:
 
 ### Chocolatey Community Package Repository
 
-Use of the community package repository is optional. Community package repository is the same thing as Chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [DOES NOT RECOMMEND using the community repository either](xref:community-packages-disclaimer) for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
+Use of the community package repository is optional. Community package repository is the same thing as community.chocolatey.org packages, and represents less than 5% of the existing packages in existence (nearly all are internal). Most **organizations using Chocolatey do NOT use the community repository**, and **Chocolatey Software [DOES NOT RECOMMEND using the community repository either](xref:community-packages-disclaimer) for *organizational* deployments** for a [variety of reasons](#organizational-use-of-chocolatey).
 
 Here are some other important things to understand:
 
@@ -35,12 +35,12 @@ Here are some other important things to understand:
 
 ## Summary
 
-We take security issues very seriously. Security falls into a few areas of the Chocolatey framework - the clients (choco.exe and ChocolateyGUI), and the community repository (aka [https://chocolatey.org/packages](https://chocolatey.org/packages)). While no one can give you a guarantee of complete security, we can provide information here for you to make the best decision for your use of Chocolatey. The most secure use of Chocolatey is when you use Chocolatey with packages that use embedded or local software resources. If you are super security conscious, you should understand the trade-offs prior to using the community repository.
+We take security issues very seriously. Security falls into a few areas of the Chocolatey framework - the clients (choco.exe and ChocolateyGUI), and the community repository (aka [https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)). While no one can give you a guarantee of complete security, we can provide information here for you to make the best decision for your use of Chocolatey. The most secure use of Chocolatey is when you use Chocolatey with packages that use embedded or local software resources. If you are super security conscious, you should understand the trade-offs prior to using the community repository.
 
 - If you are an organization and you are using Chocolatey in the recommended way (internal repositories using packages that use internal resources only), Chocolatey is secure and reliable.
-- Using the community repository ([https://chocolatey.org/packages](https://chocolatey.org/packages)) is only as secure as the packages that you are using. While Chocolatey provides security features like checksumming, verification against VirusTotal (for packages and any binaries they contain or download.
+- Using the community repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) is only as secure as the packages that you are using. While Chocolatey provides security features like checksumming, verification against VirusTotal (for packages and any binaries they contain or download.
     > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.), and moderation to be sure packages are using official binaries, there is no guarantee for what may be in the official distributions.
-- Moderation and virus checking of packages on the public community repository ([https://chocolatey.org/packages](https://chocolatey.org/packages)) represent what the package and links represented at the time of original moderation. Many packages on the public feed represent software that has distribution rights, so the packages must contain instructions on how to download those binaries from official sources. There is no guarantee (other than packages using a package checksum - required for non-secure downloads) against the vendor changing what is at the URLs that the package uses.
+- Moderation and virus checking of packages on the public community repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) represent what the package and links represented at the time of original moderation. Many packages on the public feed represent software that has distribution rights, so the packages must contain instructions on how to download those binaries from official sources. There is no guarantee (other than packages using a package checksum - required for non-secure downloads) against the vendor changing what is at the URLs that the package uses.
 - If you need better runtime protection against malware, you should look at [Chocolatey Pro / Chocolatey For Business](https://chocolatey.org/compare). While we'd like to offer runtime protection for free to everyone, it's not free for us so we are not able to provide it as a free service.
 
 ## Overall
@@ -61,7 +61,7 @@ Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has c
 
 ## Chocolatey binaries and the Chocolatey package
 
-The binary `choco.exe` can be trusted (at least as far as you trust the Chocolatey maintainers, Chocolatey Software, Inc, and formerly RealDimensions Software, LLC). On release, the binaries are also verified against [VirusTotal](https://chocolatey.org/packages/chocolatey#virus), so you can have some additional 3rd party verification.
+The binary `choco.exe` can be trusted (at least as far as you trust the Chocolatey maintainers, Chocolatey Software, Inc, and formerly RealDimensions Software, LLC). On release, the binaries are also verified against [VirusTotal](https://community.chocolatey.org/packages/chocolatey#virus), so you can have some additional 3rd party verification.
 
 - **Starting with 0.9.10.0**, both the binaries and the PowerShell scripts are Authenticode signed. This certificate is only held by Chocolatey employees (Chocolatey Software, Inc). This provides quite a bit of trust that you are getting Chocolatey from the source and as intended.
 
@@ -136,23 +136,23 @@ For more information on the specifics, see [#36](https://github.com/chocolatey/c
 
 ## Organizational Use of Chocolatey
 
-When you use Chocolatey in an organizational sense, do so in a manner that requires no internet access. Chocolatey doesn't require internet access at all. The default source ([https://chocolatey.org/packages](https://chocolatey.org/packages), aka the community package repository) that is available on installed is typically the first thing to be removed when organizations are using Chocolatey. This provides the utmost in security for organizations.
+When you use Chocolatey in an organizational sense, do so in a manner that requires no internet access. Chocolatey doesn't require internet access at all. The default source ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages), aka the community package repository) that is available on installed is typically the first thing to be removed when organizations are using Chocolatey. This provides the utmost in security for organizations.
 
 > "Hundreds of organizations use a packaging solution that requires zero internet access. It's pretty much the de facto for packaging software deployments on Windows. Have you looked at Chocolatey and building and hosting your own internal packages?"
 
 It's important to keep the following in mind:
 
-> **"Chocolatey != Chocolatey.org Packages"**
+> **"Chocolatey != community.chocolatey.org Packages"**
 
-It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](xref:host-packages) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
+It goes without stating that if you are a business and you are using Chocolatey, you should think long and hard before trusting an external source you have no control over (community.chocolatey.org packages, in addition to all of the binaries that download from official distribution channels over the internet). It is both free and easy to set up your [own private feed](xref:host-packages) where you can vet packages and have complete control over the binaries and what gets installed. This also provides a complete offline solution that is reliable and trustworthy. This is what we recommend for businesses that use Chocolatey in production scenarios (and what many of them do). There is a [great article written up](https://chocolatey.org/blog/host-your-own-server) on the reasoning and options for hosting your own server.
 
-## Chocolatey.org Packages
+## community.chocolatey.org Packages
 
-Chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [distribution rights](xref:community-packages-disclaimer), they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
+community.chocolatey.org has a community repository of packages known as the community feed / community package repository. These packages are created by folks in the community and due to [distribution rights](xref:community-packages-disclaimer), they usually contain executable instructions on how to download software from official distribution points written in PowerShell.
 
 ### Security for the Community Package Repository:
 
-1. Every package submitted to the community package repository ([https://chocolatey.org/packages](https://chocolatey.org/packages)) since October 2014 undergoes a rigorous moderation process before it becomes live. Yes, every package, every version of a package is moderated and approved before they become live. See "Rigorous Moderation Process" below.
+1. Every package submitted to the community package repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) since October 2014 undergoes a rigorous moderation process before it becomes live. Yes, every package, every version of a package is moderated and approved before they become live. See "Rigorous Moderation Process" below.
 1. Packages are run through VirusTotal to produce a second opinion on the relative safety of the package and underlying software that is contained or downloaded by the package. The verification of this is shown on the site.
     > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
 1. Some packages move into a trusted status. This is usually when the package maintainer is also the software maintainer, but can also occur when the maintainer(s) are trusted and multiple versions of a package have been submitted without issues.
@@ -170,7 +170,7 @@ In October 2014, the community repository had moderation turned on. All communit
 
 - All package versions are run through an [automated validation process](xref:package-validator) to determine quality.
 - All package versions are run through an [automated verification process](xref:package-verifier-service) to determine if they work correctly (install, etc).
-- All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://chocolatey.org/packages/chocolatey#virus](https://chocolatey.org/packages/chocolatey#virus) as an example).
+- All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://community.chocolatey.org/packages/chocolatey#virus](https://community.chocolatey.org/packages/chocolatey#virus) as an example).
     > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
 - A human [reviews every package version](xref:moderation#reviewer-moderator-process) that is not a [trusted package](xref:faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
 - We don't require cryptographically signing packages yet, that is a future enhancement
@@ -196,7 +196,7 @@ For using Chocolatey, if you are using the community repository, you will need t
 
 For specific IP addresses to whitelist, please see the following: [https://www.cloudflare.com/ips/](https://www.cloudflare.com/ips/)
 
-If you are using the community package repository, you would also need to whitelist the official distribution location for **EVERY** package that you intend to manage (unless you had a licensed edition **and** the downloads have been cached on the Chocolatey customer CDN). This is due to distribution rights and the community repo being publicly available (discussed above at [Chocolatey.org Packages](#chocolateyorg-packages)), so those community packages are not able to embed binaries directly into the package and must download those resources at runtime. Licensed editions of Chocolatey take advantage of a [CDN cache](xref:private-cdn) of those downloaded resources, which is used instead of reaching out to those remote locations to ensure availability.
+If you are using the community package repository, you would also need to whitelist the official distribution location for **EVERY** package that you intend to manage (unless you had a licensed edition **and** the downloads have been cached on the Chocolatey customer CDN). This is due to distribution rights and the community repo being publicly available (discussed above at [community.chocolatey.org Packages](#chocolateyorg-packages)), so those community packages are not able to embed binaries directly into the package and must download those resources at runtime. Licensed editions of Chocolatey take advantage of a [CDN cache](xref:private-cdn) of those downloaded resources, which is used instead of reaching out to those remote locations to ensure availability.
 
 Keep in mind that the Chocolatey CDN can only download resources for packages that it has been able to cache. While it is currently able to cache 70% of the existing packages ([https://chocolatey.org/stats](https://chocolatey.org/stats)) for actuals - use PackagesCached divided by UniquePackages), we always recommend running `choco search pkgid` (or `choco info pkgid`) to determine if it has the "Downloads cached for licensed users" aspect, or look on the package page for the indicator that the packages are cached. If it does not, you would either need to go through the process of internalization for that package, or look to whitelisting whatever resources that package needed to download.
 
@@ -257,4 +257,4 @@ A non-administrative user should choose to install Chocolatey in a directory som
 ## Report Issue
 
 - Report general security issue - please email security [at] chocolatey dot io.
-- Report package malware/security/other package issue - please use the Report Abuse link directly on the package page on [https://chocolatey.org/packages](https://chocolatey.org/packages).
+- Report package malware/security/other package issue - please use the Report Abuse link directly on the package page on [https://community.chocolatey.org/packages](https://community.chocolatey.org/packages).

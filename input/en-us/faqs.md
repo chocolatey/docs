@@ -39,11 +39,11 @@ First a [story](xref:chocolatey-story). Then [Why Chocolatey](xref:why)
 
 ### Can I use Chocolatey at my organization?
 
-Absolutely! The licensing is very business friendly (plus we have [paid options](https://chocolatey.org/compare) to better help organizations - *hint, hint*). We typically recommend organizations depending Chocolatey look to managing their own packaging as opposed to using the Community Package Repository (https://chocolatey.org/packages) - packages there are not 100% reliable due to distribution rights with publicly available packages (which causes a major failure point). See the next question for details.
+Absolutely! The licensing is very business friendly (plus we have [paid options](https://chocolatey.org/compare) to better help organizations - *hint, hint*). We typically recommend organizations depending Chocolatey look to managing their own packaging as opposed to using the Community Package Repository (https://community.chocolatey.org/packages) - packages there are not 100% reliable due to distribution rights with publicly available packages (which causes a major failure point). See the next question for details.
 
 ### Are you redistributing software?
 
-No. Packages on Chocolatey's community repository (https://chocolatey.org/packages) are publicly available and as such they are subject to software distribution rights. With those packages the following applies:
+No. Packages on Chocolatey's community repository (https://community.chocolatey.org/packages) are publicly available and as such they are subject to software distribution rights. With those packages the following applies:
 
 > Chocolatey does the same thing that you would do based on the package instructions. This usually means going out and downloading an installer from the official distribution point and then silently installing it on your machine. With most packages this means Chocolatey is not redistributing software because they are going to the same distribution point that you yourself would go get the software if you were performing this process manually.
 
@@ -84,7 +84,7 @@ tl;dr - Yes, completely possible. Use `-y` or turn on `allowGlobalConfirmation`.
 
 Also check out the help menus now - `choco -h`, `choco install -h`
 
-Longer answer, we've moved a little closer towards other package managers for security reasons, where by default we stop and confirm if you are okay with the state change. We always communicate changes in the [release notes](xref:floss-release-notes) / [Changelog](https://github.com/chocolatey/choco/blob/master/CHANGELOG.md), which also end up in the [nuspec file](https://chocolatey.org/packages/chocolatey#releasenotes), so we highly recommend folks scan at least one of those to see anything tagged breaking changes. Always scan from your current version up to the one you are upgrading to so that you catch all changes.
+Longer answer, we've moved a little closer towards other package managers for security reasons, where by default we stop and confirm if you are okay with the state change. We always communicate changes in the [release notes](xref:floss-release-notes), so we highly recommend folks scan at least one of those to see anything tagged breaking changes. Always scan from your current version up to the one you are upgrading to so that you catch all changes.
 
 The one that is the most important right now is the `x.y.z` release (in this case 0.9.9), once we reach v1 we will be fully SemVer compliant and breaking changes will constitute a major version bump (we're still SemVer in a less than v1), so you can scan breaking changes and major new features in an `x` release, new compatible features in a `.y` release, and `.z` releases will only contain compatible fixes for the current release.
 
@@ -144,7 +144,7 @@ That would be https://community.chocolatey.org/api/v2/ aka the Community Package
 
 You can package and install anything on Windows using Chocolatey - if it can be automated, Chocolatey and PowerShell can install, upgrade, and uninstall it.
 
-However, if you are just curious on what is available in the community, check out the community package repository at http://chocolatey.org/packages. Note that it does have one large limitation, distribution rights, which makes the community package repository not fully reliable like an internal repository which is not subject to distribution rights.
+However, if you are just curious on what is available in the community, check out the community package repository at https://community.chocolatey.org/packages. Note that it does have one large limitation, distribution rights, which makes the community package repository not fully reliable like an internal repository which is not subject to distribution rights.
 
 You can also install packages from other sources (nuget.org, rubygems.org, web pi tools, etc).
 
@@ -167,7 +167,7 @@ Installable applications end up where the native installer wants them to end up 
 
 A portable application is something that doesn't require a native installer to use. In other words, it is not “installed” on your system (where you can go to uninstall in the control panel). It also requires no administrative access for the package install.
 
-Portable applications end up in the %ChocolateyInstall%/lib (i.&nbsp;e. C:\ProgramData\Chocolatey\lib) folder yes, but they get a "shim" to put them on the path of the machine. This behavior is very much to how Chocolatey works and is not configurable (the directory). Where the portable apps end up is still going to be %ChocolateyInstall%/lib no matter where you move the directory, unless a package itself unpacks the portable app elsewhere (as in the case of [git-tfs](http://chocolatey.org/packages/gittfs)).
+Portable applications end up in the %ChocolateyInstall%/lib (i.&nbsp;e. C:\ProgramData\Chocolatey\lib) folder yes, but they get a "shim" to put them on the path of the machine. This behavior is very much to how Chocolatey works and is not configurable (the directory). Where the portable apps end up is still going to be %ChocolateyInstall%/lib no matter where you move the directory, unless a package itself unpacks the portable app elsewhere (as in the case of [git-tfs](https://community.chocolatey.org/packages/gittfs)).
 
 ### Why doesn't a package install software to Program Files?
 
@@ -184,7 +184,7 @@ Also consider that if the package **is** using `$env:ChocolateyBinRoot` (which w
 
 ### What is the difference between packages no suffix as compared to *.install *.portable?
 
-What is the difference between packages named *.install (i.&nbsp;e. [autohotkey.install](https://chocolatey.org/packages/autohotkey.install)), *.portable (i.&nbsp;e. [autohotkey.portable](https://chocolatey.org/packages/autohotkey.portable)) and * (i.&nbsp;e. [autohotkey](https://chocolatey.org/packages/autohotkey))?
+What is the difference between packages named *.install (i.&nbsp;e. [autohotkey.install](https://community.chocolatey.org/packages/autohotkey.install)), *.portable (i.&nbsp;e. [autohotkey.portable](https://community.chocolatey.org/packages/autohotkey.portable)) and * (i.&nbsp;e. [autohotkey](https://community.chocolatey.org/packages/autohotkey))?
 
 tl;dr: Nearly 100% of the time, the package with no suffix (autohotkey in this example) is going to ensure the *.install. The package without the suffix is for both discoverability and for other packages to take a dependency on.
 
@@ -242,7 +242,7 @@ See [Troubleshooting](xref:troubleshooting)
 
 Yes, it is. Chocolatey carries a FOSS Apache 2.0 license, which is extremely business friendly. You can use Chocolatey and most of its infrastructure completely free. Chocolatey also has a business edition with features organizations need for better software management . See [Compare](https://chocolatey.org/pricing) for details.
 
-### Should my organization depend on (use) the community feed (https://chocolatey.org/packages)?
+### Should my organization depend on (use) the community feed (https://community.chocolatey.org/packages)?
 
 For production-level scenarios, I couldn't justify giving up that level of control and trust to the internet in an organization. It's recommended that you copy and modify existing packages and/or create your own internal packages and host them internally. That way you can completely guarantee that an install/upgrade/uninstall will always work every time. See [Security](xref:security#chocolateyorg-the-community-feed) for more details.
 
@@ -332,7 +332,7 @@ For portable packages, it can be caused by not using the built in archive PowerS
 
 The install location which is displayed can be manually set in the `ChocolateyInstall.ps1` with the `$Env:ChocolateyPackageInstallLocation` environment variable.
 
-If you are setting this variable in an installer package, do not hard code it, but instead get the location via checking the uninstall keys in the registry or similar. 
+If you are setting this variable in an installer package, do not hard code it, but instead get the location via checking the uninstall keys in the registry or similar.
 If this is hard coded for a package that runs an installer, it may display an incorrect location if the install location is changed manually, by install arguments, or via the licensed ubiquitous install directory switch.
 
 ## Videos / Reference
@@ -360,7 +360,7 @@ See [Package Maintainer Handover](xref:package-maintainer-handover)
 
 ### What is moderation?
 
-Related to the community package repository only (aka the default feed aka https://chocolatey.org/packages), we have a concept called moderation, where submitted packages are held until they are considered safe and of minimal quality for regular consumption.
+Related to the community package repository only (aka the default feed aka https://community.chocolatey.org/packages), we have a concept called moderation, where submitted packages are held until they are considered safe and of minimal quality for regular consumption.
 
 Moderation involves checking a package version for quality (validation) and correctness, whether it installs and uninstalls correctly (verification). We have two automated services that validate and verify packages. The validator checks the quality of a package. If no requirements are flagged as failing review, it will be passed on to the verifier, which checks that the package actually works as intended (it may help to think of the validator as unit testing and the verifier as integration testing). If both of these automated reviews pass the package version is submitted to a moderator for final review and approval.
 
@@ -377,7 +377,7 @@ See [Review Process](xref:moderation#package-review-process).
 
 ### What is a trusted package?
 
-Related to the community package repository only (aka the default feed aka https://chocolatey.org/packages).
+Related to the community package repository only (aka the default feed aka https://community.chocolatey.org/packages).
 
 A package that is considered trusted comes from the original software creator or is maintained by someone in the community who has a track record for high quality and safe packages.
 
@@ -398,7 +398,7 @@ For a package to switch to trusted, a moderator must manually make the change. I
 
 ### How do I install a package version under moderation?
 
-Related to the community package repository only (aka the default feed aka https://chocolatey.org/packages).
+Related to the community package repository only (aka the default feed aka https://community.chocolatey.org/packages).
 
 You can install a version of a package version that's still under moderation - however know that if the maintainer needs to fix the package version during the review process, you will never get those fixes locally since they are updating the **SAME** version. Package versions are not immutable until they are approved. The caveat for "never" is that if you know it changed (likely you won't and there is no notification, *what you have installed technically never existed*), you could force the reinstall of that same version of the package.
 
@@ -412,7 +412,7 @@ You need to specify name AND version to any package to install the unlisted/unap
 
 ### How do I install a rejected package?
 
-Related to the community package repository only (aka the default feed aka https://chocolatey.org/packages), we have a concept of packages that have been rejected. You cannot install a rejected package. It could do bad things to your system so we don't allow install from the community repository.
+Related to the community package repository only (aka the default feed aka https://community.chocolatey.org/packages), we have a concept of packages that have been rejected. You cannot install a rejected package. It could do bad things to your system so we don't allow install from the community repository.
 
 ### How do I self-reject a package?
 

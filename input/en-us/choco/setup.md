@@ -113,7 +113,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 With completely offline use of Chocolatey, you want to ensure you remove the default community package source (`choco source list` followed by `choco source remove -n chocolatey`, or however you would do that with a configuration manager [like Puppet](https://forge.puppet.com/puppetlabs/chocolatey#sources-configuration)).
 
-1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://chocolatey.org/packages/chocolatey and find a version you want.
+1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://community.chocolatey.org/packages/chocolatey and find a version you want.
 1. Click on Download to download that version's nupkg file.
 
   ![download chocolatey.nupkg visual](/assets/images/DownloadChocolateyPackage.png)
@@ -723,7 +723,7 @@ $env:chocolateyUseWindowsCompression = 'true'
 
 ### Installing with restricted TLS
 
-> :memo: **NOTE** Chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions.
+> :memo: **NOTE** community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions.
 
 > :memo: **NOTE** If your server is restricted to TLS 1.1+, you need to add additional logic to be able to download and install Chocolatey (this is not necessary when running Chocolatey normally as it does this automatically).
 
@@ -754,7 +754,7 @@ At line:1 char:51
     + FullyQualifiedErrorId : WebException
 ~~~
 
-It's possible that you are attempting to install from a server that needs to use TLS 1.1 or TLS 1.2 (has restricted the use of TLS 1.0 and SSL v3), you have some options. Chocolatey.org now requires TLS 1.2 at a minimum.
+It's possible that you are attempting to install from a server that needs to use TLS 1.1 or TLS 1.2 (has restricted the use of TLS 1.0 and SSL v3), you have some options. community.chocolatey.org now requires TLS 1.2 at a minimum.
 
 #### Option 1 - Host Internally
 
@@ -791,7 +791,7 @@ You need to download and unzip the Chocolatey package, then call the PowerShell 
 
 ### Non-Administrative install
 
-> :memo: **NOTE** This option should be a last resort and is considered to be a more advanced scenario - most things you do on Windows require administrative rights, especially surrounding software management, so you are going to be limited even in packages you attempt to install. If you are using the [community package repository](https://chocolatey.org/packages), there are over 200 packages you can install from the community repository without administrative permission - see https://chocolatey.org/packages?q=id%3Aportable+tag%3Aportable.
+> :memo: **NOTE** This option should be a last resort and is considered to be a more advanced scenario - most things you do on Windows require administrative rights, especially surrounding software management, so you are going to be limited even in packages you attempt to install. If you are using the [community package repository](https://community.chocolatey.org/packages), there are over 200 packages you can install from the community repository without administrative permission - see https://community.chocolatey.org/packages?q=id%3Aportable+tag%3Aportable.
 
 You must choose a different location than the default (see [Installing to a different location](#installing-to-a-different-location) above). The default is a more secure location that only administrators can update.
 
@@ -833,7 +833,7 @@ choco install notepadplusplus.commandline -y
 #choco install vim-tux.portable
 
 # What else can I install without admin rights?
-# https://chocolatey.org/packages?q=id%3Aportable
+# https://community.chocolatey.org/packages?q=id%3Aportable
 ~~~
 
 If you prefer or need cmd.exe example, please see https://gist.github.com/ferventcoder/78fa6b6f4d6e2b12c89680cbc0daec78

@@ -16,7 +16,7 @@ One of the community maintainers has created an extension package to automate th
 
 ### Step 1: Get chocolatey-isomount.extension Package
 
-You will need to take a dependency on the [chocolatey-isomount.extension package](https://chocolatey.org/packages/chocolatey-isomount.extension) If you are using Chocolatey in an organizational context, be sure to cache the chocolatey-isomount.extension package and place it on your internal sources.
+You will need to take a dependency on the [chocolatey-isomount.extension package](https://community.chocolatey.org/packages/chocolatey-isomount.extension) If you are using Chocolatey in an organizational context, be sure to cache the chocolatey-isomount.extension package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download chocolatey-isomount.extension`
 1. FOSS: Download [chocolatey-isomount.extension](https://community.chocolatey.org/api/v2/package/chocolatey-isomount.extension)
@@ -90,7 +90,7 @@ The most compatible with all versions of Windows option is to use ImDisk. ImDisk
 
 ### Step 1: Get ImDisk Package
 
-You will need to take a dependency on the [ImDisk package](https://chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](xref:recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
+You will need to take a dependency on the [ImDisk package](https://community.chocolatey.org/packages/imdisk). If you are using Chocolatey in an organizational context, be sure to [internalize](xref:recompile-packages) (not cache) the ImDisk package and place it on your internal sources.
 
 1. MSP/C4B: Run `choco download imdisk --internalize`
 1. FOSS: Download [imdisk](https://community.chocolatey.org/api/v2/package/imdisk) - [internalize manually](xref:recompile-packages)
@@ -173,4 +173,4 @@ Dismount-DiskImage -ImagePath $iso
 
 ~~~
 
-> :memo: **NOTE** Code sample was taken from this [package](https://chocolatey.org/packages/WindowsSDK2008/6.0.6001), thanks to [dave42](https://chocolatey.org/profiles/dave42) for sharing.
+> :memo: **NOTE** Code sample was taken from this [package](https://community.chocolatey.org/packages/WindowsSDK2008/6.0.6001), thanks to [dave42](https://community.chocolatey.org/profiles/dave42) for sharing.

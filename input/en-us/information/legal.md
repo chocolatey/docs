@@ -16,7 +16,7 @@ The use of Chocolatey means that an individual using Chocolatey assumes the resp
 
 ## Distributions
 
-Most Chocolatey packages on the community feed (https://chocolatey.org/packages aka dot org) do not contain actual software distributions, only instructions for getting distributions (in PowerShell).  In a nutshell, the instructions are:
+Most Chocolatey packages on the community feed (https://community.chocolatey.org/packages aka dot org) do not contain actual software distributions, only instructions for getting distributions (in PowerShell).  In a nutshell, the instructions are:
 
 * Download a distribution from remote location, most likely the published download location
 * Run an installer (possibly in silent mode)

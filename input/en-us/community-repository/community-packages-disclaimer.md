@@ -1,8 +1,8 @@
 ---
 Order: 10
 xref: community-packages-disclaimer
-Title: Chocolatey.org Packages Disclaimer
-Description: When you should, and shouldn't, use chocolatey.org
+Title: community.chocolatey.org Packages Disclaimer
+Description: When you should, and shouldn't, use community.chocolatey.org
 RedirectFrom: docs/community-packages-disclaimer
 ---
 
@@ -57,7 +57,7 @@ If you are not able to take advantage of [internalizing](xref:recompile-packages
 
 > :memo: **NOTE** Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](xref:recompile-packages).
 
-For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the [organizational deployment guide](xref:organizational-deployment-guide) (which takes about 1-2 hours). With 15-30 minutes, you can implement a [Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://chocolatey.org/packages/nexus-oss)) which automatically caches (but does not [internalize](xref:recompile-packages)) packages from the community repository (`https://chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
+For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the [organizational deployment guide](xref:organizational-deployment-guide) (which takes about 1-2 hours). With 15-30 minutes, you can implement a [Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://community.chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://community.chocolatey.org/packages/nexus-oss)) which automatically caches (but does not [internalize](xref:recompile-packages)) packages from the community repository (`https://community.chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
 
 ### What To Do When You Are Blocked For Excessive Use
 
@@ -128,7 +128,7 @@ See the section above on avoiding excessive use - the expectation is that organi
 
 ## Community Provided Packages Are Not Supported
 
-The packages contained at https://chocolatey.org/packages (the community repository) are collectively known as the Community Feed or Community Repository. Packages found on the community repository may not be supported by the original software vendor. If you have an issue with a package, contact the package maintainers through the community repository package page, Do not contact the software vendor directly. It bears repeating, DO NOT contact the software vendor directly.
+The packages contained at https://community.chocolatey.org/packages (the community repository) are collectively known as the Community Feed or Community Repository. Packages found on the community repository may not be supported by the original software vendor. If you have an issue with a package, contact the package maintainers through the community repository package page, Do not contact the software vendor directly. It bears repeating, DO NOT contact the software vendor directly.
 
 The packages you find on the community repository are completely unsupported. By using the packages on the community repository, you assume all risk for any issues or damages that may occur. The packages found in the community repository are built, moderated, and maintained by the community. While the packages are moderated by community moderators to help ensure safety and reliability (at the time of moderation), package maintainers and moderators assume no support nor liability for the packages. Neither package moderators nor package maintainers will be held liable for any issues, downtime, or damages that may occur from your use of the packages on the community feed. It is also not the responsibility of the package maintainers and/or package moderators to ensure that the package works in all scenarios. They are volunteers and thus are unable to support you and/or your business needs.
 

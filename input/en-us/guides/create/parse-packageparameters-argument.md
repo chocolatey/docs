@@ -127,7 +127,7 @@ Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey
 
 #### Core Community extension
 
-If you want to do this simply, take a dependency on the [core community extension](https://chocolatey.org/packages/chocolatey-core.extension), which already has the above function `Get-PackageParameters` built in.
+If you want to do this simply, take a dependency on the [core community extension](https://community.chocolatey.org/packages/chocolatey-core.extension), which already has the above function `Get-PackageParameters` built in.
 
 Open the nuspec back up and add a dependency on `chocolatey-core.extension`. This will be inserted just above the closing "metadata" tag (`</metadata>`).
 

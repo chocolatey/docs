@@ -6,7 +6,7 @@ Description: Techniques for automatically updating Chocolatey packages when new 
 RedirectFrom: docs/automatic-packages
 ---
 
-Automatic packaging is a process that **package maintainers can run on *their own* to keep the packages they maintain up to date**. It is not a required step for maintaining packages on the community feed (https://chocolatey.org/packages), but it is recommended you find a way to automate the delivery of packages to the community feed when there are updates if you are going to maintain more than 5 packages and you are not the software vendor for the packages you maintain.
+Automatic packaging is a process that **package maintainers can run on *their own* to keep the packages they maintain up to date**. It is not a required step for maintaining packages on the community feed (https://community.chocolatey.org/packages), but it is recommended you find a way to automate the delivery of packages to the community feed when there are updates if you are going to maintain more than 5 packages and you are not the software vendor for the packages you maintain.
 
 > :memo: **NOTE** Not to be confused with the automatic package creation feature in [Chocolatey for Business](https://chocolatey.org/compare) - that feature creates packages directly from software installer files. This feature is for package maintenance of existing packages on the community feed.
 
@@ -15,7 +15,7 @@ Automatic packaging is a process that **package maintainers can run on *their ow
 There are currently two methods that can be used to maintain automatic packages:
 
 - RECOMMENDED - Using only Powershell via [Automatic Update module AU](https://github.com/majkinetor/au).
-- DEPRECATED - Using [Chocolatey Package Updater](https://chocolatey.org/packages/ChocolateyPackageUpdater) with 3rd party tool [Ketarin](https://chocolatey.org/packages/ketarin).
+- DEPRECATED - Using [Chocolatey Package Updater](https://community.chocolatey.org/packages/ChocolateyPackageUpdater) with 3rd party tool [Ketarin](https://community.chocolatey.org/packages/ketarin).
 
 ## Automatic Updater (AU)
 
@@ -34,25 +34,25 @@ When creating packages, do not use `--auto` as AU doesn't use token replacement 
 ## Chocolatey Package Updater aka chocopkgup [DEPRECATED]
 
 <a name="chocolatey-package-updater-aka-chocopkgup"></a>
-http://chocolatey.org/packages/ChocolateyPackageUpdater
+http://community.chocolatey.org/packages/ChocolateyPackageUpdater
 
-The tool that accomplishes this process is known as [chocopkgup](https://chocolatey.org/packages/ChocolateyPackageUpdater) (Chocolatey Package Updater). It is a free tool (unless you want to use it for uploads to somewhere other than chocolatey.org).
+The tool that accomplishes this process is known as [chocopkgup](https://community.chocolatey.org/packages/ChocolateyPackageUpdater) (Chocolatey Package Updater). It is a free tool (unless you want to use it for uploads to somewhere other than community.chocolatey.org).
 
 ### Licensing
 
 Check the license at http://realdimensions.net/licenses/chocolateypackageupdater/license.txt to be sure that it applies to you.
 
-Basically it boils down to this: if you want to use chocopkgup privately, you will need to pay for it. As long as you are publishing to chocolatey.org, the tool is completely free! The license does expire every once in awhile, but if you are keeping up on your chocolatey updates locally, you won't even notice (`cup all`, remember?).
+Basically it boils down to this: if you want to use chocopkgup privately, you will need to pay for it. As long as you are publishing to community.chocolatey.org, the tool is completely free! The license does expire every once in awhile, but if you are keeping up on your chocolatey updates locally, you won't even notice (`cup all`, remember?).
 
 ### Credits
 
-This tool makes use of [Ketarin](https://chocolatey.org/packages/ketarin). Ketarin is an awesome tool that helps chocopkgup accomplish its tasks.
+This tool makes use of [Ketarin](https://community.chocolatey.org/packages/ketarin). Ketarin is an awesome tool that helps chocopkgup accomplish its tasks.
 
 ### Requirements
 
 * A Windows box somewhere - to run the updater on
-* [Ketarin](https://chocolatey.org/packages/ketarin)
-* [Chocolatey Package Updater](https://chocolatey.org/packages/chocolateypackageupdater)
+* [Ketarin](https://community.chocolatey.org/packages/ketarin)
+* [Chocolatey Package Updater](https://community.chocolatey.org/packages/chocolateypackageupdater)
 
 ### Setup
 

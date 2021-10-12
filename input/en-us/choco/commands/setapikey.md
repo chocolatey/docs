@@ -48,7 +48,7 @@ https://bit.ly/nexus2apikey).
  write proper scripts and integrations.
 
 
-## Connecting to Chocolatey.org (Community Package Repository)
+## Connecting to community.chocolatey.org (Community Package Repository)
 
 In order to save your API key for https://push.chocolatey.org/,
  log in (or register, confirm and then log in) to
