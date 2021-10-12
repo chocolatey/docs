@@ -198,7 +198,7 @@ It could be one of a few things:
 
 You can use a tool like [Fiddler](https://www.telerik.com/fiddler) to help determine what is going on.
 
-Cloudflare uses Project Honeypot to determine if your IP address is flagged, such as if you have malware on your box that is sending spam emails. Go to Project Honeypot and put in your IP address - http://www.projecthoneypot.org/search_ip.php. Check to see if your IP is flagged here.
+Cloudflare uses Project Honeypot to determine if your IP address is flagged, such as if you have malware on your box that is sending spam emails. Go to Project Honeypot and put in your IP address - https://www.projecthoneypot.org/search_ip.php. Check to see if your IP is flagged here.
 
 If you determine it is CloudFlare blocking your IP (which is the issue 98% of the time), we may be able to get you whitelisted for Chocolatey:
 
@@ -223,7 +223,7 @@ The shims are generated as "Any CPU" programs, which depend on the `Enable64Bit`
 
     C:\Windows\Microsoft.NET\Framework64\v2.0.50727> Ldr64 set64
 
-[Any CPU 32-bit mode on 64 bit machine](http://stackoverflow.com/a/14857294)
+[Any CPU 32-bit mode on 64 bit machine](https://stackoverflow.com/a/14857294)
 
 ### A package is broken for me
 

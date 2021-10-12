@@ -65,7 +65,7 @@ As of version 0.9.8.24, binaries, libraries and Chocolatey components install in
 
 * Binary Packages – Installable/portable applications – This is 98% of the Chocolatey packages – most are pointers to the real deal native installers and/or zipped software.
 * PowerShell Command Packages – Packages that have the suffix **.powershell** will install PowerShell scripts as commands for you to call from anywhere.
-* Development Packages – Packages that have the suffix **.dev**. For instance [dropkick.dev](http://nuget.org/list/packages/dropkick.dev).
+* Development Packages – Packages that have the suffix **.dev**. For instance [dropkick.dev](https://www.nuget.org/packages/dropkick.dev).
 * Roadmap – Virtual Packages – Packages that are like a category, and you just want one package from that category. [Read more …](https://github.com/chocolatey/chocolatey/issues/7)
 
 ### Do you have a roadmap I can see?
@@ -347,7 +347,7 @@ Yes we do, take a look at [videos](xref:videos) and [known posts, presentations,
 
 ### Is there a video I can watch to show me Chocolatey in action?
 
-There is! This is a long video due to slow internet connections, but watch the first 1:30ish minutes and the last 1:30ish minutes and that will give you a general idea. [http://www.youtube.com/watch?v=N-hWOUL8roU](http://www.youtube.com/watch?v=N-hWOUL8roU)
+There is! This is a long video due to slow internet connections, but watch the first 1:30ish minutes and the last 1:30ish minutes and that will give you a general idea. [https://www.youtube.com/watch?v=N-hWOUL8roU](https://www.youtube.com/watch?v=N-hWOUL8roU)
 
 > :memo: **NOTE**
 >
@@ -471,7 +471,7 @@ On the community repository, we have a CDN cache for those files that would be d
 
 ### How is Chocolatey different than OneGet/PowerShell Package Management?
 
-OneGet is a package manager **manager**, which means it is not really a package manager at all. Chocolatey will have a provider that plugs right into OneGet. At the current time there is a CTP available, but it is based on 2 year old Chocolatey technology (we've had security fixes since then, plus a world of features), so we can't really recommend it. But if you must use it, make sure your PowerShell execution policy is set correctly and you are in an administrative console. See http://www.hanselman.com/blog/AptGetForWindowsOneGetAndChocolateyOnWindows10.aspx for more details.
+OneGet is a package manager **manager**, which means it is not really a package manager at all. Chocolatey will have a provider that plugs right into OneGet. At the current time there is a CTP available, but it is based on 2 year old Chocolatey technology (we've had security fixes since then, plus a world of features), so we can't really recommend it. But if you must use it, make sure your PowerShell execution policy is set correctly and you are in an administrative console. See https://www.hanselman.com/blog/aptget-for-windows-oneget-and-chocolatey-on-windows-10 for more details.
 
 Use ChocolateyGet for now.
 

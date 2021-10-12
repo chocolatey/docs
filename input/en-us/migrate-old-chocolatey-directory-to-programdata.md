@@ -22,7 +22,7 @@ The new path and name of the ChocolateyInstall variable may be different for you
 
 Here's how to move Chocolatey.
 
-First, move the directory.  Open a [Command Prompt as Administrator](http://www.howtogeek.com/howto/windows-vista/run-a-command-as-administrator-from-the-windows-vista-run-box/) and run the following:
+First, move the directory.  Open a [Command Prompt as Administrator](https://www.howtogeek.com/howto/windows-vista/run-a-command-as-administrator-from-the-windows-vista-run-box/) and run the following:
 
 ```shell
 cd c:\
@@ -39,12 +39,12 @@ C:\chocolatey\lib\minecraft.1.1\tools\minecraft.exe
 C:\chocolatey\bin
 ```
 
-![Right click and select properties](http://i.imgur.com/Xser6iG.png)
+![Right click and select properties](https://i.imgur.com/Xser6iG.png)
 
-![Click advanced system settings](http://i.imgur.com/6SsGw9v.png)
+![Click advanced system settings](https://i.imgur.com/6SsGw9v.png)
 
-![Click environment variables button](http://i.imgur.com/N6YtQSk.png)
+![Click environment variables button](https://i.imgur.com/N6YtQSk.png)
 
-![Edit environment variables](http://i.imgur.com/Bszc7qg.png)
+![Edit environment variables](https://i.imgur.com/Bszc7qg.png)
 
 Now, change your environment variables. Note that Chocolatey may appear in both the user PATH and the system PATH. I strongly recommend copy and pasting the contents of the text box to and from notepad for significantly easier editing.

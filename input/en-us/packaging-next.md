@@ -12,7 +12,7 @@ ShowInSidebar: false
 
 Signing
 
-- [http://www.gpg4win.org/package-integrity.html](http://www.gpg4win.org/package-integrity.html)
-- [http://www.glump.net/howto/cryptography/practical-introduction-to-gnu-privacy-guard-in-windows](http://www.glump.net/howto/cryptography/practical-introduction-to-gnu-privacy-guard-in-windows)
+- [https://www.gpg4win.org/package-integrity.html](https://www.gpg4win.org/package-integrity.html)
+- [https://www.glump.net/howto/cryptography/practical-introduction-to-gnu-privacy-guard-in-windows](https://www.glump.net/howto/cryptography/practical-introduction-to-gnu-privacy-guard-in-windows)
 - [https://gpgtools.org/](https://gpgtools.org/)
 - [https://www.gnupg.org/download/index.html](https://www.gnupg.org/download/index.html)

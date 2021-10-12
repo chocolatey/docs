@@ -108,7 +108,7 @@ Now that you have Chocolatey on your machine ([need to install?](xref:setup-choc
 
 Take a look at the [command reference](xref:choco-commands). We are going to be using the [install command](xref:choco-command-install).
 
-Let's install [Notepad++](http://notepad-plus-plus.org/).
+Let's install [Notepad++](https://notepad-plus-plus.org/).
 
 1. Open a command line as an administrator.
 1. Type `choco install notepadplusplus` and press Enter.
@@ -119,7 +119,7 @@ Let's install [Notepad++](http://notepad-plus-plus.org/).
 1. Yes we support that through the use of install arguments - see [Install Arguments](xref:choco-command-install#installarguments)
 1. If you wanted to pass native argument to the installer, like the install directory, you would need to know the silent argument passed to that particular installer and then you would specify it on the command line or in the packages.config.
 1. If it was an MSI, then usually you could pass `-ia "INSTALLDIR=""D:\Program Files"""` (for cmd.exe, it's different for PowerShell). See [how to pass options/switches](xref:choco-commands#how-to-pass-options-switches) for specifics on passing quoted values through.
-1. For example, Notepad++ uses the [NSIS](http://nsis.sourceforge.net/Main_Page) (NullSoft Scriptable Install System) installer. If we look at the silent options, we see that [/D](http://nsis.sourceforge.net/Docs/Chapter3.html#installerusagecommon) is how we influence the install directory. So we would pass `choco install notepadplusplus.install -ia "'/D=E:\SomeDirectory\somebody\npp'"` -note that we are looking at the specific package over the virtual (although you can do the same with notepadplusplus as well).
+1. For example, Notepad++ uses the [NSIS](https://nsis.sourceforge.io/Main_Page) (NullSoft Scriptable Install System) installer. If we look at the silent options, we see that [/D](https://nsis.sourceforge.io/Docs/Chapter3.html#installerusagecommon) is how we influence the install directory. So we would pass `choco install notepadplusplus.install -ia "'/D=E:\SomeDirectory\somebody\npp'"` -note that we are looking at the specific package over the virtual (although you can do the same with notepadplusplus as well).
 
 Is there a better way? Absolutely, see [ubiquitous install directory switch](xref:install-directory-override)!
 
