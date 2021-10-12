@@ -14,7 +14,7 @@ Refer to [How To Set Up Chocolatey For Organizational/Internal Use](xref:organiz
 
 ## Some Administrative Actions
 
-* The email the license is sent to will automatically be subscribed to the customer advisory list. If there are other folks who need to be on that list for important notifications, please have them sign up at [Chocolatey Customers](http://eepurl.com/b6zpGv).
+* The email the license is sent to will automatically be subscribed to the customer advisory list. If there are other folks who need to be on that list for important notifications, please have them sign up at [Chocolatey Customers](https://eepurl.com/b6zpGv).
 * Please sign up for software announcements at [Chocolatey Announce](https://groups.google.com/d/forum/chocolatey-announce). Direct others to sign up for the list as well.
 * For support, remember to use the support email address (below).
 * Learn how to install below.

@@ -410,7 +410,7 @@ As this is a local website, and accessible over HTTP, it is our recommendation t
 If you **must** open up access to Jenkins internally, we advise you to review the following documentation in order to better secure that access:
 
 * [Jenkins Security Recommendations](https://www.jenkins.io/doc/book/system-administration/security/)
-* [Jenkins SSL Setup by Sam Gleske](http://sam.gleske.net/blog/engineering/2016/05/04/jenkins-with-ssl.html)
+* [Jenkins SSL Setup by Sam Gleske](https://sam.gleske.net/blog/engineering/2016/05/04/jenkins-with-ssl.html)
 
 > :warning: **WARNING**
 >

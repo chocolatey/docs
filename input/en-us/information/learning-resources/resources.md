@@ -336,47 +336,47 @@ See [Infrastructure automation](xref:integrations)
 
 #### December
 
-* http://www.jamessturtevant.com/posts/Chocolatey-And-Boxstarter/
+* https://www.jamessturtevant.com/posts/Chocolatey-And-Boxstarter/
 * https://gripdev.wordpress.com/2014/12/10/chocolatey-powershell-dsc-and-azure-iaas-automating-dev-box-creation/
 * https://souladin.wordpress.com/2014/12/05/bake-your-own-chocolatey-nuget-repository/
 
 #### November
 
-* http://codebetter.com/robreynolds/2014/11/14/how-passion-saved-windows/
-* http://www.developer.com/net/virtualize-your-windows-development-environments-with-vagrant-packer-and-chocolatey-part-2.html
-* http://codebetter.com/robreynolds/2014/11/08/herding-code-on-chocolatey/
+* https://codebetter.com/robreynolds/2014/11/14/how-passion-saved-windows/
+* https://www.developer.com/net/virtualize-your-windows-development-environments-with-vagrant-packer-and-chocolatey-part-2.html
+* https://codebetter.com/robreynolds/2014/11/08/herding-code-on-chocolatey/
 * http://www.fixedbyvonnie.com/2014/11/5-minute-setup-using-oneget-chocolatey-windows-10/
-* http://www.developer.com/net/virtualize-your-windows-development-environments-with-vagrant-packer-and-chocolatey-part-1.html
+* https://www.developer.com/net/virtualize-your-windows-development-environments-with-vagrant-packer-and-chocolatey-part-1.html
 
 #### October
 
-* http://codebetter.com/robreynolds/2014/10/27/chocolatey-now-has-package-moderation/
-* http://codebetter.com/robreynolds/2014/10/17/chocolatey-kickstarterhelp-me-take-chocolatey-to-the-next-level/
-* http://www.hurryupandwait.io/blog/help-raise-the-chocolatey-experiment-to-the-chocolatey-experience-and-support-the-chocolatey-kickstarter
+* https://codebetter.com/robreynolds/2014/10/27/chocolatey-now-has-package-moderation/
+* https://codebetter.com/robreynolds/2014/10/17/chocolatey-kickstarterhelp-me-take-chocolatey-to-the-next-level/
+* https://www.hurryupandwait.io/blog/help-raise-the-chocolatey-experiment-to-the-chocolatey-experience-and-support-the-chocolatey-kickstarter
 * https://ma.ttias.be/chocolatey-kickstarter-making-windows-like-linux/
-* http://blog.2mas.xyz/puppet-windows/
+* https://blog.2mas.xyz/puppet-windows/
 
 #### September
 
-* http://codebetter.com/robreynolds/2014/09/27/chocolatey-newsletter/
-* http://blog.simlau.net/chocolatey-windows-lokale-repository.html
+* https://codebetter.com/robreynolds/2014/09/27/chocolatey-newsletter/
+* https://blog.simlau.net/chocolatey-windows-lokale-repository.html
 
 #### August
 
 * https://blogs.technet.microsoft.com/heyscriptingguy/2014/08/23/weekend-scripter-powershell-and-chocolatey/
-* http://www.pcworld.com/article/2459950/how-to-use-chocolatey-a-delicious-windows-package-manager.html
+* https://www.pcworld.com/article/2459950/how-to-use-chocolatey-a-delicious-windows-package-manager.html
 
 #### July
 
-* http://blog.ittoby.com/2014/07/setup-your-own-chocoloateynuget.html
+* https://blog.ittoby.com/2014/07/setup-your-own-chocoloateynuget.html
 
 #### June
 
-* http://karaaie.blogspot.com/2014/06/continuous-delivery-with-teamcity.html
+* https://karaaie.blogspot.com/2014/06/continuous-delivery-with-teamcity.html
 
 #### May
 
-* http://www.techrepublic.com/article/chocolatey-brings-linux-style-package-management-to-windows/
+* https://www.techrepublic.com/article/chocolatey-brings-linux-style-package-management-to-windows/
 
 #### April
 
@@ -385,7 +385,7 @@ See [Infrastructure automation](xref:integrations)
 
 #### January
 
-* http://www.masterzen.fr/2014/01/11/bootstrapping-windows-servers-with-puppet/
+* https://www.masterzen.fr/2014/01/11/bootstrapping-windows-servers-with-puppet/
 
 ### 2013
 
@@ -399,7 +399,7 @@ See [Infrastructure automation](xref:integrations)
 
 #### August
 
-* http://dave.thehorners.com/tech-talk/windows-os/478-nuget
+* https://dave.thehorners.com/tech-talk/windows-os/478-nuget
 
 #### June
 
@@ -407,11 +407,11 @@ See [Infrastructure automation](xref:integrations)
 
 #### May
 
-* http://www.hanselman.com/blog/IsTheWindowsUserReadyForAptget.aspx
+* https://www.hanselman.com/blog/is-the-windows-user-ready-for-aptget
 
 #### March
 
-* http://www.howtogeek.com/141783/how-to-bring-linux-style-apt-get-installations-to-windows-with-chocolatey/
+* https://www.howtogeek.com/141783/how-to-bring-linux-style-apt-get-installations-to-windows-with-chocolatey/
 
 #### January
 
@@ -421,12 +421,12 @@ See [Infrastructure automation](xref:integrations)
 
 #### November
 
-* http://www.pcworld.com/article/2013432/review-chocolatey-offers-easy-software-installation-and-updating.html
+* https://www.pcworld.com/article/2013432/review-chocolatey-offers-easy-software-installation-and-updating.html
 
 #### September
 
-* http://www.developerfusion.com/article/145913/apt-windows-lets-get-chocolatey-part-2-multiple-installs-and-package-creation/
-* http://lifehacker.com/5942417/chocolatey-brings-lightning-quick-linux-style-package-management-to-windows
+* https://www.developerfusion.com/article/145913/apt-windows-lets-get-chocolatey-part-2-multiple-installs-and-package-creation/
+* https://lifehacker.com/chocolatey-brings-lightning-quick-linux-style-package-5942417
 
 #### July
 
@@ -434,17 +434,17 @@ See [Infrastructure automation](xref:integrations)
 
 #### May
 
-* http://www.kongsli.net/2012/05/07/running-chocolatey-behind-an-authenticating-firewall/
+* https://www.kongsli.net/2012/05/07/running-chocolatey-behind-an-authenticating-firewall/
 
 #### February
 
 * http://ferventcoder.com/archive/2012/02/25/chocolatey---guidance-on-packaging-apps-with-both-an-install.aspx
-* http://www.powershellmagazine.com/2012/02/20/chocolatey-and-powershell-revolutionize-windows-part-ii/
-* http://www.powershellmagazine.com/2012/02/15/chocolatey-and-powershell-revolutionize-windows-part-i/
+* https://www.powershellmagazine.com/2012/02/20/chocolatey-and-powershell-revolutionize-windows-part-ii/
+* https://www.powershellmagazine.com/2012/02/15/chocolatey-and-powershell-revolutionize-windows-part-i/
 
 #### January
 
-* http://www.developerfusion.com/article/137219/aptget-windows-lets-get-chocolatey-part-1/
+* https://www.developerfusion.com/article/137219/aptget-windows-lets-get-chocolatey-part-1/
 * http://ferventcoder.com/archive/2012/01/25/software-release-management---why-you-canrsquot-and-shouldnrsquot-force.aspx
 
 ### 2011
@@ -452,11 +452,11 @@ See [Infrastructure automation](xref:integrations)
 #### October
 
 * http://ferventcoder.com/archive/2011/10/07/letrsquos-get-chocolatey-kind-of-like-apt-get-for-windows.aspx
-* http://melkio.codiceplastico.com/technology/2011/10/06/chocolatey-un-package-manager-per-windows.html
+* https://blog.codiceplastico.com/chocolatey-un-package-manager-per-windows
 
 #### September
 
-* http://www.xavierdecoster.com/post/2011/09/30/an-overview-of-the-nuget-ecosystem
+* https://www.xavierdecoster.com/post/2011/09/30/an-overview-of-the-nuget-ecosystem
 * https://web.archive.org/web/20111223082713/http://www.counity.at/blog/archives/253
 * https://web.archive.org/web/20110926200551/http://blogs.lessthandot.com/index.php/DesktopDev/MSTech/making-a-chocolatey-package
 * https://web.archive.org/web/20110926191629/http://blogs.lessthandot.com/index.php/DesktopDev/MSTech/chocolatey-gui

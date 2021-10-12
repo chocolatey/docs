@@ -37,14 +37,14 @@ First we will add the IP address:
 
 On returning to the network interface overview, a `Public IP address` should now be visible. Make a note of the value.
 
-Now we will add a rule to the NSG. If you do not already know your current public IP address, you can find out by visiting [ipconfig.me](http://ifconfig.me/ip).
+Now we will add a rule to the NSG. If you do not already know your current public IP address, you can find out by visiting [ipconfig.me](https://ifconfig.me/ip).
 
 1. Navigate back to your Resource Group in the Azure Portal
 1. Select the `Network security group`, and open the `Inbound security rules` panel.
 
     ![Create IP Address](/assets/images/quickdeployazure/Rdp-NsgRuleAddition.png)
 
-1. Click `Add` and fill in at least the following details:  
+1. Click `Add` and fill in at least the following details:
 
     | Key                 | Value                            |
     | ------------------- | -------------------------------- |
@@ -92,7 +92,7 @@ if (-not $ResourceGroupName) {
     $ResourceGroupName = Read-Host 'Enter the ResourceGroupName'
 }
 # Look up your current Public IP address
-$IPAddress = (Invoke-WebRequest -Uri "http://ifconfig.me/ip").Content
+$IPAddress = (Invoke-WebRequest -Uri "https://ifconfig.me/ip").Content
 
 # Find the deployed Network Security Group
 $Group = Get-AzNetworkSecurityGroup -ResourceGroupName $ResourceGroupName
