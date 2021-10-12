@@ -19,8 +19,8 @@ The [Chocolatey.Server package](https://community.chocolatey.org/packages/chocol
 ## Links
 
 * [Package](https://community.chocolatey.org/packages/chocolatey.server)
-* [Changelog](https://github.com/chocolatey/simple-server/blob/master/CHANGELOG.md)
-* [Source Code](https://github.com/chocolatey/simple-server)
+* [Changelog](https://github.com/chocolatey-community/simple-server/blob/master/CHANGELOG.md)
+* [Source Code](https://github.com/chocolatey-community/simple-server)
 
 When you install it, it will install the website typically to `c:\tools\chocolatey.server`.
 
@@ -225,4 +225,4 @@ Turn on customErrors under system.web - <customErrors mode="Off" /> - see this g
 
 Then browse to the site to see if you can gather any more information.
 
-If so, and you are a commercial edition customer, please open a support ticket. If you are using open source Chocolatey, please open a ticket at https://github.com/chocolatey/simple-server/issues.
+If so, and you are a commercial edition customer, please open a support ticket. If you are using open source Chocolatey, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.
