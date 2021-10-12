@@ -47,7 +47,7 @@ Package Internalizer can be hooked up to continuous integration automation or sc
 
 ## How To Internalize/Recompile An Existing Package Manually
 
-Chocolatey's [community feed](https://chocolatey.org/packages) has quite a few packages but they are geared towards community and use the internet for downloading from official distribution sites due to copyright law and a publicly offered repository. However, they are attractive as they have everything necessary to install a piece of software on your machine. Through the internalization process, by which you take a community package and bring all of the bits internal and/or embed them into the pacakge, you can convert an existing package to be 100% offline and reliable and host it on an internal Chocolatey repository. This gives you complete control over a package and removes the aforementioned production trust and control issues.
+Chocolatey's [community feed](https://chocolatey.org/packages) has quite a few packages but they are geared towards community and use the internet for downloading from official distribution sites due to copyright law and a publicly offered repository. However, they are attractive as they have everything necessary to install a piece of software on your machine. Through the internalization process, by which you take a community package and bring all of the bits internal and/or embed them into the package, you can convert an existing package to be 100% offline and reliable and host it on an internal Chocolatey repository. This gives you complete control over a package and removes the aforementioned production trust and control issues.
 
 To make the existing package local, use these steps.
 
