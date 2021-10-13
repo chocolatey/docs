@@ -67,7 +67,22 @@ The binary `choco.exe` can be trusted (at least as far as you trust the Chocolat
 
 Using PowerShell, you can verify the binary (the path below is the default install location, adjust if necessary).
 
-0.10.10+:
+0.11.0+:
+
+~~~sh
+C:\ PS> (Get-AuthenticodeSignature -FilePath C:\ProgramData\chocolatey\choco.exe).SignerCertificate | Format-List
+
+Subject      : CN="Chocolatey Software, Inc.", O="Chocolatey Software, Inc.", L=Topeka, S=Kansas, C=US
+Issuer       : CN=DigiCert SHA2 Assured ID Code Signing CA, OU=www.digicert.com, O=DigiCert Inc, C=US
+Thumbprint   : 83AC7D88C66CB8680BCE802E0F0F5C179722764B
+FriendlyName :
+NotBefore    : 27/04/2021 01:00:00
+NotAfter     : 01/05/2024 00:59:59
+Extensions   : {System.Security.Cryptography.Oid, System.Security.Cryptography.Oid, System.Security.Cryptography.Oid,
+               System.Security.Cryptography.Oid...}
+~~~
+
+0.10.10-0.10.15:
 
 ~~~sh
 C:\ PS> (Get-AuthenticodeSignature -FilePath C:\ProgramData\chocolatey\choco.exe).SignerCertificate | Format-List
