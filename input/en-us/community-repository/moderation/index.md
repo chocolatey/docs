@@ -1,8 +1,8 @@
 ---
-Order: 40
+Order: 50
 xref: moderation
 Title: Moderation
-Description: Information about the package moderation used on community.chocolatey.org
+Description: Information about the package moderation used on the Chocolatey Community Repository.
 RedirectFrom: docs/moderation
 ---
 
