@@ -106,6 +106,14 @@ Set an empty file next to the executable (or where it will be downloaded/unpacke
 
 [Read more...](xref:create-packages#how-do-i-exclude-executables-from-getting-shims)
 
+### I have architecture specific binaries to shim
+
+If you are creating a package where you have two binaries (or sets of binaries) to shim depending on architecture, one for x86 and one for x64, you can put them in sub-folders and the correct one(s) will be shimmed.
+
+Specifically, include 32-bit binaries in "`tools\x86`" and 64-bit binaries in "`tools\x64`".
+
+This may eliminate the need to include a "`chocolateyInstall.ps1`" in the package to create "`.ignore`" files for the other architecture.
+
 ### How can I ensure a GUI shim?
 
 Chocolatey 0.9.10+ will automatically detect GUI applications and adjust the shim accordingly. The detection may not always be accurate, and older versions of Chocolatey don't handle this, so it's best to create a "*.gui" file to direct the shim creation to be for a GUI application.
