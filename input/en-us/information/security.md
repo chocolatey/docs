@@ -204,7 +204,7 @@ With all of that said, you may want to ensure you build trust with each package 
 
 For using Chocolatey, if you are using the community repository, you will need to whitelist the following servers:
 
-- [https://chocolatey.org](https://chocolatey.org)
+- [https://community.chocolatey.org](https://community.chocolatey.org)
 - [https://packages.chocolatey.org](https://packages.chocolatey.org)
 - [https://licensedpackages.chocolatey.org](https://licensedpackages.chocolatey.org) (licensed editions of Chocolatey)
 - [https://files.chocolatey.org](https://files.chocolatey.org) (licensed editions of Chocolatey)
