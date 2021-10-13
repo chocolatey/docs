@@ -26,7 +26,7 @@ win_chocolatey:
   source: https://my.internal.repository/api/v2/
 ~~~
 
-[Read More...](https://bit.ly/choco_ansible)
+[Read More...](https://docs.ansible.com/ansible/latest/collections/chocolatey/chocolatey/win_chocolatey_source_module.html)
 
 ## Boxstarter
 
@@ -55,7 +55,7 @@ When you need to also install Chocolatey, you would use the community cookbook t
 include_recipe 'chocolatey'
 ~~~
 
-[Cookbook - Read More...](https://bit.ly/choco_chef)
+[Cookbook - Read More...](https://supermarket.chef.io/cookbooks/chocolatey/)
 
 ### Example
 
@@ -147,7 +147,7 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
   }
 ~~~
 
-[Read More...](https://bit.ly/choco_dsc)
+[Read More...](http://www.powershellgallery.com/packages/cChoco/)
 
 ## PowerShell PackageManagement
 
@@ -208,7 +208,7 @@ salt '*' chocolatey.bootstrap
 salt '*' chocolatey.install git
 ~~~
 
-[Read More...](https://bit.ly/choco_salt)
+[Read More...](https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html)
 
 ## System Center Configuration Manager
 
