@@ -124,7 +124,7 @@ Install-ChocolateyPackage $packageArgs # this is incorrect and will pass the ent
 References:
 * https://github.com/majkinetor/au/issues/70
 * https://groups.google.com/d/msgid/chocolatey/5c544e16-e1b2-4249-bad6-4591017df81b%40googlegroups.com (you will need to join the group to see the message)
-* https://github.com/chocolatey/chocolatey-coreteampackages/issues/439 (separate issue)
+* https://github.com/chocolatey-community/chocolatey-packages/issues/439 (separate issue)
 
 ### "ERROR: This package does not support 64 bit architecture." when trying to install from a local or included binary.
 

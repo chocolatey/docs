@@ -204,7 +204,7 @@ When we first released package reducer, it was in a preview mode to allow for fo
     * Fix - Allow self-service to work when the current working directory is different from system drive or a mapped drive. Also allow it to be set to locations where any user would not have a permissions error.
  * Package Internalizer (Choco Download):
     * Fix - When a variable is set to the contents of a file, work with that appropriately. A good example of this is `$data` variable in [dotnetcore-runtime](https://github.com/dotnetcore-chocolatey/dotnetcore-chocolateypackages/blob/d5960c11dda388cc7f7ab6438eee8984774f7662/dotnetcore-runtime.install/tools/ChocolateyInstall.ps1#L4) package.
-    * Fix - Allow setting variable when there is a comment on the same line following the set. An example of this is in the [Firefox](https://github.com/chocolatey/chocolatey-coreteampackages/blob/91f4e51f5c8503ca962c22a2f087b96d22ae0e9f/automatic/firefox/tools/chocolateyInstall.ps1#L26) package.
+    * Fix - Allow setting variable when there is a comment on the same line following the set. An example of this is in the [Firefox](https://github.com/chocolatey-community/chocolatey-packages/blob/91f4e51f5c8503ca962c22a2f087b96d22ae0e9f/automatic/firefox/tools/chocolateyInstall.ps1#L26) package.
  * Package Builder (Choco New):
     * Fix - Package Builder UI should recognize Architect and MSP editions and correctly set the UI for use with them.
     * Fix - Extract icon from the proper location for the file.
