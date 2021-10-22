@@ -50,8 +50,6 @@ Below are the minimum requirements for setting up your C4B server via this guide
 - Open outgoing (egress) Internet access
 - Administrator user rights
 
-> :exclamation:**[IMPORTANT]** All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
-
 ## Installation
 
 ### Step 0: Preparation of C4B Server
@@ -69,6 +67,8 @@ Below are the minimum requirements for setting up your C4B server via this guide
 > :warning:**DISCLAIMER**: This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence to review this code and ensure it meets your Organizational requirements.
 
 ### Step 1: Begin C4B Setup
+
+> :exclamation:**[IMPORTANT]** All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
 
 1. Open a PowerShell console with the `Run as Administrator` option, and paste and run the following code:
 
