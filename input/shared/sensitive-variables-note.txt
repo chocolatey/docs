@@ -1,3 +1,5 @@
 > :warning: **WARNING**
 >
-> Sensitive Variables are only supported to ensure the variable remains hidden when used within the `package-parameters-sensitive` parameter of `choco` commands.
+> Sensitive Variables are only supported for use in cases where their use would be omitted from the logs.
+> 
+> <?! Include "parameters-hidden-from-logs.txt" /?>

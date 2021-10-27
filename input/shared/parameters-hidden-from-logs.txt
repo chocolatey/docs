@@ -1,0 +1,1 @@
+By default chocolatey will omit logging commands or parameters that could potentially contain sensitive information. The commands are: `apikey`, `config`, and `push`. The parameters are: `-install-arguments-sensitive`, `-package-parameters-sensitive`, `-p`, `-password`, `-cp`, `-certpassword`, `-k`, `-key`, `-apikey`, `-api-key`, 

@@ -57,6 +57,8 @@ You will also need to have at least one Group of computers already defined.
    * For _Advanced_ deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
 
      ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
+   * As of CCM Version 0.7.0, you can use [Sensitive Variables](xref:ccm-sensitive-variables#adding-sensitive-variables-to-scripts) in advanced steps.
+
 1. (Optional) Click **Show advanced options** to set one or more of the following options:
    * `Execution timeout`.
    * `Valid exit codes`.
