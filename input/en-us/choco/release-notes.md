@@ -12,6 +12,15 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+## [0.11.3](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.3) (October 27th, 2021)
+### BUG FIXES
+ * Fix - Chocolatey fails to load all PowerShell helper cmdlets when attempting to loads modules - see [#2412](https://github.com/chocolatey/choco/issues/2412)
+ * Fix - Chocolateys PowerShell Installer Module uses non PowerShell 2 compatible syntax - see [#2398](https://github.com/chocolatey/choco/issues/2398)
+ * Fix - Running Chocolatey CLI with an expired Chocolatey License can result in non-commercial commands failing to run - see [#2289](https://github.com/chocolatey/choco/issues/2289)
+ * Fix - Installing from packages.config doesn't support installing from other sources (e.g. windowsfeatures, python, etc) - see [#877](https://github.com/chocolatey/choco/issues/877)
+ * Fix - Quoted InstallLocation in .registry file results in errors when attempting to automatically uninstall application - see [#2336](https://github.com/chocolatey/choco/issues/2336)
+
+
 ## [0.11.2](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.2) (September 23rd, 2021)
 ### BUG FIXES
  * Fix - Setting of Authorization header in Get-WebFile cmdlet does not work - see [#2374](https://github.com/chocolatey/choco/issues/2374)
