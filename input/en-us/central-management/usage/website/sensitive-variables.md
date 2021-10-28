@@ -7,7 +7,7 @@ Description: Information on sensitive variables within CCM
 
 Chocolatey Central Management gives you the ability to create sensitive variables for use in deployments.
 
-The **Sensitive Variables** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar.
+The **Sensitive Variables** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar, in the Administration section. This page is only visible to users who have permissions to create or delete sensitive variables (CCM Admins, by default).
 
 ![Sensitive Variables menu entry on the CCM Dashboard](/assets/images/sensitive-variables/ccm-sensitive-variables-nav.png)
 
