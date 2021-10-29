@@ -17,6 +17,10 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 > - Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 > - All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
+## Step 0: Backup Your Current CCM Enviornment
+
+We suggest you go through and take a snapshot of your CCM VM before proceeding with an upgrade. If taking a snapshot is not an option, at a bare minimum we recommend creating a local backup of the CentralManagement SQL Database and backing up your appsettings.json file located at `C:\tools\chocolatey-management-web\appsettings.json`.
+
 ## Step 1: Download Latest Packages
 
 > :memo: **NOTE**
