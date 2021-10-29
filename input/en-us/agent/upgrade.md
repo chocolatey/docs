@@ -21,7 +21,7 @@ If you use Chocolatey Central Management, you won't be able to use a deployment 
 
 > :memo: **NOTE** Due to limitations of Windows Task Scheduler, it is likely that your users will see the PowerShell window initially, but it should disappear once PowerShell has fully started.
 
-The Advanced deployment script to do this is as follows:
+An example advanced deployment script to do this is as follows:
 
 ```powershell
 $DelayInMinutes = 1
