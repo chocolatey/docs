@@ -2,18 +2,18 @@
 Order: 60
 xref: ccm-sensitive-variables
 Title: Sensitive Variables
-Description: Information on sensitive variables within CCM
+Description: Information on sensitive variables within Chocolatey Central Management
 ---
 
 Chocolatey Central Management gives you the ability to create sensitive variables for use in deployments.
 
-The **Sensitive Variables** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar, in the Administration section. This page is only visible to users who have permissions to create or delete sensitive variables (CCM Admins, by default).
+The **Sensitive Variables** page can be accessed from the Administration section of Chocolatey Central Management. The page is only visible to users who have permissions to create or delete sensitive variables.
 
 ![Sensitive Variables menu entry on the CCM Dashboard](/assets/images/sensitive-variables/ccm-sensitive-variables-nav.png)
 
 ## Creating a new Sensitive Variable
 
-1. From the Central Management dashboard, select `Administration` > `Sensitive Variables` from the left sidebar.
+1. From the Chocolatey Central Management Dashboard, select `Administration` > `Sensitive Variables` from the left sidebar.
 
     ![Central Management dashboard, arrow pointing to Sensitive Variables menu in the left sidebar entry on the CCM Dashboard](/assets/images/sensitive-variables/ccm-sensitive-variables-nav.png)
 1. Select the :heavy_plus_sign: **Create new sensitive variable** button at the top of the page.
@@ -37,7 +37,8 @@ Alternatively, Variables can also be added from the Advanced tab of a Deployment
 
 ## Deleting Sensitive Variables
 
-1. From the Central Management dashboard, select `Administration` > `Sensitive Variables` from the left sidebar.
+1. From the Chocolatey Central Management Dashboard, select `Administration` > `Sensitive Variables` from the left sidebar.
+
 
     ![Central Management dashboard, arrow pointing to Sensitive Variables menu in the left sidebar entry on the CCM Dashboard](/assets/images/sensitive-variables/ccm-sensitive-variables-nav.png)
 1. Select :wastebasket: **Delete** beside the Sensitive Variable you wish to delete.
