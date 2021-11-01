@@ -19,7 +19,12 @@
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
-		"ms-dotnettools.csharp"
+		"ms-dotnettools.csharp",
+		"DavidAnson.vscode-markdownlint",
+		"shardulm94.trailing-spaces",
+		"nhoizey.gremlins",
+		"streetsidesoftware.code-spell-checker",
+		"bierner.emojisense"
 	],
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
