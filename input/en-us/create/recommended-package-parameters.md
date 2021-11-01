@@ -2,30 +2,33 @@
 Order: 25
 xref: recommended-package-parameters
 Title: Recommended Package Parameters
-Description: The standart of naming package parameters and the list of most commonly used ones.
+Description: Providing guidance and best practice on the naming of package parameters and provide a list of most commonly used ones.
 ---
 
 Chocolatey's package parameters provide a way for package users to configure how the package is installed and configured.
 
-As the parameters are handled individualy by each package, establishing specific parameter names for common actions significantly simpifies the life of a user.
+As the parameters are handled individually by each package, establishing specific parameter names for common actions significantly simpifies the life of users and maintainers.
 
-## Naming convention
-* Parameter names should be in CamelCase
-* Disabling parameters should start with 'No' (`/NoStartup`, `/NoFileAssociation`, etc.)
+## Naming Convention
+* Parameter names should be in [CamelCase](https://en.wikipedia.org/wiki/Camel_case). For example `NoIcon` or `DisableStartup`.
+* Parameters that disable or turn off _something_ should start with 'No' (`/NoStartup`, `/NoFileAssociation`, etc.)
 * Binary actions should have both Off (`/NoDesktopShortcut`) and On (`/DesktopShortcut`) parameters, overriding default behaviour.
 * In cases where there are multiple binary actions of the same type (e.g. multiple components, desktop shortcuts) they should be separated by a comma (`/NoShellIntegration:GuiHere,ShellHere`, `/NoDesktopShortcut:AllUsers,CurrentUser`) 
 * Actions expanding on exsting parameter behaviour should create subparameters, not create new ones (e.g. `/DesktopShortcut:Component1Shortcut,Component2Shortcut`, not `/DesktopShortcutComponent1 /DesktopShortcutComponent2`)
 
 ## Package Parameters
-> :memo: **NOTE** Not all of these parameters are required to be checked by the package script. 
+
+Below is a list of commonly used package parameters. These give users a consistent Chocolatey experience across packages and makes it easier for them to use them. It also allows maintainers to use parameters whose meaning has already been defined by others.
+
+> :memo: **NOTE** Below is a list of commonly used parameters. Not all of these parameters are required to be checked by the package script. 
 * `/InstallDir:` - Changes package's installation directory.
-* `/NoDesktopShortcut` and `/DesktopShortcut` - Explicitly set whether the package should or should not create a shortcut on desktop, if not specified the installers default parameter is used.
-* `/NoStartMenuShortcut` and `/StartMenuShortcut` - Explicitly set whether the package should or should not create an entry in start menu.
-* `/NoStartup` and `/Startup` - Explicitly set whether the packaged application should or should not launch on start up(Applicable to installers that already can startup by default).
-* `/NoQuickLaunchShortcut` and `/QuickLaunchShortcut` - Explicitly set whether the package should or should not create a shortcut in quick launch menu.
-* `/NoFileAssociation` and `/FileAssociation` - Whether to associate files with this application.
-* `/NoShellIntegration:` and `/ShellIntegration:` - Explicitly set whether the package should or should not add itself into explorer's context menu
-* `/NoAppendPath` and `/AppendPath` - Add program folder directory to environment variable "PATH"
+* `/NoDesktopShortcut` and `/DesktopShortcut` - Explicitly set whether the package should or should not create a shortcut on desktop. If not specified, the installer default behaviour will apply.
+* `/NoStartMenuShortcut` and `/StartMenuShortcut` - Explicitly set whether the package should or should not create an entry in start menu. If not specified, the installer default behaviour will apply.
+* `/NoStartup` and `/Startup` - Explicitly set whether the packaged application should or should not launch on startup, if applicable. If not specified, the installer default behaviour will apply.
+* `/NoQuickLaunchShortcut` and `/QuickLaunchShortcut` - Explicitly set whether the package should or should not create a shortcut in quick launch menu. If not specified, the installer default behaviour will apply.
+* `/NoFileAssociation` and `/FileAssociation` - Whether to associate files with this application. If not specified, the installer default behaviour will apply.
+* `/NoShellIntegration` and `/ShellIntegration` - Explicitly set whether the package should or should not add itself into explorer's context menu. If not specified, the installer default behaviour will apply.
+* `/NoAppendPath` and `/AppendPath` - Add program folder directory to environment variable "PATH". If not specified, the installer default behaviour will apply.
 * `/Components:` - override default installation components (every optional component is turned off, and allowed selectively), e.g.: `/Components:Include_pip,CompileAll`. Package maintainer must mention the default components list.
 * `/Language:` - Specifies the language to use in the form of Language code (ISO 639-1), Hyphen (-) and Country code (ISO 3166-1 alpha-2), e.g.: en-US, en-UK
 * `/LicenseUsername:`, `/LicenseKey:` and `/LicensePath:` - Registration information required for package installation.
