@@ -8,6 +8,17 @@ RedirectFrom: docs/proxy-settings-for-chocolatey
 
 ## Installing Chocolatey behind a proxy server
 
+>Try this option first to use your default proxy server to install Chocolatey
+>Or you have this error , "The remote server returned an error: (407) Proxy Authentication Required."
+
+Steps to help address this:
+1. Open a Command Prompt, run as an Administrator.
+2. Copy this piece of code from Duane Newman
+  `@powershell -NoProfile -ExecutionPolicy Unrestricted -Command "[Net.WebRequest]::DefaultWebProxy.Credentials = [Net.CredentialCache]::DefaultCredentials; iex ((New-Object Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%systemdrive%\chocolatey\bin`
+3. Run it and this will resolve the issue.
+4. This solution completely resolves the issue around installing chocolatey behind proxy using the command to force the WebRequest to use the Default Credentials for the proxy setting.
+For more information, kindly refer to this link https://duanenewman.net/blog/post/installing-chocolatey-behind-a-corporate-proxy/ or https://stackoverflow.com/questions/30897204/how-do-i-install-chocolatey-packages-behind-a-proxy-on-windows-2012-r2-core
+
 When trying to install Chocolatey behind a proxy server, you may be faced with errors like
 
 > Get Response returned: (407) Proxy Authentication Required
@@ -107,3 +118,6 @@ Starting in 0.10.4, you can pass proxy information at runtime with each command.
 ## What to do if my proxy is socks?
 
 It may just work. It hasn't been validated yet.
+
+
+
