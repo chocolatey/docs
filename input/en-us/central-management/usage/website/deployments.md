@@ -58,6 +58,7 @@ You will also need to have at least one Group of computers already defined.
 
      ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
    * You can use [Sensitive Variables](xref:ccm-sensitive-variables#adding-sensitive-variables-to-scripts) in advanced steps in Chocolatey Central Management version 0.7.0 and later.
+   <?! Include "../../../../shared/sensitive-variables-note.txt" /?>
 
 1. (Optional) Click **Show advanced options** to set one or more of the following options:
    * `Execution timeout`.

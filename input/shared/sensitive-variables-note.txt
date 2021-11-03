@@ -1,5 +1,1 @@
-> :warning: **WARNING**
->
-> Sensitive Variables are only supported for use in cases where their use would be omitted from the logs.
-> 
-> <?! Include "parameters-hidden-from-logs.txt" /?>
+> :warning: **WARNING** To ensure that you don't accidentally leak sensitive variables into chocolatey logs, be sure to use them with [commands or parameters that are hidden from the logs](xref:sensitive-inputs).
