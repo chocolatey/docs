@@ -31,7 +31,7 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "restart choc
 
 > :warning: **WARNING**
 > 
-> Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the `chocolatey-agent` service encounters an error when trying to import it. It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
+> Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
 
 ## Change service account username or password
 
@@ -69,4 +69,4 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Upgrade choc
 
 > :warning: **WARNING**
 > 
-> Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the `chocolatey-agent` service encounters an error when trying to import it. It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
+> Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
