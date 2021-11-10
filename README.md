@@ -39,11 +39,7 @@ If you are having build errors with `'copyTheme' errored after`, try removing th
 [![GitHub Actions Build Status](https://github.com/chocolatey/docs/workflows/Publish%20Documentation/badge.svg)](https://github.com/chocolatey/docs/actions?query=workflow%3A%22Build+Pull+Request%22)
 
 ## Chat Room
-Come join in the conversation about Chocolatey in our Gitter Chat Room.
-
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chocolatey/choco?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Or, you can find us in IRC at #chocolatey on freenode. IRC is not as often checked by committers, so it is recommended you stick to Gitter if you need more timely assistance.
+Come join in the conversation about Chocolatey in our [Community Chat Room](https://ch0.co/community).
 
 Please make sure you've read over and agree with the [etiquette regarding communication](https://github.com/chocolatey/choco/blob/master/README.md#etiquette-regarding-communication).
 

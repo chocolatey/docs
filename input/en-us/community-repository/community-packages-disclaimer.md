@@ -63,7 +63,7 @@ For caching of packages, something can be quickly implemented in 15-30 minutes t
 
 > :memo: **NOTE: A block will not automatically expire, you will need to contact our team to resolve the block.** Rate Limiting on the other hand does automatically expire after one hour. Please see [rate limiting](#rate-limiting) below.
 
-If you have found that you have gone over the limit and have been warned/blocked, please reach out at https://chocolatey.org/contact (send message to "Blocked IP Address" in the drop down - you may need to do this from a different IP address) or go to https://gitter.im/chocolatey/choco to contact the community team. As we have limited information (only an IP address), please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a block.
+If you have found that you have gone over the limit and have been warned/blocked, please reach out at https://chocolatey.org/contact (send message to "Blocked IP Address" in the drop down - you may need to do this from a different IP address) or go to our [Community Chat](https://ch0.co/community) to contact the community team. As we have limited information (only an IP address), please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a block.
 
 See the section above on avoiding excessive use - the expectation is that organizations would not use the community repository directly. As part of addressing any misconfigurations you might have, you will also need to see about addressing the previous section on "How To Avoid Excessive Use".
 

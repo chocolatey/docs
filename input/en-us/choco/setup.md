@@ -856,7 +856,7 @@ See [uninstall](xref:choco-uninstallation).
 
 ### I'm having trouble installing Chocolatey
 
-Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Install Options</a> and looked over [Troubleshooting](xref:troubleshooting). If you've done those things, reach out over the mailing list or over the chat (Gitter). The links to those can be found in the open source section of https://chocolatey.org/support.
+Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Install Options</a> and looked over [Troubleshooting](xref:troubleshooting). If you've done those things, reach out over the mailing list or over [chat](https://ch0.co/community). The links to those can be found in the open source section of https://chocolatey.org/support.
 
 ### I'm getting a 403 attempting to install
 

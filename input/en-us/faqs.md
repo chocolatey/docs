@@ -10,7 +10,7 @@ RedirectFrom: docs/chocolatey-faqs
 
 ### Can't find your answer here?
 
-Feel free to reach out to us on [Gitter](https://gitter.im/chocolatey/choco) or by the [email distribution list / forum](https://groups.google.com/group/chocolatey).
+Feel free to reach out to us on [Chat](https://ch0.co/community-support) or on the [email distribution list / forum](https://groups.google.com/group/chocolatey).
 
 ### What is Chocolatey?
 

@@ -84,7 +84,7 @@ Where are [we](xref:roadmap)? Where are we [going](xref:roadmap)?
 - [Mailing List](https://groups.google.com/group/chocolatey) / [Release Announcements Only Mailing List](https://groups.google.com/group/chocolatey-announce) / [Build Status Mailing List](https://groups.google.com/group/chocolatey-build-status)
 - [Twitter](https://twitter.com/chocolateynuget) / [Facebook](https://www.facebook.com/ChocolateySoftware) / [Github](https://github.com/chocolatey)
 - [Blog](https://chocolatey.org/blog) / [Newsletter](https://chocolatey.us8.list-manage1.com/subscribe?u=86a6d80146a0da7f2223712e4&id=73b018498d)
-- [Documentation](https://docs.chocolatey.org) / [Support](https://chocolatey.org/support) / [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chocolatey/choco?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+- [Documentation](https://docs.chocolatey.org) / [Support](https://chocolatey.org/support) / [Community Chat](https://ch0.co/community)
 
 ## See It In Action
 
