@@ -29,7 +29,7 @@ The systems we run against:
 
 ## How can I bypass the verifier?
 
-If your package needs to be exempted, please contact the site admins on the package page of the package that needs the bypass and/or reach out on Gitter.
+If your package needs to be exempted, please contact the site admins on the package page of the package that needs the bypass.
 
 ## How does the verifier work?
 
