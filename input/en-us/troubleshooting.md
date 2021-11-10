@@ -202,7 +202,7 @@ Cloudflare uses Project Honeypot to determine if your IP address is flagged, suc
 
 If you determine it is CloudFlare blocking your IP (which is the issue 98% of the time), we may be able to get you whitelisted for Chocolatey:
 
-* Go to https://chocolatey.org/contact (NOTE: If you are completely blocked from accessing the site, contact us through [Gitter](https://gitter.im/chocolatey/choco) instead)
+* Go to https://chocolatey.org/contact (NOTE: If you are completely blocked from accessing the site, contact us through our [Community Chat](https://ch0.co/community) instead)
 * Select **Blocked IP Address** in "Send message to" drop down (this is important to get it routed to the right folks)
 * :exclamation: **IMPORTANT**: Let us know what's going on along with your IP address so we can talk about whitelisting options and get you moving forward.
 * Oh, and be sure to run some antivirus scans and remove any found malware (and maybe find a better antivirus scanner).

@@ -472,7 +472,3 @@ See [Infrastructure automation](xref:integrations)
 #### April
 
 * https://chrisortman.wordpress.com/2011/04/01/getting-started-with-chocolatey/ (First known public posting about Chocolatey)
-
-## Testimonials
-
-* https://gitter.im/chocolatey/choco?at=56eabc09618c335373ecb72a

@@ -45,7 +45,7 @@ Once you have an account, you will be able to request to join the [Chocolatey GU
 >
 > This request will need to be approved.
 
-If a request goes unapproved for a period of time, reach out on the Chocolatey GUI [Gitter](https://gitter.im/chocolatey/ChocolateyGUI) room for help.
+If a request goes unapproved for a period of time, reach out on [Community Chat](https://ch0.co/community) for help.
 
 ### Adding a new language
 
@@ -56,7 +56,7 @@ This can be done via the [Chocolatey GUI dashboard](https://www.transifex.com/ch
 >
 > Adding a new language to the project will require approval.
 
-If a request goes unapproved for a period of time, reach out on the Chocolatey GUI [Gitter](https://gitter.im/chocolatey/ChocolateyGUI) room for help.
+If a request goes unapproved for a period of time, reach out on [Community Chat](https://ch0.co/community) for help.
 
 > :memo: **NOTE**
 >

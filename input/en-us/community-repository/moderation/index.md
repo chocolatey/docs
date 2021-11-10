@@ -265,4 +265,4 @@ This is not an achievable status.
 * Understand the package creation process and the current recommendations, written at [create packages](xref:create-packages).
 * Become familiar with the package guidelines and all of the different Chocolatey functions available. [Helper reference](xref:powershell-reference)
 * Join the [chocolatey-moderators at google groups dot com](https://groups.google.com/forum/#!forum/chocolatey-moderators) mailing list. This is necessary for communication with other moderators and receiving messages regarding changes in moderation.
-* Join Gitter and hang out in the [Chocolatey.org Gitter](https://gitter.im/chocolatey/chocolatey.org) and [Choco Gitter](https://gitter.im/chocolatey/choco) rooms from time to time.
+* Join our [Community Chat](https://ch0.co/community) and hang out.
