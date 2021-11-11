@@ -2,10 +2,10 @@
 Order: 35
 xref: sensitive-inputs
 Title: Sensitive Inputs
-Description: Information on inputs that are hidden from the chocolatey logs if detected.
+Description: Information on inputs that are hidden from the Chocolatey logs if detected.
 ---
 
-By default chocolatey will omit logging commands or parameters that could potentially contain sensitive information.
+By default Chocolatey will omit logging commands or parameters that could potentially contain sensitive information.
 
 ## Commands hidden from logs
 
@@ -15,13 +15,13 @@ By default chocolatey will omit logging commands or parameters that could potent
 
 ## Parameters hidden from logs
 
-* `-install-arguments-sensitive`
-* `-package-parameters-sensitive`
+* `--install-arguments-sensitive`
+* `--package-parameters-sensitive`
 * `-p`
-* `-password`
+* `--password`
 * `-cp`
-* `-certpassword`
+* `--certpassword`
 * `-k`
-* `-key`
-* `-apikey`
-* `-api-key`
+* `--key`
+* `--apikey`
+* `--api-key`
