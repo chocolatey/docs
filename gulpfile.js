@@ -111,8 +111,7 @@ function purgeCss() {
                 paths.input + '**/*.cshtml',
                 paths.input + '**/*.md',
                 paths.assets + 'js/*.*',
-                paths.theme + 'scss/_algolia.scss',
-                paths.theme + 'scss/_gitter.scss'
+                paths.theme + 'scss/_algolia.scss'
             ],
             safelist: [
                 '::-webkit-scrollbar', 
