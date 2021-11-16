@@ -25,6 +25,26 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.7.0 (unreleased)
+### BREAKING CHANGES
+ * Additional steps required to change LDAP and SMTP passwords.
+   * The LDAP and SMTP password is no longer present on the page so cannot be inspected.
+   * We've added an additional step for confirmation of the passwords.
+ * Encryption passphrase is required.
+   * To enhance the security of sensitive fields in the database we require the encryption passphrase to be set to a value you provide.
+   * When any user with the CCM Administrator role logs in they will be redirected to the Settings page where the passphrase can be changed.
+   * The passphrase change can be deferred but on the 5th login it will be required to set this passphrase before any other changes can be made.
+   * Users who are not a member of the CCM Administrator role will only be shown a warning that the passphrase needs to be changed and to contact their Administrator to do so.
+   * The links provided in email activation or password reset emails that were sent prior to the passphrase change will no longer be valid. The user clicking the link will be directed to a page where they can request them again.
+
+### ENHANCEMENTS
+ * Web - Ability to add sensitive variables to advanced PowerShell deployment steps - see [documentation](https://docs.chocolatey.org/en-us/central-management/usage/website/sensitive-variables)
+ * API - Hide token API endpoints from Swagger documentation.
+ * Web - Update jQuery dependency - see [Licensed #271](https://github.com/chocolatey/chocolatey-licensed-issues/issues/271).
+
+### BUG FIXES
+ * Fix - CCM - Sensitive package parameters shown in database & Deployment step page - see [Licensed #267](https://github.com/chocolatey/chocolatey-licensed-issues/issues/267).
+
 ## 0.6.3 (September 23rd, 2021)
 ### BUG FIXES
  * Fix - Processing of message queue does not complete when an invalid XML file is located - see [Licensed #266](https://github.com/chocolatey/chocolatey-licensed-issues/issues/266)
