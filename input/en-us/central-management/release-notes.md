@@ -25,7 +25,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
-## 0.7.0 (unreleased)
+## 0.7.0 (November 17th, 2021)
 ### BREAKING CHANGES
  * Additional steps required to change LDAP and SMTP passwords.
    * The LDAP and SMTP password is no longer present on the page so cannot be inspected.
