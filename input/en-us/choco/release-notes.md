@@ -20,6 +20,17 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
  * Fix - Installing from packages.config doesn't support installing from other sources (e.g. windowsfeatures, python, etc) - see [#877](https://github.com/chocolatey/choco/issues/877)
  * Fix - Quoted InstallLocation in .registry file results in errors when attempting to automatically uninstall application - see [#2336](https://github.com/chocolatey/choco/issues/2336)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
 
 ## [0.11.2](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.2) (September 23rd, 2021)
 ### BUG FIXES
