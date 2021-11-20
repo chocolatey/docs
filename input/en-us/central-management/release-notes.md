@@ -45,6 +45,18 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ### BUG FIXES
  * Fix - CCM - Sensitive package parameters shown in database & Deployment step page - see [Licensed #267](https://github.com/chocolatey/chocolatey-licensed-issues/issues/267).
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/WH9ecBP-1zY?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 ## 0.6.3 (September 23rd, 2021)
 ### BUG FIXES
  * Fix - Processing of message queue does not complete when an invalid XML file is located - see [Licensed #266](https://github.com/chocolatey/chocolatey-licensed-issues/issues/266)
