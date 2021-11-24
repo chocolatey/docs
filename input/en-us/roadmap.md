@@ -49,7 +49,7 @@ Release Notes / Changelog at [Chocolatey GUI Release Notes](xref:chocolateygui-r
 - ~~Locking down non-secure downloads in packages (HTTP) without checksums~~ - completed Aug 2016
 - Locking down secure downloads in packages (HTTPS) without checksums
 
-Other tickets as noted at [https://github.com/chocolatey/chocolatey.org/issues](https://github.com/chocolatey/chocolatey.org/issues).
+Other tickets as noted at [https://github.com/chocolatey/home](https://github.com/chocolatey/home).
 
 ## Commercial
 
@@ -84,8 +84,8 @@ Release Notes / Changelog at [Chocolatey Licensed Extension Release Notes](xref:
   - Recurring Deployments
   - Retry
   - Templates
-- Groups Active Directory Integration (Auto-groups) - est. H2 2021
-- WCAG compliance - est. H2 2021
+- Groups Active Directory Integration (Auto-groups)
+- WCAG compliance
 
 Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 
