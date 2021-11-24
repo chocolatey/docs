@@ -15,6 +15,7 @@ ShowInSidebar: false
 ## Community
 
 ### Chocolatey CLI (choco)
+
 - Validation on choco pack (subset of the package-validator)
 - GPG package signing for traceability
 - Authenticode package signing
@@ -29,17 +30,16 @@ Other tickets as noted at [https://github.com/chocolatey/choco](https://github.c
 
 Release Notes / Changelog at [Chocolatey CLI Release Notes](xref:choco-release-notes).
 
-
 ### Chocolatey GUI
-- Dark Mode - est Q1 2021
+
+- ~~Dark Mode~~ - completed March 2021
 - WCAG compliance - est. H2 2021
 
 Other tickets as noted at [https://github.com/chocolatey/ChocolateyGUI/issues](https://github.com/chocolatey/ChocolateyGUI/issues) - be sure to check the milestone for estimated release version.
 
 Release Notes / Changelog at [Chocolatey GUI Release Notes](xref:chocolateygui-release-notes).
 
-
-### Chocolatey Community Repository aka Chocolatey.org
+### Chocolatey Community Repository aka community.chocolatey.org
 
 - ~~Adding back in search box~~ - completed Q1 2018
 - Converting rest of site
@@ -50,7 +50,6 @@ Release Notes / Changelog at [Chocolatey GUI Release Notes](xref:chocolateygui-r
 - Locking down secure downloads in packages (HTTPS) without checksums
 
 Other tickets as noted at [https://github.com/chocolatey/chocolatey.org/issues](https://github.com/chocolatey/chocolatey.org/issues).
-
 
 ## Commercial
 
@@ -75,23 +74,22 @@ Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-iss
 
 Release Notes / Changelog at [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes).
 
-
 ### Chocolatey Central Management
+
 - ~~Reporting~~ - released May 2019
 - ~~Deployments~~ - released June 2020
   - ~~Scheduled Deployments~~ - released November 2020
   - ~~Maintenance Windows~~ - released November 2020
   - ~~Semi-connected environments~~ - released November 2020
-  - Recurring Deployments - est. H1 2021
-  - Retry - est. H1 2021
-  - Templates - est. H1 2021
+  - Recurring Deployments
+  - Retry
+  - Templates
 - Groups Active Directory Integration (Auto-groups) - est. H2 2021
 - WCAG compliance - est. H2 2021
 
 Other tickets as noted at [https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 
 Release Notes / Changelog at [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
-
 
 ## Legal
 
