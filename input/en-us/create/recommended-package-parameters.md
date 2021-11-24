@@ -13,14 +13,14 @@ As the parameters are handled individually by each package, establishing specifi
 * Parameter names should be in [CamelCase](https://en.wikipedia.org/wiki/Camel_case). For example `NoIcon` or `DisableStartup`.
 * Parameters that disable or turn off _something_ should start with 'No' (`/NoStartup`, `/NoFileAssociation`, etc.)
 * Binary actions should have both Off (`/NoDesktopShortcut`) and On (`/DesktopShortcut`) parameters, overriding default behaviour.
-* In cases where there are multiple binary actions of the same type (e.g. multiple components, desktop shortcuts) they should be separated by a comma (`/NoShellIntegration:GuiHere,ShellHere`, `/NoDesktopShortcut:AllUsers,CurrentUser`) 
-* Actions expanding on exsting parameter behaviour should create subparameters, not create new ones (e.g. `/DesktopShortcut:Component1Shortcut,Component2Shortcut`, not `/DesktopShortcutComponent1 /DesktopShortcutComponent2`)
+* If there are several components sharing an action, like adding a desktop icon for programm 1 and programm 2, the name of the component should be written AFTER that common parameter action, for exmaple: `/NoDesktopShortcutProgram1`, `/DesktopShortcutProgram2` (Passing a common parameter action, like `/DesktopShortcut` or `/NoDesktopShortcut, should result in all components being enabled or disabled).
 
 ## Package Parameters
 
 Below is a list of commonly used package parameters. These give users a consistent Chocolatey experience across packages and makes it easier for them to use them. It also allows maintainers to use parameters whose meaning has already been defined by others.
 
-> :memo: **NOTE** Below is a list of commonly used parameters. Not all of these parameters are required to be checked by the package script. 
+> :memo: **NOTE** Not all of these parameters are required to be checked by the package script. 
+> :memo: **NOTE** Some parameters may be accessed via installer specific `--install-arguments`
 * `/InstallDir:` - Changes package's installation directory.
 * `/NoDesktopShortcut` and `/DesktopShortcut` - Explicitly set whether the package should or should not create a shortcut on desktop. If not specified, the installer default behaviour will apply.
 * `/NoStartMenuShortcut` and `/StartMenuShortcut` - Explicitly set whether the package should or should not create an entry in start menu. If not specified, the installer default behaviour will apply.
@@ -29,94 +29,23 @@ Below is a list of commonly used package parameters. These give users a consiste
 * `/NoFileAssociation` and `/FileAssociation` - Whether to associate files with this application. If not specified, the installer default behaviour will apply.
 * `/NoShellIntegration` and `/ShellIntegration` - Explicitly set whether the package should or should not add itself into explorer's context menu. If not specified, the installer default behaviour will apply.
 * `/NoAppendPath` and `/AppendPath` - Add program folder directory to environment variable "PATH". If not specified, the installer default behaviour will apply.
-* `/Components:` - override default installation components (every optional component is turned off, and allowed selectively), e.g.: `/Components:Include_pip,CompileAll`. Package maintainer must mention the default components list.
-* `/Language:` - Specifies the language to use in the form of Language code (ISO 639-1), Hyphen (-) and Country code (ISO 3166-1 alpha-2), e.g.: en-US, en-UK
-* `/LicenseUsername:`, `/LicenseKey:` and `/LicensePath:` - Registration information required for package installation.
-* `/Username:` and `/Password:` - Parameters to allow login into the remote download server for the package or the program, it should be allowed for the password to be read from the prompt.
+* `/Components` - Select what additional components should the package install, e.g.: `/ComponentsDocs, /NoComponentsExamples`. Package maintainer must mention the complete component list.
+* `/Language:` - Specifies what language should the package install, e.g `/Language:en-US`.
 * `/Purge` - Remove user files before install, or after uninstall.
 
-## Package Example
-### Package Description
+### Package Description Example
 ~~~markdown
 # Package Parameters
 The following package parameters can be set:
 
- * `/InstallDir:` - Where to install the binaries to, Default: `$env:ProgramFiles\GreatInnoProgram`
- * `/Components:` - Configure what additional components to install, Possible values: `docs`, `examples`, `sources`, Default: `/Components:docs,examples` 
- * `/NoStartMenuShortcut:` and `/StartMenuShortcut:` - Whether to add an entry into the "All Programs" folder, Default: Yes
- * `/NoDesktopShortcut` and `/DesktopShortcut` - Whether to add a shortcut on desktop, Default: No
- * `/NoFileAssociation` and `/FileAssociation` - Whether to associate applicable files with this program, Default: No
- * `/NoAppendPath` and `/AppendPath` - Whether to add this programm's folder to 'PATH' environmental variable, Default: Yes
- * `/NoShellIntegration` and `/ShellIntegration` - Whether the package should or should not add itself into explorer's context menu, Subparameters: `addcontextmenufiles` - add to file' context menu, `addcontextmenufolders` - add to folder' context menu, Default: `/NoShellIntegration:addcontextmenufiles /ShellIntegration:addcontextmenufolders`
+ * `/InstallDir:` - Where to install the binaries to. Default: `/InstallDir:C:\Tools\MyProgram`.
+ * `/Components` - Configure what additional components to install, Possible values: `docs`, `examples`, `sources`. Default: `/ComponentsDocs`.
+ * `/NoStartMenuShortcut:` and `/StartMenuShortcut:` - Whether or not to add an entry into the "All Programs" folder. Default: Yes.
+ * `/NoDesktopShortcut` and `/DesktopShortcut` - Whether or not to add a shortcut on desktop. Default: No.
+ * `/NoFileAssociation` and `/FileAssociation` - Whether or not to associate applicable files with the installed software. Default: No.
+ * `/NoAppendPath` and `/AppendPath` - Whether or not to add this software install folder to 'PATH' environmental variable. Default: Yes.
+ * `/NoShellIntegration` and `/ShellIntegration` - Whether the package should or should not add itself into explorer's context menu, Subparameters: `Files` - add to file's context menu, `Folders` - add to folder's context menu. Default: `/ShellIntegrationFolders`.
 
 To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/Item1:value /Item2:value2 /FlagBoolean'"`).
-To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
-~~~
-### ChocolateyInstall.ps1
-~~~powershell
-$pp = Get-PackageParameters
-
-$packageArgs = 
-@{ 
-  packageName    = 'my-amazing-package'
-  fileType       = 'exe'
-  softwareName   = 'greatInnoProgram*'
-  file           = "$toolsDir\greatInnoProgram-1.0-x86.exe"
-  file64         = "$toolsDir\greatInnoProgram-1.0-x64.exe"
-  silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-  validExitCodes = @(0)
-}
-
-$paramToTask = # The hashtabble for converting external parameter names to the Inno setup tasks
-@{
-  DesktopShortcut     = 'desktopicon'
-  QuickLaunchShortcut = 'quicklaunchicon'
-  FileAssociation     = 'associate'
-  AppendPath          = 'addtopath'
-  # Example of a parameter with subparemeters, where only specifiyng a flag results in selection of all subparameters
-  ShellIntegration    = @{ def="addcontextmenufiles","addcontextmenufolders"; files="addcontextmenufiles"; folders="addcontextmenufolders" }
-}
-
-if ($pp["InstallDir"]) { $packageArgs.silentArgs += " /dir=`"$($pp["InstallDir"])`"" }
-if ($pp["Components"]) { $packageArgs.silentArgs += " /COMPONENTS=`"$($pp["Components"])`"" } # As the components are alredy package specific we can leave it to the user to specify the correct component names
-if ($pp["NoStartMenuShortcut"]) { $packageArgs.silentArgs += " /NOICONS" } # There is no way to explicitly enable start menu entries so we will ignore '/StartMenuShortcut'
-
-$packageArgs.silentArgs += " /MERGETASKS="
-foreach ($entry in $paramToTask.GetEnumerator())
-{
-  if (($pp.ContainsKey($entry.Name)) -or ($pp.ContainsKey("No$($entry.Name)")))
-  {
-    # If it's a disabling parameter (starting with No), 
-    # Add 'No' to every reference to $entry.name and '!' to every task name to make Inno setup negate it
-    if ($pp.ContainsKey("No$($entry.Name)")) { $noParam="No"; $noTask="!" }
-    else { $noParam=""; $noTask="" }
-
-    # Test if we passed a flag e.g. "/NoShellIntegration"
-    if ($pp["$noParam$($entry.Name)"] -is [bool]) 
-    {
-      # Add task, if it's a disabling parameter append '!' to the begining of task name
-      if ($entry.Value -is [string]) { $packageArgs.silentArgs += "$noTask$($entry.Value)," }
-      # If task, has subparameters, add default value (with all tasks enabled/disabled)
-      # For each subparameter in def, add $noTask and separate them with commas
-      elseif ($entry.Value -is [Hashtable])  { $packageArgs.silentArgs += "$(($entry.Value['def'] | ForEach-Object {"$noTask$_"}) -join ',')," }
-    }
-    # Test if we passed a string e.g. "/NoShellIntegration:files"
-    elseif ($pp["$noParam$($entry.Name)"] -is [string]) 
-    {
-      # Only works if parameter has subparameters ($entry.Value is a hash table)
-      if ($entry.Value -is [string]) { Write-Warning "Parameter /$noParam$($entry.Name) doesn't accept subparameters" }
-      elseif ($entry.Value -is [Hashtable])
-      {
-        foreach ($subParam in $pp["$noParam$($entry.Name)"].Split(',')) # Iterate through all passed subparametrs
-        {
-          # If passed subparameter is in entry's, add subparameter to tasks
-          if ($entry.Value.ContainsKey($subParam)) { $packageArgs.silentArgs += "$($entry.Value[$subParam])," }
-          else { Write-Warning "Unknown subparameter: /$noParam$($entry.Name):$subParam" }          
-        }
-      }      
-    }    
-  }
-}
-
-Install-ChocolateyInstallPackage @packageArgs # Install application with our parameters
+To remember the parameters you have set when you upgrade a package, set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
 ~~~
