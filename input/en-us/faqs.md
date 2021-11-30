@@ -262,7 +262,7 @@ A lot of that is covered in the FAQ on the [pricing](https://chocolatey.org/pric
 
 ### Are the licensed editions costs annual?
 
-They are, but we can also do multi-year if you need to support something closer to that model. We also have a perpetual for Chocolatey for Business. For more detail, please see the [pricing FAQ](https://chocolatey.org/pricing#faq).
+They are, but we can also do multi-year contracts (with full amount paid on contract acceptance) if you need to support something closer to that model. We also have a perpetual for Chocolatey for Business. For more detail, please see the [pricing FAQ](https://chocolatey.org/pricing#faq).
 
 ### Can you do monthly?
 
