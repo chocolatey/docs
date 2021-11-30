@@ -33,7 +33,7 @@ The QDE appliance provides a unified architecture containing the following compo
 
 ## Getting QDE
 
-To get QDE into your environment, please [reach out to us](https://chocolatey.org/contact/quick-deployment) so we can work to get you set up.
+To get QDE into your environment, please [reach out to us](https://chocolatey.org/contact/sales) so we can work to get you set up.
 
 > :memo: **NOTE**
 >
@@ -64,7 +64,7 @@ The above articles document how that is done.
 
 ### How do we take advantage of QDE?
 
-You must have a [Business edition of Chocolatey](https://chocolatey.org/compare) or be on an active trial license. Fill out the [quick deployment request form](https://chocolatey.org/contact/quick-deployment) and we will reach out with all the necessary information to get you started.
+You must have a [Business edition of Chocolatey](https://chocolatey.org/compare) or be on an active trial license. Please [reach out to us](https://chocolatey.org/contact/sales) so we can work to get you all the necessary information needed to get started.
 ### What OS format does QDE support?
 
 The QDE disk image is built on **Windows Server 2019 Standard** (Evaluation). The steps to license the VM are detailed in the [QDE Desktop ReadMe File](xref:v2-desktop-readme#step-6-license-the-qde-vm). This is the **only** format that QDE is built in.
@@ -104,7 +104,7 @@ Typically, setting up a proper Chocolatey Central Management server and any acco
 
 ### What if we're already a C4B customer?
 
-Fill out the [quick deployment request form](https://chocolatey.org/contact/quick-deployment) and we will reach out with all the necessary information to get you started. Be sure to mention you are already a C4B customer.
+Please [reach out to us](https://chocolatey.org/contact/sales) so we can work to get you all the necessary information needed to get started. Be sure to mention you are already a C4B customer.
 
 ### I am an Open Source Chocolatey user. Can I also get access to QDE?
 
