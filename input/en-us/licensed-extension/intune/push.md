@@ -43,7 +43,7 @@ To use a `source` and `api-key` without specifying them each time, set them in t
 
 ~~~sh
 choco config set --name=intuneTenantGUID --value=<INTUNE TENANT GUID>
-choco api-key add --source=<INTUNE TENANT GUID> --key=<TENANT CLIENT ID>:<TENTANT CLIENT SECRET>
+choco apikey --source=<INTUNE TENANT GUID> --key=<TENANT CLIENT ID>:<TENTANT CLIENT SECRET>
 ~~~
 
 Once that is done you can push the package as normal:
