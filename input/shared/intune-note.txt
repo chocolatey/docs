@@ -1,6 +1,6 @@
-> :warning: **WARNING**
+> :memo: **NOTE**
 >
-> The Chocolatey Intune integration is planned for an upcoming release of Chocolatey Licensed Extension and may not yet be available..
+> The Chocolatey Intune integration shipped as part of v3.0.0 of the Chocolatey Licensed Extension.
 
 > :memo: **NOTE**
 >
