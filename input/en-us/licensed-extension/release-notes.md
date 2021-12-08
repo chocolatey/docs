@@ -26,6 +26,35 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 3.0.0 (December 8, 2021)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.1+.
+
+### BREAKING CHANGES
+ * Package Builder / Package Internalizer:
+   * Generated packaging scripts will now only work with correctly licensed Chocolatey clients - see [blog post](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/) for additional information.
+ * The for-public option has been removed from the choco new command
+   * Given the [changes](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/) that are included in this release, this option is no longer supported. Packages that are intended to be published to the Chocolatey Community Repository should be created without using any commercial arguments to the Chocolatey CLI.
+
+### FEATURES
+ * Microsoft Intune Integration - Using Chocolatey Licensed Extension there is now support for converting/pushing of Chocolatey packages to Intune - more information can be found in the [docs](https://docs.chocolatey.org/en-us/licensed-extension/intune/)
+
+### BUG FIXES
+ * Fix - PowerShell: Set destination parameter for Get-ChocolateyUnzip to be required - to match what is used in Chocolatey CLI
+ * Package Builder:
+   * Fix - Ensure "--version" option is ignored when using choco new command- see [licensed #203](https://github.com/chocolatey/chocolatey-licensed-issues/issues/203)
+   * Fix - Ensure checksums are calculated correctly when using both x86 and x64 urls that result in the same file name - see [licensed #94](https://github.com/chocolatey/chocolatey-licensed-issues/issues/94)
+ * Fix - Package Internalizer: Remove authenticode signatures when combining files - see [licensed #155](https://github.com/chocolatey/chocolatey-licensed-issues/issues/155)
+ * Fix - Package Builder UI: Ensure that long file paths don't wrap within input textboxes
+
+### IMPROVEMENTS
+ * Package Builder / Package Internalizer - Generated scripts should include validation of Chocolatey license - see [blog post](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/) for additional information
+ * PowerShell:
+   * Ensure that all Cmdlets are using consistent parameter names by using aliases
+   * Support UnzipLocation as an alias to the Destination parameter in the Get-ChocolateyUnzip function - matching with Chocolatey CLI v0.11.0 - see [licensed #243](https://github.com/chocolatey/chocolatey-licensed-issues/issues/243)
+
 ## 2.2.1 (September 22, 2021)
 ### BUG FIXES
  * Fix - Filtering of sources doesn't return correct list when useBackgroundServiceWithSelfServiceSourcesOnly is disabled - see [licensed #263](https://github.com/chocolatey/chocolatey-licensed-issues/issues/263)
