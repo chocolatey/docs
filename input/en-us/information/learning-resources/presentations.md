@@ -8,6 +8,10 @@ RedirectFrom: docs/presentations
 
 ## Presentations
 
+### 2021
+
+* [What is Chocolatey, The Package Manager for Windows?](https://www.youtube.com/watch?v=knnMgOTVRmU) - An introduction to the Chocolatey Package Manager given at the very first [PackagingCon](https://packaging-con.org) on 9 November 2021 by [Paul Broadwith](https://blog.pauby.com).
+
 ### 2020
 
 * [Microsoft Defender Advanced Threat Protection and Chocolatey](https://www.slideshare.net/slideshow/embed_code/key/GghOiJlFmVINOx) - [Windows Management User Group Netherlands](https://www.meetup.com/WMUG_NL/) - [Tim Hermie](https://www.cloud-boy.be) and [Jasper Bernaers](https://jasperbernaers.com/), [September 29, 2020](https://www.meetup.com/WMUG_NL/events/273266512/)
