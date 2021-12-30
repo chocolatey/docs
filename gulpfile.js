@@ -158,7 +158,7 @@ function delEnd() {
         .pipe(clean({ force: true }));
 }
 
-// Independednt tasks
+// Independent tasks
 exports.del = del;
 
 // Gulp series
