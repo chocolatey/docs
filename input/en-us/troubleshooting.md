@@ -569,7 +569,7 @@ A corrupt .registry file exists at C:\ProgramData\chocolatey\.chocolatey\$applic
 
             else {
 
-                Write-Warning -Message "No .bad file exists in $($folder.DirectoryName), renaming file"
+                Write-Warning -Message "No .registry file exists in $($folder.DirectoryName), renaming file"
 
                 Move-Item "$($Folder.DirectoryName)\.registry.bad" "$($Folder.DirectoryName)\.registry"
 
