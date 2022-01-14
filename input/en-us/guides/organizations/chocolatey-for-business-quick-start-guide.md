@@ -200,7 +200,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <details>
     > <summary><strong>What does this script do? (click to expand)</strong></summary>
     > <ul class="list-style-type-disc">
-    > <li>Installs Jenkins package (pinned to a specific version)</li>
+    > <li>Installs Jenkins package</li>
     > <li>Updates Jenkins plugins</li>
     > <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation</li>
     > <li>Sets up pre-defined Jenkins jobs for the scripts above</li>
