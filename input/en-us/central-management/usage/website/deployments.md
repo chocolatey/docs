@@ -157,10 +157,10 @@ This is a switch that is passed to opt out of Chocolatey Self-Service. It's typi
 ### What Happens if More Than One Deployment is "Active" at the Same Time?
 
 This will depend a little bit on the version of Central Management you're running.
-Prior to v4.0.0, control of deployments was handled entirely on a per-deployment-_step_ basis.
+Prior to v0.4.0, control of deployments was handled entirely on a per-deployment-_step_ basis.
 This means that if you have an active deployment with some of the computers in it idling (waiting for a later step in the deployment to begin, essentially), these machines will pick up available deployment steps from an unrelated deployment while they're waiting.
 
-As of v4.0.0 of Central Management, this has been fine tuned a little bit so that any computer which is acted on by a deployment will not pick up any steps from unrelated deployments until all its assigned steps in the first deployment are completed.
+As of v0.4.0 of Central Management, this has been fine tuned a little bit so that any computer which is acted on by a deployment will not pick up any steps from unrelated deployments until all its assigned steps in the first deployment are completed.
 
 This can get a bit confusing, so let's consider the following scenario:
 
