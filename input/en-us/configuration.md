@@ -16,6 +16,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 * `cacheLocation` = **' '** - Cache location if not TEMP folder. Replaces `$env:TEMP` value.  It is highly recommended this be set to make Chocolatey more deterministic in cleanup.
 * `upgradeAllExceptions` = **' '** - A comma-separated list of package names that should not be upgraded when running `choco upgrade all'. Defaults to empty. Available in 0.10.14+.
+* `defaultTemplateName` = **' '** - Default template name used when running [`choco new` command](xref:choco-command-new). Available in 0.12.0+.
 
 ### Proxy
 
