@@ -26,6 +26,19 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 3.1.0 (January 18, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.12.0+.
+
+### FEATURES
+ * Add support for choco template command
+
+### BUG FIXES
+ * Fix - PowerShell - Get-ChocolateyUnzip fails to unzip when destination is root of a drive - see [licensed #284](https://github.com/chocolatey/chocolatey-licensed-issues/issues/284)
+ * Fix - Intune - Cannot push chocolatey-agent due to duplicated dependency
+
 ## 3.0.0 (December 8, 2021)
 
 > :warning: **WARNING**
