@@ -224,11 +224,7 @@ A little history - Chocolatey up until 0.9.9 was provided completely written in 
 
 ### Does Chocolatey run on macOS/Linux?
 
-Speaking of POSIX environments, ever since we released 0.9.9 back in 2015, we've had it running in Mono which allows you to do package maintenance and simple things outside of managing software installations on Linux and macOS environments.
-
-In fact we first showed it off at PuppetConf 2014 (prior to the official March 2015 release!) - https://www.youtube.com/watch?v=cZl_wKSciVk
-
-Do we have plans to support fully running on POSIX environments? We've discussed it, but have no official stance on it yet. Keep your eyes on the [roadmap](xref:roadmap)
+Yes, for creation and maintenance of packages. See [running on non-Windows](xref:non-windows) for more information.
 
 ## Troubleshooting
 

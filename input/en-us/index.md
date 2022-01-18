@@ -24,6 +24,7 @@ Whew, that was a mouthful! For a bit more detail into what all of that means and
 - Windows PowerShell v2+ (not PowerShell Core aka PowerShell 6 yet)
 - .NET Framework 4.x+
 - See [Requirements](xref:getting-started#requirements)
+- See [running on non-Windows](xref:non-windows)
 
 ## Information
 
