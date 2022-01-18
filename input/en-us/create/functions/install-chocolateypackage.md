@@ -10,7 +10,7 @@ RedirectFrom:
 
 # Install-ChocolateyPackage
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 > :memo: **NOTE** Administrative Access Required.
 
@@ -141,8 +141,6 @@ Install-ChocolateyPackage @packageArgs
 
 $packageName= 'bob'
 $toolsDir   = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://somewhere.com/file.msi'
-$url64      = 'https://somewhere.com/file-x64.msi'
 $urlTransform = 'https://somewhere.com/file.mst'
 $mstFileLocation = Join-Path $toolsDir 'transform.mst'
 
@@ -537,4 +535,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPackage -Full`.
 
-View the source for [Install-ChocolateyPackage](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1)
+View the source for [Install-ChocolateyPackage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1)

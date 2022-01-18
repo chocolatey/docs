@@ -10,7 +10,7 @@ RedirectFrom:
 
 # Install-ChocolateyPowershellCommand
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Installs a PowerShell Script as a command
 
@@ -293,4 +293,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPowershellCommand -Full`.
 
-View the source for [Install-ChocolateyPowershellCommand](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1)
+View the source for [Install-ChocolateyPowershellCommand](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1)

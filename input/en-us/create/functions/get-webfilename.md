@@ -10,7 +10,7 @@ RedirectFrom:
 
 # Get-WebFileName
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-WebFileName.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-WebFileName.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Gets the original file name from a url. Used by Get-WebFile to determine
 the original file name for a file.
@@ -127,4 +127,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebFileName -Full`.
 
-View the source for [Get-WebFileName](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-WebFileName.ps1)
+View the source for [Get-WebFileName](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-WebFileName.ps1)

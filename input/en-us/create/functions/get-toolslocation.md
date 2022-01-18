@@ -10,7 +10,7 @@ RedirectFrom:
 
 # Get-ToolsLocation
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-ToolsLocation.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ToolsLocation.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Gets the top level location for tools/software installed outside of
 package folders.
@@ -64,4 +64,4 @@ None
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ToolsLocation -Full`.
 
-View the source for [Get-ToolsLocation](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Get-ToolsLocation.ps1)
+View the source for [Get-ToolsLocation](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ToolsLocation.ps1)

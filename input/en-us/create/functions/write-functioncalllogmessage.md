@@ -10,7 +10,7 @@ RedirectFrom:
 
 # Write-FunctionCallLogMessage
 
-<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Write-FunctionCallLogMessage.ps1 using https://github.com/chocolatey/choco/blob/stable/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
+<!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Write-FunctionCallLogMessage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 DO NOT USE. Not part of the public API.
 
@@ -100,4 +100,4 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 > :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-FunctionCallLogMessage -Full`.
 
-View the source for [Write-FunctionCallLogMessage](https://github.com/chocolatey/choco/blob/stable/src/chocolatey.resources/helpers/functions/Write-FunctionCallLogMessage.ps1)
+View the source for [Write-FunctionCallLogMessage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Write-FunctionCallLogMessage.ps1)
