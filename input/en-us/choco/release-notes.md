@@ -12,6 +12,45 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18th, 2022)
+
+> :warning: **WARNING**
+>
+> If you use Chocolatey Licensed Extension you will need to install v3.1.0 of Chocolatey Licensed Extension to use all the new functionality that has been added to Chocolatey CLI v0.12.0.
+
+### BREAKING CHANGES
+ * Remove ScriptsCheckLastExitCode feature - see [#2522](https://github.com/chocolatey/choco/issues/2522)
+
+### FEATURES
+ * Add command (choco template) to retrieve information about currently installed package templates - see [#449](https://github.com/chocolatey/choco/issues/449)
+ * Add configuration option for default template name to be used in conjunction with the choco new command - see [#2377](https://github.com/chocolatey/choco/issues/2377)
+
+### BUG FIXES
+ * Fix - Building a package on Linux fails if the description has encoded xml special character(s) - see [#2382](https://github.com/chocolatey/choco/issues/2382)
+ * Fix - Building a package on Linux fails if nuspec does not have files element - see [#2379](https://github.com/chocolatey/choco/issues/2379)
+ * Fix - choco pack command fails on non-Windows when the nupkg already exists - see [#2076](https://github.com/chocolatey/choco/issues/2076)
+ * Fix - Install location is invalid on Linux if the ChocolateyInstall environment variable is not set - see [#2370](https://github.com/chocolatey/choco/issues/2370)
+ * Fix - During upgrade, removal of old choco.exe does not use absolute path on Linux - see [#2369](https://github.com/chocolatey/choco/issues/2369)
+ * Fix - Attempting to use ProtectedData.Protect with LocalMachine scope fails when run on non-Windows system as a non-root user - see [#2437](https://github.com/chocolatey/choco/issues/2437)
+ * Fix - Chocolatey packaging script (chocolateyBeforeModify.ps1) incorrectly running on non-Windows platforms - see [#2510](https://github.com/chocolatey/choco/issues/2510)
+ * Fix - choco install command ignores install arguments when specifying direct path to nupkg - see [#2089](https://github.com/chocolatey/choco/issues/2089)
+ * Fix - Deleting NuGet temp folders fails when running on Linux - see [#2383](https://github.com/chocolatey/choco/issues/2383)
+
+### IMPROVEMENTS
+ * Warn about unsupported packages when executing Chocolatey on non-Windows platforms - see [#2481](https://github.com/chocolatey/choco/issues/2481)
+ * Display install location for purely portable packages - see [#2241](https://github.com/chocolatey/choco/issues/2241)
+ * Provide more clarity on errors when attempting to push packages to Chocolatey Community Repository - see [#2007](https://github.com/chocolatey/choco/issues/2007)
+ * Support empty directories within Chocolatey template folder - [#1003](https://github.com/chocolatey/choco/issues/1003)
+ * Snapshotting of files and config transform has been enabled on non-Windows systems - see [#2450](https://github.com/chocolatey/choco/issues/2450)
+ * Prevent usage of alternate Chocolatey installation/upgrade sources on non-Windows systems - see [#2424](https://github.com/chocolatey/choco/issues/2424)
+ * Improve response message regarding moderation times when using choco push command - see [#2298](https://github.com/chocolatey/choco/issues/2298)
+
+### DOCUMENTATION
+ * Fix outdated bit.ly links in command documentation - see [#2401](https://github.com/chocolatey/choco/issues/2401)
+ * Update default template regarding building Chocolatey package on non-Windows systems - see [#2384](https://github.com/chocolatey/choco/issues/2384)
+ * Fix version number used in default template - see [#2381](https://github.com/chocolatey/choco/pull/2381)
+
+
 ## [0.11.3](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.3) (October 27th, 2021)
 ### BUG FIXES
  * Fix - Chocolatey fails to load all PowerShell helper cmdlets when attempting to loads modules - see [#2412](https://github.com/chocolatey/choco/issues/2412)
@@ -68,7 +107,7 @@ A short video explaining what is included in this release can be found here:
 
 > :warning: **WARNING**
 >
-> If you use Chocolatey Licensed Extension then in order to use all the new functions that have been added to Chocolatey CLI, when you install v0.11.0, you will also need to install v2.2.0 of Chocolatey Licensed Extension.
+> If you use Chocolatey Licensed Extension you will need to install v2.2.0 of Chocolatey Licensed Extension to use all the new functionality that has been added to Chocolatey CLI v0.11.0.
 
 ### BREAKING CHANGES
  * Disable importing / loading of DLL in the extension folder - see [#2333](https://github.com/chocolatey/choco/issues/2333)
