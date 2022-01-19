@@ -384,6 +384,8 @@ ALTER ROLE [$DatabaseRole] ADD MEMBER [$Username]
     $Connection.Close()
 }
 
+# Please choose from one of the three listed account types below. The commands will grant database permissions to a user account of your choice. This account will be used in your Connection String for the CCM Service and Web package installs ahead.
+
 # Add Sql Server Login / User:
 Add-DatabaseUserAndRoles -DatabaseName 'ChocolateyManagement' -Username 'ChocoUser' -SqlUserPassword '<SUPER HARD PASSWORD>' -CreateSqlUser  -DatabaseRoles @('db_datareader', 'db_datawriter')
 
