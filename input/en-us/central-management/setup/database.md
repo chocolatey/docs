@@ -305,13 +305,13 @@ Once we have the database, we can create logins and map those logins to users in
 
 The difference between a login and a user when it comes to SQL Server accounts has long confused folks. Simply put:
 
-- Login (Authentication) - A login is at instance level (the credentials or Windows-based accounts) - [https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login)
-- User (Authorization) - A user is that login being mapped to a database and given roles/privileges (an instance can contain multiple databases) - [https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-user](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-user)
+* Login (Authentication) - A login is at instance level (the credentials or Windows-based accounts) - [https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login)
+* User (Authorization) - A user is that login being mapped to a database and given roles/privileges (an instance can contain multiple databases) - [https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-user](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-database-user)
 
 Notes:
 
-- Grant `db_datareader` and `db_datawriter` to the accounts you create for the web and service.
-- You can share the same login for the two accounts, unless your internal best practices dictate using different passwords.
+* Grant `db_datareader` and `db_datawriter` to the accounts you create for the web and service.
+* You can share the same login for the two accounts, unless your internal best practices dictate using different passwords.
 
 ```powershell
 function Add-DatabaseUserAndRoles {
