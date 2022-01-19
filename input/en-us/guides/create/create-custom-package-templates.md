@@ -24,7 +24,7 @@ You would call `choco new pkgname -t organization` and choco will use the templa
 
 If you are using a version of Chocolatey CLI earlier than 0.12.0, you can replace the built-in template by copying the template to a folder called `default`. The `choco new` command will then use that by default.
 
-Chocolatey CLI version 0.12.0 or later introduced the [`choco template` command](https://docs.chocolatey.org/en-us/create/commands/template). You can use it to list the installed templates and [set the `defaultTemplateName`](xref:configuration#general) to set the template to be used by default when running the `choco new` command. You can also still copy the template files that worked with previous versions.
+Chocolatey CLI version 0.12.0 or later introduced the [`choco template` command](xref:choco-command-template). You can use it to list the installed templates and [set the `defaultTemplateName`](xref:configuration#general) to set the template to be used by default when running the `choco new` command. You can also still copy the template files that worked with previous versions.
 
 ### What values can I template?
 
