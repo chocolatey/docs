@@ -12,7 +12,7 @@ As of [choco 0.9.9.9](https://github.com/chocolatey/choco/issues/76), you can cr
 
 A template is used for creating packages. Chocolatey (choco) has a built-in template that it uses when generating a new package from the command [`choco new`](xref:choco-command-new).
 
-### Where Do Templates Go?
+### Where do Templates go?
 
 If you drop a template into `$env:ChocolateyInstall\templates` folder, you can use `-t name_of_template` to generate a choco template based on that. So for:
 
@@ -22,7 +22,9 @@ You would call `choco new pkgname -t organization` and choco will use the templa
 
 ### Can I replace the built-in template?
 
-To replace the built-in template, you should put a folder in the template with the name of "default". Then choco will use that instead of the built-in template with no need to specify a template name.
+If you are using a version of Chocolatey CLI earlier than 0.12.0, you can replace the built-in template by copying the template to a folder called `default`. The `choco new` command will then use that by default.
+
+Chocolatey CLI version 0.12.0 or later introduced the [`choco template` command](xref:choco-command-template). You can use it to list the installed templates and [set the `defaultTemplateName`](xref:configuration#general) to set the template to be used by default when running the `choco new` command. You can also still copy the template files that worked with previous versions.
 
 ### What values can I template?
 
@@ -45,7 +47,7 @@ Then you surround those templated values with `[[]]` to make them templated for 
 
 > :memo: **NOTE** You can set and pass arbitrary values through as well. This is shown in the example with `CustomValue`.
 
-## Example
+## Template Example
 
 This is a template for embedding an MSI into a package. This removes almost everything that is unnecessary for embedding software into packages. And because the autoUninstaller handles MSIs without an issue, we don't need a chocolateyUninstall.ps1.
 
@@ -103,24 +105,20 @@ $packageArgs = @{
 Install-ChocolateyInstallPackage @packageArgs
 ~~~
 
-Once installed, call this with `choco new test -t mytemplatename CustomValue=Yes`
+Once installed, call this with `choco new test -t <TEMPLATE NAME> CustomValue=Yes`
 
-### Manage as Templates as Packages
+### Manage Templates as packages
 
-If you have Chocolatey v0.9.10+, then you can manage templates as packages themselves, allowing you to upgrade a template when a new version is available. When it comes to packaging templates, Chocolatey takes a conventional approach. You must create a package with the suffix ".template" and have a templates folder.
+If you have Chocolatey v0.9.10+, you can manage templates as packages allowing you to upgrade a template when a new version is available. When it comes to packaging templates, Chocolatey takes a conventional approach. You must create a package with the suffix ".template" and have a templates folder.
 
-To manage a template as a package, create a new package with the name "templatename.template". The name of the package minus the ".template" will be the name of the template.
+To manage a template as a package, create a new package with the name "<TEMPLATE NAME>.template". The name of the package minus the ".template" will be the name of the template.
 
-Then create a templates folder. This is where the template goes. the only thing to remember is that the nuspec file created here must end in ".template" as a Chocolatey package allows only one nuspec file.
+Then create a templates folder next to the `<TEMPLATE NAME>.template.nuspec`. This folder is where the template goes. The only thing to remember is that the nuspec file created here must end in ".template"  (e.g. `<TEMPLATE NAME>.nuspec.template`) as a Chocolatey package allows only one nuspec file.
 
-Here's an example: https://community.chocolatey.org/packages/zip.template. The source is at https://github.com/ferventcoder/chocolatey-packages/tree/master/manual/zip.template
+For examples of template packages see the [templates available on the Chocolatey Community Repository](https://community.chocolatey.org/packages?q=id%3A.template) and the [repository for community maintained templates](https://github.com/chocolatey-community/chocolatey-templates).
 
 Yes, it is really that easy. Enjoy!
 
 ### Extending Templates
 
 Walmart has a really good post on extending package templates. You can read that at https://chocolatey.org/blog/extending-chocolatey-packaging-at-walmart
-
-### Are There Planned Enhancements?
-
-* List Template names - https://github.com/chocolatey/choco/issues/449
