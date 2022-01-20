@@ -139,8 +139,8 @@ If the option you've chosen is not listed, take a look at [known hosting options
 * Windows is not required - there are at least two pure Java versions (see [Non-Windows Hosting](#non-windows-hosting)).
 * Push over HTTP / HTTPS/TLS.
 * Authentication / Authorization:
-   * API key for pushing packages.
-   * Basic Authentication with IIS.
+  * API key for pushing packages.
+  * Basic Authentication with IIS.
 * No direct access to packages so security can be locked down to just modify through push.
 * Package store is file system.
 * Can manage PowerShell gallery type packages.
@@ -175,11 +175,10 @@ Setting up NuGet.Server is very much a hands on approach for a packaging server 
 Many google searches will throw out good ways to set up your own feed (hint: search for "host your own NuGet server feed")
 Some notable references:
 
- * Nuget Docs [Host Your Own Remote Feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds)
- * itToby - [Setup Your Own Chocolatey/NuGet Repository](http://blog.ittoby.com/2014/07/setup-your-own-chocoloateynuget.html)
- * Rich Hopkins - [Bake your own Chocolatey NuGet repository](https://souladin.wordpress.com/2014/12/05/bake-your-own-chocolatey-nuget-repository/)
- * Brandon - [Host NuGet Server in Azure](http://netitude.bc3tech.net/2015/01/07/create-your-own-hosted-nuget-server-in-azure/)
-
+* Nuget Docs [Host Your Own Remote Feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds)
+* itToby - [Setup Your Own Chocolatey/NuGet Repository](http://blog.ittoby.com/2014/07/setup-your-own-chocoloateynuget.html)
+* Rich Hopkins - [Bake your own Chocolatey NuGet repository](https://souladin.wordpress.com/2014/12/05/bake-your-own-chocolatey-nuget-repository/)
+* Brandon - [Host NuGet Server in Azure](http://netitude.bc3tech.net/2015/01/07/create-your-own-hosted-nuget-server-in-azure/)
 
 ## Package Gallery
 
@@ -219,7 +218,7 @@ At this time we don't have setup instructions and are not keen to answer questio
 
 These are simple servers that have more advanced options and authentication scenarios, plus multiple repository types. This section accounts for the following types.
 
-#### Commercial Options
+### Commercial Options
 
 * [Artifactory Pro](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
 * [Cloudsmith](https://cloudsmith.com/nuget-feed/) ([Chocolatey Documentation](https://help.cloudsmith.io/docs/chocolatey-repository), [NuGet Documentation](https://help.cloudsmith.io/docs/nuget-feed))
@@ -239,13 +238,13 @@ If the option you've chosen is not listed, take a look at [known hosting options
 * API key for pushing packages.
 * No direct access to packages so security can be locked down to just modify through push or upload.
 * Authentication / Authorization:
-   * Multiple api keys.
-   * Basic Authentication through IIS.
-   * RBAC (role-based access control) available in some options.
-   * LDAP authentication in some options (although Nuget/Chocolatey may not support this for package operations).
+  * Multiple api keys.
+  * Basic Authentication through IIS.
+  * RBAC (role-based access control) available in some options.
+  * LDAP authentication in some options (although Nuget/Chocolatey may not support this for package operations).
 * Package stores can be file system, database, Azure blobs, and AWS S3 depending on the product.
 * Website interface.
-   * Uploading packages can also be done through website.
+  * Uploading packages can also be done through website.
 * Multiple repositories in an instance.
 * Multiple repository types (not limited to just NuGet/Chocolatey types).
 * HA (High Availability) available in some options.
