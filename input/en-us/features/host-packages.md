@@ -371,7 +371,3 @@ If you don't want to host on Windows you have only the following options (from l
 * [Cloudsmith](https://cloudsmith.com) - see [Cloudsmith NuGet Repositories](https://help.cloudsmith.io/docs/nuget-feed)
 * [Artifactory Pro](https://www.jfrog.com/artifactory/) - see [Artifactory NuGet Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
 * [Sonatype Nexus](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html)
-
-> :memo: **NOTE** NuGet.Java.Server, TeamCity and JNuGet are about the same in terms of sophistication (they are ordered alphabetically).
-
-> :memo: **NOTE** Artifactory Pro and Nexus are about the same in terms of sophistication (they are also ordered alphabetically).

@@ -223,4 +223,4 @@ Turn on customErrors under system.web `<customErrors mode="Off" />` see this gui
 
 Then browse to the site to see if you can gather any more information.
 
-If so, and you are a commercial edition customer, please open a support ticket. If you are using open source Chocolatey, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.
+If so, and you are a commercial edition customer or open source Chocolatey user, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.
