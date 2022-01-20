@@ -29,7 +29,6 @@ Some of these options also work from a non-Windows hosting perspective. See [Non
 
 * File Share\UNC share (below)
 * SCCM Distribution Points (when used as a file share)
-* [Chocolatey.Server](xref:set-up-chocolatey-server) (supported by Chocolatey Software with your Chocolatey for Business subscription)
 * Sonatype Nexus - [Nexus2](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html) / [Nexus3](https://books.sonatype.com/nexus-book/3.0/reference/nuget.html#nuget-hosted)- Sonatype Nexus has a built-in simple server
 * [ProGet](http://inedo.com/proget/overview) - ProGet gives you a ready to go On-Premise option. Enterprise has replication
 * [Artifactory Pro](https://www.jfrog.com/artifactory/) - see [Artifactory NuGet Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
@@ -120,7 +119,6 @@ There is where the bulk of NuGet OData compatible servers fall (NuGet.Server, Ch
 
 ### Known Simple Server Options
 
-* [Chocolatey.Server](xref:set-up-chocolatey-server) (recommended)
 * NuGet.Server
 * [TeamCity](https://www.jetbrains.com/teamcity/) has built-in Simple Server
 * [Visual Studio Team Services (NuGet v2 endpoints)](https://docs.microsoft.com/en-us/vsts/package/overview) - [Setup](https://docs.microsoft.com/en-us/vsts/package/get-started-nuget) (Remove the part of the url that is /v3/index.json and use /v2 instead) - you may also need to [setup a personal access token](https://docs.microsoft.com/en-us/vsts/accounts/use-personal-access-tokens-to-authenticate).
