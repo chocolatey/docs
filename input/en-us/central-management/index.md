@@ -23,15 +23,15 @@ This provides an overview on Chocolatey Central Management (CCM). It provides bo
 
 The following are all of the Chocolatey components required for Central Management to work.
 
-* Chocolatey (`chocolatey` package) v0.10.12+
+* Chocolatey (`chocolatey` package)
 * Chocolatey for Business (C4B) Edition.
-* Chocolatey Licensed Extension (`chocolatey.extension` package) v2.0.0+
-* Chocolatey Agent (`chocolatey-agent` package) v0.9.0+
-* CCM Database (`chocolatey-management-database` package) v0.1.0+
+* Chocolatey Licensed Extension (`chocolatey.extension` package)
+* Chocolatey Agent (`chocolatey-agent` package)
+* CCM Database (`chocolatey-management-database` package)
   * This deploys the CCM database schema to a specified SQL Server instance
-* CCM Service (`chocolatey-management-service` package) v0.1.0+
+* CCM Service (`chocolatey-management-service` package)
   * This installs the CCM Service, which the Chocolatey Agent will communicate with.
-* CCM Website (`chocolatey-management-web` package) v0.1.0+
+* CCM Website (`chocolatey-management-web` package)
   * This is the CCM front end website that is the main user interface of the application
 
 ### CCM Component Compatibility Matrix
@@ -68,7 +68,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ## Stay Up To Date
 
-* [Release Notes Central Management](xref:ccm-release-notes)
+* [Central Management Release Notes](xref:ccm-release-notes)
 * [Release Announcements Only Mailing List](https://groups.google.com/group/chocolatey-announce)
 
 ## Links
@@ -95,26 +95,22 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ![CCM Overview](/assets/images/features/ccm/ccm_overview.jpg)
 
+### Central Management API
+
+* [CCM API](xref:ccm-api)
+
+### ChocoCCM Powershell Module
+
+* [ChocoCCM Module](xref:chococcm)
+
 ## Related Articles
 
-* [Quick Deployment Environment (QDE)](xref:qde)
+* [C4B Quick Start Guide(QSG)](xref:c4b-quick-start-guide)
+* [C4B Azure Enviornment](xref:qdeazure)
 
 ## Roadmap
 
-Chocolatey Central Management will allow:
-
-* ~~Centralized Software Management for your entire organization.~~ Completed June 2020.
-* ~~Centralized reporting of software.~~ Completed May 2019
-* ~~Know immediately what software is out of date and on what machines.~~ Completed May 2019
-* ~~Know within seconds the entire estate of software and what versions are installed.~~ Completed May 2019
-  * ~~Including zips and archives* that do not show up in Programs and Features~~ Completed May 2019
-  * ~~Including internal software* that does not show up in Programs and Features~~ Completed May 2019
-* Adhoc reporting for a particular machine or set of machines
-* ~~Run arbitrary Chocolatey commands against one or more machines~~ Completed June 2020.
-* ~~See how many machines you are actively managing in your organization~~ Completed May 2019
-* More...
-
-\* - When deployed through Chocolatey.
+* [CCM Development Roadmap](xref:roadmap#chocolatey-central-management)
 
 ## FAQs
 
@@ -132,7 +128,7 @@ CCM will only be available in Chocolatey for Business (C4B).
 
 ### What's the minimum version of the Chocolatey packages I need to use CCM?
 
-See [CCM Components](#ccm-components).
+See [CCM Component Compatibility Matrix](#ccm-component-compatibility-matrix).
 
 ### Where can I find all the log files for Chocolatey Central Management
 
@@ -144,7 +140,7 @@ Chocolatey Central Management is made up of a number of components, so there wil
 
 ### Where can I find the changelog or release notes for Chocolatey Central Management?
 
-Please see [Release Notes Central Management](xref:ccm-release-notes).
+Please see [Central Management Release Notes](xref:ccm-release-notes).
 
 ### How do I get support?
 
@@ -152,11 +148,9 @@ Please run `choco support` from a licensed edition and follow the instructions.
 
 ### How do I set up Chocolatey Central Management?
 
-You can start from a pre-configured environment known as [Quick Deployment Environment (QDE)](xref:qde), or see [Setup / Installation](#setup-installation).
-
-### What is the CCM compatibility matrix?
-
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
+* You can standup CCM from one powershell script as part of our [C4B Quick Start Guide](xref:c4b-quick-start-guide). Allowing you setup an entire Chococlatey enviornment in just 6 simple steps.
+* CCM is stood up as part of our [C4B Azure Enviornment](xref:qdeazure)
+* You can also setup CCM on its own following the [CCM Setup Docs](xref:ccm-setup)
 
 ### If I update the license file, do I need to restart my services and web?
 
