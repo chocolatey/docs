@@ -12,6 +12,12 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+## [0.12.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.1) (January 25th, 2022)
+### BUG FIXES
+ * Fix - Installation of Chocolatey fails when running under "AllSigned" execution policy - see [#2539](https://github.com/chocolatey/choco/issues/2539)
+ * Fix - Output from "choco template -h" references wrong subcommand in usage statement - see [#2546](https://github.com/chocolatey/choco/issues/2546)
+
+
 ## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18th, 2022)
 
 > :warning: **WARNING**
