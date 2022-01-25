@@ -12,7 +12,7 @@ RedirectFrom:
 
 # Template Command (choco template)
 
-List information regarding installed templates.
+List information installed templates.
 
 Both manually installed templates and templates installed via
  .template packages are displayed.

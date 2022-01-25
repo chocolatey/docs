@@ -22,7 +22,7 @@ Both manually installed templates and templates installed via
 > :memo: **NOTE** Available with 0.12.0+.
 ## Usage
 
-    choco pin [list]|info [<options/switches>]
+    choco template [list]|info [<options/switches>]
 ## Examples
 
     choco template
