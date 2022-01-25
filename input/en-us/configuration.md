@@ -8,6 +8,11 @@ RedirectFrom: docs/chocolatey-configuration
 
 There are settings and features that can customize the way that Chocolatey works for you. The following is a list of config settings and features and their default values.
 
+> :information_source: **INFORMATION**
+>
+> When a Chocolatey configuration or feature is removed (for example, it becomes deprecated and no longer required), it will not be removed from the chocolatey.config file automatically when you upgrade Chocolatey.
+> This is in order to preserve backwards compatibility, should the user decide to go back to a previous version of Chocolatey.
+
 ## Config Settings
 
 Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" --value="'<value>'"` and set back to default with `choco config unset --name="'<nameFromBelow>'"`. For more information see [`choco config` command](xref:choco-command-config) or run `choco config -?`.
