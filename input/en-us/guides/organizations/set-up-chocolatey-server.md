@@ -62,35 +62,35 @@ If you are using the Puppet module [chocolatey/chocolatey_server](https://forge.
 The module works with Windows Server 2008/2012.
 For a simple `include chocolatey_server` it does the following automatically:
 
- * Ensures IIS is installed
- * Ensures ASP.NET is installed
- * Ensures the chocolatey.server package is installed
- * Ensures an app pool for the chocolatey.server site
- * Ensures the IIS website is setup for chocolatey.server
- * Ensures permissions for the site are set correctly.
+* Ensures IIS is installed
+* Ensures ASP.NET is installed
+* Ensures the chocolatey.server package is installed
+* Ensures an app pool for the chocolatey.server site
+* Ensures the IIS website is setup for chocolatey.server
+* Ensures permissions for the site are set correctly.
 
 ### Setup Manually
 
- * If your Windows updates are not up to date, there are two required Windows updates you are going to need (heads up they take awhile)
-    * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a **very** long time to install, just be patient
-    * Restart your machine.
-    * Install KB2919442 - `choco install KB2919442 -y` (IIRC this is the one that takes forever...) -
-    * Reboot that machine again
- * You need at least .NET Framework 4.6. If you don't have that or newer, then run `choco install dotnet4.6.1 -y`
-    * Reboot one more time, thanks Windows!!
- * Install or upgrade the package - `choco upgrade chocolatey.server -y`
- * Ensure IIS is installed. You can try `choco install IIS-WebServer --source windowsfeatures`
- * Ensure that ASP.NET is installed. Try `choco install IIS-ASPNET45 --source windowsfeatures` (Windows Server 2012). Use `IIS-ASPNET` for Windows Server 2008, possibly `IIS-ASPNET46` for Windows Server 2016.
- * Disable or remove the Default website
- * Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is `v4.0` (or some version of 4). Ensure it is "Integrated" and not "Classic".
- * Set up an IIS website pointed to the install location and set it to use the app pool.
- * Go to explorer and right click on `c:\tools\chocolatey.server` and add the following permissions:
-   * `IIS_IUSRS` - Read
-   * `IUSR` - Read
-   * `IIS APPPOOL\<app pool name>` - Read
- * Right click on the `App_Data` subfolder and add the following permissions:
-   * `IIS_IUSRS` - Modify
-   * `IIS APPPOOL\<app pool name>` - Modify
+* If your Windows updates are not up to date, there are two required Windows updates you are going to need (heads up they take awhile)
+  * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a **very** long time to install, just be patient
+  * Restart your machine.
+  * Install KB2919442 - `choco install KB2919442 -y` (IIRC this is the one that takes forever...) -
+  * Reboot that machine again
+* You need at least .NET Framework 4.6. If you don't have that or newer, then run `choco install dotnet4.6.1 -y`
+  * Reboot one more time, thanks Windows!!
+* Install or upgrade the package - `choco upgrade chocolatey.server -y`
+* Ensure IIS is installed. You can try `choco install IIS-WebServer --source windowsfeatures`
+* Ensure that ASP.NET is installed. Try `choco install IIS-ASPNET45 --source windowsfeatures` (Windows Server 2012). Use `IIS-ASPNET` for Windows Server 2008, possibly `IIS-ASPNET46` for Windows Server 2016.
+* Disable or remove the Default website
+* Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is `v4.0` (or some version of 4). Ensure it is "Integrated" and not "Classic".
+* Set up an IIS website pointed to the install location and set it to use the app pool.
+* Go to explorer and right click on `c:\tools\chocolatey.server` and add the following permissions:
+  * `IIS_IUSRS` - Read
+  * `IUSR` - Read
+  * `IIS APPPOOL\<app pool name>` - Read
+* Right click on the `App_Data` subfolder and add the following permissions:
+  * `IIS_IUSRS` - Modify
+  * `IIS APPPOOL\<app pool name>` - Modify
 
 ### Setup with PowerShell Script
 
@@ -189,11 +189,9 @@ To configure for performance, you will want to do the following:
   * Under the Site's Advanced Settings:
     * Preload Enabled -> True
 
-
 #### Future
 
 We are looking to add support for the package source to automatically handle this aspect - http://blog.nuget.org/20150922/Accelerate-Package-Source.html
-
 
 ### Configure Simple Server alongside WSUS admin-site
 
@@ -221,8 +219,8 @@ This can mean a couple of things:
 
 ### Other error
 
-Turn on customErrors under system.web - <customErrors mode="Off" /> - see this guide to set it - https://stackify.com/web-config-customerrors-asp-net/
+Turn on customErrors under system.web `<customErrors mode="Off" />` see this guide to set it - https://stackify.com/web-config-customerrors-asp-net/
 
 Then browse to the site to see if you can gather any more information.
 
-If so, and you are a commercial edition customer, please open a support ticket. If you are using open source Chocolatey, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.
+If so, and you are a commercial edition customer or open source Chocolatey user, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.
