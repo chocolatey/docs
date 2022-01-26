@@ -1287,7 +1287,7 @@ Probably a lot of bug fixes that may not make it here, but here are the ones we 
  * Shims now have gui (`--shimgen-gui`) and exit (`--shimgen-exit`) switches - see [ShimGen #13](https://github.com/chocolatey/shimgen/issues/13) and [ShimGen #12](https://github.com/chocolatey/shimgen/issues/12)
  * Dat help menu tho. I mean srsly guise - see [Chocolatey #641](https://github.com/chocolatey/chocolatey/issues/641)
 
-##[0.9.8.33](https://github.com/chocolatey/chocolatey/issues?q=label%3Av0.9.8.33+is%3Aclosed) (Feb 11, 2015)
+## [0.9.8.33](https://github.com/chocolatey/chocolatey/issues?q=label%3Av0.9.8.33+is%3Aclosed) (Feb 11, 2015)
 
 FEATURES:
 
