@@ -42,10 +42,7 @@
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
         <script>
-            if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
-                const theme = localStorage.getItem('theme'), html = document.getElementsByTagName("html")[0];
-                if(theme){if(theme == 'dark') {html.setAttribute("data-user-color-scheme", "dark");}else{html.setAttribute("data-user-color-scheme", "light");}}
-            }
+            if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){const e=localStorage.getItem("theme"),t=document.getElementsByTagName("html")[0];e?"dark"==e?(t.classList.add("dark-theme"),t.setAttribute("data-user-color-scheme","dark")):(t.classList.add("light-theme"),t.setAttribute("data-user-color-scheme","light")):window.matchMedia("(prefers-color-scheme: dark)").matches?t.classList.add("dark-theme"):t.classList.add("light-theme")}
         </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2743882-12"></script>
         <script>
@@ -63,7 +60,9 @@
         <header>
             @Html.Partial("global-partials/_TopAlertBanner")
             <div class="d-none d-sm-flex">
-                @Html.Partial("global-partials/_globalnavigation")
+                <div class="global-nav w-100 pe-md-3">
+                    @Html.Partial("global-partials/_globalnavigation")
+                </div>
             </div>
             <nav id="topNav" class="navbar navbar-expand">
                 <a class="navbar-brand" href="@Context.GetLink("/")">
@@ -74,18 +73,9 @@
                     <li class="nav-item me-2 me-md-3">
                         <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
                     </li>
-                    <li class="nav-item me-2 me-md-3">
+                    <li class="nav-item me-2 me-md-3 d-md-none">
                         <label class="mb-0" for="themeToggle">
-                        <input id="themeToggle" class="toggle-checkbox" type="checkbox" aria-label="Toggle theme settings" />
-                            <div class="toggle-slot">
-                                <div class="sun-icon-wrapper">
-                                    <div class="sun-icon fas fa-sun"></div>
-                                </div>
-                                <div class="toggle-button"></div>
-                                <div class="moon-icon-wrapper">
-                                    <div class="moon-icon fas fa-moon"></div>
-                                </div>
-                            </div>
+                            @Html.Partial("global-partials/_ThemeToggle")
                         </label>
                     </li>
                     <li class="nav-item d-md-none me-2">
@@ -125,7 +115,9 @@
                                 <nav class="navbar navbar-expand-md p-0">
                                     <div id="leftSidebar" class="collapse navbar-collapse">
                                         <div class="d-sm-none">
-                                            @Html.Partial("global-partials/_globalnavigation")
+                                            <div class="global-nav">
+                                                @Html.Partial("global-partials/_globalnavigation")
+                                            </div>
                                         </div>
                                         <ul class="navbar-nav">
                                             <li class="nav-item">

@@ -60,6 +60,8 @@ function copyTheme() {
     var copyPartials = src([paths.theme + 'partials/*.*', '!' + paths.theme + 'partials/svgstyles.txt', '!' + paths.theme + 'partials/AlertText.txt'])
         .pipe(injectstring.prepend('@* ' + editFilePartial + ' *@\n'))
         .pipe(injectstring.replace(/topNoticeText = \"\"/, 'topNoticeText = "' + fs.readFileSync(paths.theme + 'partials/AlertText.txt', 'utf8') + '"'))
+        .pipe(injectstring.replace(/<input id=\"themeToggle\" \/>/, fs.readFileSync(paths.theme + 'partials/ThemeToggle.txt')))
+        .pipe(injectstring.replace(/﻿/, ''))
         .pipe(rename({ prefix: "_", extname: '.cshtml' }))
         .pipe(dest(paths.partials));
 
