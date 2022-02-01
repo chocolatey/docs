@@ -76,12 +76,6 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 * `genericVirusScannerValidExitCodes` = **'0'** - The exit codes for the generic virus scanner when a file is not flagged. Separate with comma, defaults to 0. Used when virusScannerType is Generic. Available in 0.9.10+. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
 * `genericVirusScannerTimeoutInSeconds` = **'120'** - Generic Virus Scanner Timeout In Seconds - The number of seconds to allow the virus scanner to run before timing out. Used when virusScannerType is Generic. Defaults to '120'. Licensed editions v2.1.0+ only. See https://docs.chocolatey.org/en-us/features/virus-check
 
-### Timeouts
-
-* `centralManagementReceiveTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to receive information from Chocolatey Central Management.  Available in business editions v2.0.0+ only.
-* `centralManagementSendTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to send information to Chocolatey Central Management.  Available in business editions v2.0.0+ only.
-* `genericVirusScannerTimeoutInSeconds` = **'120'** - Generic Virus Scanner Timeout In Seconds - The number of seconds to allow the virus scanner to run before timing out. Used when virusScannerType is Generic. Defaults to '120'. Licensed editions v2.1.0+ only. See https://docs.chocolatey.org/en-us/features/virus-check
-
 ## Features
 
 Features are adjusted using `choco feature enable|disable --name="'<nameFromBelow>'"`. For more information see [`choco feature` command](xref:choco-command-feature) or run `choco feature -?`.
@@ -110,10 +104,8 @@ A checkbox means this feature is turned on by default.
 
 ### Flow Control
 
-* [ ] `failOnInvalidOrMissingLicense` - Fail On Invalid Or Missing License - allows knowing when a license is expired or not applied to a machine. Available in 0.9.10+.
 * [x] `ignoreInvalidOptionsSwitches` - Ignore Invalid Options/Switches - If a switch or option is passed that is not recognized, should choco fail? Available in 0.9.10+.
 * [ ] `failOnStandardError` - Fail if install provider writes to stderr. Not recommended for use. Available in 0.9.10+.
-* [ ] `failOnAutoUninstaller` - Fail if automatic uninstaller fails.
 * [ ] `stopOnFirstPackageFailure` - Stop On First Package Failure - stop running install, upgrade or uninstall on first package failure instead of continuing with others. As this will affect upgrade all, it is normally recommended to leave this off. Available in 0.10.4+.
 * [ ] `skipPackageUpgradesWhenNotInstalled` - Skip Packages Not Installed During Upgrade - if a package is not installed, do not install it during the upgrade process. Available in 0.10.12+.
 * [ ] `ignoreUnfoundPackagesOnUpgradeOutdated` - Ignore Unfound Packages On Upgrade Outdated - When checking outdated or upgrades, if a package is not found against sources specified, don't report the package at all. Available in 0.10.9+.
@@ -146,7 +138,6 @@ A checkbox means this feature is turned on by default.
 * [ ] `adminOnlyExecutionForAllChocolateyCommands` - Limit to Administrator Execution Only for All Chocolatey Commands - If enabled, only administrators will be able to run 'choco' commands. Business editions only (version 1.12.2+).
 * [ ] `adminOnlyExecutionForNewCommand` - Limit to Administrator Execution Only for New Command - If enabled, only administrators will be able to run 'choco new'. Business editions only (version 1.10.0+).
 * [ ] `adminOnlyExecutionForDownloadCommand` - Limit to Administrator Execution Only for Download Command - If enabled, only administrators will be able to run 'choco download'. Business editions only (version 1.10.0+).
-* [ ] `useBackgroundServiceWithNonAdministratorsOnly` - Use Background Service With Non-Administrators Only - When using Self-Service, only execute background mode for non-administrators. Business editions only (version 1.12.0+).
 * [x] `useLocalSystemForServiceInstalls` - Use LocalSystem For Service Installs - When installing services that don't indicate a user/password, use the LocalSystem for those installations. When turned off, Chocolatey will manage a local admin with a password unique to the machine but will never know it. Business editions only (version 1.12.0+).
 
 ### Chocolatey Central Management
