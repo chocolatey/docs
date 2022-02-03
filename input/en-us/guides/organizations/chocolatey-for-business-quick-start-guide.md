@@ -76,7 +76,9 @@ Below are the minimum requirements for setting up your C4B server via this guide
     Set-ExecutionPolicy Bypass -Scope Process -Force
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::tls12
     $QuickStart = 'https://raw.githubusercontent.com/chocolatey/choco-quickstart-scripts/main/Start-C4bSetup.ps1'
-    Invoke-Expression -Command ((New-Object System.Net.WebClient).DownloadString($QuickStart))
+    $Script = [System.Net.Webclient]::new().DownloadString($QuickStart)
+    $sb = [ScriptBlock]::Create($Script)
+    & $sb
     ```
 
     > <details>
