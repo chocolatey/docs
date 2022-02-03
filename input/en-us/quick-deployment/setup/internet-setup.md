@@ -323,7 +323,7 @@ These are both configuration items that can be set using the `choco config` comm
 
 ```powershell
 choco config set centralManagementClientCommunicationSaltAdditivePassword 'YourSuperSecureSalt1'
-choco config set centralManagementServerCommunicationSaltAdditivePassword 'YourSuperSecureSalt2'
+choco config set centralManagementServiceCommunicationSaltAdditivePassword 'YourSuperSecureSalt2'
 ```
 
 Further details on configuring CCM, and all available settings, can be found in the [Central Management Client Setup](xref:ccm-client#config-settings) documentation.
