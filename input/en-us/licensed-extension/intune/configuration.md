@@ -15,12 +15,12 @@ This document contains information about the configuration values available thro
 
 Several new configuration values can be set/updated for the new Intune functionality. These configuration values are for pushing packages to your Intune tenant, and most do not need to be changed.
 
-- `intuneTenantGUID` - The tenant to use by default when no `--source` argument is used on the `push` command. The GUID is available on the [Azure AD Application page](https://aad.portal.azure.com/).
-- `intuneAuthenticationUrl` - The URL used when authenticating to the Microsoft Intune API. _Only change this if you know what you are doing_.
-- `intuneApiUrl` - The URL used when handling requests to the Intune API, for instance, when checking for available packages on Intune.  _Only change this if you know what you are doing_.
-- `intuneRetryIntervalInSeconds` - The amount of time, in seconds, that Chocolatey should wait before retrying any calls to the Intune API (_Defaults to 5 seconds_).
-- `intuneUploadTimeoutInSeconds` - The amount of time, in seconds, that Chocolatey should wait for completion while uploading files to Intune (_Defaults to 600 seconds_).
-- `intuneUploadChunkSizeInMegabytes` - The size of the file, in megabytes, below which Chocolatey will split the upload into multiple chunks. Above this size, Chocolatey will make a best effort to break the upload into logical chunk sizes (_Defaults to 10 megabytes_).
+* `intuneTenantGUID` = **' '** - The tenant to use by default when no `--source` argument is used on the `push` command. The GUID is available on the [Azure AD Application page](https://aad.portal.azure.com/). Available in business editions v3.0.0+.
+* `intuneAuthenticationUrl` = **'https://login.microsoftonline.com'** - The URL used when authenticating to the Microsoft Intune API. _Only change this if you know what you are doing_. Available in business editions v3.0.0+.
+* `intuneApiUrl` = **'https://graph.microsoft.com'** - The URL used when handling requests to the Intune API, for instance, when checking for available packages on Intune.  _Only change this if you know what you are doing_. Available in business editions v3.0.0+.
+* `intuneRetryIntervalInSeconds` = **'5'** - The amount of time, in seconds, that Chocolatey should wait before retrying any calls to the Intune API. Available in business editions v3.0.0+.
+* `intuneUploadTimeoutInSeconds` = **'600'** - The amount of time, in seconds, that Chocolatey should wait for completion while uploading files to Intune. Available in business editions v3.0.0+.
+* `intuneUploadChunkSizeInMegabytes` = **'10'** - The size of the file, in megabytes, below which Chocolatey will split the upload into multiple chunks. Above this size, Chocolatey will make a best effort to break the upload into logical chunk sizes. Available in business editions v3.0.0+.
 
 ## API Keys
 
