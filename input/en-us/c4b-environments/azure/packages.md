@@ -1,15 +1,16 @@
 ---
 Order: 26
-xref: qdeazurepackages
+xref: c4b-azure-packages
 Title: Package Selection
-Description: A summary of the package offerings for the Chocolatey for Business QDE Azure Environment
+Description: A summary of the package offerings for the Chocolatey for Business Azure Environment
+RedirectFrom: en-us/quick-deployment/azure/packages
 ---
 
 ## Summary
 
-When deploying the Chocolatey for Business QDE Azure Environment, you are prompted to select [packages to internalize](xref:qdeazure#internalize-packages).  
+When deploying the Chocolatey for Business Azure Environment, you are prompted to select [packages to internalize](xref:c4b-azure#internalize-packages).
 
-This page shows the packages we bundle as recommendations, and discusses how to source other packages to automatically publish to your new Chocolatey for Business QDE Azure Environment.
+This page shows the packages we bundle as recommendations, and discusses how to source other packages to automatically publish to your new Chocolatey for Business Azure Environment.
 
 ## Recommendations
 

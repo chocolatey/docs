@@ -1,15 +1,16 @@
 ---
 Order: 28
-xref: qdeazurerdp
+xref: c4b-azure-rdp
 Title: RDP Access
-Description: A guide to accessing RDP in the Chocolatey for Business QDE Azure Environment
+Description: A guide to accessing RDP in the Chocolatey for Business Azure Environment
+RedirectFrom: en-us/quick-deployment/azure/rdp
 ---
 
 ## Summary
 
-After deploying a Chocolatey for Business QDE Azure Environment, you may wish to link the machine to an existing Active Directory domain or install monitoring software. This page will show you how to gain access to the primary VM within the environment via Remote Desktop Protocol (RDP).
+After deploying a Chocolatey for Business Azure Environment, you may wish to link the machine to an existing Active Directory domain or install monitoring software. This page will show you how to gain access to the primary VM within the environment via Remote Desktop Protocol (RDP).
 
-We will assume you know [how to retrieve passwords from your environment](xref:qdeazure#accessing-services). In order to connect, you need the VM username and password (stored in the deployed Azure Key Vault).
+We will assume you know [how to retrieve passwords from your environment](xref:c4b-azure#accessing-services). In order to connect, you need the VM username and password (stored in the deployed Azure Key Vault).
 
 ## Azure Portal
 
@@ -17,14 +18,14 @@ We need to add a publicly accessible IP address to the VM, and add a rule to the
 
 First we will add the IP address:
 
-1. In the [Azure Portal](https://portal.azure.com), navigate to the Resource Group containing your deployed Chocolatey for Business QDE Azure Environment.
+1. In the [Azure Portal](https://portal.azure.com), navigate to the Resource Group containing your deployed Chocolatey for Business Azure Environment.
 1. Select the VM's network interface (which should be called `choco-vm-nic` by default), and open the `IP configurations` panel.
 
-    ![Open IP Configurations](/assets/images/quickdeployazure/Rdp-IpConfiguration.png)
+    ![Open IP Configurations](/assets/images/c4b-azure/Rdp-IpConfiguration.png)
 
 1. Select the IP configuration (`ipconfig1` by default), and under `Public IP address settings` click `Associate`.
 
-    ![Create IP Address](/assets/images/quickdeployazure/Rdp-IpCreation.png)
+    ![Create IP Address](/assets/images/c4b-azure/Rdp-IpCreation.png)
 
 1. Click `Create new`, and create a basic IP address. For future examples, I have named this IP `choco-vm-ip`.
 
@@ -42,7 +43,7 @@ Now we will add a rule to the NSG. If you do not already know your current publi
 1. Navigate back to your Resource Group in the Azure Portal
 1. Select the `Network security group`, and open the `Inbound security rules` panel.
 
-    ![Create IP Address](/assets/images/quickdeployazure/Rdp-NsgRuleAddition.png)
+    ![Create IP Address](/assets/images/c4b-azure/Rdp-NsgRuleAddition.png)
 
 1. Click `Add` and fill in at least the following details:
 
@@ -54,11 +55,11 @@ Now we will add a rule to the NSG. If you do not already know your current publi
     | Name                | RDPAccess _(or similar)_         |
 1. Click `Add` at the bottom of the panel
 
-You should now be able to try [Connecting to the VM](xref:qdeazurerdp#connecting-to-the-vm)
+You should now be able to try [Connecting to the VM](xref:c4b-azure-rdp#connecting-to-the-vm)
 
 ## PowerShell
 
-For the sake of this section, we will assume that you have installed an up-to-date version of [Az modules](https://www.powershellgallery.com/packages/Az) and your session is authenticated with an account that has access to your Chocolatey for Business QDE Azure Environment. We also assume that you haven't made significant modifications to the deployed resources.
+For the sake of this section, we will assume that you have installed an up-to-date version of [Az modules](https://www.powershellgallery.com/packages/Az) and your session is authenticated with an account that has access to your Chocolatey for Business Azure Environment. We also assume that you haven't made significant modifications to the deployed resources.
 
 To begin, we need to create a Public IP address for the VM.
 
@@ -131,4 +132,4 @@ Write-Host "The IP Address to connect to is $($IPAddress)"
 > :memo: **NOTE**
 > It can sometimes take a few minutes for the Network Security Group rules to be updated.
 
-Finally, use the IP address that we found in the previous steps to [connect to the VM](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/connect-logon) using the IP address you procured in the previous steps, using [the credential from the Azure Key Vault](xref:qdeazure#accessing-services).
+Finally, use the IP address that we found in the previous steps to [connect to the VM](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/connect-logon) using the IP address you procured in the previous steps, using [the credential from the Azure Key Vault](xref:c4b-azure#accessing-services).

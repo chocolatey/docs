@@ -1,46 +1,45 @@
 ---
-Order: 25
-xref: qdeazure
-Title: Chocolatey for Business QDE Azure Environment
-Description: High level information about the Chocolatey for Business QDE Azure Environment
+Order: 20
+xref: c4b-azure
+Title: Azure Environment
+Description: High level information about the Chocolatey for Business Azure Environment
+RedirectFrom:
+  - en-us/quick-deployment/azure
+  - en-us/quick-deployment/azure/index.html
 ---
 
 ## Summary
 
-This is an overview of the Chocolatey for Business QDE Azure Environment.
+This is an overview of the Chocolatey for Business Azure Environment.
 
 It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
 > :memo: **NOTE**
 >
-> A Chocolatey for Business QDE Azure Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
-
-## QDE Components / Overview
-
-For an overview of QDE, please refer to the existing [QDE Documentation](xref:qde).
+> A Chocolatey for Business Azure Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
 
 ## Prerequisites
 
-Currently, to deploy the Chocolatey for Business QDE Azure Environment you will need:
+Currently, to deploy the Chocolatey for Business Azure Environment you will need:
 
 * A Chocolatey for Business License, or Trial License
 * An account with [Contributor](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor) access to an Azure subscription
 * The ability to create a CNAME DNS record for your chosen FQDN
 * A valid certificate for your chosen FQDN, in PFX format, with exportable private key
 
-For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed the Chocolatey for Business QDE Azure Environment to as we will use this with the PowerShell code snippets below.
+For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed the Chocolatey for Business Azure Environment to as we will use this with the PowerShell code snippets below.
 
-## Deploying the Chocolatey for Business QDE Azure Environment
+## Deploying the Chocolatey for Business Azure Environment
 
-The Chocolatey for Business QDE Azure Environment is available as a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde).
+The Chocolatey for Business Azure Environment is available as a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde).
 
-Find the [Chocolatey for Business QDE Azure Environment](https://portal.azure.com/#blade/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/chocolateysoftwareinc1605695330527.c4b_azure_qde) resource, and click `Create`. You will be taken to the `Create Chocolatey for Business QDE Azure Environment` page.
+Find the [Chocolatey for Business Azure Environment](https://portal.azure.com/#blade/Microsoft_Azure_Marketplace/GalleryItemDetailsBladeNopdl/id/chocolateysoftwareinc1605695330527.c4b_azure_qde) resource, and click `Create`. You will be taken to the `Create Chocolatey for Business Azure Environment` page.
 
 ### Basics
 
 Select the subscription, resource group, and region you intend to deploy to. As you need to deploy this to an empty resource group, you may need to create a new one by clicking the `Create new` button below the selector.
 
-![Resource Group Selector](/assets/images/quickdeployazure/BasicsView-ResourceGroupSelector.png)
+![Resource Group Selector](/assets/images/c4b-azure/BasicsView-ResourceGroupSelector.png)
 
 By default, all resources in the resource group are deployed with 'choco' prefixing the resource name. If you'd prefer to use something else for identification you can change it here.
 
@@ -48,30 +47,30 @@ By default, all resources in the resource group are deployed with 'choco' prefix
 >
 > Due to constraints in naming some resources, the prefix must be 8 characters or less and contain only alphanumeric characters.
 
-![Naming Prefix](/assets/images/quickdeployazure/BasicsView-InstanceDetails.png)
+![Naming Prefix](/assets/images/c4b-azure/BasicsView-InstanceDetails.png)
 
 For the environment to deploy successfully, you must have a valid Chocolatey for Business license. Select and upload your license here.
 
-![License Upload](/assets/images/quickdeployazure/BasicsView-LicenseUpload.png)
+![License Upload](/assets/images/c4b-azure/BasicsView-LicenseUpload.png)
 
 ### Domain Configuration
 
-In order to connect to your new Chocolatey for Business QDE Azure Environment, you will need to select a DNS name. Though you can connect to the Microsoft provided FQDN, there would be additional work involved in trusting the self-signed certificate used (i.e. adding the Public IP addresses' FQDN to a self-signed certificate, and ensuring this certificate was in the `Trusted Root Certification Authorities` store).
+In order to connect to your new Chocolatey for Business Azure Environment, you will need to select a DNS name. Though you can connect to the Microsoft provided FQDN, there would be additional work involved in trusting the self-signed certificate used (i.e. adding the Public IP addresses' FQDN to a self-signed certificate, and ensuring this certificate was in the `Trusted Root Certification Authorities` store).
 
 Fill your intended domain name in, select and upload your PFX certificate, and enter the password for the certificate.
 
-![Custom Domain Configuration](/assets/images/quickdeployazure/DomainView-CustomDomain.png)
+![Custom Domain Configuration](/assets/images/c4b-azure/DomainView-CustomDomain.png)
 
 > :memo: **NOTE**
 >
-> The PFX certificate must contain the exportable private key, and should be protected with a password.  
-> Suggestions for creating a PFX certificate can be found [here](xref:qdeazure#ssl-certificate).
+> The PFX certificate must contain the exportable private key, and should be protected with a password.
+> Suggestions for creating a PFX certificate can be found [here](xref:c4b-azure#ssl-certificate).
 
 ### Internalize Packages
 
 You can select packages to directly internalize from the [Chocolatey Community Repository](https://community.chocolatey.org/packages/).
 
-We offer bundles of recommended packages (see [recommendations](xref:qdeazurepackages#recommendations) for the exact content of each bundle).
+We offer bundles of recommended packages (see [recommendations](xref:c4b-azure-packages#recommendations) for the exact content of each bundle).
 
 You can then select any of the **Additional Packages**, which will be added to the bundle you choose.
 
@@ -79,7 +78,7 @@ Finally, you can specify _any other_ package from the Chocolatey Community Repos
 
 Please provide a list of Package IDs, separated with commas.
 
-![Package Internalization Screen](/assets/images/quickdeployazure/InternalizePackagesView.png)
+![Package Internalization Screen](/assets/images/c4b-azure/InternalizePackagesView.png)
 
 ### Review + create
 
@@ -101,7 +100,7 @@ You can get the FQDN using the [Azure Portal](https://portal.azure.com), or via 
 1. Select the resource with type `Public IP Address`
 1. Copy the `DNS name` from the `Essentials` panel at the top of the blade
 
-![Public IP Address](/assets/images/quickdeployazure/PublicIPAddress-EssentialsView.png)
+![Public IP Address](/assets/images/c4b-azure/PublicIPAddress-EssentialsView.png)
 
 **PowerShell:**
 
@@ -114,7 +113,7 @@ Get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName | Select-Object -Exp
 
 ### Creating a CNAME record
 
-You should now create a CNAME record for this FQDN. The exact method for this will vary depending on your domain registrar.  
+You should now create a CNAME record for this FQDN. The exact method for this will vary depending on your domain registrar.
 Please see the table below for links to help from some popular registrars:
 
 | Registrar  | Documentation |
@@ -131,7 +130,7 @@ If you need help with another registrar, we recommend searching for their docume
 
 > :warning: **WARNING**
 >
-> You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).  
+> You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).
 > You can log in to CCM using the credentials provided in the KeyVault (see [Accessing Services](#accessing-services), below).
 
 ## Accessing Services
@@ -155,22 +154,22 @@ You can access these passwords either via the Azure Portal, or with PowerShell.
 1. Under `Settings` on the left of the blade, select `Access Policies`
 1. Click `+ Add Access Policy`
 
-    ![Vault Access Policies](/assets/images/quickdeployazure/KeyVault-AccessPolicies.png)
+    ![Vault Access Policies](/assets/images/c4b-azure/KeyVault-AccessPolicies.png)
 
 1. Select, at a minimum, `Secret Permissions`: `Get` and `List` *(You can use a Template such as `Secret Management`)*
 
-    ![Secret Permissions](/assets/images/quickdeployazure/KeyVault-SecretPermissions.png)
+    ![Secret Permissions](/assets/images/c4b-azure/KeyVault-SecretPermissions.png)
 
 1. Under `Select Principal`, click `None Selected` and find your current user, and select it
 1. Click `Add`
 
-    ![Add Principal](/assets/images/quickdeployazure/KeyVault-AddPrincipal.png)
+    ![Add Principal](/assets/images/c4b-azure/KeyVault-AddPrincipal.png)
 
 1. Back on the `Access Policies` blade, hit `Save` and wait for the operation to complete
 
 You can now view and access the secrets in this KeyVault.
 
-![Secrets in Vault](/assets/images/quickdeployazure/KeyVault-Secrets.png)
+![Secrets in Vault](/assets/images/c4b-azure/KeyVault-Secrets.png)
 
 1. Under `Settings` on the left of the blade, select `Secrets`
 1. For each Password you want to retrieve (e.g. nexusPassword)
@@ -192,7 +191,7 @@ if ($KeyVault.AccessPolicies.Where{$_.DisplayName -like "*$CurrentUser*"}.Permis
     Set-AzKeyVaultAccessPolicy -VaultName $KeyVault.VaultName -UserPrincipalName $CurrentUser -PermissionsToSecrets @('get')
 }
 
-Write-Host "Chocolatey for Business QDE Azure Environment Passwords for '$($KeyVault.ResourceGroupName)':"
+Write-Host "Chocolatey for Business Azure Environment Passwords for '$($KeyVault.ResourceGroupName)':"
 @{
     CCM     = Get-AzKeyVaultSecret -VaultName $KeyVault.VaultName -Name ccmPassword -AsPlainText
     Nexus   = Get-AzKeyVaultSecret -VaultName $KeyVault.VaultName -Name nexusPassword -AsPlainText
@@ -221,7 +220,7 @@ You will need an SSL certificate for the domain you intend to use. This certific
 
 You can either provide a self-signed SSL certificate, or a purchased or acquired certificate from a Certificate Authority (CA).
 
-Though you can reference the previous QDE documentation on [SSL Certificates](xref:v2-internet-setup#ssl-certificate-scenarios), there are some differences as you need to have the certificate before deploying the QDE in Azure environment.
+Though you can reference the previous Quick Deployment Environment documentation on [SSL Certificates](xref:v2-internet-setup#ssl-certificate-scenarios), there are some differences as you need to have the certificate before deploying the Chocolatey for Business Azure Environment.
 
 #### Self-Signed SSL Certificates
 
@@ -233,20 +232,20 @@ You can quickly generate a self-signed certificate on any recent Windows compute
 1. Run code similar to the following, modifying the filepath if necessary:
 
 ```PowerShell
-$Domain   = Read-Host "Enter the FQDN you plan to use to access the Chocolatey for Business QDE Azure Environment sites"
+$Domain   = Read-Host "Enter the FQDN you plan to use to access the Chocolatey for Business Azure Environment sites"
 $Password = Read-Host "Enter a password to use for the PFX" -AsSecureString
 
 $Cert = New-SelfSignedCertificate -DnsName $Domain -CertStoreLocation cert:\LocalMachine\My
 $Cert | Export-PfxCertificate -FilePath ~\Desktop\$($Domain).pfx -Password $Password
 ```
 
-You can then use this generated file and the password you set to deploy your Chocolatey for Business QDE Azure Environment.
+You can then use this generated file and the password you set to deploy your Chocolatey for Business Azure Environment.
 
 You can also use a Microsoft Azure KeyVault to create a self-signed certificate by following the steps in Microsoft's documentation using the [Portal](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-portal) or [Azure PowerShell](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-powershell).
 
 > :memo: **NOTE**
 >
-> Your browser will display warnings when accessing the Chocolatey for Business QDE Azure Environment sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on machines used to access the management sites.
+> Your browser will display warnings when accessing the Chocolatey for Business Azure Environment sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on machines used to access the management sites.
 
 #### Purchased/Acquired Certificates from CA
 
@@ -272,7 +271,7 @@ This is based on:
 
 ### Status Message: Exist soft deleted vault with the same name.  (Code:ConflictError)
 
-This can happen when you've deployed a Chocolatey for Business QDE Azure Environment, deleted the Resource Group, and then redeployed it with the same name.
+This can happen when you've deployed a Chocolatey for Business Azure Environment, deleted the Resource Group, and then redeployed it with the same name.
 
 You can either purge the KeyVault in the GUI, or use the PowerShell Az modules as follows:
 

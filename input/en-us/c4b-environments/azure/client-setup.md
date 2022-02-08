@@ -1,18 +1,19 @@
 ---
 Order: 27
-xref: qdeazureclientsetup
+xref: c4b-azure-client-setup
 Title: Client Setup
-Description: How to setup a client machine to use Chocolatey for Business QDE Azure Environment
+Description: How to setup a client machine to use Chocolatey for Business Azure Environment
+RedirectFrom: en-us/quick-deployment/azure/client-setup
 ---
 
 > :memo: **NOTE**
 >
-> This document is for the Chocolatey for Business QDE Azure Environment from the [Azure Marketplace](https://ch0.co/azureqde).
-> If you are using a non-Azure version of QDE, please refer to the [QDE v2 Client Setup page](xref:v2-client-setup).
+> This document is for the Chocolatey for Business Azure Environment from the [Azure Marketplace](https://ch0.co/C4B-Azure).
+> If you are using the Quick Deployment Environment, please refer to the [QDE v2 Client Setup page](xref:v2-client-setup).
 
 ## Summary
 
-Once you have your Chocolatey for Business QDE Azure Environment deployed, you'll need to get clients talking to it.
+Once you have your Chocolatey for Business Azure Environment deployed, you'll need to get clients talking to it.
 To do that, you'll need to do the following on the clients:
 
 1. Setup DNS to allow access to the environment.
@@ -21,7 +22,7 @@ To do that, you'll need to do the following on the clients:
 
 ## DNS
 
-Ensure that you have [configured DNS](xref:qdeazure#dns-configuration) to direct clients to your deployed environment.
+Ensure that you have [configured DNS](xref:c4b-azure#dns-configuration) to direct clients to your deployed environment.
 
 Once you've added the required CNAME record, clients should be able to access it.
 
@@ -31,7 +32,7 @@ Once you've added the required CNAME record, clients should be able to access it
 >
 > If you used an SSL certificate from an external Certificate Authority (CA), or internally trusted PKI CA, your clients will automatically trust it and you can skip this section.
 
-If you used a self-signed certificate to deploy your Chocolatey for Business QDE Azure Environment, you will need to import this certificate to the `Trusted Root Certification Authorities` store on the clients.
+If you used a self-signed certificate to deploy your Chocolatey for Business Azure Environment, you will need to import this certificate to the `Trusted Root Certification Authorities` store on the clients.
 
 1. Open the Microsoft Management Console (`MMC.msc`)
 1. Select **File** -> **Add/Remove Snap-in...**
@@ -40,13 +41,13 @@ If you used a self-signed certificate to deploy your Chocolatey for Business QDE
 1. Expand **Certificates (Local Computer)**
 1. Right-click **Trusted Root Certification Authorities**, and select **All Tasks** -> **Import**
 
-    ![Importing SSL Certificate in MMC](/assets/images/quickdeployazure/MMC-Import-Certificate.png)
+    ![Importing SSL Certificate in MMC](/assets/images/c4b-azure/MMC-Import-Certificate.png)
 
 1. Click **Next**
 1. Browse to the self-signed certificate file
     1. You may need to adjust the filetype so that you can see `.pfx` files
 
-    ![Changing file type when browsing for certificate file in MMC](/assets/images/quickdeployazure/MMC-Browse-FileType.png)
+    ![Changing file type when browsing for certificate file in MMC](/assets/images/c4b-azure/MMC-Browse-FileType.png)
 
 1. Click **Next**
 1. Enter the password supplied when creating the certificate
@@ -55,7 +56,7 @@ If you used a self-signed certificate to deploy your Chocolatey for Business QDE
 
 ## Client Setup Script
 
-To on-board clients, you run the `ClientSetup.ps1` script provided with your Chocolatey for Business QDE Azure Environment.
+To on-board clients, you run the `ClientSetup.ps1` script provided with your Chocolatey for Business Azure Environment.
 
 You will need the following values ready when running this script:
 
@@ -65,13 +66,13 @@ You will need the following values ready when running this script:
 * `ChocoUserPassword`: The password for the `chocouser` account which is used by the client to access your environment's Nexus component.
 
 Except for the `FQDN`, all of these values are available in your deployed environment's Azure Key Vault.
-See [Accessing Services](xref:qdeazure#accessing-services) for more information about retrieving values from the Vault.
+See [Accessing Services](xref:c4b-azure#accessing-services) for more information about retrieving values from the Vault.
 
 When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell console:
 
 ```powershell
 # Prompt for input
-$fqdn = Read-Host 'Enter the FQDN for your Chocolatey for Business QDE Azure Environment'
+$fqdn = Read-Host 'Enter the FQDN for your Chocolatey for Business Azure Environment'
 $clientCommunicationSalt = Read-Host 'Enter the "ccmClientCommunicationSalt", you can find this in your Azure Key Vault'
 $serverCommunicationSalt = Read-Host 'Enter the "ccmServiceCommunicationSalt", you can find this in your Azure Key Vault'
 $password = Read-Host 'Enter the "ChocoUserPassword", you can find this in your Azure Key Vault' -AsSecureString
