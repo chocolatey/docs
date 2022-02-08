@@ -59,6 +59,7 @@ The following package parameters can be passed into the `choco install` or `choc
 - `/ShowConsoleOutput` - Enables/disables whether or not Chocolatey GUI shows output from the commands being executed when a job is running.
 - `/UseDelayedSearch` - Enables/disables whether or not Chocolatey GUI uses a live search, which returns results after a short delay without clicking the search button.
 - `/UseKeyboardBindings` - Allows keyboard bindings to be used to interact with different areas of the Chocolatey GUI User Interface.
+- `/UseLanguage` - The preferred language for Chocolatey GUI. Defaults to Windows System Locale.
 
 As an example, the following installation command could be used to enable ShowConsoleOutput to ensure UseDelayedSearch is disabled, and set the output cache to 120 minutes:
 
