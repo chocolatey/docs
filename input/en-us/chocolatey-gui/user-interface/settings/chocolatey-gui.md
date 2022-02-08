@@ -10,6 +10,9 @@ supports, as well as to set values for the specific configuration values that ex
 once changed, the feature or configuration value changes takes immediate effect, but it may require an application
 restart to take effect.
 
+There are search boxes which allows you to type the name of a feature, or a setting, and the list will be filtered down
+to only matching entries.
+
 ![Settings Chocolatey GUI](/assets/images/chocolatey-gui/user_interface_settings_chocolatey_gui.png "Settings Chocolatey GUI")
 
 For more information about the individual features and settings, see the corresponding section below:

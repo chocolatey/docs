@@ -8,6 +8,9 @@ Description: Settings for Chocolatey
 The Chocolatey Settings screen allow the user to toggle on and off the various features that Chocolatey supports, as
 well as to set values for the specific configuration values that exist for Chocolatey.
 
+There are search boxes which allows you to type the name of a feature, or a setting, and the list will be filtered down
+to only matching entries.
+
 ![Settings Chocolatey](/assets/images/chocolatey-gui/user_interface_settings_chocolatey.png "Settings Chocolatey")
 
 Changing the values in this screen is the same as directly calling the `choco feature` or `choco config` commands.  For
