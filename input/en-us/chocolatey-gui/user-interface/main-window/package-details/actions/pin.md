@@ -1,8 +1,8 @@
 ---
 Order: 40
-xref: gui-package-details
-Title: Package Details
-Description: Information about displaying detailed information about a specific package
+xref: gui-package-details-actions-pin
+Title: Pin
+Description: Information on how to use the Pin action
 ShowInNavBar: false
 ShowInSideBar: false
 ---
