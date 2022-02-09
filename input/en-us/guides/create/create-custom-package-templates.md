@@ -121,4 +121,4 @@ Yes, it is really that easy. Enjoy!
 
 ### Extending Templates
 
-Walmart has a really good post on extending package templates. You can read that at https://chocolatey.org/blog/extending-chocolatey-packaging-at-walmart
+Walmart has a really good post on extending package templates. You can read that at https://blog.chocolatey.org/2016/10/extending-chocolatey-packaging-at-walmart/
