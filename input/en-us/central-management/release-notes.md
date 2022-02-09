@@ -236,14 +236,14 @@ Previously this value was set to a constant value of 20 and not configurable. To
 
 
 ## 0.2.0 (June 18, 2020)
-Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://chocolatey.org/blog/announcing-deployments). We've also overhauled the documentation to make it understandable and approachable. Please see https://docs.chocolatey.org/en-us/central-management/.
+Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://blog.chocolatey.org/2020/05/announcing-deployments/) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://blog.chocolatey.org/2020/05/announcing-deployments/). We've also overhauled the documentation to make it understandable and approachable. Please see https://docs.chocolatey.org/en-us/central-management/.
 
 > :memo: **NOTE**
 >
 > Log locations have changed. Please see [Central Management FAQs](xref:central-management#faqs) for more information.
 
 ### FEATURES
-* [Central Management Deployments](https://chocolatey.org/blog/announcing-deployments):
+* [Central Management Deployments](https://blog.chocolatey.org/2020/05/announcing-deployments/):
   * Create target groups to deploy to
   * Create a deployment with one or more steps
   * Each step can target multiple groups, and different groups in each step if desired

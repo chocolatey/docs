@@ -12,7 +12,7 @@ RedirectFrom:
 >
 > This is a Work in Progress. Please check back later.
 >
-> Please see https://chocolatey.org/blog/announcing-deployments for now.
+> Please see https://blog.chocolatey.org/2020/05/announcing-deployments/ for now.
 
 ## Description
 

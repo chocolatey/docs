@@ -24,7 +24,7 @@ Also consider the [frequently asked questions](xref:faqs).
 
 If you see the following: Exception calling "DownloadString" with "1" argument(s): "The request was aborted: Could not create SSL/TLS secure channel." then you are likely running an older machine that needs to be upgraded to be able to use TLS 1.2 at a minimum.
 
-community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions. The post provides options if you have older clients that need to install Chocolatey.
+community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/. The post provides options if you have older clients that need to install Chocolatey.
 
 ### The underlying connection was closed
 
@@ -40,7 +40,7 @@ At line:1 char:1
     + FullyQualifiedErrorId : WebException
 ~~~
 
-community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://chocolatey.org/blog/remove-support-for-old-tls-versions. The post provides options if you have older clients that need to install Chocolatey.
+community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/. The post provides options if you have older clients that need to install Chocolatey.
 
 ### I'm getting a 403 unauthorized issue attempting to install Chocolatey
 

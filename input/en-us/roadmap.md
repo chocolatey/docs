@@ -44,7 +44,7 @@ Release Notes / Changelog at [Chocolatey GUI Release Notes](xref:chocolateygui-r
 - ~~Adding back in search box~~ - completed Q1 2018
 - Converting rest of site
 - ~~Kickstarter backers~~ - [https://chocolatey.org/kickstarter](https://chocolatey.org/kickstarter)
-- ~~Add blog~~ - [https://chocolatey.org/blog](https://chocolatey.org/blog)
+- ~~Add blog~~ - [https://blog.chocolatey.org/](https://blog.chocolatey.org/)
 - ~~VirusTotal scans of all packages and downloaded binaries~~ - Completed Feb 2016
 - ~~Locking down non-secure downloads in packages (HTTP) without checksums~~ - completed Aug 2016
 - Locking down secure downloads in packages (HTTPS) without checksums
