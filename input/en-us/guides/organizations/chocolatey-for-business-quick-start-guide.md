@@ -168,7 +168,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
     **ALTERNATIVE 2 : Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
 
     ```powershell
-    Set-Location "$env:\SystemDrive\choco-setup\files"
+    Set-Location "$env:SystemDrive\choco-setup\files"
     .\Set-SslSecurity.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>' -CertificateDnsName '<YOUR_DESIRED_FQDN_HERE>' -Hardened
     ```
 
