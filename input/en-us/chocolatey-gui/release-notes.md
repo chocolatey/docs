@@ -12,6 +12,47 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [0.20.0](https://github.com/chocolatey/ChocolateyGUI/milestone/23?closed=1) (February 10, 2022)
+
+> :warning: **WARNING**
+>
+> If you install v0.20.0 of Chocolatey GUI then you will also have to install v0.4.0 of Chocolatey GUI Licensed Extension if you use it. You will see errors when attempting to run Chocolatey GUI if you do not do so.
+
+### BREAKING CHANGES
+
+* Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841)
+
+### FEATURES
+
+* Allow for passing in package parameters / installer arguments when installing a package - see [#545](https://github.com/chocolatey/ChocolateyGUI/issues/545)
+* Allow users to change the locale to use - see [#533](https://github.com/chocolatey/ChocolateyGUI/issues/533)
+* Provide ability to "see" persisted arguments for installed package - see [#770](https://github.com/chocolatey/ChocolateyGUI/issues/770)
+* Provide ability to search/filter features and settings - see [#838](https://github.com/chocolatey/ChocolateyGUI/issues/838)
+* Add confirmation dialog for update all button - see [#828](https://github.com/chocolatey/ChocolateyGUI/issues/828)
+* Add confirmation dialog when removing a source - see [#827](https://github.com/chocolatey/ChocolateyGUI/issues/827)
+* Add confirmation dialog when performing an Uninstall/Reinstall operation from context menu - see [#786](https://github.com/chocolatey/ChocolateyGUI/issues/786)
+
+### BUGS
+
+* Install button is not disabled when installation of packages is not allowed - see [#911](https://github.com/chocolatey/ChocolateyGUI/issues/911)
+* Message boxes used to report issues often don't stay open - see [#904](https://github.com/chocolatey/ChocolateyGUI/issues/904)
+* All operations on packages with a progress dialog are broken - see [#875](https://github.com/chocolatey/ChocolateyGUI/issues/875)
+
+### IMPROVEMENTS
+
+* Ensure WiX installer verifies that .NET Framework 4.8 is installed - see [#842](https://github.com/chocolatey/ChocolateyGUI/issues/842)
+* Order features and settings alphabetically - see [#837](https://github.com/chocolatey/ChocolateyGUI/issues/837)
+* Support per-monitor DPI - see [#836](https://github.com/chocolatey/ChocolateyGUI/issues/836)
+* Chocolatey GUI doesn't write to chocolatey.log - see [#697](https://github.com/chocolatey/ChocolateyGUI/issues/697)
+
+### DOCUMENTATION
+
+* Gitter is still mentioned in the Readme - see [#898](https://github.com/chocolatey/ChocolateyGUI/issues/898)
+* Fix link to localization article - see [#891](https://github.com/chocolatey/ChocolateyGUI/pull/891)
+* Remove package parameters from nuspec file - see [#885](https://github.com/chocolatey/ChocolateyGUI/issues/885)
+* Contributing.md has broken links - see [#854](https://github.com/chocolatey/ChocolateyGUI/issues/854)
+
+
 ## [0.19.0](https://github.com/chocolatey/ChocolateyGUI/milestone/26?closed=1) (September 6, 2021)
 
 > :warning: **WARNING**
@@ -24,8 +65,8 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 ### IMPROVEMENTS
 
-* [Security] XML External Entity attack in log4net (CVE-2018-1285) - [#869](https://github.com/chocolatey/ChocolateyGUI/issues/869)
-* Make use of Chocolatey CLI Export command - [#882](https://github.com/chocolatey/ChocolateyGUI/issues/882)
+* [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [#869](https://github.com/chocolatey/ChocolateyGUI/issues/869)
+* Make use of Chocolatey CLI Export command - see [#882](https://github.com/chocolatey/ChocolateyGUI/issues/882)
 
 ### Release Video
 
@@ -43,7 +84,7 @@ A short video explaining what is included in this release can be found here:
 
 ### BUGS
 
-* When running Chocolatey GUI, ensure installed Chocolatey assembly is used, rather than locally referenced assembly - [#857](https://github.com/chocolatey/ChocolateyGUI/issues/857)
+* When running Chocolatey GUI, ensure installed Chocolatey assembly is used, rather than locally referenced assembly - see [#857](https://github.com/chocolatey/ChocolateyGUI/issues/857)
 
 ### Release Video
 
@@ -67,7 +108,7 @@ A short video explaining what is included in this release can be found here:
 
 ### DOCUMENTATION
 
-* Fix incorrect quoting of parameter in package nuspec - [#831](https://github.com/chocolatey/ChocolateyGUI/issues/831)
+* Fix incorrect quoting of parameter in package nuspec - see [#831](https://github.com/chocolatey/ChocolateyGUI/issues/831)
 
 ### Release Video
 
