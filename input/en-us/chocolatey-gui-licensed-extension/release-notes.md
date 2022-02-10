@@ -16,6 +16,16 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 * Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 * Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+## 0.4.0 (February 10, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolateygui.extension package have changed in this release, and it now requires Chocolatey GUI v0.20.0.
+
+### BREAKING CHANGES
+
+* Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841)
+
 ## 0.3.0 (September 6, 2021)
 
 > :warning: **WARNING**
