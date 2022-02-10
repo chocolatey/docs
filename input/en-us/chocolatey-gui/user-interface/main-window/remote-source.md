@@ -23,4 +23,4 @@ by setting the [Default to Tile View for Local Source](xref:default-to-tile-view
 From any remote source view, either by navigating to the [package details page](xref:gui-package-details), or by activating the context menu for the
 required package, it is possible to perform one of the [available actions](xref:gui-package-details-actions) for a package.
 
-All remote sources can be turned off using the [Hide All Remote Chocolatey Sources](xref:hide-all-remote-chocolatey-sources) feature.
+All remote sources can be turned off using the [Hide All Remote Chocolatey Sources](xref:hide-all-remote-chocolatey-sources) feature.  **NOTE:** This is a commercial feature that requires the use of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension).

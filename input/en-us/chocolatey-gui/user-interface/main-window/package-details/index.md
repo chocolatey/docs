@@ -14,6 +14,11 @@ the details for the selected package will be shown.  This includes information s
 - External links provided by the package maintainer
 - Description
 - Release notes
+- Software Authors
+- Package Maintainers (If available)
+- Downloads for the version, and total downloads
+- Size of the package
+- Package Dependencies
 
 In addition, depending on the current state of the package, different [actions](xref:gui-package-details-actions) can be performed on the package.
 

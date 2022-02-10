@@ -8,7 +8,7 @@ Description: Information on how to use the Use Language setting
 By default, Chocolatey GUI will use the locale defined on your machine, to translate the various sections of the user
 interface.  However, there are times when you may want to use a locale other than the one defined on your machine.  The
 UseLanguage configuration setting allows the user to choose what language (from the list of currently [available languages](xref:use-language#available-languages)),
-used be used.
+to use.
 
 > :memo: **NOTE**
 >
@@ -55,7 +55,7 @@ Currently, the following languages can be selected:
 
 ## Default Value
 
-The default value for this configuration is the locale defined on your machine.
+The default value for this configuration is the locale defined on your machine if it exists, falling back to English if there is no translation available.
 
 ## Availability
 

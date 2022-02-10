@@ -19,4 +19,4 @@ In addition, you may want to use the [Prevent Automated Outdated Packages Check]
 From the local source view, either by navigating to the [package details page](xref:gui-package-details), or by activating the context menu for the
 required package, it is possible to perform one of the [available actions](xref:gui-package-details-actions) for a package.
 
-The local source view can be turned off using the [Hide This PC Source](xref:hide-this-pc-source) feature.
+The local source view can be turned off using the [Hide This PC Source](xref:hide-this-pc-source) feature.  **NOTE:** This is a commercial feature that requires the use of the [Chocolatey GUI Licensed Extension](xref:chocolatey-gui-licensed-extension).
