@@ -1,5 +1,5 @@
 ---
-Order: 20
+Order: 10
 xref: default-source-name
 Title: Default Source Name
 Description: Information on how to use the Default Source Name setting

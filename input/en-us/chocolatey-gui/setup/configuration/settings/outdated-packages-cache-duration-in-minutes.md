@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 20
 xref: outdated-packages-cache-duration-in-minutes
 Title: Outdated Packages Cache Duration in Minutes
 Description: Information on how to use the Outdated Packages Cache Duration setting

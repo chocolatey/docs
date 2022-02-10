@@ -1,6 +1,6 @@
 ---
 Order: 10
-xref: gui-settings
+xref: gui-configuration-settings
 Title: Settings
 Description: The available config options for Chocolatey GUI
 ---
