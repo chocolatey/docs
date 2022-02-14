@@ -51,7 +51,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/WH9ecBP-1zY?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/WH9ecBP-1zY?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -72,7 +72,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/D3z4w3O6w8Q?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/D3z4w3O6w8Q?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -97,7 +97,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/UF3Z9PVh2K0?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/UF3Z9PVh2K0?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -113,7 +113,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/pbgpxeRQ-V4?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/pbgpxeRQ-V4?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -136,7 +136,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/i5_42euUABY?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/i5_42euUABY?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -152,7 +152,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/ED6vAz6_AHk?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/ED6vAz6_AHk?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -176,7 +176,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PL84yg23i9GBilzTYltuVSvxuqPg56cCCe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>

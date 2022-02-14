@@ -81,11 +81,9 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-https://www.youtube.com/watch?v=2yKiCi5m9Jw&
-
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -101,7 +99,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -117,7 +115,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -178,7 +176,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
