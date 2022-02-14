@@ -1546,7 +1546,7 @@ chartist@^0.11.4:
 
 "choco-theme@github:chocolatey/choco-theme":
   version "0.1.0"
-  resolved "https://codeload.github.com/chocolatey/choco-theme/tar.gz/2bb8fb254492f2b0633f25d926133c5065c48939"
+  resolved "https://codeload.github.com/chocolatey/choco-theme/tar.gz/aeedd35b7453d1ff695e9b699f52d180fd2ba82d"
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/preset-env" "^7.12.1"
