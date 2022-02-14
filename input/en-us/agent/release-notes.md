@@ -37,7 +37,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/EoliKrC_MBA?list=PL84yg23i9GBhOSL0YVuJV2bG5fTOijsD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/EoliKrC_MBA?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -63,7 +63,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/Uv59msxXzeg?list=PL84yg23i9GBhOSL0YVuJV2bG5fTOijsD4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/Uv59msxXzeg?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>

@@ -78,7 +78,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/p8m2nnSO7bw?list=PL84yg23i9GBgflAg7JGRLWh7tqTX7F5-z" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/p8m2nnSO7bw?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -108,7 +108,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/yohhvgtwxiM?list=PL84yg23i9GBgflAg7JGRLWh7tqTX7F5-z" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/yohhvgtwxiM?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>

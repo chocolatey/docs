@@ -17,6 +17,18 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
  * Fix - Installation of Chocolatey fails when running under "AllSigned" execution policy - see [#2539](https://github.com/chocolatey/choco/issues/2539)
  * Fix - Output from "choco template -h" references wrong subcommand in usage statement - see [#2546](https://github.com/chocolatey/choco/issues/2546)
 
+ ### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<p>
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/2yKiCi5m9Jw?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+<br>
+</p>
+
 
 ## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18th, 2022)
 
@@ -71,7 +83,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -87,7 +99,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -103,7 +115,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
@@ -164,7 +176,7 @@ A short video explaining what is included in this release can be found here:
 
 <p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PL84yg23i9GBh4-KNBaQrTnwGlHsWFY6tc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 <br>
