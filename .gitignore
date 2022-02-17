@@ -16,3 +16,10 @@ input/global-partials/
 apple-touch-*.png
 favicon.ico
 cache/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
