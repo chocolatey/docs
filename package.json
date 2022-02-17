@@ -1,5 +1,6 @@
 {
-  "main": "gulpfile.js",
+  "name": "docs",
+  "packageManager": "yarn@3.1.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/docs.git"
@@ -11,7 +12,7 @@
   },
   "homepage": "https://github.com/chocolatey/docs#readme",
   "devDependencies": {
-    "choco-theme": "github:chocolatey/choco-theme"
+    "choco-theme": "git+https://github.com/chocolatey/choco-theme.git"
   },
   "resolutions": {
     "glob-parent": "^6.0.1",

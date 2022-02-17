@@ -77,8 +77,8 @@ Task("Yarn-Install")
     }
     else
     {
-        Information("Running yarn install --frozen-lockfile...");
-        Yarn.Install(settings => settings.WithFrozenLockfile());
+        Information("Running yarn install --immutable...");
+        Yarn.Install(settings => settings.ArgumentCustomization = args => args.Append("--immutable"));
     }
 });
 

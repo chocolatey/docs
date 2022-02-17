@@ -18,7 +18,6 @@ There are a number or pre-requisites that are needed before you will be able to 
 
 * .NET Core SDK
 * NodeJS
-* Yarn
 
 There is a `.\setup.ps1` file in the root of this repository that can be used to install all necessary packages, and which will be kept up to date as these change.
 
