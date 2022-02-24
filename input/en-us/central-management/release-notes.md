@@ -25,6 +25,24 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.8.0 (February 28, 2022)
+
+### Features
+
+- Ensure that a deployment step specifies whether it contains sensitive variables in the script that's to be run.
+- Enhanced communication contracts that are used when communicating with Chocolatey Agent.
+- Store the database package version number in a database table.
+
+### Bug Fixes
+
+- [Security] Fix - ASP.NET Core anti-forgery cookie doesn't use the secure flag.
+- Fix - High memory/cpu consumption when there are lots of computers/software/deployments being used.
+
+### Improvements
+
+- Disable updating of related group information when it is not needed as computers are reporting in.
+
+
 ## 0.7.0 (November 17th, 2021)
 ### BREAKING CHANGES
  * Additional steps required to change LDAP and SMTP passwords.
