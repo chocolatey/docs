@@ -25,11 +25,7 @@ Please see the following [GitHub Issue](https://github.com/chocolatey/Chocolatey
 
 ## Pin command does not work when running with Background Mode enabled
 
-In the current versions of Chocolatey CLI (v0.11.1) and Chocolatey GUI (v0.19.0), when attempting to pin a package using the Chocolatey CLI (choco.exe) with Background Mode enabled, things will work as expected.  i.e. when running:
-
-```powershell
-choco pin add --name="procmon"
-```
+In the current versions of Chocolatey CLI (v0.11.1) and Chocolatey GUI (v0.19.0), when attempting to pin a package using the Chocolatey CLI (choco.exe) with Background Mode enabled, things will work as expected.  i.e. when running: `choco pin add --name="procmon"`.
 
 The procmon package will be correctly pinned.
 
@@ -40,3 +36,13 @@ However, if you attempt the same operation via Chocolatey GUI, using the "Pin (I
 > Exception: System.NullReferenceException: Object reference not set to an instance of an object
 
 This will be addressed in a future version of Chocolatey CLI/Chocolatey GUI.
+
+## chocolateyguicli Command Not Registered by System
+
+If you recieve an error in the shell stating `chocolateyguicli is not registered` or `ObjectNotFound`, please go through the following steps.
+
+1. Reinstall the `chococlateygui` package. `choco upgrade chocolateygui -y --force`
+
+1. If step 1 did not fix the issue, please check that your antivirus software is not blocking the Chocolatey GUI Config from being written to. The Chocolatey GUI Config file can be located at `C:\ProgramData\Chocolatey GUI\Config\Data.db`.
+
+1. If further assistance is needed please reach out via your support means. Listed by running `choco support`. If running Chocolatey OSS please reach out via Discord.
