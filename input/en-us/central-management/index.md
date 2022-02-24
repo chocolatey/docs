@@ -148,9 +148,9 @@ Please run `choco support` from a licensed edition and follow the instructions.
 
 ### How do I set up Chocolatey Central Management?
 
-* You can standup CCM from one powershell script as part of our [C4B Quick Start Guide](xref:c4b-quick-start-guide). Allowing you setup an entire Chococlatey enviornment in just 6 simple steps.
-* CCM is stood up as part of our [C4B Azure Enviornment](xref:qdeazure)
-* You can also setup CCM on its own following the [CCM Setup Docs](xref:ccm-setup)
+* As part of our [C4B Quick Start Guide](xref:c4b-quick-start-guide). Allowing you setup an entire Chococlatey enviornment in just 6 simple steps.
+* As part of our [C4B Azure Enviornment](xref:qdeazure)
+* By following the [CCM Setup Docs](xref:ccm-setup)
 
 ### If I update the license file, do I need to restart my services and web?
 
