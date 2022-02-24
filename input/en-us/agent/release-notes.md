@@ -26,6 +26,23 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.13.0 (February 28, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey-agent package have changed in this release, and it now requires Chocolatey Licensed Extension v3.2.0+.
+
+### Breaking Changes
+
+- Chocolatey Central Management - Enhanced communication method for reporting information in Chocolatey Central Management.
+  - **NOTE:** This version of Chocolatey Agent is backwards compatible with versions of Chocolatey Central Management earlier than 0.8.0. However, we always recommend updating to the latest version of Chocolatey Central Management.
+
+### Improvements
+
+- Chocolatey Central Management
+  - Add logic to retry reporting of a deployment step result to Chocolatey Central Management if it initially fails.
+  - Ensure that no expanded sensitive variables are captured in log that is returned to Chocolatey Central Management.
+
 ## 0.12.1 (September 14, 2021)
 
 ### BUG FIXES
