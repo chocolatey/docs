@@ -26,6 +26,13 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 3.2.0 (February 28, 2022)
+
+### Improvements
+
+- Chocolatey Central Management - Enhanced contracts for communication between Chocolatey Agent and Chocolatey Central Management.
+
+
 ## 3.1.0 (January 18, 2022)
 
 > :warning: **WARNING**
