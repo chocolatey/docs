@@ -90,7 +90,6 @@ Task("Run-Gulp")
     Gulp.Local.Execute();
 });
 
-
 Task("Statiq-Preview")
     .IsDependentOn("Run-Gulp")
     .Does<BuildData>((context, buildData) =>
