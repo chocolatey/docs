@@ -55,7 +55,7 @@ See [Infrastructure automation](xref:integrations)
 #### July
 
 * https://techielass.com/automating-azure-vm-with-chef
-* https://winsysblog.com/2019/07/introducing-the-chocolatey-remote-management-powershell-gui.html
+* https://winsysblog.com/2019/07/introducing-the-chocolatey-remote-management-powershell-gui.html ([archive.org](https://web.archive.org/web/20210814063003/https://winsysblog.com/2019/07/introducing-the-chocolatey-remote-management-powershell-gui.html))
 
 #### June
 
@@ -80,11 +80,11 @@ See [Infrastructure automation](xref:integrations)
 
 #### December
 
-* https://winsysblog.com/2018/12/using-multiple-package-repositories-with-chocolatey.html
+* https://winsysblog.com/2018/12/using-multiple-package-repositories-with-chocolatey.html ([archive.org](https://web.archive.org/web/20210813110818/https://winsysblog.com/2018/12/using-multiple-package-repositories-with-chocolatey.html))
 
 #### September
 
-* https://winsysblog.com/2018/09/anatomy-of-a-chocolatey-package.html
+* https://winsysblog.com/2018/09/anatomy-of-a-chocolatey-package.html ([archive.org](https://web.archive.org/web/20210817161935/https://winsysblog.com/2018/09/anatomy-of-a-chocolatey-package.html))
 
 #### October
 
@@ -92,16 +92,16 @@ See [Infrastructure automation](xref:integrations)
 
 #### August
 
-* https://winsysblog.com/2018/08/installing-chocolatey-packages-remotely-with-powershell.html
+* https://winsysblog.com/2018/08/installing-chocolatey-packages-remotely-with-powershell.html ([archive.org](https://web.archive.org/web/20210814141429/https://winsysblog.com/2018/08/installing-chocolatey-packages-remotely-with-powershell.html))
 
 #### July
 
 * https://www.gep13.co.uk/blog/problem-running-chocolatey-test-environment
-* https://winsysblog.com/2018/07/auditing-software-with-chocolatey.html
+* https://winsysblog.com/2018/07/auditing-software-with-chocolatey.html ([archive.org](https://web.archive.org/web/20210813115006/https://winsysblog.com/2018/07/auditing-software-with-chocolatey.html))
 
 #### June
 
-* https://winsysblog.com/2018/06/install-internalized-chocolatey-packages-from-your-offline-repository.html
+* https://winsysblog.com/2018/06/install-internalized-chocolatey-packages-from-your-offline-repository.html ([archive.org](https://web.archive.org/web/20210815153256/https://winsysblog.com/2018/06/install-internalized-chocolatey-packages-from-your-offline-repository.html))
 
 #### April
 
@@ -134,11 +134,11 @@ See [Infrastructure automation](xref:integrations)
 #### October
 
 * http://jkarger.de/2017/10/29/tile-banner-for-chocolateygui/
-* https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html (C4B)
+* https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html (C4B) ([archive.org](https://web.archive.org/web/20210814170920/https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html))
 
 #### August
 
-* http://www.winsysblog.com/2017/08/recompiling-chocolatey-packages.html (C4B)
+* http://www.winsysblog.com/2017/08/recompiling-chocolatey-packages.html (C4B) ([archive.org](https://web.archive.org/web/20210815015512/https://winsysblog.com/2017/08/recompiling-chocolatey-packages.html))
 * https://controlaltfail.wordpress.com/2017/08/03/salt-chocolatey-install-totally-offline/
 
 #### July
@@ -161,12 +161,12 @@ See [Infrastructure automation](xref:integrations)
 
 #### April
 
-* http://www.winsysblog.com/2017/04/importing-hosted-nuget-packages-into.html (MDT)
+* http://www.winsysblog.com/2017/04/importing-hosted-nuget-packages-into.html (MDT) ([archive.org](https://web.archive.org/web/20201201143740/https://winsysblog.com/2017/04/importing-hosted-nuget-packages-into.html))
 * http://www.laurierhodes.info/?q=node/129
 
 #### March
 
-* https://winsysblog.com/2017/03/creating-software-packages-wi.html
+* https://winsysblog.com/2017/03/creating-software-packages-wi.html ([archive.org](https://web.archive.org/web/20210813091644/https://winsysblog.com/2017/03/creating-software-packages-wi.html))
 * https://brian.teeman.net/joomla/885-install-amp-on-windows-with-chocolatey
 
 #### February
