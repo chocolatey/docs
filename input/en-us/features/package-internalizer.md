@@ -88,8 +88,8 @@ See [download command](xref:choco-command-download) for more information.
 Community posts that include Package Internalizer:
 
 * [Getting Started With Chocolatey 4 Business & Jenkins CI](https://blog.pauby.com/post/getting-started-with-chocolatey-and-jenkins/)
-* [Automating Chocolatey package internalizing with PowerShell](https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html)
-* [Recompiling Chocolatey packages](https://winsysblog.com/2017/08/recompiling-chocolatey-packages.html)
+* [Automating Chocolatey package internalizing with PowerShell](https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html) ([archive.org](https://web.archive.org/web/20201025112142/https://winsysblog.com/2017/10/automating-chocolatey-package-internalizing-with-powershell.html))
+* [Recompiling Chocolatey packages](https://winsysblog.com/2017/08/recompiling-chocolatey-packages.html) ([archive.org](https://web.archive.org/web/20210815015512/https://winsysblog.com/2017/08/recompiling-chocolatey-packages.html))
 
 ## FAQ
 
