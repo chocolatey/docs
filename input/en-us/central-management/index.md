@@ -44,6 +44,7 @@ Central Management has specific needs that are mostly handled by packaging aspec
 
 |Central Management|Chocolatey Agent|Chocolatey Licensed Extension|Chocolatey|
 |------------------|----------------|-----------------------------|----------|
+|0.8.0             |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.7.0             |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.6.x             |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.5.x             |0.11.0+         | 2.1.0+                      | 0.10.15+ |
