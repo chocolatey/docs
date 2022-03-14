@@ -66,8 +66,14 @@
             </div>
             <nav id="topNav" class="navbar navbar-expand">
                 <a class="navbar-brand" href="@Context.GetLink("/")">
-                    <img class="d-md-none" src="@Context.GetLink("/assets/images/global-shared/logo.svg")" alt="Chocolatey" />
-                    <img class="d-none d-md-block" src="@Context.GetLink("/assets/images/global-shared/logo-square.svg")" alt="Chocolatey" />
+                    <span class="d-md-none">
+                        <img class="light-theme" src="@Context.GetLink("/assets/images/global-shared/chocolatey-11-icon-light.svg")" alt="Chocolatey" />
+                        <img class="dark-theme" src="@Context.GetLink("/assets/images/global-shared/chocolatey-11-icon-dark.svg")" alt="Chocolatey" />
+                    </span>
+                    <span class="d-none d-md-block">
+                        <img class="light-theme" src="@Context.GetLink("/assets/images/global-shared/chocolatey-11-light.svg")" alt="Chocolatey" />
+                        <img class="dark-theme" src="@Context.GetLink("/assets/images/global-shared/chocolatey-11-dark.svg")" alt="Chocolatey" />
+                    </span>
                 </a>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item me-2 me-md-3">

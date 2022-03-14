@@ -117,7 +117,9 @@ function purgeCss() {
             ],
             safelist: [
                 '::-webkit-scrollbar', 
-                '::-webkit-scrollbar-thumb'
+                '::-webkit-scrollbar-thumb',
+                'link-light',
+                'bg-purple'
             ]
         }))
         .pipe(dest(paths.assets + 'css/'));
