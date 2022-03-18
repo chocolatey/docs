@@ -3,6 +3,3 @@ contact_links:
   - name: Ask A Question
     url: https://github.com/chocolatey/docs/discussions
     about: Please ask and answer questions here.
-  - name: Security Issues or Concerns?
-    url: https://docs.chocolatey.org/en-us/information/security
-    about: Please see this for security vulnerabilities or concerns, including how to responsibly disclose to us.
