@@ -262,7 +262,7 @@ These guidelines are already commonly applied on packages for all major Linux di
 
 Note that a lot of packages in the Chocolatey Gallery don’t follow these guidelines. The simple reason is that the affected packages were created before the introduction of these guidelines.
 
-If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](xref:faqs#what-is-the-difference-between-packages-named-install-ie-autohotkeyinstall-portable-ie-autohotkeyportable-and-ie-autohotkey)
+If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](xref:faqs#what-is-the-difference-between-packages-no-suffix-as-compared-to.install.portable)
 
 ## Package description and release notes
 
