@@ -79,6 +79,12 @@ The path to the folder where deployment step result messages will be processed.
 
 Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messages_processing`
 
+### DeploymentStepResultMessagesFailedFolderPath
+
+The path to the folder where deployment step result messages that failed to process will be stored. _(Available since v0.8.0)_
+
+Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messages_failed`
+
 ## Chocolatey Configuration File
 
 > :memo: **NOTE**

@@ -19,6 +19,7 @@ The Chocolatey Central Management Service uses a number of different folders to 
 * [ComputerInformationMessagesProcessingFolderPath](xref:ccm-usage-service-configuration#computerinformationmessagesprocessingfolderpath)
 * [DeploymentStepResultMessagesFolderPath](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfolderpath)
 * [DeploymentStepResultMessagesProcessingFolderPath](xref:ccm-usage-service-configuration#deploymentstepresultmessagesprocessingfolderpath)
+* [DeploymentStepResultMessagesFailedFolderPath](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfailedfolderpath)
 
 As new messages, both computer information and deployment step results, arrive at the Chocolatey Central Management Service, they are immediately stored into the `*MessagesFolderPath` folders.  Then as the service begins to process these messages, they are moved into the `*MessageProcessingFolderPath` folders, and once they are processed, the stored messages are deleted.
 
@@ -27,6 +28,10 @@ As new messages, both computer information and deployment step results, arrive a
 During start up of the Chocolatey Central Management Service, it will ensure that all required folders are created (based on the configured values above).  In addition, it will ensure, for security purposes, that only the user account that is currently running the Chocolatey Central Management Service has read/write permissions to these folders.  By default, this will be the ChocolateyLocalAdmin user, which Chocolatey creates as part of the installation process.  If an additional account is used to run the Chocolatey Central Management Service, then this account, and only this account, will be provided read/write permissions to these folders.
 
 ## Poison Messages
+
+Starting in version 0.8.0 of the Chocolatey Central Management service there is now an additional folder for deployment messages. Processed messages that failed to update the status of the deployment will be moved to the folder specified in [`DeploymentStepResultMessagesFailedFolderPath`](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfailedfolderpath) after the update has been tried 3 times. Files in this directory are not deleted by the Chocolatey Central Management service.
+
+See the additional information below for computers which have reported in the status of their Chocolatey packages, or for older versions of Chocolatey Central Management service.
 
 If there is an error during the processing of a message, the message will not be deleted from the `*MessageProcessingFolderPath`.  As a result, the message will attempt to be processed again.
 
