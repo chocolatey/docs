@@ -12,6 +12,24 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+## [1.0.0](https://github.com/chocolatey/ChocolateyGUI/milestone/28?closed=1) (March 21, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolateygui package have changed in this release. It now requires Chocolatey v1.0.0.
+
+### Breaking Change
+
+- Updates Chocolatey dependency for package to v1.0.0 - see [#928](https://github.com/chocolatey/ChocolateyGUI/issues/928)
+
+### Bug Fix
+
+- Ensure keyboard shortcuts to navigate between sources works correctly when the show aggregated sources feature is enabled - see [#915](https://github.com/chocolatey/ChocolateyGUI/issues/915)
+
+### Documentation
+
+- Fix typo in window seen after export command finishes - see [#924](https://github.com/chocolatey/ChocolateyGUI/pull/924)
+
 ## [0.20.0](https://github.com/chocolatey/ChocolateyGUI/milestone/23?closed=1) (February 10, 2022)
 
 > :warning: **WARNING**
