@@ -30,6 +30,29 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 > :memo: **NOTE** We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
+## 4.0.0 (March 21, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey.extension package have changed in this release. It now requires Chocolatey CLI v1.0.0.
+
+> :warning: **WARNING**
+>
+> When using Chocolatey Licensed Extension, the order of upgrading packages is very important!
+> You should perform `choco upgrade chocolatey.extension` first, and Chocolatey will then ensure all required dependencies are in place.
+> If you first attempt to do `choco upgrade chocolatey`, followed by `choco upgrade chocolatey.extension`, there will be complications.
+> If you find yourself in this situation, reach out to the Support Team for assistance.
+
+### Breaking Changes
+
+- Update dependency for Chocolatey.lib to v1.0.0 and Chocolatey v1.0.0
+- Ensure that all deprecated Chocolatey commands are no longer referenced - see [licensed #295](https://github.com/chocolatey/chocolatey-licensed-issues/issues/295)
+- Remove all usage of (including aliases) of the deprecated Chocolatey helper functions - see [licensed #294](https://github.com/chocolatey/chocolatey-licensed-issues/issues/294)
+
+### Improvements
+
+- Ensure that features that have been removed from Chocolatey can no longer be set using feature command - see [licensed #293](https://github.com/chocolatey/chocolatey-licensed-issues/issues/293)
+
 ## 3.2.0 (February 28, 2022)
 
 ### Improvement
