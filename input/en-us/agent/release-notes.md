@@ -26,6 +26,16 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 - Some issues may be held internally, please follow your support routes to learn more.
 
+## 1.0.0 (March 21, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolatey-agent package have changed in this release. It now requires Chocolatey Licensed Extension v4.0.0.
+
+### Breaking Change
+
+- Update Chocolatey Licensed Extension dependency to v4.0.0
+
 ## 0.13.0 (February 28, 2022)
 
 > :warning: **WARNING**
