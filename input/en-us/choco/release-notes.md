@@ -12,6 +12,32 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
+
+### Breaking Changes
+
+- Remove deprecated Chocolatey commands and shims - see [#2468](https://github.com/chocolatey/choco/issues/2468)
+- Remove deprecated Chocolatey helper functions - see [#2469](https://github.com/chocolatey/choco/issues/2469)
+- Remove the cpack command alias - see [#89](https://github.com/chocolatey/choco/issues/89)
+- Remove the fallback to using old URL for Chocolatey Community Repository when pushing packages - see [#2628](https://github.com/chocolatey/choco/issues/2628)
+- Remove deprecated -t argument for the push command - see [#2627](https://github.com/chocolatey/choco/issues/2627)
+- Ensure that Chocolatey correctly handles removed features when running the choco feature command - see [#2538](https://github.com/chocolatey/choco/issues/2538)
+
+### Improvements
+
+- Update to use version v1.0.0 of shimgen - see [#2602](https://github.com/chocolatey/choco/issues/2602)
+- Installation of Chocolatey should add a more descriptive comment when adding Chocolatey tab-completion module to profile - see [#2443](https://github.com/chocolatey/choco/issues/2443)
+
+### Documentation
+
+- Update deprecation notice for push command to mention that the default source will be removed in v2.0.0 - see [#2634](https://github.com/chocolatey/choco/issues/2634)
+- Mark Chocolatey shims (chocolatey. cinst, clist, cpush, cuninst, cup) as deprecated - see [#2641](https://github.com/chocolatey/choco/issues/2641)
+- Mark Get-BinRoot Chocolatey helper function as deprecated - see [#2470](https://github.com/chocolatey/choco/issues/2470)
+- Add deprecation notices for all things that are set to change in v2.0.0 - see [#2462](https://github.com/chocolatey/choco/issues/2462)
+- Provide better clarity regarding the license terms for using Chocolatey and shimgen - see [#2549](https://github.com/chocolatey/choco/issues/2549), [#2615](https://github.com/chocolatey/choco/issues/2615), and [2614](https://github.com/chocolatey/choco/issues/2614)
+- Document the fact that the Source switch doesn't do anything when running the command choco list --lo - see [#2545](https://github.com/chocolatey/choco/issues/2545)
+- Update warning that is shown regarding using a trial license of Chocolatey - see [#2407](https://github.com/chocolatey/choco/issues/2407)
+
 ## [0.12.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.1) (January 25th, 2022)
 
 ### Bug Fixes
