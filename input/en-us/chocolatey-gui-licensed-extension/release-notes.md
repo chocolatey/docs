@@ -17,6 +17,17 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 - Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 - Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+## 1.0.0 (March 21, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of the chocolateygui.extension package have changed in this release. It now requires Chocolatey GUI v1.0.0 and Chocolatey Licensed Extension v4.0.0.
+
+### Breaking Changes
+
+- Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade
+- Updates Chocolatey dependency for package to v1.0.0
+
 ## 0.4.0 (February 10, 2022)
 
 > :warning: **WARNING**
