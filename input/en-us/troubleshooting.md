@@ -170,7 +170,11 @@ Once you've looked at your log to determine what it said, here are some followup
 - If that is fine, then we need to look at your "$profile". Run `type $profile`. Examine the output. You should have something like this in the file:
 
 ~~~powershell
-# Chocolatey profile
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
