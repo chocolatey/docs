@@ -229,7 +229,6 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 ## Links
 
- * [Install-ChocolateyDesktopLink](xref:install-chocolateydesktoplink)
  * [Install-ChocolateyExplorerMenuItem](xref:install-chocolateyexplorermenuitem)
  * [Install-ChocolateyPinnedTaskBarItem](xref:install-chocolateypinnedtaskbaritem)
 

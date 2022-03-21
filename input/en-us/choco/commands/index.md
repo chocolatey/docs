@@ -14,6 +14,12 @@ RedirectFrom:
 
 This is a listing of all of the different things you can pass to choco.
 
+## DEPRECATION NOTICE
+
+The shims `chocolatey`, `cinst`, [`clist`](xref:choco-command-list), `cpush`, `cuninst` and `cup` are deprecated.
+We recommend updating all scripts to use their full command equivalent as these will be
+removed in v2.0.0 of Chocolatey.
+
 ## Commands
 
  * [search](xref:choco-command-search) - searches remote or local packages (alias for list)
@@ -36,8 +42,6 @@ This is a listing of all of the different things you can pass to choco.
  * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
  * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an apikey for a particular source
  * [unpackself](xref:choco-command-unpackself) - re-installs Chocolatey base files
- * [version](xref:choco-command-version) - [DEPRECATED] will be removed in v1 - use [`choco outdated`](xref:choco-command-outdated) or `cup <pkg|all> -whatif` instead
- * [update](xref:choco-command-update) - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)
  * [support](xref:choco-command-support) - provides support information
  * [help](xref:choco-command-help) - displays top level help information for choco
  * [export](xref:choco-command-export) - exports list of currently installed packages
@@ -105,7 +109,8 @@ Following this guide will ensure your experience is not frustrating
 based on choco not receiving things you think you are passing to it.
 
  * For consistency, always use `choco`, not `choco.exe`. Never use
-   shortcut commands like `cinst` or `cup`.
+   shortcut commands like `cinst` or `cup` (The shortcuts `cinst`
+   and `cup` will be removed in v2.0.0).
  * Always have the command as the first argument to `choco`. e.g.
    [`choco install`](xref:choco-command-install), where [`install`](xref:choco-command-install) is the command.
  * If there is a subcommand, ensure that is the second argument. e.g.
