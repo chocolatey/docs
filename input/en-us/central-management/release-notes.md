@@ -43,7 +43,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Disable updating of related group information when it is not needed as computers are reporting in.
 
 
-## 0.7.0 (November 17th, 2021)
+## 0.7.0 (November 17, 2021)
 ### BREAKING CHANGES
  * Additional steps required to change LDAP and SMTP passwords.
    * The LDAP and SMTP password is no longer present on the page so cannot be inspected.
@@ -75,7 +75,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## 0.6.3 (September 23rd, 2021)
+## 0.6.3 (September 23, 2021)
 ### BUG FIXES
  * Fix - Processing of message queue does not complete when an invalid XML file is located - see [Licensed #266](https://github.com/chocolatey/chocolatey-licensed-issues/issues/266)
  * Fix - When the "Only one concurrent login per user" setting is enabled, users are locked out of CCM Web UI - see [Licensed #260](https://github.com/chocolatey/chocolatey-licensed-issues/issues/260)
@@ -96,7 +96,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## 0.6.2 (August 26th, 2021)
+## 0.6.2 (August 26, 2021)
 ### BUG FIXES
  * Fix - Service - Method to determine correct SSL certificate to use between CCM Service installation script and execution is inconsistent
  * Fix - Service - Exceptions thrown during CCM Service startup do not halt internal service tasks
@@ -121,7 +121,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## 0.6.1 (August 5th, 2021)
+## 0.6.1 (August 5, 2021)
 ### BUG FIXES
  * Fix - Service - Unable to install chocolatey-management-service package under certain conditions - see [Licensed #242](https://github.com/chocolatey/chocolatey-licensed-issues/issues/242)
 
@@ -137,7 +137,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## 0.6.0 (August 3rd, 2021)
+## 0.6.0 (August 3, 2021)
 ### BREAKING CHANGES
  * Audit Retention
    * By default, Audit Logs generated within CCM will now be kept for 30 days, after which they will be removed
@@ -160,7 +160,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## 0.5.1 (April 12th, 2021)
+## 0.5.1 (April 12, 2021)
 ### BUG FIXES
  * Fix - Service - Unable to process deployment report messages that contain invalid XML characters - see [Licensed #216](https://github.com/chocolatey/chocolatey-licensed-issues/issues/216)
 
