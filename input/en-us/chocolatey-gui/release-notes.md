@@ -12,6 +12,8 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
+<?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+
 ## [1.0.0](https://github.com/chocolatey/ChocolateyGUI/milestone/28?closed=1) (March 21, 2022)
 
 > :warning: **WARNING**

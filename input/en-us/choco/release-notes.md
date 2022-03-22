@@ -12,6 +12,8 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 > :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
+<?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
 ### Breaking Changes

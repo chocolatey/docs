@@ -17,6 +17,8 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 - Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
 - Chocolatey for Business (C4B) customers - also refer to [Chocolatey Agent Release Notes](xref:agent-release-notes) and [Chocolatey Central Management Release Notes](xref:ccm-release-notes).
 
+<?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+
 ## 1.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
