@@ -38,7 +38,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Document the fact that the Source switch doesn't do anything when running the command choco list --lo - see [#2545](https://github.com/chocolatey/choco/issues/2545)
 - Update warning that is shown regarding using a trial license of Chocolatey - see [#2407](https://github.com/chocolatey/choco/issues/2407)
 
-## [0.12.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.1) (January 25th, 2022)
+## [0.12.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.1) (January 25, 2022)
 
 ### Bug Fixes
 
@@ -57,7 +57,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18th, 2022)
+## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18, 2022)
 
 > :warning: **WARNING**
 >
@@ -100,7 +100,7 @@ A short video explaining what is included in this release can be found here:
 - Update default template regarding building Chocolatey package on non-Windows systems - see [#2384](https://github.com/chocolatey/choco/issues/2384)
 - Fix version number used in default template - see [#2381](https://github.com/chocolatey/choco/pull/2381)
 
-## [0.11.3](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.3) (October 27th, 2021)
+## [0.11.3](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.3) (October 27, 2021)
 
 ### Bug Fixes
 
@@ -122,7 +122,7 @@ A short video explaining what is included in this release can be found here:
 <br>
 </p>
 
-## [0.11.2](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.2) (September 23rd, 2021)
+## [0.11.2](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.2) (September 23, 2021)
 
 ### Bug Fix
 

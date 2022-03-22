@@ -18,9 +18,9 @@ RedirectFrom: docs/presentations
 
 ### 2019
 
-* [Automating the Software Deployment Lifecycle in Azure with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190702-neaug/) - [North East Azure User Group](https://www.meetup.com/North-East-Azure-User-Group/) - [Paul Broadwith](https://pauby.com), [June 6th, 2019](https://www.meetup.com/North-East-Azure-User-Group/events/261825832/)
-* [Click Free Application Deployment with the Magic of PowerShell and Chocolatey](https://blog.pauby.com/presentation/20190607-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 7th, 2019 - [Video](https://www.youtube.com/watch?v=HAWRkWMnAus&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
-* [Automating the Software Deployment Lifecycle with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190606-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 6th, 2019 - [Video](https://www.youtube.com/watch?v=TvWl2VzGo5U&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
+* [Automating the Software Deployment Lifecycle in Azure with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190702-neaug/) - [North East Azure User Group](https://www.meetup.com/North-East-Azure-User-Group/) - [Paul Broadwith](https://pauby.com), [June 6, 2019](https://www.meetup.com/North-East-Azure-User-Group/events/261825832/)
+* [Click Free Application Deployment with the Magic of PowerShell and Chocolatey](https://blog.pauby.com/presentation/20190607-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 7, 2019 - [Video](https://www.youtube.com/watch?v=HAWRkWMnAus&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
+* [Automating the Software Deployment Lifecycle with Chocolatey, Jenkins and PowerShell](https://blog.pauby.com/presentation/20190606-psconfeu/) - [PowerShell Conference Europe](https://psconf.eu/2019/) - [Paul Broadwith](https://pauby.com), June 6, 2019 - [Video](https://www.youtube.com/watch?v=TvWl2VzGo5U&list=PLfpfxDPYyd6KBiKwl2oopwG8ogAUtQ9nP)
 
 ### 2017
 
