@@ -26,6 +26,8 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 - Some issues may be held internally, please follow your support routes to learn more.
 
+<?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+
 ## 1.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
