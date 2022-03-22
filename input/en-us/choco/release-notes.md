@@ -16,6 +16,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
+> :warning: **WARNING**
+>
+> If you are using a commercial version of Chocolatey (i.e. you have the chocolatey.extension package installed), you will need to **_first_** upgrade to version v4.0.0 of the [Chocolatey Licensed Extension](xref:licensed-extension-release-notes#march-21-2022).
+
 ### Breaking Changes
 
 - Remove deprecated Chocolatey commands and shims - see [#2468](https://github.com/chocolatey/choco/issues/2468)
