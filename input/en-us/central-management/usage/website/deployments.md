@@ -12,7 +12,7 @@ RedirectFrom:
 >
 > This is a Work in Progress. Please check back later.
 >
-> Please see https://blog.chocolatey.org/2020/05/announcing-deployments/ for now.
+> Please see <https://blog.chocolatey.org/2020/05/announcing-deployments/> for now.
 
 ## Description
 
@@ -144,7 +144,7 @@ This deployment status indicates the step completed and reported back as success
 
 ### Failed
 
-This deployment status indicates the deployment failed for some reason. You can click the `View Log` button on the individual deployment step to get more data as why the failure may have occured.
+This deployment status indicates the deployment failed for some reason. You can click the `View Log` button on the individual deployment step to get more data as why the failure may have occurred.
 
 ### Unknown
 
@@ -166,7 +166,7 @@ Central Management has specific compatibility requirements with quite a few movi
 
 ### Why do I see some machines have not opted in for Deployments?
 
-If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deploymens (Configuration)".
+If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deployments (Configuration)".
 
 ![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
 
