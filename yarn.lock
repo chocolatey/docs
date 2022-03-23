@@ -1247,7 +1247,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gar/promisify@npm:^1.0.1":
+"@gar/promisify@npm:^1.0.1, @gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
   checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
@@ -1285,6 +1285,16 @@ __metadata:
     "@gar/promisify": ^1.0.1
     semver: ^7.3.5
   checksum: f5ad92f157ed222e4e31c352333d0901df02c7c04311e42a81d8eb555d4ec4276ea9c635011757de20cc476755af33e91622838de573b17e52e2e7703f0a9965
+  languageName: node
+  linkType: hard
+
+"@npmcli/fs@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "@npmcli/fs@npm:2.1.0"
+  dependencies:
+    "@gar/promisify": ^1.1.3
+    semver: ^7.3.5
+  checksum: 6ec6d678af6da49f9dac50cd882d7f661934dd278972ffbaacde40d9eaa2871292d634000a0cca9510f6fc29855fbd4af433e1adbff90a524ec3eaf140f1219b
   languageName: node
   linkType: hard
 
@@ -2001,16 +2011,16 @@ __metadata:
   linkType: hard
 
 "cacache@npm:^16.0.0":
-  version: 16.0.2
-  resolution: "cacache@npm:16.0.2"
+  version: 16.0.3
+  resolution: "cacache@npm:16.0.3"
   dependencies:
-    "@npmcli/fs": ^1.0.0
+    "@npmcli/fs": ^2.1.0
     "@npmcli/move-file": ^1.1.2
     chownr: ^2.0.0
     fs-minipass: ^2.1.0
     glob: ^7.2.0
     infer-owner: ^1.0.4
-    lru-cache: ^7.5.1
+    lru-cache: ^7.7.1
     minipass: ^3.1.6
     minipass-collect: ^1.0.2
     minipass-flush: ^1.0.5
@@ -2022,7 +2032,7 @@ __metadata:
     ssri: ^8.0.1
     tar: ^6.1.11
     unique-filename: ^1.1.1
-  checksum: dced60dc532ed6a6da3feeb7736c5cb38bbbc900e273a04e68e510cc9bd1acab8e61ee86df7b4fe959ef35e39fd74abb4cb4834d221a9a59afa8029f3773eab3
+  checksum: 9bb9a0bd1b8bee3284c6fa9dcb4b28a62b528dd181f7cd482319611b5d6df295a3594dcefc24d1a4f16162bac50d6facc183ed21935f3d09af6d16f620ea54d3
   languageName: node
   linkType: hard
 
@@ -2136,7 +2146,7 @@ __metadata:
 
 "choco-theme@git+https://github.com/chocolatey/choco-theme.git":
   version: 0.1.0
-  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=610e9aa1ac52e7e860ce9483491a8202fdf4baee"
+  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=a3d0705b21e2339a86b5cfe173d25fbba7aa8d99"
   dependencies:
     "@babel/core": ^7.12.3
     "@babel/preset-env": ^7.12.1
@@ -2173,7 +2183,7 @@ __metadata:
     mousetrap: ^1.6.5
     node-sass: ^7.0.1
     nouislider: ^15.5.1
-  checksum: 1209bf03b258be0620b6a9cb101da44b765fd21bfa4361740da14178ac17b225a4b0c48f429d3ad134181127c5e77075ef9afd35846dbb5aec0193b534d8a131
+  checksum: 630dc088694d860642bd36e92ebce665c6c367e058a8552cc8728ca7aed78fe4eabc6b1d0f8ba62d04ccd90700010a734cd2fdee12fbdedbe0ffe1839b52901e
   languageName: node
   linkType: hard
 
@@ -2764,9 +2774,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.84":
-  version: 1.4.88
-  resolution: "electron-to-chromium@npm:1.4.88"
-  checksum: a93d364efae8e6f718f1aae0f47914028178ed0b643cc583344127dc547bf1f7fc8df066834233e04629e8df2141eb192bcb2070abdbeeb872e551acbaba2bbf
+  version: 1.4.91
+  resolution: "electron-to-chromium@npm:1.4.91"
+  checksum: 48396dc8b1aff87671853c9b39432402079e99f62da1c5f136231c292c43012965f0bc14ff7ae8fcad5a8af437c21912b0fc5399bde98ed3d4c2b871a0ae781d
   languageName: node
   linkType: hard
 
@@ -4569,7 +4579,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^7.5.1":
+"lru-cache@npm:^7.5.1, lru-cache@npm:^7.7.1":
   version: 7.7.1
   resolution: "lru-cache@npm:7.7.1"
   checksum: f362c5a2cfa8ad6fe557ec43dc1b7a9695cce84a5652a43ff813609f782f5da576631e7dfad41878bf19a7a69438f38375178635ee80de269aa314280ca2f59e
