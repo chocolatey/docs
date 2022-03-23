@@ -103,9 +103,9 @@ Deployments in this state can be started manually or according to a schedule.
 
 Deployments that are currently in progress will be in this state.
 
-### Succeeded / Failed
+### Completed
 
-Deployments that have finished running will be either the `Succeeded` or `Failed` state, depending on how the run went.
+Deployments that have finished running will enter the `Completed` state. They will list their status depending on how the run went.
 
 ### Archived
 
@@ -113,6 +113,42 @@ Deployments that are in a completed state can also be `Archived` to hide them fr
 This is helpful if you'd like to reduce clutter on the main deployments screen without discarding the information the completed report contains.
 
 You can access archived deployments from the `Reports -> Deployments` page in the left sidebar of the CCM dashboard.
+
+## Deployment Statuses
+
+This is a list of all the statuses that a deployment step or whole deployment can report as. They are listed in order of processing order as a new deployment runs.
+
+### Ready
+
+This deployment status is presented once a deployment enters the active state. It is now waiting for the next agent check-in to grab the deployment from CCM.
+
+### Unreachable
+
+This deployment status is reported when a deployment is queued up in Central Management. But the client machine agent is unable to receive to accept the deployment. This is usually the status given when a deployment step or whole deployment reaches its execution timeout. This can be a client or sever side error. It's best to check both the central-management-service.log file on the server as well as the chocolatey-agent.log file on the client to investigate if you receive this status.
+
+### Active
+
+This deployment status is given once the agent on the client machine accepts the deployment from CCM. It then begins processing the deployment and also reports back to Central Management that is has started this deployment step.
+
+### Inconclusive
+
+This deployment status is reported when a deployment step has gone to active, but Central Management doesn't get a reply back as to the status of the deployment step running on the client machine. It is best to look at the chocolatey-agent.log file from the client machine as to why it was not able to report back to Central Management.
+
+### Cancelled
+
+This status is reported anytime a deployment step or deployment as a whole is manually cancelled by someone.
+
+### Success
+
+This deployment status indicates the step completed and reported back as successful.
+
+### Failed
+
+This deployment status indicates the deployment failed for some reason. You can click the `View Log` button on the individual deployment step to get more data as why the failure may have occured.
+
+### Unknown
+
+This status is reported when a deployment step or deployment as a whole cannot be interpreted by Central Management and placed into one of the other statuses. This should only happen in the case of a bug. If you get this status please reach out to us via the means listed when running `choco support`.
 
 ## FAQ
 
