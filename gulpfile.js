@@ -57,7 +57,14 @@ function copyTheme() {
     var copyIcons = src(paths.theme + 'images/icons/*.*')
         .pipe(dest(paths.input));
 
-    var copyPartials = src([paths.theme + 'partials/*.*', '!' + paths.theme + 'partials/svgstyles.txt', '!' + paths.theme + 'partials/AlertText.txt'])
+    var copyPartials = src([
+            paths.theme + 'partials/*.*',
+            '!' + paths.theme + 'partials/svgstyles.txt',
+            '!' + paths.theme + 'partials/AlertText.txt',
+            '!' + paths.theme + 'partials/TermsLastUpdated.txt',
+            '!' + paths.theme + 'partials/TermsToc.html',
+            '!' + paths.theme + 'partials/TermsContent.html'
+        ])
         .pipe(injectstring.prepend('@* ' + editFilePartial + ' *@\n'))
         .pipe(injectstring.replace(/topNoticeText = \"\"/, 'topNoticeText = "' + fs.readFileSync(paths.theme + 'partials/AlertText.txt', 'utf8') + '"'))
         .pipe(injectstring.replace(/<input id=\"themeToggle\" \/>/, fs.readFileSync(paths.theme + 'partials/ThemeToggle.txt')))
@@ -65,7 +72,17 @@ function copyTheme() {
         .pipe(rename({ prefix: "_", extname: '.cshtml' }))
         .pipe(dest(paths.partials));
 
-    return merge(copyFontAwesome, copyImages, copyIcons, copyPartials);
+    var copyTermsLastUpdated = src(paths.theme + 'partials/TermsLastUpdated.txt')
+        .pipe(injectstring.prepend('<!-- ' + editFilePartial + ' -->\n'))
+        .pipe(rename({ basename: 'terms-last-updated' }))
+        .pipe(dest(paths.partials));
+
+    var copyTermsContent = src(paths.theme + 'partials/TermsContent.html')
+        .pipe(injectstring.prepend('<!-- ' + editFilePartial + ' -->\n'))
+        .pipe(rename({ basename: 'terms-content', extname: '.txt' }))
+        .pipe(dest(paths.partials));
+
+    return merge(copyFontAwesome, copyImages, copyIcons, copyPartials, copyTermsLastUpdated, copyTermsContent);
 }
 
 function compileSass() {

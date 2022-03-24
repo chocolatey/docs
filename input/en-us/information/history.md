@@ -1,5 +1,5 @@
 ---
-Order: 40
+Order: 50
 xref: history
 Title: History
 Description: Historical information about Chocolatey
