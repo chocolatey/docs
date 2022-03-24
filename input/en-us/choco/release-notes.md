@@ -14,6 +14,12 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.0.1](https://github.com/chocolatey/choco/milestone/55?closed=1) (March 24, 2022)
+
+### Bug Fix
+
+- Fix - When Chocolatey CLI v1.0.0 attempts to load Chocolatey Licensed Extension versions less than v4.0.0, it halts execution with an unclear and unhelpful error message - see [#2656](https://github.com/chocolatey/choco/issues/2656)
+
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
 > :warning: **WARNING**
@@ -37,7 +43,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 ### Documentation
 
 - Update deprecation notice for push command to mention that the default source will be removed in v2.0.0 - see [#2634](https://github.com/chocolatey/choco/issues/2634)
-- Mark Chocolatey shims (chocolatey. cinst, clist, cpush, cuninst, cup) as deprecated - see [#2641](https://github.com/chocolatey/choco/issues/2641)
+- Mark Chocolatey shims (chocolatey, cinst, clist, cpush, cuninst, cup) as deprecated - see [#2641](https://github.com/chocolatey/choco/issues/2641)
 - Mark Get-BinRoot Chocolatey helper function as deprecated - see [#2470](https://github.com/chocolatey/choco/issues/2470)
 - Add deprecation notices for all things that are set to change in v2.0.0 - see [#2462](https://github.com/chocolatey/choco/issues/2462)
 - Provide better clarity regarding the license terms for using Chocolatey and shimgen - see [#2549](https://github.com/chocolatey/choco/issues/2549), [#2615](https://github.com/chocolatey/choco/issues/2615), and [2614](https://github.com/chocolatey/choco/issues/2614)
