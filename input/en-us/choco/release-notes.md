@@ -14,6 +14,12 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.0.1](https://github.com/chocolatey/choco/milestone/55?closed=1) (March 24, 2022)
+
+### Bug Fix
+
+- Fix - When Chocolatey CLI v1.0.0 attempts to load Chocolatey Licensed Extension versions less than v4.0.0, it halts execution with an unclear and unhelpful error message - see [#2656](https://github.com/chocolatey/choco/issues/2656)
+
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
 > :warning: **WARNING**
