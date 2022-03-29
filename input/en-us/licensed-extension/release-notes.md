@@ -32,6 +32,18 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 4.1.0 (March 30, 2022)
+
+### Features
+
+- Add feature to allow exclusion of all Chocolatey component packages during choco upgrade all command.
+  - This is designed to prevent unexpected updating of a Chocolatey component when executing the `choco upgrade all` command. Chocolatey has had the `upgradeAllExceptions` configuration
+    option since v0.10.14, where any package can be excluded from the `choco upgrade all` command, however, this feature makes it really simple to add all the official Chocolatey
+    component packages into this exclusion list.
+- Add an attribute to the Chocolatey Licensed Extension assembly to provide information about the minimum supported Chocolatey version.
+  - This will match the version number that is defined in the nuspec dependencies for the chocolatey.extension package, however, this assembly attribute is something which can be
+    checked at the time of running choco.exe to allow checks to see if everything is compatible.
+
 ## 4.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
