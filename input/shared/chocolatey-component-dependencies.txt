@@ -5,16 +5,17 @@ The following table aims to illustrate those dependencies, based on the latest s
 
 | Package Name / Dependency      | chocolatey  | chocolatey.extension | chocolateygui |
 |------------------------------- |-------------|----------------------|---------------|
-| chocolatey v1.0.0              |             |                      |               |
-| chocolatey.extension v4.0.0    | v1.0.0      |                      |               |
+| chocolatey v1.1.0              |             |                      |               |
+| chocolatey.extension v4.1.0    | v1.0.0      |                      |               |
 | chocolatey-agent v1.0.0        |             | v4.0.0               |               |
 | chocolateygui v1.0.0           | v1.0.0      |                      |               |
 | chocolateygui.extension v1.0.0 |             | v4.0.0               | v1.0.0        |
 
 > :warning: **WARNING**
 >
-> Due the nature of how Chocolatey package dependencies work, we can ensure that all the required package versions are installed.
-For example, if you were to install chocolateygui.extension then it would make sure that the following tree of packages are installed:
+> Due the nature of how Chocolatey package dependencies work, we can ensure that all the required package versions are
+> installed. For example, if you were to install chocolateygui.extension then it would make sure that the following tree
+> of packages, with as a minimum these package versions, are installed:
 >
 > | Package Name            | Version |
 > | ----------------------- | ------- |
@@ -22,6 +23,9 @@ For example, if you were to install chocolateygui.extension then it would make s
 > | chocolateygui           | v1.0.0  |
 > | chocolatey.extension    | v4.0.0  |
 > | chocolatey              | v1.0.0  |
+>
+> **NOTE:** Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
+> available that matches the defined dependency range.
 >
 > However, there is nothing that can be done to ensure that indirect dependencies are satisfied.
 > For example, if you currently have chocolateygui v0.18.1 installed along with chocolateygui.extension

@@ -3,12 +3,11 @@ Order: 30
 xref: licensed-extension-compatibility
 Title: Compatibility
 Description: Compatibility Information for Chocolatey Licensed Extension
-RedirectFrom:
 ---
 
 ## Summary
 
-This covers the compatibility information for the Chocolatey Licensed Extension and associated Chocolatey and other product versions.
+This covers the compatibility information for the Chocolatey Licensed Extension and associated Chocolatey CLI and other product versions.
 The Chocolatey Licensed Extension is designed to work with a certain corresponding version range of the Chocolatey CLI package.
 Using incompatible versions of Chocolatey CLI with the Chocolatey Licensed Extension may result in undesirable behaviour.
 
@@ -24,9 +23,9 @@ If you are working with an earlier version of Chocolatey Licensed Extension, ple
 > :warning: **WARNING**
 >
 > Chocolatey CLI v1.0.1 and up may continue to work for versions of the Chocolatey Licensed Extension older than v4.0.0, but these configurations are not supported for use in a production environment.
-> We recommend all customers update to new product versions as they are able to do so in order to get the latest features and fixes.
+> We recommend all customers update to new product versions, if/when they are able to do so, in order to get the latest features and fixes.
 
-In Chocolatey CLI versions v1.0.1 and newer, you may receive error messages from the licensed extension, but these will not prevent Chocolatey from functioning.
+In Chocolatey CLI versions v1.0.1 and newer, you may receive error messages regarding the currently installed Chocolatey Licensed Extension, but these will not prevent Chocolatey from functioning.
 In order to resolve these messages, simply use `choco install` or `choco upgrade` to install, upgrade, or downgrade the Chocolatey CLI or Chocolatey Licensed Extension packages as appropriate to ensure you are using compatible versions of Chocolatey CLI and the Chocolatey Licensed Extension.
 
 In Chocolatey CLI versions prior to v1.0.1, you may receive error messages similar to the following if there are incompatible versions of the Chocolatey Licensed Extension installed:
@@ -54,5 +53,44 @@ Add the `--version` parameter with the appropriate version if you need to instal
 If you needed to back-up the existing Chocolatey Licensed Extension version in order to install the newer version, the following command can be used to remove the backed-up files after you have confirmed that the above steps have resolved the issue:
 
 ```powershell
-Remove-Item -Path "C:\ProgramData\chocolatey\extensions\chocolatey.old" -Recurse -Force
+Remove-Item -Path "$env:ChocolateyInstall\extensions\chocolatey.old" -Recurse -Force
+```
+
+## Compatibility Warnings
+
+As of Chocolatey CLI v1.1.0, Chocolatey will notify you with a warning if it detects that the version of the Chocolatey Licensed Extension is not supported by the current version of Chocolatey CLI.
+At runtime, with a potentially incompatible version of Chocolatey Licensed Extension installed, you will see a warning that looks like this:
+
+```code
+WARNING!
+
+You are running a version of Chocolatey that may not be compatible with
+the currently installed version of the chocolatey.extension package.
+Running Chocolatey with the current version of the chocolatey.extension
+package is an unsupported configuration.
+
+See https://ch0.co/compatibility for more information.
+If you are in the process of modifying the chocolatey.extension package,
+you can ignore this warning.
+
+Additionally, you can ignore these warnings by either setting the
+DisableCompatibilityChecks feature:
+
+choco feature enable --name=""'disableCompatibilityChecks'""
+
+Or by passing the --skip-compatibility-checks option when executing a
+command.
+```
+
+As the warning text notes, this feature can be disabled in one of two ways.
+When running each Chocolatey CLI command, you can append the `--skip-compatibility-checks` flag, for example:
+
+```powershell
+choco list --local-only --skip-compatibility-checks
+```
+
+Alternatively, the compatibility checks can be persistently disabled by enabling the `disableCompatibilityChecks` feature:
+
+```powershell
+choco feature enable --name=""'disableCompatibilityChecks'""
 ```
