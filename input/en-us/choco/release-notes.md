@@ -14,6 +14,25 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.1.0](https://github.com/chocolatey/choco/milestone/53?closed=1) (March 30, 2022)
+
+### Bug Fixes
+
+- Fix - Python alternate source does not handle `all` keyword correctly - see [#2540](https://github.com/chocolatey/choco/issues/2540)
+- Fix - Incorrect error message is displayed when chocolatey.config becomes corrupt - see [#2525](https://github.com/chocolatey/choco/issues/2525)
+- Fix - When running the `choco outdated` command the wrong exit code is shown when there is a pinned package and the `--ignore-pinned` option is being used  - see [#1896](https://github.com/chocolatey/choco/issues/1896)
+- Fix - Windows PowerShell incorrectly identifies a PowerShell file that is UTF8 encoded with a BOM as being signed if it is a single newline - see [#2663](https://github.com/chocolatey/choco/issues/2663)
+- Fix - Unable to install Chocolatey using PowerShell Core - see [#2083](https://github.com/chocolatey/choco/issues/2083)
+
+### Improvements
+
+- Support installation checks for incompatible Licensed Extension when running `choco upgrade chocolatey` - see [#2659](https://github.com/chocolatey/choco/issues/2659)
+- Support runtime checks for incompatible Chocolatey CLI and Chocolatey Licensed Extension versions - see [#2660](https://github.com/chocolatey/choco/issues/2660)
+  - When triggered, these checks will output a warning and the beginning of the command execution, and at the end of it. To acknowledge these warnings you can
+    either pass the `--skip-compatibility-checks` option when executing a command, or you can enable the `DisableCompatibilityChecks` feature using the following
+    command `choco feature enable --name="'disableCompatibilityChecks'"`
+- Include the latest version of 7zip (v21.07) within Chocolatey installation - see [#2650](https://github.com/chocolatey/choco/issues/2650)
+
 ## [1.0.1](https://github.com/chocolatey/choco/milestone/55?closed=1) (March 24, 2022)
 
 ### Bug Fix
