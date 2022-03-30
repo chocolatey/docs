@@ -201,6 +201,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Log File to output to in addition to regular loggers. Available in 0.1-
        0.8+.
 
+     --skipcompatibilitychecks, --skip-compatibility-checks
+     SkipCompatibilityChecks - Prevent warnings being shown before and after 
+       command execution when a runtime compatibility problem is found between 
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+
+
  -a, --auto, --automaticpackage
      AutomaticPackage - Generate automatic package instead of normal. 
        Defaults to false

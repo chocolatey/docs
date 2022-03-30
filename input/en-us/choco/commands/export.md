@@ -173,6 +173,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Log File to output to in addition to regular loggers. Available in 0.1-
        0.8+.
 
+     --skipcompatibilitychecks, --skip-compatibility-checks
+     SkipCompatibilityChecks - Prevent warnings being shown before and after 
+       command execution when a runtime compatibility problem is found between 
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+
+
  -o, --output-file-path=VALUE
      Output File Path - the path to where the list of currently installed 
        packages should be saved. Defaults to packages.config.

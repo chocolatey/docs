@@ -216,6 +216,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Log File to output to in addition to regular loggers. Available in 0.1-
        0.8+.
 
+     --skipcompatibilitychecks, --skip-compatibility-checks
+     SkipCompatibilityChecks - Prevent warnings being shown before and after 
+       command execution when a runtime compatibility problem is found between 
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+
+
  -s, --source=VALUE
      Source - The source to find the package(s) to install. Special sources 
        include: ruby, webpi, cygwin, windowsfeatures, and python. To specify 
@@ -491,6 +497,20 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        using Package Reducer. Overrides the default feature 
        'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only (version -
        1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer 
+
+     --exclude-chocolatey-packages-during-upgrade-all
+     Exclude Chocolatey Packages During Upgrade All - When running the 'choco 
+       upgrade all' command, do not upgrade any of the official Chocolatey 
+       packages. Overrides the default feature 
+       'excludeChocolateyPackagesDuringUpgradeAll' set to 'False'. Licensed 
+       editions only (version 4.1.0+). 
+
+     --include-chocolatey-packages-during-upgrade-all
+     Include Chocolatey Package During Upgrade All - When running the 'choco 
+       upgrade all' command, include all the official Chocolatey packages. 
+       Overrides the default feature 
+       'excludeChocolateyPackagesDuringUpgradeAll' set to 'False'. Licensed 
+       editions only (version 4.1.0+). 
 
 ~~~
 
