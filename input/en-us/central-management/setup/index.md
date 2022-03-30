@@ -21,7 +21,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 
 > :memo: **NOTE**
 >
-> If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](xref:qde). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](xref:qde).
+> If this seems like a lot to set up, you have access to the [Quick Start Guide](xref:c4b-quick-start-guide). Making setup of Central Management just running one powershell script. We also offer our [Chocolatey For Business Azure Environment](xref:qdeazure). It comes preloaded with Central Management and other Chocolatey recommended infrastructure.
 
 > :warning: **WARNING**
 >
