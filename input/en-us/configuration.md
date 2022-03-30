@@ -141,6 +141,7 @@ A checkbox means this feature is turned on by default.
 * [x] `downloadCache` - Download Cache - use the private download cache if available for a package. Available in 0.9.10+. Licensed editions only. See <https://docs.chocolatey.org/en-us/features/private-cdn>
 * [ ] `failOnInvalidOrMissingLicense` - Fail On Invalid Or Missing License - allows knowing when a license is expired or not applied to a machine. Available in 0.9.10+.
 * [x] `warnOnUpcomingLicenseExpiration` - Warn On Upcoming License Expiration - When a license expiration date is upcoming, should Chocolatey provide a warning? MSP and Business editions only (version 1.12.12+). Setting ignored in trial editions.
+* [ ] `excludeChocolateyPackagesDuringUpgradeAll` - Exclude Chocolatey Packages During Upgrade All - When enabled, all official Chocolatey packages will be added to the comma-separated list of package names that should not be upgraded when upgrading 'all'. Any packages specified in the 'upgradeAllExceptions' configuration setting will still be respected. Licensed editions only (version 4.1.0+).
 
 ### Access Control / Security
 
