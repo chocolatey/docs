@@ -2089,9 +2089,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001317":
-  version: 1.0.30001322
-  resolution: "caniuse-lite@npm:1.0.30001322"
-  checksum: 48609d1808c69034a74ab6df9db8cffd847e12da6979e150f364cc8e2a4310fce1f2811382ca57b3b4111c0182f7c67edfde3cd4159c29537fc232596aecf48b
+  version: 1.0.30001325
+  resolution: "caniuse-lite@npm:1.0.30001325"
+  checksum: 383a86a513381e3927a30b578ac8616ce388af79dc5dced22e18fffaef17c0bed0e324eadba1b13a6c15b3ec39128fbcfbb097992d3aca206feef5a539c4639f
   languageName: node
   linkType: hard
 
@@ -2146,7 +2146,7 @@ __metadata:
 
 "choco-theme@git+https://github.com/chocolatey/choco-theme.git":
   version: 0.1.0
-  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=b64d89c182742fd560936c520711dadfc2e8d99b"
+  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=18193da27d628b4cfdc0ef8e7d52fd34dc7e4275"
   dependencies:
     "@babel/core": ^7.12.3
     "@babel/preset-env": ^7.12.1
@@ -2183,7 +2183,7 @@ __metadata:
     mousetrap: ^1.6.5
     node-sass: ^7.0.1
     nouislider: ^15.5.1
-  checksum: cbd22dd372c51f2d03e301a3ab06c324323021ccfbb5e849e6f7c63bf4ae28b7034559938645a12e84d19d5c93ee5cec1754ba29ed856fba5cddcdf4d2fbb153
+  checksum: c2a3d5e5210bbe6ec0aafdd86eb35c5403181bf6c8ffa085cbd7fcf3fca6d62160be43f3ec0a3148326e9cec70425bdc1ae58b230576cf62661fd8588b0e461e
   languageName: node
   linkType: hard
 
@@ -2774,9 +2774,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.84":
-  version: 1.4.101
-  resolution: "electron-to-chromium@npm:1.4.101"
-  checksum: b4ba580c7e9f6ee4ea8c84524ed1c5279dcabf2d52b72e05aa7d4dc2097b07ada694c05e30d6f1ba0fe9e3788f0f027e9092fd4742967d65b484eb5db1e188f9
+  version: 1.4.103
+  resolution: "electron-to-chromium@npm:1.4.103"
+  checksum: ae5783cafb1f49e92946416fafc5af45d85e5a6847ce00f4cf4b4d2e54bca1d27b26699ea2cedf5b700c1a0190329e7ec20dc06198daa9f0c343044bc074ae75
   languageName: node
   linkType: hard
 
@@ -4580,9 +4580,9 @@ __metadata:
   linkType: hard
 
 "lru-cache@npm:^7.7.1":
-  version: 7.7.2
-  resolution: "lru-cache@npm:7.7.2"
-  checksum: 1aaad83fcffeeed2e08d5b47862e22abe9a2aa065d4e333a0e1944f4125f11acc7a950374ab53a68e61c6188b300f8b4bc59a5f4798d0ca3c9a67b33ea185433
+  version: 7.7.3
+  resolution: "lru-cache@npm:7.7.3"
+  checksum: 1789743a68a8db052564a9dd020f04ba0712327a43e08babc94f05e1c56ef75a03514cf4acab75ae90e3d5d16ae02c7bf0f34754968dc5b8c2c3bc2d92c21745
   languageName: node
   linkType: hard
 
@@ -5553,12 +5553,12 @@ __metadata:
   linkType: hard
 
 "postcss-selector-parser@npm:^6.0.6":
-  version: 6.0.9
-  resolution: "postcss-selector-parser@npm:6.0.9"
+  version: 6.0.10
+  resolution: "postcss-selector-parser@npm:6.0.10"
   dependencies:
     cssesc: ^3.0.0
     util-deprecate: ^1.0.2
-  checksum: f8161ab4d3e5c76b8467189c6d164ba0f6b6e74677435f29e34caa1df01e052b582b4ae4f7468b2243c4befdd8bdcdb7685542d1b2fca8deae21b3e849c78802
+  checksum: 46afaa60e3d1998bd7adf6caa374baf857cc58d3ff944e29459c9a9e4680a7fe41597bd5b755fc81d7c388357e9bf67c0251d047c640a09f148e13606b8a8608
   languageName: node
   linkType: hard
 
