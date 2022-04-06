@@ -1,0 +1,4 @@
+## Maintenance and Support contract considerations for Perpetual License customers
+
+
+Please check out the [Maintenance and Support contract considerations for Perpetual License customers](xref:chocolatey-components-dependencies-and-support-lifecycle#maintenance-and-support-contract-considerations-for-perpetual-license-customers) section for more information.
