@@ -71,7 +71,6 @@ $packageArgs = @{
   packageName   = 'test'
   fileType      = 'MSI'
   file          = "$toolsPath\somefile.msi"
-  softwareName  = 'test'
   silentArgs    = '/qn /norestart'
   validExitCodes= @(0)
 }

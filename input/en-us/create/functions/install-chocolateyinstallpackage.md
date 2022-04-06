@@ -72,7 +72,6 @@ $packageArgs = @{
   file          = $fileLocation
   silentArgs    = "/qn /norestart"
   validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'Bob*'
 }
 
 Install-ChocolateyInstallPackage @packageArgs
@@ -88,7 +87,6 @@ $packageArgs = @{
   file          = '\\SHARE_LOCATION\to\INSTALLER_FILE'
   silentArgs    = "/S"
   validExitCodes= @(0)
-  softwareName  = 'Bob*'
 }
 
 Install-ChocolateyInstallPackage @packageArgs
@@ -108,7 +106,6 @@ $packageArgs = @{
   file          = $fileLocation
   silentArgs    = "/qn /norestart MSIPROPERTY=`"true`""
   validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'Bob*'
 }
 
 Install-ChocolateyInstallPackage @packageArgs
@@ -129,7 +126,6 @@ $packageArgs = @{
   file          = $fileLocation
   silentArgs    = "/qn /norestart TRANSFORMS=`"$mstFileLocation`""
   validExitCodes= @(0, 3010, 1641)
-  softwareName  = 'Bob*'
 }
 
 Install-ChocolateyInstallPackage @packageArgs

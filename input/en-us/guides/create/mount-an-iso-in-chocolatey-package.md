@@ -54,7 +54,6 @@ $packageArgs = @{
     file64        = 'x64\setup64.msi'
     silentArgs    = "/qn /norestart"
     validExitCodes= @(0, 3010, 1641)
-    softwareName  = 'Bob*'
     isoFile       = $fileLocation
 }
 
@@ -76,7 +75,6 @@ $packageArgs = @{
     file64        = 'x64\setup64.msi'
     silentArgs    = "/qn /norestart"
     validExitCodes= @(0, 3010, 1641)
-    softwareName  = 'Bob*'
     checksum      = '12345'
     checksumType  = 'sha256'
 }
