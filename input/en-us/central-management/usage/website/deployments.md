@@ -8,12 +8,6 @@ RedirectFrom:
   - en-us/central-management/usage/deployments
 ---
 
-> :warning: **WARNING**
->
-> This is a Work in Progress. Please check back later.
->
-> Please see <https://blog.chocolatey.org/2020/05/announcing-deployments/> for now.
-
 ## Description
 
 Central Management's Deployments functionality allows for pre-defined actions to be executed across any Chocolatey-managed computers.
