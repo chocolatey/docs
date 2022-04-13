@@ -360,13 +360,13 @@ Below are the details for the Jenkins job to update the test repository from the
   * _Parameters_:
     * _Parameter Type_: **String parameter**
     * _Name_: **P_LOCAL_REPO_URL**
-    * _Default Value_: <http://testrepo-srv/chocolatey>
+    * _Default Value_: http://testrepo-srv/chocolatey
     * _Description_: **Internal test repository.**
     * _Options_: Tick **Trim the string**
 
     * _Parameter Type_: **String parameter**
     * _Name_: **P_REMOTE_REPO_URL**
-    * _Default Value_: <https://community.chocolatey.org/api/v2/>
+    * _Default Value_: https://community.chocolatey.org/api/v2/
     * _Description_: **Remote repository containing updated package versions.**
     * _Options_: Tick **Trim the string**
 
@@ -413,7 +413,7 @@ Below are the details for the Jenkins job to update the test repository from the
 
     * _Parameter Type_: **String parameter**
     * _Name_: **P_DST_URL**
-    * _Default Value_: <http://testrepo-srv/chocolatey>
+    * _Default Value_: http://testrepo-srv/chocolatey
     * _Description_: **Internal package repository URL.**
     * _Options_: Tick **Trim the string**
 
@@ -472,7 +472,7 @@ Below are the details for the Jenkins job to update the production repository. T
   * _Parameters_:
     * _Parameter Type_: **String parameter**
     * _Name_: **P_PROD_REPO_URL**
-    * _Default Value_: <http://prodrepo-srv/chocolatey>
+    * _Default Value_: http://prodrepo-srv/chocolatey
     * _Description_: **URL to the production repository.**
     * _Options_: Tick **Trim the string**
 
@@ -483,7 +483,7 @@ Below are the details for the Jenkins job to update the production repository. T
 
     * _Parameter Type_: **String parameter**
     * _Name_: **P_TEST_REPO_URL**
-    * _Default Value_: <http://testrepo-srv/chocolatey>
+    * _Default Value_: http://testrepo-srv/chocolatey
     * _Description_: **URL for the test repository.**
     * _Options_: Tick **Trim the string**
 
