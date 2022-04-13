@@ -11,23 +11,19 @@ While it is envisioned that CCM will be installed across multiple servers (split
 
 When setting up Central Management, currently, the CCM packages do not provision the SQL Server Database Permissions that are required for the CCM components to function.  It is assumed that the necessary permissions have already been provided (see the [FAQ](#how-can-i-add-sql-server-permissions-through-powershell) for one method of doing it).
 
-> :memo: **NOTE**
+> :warning: **WARNINGS**
 >
-> Please read through all of this prior to running installation as you could run into issues that require support to help you correct later.
-
-> :warning: **WARNING**
+> * Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 >
-> Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
-
-> :memo: **NOTE**
+> * All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 >
-> If this seems like a lot to set up, you have the ability to get access to the [Quick Deployment Environment (QDE)](xref:qde). It comes preloaded with Central Management and other Chocolatey recommended infrastructure. Please see [Quick Deployment Environment (QDE)](xref:qde).
 
-> :warning: **WARNING**
+> :memo: **NOTES**
 >
-> All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
-
-> :memo: **NOTE** Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgrade).
+> * Please read through all of this prior to running installation as you could run into issues that require support to help you correct later.
+>
+> * If this seems like a lot to set up, you have access to the [Quick Start Guide](xref:c4b-quick-start-guide) which makes setup of Chocolatey Central Management just running one Powershell script. We also offer our [Chocolatey For Business Azure Environment](xref:qdeazure). It comes preloaded with Chocolatey Central Management and other Chocolatey recommended infrastructure.
+>
 
 ## High Level Requirements
 
@@ -120,7 +116,7 @@ Looking for upgrade instructions? See [Central Management Upgrade](xref:ccm-upgr
 
 ### Executable script code found in signature block
 
-When attempting to install some components of Chocolatey, you may have seen this error. This was a bug due to how the script at [Step 1: Internalize Packages](#step-1-internalize-packages) was exasperating a known issue at https://github.com/chocolatey/chocolatey-licensed-issues/issues/155.
+When attempting to install some components of Chocolatey, you may have seen this error. This was a bug due to how the script at [Step 1: Internalize Packages](#step-1-internalize-packages) was [internalizing packages](https://github.com/chocolatey/chocolatey-licensed-issues/issues/155).
 
 Please go back through Step 1 and re-internalize those packages. You may need to overwrite any you would have pushed up (many if it won't let you do a push). In Nexus, you can remove the existing items and then upload through there. In other repositories you may need to remove the existing package versions you deployed first.
 
