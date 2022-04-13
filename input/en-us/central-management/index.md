@@ -8,7 +8,7 @@ RedirectFrom: docs/central-management
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments. CCM is available with Chocolatey for Business only.
 
-Once installed and configured, you can use CCM to:
+Once installed and configured, you can use Chocolatey Central Management to:
 
 * Bring reporting to the organizational level
 * Quickly see all software across the organization and see what needs attention immediately
@@ -19,9 +19,9 @@ Once installed and configured, you can use CCM to:
 
 This provides an overview on Chocolatey Central Management (CCM). It provides both setup and use of CCM.
 
-## CCM Components
+## Chocolatey Central Management Components
 
-The following are all of the Chocolatey components required for Central Management to work.
+The following are all of the Chocolatey components required for Chocolatey Central Management to work.
 
 * Chocolatey CLI (`chocolatey` package)
 * Chocolatey for Business (C4B) Edition.
@@ -34,17 +34,17 @@ The following are all of the Chocolatey components required for Central Manageme
 * Chocolatey Central Management Website (`chocolatey-management-web` package)
   * This is the Chocolatey Central Management front-end website that is the main user interface of the application.
 
-### Chocolatey Central Managment Component Compatibility Matrix
+### Chocolatey Central Management Component Compatibility Matrix
 
-Central Management has specific needs that are mostly handled by packaging aspects. As the Chocolatey Agent and Central Management communicate with each other, there are some versions that may not be compatible with each other due to mistakes or fixes that needed to be implemented. This serves as a means of capturing that for you.
+Chocolatey Central Management has specific needs that are mostly handled by packaging aspects. As the Chocolatey Agent and Chocolatey Central Management communicate with each other, there are some versions that may not be compatible with each other due to mistakes or fixes that needed to be implemented. This serves as a means of capturing that for you.
 
 > :memo: **NOTE**
 >
-> Central Management packages (all three) are treated as a singular unit, meaning all three packages across one or more machines must all be on the same version. Using different versions of Central Management packages (db, service, web) is completely unsupported and likely will not even work properly.
+> Central Management packages (all three) are treated as a singular unit, meaning that they all must be on the same version across one or more machines. Using different versions of Chocolatey Central Management packages is unsupported and will likely not work properly.
 
 |Chocolatey Central Management|Chocolatey Agent|Chocolatey Licensed Extension|Chocolatey|
 |-----------------------------|----------------|-----------------------------|----------|
-|0.8.0                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
+|0.8.0                        |0.13.0+         | 3.2.0+                      | 0.12.0+  |
 |0.7.0                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.6.x                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.5.x                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
@@ -88,7 +88,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 
 ### Using Chocolatey Central Management
 
-* [Chocolatey Central Managament Computers](xref:ccm-computers)
+* [Chocolatey Central Management Computers](xref:ccm-computers)
 * [Chocolatey Central Management Software](xref:ccm-software)
 * [Chocolatey Central Management Groups](xref:ccm-groups)
 * [Chocolatey Central Management Deployments](xref:ccm-deployments)
@@ -107,7 +107,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 ## Related Articles
 
 * [Chocolatey For Business Quick Start Guide(QSG)](xref:c4b-quick-start-guide)
-* [Chocolatey For Business Azure Enviornment](xref:qdeazure)
+* [Chocolatey For Business Azure Environment](xref:qdeazure)
 
 ## Roadmap
 
@@ -121,13 +121,13 @@ You must have a [Business edition of Chocolatey](https://chocolatey.org/compare)
 
 ### I'm a licensed customer, now what?
 
-See [Getting Chococlatey Central Management](#getting-ccm).
+See [Getting Chocolatey Central Management](#getting-ccm).
 
 ### Will this become available for lower editions of Chocolatey?
 
-CCM will only be available in Chocolatey for Business (C4B).
+Chocolatey Central Management will only be available in Chocolatey for Business (C4B).
 
-### What's the minimum version of the Chocolatey packages I need to use CCM?
+### What's the minimum version of the Chocolatey packages I need to use Chocolatey Central Management?
 
 See [Chocolatey Central Management Component Compatibility Matrix](#chocolatey-central-management-component-compatibility-matrix).
 
@@ -149,8 +149,8 @@ Please run `choco support` from a licensed edition and follow the instructions.
 
 ### How do I set up Chocolatey Central Management?
 
-* As part of our [Chocolatey for Business Quick Start Guide](xref:c4b-quick-start-guide). Allowing you setup an entire Chococlatey enviornment in just 6 simple steps.
-* As part of our [Chocolatey For Business Azure Enviornment](xref:qdeazure)
+* As part of our [Chocolatey for Business Quick Start Guide](xref:c4b-quick-start-guide)
+* As part of our [Chocolatey For Business Azure Environment](xref:qdeazure)
 * By following the [Chocolatey Central Management Setup Docs](xref:ccm-setup)
 
 ### If I update the license file, do I need to restart my services and web?
