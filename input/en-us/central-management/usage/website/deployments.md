@@ -106,7 +106,7 @@ Deployments that have finished running will enter the `Completed` state. They wi
 Deployments that are in a completed state can also be `Archived` to hide them from the main Deployments screen.
 This is helpful if you'd like to reduce clutter on the main deployments screen without discarding the information the completed report contains.
 
-You can access archived deployments from the `Reports -> Deployments` page in the left sidebar of the CCM dashboard.
+You can access archived deployments from the `Reports -> Deployments` page in the left sidebar of the Chocolatey Central Management dashboard.
 
 ## Deployment Statuses
 
@@ -114,19 +114,19 @@ This is a list of all the statuses that a deployment step or whole deployment ca
 
 ### Ready
 
-This deployment status is presented once a deployment enters the active state. It is now waiting for the next agent check-in to grab the deployment from CCM.
+This deployment status is presented once a deployment enters the active state. It is now waiting for the next agent check-in to grab the deployment from Chocolatey Central Management.
 
 ### Unreachable
 
-This deployment status is reported when a deployment is queued up in Central Management. But the client machine agent is unable to receive to accept the deployment. This is usually the status given when a deployment step or whole deployment reaches its execution timeout. This can be a client or sever side error. It's best to check both the central-management-service.log file on the server as well as the chocolatey-agent.log file on the client to investigate if you receive this status.
+This deployment status is reported when a deployment is queued up in Chocolatey Central Management. But the client machine agent is unable to receive or accept the deployment. This is usually the status given when a deployment step or whole deployment reaches its execution timeout. This can be a client or sever side error. It's best to check both the `central-management-service.log` file on the server as well as the `chocolatey-agent.log` file on the client to investigate if you receive this status.
 
 ### Active
 
-This deployment status is given once the agent on the client machine accepts the deployment from CCM. It then begins processing the deployment and also reports back to Central Management that is has started this deployment step.
+This deployment status is given once the agent on the client machine accepts the deployment from Chocolatey Central Management. It then begins processing the deployment and also reports back to Chocolatey Central Management that is has started this deployment step.
 
 ### Inconclusive
 
-This deployment status is reported when a deployment step has gone to active, but Central Management doesn't get a reply back as to the status of the deployment step running on the client machine. It is best to look at the chocolatey-agent.log file from the client machine as to why it was not able to report back to Central Management.
+This deployment status is reported when a deployment step has gone to active, but Chocolatey Central Management doesn't get a reply back as to the status of the deployment step running on the client machine. It is best to look at the `chocolatey-agent.log` file from the client machine as to why it was not able to report back to Chocolatey Central Management.
 
 ### Cancelled
 
@@ -142,21 +142,21 @@ This deployment status indicates the deployment failed for some reason. You can 
 
 ### Unknown
 
-This status is reported when a deployment step or deployment as a whole cannot be interpreted by Central Management and placed into one of the other statuses. This should only happen in the case of a bug. If you get this status please reach out to us via the means listed when running `choco support`.
+This status is reported when a deployment step or deployment as a whole cannot be interpreted by Chocolatey Central Management and placed into one of the other statuses. This should only happen in the case of a bug. If you get this status please reach out to us via the means listed when running `choco support`.
 
 ## FAQ
 
 ### What versions of components do I need for Deployments to work properly?
 
-While you might be able to get things to work with CCM v0.2.x and Chocolatey Agent v0.10.x, it's best to use the following:
+While you might be able to get things to work with Chocolatey Central Management v0.2.x and Chocolatey Agent v0.10.x, it's best to use the following:
 
-* CCM components (`chocolatey-management-*` all 3 packages) - v0.3.0+
+* Chocolatey Central Management components (`chocolatey-management-*` all 3 packages) - v0.3.0+
 * Chocolatey Agents (`chocolatey-agent` package on all clients) - v0.11.0+
 * Chocolatey Licensed Extension (`chocolatey.extension` on all clients) - v2.1.1+
 
-### What is the CCM compatibility matrix?
+### What is the Chocolatey Central Management compatibility matrix?
 
-Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [CCM Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
+Chocolatey Central Management(CCM) has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of CCM and vice versa.  Please see the [Chocolatey Central Management Component Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) for details.
 
 ### Why do I see some machines have not opted in for Deployments?
 
@@ -172,11 +172,11 @@ This is telling you that you need to ensure you set the client to allow for the 
 
 ### I have plenty of licenses, why do some machines show not opted in for deployments and also exceeds your current license count?
 
-Once you upgrade to at least CCM v0.2.0, every machine will show that until they check in the next time. Once they check in, that will go away. So it's basically normal to see that until those machines check in again.
+Once you upgrade to at least Chocolatey Central Management v0.2.0, every machine will show that until they check in the next time. Once they check in, that will go away. So it's basically normal to see that until those machines check in again.
 
-### Can I use Chocolatey Deployments to upgrade CCM based components?
+### Can I use Chocolatey Deployments to upgrade Chocolatey Central Management based components?
 
-Likely you absolutely can, just keep in mind that there may be a specific ordering in how you would upgrade everything and adhere to that order. In some instances, you may need to upgrade agents first, then CCM components as once CCM is upgraded it may not be able to talk to the agents. However agents will stop being able to talk to CCM for a small period of time while you are upgrading CCM, but then things will start working again.
+Likely you absolutely can, just keep in mind that there may be a specific ordering in how you would upgrade everything and adhere to that order. In some instances, you may need to upgrade agents first, then Chocolatey Central Management(CCM) components as once CCM is upgraded it may not be able to talk to the agents. However agents will stop being able to talk to CCM for a small period of time while you are upgrading CCM, but then things will start working again.
 
 ### What is Run Actual?
 
@@ -186,11 +186,11 @@ This is a switch that is passed to opt out of Chocolatey Self-Service. It's typi
 
 ### What Happens if More Than One Deployment is "Active" at the Same Time?
 
-This will depend a little bit on the version of Central Management you're running.
+This will depend a little bit on the version of Chocolatey Central Management you're running.
 Prior to v0.4.0, control of deployments was handled entirely on a per-deployment-_step_ basis.
 This means that if you have an active deployment with some of the computers in it idling (waiting for a later step in the deployment to begin, essentially), these machines will pick up available deployment steps from an unrelated deployment while they're waiting.
 
-As of v0.4.0 of Central Management, this has been fine tuned a little bit so that any computer which is acted on by a deployment will not pick up any steps from unrelated deployments until all its assigned steps in the first deployment are completed.
+As of v0.4.0 of Chocolatey Central Management, this has been fine tuned a little bit so that any computer which is acted on by a deployment will not pick up any steps from unrelated deployments until all its assigned steps in the first deployment are completed.
 
 This can get a bit confusing, so let's consider the following scenario:
 
@@ -208,7 +208,7 @@ This can get a bit confusing, so let's consider the following scenario:
 
 Let's say `Deployment A` is started first, and `Deployment B` starts while `Deployment A` is in either step 1 or step 2.
 When `Deployment A` reaches step 2, even though `Computer A` is not currently running any deployment steps, it will not start running steps from `Deployment B` because it still has a task to do in `Deployment A`.
-If you are running CCM 0.3.x, `Computer A` will instead pick up and run the step from `Deployment B` despite `Deployment A` still being in progress.
+If you are running Chocolatey Central Management 0.3.x, `Computer A` will instead pick up and run the step from `Deployment B` despite `Deployment A` still being in progress.
 
 ### Why do My Computers or Groups Show as Ineligible for Deployments While They're Opted In?
 
@@ -231,15 +231,15 @@ Additionally, any group that contains any of the following will be considered in
   * If the deployment is scheduled, it will not run until all computers/groups are eligible again.
   * If the deployment is not scheduled, it cannot be started until all computers/groups are eligible again.
 
-  Once CCM has confirmed the problem computer(s)/group(s) are eligible again, the deployment can be started.
+  Once Chocolatey Central Management has confirmed the problem computer(s)/group(s) are eligible again, the deployment can be started.
   If the deployment was previously scheduled and it has not passed the maintenance window time (if set), it will start at that point.
 * For deployments that are currently `Active`
-  * As soon as CCM detects the ineligible computer, it will terminate the current deployment step.
+  * As soon as Chocolatey Central Management detects the ineligible computer, it will terminate the current deployment step.
   * Then, all following deployment steps will be `Cancelled`.
 
 ### How Can I Run Deployments in a Semi-Connected Environment?
 
-As of CCM v0.4.0, you are able to configure deployments to tolerate semi-connected environments.
+As of Chocolatey Central Management(CCM) v0.4.0, you are able to configure deployments to tolerate semi-connected environments.
 This effectively allows CCM deployments to simply wait until a machine is connected to the network before it begins a given deployment step.
 
 To configure this, you can set the `Machine Contact Timeout` value in the Advanced settings of each individual Deployment Step to `0`.
@@ -259,7 +259,7 @@ Infinite execution timeouts are **not recommended** for this reason &mdash; depl
 
 Catch the recording of the Jun 32rd, 2020 webinar for a full showcase of the Chocolatey Central Management Deployments features:
 
-<https://chocolatey.org/events/chocolatey-deployments>
+https://chocolatey.org/events/chocolatey-deployments
 
 ## Common Errors and Resolutions
 
@@ -283,7 +283,7 @@ Get-Service chocolatey-* | Start-Service
 
 ### A computer or group is not showing as available for deployments but I have plenty of available licenses
 
-Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
+Once you upgrade to Chocolatey Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of Chocolatey Central Management prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
 ### Using `choco` commands in a script deployment break if semicolons are used to separate the statements
 
@@ -305,6 +305,6 @@ For more information on when this will be addressed, you can subscribe to the [G
 ## Related Topics
 
 * [Chocolatey Central Management](xref:central-management)
-* [Central Management - Groups](xref:ccm-groups)
-* [Central Management - Computers](xref:ccm-computers)
-* [Central Management - Reports](xref:ccm-reports)
+* [Chocolatey Central Management - Groups](xref:ccm-groups)
+* [Chocolatey Central Management - Computers](xref:ccm-computers)
+* [Chocolatey Central Management - Reports](xref:ccm-reports)
