@@ -43,7 +43,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ### Features
 
-- Add feature to allow exclusion of all Chocolatey component packages during choco upgrade all command.
+- Add feature [`excludeChocolateyPackagesDuringUpgradeAll`](xref:configuration#general-2) to allow exclusion of all Chocolatey component packages during choco upgrade all command.
   - This is designed to prevent unexpected updating of a Chocolatey component when executing the `choco upgrade all` command. Chocolatey has had the `upgradeAllExceptions` configuration
     option since v0.10.14, where any package can be excluded from the `choco upgrade all` command, however, this feature makes it really simple to add all the official Chocolatey
     component packages into this exclusion list.
