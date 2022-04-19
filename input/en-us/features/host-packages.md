@@ -111,10 +111,9 @@ A way to do this with LocalSystem:
 
 ## Simple Server
 
-There is where the bulk of NuGet OData compatible servers fall (NuGet.Server, Chocolatey.Server, etc). There are simple servers that are very enhanced, which fall into the [Commercial Package Repositories](#commercial-package-repositories) section.
+This is where the bulk of NuGet OData compatible servers fall (NuGet.Server, etc). There are simple servers that are very enhanced, which fall into the [Commercial Package Repositories](#commercial-package-repositories) section.
 
 * Since Chocolatey just uses an enhanced version of the NuGet framework, it is compatible everywhere you can put a NuGet package.
-* We recommend Chocolatey.Server if you are choosing between these options.
 * A simple server typically has one repo per instance and manages only Chocolatey / NuGet packages.
 
 ### Known Simple Server Options
@@ -154,17 +153,6 @@ If the option you've chosen is not listed, take a look at [known hosting options
 * Package size may be limited to 28.61MB by default on some simple servers. Depending on your simple server - For IIS simple servers package size can be controlled through [maxAllowedContentLength](https://msdn.microsoft.com/en-us/library/ms689462(v=vs.90).aspx) and [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx). For others like Nexus, it may already be set very high. You can host the installer internally somewhere and access it through packaging though.
 
 The actual limit for package sizes varies depending on what each simple server can handle (usually determined by the limitation of pushing a package to the server). If you determine what those are, we'd be happy to list each one here.
-
-#### Chocolatey.Server Setup
-
-Please see [Set up the Chocolatey.Server](xref:set-up-chocolatey-server). More details below on what this option provides.
-
-[Chocolatey Simple Server](https://community.chocolatey.org/packages/chocolatey.server) is a simple Nuget.Server that is ready to rock and roll. It has already completed Steps 1-3 of NuGet's [host your own remote feed](https://docs.nuget.org/Create/Hosting-Your-Own-NuGet-Feeds#creating-remote-feeds). Some things to consider with Chocolatey.Server as compared to other options:
-
-* Uses same enhanced NuGet that Chocolatey uses so you can see more information in search if you choose to use those things.
-* Allows packages up to 2GB. Package size can be controlled through [maxAllowedContentLength](https://msdn.microsoft.com/en-us/library/ms689462(v=vs.90).aspx) and [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx).
-
-> :memo: **NOTE** Commercial options of Chocolatey also may have support for the Chocolatey.Server.
 
 #### NuGet.Server Setup
 
