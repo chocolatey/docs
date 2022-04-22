@@ -32,11 +32,18 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 4.1.1 (April 11, 2022)
+
+### Bug Fixes
+
+- Fix - Unable to enable/disable licensed features when using a Professional license - see [licensed #298](https://github.com/chocolatey/chocolatey-licensed-issues/issues/298)
+- Fix - Admin Only sources are not filtered out consistently when using different Chocolatey license types
+
 ## 4.1.0 (March 30, 2022)
 
 ### Features
 
-- Add feature to allow exclusion of all Chocolatey component packages during choco upgrade all command.
+- Add feature [`excludeChocolateyPackagesDuringUpgradeAll`](xref:configuration#general-2) to allow exclusion of all Chocolatey component packages during choco upgrade all command.
   - This is designed to prevent unexpected updating of a Chocolatey component when executing the `choco upgrade all` command. Chocolatey has had the `upgradeAllExceptions` configuration
     option since v0.10.14, where any package can be excluded from the `choco upgrade all` command, however, this feature makes it really simple to add all the official Chocolatey
     component packages into this exclusion list.
