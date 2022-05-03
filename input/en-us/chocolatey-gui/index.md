@@ -1,5 +1,5 @@
 ---
-Order: 90
+Order: 100
 xref: chocolateygui
 Title: Chocolatey GUI
 Description: What is Chocolatey GUI
