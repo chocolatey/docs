@@ -8,9 +8,11 @@ RedirectFrom:
 
 This document is meant to serve as a guide for where to look when needing to renew your SSL certificate(s) for the Nexus and Chocolatey Central Management components of quick start guide.
 
-## Set-NexusCert
+## Set-NexusCert.ps1
 
-This script should be on your quick start guide server at `C:\choco-setup\scripts\Set-NexusCert.ps1`. If it isn't, you can download it from the choco-quickstart-scripts project repo on GitHub at https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-NexusCert.ps1.
+This script should be saved on your repository server at `C:\choco-setup\scripts\Set-NexusCert.ps1`.
+
+You can download this file directly from [here](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-NexusCert.ps1), or copy the below code and save it manually.
 
 ```powershell
 <#
@@ -100,7 +102,7 @@ Write-Host -BackgroundColor Black -ForegroundColor DarkGreen "The script has suc
 
 - Prompts for Thumbprint value. This is the certificate thumbprint value you wish to associate to your Nexus instance.
 - Optionally you can specify `-Port` with the port number you want Nexus to run over.
-- The script will remove you previous keystore.jks file
+- The script will remove your previous keystore.jks file
 - Create a new keystore.jks file based on your certificate
 - Re-write the nexus.properties file to use the correct port, by default will use port 8443 unless specified in command.
 - Restart the Nexus service for changes to take effect and re-load web UI.
@@ -115,9 +117,11 @@ Write-Host -BackgroundColor Black -ForegroundColor DarkGreen "The script has suc
 .\Set-NexusCert.ps1 -Thumbprint 'Your_Certificate_Thumbprint_Value'
 ```
 
-## Set-CCMCert
+## Set-CCMCert.ps1
 
-This script should be on your quick start guide server at `C:\choco-setup\scripts\Set-CCMCert.ps1`. If it isn't, you can download it from the choco-quickstart-scripts project repo on GitHub at https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1.
+This script should be saved on your repository server at `C:\choco-setup\scripts\Set-CCMCert.ps1`.
+
+You can download this file directly from [here)(https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1), or copy the below code and manually save it.
 
 ```powershell
 <#
@@ -188,7 +192,7 @@ process {
 
 ### What does this script do?
 
-- The script will prompt for a $CertificateThumbprint value when run. Please enter the thumbprint value of the certificate you wish to have the IIS endpoint of Chocolatey Central Management run over.
+- The script will prompt for certificate thumbprint value. Please enter the thumbprint value of the certificate you wish to have the IIS endpoint of Chocolatey Central Management run over.
 - Stops the chocolatey-central-management windows service
 - Removes any existing binding for the site running over port 443.
 - Adds a new IIS binding with the new certificate info.
