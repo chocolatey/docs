@@ -120,7 +120,7 @@ Write-Host -BackgroundColor Black -ForegroundColor DarkGreen "The script has suc
 
 This script should be saved on your repository server at `C:\choco-setup\scripts\Set-CCMCert.ps1`.
 
-You can download this file directly from [here)(https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1), or copy the below code and manually save it.
+You can download this file directly from [here](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1), or copy the below code and manually save it.
 
 ```powershell
 <#
