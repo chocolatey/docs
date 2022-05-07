@@ -11,7 +11,7 @@ This document is meant to serve as a guide for where to look when needing to ren
 
 This script should be saved on your repository server at `C:\choco-setup\scripts\Set-NexusCert.ps1`.
 
-You can download this file directly from [here](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-NexusCert.ps1), or copy the below code and save it manually.
+You can [download the Set-NexusCert.ps1 file directly](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-NexusCert.ps1), or copy the below code and save it manually.
 
 ```powershell
 <#
@@ -120,7 +120,7 @@ Write-Host -BackgroundColor Black -ForegroundColor DarkGreen "The script has suc
 
 This script should be saved on your repository server at `C:\choco-setup\scripts\Set-CCMCert.ps1`.
 
-You can download this file directly from [here](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1), or copy the below code and manually save it.
+You can [download the Set-CCMCert.ps1 file directly](https://github.com/chocolatey/choco-quickstart-scripts/blob/main/scripts/Set-CCMCert.ps1), or copy the below code and manually save it.
 
 ```powershell
 <#
