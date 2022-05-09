@@ -63,7 +63,7 @@ Choose one of the following methods for what your hypervisor environment support
 
 > :warning: **WARNING**
 >
-> We now recommend using the [Chocolatey for Business QDE Azure Environment](xref:qdeazure).  
+> We now recommend using the [Chocolatey for Business Azure Environment](xref:c4b-azure).
 > Please refer to the link above for steps to quickly deploy a Chocolatey for Business environment into Azure.
 
 ### Platform: Hyper-V
