@@ -6,11 +6,6 @@ Description: How to setup a client machine to use Chocolatey for Business Azure 
 RedirectFrom: en-us/quick-deployment/azure/client-setup
 ---
 
-> :memo: **NOTE**
->
-> This document is for the Chocolatey for Business Azure Environment from the [Azure Marketplace](https://ch0.co/C4B-Azure).
-> If you are using the Quick Deployment Environment, please refer to the [QDE v2 Client Setup page](xref:v2-client-setup).
-
 ## Summary
 
 Once you have your Chocolatey for Business Azure Environment deployed, you'll need to get clients talking to it.
