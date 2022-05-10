@@ -66,17 +66,17 @@ See [Accessing Services](xref:c4b-azure#accessing-services) for more information
 When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell console:
 
 ```powershell
-# Prompt for input
-$fqdn = Read-Host 'Enter the FQDN for your Chocolatey for Business Azure Environment'
-$clientCommunicationSalt = Read-Host 'Enter the "ccmClientCommunicationSalt", you can find this in your Azure Key Vault'
-$serverCommunicationSalt = Read-Host 'Enter the "ccmServiceCommunicationSalt", you can find this in your Azure Key Vault'
-$password = Read-Host 'Enter the "ChocoUserPassword", you can find this in your Azure Key Vault' -AsSecureString
+# Please fill in the following values
+$fqdn = 'Replace with FQDN for your Chocolatey for Business QDE Azure Environment' 
+$clientCommunicationSalt = 'Your ccmClientCommunicationSalt'  #This value is stored within your Azure Key Vault
+$serverCommunicationSalt = 'Your ccmServiceCommunicationSalt' #This value is stored within your Azure Key Vault
+$password = 'Your ChocoUserPassword' #This value is stored within your Azure Key Vault
 
 # Touch NOTHING below this line
 $user = 'chocouser'
 
-$credential = [pscredential]::new($user, $password)
-
+$securePassword = $password | ConvertTo-SecureString -AsPlainTest -Force
+$credential = [pscredential]::new($user, $securePassword)
 $downloader = [System.Net.WebClient]::new()
 $downloader.Credentials = $credential
 
