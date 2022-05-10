@@ -216,3 +216,8 @@ Chocolatey integrates with SCCM by handling the software management, and pointin
 
 To direct Chocolatey package installs, you can still write GPOs to ensure this.
 
+## Microsoft Intune
+
+Chocolatey's Intune Integration is only available to our Chocolatey for Business customers. It allows you to take any Chocolatey package and `choco convert` them into an intunewin app. It then allows you to then `choco push` your converted Chocolatey packages to your intune tenant for hosting and distribution.
+
+To get started with the Chocolatey Intune Integration please reference our [setup and use documentation](https://docs.chocolatey.org/en-us/licensed-extension/intune/).
