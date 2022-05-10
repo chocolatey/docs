@@ -18,6 +18,12 @@
       ]
     },
     {
+      "outputFileName": "input/assets/js/chocolatey-head.bundle.js",
+      "inputFiles": [
+        "node_modules/choco-theme/js/chocolatey-theme-toggle-head.js"
+      ]
+    },
+    {
       "outputFileName": "input/assets/js/chocolatey.bundle.js",
       "inputFiles": [
         "node_modules/jquery/dist/jquery.js",
