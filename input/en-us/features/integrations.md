@@ -20,11 +20,11 @@ With most of these tools, the interface you would interact with Chocolatey would
 
 Ansible has the `win_chocolatey` module that manages both packages and the installation of Chocolatey itself.
 
-~~~yaml
+```yaml
 win_chocolatey:
   name: git
   source: https://my.internal.repository/api/v2/
-~~~
+```
 
 [Read More...](https://docs.ansible.com/ansible/latest/collections/chocolatey/chocolatey/win_chocolatey_source_module.html)
 
@@ -40,20 +40,20 @@ Boxstarter is a lightweight configuration management utility.
 
 Chef 12.7+ has a [built-in](https://www.chef.io/blog/2016/02/12/chef-client-12-7-released/) `chocolatey_package` resource to use with Chocolatey.
 
-~~~ruby
+```ruby
 chocolatey_package 'git' do
   action :install
   source 'https://my.internal.repository/api/v2'
 end
-~~~
+```
 
 [Resource - Read More...](https://docs.chef.io/resource_chocolatey_package.html)
 
 When you need to also install Chocolatey, you would use the community cookbook to do so. The cookbook is maintained by the Chocolatey team. It has a package resource that can be used with older Chef versions.
 
-~~~ruby
+```ruby
 include_recipe 'chocolatey'
-~~~
+```
 
 [Cookbook - Read More...](https://supermarket.chef.io/cookbooks/chocolatey/)
 
@@ -61,7 +61,7 @@ include_recipe 'chocolatey'
 
 Here's a more in depth example from [Nordstrom](https://github.com/Nordstrom/chefdk_bootstrap/blob/master/recipes/windows.rb):
 
-~~~ruby
+```ruby
 include_recipe 'chocolatey'
 
 home = Dir.home
@@ -78,15 +78,15 @@ packages = node['chefdk_bootstrap']['package']
 packages.each do |pkg, install|
   include_recipe "#{cookbook_name}::#{pkg}" if install
 end
-~~~
+```
 
 Another example from [Facebook](https://github.com/facebook/IT-CPE/tree/master/chef/cookbooks/cpe_choco):
 
-~~~ruby
+```ruby
 node.default['cpe_choco']['sources']['bacon'] =
   'source' => 'http://bacon.es.yummy',
 }
-~~~
+```
 
 ## Octopus Deploy
 
@@ -96,11 +96,11 @@ Octopus is a friendly deployment automation tool for .NET developers. It integra
 
 ## Otter
 
-Otter has an [open source Chocolatey extension](https://github.com/Inedo/inedox-chocolatey) that allows installing and uninstalling packages, specifying package versions, chocolatey sources, chocolatey features, and installing chocolatey istelf.
+Otter has an [open source Chocolatey extension](https://github.com/Inedo/inedox-chocolatey) that allows installing and uninstalling packages, specifying package versions, chocolatey sources, chocolatey features, and installing chocolatey itself.
 
 Otter also keeps an inventory of Chocolatey packages installed on any or all servers.
 
-~~~otter
+```otter
 Chocolatey::Ensure-Package
 (
     Name: 7zip.install,
@@ -126,7 +126,7 @@ Chocolatey::Ensure-Feature
     Feature: checksumFiles,
     Enabled: false
 );
-~~~
+```
 
 [Read More...](https://inedo.com/den/otter/chocolatey)
 
@@ -134,7 +134,7 @@ Chocolatey::Ensure-Feature
 
 PowerShell DSC (Desired State Configuration) has a cChoco module that can manage both packages and the installation of Chocolatey itself.
 
-~~~powershell
+```powershell
   cChocoInstaller installChoco
   {
     InstallDir = "c:\ProgramData\chocolatey"
@@ -145,7 +145,7 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
      Name = "git"
      DependsOn = "[cChocoInstaller]installChoco"
   }
-~~~
+```
 
 [Read More...](http://www.powershellgallery.com/packages/cChoco/)
 
@@ -178,7 +178,7 @@ Deploy SingleChocolateyPackage {
 
 Puppet has a [Supported module](https://forge.puppet.com/supported) for Chocolatey `puppetlabs/chocolatey`. Note that there is also a `chocolatey/chocolatey` module, the supported module is a drop in replacement for the `chocolatey/chocolatey` module - please use `puppetlabs/chocolatey` as it has full configuration of Chocolatey.
 
-~~~puppet
+```puppet
 include chocolatey
 
 package { 'git':
@@ -186,7 +186,7 @@ package { 'git':
   provider => 'chocolatey',
   source   => 'https://my.internal.repository/api/v2',
 }
-~~~~
+```
 
 Puppet has some great documentation on getting started with Chocolatey. Be sure to check that out at [Using Windows modules](https://docs.puppet.com/pe/latest/windows_modules.html).
 
@@ -203,10 +203,10 @@ The Chocolatey team is most familiar with Puppet and has written some documentat
 
 Salt has a Chocolatey module that manages both packages and the installation of Chocolatey itself.
 
-~~~python
+```python
 salt '*' chocolatey.bootstrap
 salt '*' chocolatey.install git
-~~~
+```
 
 [Read More...](https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html)
 
