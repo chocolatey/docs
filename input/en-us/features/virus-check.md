@@ -26,6 +26,10 @@ VirusTotal scans binaries against over 50 different anti-virus scanners. Chocola
 
 By default, the virus scanner is already enabled and set to VirusTotal for Pro licenses. Organizations are usually more wary about reaching out to the internet, so the feature is set to Generic and the virus scanner may not be enabled by default (because it needs configuration). If you need to configure the virus scanner to use VirusTotal, please run the following two commands:
 
+> :warning: **WARNING**
+>
+> If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
+
  * `choco config set virusScannerType VirusTotal`
  * `choco feature enable -n virusCheck`
 
@@ -105,9 +109,17 @@ You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing)
 
 ### I'm a licensed customer, now what?
 
+> :warning: **WARNING**
+>
+> If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
+
 When you install a package that download content, those items will automatically be verified if the feature is turned on (it is automatically turned on for Pro users). We don't turn it on automatically in Business editions because many organizations are wary about reaching out to the internet and the generic virus scanner requires additional configuration.
 
 ### How do I turn this feature on?
+
+> :warning: **WARNING**
+>
+> If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 
 * Globally - `choco feature enable -n virusCheck`
 * Per command - use the switch `--virus-check` with install/upgrade commands.
