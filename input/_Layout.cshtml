@@ -41,9 +41,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
-        <script>
-            if(!/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){const e=localStorage.getItem("theme"),t=document.getElementsByTagName("html")[0];e?"dark"==e?(t.classList.add("dark-theme"),t.setAttribute("data-user-color-scheme","dark")):(t.classList.add("light-theme"),t.setAttribute("data-user-color-scheme","light")):window.matchMedia("(prefers-color-scheme: dark)").matches?t.classList.add("dark-theme"):t.classList.add("light-theme")}
-        </script>
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey-head.bundle.min.js")"></script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2743882-12"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
