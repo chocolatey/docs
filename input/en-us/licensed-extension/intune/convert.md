@@ -54,7 +54,7 @@ choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 ~~~
 
 > :warning: **WARNING**
-> 
+>
 > By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are converting can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are converting is a stable release. This is the same behaviour as the [`push`](xref:intune-push) command.
 
 > :memo: **NOTE**
@@ -67,18 +67,4 @@ choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 
 ## FAQ
 
-### Do I need to call convert for all dependencies of a Chocolatey package?
-
-If a Chocolatey package has dependencies, Chocolatey will convert each of them to a Chocolatey Intune package.
-
-### Must I have all Chocolatey package dependencies already downloaded?
-
-You may skip the handling of dependencies when converting a package by using the `--ignore-dependencies` argument. However, it is recommended not to skip dependency handling as the package may not install or upgrade, and some software functionality may be lost. Be mindful that you may be prevented from pushing the Chocolatey package to your Intune tenant if the dependencies do not already exist locally or in Intune.
-
-### I get an error message about `convert` not being available
-
-The `convert` command is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled. This feature can be enabled by running:
-
-~~~sh
-choco feature enable --name=allowPreviewFeatures
-~~~
+Frequently asked questions about choco convert can be found [here](xref:intune-faq#convert-faqs)
