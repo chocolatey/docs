@@ -67,4 +67,4 @@ choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 
 ## FAQ
 
-Frequently asked questions about choco convert can be found [here](xref:intune-faq#convert-faqs)
+See the [frequently asked questions](xref:intune-faq#convert-faqs) about the `convert` command.

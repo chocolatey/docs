@@ -8,19 +8,23 @@ Title: Intune Frequently Asked Questions
 
 ## General FAQs
 
-### Why does the Chocolatey install in Intune require a restart of the computer
+### Why does the Intune install of Chocolatey CLI require a restart of the computer
 
-During the installation of Chocolatey, a number of environment variables are set or updated, including the `PATH` variable that tells Windows where to look for programs to run. The only reliable way to ensure that these are updated prior to running any subsequent Chocolatey commands is to inform Intune that the package requires a restart to complete installation.
 
-## Convert FAQs
+During the installation of Chocolatey CLI, a number of environment variables are set or updated. This includes the `PATH` environment variable that tells Windows where to look for programs to run. The only reliable way to ensure that these are updated prior to running any subsequent Chocolatey CLI commands is to inform Intune that the package requires a restart to complete installation.
+
+## Intune Convert Command
 
 ### Do I need to call convert for all dependencies of a Chocolatey package?
 
-If a Chocolatey package has dependencies, Chocolatey will convert each of them to a Chocolatey Intune package.
+If a Chocolatey package has dependencies, Chocolatey CLI will convert each of them to a Chocolatey Intune package.
 
-### Must I have all Chocolatey package dependencies already downloaded?
+### Must I download all of the Chocolatey package dependencies before conversion?
 
-You may skip the handling of dependencies when converting a package by using the `--ignore-dependencies` argument. However, it is recommended not to skip dependency handling as the package may not install or upgrade, and some software functionality may be lost. Be mindful that you may be prevented from pushing the Chocolatey package to your Intune tenant if the dependencies do not already exist locally or in Intune.
+
+It is recommended that all package dependencies are converted to ensure that the package installs and upgrades correctly, and to ensure the software functions as intended. If the dependencies do not exist either locally or in your Intune tenant you may be prevented from pushing the Chocolatey package.
+
+With the above recommendations in mind, if you do need to skip converting package dependencies, use the `--ignore-dependencies` switch when running the `convert` command.
 
 ### I get an error message about `convert` not being available
 
@@ -32,13 +36,13 @@ choco feature enable --name=allowPreviewFeatures
 
 ### I get an error about `Stream was too long` when I try to convert a package
 
-When trying to convert packages that are larger than ~2 GB, you may encounter the error `[IntuneWinAppUtil] ERROR  System.IO.IOException: Stream was too long.` There is a [known issue](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/issues/58) with version 1.8.3 of `intunewinapputil` which is used to generate the `intunewin` file. You can work around this by either downgrading to `1.8.2.20220507` with the command `choco install intunewinapputil -y --version 1.8.2.20220507 --allow-downgrade --force`, or you can upgrade to the latest intunewinapputil with the command `choco upgrade intunewinapputil -y`
+When trying to convert packages that are larger than around 2 GB, you may encounter the error `[IntuneWinAppUtil] ERROR  System.IO.IOException: Stream was too long.` There is a [known issue](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/issues/58) with version 1.8.3 of `intunewinapputil` which is used to generate the Chocolatey Intune package `intunewin` file. You can work around this by either downgrading to `1.8.2.20220507` with the command `choco install intunewinapputil -y --version 1.8.2.20220507 --allow-downgrade --force`, or you can upgrade to the latest intunewinapputil with the command `choco upgrade intunewinapputil -y`
 
-## Push FAQs
+## Push to Intune Command
 
 ### Can I push a custom version of the `chocolatey-license` package?
 
-Yes, but there are a few things to know before doing so.
+Yes, but there are a few things to know before doing so:
 
 1. If there is no `chocolatey-license` package on the Intune tenant, ensure you push this package to Intune first. Otherwise, a new `chocolatey-license` package will be generated and will replace the custom one in your local directory.
 1. The Chocolatey package ID must be `chocolatey-license`.
@@ -46,13 +50,16 @@ Yes, but there are a few things to know before doing so.
 
 ### How can I update my license in the Intune tenant when I have a new Chocolatey for Business license?
 
-Updates to Intune packages through Chocolatey is not currently supported. There is a manual process that you can follow to do this within Intune:
+Follow these steps to do this:
 
-1. Ensure the local computer that you will run the Chocolatey commands on has the new license applied to it.
+
+1. Ensure the local computer that you will run the Chocolatey CLI commands on has the new license applied to it.
+
 1. Login to the Intune tenant and locate the `Chocolatey License` package.
-1. Replace `Notes` section of the Intune package with a non-whitespace character (for example, the letter A). This will cause the Intune package not to be found by Chocolatey in the next step.
- 1. Push a package to Intune as you would normally do. This will result in Chocolatey not finding a `chocolatey-license` package within the Intune tenant, and therefore automatically generating a new one using the Chocolatey for Business license package using the license present on the local computer running the `push` command.
-1. Locate the `Chocolatey Licensed Extension` package in the Intune tenant and add the new `Chocolatey License` package as a dependency and remove the previous `Chocolatey License` package as a dependency.
+1. Replace the `Notes` section of the Intune package with a non-whitespace character (for example, the letter A).
+1. Push a package to Intune as you would normally do. This will result in Chocolatey automatically generating a new `chocolatey-license` package using the license present on the local computer running the `push` command.
+1. Locate the `Chocolatey Licensed Extension` package in the Intune tenant and add the new `Chocolatey License` package, created above, as a dependency and remove the previous `Chocolatey License` package as a dependency.
+
 
 ### What can I do if I receive an error about my file not being found or not being a `nupkg` file?
 
