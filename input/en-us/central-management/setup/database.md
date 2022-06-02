@@ -19,7 +19,7 @@ At the end of this, we should have a fully ready to go SQL Server:
 
 ## Step 1: Complete Prerequisites
 
-* SQL Server
+* SQL Server 2012 or later.
 
 > :memo: **NOTE** While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
