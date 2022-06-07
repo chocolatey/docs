@@ -79,7 +79,7 @@ You will also need to have at least one Group of computers already defined.
 
 ## Deployment States
 
-A Deployment state is the state is the state of an individual Deployment from creation/draft to completion and being optionally archived after completion. Once a Deployment has completed, it can be labeled as a number of different [Deployment Statuses](xref:#deployment-statuses). This is the complete lifecycle of a Deployment as it flows down the menu structure defined in the Deployments tab of the Chocolatey Central Management dashboard.
+A Deployment state is the state of an individual Deployment from creation/draft to completion and being optionally archived after completion. Once a Deployment has completed, it can be labeled as a number of different [Deployment Statuses](#deployment-statuses). This is the complete lifecycle of a Deployment as it flows down the menu structure defined in the Deployments tab of the Chocolatey Central Management dashboard.
 
 ### Draft
 
