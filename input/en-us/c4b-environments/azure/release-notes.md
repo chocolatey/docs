@@ -118,7 +118,7 @@ Updates the bundled version of CCM  to the [recently released 0.6.2](https://doc
 
 * Fixes an issue with package internalization - see [#54](https://github.com/chocolatey/c4b-azure/issues/54)
 
-### Docs
+### Documentation
 
 * Adds a guide to enabling RDP [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/rdp) - see [#52](https://github.com/chocolatey/c4b-azure/issues/52)
 * Adds a guide for onboarding clients [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/client-setup) - see [#53](https://github.com/chocolatey/c4b-azure/issues/53)
@@ -147,7 +147,7 @@ Update the bundled version of CCM to the [recently released 0.6.1](https://docs.
 
 * Uses `Restart-WebAppPool` instead of `iisreset`, which fixes a rare issue that failed deployments complaining of insufficient permissions
 
-### Enhancements
+### Improvements
 
 * Changes the available base packages to offer packages not available in the bundles
 
@@ -172,7 +172,7 @@ The first released version! Available on the [Azure Marketplace](https://portal.
 * Deploys CCM, Nexus, and Jenkins to a VM
 * Takes an SSL certificate and FQDN and configures the environment appropriately
 
-### Docs
+### Documentation
 
 * Adds basic docs [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/)
 
