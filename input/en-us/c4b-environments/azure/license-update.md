@@ -14,7 +14,7 @@ If you use the Chocolatey for Business Azure Environment for long periods of tim
 - You will need Chocolatey CLI installed.
 - You will need your new Chocolatey for Business license file.
 - You will need the FQDN of your Chocolatey for Business Azure Environment.
-- You will need the API Key for your Nexus repository (or access to the Resource Group hosting your Azure Key Vault to be able to [retrieve it]((xref:c4b-azure#accessing-services))).
+- You will need the API Key for your Nexus repository (or access to the Resource Group hosting your Azure Key Vault to be able to [retrieve it](xref:c4b-azure#accessing-services)).
 
 
 ## Creating a New License Package
