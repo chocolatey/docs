@@ -9,9 +9,6 @@ Description: Integrating with Microsoft Intune
 
 ## Setup Video
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/J12q1AbNw5k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<br>
-</p>
