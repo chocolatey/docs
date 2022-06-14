@@ -197,8 +197,8 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Changes
 
- Disable importing / loading of DLL in the extension folder - see [#2333](https://github.com/chocolatey/choco/issues/2333)
- choco list -e -a returns pre-releases even when --pre is not passed - see [#2304](https://github.com/chocolatey/choco/issues/2304)
+- Disable importing / loading of DLL in the extension folder - see [#2333](https://github.com/chocolatey/choco/issues/2333)
+- choco list -e -a returns pre-releases even when --pre is not passed - see [#2304](https://github.com/chocolatey/choco/issues/2304)
 
 ### Bug Fixes
 
