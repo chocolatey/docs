@@ -171,6 +171,10 @@ Likely you absolutely can, just keep in mind that there may be a specific orderi
 
 ### Why does the chocolatey-management-web package upgrade when I upgrade the chocolatey-management-service package?
 
+> :warning: **WARNING**
+>
+> This only applies to version of CCM _after_ 0.6.0 and _before_ 0.9.0.
+
 When you run the upgrade of the chocolatey-management-service package from a computer that has all the CCM packages installed, you may not expect the chocolatey-management-web package to also be upgraded.
 
 This happens due to the bounded version numbers that are in place for the service and web packages.  Starting with 0.6.0, both the service and web packages have the following dependencies:

@@ -70,13 +70,13 @@ choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls
   choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# We must use the 3.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 3.1.16, but later package versions (within the 3.x.x release) are expected to work.
-@('aspnetcore-runtimepackagestore','dotnetcore-windowshosting') | Foreach-Object {
-  choco download $_ --version 3.1.16 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# We must use the 6.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 6.0.5, but later package versions (within the 6.x.x release) are expected to work.
+@('dotnet-6.0-runtime', 'dotnet-6.0-aspnetruntime') | Foreach-Object {
+  choco download $_ --version 6.0.5 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# Starting with v0.6.2 of the CCM Database package, it uses dotnetcore-sdk so that it may be installed on a system without requiring IIS. At the time of publishing, the most recent version of this package is 3.1.410, but later package versions (within the 3.x.x release) are expected to work
-choco download dotnetcore-sdk --version 3.1.410 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# Starting with v0.9.0 of the CCM Website package, it uses dotnet-aspnetcoremodule-v2. At the time of publishing, the most recent version of this package 16.0.22108, but later package versions (within the 17.x.x release) are expected to work
+choco download dotnet-aspnetcoremodule-v2 --version 16.0.22108 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155

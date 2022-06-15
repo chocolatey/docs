@@ -18,18 +18,20 @@ This is the Central Management website that gives an API and a web layer to cent
 * Windows Server 2012+
 * PowerShell 3+
 * IIS Set up and available
-* aspnetcore-runtimepackagestore version 3.1.16
-* dotnetcore-windowshosting version 3.1.16
+* dotnet-aspnetcoremodule-v2 version 16.0.22108
+* dotnet-6.0-runtime version 6.0.5
+* dotnet-6.0-aspnetruntime version 6.0.5
 
-The CCM Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note, that the codebase is currently locked to version `3.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages is 3.1.16.
+The CCM Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note, that the codebase is currently locked to version `6.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages is 6.0.5.
 
 ### Script for some prerequisites
 
 ```powershell
 choco install IIS-WebServer -s windowsfeatures --no-progress -y
 choco install IIS-ApplicationInit -s windowsfeatures --no-progress -y
-choco install aspnetcore-runtimepackagestore --version 3.1.16 --no-progress -y
-choco install dotnetcore-windowshosting --version 3.1.16 --no-progress -y
+choco install dotnet-aspnetcoremodule-v2 --version 16.0.22108 --no-progress -y
+choco install dotnet-6.0-runtime --version 6.0.5 --no-progress -y
+choco install dotnet-6.0-aspnetruntime --version 6.0.5 --no-progress -y
 ```
 
 ## Step 2: Install Central Management Web Package
