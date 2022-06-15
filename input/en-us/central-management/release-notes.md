@@ -25,6 +25,46 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 * Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 * Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.9.0 (June 15, 2022)
+
+> :warning: **WARNING**
+>
+> The dependencies of all the Chocolatey Central Management packages (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) have changed in this release. This is to allow the installation of .NET 6.0, which is now a requirement to run Chocolatey Central Management.
+>
+> In addition to the above, all the Chocolatey Central Management packages now make use of the commercial cmdlets, which means that these packages _have_ to be installed on a correctly licensed machine. [Further information about why we have enabled this can be found on our blog post](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/)
+>
+> Finally, support for SQL Server 2008 and SQL Server 2008 R2 has been removed. Any attempt to install one of the Chocolatey Central Management packages against one of these instances will results in an error. [Further information about this change can be found in our blog post](https://blog.chocolatey.org/2022/06/ccm-090-remove-sqlserver2008-support/)
+
+### Breaking Changes
+
+- Add support for .NET 6.0 to all Chocolatey Central Management components
+  - As a result, the dependencies for all of the Chocolatey Central Management packages have changed
+- Update all Chocolatey Central Management packages to make use of commercial cmdlets and license validation
+  - This will mean that installation of the Chocolatey Central Management packages has to happen on a correctly licensed machine. [Further information about why we have enabled this can be found on our blog post](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/)
+- Remove support for SQL Server 2008
+  - [Further information about this change can be found in our blog post](https://blog.chocolatey.org/2022/06/ccm-090-remove-sqlserver2008-support/)
+
+### Features
+
+- Add ability to update the "Friendly Name" of a computer via the API - see [Licensed #285](https://github.com/chocolatey/chocolatey-licensed-issues/issues/285)
+- Provide ability to ensure that all Chocolatey Central Management Chocolatey packages are not being installed to either SQL Server 2008 or SQL Server 2008 R2 instance
+
+### Bug Fixes
+
+- Ensure that it is possible to hide links from login page when new user registration is disabled - see [Licensed #270](https://github.com/chocolatey/chocolatey-licensed-issues/issues/270)
+- Ensure that no error is caused when viewing a large response from the website
+- Ensure that the `chocolatey-management-web` Chocolatey package can be internalized using Package Internalizer
+
+### Improvements
+
+- [Security] Remove usage of `morris.js` due to security vulnerability
+- Add ability for the CCM Admin Role, by default, to be able to edit a computer - see [Licensed #217](https://github.com/chocolatey/chocolatey-licensed-issues/issues/217)
+- Add ability to see the "Friendly Name" assigned to a computer across other areas of Chocolatey Central Management - see [Licensed #221](https://github.com/chocolatey/chocolatey-licensed-issues/issues/221)
+- Add colorization to the Deployment Plan / Step screens to show overall result in detail pages
+- Remove "Show Log" button from Deployment Step details page for a computer with a result reason of "Unreachable"
+- Provide ability to navigate to software screen from the KPI dashboard screen - see [Licensed #282](https://github.com/chocolatey/chocolatey-licensed-issues/issues/282)
+
+
 ## 0.8.0 (February 28, 2022)
 
 ### Features
