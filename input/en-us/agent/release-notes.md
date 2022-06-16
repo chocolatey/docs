@@ -38,6 +38,15 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 - Update Chocolatey Licensed Extension dependency to v4.0.0
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/TnJP8hgEtjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 0.13.0 (February 28, 2022)
 
 > :warning: **WARNING**
@@ -55,6 +64,15 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
   - Add logic to retry reporting of a deployment step result to Chocolatey Central Management if it initially fails.
   - Ensure that no expanded sensitive variables are captured in log that is returned to Chocolatey Central Management.
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/AISFNuSH6XQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 0.12.1 (September 14, 2021)
 
 ### Bug Fixes
@@ -65,13 +83,10 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/EoliKrC_MBA?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.12.0 (September 2, 2021)
 
@@ -93,13 +108,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/Uv59msxXzeg?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.11.2 (November 5, 2020)
 
@@ -224,6 +236,7 @@ A short video explaining what is included in this release can be found here:
 - Fix - Sources using nupkg/nuspec were being allowed. This is now disabled as well.
 
 ## 0.5.0 (January 14, 2017)
+
 ### Breaking Changes
 
 - New pattern for dependencies requires a reload of the interface that works between the Agent and Chocolatey.Extension, requiring a bump in the sub v1.
