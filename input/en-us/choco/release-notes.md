@@ -33,11 +33,29 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
     command `choco feature enable --name="'disableCompatibilityChecks'"`
 - Include the latest version of 7zip (v21.07) within Chocolatey installation - see [#2650](https://github.com/chocolatey/choco/issues/2650)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/wm9FiYRm8mA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## [1.0.1](https://github.com/chocolatey/choco/milestone/55?closed=1) (March 24, 2022)
 
 ### Bug Fix
 
 - Fix - When Chocolatey CLI v1.0.0 attempts to load Chocolatey Licensed Extension versions less than v4.0.0, it halts execution with an unclear and unhelpful error message - see [#2656](https://github.com/chocolatey/choco/issues/2656)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/l4RqA4iLca0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
@@ -69,6 +87,15 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Document the fact that the Source switch doesn't do anything when running the command choco list --lo - see [#2545](https://github.com/chocolatey/choco/issues/2545)
 - Update warning that is shown regarding using a trial license of Chocolatey - see [#2407](https://github.com/chocolatey/choco/issues/2407)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/7Go3VLEGK_o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## [0.12.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.1) (January 25, 2022)
 
 ### Bug Fixes
@@ -80,13 +107,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/2yKiCi5m9Jw?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/4055gqvwyuk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18, 2022)
 
@@ -131,6 +155,15 @@ A short video explaining what is included in this release can be found here:
 - Update default template regarding building Chocolatey package on non-Windows systems - see [#2384](https://github.com/chocolatey/choco/issues/2384)
 - Fix version number used in default template - see [#2381](https://github.com/chocolatey/choco/pull/2381)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/Ip6e35dshBw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## [0.11.3](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.3) (October 27, 2021)
 
 ### Bug Fixes
@@ -145,13 +178,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/py-3BJIPebk?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.11.2](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.2) (September 23, 2021)
 
@@ -163,13 +193,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/YMLpILkkoGc?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.11.1](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.1) (September 2nd, 2021)
 
@@ -181,13 +208,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/hSCh9o37qb8?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.11.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.0) (September 2nd, 2021)
 
@@ -246,13 +270,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/hMzbedfEl8w?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.10.15](https://github.com/chocolatey/choco/issues?q=milestone%3A0.10.15+is%3Aclosed) (June 3, 2019)
 
