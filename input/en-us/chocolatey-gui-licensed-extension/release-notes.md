@@ -30,6 +30,15 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 - Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade
 - Updates Chocolatey dependency for package to v1.0.0
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/UNayhXD_6Oc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 0.4.0 (February 10, 2022)
 
 > :warning: **WARNING**
@@ -39,6 +48,15 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 ### Breaking Change
 
 - Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/hRgfe0NxVL4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## 0.3.0 (September 6, 2021)
 
@@ -59,13 +77,10 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/O0fyUHe2pb8?list=PLGvGJzqY88slXNljm_qph3jnD2Z4bH6nx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.2.1 (March 29, 2021)
 
@@ -77,13 +92,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/t4h3Y9GMIrc?list=PLGvGJzqY88slXNljm_qph3jnD2Z4bH6nx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.2.0 (March 9, 2021)
 
@@ -102,13 +114,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/tug8P1wxXmY?list=PLGvGJzqY88slXNljm_qph3jnD2Z4bH6nx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.1.0 (January 22, 2021)
 
@@ -125,10 +134,7 @@ Initial preview release
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/kypWt1UyVwg?list=PLGvGJzqY88slXNljm_qph3jnD2Z4bH6nx" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
