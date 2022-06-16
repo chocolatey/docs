@@ -32,6 +32,15 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 - Fix typo in window seen after export command finishes - see [#924](https://github.com/chocolatey/ChocolateyGUI/pull/924)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/D-Gi463UukQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## [0.20.0](https://github.com/chocolatey/ChocolateyGUI/milestone/23?closed=1) (February 10, 2022)
 
 > :warning: **WARNING**
@@ -57,6 +66,7 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 - Install button is not disabled when installation of packages is not allowed - see [#911](https://github.com/chocolatey/ChocolateyGUI/issues/911)
 - Message boxes used to report issues often don't stay open - see [#904](https://github.com/chocolatey/ChocolateyGUI/issues/904)
 - All operations on packages with a progress dialog are broken - see [#875](https://github.com/chocolatey/ChocolateyGUI/issues/875)
+
 ### Improvements
 
 - Ensure WiX installer verifies that .NET Framework 4.8 is installed - see [#842](https://github.com/chocolatey/ChocolateyGUI/issues/842)
@@ -70,6 +80,15 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 - Fix link to localization article - see [#891](https://github.com/chocolatey/ChocolateyGUI/pull/891)
 - Remove package parameters from nuspec file - see [#885](https://github.com/chocolatey/ChocolateyGUI/issues/885)
 - Contributing.md has broken links - see [#854](https://github.com/chocolatey/ChocolateyGUI/issues/854)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/8sSp1d7Ni8o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## [0.19.0](https://github.com/chocolatey/ChocolateyGUI/milestone/26?closed=1) (September 6, 2021)
 
@@ -90,13 +109,10 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/6EJKPy4cCKI?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.18.2](https://github.com/chocolatey/ChocolateyGUI/milestone/25?closed=1) (September 2, 2021)
 
@@ -108,13 +124,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/PC00qA4rlkY?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.18.1](https://github.com/chocolatey/ChocolateyGUI/milestone/24?closed=1) (March 29, 2021)
 
@@ -132,13 +145,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/LzMKMZX_ja4?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.18.0](https://github.com/chocolatey/ChocolateyGUI/milestone/19?closed=1) (March 9, 2021)
 
@@ -187,13 +197,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/eKXPDmqO-hs?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.17.3](https://github.com/chocolatey/ChocolateyGUI/milestone/22?closed=1) (February 1, 2021)
 
@@ -205,13 +212,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/SAob-HgTf2Q?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.17.2](https://github.com/chocolatey/ChocolateyGUI/milestone/21?closed=1) (July 13, 2020)
 
@@ -223,13 +227,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/DGpdtcby9N4?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.17.1](https://github.com/chocolatey/ChocolateyGUI/milestone/20?closed=1) (June 11, 2020)
 
@@ -242,13 +243,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/1wSwRMbds1k?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## [0.17.0](https://github.com/chocolatey/ChocolateyGUI/milestone/18?closed=1) (March 26, 2020)
 
@@ -308,13 +306,13 @@ A short video explaining what is included in this release can be found here:
 
 ### Improvements
 
-- Prelease label should not be red as this suggests an error, which isn't the case - see [#711](https://github.com/chocolatey/ChocolateyGUI/issues/711)
+- Prerelease label should not be red as this suggests an error, which isn't the case - see [#711](https://github.com/chocolatey/ChocolateyGUI/issues/711)
 - Move Windows specific code into another Common library - see [#682](https://github.com/chocolatey/ChocolateyGUI/issues/682)
 - Remove tilting chocolatey logo - see [#680](https://github.com/chocolatey/ChocolateyGUI/issues/680)
 - Split CLI functionality into separate exe - see [#675](https://github.com/chocolatey/ChocolateyGUI/issues/675)
 - Allow "safe" Chocolatey operations to happen in parallel - see [#672](https://github.com/chocolatey/ChocolateyGUI/issues/672)
 - Update to Chocolatey.Lib 0.10.15 - see [#670](https://github.com/chocolatey/ChocolateyGUI/issues/670)
-- Ensure all dialogs shown in Chocolatey GUI have localised text on buttons - see [#668](https://github.com/chocolatey/ChocolateyGUI/issues/668)
+- Ensure all dialogs shown in Chocolatey GUI have localized text on buttons - see [#668](https://github.com/chocolatey/ChocolateyGUI/issues/668)
 - Do not display password in source settings screen - see [#665](https://github.com/chocolatey/ChocolateyGUI/issues/665)
 - Tile View - Prevent Version text overlap - see [#651](https://github.com/chocolatey/ChocolateyGUI/issues/651)
 - Ensure that icons maintain their aspect ratio - see [#633](https://github.com/chocolatey/ChocolateyGUI/issues/633)
