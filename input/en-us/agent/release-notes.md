@@ -43,7 +43,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/TnJP8hgEtjQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/TnJP8hgEtjQ?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -69,7 +69,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/AISFNuSH6XQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/AISFNuSH6XQ?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 

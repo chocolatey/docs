@@ -37,7 +37,7 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/D-Gi463UukQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/D-Gi463UukQ?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -86,7 +86,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/8sSp1d7Ni8o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/8sSp1d7Ni8o?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 

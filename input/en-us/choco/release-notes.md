@@ -38,7 +38,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/wm9FiYRm8mA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/wm9FiYRm8mA?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -53,7 +53,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/l4RqA4iLca0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/l4RqA4iLca0?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -92,7 +92,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/7Go3VLEGK_o" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/7Go3VLEGK_o?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -108,7 +108,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/4055gqvwyuk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/4055gqvwyuk?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
@@ -160,7 +160,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <div class="ratio ratio-16x9">
-    <iframe src="https://www.youtube.com/embed/Ip6e35dshBw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    <iframe src="https://www.youtube.com/embed/Ip6e35dshBw?list=PLGvGJzqY88sm2CQ1Bf5ZGCgtJbTlgw1xK" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
 
