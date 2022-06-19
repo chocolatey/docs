@@ -39,6 +39,15 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 - Fix - Unable to enable/disable licensed features when using a Professional license - see [licensed #298](https://github.com/chocolatey/chocolatey-licensed-issues/issues/298)
 - Fix - Admin Only sources are not filtered out consistently when using different Chocolatey license types
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/6MotLthNaTA?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 4.1.0 (March 30, 2022)
 
 ### Features
@@ -50,6 +59,15 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 - Add an attribute to the Chocolatey Licensed Extension assembly to provide information about the minimum supported Chocolatey version.
   - This will match the version number that is defined in the nuspec dependencies for the chocolatey.extension package, however, this assembly attribute is something which can be
     checked at the time of running choco.exe to allow checks to see if everything is compatible.
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/bjF-IQ6qAZE?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## 4.0.0 (March 21, 2022)
 
@@ -74,11 +92,29 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 - Ensure that features that have been removed from Chocolatey can no longer be set using feature command - see [licensed #293](https://github.com/chocolatey/chocolatey-licensed-issues/issues/293)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/TwF0oxZdLc8?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 3.2.0 (February 28, 2022)
 
 ### Improvement
 
 - Chocolatey Central Management - Enhanced contracts for communication between Chocolatey Agent and Chocolatey Central Management.
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/LlUu_J_EveU?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## 3.1.0 (January 18, 2022)
 
@@ -94,6 +130,15 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 - Fix - PowerShell - Get-ChocolateyUnzip fails to unzip when destination is root of a drive - see [licensed #284](https://github.com/chocolatey/chocolatey-licensed-issues/issues/284)
 - Fix - Intune - Cannot push chocolatey-agent due to duplicated dependency
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/KIFJntXpR9k?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## 3.0.0 (December 8, 2021)
 
@@ -119,7 +164,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
   - Fix - Ensure "--version" option is ignored when using choco new command- see [licensed #203](https://github.com/chocolatey/chocolatey-licensed-issues/issues/203)
   - Fix - Ensure checksums are calculated correctly when using both x86 and x64 urls that result in the same file name - see [licensed #94](https://github.com/chocolatey/chocolatey-licensed-issues/issues/94)
 - Fix - Package Internalizer: Remove authenticode signatures when combining files - see [licensed #155](https://github.com/chocolatey/chocolatey-licensed-issues/issues/155)
-- Fix - Package Builder UI: Ensure that long file paths don't wrap within input textboxes
+- Fix - Package Builder UI: Ensure that long file paths don't wrap within input text boxes
 
 ### Improvements
 
@@ -127,6 +172,15 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 - PowerShell:
   - Ensure that all Cmdlets are using consistent parameter names by using aliases
   - Support UnzipLocation as an alias to the Destination parameter in the Get-ChocolateyUnzip function - matching with Chocolatey CLI v0.11.0 - see [licensed #243](https://github.com/chocolatey/chocolatey-licensed-issues/issues/243)
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/GmWN-z6Nkew?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ## 2.2.1 (September 22, 2021)
 
@@ -138,13 +192,10 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/p8m2nnSO7bw?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 2.2.0 (September 2, 2021)
 
@@ -170,13 +221,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/yohhvgtwxiM?list=PLGvGJzqY88smUhr6TiAwpSs5W25-Z4RZ5" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 2.1.1 (July 3, 2020)
 
@@ -206,7 +254,7 @@ A short video explaining what is included in this release can be found here:
 
 - Package Internalizer (Choco Download):
   - Enhance `--no-progress` to not display download counters - see [licensed #104](https://github.com/chocolatey/chocolatey-licensed-issues/issues/104)
-  - [Security] Files dowloaded and internalized should be run against the virus scanner (if configured) - see [licensed #108](https://github.com/chocolatey/chocolatey-licensed-issues/issues/108)
+  - [Security] Files downloaded and internalized should be run against the virus scanner (if configured) - see [licensed #108](https://github.com/chocolatey/chocolatey-licensed-issues/issues/108)
 - Disable existing context menus on upgrade when passing `/NoContextMenu` in package parameters
 - Remove context menus added during installation when uninstalling extension
 - Central Management Deployments configuration additions
@@ -249,7 +297,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Features
 
-- Chocolatey Central Management tie in - Brings Central Management client configuration to Chocolatey. Requires Chocolatey v0.10.12 along with Chocolatey Agent v0.9.0 to allow communication with Central Maangement.
+- Chocolatey Central Management tie in - Brings Central Management client configuration to Chocolatey. Requires Chocolatey v0.10.12 along with Chocolatey Agent v0.9.0 to allow communication with Central Management.
 - [Security] Self-Service - allow uninstalls of ONLY packages installed by a user. Allows restricting what a user can uninstall to only what they have installed - see [licensed #2](https://github.com/chocolatey/chocolatey-licensed-issues/issues/2)
 
 ### Bug Fixes
@@ -272,16 +320,16 @@ A short video explaining what is included in this release can be found here:
 
 ### Improvements
 
- - Package Builder - Remove "v" as part of "Name v2.2.23" In product names
- - Package Upload UI - Ability to auto populate Source dropdown list - see [licensed #50](https://github.com/chocolatey/chocolatey-licensed-issues/issues/50)
- - Package Internalizer - Allow downloading all installed packages with `--installed-packages`
- - PowerShell - Cmdlets for Getting/Setting encrypted values in JSON files
+- Package Builder - Remove "v" as part of "Name v2.2.23" In product names
+- Package Upload UI - Ability to auto populate Source dropdown list - see [licensed #50](https://github.com/chocolatey/chocolatey-licensed-issues/issues/50)
+- Package Internalizer - Allow downloading all installed packages with `--installed-packages`
+- PowerShell - Cmdlets for Getting/Setting encrypted values in JSON files
 
 ## 1.12.12 (June 12, 2018)
 
 ### Features
 
- * Package Upload UI - Ability to right click on a nupkg, and access UI for selecting where package is pushed to
+- Package Upload UI - Ability to right click on a nupkg, and access UI for selecting where package is pushed to
 
 ### Bug Fixes
 
@@ -356,9 +404,10 @@ If you want self-service to interactively manage installations, run `choco featu
   - Fix - Don't attempt to generate an icon unless a file for that icon exists.
 
 ### Improvements
- * Package Builder (Choco New):
-    * Right click create package w/out GUI should pause on error. This allows a user to see any errors instead of closing quickly.
-    * Do not generate template files if not using the default template.
+
+- Package Builder (Choco New):
+  - Right click create package w/out GUI should pause on error. This allows a user to see any errors instead of closing quickly.
+  - Do not generate template files if not using the default template.
 
 ## 1.12.9 (November 10, 2017)
 
@@ -483,7 +532,7 @@ Among the bug fixes, we've brought Package Internalizer to the MSP edition of Ch
 
 - Fix - Configuration item is not serialized, causing issues with installs with packages.config and ChocolateyGUI.
 - Package Synchronizer (Choco Sync):
-   - Fix - syncing new items should capture audit information for Package Audit.
+  - Fix - syncing new items should capture audit information for Package Audit.
 - Self-Service / Background Mode
   - Fix - timeout should be near infinite when execution timeout is 0.
   - Fix - loading commands over PowerShell remoting can fail.
@@ -641,7 +690,6 @@ This release brings Package Throttle, Package Synchronizer's "Show All Packages 
   - Don't delete the download directory unless `--force`
 - Set user modes for terminal services (`change user /install` | `change user /execute`)
 
-
 ## 1.9.4 (January 19, 2017)
 
 ### Bug Fix
@@ -666,8 +714,6 @@ This release brings Package Throttle, Package Synchronizer's "Show All Packages 
 
 - Fix - Ensure Pro users can call Package Builder from the command line ("packagebuilder") after install
 - Fix - Correct title of package to "Chocolatey Licensed Edition"
-
-
 
 ## 1.9.0 (January 15, 2017)
 
@@ -718,7 +764,7 @@ This release brings the coveted PackageBuilder UI to the Pro+ license (minus aut
 
 We've introduced some service management functions to the business edition. `Install-ChocolateyWindowsService`, `Uninstall-ChocolateyWindowsService`, `Start-ChocolateyWindowsService`, and `Stop-ChocolateyWindowsService`. Those will be documented soon enough. For now some example code should suffice.
 
-~~~powershell
+```powershell
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $serviceExe = Join-Path $toolsDir 'service\chocolatey-agent.exe'
 
@@ -738,7 +784,7 @@ Install-ChocolateyWindowsService @packageArgs
 Start-ChocolateyWindowsService -Name 'chocolatey-agent'
 Stop-ChocolateyWindowsService -Name 'chocolatey-agent'
 Uninstall-ChocolateyWindowsService -Name 'chocolatey-agent'
-~~~
+```
 
 ### Bug Fixes
 
@@ -780,8 +826,8 @@ Uninstall-ChocolateyWindowsService -Name 'chocolatey-agent'
   - Generate from Programs and Features is faster, does not repeat for Uninstaller keys in both 32bit/64bit registry hives
   - Show downloaded file progress
 - Package Downloader/Internalizer (Choco Download):
-   - When chocolateyInstall.ps1 uses other ps1 files, ensure those are loaded for token replacement
-   - Show downloaded file progress
+  - When chocolateyInstall.ps1 uses other ps1 files, ensure those are loaded for token replacement
+  - Show downloaded file progress
 
 ## 1.8.2 (December 12, 2016)
 
@@ -815,7 +861,6 @@ Uninstall-ChocolateyWindowsService -Name 'chocolatey-agent'
   - version - always set to 3 segments (x.y.z)
   - version - remove extra version segments when more than 4 segments are returned
 
-
 ## 1.8.0 (November 16, 2016)
 
 Package Builder has some major improvements in this release, including a new UI! See https://blog.chocolatey.org/2016/11/package-builder-announcements/ for details! While building some of the features for the enhancements for this release, we've made quite a few tweaks and fixes to Package Builder and we think you are going to like the results. Being able to generate packages from the installed software on a reference system is huge (`choco new --from-programs-and-features`)!
@@ -826,9 +871,9 @@ Pro users now have the ability to download packages (minus internalization). Thi
 
 - Package Downloader comes to Pro+ Licenses - minus internalizer, you can now download a package using an easy command `choco download`.
 - Package Builder (Choco New):
-    * Package Builder now has a UI - see https://youtu.be/qJNKR_PEQqY for details.
-    * Right click on an exe, msi, zip (or other supported types) and click "Create Package..."
-    * Package Builder - generate packages from installed software (Programs and Features) - see https://youtu.be/Mw_ReipnskI for details.
+  - Package Builder now has a UI - see https://youtu.be/qJNKR_PEQqY for details.
+  - Right click on an exe, msi, zip (or other supported types) and click "Create Package..."
+  - Package Builder - generate packages from installed software (Programs and Features) - see https://youtu.be/Mw_ReipnskI for details.
 
 ### Bug Fixes
 
@@ -1003,7 +1048,6 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
 
 - Support FIPS compliant algorithms [#446](https://github.com/chocolatey/choco/issues/446)
 
-
 ## 1.3.2 (May 28, 2016)
 
 ### Bug Fix
@@ -1013,7 +1057,6 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
 ### Improvement
 
 - Clarified options with version and better messaging.
-
 
 ## 1.3.1 (May 9, 2016)
 
@@ -1039,7 +1082,7 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
 
 ### Improvement
 
- * Virus Scanner exits as soon as possible on files too big for the scanner. If the file is over 500MB, the scanner cannot upload the file, so it should not ask whether it can try to upload prior to failing on the size check (previous behavior).
+- Virus Scanner exits as soon as possible on files too big for the scanner. If the file is over 500MB, the scanner cannot upload the file, so it should not ask whether it can try to upload prior to failing on the size check (previous behavior).
 
 ## 1.2.0 (March 14, 2016)
 
@@ -1048,6 +1091,7 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
 - Virus scanning for Pro users! See the [post](https://www.kickstarter.com/projects/ferventcoder/chocolatey-the-alternative-windows-store-like-yum/posts/1518468) for details!
 
 ## 1.1.0 (February 12, 2016)
+
 ### Improvements
 
 - License can now be in user profile (like `c:\Users\yourname\chocolatey.license.xml`). This is great for roaming user profiles and in multiple machine usage scenarios.
@@ -1061,11 +1105,13 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
   - Skip or run virus check with command options - see `choco install -h` for details.
 
 ## 1.0.2 (February 5, 2016)
+
 ### Bug Fix
 
 - Fix - PowerShell 5 respects Cmdlet aliases, causing overrides on functions not ready (Install-ChocolateyPackage). See the [post](https://www.kickstarter.com/projects/ferventcoder/chocolatey-the-alternative-windows-store-like-yum/posts/1484093) for details.
 
 ## 1.0.1 (February 2, 2016)
+
 ### Bug Fix
 
 - Fix - License location validation is incorrect.

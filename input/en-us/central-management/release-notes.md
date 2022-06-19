@@ -7,23 +7,27 @@ RedirectFrom: docs/release-notes-central-management
 ---
 
 # Chocolatey Release Notes - Chocolatey Central Management
+
 ## Summary
+
 This covers the release notes for the Chocolatey Central Management (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) packages, which covers Central Management server-side functionality. For more information, installation options, etc, please refer to [Chocolatey Central Management](xref:central-management).
 
-* Installation - [Central Management Setup](xref:ccm-setup)
-* Upgrade - [Central Management Upgrade](xref:ccm-upgrade)
+- Installation - [Central Management Setup](xref:ccm-setup)
+- Upgrade - [Central Management Upgrade](xref:ccm-upgrade)
 
 > :memo: **NOTE**
 >
 > This package is available to Chocolatey for Business (C4B) customers only.
 
 ## Other Release Notes
-* Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
-* Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes) and [Chocolatey Agent Release Notes](xref:agent-release-notes).
+
+- Refer to [Open Source Release Notes](xref:floss-release-notes) as commercial editions build on top of open source.
+- Chocolatey for Business (C4B) customers - also refer to [Chocolatey Licensed Extension Release Notes](xref:licensed-extension-release-notes) and [Chocolatey Agent Release Notes](xref:agent-release-notes).
 
 ## Known Issues
-* Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
-* Some issues may be held internally, please follow your support routes to learn more.
+
+- Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
+- Some issues may be held internally, please follow your support routes to learn more.
 
 ## 0.9.0 (June 15, 2022)
 
@@ -64,7 +68,6 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Remove "Show Log" button from Deployment Step details page for a computer with a result reason of "Unreachable"
 - Provide ability to navigate to software screen from the KPI dashboard screen - see [Licensed #282](https://github.com/chocolatey/chocolatey-licensed-issues/issues/282)
 
-
 ## 0.8.0 (February 28, 2022)
 
 ### Features
@@ -81,7 +84,6 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ### Improvements
 
 - Disable updating of related group information when it is not needed as computers are reporting in.
-
 
 ## 0.7.0 (November 17, 2021)
 
@@ -111,15 +113,13 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/WH9ecBP-1zY?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.6.3 (September 23, 2021)
+
 ### Bug Fixes
 
 - Fix - Processing of message queue does not complete when an invalid XML file is located - see [Licensed #266](https://github.com/chocolatey/chocolatey-licensed-issues/issues/266)
@@ -133,13 +133,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/D3z4w3O6w8Q?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.6.2 (August 26, 2021)
 
@@ -160,13 +157,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/UF3Z9PVh2K0?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.6.1 (August 5, 2021)
 
@@ -178,13 +172,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/pbgpxeRQ-V4?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.6.0 (August 3, 2021)
 
@@ -197,20 +188,17 @@ A short video explaining what is included in this release can be found here:
 
 ### Enhancements
 
- - All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
+- All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
 - Due to this update, the CCM Website now uses the in-process hosting model within IIS. This is enabled by [default starting with ASP.NET Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0#enable-in-process-hosting).
 
 ### Release Video
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/i5_42euUABY?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.5.1 (April 12, 2021)
 
@@ -222,13 +210,10 @@ A short video explaining what is included in this release can be found here:
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/ED6vAz6_AHk?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.5.0 (March 25, 2021)
 
@@ -250,13 +235,10 @@ Previously, while not recommended, the CCM Service could be run as a user with n
 
 A short video explaining what is included in this release can be found here:
 
-<p>
 <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
     </iframe>
 </div>
-<br>
-</p>
 
 ## 0.4.0 (November 6, 2020)
 
@@ -292,7 +274,6 @@ Previously this value was set to a constant value of 20 and not configurable. To
 - Deployments - Round percentage complete values on report pages while deployment is in progress
 - Deployments - Auto-refresh deployment report pages
 
-
 ## 0.3.1 (October 5, 2020)
 
 ### Bug FIxes
@@ -320,7 +301,6 @@ Previously this value was set to a constant value of 20 and not configurable. To
 
 - Fix - Service - Communication with Chocolatey Agent fails on Incorrect Passphrase - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152)
 - Fix - Web - Do not recreate website w/bindings on upgrade - see [Licensed #156](https://github.com/chocolatey/chocolatey-licensed-issues/issues/156)
-
 
 ## 0.2.0 (June 18, 2020)
 
@@ -370,7 +350,6 @@ Deployments Release - we are excited to bring about managing remote machines wit
 - Database Install - Add `/SkipDatabasePermissionCheck` parameter to skip permissions check - see [licensed #147](https://github.com/chocolatey/chocolatey-licensed-issues/issues/147)
 - Trial licenses that do not include counts will allow 100 licenses - see [licensed #140](https://github.com/chocolatey/chocolatey-licensed-issues/issues/140)
 
-
 ## 0.1.1 (January 30, 2020)
 
 ### Bug Fixes
@@ -402,7 +381,6 @@ Deployments Release - we are excited to bring about managing remote machines wit
 - All - Show a warning during installation when provided SQL Server connection string doesn't provide an explicit user/password to connect with
 - Service - Adjust logs to provide more appropriate information for normal operations
 - Web - Autofocus on new password text box on password change screen
-
 
 ## 0.1.0 (May 22, 2019)
 
@@ -445,7 +423,6 @@ Initial preview release
 - Packaging - Added required dependencies to packages
 - Packaging - Add information about available installation parameters to package description
 - Service - Allow modification of configuration settings without the need to restart Windows Service
-
 
 ## 0.1.0-beta-20181009 (October 9, 2018)
 
