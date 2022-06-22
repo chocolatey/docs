@@ -32,6 +32,46 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 4.2.0 (June 22, 2022)
+
+### Features
+
+- Intune - Add `--skip-cleanup` option to push command
+  - When pushing a package to Intune, if it fails for any reason Chocolatey will default to removing the partially created application. This new option allows skipping this cleanup process so you can investigate the state in Intune. This option also prevents cleanup of temporary files used for the upload process.
+
+### Bug Fixes
+
+- Fix - Intune - Unable to push package from file directory with spaces - see [licensed #310](https://github.com/chocolatey/chocolatey-licensed-issues/issues/310)
+- Fix - VirusTotal - Allow business trial license access to VirusTotal virusScannerType - see [licensed #309](https://github.com/chocolatey/chocolatey-licensed-issues/issues/309)
+  - Business trial customers will now be able to use the VirusTotal scanner type when installing and downloading packages. Previously this feature was limited to just Business and Professional license customers.
+- Fix - 7z.exe error causes Chocolatey to throw wrong message - see [licensed #307](https://github.com/chocolatey/chocolatey-licensed-issues/issues/307)
+- Fix - Package Internalizer - Prevent UseOriginalLocation flag being added to PowerShell scripts when internalizing a package
+- Fix - Package Builder - MSI installer causes package to be built recursively until the path becomes too long
+- Fix - Architect license reports warning about automatic uninstaller service requiring newer version of Chocolatey
+- Fix - Adding the Chocolatey licensed source without authentication stops Chocolatey CLI from working - see [licensed #279](https://github.com/chocolatey/chocolatey-licensed-issues/issues/279)
+
+### Improvements
+
+- Intune
+  - Update chocolatey.extension package on Intune tenant to new chocolatey-license package on push
+    - When a new chocolatey-license is pushed to Intune, we now automatically link the Chocolatey Licensed Extension to the new dependency
+  - Make chocolatey.extension package take exact version dependency on chocolatey-license package
+    - The internal structure of the Chocolatey Licensed Extension package identifies requiring the exact license version number
+  - Use 4th part of the version when creating a chocolatey-license package to define the node count
+    - When a new license package is created, the node count is included in the version number so updated license counts will correctly update in Intune.
+  - Update Package Uploader UI to accept intunewin files for pushing to Intune
+    - Package Uploader UI can now handle intunewin files and pushing to Intune if your license allows it
+- VirusTotal - 500MB+ binaries should not attempt virus scanning since this is not supported by VirusTotal - see [licensed #65](https://github.com/chocolatey/chocolatey-licensed-issues/issues/65)
+- Package Internalizer - Remove duplicate resources that are downloaded to reduce package size - see [licensed #93](https://github.com/chocolatey/chocolatey-licensed-issues/issues/93)
+- Package Builder UI - Show command to be run - see [licensed #169](https://github.com/chocolatey/chocolatey-licensed-issues/issues/169)
+- New Command - Remove warning that `for-public` option is no longer present
+
+### Documentation
+
+- Intune - Enhance error messages and link to FAQ docs
+  - When running some Intune integration related tasks, the error messages will now link to the [Intune FAQ](xref:intune-faq)
+
+
 ## 4.1.1 (April 11, 2022)
 
 ### Bug Fixes
