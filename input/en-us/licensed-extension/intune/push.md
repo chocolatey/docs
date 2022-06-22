@@ -53,7 +53,7 @@ choco push firefox.86.0.intunewin
 ~~~
 
 > :warning: **WARNING**
-> 
+>
 > By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are pushing can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are pushing is a stable release. This is the same behaviour as the [`convert`](xref:intune-convert) command.
 
 > :warning: **WARNING**
@@ -66,36 +66,4 @@ choco push firefox.86.0.intunewin
 
 ## FAQ
 
-### Can I push a custom version of the `chocolatey-license` package?
-
-Yes, but there are a few things to know before doing so.
-
-1. If there is no `chocolatey-license` package on the Intune tenant, ensure you push this package to Intune first. Otherwise, a new `chocolatey-license` package will be generated and will replace the custom one in your local directory.
-1. The Chocolatey package ID must be `chocolatey-license`.
-1. It must have been converted to a Chocolatey Intune package by calling `choco convert`.
-
-### How can I update my license in the Intune tenant when I have a new Chocolatey for Business license?
-
-Updates to Intune packages through Chocolatey is not currently supported. There is a manual process that you can follow to do this within Intune:
-
-1. Ensure the local computer that you will run the Chocolatey commands on has the new license applied to it.
-1. Login to the Intune tenant and locate the `Chocolatey License` package.
-1. Replace `Notes` section of the Intune package with a non-whitespace character (for example, the letter A). This will cause the Intune package not to be found by Chocolatey in the next step.
- 1. Push a package to Intune as you would normally do. This will result in Chocolatey not finding a `chocolatey-license` package within the Intune tenant, and therefore automatically generating a new one using the Chocolatey for Business license package using the license present on the local computer running the `push` command.
-1. Locate the `Chocolatey Licensed Extension` package in the Intune tenant and add the new `Chocolatey License` package as a dependency and remove the previous `Chocolatey License` package as a dependency.
-
-### What can I do if I receive an error about my file not being found or not being a `nupkg` file?
-
-The command to `push` a Chocolatey Intune package (a package with the `intunewin` extension) is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled by running:
-
-~~~sh
-choco feature enable --name=allowPreviewFeatures
-~~~
-
-### What can I do if I receive an error about the format of the URI could not be determined?
-
-The command to `push` a Chocolatey Intune package (a package with the `intunewin` extension) is currently a preview feature, and the feature configuration `allowPreviewFeatures` needs to be enabled by running:
-
-~~~sh
-choco feature enable --name=allowPreviewFeatures
-~~~
+Frequently asked questions about choco push for Intune can be found [here](xref:intune-faq#push-faqs)
