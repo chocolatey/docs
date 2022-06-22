@@ -37,7 +37,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 ### Features
 
 - Intune - Add `--skip-cleanup` option to push command
-  - When pushing a package to Intune, if it fails for any reason Chocolatey will default to removing the partially created application. This new option allows skips this cleanup process so you can investigate the state in Intune. This option also prevents cleanup of temporary files used for the upload process.
+  - When pushing a package to Intune, if it fails for any reason Chocolatey will default to removing the partially created application. This new option allows skipping this cleanup process so you can investigate the state in Intune. This option also prevents cleanup of temporary files used for the upload process.
 
 ### Bug Fixes
 
