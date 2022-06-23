@@ -248,6 +248,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Endpoint - The Intune API endpoint to use. Defaults to beta endpoint, 
        can fallback to `v1.0` should the beta change and cause issues.
 
+     --skip-cleanup
+     Skip Cleanup - Don't cleanup local files when pushing to Intune. On a 
+       failed push to Intune, don't attempt to cleanup the Intune packages.
+
 ~~~
 
 [Command Reference](xref:choco-commands)
