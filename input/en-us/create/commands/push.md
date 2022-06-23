@@ -50,7 +50,7 @@ Chocolatey will attempt to push a compiled nupkg to a package feed.
  switches with one dash (`-`). For more details, see
  [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
-A feed can be a local folder, a file share, the [community feed](https://community.chocolatey.org/packages) 
+A feed can be a local folder, a file share, the [community feed](https://community.chocolatey.org/packages)
  (https://push.chocolatey.org/), or a custom/private feed. For web
  feeds, it has a requirement that it implements the proper OData
  endpoints required for NuGet packages.
@@ -70,7 +70,7 @@ use the full command going forward (`choco push`).
     choco push [<path to nupkg>] [<options/switches>]
     cpush [<path to nupkg>] [<options/switches>] (DEPRECATED, will be removed in v2.0.0)
 
-> :memo: **NOTE** If there is more than one nupkg file in the folder, the command 
+> :memo: **NOTE** If there is more than one nupkg file in the folder, the command
  will require specifying the path to the file.
 
 ## Examples
@@ -79,15 +79,15 @@ use the full command going forward (`choco push`).
     choco push --source "'https://push.chocolatey.org/'" --execution-timeout 500
     choco push --source "'https://push.chocolatey.org/'" -k="'123-123123-123'"
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
 ## Troubleshooting
 
 To use this command, you must have your API key saved for the community
- feed (chocolatey.org) or the source you want to push to. Or you can 
- explicitly pass the apikey to the command. See [`apikey`](xref:choco-command-apikey) command help 
+ feed (chocolatey.org) or the source you want to push to. Or you can
+ explicitly pass the apikey to the command. See [`apikey`](xref:choco-command-apikey) command help
  for instructions on saving your key:
 
     choco apikey -?
@@ -108,8 +108,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
