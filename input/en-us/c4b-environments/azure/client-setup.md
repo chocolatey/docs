@@ -75,7 +75,7 @@ $password = 'Your ChocoUserPassword' #This value is stored within your Azure Key
 # Touch NOTHING below this line
 $user = 'chocouser'
 
-$securePassword = $password | ConvertTo-SecureString -AsPlainTest -Force
+$securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
 $credential = [pscredential]::new($user, $securePassword)
 $downloader = [System.Net.WebClient]::new()
 $downloader.Credentials = $credential
