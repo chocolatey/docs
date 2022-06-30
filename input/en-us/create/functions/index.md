@@ -128,12 +128,12 @@ The following are more advanced settings:
 
  * ChocolateyPackageParameters - Parameters to use with packaging, not the same as install arguments (which are passed directly to the native installer). Based on `--package-parameters`. (0.9.8.22+)
  * CHOCOLATEY_VERSION - The version of Choco you normally see. Use if you are 'lighting' things up based on choco version. (0.9.9+) - Otherwise take a dependency on the specific version you need.
- * ChocolateyForceX86 = If available and set to 'true', then user has requested 32bit version. (0.9.9+) - Automatically handled in built in Choco functions.
- * OS_PLATFORM - Like Windows, OSX, Linux. (0.9.9+)
- * OS_VERSION - The version of OS, like 6.1 something something for Windows. (0.9.9+)
- * OS_NAME - The reported name of the OS. (0.9.9+)
- * IS_PROCESSELEVATED = Is the process elevated? (0.9.9+)
- * ChocolateyToolsLocation - formerly 'ChocolateyBinRoot' ('ChocolateyBinRoot' will be removed with Chocolatey v2.0.0), this is where tools being installed outside of Chocolatey packaging will go. (0.9.10+)
+ * ChocolateyForceX86 - If available and set to `true`, then user has requested 32bit version. (0.9.9+) - Automatically handled in built in Choco functions.
+ * OS_PLATFORM - The operating system overall platform. Can be `Windows`, `Linux`, `Mac` or `Unknown`, although in practice it will only be `Windows` as PowerShell automation scripts are not ran on other platforms. (0.9.9+)
+ * OS_VERSION - The version of the operating system, like 6.1.x.x for Windows 7. (0.9.9+)
+ * OS_NAME - The reported name of the operating system, like `Windows 10` or `Windows Server 2016`. (0.9.9+)
+ * IS_PROCESSELEVATED - Is the process elevated? (0.9.9+)
+ * ChocolateyToolsLocation - formerly `ChocolateyBinRoot` (`ChocolateyBinRoot` will be removed with Chocolatey v2.0.0), this is where tools being installed outside of Chocolatey packaging will go. (0.9.10+)
  * ChocolateyPackageInstallLocation - Install location of the software that the package installs. Displayed at the end of the package install. (0.9.10+)
 
 #### Set By Options and Configuration
