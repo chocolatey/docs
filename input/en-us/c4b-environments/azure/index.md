@@ -12,7 +12,7 @@ RedirectFrom:
 
 This is an overview of the Chocolatey for Business Azure Environment.
 
-It is a deployable resource in the Microsoft Azure Marketplace, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
+It is a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde), allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
 > :memo: **NOTE**
 >
