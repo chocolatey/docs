@@ -212,9 +212,33 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > </ul>
     > </details>
 
-    > :mag: **FYI**: A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser. 
+    > :mag: **FYI**: A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
 
-### Step 6: Setting up Endpoints
+### Step 6: Verification
+
+1. In the same **elevated** PowerShell console as above, paste and run the following code:
+
+    ```powershell
+    Set-Location "$env:SystemDrive\choco-setup\files"
+    .\Start-C4bVerification.ps1 -Fqdn '<Your expected fqdn here>'
+    ```
+
+    If you expect services to be available at `chocoserver.yourcompany.com`, then your command would look like: `.\Start-C4bVerification.ps1 -Fqdn 'chocoserver.yourcompany.com'`
+
+    > <details>
+    > <summary><strong>What does this script do? (click to expand)</strong></summary>
+    > <ul class="list-style-type-disc">
+    > <li>Verifies Nexus Repository installation</li>
+    > <li>Verifies Central Management installation</li>
+    > <li>Verifies Jenkins installation</li>
+    > <li>Ensures system firewall is configured</li>
+    > <li>Ensures Windows Features are installed</li>
+    > <li>Ensures services are correctly configured</li>
+    > <li>Ensured README is created</li>
+    > </ul>
+    > </details>
+
+### Step 7: Setting up Endpoints
 
 1. Find the `Register-C4bEndpoint.ps1` script in the `choco-setup\files\scripts\` directory on your C4B Server. Copy this script to your client endpoint.
 
