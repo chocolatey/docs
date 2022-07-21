@@ -2009,7 +2009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^5.1.3":
+"bootstrap@npm:5.1.3":
   version: 5.1.3
   resolution: "bootstrap@npm:5.1.3"
   peerDependencies:
@@ -2245,14 +2245,14 @@ __metadata:
 
 "choco-theme@git+https://github.com/chocolatey/choco-theme.git":
   version: 0.1.0
-  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=32202f37943b37d35d91163523a56f7eb9251cf7"
+  resolution: "choco-theme@https://github.com/chocolatey/choco-theme.git#commit=2a61586e5164263b4ddd71142e197b964c0d8d6f"
   dependencies:
     "@babel/core": ^7.12.3
     "@babel/preset-env": ^7.12.1
     "@fortawesome/fontawesome-free": ^5.15.1
     "@popperjs/core": ^2.6.0
     anchor-js: ^4.3.0
-    bootstrap: ^5.1.3
+    bootstrap: 5.1.3
     canvas-confetti: ^1.5.1
     chartist: ^0.11.4
     chartist-plugin-legend: ^0.6.2
@@ -2284,7 +2284,7 @@ __metadata:
     mousetrap: ^1.6.5
     node-sass: ^7.0.1
     nouislider: ^15.5.1
-  checksum: 4370caf626f1dc9119c6b22a2c2f0cd428887e9b64433f53ab97ed03c6900501550ebbaa8dacd0cb0f068576a574c737c86c2830abc3d12fbf94fac7f9e8c98f
+  checksum: 591a5c39fc95d8e0089a5fc059b4fc6cdf6632bbc6dcab92a0a54fbc094a0efc5903aa6471adfbb69062e1efd496782e88a2439ad6dba30c4e33419f0446fb3f
   languageName: node
   linkType: hard
 
@@ -2439,9 +2439,9 @@ __metadata:
   linkType: hard
 
 "codemirror@npm:^5.63.1":
-  version: 5.65.6
-  resolution: "codemirror@npm:5.65.6"
-  checksum: d65aa28af06df5e37fc34a0ae0cd96566411f2c62a157047a2993c2d4db312452e3e5542a64aad66e9bd2114a2dfce448032be71fb382452753d7a6deeaa08dc
+  version: 5.65.7
+  resolution: "codemirror@npm:5.65.7"
+  checksum: 84e28000241fee3d605c1dd928d816f69e93b92621752d048f9273e18083ccaaa4e66783908060df13d0d566a20a1e007cd5bd0c0629cebd0e1c395d62f75795
   languageName: node
   linkType: hard
 
@@ -2999,9 +2999,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.188":
-  version: 1.4.192
-  resolution: "electron-to-chromium@npm:1.4.192"
-  checksum: b4c59ecdfa3c19a3d350a28129bc4162a9707378f69dbf00ea87d138e86696196e4ffcb1b23ba979368117f83333ed1bb26524749994134a06ec6ac9b9800847
+  version: 1.4.195
+  resolution: "electron-to-chromium@npm:1.4.195"
+  checksum: 17aa9d834eadba6762dc9e3839a273ad87d82aeda82e6ace7db81829a00a0527c8291179d61b4599fac1c09a982cebd6d3ef68bcef7d07076d957d9ec0991b94
   languageName: node
   linkType: hard
 
@@ -5139,8 +5139,8 @@ __metadata:
   linkType: hard
 
 "make-fetch-happen@npm:^10.0.3":
-  version: 10.1.8
-  resolution: "make-fetch-happen@npm:10.1.8"
+  version: 10.2.0
+  resolution: "make-fetch-happen@npm:10.2.0"
   dependencies:
     agentkeepalive: ^4.2.1
     cacache: ^16.1.0
@@ -5158,7 +5158,7 @@ __metadata:
     promise-retry: ^2.0.1
     socks-proxy-agent: ^7.0.0
     ssri: ^9.0.0
-  checksum: 5fe9fd9da5368a8a4fe9a3ea5b9aa15f1e91c9ab703cd9027a6b33840ecc8a57c182fbe1c767c139330a88c46a448b1f00da5e32065cec373aff2450b3da54ee
+  checksum: 2f6c294179972f56fab40fd8618f07841e06550692bb78f6da16e7afaa9dca78c345b08cf44a77a8907ef3948e4dc77e93eb7492b8381f1217d7ac057a7522f8
   languageName: node
   linkType: hard
 
