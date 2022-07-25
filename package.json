@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/docs.git"
@@ -15,9 +15,8 @@
     "choco-theme": "git+https://github.com/chocolatey/choco-theme.git"
   },
   "resolutions": {
-    "glob-parent": "^6.0.1",
-    "yargs-parser": "^20.2.9",
-    "ansi-regex": "^5.0.1",
-    "set-value": "^4.0.1"
+    "glob-parent": "^6.0.2",
+    "nth-check": "^2.1.1",
+    "terser": "^5.14.2"
   }
 }
