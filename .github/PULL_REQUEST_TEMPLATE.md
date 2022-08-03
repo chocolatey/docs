@@ -41,6 +41,8 @@ Please remove all comments before submitting.
 * [ ] Minor documentation fix (typos etc.).
 * [ ] Major documentation change (refactoring, reformatting or adding documentation to existing page).
 * [ ] New documentation page added.
+* [ ] The change I have made should have a video added, and I have raised an issue for this.
+    * Issue #
 
 ## Change Checklist
 
