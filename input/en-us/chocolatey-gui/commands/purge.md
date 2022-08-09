@@ -10,7 +10,7 @@ Chocolatey GUI will allow you to interact with purging caches used in applicatio
 ## Usage
 
 ```powershell
-chocolateyguicli pruge icons|outdated [<options/switches>]
+chocolateyguicli purge icons|outdated [<options/switches>]
 ```
 
 ## Examples
