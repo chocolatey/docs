@@ -157,7 +157,7 @@ Note the use of `$file` on the left side, which should be just `file`. Once you 
 
 See next question.
 
-### Why does choco in\{tab\} not work for me?
+### Why does choco tab not work for me?
 
 This means the import failed during install/upgrade. Chocolatey does supply a warning when this happens in the install/upgrade log. Take a look there.
 
@@ -295,7 +295,7 @@ When you update the Machine/User environment variables, you would also need to u
 
 If you are in cmd.exe, it should just work. In PowerShell, you need to install the Chocolatey PowerShell profile first for the command to work.
 
-Take note of whether it says "refreshing environment variables for **cmd.exe**" or "refreshing environment variables for **powershell.exe**". If you are in PowerShell and you see "**cmd.exe**" when you run `refreshenv`, then you need to do some additional work to get things set up. see [Why does choco in{tab} not work for me?](#why-does-choco-intab-not-work-for-me).
+Take note of whether it says "refreshing environment variables for **cmd.exe**" or "refreshing environment variables for **powershell.exe**". If you are in PowerShell and you see "**cmd.exe**" when you run `refreshenv`, then you need to do some additional work to get things set up. See [Why does choco tab not work for me?](#why-does-choco-tab-not-work-for-me)
 
 ### Options and/or parameters are not handled correctly
 
