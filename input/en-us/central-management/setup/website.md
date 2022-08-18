@@ -279,7 +279,11 @@ And then try accessing the website again.  Any emails that are then sent from CC
 1. Under LDAP Setting click the `Enable LDAP Authentication` button.
 1. Fill in your FQDN for the `Domain name` field.
 1. Fill in the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
-1. Fill the `Password` field with the password for the active directory user name used above.
+1. Click the `Update LDAP Password` button to open a modal window to allow you to enter/confirm the password that is to be used.
+
+    ![Update LDAP Password](/assets/images/features/ccm/update_ldap_password.png)
+
+1. Click the `Save` button
 1. Click the `Save All` button at the top right of the page to save your settings.
 
 > :memo: **NOTE**
