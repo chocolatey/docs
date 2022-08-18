@@ -9,7 +9,7 @@ Starting in Chocolatey Central Management 0.7.0 we are providing the ability to 
 
 The encryption passphrase can be changed in Chocolatey Central Management by accessing the `Administrator -> Settings` section and selecting the `Security` tab. The settings for the encryption passphrase will only be visible to users who are a member of the CCM Administrator role.
 
-> :heavy_exclamation_mark: **IMPORTANT**
+> :exclamation: **IMPORTANT**
 >
 > We recommend this passphrase is set as soon as possible. However, a user who is a member of the CCM Administrator role will be able to defer this for 4 logins. On the 5th login they will be restricted to only being able to set the passphrase.
 

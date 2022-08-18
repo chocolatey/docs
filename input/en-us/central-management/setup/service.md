@@ -257,7 +257,7 @@ As of CCM v0.6.2, the default configuration values in the `appsettings.json` for
 }
 ```
 
-> **NOTE**
+> :memo: **NOTE**
 >
 > This file will usually be condensed into a single line, with the values encrypted.
 

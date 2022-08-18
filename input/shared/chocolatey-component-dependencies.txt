@@ -24,7 +24,9 @@ The following table aims to illustrate those dependencies, based on the latest s
 > | chocolatey.extension    | v4.0.0  |
 > | chocolatey              | v1.0.0  |
 >
-> **NOTE:** Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
+> :memo: **NOTE**
+>
+> Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
 > available that matches the defined dependency range.
 >
 > However, there is nothing that can be done to ensure that indirect dependencies are satisfied.

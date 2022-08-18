@@ -426,7 +426,7 @@ As of CCM v0.6.2, the default settings in the `appsettings.json` for the databas
 }
 ```
 
-> **NOTE**
+> :memo: **NOTE**
 >
 > This file will usually be condensed into a single line, with the values encrypted.
 
