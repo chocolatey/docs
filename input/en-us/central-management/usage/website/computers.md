@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 30
 xref: ccm-computers
 Title: Computers
 Description: Information on computers within CCM

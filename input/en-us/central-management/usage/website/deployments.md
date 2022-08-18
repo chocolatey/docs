@@ -1,5 +1,5 @@
 ---
-Order: 40
+Order: 10
 xref: ccm-deployments
 Title: Deployments
 Description: How to deploy packages, and execute PowerShell, on client machines

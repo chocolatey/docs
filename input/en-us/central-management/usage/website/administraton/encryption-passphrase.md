@@ -1,8 +1,9 @@
 ---
-Order: 70
+Order: 20
 xref: ccm-encryption-passphrase
 Title: Encryption Passphrase
 Description: Information on the Encryption Passphrase within Chocolatey Central Management.
+RedirectFrom: en-us/central-management/usage/website/encryption-passphrase
 ---
 
 Starting in Chocolatey Central Management 0.7.0 we are providing the ability to control the passphrase that is used when encrypting both secret values and certain requests that happen between the website and the service.
