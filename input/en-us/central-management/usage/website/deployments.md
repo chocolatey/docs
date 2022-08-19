@@ -28,35 +28,45 @@ You will also need to have at least one Group of computers already defined.
 1. From the Central Management dashboard, select `Deployments` from the left sidebar.
 
    ![Central Management dashboard, arrow pointing to Deployments menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
+
 1. Select the :heavy_plus_sign: **Create New Deployment** button at the top of the page.
 
    ![CCM Deployments page, arrow pointing to Create New Deployment button](/assets/images/deployments/ccm-deployments-new-deployment-button.png)
+
 1. (Optional) Give the deployment a custom name by clicking the edit icon displayed next to it and entering a new name.
    Press **Enter** to save the new name.
 
    ![CCM New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
+
 1. (Optional, Requires CCM v0.4.0+) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
 
    ![CCM New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
+
    1. Enter a date and time, or click the :calendar: button to pick the date and time from a calendar UI.
 
-   ![CCM deployment schedule picker](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
+       ![CCM deployment schedule picker](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
+
    1. (Optional) If you'd like to define a maintenance window for the deployment start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
 
-   ![CCM deployment maintenance window option](/assets/images/deployments/ccm-deployments-maintenance-window.png)
+       ![CCM deployment maintenance window option](/assets/images/deployments/ccm-deployments-maintenance-window.png)
+
 1. Select :heavy_plus_sign: **Add Step** to add your first deployment step.
 
    ![CCM deployment add step button](/assets/images/deployments/ccm-deployments-add-step.png)
+
 1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the deployment step.
 
    ![CCM deployment new step modal](/assets/images/deployments/ccm-deployments-new-step-modal.png)
+
 1. Add the deployment step action:
    * For _Basic_ deployment steps, select a `Script command` from the list, a `Package name` to install, and optionally a specific package version to install, or whether to use the `--pre` option, i.e. to install the latest prerelease package version.  **NOTE:** It is not possible to use a space character within the `Package name` or `Package Version` textboxes, and the `Package Version` textbox must contain at least one digit.
 
-     ![CCM deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
+       ![CCM deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
+
    * For _Advanced_ deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
 
-     ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
+       ![CCM deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
+
    * You can use [Sensitive Variables](xref:ccm-administration-sensitive-variables#adding-sensitive-variables-to-scripts) in an Advanced script in Chocolatey Central Management version 0.7.0 and later.
    <?! Include "../../../../shared/sensitive-variables-note.txt" /?>
 
@@ -73,13 +83,15 @@ You will also need to have at least one Group of computers already defined.
 1. Select the **Select Target Groups** tab.
 
    ![CCM deployment step Select Target Group tab](/assets/images/deployments/ccm-deployments-select-groups-tab.png)
-1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button.
-   You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
+
+1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button. You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
 
    ![CCM deployment step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
+
 1. Click the :floppy_disk: **Save** button to save the step.
 
    ![CCM deployment step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
+
 1. Continue to add steps until your deployment is complete.
 1. Select :floppy_disk: **Save** to save the changes to the deployment.
 
@@ -87,32 +99,115 @@ You will also need to have at least one Group of computers already defined.
 
 ### Draft
 
-A deployment is initially created in the `Draft` state, and will remain in this state until it is moved into the `Ready` state.
-While it is in the `Draft` state, it cannot be run, and scheduled deployment start times will be ignored.
+A deployment is initially created in the [`Draft`](#draft) state, and will remain in this state until it is moved into the [`Ready`](#ready) state.
+While it is in the [`Draft`](#draft) state, it cannot be run, and scheduled deployment start times will be ignored.
+
+While in the [`Draft`](#draft) state, the available actions that can be performed on a deployment plan are:
+
+- [Move To Ready](#move-to-ready)
+- [Edit](#edit)
+- [Duplicate](#duplicate)
+- [Delete](#delete)
 
 ### Ready
 
-Once the deployment enters the `Ready` state, it's eligible to be started.
+Once the deployment enters the [`Ready`](#ready) state, it's eligible to be started.
 Deployments in this state can be started manually or according to a schedule.
 
 > :memo: **NOTE**
 >
-> Any further modifications to a deployment in this state will revert it back to the `Draft` state.
+> Any further modifications to a deployment in this state will revert it back to the [`Draft`](#draft) state.
+
+While in the [`Ready`](#ready) state, the available actions that can be performed on a deployment plan are:
+
+- [View](#view)
+- [Run Now](#run-now)
+- [Edit](#edit)
+- [Duplicate](#duplicate)
+- [Cancel](#cancel)
+- [Delete](#delete)
 
 ### Active
 
 Deployments that are currently in progress will be in this state.
 
-### Succeeded / Failed
+While in the [`Active`](#active) state, the available actions that can be performed on a deployment plan are:
 
-Deployments that have finished running will be either the `Succeeded` or `Failed` state, depending on how the run went.
+- [Details](#details)
+- [Duplicate](#duplicate)
+- [Cancel](#cancel)
+
+### Completed
+
+Deployments that have completed running will be in either the `Success`,  `Failed`, `Unreachable`, `Inconclusive`, or `Cancelled` state, depending on how the run went.
+
+While in one of these states, the available actions that can be performed on a deployment plan are:
+
+- [Details](#details)
+- [Duplicate](#duplicate)
+- [Archive](#archive)
 
 ### Archived
 
-Deployments that are in a completed state can also be `Archived` to hide them from the main Deployments screen.
+Deployments that are in a completed state can be actioned using [`Archive`](#archive) action to hide them from the main Deployments screen.
 This is helpful if you'd like to reduce clutter on the main deployments screen without discarding the information the completed report contains.
 
-You can access archived deployments from the `Reports -> Deployments` page in the left sidebar of the CCM dashboard.
+You can access archived deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.  [`Archived](#archived) deployments will not appear in any other reports that contain deployment plans.
+
+While in the [`Archived`](#archived) state, no additional actions can be performed on a deployment plan.
+
+## Deployment Plan Actions
+
+Depending on the [state](#deployment-states) that a deployment plan is currently in, there are a defined set of actions that can be performed on them.  What follows are is a description of each of those actions.
+
+### Move To Ready
+
+This action moves a deployment plan from the [`Draft`](#draft) state to the [`Ready`](#ready) state. While in this interim state, no additional changes can be made to the deployment plan.  If changes are made, it will be moved back to the [`Draft`](#draft) state.
+
+### Edit
+
+The action opens the edit page for the selected deployment plan.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a deployment plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
+
+### Duplicate
+
+> :memo: **NOTE**
+>
+> This feature became available starting with Chocolatey Central Management 0.10.0
+
+The action makes an exact copy (with the exception of any scheduled start/end time) of any given deployment plan.  Once the duplicate has been created, you will be taken to the edit page ready to make any additional required changes.  The name of the new deployment plan will be the same as the original with some additional information added to the end.  For example, if the original deployment plan was called `Install Papercut`, the name given to the duplicate would be `Install Papercut - Copy (19 Aug 2022 12:52:25)` where the date time is the current date time.
+
+> :memo: **NOTE**
+>
+> There is a specific permission to allow duplication of a deployment plan. If you want to configure this permission, it can be done either for an individual [user](xref:ccm-administration-users), or a specific [role](xref:ccm-administration-roles)
+### Delete
+
+This removes all information about the deployment plan from Chocolatey Central Management.
+
+The action cannot be undone, so care should be taken before using it.
+
+### View
+
+The action opens the edit page for the selected deployment plan where all the parts of the plan can be viewed.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a deployment plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
+
+### Run Now
+
+This action takes a deployment plan from the [`Ready`](#ready) state, to the [`Active`](#active) state.  This can be thought of as actually setting the deployment plan in motion, and the steps within this deployment plan will begin to be picked up by the computers that are contained within the steps (in the order that has been defined).
+
+If a deployment plan is in the ready state, but is waiting for the scheduled start time before automatically starting, it is possible to override this start time using the `Run Now` action.  Care should be taken here though if the deployment plan is also a recurring deployment plan.  In this case, the overriding the scheduled start time will mean that the next deployment plan will be configured to use the scheduled start time for the next iteration, and _not_ the overridden start time.
+
+### Cancel
+
+This action stops all future steps from being performed within a deployment plan.  Any steps that are currently active will still be allowed to complete, but no further steps will occur.
+
+Care should be taken when choosing to cancel a scheduled deployment, which has also been setup to a be a recurring deployment.  If you cancel the non-active version of a recurring deployment, no new deployment plans will be created in this series, and a new recurring deployment plan will have to be created.
+
+### Details
+
+This action opens up the details for the selected deployment plans, allowing the user to see the progress so far.  i.e. which step is currently active, which computers have picked up this step, etc.  The screen can be very useful for monitoring the progress in realtime, as the details pages update automatically.
+
+### Archive
+
+This action will mark any completed deployment plan as archived, and it will no longer be shown in the main deployments screen of Chocolatey Central Management website.  You can access archived deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.
 
 ## FAQ
 
@@ -203,7 +298,7 @@ Additionally, any group that contains any of the following will be considered in
 
   Once CCM has confirmed the problem computer(s)/group(s) are eligible again, the deployment can be started.
   If the deployment was previously scheduled and it has not passed the maintenance window time (if set), it will start at that point.
-* For deployments that are currently `Active`
+* For deployments that are currently [`Active`](#active)
   * As soon as CCM detects the ineligible computer, it will terminate the current deployment step.
   * Then, all following deployment steps will be `Cancelled`.
 
@@ -236,7 +331,7 @@ Catch the recording of the Jun 32rd, 2020 webinar for a full showcase of the Cho
 ### A deployment step is stalled with infinite execution timeout
 
 The only way to resolve this currently is to cancel the deployment itself, which can be done from the main Deployments list.
-On the right-hand side of the Active Deployments table, click the Actions menu for the corresponding deployment, and select `Cancel`.
+On the right-hand side of the [`Active`](#active) Deployments table, click the Actions menu for the corresponding deployment, and select [`Cancel`](#cancel).
 You will be asked to confirm the cancellation.
 
 All remaining steps in the deployment will be cancelled, along with any still running or pending tasks.
