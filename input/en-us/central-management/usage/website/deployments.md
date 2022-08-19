@@ -51,7 +51,7 @@ You will also need to have at least one Group of computers already defined.
 
    ![CCM deployment new step modal](/assets/images/deployments/ccm-deployments-new-step-modal.png)
 1. Add the deployment step action:
-   * For _Basic_ deployment steps, select a `Script command` from the list, and one or more `Package name`(s) to install.
+   * For _Basic_ deployment steps, select a `Script command` from the list, a `Package name` to install, and optionally a specific package version to install, or whether to use the `--pre` option, i.e. to install the latest prerelease package version.  **NOTE:** It is not possible to use a space character within the `Package name` or `Package Version` textboxes, and the `Package Version` textbox must contain at least one digit.
 
      ![CCM deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
    * For _Advanced_ deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
