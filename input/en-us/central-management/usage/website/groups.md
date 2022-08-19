@@ -1,5 +1,5 @@
 ---
-Order: 20
+Order: 30
 xref: ccm-groups
 Title: Groups
 Description: Information on groups within CCM

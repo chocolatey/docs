@@ -15,7 +15,7 @@ Once signed into the Chocolatey Central Management website, you can select wheth
 
 ![Chocolatey Central Management dark/light mode selection](/assets/images/ccm/general/dark-light-mode-selection.png)
 
-The selection that is made here is persisted, meaning that it will be remembered after to sign out of the Chocolatey Central Management website.
+The selection that is made here is persisted, meaning that it will be remembered after you sign out of the Chocolatey Central Management website.
 
 ### Dashboard in Dark Mode
 
@@ -41,7 +41,7 @@ Across the various pages within the Chocolatey Central Management website, there
 >
 > This feature became available starting with Chocolatey Central Management 0.10.0
 
-When your Chocolatey license is approaching its expiration date, a new banner will be shown on the Dashboard screen once you sign into the Chocolatey Central Management website.
+When your Chocolatey license is approaching its expiration date, a new banner will be shown on the [Dashboard](xref:ccm-dashboard) screen once you sign into the Chocolatey Central Management website.
 
 ![License expiration warning shown on the Chocolatey Central Management dashboard once signed in](/assets/images/ccm/general/license-expiration-warning.png)
 
@@ -49,4 +49,4 @@ For a normal license, this will start showing when there are 90 days remaining o
 
 For a trial license, this will start showing when there are 7 days remaining on your license.
 
-It is possible to dismiss this warning using the "x" on the far right of the banner, however, the banner will re-appear again in 2 days time to remind yo.u.  This will repeat until the license is renewed, or until the license expires.
+It is possible to dismiss this warning using the "x" on the far right of the banner, however, the banner will re-appear again in 2 days' time to remind you.  This will repeat until the license is renewed, or until the license expires.
