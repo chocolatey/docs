@@ -267,33 +267,7 @@ And then try accessing the website again.  Any emails that are then sent from CC
 
 ### Step 4.3: LDAP Configuration
 
-> :memo: **NOTE**
->
-> The Central Management Server must be joined to the Active Directory Domain.
->
-
-1. Open the CCM Site in the browser.
-1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
-1. Click on the `User management` tab in the `Settings` screen.
-1. Under LDAP Setting click the `Enable LDAP Authentication` button.
-1. Fill in your FQDN for the `Domain name` field.
-1. Fill in the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
-1. Click the `Update LDAP Password` button to open a modal window to allow you to enter/confirm the password that is to be used.
-
-    ![Update LDAP Password](/assets/images/features/ccm/update_ldap_password.png)
-
-1. Click the `Save` button
-1. Click the `Save All` button at the top right of the page to save your settings.
-
-> :memo: **NOTE**
->
-> In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
-> an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are
-> attempting to use for login. If any of these fields are empty, errors will be encountered when attempting to login
-> to the Central Management application.
-
-![CCM LDAP Setup](/assets/images/features/ccm/ccm_ldap_setup.png)
+You may want to allow [authentication against LDAP](xref:ccm-administration-settings-user-management#ldap-configuration) for users that are logging into the Chocolatey Central Management website.
 
 ### Step 4.4: Application Settings File
 
@@ -322,72 +296,11 @@ Here is a copy of items that can be set. They are not required to be encrypted. 
 
 ### Step 4.5: Audit Retention
 
-> :warning: **WARNING**
->
-> **BREAKING CHANGE**
->
-> This feature was added, as a breaking change, in version 0.6.0 of Chocolatey Central Management.  Audit Retention is enabled by default, and will immediately start truncating the audit log table as soon as it is installed.
-> If you require to keep all audit logs, we would recommend that you first back up the CCM database before applying the new version.
-
-In an attempt to control the size of the Chocolatey Central Management database, it is possible to control the retention policy for the audit logs table within the application.
-
-By default, Audit Retention is enabled, and any logs that are older than 30 days will automatically be removed.
-
-![Audit Retention Settings Tab](/assets/images/ccm/setup/website/audit-retention-tab.png)
-
-If you want to change these settings, follow these steps:
-
-1. Open the CCM Site in the browser.
-1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
-1. Click on the `Audit Retention` tab
-1. Modify the settings as required (either disable audit retention by unchecking the checkbox, or modify the length of time that logs are retained)
-1. Click the `Save All` button at the top right of the page to save your settings.
-
-As noted in the User Interface, any modifications to this section of the settings will require the Web Application to be restarted.  This can be completed by doing the following:
-
-1. Get direct access to the machine that is hosting the CCM Web Application
-1. Open an administrative PowerShell session
-1. Run the following commands:
-```powershell
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+You may want to configure the [automatic deletion of audit logs](xref:ccm-administration-settings-audit-retention) that are captured by Chocolatey Central Management website.
 
 ### Step 4.6: Stale Computer Deletion
 
-> :memo: **NOTE**
->
-> This feature is available in Chocolatey Central Management starting with version 0.10.0.
-
-In Chocolatey Central Management, a stale computer is one which hasn't reported in for a long period of time. This could be perfectly normal, but it could also be a sign that this computer is no longer active, and should be removed.  This is something that can be done manually, given the correct permissions, from the [computers page](xref:ccm-computers#removing-a-computer-from-central-management), however, enabling this setting automatically removes stale computers from Chocolatey Central Management.
-
-By default, Stale Computer Deletion is disabled, and computers that haven't reported into Chocolatey Central Management within the last 365 days will automatically be removed.
-
-![Stale Computer Deletion Settings Tab](/assets/images/ccm/setup/website/stale-computer-deletion-tab.png)
-
-If you want to change these settings, follow these steps:
-
-1. Open the CCM Site in the browser.
-1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
-1. Click on the `Stale Computer Deletion` tab
-1. Modify the settings as required (either enable audit retention by unchecking the checkbox, or modify the length of time that logs are retained)
-1. Click the `Save All` button at the top right of the page to save your settings.
-
-As noted in the User Interface, any modifications to this section of the settings will require the Web Application to be restarted.  This can be completed by doing the following:
-
-1. Get direct access to the machine that is hosting the CCM Web Application
-1. Open an administrative PowerShell session
-1. Run the following commands:
-```powershell
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+You may want to setup the [automatic deletion of computers](xref:ccm-administration-settings-stale-computer-deletion) that are no longer reporting into Chocolatey Central Management.
 
 ## FAQ
 
