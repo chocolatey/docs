@@ -27,6 +27,13 @@ Please see [Central Management Client Setup](xref:ccm-client) for more details a
 
 ## Viewing Installed Software on a Computer
 
+> :memo: **NOTE**
+>
+> Starting with Chocolatey Central Management 0.10.0, the groups that a computer is a member of is shown in both the table of all computers, as well as on the computer details pages.  By default, this will only show the first 5 group memberships. If there are more group associations:
+>
+> - on the computers table a `...` link can be hovered on and a tooltip will be shown with all the memberships,
+> - the computer details page a `View More` link will be shown, and when clicked will cause an expansion to show all memberships. Then a `View Less` link will be shown to default to previous view.
+
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
 Select the :gear: **Actions** menu in the corresponding right-hand column, and click **Details**.
 
