@@ -1,5 +1,5 @@
 ---
-Order: 20
+Order: 10
 xref: ccm-encryption-passphrase
 Title: Encryption Passphrase
 Description: Information on the Encryption Passphrase within Chocolatey Central Management.
@@ -97,7 +97,7 @@ The encryption passphrase is the password (along with a salt value) that will be
 
 The following items are encrypted using the passphrase:
 
-- [`Sensitive Variables`](xref:ccm-sensitive-variables).
+- [`Sensitive Variables`](xref:ccm-administration-sensitive-variables).
 - SMTP and LDAP passwords.
 - Links used in Email Activation and Password Reset emails.
 There are also some of the requests used when browsing the web site, and making API requests that also encrypt/decrypt values using the same passphrase.

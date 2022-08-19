@@ -30,7 +30,7 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "restart choc
 ```
 
 > :warning: **WARNING**
-> 
+>
 > Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
 
 ## Change service account username or password
@@ -42,7 +42,7 @@ If you need to change the username or password of the Chocolatey Agent, you have
 * Change it during an uninstall and reinstall while [passing the new username/password to the install command](xref:setup-agent#package-parameters).
 
 > :warning: **WARNING**
-> 
+>
 > The service password cannot be changed through a Chocolatey upgrade command while the service is running.
 
 ### Use Chocolatey Central Management to change the service account username or password
@@ -65,8 +65,8 @@ $settings = New-ScheduledTaskSettingsSet -Hidden
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Upgrade chocolatey-agent" -Description "Upgrade Chocolatey Agent" -Principal $principal -Settings $settings -Verbose:$false
 ```
 
-> :memo: **NOTE** Be sure to use [Sensitive Variables](xref:ccm-sensitive-variables) to ensure the username and password don't get added to the Chocolatey logs when using Chocolatey Central Management version 0.7.0 or newer.
+> :memo: **NOTE** Be sure to use [Sensitive Variables](xref:ccm-administration-sensitive-variables) to ensure the username and password don't get added to the Chocolatey logs when using Chocolatey Central Management version 0.7.0 or newer.
 
 > :warning: **WARNING**
-> 
+>
 > Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
