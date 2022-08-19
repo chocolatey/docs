@@ -34,3 +34,19 @@ The selection that is made here is persisted, meaning that it will be remembered
 Across the various pages within the Chocolatey Central Management website, there are a number of different tables. Showing, for example, all the [computers](xref:ccm-computers) that are currently reporting into Chocolatey Central Management service, or all of the [deployments](xref:ccm-deployments) that have been created.  For each of these tables, it is possible to select the number of entries that you want to see in the table.  The selection will be remembered between logged in sessions to the Chocolatey Central Management website (assuming you are using teh same browser).
 
 ![Drop down list showing available options for how many entries to show in a table](/assets/images/ccm/general/number-of-table-entries-selection.png)
+
+## License Expiration Warning
+
+> :memo: **NOTE**
+>
+> This feature became available starting with Chocolatey Central Management 0.10.0
+
+When your Chocolatey license is approaching its expiration date, a new banner will be shown on the Dashboard screen once you sign into the Chocolatey Central Management website.
+
+![License expiration warning shown on the Chocolatey Central Management dashboard once signed in](/assets/images/ccm/general/license-expiration-warning.png)
+
+For a normal license, this will start showing when there are 90 days remaining on your license.
+
+For a trial license, this will start showing when there are 7 days remaining on your license.
+
+It is possible to dismiss this warning using the "x" on the far right of the banner, however, the banner will re-appear again in 2 days time to remind yo.u.  This will repeat until the license is renewed, or until the license expires.
