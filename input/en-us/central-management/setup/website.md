@@ -203,20 +203,7 @@ When you access the CCM Website you will be prompted to provide a username and p
 
 ### Step 4.2: SMTP Configuration
 
-The CCM Site needs to be able to send email for certain actions.  For example, when a new user is registering with the system, or when sending out forgotten password emails.  Valid SMTP Configuration has to be provided in order for these emails to be sent out.  Follow these steps to configure SMTP for CCM.
-
-1. Open the CCM Site in the browser
-1. Login with the `ccmadmin` user
-1. In the left hand menu click on `Administration` and then `Settings`
-1. Click on the `Email (SMTP)` tab in the `Settings` screen
-1. Add the SMTP settings for your environment
-1. Click the `Save All` button to save changes
-1. Change the email address to go to your email address
-1. Click the `Send Test Email` button and ensure that an email is received correctly
-
-You should received a notification similar to this:
-
-![Test email sent successfully](/assets/images/features/ccm/test_email_sent_correctly.png)
+In order to send email from Chocolatey Central Management, you will need to make sure that [all necessary settings have been configured](xref:ccm-administration-settings-email).
 
 #### appsettings.json configuration
 
@@ -509,7 +496,7 @@ ERROR 2019-06-14 00:54:03,491 [55   ] Microsoft.AspNetCore.Server.Kestrel      -
 System.Net.Sockets.SocketException (0x80004005): No connection could be made because the target machine actively refused it 127.0.0.1:25
 ```
 
-This is caused due to the default SMTP configuration being used by CCM, which is incompatible with the environment.  CCM, by default, assumes that there is an available SMTP Server available on the current machine, using port 25.  To fix this, follow the installation steps [above](#smtp-configuration).
+This is caused due to the default SMTP configuration being used by CCM, which is incompatible with the environment.  CCM, by default, assumes that there is an available SMTP Server available on the current machine, using port 25.  To fix this, follow the [configuration steps](xref:ccm-administration-settings-email).
 
 ### Emails sent from CCM to users has links that contains localhost, rather than actual CCM Server name
 

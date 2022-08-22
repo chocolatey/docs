@@ -21,7 +21,7 @@ If you want to change these settings, follow these steps:
 1. Click on the `Security` tab
 1. Either enable, or disable, the `Enable two factor user login` checkbox as required.
 
-    ![Chocolatey Central Management Securty Two Factor Login Settings](/assets/images/ccm/setup/security/ccm-security-2fa-settings.png)
+    ![Chocolatey Central Management Security Two Factor Login Settings](/assets/images/ccm/setup/security/ccm-security-2fa-settings.png)
 
 1. If enabled, choose whether to `Enable email verification` and `Allow to remember browser. If you allow this, users can select to remember browser to skip second time two factor login for the same browser.`
 1. Click the `Save All` button at the top right of the page to save your settings.
@@ -34,4 +34,4 @@ Once enabled, any user logging into the Chocolatey Central Management website wi
 
 ![Verify Security Code](/assets/images/ccm/setup/security/verify-security-code.png)
 
-The `Remember this browser` checkbox is what can be enabled/disabled in step 6 above.  If the user chooses to enable this setting, a cookie will be created and stored in teh browser, meaning that they will not be promoted for a two factor login security code on this browser again.
+The `Remember this browser` checkbox is what can be enabled/disabled in step 6 above.  If the user chooses to enable this setting, a cookie will be created and stored in the browser, meaning that they will not be promoted for a two factor login security code on this browser again.
