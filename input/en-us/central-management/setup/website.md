@@ -302,6 +302,10 @@ You may want to configure the [automatic deletion of audit logs](xref:ccm-admini
 
 You may want to setup the [automatic deletion of computers](xref:ccm-administration-settings-stale-computer-deletion) that are no longer reporting into Chocolatey Central Management.
 
+### Step 4.7: Set up Two Factor Login
+
+You may want to setup [two factor login](xref:ccm-administration-settings-security#two-factor-login) for users who are going to be logging into the Chocolatey Central Management website.
+
 ## FAQ
 
 ### What is the minimum required configuration for the appsettings.json file?
