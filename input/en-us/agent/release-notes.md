@@ -39,7 +39,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 - Chocolatey Central Management - Add retry logic for running deployments acquired from Chocolatey Central Management Service.
 - Recheck the license on a schedule and shut down if it is invalid.
 
-## Bug Fixes
+### Bug Fixes
 
 - Logging - Exception handling for all the tasks
 
