@@ -28,6 +28,21 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 1.1.0 (August 22, 2022)
+
+### Features
+
+- Add scheduled automatic log cleaner for Chocolatey and Chocolatey Agent rollover log files - see [licensed #214](https://github.com/chocolatey/chocolatey-licensed-issues/issues/214).
+
+### Improvements
+
+- Chocolatey Central Management - Add retry logic for running deployments acquired from Chocolatey Central Management Service.
+- Recheck the license on a schedule and shut down if it is invalid.
+
+## Bug Fixes
+
+- Logging - Exception handling for all the tasks
+
 ## 1.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
