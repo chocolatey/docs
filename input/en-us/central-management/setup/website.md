@@ -18,8 +18,8 @@ This is the Central Management website that gives an API and a web layer to cent
 >
 > The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* Windows Server 2012+
-* PowerShell 3+
+* Windows Server 2016
+* PowerShell 5.1
 * IIS Set up and available
 * dotnet-aspnetcoremodule-v2 version 16.0.22108
 * dotnet-6.0-runtime version 6.0.5

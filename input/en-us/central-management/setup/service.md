@@ -22,8 +22,8 @@ This is the service that the agents (chocolatey-agent) communicates with. You co
 >
 > The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* Windows Server 2012+
-* PowerShell 4+
+* Windows Server 2016
+* PowerShell 5.1
 
 ## Step 2: Install Central Management Service Package
 
