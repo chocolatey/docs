@@ -224,7 +224,10 @@ The action opens the edit page for the selected deployment plan where all the pa
 
 This action takes a deployment plan from the [`Ready`](#ready) state, to the [`Active`](#active) state.  This can be thought of as actually setting the deployment plan in motion, and the steps within this deployment plan will begin to be picked up by the computers that are contained within the steps (in the order that has been defined).
 
-If a deployment plan is in the ready state, but is waiting for the scheduled start time before automatically starting, it is possible to override this start time using the `Run Now` action.  Care should be taken here though if the deployment plan is also a recurring deployment plan.  In this case, the overriding the scheduled start time will mean that the next deployment plan will be configured to use the scheduled start time for the next iteration, and _not_ the overridden start time.
+> :warning: WARNING
+>
+> If the scheduled start date/time of a deployment is overridden using the [Run Now](#run-now) action, the new instance of the recurring deployment will use the **scheduled** start date/time of the previous instance when calculating the next scheduled start date/time, **not** the date/time that the deployment actually started.
+> If you want to change the scheduled start date/time of the recurring deployment, edit the deployment while it is in the [Ready](#ready) state to ensure that future instances of the recurring deployment will use that value when calculating the next scheduled date/time.
 
 ### Cancel
 
