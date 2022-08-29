@@ -58,7 +58,9 @@ If the software is an MSI, the Product Guid is used for managing uninstalls. Gue
 
 ![auto package creation/synchronize](/assets/images/gifs/choco_business_features.gif)
 
-> :memo: **NOTE** To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+> :memo: **NOTE**
+>
+> To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
 ### Options and Switches
 

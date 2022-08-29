@@ -21,7 +21,9 @@ RedirectFrom: docs/quick-deployment-firewall-changes-v1
 
 These are ports that are opened through the corporate firewall, in case users are **not** on VPN and need to install packages from anywhere.
 
-> :memo: **NOTE** You will have needed to done more to secure Nexus and the repositories ahead of this change.
+> :memo: **NOTE**
+>
+> You will have needed to done more to secure Nexus and the repositories ahead of this change.
 
 See the warning below and contact support if you want to enable clients to connect from the internet and not over VPN.
 

@@ -8,7 +8,9 @@ RedirectFrom: docs/automatic-packages
 
 Automatic packaging is a process that **package maintainers can run on *their own* to keep the packages they maintain up to date**. It is not a required step for maintaining packages on the community feed (https://community.chocolatey.org/packages), but it is recommended you find a way to automate the delivery of packages to the community feed when there are updates if you are going to maintain more than 5 packages and you are not the software vendor for the packages you maintain.
 
-> :memo: **NOTE** Not to be confused with the automatic package creation feature in [Chocolatey for Business](https://chocolatey.org/compare) - that feature creates packages directly from software installer files. This feature is for package maintenance of existing packages on the community feed.
+> :memo: **NOTE**
+>
+> Not to be confused with the automatic package creation feature in [Chocolatey for Business](https://chocolatey.org/compare) - that feature creates packages directly from software installer files. This feature is for package maintenance of existing packages on the community feed.
 
 ## Automatic update methods
 

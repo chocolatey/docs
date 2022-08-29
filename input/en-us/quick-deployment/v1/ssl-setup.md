@@ -32,7 +32,9 @@ Under the following situations you would want to run the script that follows:
 >
 > If you provide your own certificate, it needs to include the private key to allow for export. Nexus requires this.
 
-> :memo: **NOTE** Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**
+>
+> Please run the below from an administrative PowerShell session.
 
 Once complete, this script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them.
 

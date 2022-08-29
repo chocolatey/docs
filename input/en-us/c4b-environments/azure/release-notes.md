@@ -7,7 +7,9 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 
 # Chocolatey for Business Azure Environment Release Notes
 
-> :memo: **NOTE**: Issue links may not be publicly available at this time.
+> :memo: **NOTE**
+>
+> Issue links may not be publicly available at this time.
 
 ## 0.15.0 (May 18, 2022)
 

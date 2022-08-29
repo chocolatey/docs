@@ -21,7 +21,9 @@ At the end of this, we should have a fully ready to go SQL Server:
 
 * SQL Server 2012 or later.
 
-> :memo: **NOTE** While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
+> :memo: **NOTE**
+>
+> While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
 CCM will not install or take a dependency on a database engine install as there are different editions that could be installed and multiple packages out there. At this time, it is expected that you have this ready. This is required before you can continue to other steps.
 
@@ -39,7 +41,9 @@ CCM will not install or take a dependency on a database engine install as there 
 >   * **!!Security!!** - As part of installation, an account will be made a member of the `BUILTIN\Administrators` group on the machine where the service is installed. Ensure that is **not** the same machine where SQL Server is installed or that account will immediately be a member of the `sysadmin` role by default in SQL Server (until removed).
 > * **Central Management Web installation** - You'll need to use an Active Directory (LDAP) account. See the install options for how to pass that through to be set with the IIS Application Pool.
 >
-> :memo: Incorrect credentials to the database is 90% of support tickets related to Central Management.
+> :memo: **NOTE**
+>
+> Incorrect credentials to the database is 90% of support tickets related to Central Management.
 >
 > Unless you are an expert in hooking things up to SQL Server, its probably best to stick with SQL Server Mixed Mode Authentication.
 > See <https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/authentication-in-sql-server>
@@ -149,7 +153,9 @@ The Central Management Database package
 
 The CCM database package will add or update a database to an existing SQL Server instance.
 
-> :memo: **NOTE** When you run this package installation, you will want to do so as integrated security, or with Windows Authentication. When you run the other two package installations, you will want to do so providing a connection string.
+> :memo: **NOTE**
+>
+> When you run this package installation, you will want to do so as integrated security, or with Windows Authentication. When you run the other two package installations, you will want to do so providing a connection string.
 
 ### Package Parameters
 
@@ -158,7 +164,9 @@ The CCM database package will add or update a database to an existing SQL Server
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 * `/SkipDatabasePermissionCheck` - By default, a check will be completed to ensure that the installing user has access to create a new database, based on the provided/computed connection string. If this check isn't required, for example, the database has already been created or permissions will error, this step can be skipped using this parameter. Available with CCM v0.2.0+.
 
-> :memo: **NOTE** Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
+> :memo: **NOTE**
+>
+> Items suffixed with "`:`" mean a value should be provided, items without are simply switches.
 
 ### Scenarios
 
@@ -232,7 +240,9 @@ We typically recommend you run installations and upgrades for the database on th
 
 ##### Use Windows Account to Attach SQL Server
 
-> :memo: **NOTE** This is not a normal scenario, and it is not a good idea.
+> :memo: **NOTE**
+>
+> This is not a normal scenario, and it is not a good idea.
 
 Scenario 4: You are using AttachDBFile or User Instance in your Connection String. This is effectively asking to attach a database file to the User's Data directory.
 
@@ -275,7 +285,9 @@ choco install chocolatey-management-service -y --package-parameters-sensitive='/
 
 ##### Use SQL Server Account to Remote SQL Server
 
-> :memo: **NOTE** This is not a normal scenario.
+> :memo: **NOTE**
+>
+> This is not a normal scenario.
 
 Scenario 6: The database has been setup to use Mixed Mode Authentication. Someone has already pre-created the login credentials for a SQL Server account and ensured the user has `db_owner` permissions to allow for changing schema. There is a high likelihood that the database has been pre-created. Now you want to install the package on a different machine than where the sql server instance is located.
 

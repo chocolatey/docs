@@ -8,9 +8,13 @@ RedirectFrom: docs/how-to-install-upgrade-package-without-scripts
 
 So you've updated your applications manually or through some other means or you want to make Chocolatey aware of some previously installed applications without actually running the installation scripts.
 
-> :memo: **NOTE** [Chocolatey Pro+](https://chocolatey.org/compare) has [automatic sync](xref:package-synchronization) to handle this. [Chocolatey for Business](https://chocolatey.org/compare) also has `choco sync` that can generate packages on the fly and baseline them to the system. The [sync command](xref:package-synchronization) is also able to link up installed packages that are installed through this manner so they track the package to the software (something you won't get without running the install script).
+> :memo: **NOTE**
+>
+> [Chocolatey Pro+](https://chocolatey.org/compare) has [automatic sync](xref:package-synchronization) to handle this. [Chocolatey for Business](https://chocolatey.org/compare) also has `choco sync` that can generate packages on the fly and baseline them to the system. The [sync command](xref:package-synchronization) is also able to link up installed packages that are installed through this manner so they track the package to the software (something you won't get without running the install script).
 
-> :memo: **NOTE** This is considered an advanced scenario - make sure you read and understand everything here before trying it. You may mess something up if you don't understand the full implication of what you are doing.
+> :memo: **NOTE**
+>
+> This is considered an advanced scenario - make sure you read and understand everything here before trying it. You may mess something up if you don't understand the full implication of what you are doing.
 
 ## Installing a Package Without Running Install Script
 
@@ -18,7 +22,9 @@ The first thing to understand is that in most instances when you want to bring C
 
 We normally recommend just calling the install as usual with no special switches and letting it handle the install - normally this turns into a no state change scenario for the computer (that is, the end state is that your application is still installed and Chocolatey now knows about it). In most cases it will ensure that the link for tracking the package to the software for automatic uninstalls is covered.
 
-> :memo: **NOTE** If no scripts are run, Chocolatey cannot link the package to the software, so things like AutoUninstaller will not be able to be used until you have also run an upgrade (unless you use ["choco sync"](xref:package-synchronization) - see above).
+> :memo: **NOTE**
+>
+> If no scripts are run, Chocolatey cannot link the package to the software, so things like AutoUninstaller will not be able to be used until you have also run an upgrade (unless you use ["choco sync"](xref:package-synchronization) - see above).
 
 However if you are sold on skipping the automation scripts and tricking Chocolatey into believing that a script is installed, then continue reading.
 

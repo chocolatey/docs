@@ -29,7 +29,9 @@ Use of the community package repository is optional. Community package repositor
 Here are some other important things to understand:
 
 - Every version of every package submitted must pass through [a rigorous moderation review process](#rigorous-moderation-process-for-community-packages) **before they become publicly available** (includes checks for quality, consistency, installation, and validations against VirusTotal).
-    > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
+    > :memo: **NOTE**
+    >
+    > Only en-US installers are tested by default via Chocolatey's Package Scanner.
 - Data Collection / Telemetry - IP address, package, and a timestamp - this provides statistics for install counts for community folks. Google analytics for site usage. For more information on what is automatically collected for the Community Repository, see our [Privacy Policy](https://chocolatey.org/privacy#what-information-do-we-collect)
 - No 3rd party advertising - That's right, we don't have any advertising on the site. We don't agree with the ideas behind ad-based income (but others might and that is fine). People should never be the product and we don't want to waste your time. If you see any of the tools we use (like Disqus) put up advertisements on our pages, please notify us immediately as we might have missed a policy change with them and will need to seek alternatives.
 
@@ -39,7 +41,9 @@ We take security issues very seriously. Security falls into a few areas of the C
 
 - If you are an organization and you are using Chocolatey in the recommended way (internal repositories using packages that use internal resources only), Chocolatey is secure and reliable.
 - Using the community repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) is only as secure as the packages that you are using. While Chocolatey provides security features like checksumming, verification against VirusTotal (for packages and any binaries they contain or download.
-    > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.), and moderation to be sure packages are using official binaries, there is no guarantee for what may be in the official distributions.
+    > :memo: **NOTE**
+    >
+    > Only en-US installers are tested by default via Chocolatey's Package Scanner.), and moderation to be sure packages are using official binaries, there is no guarantee for what may be in the official distributions.
 - Moderation and virus checking of packages on the public community repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) represent what the package and links represented at the time of original moderation. Many packages on the public feed represent software that has distribution rights, so the packages must contain instructions on how to download those binaries from official sources. There is no guarantee (other than packages using a package checksum - required for non-secure downloads) against the vendor changing what is at the URLs that the package uses.
 - If you need better runtime protection against malware, you should look at [Chocolatey Pro / Chocolatey For Business](https://chocolatey.org/compare). While we'd like to offer runtime protection for free to everyone, it's not free for us so we are not able to provide it as a free service.
 
@@ -169,7 +173,9 @@ community.chocolatey.org has a community repository of packages known as the com
 
 1. Every package submitted to the community package repository ([https://community.chocolatey.org/packages](https://community.chocolatey.org/packages)) since October 2014 undergoes a rigorous moderation process before it becomes live. Yes, every package, every version of a package is moderated and approved before they become live. See "Rigorous Moderation Process" below.
 1. Packages are run through VirusTotal to produce a second opinion on the relative safety of the package and underlying software that is contained or downloaded by the package. The verification of this is shown on the site.
-    > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
+    > :memo: **NOTE**
+    >
+    > Only en-US installers are tested by default via Chocolatey's Package Scanner.
 1. Some packages move into a trusted status. This is usually when the package maintainer is also the software maintainer, but can also occur when the maintainer(s) are trusted and multiple versions of a package have been submitted without issues.
 1. Packages that download binaries (installers, zip archives) are checked to ensure that the binary is coming from the official distribution source.
 1. Users can report malicious packages/software directly to the site administrators using a form found on every package page.
@@ -186,7 +192,9 @@ In October 2014, the community repository had moderation turned on. All communit
 - All package versions are run through an [automated validation process](xref:package-validator) to determine quality.
 - All package versions are run through an [automated verification process](xref:package-verifier-service) to determine if they work correctly (install, etc).
 - All packages versions are run through VirusTotal to determine if there are any flagging items. This includes downloading and unpacking any external resources (See the results on a package page in the Virus section - [https://community.chocolatey.org/packages/chocolatey#virus](https://community.chocolatey.org/packages/chocolatey#virus) as an example).
-    > :memo: **NOTE** Only en-US installers are tested by default via Chocolatey's Package Scanner.
+    > :memo: **NOTE**
+    >
+    > Only en-US installers are tested by default via Chocolatey's Package Scanner.
 - A human [reviews every package version](xref:moderation#reviewer-moderator-process) that is not a [trusted package](xref:faqs#what-is-a-trusted-package). This process verifies that packages are pulling from official distro sources or checksumming items versus the official distros and checking over scripts for malicious behavior.
 - We don't require cryptographically signing packages yet, that is a future enhancement
 - Checksumming is a requirement for non-secure scenarios, but is not yet a requirement in some scenarios, so keep reading the next section.

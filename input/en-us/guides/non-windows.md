@@ -15,13 +15,15 @@ Alternatively, to create the Mono build of Chocolatey CLI from source, see [the 
 
 When running on non-Windows systems, the intended use of Chocolatey CLI has a much more specific focus than it does on Windows systems. This focus is the creation and maintenance of packages.
 
-Some features that relate to installing and uninstalling software, such as the package PowerShell scripts, the automatic uninstaller, and alternate installation sources (e.g. WindowsFeatures) are disabled, and will never work as they interface with Windows specific components. 
+Some features that relate to installing and uninstalling software, such as the package PowerShell scripts, the automatic uninstaller, and alternate installation sources (e.g. WindowsFeatures) are disabled, and will never work as they interface with Windows specific components.
 
 The commands for installing, pinning, upgrading and uninstalling packages are available, but they are intended to be used with only `.template` packages. Other packages should install with a warning, but in most cases will not be very useful as the install script gets skipped and any embedded binaries would be for Windows systems.
 
 ### Chocolatey CLI Commands Supported On Non-Windows Systems
 
-> :memo: **NOTE** This list is not final and may change as commands are added, modified, or removed.
+> :memo: **NOTE**
+>
+> This list is not final and may change as commands are added, modified, or removed.
 
 These commands are supported on non-Windows systems:
 
@@ -40,7 +42,9 @@ These commands are supported on non-Windows systems:
 
 These commands are supported for management of `.template` packages:
 
-> :memo: **NOTE** All commands will run, but these commands may print warnings if they are used with non `.template` packages.
+> :memo: **NOTE**
+>
+> All commands will run, but these commands may print warnings if they are used with non `.template` packages.
 
 - install
 - pin
@@ -58,7 +62,7 @@ The Chocolatey Licensed Extension is currently not supported and does not work c
 
 Ever since we released 0.9.9 back in 2015, we've had it running in Mono which allows you to do package maintenance and simple things outside of managing software installations on Linux and MacOS environments.
 
-In fact we first showed it off at PuppetConf 2014 (prior to the official March 2015 release!) - https://www.youtube.com/watch?v=cZl_wKSciVk 
+In fact we first showed it off at PuppetConf 2014 (prior to the official March 2015 release!) - https://www.youtube.com/watch?v=cZl_wKSciVk
 
 In 2017, community member linuturk [contributed a Dockerfile](https://github.com/chocolatey/choco/pull/1153) to Chocolatey, and [uploaded an unofficial image to Docker Hub](https://hub.docker.com/r/linuturk/mono-choco/).
 

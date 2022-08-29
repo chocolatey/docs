@@ -137,7 +137,9 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 >
 > Please ensure the user `<DomainAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE**
+>
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Local Windows Account to Local SQL Server
 
@@ -163,7 +165,9 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 >
 > Please ensure the user `ChocolateyLocalAdmin` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-> :memo: **NOTE** Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> :memo: **NOTE**
+>
+> The connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 ##### Use Windows Account to Attach SQL Server
 
@@ -305,7 +309,9 @@ If you need to remove a netsh binding, you can do that using the following comma
 netsh http delete sslcert ipport=0.0.0.0:<port_number>
 ```
 
-> :memo: **NOTE** Here `<port_number>` should be replaced with the Port Number that has been registered
+> :memo: **NOTE**
+>
+> Here `<port_number>` should be replaced with the Port Number that has been registered
 
 <?! Include "../../../shared/netsh-bindings-note.txt" /?>
 
@@ -327,7 +333,9 @@ netsh http add sslcert ipport=0.0.0.0:<port_number> certhash=<certificate_thumbp
 
 Unfortunately, it's not a supported scenario. If you are trying to load balance requests to CCM service, you should install multiple instances on multiple machines and point clients explicitly to an instance so they can work together. If you are trying to load balance other things on a machine and CCM service just happens to be there (like with QDE), move CCM service to a different machine or allow direct connections to the box for CCM.
 
-> :memo: **NOTE** If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
+> :memo: **NOTE**
+>
+> If you are an expert in managing X509 certificates with load balancing, you can certainly set this up, but if you can't get it to work, move to a supported scenario. Support folks will tell you the same.
 
 ### We want to set up the Chocolatey Central Management service to use a domain account that will have local admin on each box. Can we do this?
 
