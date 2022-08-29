@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 70
 xref: ccm-encryption-passphrase
 Title: Encryption Passphrase
 Description: Information on the Encryption Passphrase within Chocolatey Central Management.

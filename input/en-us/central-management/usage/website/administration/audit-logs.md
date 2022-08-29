@@ -1,7 +1,7 @@
 ---
 Order: 40
 xref: ccm-administration-audit-logs
-Title: Roles
+Title: Audit Logs
 Description: Information about using the audit logs within the Chocolatey Central Management Administration section.
 ---
 
