@@ -29,6 +29,43 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 - Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.10.0 (August 30, 2022)
+
+### Features
+
+- Implement Recurring Deployments
+- Allow users to Duplicate an existing deployment
+- Retention Policies - Automatically delete a computer that hasn't reported into CCM for a configurable period of time
+- Implement a dark/light mode switcher
+- API - Add a way to query licensed machine count - see [Licensed #272](https://github.com/chocolatey/chocolatey-licensed-issues/issues/272)
+
+### Bug Fixes
+
+- Some auditing data is lost in the database when some entities are updated
+  - Previously, editing a Group, Software, or Computer entity would erase the `CreatorUserId` and `CreationTime` auditing fields
+  - As part of this fix, entities with a `NULL` `CreatorUserId` will copy the `LastModifierUserId` into their `CreatorUserId` when they are next updated
+- Retrieving a deployment from the GetDeploymentPlanForView method via the API causes a JsonSerializationException
+- Notifications table shows wrong creation time
+- The "Generated" time on Excel and PDF Reports is in UTC regardless of the specified Time Zone
+- Login Attempts section is broken for non-administrative users
+- API - Adding direct ComputerGroup / GroupGroup mappings via the API does not update group counts or deployment eligibility immediately
+
+### Improvements
+
+- Request for Computers Tab to Display Group Enrolment - see [Licensed #223](https://github.com/chocolatey/chocolatey-licensed-issues/issues/223)
+- Creating a Deployment and then clicking Cancel without adding steps or saving once should remove the deployment entirely
+- Add the Deployment Plan Name to its Step Details pages
+- Add visual indicators that editing/adding/removing deployment steps is disabled when the deployment schedule is outdated
+- Provide ability to specify basic parameters on Basic step
+- Add email notifications when a scheduled deployment fails to start
+- Warn Users when their Chocolatey License Expiration is coming up
+- Remember selected value for Show Entries dropdown on tables
+- Replace loading gif used on datatables
+- CCM User passwords must be at least 6 characters long
+- Enable 2FA as part of authentication - see [Licensed #300](https://github.com/chocolatey/chocolatey-licensed-issues/issues/300)
+- Uninstalling chocolatey-management-web should remove IIS Website and Application Pool
+- Add additional auditing fields for deployment plans
+
 ## 0.9.0 (June 15, 2022)
 
 > :warning: **WARNING**
