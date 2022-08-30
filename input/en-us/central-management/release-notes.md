@@ -61,7 +61,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Remember the specified value for Show Entries dropdown on tables.
 - Replace loading animation.
 - Require new user passwords to be at least 6 characters long.
-- Enable email 2FA as part of authentication - see [Licensed #300](https://github.com/chocolatey/chocolatey-licensed-issues/issues/300).
+- Add option for email 2FA as part of authentication - see [Licensed #300](https://github.com/chocolatey/chocolatey-licensed-issues/issues/300).
 - Uninstalling chocolatey-management-web should remove IIS Website and Application Pool.
 - Add additional auditing fields for Deployments.
 
