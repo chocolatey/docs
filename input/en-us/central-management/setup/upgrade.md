@@ -51,7 +51,9 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Upgrade Central Management Database
 
-> :memo: **NOTE** Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
+> :memo: **NOTE**
+>
+> Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-database -y
@@ -63,7 +65,9 @@ choco upgrade chocolatey-management-database -y
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-> :memo: **NOTE** Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
+> :memo: **NOTE**
+>
+> Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-service -y
@@ -86,7 +90,9 @@ There may be additional (new) things you will want to configure. Please see [Cen
 
 ## Step 4: Setup Central Management Website
 
-> :memo: **NOTE** Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
+> :memo: **NOTE**
+>
+> Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-management-web -y
@@ -98,7 +104,9 @@ choco upgrade chocolatey-management-web -y
 
 ## Step 5: Upgrade Agent Machines
 
-> :memo: **NOTE** Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
+> :memo: **NOTE**
+>
+> Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
 
 ```powershell
 choco upgrade chocolatey-agent -y

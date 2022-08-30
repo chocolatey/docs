@@ -10,7 +10,9 @@ Description: Release Notes for Chocolatey GUI Extension
 This covers the release notes for the Chocolatey GUI Licensed Extension (`chocolateygui.extension`) package, where the commercial editions of Chocolatey GUI get their enhanced functionality.
 Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) for information on how to get and install the package.
 
-> :memo: **NOTE** This package is available to Chocolatey for Business customers only.
+> :memo: **NOTE**
+>
+> This package is available to Chocolatey for Business customers only.
 
 ## Other Release Notes
 

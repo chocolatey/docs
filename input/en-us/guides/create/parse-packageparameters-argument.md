@@ -22,11 +22,17 @@ You can use package parameters to set up arguments to the native installer, but 
    * [Review](#review-set-parameters)
 * [Installing With Package Parameters](#installing-with-package-parameters)
 
-> :memo: **NOTE** There is also the concept of "Install Arguments", or silent arguments you can pass through transparently to the native installer. This is more of a way for a package consumer to override the default silent arguments that are passed to the native installer.
+> :memo: **NOTE**
+>
+> There is also the concept of "Install Arguments", or silent arguments you can pass through transparently to the native installer. This is more of a way for a package consumer to override the default silent arguments that are passed to the native installer.
 
-> :memo: **NOTE** Package parameters are not meant to be a substitute for sensible default values. A package installation should require no arguments and the default values should just happen. This is especially true of the packages on the community feed. If you are hosting your own internal feeds, it is recommended you follow this behavior, but not required.
+> :memo: **NOTE**
+>
+> Package parameters are not meant to be a substitute for sensible default values. A package installation should require no arguments and the default values should just happen. This is especially true of the packages on the community feed. If you are hosting your own internal feeds, it is recommended you follow this behavior, but not required.
 
-> :memo: **NOTE** `Get-PackageParameters` is available now with a dependency on `chocolatey-core.extension`, and in a future version of Chocolatey (see [#312](https://github.com/chocolatey/choco/issues/312)), it will also be one of Chocolatey's built-in functions.
+> :memo: **NOTE**
+>
+> `Get-PackageParameters` is available now with a dependency on `chocolatey-core.extension`, and in a future version of Chocolatey (see [#312](https://github.com/chocolatey/choco/issues/312)), it will also be one of Chocolatey's built-in functions.
 
 ## Walkthrough
 
@@ -88,7 +94,9 @@ One thing you will need is a good idea of what package parameters and defaults f
 
 Be sure to let folks know about the package parameters.
 
-> :memo: **NOTE** this will be a holding review item by moderators.
+> :memo: **NOTE**
+>
+> This will be a holding review item by moderators.
 
 Set up your nuspec appropriately:
 
@@ -110,7 +118,9 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
     </description>
 ~~~
 
-> :memo: **NOTE** Package parameters can be passed as `--params`, but also as a few different ways including `--package-parameters`. See [install options](xref:choco-command-install#options-and-switches):
+> :memo: **NOTE**
+>
+> Package parameters can be passed as `--params`, but also as a few different ways including `--package-parameters`. See [install options](xref:choco-command-install#options-and-switches):
 
 ~~~sh
  --params, --parameters, --pkgparameters, --packageparameters, --package-parameters=VALUE
@@ -137,7 +147,9 @@ Open the nuspec back up and add a dependency on `chocolatey-core.extension`. Thi
   </dependencies>
 ~~~
 
-> :memo: **NOTE** The version specified without brackets (`[]`) means this is a minimum version dependency. So in this case, 1.1.0 or newer (`>=1.1.0`). If it was `[1.1.0]`, that would mean exactly version 1.1.0 (`=1.1.0`).
+> :memo: **NOTE**
+>
+> The version specified without brackets (`[]`) means this is a minimum version dependency. So in this case, 1.1.0 or newer (`>=1.1.0`). If it was `[1.1.0]`, that would mean exactly version 1.1.0 (`=1.1.0`).
 
 #### Prepare The Code
 
@@ -161,7 +173,9 @@ if ($pp['AdditionalTools'] -eq 'true') { $silentArgs += " /Additionaltools" }
 Write-Debug "This would be the Chocolatey Silent Arguments: $silentArgs"
 ~~~
 
-> :memo: **NOTE** In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [Extensions](xref:extensions).
+> :memo: **NOTE**
+>
+> In the above example, `Get-PackageParameters` will already be available because chocolatey-core.extensions is an extension package. Chocolatey automatically loads up PowerShell modules installed as extensions (so you don't need the Import-Module in your chocolateyInstall.ps1 script). See [Extensions](xref:extensions).
 
 <a name="step-3-alternative---set-up-your-own-parsing"></a>
 ### Step 3 (alternative) - Set up Your Own Parsing [DEPRECATED]
@@ -251,7 +265,9 @@ Typically this is handled in the following way:
 choco install <packageName> --params "'/key:value key2:value'"
 ~~~
 
-> :memo: **NOTE** `<packageName>` is synonymous with the value you put in the nuspec `<id />` field. It is NEVER `name.version.nupkg` or `name.nuspec`. If you are testing a package locally, always use `choco install <pkgid> -d -s .`. That is a literal `-s .` (set source to local folder where the compiled nupkg is located), unless you have a dependency on another package, then use `-s "'.;other feeds here'"` - when you override the source (`--source` or `-s`), it means use ONLY this source for resolving packages.
+> :memo: **NOTE**
+>
+> `<packageName>` is synonymous with the value you put in the nuspec `<id />` field. It is NEVER `name.version.nupkg` or `name.nuspec`. If you are testing a package locally, always use `choco install <pkgid> -d -s .`. That is a literal `-s .` (set source to local folder where the compiled nupkg is located), unless you have a dependency on another package, then use `-s "'.;other feeds here'"` - when you override the source (`--source` or `-s`), it means use ONLY this source for resolving packages.
 
 Now, in this example, if we were to call:
 
@@ -263,7 +279,9 @@ The output would be:
 This would be the Chocolatey Silent Arguments: /S /Port:81 /Edition:LicenseKey /InstallationPath:c:\temp
 ~~~
 
-> :memo: **NOTE** If you have a prerelease (has a `-` in the version value e.g. `1.0.0-beta1`), make sure you add `--pre` to the install/upgrade arguments.
+> :memo: **NOTE**
+>
+> If you have a prerelease (has a `-` in the version value e.g. `1.0.0-beta1`), make sure you add `--pre` to the install/upgrade arguments.
 
 i.e. it is using the default values which we made at the top of the file
 
@@ -274,7 +292,9 @@ However, if we instead used:
 choco install <packageName> -d --package-parameters '/Port:82 /Edition:LicenseKey1 /InstallationPath:""C:\temp\folder with space"" /AdditionalTools'
 ~~~
 
-> :memo: **NOTE** How you pass options with spaces varies with shell (cmd.exe vs powershell.exe) and other related information with choco options is important to keep in mind here. See [how to pass options/switches](xref:choco-commands#how-to-pass-options-switches).
+> :memo: **NOTE**
+>
+> How you pass options with spaces varies with shell (cmd.exe vs powershell.exe) and other related information with choco options is important to keep in mind here. See [how to pass options/switches](xref:choco-commands#how-to-pass-options-switches).
 
 The output would be:
 

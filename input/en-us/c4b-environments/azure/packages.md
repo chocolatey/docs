@@ -34,7 +34,7 @@ Please provide these as a comma-separated list, e.g.
 nexus-repository, notepadplusplus, sublimetext3
 ```
 
-> :warning: **NOTE**
+> :warning: **WARNING**
 >
 > We recommend you review and test all packages before internalizing and deploying them from the [Chocolatey Community Repository](https://community.chocolatey.org/packages).
 

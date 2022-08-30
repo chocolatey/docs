@@ -3,13 +3,14 @@ Order: 70
 xref: ccm-encryption-passphrase
 Title: Encryption Passphrase
 Description: Information on the Encryption Passphrase within Chocolatey Central Management.
+RedirectFrom: en-us/central-management/usage/website/encryption-passphrase
 ---
 
 Starting in Chocolatey Central Management 0.7.0 we are providing the ability to control the passphrase that is used when encrypting both secret values and certain requests that happen between the website and the service.
 
 The encryption passphrase can be changed in Chocolatey Central Management by accessing the `Administrator -> Settings` section and selecting the `Security` tab. The settings for the encryption passphrase will only be visible to users who are a member of the CCM Administrator role.
 
-> :heavy_exclamation_mark: **IMPORTANT**
+> :exclamation: **IMPORTANT**
 >
 > We recommend this passphrase is set as soon as possible. However, a user who is a member of the CCM Administrator role will be able to defer this for 4 logins. On the 5th login they will be restricted to only being able to set the passphrase.
 
@@ -96,7 +97,7 @@ The encryption passphrase is the password (along with a salt value) that will be
 
 The following items are encrypted using the passphrase:
 
-- [`Sensitive Variables`](xref:ccm-sensitive-variables).
+- [`Sensitive Variables`](xref:ccm-administration-sensitive-variables).
 - SMTP and LDAP passwords.
 - Links used in Email Activation and Password Reset emails.
 There are also some of the requests used when browsing the web site, and making API requests that also encrypt/decrypt values using the same passphrase.

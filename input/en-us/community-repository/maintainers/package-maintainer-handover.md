@@ -8,7 +8,9 @@ RedirectFrom: docs/package-maintainer-handover
 
 # Package Maintainer Handover
 
-> :memo: **NOTE** This process comes after the [Package Triage Process](xref:package-triage-process). If you are a **software vendor** wanting to maintain your own software's packages, please see [maintain packages for my software](xref:package-triage-process#i-want-to-take-overhelp-with-package-maintenance-for-my-software).
+> :memo: **NOTE**
+>
+> This process comes after the [Package Triage Process](xref:package-triage-process). If you are a **software vendor** wanting to maintain your own software's packages, please see [maintain packages for my software](xref:package-triage-process#i-want-to-take-overhelp-with-package-maintenance-for-my-software).
 
 
 When a package maintainer is deemed no longer maintaining a package, a new maintainer or maintainers can assist and/or takeover. This is done through the [Package Triage Process](xref:package-triage-process).

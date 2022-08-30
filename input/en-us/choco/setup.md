@@ -57,7 +57,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 #### Additional considerations
 
-> :memo: **NOTE** Please inspect [https://community.chocolatey.org/install.ps1](https://community.chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of **any** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
+> :memo: **NOTE**
+>
+> Please inspect [https://community.chocolatey.org/install.ps1](https://community.chocolatey.org/install.ps1) prior to running any of these scripts to ensure safety. We already know it's safe, but you should verify the security and contents of **any** script from the internet you are not familiar with. All of these scripts download a remote PowerShell script and execute it on your machine.
 
 We take security very seriously. [Learn more](xref:security).
 
@@ -96,7 +98,9 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 ### Install from PowerShell v3+
 
-> :memo: **NOTE** The command for installing with PowerShell at the top of the page works for all versions of PowerShell from v2 on. This is provided as an additional note for folks who want a more terse command that is easier to remember.
+> :memo: **NOTE**
+>
+> The command for installing with PowerShell at the top of the page works for all versions of PowerShell from v2 on. This is provided as an additional note for folks who want a more terse command that is easier to remember.
 
 With PowerShell, there is an additional step or two. You must ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is not Restricted. We suggest using `Bypass` to bypass the policy to get things installed or `AllSigned` for quite a bit more security.
 
@@ -410,7 +414,9 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 ### Install with Puppet
 
-> :memo: **NOTE** If you have the licensed edition, see [Setting up Licensed Edition with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
+> :memo: **NOTE**
+>
+> If you have the licensed edition, see [Setting up Licensed Edition with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet) instead. This only additionally contains some package examples and setting up tab completion.
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
@@ -615,7 +621,9 @@ If you prefer to have the install.ps1 file already, comment out the download lin
 
 Run `installChocolatey.cmd` from an elevated `cmd.exe` command prompt and it will install the latest version of Chocolatey. You can not run this from `powershell.exe` without making changes to your execution policy.
 
-> :memo: **NOTE** To create and save a `.cmd` file, please use a text editor and nothing fancy like Microsoft Word or OneNote.
+> :memo: **NOTE**
+>
+> To create and save a `.cmd` file, please use a text editor and nothing fancy like Microsoft Word or OneNote.
 
 ### Install using NuGet Package Manager
 
@@ -643,9 +651,13 @@ You can also just download and unzip the Chocolatey package (`.nupkg` is a fancy
  1. Ensure the downloaded nupkg is not blocked.
  1. Unzip it using any application that supports `zip` format.
  1. Open a PowerShell command shell and navigate into the unzipped package's tools folder.
-     > :memo: **NOTE** Ensure PowerShell execution policy is set to at least bypass or remote signed (if you have issues, you may need to set it to Unrestricted).
+     > :memo: **NOTE**
+     >
+     > Ensure PowerShell execution policy is set to at least bypass or remote signed (if you have issues, you may need to set it to Unrestricted).
  1. Call `& .\chocolateyInstall.ps1` to allow Chocolatey to install.
-     > :memo: **NOTE** This will not set Chocolatey as an installed package, so it may be a good idea to also call `choco upgrade chocolatey -y` and let it reinstall the same version, but at least it will be available for upgrades then.
+     > :memo: **NOTE**
+     >
+     > This will not set Chocolatey as an installed package, so it may be a good idea to also call `choco upgrade chocolatey -y` and let it reinstall the same version, but at least it will be available for upgrades then.
 
 ### Install licensed edition
 
@@ -686,7 +698,9 @@ See [Installing Chocolatey Behind a Proxy Server](xref:proxy-settings#installing
   * Copy/Move over the items from the old lib/bin directory.
   * Delete your old install directory.
 
-> :memo: **NOTE** There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
+> :memo: **NOTE**
+>
+> There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
 > If you are installing to another location, you will need to handle this yourself, i. e. restrict write access to Admins in case you so desire.
 This is due to alternative locations could have a range of permissions that should not be changed.
 See [Why does Chocolatey install where it does](xref:default-chocolatey-install-reasoning) and [GitHub Issue 398](https://github.com/chocolatey/choco/issues/398) for more details.
@@ -704,7 +718,9 @@ $env:chocolateyVersion = '0.9.9.12'
 # install script
 ~~~
 
-> :memo: **NOTE** This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
+> :memo: **NOTE**
+>
+> This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
 
 ### Use Windows built-in compression instead of downloading 7zip
 
@@ -719,15 +735,23 @@ $env:chocolateyUseWindowsCompression = 'true'
 # install script
 ~~~
 
-> :memo: **NOTE** This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
+> :memo: **NOTE**
+>
+> This will only work with the installation methods that call https://community.chocolatey.org/install.ps1 as part of the install.
 
 ### Installing with restricted TLS
 
-> :memo: **NOTE** community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/.
+> :memo: **NOTE**
+>
+> community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/.
 
-> :memo: **NOTE** If your server is restricted to TLS 1.1+, you need to add additional logic to be able to download and install Chocolatey (this is not necessary when running Chocolatey normally as it does this automatically).
+> :memo: **NOTE**
+>
+> If your server is restricted to TLS 1.1+, you need to add additional logic to be able to download and install Chocolatey (this is not necessary when running Chocolatey normally as it does this automatically).
 
-> :memo: **NOTE** If this is for organizational use, you should consider hosting the Chocolatey package internally and installing from there.
+> :memo: **NOTE**
+>
+> If this is for organizational use, you should consider hosting the Chocolatey package internally and installing from there.
 
 
 If you see an error that looks similar to the following:
@@ -791,7 +815,9 @@ You need to download and unzip the Chocolatey package, then call the PowerShell 
 
 ### Non-Administrative install
 
-> :memo: **NOTE** This option should be a last resort and is considered to be a more advanced scenario - most things you do on Windows require administrative rights, especially surrounding software management, so you are going to be limited even in packages you attempt to install. If you are using the [community package repository](https://community.chocolatey.org/packages), there are over 200 packages you can install from the community repository without administrative permission - see https://community.chocolatey.org/packages?q=id%3Aportable+tag%3Aportable.
+> :memo: **NOTE**
+>
+> This option should be a last resort and is considered to be a more advanced scenario - most things you do on Windows require administrative rights, especially surrounding software management, so you are going to be limited even in packages you attempt to install. If you are using the [community package repository](https://community.chocolatey.org/packages), there are over 200 packages you can install from the community repository without administrative permission - see https://community.chocolatey.org/packages?q=id%3Aportable+tag%3Aportable.
 
 You must choose a different location than the default (see [Installing to a different location](#installing-to-a-different-location) above). The default is a more secure location that only administrators can update.
 

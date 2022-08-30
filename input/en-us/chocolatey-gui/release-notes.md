@@ -10,7 +10,9 @@ RedirectFrom: docs/release-notes-chocolatey-gui
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.
 
-> :memo: **NOTE** For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
+> :memo: **NOTE**
+>
+> For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 

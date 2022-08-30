@@ -101,7 +101,7 @@ application.Run();
 ```
 
 > :memo: **NOTE**
-> :memo:
+>
 > If you are unsure what you should replace `<lang>` with, a list of available cultures and their corresponding codes tags can be found [here](https://msdn.microsoft.com/en-us/library/cc233982.aspx).
 
 > :memo: **NOTE**

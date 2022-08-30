@@ -17,7 +17,9 @@ This system has been pre-configured as a fully functioning C4B environment.
 >
 > Please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 
-> :memo: **NOTE** This is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see here, use this document.
+> :memo: **NOTE**
+>
+> This is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials). If there are conflicts between the desktop readme and what you see here, use this document.
 
 ## Summary
 
@@ -66,7 +68,9 @@ This will create the licensed package at `C:\choco-setup\packages` and push it u
 
 Under almost all circumstances for security purposes, you are going to want to complete this step. We've made it easy for you with a script. Once complete, the script will generate new SSL certificates for all services and move them to the appropriate locations and configure the services to use them. Please see [SSL/TLS Setup](xref:v1-ssl-setup) for more details.
 
-> :memo: **NOTE** Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**
+>
+> Please run the below from an administrative PowerShell session.
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1
@@ -174,7 +178,9 @@ To help make pushing packages easier, the `choco apikey` command is available.
 This will store your API key for a specific source as part of Chocolatey's configuration.
 This will be encrypted. To setup, do the following:
 
-> :memo: **NOTE** Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**
+>
+> Please run the below from an administrative PowerShell session.
 
 ```powershell
 choco apikey add --key="'$YourApiKey'" --source="'https://chocoserver:8443/repository/ChocolateyInternal/'"
@@ -192,7 +198,9 @@ What does this do?
 
 * Sets the execution policy for this script run to remote signed scripts. This is only in the scope of this process and not permanent.
 * Imports the SSL Certificate from the Quick Deploy Environment.
-    > :memo: **NOTE** This is a signed script that is used to import a certificate. Due to how it works and security considerations, there are very few options allowed.
+    > :memo: **NOTE**
+    >
+    > This is a signed script that is used to import a certificate. Due to how it works and security considerations, there are very few options allowed.
 * Switches execution policy to bypass for the internal script. This is only in the scope of this process and not permanent.
 * Calls Client setup script from the QDE environment (see below for what it does).
 
@@ -231,7 +239,9 @@ Example Usage:
 . C:\choco-setup\files\Invoke-ChocolateyInternalizer.ps1 -Packages adobereader,vlc,vscode -RepositoryUrl https://chocoserver:8443/repository/ChocolateyTest/ -RemoteRepo https://chocolatey.org/api/v2 -LocalRepoApiKey [REDACTED_API_KEY]
 ```
 
-> :memo: **NOTE** Please run the above from an administrative PowerShell session.
+> :memo: **NOTE**
+>
+> Please run the above from an administrative PowerShell session.
 
 ## Step 9: License the QDE VM
 
@@ -239,7 +249,9 @@ This VM is running an **UNACTIVATED** Server 2019 Standard Operating System. If 
 
 If you rely on Retail or MAK licensing, you will need to apply the license using the following, replacing the x's with your actual product key:
 
-> :memo: **NOTE** Please run the below from an administrative PowerShell session.
+> :memo: **NOTE**
+>
+> Please run the below from an administrative PowerShell session.
 
 ```powershell
 slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx

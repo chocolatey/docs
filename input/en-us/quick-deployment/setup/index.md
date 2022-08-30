@@ -159,7 +159,9 @@ Choose one of the following methods for what your hypervisor environment support
 1. Click the `Add hard disk` button, select `Existing hard disk`, and browse to the VMDK you uploaded. Once slected, expand the `New hard disk` dropdown, and set the `Controller location` to `IDE controller 0`, or whichever IDE controllers you have available. Click `Save`.
     > :exclamation: **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the "Controller Location" setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
 1. Once again, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
-    > :memo: **NOTE** likely you will need to allocate the additional space to the C drive.
+    > :memo: **NOTE**
+    >
+    > Likely you will need to allocate the additional space to the C drive.
 1. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
 
 #### See it in Action

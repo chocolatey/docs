@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 40
 xref: ccm-computers
 Title: Computers
 Description: Information on computers within CCM
@@ -26,6 +26,13 @@ Client computers (agents) will show up in Central Management automatically as lo
 Please see [Central Management Client Setup](xref:ccm-client) for more details and setup.
 
 ## Viewing Installed Software on a Computer
+
+> :memo: **NOTE**
+>
+> Starting with Chocolatey Central Management 0.10.0, the groups that a computer is a member of is shown in both the table of all computers, as well as on the computer details pages.  By default, this will only show the first 5 group memberships. If there are more group associations:
+>
+> - The computers table will display a `...` link in the Groups column. Upon hovering this link, a tooltip will be shown with all group memberships.
+> - On the computer details page, a `View More` link will be shown. When clicked, this will cause an expansion to show all group memberships and the link will update to say `View Less`. Clicking this link again will show the default previous view.
 
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
 Select the :gear: **Actions** menu in the corresponding right-hand column, and click **Details**.
