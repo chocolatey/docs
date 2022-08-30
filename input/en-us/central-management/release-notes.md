@@ -45,7 +45,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
   - Editing a Group, Software, or Computer would erase the user who created it and the time it was created. As part of this fix, entries without that information will set the creating user to the user who last modified it.
 - API - Exception when retrieving a deployment from the `GetDeploymentPlanForView` method.
 - The creation time on the Notifications table was incorrect.
-- Excel and PDF Reports incorrect show the time in UTC and not the local time zone.
+- Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
 - Non-administrative users cannot view the Login Attempts section.
 - API - Group statistics were not updated when adding Computers / Groups via the API.
 
