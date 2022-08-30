@@ -150,7 +150,9 @@ Video Summary:
     - 4 vCPUs
     - 8 GB RAM
 8. Once you click Finish, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
-    > :memo: **NOTE** likely you will need to allocate the additional space to the C drive.
+    > :memo: **NOTE**
+    >
+    > Likely you will need to allocate the additional space to the C drive.
 9. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
 
 Video Summary:

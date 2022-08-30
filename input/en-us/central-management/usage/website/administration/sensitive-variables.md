@@ -1,8 +1,9 @@
 ---
-Order: 60
-xref: ccm-sensitive-variables
+Order: 30
+xref: ccm-administration-sensitive-variables
 Title: Sensitive Variables
 Description: Information on sensitive variables within Chocolatey Central Management
+RedirectFrom: en-us/central-management/usage/website/sensitive-variables
 ---
 
 Chocolatey Central Management gives you the ability to create sensitive variables for use in deployments.

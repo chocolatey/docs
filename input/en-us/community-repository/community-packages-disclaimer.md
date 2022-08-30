@@ -22,7 +22,9 @@ A huge thing in Windows ecosystem is copyright law and how it plays into distrib
 
 You can build a 100% reliable pipeline/workflow within the Chocolatey framework, just not with the community package repository. Building a reliable pipeline is huge. If you are a Windows admin wanting to trust a framework like Chocolatey, you are not going to use the Community Package Repository. Not when your reputation/job is on the line for picking the best options.
 
-> :memo: **NOTE** You can also achieve reliability when reusing community packages, as long as you [internalize](xref:recompile-packages) them. **Internalizing is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.**
+> :memo: **NOTE**
+>
+> You can also achieve reliability when reusing community packages, as long as you [internalize](xref:recompile-packages) them. **Internalizing is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.**
 
 ### Trust / Control
 Windows admins typically need to do everything internally with no outside internet access. There is quite a bit more hush-hush, non-use of publicly available things without bringing it internal for absolute control and trust. There is a huge (semi-healthy, but maybe even unhealthy) lack of trust for anything reaching out to the internet. I'm not saying this is exclusive to Windows admins, but it is very much the norm. So using the community package repository is a non-starter for these kinds of folks.
@@ -39,7 +41,9 @@ However Windows doesn't have a distro-provided repo. Chocolatey Software does no
 
 **Please note that individuals (even organizations) using the community repository are unlikely to hit excessive use numbers under normal usage scenarios.**
 
-> :memo: **NOTE: If you do find you have been blocked / rate-limited, having commercial licenses will not have any effect the policies with the community package repository. These policies were put into place to ensure stability and availability for the entire community, not to try to get folks to pay for licensing.**
+> :memo: **NOTE**
+>
+> If you do find you have been blocked / rate-limited, having commercial licenses will not have any effect the policies with the community package repository. These policies were put into place to ensure stability and availability for the entire community, not to try to get folks to pay for licensing.
 
 See [rate limiting](#rate-limiting) below if you are seeing 429 errors (too many requests).
 
@@ -47,7 +51,9 @@ Another aspect to keep in mind is that the community package repository is meant
 
 **Blocks are meant to be temporary bans, but require you to act to remedy the situation.** If you have been blocked, please see the next sections for corrective actions.
 
-> :memo: **NOTE** If you or your organization feels you will need to go over this limit with good reason and need whitelisted, please reach out at https://chocolatey.org/contact, choose "Blocked IP Address". As we have limited information, please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a ban. Once you have resolved any issues on your side, we can lift the ban.
+> :memo: **NOTE**
+>
+> If you or your organization feels you will need to go over this limit with good reason and need whitelisted, please reach out at https://chocolatey.org/contact, choose "Blocked IP Address". As we have limited information, please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a ban. Once you have resolved any issues on your side, we can lift the ban.
 
 ### How To Avoid Excessive Use
 
@@ -55,13 +61,17 @@ To avoid excessive use, please see our [organizational deployment guide](xref:or
 
 If you are not able to take advantage of [internalizing](xref:recompile-packages) packages, you can still cache them locally (using package repository solutions like Artifactory, Cloudsmith, Nexus, ProGet, MyGet, etc), which will reduce your direct usage of the community repository.
 
-> :memo: **NOTE** Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](xref:recompile-packages).
+> :memo: **NOTE**
+>
+> Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](xref:recompile-packages).
 
 For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the [organizational deployment guide](xref:organizational-deployment-guide) (which takes about 1-2 hours). With 15-30 minutes, you can implement a [Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://community.chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://community.chocolatey.org/packages/nexus-oss)) which automatically caches (but does not [internalize](xref:recompile-packages)) packages from the community repository (`https://community.chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
 
 ### What To Do When You Are Blocked For Excessive Use
 
-> :memo: **NOTE: A block will not automatically expire, you will need to contact our team to resolve the block.** Rate Limiting on the other hand does automatically expire after one hour. Please see [rate limiting](#rate-limiting) below.
+> :memo: **NOTE**
+>
+> A block will not automatically expire, you will need to contact our team to resolve the block. Rate Limiting on the other hand does automatically expire after one hour. Please see [rate limiting](#rate-limiting) below.
 
 If you have found that you have gone over the limit and have been warned/blocked, please reach out at https://chocolatey.org/contact (send message to "Blocked IP Address" in the drop down - you may need to do this from a different IP address) or go to our [Community Chat](https://ch0.co/community) to contact the community team. As we have limited information (only an IP address), please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a block.
 
@@ -71,7 +81,9 @@ Once you have resolved any issues on your side, we can lift the block. A block w
 
 ### Rate Limiting
 
-> :memo: **NOTE: Purchasing licenses will not have any effect on rate limiting of the community package repository. Please read carefully below to understand why this was put in place and steps you can take to reduce issues if you run into it. HINT: It's not an attempt to get you to pay for commercial editions.**
+> :memo: **NOTE**
+>
+> Purchasing licenses will not have any effect on rate limiting of the community package repository. Please read carefully below to understand why this was put in place and steps you can take to reduce issues if you run into it. HINT: It's not an attempt to get you to pay for commercial editions.
 
 As a measure to increase site stability and prevent excessive use, the Chocolatey website uses rate limiting on requests for the community repository. Rate limiting was introduced in November 2018. Most folks typically won't hit rate limits unless they are automatically tagged for excessive use. If you do trigger the rate limit, you will see a `(429) Too Many Requests`. When attempting to install Chocolatey you will see the following:
 
@@ -89,18 +101,24 @@ You will start to see `429 Too Many Requests` if you have triggered the rate lim
 
 * Error 1015
 
-> :memo: **NOTE: Please note that individuals using the community repository are unlikely to hit rate limiting under normal usage scenarios.**
+> :memo: **NOTE**
+>
+> Please note that individuals using the community repository are unlikely to hit rate limiting under normal usage scenarios.
 
 **Details:**
 * Installations/downloads of Chocolatey itself (chocolatey.nupkg) are rate limited at about 5 per minute per IP address - temporary ban expires after 1 hour.
 * All other packages are rate limited at about 20 per minute per IP address - temporary ban expires after 1 hour.
 
 
-> :memo: **NOTE** Rate Limiting defaults are subject to change with or without notice as we find a good happy medium that ensures ease of use and stability for our community.
+> :memo: **NOTE**
+>
+> Rate Limiting defaults are subject to change with or without notice as we find a good happy medium that ensures ease of use and stability for our community.
 
 ### What To Do When You Are Rate Limited
 
-> :memo: **NOTE: A rate limit will automatically expire after an hour, but if you hit the limit again, it will block for another hour.**
+> :memo: **NOTE**
+>
+> A rate limit will automatically expire after an hour, but if you hit the limit again, it will block for another hour.
 
 If you have found that you have been rate limited, please see [How To Avoid Excessive Use](#how-to-avoid-excessive-use). Implementing best practices for organizational use will limit chances of being rate limited again in the future.
 
@@ -122,7 +140,9 @@ If you have special needs and are being rate limited, please reach out to us as 
 * You will typically receive a response somewhat quickly with options for you to implement. These are considered [best practices](#how-to-avoid-excessive-use) and can typically be implemented within 15-30 minutes.
 * Our team will evaluate your request within a few business days and make a determination if your need qualifies for whitelisting. If so, the team will typically put in a temporary one time 7 day whitelist for you to [implement best practices](#how-to-avoid-excessive-use).
 
-> :memo: **NOTE: These are subjective, and special requests ONLY. Please ensure you [implement best practices](#how-to-avoid-excessive-use) so that you are not rate limited.**
+> :memo: **NOTE**
+>
+> These are subjective, and special requests ONLY. Please ensure you [implement best practices](#how-to-avoid-excessive-use) so that you are not rate limited.
 
 See the section above on avoiding excessive use - the expectation is that organizations would not use the community repository directly. As part of addressing any misconfigurations you might have, you will also need to see about addressing the previous section on "How To Avoid Excessive Use".
 

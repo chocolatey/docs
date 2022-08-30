@@ -69,7 +69,9 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 
 Here are some simple examples.
 
-> :memo: **NOTE** This needs updated with checksums and newer package concepts. Please run `choco new` when creating packages as it contains all of the most up to date notes.
+> :memo: **NOTE**
+>
+> This needs updated with checksums and newer package concepts. Please run `choco new` when creating packages as it contains all of the most up to date notes.
 
 ### chocolateyInstall.ps1 for .exe installer
 
@@ -82,11 +84,15 @@ $silentArgs = '/VERYSILENT'
 Install-ChocolateyPackage $name $installerType $silentArgs $url
 ```
 
-> :memo: **NOTE** You have to figure out the command line switch to make the installer silent, e.g. **/VERYSILENT**. This changes from installer to installer.
+> :memo: **NOTE**
+>
+> You have to figure out the command line switch to make the installer silent, e.g. **/VERYSILENT**. This changes from installer to installer.
 
 ### chocolateyInstall.ps1 for .msi installer
 
-> :memo: **NOTE** Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
+> :memo: **NOTE**
+>
+> Please maintain compatibility with Posh v2. Not every OS we support is on Posh v2 (nor comes OOB with Posh v3+). It's best to work with the widest compatibility of systems out there.
 
 ```powershell
 $packageName = 'Package Name'

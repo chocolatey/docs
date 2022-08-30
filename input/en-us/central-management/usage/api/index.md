@@ -49,7 +49,7 @@ Invoke-WebRequest -Uri "https://$CcmServerHostname/$endpointUrl" -Method $Method
 
 ## Endpoints
 
-Below is a list of the API endpoints available for CCM as of v0.4.0.
+Below is a list of the API endpoints available for CCM as of v0.10.0.
 For more detailed information on the API endpoints and their parameters for your version of CCM, select the :gear: **API** option from the sidebar on the Central Management dashboard, or navigate to `https://CCM_SERVER_HOSTNAME/swagger/`.
 
 ### AuditLog
@@ -57,6 +57,15 @@ For more detailed information on the API endpoints and their parameters for your
 | Method | EndpointUrl                             |
 | :----: | :-------------------------------------- |
 |  GET   | /api/services/app/AuditLog/GetAuditLogs |
+
+### ChocolateyLicenseInformation
+
+| Method | EndpointUrl                                                           |
+| :----: | :-------------------------------------------------------------------- |
+|  GET   | /api/services/app/ChocolateyLicenseInformation/GetLicenseCount        |
+|  GET   | /api/services/app/ChocolateyLicenseInformation/GetLicenseExpiration   |
+|  GET   | /api/services/app/ChocolateyLicenseInformation/GetIsTrialLicense      |
+|  GET   | /api/services/app/ChocolateyLicenseInformation/GetIsLicenseCountValid |
 
 ### ComputerGroup
 
@@ -77,6 +86,7 @@ For more detailed information on the API endpoints and their parameters for your
 |  GET   | /api/services/app/Computers/GetComputerForView               |
 |  GET   | /api/services/app/Computers/GetComputerForEditByComputerGuid |
 |  GET   | /api/services/app/Computers/GetComputerForEdit               |
+|  POST  | /api/services/app/Computers/Edit                             |
 | DELETE | /api/services/app/Computers/Delete                           |
 
 ### ComputerSoftware
@@ -101,7 +111,9 @@ Methods for querying or managing mappings between Computer objects and Software 
 |  GET   | /api/services/app/DeploymentPlans/GetDeploymentPlanForEdit                   |
 |  POST  | /api/services/app/DeploymentPlans/CreateOrEdit                               |
 | DELETE | /api/services/app/DeploymentPlans/Delete                                     |
+| DELETE | /api/services/app/DeploymentPLans/DeleteNewDraftDeploymentPlan               |
 |  POST  | /api/services/app/DeploymentPlans/Archive                                    |
+|  POST  | /api/services/app/DeploymentPlans/Duplicate                                  |
 |  POST  | /api/services/app/DeploymentPlans/Start                                      |
 |  POST  | /api/services/app/DeploymentPlans/Cancel                                     |
 |  POST  | /api/services/app/DeploymentPlans/MoveToReady                                |
@@ -177,6 +189,16 @@ Methods for querying or managing mappings between Computer objects and Software 
 |  GET   | /api/services/app/Role/GetRoleForEdit     |
 |  POST  | /api/services/app/Role/CreateOrUpdateRole |
 | DELETE | /api/services/app/Role/DeleteRole         |
+
+### SensitiveVariables
+
+| Method | EndpointUrl                                                      |
+| :----: | :--------------------------------------------------------------- |
+|  GET   | /api/services/app/SensitiveVariables/GetAllPaged                 |
+|  GET   | /api/services/app/SensitiveVariables/GetAll                      |
+|  GET   | /api/services/app/SensitiveVariables/GetSensitiveVariableForView |
+|  POST  | /api/services/app/SensitiveVariables/Create                      |
+| DELETE | /api/services/app/SensitiveVariables/Delete                      |
 
 ### Software
 

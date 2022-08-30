@@ -226,7 +226,9 @@ Write-Warning "Check and adjust script at '$env:SystemDrive\choco-setup\files\Ch
 
 Now that we've finished the first exercise and have those files over on our offline Windows machine, we need to get Chocolatey set up on this machine as well. This could be ultimately be a Chocolatey.Server Repository, or it could be something else. Note: [Other repository servers don't necessarily require Windows](xref:host-packages).
 
-> :memo: **NOTE** If you are using the same machine from Exercise 0 for setting up your repository, you can skip this Exercise and go to Exercise 2 (in other words, your machine already has Chocolatey installed).
+> :memo: **NOTE**
+>
+> If you are using the same machine from Exercise 0 for setting up your repository, you can skip this Exercise and go to Exercise 2 (in other words, your machine already has Chocolatey installed).
 
 1. Ensure the folders from the other drive are set in `c:\choco-setup` here on this machine (should match with where things were set in Exercise 0).
 1. Open PowerShell.exe as an administrative shell. You can type "Windows Key + X + A" (Windows 8+ - when that comes up if it is cmd.exe, simply type `powershell` to get into it).
@@ -312,7 +314,9 @@ Pick one or more of the following paths:
 
 > Not recommended for most organizational use cases. Please look to set up Artifactory, Nexus, or ProGet as they are much more robust (and two do can be used without cost).
 
-> :memo: **NOTE** If you have an IIS site for WSUS administration, Chocolatey.Server website will not come up at all, even if everything looks right. We have not yet been able to determine the issue, but believe it is related to ASP.NET 4.6+. Installing all of the required components for Chocolatey.Server may also affect your WSUS admin site. Please seek a different box.
+> :memo: **NOTE**
+>
+> If you have an IIS site for WSUS administration, Chocolatey.Server website will not come up at all, even if everything looks right. We have not yet been able to determine the issue, but believe it is related to ASP.NET 4.6+. Installing all of the required components for Chocolatey.Server may also affect your WSUS admin site. Please seek a different box.
 
 Since we put the items on this machine in the previous exercise, we can just pick up where we left off.
 
@@ -321,11 +325,15 @@ Since we put the items on this machine in the previous exercise, we can just pic
 1. Follow the [steps](xref:set-up-chocolatey-server#additional-configuration)
 1. Open a web browser and navigate to http://localhost. Read over the site and take notes.
 1. Change the API key in the web.config file following the instructions at http://localhost. If localhost doesn't resolve to the site, make sure the bindings include "All Unassigned". This could be a temporary change if you need it to be, but it's important to access this to see additional setup instructions.
-    > :memo: **NOTE** Use a real editor, like Notepad++ when working with text files like the web.config. Do NOT, I repeat, DO NOT use notepad.exe.
+    > :memo: **NOTE**
+    >
+    > Use a real editor, like Notepad++ when working with text files like the web.config. Do NOT, I repeat, DO NOT use notepad.exe.
 1. You may wish to install an SSL certificate.
 1. You may wish to set up authentication to the repository (the SSL certificate is highly recommended to not pass passwords in cleartext).
 
-> :memo: **NOTE** It is important that you do not end with the default apikey in the web.config, as that is easily found. That would leave your install insecure in that anyone in your organization would be able to push packages. You want to keep that down to approved folks.
+> :memo: **NOTE**
+>
+> It is important that you do not end with the default apikey in the web.config, as that is easily found. That would leave your install insecure in that anyone in your organization would be able to push packages. You want to keep that down to approved folks.
 
 > Best practices with Chocolatey.Server:
 > * Change the ApiKey in the web.config file
@@ -333,7 +341,9 @@ Since we put the items on this machine in the previous exercise, we can just pic
 > * Use SSL if accessible from the internet
 > * Store the Chocolatey nupkg and other packages from Chocolatey Software on this server (next exercise covers this)
 
-> :memo: **NOTE** Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Cloudsmith, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
+> :memo: **NOTE**
+>
+> Chocolatey.Server is a one package repository per setup and only has one apikey that can be used. So if you need multiple repositories, you would setup multiple Chocolatey.Server instances to cover your needs. Another option when you need multiple repositories and want ease of management is to look into Artifactory Pro, Cloudsmith, Nexus, and ProGet. They not only have multiple Chocolatey/NuGet repositories per instance, but also other repositories types as well. See the next section.
 
 ~~~powershell
 # Ensure we can run everything
@@ -359,9 +369,13 @@ Write-Warning "Follow the steps at https://docs.chocolatey.org/en-us/guides/orga
 
 If you are setting up something different than Chocolatey.Server, you may wish to read over [How To Set Up an Internal Repository](xref:host-packages). This will give you options and links to repositories like Artifactory Pro, Nexus, and ProGet.
 
-> :memo: **NOTE** Some repository server options don't require Windows.
+> :memo: **NOTE**
+>
+> Some repository server options don't require Windows.
 
-> :memo: **NOTE** Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely **DO NOT WANT** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - **cached* is not the same concept as *internalized**. To reuse packages from the community repository in a reliable way, you need to [internalize them](xref:recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at **runtime**. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](xref:recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](xref:community-packages-disclaimer).
+> :memo: **NOTE**
+>
+> Many repositories have a concept of a proxy repository. Unlike NuGet repositories, you likely **DO NOT WANT** a proxied NuGet/Chocolatey repository pointing to the community repository. They only cache packages - **cached* is not the same concept as *internalized**. To reuse packages from the community repository in a reliable way, you need to [internalize them](xref:recompile-packages). The community repository is subject to distribution rights, which means many packages need to download things from the internet at **runtime**. That's unreliable and a no go for many organizations. You can use Package Internalizer (as we are seeing above) or [manually internalize packages](xref:recompile-packages) you want to use from the community repository. More on [why (community packages repository notes)](xref:community-packages-disclaimer).
 
 ### Exercise 2C: Set Up A File Share Repository
 
@@ -379,7 +393,9 @@ Setting up a file share repository is typically quite simple. You put your nupkg
 > * Migration to other repo formats is easy
 > * Set access properly if you need to connect from local machine accounts, Everyone share access does not give them network permission. See [local share permissions](xref:host-packages#local-folder-permissions).
 
-> :memo: **NOTE** If you run into issues where Chocolatey can't see the packages, check the last point above.
+> :memo: **NOTE**
+>
+> If you run into issues where Chocolatey can't see the packages, check the last point above.
 
 While setting up a file share is the quickest way to get started, you may find you outgrow it quite quickly. Fortunately migration to another repository is very simple.
 
@@ -394,7 +410,9 @@ We won't go into how to set up a distribution point, as you have places to learn
 1. Now we need to get the packages we have in `c:\choco-setup\packages` to the package repository. With Chocolatey.Server, we can cheat a little and simply copy the nupkg files to `$env:ChocolateyToolsLocation\Chocolatey.Server\App_Data\Packages`.
 1. If we are using a different repository, we just need to run `choco push <nupkg_path> -s http://<url_to_api> -k <apikey>`
 
-> :memo: **NOTE** We'll put Chocolatey here, and use this location of Chocolatey for all further client installations. If we are using Chocolatey.Server, we'll have an install.ps1 that it serves that is dynamic and will use a local chocolatey.nupkg if we have one in the repository (it will use the Chocolatey package at https://chocolatey.org/ otherwise, which we won't want).
+> :memo: **NOTE**
+>
+> We'll put Chocolatey here, and use this location of Chocolatey for all further client installations. If we are using Chocolatey.Server, we'll have an install.ps1 that it serves that is dynamic and will use a local chocolatey.nupkg if we have one in the repository (it will use the Chocolatey package at https://chocolatey.org/ otherwise, which we won't want).
 
 Here is a script for Chocolatey.Server:
 
@@ -414,7 +432,9 @@ For other things, just loop over the nupkg files and call `choco push`.
 
 ## Exercise 4: Create a Package For the License
 
-> :memo: **NOTE** This is for C4B / MSP / C4BTRIAL ONLY.
+> :memo: **NOTE**
+>
+> This is for C4B / MSP / C4BTRIAL ONLY.
 To make things easier for deployments, let's create a package for the license file. We are going to grab the currently installed license to do this, but you could use the one in `c:\choco-setup\files`.
 
 Save this script and run it on a machine where you've installed the license.
@@ -537,7 +557,9 @@ We need to ensure the repository is all set up correctly, the best way to test t
 1. If you get an error about insecure channels, "The specified source '' is not secure", and you are all inside an internal network, you can add `--force` to the end of the command above.
 1. If you have not already placed a package with this name/version, it should be successful. If it is not, you need to revisit earlier exercises to determine if you missed a step.
 
-> :memo: **NOTE** If you are using open source Chocolatey, you will want to create a test package using `choco new` and use that to push and verify setup.
+> :memo: **NOTE**
+>
+> If you are using open source Chocolatey, you will want to create a test package using `choco new` and use that to push and verify setup.
 
 ## Exercise 6: Installing Chocolatey On Client Machines
 
@@ -547,7 +569,9 @@ So now we'll install Chocolatey using all internal resources and configure Choco
 
 Starting with Chocolatey.Server v0.2.3, you get a similar experience where you just open an Administrative PowerShell.exe and follow the instructions like you see at https://chocolatey.org/install. This ease of install is very beneficial when setting up client machines directly.
 
-> :memo: **NOTE** Perform the following steps on a different machine, not on the machine where you've already set up Chocolatey or a repository.
+> :memo: **NOTE**
+>
+> Perform the following steps on a different machine, not on the machine where you've already set up Chocolatey or a repository.
 
 1. From the client machine (not the same machine you just set up the repository on), open a browser and navigate to the url of the package repository you just set up.
 1. On that page it will contain instructions on how to install. Follow those instructions and that will set up the client (Chocolatey.Server v0.2.2+ ONLY).

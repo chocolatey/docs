@@ -10,7 +10,9 @@ RedirectFrom: docs/package-triage-process
 
 The Community Feed (https://community.chocolatey.org/packages) has a collection of packages provided and maintained by the community. You may have come across a package and found you have questions about it or you have found it outdated or broken.
 
-> :memo: **NOTE** If you are a **software vendor** wanting to maintain your own software's packages, please see the [vendors maintaining packages](#i-want-to-take-overhelp-with-package-maintenance-for-my-software) below.
+> :memo: **NOTE**
+>
+> If you are a **software vendor** wanting to maintain your own software's packages, please see the [vendors maintaining packages](#i-want-to-take-overhelp-with-package-maintenance-for-my-software) below.
 
 ## Table of Contents
 
@@ -45,7 +47,9 @@ It's not often that a moderator would approved a package that violates distribut
 
 ![report abuse](/assets/images/triage-reportabuse.jpg)
 
-> :memo: **NOTE** The community feed has only been moderated since October 2014. There may be some packages were created prior to this date that possibly do violate distribution rights. These packages also likely won't list the files as the community feed did not start capturing the package files until July 2014. The package page has instructions for viewing the package content (and so does the previous section).
+> :memo: **NOTE**
+>
+> The community feed has only been moderated since October 2014. There may be some packages were created prior to this date that possibly do violate distribution rights. These packages also likely won't list the files as the community feed did not start capturing the package files until July 2014. The package page has instructions for viewing the package content (and so does the previous section).
 
 #### I want to take over/help with package maintenance for my software
 Please click the "Contact Site Admins" link on the left hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after. Please remember to mention that you are the software vendor interested in taking over the package.
@@ -109,4 +113,6 @@ Please include details of how and when you attempted to contact the Maintainer(s
 
     Otherwise, if you specified that you would not like to become a maintainer, please create a RFM (Request For Maintainer) issue at [Chocolatey Package Requests (https://github.com/chocolatey/chocolatey-package-requests)](https://github.com/chocolatey/chocolatey-package-requests).
 
-> :memo: **NOTE** We don't have non-maintainer uploads in the community feed and we haven't needed them yet.
+> :memo: **NOTE**
+>
+> We don't have non-maintainer uploads in the community feed and we haven't needed them yet.
