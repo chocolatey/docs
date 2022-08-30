@@ -47,7 +47,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - The creation time on the Notifications table was incorrect.
 - Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
 - Non-administrative users cannot view the Login Attempts section.
-- API - Group statistics were not updated when adding Computers / Groups via the API.
+- API - Group statistics were not updated when adding ComputerGroups / GroupGroups via the API.
 
 ### Improvements
 
