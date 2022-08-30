@@ -177,6 +177,10 @@ While in one of these states, the available actions that can be performed on a d
 - [Duplicate](#duplicate)
 - [Archive](#archive)
 
+In most cases deployments in one of the Completed states will remain in that same state.
+However, due to changes introduced in [Chocolatey Agent v1.1.0](xref:agent-release-notes#august-22-2022), a deployment in the `Inconclusive` state due to the computer or the Agent service being shut down or restarted during the deployment task may retry the task and later update the deployment's status.
+This can result in the deployment step or overall deployment changing from the `Inconclusive` status to `Success` or `Failed` depending on the final status of the retried task.
+
 ### Archived
 
 Deployments that are in a completed state can be actioned using [`Archive`](#archive) action to hide them from the main Deployments screen.
