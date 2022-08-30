@@ -29,6 +29,42 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 - Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.10.0 (August 30, 2022)
+
+### Features
+
+- Added recurring Deployments.
+- Add ability to duplicate an existing Deployment.
+- Retention Policies - Automatically delete a computer that hasn't reported in for a configurable period of time. This defaults to 365 days.
+- Implement a dark/light mode.
+- API - Add a way to query licensed machine count - see [Licensed #272](https://github.com/chocolatey/chocolatey-licensed-issues/issues/272).
+
+### Bug Fixes
+
+- Fixed issue where auditing data may be lost in the database when some entries are updated. 
+  - Editing a Group, Software, or Computer would erase the user who created it and the time it was created. As part of this fix, entries without that information will set the creating user to the user who last modified it.
+- API - Exception when retrieving a deployment from the `GetDeploymentPlanForView` method.
+- The creation time on the Notifications table was incorrect.
+- Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
+- Non-administrative users cannot view the Login Attempts section.
+- API - Group statistics were not updated when adding ComputerGroups / GroupGroups via the API.
+
+### Improvements
+
+- Computers tab should display Group enrolment - see [Licensed #223](https://github.com/chocolatey/chocolatey-licensed-issues/issues/223).
+- Creating a Deployment and then clicking Cancel without adding steps or saving once should remove the deployment entirely.
+- Add the Deployment name to its Step Details pages.
+- Add visual indicators that editing/adding/removing deployment steps is disabled when the deployment schedule is outdated.
+- Add option of `--version` and `--pre` for a Basic Deployment Step.
+- Send email notifications when a scheduled deployment fails to start.
+- Warn Users when their Chocolatey License Expiration is coming up
+- Remember the specified value for Show Entries dropdown on tables.
+- Replace loading animation.
+- Require new user passwords to be at least 6 characters long.
+- Add option for email 2FA as part of authentication - see [Licensed #300](https://github.com/chocolatey/chocolatey-licensed-issues/issues/300).
+- Uninstalling chocolatey-management-web should remove IIS Website and Application Pool.
+- Add additional auditing fields for Deployments.
+
 ## 0.9.0 (June 15, 2022)
 
 > :warning: **WARNING**
