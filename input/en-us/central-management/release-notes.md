@@ -41,13 +41,13 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ### Bug Fixes
 
-- Fixed issue where auditing data may be lost in the database when some entries are updated. 
+- Fix - Auditing data may be lost in the database when some entries are updated.
   - Editing a Group, Software, or Computer would erase the user who created it and the time it was created. As part of this fix, entries without that information will set the creating user to the user who last modified it.
-- API - Exception when retrieving a deployment from the `GetDeploymentPlanForView` method.
-- The creation time on the Notifications table was incorrect.
-- Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
-- Non-administrative users cannot view the Login Attempts section.
-- API - Group statistics were not updated when adding ComputerGroups / GroupGroups via the API.
+- Fix - API - Exception when retrieving a deployment from the `GetDeploymentPlanForView` method.
+- Fix - The creation time on the Notifications table was incorrect.
+- Fix - Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
+- Fix - Non-administrative users cannot view the Login Attempts section.
+- Fix - API - Group statistics were not updated when adding ComputerGroups / GroupGroups via the API.
 
 ### Improvements
 
@@ -57,7 +57,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Add visual indicators that editing/adding/removing deployment steps is disabled when the deployment schedule is outdated.
 - Add option of `--version` and `--pre` for a Basic Deployment Step.
 - Send email notifications when a scheduled deployment fails to start.
-- Warn Users when their Chocolatey License Expiration is coming up
+- Warn when Chocolatey license is due to expire.
 - Remember the specified value for Show Entries dropdown on tables.
 - Replace loading animation.
 - Require new user passwords to be at least 6 characters long.
