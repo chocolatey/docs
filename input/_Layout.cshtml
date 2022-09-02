@@ -67,7 +67,7 @@
                 </a>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item me-2 me-md-3">
-                        <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fab fa-2x fa-github" aria-hidden="true"></i></a>
+                        <a class="nav-link" href="https://github.com/chocolatey/docs" aria-label="Edit on GitHub"><i class="fa-brands fa-github fa-2x" aria-hidden="true"></i></a>
                     </li>
                     <li class="nav-item me-2 me-md-3 d-md-none">
                         <label class="mb-0" for="themeToggle">
@@ -76,22 +76,22 @@
                     </li>
                     <li class="nav-item d-md-none me-2">
                         <button type="button" aria-label="Search documentation" class="btn btn-search btn-top-nav">
-                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                         </button>
                     </li>
                 </ul>
                 <form class="ms-3 ms-md-0 search-box search-d-none-submit" role="search">
                     <div class="flex-grow-1">
                         <input type="search" class="form-control search-input" id="searchQuery" placeholder="Search..." aria-label="Search" />
-                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                         <span class="d-none d-md-flex search-key-container">
                             <span class="badge badge-key bg-primary search-key"></span>
                             <span class="badge badge-key bg-primary">k</span>
                         </span>
                     </div>
-                    <button type="button" aria-label="Close search" class="btn btn-search-close btn-outline-primary ms-2 me-3 me-md-0 d-md-none"><i class="fas fa-times" aria-hidden="true"></i></button>
+                    <button type="button" aria-label="Close search" class="btn btn-search-close btn-outline-primary ms-2 me-3 me-md-0 d-md-none"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                 </form>
-                <button type="button" class="navbar-toggler btn btn-top-nav d-md-none me-3" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <button type="button" class="navbar-toggler btn btn-top-nav d-md-none me-3" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
             </nav>
         </header>
         @if (Document.GetBool(Constants.NoSidebar))
@@ -272,7 +272,7 @@
                                                 <div class="card card-body py-0 px-xl-0 mb-3 border-0 shadow-none">
                                                     @if (Document.ContainsKey("EditLink"))
                                                     {
-                                                        <p class="fw-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fas fa-pencil-alt" aria-hidden="true"></i> Edit This Page</a></p>
+                                                        <p class="fw-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fa-solid fa-pencil" aria-hidden="true"></i> Edit This Page</a></p>
                                                         <hr class="m-0" />
                                                     }
                                                     <p class="fw-bold pt-3 mb-2">On This Page</p>
