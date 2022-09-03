@@ -3,7 +3,7 @@ Order: 320
 xref: start-ccmdeployment
 Title: Start-CCMDeployment
 Description: Information about the Start-CCMDeployment function
-RedirectFrom: docs/set-ccmdeployment
+RedirectFrom: docs/start-ccmdeployment
 ---
 
 # Start-CCMDeployment

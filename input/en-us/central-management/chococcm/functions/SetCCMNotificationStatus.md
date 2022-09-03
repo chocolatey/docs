@@ -3,7 +3,7 @@ Order: 310
 xref: set-ccmnotificationstatus
 Title: Set-CCMNotificationStatus
 Description: Information about the Set-CCMNotificationStatus function
-RedirectFrom: docs/set-cmmnotification-status
+RedirectFrom: docs/set-ccmnotification-status
 ---
 
 # Set-CCMNotificationStatus
