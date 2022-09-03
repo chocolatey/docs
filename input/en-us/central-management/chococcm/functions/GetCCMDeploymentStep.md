@@ -1,9 +1,8 @@
 ---
 Order: 95
-xref: get-ccmdeployment
-Title: Get-CCMDeployment
-Description: Information about the Get-CCMDeployment function
-RedirectFrom: docs/get-ccmdeploymentstep
+xref: get-ccmdeploymentstep
+Title: Get-CCMDeploymentStep
+Description: Information about the Get-CCMDeploymentStep function
 ---
 
 # Get-CCMDeploymentStep
