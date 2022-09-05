@@ -30,7 +30,7 @@ When setting up Central Management, currently, the CCM packages do not provision
 Central Management packages require at a minimum:
 
 * Chocolatey for Business (C4B) Edition
-* Windows Server 2012+
+* Windows Server 2016
 
 Each package further defines dependencies that they include.
 
