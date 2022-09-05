@@ -44,6 +44,8 @@ Chocolatey Central Management has specific needs that are mostly handled by pack
 
 |Chocolatey Central Management|Chocolatey Agent|Chocolatey Licensed Extension|Chocolatey|
 |-----------------------------|----------------|-----------------------------|----------|
+|0.10.0                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
+|0.9.0                        |1.0.0+          | 4.1.1+                      | 1.1.0+   |
 |0.8.0                        |0.13.0+         | 3.2.0+                      | 0.12.0+  |
 |0.7.0                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
 |0.6.x                        |0.11.0+         | 2.1.0+                      | 0.10.15+ |
