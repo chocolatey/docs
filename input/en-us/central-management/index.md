@@ -109,7 +109,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 ## Related Articles
 
 * [Chocolatey For Business Quick Start Guide(QSG)](xref:c4b-quick-start-guide)
-* [Chocolatey For Business Azure Environment](xref:qdeazure)
+* [Chocolatey For Business Azure Environment](xref:c4b-azure)
 
 ## Roadmap
 
@@ -152,7 +152,7 @@ Please run `choco support` from a licensed edition and follow the instructions.
 ### How do I set up Chocolatey Central Management?
 
 * As part of our [Chocolatey for Business Quick Start Guide](xref:c4b-quick-start-guide)
-* As part of our [Chocolatey For Business Azure Environment](xref:qdeazure)
+* As part of our [Chocolatey For Business Azure Environment](xref:c4b-azure)
 * By following the [Chocolatey Central Management Setup Docs](xref:ccm-setup)
 
 ### If I update the license file, do I need to restart my services and web?
