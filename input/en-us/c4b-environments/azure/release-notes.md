@@ -11,6 +11,37 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 >
 > Issue links may not be publicly available at this time.
 
+## 0.16.0 (September 7, 2022)
+
+### Improvements
+
+- Update Chocolatey Central Management to 0.10.0 and include new dependencies - see [#94](https://github.com/chocolatey/c4b-azure/issues/94)
+- Update chocolatey.extension to 4.2.0 - see [#99](https://github.com/chocolatey/c4b-azure/issues/99)
+- Update chocolatey-agent to 1.1.0 - see [#100](https://github.com/chocolatey/c4b-azure/issues/100)
+- Deployment should fail if installation of key components is not successful - see [#101](https://github.com/chocolatey/c4b-azure/issues/101)
+
+### Bundled Version Update
+
+| Package                        | Version             |
+|--------------------------------|---------------------|
+| aspnetcore-runtimepackagestore | N/A (Removed)       |
+| chocolatey-agent               | 1.1.0               |
+| chocolatey-management-database | 0.10.0              |
+| chocolatey-management-service  | 0.10.0              |
+| chocolatey-management-web      | 0.10.0              |
+| chocolatey.extension           | 4.2.0               |
+| dotnet-6.0-aspnetruntime       | 6.0.5 (New)         |
+| dotnet-6.0-runtime             | 6.0.5 (New)         |
+| dotnet-aspnetcoremodule-v2     | 16.0.22108 (New)    |
+| dotnetcore-sdk                 | N/A (Removed)       |
+| dotnetcore-windowshosting      | N/A (Removed)       |
+| dotnetfx                       | 4.8.0.20220524      |
+| KB2533623                      | N/A (Removed)       |
+| nexus-repository               | 3.41.1.01           |
+| Temurin11jre                   | 11.0.16.10100       |
+| vcredist140                    | 14.28.29913         |
+| vcredist2015                   | N/A (Removed)       |
+
 ## 0.15.0 (May 18, 2022)
 
 Updates the bundled versions of:
