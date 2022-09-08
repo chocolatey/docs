@@ -15,6 +15,16 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 >
 > This PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
 
+## 0.3.0 (September 8, 2022)
+
+### Improvement
+
+- Sign PowerShell Module Files - see [#73](https://github.com/chocolatey/ChocoCCM/issues/73)
+
+### Documentation
+
+- Add documentation around building and testing locally - see [#61](https://github.com/chocolatey/ChocoCCM/issues/61)
+
 ## 0.2.0 (April 1, 2021)
 
 ### Bug Fixes
