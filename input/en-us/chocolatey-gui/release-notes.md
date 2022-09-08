@@ -16,6 +16,12 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.1.0](https://github.com/chocolatey/ChocolateyGUI/milestone/29?closed=1) (September 8, 2022)
+
+### Improvement
+
+- Add option to bypass confirmation dialogs of potentially destructive operations - see [#919](https://github.com/chocolatey/ChocolateyGUI/issues/919)
+
 ## [1.0.0](https://github.com/chocolatey/ChocolateyGUI/milestone/28?closed=1) (March 21, 2022)
 
 > :warning: **WARNING**
