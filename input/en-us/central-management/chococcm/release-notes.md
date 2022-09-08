@@ -42,7 +42,7 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 
 Initial preview release
 
-### FEATURES
+### Features
 
 - PowerShell functions are provided for interacting with the core entities within CCM via the Web API
   - Roles
