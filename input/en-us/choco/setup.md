@@ -615,7 +615,7 @@ SET DIR=%~dp0%
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%install.ps1' %*"
 ~~~
 
-You can also get to this file by going to [https://chocolatey.org/installChocolatey.cmd](https://chocolatey.org/installChocolatey.cmd).
+You can also get to this file by going to [https://community.chocolatey.org/installChocolatey.cmd](https://community.chocolatey.org/installChocolatey.cmd).
 
 If you prefer to have the install.ps1 file already, comment out the download line in the batch file and download the [`install.ps1`](https://community.chocolatey.org/install.ps1) from [community.chocolatey.org](https://community.chocolatey.org/install.ps1) and save it as `install.ps1` next to the `installChocolatey.cmd` file.
 
