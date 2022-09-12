@@ -1,0 +1,3 @@
+- name: "Video"
+  color: "D0E64E"
+  description: "The issue or PR requires a video to be recorded and included in a later PR."
