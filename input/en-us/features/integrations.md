@@ -190,7 +190,7 @@ package { 'git':
 }
 ```
 
-Puppet has some great documentation on getting started with Chocolatey. Be sure to check that out at [Using Windows modules](https://docs.puppet.com/pe/latest/windows_modules.html).
+Puppet has some great documentation on getting started with Chocolatey. Be sure to check that out at [Create, Install, and Repackage with Chocolatey](https://puppet.com/docs/pe/2021.7/managing_windows_nodes.html#create_install_repackage_with_chocolatey).
 
 The Chocolatey team is most familiar with Puppet and has written some documentation for using Puppet with Chocolatey. Please see
 
