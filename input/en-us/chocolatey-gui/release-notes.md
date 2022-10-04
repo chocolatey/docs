@@ -22,6 +22,15 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 - Add option to bypass confirmation dialogs of potentially destructive operations - see [#919](https://github.com/chocolatey/ChocolateyGUI/issues/919)
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/QObUMKu-ePY?list=PLGvGJzqY88slZbIf7_6QVAVmrZHujDW44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## [1.0.0](https://github.com/chocolatey/ChocolateyGUI/milestone/28?closed=1) (March 21, 2022)
 
 > :warning: **WARNING**
