@@ -43,6 +43,15 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 - Logging - Exception handling for all the tasks
 
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/o6WCHzfntSo?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
+
 ## 1.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
