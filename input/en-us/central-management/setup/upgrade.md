@@ -17,7 +17,7 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 > - Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 > - All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-## Step 0: Backup Your Current CCM Enviornment
+## Step 0: Backup Your Current CCM Environment
 
 We suggest you go through and take a snapshot of your CCM VM before proceeding with an upgrade. If taking a snapshot is not an option, at a bare minimum we recommend creating a local backup of the CentralManagement SQL Database and backing up your appsettings.json file located at `C:\tools\chocolatey-management-web\appsettings.json`.
 
@@ -221,14 +221,14 @@ choco upgrade chocolatey-management-database -y --package-parameters="'/SqlServe
 This was an issue in releases prior to upgrading to CCM v0.3.0 - see <https://github.com/chocolatey/chocolatey-licensed-issues/issues/156>.
 If you run into this, please recreate the bindings again.
 
-### ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.
+### ERROR: The term 'Install-SettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
 
 This is <https://github.com/chocolatey/chocolatey-licensed-issues/issues/161>.
 
 There are two workarounds noted:
 
-* Delete the appsettings.json file prior to upgrade
-* Do not pass database details if they have not changed during upgrade.
+- Delete the appsettings.json file prior to upgrade
+- Do not pass database details if they have not changed during upgrade.
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
 
