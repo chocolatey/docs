@@ -29,6 +29,16 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
 - Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.10.1 (October 6, 2022)
+
+### Bug Fixes
+
+- Reporting - Internal error shown when exporting individual software report to excel - see [Licensed #323](https://github.com/chocolatey/chocolatey-licensed-issues/issues/323)
+- Deployments - Recurring deployments are missing deployment steps - see [Licensed #322](https://github.com/chocolatey/chocolatey-licensed-issues/issues/322)
+- API - GetComputerForView method result missing creationTime - see [Licensed #321](https://github.com/chocolatey/chocolatey-licensed-issues/issues/321)
+- Multi-Factor Authentication - Email verification can be enabled while SMTP settings have not been configured
+- Website - Ensure builtin accounts' default email addresses are not resolvable
+
 ## 0.10.0 (August 30, 2022)
 
 ### Features
