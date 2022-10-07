@@ -400,11 +400,11 @@ This will install the package right out of your source. As you find things you m
 
 When your `nuspec` specifies dependencies that are not in your source, you should add their paths to the source directory. E.g. in the case of Chocolatey itself:
 
-~~~xml
-    <dependencies>
-      <dependency id="chocolatey" version="0.9.8.20" />
-    </dependencies>
-~~~
+```xml
+<dependencies>
+    <dependency id="chocolatey" version="0.9.8.20" />
+</dependencies>
+```
 
 You'll need to append the API path like so:
 `--source "'.;https://community.chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
