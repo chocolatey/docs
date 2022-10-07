@@ -55,8 +55,8 @@ So the space usage impact changes to what you'd normally experience outside of C
 To turn on Package Reducer, you need to run the following:
 
 * `choco upgrade chocolatey.extension <options>`
-* `choco feature enable -n reduceInstalledPackageSpaceUsage`
-* If you want to limit to just nupkg files being reduced and not automatically removing zips and installers, run the following: `choco feature enable -n reduceOnlyNupkgSize`
+* `choco feature enable --name reduceInstalledPackageSpaceUsage`
+* If you want to limit to just nupkg files being reduced and not automatically removing zips and installers, run the following: `choco feature enable --name reduceOnlyNupkgSize`
 
 ### See It In Action
 
@@ -126,19 +126,19 @@ It just works. When you install or upgrade a package, it will automatically redu
 
 #### How do I turn this feature on?
 
-* Globally - `choco feature enable -n reduceInstalledPackageSpaceUsage`
+* Globally - `choco feature enable --name reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--reduce-package-size` with install/upgrade commands.
 
 #### How do I turn this feature off?
 
-* Globally - `choco feature disable -n reduceInstalledPackageSpaceUsage`
+* Globally - `choco feature disable --name reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--no-reduce-package-size` with install/upgrade commands.
 
 #### Can I just deflate nupkg file sizes?
 
 Yes!
 
-* Globally - `choco feature disable -n reduceInstalledPackageSpaceUsage`
+* Globally - `choco feature disable --name reduceInstalledPackageSpaceUsage`
 * Per command - use the option `--reduce-nupkg-only` with install/upgrade commands.
 
 #### Can I apply reducer to already installed packages?

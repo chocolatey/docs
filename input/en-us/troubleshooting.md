@@ -357,9 +357,9 @@ Also take a look at [Already referencing a newer version of 'packagename'](#alre
 
   By the way, calling install directly from a nupkg/nuspec can be an anti-pattern. Use it VERY rarely, like not at all if you can help it.
 
-  **Fix:** Stop pointing directly to the nupkg/nuspec. Call `choco install name -s .` instead.
+  **Fix:** Stop pointing directly to the nupkg/nuspec. Call `choco install name --source .` instead.
 
-If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `-dv --noop` and see how it is setting sources, etc.
+If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `--debug --verbose --noop` and see how it is setting sources, etc.
 
 ###  Package not installed. The package was not found with the source(s) listed.
 
@@ -373,7 +373,7 @@ If you have determined all of this is good to go, take a look at what Chocolatey
 
 * For your next step in troubleshooting, please see [403 unauthorized issues](#im-getting-a-403-unauthorized-issue-when-attempting-to-use-the-community-package-repository).
 
-If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `-dv --noop` and see how it is setting sources, etc.
+If you have determined all of this is good to go, take a look at what Chocolatey tells you when you run with `--debug --verbose --noop` and see how it is setting sources, etc.
 
 ### Access to the path is denied.
 

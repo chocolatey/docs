@@ -30,14 +30,14 @@ By default, the virus scanner is already enabled and set to VirusTotal for Pro l
 >
 > If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 
- * `choco config set virusScannerType VirusTotal`
- * `choco feature enable -n virusCheck`
+ * `choco config set --name virusScannerType --value VirusTotal`
+ * `choco feature enable --name virusCheck`
 
 Because some scanners can be quite aggressive and may falsely identify a binary as a false positive for malware, Chocolatey CLI doesn't flag a binary until a certain number of scanners have identified the binary as malware. This number defaults to `5` in the configuration. This means 5 anti-virus scanners need to flag the binary for Chocolatey CLI to stop and fail the install or upgrade. You can adjust this value in two ways, by adjusting the configuration and per Chocolatey CLI command.
 
 To adjust the configuration value, which will globally set the number, please run the following replacing `##` with the value you want as a minimum:
 
- * `choco config set virusCheckMinimumPositives ##`
+ * `choco config set --name virusCheckMinimumPositives --value ##`
 
 If you need to override the minimum number of positives just for one install or upgrade, you can do that by passing `--virus-positives-minimum=VALUE` with your install or upgrade commands.
 
@@ -50,11 +50,11 @@ Then you will get the same benefit of runtime virus checking as an added benefit
 
 If you need to configure the virus scanner to use your built-in anti-virus solution, please run the following two commands:
 
- * `choco config set virusScannerType Generic`
- * `choco config set genericVirusScannerPath "full path to av command line"`
- * `choco config set genericVirusScannerArgs "[[File]]"`
- * `choco config set genericVirusScannerValidExitCodes "0, ##"`
- * `choco feature enable -n virusCheck`
+ * `choco config set --name virusScannerType --value Generic`
+ * `choco config set --name genericVirusScannerPath --value "full path to av command line"`
+ * `choco config set --name genericVirusScannerArgs --value "[[File]]"`
+ * `choco config set --name genericVirusScannerValidExitCodes --value "0, ##"`
+ * `choco feature enable --name virusCheck`
 
 The `genericVirusScannerPath` should be the full path to the anti-virus command line executable. What we are looking for is the command line interface to the scanner.
 
@@ -123,19 +123,19 @@ When you install a package that download content, those items will automatically
 >
 > If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 
-* Globally - `choco feature enable -n virusCheck`
+* Globally - `choco feature enable --name virusCheck`
 * Per command - use the switch `--virus-check` with install/upgrade commands.
 
 You need to provide additional configuration if you are using the Generic virus scanner.
 
 ### How do I turn this feature off?
 
-* Globally - `choco feature disable -n virusCheck`
+* Globally - `choco feature disable --name virusCheck`
 * Per command - use the switch `--skip-virus-check` with install/upgrade commands.
 
 ### How do I override the minium number of positives?
 
-* Globally - `choco config set virusCheckMinimumPositives <value>`
+* Globally - `choco config set --name virusCheckMinimumPositives --value <value>`
 * Per command - use the option `--virus-positives-minimum=<value>` with install/upgrade commands.
 
 ### How does the VirusTotal integration work?

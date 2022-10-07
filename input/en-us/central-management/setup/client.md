@@ -19,7 +19,7 @@ First you need Chocolatey Agent installed. As there may be some steps involved w
 At a minimum you need the following items set to be able to have a Chocolatey Agent be "opted-in" for both checking into Central Management and Deployments:
 
 ```powershell
-choco config set CentralManagementServiceUrl https://<FQDN_CCM_SERVICE>:24020/ChocolateyManagementService
+choco config set --name CentralManagementServiceUrl --value https://<FQDN_CCM_SERVICE>:24020/ChocolateyManagementService
 choco feature enable --name="'useChocolateyCentralManagement'"
 # Requires Chocolatey Licensed Extension v2.1.0+, Chocolatey-Agent v0.10.0+, and Chocolatey Central Management v0.2.0+:
 choco feature enable --name="'useChocolateyCentralManagementDeployments'"

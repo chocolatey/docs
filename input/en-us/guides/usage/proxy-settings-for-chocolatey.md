@@ -75,11 +75,11 @@ Chocolatey has explicit proxy support starting with 0.9.9.9.
 You can simply configure 1 up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.
 
 ~~~sh
-choco config set proxy <locationandport>
-choco config set proxyUser <username> #optional
-choco config set proxyPassword <passwordThatGetsEncryptedInFile> # optional
-choco config set proxyBypassList "'<bypasslist, comma separated>'" # optional, Chocolatey v0.10.4 required
-choco config set proxyBypassOnLocal true # optional, Chocolatey v0.10.4 required
+choco config set --name proxy --value <locationandport>
+choco config set --name proxyUser --value <username> #optional
+choco config set --name proxyPassword --value <passwordThatGetsEncryptedInFile> # optional
+choco config set --name proxyBypassList --value "'<bypasslist, comma separated>'" # optional, Chocolatey v0.10.4 required
+choco config set --name proxyBypassOnLocal --value true # optional, Chocolatey v0.10.4 required
 ~~~~
 
 ### Example
@@ -87,11 +87,11 @@ choco config set proxyBypassOnLocal true # optional, Chocolatey v0.10.4 required
 Running the following commands in 0.9.9.9:
 
 ~~~sh
-choco config set proxy http://localhost:8888
-choco config set proxyUser bob
-choco config set proxyPassword 123Sup#rSecur3
-choco config set proxyBypassList "'http://localhost,http://this.location/'" #0.10.4 required
-choco config set proxyBypassOnLocal true #0.10.4 required
+choco config set --name proxy --value http://localhost:8888
+choco config set --name proxyUser --value bob
+choco config set --name proxyPassword --value 123Sup#rSecur3
+choco config set --name proxyBypassList --value "'http://localhost,http://this.location/'" #0.10.4 required
+choco config set --name proxyBypassOnLocal --value true #0.10.4 required
 ~~~
 
 Results in the following items being added to the config file:

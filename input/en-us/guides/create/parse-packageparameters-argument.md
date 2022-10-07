@@ -267,7 +267,7 @@ choco install <packageName> --params "'/key:value key2:value'"
 
 > :memo: **NOTE**
 >
-> `<packageName>` is synonymous with the value you put in the nuspec `<id />` field. It is NEVER `name.version.nupkg` or `name.nuspec`. If you are testing a package locally, always use `choco install <pkgid> -d -s .`. That is a literal `-s .` (set source to local folder where the compiled nupkg is located), unless you have a dependency on another package, then use `-s "'.;other feeds here'"` - when you override the source (`--source` or `-s`), it means use ONLY this source for resolving packages.
+> `<packageName>` is synonymous with the value you put in the nuspec `<id />` field. It is NEVER `name.version.nupkg` or `name.nuspec`. If you are testing a package locally, always use `choco install <pkgid> --debug --verbose --source .`. That is a literal `--source .` (set source to local folder where the compiled nupkg is located), unless you have a dependency on another package, then use `--source "'.;other feeds here'"` - when you override the source (`--source` or `-s`), it means use ONLY this source for resolving packages.
 
 Now, in this example, if we were to call:
 

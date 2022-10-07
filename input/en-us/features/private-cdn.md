@@ -20,7 +20,7 @@ If you have questions or **prefer to opt out**, please [contact us](https://choc
 
 ## Usage
 
-This is mostly automatic, but in case the feature is turned off, you may turn it on by setting the feature `downloadCache` (`choco feature enable -n downloadCache`).
+This is mostly automatic, but in case the feature is turned off, you may turn it on by setting the feature `downloadCache` (`choco feature enable --name downloadCache`).
 
 To see if a package has content cached on the CDN, you can run `choco info packagename` and it will give you detailed information pertaining to a package.
 
@@ -64,12 +64,12 @@ When you install packages from the community repository and a private cache beco
 
 ### How do I turn this feature on?
 
-* Globally - `choco feature enable -n downloadCache`
+* Globally - `choco feature enable --name downloadCache`
 * Per command - use the switch `--use-download-cache` with install/upgrade commands.
 
 ### How do I turn this feature off?
 
-* Globally - `choco feature disable -n downloadCache`
+* Globally - `choco feature disable --name downloadCache`
 * Per command - use the switch `--skip-download-cache` with install/upgrade commands.
 
 ### Is the content modified?

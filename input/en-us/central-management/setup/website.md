@@ -30,8 +30,8 @@ The CCM Website is built on ASP.Net Core, and as such we need to ensure that it 
 ### Script for some prerequisites
 
 ```powershell
-choco install IIS-WebServer -s windowsfeatures --no-progress -y
-choco install IIS-ApplicationInit -s windowsfeatures --no-progress -y
+choco install IIS-WebServer --source windowsfeatures --no-progress -y
+choco install IIS-ApplicationInit --source windowsfeatures --no-progress -y
 choco install dotnet-aspnetcoremodule-v2 --version 16.0.22108 --no-progress -y
 choco install dotnet-6.0-runtime --version 6.0.5 --no-progress -y
 choco install dotnet-6.0-aspnetruntime --version 6.0.5 --no-progress -y

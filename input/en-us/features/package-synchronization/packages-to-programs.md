@@ -34,7 +34,7 @@ This image shows a display of `choco list -lo` side by side with Programs and Fe
 
 ### Setup
 
-* `choco feature enable -n showAllPackagesInProgramsAndFeatures`
+* `choco feature enable --name showAllPackagesInProgramsAndFeatures`
 
 ### Options and Switches
 

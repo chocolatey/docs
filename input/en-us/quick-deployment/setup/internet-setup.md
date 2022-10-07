@@ -303,7 +303,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
    The below command is an example; please adjust according to your FQDN, repository name, and user credential created:
 
     ```powershell
-    choco source add -n "'ChocolateyInternal'" -s "'https://chocoserver:8443/repository/ChocolateyInternal/'" --user='chocouser' --password='YOUR_PASSWORD' --allow-self-service
+    choco source add --name "'ChocolateyInternal'" --source "'https://chocoserver:8443/repository/ChocolateyInternal/'" --user='chocouser' --password='YOUR_PASSWORD' --allow-self-service
     ```
 
 ## CCM Setup
@@ -322,8 +322,8 @@ These salt additives should be at least 8 characters, and you will need to provi
 These are both configuration items that can be set using the `choco config` command, as shown in the example here:
 
 ```powershell
-choco config set centralManagementClientCommunicationSaltAdditivePassword 'YourSuperSecureSalt1'
-choco config set centralManagementServiceCommunicationSaltAdditivePassword 'YourSuperSecureSalt2'
+choco config set --name centralManagementClientCommunicationSaltAdditivePassword --value 'YourSuperSecureSalt1'
+choco config set --name centralManagementServiceCommunicationSaltAdditivePassword --value 'YourSuperSecureSalt2'
 ```
 
 Further details on configuring CCM, and all available settings, can be found in the [Central Management Client Setup](xref:ccm-client#config-settings) documentation.

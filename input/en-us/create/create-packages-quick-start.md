@@ -41,13 +41,13 @@ Here's a TL;DR quick start version of the package creating tutorial. Follow thes
 * **Test the package**
    * **Testing should probably be done on a Virtual Machine**
    * In your package directory, use:
-      * `choco install package-name -s .` (package-name is the id element in the nuspec)
+      * `choco install package-name --source .` (package-name is the id element in the nuspec)
 * **Push the package** to the Chocolatey community package repository:
    * Get a Chocolatey account:
       * [Register](https://chocolatey.org/account/register)
    * Copy the API key from [your Chocolatey account](https://chocolatey.org/account).
-   * `choco apikey -k [API_KEY_HERE] -source https://push.chocolatey.org/`
-   * `choco push package-name.1.1.0.nupkg -s https://push.chocolatey.org/` - nupkg file can be ommitted if it is the only one in the directory.
+   * `choco apikey --api-key [API_KEY_HERE] -source https://push.chocolatey.org/`
+   * `choco push package-name.1.1.0.nupkg --source https://push.chocolatey.org/` - nupkg file can be omitted if it is the only one in the directory.
 
 ## Common Mistakes
 

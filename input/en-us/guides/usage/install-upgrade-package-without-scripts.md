@@ -47,7 +47,7 @@ Consider the following scenario:
 
 Your command could be
 
-`choco install firefox -n -y --version 1.0.0`
+`choco install firefox --skip-automation-scripts -y --version 1.0.0`
 
 **Recommendation**: You should try to just install the package first and see what happens. In some cases the package may do additional things like update the path or do some helpful configuration for you (although this is not usually the case). If it fails or doesn't work, you can always fall back to skipping the install script as in the command above.
 
@@ -72,7 +72,7 @@ Consider the following scenario:
 
 Your command could be:
 
-`choco install firefox -n -y --version 1.8.0`
+`choco install firefox --skip-automation-scripts -y --version 1.8.0`
 
 **Recommendation**: Ask the maintainer to update the package. Don't allow choco to know about an older version of a package. If the maintainer provides an update of 1.9.0 without also providing an update at or above your currently installed version, running upgrade later may put your installed software down to the version that is installed by the package. This is definitely not a situation you want to be in.
 
@@ -92,7 +92,7 @@ Consider the following scenario:
 
 You should run
 
-`choco pin add -n=googlechrome`
+`choco pin add --name=googlechrome`
 
 For more information see [Pin Command](xref:choco-command-pin).
 
@@ -125,6 +125,6 @@ See [Community Feed has a version older than your version](#community-feed-has-a
 **Additional Recommendation**: You may also want to bump it to 1.8.0 using the skip argument (`-n`) and then promptly [pin](xref:choco-command-pin) the package until a newer version is available.
 
 ~~~
-choco upgrade firefox -n -y --version 1.8.0
-choco pin add -n=firefox
+choco upgrade firefox --name -y --version 1.8.0
+choco pin add --name=firefox
 ~~~

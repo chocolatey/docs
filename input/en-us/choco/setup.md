@@ -115,7 +115,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### Completely offline install
 
-With completely offline use of Chocolatey, you want to ensure you remove the default community package source (`choco source list` followed by `choco source remove -n chocolatey`, or however you would do that with a configuration manager [like Puppet](https://forge.puppet.com/puppetlabs/chocolatey#sources-configuration)).
+With completely offline use of Chocolatey, you want to ensure you remove the default community package source (`choco source list` followed by `choco source remove --name chocolatey`, or however you would do that with a configuration manager [like Puppet](https://forge.puppet.com/puppetlabs/chocolatey#sources-configuration)).
 
 1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://community.chocolatey.org/packages/chocolatey and find a version you want.
 1. Click on Download to download that version's nupkg file.
@@ -422,7 +422,7 @@ Here's an example of setting Chocolatey up with Puppet that sets up and configur
 
 * Download the chocolatey.nupkg from the community repository - [download the latest chocolatey nupkg](https://community.chocolatey.org/api/v2/package/chocolatey) or see [Completely offline install](#completely-offline-install) to get an older version.
 * Optionally download the chocolatey.server package from the community repository - [download the latest chocolatey.server nupkg](https://community.chocolatey.org/api/v2/package/chocolatey.server).
-* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg -s http://internal_repo/ -k abc123`)
+* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg --source http://internal_repo/ --api-key abc123`)
 * Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
 
 

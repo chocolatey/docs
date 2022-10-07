@@ -383,7 +383,7 @@ Open a command line in the directory where the nuspec is and type [`choco pack`]
 To test the package you just built, open a command line shell and navigate to the directory where the `*.nupkg` file is located. Then type:
 
 ~~~powershell
-choco install packageName -dv -s .
+choco install packageName --debug --verbose --source .
 ~~~~
 
 This will install the package right out of your source. As you find things you may need to fix, using `--force` (`-f`) will remove and reinstall the package from the updated `*.nupkg`. If you are specifically testing `chocolateyBeforeModify.ps1`, you need to be testing upgrade and uninstall scenarios. You need to install a version of the package with this file **first** as before modify is like uninstall, it runs from the installed package, not the package you are installing (like `chocolateyInstall.ps1` does).
@@ -394,7 +394,7 @@ This will install the package right out of your source. As you find things you m
 
 > :memo: **NOTE**
 >
-> If you are using a Semver dash in your package version (such as 1.0.0-beta), you will need to use the `-pre` switch or else you will get *Unable to find package* errors from `choco install`.  You can also specify `-version 1.0.0-beta` to try to install that exact version.
+> If you are using a Semver dash in your package version (such as 1.0.0-beta), you will need to use the `--pre` switch or else you will get *Unable to find package* errors from `choco install`.  You can also specify `-version 1.0.0-beta` to try to install that exact version.
 
 `.` points to the current directory. You can specify multiple directories separated by a semicolon;
 
@@ -407,7 +407,7 @@ When your `nuspec` specifies dependencies that are not in your source, you shoul
 ~~~
 
 You'll need to append the API path like so:
-`-source "'.;https://community.chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
+`--source "'.;https://community.chocolatey.org/api/v2/'"` (note the double quotes bookending the apostrophes here, use `%cd%` in cmd.exe or `$pwd` in Powershell.exe if `.` doesn't resolve). See [passing options with quotes](xref:choco-commands#how-to-pass-options-switches).
 
 > :memo: **NOTE**
 >
@@ -417,7 +417,7 @@ You can also use the `-debug` switch on `choco install` to provide more informat
 
 > :memo: **NOTE**
 >
-> Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `-s "'.;https://community.chocolatey.org/api/v2/'"`. Call `choco install dude -s "'.;https://community.chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg -s "'.;https://community.chocolatey.org/api/v2/'"`.
+> Do not call install with `.nupkg` - pointing to a file explicitly overrides source. You must call your install with the package name, not the nupkg file and location. You've already specified for choco to look in a local source with `--source "'.;https://community.chocolatey.org/api/v2/'"`. Call `choco install dude --source "'.;https://community.chocolatey.org/api/v2/'"`, not `choco install .\dude.nupkg --source "'.;https://community.chocolatey.org/api/v2/'"`.
 
 ### Alternative testing strategy
 You can also type `choco install -fdv path/to/nuspec` and choco will build the nupkg and attempt to install it.
@@ -428,7 +428,7 @@ You can also type `choco install -fdv path/to/nuspec` and choco will build the n
 
 ## Push Your Package
 
-To push your package after you have built and tested it, you type `choco push packageName.nupkg -s sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `-s https://push.chocolatey.org/` for chocolatey's community feed).  You must have an API key for https://push.chocolatey.org/ set. Take a look at [choco push](xref:choco-command-push)
+To push your package after you have built and tested it, you type `choco push packageName.nupkg --source sourceLocation` where *packageName.nupkg* is the name of the nupkg that was built with a version number as part of the package name and *sourceLocation* is the location of the source you want to push to (e.g. `--source https://push.chocolatey.org/` for chocolatey's community feed).  You must have an API key for https://push.chocolatey.org/ set. Take a look at [choco push](xref:choco-command-push)
 
 ## Automatic packaging?
 Yes - [Automatic Packaging](xref:automatic-packaging)

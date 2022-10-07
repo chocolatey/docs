@@ -642,19 +642,19 @@ This release brings Package Throttle, Package Synchronizer's "Show All Packages 
 
     If you are using self-service functionality, when you upgrade to v1.10, you will need to go to those sources that you allow to be self-service and ensure they are selected to allow self-service (`choco source list`). Otherwise by default users are going to be locked out of using those sources. The move to opt-in is best from a security standpoint and we want to give you the ability to have folks opt-in to the better behavior.
 
-    To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For more details see `choco feature list` or https://docs.chocolatey.org/en-us/configuration#self-service-background-mode
+    To change this behavior back to the way it was previously, simply run `choco disable --name useBackgroundServiceWithSelfServiceSourcesOnly`. For more details see `choco feature list` or https://docs.chocolatey.org/en-us/configuration#self-service-background-mode
 
 ### Features
 
 - Package Throttle - Throttle Bandwidth / Rate Limit Download Speeds
 
-    By default, Chocolatey downloads packages and resources as fast as it can. Package Throttle gives you a way to slow down Chocolatey so it doesn't overwhelm any bandwidth restrictions you may have. This is done as both a setting and per package install/upgrade. This is in bits per second (not bytes, bits is what most network traffic is measured in). When adding at runtime, simply add `--bps=VALUE`. To set the value in the configuration, call `choco config set maximumDownloadRateBitsPerSecond VALUE`. For more details see https://docs.chocolatey.org/en-us/features/package-reducer.
+    By default, Chocolatey downloads packages and resources as fast as it can. Package Throttle gives you a way to slow down Chocolatey so it doesn't overwhelm any bandwidth restrictions you may have. This is done as both a setting and per package install/upgrade. This is in bits per second (not bytes, bits is what most network traffic is measured in). When adding at runtime, simply add `--bps=VALUE`. To set the value in the configuration, call `choco config set --name maximumDownloadRateBitsPerSecond --value VALUE`. For more details see https://docs.chocolatey.org/en-us/features/package-reducer.
 
 - Package Synchronizer's Show All Packages In Programs and Features
 
     This means packages that do not have an underlying installation can still show up in Programs and Features and be managed there as well, which allows for legacy inventory reporting systems to see all the software that is installed in the same way that Chocolatey is able to. A picture can probably best explain this feature, check out [All Package In Programs and Features](/assets/images/features/features_packages_in_programs_and_features.png)
 
-    To turn this feature on, simply run the following command `choco feature enable -n showAllPackagesInProgramsAndFeatures`. For more details on the feature, see https://docs.chocolatey.org/en-us/configuration#package-synchronizer and https://docs.chocolatey.org/en-us/features/package-synchronization. This does require one additional run of `choco` to take affect (same when disabling the feature), hopefully we can remove that in the future.
+    To turn this feature on, simply run the following command `choco feature enable --name showAllPackagesInProgramsAndFeatures`. For more details on the feature, see https://docs.chocolatey.org/en-us/configuration#package-synchronizer and https://docs.chocolatey.org/en-us/features/package-synchronization. This does require one additional run of `choco` to take affect (same when disabling the feature), hopefully we can remove that in the future.
 
 - Package-less Install / Direct Installer - Install and upgrade directly from installers (MSIs, EXEs, etc)!
 
@@ -788,7 +788,7 @@ This release brings the coveted PackageBuilder UI to the Pro+ license (minus aut
 
 ### Improvements
 
-- User can turn on Preview Features - `choco feature enable -n allowPreviewFeatures`
+- User can turn on Preview Features - `choco feature enable --name allowPreviewFeatures`
 - InstallDirectory switch added to Install-ChocolateyInstallPackage
 - Package Internalizer (Choco Download)
   - option to ignore dependencies `--ignore-dependencies`

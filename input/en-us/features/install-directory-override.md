@@ -29,7 +29,7 @@ Override Install Directory - One Switch, All Installers
 - Chocolatey for Business (and Pro) can override the installation directory for compatible installer types automatically.
 - Save countless hours determining installers, their switches and the correct way to pass those switches.
 
-The image shows installing 1password with Chocolatey for Business. The command passed is `choco install 1password -s . -y --dir c:\1password`, then shows that Chocolatey automatically determines the installer requires `/DIR="c:\1password"` and installs it to the proper location.
+The image shows installing 1password with Chocolatey for Business. The command passed is `choco install 1password --source . -y --dir c:\1password`, then shows that Chocolatey automatically determines the installer requires `/DIR="c:\1password"` and installs it to the proper location.
 -->
 
 ## See It In Action

@@ -19,7 +19,7 @@ To synchronize your system, Simply call `choco sync` and Chocolatey will ensure 
 
 At 1.9.0, sync is in preview. You need to turn it on by enabling the feature  `allowPreviewFeatures`:
 
-* `choco feature enable -n allowPreviewFeatures`
+* `choco feature enable --name allowPreviewFeatures`
 
 ### See it in action
 

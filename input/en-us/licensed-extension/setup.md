@@ -140,7 +140,7 @@ You can even script this or add it to a CI job that would automatically make the
 
 > :warning: **WARNING**
 >
-> The licensed source that is automatically added can be disabled, but it cannot be removed. So just run `choco source disable -n chocolatey.licensed` to disable it or set that up in your configuration management solution scripts. Some of them, like Puppet, have a resource dedicated strictly to this:
+> The licensed source that is automatically added can be disabled, but it cannot be removed. So just run `choco source disable --name chocolatey.licensed` to disable it or set that up in your configuration management solution scripts. Some of them, like Puppet, have a resource dedicated strictly to this:
 
 ~~~puppet
 ## Disable the licensed source, it can't be removed
@@ -167,7 +167,7 @@ Most organizations using Chocolatey and Puppet are going to do so with zero inte
 * `choco download chocolatey.server --source https://community.chocolatey.org/api/v2/`
 * `choco download chocolatey.extension --source https://licensedpackages.chocolatey.org/api/v2/ --ignore-dependencies`
 * `choco download chocolatey-agent --source https://licensedpackages.chocolatey.org/api/v2/ --ignore-dependencies`
-* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg -s http://internal_repo/ -k abc123`)
+* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg --source http://internal_repo/ --api-key abc123`)
 * Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
 
 Here is what a completely offline use of Chocolatey looks like (complete with a Chocolatey.Server instance):
@@ -384,7 +384,7 @@ This is used in conjunction with the script in [Set Up Licensed Edition With Pup
 Here are some additional commands and scripts you will need for that setup:
 
 * `choco download chocolatey-agent --source https://licensedpackages.chocolatey.org/api/v2/ --ignore-dependencies`
-* Use `choco push` to push packages to your internal package repository (e.g. `choco push chocolatey-agent.0.8.0.nupkg -s http://internal_repo/ -k abc123`)
+* Use `choco push` to push packages to your internal package repository (e.g. `choco push chocolatey-agent.0.8.0.nupkg --source http://internal_repo/ --api-key abc123`)
 
 ~~~puppet
 ## - Chocolatey Agent (Additional optional Chocolatey for Business install) -
@@ -422,7 +422,7 @@ For setting up Self-Service / Background Mode, add the following elements:
 
 * `choco download chocolateygui --pre --source="'https://www.myget.org/F/chocolateygui/;https://chocolatey.org/api/v2'" --ignore-dependencies`
 * `choco download dotnet4.5.2 --internalize --source https://chocolatey.org/api/v2`
-* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg -s http://internal_repo/ -k abc123`)
+* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg --source http://internal_repo/ -api-key abc123`)
 
 
 ~~~puppet

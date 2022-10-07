@@ -79,10 +79,10 @@ Package Throttle only works for resources downloaded with built-in Chocolatey Po
 
 ### How do I turn this feature on?
 
-* Globally - `choco config set maximumDownloadRateBitsPerSecond <value>`
+* Globally - `choco config set --name maximumDownloadRateBitsPerSecond --value <value>`
 * Per command - use the option `--max-download-bits-per-second="'<value>'"` with install/upgrade commands.
 
 ### How do I turn this feature off?
 
-* Globally - `choco config unset maximumDownloadRateBitsPerSecond`
+* Globally - `choco config unset --name maximumDownloadRateBitsPerSecond`
 * Per command - don't specify the `--max-download-bits-per-second` option (and don't have the config set) or `--max-download-bits-per-second="'0'"` if you want to temporarily disable it but keep the config setting.

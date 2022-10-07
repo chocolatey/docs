@@ -82,7 +82,7 @@ To set Chocolatey in background mode, you need to run the following:
 * You also need to opt in sources in for self-service packages. See [choco source](xref:choco-command-source) (and `--allow-self-service`). You can also run `choco source -?` to get the help menu.
     * OPTIONAL (not recommended): Alternatively, you can allow any configured source to be used for self-service by running the following: `choco feature disable --name="'useBackgroundServiceWithSelfServiceSourcesOnly'"` (requires Chocolatey Extension v1.10.0+). We do not recommend this as it could be a security finding if you shut it off.
 * OPTIONAL (highly recommended): If you want self-service to apply only to non-administrators, run `choco feature enable --name="'useBackgroundServiceWithNonAdministratorsOnly'"` (requires Chocolatey Extension v1.11.1+). Do understand this means that a real non-administrator, not an administrator in a non-elevated UAC context (that scenario will go the normal route and will not go through background mode).
-* OPTIONAL (varied recommendations): If you want to configure custom commands (not just install/upgrade), use something like `choco config set backgroundServiceAllowedCommands "install,upgrade,pin,sync"` (with the commands you want to allow, requires Chocolatey Extension v1.12.4+). See [commands consideration](#command-customization-consideration) below.
+* OPTIONAL (varied recommendations): If you want to configure custom commands (not just install/upgrade), use something like `choco config set --name backgroundServiceAllowedCommands --value "install,upgrade,pin,sync"` (with the commands you want to allow, requires Chocolatey Extension v1.12.4+). See [commands consideration](#command-customization-consideration) below.
 * OPTIONAL (highly recommended): If you want to allow non-admins to uninstall packages, you can also restrict down to only the packages they have installed/upgraded. Run `choco feature enable --name="'allowBackgroundServiceUninstallsFromUserInstallsOnly'"` (requires Chocolatey Extension v2.0+).
 * OPTIONAL (highly recommended): For use with Chocolatey GUI, you need Chocolatey Extension v1.12.4+, and at least Chocolatey GUI v0.15.0. **Uninstall any version of the GUI you already have installed first**, then run `choco upgrade chocolateygui -y --allow-downgrade` (you will also need at least .NET 4.5.2 installed)
 * DOES NOT WORK WITH UAC, DO NOT USE UNTIL [FIX IS ANNOUNCED](https://groups.google.com/group/chocolatey-announce)! OPTIONAL (recommended if you use installers that are not completely silent): If you want self-service to interactively manage installations, run `choco feature enable --name="'useBackgroundServiceInteractively'"` (requires Chocolatey Extension v1.12.10+). This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](#interactive-self-service-consideration).
@@ -101,7 +101,7 @@ choco feature disable --name="'showNonElevatedWarnings'"
 choco feature enable --name="'useBackgroundService'"
 choco feature enable --name="'useBackgroundServiceWithNonAdministratorsOnly'"
 # allow uninstalls as well:
-#choco config set backgroundServiceAllowedCommands "install,upgrade,uninstall"
+#choco config set --name backgroundServiceAllowedCommands --value "install,upgrade,uninstall"
 # restrict uninstalls to just packages the user has installed/upgraded (requires Chocolatey Extension v2.0+):
 #choco feature enable --name="'allowBackgroundServiceUninstallsFromUserInstallsOnly'"
 
@@ -358,15 +358,15 @@ You can not pass custom source arguments to Chocolatey, it will error. You need 
 
 > :memo: **NOTE**
 >
-> If you have run `choco feature disable -n useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
+> If you have run `choco feature disable --name useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
 
 ### I'm getting the following: "There are no sources enabled for packages and none were passed as arguments."
 
 This means you need to opt a source into self-service (new in Chocolatey Extension v1.10).
 
-This just involves ensuring a source is set so that it allows self-service. To do this you run `choco source add -n name -s location <--other details need repeated> --allow-self-service`. Editing a source happens when the name is the same in `choco source add`.
+This just involves ensuring a source is set so that it allows self-service. To do this you run `choco source add --name name --source location <--other details need repeated> --allow-self-service`. Editing a source happens when the name is the same in `choco source add`.
 
-To change this behavior back to the way it was previously, simply run `choco disable -n useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](xref:configuration#self-service-background-mode)
+To change this behavior back to the way it was previously, simply run `choco disable --name useBackgroundServiceWithSelfServiceSourcesOnly`. For feature options, run `choco feature list` or see [Self-Service Feature Configuration](xref:configuration#self-service-background-mode)
 
 ### I'm having trouble seeing packages on a file share source
 
