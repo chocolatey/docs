@@ -17,7 +17,7 @@ This will guide us through upgrading an existing Chocolatey Central Management i
 > - Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 > - All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 
-## Step 0: Backup Your Current CCM Enviornment
+## Step 0: Backup Your Current CCM Environment
 
 We suggest you go through and take a snapshot of your CCM VM before proceeding with an upgrade. If taking a snapshot is not an option, at a bare minimum we recommend creating a local backup of the CentralManagement SQL Database and backing up your appsettings.json file located at `C:\tools\chocolatey-management-web\appsettings.json`.
 
@@ -38,12 +38,12 @@ $YourInternalRepositoryApiKey = '<YOUR API KEY HERE>'
 # You get this from the chocolatey.license.xml file:
 $YourBusinessLicenseGuid = '<INSERT C4B LICENSE GUID HERE>'
 
-# Download Chocolatey community related items, no internalization necessary
-choco download chocolatey chocolateygui --force --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# Download Chocolatey community related dependencies, internalization necessary
+choco download dotnet-6.0-runtime dotnet-6.0-aspnetruntime dotnet-aspnetcoremodule-v2 --source="'https://community.chocolatey.org/api/v2/'" --internalize --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155
-choco download chocolatey-agent chocolatey.extension chocolatey-management-database chocolatey-management-service chocolatey-management-web --force --source="'https://licensedpackages.chocolatey.org/api/v2/;https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"  --user="'user'" --password="'$YourBusinessLicenseGuid'"
+choco download chocolatey chocolatey-agent chocolatey.extension chocolatey-management-database chocolatey-management-service chocolatey-management-web --source="'https://licensedpackages.chocolatey.org/api/v2/'" --ignore-dependencies --output-directory="'C:\packages'"  --user="'user'" --password="'$YourBusinessLicenseGuid'"
 
 # Push all downloaded packages to your internal repository
 Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push $_.Fullname --source="'$YourInternalRepositoryPushUrl'" --api-key="'$YourInternalRepositoryApiKey'"}
@@ -221,14 +221,14 @@ choco upgrade chocolatey-management-database -y --package-parameters="'/SqlServe
 This was an issue in releases prior to upgrading to CCM v0.3.0 - see <https://github.com/chocolatey/chocolatey-licensed-issues/issues/156>.
 If you run into this, please recreate the bindings again.
 
-### ERROR: The term ‘Install-SettingsJsonFile’ is not recognized as the name of a cmdlet, function, script file, or operable program.
+### ERROR: The term 'Install-SettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
 
 This is <https://github.com/chocolatey/chocolatey-licensed-issues/issues/161>.
 
 There are two workarounds noted:
 
-* Delete the appsettings.json file prior to upgrade
-* Do not pass database details if they have not changed during upgrade.
+- Delete the appsettings.json file prior to upgrade
+- Do not pass database details if they have not changed during upgrade.
 
 [Central Management Setup](xref:ccm-setup) | [Chocolatey Central Management](xref:central-management)
 
