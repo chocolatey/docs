@@ -413,7 +413,7 @@ You'll need to append the API path like so:
 >
 > If you need to do this, please ensure you run `choco pack` first. This method of passing a source won't work calling a nuspec or nupkg directly as it will override the source passed to the local folder.
 
-You can also use the `-debug` switch on `choco install` to provide more information.
+You can also use the `--debug` switch on `choco install` to provide more information.
 
 > :memo: **NOTE**
 >
