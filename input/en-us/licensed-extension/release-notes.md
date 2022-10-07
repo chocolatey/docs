@@ -819,7 +819,7 @@ $serviceExe = Join-Path $toolsDir 'service\chocolatey-agent.exe'
 $packageArgs = @{
   Name                  = 'chocolatey-agent'
   DisplayName           = 'Chocolatey Agent'
-  Description           = 'Chocolatey Agent is a backgound service for Chocolatey.'
+  Description           = 'Chocolatey Agent is a background service for Chocolatey.'
   StartupType           = 'Automatic'
   ServiceExecutablePath = $serviceExe
 }

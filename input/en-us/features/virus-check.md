@@ -133,7 +133,7 @@ You need to provide additional configuration if you are using the Generic virus 
 * Globally - `choco feature disable --name virusCheck`
 * Per command - use the switch `--skip-virus-check` with install/upgrade commands.
 
-### How do I override the minium number of positives?
+### How do I override the minimum number of positives?
 
 * Globally - `choco config set --name virusCheckMinimumPositives --value <value>`
 * Per command - use the option `--virus-positives-minimum=<value>` with install/upgrade commands.

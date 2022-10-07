@@ -129,7 +129,7 @@ The same way you upgrade for the full edition. See [How Do I Upgrade the License
 
 ## Installing / Upgrading In Secure Environments / Without Internet Access
 
-Once you have the license down and the licensed edition extension intstalled the first time, you will have access to `choco download`. This will allow you to download the licensed edition and put it on your internally hosted repository.
+Once you have the license down and the licensed edition extension installed the first time, you will have access to `choco download`. This will allow you to download the licensed edition and put it on your internally hosted repository.
 
 From a machine that will have access to do this you simply run:
 
