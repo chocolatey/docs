@@ -26,7 +26,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ## Known Issues
 
-- Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement
+- Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 - Some issues may be held internally, please follow your support routes to learn more.
 
 ## 0.10.1 (October 6, 2022)
