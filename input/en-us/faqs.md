@@ -331,6 +331,12 @@ The install location which is displayed can be manually set in the `ChocolateyIn
 If you are setting this variable in an installer package, do not hard code it, but instead get the location via checking the uninstall keys in the registry or similar.
 If this is hard coded for a package that runs an installer, it may display an incorrect location if the install location is changed manually, by install arguments, or via the licensed ubiquitous install directory switch.
 
+### How do I skip the Automatic Uninstaller?
+
+If you are trying to uninstall a package, but Automatic Uninstall is uninstalling software you don't want uninstalled, or otherwise misbehaving, then it can be skipped by using the `--skip-autouninstaller` switch, or disabling it by setting the `autoUninstaller` feature to `false`.
+
+If you are creating a package, and want or need to use the `chocolateyUninstall.ps1` while not running the Automatic Uninstaller, then include a `.skipAutoUninstall` file inside the package. If a file with that name is found, then during uninstall the Automatic Uninstaller will not be run. If a `.skipAutoUninstall` file is being included, make sure that it is included in the `files` element of the `.nuspec`, either explicitly via a `file` element, or by placing the file inside a folder that is included inside the package (like the `tools` directory).
+
 ## Videos / Reference
 
 ### Where can I learn more?
