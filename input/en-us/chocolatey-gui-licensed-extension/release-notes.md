@@ -21,6 +21,12 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 1.0.1 (October 12, 2022)
+
+### Improvements
+
+- Update package version range for Chocolatey Licensed Extension to support 5.0.0+.
+
 ## 1.0.0 (March 21, 2022)
 
 > :warning: **WARNING**
