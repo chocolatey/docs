@@ -28,6 +28,12 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 1.1.1 (October 12, 2022)
+
+### Improvements
+
+- Update package version range for Chocolatey Licensed Extension to support 5.0.0+.
+
 ## 1.1.0 (August 22, 2022)
 
 ### Features
