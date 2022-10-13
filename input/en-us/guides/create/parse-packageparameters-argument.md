@@ -32,7 +32,7 @@ You can use package parameters to set up arguments to the native installer, but 
 
 > :memo: **NOTE**
 >
-> `Get-PackageParameters` is available now with a dependency on `chocolatey-core.extension`, and in a future version of Chocolatey (see [#312](https://github.com/chocolatey/choco/issues/312)), it will also be one of Chocolatey's built-in functions.
+> Since Chocolatey CLI v0.10.8, `Get-PackageParameters` is part of Chocolatey CLI. Formerly, it was only available in `chocolatey-core.extension` and usage required taking a dependency on the extension.
 
 ## Walkthrough
 
@@ -131,25 +131,6 @@ To have choco remember parameters on upgrade, be sure to set `choco feature enab
 ### Step 3 - Use Get-PackageParameters
 
 This is the recommended way to work with Package Parameters. For consistency and understanding, please only use this method when building packages.
-
-#### Built-In
-Starting in Chocolatey v0.10.8, `Get-PackageParameters` is built into Chocolatey - see the [`Get-PackageParameters` documentation](xref:get-packageparameters). If you are using Chocolatey internally, you can use this without needing the community extension (below). If you are pushing packages externally (e.g. the community package repository), you must add the core extension as a polyfill for 6 months after release of Chocolatey v0.10.8. Follow the next section below.
-
-#### Core Community extension
-
-If you want to do this simply, take a dependency on the [core community extension](https://community.chocolatey.org/packages/chocolatey-core.extension), which already has the above function `Get-PackageParameters` built in.
-
-Open the nuspec back up and add a dependency on `chocolatey-core.extension`. This will be inserted just above the closing "metadata" tag (`</metadata>`).
-
-~~~xml
-  <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.1.0" />
-  </dependencies>
-~~~
-
-> :memo: **NOTE**
->
-> The version specified without brackets (`[]`) means this is a minimum version dependency. So in this case, 1.1.0 or newer (`>=1.1.0`). If it was `[1.1.0]`, that would mean exactly version 1.1.0 (`=1.1.0`).
 
 #### Prepare The Code
 
