@@ -265,8 +265,8 @@ Jenkins requires several PowerShell scripts to automate the processes. Create a 
   . .\ConvertTo-ChocoObject.ps1
 
   # get all of the packages from the test repo
-  $testPkgs = choco list --source $TestRepo --limit-output | ConvertTo-ChocoObject
-  $prodPkgs = choco list --source $ProdRepo --limit-output | ConvertTo-ChocoObject
+  $testPkgs = choco list --source $TestRepo --all-versions --limit-output | ConvertTo-ChocoObject
+  $prodPkgs = choco list --source $ProdRepo --all-versions --limit-output | ConvertTo-ChocoObject
   $tempPath = Join-Path -Path $env:TEMP -ChildPath ([GUID]::NewGuid()).GUID
 
   if ($null -eq $testPkgs) {
