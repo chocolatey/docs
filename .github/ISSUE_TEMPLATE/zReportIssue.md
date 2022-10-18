@@ -4,7 +4,7 @@ about: Did you find issues in our documentation?
 ---
 
 <!--
-Ensure you have read over [Submitting Issues](https://github.com/chocolatey/.github/blob/main/SUBMITTING_ISSUES.md)
+Ensure you have read over [Submitting Issues](https://github.com/chocolatey/.github/blob/main/SUBMITTING-ISSUES.md)
 
 Please check to see if your issue already exists with a quick search of the issues. Start with one relevant term and then add if you get too many results.
 
