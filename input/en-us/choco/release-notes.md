@@ -16,6 +16,41 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (Oktober 19, 2022)
+
+> :memo: NOTE
+>
+> As part of this release, we have added the functionality to allow officially signed extensions, other than Chocolatey Licensed Extension, to be loaded dynamically. See [#2693](https://github.com/chocolatey/choco/issues/2693).
+
+### Feature
+
+- Allow post/pre hooks to run on upgrade/install/uninstall - see [#1185](https://github.com/chocolatey/choco/issues/1185)
+
+### Bug Fixes
+
+- Fix - Upgrade all reuses overridden package parameters when useRememberedArgumentsForUpgrades feature is turned on - see [#1443](https://github.com/chocolatey/choco/issues/1443)
+- Fix - Wrong item set for overriding credentials when using remembered arguments during upgrade - see [#2752](https://github.com/chocolatey/choco/issues/2752)
+- Fix - Python alternative source doesn't create arguments correctly due to spelling mistake - see [#2777](https://github.com/chocolatey/choco/issues/2777)
+- Fix - Directory permissions not set when installed from PowerShell 7.2.5 - see [#2789](https://github.com/chocolatey/choco/issues/2789)
+
+### Improvements
+
+- [Security] Unable to extract files from nupkg when different file name encoding is used - see [#2816](https://github.com/chocolatey/choco/issues/2816)
+- Add cmdlet for acquiring paths set in environment variables that should not be used directly - see [#2860](https://github.com/chocolatey/choco/issues/2860)
+- Add support for the --pin option on the install and upgrade commands - see [#798](https://github.com/chocolatey/choco/issues/798)
+- Packages.config should include all options (including ignorechecksums) - see [#886](https://github.com/chocolatey/choco/issues/886)
+- Add option to skip file logging for Zip file extraction in the Get-ChocolateyUnZip and Install-ChocolateyZipPackage cmdlets - see [#1332](https://github.com/chocolatey/choco/issues/1332)
+- List parameters in templates - see [#2500](https://github.com/chocolatey/choco/issues/2500)
+- ChocolateyTabExpansion.ps1 can cause slow auto-complete in PowerShell - see [#2556](https://github.com/chocolatey/choco/issues/2556)
+- Deprecate side-by-side installs - see [#2787](https://github.com/chocolatey/choco/issues/2787)
+- Change source type on source runners to be a generic string - see [#2791](https://github.com/chocolatey/choco/issues/2791)
+- Remove trailing semicolon in templates and tests - see [#2807](https://github.com/chocolatey/choco/issues/2807)
+
+### Documentation
+
+- Minor spelling errors in chocolatey/choco  - see [#2465](https://github.com/chocolatey/choco/issues/2465)
+- Update brand names - see [#2747](https://github.com/chocolatey/choco/pull/2747)
+
 ## [1.1.0](https://github.com/chocolatey/choco/milestone/53?closed=1) (March 30, 2022)
 
 ### Bug Fixes
