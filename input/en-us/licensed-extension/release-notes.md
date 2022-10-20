@@ -38,6 +38,25 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 5.0.0 (October 20, 2022)
+
+### Breaking Change
+
+- Update minimum Chocolatey version to 1.2.0.
+  - To take advantage of internal changes made in Chocolatey CLI v1.2.0 we have taken a minimum dependency on this version as it changes internally how we are resolving the Chocolatey Licensed Extension.
+
+### Bug Fixes
+
+- When creating the chocolatey-license package for Intune, the install command is missing the source location - see [licensed #315](https://github.com/chocolatey/chocolatey-licensed-issues/issues/315).
+- Ensure that argument replacement is case insensitive when using GenericVirusScanner.
+
+### Improvements
+
+- Add support for the `--pin` option on the install and upgrade commands.
+- Add option to skip file logging for Zip file extraction in the `Get-ChocolateyUnzip` and `Install-ChocolateyZipPackage` cmdlets - see [licensed #319](https://github.com/chocolatey/chocolatey-licensed-issues/issues/319).
+- Add new configuration for specifying how often Chocolatey Agent should clean up rollover log files.
+- Add `--use-self-service` option to install, upgrade, and uninstall commands to force execution through Self Service - see [licensed #102](https://github.com/chocolatey/chocolatey-licensed-issues/issues/102).
+
 ## 4.2.0 (June 22, 2022)
 
 ### Features
