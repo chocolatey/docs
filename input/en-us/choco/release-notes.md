@@ -16,7 +16,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
-## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (Oktober 19, 2022)
+## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (October 19, 2022)
 
 > :memo: NOTE
 >
