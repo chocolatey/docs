@@ -14,43 +14,19 @@
     {
       "outputFileName": "input/assets/js/docsearch.js",
       "inputFiles": [
-        "node_modules/docsearch.js/dist/cdn/docsearch.js"
+        "input/assets/js/temp/chocolatey-docsearch.js"
       ]
     },
     {
       "outputFileName": "input/assets/js/chocolatey-head.bundle.js",
       "inputFiles": [
-        "node_modules/choco-theme/js/chocolatey-theme-toggle-head.js"
+        "input/assets/js/temp/chocolatey-theme-toggle-head.js"
       ]
     },
     {
       "outputFileName": "input/assets/js/chocolatey.bundle.js",
       "inputFiles": [
-        "node_modules/jquery/dist/jquery.js",
-        "node_modules/bootstrap/js/dist/dom/data.js",
-        "node_modules/bootstrap/js/dist/dom/event-handler.js",
-        "node_modules/bootstrap/js/dist/dom/manipulator.js",
-        "node_modules/bootstrap/js/dist/dom/selector-engine.js",
-        "node_modules/bootstrap/js/dist/base-component.js",
-        "node_modules/bootstrap/js/dist/alert.js",
-        "node_modules/bootstrap/js/dist/button.js",
-        "node_modules/bootstrap/js/dist/collapse.js",
-        "node_modules/anchor-js/anchor.js",
-        "node_modules/choco-theme/js/prism.min.js",
-        "node_modules/mousetrap/mousetrap.js",
-        "node_modules/choco-theme/js/chocolatey-theme-toggle.js",
-        "node_modules/choco-theme/js/chocolatey-functions.js",
-        "node_modules/choco-theme/js/chocolatey-docs.js",
-        "node_modules/choco-theme/js/chocolatey-alerts.js",
-        "node_modules/choco-theme/js/chocolatey-collapse-y-height.js",
-        "node_modules/choco-theme/js/chocolatey-anchors.js",
-        "node_modules/choco-theme/js/chocolatey-collapse-nested.js",
-        "node_modules/choco-theme/js/chocolatey-collapse-responsive.js",
-        "node_modules/choco-theme/js/chocolatey-code.js",
-        "node_modules/choco-theme/js/chocolatey-tables.js",
-        "node_modules/choco-theme/js/chocolatey-markdown.js",
-        "node_modules/choco-theme/js/chocolatey-search.js",
-        "node_modules/choco-theme/js/chocolatey-scrollspy.js"
+        "input/assets/js/temp/init/chocolatey-docs.js"
       ]
     }
   ]

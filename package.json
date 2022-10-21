@@ -6,13 +6,13 @@
     "url": "git+https://github.com/chocolatey/docs.git"
   },
   "author": "chocolatey",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/chocolatey/docs/issues"
   },
   "homepage": "https://github.com/chocolatey/docs#readme",
   "devDependencies": {
-    "choco-theme": "git+https://github.com/chocolatey/choco-theme.git"
+    "choco-theme": "^0.1.1"
   },
   "resolutions": {
     "glob-parent": "^6.0.2",
