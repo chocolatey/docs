@@ -99,8 +99,8 @@ Accept Pipeline Input? | false
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
 
-[[Function Reference|HelpersReference]]
 
-***NOTE:*** This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Get-CCMDeploymentStep -Full`.
 
-View the source for [Get-CCMDeploymentStep](/Get-CCMDeploymentStep.ps1)
+[Function Reference](xref:chococcm-functions)
+
+> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Get-CCMDeploymentStep -Full`.
