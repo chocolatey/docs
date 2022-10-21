@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -46,7 +46,7 @@ Coming soon
 Chocolatey will attempt to push a compiled nupkg to a package feed.
 
 > :memo: **NOTE** 100% compatible with older chocolatey client (0.9.8.32 and below)
- with options and switches. In most cases you can still pass options and 
+ with options and switches. In most cases you can still pass options and
  switches with one dash (`-`). For more details, see
  [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
@@ -251,6 +251,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --skip-cleanup
      Skip Cleanup - Don't cleanup local files when pushing to Intune. On a 
        failed push to Intune, don't attempt to cleanup the Intune packages.
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

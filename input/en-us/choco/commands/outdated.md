@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -40,11 +40,11 @@ Returns a list of outdated packages.
     choco outdated -s https://somewhere/out/there
     choco outdated -s "'https://somewhere/protected'" -u user -p pass
 
-If you use `--source=https://somewhere/out/there`, it is 
- going to look for outdated packages only based on that source, so 
+If you use `--source=https://somewhere/out/there`, it is
+ going to look for outdated packages only based on that source, so
  you may want to add `--ignore-unfound` to your options.
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -61,12 +61,12 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: outdated packages have been found
 
-> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes' 
- turned on, then choco will provide enhanced exit codes that allow 
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+ turned on, then choco will provide enhanced exit codes that allow
  better integration and scripting.
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -231,6 +231,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        disabled, this makes queries similar to the way they were done in 
        Chocolatey v0.10.11 and before. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

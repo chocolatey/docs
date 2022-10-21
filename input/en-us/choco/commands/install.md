@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -38,6 +38,10 @@ Installs a package or a list of packages (sometimes specified as a
 Starting in v2.0.0 the shortcut `cinst` will be removed and can not be used
 to install packages anymore. We recommend you make sure that you always
 use the full command going forward ([`choco install`](xref:choco-command-install)).
+
+Side by side installations has been deprecated and will be removed in v2.0.0.
+Instead of using side by side installations, distinct packages should be created
+if similar functionality is needed going forward.
 
 ## Usage
 
@@ -155,7 +159,7 @@ Alternative to PackageName. This is a list of packages in an xml manifest for Ch
       <package id="alloptions" version="0.1.1"
                source="https://somewhere/api/v2/" installArguments=""
                packageParameters="" forceX86="false" allowMultipleVersions="false"
-               ignoreDependencies="false"
+               ignoreDependencies="false" executionTimeout="1000" force="false"
                />
     </packages>
 ~~~
@@ -368,7 +372,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -m, --sxs, --sidebyside, --side-by-side, --allowmultiple, --allow-multiple, --allowmultipleversions, --allow-multiple-versions
      AllowMultipleVersions - Should multiple versions of a package be 
-       installed? Defaults to false.
+       installed? Defaults to false. (DEPRECATED)
 
  -i, --ignoredependencies, --ignore-dependencies
      IgnoreDependencies - Ignore dependencies when installing package(s). 
@@ -482,6 +486,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        0.11 and before. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
 
+     --pin, --pinpackage, --pin-package
+     Pin Package - Add a pin to the package after install. Available in 1.2.0+
+
+     --skiphooks, --skip-hooks
+     Skip hooks - Do not run hook scripts. Available in 1.2.0+
+
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download even if a private CDN 
        cache is available for a package. Overrides the default feature 
@@ -557,6 +567,16 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        using Package Reducer. Overrides the default feature 
        'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only (version -
        1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer 
+
+     --reason, --pin-reason, --note=VALUE
+     Pin Reason - Text information about why you are setting a pin. Available 
+       in business editions 5.0.0+. 
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

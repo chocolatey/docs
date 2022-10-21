@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -25,8 +25,8 @@ RedirectFrom:
 
 # Info Command (choco info)
 
-Chocolatey will perform a search for a package local or remote and provide 
- detailed information about that package. This is a synonym for 
+Chocolatey will perform a search for a package local or remote and provide
+ detailed information about that package. This is a synonym for
  `choco search <pkgname> --exact --detailed`.
 
 > :memo: **NOTE** New as of 0.9.10.0.
@@ -42,7 +42,7 @@ Chocolatey will perform a search for a package local or remote and provide
     choco info googlechrome
     choco info powershell
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -59,12 +59,12 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: no results (enhanced)
 
-> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes' 
- turned on, then choco will provide enhanced exit codes that allow 
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+ turned on, then choco will provide enhanced exit codes that allow
  better integration and scripting.
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -217,6 +217,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        this makes queries similar to the way they were done in Chocolatey v0.1-
        0.11 and before. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

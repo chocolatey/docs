@@ -27,9 +27,9 @@ RedirectFrom:
 
 Chocolatey will perform a search for a package local or remote.
 
-> :memo: **NOTE** 100% compatible with older Chocolatey client (0.9.8.x and below) 
- with options and switches. In most cases you can still pass options 
- and switches  with one dash (`-`). For more details, see 
+> :memo: **NOTE** 100% compatible with older Chocolatey client (0.9.8.x and below)
+ with options and switches. In most cases you can still pass options
+ and switches  with one dash (`-`). For more details, see
  [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 ## Usage
@@ -63,7 +63,7 @@ Starting in v2.0.0 the shortcut [`clist`](xref:choco-command-list) will be remov
     choco search git --source="'https://somewhere/out/there'"
     choco search bob -s "'https://somewhere/protected'" -u user -p pass
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -80,12 +80,12 @@ Enhanced:
  - -1 or 1: an error has occurred
  - 2: no results (enhanced)
 
-> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes' 
- turned on, then choco will provide enhanced exit codes that allow 
+> :memo: **NOTE** Starting in v0.10.12, if you have the feature 'useEnhancedExitCodes'
+ turned on, then choco will provide enhanced exit codes that allow
  better integration and scripting.
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 
@@ -101,15 +101,15 @@ Will be removed for the list command in v2.0.0.
 Available in 0.9.10+.
 
 ### WebPI
-This specifies the source is Web PI (Web Platform Installer) and that 
- we are searching for a WebPI product, such as IISExpress. If you do 
- not have the Web PI command line installed, it will install that first 
+This specifies the source is Web PI (Web Platform Installer) and that
+ we are searching for a WebPI product, such as IISExpress. If you do
+ not have the Web PI command line installed, it will install that first
  and then perform the search requested.
  e.g. `choco list --source webpi`
 
 ### Windows Features
-This specifies that the source is a Windows Feature and we should 
- install via the Deployment Image Servicing and Management tool (DISM) 
+This specifies that the source is a Windows Feature and we should
+ install via the Deployment Image Servicing and Management tool (DISM)
  on the local machine.
  e.g. `choco list --source windowsfeatures`
 
@@ -333,6 +333,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --audit, --showaudit, --show-audit, --show-audit-info
      Show Audit Information - Display auditing information for a package. 
        Available in business editions 1.12.0+. 
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

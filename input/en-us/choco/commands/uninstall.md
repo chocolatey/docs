@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -79,6 +79,10 @@ Starting in v2.0.0 the shortcut `cuninst` will be removed and can not be used
 to uninstall packages anymore. We recommend you make sure that you always
 use the full command going forward ([`choco uninstall`](xref:choco-command-uninstall)).
 
+Side by side installations has been deprecated and support for uninstalling such packages will be removed in v2.0.0.
+Instead of using side by side installations, distinct packages should be created
+if similar functionality is needed going forward.
+
 ## Usage
 
     choco uninstall <pkg|all> [pkg2 pkgN] [options/switches]
@@ -101,7 +105,7 @@ use the full command going forward ([`choco uninstall`](xref:choco-command-unins
     choco uninstall ruby --version 1.8.7.37402
     choco uninstall nodejs.install --all-versions
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -285,7 +289,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -m, --sxs, --sidebyside, --side-by-side, --allowmultiple, --allow-multiple, --allowmultipleversions, --allow-multiple-versions
      AllowMultipleVersions - Should multiple versions of a package be 
-       installed? Defaults to false.
+       installed? Defaults to false. (DEPRECATED)
 
  -x, --forcedependencies, --force-dependencies, --removedependencies, --remove-dependencies
      RemoveDependencies - Uninstall dependencies when uninstalling package(s-
@@ -345,11 +349,20 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        the default feature 'exitOnRebootDetected' set to 'False'.  Available in 
        0.10.12+.
 
+     --skiphooks, --skip-hooks
+     Skip hooks - Do not run hook scripts. Available in 1.2.0+
+
      --fromprograms, --from-programs, --fromprogramsandfeatures, --from-programs-and-features
      From Programs and Features - Uninstalls a program from programs and 
        features. Name used for id must be a match or a wildcard (*) to Display 
        Name in Programs and Features. Available in [licensed editions](https://chocolatey.org/compare) only 
        (licensed version 1.8.0+) and requires v0.10.4+.
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

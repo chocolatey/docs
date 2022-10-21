@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -30,17 +30,7 @@ As a licensed customer, you can reach out to
  may reach out during the hours that are listed in your support 
  contract. See https://chocolatey.org/support for details.
 
-## Options and Switches
 
-> :memo: **NOTE** Options and switches apply to all items passed, so if you are
- running a command like install that allows installing multiple
- packages, and you use `--version=1.0.0`, it is going to look for and
- try to install version 1.0.0 of every package passed. So please split
- out multiple package calls when wanting to pass specific options.
-
-Includes [default options/switches](xref:choco-commands#default-options-and-switches) (included below for completeness).
-
-~~~
  -?, --help, -h
      Prints out the help menu.
 

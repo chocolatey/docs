@@ -1,5 +1,5 @@
 ﻿---
-Order: 50
+Order: 60
 xref: get-environmentvariable
 Title: Get-EnvironmentVariable
 Description: Information on Get-EnvironmentVariable function
@@ -62,7 +62,9 @@ None
 
 ## Outputs
 
-None
+
+ * System.String
+
 
 ## Parameters
 

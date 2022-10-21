@@ -13,7 +13,7 @@ RedirectFrom:
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Update-SessionEnvironment.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
 Updates the environment variables of the current powershell session with
-any environment variable changes that may have occured during a
+any environment variable changes that may have occurred during a
 Chocolatey package install.
 
 ## Syntax

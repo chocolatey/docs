@@ -39,6 +39,10 @@ Starting in v2.0.0 the shortcut `cup` will be removed and can not be used
 to upgrade or install packages anymore. We recommend you make sure that you always
 use the full command going forward ([`choco upgrade`](xref:choco-command-upgrade)).
 
+Side by side installations has been deprecated and will be removed in v2.0.0.
+Instead of using side by side installations, distinct packages should be created
+if similar functionality is needed going forward.
+
 ## Usage
 
     choco upgrade <pkg|all> [<pkg2> <pkgN>] [<options/switches>]
@@ -62,7 +66,7 @@ Skip upgrading certain packages with [`choco pin`](xref:choco-command-pin) or wi
     choco upgrade git -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'"
     choco upgrade git -y --params="'/GitAndUnixToolsOnPath /NoAutoCrlf'" --install-args="'/DIR=C:\git'"
     # Params are package parameters, passed to the package
-    # Install args are installer arguments, appended to the silentArgs 
+    # Install args are installer arguments, appended to the silentArgs
     #  in the package for the installer itself
     choco upgrade nodejs.install --version 0.10.35
     choco upgrade git -s "'https://somewhere/out/there'"
@@ -70,7 +74,7 @@ Skip upgrading certain packages with [`choco pin`](xref:choco-command-pin) or wi
     choco upgrade all
     choco upgrade all --except="'skype,conemu'"
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -267,7 +271,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -m, --sxs, --sidebyside, --side-by-side, --allowmultiple, --allow-multiple, --allowmultipleversions, --allow-multiple-versions
      AllowMultipleVersions - Should multiple versions of a package be 
-       installed? Defaults to false.
+       installed? Defaults to false. (DEPRECATED)
 
  -i, --ignoredependencies, --ignore-dependencies
      IgnoreDependencies - Ignore dependencies when upgrading package(s). 
@@ -423,6 +427,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        Chocolatey v0.10.11 and before. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'. Available in 0.10.14+.
 
+     --pin, --pinpackage, --pin-package
+     Pin Package - Add a pin to the package after upgrade. Available in 1.2.0+
+
+     --skiphooks, --skip-hooks
+     Skip hooks - Do not run hook scripts. Available in 1.2.0+
+
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download even if a private CDN 
        cache is available for a package. Overrides the default feature 
@@ -511,6 +521,16 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        Overrides the default feature 
        'excludeChocolateyPackagesDuringUpgradeAll' set to 'False'. Licensed 
        editions only (version 4.1.0+). 
+
+     --reason, --pin-reason, --note=VALUE
+     Pin Reason - Text information about why you are setting a pin. Available 
+       in business editions 5.0.0+. 
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

@@ -1,5 +1,5 @@
 ﻿---
-Order: 60
+Order: 70
 xref: get-environmentvariablenames
 Title: Get-EnvironmentVariableNames
 Description: Information on Get-EnvironmentVariableNames function
@@ -50,9 +50,26 @@ None
 
 ## Outputs
 
-None
+
+ * A list of environment variables names.
+
 
 ## Parameters
+
+###  -Scope
+The environment variable target scope. This is `Process`, `User`, or
+`Machine`.
+
+
+Valid options: Process, User, Machine
+
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
  
 
 

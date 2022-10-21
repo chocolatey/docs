@@ -174,7 +174,7 @@ Install-ChocolateyPackage 'StExBar' 'msi' '/quiet' `
 ~~~powershell
 
 Install-ChocolateyPackage 'mono' 'exe' '/SILENT' `
- 'http://somehwere/something.exe' -ValidExitCodes @(0,21)
+ 'http://somewhere/something.exe' -ValidExitCodes @(0,21)
 ~~~
 
 **EXAMPLE 6**

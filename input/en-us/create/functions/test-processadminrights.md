@@ -42,7 +42,9 @@ None
 
 ## Outputs
 
-None
+
+ * System.Boolean
+
 
 ## Parameters
  

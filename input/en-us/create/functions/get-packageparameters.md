@@ -1,5 +1,5 @@
 ﻿---
-Order: 90
+Order: 100
 xref: get-packageparameters
 Title: Get-PackageParameters
 Description: Information on Get-PackageParameters function
@@ -112,7 +112,9 @@ None
 
 ## Outputs
 
-None
+
+ * [HashTable]
+
 
 ## Parameters
 

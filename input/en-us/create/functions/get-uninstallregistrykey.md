@@ -1,5 +1,5 @@
 ﻿---
-Order: 120
+Order: 130
 xref: get-uninstallregistrykey
 Title: Get-UninstallRegistryKey
 Description: Information on Get-UninstallRegistryKey function
@@ -94,7 +94,12 @@ None
 
 ## Outputs
 
-None
+
+ * This function searches registry objects and returns an array
+of PSCustomObject with the matched key's properties.
+ * Retrieve properties with dot notation, for example:
+`$key.UninstallString`
+
 
 ## Parameters
 

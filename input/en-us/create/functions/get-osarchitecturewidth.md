@@ -1,5 +1,5 @@
 ﻿---
-Order: 80
+Order: 90
 xref: get-osarchitecturewidth
 Title: Get-OSArchitectureWidth
 Description: Information on Get-OSArchitectureWidth function
@@ -55,7 +55,20 @@ None
 
 None
 
+
 ## Parameters
+
+###  -Compare [&lt;Object&gt;]
+This optional parameter causes the function to return $true or $false,
+depending on whether or not the bit width matches.
+
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
  
 
 

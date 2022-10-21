@@ -22,36 +22,36 @@ removed in v2.0.0 of Chocolatey.
 
 ## Commands
 
- * [search](xref:choco-command-search) - searches remote or local packages (alias for list)
- * [list](xref:choco-command-list) - lists remote or local packages
- * [find](xref:choco-command-find) - searches remote or local packages (alias for search)
- * [info](xref:choco-command-info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
- * [install](xref:choco-command-install) - installs packages from various sources
- * [pin](xref:choco-command-pin) - suppress upgrades for a package
- * [outdated](xref:choco-command-outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
- * [upgrade](xref:choco-command-upgrade) - upgrades packages from various sources
- * [uninstall](xref:choco-command-uninstall) - uninstalls a package
- * [pack](xref:choco-command-pack) - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
- * [push](xref:choco-command-push) - pushes a compiled nupkg to a source
- * [new](xref:choco-command-new) - generates files necessary for a chocolatey package from a template
- * [source](xref:choco-command-source) - view and configure default sources
- * [sources](xref:choco-command-sources) - view and configure default sources (alias for source)
+ * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an apikey for a particular source
  * [config](xref:choco-command-config) - Retrieve and configure config file settings
+ * [convert](xref:choco-command-convert) - converts packages from one type to another type
+ * [download](xref:choco-command-download) - downloads packages - optionally internalizing all remote resources
+ * [export](xref:choco-command-export) - exports list of currently installed packages
  * [feature](xref:choco-command-feature) - view and configure choco features
  * [features](xref:choco-command-features) - view and configure choco features (alias for feature)
- * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
- * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an apikey for a particular source
- * [unpackself](xref:choco-command-unpackself) - re-installs Chocolatey base files
- * [support](xref:choco-command-support) - provides support information
+ * [find](xref:choco-command-find) - searches remote or local packages (alias for search)
  * [help](xref:choco-command-help) - displays top level help information for choco
- * [export](xref:choco-command-export) - exports list of currently installed packages
+ * [info](xref:choco-command-info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
+ * [install](xref:choco-command-install) - installs packages from various sources
+ * [list](xref:choco-command-list) - lists remote or local packages
+ * [new](xref:choco-command-new) - generates files necessary for a chocolatey package from a template
+ * [optimize](xref:choco-command-optimize) - optimizes installation, reducing space usage
+ * [outdated](xref:choco-command-outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
+ * [pack](xref:choco-command-pack) - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
+ * [pin](xref:choco-command-pin) - suppress upgrades for a package
+ * [push](xref:choco-command-push) - pushes a compiled nupkg or intunewin file to a source
+ * [search](xref:choco-command-search) - searches remote or local packages (alias for list)
+ * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
+ * [source](xref:choco-command-source) - view and configure default sources
+ * [sources](xref:choco-command-sources) - view and configure default sources (alias for source)
+ * [support](xref:choco-command-support) - provides support information
+ * [sync](xref:choco-command-sync) - synchronizes against system installed software - generates missing packages
+ * [synchronize](xref:choco-command-synchronize) - synchronizes against system installed software - generates missing packages
  * [template](xref:choco-command-template) - get information about installed templates
  * [templates](xref:choco-command-templates) - get information about installed templates (alias for template)
- * [download](xref:choco-command-download) - downloads packages - optionally internalizing all remote resources
- * [synchronize](xref:choco-command-synchronize) - synchronizes against system installed software - generates missing packages
- * [sync](xref:choco-command-sync) - synchronizes against system installed software - generates missing packages
- * [optimize](xref:choco-command-optimize) - optimizes installation, reducing space usage
- * [convert](xref:choco-command-convert) - converts packages from one type to another type
+ * [uninstall](xref:choco-command-uninstall) - uninstalls a package
+ * [unpackself](xref:choco-command-unpackself) - re-installs Chocolatey base files
+ * [upgrade](xref:choco-command-upgrade) - upgrades packages from various sources
 
 
 Please run chocolatey with `choco command -help` for specific help on
