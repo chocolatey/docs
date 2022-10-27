@@ -39,6 +39,7 @@ can do just about anything you need. Choco has some very handy [built-in functio
 [helpers](xref:powershell-reference).
 
 ## Table of Contents
+
 1. [Rules](#rules-to-be-observed-before-publishing-packages)
 1. [Encoding](#character-encoding)
 1. Learning about NuGet (and Chocolatey) Packages in general - [Information](#okay-how-do-i-create-packages) and [Nuspec](#nuspec)
@@ -261,28 +262,79 @@ chocolateyInstall or chocolateyUninstall scripts.
 
 Uninstalling is handled by a `chocolateyUninstall.ps1` script, which should be in your package's `tools` directory, next to [chocolateyInstall.ps1](xref:chocolatey-install-ps1). All the usual [helper reference](xref:powershell-reference) are available. If your package doesn't uninstall cleanly, people will get grumpy because they'll have to manually clean up after you. Be a good human being and write an uninstaller.
 
-
 ## Dependency Chaining
+
 You can make packages that depend on other packages just by adding those dependencies to the nuspec. Take a look at [ferventcoder.chocolatey.utilities nuspec](https://github.com/ferventcoder/chocolatey-packages/blob/master/manual/ferventcoder.chocolatey.utilities/ferventcoder.chocolatey.utilities.nuspec).
 
 ## Avoid folders named “content”
+
 Do not use a folder named “content” in your package. NuGet attaches a special meaning to this folder and will not allow you to have dependencies on packages that have content folders without also having a content folder. It's turtles all the way down until we or NuGet removes this limitation.
 
 ## Naming your package
-The __title__ of your package (`<title>` tag in the nuspec) should be the same as the name of the application. Follow the official spelling, use upper and lower case and don’t forget the spaces. Examples of correct package titles are: *Google&nbsp;Chrome*, *CCleaner*, *PuTTY* and *FileZilla*. The title will appear on the left side in the package list of the Chocolatey gallery, followed by the version.
 
-There are some guidelines in terms of the package __id__ (`<id>` tag in the nuspec):
-* __Use only lowercase letters__, even if you used uppercase letters in the package title. (This is considered a guideline because it is correctable in other ways). Once a package is submitted (even prior moderation), the Gallery will always show the id with the casing of the first package version. In addition, changing the casing of the package id may have negative side effects on dependencies (note: this last statement needs verified).
-* If the original application name consists of compound words without spaces (CamelCase), just as *MKVToolNix*, *TightVNC* and *VirtualBox*, the package id’s are simply the same (but __lowercase__ of course): `mkvtoolnix`, `tightvnc`, and `virtualbox`.
-* If the name of the application contains multiple words separated by spaces, such as *MusicBrainz&nbsp;Picard* or *Adobe Reader*, replace the spaces with the hyphen-minus character “-” (U+002D) or just omit them. __Don’t use dots.__ They should be used only if the original application name contains dots (e.&nbsp;g. *Paint.NET*). Hence the correct id’s of the previously mentioned applications can be `musicbrainz-picard` or `adobereader`. It is highly suggested to use the hyphen method when there are long package names, because that increases readability.
-* For sub-packages, use the hyphen-minus character “-” (U+002D) as separator, not a dot. Sub-packages are intended for separate packages that include extensions, modules or additional features/files for other applications. Therefore `keepass-langfiles` is a proper package id, because it adds the language files for the main application which in this case is _KeePass_. Another example is `libreoffice-help` for the help pack for _LibreOffice_, the open source office suite.
-* If you want to package an open source application, look on the repositories of some popular Linux distributions, such as [Debian](http://www.debian.org/distrib/packages#search_packages), [Ubuntu](http://packages.ubuntu.com/) and [Arch Linux](https://www.archlinux.org/packages/) if they already have a package of it. If that is the case, __use the same package id__. This will make it easier for Linux and Windows users, because then they don’t have to remember and use different package names.
+The **title** of your package (`<title>` tag in the nuspec) should be the same as the name of the application.
+Follow the official spelling, use upper and lower case and don’t forget the spaces.
+Examples of correct package titles are: _Google Chrome_, _CCleaner_, _PuTTY_ and _FileZilla_.
+The title will appear on the left side in the package list of the Chocolatey gallery, followed by the version.
 
-These guidelines are already commonly applied on packages for all major Linux distributions, because they lead to a more consistent look of software repositories, easier to remember package id’s and less considerations about the naming for package creators.
+There are some guidelines in terms of the package **ID** (`<id>` tag in the nuspec):
 
-Note that a lot of packages in the Chocolatey Gallery don’t follow these guidelines. The simple reason is that the affected packages were created before the introduction of these guidelines.
+* **Use only lowercase letters**, even if you used uppercase letters in the package title.
+  (This is considered a guideline because it is correctable in other ways).
+  Once a package is submitted (even prior moderation), the Chocolatey Community Repository will always show the id with the casing of the first package version.
+  In addition, changing the casing of the package id may have negative side effects on dependencies (note: this last statement needs verified).
+* If the original application name consists of compound words without spaces (CamelCase), just as _MKVToolNix_, _TightVNC_ and _VirtualBox_, the package id’s are simply the same (but **lowercase** of course): `mkvtoolnix`, `tightvnc`, and `virtualbox`.
+* If the name of the application contains multiple words separated by spaces, such as _MusicBrainz Picard_ or _Adobe Reader_, replace the spaces with the hyphen-minus character “-” (U+002D), or just omit them.
+  **Don’t use dots**.
+  Dots should be used only if the original application name contains dots (for example, _Paint.NET_).
+  Hence the correct id’s of the previously mentioned applications can be `musicbrainz-picard` or `adobereader`.
+  We recommended you use the hyphen method when there are long package names to ensure they remain readable.
+* For sub-packages, use the hyphen-minus character “-” (U+002D) as the separator, not a dot.
+  Sub-packages are intended for separate packages that include extensions, modules or additional features/files for other applications.
+  Therefore `keepass-langfiles` is a proper package id, because it adds the language files for the main application which in this case is _KeePass_.
+  Another example is `libreoffice-help` for the help pack for _LibreOffice_, the open source office suite.
+* If you want to package an open source application, first search for any pre-existing packages on services like [Repology](https://repology.org/).
+  If there are already published packages for the application on another repository, **use the same package id**.
+  This will make it easier for users which work with multiple platforms, so they don't have to remember and use different package names.
 
-If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages&nbsp; - see [Portable vs Installable](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](xref:faqs#what-is-the-difference-between-packages-no-suffix-as-compared-to.install.portable)
+These guidelines are already commonly applied on packages for all major Linux distributions, because they lead to a more consistent user experience for software repositories, result in easier to remember package IDs, and reduce unnecessary considerations on naming packages for package creators.
+
+Note that some packages in the Chocolatey Community Repository don't follow these guidelines; many of these were created before these guidelines were introduced.
+New packages should follow the guidelines to improve the overall experience for users going forward.
+
+If you are going to offer a package that has both an installer and an archive (zip or executable only) version of the application, create three packages - see [Portable vs Installable](xref:faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application) and [Install, Portable, and Meta/Virtual Packages](xref:faqs#what-is-the-difference-between-packages-no-suffix-as-compared-to.install.portable).
+
+### Naming packages to allow for side-by-side installation
+
+For some software, it is expected that users may want multiple different versions installed simultaneously.
+This has commonly been seen with software like Python which offer some kind of runtime dependency that other scripts or applications depend on.
+
+In the past, Chocolatey CLI supported a "side-by-side" installation method which could be used for this purpose to install multiple distinct versions side-by-side, on the same machine.
+This has since been deprecated and will be removed in version 2.0.0 due to many issues with the use and implementation of the feature.
+
+#### If the software you're creating a package for expects **side-by-side installations of different versions**
+
+1. Create _separate package IDs_ for each major version (or major + minor version, depending on the expectations of users) which include the version number in the ID.
+  For example, if the package ID would be `python`, the package for major version 2 would be `python2`, or a package for specifically the 2.7 branch might be `python27` or `python2-7`.
+  These individual versioned packages can be updated as normal, as long as that major and/or minor version is still receiving further updates.
+2. Create a [**metapackage**](xref:getting-started#terminology) for the overall product with a package version for each of the versioned packages.
+  In other words, create another package (this time without a version number in the ID), which contains only a `nuspec` file and add a dependency on the versioned package.
+  Following the above example for Python, we'd create a package with the ID `python` at version `2.0.0` that takes a dependency on the `python2` package.
+3. New versions of the metapackage should be published for "sub-versions" of the dependency package as well.
+  For example, if Python version `3` is released, we'd create a new version of the `python` package with its version set to `3.0.0`, which depends on a new `python3` package.
+
+#### If the software you're creating a package for expects **side-by-side installations of the same version**
+
+A possible example might be where multiple different instances of the software are being installed into different install directories.
+
+Chocolatey does not currently support this functionality.
+This functionality can be mimicked by making use of `--force` to forcibly overwrite an already-installed package and providing an argument or package parameter that the package can use to direct the installation to install into a different directory.
+However, Chocolatey will only be aware of the most-recently installed copy of the software, and will only be able to provide updates to that single installation of the software in most cases.
+As a result, this particular configuration is not supported.
+
+A potential workaround for users maintaining their own package repositories is to maintain separate instances of the same package under different package IDs, where each package ships the same software, but is scripted to install to a different directory.
+For example, you can create a `python3-localtoolsfolder` and a `python3-programfilesfolder` package which have the same contents, with only slight differences in the parameters passed to the install functions to ensure they install in the desired locations.
+The recommended naming conventions here are similar to sub-packages, where the package is named after the primary package ID followed by a dash and a discriminator, likely named after the install location or referencing the purpose of the additional package(s).
 
 ## Package description and release notes
 
