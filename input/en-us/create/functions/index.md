@@ -185,4 +185,4 @@ The following are experimental or use not recommended:
  * https_proxy - Set by original `https_proxy` passthrough, or same as `ChocolateyProxyLocation` if explicitly set. (0.10.4+)
  * no_proxy- Set by original `no_proxy` passthrough, or same as `ChocolateyProxyBypassList` if explicitly set. (0.10.4+)
  * ChocolateyPackageFolder - Not for use in package automation scripts. Recommend using `Get-ChocolateyPath -PathType 'PackagePath'` instead
- * ChocolateyToolsLocation - Not for use in package automation scripts. Recommend using Get-ToolsLocation instead
+ * ChocolateyToolsLocation - Not for use in package automation scripts. Recommend using `Get-ToolsLocation` instead
