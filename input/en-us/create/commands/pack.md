@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -28,13 +28,12 @@ RedirectFrom:
 Chocolatey will attempt to package a nuspec into a compiled nupkg.
 
 > :memo: **NOTE** 100% compatible with older chocolatey client (0.9.8.32 and below)
- with options and switches. In most cases you can still pass options 
- and switches with one dash (`-`). For more details, see 
+ with options and switches. In most cases you can still pass options
+ and switches with one dash (`-`). For more details, see
  [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`).
 
 > :memo: **NOTE** You can pass arbitrary property value pairs through to nuspecs.
  These will replace variables formatted as `$property$` with the value passed.
-
 
 ## Usage
 
@@ -47,7 +46,7 @@ Chocolatey will attempt to package a nuspec into a compiled nupkg.
     choco pack path/to/nuspec
     choco pack --outputdirectory build
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -59,8 +58,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 

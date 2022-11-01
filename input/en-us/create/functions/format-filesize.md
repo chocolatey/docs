@@ -51,7 +51,10 @@ None
 
 ## Outputs
 
-None
+
+ * Returns a string representation of the file size in a more friendly
+format based on the passed in bytes.
+
 
 ## Parameters
 

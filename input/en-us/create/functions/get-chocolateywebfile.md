@@ -1,5 +1,5 @@
 ﻿---
-Order: 40
+Order: 50
 xref: get-chocolateywebfile
 Title: Get-ChocolateyWebFile
 Description: Information on Get-ChocolateyWebFile function
@@ -12,7 +12,7 @@ RedirectFrom:
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyWebFile.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-Downloads a file from the internets.
+Downloads a file from the internet.
 
 ## Syntax
 

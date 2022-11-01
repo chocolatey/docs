@@ -19,7 +19,7 @@ ShowInSidebar: false
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -40,7 +40,7 @@ Chocolatey will allow you to interact with features.
     choco feature disable -n=bob
     choco feature enable -n=bob
 
-> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to 
+> :memo: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 
@@ -52,8 +52,8 @@ Normal:
  - 0: operation was successful, no issues detected
  - -1 or 1: an error has occurred
 
-If you find other exit codes that we have not yet documented, please 
- file a ticket so we can document it at 
+If you find other exit codes that we have not yet documented, please
+ file a ticket so we can document it at
  https://github.com/chocolatey/choco/issues/new/choose.
 
 

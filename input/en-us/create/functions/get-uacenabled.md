@@ -1,5 +1,5 @@
 ﻿---
-Order: 110
+Order: 120
 xref: get-uacenabled
 Title: Get-UACEnabled
 Description: Information on Get-UACEnabled function
@@ -40,7 +40,9 @@ None
 
 ## Outputs
 
-None
+
+ * System.Boolean
+
 
 ## Parameters
  

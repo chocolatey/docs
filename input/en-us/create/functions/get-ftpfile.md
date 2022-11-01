@@ -1,5 +1,5 @@
 ﻿---
-Order: 70
+Order: 80
 xref: get-ftpfile
 Title: Get-FtpFile
 Description: Information on Get-FtpFile function
@@ -12,7 +12,7 @@ RedirectFrom:
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-FtpFile.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-Downloads a file from a File Transfter Protocol (FTP) location.
+Downloads a file from a File Transfer Protocol (FTP) location.
 
 ## Syntax
 
@@ -49,7 +49,9 @@ None
 
 ## Outputs
 
-None
+
+ * None
+
 
 ## Parameters
 

@@ -1,5 +1,5 @@
 ﻿---
-Order: 160
+Order: 170
 xref: get-webheaders
 Title: Get-WebHeaders
 Description: Information on Get-WebHeaders function
@@ -29,9 +29,6 @@ This is a low-level function that is used by Chocolatey to get the
 headers for a request/response to better help when getting and
 validating internet resources.
 
-## Notes
-
-Not recommended for use in package scripts.
 
 ## Aliases
 

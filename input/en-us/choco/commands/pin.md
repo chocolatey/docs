@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
@@ -186,6 +186,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --reason, --pin-reason, --note=VALUE
      Pin Reason - Text information about why you are setting a pin. Available 
        in business editions 1.12.2+. 
+
+     --use-self-service, --force-self-service
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

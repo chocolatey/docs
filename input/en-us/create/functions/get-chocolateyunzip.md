@@ -1,5 +1,5 @@
 ﻿---
-Order: 30
+Order: 40
 xref: get-chocolateyunzip
 Title: Get-ChocolateyUnzip
 Description: Information on Get-ChocolateyUnzip function
@@ -23,6 +23,7 @@ Get-ChocolateyUnzip `
   [-SpecificFolder <String>] `
   [-PackageName <String>] `
   [-FileFullPath64 <String>] `
+  [-DisableLogging] `
   [-IgnoredArguments <Object[]>] [<CommonParameters>]
 ~~~
 
@@ -68,7 +69,9 @@ None
 
 ## Outputs
 
-None
+
+ * Returns the passed in $destination.
+
 
 ## Parameters
 
@@ -141,6 +144,22 @@ Aliases                | file64
 Required?              | false
 Position?              | named
 Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -DisableLogging
+OPTIONAL - This disables logging of the extracted items. It speeds up
+extraction of archives with many files. 
+
+Usage of this parameter will prevent Uninstall-ChocolateyZipPackage
+from working, extracted files will have to be cleaned up with
+Remove-Item or a similar command instead.
+
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
 Accept Pipeline Input? | false
  
 ###  -IgnoredArguments [&lt;Object[]&gt;]

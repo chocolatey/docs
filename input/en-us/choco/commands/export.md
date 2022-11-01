@@ -17,7 +17,7 @@ RedirectFrom:
 > - chocolatey (Alias for choco)
 > - cinst (Shortcut for choco install)
 > - cpush (Shortcut for choco push)
-> - cuninst (Shortcut for cuninst)
+> - cuninst (Shortcut for choco uninstall)
 > - cup (Shortcut for choco upgrade)
 >
 > We recommend that any scripts calling these shims be updated to use the full command, as
