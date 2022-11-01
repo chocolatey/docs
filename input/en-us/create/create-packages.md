@@ -75,7 +75,7 @@ There are a few rules that you have to follow before pushing packages to chocola
 1. **Only post publicly relevant packages.** You should consider whether this package is useful for others. If that is not the case, it shouldn't be published on Chocolatey.org. Reasons for that can be if the package would require a very customized configuration. You can host your personal packages on [MyGet](https://www.myget.org/) and still be able to install them with Chocolatey using the `-source` parameter.
 1. **Do not publish junk or malware** packages.
 1. **Don't package software _containing_ malware.** Packages of software that comes with bundled adware, spyware or other unrelated software that installs even in silent mode, are not allowed. But if you can figure out how to install the desired software without this unrelated software, it is allowed to publish the package. That can be accomplished for example with additional command line switches or by adding specific values to the registry. Examples of packages which make use of this are [PDFCreator](https://github.com/stack72/MyChocolateyPackages/tree/master/PDFCreator) and [CCleaner](https://github.com/tonigellida/chocolateyautomaticpackages/tree/master/ccleaner).
-1. **Don't package software that is already packaged**. Use the search function in the [community.chocolatey.org gallery](https://community.chocolatey.org/packages) and look if there is already a package for the desired software. If you would like to improve the already existing  package or if you have suggestions, just contact the package maintainer or open a pull request at the maintainer’s package repository.
+1. **Don't package software that is already packaged**. Use the search function in the [Chocolatey Community Repository(https://community.chocolatey.org/packages) and look if there is already a package for the desired software. If you would like to improve the already existing  package or if you have suggestions, just contact the package maintainer or open a pull request at the maintainer’s package repository.
 1. **Don't include other required software if there's a package of it.** If a package requires other software of which there is already a package, the already existing package should be used as [dependency](http://docs.nuget.org/create/nuspec-reference#specifying-dependencies) instead.
 1. **Split dependencies into multiple packages.** Try to split up packages as much as possible. If for example a program comes with additional modules/installers that are optional, make different packages for them instead of including all the things into one package. This idea is already widely applied for Linux packages, because it leads to a more lightweight system and reduces potential issues and conflicts.
 1. **Use a simple intuitive lowercase name for the package**. See the [package naming guidelines](#naming-your-package) for details. (If you are a reviewer/moderator, this is considered a guideline).
@@ -84,7 +84,7 @@ Is your package unqualified for the Chocolatey feed, but you like to be able to 
 
 ## Character encoding
 
-* **Use the UTF-8 character encoding** for the `*.nuspec` and `*.ps1` files. If you don’t respect this rule, some characters are not displayed correctly in the [Gallery on Chocolatey.org](http://community.chocolatey.org/packages), because the Gallery assumes `UTF-8`.
+* **Use the UTF-8 character encoding** for the `*.nuspec` and `*.ps1` files. If you don’t respect this rule, some characters are not displayed correctly in the [Chocolatey Community Repository](http://community.chocolatey.org/packages), because if defaults to `UTF-8`.
 * **Byte Order Mark (BOM) is optional for `*.nuspec`.**. A `BOM` is not required but it won't hurt anything if it is found.
 * **PowerShell scripts need to be saved in UTF-8 with `BOM`**. PowerShell is ignoring the standards and needs a `BOM` in order to recognize scripts as `UTF-8`. Otherwise it processes non `ASCII` characters incorrectly.
 * Don’t use the default Windows Editor. While newer versions of Notepad have improved its ability to handle line endings and UTF-8 w/out BOM, it is still behind in capabilities as compared to other editors. Alternatives:
@@ -275,7 +275,7 @@ Do not use a folder named “content” in your package. NuGet attaches a specia
 The **title** of your package (`<title>` tag in the nuspec) should be the same as the name of the application.
 Follow the official spelling, use upper and lower case and don’t forget the spaces.
 Examples of correct package titles are: _Google Chrome_, _CCleaner_, _PuTTY_ and _FileZilla_.
-The title will appear on the left side in the package list of the Chocolatey gallery, followed by the version.
+The title will appear on the left side in the package list of the Chocolatey Community Repository, followed by the version.
 
 There are some guidelines in terms of the package **ID** (`<id>` tag in the nuspec):
 
@@ -317,10 +317,10 @@ This has since been deprecated and will be removed in version 2.0.0 due to many 
 1. Create _separate package IDs_ for each major version (or major + minor version, depending on the expectations of users) which include the version number in the ID.
   For example, if the package ID would be `python`, the package for major version 2 would be `python2`, or a package for specifically the 2.7 branch might be `python27` or `python2-7`.
   These individual versioned packages can be updated as normal, as long as that major and/or minor version is still receiving further updates.
-2. Create a [**metapackage**](xref:getting-started#terminology) for the overall product with a package version for each of the versioned packages.
+1. Create a [**metapackage**](xref:getting-started#terminology) for the overall product with a package version for each of the versioned packages.
   In other words, create another package (this time without a version number in the ID), which contains only a `nuspec` file and add a dependency on the versioned package.
   Following the above example for Python, we'd create a package with the ID `python` at version `2.0.0` that takes a dependency on the `python2` package.
-3. New versions of the metapackage should be published for "sub-versions" of the dependency package as well.
+1. New versions of the metapackage should be published for "sub-versions" of the dependency package as well.
   For example, if Python version `3` is released, we'd create a new version of the `python` package with its version set to `3.0.0`, which depends on a new `python3` package.
 
 #### If the software you're creating a package for expects **side-by-side installations of the same version**
@@ -389,7 +389,7 @@ If there is an icon which is suitable for your package, you can specify it in th
 * **Use package icons with at least 128 pixels in width or height** if available. However, avoid very high resolutions, because this would only unnecessarily increase the page load time. If there are only icons with less than 128 pixels available, choose the icon with the highest resolution you can find without upscaling it. Don’t use low resolution favicons as package icons.
 * Use icons with transparent background if available.
 * Don’t use distorted or blurry icons.
-* The package list in the gallery shows the icons with a maximum of 48 pixels in width/height. Application logos with very detailed graphics that are barely visible at that dimension are not suitable as package icons.
+* The package list in the Chocolatey Community Repository shows the icons with a maximum of 48 pixels in width/height. Application logos with very detailed graphics that are barely visible at that dimension are not suitable as package icons.
 * **PNG is the preferred format** for raster package icons. Avoid ICO, GIF and JPEG graphics.
 * Good sources for package icons are the official desktop icons of the corresponding application you want to make a package of. The icons can be extracted from the app executables using tools like [BeCyIconGrabber](https://community.chocolatey.org/packages/becyicongrabber). Remember to take the icon with 128&nbsp;px or more and save it as PNG file.
 
