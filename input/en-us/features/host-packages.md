@@ -337,24 +337,24 @@ See https://help.sonatype.com/repomanager3/high-availability for details. It is 
 
 #### ProGet
 
-* Windows Server
-* CPU - 4 cores (Recommend more)
-* RAM - 8GB+
-* Storage (HDD) - We recommend 2-5TB of free space for a local file store of artifacts (default install needs 20GB).
-* Database: SQL Server. Assume high specs for SQL Server, pretty much the highest specs you can configure on a Windows machine. 16+ cores (CPU), 64GB+ RAM, 5TB+, etc
+* Windows Server or Linux (Docker)
+* CPU - 2 to 4 cores
+* RAM - 4GB to 8GB
+* Storage (HDD) - we recommend 2-5TB of free space for a local file store of artifacts (ProGet itself requires less than 100MB free space)
+* Database: SQL Server (built-in SQL Express is fine, or use your existing SQL Server)
 * Chocolatey Repository Type: Chocolatey or NuGet
 
-See https://inedo.com/support/documentation/proget/installation/installation-guide for more details. There is a Linux installation guide for Docker containers, however we don't recommend it for production use - https://inedo.com/support/documentation/proget/installation/installation-guide/linux-docker.
+See https://inedo.com/support/documentation/proget/installation/installation-guide for more details. 
 
 **PRICING**: Starts at free (for ProGet) - https://inedo.com/proget/pricing.
 
 #### ProGet Enterprise High Availabilty
 
-* ProGet Server (Each): Windows Server with 4+ cores (CPU), 8GB+ RAM, and probably at least 50GB of free space (as the artifacts are stored on shared storage). This is similar to ProGet section above.
+* Windows Server Cluster or Kubernetes Cluster, each with similar specifications as above;  note that artifacts are stored on shared storage
 * Shared Storage: Appliance-based (such as NAS), or software-based (such as SMB). This will be shared across all Servers, so they will need to be able to read and write to it at high speed. Recommend appliance-based (NAS) with 3 times the total size of what you will store (and a backup) - 2-5TB+ space.
-* Database: SQL Server with Database Clustering Recommended. Assume high specs for SQL Server, pretty much the highest specs you can configure on a Windows machine. 16+ cores (CPU), 64GB+ RAM, 5TB+, etc
+* Database: SQL Server with Database Clustering Recommended; high specs are not a requirement
 * Load Balancer: Assume powerful - this will be software-based (such as nginx or HAProxy) or an appliance (such as F5 or Citrix).
-* May or may not support cross-datacenter replication.
+* Supports cross-datacenter replication with multiple instances
 
 See https://inedo.com/support/documentation/proget/administration/high-availability for details.
 
