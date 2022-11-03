@@ -24,14 +24,14 @@ If a package does not contain a `chocolateyInstall.ps1`, but a `pre-install-all.
 Hooks can be installed just like extensions, via a specific package type, namely `.hook`. The name of the installed hook folder is the package id, minus the `.hook`.
 
 How to create a Hook package:
+
 1. Create a package with a `.hook` suffix like `choco new name.hook`
 1. Delete the created files and folders except for the `.nuspec`
 1. Create a `hook` folder in the root of the package (next to the `.nuspec`).
 1. Put your hook PowerShell script files inside the `hook` folder.
 1. Pack and install your new Hook package.
 
-
-## Recommenations
+## Recommendations
 
 ### Still under development
 
@@ -44,3 +44,11 @@ It is best to avoid having a `.hook` package taking a dependency on regular pack
 ### Do take dependencies on extension packages
 
 If any hook script in a `.hook` package require helpers from an `.extension` package, then make sure that they `.hook` package takes a dependency on that `.extension` package.
+
+### Don't take dependencies on hook packages
+
+Don't add a hook package as a dependency for your regular package. Hook scripts are intended to be added only by the user of Chocolatey CLI. If your package requires functionality similar to that which would normally be provided via a hook script package, then it should be added directly to the standard automation scripts for the package. Adding a hook package as a dependency to your regular package will cause the package to fail validation on the Chocolatey Community Repository.
+
+### Don't add hook scripts to regular packages
+
+Don't add hook scripts to your regular Chocolatey package. If your package requires functionality similar to that which would normally be provided via a hook script package, then it should be added directly to the standard automation scripts for the package. Adding a hook script to your regular package will cause the package to fail validation on the Chocolatey Community Repository.
