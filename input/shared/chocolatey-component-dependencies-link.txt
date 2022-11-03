@@ -1,0 +1,3 @@
+## Chocolatey Component Package Dependencies
+
+Please check out the [Chocolatey Component Package Dependencies](xref:chocolatey-components-dependencies-and-support-lifecycle#chocolatey-component-package-dependencies) section for more information about how each package version relates to the other.

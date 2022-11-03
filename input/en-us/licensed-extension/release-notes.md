@@ -36,7 +36,9 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 >
 > We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
-<?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+<?! Include "../../shared/maintenance-and-support-link.txt" /?>
+
+<?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 ## 5.0.0 (October 20, 2022)
 
