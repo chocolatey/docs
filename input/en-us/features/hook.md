@@ -5,7 +5,7 @@ Title: Extend Chocolatey With PowerShell Scripts (Hooks)
 Description: Run PowerShell before and after Package Automation Scripts
 ---
 
-A feature is available in Chocolatey CLI v1.2.0, which allows you to extend a package's automation script(s) with additional PowerShell scripts, called hooks. 
+A feature is available in Chocolatey CLI v1.2.0, which allows you to extend a package's automation script(s) with additional PowerShell scripts, called hooks.
 
 ## Overview
 
@@ -13,11 +13,11 @@ Hooks allow you to run code before a package automation script like a `chocolate
 
 ## Creating Hook Scripts
 
-Hook scripts are PowerShell `.ps1` files, and are run in the same environment as package automation scripts run, so they have access to all of the same environment variables and helpers. 
+Hook scripts are PowerShell `.ps1` files, and are run in the same environment as package automation scripts run, so they have access to all of the same environment variables and helpers.
 
 The conditions for when a hook is run is based on the filename of the hook. The filename format is `<pre|post>-<install|beforemodify|uninstall>-<packageID|all>.ps1`. The first section is for the timing of when the hook script runs. Filenames that start with `pre` run before the package automation script (e.g. the `chocolateyInstall.ps1`), while filenames that start with `post` are run afterwards. The second section of the filename determines which package automation script the hook is run before or after. The third section of the filename is either a string of the package ID for which the hook should be run, or the keyword `all` to specify that the hook should be run for all package IDs.
 
-If a package does not contain a `chocolateyInstall.ps1`, but a `pre-install-all.ps1` hook is installed, then that hook will still run at the point in the package install as the `chocolateyInstall.ps1` would have been run if the package had included it. 
+If a package does not contain a `chocolateyInstall.ps1`, but a `pre-install-all.ps1` hook is installed, then that hook will still run at the point in the package install as the `chocolateyInstall.ps1` would have been run if the package had included it.
 
 ## Creating Hook Packages
 
