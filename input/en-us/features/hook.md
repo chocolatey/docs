@@ -43,7 +43,7 @@ It is best to avoid having a `.hook` package taking a dependency on regular pack
 
 ### Do take dependencies on extension packages
 
-If any hook script in a `.hook` package require helpers from an `.extension` package, then make sure that they `.hook` package takes a dependency on that `.extension` package.
+If any hook script in a `.hook` package require helpers from an `.extension` package, then make sure that the `.hook` package takes a dependency on that `.extension` package.
 
 ### Don't take dependencies on hook packages
 
