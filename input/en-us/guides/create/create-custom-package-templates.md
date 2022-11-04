@@ -115,7 +115,7 @@ Once installed, call this with `choco new test -t <TEMPLATE NAME> CustomValue=Ye
 
 If you have Chocolatey v0.9.10+, you can manage templates as packages allowing you to upgrade a template when a new version is available. When it comes to packaging templates, Chocolatey takes a conventional approach. You must create a package with the suffix ".template" and have a templates folder.
 
-To manage a template as a package, create a new package with the name "<TEMPLATE NAME>.template". The name of the package minus the ".template" will be the name of the template.
+To manage a template as a package, create a new package with the name `<TEMPLATE NAME>.template`. The name of the package minus the ".template" will be the name of the template.
 
 Then create a templates folder next to the `<TEMPLATE NAME>.template.nuspec`. This folder is where the template goes. The only thing to remember is that the nuspec file created here must end in ".template"  (e.g. `<TEMPLATE NAME>.nuspec.template`) as a Chocolatey package allows only one nuspec file.
 
