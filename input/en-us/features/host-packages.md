@@ -41,6 +41,7 @@ Some of these options also work from a non-Windows hosting perspective. See [Non
 * Chocolatey Gallery
 * Visual Studio Team Services (use NuGet v2 urls)
 * [Cloudsmith](https://cloudsmith.com) - Cloudsmith is a universal, cloud-native package management solution for Deployment or Distribution. All your packages, in any format, including Chocolatey, NuGet and Powershell, in one location and accessible across the organization.
+* [Express Chocolatey Server](https://www.npmjs.com/package/express-chocolatey-server) - Open source, OS-agnostic, read-only, does not require .NET or Windows, based on [Express](https://expressjs.com/)
 
 #### Others
 
@@ -379,3 +380,4 @@ If you don't want to host on Windows you have only the following options (from l
 * [Cloudsmith](https://cloudsmith.com) - see [Cloudsmith NuGet Repositories](https://help.cloudsmith.io/docs/nuget-feed)
 * [Artifactory Pro](https://www.jfrog.com/artifactory/) - see [Artifactory NuGet Repositories](http://www.jfrog.com/confluence/display/RTF/NuGet+Repositories)
 * [Sonatype Nexus](https://books.sonatype.com/nexus-book/reference/nuget-nuget_hosted_repositories.html)
+* [Express Chocolatey Server](https://www.npmjs.com/package/express-chocolatey-server) - Open source, OS-agnostic, read-only, does not require .NET or Windows, based on [Express](https://expressjs.com/)
