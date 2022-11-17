@@ -392,11 +392,7 @@ In most cases, a package will only be switched to trusted after a few versions h
 
 > :memo: **NOTE**
 >
-> Once everything is ready, all packages will go under automated verification and validation and be held for fixes if they don't pass, even trusted packages.
-
-> :memo: **NOTE**
->
-> Another note, we've been setting trust per package. That is planned to change at some point for the most part as the trust level has always been about the maintainer and not always the package itself.
+> All packages go under automated verification, validation and virus scanning. If any of the tests don't pass, they are held for the maintainer to fix the package or to make a review comment. This includes trusted packages.
 
 ### How do I install a package version under moderation?
 
