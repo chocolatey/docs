@@ -71,10 +71,10 @@ if (-not (Test-Path $env:ChocolateyInstall)) {
     accidentally overwrite them with absolute path values. Where the registry allows us to see "%SystemRoot%" in a PATH
     entry, PowerShell's registry provider only sees "C:\Windows", for example.
 #>
-$userKey = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment')
+$userKey = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey('Environment',$true)
 $userPath = $userKey.GetValue('PATH', [string]::Empty, 'DoNotExpandEnvironmentNames').ToString()
 
-$machineKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\ControlSet001\Control\Session Manager\Environment\')
+$machineKey = [Microsoft.Win32.Registry]::LocalMachine.OpenSubKey('SYSTEM\ControlSet001\Control\Session Manager\Environment\',$true)
 $machinePath = $machineKey.GetValue('PATH', [string]::Empty, 'DoNotExpandEnvironmentNames').ToString()
 
 $backupPATHs = @(
