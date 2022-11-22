@@ -388,15 +388,11 @@ Two ways your packages can become trusted:
 * You write the underlying software that the package installs. For instance the ReSharper package that comes directly from JetBrains.
 * You put in a lot of good packages and your packages will eventually become trusted.
 
-For a package to switch to trusted, a moderator must manually make the change. It is not an automated process.
+In most cases, a package will only be switched to trusted after a few versions have been approved by moderators without any changes being required. This is to ensure that the package has been looked at by more than one person, since automated testing does not catch everything. Switching a package to trusted status is a manual change by a moderator. It is not an automated process, and does not happen imediately even if you are the software author. 
 
 > :memo: **NOTE**
 >
-> Once everything is ready, all packages will go under automated verification and validation and be held for fixes if they don't pass, even trusted packages.
-
-> :memo: **NOTE**
->
-> Another note, we've been setting trust per package. That is planned to change at some point for the most part as the trust level has always been about the maintainer and not always the package itself.
+> All packages go under automated verification, validation and virus scanning. If any of the tests don't pass, they are held for the maintainer to fix the package or to make a review comment. This includes trusted packages.
 
 ### How do I install a package version under moderation?
 
