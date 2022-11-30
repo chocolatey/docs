@@ -67,7 +67,7 @@ You can pass options and switches in the following ways:
  * **Option Bundling / Bundled Options**: One character switches can be
    bundled. e.g. `-d` (debug), `-f` (force), `-v` (verbose), and `-y`
    (confirm yes) can be bundled as `-dfvy`.
- * > :memo: **NOTE** If `debug` or `verbose` are bundled with local options
+ * NOTE: If `debug` or `verbose` are bundled with local options
    (not the global ones above), some logging may not show up until after
    the local options are parsed.
  * **Use Equals**: You can also include or not include an equals sign
@@ -157,7 +157,7 @@ based on choco not receiving things you think you are passing to it.
    not source name ('https://community.chocolatey.org/api/v2' versus
    'chocolatey').
  * If parsing output, you might want to use `--limit-output`/`-r` to
-   get output in a more machine parseable format. > :memo: **NOTE** Not all
+   get output in a more machine parseable format. NOTE: Not all
    commands handle return of information in an easily digestible
    output.
  * Use exit codes to determine status. Chocolatey exits with 0 when
@@ -212,7 +212,9 @@ Following these scripting best practices will ensure your scripts work
 
 ## Default Options and Switches
 
-> :memo: **NOTE** Options and switches apply to all items passed, so if you are
+> :choco-info: **NOTE**
+>
+> Options and switches apply to all items passed, so if you are
  running a command like install that allows installing multiple
  packages, and you use `--version=1.0.0`, it is going to look for and
  try to install version 1.0.0 of every package passed. So please split
@@ -326,5 +328,7 @@ Following these scripting best practices will ensure your scripts work
 
 
 
-> :memo: **NOTE** This documentation has been automatically generated from `choco -h`. 
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `choco -h`. 
 

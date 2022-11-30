@@ -84,6 +84,8 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Set-PowerShellExitCode -Full`.
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Set-PowerShellExitCode -Full`.
 
 View the source for [Set-PowerShellExitCode](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Set-PowerShellExitCode.ps1)

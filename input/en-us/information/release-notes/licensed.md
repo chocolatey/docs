@@ -8,7 +8,7 @@ RedirectFrom: docs/release-notes-licensed
 
 # Chocolatey Release Notes - Commercial Editions
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > For commercial editions, refer to both this set of release notes and [Open Source Release Notes](xref:floss-release-notes).
 

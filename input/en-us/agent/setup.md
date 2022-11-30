@@ -14,7 +14,7 @@ To install the Chocolatey Agent service, you need to install the `chocolatey-age
 * Chocolatey Licensed Extension (`chocolatey.extension` package) v1.8.4+. For chocolatey-agent v0.5.0+, licensed extension v1.9.0+. For `chocolatey-agent` v0.7.0+, licensed extension v1.11.0+.
 * Chocolatey Agent Service (`chocolatey-agent` package) - 0.7.0+ is recommended.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The Chocolatey Agent Service requires Log On As Service and Log On As Batch rights. We attempt to set these rights on the user at the time of installation via Local Policy, but if you have a restrictive Group Policy that will be applied to the system, please ensure that the user account you are attempting to use (or ChocolateyLocalAdmin as the default) has the correct permissions applied in your Group Policy.
 
@@ -24,11 +24,11 @@ For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Lice
 
 Starting with Chocolatey Agent v0.8.0+, the service will install as a local administrative user `ChocolateyLocalAdmin` by default (and manage the password as well). However you can specify your own user with package parameters (or have it use `LocalSystem`). Using a local administrator account allows for more things to be installed without issues. It also will allow easier shortcuts and other items to be put back on the correct user (the original requestor). You can specify a domain account as well. Prior to `v0.8.0`, Chocolatey Agent would install as LocalSystem (`SYSTEM`) and would require additional customization.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Chocolatey Agent should **not** be installed on a machine that is acting as a domain controller. Doing so is not a supported configuration. Domain controllers do not have local accounts other than the LocalSystem (`SYSTEM`) account. Any other local administrator account, such as the default `ChocolateyLocalAdmin` account, used to install Chocolatey Agent on a domain controller will by default become a domain administrator account.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you are using file shares for sources, you may want to ensure the account or computer has network access permissions for the file share(s).
 
@@ -87,7 +87,7 @@ To set Chocolatey in background mode, you need to run the following:
 * OPTIONAL (highly recommended): For use with Chocolatey GUI, you need Chocolatey Extension v1.12.4+, and at least Chocolatey GUI v0.15.0. **Uninstall any version of the GUI you already have installed first**, then run `choco upgrade chocolateygui -y --allow-downgrade` (you will also need at least .NET 4.5.2 installed)
 * DOES NOT WORK WITH UAC, DO NOT USE UNTIL [FIX IS ANNOUNCED](https://groups.google.com/group/chocolatey-announce)! OPTIONAL (recommended if you use installers that are not completely silent): If you want self-service to interactively manage installations, run `choco feature enable --name="'useBackgroundServiceInteractively'"` (requires Chocolatey Extension v1.12.10+). This requires that you use the `ChocolateyLocalAdmin` account with the Chocolatey-managed password as passwords are not stored and the service would need to produce that at runtime. There are some security considerations and why this is not turned on by default. Please see [interactive self-service consideration](#interactive-self-service-consideration).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Once you are all setup, please review the [Common Errors and Resolutions](#common-errors-and-resolutions) section so you will be familiar if you run into any issues with working with sources.
 
@@ -159,7 +159,7 @@ If you must run in the context of working with "unattended", non-silent installa
 
 Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This will also contain more FAQs and Common Errors and Resolutions related to communication with Central Management.
 
@@ -356,7 +356,7 @@ Please see [Central Management Client Setup](xref:ccm-client) as the common erro
 
 You can not pass custom source arguments to Chocolatey, it will error. You need to set up sources in the Chocolatey configuration and any that are marked as allowed for self-service will be passed by the background service.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you have run `choco feature disable --name useBackgroundServiceWithSelfServiceSourcesOnly`, then all configured sources will be passed by the background service.
 
@@ -386,7 +386,7 @@ A way to do this with LocalSystem:
 1. Add this group to the share permissions with "Read" Access
 1. Add this group to the NTFS permissions with "Read" Access
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > You'll need to add this group itself and not nest it inside of another one.
 

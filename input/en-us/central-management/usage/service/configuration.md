@@ -7,7 +7,7 @@ Description: Information about the configuration options available for the CCM S
 
 ## Chocolatey Central Management Service Configuration File
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Any changes to the `chocolatey-central-management.exe.config` file will require that the Chocolatey Central Management Service be restarted.
 
@@ -87,7 +87,7 @@ Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messag
 
 ## Chocolatey Configuration File
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > When changes are made to these settings via the `choco config` command, there is no requirement to restart the CCM Service. These changes will be automatically picked up, and the necessary components within the CCM Service updated to use the changed values.
 

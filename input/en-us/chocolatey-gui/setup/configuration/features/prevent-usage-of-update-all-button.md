@@ -23,7 +23,7 @@ however, once this feature is enabled, it will no longer be shown
 
 Below is a short video which shows this feature in action:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Coming soon
 

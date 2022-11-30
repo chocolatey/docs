@@ -151,7 +151,7 @@ PowerShell DSC (Desired State Configuration) has a cChoco module that can manage
 
 ## PowerShell PackageManagement
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Chocolatey has a prototype provider for the built-in package manager on Windows 10/Windows Server 2016 that was created by Microsoft awhile back. It is not fully functional and it may have security issues. If you want to use Chocolatey with PackageManagement, we recommend using ChocolateyGet, which is a nice bridge until an official one is implemented. No ETA has been defined.
 
@@ -197,7 +197,7 @@ The Chocolatey team is most familiar with Puppet and has written some documentat
 * [Install with Puppet](https://chocolatey.org/install#install-with-puppet)
 * [Chocolatey Licensed Editions Configuration/Setup with Puppet](xref:setup-licensed#set-up-licensed-edition-with-puppet)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If anyone would be interested in providing documentation similar to the above for other frameworks, we'd accept it as Pull Requests at https://github.com/chocolatey/docs.
 

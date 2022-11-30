@@ -13,10 +13,10 @@ When there are no packages that are currently outdated, the button will be disab
 
 ![Show the update all button being disabled as no action can be taken](/assets/images/chocolatey-gui/user_interface_main-window_action_update-all_2.png "Show the update all button being disabled as no action can be taken")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button only exists when browsing the local source, i.e. `This PC`
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If required, it is possible to remove the Update All button via the [PreventUsageOfUpdateAllButton](xref:prevent-usage-of-update-all-button) feature.

@@ -7,7 +7,7 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 
 # Chocolatey for Business Azure Environment Release Notes
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Issue links may not be publicly available at this time.
 

@@ -8,7 +8,9 @@ RedirectFrom: docs/helpers-install-chocolatey-windows-service
 
 # Install-ChocolateyWindowsService
 
-> :memo: **NOTE** This function requires a Chocolatey for Business License to use.
+> :choco-info: **NOTE**
+> 
+> This function requires a Chocolatey for Business License to use.
 
 Installs a Windows Service using Install Util, plus some extra awesome-sauce.
 
@@ -263,4 +265,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from licensed code.
+> :choco-info: **NOTE**
+> 
+> This documentation has been automatically generated from licensed code.

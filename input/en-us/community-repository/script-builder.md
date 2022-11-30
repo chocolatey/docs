@@ -7,13 +7,13 @@ Description: Features and benefits of Script Builder
 
 Script Builder allows you to bulk install Chocolatey packages in just a few clicks by providing clear, step-by-step instructions, on how to get packages into your environment quickly and easily using generated scripts. Just add packages to the builder and choose your integration method to get started.
 
-> :memo: **NOTE** 
+> :choco-info: **NOTE**
 >
 > Packages selected in Script Builder, the [internal repository url](#internal-repository-url) provided, and your selected integration method are saved within the browser on your computer and will not be available on other computers.
 
 ## Adding and removing packages
 
-> :memo: **NOTE** 
+> :choco-info: **NOTE**
 >
 > Package versions are always included in generated scripts. In a future release, a toggle will be provided to remove version numbers.
 
@@ -40,7 +40,7 @@ When using Script Builder for individual use, follow these steps:
 
 ## Specifics for Organizational Use
 
-> :warning: **WARNING** 
+> :choco-warning: **WARNING** 
 >
 > The organizational use of the Chocolatey Community Repository is not recommended. Please see how to setup [Chocolatey for internal / organizational use](xref:organizational-deployment-guide).
 
@@ -62,7 +62,7 @@ Currently, Script Builder provides installation and configuration scripts as a g
 
 The Internal Repository Url is the location of your internal package repository. Read over [How To Set Up an Internal Repository](xref:host-packages) for options and more information on using Artifactory Pro, Nexus, and ProGet.
 
-> :exclamation: **IMPORTANT** 
+> :choco-danger: **IMPORTANT** 
 >
 > An Internal Repository Url is required and you will not be able to proceed with further steps in Script Builder until one is supplied.
 
@@ -72,7 +72,7 @@ The Internal Repository Url is the location of your internal package repository.
 
 Script Builder provides the instructions on how to get your selected packages into your specific environment.
 
-> :memo: **NOTE** 
+> :choco-info: **NOTE**
 >
 > When choosing to bulk download packages from this step, your browser may block multiple pop-ups, resulting in only 1 package being downloaded. To avoid this, be sure to add community.chocolatey.org to your list of approved sites to allow pop-ups and redirects.
 

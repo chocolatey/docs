@@ -10,7 +10,7 @@ RedirectFrom: docs/release-notes-chocolatey-gui
 
 This covers changes for the "chocolateygui" package, which is available as FOSS.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > For commercial editions, please also refer to [Licensed Release Notes](xref:licensed-extension-release-notes), as well at the [Chocolatey GUI Licensed Extension Release Notes](xref:chocolatey-gui-licensed-extension-release-notes).
 
@@ -33,7 +33,7 @@ A short video explaining what is included in this release can be found here:
 
 ## [1.0.0](https://github.com/chocolatey/ChocolateyGUI/milestone/28?closed=1) (March 21, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolateygui package have changed in this release. It now requires Chocolatey v1.0.0.
 
@@ -60,7 +60,7 @@ A short video explaining what is included in this release can be found here:
 
 ## [0.20.0](https://github.com/chocolatey/ChocolateyGUI/milestone/23?closed=1) (February 10, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you install v0.20.0 of Chocolatey GUI then you will also have to install v0.4.0 of Chocolatey GUI Licensed Extension if you use it. You will see errors when attempting to run Chocolatey GUI if you do not do so.
 
@@ -109,11 +109,11 @@ A short video explaining what is included in this release can be found here:
 
 ## [0.19.0](https://github.com/chocolatey/ChocolateyGUI/milestone/26?closed=1) (September 6, 2021)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolateygui package have changed in this release, and it now requires Chocolatey CLI v0.11.1.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you use Chocolatey GUI alongside the Chocolatey GUI Licensed Extension, if you install v0.19.0 of Chocolatey GUI then you will also have to install v0.3.0 of Chocolatey GUI Licensed Extension, or you will see errors when attempting to run Chocolatey GUI.
 

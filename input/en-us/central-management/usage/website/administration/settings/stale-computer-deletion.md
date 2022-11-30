@@ -5,7 +5,7 @@ Title: Stale Computer Deletion
 Description: Information about using up stale computer deletion settings within the Administration Settings screen.
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature is available in Chocolatey Central Management starting with version 0.10.0.
 

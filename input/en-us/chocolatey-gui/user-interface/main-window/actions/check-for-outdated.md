@@ -9,6 +9,6 @@ Chocolatey GUI, by default, will check for installed packages that are currently
 
 ![Show where the check for outdated packages button is located within the User Interface](/assets/images/chocolatey-gui/user_interface_main-window_action_check-for-outdated.png "Show where the check for outdated packages button is located within the User Interface")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button exists when looking at both local and remote sources

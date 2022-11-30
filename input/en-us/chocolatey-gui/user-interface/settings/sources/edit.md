@@ -21,7 +21,7 @@ To edit an existing source through Chocolatey GUI simply click on the source in 
 
 Update all these details, and once completed, click the `SAVE` button.  The updated source will then refresh in the Sources section at the top of the screen.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If attempting to edit the built-in `chocolatey.licensed` source, only certain fields are allowed to be modified, and this will be reflected within the user interface
 >

@@ -16,7 +16,7 @@ Why? Downloading software from the internet creates a failure point because it m
 
 This is where internalizing/recompiling existing community packages comes in. Internalizing a package lets you take an existing package and internalize all of the resources to embedded/internal resources so you can reuse the install logic without the hassle of downloading files from the internet. This guarantees complete control, trust, reliability, and repeatability of a package for organizations that have a low tolerance for production issues.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Internalizing a package is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.
 
@@ -109,6 +109,6 @@ To make the existing package local, use these steps.
 
 1. Normally you test on a system to ensure that the package you just built is good prior to pushing the package (just the *.nupkg) to your internal repository. This can be done by using `choco.exe` on a test system to install (`choco install notepadplusplus.commandline -source .`) and uninstall (`choco uninstall notepadplusplus.commandline`).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Originally posted at https://puppet.com/blog/chocolatey-creating-recompiled-packages and https://docs.puppet.com/pe/latest/windows_modules.html

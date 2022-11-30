@@ -5,6 +5,6 @@ Title: Dashboard
 Description: Information on the dashboard page
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.

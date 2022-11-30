@@ -5,6 +5,6 @@ Title: Package Scanner Moderation Service
 Description: Information on the Package Scanner Moderation Service
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.

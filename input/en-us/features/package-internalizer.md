@@ -37,7 +37,7 @@ This image shows running `choco download --recompile git.install`.
 
 ![automatic recompile](/assets/images/gifs/choco_business_features_recompile.gif)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

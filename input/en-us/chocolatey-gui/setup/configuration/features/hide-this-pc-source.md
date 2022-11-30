@@ -25,7 +25,7 @@ Notice that the "This PC" source is no longer available.
 
 Below is a short video which shows this feature in action:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Coming soon
 

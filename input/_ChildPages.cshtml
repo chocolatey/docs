@@ -7,20 +7,18 @@
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
 
 		<div class="col-lg-6 col-xl-4 pb-4">
-			<a href="@child.GetLink()">
-			<div class="card card-body card-index">
+			<div class="card card-body card-link card-index">
 				<div class="circle">
 					<i class="fa-solid fa-file" aria-hidden="true"></i>
 				</div>
 				<div class="d-flex flex-column ps-3">
-					<p class="h5 fw-bold card-title">@child.GetTitle()</p>
+					<p class="h5 fw-bold card-title"><a class="stretched-link" href="@child.GetLink()" title='@child.GetTitle()'>@child.GetTitle()</a></p>
 					@if (child.ContainsKey(WebKeys.Description))
 					{
 						<p class="card-content">@(child.Get(WebKeys.Description))</p>
 					}
 				</div>
 			</div>
-			</a>
 		</div>
 	}
 </div>

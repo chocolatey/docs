@@ -27,6 +27,6 @@ It would then be possible to take this file onto another machine and then run th
 choco install <path-to-exported-file>
 ```
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button only exists when browsing the local source, i.e. `This PC`

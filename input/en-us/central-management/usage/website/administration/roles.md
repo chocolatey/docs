@@ -29,7 +29,7 @@ Click :floppy_disk: **Save** to close the window and create the new role.
 
 ## Editing a Role
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you do not see the **Edit** menu entry or the :gear: **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permission.
 
@@ -44,7 +44,7 @@ From the **Edit Role** window, you can modify the name, set it to be the Default
 
 ## Deleting a Role
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you do not see the **Delete** menu entry or the :gear: **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permissions.
 >

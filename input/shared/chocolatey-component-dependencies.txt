@@ -11,7 +11,7 @@ The following table aims to illustrate those dependencies, based on the latest s
 | chocolateygui v1.0.0           | v1.0.0      |                      |               |
 | chocolateygui.extension v1.0.0 |             | v4.0.0               | v1.0.0        |
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Due the nature of how Chocolatey package dependencies work, we can ensure that all the required package versions are
 > installed. For example, if you were to install chocolateygui.extension then it would make sure that the following tree
@@ -24,7 +24,7 @@ The following table aims to illustrate those dependencies, based on the latest s
 > | chocolatey.extension    | v4.0.0  |
 > | chocolatey              | v1.0.0  |
 >
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
 > available that matches the defined dependency range.

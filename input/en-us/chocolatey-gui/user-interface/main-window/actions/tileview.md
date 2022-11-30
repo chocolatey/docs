@@ -21,6 +21,6 @@ This is what the User Interface looks like when the list view is selected:
 
 If required, the [default selection for local sources](xref:default-to-tile-view-for-local-source) and the [default selection for remote sources](xref:default-to-tile-view-for-remote-source) can be modified to your personal liking.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button exists when looking at both local and remote sources

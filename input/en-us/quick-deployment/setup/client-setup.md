@@ -6,7 +6,7 @@ Description: How to setup a client machine to use QDE
 RedirectFrom: docs/quick-deployment-client-setup
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Client Setup page](xref:v1-client-setup).
@@ -29,14 +29,14 @@ In some situations, you may need to add the host name with the IP address to you
 
 On your client machines, you will need to run the following PowerShell scripts in an administrative context:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > `chocoserver` is the default hostname for QDE.
 > If you've adjusted the QDE server hostname or added custom HOSTS mappings, use the appropriate hostname instead.
 
 ### Import Self-Signed Certificate from QDE Server
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > - If you're using a CA-signed or domain certificate that is already trusted by client machines for QDE, you can skip this step.
 > - If your clients are air-gapped, you will need to ensure that they can at least access the QDE server itself in order to import the QDE Certificate.
@@ -63,7 +63,7 @@ The `ClientSetup.ps1` script executed here will:
 1. Configure Self-Service mode
 1. Configure Central Management check-in
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > For internet enabled client setup please refer to [Quick deployment Environment Internet Setup](xref:v2-internet-setup) for additional information.
 

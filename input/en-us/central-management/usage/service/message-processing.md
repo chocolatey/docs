@@ -5,7 +5,7 @@ Title: Message Processing
 Description: Information about how messages are processed by the Chocolatey Central Management Service
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The message processing that is described below was introduced in version 0.4.1 of the Chocolatey Central Management Service.
 

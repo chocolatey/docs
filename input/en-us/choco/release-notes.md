@@ -10,7 +10,7 @@ RedirectFrom: docs/release-notes-choco-cli
 
 This covers changes for the "chocolatey" and "chocolatey.lib" packages, which are available as FOSS.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > For commercial editions, please also refer to [Licensed Release Notes](xref:setup-licensed).
 
@@ -28,7 +28,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 ## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (October 19, 2022)
 
-> :memo: NOTE
+> :choco-info: **NOTE**
 >
 > As part of this release, we have added the functionality to allow officially signed extensions, other than Chocolatey Licensed Extension, to be loaded dynamically. See [#2693](https://github.com/chocolatey/choco/issues/2693).
 
@@ -106,7 +106,7 @@ A short video explaining what is included in this release can be found here:
 
 ## [1.0.0](https://github.com/chocolatey/choco/milestone/50?closed=1) (March 21, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you are using a commercial version of Chocolatey (i.e. you have the chocolatey.extension package installed), you will need to **_first_** upgrade to version v4.0.0 of the [Chocolatey Licensed Extension](xref:licensed-extension-release-notes#march-21-2022).
 
@@ -161,7 +161,7 @@ A short video explaining what is included in this release can be found here:
 
 ## [0.12.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.12.0) (January 18, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you use Chocolatey Licensed Extension you will need to install v3.1.0 of Chocolatey Licensed Extension to use all the new functionality that has been added to Chocolatey CLI v0.12.0.
 
@@ -262,7 +262,7 @@ A short video explaining what is included in this release can be found here:
 
 ## [0.11.0](https://github.com/chocolatey/choco/issues?q=is%3Aclosed+milestone%3A0.11.0) (September 2nd, 2021)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you use Chocolatey Licensed Extension you will need to install v2.2.0 of Chocolatey Licensed Extension to use all the new functionality that has been added to Chocolatey CLI v0.11.0.
 
@@ -1360,7 +1360,7 @@ We'll try to capture everything here that you should know about. Please call `ch
 ### Breaking Changes
 
 - [Security] **Prompt for confirmation**: For security reasons, we now stop for confirmation before changing the state of the system on most commands. You can pass `-y` to confirm any prompts **or set a value in the config that will globally confirm and behave like older versions of Chocolatey** - see [#52](https://github.com/chocolatey/choco/issues/52)
-     > :memo: **NOTE**
+     > :choco-info: **NOTE**
      >
      > This is one of those additional switches we were talking about)
 - [Security] If your default installation is still at `c:\Chocolatey`, this version will force a move to ProgramData and update the environment settings - see [#7](https://github.com/chocolatey/choco/issues/7)

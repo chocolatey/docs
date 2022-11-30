@@ -6,14 +6,14 @@ Description: How has the firewall on the QDE image been changed
 RedirectFrom: docs/quick-deployment-firewall-changes
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Firewall Changes page](xref:v1-firewall-changes).
 
 ## External Firewall Ports (Optional)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > * Performing this incorrectly could cause security issues and possibly cause you to be subjected to copyright law/redistribution.
 >   Read all of this first.

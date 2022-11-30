@@ -35,7 +35,7 @@ Shows output as described above.
 
 -->
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

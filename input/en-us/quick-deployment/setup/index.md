@@ -6,7 +6,7 @@ Description: How to setup QDE
 RedirectFrom: docs/quick-deployment-setup
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Setup page](xref:v1-qde).
@@ -15,7 +15,7 @@ This document contains instructions for importing the QuickDeploy appliance/VM, 
 You will receive a download link via email for an archive of the VM image.
 Once you have this downloaded, it will be ready for extraction and import into your environment.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Please follow these steps in **exact** order.
 > These will be very important later when you are trying to use the environment.
@@ -36,7 +36,7 @@ Keep the following points in mind during initial setup:
 
 ### Step 0.1: Changing the Hostname
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Renaming the QDE host needs to be completed prior to ANYTHING that is done on the QDE box.
 > It is recommended to use the default hostname unless you really need to change it.
@@ -61,14 +61,14 @@ Choose one of the following methods for what your hypervisor environment support
 
 ### Platform: Azure
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > We now recommend using the [Chocolatey for Business Azure Environment](xref:c4b-azure).
 > Please refer to the link above for steps to quickly deploy a Chocolatey for Business environment into Azure.
 
 ### Platform: Hyper-V
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Windows 10 and Windows Server 2016/2019 version of Hyper-V now come with built-in support for Hyper-V Integration Services, so they automatically get pushed to guest VMs.
 > In older versions of Hyper-V, you should see an option to `Insert Integration Services Setup Disk`.
@@ -138,7 +138,7 @@ Choose one of the following methods for what your hypervisor environment support
 1. Once the import completes, go into the VM's hardware settings and expand the main disk to at least 500GB.
 1. Boot up the VM, and (if needed) install any software required / recommended for your hypervisor.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Upon first booting the environment in ESXi with the HTML modal console control, the mouse will not be available to the VM.
 > We recommend you use either RDP or VMRC (VMWare Remote Console) to access the VM initially and install VMWare Tools.
@@ -157,9 +157,11 @@ Choose one of the following methods for what your hypervisor environment support
 1. In the `VM Options` tab, and under the `Boot Options` dropdown, set your `Firmware` to `BIOS` (**not** UEFI). Click `Next`, then `Finish`.
 1. Now go back into the VM configuration using the `Edit Settings` context menu.
 1. Click the `Add hard disk` button, select `Existing hard disk`, and browse to the VMDK you uploaded. Once slected, expand the `New hard disk` dropdown, and set the `Controller location` to `IDE controller 0`, or whichever IDE controllers you have available. Click `Save`.
-    > :exclamation: **IMPORTANT**: [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the "Controller Location" setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
+    > :choco-danger: **IMPORTANT**
+    >
+    > [vCenter/ESX/ESXi] You **must** select an `IDE controller` under the "Controller Location" setting of the disk. If you leave the controller as SCSI (default), your VM will not boot.
 1. Once again, go back into the `Edit settings` context menu for the VM, and expand the disk you attached to 500GB (double-check in OS, and extend if needed).
-    > :memo: **NOTE**
+    > :choco-info: **NOTE**
     >
     > Likely you will need to allocate the additional space to the C drive.
 1. Boot up VM, and Install VMware Tools using the console menus (this will require a reboot).
@@ -201,7 +203,7 @@ Also check the additional [high level requirements for CCM](xref:ccm-setup#high-
 
 ## Step 3: Virtual Environment Setup
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you have an existing corporate environment you will be servicing with the QDE VM, be sure to perform your organization-specific initial configuration **_before_** running setup scripts.
 
@@ -223,7 +225,7 @@ In the [Quick Deployment Desktop Readme](xref:v2-desktop-readme), you will be in
 You should already have been given a license file prior to downloading QDE.
 We generally recommend you copy the file into the VM directly, if possible.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you find that you need to copy the file contents in order to get the license file text into a new file in QDE, the file format and name is extremely important to get right.
 > If you don't save the file in UTF-8 encoding or there is extra whitespace, Chocolatey will consider it invalid.
@@ -235,7 +237,7 @@ We generally recommend you copy the file into the VM directly, if possible.
 On the desktop of your QDE VM, there is a `Readme.html` file, that will guide you through the rest of the setup process once you are logged in.
 A version of this readme file can be found in the [Quick Deployment Desktop Readme](xref:v2-desktop-readme).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The online version is likely more up to date than the ReadMe you will find on the desktop (not including redacted items like credentials).
 > If there are conflicts between the desktop readme and what you see online, prefer the online version.

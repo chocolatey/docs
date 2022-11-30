@@ -98,6 +98,8 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-FunctionCallLogMessage -Full`.
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Write-FunctionCallLogMessage -Full`.
 
 View the source for [Write-FunctionCallLogMessage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Write-FunctionCallLogMessage.ps1)

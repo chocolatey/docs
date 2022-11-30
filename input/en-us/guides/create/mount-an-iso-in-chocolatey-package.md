@@ -22,7 +22,7 @@ You will need to take a dependency on the [chocolatey-isomount.extension package
 1. FOSS: Download [chocolatey-isomount.extension](https://community.chocolatey.org/api/v2/package/chocolatey-isomount.extension)
 1. Deploy the package to your internal repository.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
@@ -36,7 +36,7 @@ Open your package's nuspec up and add a dependency on `chocolatey-isomount.exten
   </dependencies>
 ~~~
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
@@ -100,7 +100,7 @@ You will need to take a dependency on the [ImDisk package](https://community.cho
 1. FOSS: Download [imdisk](https://community.chocolatey.org/api/v2/package/imdisk) - [internalize manually](xref:recompile-packages)
 1. Deploy the package to your internal repository.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > MSP stands for Managed Service Provider. It along with Chocolatey for Business (C4B) are commercial editions of Chocolatey that come with [Package Internalizer](xref:recompile-packages) to convert existing packages to be 100% offline and reliable. FOSS (free open source software) is short for the open source edition.
 
@@ -114,7 +114,7 @@ Open your package's nuspec up and add a dependency on `imdisk`. This will be ins
   </dependencies>
 ~~~
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The above version is a minimum version dependency. Your version may be newer, you can substitute it there.
 
@@ -181,6 +181,6 @@ Dismount-DiskImage -ImagePath $iso
 
 ~~~
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Code sample was taken from this [package](https://community.chocolatey.org/packages/WindowsSDK2008/6.0.6001), thanks to [dave42](https://community.chocolatey.org/profiles/dave42) for sharing.

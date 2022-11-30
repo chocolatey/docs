@@ -30,7 +30,7 @@ VirusTotal scans binaries against over 50 different anti-virus scanners. Chocola
 
 By default, the virus scanner is already enabled and set to VirusTotal for Pro licenses. Organizations are usually more wary about reaching out to the internet, so the feature is set to Generic and the virus scanner may not be enabled by default (because it needs configuration). If you need to configure the virus scanner to use VirusTotal, please run the following two commands:
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 
@@ -80,7 +80,7 @@ choco feature enable --name="'virusCheck'"
 
 ![Pro install in action](/assets/images/gifs/chocopro_install_stopped.gif)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
@@ -115,7 +115,7 @@ You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing)
 
 ### I'm a licensed customer, now what?
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 
@@ -123,7 +123,7 @@ When you install a package that download content, those items will automatically
 
 ### How do I turn this feature on?
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If package contents are not recognized by VirusTotal they may be uploaded to be scanned, and be viewable in public. If you package internal components we do not recommend you enable this feature with the VirusTotal `virusScannerType`.
 

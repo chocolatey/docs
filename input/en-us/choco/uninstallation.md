@@ -13,7 +13,7 @@ Should you decide you don't like Chocolatey, you can uninstall it simply by remo
 ## Folder
 Most of Chocolatey is contained in `C:\ProgramData\chocolatey` or whatever `$env:ChocolateyInstall` evaluates to. You can simply delete that folder.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > You might first back up the sub-folders `lib` and `bin` just in case you find undesirable results in removing Chocolatey. Bear in mind not every Chocolatey package is an installer package, there may be some non-installed applications contained in these subfolders that could potentially go missing. Having a backup will allow you to test that aspect out.
 
@@ -28,11 +28,11 @@ There are some environment variables that need to be adjusted or removed.
 ## Script
 There are no warranties on this script whatsoever, but here is something you can try:
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This will remove Chocolatey and all packages, software, and configurations in the Chocolatey Installation folder from your machine. Everything will be GONE. This is very destructive. DO NOT RUN this script unless you completely understand what the intention of this script is and are good with it. If you mess something up, we cannot help you fix it.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Seriously, this script may destroy your machine and require a rebuild. It may have varied results on different machines in the same environment. Think twice before running this.
 

@@ -13,11 +13,11 @@ RedirectFrom: docs/release-notes-extension
 This covers the release notes for the Chocolatey Licensed Extension (`chocolatey.extension`) package, where the commercial editions of Chocolatey get their enhanced functionality.
 Please see [Install the Licensed Edition](xref:setup-licensed) for information on how to get and install the package.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This package is available to all levels of commercial editions, so if you have paid for a license, you will have access to this package.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Some features in the Chocolatey Licensed Extension are limited by the commercial edition you have. Please see https://chocolatey.org/compare for more information.
 
@@ -32,7 +32,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/LicensedExtension
 - Some issues may be held internally, please follow your support routes to learn more.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > We've identified an issue with Self-Service "Interactive" and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details. Until then, do not turn on the interactive feature of self-service or nothing will work.
 
@@ -148,11 +148,11 @@ A short video explaining what is included in this release can be found here:
 
 ## 4.0.0 (March 21, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolatey.extension package have changed in this release. It now requires Chocolatey CLI v1.0.0.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > When using Chocolatey Licensed Extension, the order of upgrading packages is very important!
 > You should perform `choco upgrade chocolatey.extension` first, and Chocolatey will then ensure all required dependencies are in place.
@@ -195,7 +195,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 3.1.0 (January 18, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.12.0+.
 
@@ -219,7 +219,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 3.0.0 (December 8, 2021)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.1+.
 
@@ -276,7 +276,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 2.2.0 (September 2, 2021)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolatey.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.0.
 
@@ -433,7 +433,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 1.12.11 (February 1, 2018)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > We've identified an issue with Self-Service interactive and UAC - we are working on a fix. Please see [#36](https://github.com/chocolatey/chocolatey-licensed-issues/issues/36) and subscribe for details.
 

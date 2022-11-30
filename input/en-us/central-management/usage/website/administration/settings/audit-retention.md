@@ -5,7 +5,7 @@ Title: Audit Retention
 Description: Information about using up audit retention settings within the Administration Settings screen.
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > **BREAKING CHANGE**
 >

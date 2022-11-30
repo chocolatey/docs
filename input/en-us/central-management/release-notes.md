@@ -15,7 +15,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Installation - [Central Management Setup](xref:ccm-setup)
 - Upgrade - [Central Management Upgrade](xref:ccm-upgrade)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This package is available to Chocolatey for Business (C4B) customers only.
 
@@ -77,7 +77,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ## 0.9.0 (June 15, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of all the Chocolatey Central Management packages (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) have changed in this release. This is to allow the installation of .NET 6.0, which is now a requirement to run Chocolatey Central Management.
 >
@@ -352,7 +352,7 @@ Previously this value was set to a constant value of 20 and not configurable. To
 
 Deployments Release - we are excited to bring about managing remote machines with [Central Management Deployments](https://blog.chocolatey.org/2020/05/announcing-deployments/) coming in this release! There are quite a few things we've brought into the initial release and we think you'll agree that it is a powerful, yet easy to use interface. Read [the announcement.](https://blog.chocolatey.org/2020/05/announcing-deployments/). We've also overhauled the documentation to make it understandable and approachable. Please see https://docs.chocolatey.org/en-us/central-management/.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Log locations have changed. Please see [Central Management FAQs](xref:central-management#faqs) for more information.
 

@@ -12,7 +12,9 @@ RedirectFrom:
 
 <!-- This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). -->
 
-> :memo: **NOTE** Administrative Access Required.
+> :choco-info: **NOTE**
+>
+> Administrative Access Required.
 
 Installs software into "Programs and Features" based on a remote file
 download. Use Install-ChocolateyInstallPackage when local or embedded
@@ -343,7 +345,9 @@ The checksum hash value of the Url resource. This allows a checksum to
 be validated for files that are not local. The checksum type is covered
 by ChecksumType.
 
-> :memo: **NOTE** Checksums in packages are meant as a measure to validate the
+> :choco-info: **NOTE**
+>
+> Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
 other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
@@ -355,7 +359,9 @@ ensure the package also stays updated in line with those remote
 resource updates. You should look into [automatic packaging](xref:automatic-packaging)
 to help provide that functionality.
 
-> :memo: **NOTE** To determine checksums, you can get that from the original
+> :choco-info: **NOTE**
+>
+> To determine checksums, you can get that from the original
 site if provided. You can also use the [checksum tool available on
 the community feed](https://community.chocolatey.org/packages/checksum) (`choco install checksum`)
 and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you
@@ -392,7 +398,9 @@ OPTIONAL if no Url64bit - The checksum hash value of the Url64bit
 resource. This allows a checksum to be validated for files that are not
 local. The checksum type is covered by ChecksumType64.
 
-> :memo: **NOTE** Checksums in packages are meant as a measure to validate the
+> :choco-info: **NOTE**
+>
+> Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
 other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
@@ -487,7 +495,9 @@ Do not download the resources. This is typically passed if Url/Url64bit
 are pointed to local files or files on a share and those files should
 be used in place. Available in 0.10.1+.
 
-NOTE: You can also use `Install-ChocolateyInstallPackage` for the same
+> :choco-info: **NOTE**
+>
+> You can also use `Install-ChocolateyInstallPackage` for the same
 functionality (see links).
 
 Property               | Value
@@ -533,6 +543,8 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPackage -Full`.
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPackage -Full`.
 
 View the source for [Install-ChocolateyPackage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPackage.ps1)

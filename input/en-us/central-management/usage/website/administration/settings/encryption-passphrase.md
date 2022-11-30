@@ -10,17 +10,17 @@ Starting in Chocolatey Central Management 0.7.0 we are providing the ability to 
 
 The encryption passphrase can be changed in Chocolatey Central Management by accessing the `Administrator -> Settings` section and selecting the `Security` tab. The settings for the encryption passphrase will only be visible to users who are a member of the CCM Administrator role.
 
-> :exclamation: **IMPORTANT**
+> :choco-danger: **IMPORTANT**
 >
 > We recommend this passphrase is set as soon as possible. However, a user who is a member of the CCM Administrator role will be able to defer this for 4 logins. On the 5th login they will be restricted to only being able to set the passphrase.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Changing the encryption passphrase will invalidate the links in Email Activation and Password Resets emails sent out prior to the change. The user clicking on the invalid link will be notified of this, and will be requested to enter their information again to have a new email sent.
 
 ## Set the encryption passphrase for the first time { #set-the-encryption-passphrase-for-the-first-time }
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Once the passphrase has been changed and saved, there will be a short delay while both the website and the API are updated. During that time they will be unavailable for any other use and browsing the website or calling the API may result in a `500 - Internal Server Error` response.
 
@@ -30,7 +30,7 @@ The encryption passphrase can be changed in Chocolatey Central Management by acc
 
 2. Enter the passphrase to use in the box labeled `New Passphrase`.
 
-   > :memo: **NOTE**
+   > :choco-info: **NOTE**
    >
    > The new passphrase must meet the following requirements:
    >
@@ -41,13 +41,13 @@ The encryption passphrase can be changed in Chocolatey Central Management by acc
    > 5. At least 1 alpha numeric character.
 3. Enter the same passphrase in the box labeled `Confirm New Passphrase`.
 
-   > :warning: **WARNING**
+   > :choco-warning: **WARNING**
    >
    > Make sure to save the passphrase in a secure location as it will be needed if there is a need to change it again in the future.
    > Chocolatey Software, Inc. will not be responsible for any misplaced passphrases or restoring the database if the passphrase has been forgotten or lost.
 4. Save the changes using the `Save all` button located at the top of the page.
 
-   > :warning: **WARNING**
+   > :choco-warning: **WARNING**
    >
    > This will take between 5 and 10 seconds but could take more depending on performance.
    > During this time it is not recommended to navigate to any other pages or make any API calls as they may result in an error.
@@ -81,7 +81,7 @@ We have added a number of warnings to help highlight that changes need to be mad
   ![Chocolatey Central Management Dashboard warning on Administrators](/assets/images/ccm/encryption-passphrase/ccm-admin-user-warning.png)
 
 - On the 5th and subsequent logins, a user who is a member of the CCM Administrator role will be redirected to set the encryption passphrase and will not be able to navigate to other sections of Chocolatey Central Management until the passphrase has been set.
-  > :memo: **NOTE**
+  > :choco-info: **NOTE**
   >
   > A user who is not a member of the CCM Administrators role will still be available to use Chocolatey Central Management website and API, as normal .
 

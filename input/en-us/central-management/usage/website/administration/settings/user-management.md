@@ -7,7 +7,7 @@ Description: Information about using up user management settings within the Admi
 
 ## LDAP Configuration
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The Central Management Server must be joined to the Active Directory Domain.
 
@@ -27,7 +27,7 @@ Description: Information about using up user management settings within the Admi
 1. Click the `Save` button
 1. Click the `Save All` button at the top right of the page to save your settings.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
 > an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are

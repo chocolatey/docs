@@ -1,4 +1,4 @@
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This rule has been marked as a Requirement.
 >

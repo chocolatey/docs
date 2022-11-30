@@ -7,6 +7,6 @@ ShowInNavBar: false
 ShowInSideBar: false
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.
