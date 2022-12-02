@@ -810,7 +810,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 
 #### Option 3 - Manual
 
-You need to download and unzip the Chocolatey package, then call the PowerShell install script from there. See the [Download + PowerShell Method](#download--powershell-method) section below.
+You need to download and unzip the Chocolatey package, then call the PowerShell install script from there. See the [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell) section below.
 
 
 ### Non-Administrative install
