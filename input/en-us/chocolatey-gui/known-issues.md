@@ -6,6 +6,14 @@ Description: Current known issues regarding Chocolatey GUI
 RedirectFrom: docs/chocolatey-gui-known-issues
 ---
 
+## Package installation arguments are not remembered when upgrading a package with ChocolateyGUI
+
+When the `useRememberedArgumentsForUpgrades` Chocolatey feature is enabled, package arguments are not correctly retained when upgrading packages.
+
+This is due to [a known bug in chocolatey.lib](https://github.com/chocolatey/choco/issues/2886).
+
+If you need to use this feature, you must currently upgrade affected packages via Chocolatey CLI instead of Chocolatey GUI.
+
 ## Unable to use Chocolatey GUI extension with Chocolatey GUI v0.17.1
 
 Some business customers have reported an issue when attempting to use version `0.1.0-alpha-20200402` of the Chocolatey GUI extension (a pre-release version of the extension) in combination with Chocolatey GUI v0.17.1.
