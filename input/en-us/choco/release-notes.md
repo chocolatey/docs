@@ -18,6 +18,14 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## [1.2.1](https://github.com/chocolatey/choco/milestone/58?closed=1) (December 6, 2022)
+
+### Bug Fixes
+
+- Running `choco new --file` returns "Cannot Combine Path" Error when Chocolatey Licensed Extension is installed and other assemblies are present in the extensions folder - see [#2865](https://github.com/chocolatey/choco/issues/2865)
+- Selecting `[A] Yes to all` at package script prompt does not work correctly - see [#2872](https://github.com/chocolatey/choco/issues/2872)
+- Attempting to upgrade multiple packages at once causes an error to be thrown about configuration backups - see [#2884](https://github.com/chocolatey/choco/issues/2884)
+
 ## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (October 19, 2022)
 
 > :memo: NOTE
