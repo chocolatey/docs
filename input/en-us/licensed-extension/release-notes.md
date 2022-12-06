@@ -40,6 +40,16 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 5.0.1 (December 6, 2022)
+
+### Bug Fixes
+
+- Chocolatey Licensed Extension does not fall back to open source behaviour when license verification fails - see [licensed #330](https://github.com/chocolatey/chocolatey-licensed-issues/issues/330).
+- License identifier should not be shown in logs.
+- Get-ChocolateyWebFile - Checksum incorrectly fails when downloading a file to the same file path.
+- Package Internalizer - Unable to load Uninstall-ChocolateyPackageCmdlet - see [licensed #326](https://github.com/chocolatey/chocolatey-licensed-issues/issues/326).
+- Self-Service - Default the `allowBackgroundServiceOverride` feature to disabled.
+
 ## 5.0.0 (October 20, 2022)
 
 ### Breaking Change
