@@ -46,6 +46,7 @@ Some of these options also work from a non-Windows hosting perspective. See [Non
 
 These are other known servers, but we don't know the quality or compatibility of these frameworks as they relate to Chocolatey packages.
 
+* [Express Chocolatey Server](https://www.npmjs.com/package/express-chocolatey-server) - Open source, OS-agnostic, read-only, does not require .NET or Windows, based on [Express](https://expressjs.com/)
 * [Klondike](https://github.com/themotleyfool/Klondike) - Ember front-end that builds on NuGet.Lucene for private NuGet package hosting
 * [PHP NuGet](http://www.kendar.org/?p=/dotnet/phpnuget) - Simple server built in PHP
 * [LaGet](https://github.com/ikkentim/LaGet) - A NuGet server written using the Laravel PHP Framework
@@ -372,6 +373,7 @@ See https://inedo.com/support/documentation/proget/administration/high-availabil
 If you don't want to host on Windows you have only the following options (from least advanced to most advanced - these options typically also work on Windows):
 
 * CIFS share
+* [Express Chocolatey Server](https://www.npmjs.com/package/express-chocolatey-server) - Open source, OS-agnostic, read-only, does not require .NET or Windows, based on [Express](https://expressjs.com/)
 * [NuGet.Java.Server](http://blog.jonnyzzz.name/2012/03/nuget-server-in-pure-java.html) ([NuGet Package](https://www.nuget.org/packages/NuGet.Java.Server)) - simple server (same tool used in TeamCity)
 * [TeamCity](https://www.jetbrains.com/teamcity/) - contains built-in simple server
 * [PHP NuGet](http://www.kendar.org/?p=/dotnet/phpnuget) - Simple server built in PHP
