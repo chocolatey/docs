@@ -5,5 +5,5 @@ $env:DOTNET_NOLOGO = '1'
 dotnet tool restore
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-dotnet cake --target=Statiq-Build
+dotnet cake recipe.cake --target=Statiq-Build
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
