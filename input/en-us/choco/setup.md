@@ -890,7 +890,8 @@ This is addressed in [Troubleshooting](xref:troubleshooting).
 
 ### Why isn't there an MSI?
 
-**tl;dr** - Chocolatey installs as a nupkg like everything else, a PowerShell install script just ensures that.
+> :memo: **NOTE**
+> Chocolatey installs as Chocolatey package, like everything else. A PowerShell install script just ensures that.
 
 Chocolatey was born out of providing automation for Windows and doing that with packages, packages that could surround an installer but didn't necessarily need to. The Chocolatey install scripts use the Chocolatey package (a nupkg file itself) to be installed and upgraded as just another package. This means Chocolatey is "eating its own dogfood" and it is unlikely we'd offer it as an MSI (native installer)as it would fly a bit in the face of what Chocolatey represents (although it is something that we would not rule out).
 
