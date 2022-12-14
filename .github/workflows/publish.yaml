@@ -34,4 +34,4 @@ jobs:
         STATIQ_DEPLOY_REMOTE: ${{ secrets.STATIQ_DEPLOY_REMOTE }}
       run: |
         dotnet tool restore
-        dotnet cake recipe.cake --target=Publish-Documentation
+        dotnet cake --target=Publish-Documentation

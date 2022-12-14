@@ -28,4 +28,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         dotnet tool restore
-        dotnet cake recipe.cake --target=Statiq-Build
+        dotnet cake --target=Statiq-Build

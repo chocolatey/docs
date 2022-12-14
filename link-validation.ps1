@@ -1,2 +1,2 @@
 dotnet tool restore
-dotnet cake recipe.cake --target=Statiq-LinkValidation
+dotnet cake --target=Statiq-LinkValidation
