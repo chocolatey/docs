@@ -153,6 +153,10 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 - Allow post/pre hooks to run on upgrade/install/uninstall - see [#1185](https://github.com/chocolatey/choco/issues/1185)
 
+### Deprecated Features
+
+- Deprecate side-by-side installs - see [#2787](https://github.com/chocolatey/choco/issues/2787)
+
 ### Bug Fixes
 
 - Fix - Upgrade all reuses overridden package parameters when useRememberedArgumentsForUpgrades feature is turned on - see [#1443](https://github.com/chocolatey/choco/issues/1443)
@@ -169,7 +173,6 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Add option to skip file logging for Zip file extraction in the Get-ChocolateyUnZip and Install-ChocolateyZipPackage cmdlets - see [#1332](https://github.com/chocolatey/choco/issues/1332)
 - List parameters in templates - see [#2500](https://github.com/chocolatey/choco/issues/2500)
 - ChocolateyTabExpansion.ps1 can cause slow auto-complete in PowerShell - see [#2556](https://github.com/chocolatey/choco/issues/2556)
-- Deprecate side-by-side installs - see [#2787](https://github.com/chocolatey/choco/issues/2787)
 - Change source type on source runners to be a generic string - see [#2791](https://github.com/chocolatey/choco/issues/2791)
 - Remove trailing semicolon in templates and tests - see [#2807](https://github.com/chocolatey/choco/issues/2807)
 
