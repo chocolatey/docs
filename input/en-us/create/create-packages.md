@@ -147,6 +147,21 @@ Logically, the version is based on the lowest compatible version. But if you don
 
 **See also:** [NuGet Version Reference](http://docs.nuget.org/docs/reference/versioning)
 
+### Package Metadata in the Nuspec file
+
+* `<id>`
+   This is the name of the package itself and must exist to be able to use the `choco pack` command to create a package. This will contain the package name provided to the `choco new` command automatically. An example would be `<id>microsoft-teams.install</id>`See [naming your package](#naming-your-package) for more information and guidance.
+* `<projectUrl>`
+  This is the URL that points to the project that the package is installing. This is likely to be software, therefore this URL would point to the project page for the software. Taking `adobereader` as an example, this would be `<projectUrl>https://www.adobe.com/acrobat/pdf-reader.html</projectUrl>`.
+* `<owners>`
+   This is a comma seperated list of package maintainers. Many maintainers prefer to keep previous maintainers here as a thank you for maintaining the package, even though they may no longer appear as maintainers on the package page. An example would be `<owners>pauby, dtgm, doc</owners>`.
+* `<authors>`
+   This contains the software author / vendor. It should not be the same value as the `<owners>` field unless the maintainer is also the software author. An example would be `<authors>Python Software Foundation</authors>`.
+* `<copyright>`
+   This is the project copyright and should be used appropriately. Look at anything you can find that states the copyright. An example would be `<copyright>2022 Google Inc.</copyright>`.
+* `<licenseUrl>`
+  This is the URL pointing to the license for the project. It should point directly to where the license is stated by the project rather than pointing at a generic defintiion of that license. As an example, if projectX has a GPL v3 license that is stated in their GitHub repository, then the URL will be _that_ location and not the [GPL v3 license definition](https://www.gnu.org/licenses/gpl-3.0.en.html), `<licenseUrl>https://github.com/projectX/projectX/license.txt</licenseUrl>`.
+
 ## But for real, how do I create a package?
 
 * **Generate new package**:
