@@ -6,29 +6,29 @@ Description: Information about the package moderation used on the Chocolatey Com
 RedirectFrom: docs/moderation
 ---
 
-The community feed, which is found at https://community.chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See [What is moderation](xref:faqs#what-is-moderation) for more details. There are also [trusted packages](xref:faqs#what-is-a-trusted-package), which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
+The [Chocolatey Community Repository](https://community.chocolatey.org/packages, is a moderated packages feed. That means all new versions of packages are moderated prior to approval to check for safety, quality, and correctness.
 
-By safety - we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain crapware/malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
+* Safety: we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain [crapware](https://www.computerhope.com/jargon/c/crapware.htm) / malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
+* Quality: we check that the package contains valid metadata and the package scripts use standard format PowerShell that can be easily read and understood.
+* Correctness: we check that the package does what is intended, usually to install and uninstall software.
+
+These checks are performed by automated moderation review systems on all packages, with human moderators performing the additional last pass checks on all packages that have not reached trusted status. [Trusted packages](xref:faqs#what-is-a-trusted-package) only go through automated moderation review and bypass human review as they are coming from trusted sources and / or the software vendors themselves. See [What is moderation](xref:faqs#what-is-moderation) for more details.
 
 ## Definitions
 
-* package - The Chocolatey/NuGet package
-* software - The underlying software that the package assists in installing
-* installer - The native installer, usually packaged as MSI, NSIS, InstallShield, Wise, Squirrel, or some other flavor.
-* the validator - The [package validation service](xref:package-validator) checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
-* the verifier - The [package verifier service](xref:package-verifier-service) checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (checking every two weeks that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It’s testing all the parts and ensuring everything is good.
+* `package`: The Chocolatey package
+* `software`: The underlying software that the package assists in installing.
+* `installer`: The native software installer, usually packaged as MSI, NSIS, InstallShield, Wise, Squirrel, or some other flavor.
+* `Package Validator`: The [package validation service](xref:package-validator) checks the quality of a package based on requirements, guidelines and suggestions for creating packages for the Chocolatey Community Repository. We like to think of Package Validator as unit testing for packages. It is validating that everything is as it should be and meets the minimum requirements for a package on the Chocolatey Community Repository.
+* `Package Verifier`: The [package verifier service](xref:package-verifier-service) checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (checking every two weeks that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It’s testing all the parts and ensuring everything is good.
 
 ## Requirements and Guidelines
 
-While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](xref:package-validator) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
+These apply to packages submitted to the Chocolatey Community Repository. While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [Package Validator](xref:package-validator) may be checking for newer things than are written here and that reviewers / moderators may find newer things to check from time to time.
 
 > :memo: **NOTE**
 >
 > Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
-
-> :memo: **NOTE**
->
-> This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
 
 ### Existing Packages
 
@@ -36,11 +36,17 @@ This section provides the requirements for packages that have had at least one r
 
 #### Requirements
 
-Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it **must** be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
+Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and / or response by the maintainer. Provided a requirement has flagged correctly, it **must** be fixed before the package version can be approved. The exact same version number should be used when uploading again for moderation review.
 
-* ProjectUrl - it's required for the community feed
-* The authors field (software author/vendor) is not being used for the maintainers field (exception: when the maintainer is also the author)
-* The copyright is used appropriately. Look at anything you can find that states the copyright.
+* `<projectUrl>`
+  This is the URL that points to the project that the package is installing. This is likely to be software, therefore this URL would point to the project page for the software. Taking `adobereader` as an example, this would be `<projectUrl>https://www.adobe.com/acrobat/pdf-reader.html</projectUrl>`.
+* `<owners>`
+   This is a comma seperated list of package maintainers. Many maintainers prefer to keep previous maintainers here as a thank you for maintaining the package, even though they may no longer appear as maintainers on the package page. An example would be `<owners>pauby, dtgm, doc</owners>`.
+* `<authors>`
+   This contains the software author / vendor. It should not be the same value as the `<owners>` field unless the maintainer is also the software author. An example would be `<authors>Python Software Foundation</authors>`.
+* `<copyright>`
+   This is the project copyright and is should be used appropriately. Look at anything you can find that states the copyright. An example would be `<copyright>2022 Google Inc.</copyright>`.
+
 * If there is a license available, it **must** be included in the licenseUrl.
 * Is the title appropriate?
 * At least something written in the description. It should be sufficient to explain the software.
