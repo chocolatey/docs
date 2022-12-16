@@ -38,25 +38,6 @@ You have a powerful use of Chocolatey, as you are using PowerShell. So you
 can do just about anything you need. Choco has some very handy [built-in functions](xref:powershell-reference) that you can use, these are sometimes called
 [helpers](xref:powershell-reference).
 
-## Table of Contents
-
-1. [Rules](#rules-to-be-observed-before-publishing-packages)
-1. [Encoding](#character-encoding)
-1. Learning about NuGet (and Chocolatey) Packages in general - [Information](#okay-how-do-i-create-packages) and [Nuspec](#nuspec)
-1. [Description/Release Notes Recommendations](#package-description-and-release-notes)
-1. [Limit Windows Versions](#install-only-on-some-versions-of-windows)
-1. [Install paths](#installation-paths)
-1. [Upgrading](#upgrading) and [Uninstalling](#uninstalling)
-1. [Naming your package](#naming-your-package)
-1. [Versioning](#versioning-recommendations) (and [package fix version notation](#package-fix-version-notation))
-1. [Icons](#package-icon-guidelines)
-1. [Exclude executables from shims](#how-do-i-exclude-executables-from-getting-batch-redirects)
-1. [Make shim for GUI application](#how-do-i-set-up-batch-redirects-for-applications-that-have-a-gui)
-1. [Localization](#internationalization-and-localization-of-packages)
-1. [Building](#build-your-package) / [Testing](#testing-your-package) / [Pushing](#push-your-package)
-1. [Maintainer magic - automatically updating packaging](xref:automatic-packaging)
-1. [Taking over existing package](xref:package-maintainer-handover)
-
 ## Quick Start guide
 
 If you think you got what it takes and just want to know the basic steps to get a package out, there is a special [Quick Start Guide](xref:create-packages-quick-start) for you.
