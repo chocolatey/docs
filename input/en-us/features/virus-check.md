@@ -6,7 +6,11 @@ Description: Virus checking via VirusTotal or Generic scanner
 RedirectFrom: docs/features-virus-check
 ---
 
-We are pleased to offer runtime malware protection for our [customers](https://chocolatey.org/pricing)! Virus checking is available in two flavors - VirusTotal and Generic malware verification.
+We are pleased to offer runtime malware protection for our [customers](https://chocolatey.org/pricing)!
+Virus checking is available in two flavors - VirusTotal and Generic malware verification.
+
+Both forms of virus scanning will only scan files **downloaded** from an external source during the package installation process.
+Packages which embed the software binaries will not have their binaries scanned by Chocolatey during installation.
 
 ## Usage
 
