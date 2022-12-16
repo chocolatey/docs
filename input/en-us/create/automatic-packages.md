@@ -16,7 +16,7 @@ Automatic packaging is a process that **package maintainers can run on *their ow
 
 There are currently two methods that can be used to maintain automatic packages:
 
-- RECOMMENDED - Using only Powershell via [Chocolatey Automatic Package Updater Module](https://github.com/chocolatey-community/chocolatey-au).
+- RECOMMENDED - Using only PowerShell via [Chocolatey Automatic Package Updater Module](https://github.com/chocolatey-community/chocolatey-au).
 - DEPRECATED - Using [Chocolatey Package Updater](https://community.chocolatey.org/packages/ChocolateyPackageUpdater) with 3rd party tool [Ketarin](https://community.chocolatey.org/packages/ketarin).
 
 ## Automatic Updater (AU)
