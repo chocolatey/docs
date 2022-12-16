@@ -38,17 +38,13 @@ This section provides the requirements for packages that have had at least one r
 
 Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and / or response by the maintainer. Provided a requirement has flagged correctly, it **must** be fixed before the package version can be approved. The exact same version number should be used when uploading again for moderation review.
 
-* `<projectUrl>`
-  This is the URL that points to the project that the package is installing. This is likely to be software, therefore this URL would point to the project page for the software. Taking `adobereader` as an example, this would be `<projectUrl>https://www.adobe.com/acrobat/pdf-reader.html</projectUrl>`.
-* `<owners>`
-   This is a comma seperated list of package maintainers. Many maintainers prefer to keep previous maintainers here as a thank you for maintaining the package, even though they may no longer appear as maintainers on the package page. An example would be `<owners>pauby, dtgm, doc</owners>`.
-* `<authors>`
-   This contains the software author / vendor. It should not be the same value as the `<owners>` field unless the maintainer is also the software author. An example would be `<authors>Python Software Foundation</authors>`.
-* `<copyright>`
-   This is the project copyright and is should be used appropriately. Look at anything you can find that states the copyright. An example would be `<copyright>2022 Google Inc.</copyright>`.
+##### Package Metadata in the `.nuspec` file
 
-* If there is a license available, it **must** be included in the licenseUrl.
-* Is the title appropriate?
+* The `<projectUrl>` field must contain a valid URL to the project. See [package metadata](xref:create-packages#package-metadata-in-the-nuspec-file) for more information on what this field should contain.
+* The `<authors>` field must not be the same as the `<owners>` field, _except_ when the maintainer and the software author are the same. See [package metadata](xref:create-packages#package-metadata-in-the-nuspec-file) for more information on what this field should contain.
+* The `<copyright>` field must contain a valid copyright for the project. See [package metadata](xref:create-packages#package-metadata-in-the-nuspec-file) for more information on what this field should contain.
+* The `<licenseUrl>` field must contain a valid URL that points to th elicense for the project. Note that this should not be a generic license definition but the location of where the license is stated within the project. See [package metadata](xref:create-packages#package-metadata-in-the-nuspec-file) for more information on what this field should contain.
+
 * At least something written in the description. It should be sufficient to explain the software.
 * The description should explicitly mention if this package installs trial software or software that needs a license present, or both.
 * The tags field is not being abused - note this doesn't mean they are missing tags you believe they should have (that is a guideline).
