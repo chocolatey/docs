@@ -16,16 +16,19 @@ Automatic packaging is a process that **package maintainers can run on *their ow
 
 There are currently two methods that can be used to maintain automatic packages:
 
-- RECOMMENDED - Using only Powershell via [Automatic Update module AU](https://github.com/majkinetor/au).
+- RECOMMENDED - Using only PowerShell via [Chocolatey Automatic Package Updater Module](https://github.com/chocolatey-community/chocolatey-au).
 - DEPRECATED - Using [Chocolatey Package Updater](https://community.chocolatey.org/packages/ChocolateyPackageUpdater) with 3rd party tool [Ketarin](https://community.chocolatey.org/packages/ketarin).
 
 ## Automatic Updater (AU)
 
-The [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au/blob/master/README.md) is a PowerShell module which implements functions that can be used to automate Chocolatey package updates.
+The [Chocolatey Automatic Package Updater Module](https://github.com/chocolatey-community/chocolatey-au/blob/master/README.md) is a PowerShell module which implements functions that can be used to automate Chocolatey package updates.
 
 ### Credits
 
-AU is brought to you by a Chocolatey community member [Miodrag Milic](https://github.com/majkinetor) and it is becoming more awesome all the time.
+AU was created by Chocolatey community member [Miodrag Milic](https://github.com/majkinetor).
+The original repository has been archived and is no longer receiving updates.
+
+Due to its widespread usage for many Chocolatey packages, we have forked the module into the [chocolatey-au](https://github.com/chocolatey-community/chocolatey-au) repository in the Chocolatey Community organisation where it will be maintained going forward.
 
 ### Setup
 
