@@ -85,10 +85,25 @@ If items are installed in any other order, it could have strange effects or fail
 
 # Update the license
 Copy-Item -Path $LicensePath -Destination $ToolsDir\chocolatey.license.xml -Force
-$PackageVersion = Get-Date ([xml](Get-Content $LicensePath)).license.expiration -Format 'yyyy.MM.dd'
+
+# Get license expiration date and node count
+[xml]$licenseXml = Get-Content -Path $LicensePath
+$licenseExpiration = [datetimeoffset]::Parse("$($licenseXml.SelectSingleNode('/license').expiration) +0")
+$null = $licenseXml.license.name -match "(?<=\[).*(?=\])"
+$licenseNodeCount = $Matches.Values -replace '\s[A-Za-z]+',''
+
+if ($licenseExpiration -lt [datetimeoffset]::UtcNow) {
+    Write-Warning "THE LICENSE FILE AT '$LicensePath' is EXPIRED. This is the file used by this script to generate this package, not at '$licensePackageFolder'"
+    Write-Warning "Please update the license file correctly in the environment FIRST, then rerun this script."
+    throw "License is expired as of $($licenseExpiration.ToString()). Please use an up to date license."
+}
+
+if (-not $LicensePackageVersion) {
+    $LicensePackageVersion = ($licenseExpiration | Get-Date -Format 'yyyy.MM.dd') + '.' + "$licenseNodeCount"
+}
 
 # Pack everything up
-choco pack $WorkingDirectory\chocolatey-license\chocolatey-license.nuspec --output-directory="$WorkingDirectory" --version=$PackageVersion
+choco pack $WorkingDirectory\chocolatey-license\chocolatey-license.nuspec --output-directory="$WorkingDirectory" --version="$LicensePackageVersion"
 ```
 
 ## Uploading the License Package
