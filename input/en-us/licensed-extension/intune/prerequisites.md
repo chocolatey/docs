@@ -8,7 +8,7 @@ Title: Prerequisites for Intune functionality
 
 ### Chocolatey Configuration
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > As the Intune commands are in preview, ensure you enable the `allowPreviewFeatures` feature by using the command:
 >

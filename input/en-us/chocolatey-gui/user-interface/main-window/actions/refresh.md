@@ -9,6 +9,6 @@ Chocolatey GUI, by default, will automatically check for the currently installed
 
 ![Show where the refresh packages button is located within the User Interface](/assets/images/chocolatey-gui/user_interface_main-window_action_refresh-packages.png "Show where the refresh packages button is located within the User Interface")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button exists when looking at both local and remote sources

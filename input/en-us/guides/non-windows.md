@@ -21,7 +21,7 @@ The commands for installing, pinning, upgrading and uninstalling packages are av
 
 ### Chocolatey CLI Commands Supported On Non-Windows Systems
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This list is not final and may change as commands are added, modified, or removed.
 
@@ -42,7 +42,7 @@ These commands are supported on non-Windows systems:
 
 These commands are supported for management of `.template` packages:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > All commands will run, but these commands may print warnings if they are used with non `.template` packages.
 

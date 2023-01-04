@@ -7,7 +7,7 @@ Description: Information about using up security settings within the Administrat
 
 ## Two Factor Login
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature is available in Chocolatey Central Management starting with version 0.10.0.
 
@@ -26,7 +26,7 @@ If you want to change these settings, follow these steps:
 1. If enabled, choose whether to `Enable email verification` and `Allow to remember browser. If you allow this, users can select to remember browser to skip second time two factor login for the same browser.`
 1. Click the `Save All` button at the top right of the page to save your settings.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you disable the `Enable email verification` option, this is the same as disabling all two factor login. In future versions of Chocolatey Central Management, there will be additional methods of verification on top of only email, this is why there is a checkbox for it currently.
 

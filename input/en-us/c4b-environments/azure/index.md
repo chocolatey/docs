@@ -14,7 +14,7 @@ This is an overview of the Chocolatey for Business Azure Environment.
 
 It is a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde), allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > A Chocolatey for Business Azure Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
 
@@ -43,7 +43,7 @@ Select the subscription, resource group, and region you intend to deploy to. As 
 
 By default, all resources in the resource group are deployed with 'choco' prefixing the resource name. If you'd prefer to use something else for identification you can change it here.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Due to constraints in naming some resources, the prefix must be 8 characters or less and contain only alphanumeric characters.
 
@@ -61,7 +61,7 @@ Fill your intended domain name in, select and upload your PFX certificate, and e
 
 ![Custom Domain Configuration](/assets/images/c4b-azure/DomainView-CustomDomain.png)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The PFX certificate must contain the exportable private key, and should be protected with a password.
 > Suggestions for creating a PFX certificate can be found [here](xref:c4b-azure#ssl-certificate).
@@ -128,7 +128,7 @@ If you need help with another registrar, we recommend searching for their docume
 
 ### Configuring CCM
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).
 > You can log in to CCM using the credentials provided in the KeyVault (see [Accessing Services](#accessing-services), below).
@@ -243,7 +243,7 @@ You can then use this generated file and the password you set to deploy your Cho
 
 You can also use a Microsoft Azure KeyVault to create a self-signed certificate by following the steps in Microsoft's documentation using the [Portal](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-portal) or [Azure PowerShell](https://docs.microsoft.com/en-us/azure/key-vault/certificates/quick-create-powershell).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Your browser will display warnings when accessing the Chocolatey for Business Azure Environment sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on machines used to access the management sites.
 

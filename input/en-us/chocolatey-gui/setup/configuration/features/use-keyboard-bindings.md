@@ -15,7 +15,7 @@ then back to the `This PC` feed using `CTRL + 1`.  It is also possible to naviga
 Disabling this feature will stop these navigations from being possible using these keyboard shortcuts, but they can
 still be navigated to using the mouse in the normal way.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 >Keyboard bindings are only supported for the first 9 sources.  Trying to press `CTRL + 1 + 0` for navigating to a tenth source will not work.
 

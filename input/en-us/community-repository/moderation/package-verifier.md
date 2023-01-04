@@ -18,7 +18,7 @@ The verifier is a service that checks the correctness (that the package actually
 
 ## Specifications
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > We currently run against only one system. This was chosen as it will install almost all Chocolatey packages. We will be adding multiple systems in the future.
 
@@ -54,7 +54,9 @@ The verifier has the following prerequisites for it to work:
 
 #### Vagrant Testing
 
-**NOTE:** You can repeat the testing of the verifier at https://github.com/chocolatey/chocolatey-test-environment
+> :choco-info: **NOTE**
+>
+> You can repeat the testing of the verifier at https://github.com/chocolatey/chocolatey-test-environment
 
 ##### Box Prep
 * Copy `PrepareMachine.ps1` to `VagrantAction.ps1`

@@ -22,11 +22,11 @@ By safety - we check that the package scripts do not do anything devious and tha
 
 While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the [validator](xref:package-validator) may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
 

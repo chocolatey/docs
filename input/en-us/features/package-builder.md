@@ -97,7 +97,7 @@ Another way Package Builder can generate packages is based on looking at what is
 
 [![Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!](/assets/images/package-builder/package-builder-programs-features-video.png)](https://www.youtube.com/watch?v=Mw_ReipnskI&list=PLfn-TaDnc1us5X-PVlxW8M1h-6mXEXZSG&index=3 "Chocolatey's Package Builder - Generate Packages from Programs and Features Automatically!")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

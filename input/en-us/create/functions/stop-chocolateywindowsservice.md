@@ -8,7 +8,9 @@ RedirectFrom: docs/helpers-stop-chocolatey-windows-service
 
 # Stop-ChocolateyWindowsService
 
-> :memo: **NOTE** This function requires a Chocolatey for Business License to use.
+> :choco-info: **NOTE**
+> 
+> This function requires a Chocolatey for Business License to use.
 
 Stops a Windows Service.
 
@@ -57,4 +59,6 @@ Accept Pipeline Input? | true (ByPropertyName)
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from licensed code.
+> :choco-info: **NOTE**
+> 
+> This documentation has been automatically generated from licensed code.

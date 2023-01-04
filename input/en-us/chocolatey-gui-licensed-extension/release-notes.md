@@ -10,7 +10,7 @@ Description: Release Notes for Chocolatey GUI Extension
 This covers the release notes for the Chocolatey GUI Licensed Extension (`chocolateygui.extension`) package, where the commercial editions of Chocolatey GUI get their enhanced functionality.
 Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) for information on how to get and install the package.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This package is available to Chocolatey for Business customers only.
 
@@ -31,7 +31,7 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 ## 1.0.0 (March 21, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolateygui.extension package have changed in this release. It now requires Chocolatey GUI v1.0.0 and Chocolatey Licensed Extension v4.0.0.
 
@@ -51,7 +51,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 0.4.0 (February 10, 2022)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolateygui.extension package have changed in this release, and it now requires Chocolatey GUI v0.20.0.
 
@@ -70,7 +70,7 @@ A short video explaining what is included in this release can be found here:
 
 ## 0.3.0 (September 6, 2021)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The dependencies of the chocolateygui.extension package have changed in this release, and it now requires Chocolatey CLI v0.11.1 and Chocolatey GUI v0.19.0.
 

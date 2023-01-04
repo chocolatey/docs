@@ -8,7 +8,7 @@ RedirectFrom: docs/chocolatey-for-business-quick-start-guide
 
 Welcome to the Chocolatey for Business (C4B) Quick-Start Guide! This guide will walk you through the basics of configuring a C4B Server on your VM infrastructure of choice. This includes the Chocolatey Licensed components, a NuGet V2 Repository (Nexus), Chocolatey Central Management (CCM), and an Automation Pipeline (Jenkins).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This quick-start guide is intended for customers who have recently purchased Chocolatey for Business (C4B), or are evaluating C4B as part of a proof-of-concept.
 > It is **opinionated**, and thus illustrates only one method of setting up your Chocolatey environment.
@@ -70,7 +70,9 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 ### Step 1: Begin C4B Setup
 
-> :exclamation:**[IMPORTANT]** All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
+> :choco-danger: **[IMPORTANT]** 
+>
+> All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
 
 1. Open a PowerShell console with the `Run as Administrator` option, and paste and run the following code:
 
@@ -169,7 +171,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
     >
     > If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Personal` certificate store before running the above script, and ensure that the private key is exportable.
 
-    > :memo: **NOTE**
+    > :choco-info: **NOTE**
     > You may have noticed the `-Hardened` parameter we've added above. When using a custom SSL certificate, this parameter will further secure access to your C4B Server. A Role and User credential will be configured to limit access to your Nexus repositories. As well, CCM Client and Service Salts are configured to further encrypt your connection between CCM and your endpoint clients. These additional settings are also incorporated into your `Register-C4bEndpoint.ps1` script for onboarding endpoints. We do require you to enable this option if your C4B Server will be Internet-facing, with a FQDN that resolves to a public IP.
 
     **ALTERNATIVE 2 : Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
@@ -219,7 +221,9 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > </ul>
     > </details>
 
-    > :mag: **FYI**: A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
+    > :choco-info: **NOTE**
+    > 
+    > A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
 
 ### Step 6: Verification
 

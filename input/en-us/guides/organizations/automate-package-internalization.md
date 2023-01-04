@@ -38,7 +38,7 @@ Let's break down the diagram:
 
 While it's not explicitly specified the glue that holds all of this together is automation using a self-hosted CI / CD tool such as [Jenkins](https://community.chocolatey.org/packages/jenkins), [GoCD](https://community.chocolatey.org/packages/gocdserver), [TeamCity](https://community.chocolatey.org/packages/teamcity) etc. While it may be possible to do this with externally hosted solutions using local build agents (such as [VSTS](https://visualstudio.microsoft.com/team-services/)) your mileage may vary.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The Chocolatey Architecture Diagram shows the services separated. But don't mistake the services for servers. All of these services, package internalizer, source control and package repositories can all be run on one server. There is a caveat however. [Chocolatey Server](xref:set-up-chocolatey-server) can only run one package source per server, so if you use this with a test and production repository source, as we recommend, you will need to run each on separate servers. This limitation does not apply to [Sonatype Nexus](https://www.sonatype.com/nexus-repository-sonatype), [Artifactory](https://jfrog.com/artifactory/), [ProGet](https://inedo.com/proget), [Cloudsmith](https://cloudsmith.com) and others.
 
@@ -511,7 +511,7 @@ Below are the details for the Jenkins job to update the production repository. T
   }
 ```
 
-> :memo: **Optional Configuration**
+> :choco-info: **Optional Configuration**
 >
 > For this guide we will trigger each job manually, however in production you will want to add the **Build Trigger** option **Build periodically** and complete the **Schedule** field.
 >

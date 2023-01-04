@@ -5,6 +5,6 @@ Title: Users
 Description: Information about configuring users within the Chocolatey Central Management Administration section.
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.

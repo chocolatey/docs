@@ -129,7 +129,7 @@ Write-Host "The IP Address to connect to is $($IPAddress)"
 
 ## Connecting to the VM
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 > It can sometimes take a few minutes for the Network Security Group rules to be updated.
 
 Finally, use the IP address that we found in the previous steps to [connect to the VM](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/connect-logon) using the IP address you procured in the previous steps, using [the credential from the Azure Key Vault](xref:c4b-azure#accessing-services).

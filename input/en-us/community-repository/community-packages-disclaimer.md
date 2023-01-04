@@ -22,7 +22,7 @@ A huge thing in Windows ecosystem is copyright law and how it plays into distrib
 
 You can build a 100% reliable pipeline/workflow within the Chocolatey framework, just not with the community package repository. Building a reliable pipeline is huge. If you are a Windows admin wanting to trust a framework like Chocolatey, you are not going to use the Community Package Repository. Not when your reputation/job is on the line for picking the best options.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > You can also achieve reliability when reusing community packages, as long as you [internalize](xref:recompile-packages) them. **Internalizing is not the same thing as caching the nupkg files like Artifactory, Cloudsmith, Nexus, ProGet, etc can do.**
 
@@ -41,7 +41,7 @@ However Windows doesn't have a distro-provided repo. Chocolatey Software does no
 
 **Please note that individuals (even organizations) using the community repository are unlikely to hit excessive use numbers under normal usage scenarios.**
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you do find you have been blocked / rate-limited, having commercial licenses will not have any effect the policies with the community package repository. These policies were put into place to ensure stability and availability for the entire community, not to try to get folks to pay for licensing.
 
@@ -51,7 +51,7 @@ Another aspect to keep in mind is that the community package repository is meant
 
 **Blocks are meant to be temporary bans, but require you to act to remedy the situation.** If you have been blocked, please see the next sections for corrective actions.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you or your organization feels you will need to go over this limit with good reason and need whitelisted, please reach out at https://chocolatey.org/contact, choose "Blocked IP Address". As we have limited information, please include your name, email address, phone number, and the IP addresses you believe are blocked so we can contact you and verify if there is a ban. Once you have resolved any issues on your side, we can lift the ban.
 
@@ -61,7 +61,7 @@ To avoid excessive use, please see our [organizational deployment guide](xref:or
 
 If you are not able to take advantage of [internalizing](xref:recompile-packages) packages, you can still cache them locally (using package repository solutions like Artifactory, Cloudsmith, Nexus, ProGet, MyGet, etc), which will reduce your direct usage of the community repository.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to [internalize packages](xref:recompile-packages).
 
@@ -69,7 +69,7 @@ For caching of packages, something can be quickly implemented in 15-30 minutes t
 
 ### What To Do When You Are Blocked For Excessive Use
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > A block will not automatically expire, you will need to contact our team to resolve the block. Rate Limiting on the other hand does automatically expire after one hour. Please see [rate limiting](#rate-limiting) below.
 
@@ -81,7 +81,7 @@ Once you have resolved any issues on your side, we can lift the block. A block w
 
 ### Rate Limiting
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Purchasing licenses will not have any effect on rate limiting of the community package repository. Please read carefully below to understand why this was put in place and steps you can take to reduce issues if you run into it. HINT: It's not an attempt to get you to pay for commercial editions.
 
@@ -101,7 +101,7 @@ You will start to see `429 Too Many Requests` if you have triggered the rate lim
 
 * Error 1015
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please note that individuals using the community repository are unlikely to hit rate limiting under normal usage scenarios.
 
@@ -110,13 +110,13 @@ You will start to see `429 Too Many Requests` if you have triggered the rate lim
 * All other packages are rate limited at about 20 per minute per IP address - temporary ban expires after 1 hour.
 
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Rate Limiting defaults are subject to change with or without notice as we find a good happy medium that ensures ease of use and stability for our community.
 
 ### What To Do When You Are Rate Limited
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > A rate limit will automatically expire after an hour, but if you hit the limit again, it will block for another hour.
 
@@ -129,7 +129,7 @@ If you have found that you have been rate limited, please see [How To Avoid Exce
 
 If you have special needs and are being rate limited, please reach out to us as in special instances, we can whitelist your IP address for a small period of time. Do the following:
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Rate limits are temporary and expire within an hour, but will trigger again if you go over the limits. You may not need to file a special request if you can determine alternative means of use or if you [implement best practices](#how-to-avoid-excessive-use).
 
@@ -140,7 +140,7 @@ If you have special needs and are being rate limited, please reach out to us as 
 * You will typically receive a response somewhat quickly with options for you to implement. These are considered [best practices](#how-to-avoid-excessive-use) and can typically be implemented within 15-30 minutes.
 * Our team will evaluate your request within a few business days and make a determination if your need qualifies for whitelisting. If so, the team will typically put in a temporary one time 7 day whitelist for you to [implement best practices](#how-to-avoid-excessive-use).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > These are subjective, and special requests ONLY. Please ensure you [implement best practices](#how-to-avoid-excessive-use) so that you are not rate limited.
 

@@ -20,7 +20,7 @@ This page serves as a reference for troubleshooting and resolving issues that ma
 The above table lists the compatible product versions with the most recent version of the Chocolatey Licensed Extension.
 If you are working with an earlier version of Chocolatey Licensed Extension, please consult the [Chocolatey Licensed Extension](xref:licensed-extension-release-notes) release notes to determine the recommended version(s) of Chocolatey CLI for your version of the Chocolatey Licensed Extension.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Chocolatey CLI v1.0.1 and up may continue to work for versions of the Chocolatey Licensed Extension older than v4.0.0, but these configurations are not supported for use in a production environment.
 > We recommend all customers update to new product versions, if/when they are able to do so, in order to get the latest features and fixes.

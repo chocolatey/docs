@@ -8,7 +8,7 @@ RedirectFrom:
   - en-us/central-management/usage/reports
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.
 

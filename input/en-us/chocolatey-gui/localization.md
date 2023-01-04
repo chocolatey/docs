@@ -9,7 +9,7 @@ Description: Localization in Chocolatey GUI
 
 To enable using localized strings in the Chocolatey GUI UI, the UI loads all its strings from a set of resource files called `resx` files.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Only the default `Resources.resx` file is committed into source control.  All other translations are downloaded from transifex at the time of compilation (more information on this below).
 
@@ -24,7 +24,7 @@ If no fitting `<lang>` is present for the current system, the default/fallback `
 When a new release of Chocolatey GUI is created, the resx files at the time of compilation are embedded within the generated assembly.
 As a result, any modifications/additions to any files will not be available until the next release of Chocolatey GUI.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > It is possible, assuming you have a transifex token, to download the resx files locally onto your environment. and compile Chocolatey GUI, will would allow you to test any changes locally.  More information on this below.
 
@@ -32,7 +32,7 @@ As a result, any modifications/additions to any files will not be available unti
 
 The Chocolatey GUI project makes use of the localization platform known as [transifex](https://www.transifex.com/).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This is normally a paid for service, however, we are using the Open Source offering that they provide.
 
@@ -41,7 +41,7 @@ The Chocolatey GUI project makes use of the localization platform known as [tran
 In order to help with the localization effort for Chocolatey GUI, you will need to create an account on [transifex](https://www.transifex.com/).
 Once you have an account, you will be able to request to join the [Chocolatey GUI](https://www.transifex.com/chocolatey/chocolatey-gui/dashboard/) project in transifex.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This request will need to be approved.
 
@@ -52,13 +52,13 @@ If a request goes unapproved for a period of time, reach out on [Community Chat]
 If a language hasn't yet been created for the Chocolatey GUI project that you would like to help with, you will need to make a request to have it added.
 This can be done via the [Chocolatey GUI dashboard](https://www.transifex.com/chocolatey/chocolatey-gui/dashboard/).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Adding a new language to the project will require approval.
 
 If a request goes unapproved for a period of time, reach out on [Community Chat](https://ch0.co/community) for help.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you are requesting a new language that uses a full language code, for example `zh_CN` rather than a language code similar to `de`, please get in touch with one of the project maintainers, as a Pull Request similar to [this](https://github.com/chocolatey/ChocolateyGUI/pull/634) will be required.
 
@@ -100,11 +100,11 @@ System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalizatio
 application.Run();
 ```
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you are unsure what you should replace `<lang>` with, a list of available cultures and their corresponding codes tags can be found [here](https://msdn.microsoft.com/en-us/library/cc233982.aspx).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > There is an [open issue](https://github.com/chocolatey/ChocolateyGUI/issues/533) that would allow runtime modification of the current locale, but this hasn't been implemented yet.
 

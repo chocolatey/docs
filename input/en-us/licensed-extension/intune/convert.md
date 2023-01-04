@@ -32,7 +32,7 @@ For convenience, a new context menu entry **Convert Chocolatey Package** has bee
 
 When Chocolatey looks to resolve dependencies, it will look in the folder that the package being converted is in (e.g. Chocolatey will look in `c:\packages` if you run `choco convert c:\packages\mypackage.1.0.0.nupkg`). It will find and convert the highest version found that satisfies the version criteria specified in the converted package `.nuspec` metadata file.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If a child package is found in the dependency chain, that has a more restrictive dependency version criteria than the Chocolatey package you want to convert, then this more restrictive version criteria will be used when the Chocolatey Intune package is created.
 
@@ -53,11 +53,11 @@ choco download firefox --version 86.0 --internalize --ignore-dependencies
 choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 ~~~
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > By specifying the path to a pre-release package, pre-release support will be enabled for the package and its dependencies. However, while the package you are converting can be a pre-release, you cannot have a dependency on a pre-release package if the Chocolatey package you are converting is a stable release. This is the same behaviour as the [`push`](xref:intune-push) command.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If the packages `chocolatey` or `chocolatey.extension` do not exist in the same directory as the Chocolatey package you are converting, a warning about them being 'missing' will be shown. This warning can be safely ignored if these two packages are already available in your Intune tenant. If these are not available in your Intune tenant, you may use this download command:
 >

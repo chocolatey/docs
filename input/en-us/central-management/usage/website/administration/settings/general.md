@@ -5,6 +5,6 @@ Title: General
 Description: Information about using up general settings within the Administration Settings screen.
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.

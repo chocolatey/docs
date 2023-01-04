@@ -8,11 +8,11 @@ RedirectFrom: docs/central-management-setup-upgrade
 
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Looking for installation instructions? See [Central Management Setup](xref:ccm-setup).
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > - Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 > - All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
@@ -23,7 +23,7 @@ We suggest you go through and take a snapshot of your CCM VM before proceeding w
 
 ## Step 1: Download Latest Packages
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Make sure you have read over the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
@@ -51,7 +51,7 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 ## Step 2: Upgrade Central Management Database
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please see [Central Management Database Setup](xref:ccm-database) for details about all arguments that can be passed and set.
 
@@ -59,13 +59,13 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 choco upgrade chocolatey-management-database -y
 ```
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you are using QDE and receive an error about deserializing and padding, see the resolution below.
 
 ## Step 3: Setup Central Management Windows Service(s)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please see [Central Management Service Setup](xref:ccm-service) for details about all arguments that can be passed and set.
 
@@ -73,7 +73,7 @@ choco upgrade chocolatey-management-database -y
 choco upgrade chocolatey-management-service -y
 ```
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > - If you passed non-default options for any of the following:
 >   - `/Username:` / `/Password:` / `/EnterPassword`
@@ -82,7 +82,7 @@ choco upgrade chocolatey-management-service -y
 > - If you passed a non-default option for the `/CertificateDnsName:` / `/CertificateThumbprint:`, you **may need to pass those items again** under the following conditions:
 >   - Your certificate's DNS name does not match `<hostname>*`(a certificate that at least starts with the hostname).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Database details that have not changed will not need to be passed.
 
@@ -90,7 +90,7 @@ There may be additional (new) things you will want to configure. Please see [Cen
 
 ## Step 4: Setup Central Management Website
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please see [Central Management Web Setup](xref:ccm-website) for details about all arguments that can be passed and set.
 
@@ -98,13 +98,13 @@ There may be additional (new) things you will want to configure. Please see [Cen
 choco upgrade chocolatey-management-web -y
 ```
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > You may need to adjust permissions/roles for your user if not using the default `ccmadmin` account. Please see the roles and permissions your account has versus what is available in `Administration -> Users`.
 
 ## Step 5: Upgrade Agent Machines
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please see [Central Management Client Setup](xref:ccm-client) for details about all arguments that can be passed and set.
 
@@ -114,11 +114,11 @@ choco upgrade chocolatey-agent -y
 
 There may be additional (new) things you will want to configure. Please see [Central Management Client Setup](xref:ccm-client) for details.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This could include the agent(s) on the CCM machine(s).
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The Chocolatey Agent installed on the same machine that has the CCM Service installed will share the `centralManagementServiceUrl` setting, so that agent can only report into that CCM Service.
 
@@ -131,7 +131,7 @@ As an example, configuring using Deployments would have the folllowing:
 choco feature enable --name="'useChocolateyCentralManagementDeployments'"
 ```
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > As these features have security considerations (it is enabling cross-machine communication), they must be turned on explicitly.
 > If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword`.
@@ -179,7 +179,7 @@ Likely you absolutely can, just keep in mind that there may be a specific orderi
 
 ### Why does the chocolatey-management-web package upgrade when I upgrade the chocolatey-management-service package?
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This only applies to version of CCM _after_ 0.6.0 and _before_ 0.9.0.
 

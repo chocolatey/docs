@@ -7,7 +7,7 @@ Description: Information on how to upgrade Chocolatey Agent
 
 ## Upgrade process
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The upgrade of `chocolatey-agent` through `chocolatey-agent` will require a restart of the service in order for the new version to be picked up.
 
@@ -31,7 +31,7 @@ $settings = New-ScheduledTaskSettingsSet -Hidden
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "restart chocolatey-agent" -Description "Upgrade Chocolatey Agent" -Principal $principal -Settings $settings -Verbose:$false
 ```
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
 
@@ -43,7 +43,7 @@ If you need to change the username or password of the Chocolatey Agent, you have
 * Change it during an upgrade by [passing the new username/password to the upgrade command](xref:setup-agent#package-parameters)
 * Change it during an uninstall and reinstall while [passing the new username/password to the install command](xref:setup-agent#package-parameters).
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The service password cannot be changed through a Chocolatey upgrade command while the service is running.
 
@@ -51,7 +51,7 @@ If you need to change the username or password of the Chocolatey Agent, you have
 
 If you use Chocolatey Central Management, you won't be able to use a deployment to uninstall the agent and then install the agent. This is because the agent cannot change the username/password while is it running. Instead, you can send a deployment that creates a scheduled task to uninstall the agent, then install with the new parameters.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Due to limitations of Windows Task Scheduler, it is likely that your users will see the PowerShell window initially, but it should disappear once PowerShell has fully started.
 
@@ -69,10 +69,10 @@ $settings = New-ScheduledTaskSettingsSet -Hidden
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "Upgrade chocolatey-agent" -Description "Upgrade Chocolatey Agent" -Principal $principal -Settings $settings -Verbose:$false
 ```
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Be sure to use [Sensitive Variables](xref:ccm-administration-sensitive-variables) to ensure the username and password don't get added to the Chocolatey logs when using Chocolatey Central Management version 0.7.0 or newer.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.

@@ -6,7 +6,7 @@ Description: How to make QDE accessible from the internet
 RedirectFrom: docs/quick-deployment-internet-setup
 ---
 
-> :information_source: **INFORMATION**
+> :choco-info: **NOTE**
 >
 > This document was written primarily for QDE v1.0.
 >
@@ -21,7 +21,7 @@ RedirectFrom: docs/quick-deployment-internet-setup
 
 With an unprecedented amount of employees working from home, there is a much greater demand to serve their software lifecycle needs remotely. Thus, many organizations would like the option to make the Chocolatey Quick Deployment Environment (QDE) Internet-accessible. This document walks you through some options you will need to consider, if you choose this route.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This document assumes you have an understanding of the underlying principles behind **SSL Certificates** and **Public Key Infrastructure**.
 > Therefore, it does not exhaustively cover these topics, but rather presents steps and examples of what you will need to accomplish.
@@ -75,7 +75,7 @@ The `New-SSLCertificate.ps1` script in the "C:\choco-setup\files" folder on the 
 
 This script can be utilized in multiple certificate scenarios outlined below. Any time this script is run, please be mindful of the warnings below.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > * The `New-SSLCertificate.ps1` script will appear to prompt for input, and also display some misleading output.
 >   This is due to the nature of the Java tooling by which the script interacts with Nexus.
@@ -102,7 +102,7 @@ If you manage a Windows AD Domain, this is going to be the most common scenario.
 The majority of customers will want to join the QDE server to their domain, and possibly even change the hostname to match their organizational naming conventions.
 As this process will change your FQDN, this will need to be completed  **_ahead_** of any other changes.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > We are assuming you are able to manage certificates in your Active Directory (AD) domain environment.
 > You should have a server with the Active Directory Certificate Services (AD CS) role in place, that can issue and mange digital certificates.
@@ -174,7 +174,7 @@ As you will be exposing these two services via the Internet, you must make sure 
 This scenario is the least desirable for an Internet-accessible setup, as you will likely have to perform steps manually on every endpoint.
 It is also less secure, and thus **not recommended** for a server that is Internet-accessible.
 
-> :unlock: **SECURITY NOTE**
+> :choco-warning: **SECURITY NOTE**
 >
 > As valid and widely-trusted SSL certificates are now available from CA's such as LetsEncrypt for free, there is no need to continue using self-signed certificates for Internet-accessible resources.
 > For resources that are being utilized over the Internet, it's much safer to use a certificate that is signed by a trusted third party for SSL connections.
@@ -190,7 +190,7 @@ You can follow two paths to accomplish this:
 
 ### Option 1: Scripted Nexus Configuration
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > QDE v1 customers, please download the `Set-QDEnvironmentInternetSecurity.ps1` script and save it to the `C:\choco-setup\files\` directory on your QDE instance.
 > You can accomplish this with the following script:
@@ -202,7 +202,7 @@ You can follow two paths to accomplish this:
 Now, you will use `Set-QDEnvironmentInternetSecurity.ps1` to update the scripts in your `choco-install` Nexus raw repository to reflect the additional security measures you've implemented above.
 Remember, it is **required** to pass your FQDN for your QDE server with the `-FullyQualifiedDomainName` parameter.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This script will throw an error if you have logged into Nexus and changed your password from the default found in the README when you first got started with the appliance.
 > If this is the case, add the `-NexusAdminPassword` parameter to the below command and supply the new password.
@@ -213,7 +213,7 @@ From an administrative PowerShell console, execute the following:
 Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QDEnvironmentInternetSecurity.ps1 -FullyQualifiedDomainName '<YOUR_FQDN_HERE>' -PasswordLength 32 -SpecialCharCount 12
 ```
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > 1. This script will emit random passwords for your nexus user, your client salt, and your service salt.
 >    Make sure you save these passwords for use when setting up your clients later.
@@ -308,7 +308,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force ; . C:\choco-setup\files\Set-QD
 
 ## CCM Setup
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you ran option 1 above ([Scripted Nexus Configuration](#option-1-scripted-nexus-configuration)), you can skip this step, as the configuration has already been applied to the server.
 
@@ -412,7 +412,7 @@ If you **must** open up access to Jenkins internally, we advise you to review th
 * [Jenkins Security Recommendations](https://www.jenkins.io/doc/book/system-administration/security/)
 * [Jenkins SSL Setup by Sam Gleske](https://sam.gleske.net/blog/engineering/2016/05/04/jenkins-with-ssl.html)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > As Jenkins is more of a "set-and-forget" service, we strongly advise you **do not** open up access to the Jenkins web console, but rather just use the web console on the QDE VM itself as needed.
 > If you must, we recommend you only access it over your internal network, or via a VPN.

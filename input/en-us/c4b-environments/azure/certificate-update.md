@@ -63,7 +63,7 @@ if ($CertPermissions -notcontains 'Get' -or $CertPermissions -notcontains 'List'
 
 The certificate used by most of the C4B Azure Environment is stored in the provided Azure Key Vault under the name `C4B-Azure-Certificate`. To update the certificate used by the environment, you create a new version of this certificate.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please note that the new certificate must meet the same requirements as the original did during the [initial deployment](xref:c4b-azure#ssl-certificate). The certificate:
 >
@@ -123,7 +123,7 @@ The Application Gateway provided with your C4B Azure Environment needs to be upd
 
 ### Azure Portal
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > In addition to the certificate in a PFX format that was used in the [previous section](xref:c4b-azure-cert-update#updating-the-azure-key-vault), you will need a copy of the certificate in CER format.
 >

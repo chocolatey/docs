@@ -44,13 +44,13 @@ You could also upgrade the software directly outside of Chocolatey, which would 
 
 Chocolatey's autosync understands that an upgrade occurred and tracks that for the software, but not the packaging. So you won't see anything visual that indicates the sync as the package version will remain the same.
 
-> :memo: **Why doesn't Chocolatey upgrade the package version?**
+> :choco-info: **Why doesn't Chocolatey upgrade the package version?**
 >
 > There is not always a one to one line up between package version and software version. The version of software you think you are based on the software telling you and what that software reports as the version in the registry are different many times, unfortunately. This makes it very difficlt to update a package version correctly.
 
 For example, for the longest time Google Chrome had a version number in the registry at 65.x when the version being displayed to users was at like 59.x. The packaging was at 59.x following what people note as the version based on what Google Chrome tells them. This is just one of many examples.
 
-> :memo: **Software version tracking assists in uninstallations where Chocolatey's autouninstaller is invoked.**
+> :choco-info: **Software version tracking assists in uninstallations where Chocolatey's autouninstaller is invoked.**
 
 If the software is an MSI, the Product Guid is used for managing uninstalls. Guess what typically changes on every upgrade? Yes, the Product Guid. So autosync is keeping track of the new ones as the software automatically upgrades. Without tracking that, if you were to say `choco uninstall googlechrome` without autosync and there was no `chocolateyUninstall.ps1` in the package, then the software could potentially be left on the system because Chocolatey's automatic uninstaller wouldn't have the right Product Guid and thus be unable to handle software uninstallation.
 
@@ -58,7 +58,7 @@ If the software is an MSI, the Product Guid is used for managing uninstalls. Gue
 
 ![auto package creation/synchronize](/assets/images/gifs/choco_business_features.gif)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

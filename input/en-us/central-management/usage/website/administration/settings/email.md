@@ -23,6 +23,6 @@ You should received a notification similar to this:
 
 ![Test email sent successfully](/assets/images/features/ccm/test_email_sent_correctly.png)
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > If you leave either the `Default from (sender) email address` or `Default from (sender) display name` with their default values, you will see an error when an email is attempted to be sent via the system.

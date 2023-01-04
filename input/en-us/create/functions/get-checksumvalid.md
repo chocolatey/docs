@@ -109,7 +109,9 @@ Accept Pipeline Input? | false
 The expected checksum hash value of the File resource. The checksum
 type is covered by ChecksumType.
 
-> :memo: **NOTE** Checksums in packages are meant as a measure to validate the
+> :choco-info: **NOTE**
+>
+> Checksums in packages are meant as a measure to validate the
 originally intended file that was used in the creation of a package is
 the same file that is received at a future date. Since this is used for
 other steps in the process related to the [community repository](https://community.chocolatey.org/packages), it
@@ -121,7 +123,9 @@ ensure the package also stays updated in line with those remote
 resource updates. You should look into [automatic packaging](xref:automatic-packaging)
 to help provide that functionality.
 
-> :memo: **NOTE** To determine checksums, you can get that from the original
+> :choco-info: **NOTE**
+>
+> To determine checksums, you can get that from the original
 site if provided. You can also use the [checksum tool available on
 the community feed](https://community.chocolatey.org/packages/checksum) (`choco install checksum`)
 and use it e.g. `checksum -t sha256 -f path\to\file`. Ensure you
@@ -186,6 +190,8 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 
 [Function Reference](xref:powershell-reference)
 
-> :memo: **NOTE** This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChecksumValid -Full`.
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChecksumValid -Full`.
 
 View the source for [Get-ChecksumValid](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChecksumValid.ps1)

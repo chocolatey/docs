@@ -5,6 +5,6 @@ Title: Package Cleaner Moderation Service
 Description: Information on the Package Cleaner Moderation Service
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This is a Work in Progress. Please check back later.

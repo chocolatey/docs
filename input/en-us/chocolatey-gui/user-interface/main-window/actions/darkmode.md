@@ -21,6 +21,6 @@ This is what the User Interface looks like when dark mode is selected:
 
 If required, the [default selection for light/dark mode](xref:default-to-dark-mode) can be modified to your personal liking.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This button exists when using the entire application

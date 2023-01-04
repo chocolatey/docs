@@ -6,7 +6,7 @@ Description: How to host your own Chocolatey packages, rather than use the Choco
 RedirectFrom: docs/how-to-host-feed
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Refer to [How To Set Up Chocolatey For Organizational/Internal Use](xref:organizational-deployment-guide) in tandem with this article.
 
@@ -71,7 +71,7 @@ Perhaps the easiest to set up and recommended for testing quick and dirty scenar
 * Can manage PowerShell gallery type packages.
 * There is no limitation on package sizes (or rather, it can likely handle 100MB+ file sizes, maybe even GB sized packages). Don't create multiple GB sized packages, what is wrong with you?! ;)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you must create large packages, see [Package Reducer](xref:package-reducer) for keeping used space down on client machines.
 
@@ -94,7 +94,7 @@ No really, it's that easy. Just set your permissions appropriately and put packa
 
 The structure should just be a flat folder or share (no subfolders) with nupkgs inside that folder. You get that when you choco push to that location. No subfolders, no `nuget add` type of setup will work for Chocolatey with those local folders and shares.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you build a local NuGet folder repository using NuGet.exe v3.4+, where you use `nuget add`, you may find that it doesn't produce the results you might expect when you are using Chocolatey. It creates subfolders and adds those nupkgs in an optimized way for query. That is fine when there is a server like Chocolatey.Server that does that but has a way to translate that to an OData feed. When Chocolatey is querying those local folders and shares, it uses what is built into the Chocolatey client (choco.exe). That is currently a very enhanced version of NuGet v2, so it won't understand that optimized subfolder structure and you may get no results. So keep things simple and flat for those types of repositories.
 
@@ -114,7 +114,7 @@ A way to do this with LocalSystem:
 1. Add this group to the share permissions with "Read" Access
 1. Add this group to the NTFS permissions with "Read" Access
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > You'll need to add this group itself and not nest it inside of another one.
 
@@ -173,7 +173,7 @@ Please see [Set up the Chocolatey.Server](xref:set-up-chocolatey-server). More d
 * Uses same enhanced NuGet that Chocolatey uses so you can see more information in search if you choose to use those things.
 * Allows packages up to 2GB. Package size can be controlled through [maxAllowedContentLength](https://msdn.microsoft.com/en-us/library/ms689462(v=vs.90).aspx) and [maxRequestLength](https://msdn.microsoft.com/en-us/library/e1f13641(v=vs.100).aspx).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Commercial options of Chocolatey also may have support for the Chocolatey.Server.
 

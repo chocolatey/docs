@@ -144,7 +144,7 @@ While in the [`Draft`](#draft) state, the available actions that can be performe
 Once the Deployment enters the [`Ready`](#ready) state, it's eligible to be started.
 Deployments in this state can be started manually or according to a schedule.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Any modifications to a Deployment in this state will revert it back to the [`Draft`](#draft) state.
 
@@ -204,13 +204,13 @@ The action opens the edit page for the selected Deployment plan.  Here changes c
 
 ### Duplicate
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature became available starting with Chocolatey Central Management 0.10.0
 
 The action makes an exact copy (with the exception of any scheduled start/end time or repeat period) of any given Deployment plan.  Once the duplicate has been created, you will be taken to the edit page ready to make any additional required changes.  The name of the new Deployment plan will be the same as the original with some additional information added to the end.  For example, if the original Deployment plan was called `Install Papercut`, the name given to the duplicate would be `Install Papercut - Copy (19 Aug 2022 12:52:25)` where the timestamp is the current date time.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > There is a specific permission to allow duplication of a Deployment plan. If you want to configure this permission, it can be done either for an individual [user](xref:ccm-administration-users), or a specific [role](xref:ccm-administration-roles)
 
@@ -352,7 +352,7 @@ To configure this, you can set the `Machine Contact Timeout` value in the Advanc
 This value must be positive, or zero (which is treated as infinite).
 You may want to configure this only for the first step of a Deployment, or for multiple steps if you expect the target machines to be connected/disconnected over the course of the Deployment.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If the Deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first Deployment step is ignored.
 > In this case, the maintenance window defines the contact timeout for the first step.

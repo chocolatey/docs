@@ -6,7 +6,7 @@ Description: Online copy of what ships on desktop of QDE image
 RedirectFrom: docs/quick-deployment-desktop-readme
 ---
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [QDEv1 Desktop Readme page](xref:v1-desktop-readme).
@@ -17,7 +17,7 @@ To finish setting up QDE (Quick Deployment Environment), you'll need to closely 
 
 ## Summary
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > - The commands outlined in this document need to be run from an administrative PowerShell session.
 >   Many of these scripts will function poorly or not at all in a non-administrative shell.
@@ -60,7 +60,7 @@ If you would like to change the hostname of this VM, please do so **before** goi
 
 ### 3. Run the Set-QDEnvironment.ps1 Script
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > When running the `Set-QDEnvironment` script ensure you are logged into the QDE VM with the _local admininistrator_ account.
 > This is necessary for SQL to work properly initially.
@@ -85,14 +85,14 @@ If you have a domain certificate or you have otherwise already created / obtaine
 please ensure the certificate is present in either the `Cert:\LocalMachine\My` or `Cert:\LocalMachine\TrustedPeople` stores before continuing.
 If you're not familiar with how to do this, please refer to [this DigiCert article for instructions](https://www.digicert.com/kb/managing-client-certificates.htm).
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The private key of the certificate you're using **must** be exportable.
 > If it is not, configuring Nexus will fail, as Nexus does not work with the Windows certificate store directly and maintains its own certificate store.
 
 You will need either the certificate thumbprint or the subject in order to use the certificate for setup:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > * `-CertificateDnsName` is optional if you're providing the `-CertificateSubject`, but only if the subject does **not** contain wildcards.
 > * You can also optionally provide the `-InternetEnabled` switch if your QDE instance has a certificate with a public hostname and will be operating over the internet.
@@ -119,7 +119,7 @@ You can also call `Get-Help C:\choco-setup\files\Set-QDEnvironment.ps1 -Full` fo
 
 ### 4. Select Community Packages to Internalize
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > - If your environment is air-gapped or you have otherwise locked down access to the Community Repository, you will need to ensure the community repository is accessible for this part of the script to work.
 >   It is completely optional, and you're more than welcome to skip this by selecting **Cancel** and only utilize the built in Jenkins tasks for internalization.
@@ -137,7 +137,7 @@ We recommend you leave the VM running while it's happening; you can keep tabs on
 
 ### Nexus Repository
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you have changed the hostname from the default, or you're using a FQDN for the server setup, this hostname will have changed.
 > In that case, substitute the hostname for the new FQDN.
@@ -181,7 +181,7 @@ In order to begin using Jenkins, the following steps will need to be performed:
 1. Enter the administrator password into the textbox and click `Continue`
 1. From the Plugin Installation Page select "Install Suggested Plugins"
 
-   > :memo: **NOTE**
+   > :choco-info: **NOTE**
    >
    > Some of these may fail to install, and that is OK.
 
@@ -197,7 +197,7 @@ In order to begin using Jenkins, the following steps will need to be performed:
 
 ### Chocolatey Central Management
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you have changed the hostname from the default, or you're using a FQDN for the server setup, this hostname will have changed.
 > In that case, substitute the hostname for the new FQDN.
@@ -222,7 +222,7 @@ To allow access to all services, the following firewall ports have been opened o
 We recommend you use either Mozilla Firefox or Google Chrome to interact with all Web interfaces for the different services installed.
 You will find Google Chrome pre-installed in the environment.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > There is a known issue in some QDE configurations where Firefox will be unable to load Nexus correctly.
 > If this occurs, you need to disable the `Block dangerous and deceptive content` option under **Security** in order to load Nexus.
@@ -256,7 +256,7 @@ To help make pushing packages easier, the `choco apikey` command is available.
 This will store your API key for a specific source as part of Chocolatey's configuration.
 This will be encrypted. To setup, do the following:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you have changed the hostname from the default, or you're using a FQDN for the server setup, this hostname will have changed.
 > In that case, substitute the hostname for the new FQDN.
@@ -291,7 +291,7 @@ If you use a KMS server in your environment, and have it configured on clients v
 
 If you rely on Retail or MAK licensing, you will need to apply the license using the following command, replacing the `x`'s with your actual product key:
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Please run the below from an administrative PowerShell session.
 
@@ -301,7 +301,7 @@ slmgr.vbs /ipk xxxxx-xxxxx-xxxxx-xxxxx
 
 ## Common Errors and Resolutions
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This document is for **Version 2** of the Quick Deployment Environment.
 > If you're using an older version of QDE, please refer to the [document for that version](xref:v1-desktop-readme).

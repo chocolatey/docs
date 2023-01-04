@@ -15,7 +15,7 @@ With the PreventAllPackageIconDownloads feature enabled, no attempt will be made
 
 <?! Include "../../../../../shared/require-chocolatey-gui-licensed-extension-note.txt" /?>
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If Chocolatey GUI has been run before enabling this feature, make sure to [purge any existing icons](xref:gui-purge-icons) that may have been cached
 

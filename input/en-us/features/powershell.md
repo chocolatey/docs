@@ -15,7 +15,7 @@ Within a Chocolatey package, there are three main PowerShell files:
 - chocolateyUninstall.ps1
 - chocolateyBeforeModify.ps1
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Not all of these files are required within every Chocolatey package, as Chocolatey performs a number of tasks automatically, and overrdiing the dfeault functionality is only required when you want to do something different.
 

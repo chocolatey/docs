@@ -144,7 +144,15 @@ const purgeCss = () => {
                 '::-webkit-scrollbar',
                 '::-webkit-scrollbar-thumb',
                 'link-light',
-                'bg-purple'
+                'bg-purple',
+                'fa-check',
+                'fa-triangle-exclamation',
+                'fa-info',
+                'fa-xmark',
+                'text-bg-warning',
+                'text-bg-danger',
+                'text-bg-success',
+                'text-bg-info'
             ]
         }))
         .pipe(dest(`${paths.assets}css/`));

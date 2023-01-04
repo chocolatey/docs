@@ -7,7 +7,7 @@ Description: Top level, general, information about Chocolatey Central Management
 
 ## Dark/Light Mode
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature became available starting with Chocolatey Central Management 0.10.0
 
@@ -27,7 +27,7 @@ The selection that is made here is persisted, meaning that it will be remembered
 
 ## Remembered number of table entries
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature became available starting with Chocolatey Central Management 0.10.0
 
@@ -37,7 +37,7 @@ Across the various pages within the Chocolatey Central Management website, there
 
 ## License Expiration Warning
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This feature became available starting with Chocolatey Central Management 0.10.0
 

@@ -23,7 +23,7 @@ Once you've added the required CNAME record, clients should be able to access it
 
 ## SSL Certificate
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If you used an SSL certificate from an external Certificate Authority (CA), or internally trusted PKI CA, your clients will automatically trust it and you can skip this section.
 

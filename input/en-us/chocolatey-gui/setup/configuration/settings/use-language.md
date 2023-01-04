@@ -10,7 +10,7 @@ interface.  However, there are times when you may want to use a locale other tha
 UseLanguage configuration setting allows the user to choose what language (from the list of currently [available languages](xref:use-language#available-languages)),
 to use.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This configuration setting appears in a slightly different area of the Chocolatey GUI settings screen
 >
@@ -48,7 +48,7 @@ Currently, the following languages can be selected:
 - `pt` - português (Portuguese)
 - `zh_CN` - 中文(中国) (Chinese (Simplified, China))
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Chocolatey GUI only uses languages that have over 60% of the languages strings translated. If your desired language
 > isn't in the list above, then feel free to join the [localization effort](xref:gui-localization).

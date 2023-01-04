@@ -14,7 +14,7 @@ While your Maintenance contract is valid, you are able to download updates to th
 A Perpetual License customer that does not have an active Maintenance contract will not be in a position to upgrade to the latest version of Chocolatey Licensed Extension.
 This can cause problems when there is a dependency that exists between a new version of Chocolatey CLI and Chocolatey Licensed Extension.
 
-> :memo: **NOTE:**
+> :choco-info: **NOTE**
 >
 > We added the dependency requirement to the [release notes](xref:choco-release-notes#march-21-2022) of v1.0.0 of Chocolatey CLI but some customers continued to experience the issue.
 > In the [v1.0.1](xref:choco-release-notes#march-24-2022) and the [v1.1.0](xref:choco-release-notes#march-30-2022) releases of Chocolatey CLI we implemented changes to allow Chocolatey CLI to work with the latest version of Chocolatey Licensed Extension. There are no guarantees that these changes will be applied in the same way to future versions.

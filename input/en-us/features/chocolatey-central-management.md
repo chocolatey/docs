@@ -15,7 +15,7 @@ Once installed and configured, you can use CCM to:
 * Create reports for tracking and auditing purposes
 * Manage endpoints with deployments through groups and collections
 
-> :information_source:
+> :choco-info: **NOTE**
 >
 > The information on this page has been spread out to an entire section and multiple pages. Links still here are due to code pointing to these. Please follow the link below for the most up-to-date information on CCM.
 

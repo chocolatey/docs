@@ -40,7 +40,7 @@ _The steps and screenshots below are current as of July 2021._
 
 ## Create a secret for your Azure AD Application
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > It's important to note down the secret generated below as you cannot retrieve it again. If you forget the secret you will need to generate another one.
 

@@ -27,7 +27,7 @@ We've prepared a short video to show sync in action:
 
 [![Chocolatey's Package Synchronizer - Sync Command](/assets/images/features/sync-command-video.png)](https://youtu.be/tzSsYHYsjf4 "Chocolatey's Package Synchronizer - Sync Command")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 

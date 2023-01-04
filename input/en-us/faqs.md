@@ -57,7 +57,7 @@ For more information on organizational cautions about the community package repo
 
 As of version 0.9.8.24, binaries, libraries and Chocolatey components install in ```C:\ProgramData\chocolatey``` (environment variable %ProgramData%) by default. This reduces the attack surface on a local installation of Chocolatey and limits who can make changes to the directory.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Historically, Chocolatey installed to ```C:\Chocolatey``` and currently, performing an update of Chocolatey doesn't change the installation location, except for when the install path is `C:\chocolatey`. It will upgrade that path and all variables automatically.  For more information about why Chocolatey used ```C:\Chocolatey``` as the default location, look here - [Default Install Reasoning](xref:default-chocolatey-install-reasoning)
 
@@ -194,13 +194,13 @@ A package with no suffix that is surrounded by packages with suffixes is to prov
 
 Talking specifically about the *.install package suffix – those are for the packages that have a native installer that they have bundled or they download and run.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > The suffix *.app has been used previously to mean the same as *.install. But the *.app suffix is now deprecated and should not be used for new packages.
 
 The *.portable packages are the packages that will usually result in an executable on your path somewhere but do not get installed onto the system (Add/Remove Programs). Previously the suffixes *.tool and *.commandline have been used to refer to the same type of packages.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Now *.tool and *.commandline are deprecated and should not be used for new packages.
 
@@ -351,7 +351,7 @@ Yes we do, take a look at [videos](xref:videos) and [known posts, presentations,
 
 There is! This is a long video due to slow internet connections, but watch the first 1:30ish minutes and the last 1:30ish minutes and that will give you a general idea. [https://www.youtube.com/watch?v=N-hWOUL8roU](https://www.youtube.com/watch?v=N-hWOUL8roU)
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This video shows dependency chaining, so you are seeing it install 11 applications/tools. It's also 6+ years old and there have been many, many improvements since then.
 
@@ -390,7 +390,7 @@ Two ways your packages can become trusted:
 
 In most cases, a package will only be switched to trusted after a few versions have been approved by moderators without any changes being required. This is to ensure that the package has been looked at by more than one person, since automated testing does not catch everything. Switching a package to trusted status is a manual change by a moderator. It is not an automated process, and does not happen imediately even if you are the software author. 
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > All packages go under automated verification, validation and virus scanning. If any of the tests don't pass, they are held for the maintainer to fix the package or to make a review comment. This includes trusted packages.
 
@@ -414,7 +414,7 @@ Related to the community package repository only (aka the default feed aka https
 
 ### How do I self-reject a package?
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This applies during the moderation process only on the community repository. Once approved, there is no reject.
 
@@ -449,15 +449,15 @@ The [verifier](xref:package-verifier-service) is a service that checks the corre
 
 All packages (and the binaries they contain or download at runtime) on community repository are scanned by 50-60 antivirus scanners. We have partnered with [VirusTotal](https://virustotal.com) to provide this information back to the website so you can know when you are on a package page whether it is something you should be concerned with or not. It falls just under the files section of the package pages.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Only en-US installers are tested by default via Chocolatey's Package Scanner
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Did you know that 60% or more of the sofware that is submitted to the community repository has its first scans by VirusTotal through Chocolatey's package scanner submissions? It's helped many of those anti-virus manufacturers get a clearer picture of heuristics and hopefully ends up in better anti-virus products with less false positives.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Need runtime malware protection? Learn more about [runtime malware protection](xref:virus-check)
 

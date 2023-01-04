@@ -27,7 +27,7 @@ Please see [Central Management Client Setup](xref:ccm-client) for more details a
 
 ## Viewing Installed Software on a Computer
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Starting with Chocolatey Central Management 0.10.0, the groups that a computer is a member of is shown in both the table of all computers, as well as on the computer details pages.  By default, this will only show the first 5 group memberships. If there are more group associations:
 >
@@ -45,7 +45,7 @@ You will be presented with a list of the installed software packages for the mac
 
 ## Removing a Computer from Central Management
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Unless you first uninstall (at minimum) the `chocolatey-agent` or disable Central Management by disabling the feature setting, the deleted computer will reappear when the Chocolatey Agent performs its next check-in.
 

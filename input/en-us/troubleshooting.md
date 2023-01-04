@@ -8,7 +8,7 @@ RedirectFrom: docs/troubleshooting
 
 There are some well-known things you may run into when you are using Chocolatey. We've tried to get some of the high level things you may run into into one document.
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > This is a work in progress. It doesn't cover all of the troubleshooting steps that are known but it is attempting to cover quite a few.
 
@@ -117,7 +117,7 @@ Install-ChocolateyPackage $packageArgs # this is incorrect and will pass the ent
 #           -ValidExitCodes @(0, 3010, 1641)
 ~~~
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > It is helpful to always use `choco new` when creating packages, it has this correct and you never run into this error.
 

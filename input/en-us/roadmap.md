@@ -8,7 +8,7 @@ ShowInNavbar: false
 ShowInSidebar: false
 ---
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > This does not represent a complete listing. Links are provided for more detailed set of backlog items. Some items will not be shared publicly.
 

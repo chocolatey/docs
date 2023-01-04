@@ -8,7 +8,7 @@ Description: Information on how to use the View Package Arguments action
 Each time a package is installed, either via Chocolatey or Chocolatey GUI, the arguments that were passed into the
 command are recorded, so that they can be re-used when performing an upgrade of the package.
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > The useRememberedArgumentsForUpgrades feature of Chocolatey needs to be enabled for this ability to be used.
 

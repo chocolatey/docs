@@ -1,3 +1,3 @@
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > To ensure that you don't accidentally leak sensitive information into Chocolatey logs, be sure to use them with [commands or parameters that are hidden from the logs](xref:sensitive-inputs).

@@ -16,7 +16,7 @@ as shown here:
 
 ![Exclude Installed Packages Enabled](/assets/images/chocolatey-gui/feature_exclude_installed_packages_enabled.png "Exclude Installed Packages Enabled")
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > When first enabling this feature, if the remote source was already open, it will be refresh to refresh the package list before the packages will be excluded.
 

@@ -11,14 +11,14 @@ While it is envisioned that CCM will be installed across multiple servers (split
 
 When setting up Central Management, currently, the CCM packages do not provision the SQL Server Database Permissions that are required for the CCM components to function.  It is assumed that the necessary permissions have already been provided (see the [FAQ](#how-can-i-add-sql-server-permissions-through-powershell) for one method of doing it).
 
-> :warning: **WARNING**
+> :choco-warning: **WARNING**
 >
 > * Unless otherwise noted, please follow these steps in **exact** order. These steps build on each other and need to be completed in order.
 >
 > * All deployed components of the CCM packages should **always** be the **SAME VERSION**. The only time you should not have this is when you are in a state of upgrading and that transition time should be quite short.
 >
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > * Please read through all of this prior to running installation as you could run into issues that require support to help you correct later.
 >
@@ -38,7 +38,7 @@ Additionally, the Chocolatey Central Management components should be installed o
 
 ## Step 1: Internalize Packages
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > Make sure you have read over the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix) prior to starting internalization as this will save you some headaches.
 
@@ -90,7 +90,7 @@ Get-ChildItem C:\packages -Recurse -Filter *.nupkg | Foreach-Object { choco push
 
 Please see [Central Management Database Setup](xref:ccm-database).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > While we'd like to support different database engines at some point in the distant future, currently only SQL Server is supported.
 
@@ -98,7 +98,7 @@ Please see [Central Management Database Setup](xref:ccm-database).
 
 Please see [Central Management Service Setup](xref:ccm-service).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If Step 1 is not succesful, do not move on to this step until you resolve issues with database setup.
 
@@ -106,7 +106,7 @@ Please see [Central Management Service Setup](xref:ccm-service).
 
 Please see [Central Management Web Setup](xref:ccm-website).
 
-> :memo: **NOTE**
+> :choco-info: **NOTE**
 >
 > If Step 1 or 2 is not successful, do not move on to this step until you resolve issues with previous steps.
 
