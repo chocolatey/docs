@@ -18,6 +18,43 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 2.0.0-alpha-20230124 (January 24, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI does **NOT** work with the Chocolatey Licensed Extension. It will actually prevent the loading of the Chocolatey Licensed Extension if it is installed.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this alpha version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this alpha release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework - see [#2738](https://github.com/chocolatey/choco/issues/2738).
+- Prevent usage of leading 0 in package version numbers - see [#1174](https://github.com/chocolatey/choco/issues/1174).
+
+### Bug
+
+- `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
+
+### Documentation
+
+- Fix broken URLs in repository README file - see [#2888](https://github.com/chocolatey/choco/pull/2888).
+- Update package files to reflect current CCR moderation requirements - see [#2920](https://github.com/chocolatey/choco/issues/2920).
+
+### Enhancements
+
+- Upgrade to target version 6.4.0 of NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
+- Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).
+
 ## [1.2.1](https://github.com/chocolatey/choco/milestone/58?closed=1) (December 6, 2022)
 
 ### Bug Fixes
