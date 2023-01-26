@@ -16,6 +16,13 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## [1.1.1](https://github.com/chocolatey/ChocolateyGUI/milestone/30?closed=1) (January 26, 2023)
+
+### Bug Fixes
+
+- Unable to load with Chocolatey GUI Licensed Extension - see [#977](https://github.com/chocolatey/ChocolateyGUI/issues/977).
+- Cached file listing outdated packages is not updated when there are no changes - see [#978](https://github.com/chocolatey/ChocolateyGUI/issues/978).
+
 ## [1.1.0](https://github.com/chocolatey/ChocolateyGUI/milestone/29?closed=1) (September 8, 2022)
 
 ### Improvement
