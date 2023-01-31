@@ -267,6 +267,7 @@ See [Infrastructure automation](xref:integrations)
 
 #### January
 
+* [Installing Chocolatey behind a corporate proxy](https://duanenewman.net/blog/post/installing-chocolatey-behind-a-corporate-proxy/)
 * http://www.jamessturtevant.com/posts/How-to-install-elixir-using-chocolatey-on-windows/
 * https://stefanscherer.github.io/get-started-with-docker-on-windows-using-chocolatey/
 * http://codebetter.com/robreynolds/2016/01/16/chocolatey-community-update/
