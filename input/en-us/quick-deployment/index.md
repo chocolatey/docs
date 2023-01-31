@@ -6,6 +6,15 @@ Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
 ---
 
+> :choco-danger: **DEPRECATION NOTICE**
+>
+> The Quick Deploy Environment(QDE) solution has been deprecated.
+> As such, we do not recommend new installations of this environment solution.
+> The [Quick Start Guide(QSG)](xref:c4b-quick-start-guide) has been developed as the replacement for the Quick Deploy Environment(QDE).
+> If you are running QDE within your organization, it is still fine to do so.
+> This notice is for any new trial or business customers.
+> We formally no longer support the Quick Deploy Environment(QDE) as a valid setup option.
+
 ## Summary
 
 This is an overview on the Chocolatey Quick Deployment Environment (QDE).
