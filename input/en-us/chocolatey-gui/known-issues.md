@@ -14,14 +14,6 @@ This is due to [a known bug in chocolatey.lib](https://github.com/chocolatey/cho
 
 If you need to use this feature, you must currently upgrade affected packages via Chocolatey CLI instead of Chocolatey GUI.
 
-## Unable to use Chocolatey GUI extension with Chocolatey GUI v0.17.1
-
-Some business customers have reported an issue when attempting to use version `0.1.0-alpha-20200402` of the Chocolatey GUI extension (a pre-release version of the extension) in combination with Chocolatey GUI v0.17.1.
-
-This issue was tracked in this [GitHub issue](https://github.com/chocolatey/ChocolateyGUI/issues/785) and a fix was released in Chocolatey GUI v0.17.2.
-
-If you are running into any issues with using the Chocolatey GUI extension alongside Chocolatey GUI, please ensure that you are using at least Chocolatey GUI v0.17.2 and also using the latest pre-release version of Chocolatey GUI extension which is currently `0.1.0-GL-4-20200713`.
-
 ## Chocolatey GUI asking for credentials for my non-administrator accounts
 
 If a user is a member of the Built-in AD group `Network Configuration Operators`, then that means they have an elevation token available and will be treated in the same way as administrative accounts. To fix this, you have two options:
