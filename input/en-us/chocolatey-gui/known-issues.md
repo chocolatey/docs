@@ -43,7 +43,7 @@ However, if you attempt the same operation via Chocolatey GUI, using the "Pin (I
 >
 > Exception: System.NullReferenceException: Object reference not set to an instance of an object
 
-This will be addressed in a future version of Chocolatey CLI/Chocolatey GUI.
+This was fixed as part of a feature addition within [Chocolatey GUI Licensed Extension V 0.2.0](xref:chocolatey-gui-licensed-extension-release-notes#march-9-2021).
 
 ## chocolateyguicli Command Not Registered by System
 
