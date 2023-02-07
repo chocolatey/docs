@@ -11,6 +11,43 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 >
 > Issue links may not be publicly available at this time.
 
+## 0.17.1 (February 3, 2023)
+
+### Improvement
+
+- Update Chocolatey software components to the latest available versions - see [#123](https://github.com/chocolatey/c4b-azure/issues/123)
+
+### Bundled Version Update
+
+| Package                            | Version       |
+|------------------------------------|---------------|
+| chocolatey                         | 1.2.1         |
+| chocolatey-windowsupdate.extension | 1.0.5         |
+| chocolatey.extension               | 5.0.1         |
+| nexus-repository                   | 3.43.0.01     |
+| Temurin11jre                       | 11.0.18.1000  |
+| vcredist140                        | 14.32.31332   |
+
+## 0.17.0 (October 28, 2022)
+
+### Improvements
+
+- Update Chocolatey software components to the latest available versions - see [#110](https://github.com/chocolatey/c4b-azure/issues/110)
+- Jenkins Job should account for multiple new releases when syncing from test to prod repository  - see [#111](https://github.com/chocolatey/c4b-azure/issues/111)
+
+### Bundled Version Update
+
+| Package                        | Version       |
+|--------------------------------|---------------|
+| chocolatey                     | 1.2.0         |
+| chocolatey.extension           | 5.0.0         |
+| chocolatey-agent               | 1.1.1         |
+| chocolateygui                  | 1.1.0         |
+| chocolateygui.extension        | 1.0.1         |
+| chocolatey-management-database | 0.10.1        |
+| chocolatey-management-service  | 0.10.1        |
+| chocolatey-management-web      | 0.10.1        |
+
 ## 0.16.0 (September 7, 2022)
 
 ### Improvements
