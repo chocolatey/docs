@@ -18,6 +18,20 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## [1.3.0](https://github.com/chocolatey/choco/milestone/59?closed=1) (February 15, 2023)
+
+### Deprecated Features
+
+- Deprecate WebPI alternative source - see [#2958](https://github.com/chocolatey/choco/issues/2958).
+- Deprecate usage of direct path to nupkg or nuspec in `choco install` command - see [#2981](https://github.com/chocolatey/choco/issues/2981).
+- Deprecate the `--remove` option in the apikey command - see [#2983](https://github.com/chocolatey/choco/issues/2983).
+- Deprecate `choco config list` including output from features/sources/apikeys etc - see [#2985](https://github.com/chocolatey/choco/issues/2985).
+- Deprecate unnecessary public methods on CygwinService - see [#3026](https://github.com/chocolatey/choco/issues/3026).
+
+### Bug Fixes
+
+- File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
+
 ## 2.0.0-alpha-20230124 (January 24, 2023)
 
 > :choco-warning: **WARNING**
