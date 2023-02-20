@@ -18,6 +18,41 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+
+## 2.0.0-alpha-20230221 (February 21, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the alpha version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this alpha version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this alpha release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Changes
+
+In addition to the breaking changes listed in the previous [alpha release](#alpha-20230124-january-24-2023) below, the following changes have been made:
+
+- Introduce upper limit when querying for packages and warn when threshold is close to being hit - see [3014](https://github.com/chocolatey/choco/issues/3014).
+- Disallow passing in a path to a NUPKG file directly when installing/upgrading packages - see [3008](https://github.com/chocolatey/choco/issues/3008).
+
+### Enhancement
+
+- Add back validation messages after upgrade to NuGet v3+ - see [3000](https://github.com/chocolatey/choco/issues/3000).
+
+### Documentation
+
+- Fix typos and spelling errors - see [2990](https://github.com/chocolatey/choco/pull/2990).
+
+
 ## [1.3.0](https://github.com/chocolatey/choco/milestone/59?closed=1) (February 15, 2023)
 
 ### Deprecated Features
@@ -55,19 +90,21 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Upgrade to target version 4.8 of the .NET Framework - see [#2738](https://github.com/chocolatey/choco/issues/2738).
 - Prevent usage of leading 0 in package version numbers - see [#1174](https://github.com/chocolatey/choco/issues/1174).
 
-### Bug
+### Bugs
 
 - `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
+- Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
+
+### Enhancements
+
+- Upgrade to target version 6.4.0 of NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
+- Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).
 
 ### Documentation
 
 - Fix broken URLs in repository README file - see [#2888](https://github.com/chocolatey/choco/pull/2888).
 - Update package files to reflect current CCR moderation requirements - see [#2920](https://github.com/chocolatey/choco/issues/2920).
 
-### Enhancements
-
-- Upgrade to target version 6.4.0 of NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
-- Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).
 
 ## [1.2.1](https://github.com/chocolatey/choco/milestone/58?closed=1) (December 6, 2022)
 

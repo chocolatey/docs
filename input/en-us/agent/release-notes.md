@@ -28,6 +28,27 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+
+## 2.0.0-alpha-20230221 (February 21, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this alpha version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this alpha release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework.
+- Upgrade to target version 2.0.0 of Chocolatey.Lib and version 6.0.0 of Chocolatey.Licensed.Lib assemblies.
+
+
 ## 1.1.1 (October 12, 2022)
 
 ### Improvements
