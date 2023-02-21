@@ -11,6 +11,19 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 >
 > Issue links may not be publicly available at this time.
 
+## 0.18.1 (February 21, 2023)
+
+### Improvement
+
+- Update Chocolatey software components to the latest available versions - see [#124](https://github.com/chocolatey/c4b-azure/issues/124)
+
+### Bundled Version Update
+
+| Package       | Version       |
+|---------------|---------------|
+| chocolatey    | 1.3.0         |
+| chocolateygui | 1.1.1         |
+
 ## 0.17.1 (February 3, 2023)
 
 ### Improvement
