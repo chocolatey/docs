@@ -11,7 +11,7 @@ Description: Release Notes for the Chocolatey for Business Azure Environment
 >
 > Issue links may not be publicly available at this time.
 
-## 0.18.1 (February 21, 2023)
+## 0.18.0 (February 21, 2023)
 
 ### Improvement
 
