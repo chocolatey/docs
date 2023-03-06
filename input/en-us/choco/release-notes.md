@@ -19,6 +19,35 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0-alpha-20230307 (March 7, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the alpha version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this alpha version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this alpha release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Bug Fixes
+
+- Fix `choco search` command that was providing invalid results when using the `--version` option.
+- Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
+
+### Enhancements
+
+- Add back support for the `--disable-repository-optimizations` option which was missing in previous alpha releases.
+- Improvements made to warnings that are emitted when a dependency fails to be resolved during a `choco upgrade` or `choco install`.
+
+
 ## 2.0.0-alpha-20230221 (February 21, 2023)
 
 > :choco-warning: **WARNING**
