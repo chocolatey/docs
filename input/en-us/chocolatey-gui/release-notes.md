@@ -35,7 +35,7 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Bug
+### Bug Fix
 
 - Chocolatey GUI MSI incorrectly included the `chocolatey.dll` and `chocolatey.pdb` files.
 
