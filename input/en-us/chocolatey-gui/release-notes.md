@@ -16,6 +16,9 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 1.1.2 (March 8, 2023)
+
+- Bump LiteDB dependency to 5.0.15 - see [#985](https://github.com/chocolatey/ChocolateyGUI/issues/985).
 
 ## 2.0.0-alpha-20230307 (March 7, 2023)
 
