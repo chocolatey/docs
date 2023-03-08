@@ -4,6 +4,7 @@ xref: v2-firewall-changes
 Title: Firewall Changes
 Description: How has the firewall on the QDE image been changed
 RedirectFrom: docs/quick-deployment-firewall-changes
+RedirectFrom: docs/quick-deployment/setup/firewall-changes
 ---
 
 > :choco-info: **NOTE**

@@ -4,6 +4,7 @@ xref: v2-internet-setup
 Title: Internet Setup
 Description: How to make QDE accessible from the internet
 RedirectFrom: docs/quick-deployment-internet-setup
+RedirectFrom: docs/quick-deployment/setup/internet-setup
 ---
 
 > :choco-info: **NOTE**
@@ -184,7 +185,7 @@ It is also less secure, and thus **not recommended** for a server that is Intern
 The `New-SSLCertificate.ps1` mentioned above will create a Java KeyStore (JKS) version of an SSL certificate, that can be used to secure communication between your endpoints and your Nexus repositories.
 As mentioned in the section above, this certificate will need to be trusted by your endpoints.
 
-Additionally, when logging in and resetting your administrative credential in the Nexus web UI, there is a checkbox to allow “Anonymous” access.
+Additionally, when logging in and resetting your administrative credential in the Nexus web UI, there is a checkbox to allow "Anonymous" access.
 This is convenient for endpoints that will be accessing Nexus strictly from your internal network, but will need to be changed if you are planning to expose Nexus to your endpoints over the Internet.
 You can follow two paths to accomplish this:
 
