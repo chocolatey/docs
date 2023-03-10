@@ -54,6 +54,10 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 ### Step 0: Preparation of C4B Server
 
+> :choco-warning: **WARNING**
+>
+> This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence to review this code and ensure it meets your Organizational requirements.
+
 1. Provision your C4B server on the infrastructure of your choice.
 
 1. Install all Windows Updates.
@@ -64,13 +68,9 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 1. Copy your `chocolatey.license.xml` license file (from the email you received) onto your C4B Server.
 
-> :warning:**WARNING**
->
-> This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence to review this code and ensure it meets your Organizational requirements.
-
 ### Step 1: Begin C4B Setup
 
-> :choco-danger: **[IMPORTANT]** 
+> :choco-danger: **IMPORTANT** 
 >
 > All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
 
@@ -142,7 +142,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
     <br>
 
-    > :warning:**WARNING**
+    > :choco-warning: **WARNING**
     >
     > **Only if** you choose to run this on a **Windows Server 2016** VM, you will **require** a **reboot** before IIS is completely installed. The script above will notify you of this. Once the reboot is complete and you log back in, you will also have to paste and run the following code in a PowerShell Administrator console:
     >
@@ -167,11 +167,12 @@ Below are the minimum requirements for setting up your C4B server via this guide
     .\Set-SslSecurity.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>' -Hardened
     ```
 
-    > :warning:**WARNING**
+    > :choco-warning: **WARNING**
     >
     > If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Personal` certificate store before running the above script, and ensure that the private key is exportable.
 
     > :choco-info: **NOTE**
+    >
     > You may have noticed the `-Hardened` parameter we've added above. When using a custom SSL certificate, this parameter will further secure access to your C4B Server. A Role and User credential will be configured to limit access to your Nexus repositories. As well, CCM Client and Service Salts are configured to further encrypt your connection between CCM and your endpoint clients. These additional settings are also incorporated into your `Register-C4bEndpoint.ps1` script for onboarding endpoints. We do require you to enable this option if your C4B Server will be Internet-facing, with a FQDN that resolves to a public IP.
 
     **ALTERNATIVE 2 : Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:

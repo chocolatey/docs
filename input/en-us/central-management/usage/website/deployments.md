@@ -118,7 +118,7 @@ The new instance will have the same steps and settings except for the scheduled 
 For repeating Deployments, a new instance of the Deployment will be created once a scheduled Deployment moves to the [Active](#active) state.
 If a repeating Deployment specifies a maintenance window date/time (`Last Scheduled Date Time`), the new instance's maintenance window will also be adjusted from the previous instance's value by the same period as the scheduled start date/time.
 
-> :warning: WARNING
+> :choco-warning: **WARNING**
 >
 > If the scheduled start date/time of a Deployment is overridden using the [Run Now](#run-now) action, the new instance of the recurring Deployment will use the **scheduled** start date/time of the previous instance when calculating the next scheduled start date/time, **not** the date/time that the Deployment actually started.
 > If you want to change the scheduled start date/time of the recurring Deployment, edit the Deployment while it is in the [Ready](#ready) state to ensure that future instances of the recurring Deployment will use that value when calculating the next scheduled date/time.
@@ -228,7 +228,7 @@ The action opens the edit page for the selected Deployment plan where all the pa
 
 This action takes a Deployment plan from the [`Ready`](#ready) state, to the [`Active`](#active) state.  This can be thought of as actually setting the Deployment plan in motion, and the steps within this Deployment plan will begin to be picked up by the computers that are contained within the steps (in the order that has been defined).
 
-> :warning: WARNING
+> :choco-warning: **WARNING**
 >
 > If the scheduled start date/time of a Deployment is overridden using the [Run Now](#run-now) action, the new instance of the recurring Deployment will use the **scheduled** start date/time of the previous instance when calculating the next scheduled start date/time, **not** the date/time that the Deployment actually started.
 > If you want to change the scheduled start date/time of the recurring Deployment, edit the Deployment while it is in the [Ready](#ready) state to ensure that future instances of the recurring Deployment will use that value when calculating the next scheduled date/time.
