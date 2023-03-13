@@ -23,6 +23,11 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 1.0.2 (March 13, 2023)
+
+### Bug Fixes
+
+- Chocolatey GUI v1.1.2 crashes on launch with Chocolatey GUI Licensed Extension installed - see [licensed #338](https://github.com/chocolatey/chocolatey-licensed-issues/issues/338).
 
 ## 2.0.0-alpha-20230221 (February 21, 2023)
 
