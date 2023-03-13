@@ -28,9 +28,9 @@ Let's get started!
 As illustrated in the diagram above, there are four main components to a Chocolatey for Business installation:
 
 1. **C4B Licensed components**: A licensed version of Chocolatey includes:
-    * Installation of the Chocolatey OSS client package itself (`chocolatey`)
-    * Chocolatey license file (`chocolatey.license.xml`) installed in the correct directory (`ProgramData\chocolatey\license`)
-    * Installation of the Chocolatey Licensed extension (`chocolatey.extension`), giving you access to features like Package Builder, Package Internalizer, etc. (full list [here](https://docs.chocolatey.org/en-us/features/)).
+    - Installation of the Chocolatey OSS client package itself (`chocolatey`)
+    - Chocolatey license file (`chocolatey.license.xml`) installed in the correct directory (`ProgramData\chocolatey\license`)
+    - Installation of the Chocolatey Licensed extension (`chocolatey.extension`), giving you access to features like Package Builder, Package Internalizer, etc. (full list [here](https://docs.chocolatey.org/en-us/features/)).
     <p></p>
 
 1. **NuGet V2 Repository Server App (Nexus)**: Chocolatey works best with a NuGet V2 repository. This application hosts and manages versioning of your Chocolatey package artifacts, in their enhanced NuGet package (.nupkg) file format. The quick start guide helps you setup [Sonatype Nexus Repository Manager (OSS)](https://www.sonatype.com/products/nexus-repository).
@@ -42,8 +42,8 @@ As illustrated in the diagram above, there are four main components to a Chocola
 ## Requirements
 
 Below are the minimum requirements for setting up your C4B server via this guide:
-- Windows Server 2019+ (ideally, Windows Server 2019)
-    - Windows Server 2016 is technically supported, but not recommended as it is nearing End-of-Life; also, you will require an additional setup script.
+
+- Windows Server 2019+ (ideally, Windows Server 2022)
 - 4+ CPU cores (more preferred)
 - 16 GB+ RAM (8GB as a bare minimum; 4GB of RAM is reserved specifically for Nexus)
 - 500 GB+ of free space for local NuGet package artifact storage (more is better, and you may have to grow this as your packages and versions increase)
@@ -70,7 +70,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 ### Step 1: Begin C4B Setup
 
-> :choco-danger: **IMPORTANT** 
+> :choco-danger: **IMPORTANT**
 >
 > All commands should be run from an **elevated** PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
 
@@ -139,17 +139,6 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <li>Outputs data to a JSON file to pass between scripts</li>
     > </ul>
     > </details>
-
-    <br>
-
-    > :choco-warning: **WARNING**
-    >
-    > **Only if** you choose to run this on a **Windows Server 2016** VM, you will **require** a **reboot** before IIS is completely installed. The script above will notify you of this. Once the reboot is complete and you log back in, you will also have to paste and run the following code in a PowerShell Administrator console:
-    >
-    > ```powershell
-    > Set-Location "$env:SystemDrive\choco-setup\files\scripts"
-    > .\Start-C4bCcmSetup2.ps1
-    > ```
 
 ### Step 4: SSL Setup
 
@@ -223,7 +212,7 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > </details>
 
     > :choco-info: **NOTE**
-    > 
+    >
     > A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
 
 ### Step 6: Verification
