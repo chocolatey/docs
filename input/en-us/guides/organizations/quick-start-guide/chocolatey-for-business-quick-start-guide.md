@@ -50,6 +50,8 @@ Below are the minimum requirements for setting up your C4B server via this guide
 - Open outgoing (egress) Internet access
 - Administrator user rights
 
+<?! Include "../../../../shared/third-party-notice.txt" /?>
+
 ## Installation
 
 ### Step 0: Preparation of C4B Server
