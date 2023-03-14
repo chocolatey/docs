@@ -18,6 +18,11 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 1.3.1 (March 14, 2023)
+
+### Bug Fix
+
+- `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
 
 ## 2.0.0-alpha-20230307 (March 7, 2023)
 
