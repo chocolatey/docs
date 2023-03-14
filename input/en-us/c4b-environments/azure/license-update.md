@@ -16,7 +16,6 @@ If you use the Chocolatey for Business Azure Environment for long periods of tim
 - You will need the FQDN of your Chocolatey for Business Azure Environment.
 - You will need the API Key for your Nexus repository (or access to the Resource Group hosting your Azure Key Vault to be able to [retrieve it](xref:c4b-azure#accessing-services)).
 
-
 ## Creating a New License Package
 
 When you initially deploy a Chocolatey for Business Azure Environment, you upload your Chocolatey for Business license. This is then used to create a Chocolatey package that installs the license on your nodes.
@@ -85,10 +84,25 @@ If items are installed in any other order, it could have strange effects or fail
 
 # Update the license
 Copy-Item -Path $LicensePath -Destination $ToolsDir\chocolatey.license.xml -Force
-$PackageVersion = Get-Date ([xml](Get-Content $LicensePath)).license.expiration -Format 'yyyy.MM.dd'
+
+# Get license expiration date and node count
+[xml]$licenseXml = Get-Content -Path $LicensePath
+$licenseExpiration = [datetimeoffset]::Parse("$($licenseXml.SelectSingleNode('/license').expiration) +0")
+$null = $licenseXml.license.name -match "(?<=\[).*(?=\])"
+$licenseNodeCount = $Matches.Values -replace '\s[A-Za-z]+',''
+
+if ($licenseExpiration -lt [datetimeoffset]::UtcNow) {
+    Write-Warning "THE LICENSE FILE AT '$LicensePath' is EXPIRED. This is the file used by this script to generate this package, not at '$licensePackageFolder'"
+    Write-Warning "Please update the license file correctly in the environment FIRST, then rerun this script."
+    throw "License is expired as of $($licenseExpiration.ToString()). Please use an up to date license."
+}
+
+if (-not $LicensePackageVersion) {
+    $LicensePackageVersion = ($licenseExpiration | Get-Date -Format 'yyyy.MM.dd') + '.' + "$licenseNodeCount"
+}
 
 # Pack everything up
-choco pack $WorkingDirectory\chocolatey-license\chocolatey-license.nuspec --output-directory="$WorkingDirectory" --version=$PackageVersion
+choco pack $WorkingDirectory\chocolatey-license\chocolatey-license.nuspec --output-directory="$WorkingDirectory" --version="$LicensePackageVersion"
 ```
 
 ## Uploading the License Package
