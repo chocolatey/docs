@@ -4,7 +4,6 @@ xref: v2-qde
 Title: Setup
 Description: How to setup QDE
 RedirectFrom: docs/quick-deployment-setup
-RedirectFrom: docs/quick-deployment/setup
 ---
 
 > :choco-info: **NOTE**

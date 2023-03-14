@@ -4,7 +4,6 @@ xref: qde
 Title: Quick Deployment Environment (QDE) [DEPRECATED]
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
-RedirectFrom: docs/quick-deployment
 ---
 
 > :choco-danger: **DEPRECATION NOTICE**

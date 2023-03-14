@@ -3,7 +3,6 @@ Order: 70
 xref: v2-upgrade-nexus-qde
 Title: Upgrade Nexus
 Description: How to upgrade Nexus installed on QDE
-RedirectFrom: docs/quick-deployment/setup/upgrade-nexus-qde
 ---
 
 ## Upgrade Nexus in Quick Deploy Environment

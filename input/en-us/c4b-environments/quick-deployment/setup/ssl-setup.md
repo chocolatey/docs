@@ -4,7 +4,6 @@ xref: v2-ssl-setup
 Title: SSL Setup
 Description: How to setup QDE to use SSL
 RedirectFrom: docs/quick-deployment-ssl-setup
-RedirectFrom: docs/quick-deployment/setup/ssl-setup
 ---
 
 ## Quick Deployment Environment SSL Setup

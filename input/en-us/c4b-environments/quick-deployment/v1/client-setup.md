@@ -4,7 +4,6 @@ xref: v1-client-setup
 Title: Client Setup
 Description: How to setup a client machine to use QDE v1
 RedirectFrom: docs/quick-deployment-client-setup-v1
-RedirectFrom: docs/quick-deployment/v1/client-setup
 ---
 
 > :choco-info: **NOTE**

@@ -4,7 +4,6 @@ xref: v2-desktop-readme
 Title: Desktop Readme
 Description: Online copy of what ships on desktop of QDE image
 RedirectFrom: docs/quick-deployment-desktop-readme
-RedirectFrom: docs/quick-deployment/setup/desktop-readme
 ---
 
 > :choco-info: **NOTE**

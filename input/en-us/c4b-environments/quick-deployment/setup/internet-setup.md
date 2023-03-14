@@ -4,7 +4,6 @@ xref: v2-internet-setup
 Title: Internet Setup
 Description: How to make QDE accessible from the internet
 RedirectFrom: docs/quick-deployment-internet-setup
-RedirectFrom: docs/quick-deployment/setup/internet-setup
 ---
 
 > :choco-info: **NOTE**

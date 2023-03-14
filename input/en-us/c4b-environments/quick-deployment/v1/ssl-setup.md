@@ -4,7 +4,6 @@ xref: v1-ssl-setup
 Title: SSL Setup
 Description: How to setup QDE v1 to use SSL
 RedirectFrom: docs/quick-deployment-ssl-setup-v1
-RedirectFrom: docs/quick-deployment/v1/ssl-setup
 ---
 
 > :choco-info: **NOTE**
