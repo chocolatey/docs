@@ -17,7 +17,7 @@ Within a Chocolatey package, there are three main PowerShell files:
 
 > :choco-info: **NOTE**
 >
-> Not all of these files are required within every Chocolatey package, as Chocolatey performs a number of tasks automatically, and overrdiing the dfeault functionality is only required when you want to do something different.
+> Not all of these files are required within every Chocolatey package, as Chocolatey performs a number of tasks automatically, and overriding the default functionality is only required when you want to do something different.
 
 When a Chocolatey package is installed/uninstalled, these files are executed at [different times](xref:create-packages#during-which-scenarios-will-my-custom-scripts-be-triggered), giving a [package creator](xref:create-your-own-packages) full control over exactly what actions are performed within a package.
 
