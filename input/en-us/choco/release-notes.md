@@ -18,6 +18,49 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+
+## 2.0.0-beta-20230321 (March 21, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the beta version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Changes
+
+In addition to the breaking changes listed in the previous [alpha release](#alpha-20230221-february-21-2023) below, the following changes have been made:
+
+- `choco config list` should only include information about config - see [#2986](https://github.com/chocolatey/choco/issues/2986).
+- Remove the `--remove` option in `choco apikey` command and replace with `remove` subcommand - see [#2984](https://github.com/chocolatey/choco/issues/2984).
+- Remove WebPI alternative source - see [#2980](https://github.com/chocolatey/choco/issues/2980).
+- Rename or migrate away from custom HashCode class - see [#2909](https://github.com/chocolatey/choco/issues/2909).
+- Migrate from Rx-* packages to System.Reactive.* packages - see [#2896](https://github.com/chocolatey/choco/issues/2896).
+- Remove side-by-side installs - see [#2788](https://github.com/chocolatey/choco/issues/2788).
+- Fix spelling mistake in the extract_binary_file_from_assembly function - see [#2776](https://github.com/chocolatey/choco/issues/2776).
+- Remove deprecated Chocolatey shims (`chocolatey`, `cinst`, `clist`, `cpush`, `cuninst`, `cup`) - see [#2642](https://github.com/chocolatey/choco/issues/2642).
+- Remove deprecated configurations from Config - see [#2630](https://github.com/chocolatey/choco/issues/2630).
+- Remove the default push location when uploading/pushing packages - see [#2629](https://github.com/chocolatey/choco/issues/2629).
+- Remove `Get-BinRoot` Chocolatey helper function - see [#2623](https://github.com/chocolatey/choco/issues/2623).
+- `choco config list --limit-output` does not limit output as expected - see [#2013](https://github.com/chocolatey/choco/issues/2013).
+- Change default behavior of `choco list` to be local only - see [#158](https://github.com/chocolatey/choco/issues/158).
+
+### Enhancements
+
+- Ability to specify a default source when doing `choco push` - see [#62](https://github.com/chocolatey/choco/issues/62).
+- Remove re-instated Chocolatey commands which were added in v1.0.1 - see [#2678](https://github.com/chocolatey/choco/issues/2678).
+
+
 ## 1.3.1 (March 14, 2023)
 
 ### Bug Fix
