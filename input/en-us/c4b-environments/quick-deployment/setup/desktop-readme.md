@@ -33,9 +33,9 @@ If you run into any issues as you set up your QDE and clients, please reach out 
 
 There are some initial steps you will need to have taken before you work through this document.
 Please make sure you have taken those steps ahead of time.
-See the [Online Documentation](#step-3-virtual-environment-setup) for the most up to date information.
+See the [Online Documentation](xref:v2-qde#step-3-virtual-environment-setup) for the most up to date information.
 
-* [QDE Setup](xref:v2-qde)
+- [QDE Setup](xref:v2-qde)
 
 ## Step 1: Expand Disk Size
 
@@ -94,8 +94,8 @@ You will need either the certificate thumbprint or the subject in order to use t
 
 > :choco-info: **NOTE**
 >
-> * `-CertificateDnsName` is optional if you're providing the `-CertificateSubject`, but only if the subject does **not** contain wildcards.
-> * You can also optionally provide the `-InternetEnabled` switch if your QDE instance has a certificate with a public hostname and will be operating over the internet.
+> - `-CertificateDnsName` is optional if you're providing the `-CertificateSubject`, but only if the subject does **not** contain wildcards.
+> - You can also optionally provide the `-InternetEnabled` switch if your QDE instance has a certificate with a public hostname and will be operating over the internet.
 >   This will enable additional security features; take note of the additional output and do not lose the newly-generated passwords or salt values.
 
 ```powershell
@@ -267,7 +267,7 @@ choco apikey add --key="'{{NugetApiKey}}'" --source="'https://chocoserver:8443/r
 
 ### Update pre-configured Jenkins jobs with the new API Key
 
-After updating the Nexus API Key, you'll need to ensure that the preconfigured Jenkins jobs are also updated with the new API key.
+After updating the Nexus API Key, you'll need to ensure that the pre-configured Jenkins jobs are also updated with the new API key.
 To do so:
 
 1. Login to Jenkins after completing the first-time setup (see [above](#jenkins))
@@ -335,9 +335,9 @@ Stop-Process -Name explorer -Force
 
 ## See Also
 
-* [Quick Deployment Environment](xref:qde)
-* [QDE Setup](xref:v2-qde)
-* [QDE Desktop ReadMe File](xref:v2-desktop-readme)
-* [QDE SSL/TLS Setup](xref:v2-ssl-setup)
-* [QDE Firewall Changes](xref:v2-firewall-changes)
-* [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)
+- [Quick Deployment Environment](xref:qde)
+- [QDE Setup](xref:v2-qde)
+- [QDE Desktop ReadMe File](xref:v2-desktop-readme)
+- [QDE SSL/TLS Setup](xref:v2-ssl-setup)
+- [QDE Firewall Changes](xref:v2-firewall-changes)
+- [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)

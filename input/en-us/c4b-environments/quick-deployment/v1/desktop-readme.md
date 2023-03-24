@@ -172,7 +172,7 @@ Once logged in perform the following steps:
 If you change your API key, you will need to change the key in the Jenkins jobs that are pre-configured for you.
 See the next section for information on how to connect to Jenkins.
 
-#### Choco Apikey Command
+### Choco Apikey Command
 
 To help make pushing packages easier, the `choco apikey` command is available.
 This will store your API key for a specific source as part of Chocolatey's configuration.

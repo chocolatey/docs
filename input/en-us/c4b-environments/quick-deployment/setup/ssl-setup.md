@@ -6,7 +6,7 @@ Description: How to setup QDE to use SSL
 RedirectFrom: docs/quick-deployment-ssl-setup
 ---
 
-# Quick Deployment Environment SSL Setup
+## Quick Deployment Environment SSL Setup
 
 > :choco-info: **NOTE**
 >

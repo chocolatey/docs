@@ -20,7 +20,6 @@ Once you have this downloaded, it will be ready for extraction and import into y
 > Please follow these steps in **exact** order.
 > These will be very important later when you are trying to use the environment.
 
-
 ## Step 0: Setup Considerations
 
 Keep the following points in mind during initial setup:
@@ -151,8 +150,10 @@ Choose one of the following methods for what your hypervisor environment support
 1. Create a new VM.
 1. When prompted for OS type, choose `Windows Server 2019` (if available), or `Windows Server 2016 or later`.
 1. Adjust the hardware specifications of the VM. For a performant system, the following are recommended:
-    - 4 vCPUs
-    - 8 GB RAM
+
+* 4 vCPUs
+* 8 GB RAM
+
 1. Use the "x" icon at the far right of `Hard disk 1` to remove it.
 1. In the `VM Options` tab, and under the `Boot Options` dropdown, set your `Firmware` to `BIOS` (**not** UEFI). Click `Next`, then `Finish`.
 1. Now go back into the VM configuration using the `Edit Settings` context menu.

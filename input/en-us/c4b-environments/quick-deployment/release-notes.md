@@ -3,9 +3,8 @@ Order: 10
 xref: qde-release-notes
 Title: Release Notes
 Description: Release Notes for QDE
+RedirectFrom: docs/quick-deployment/release-notes
 ---
-
-# Chocolatey Release Notes - Quick Deployment Environment
 
 ## Summary
 

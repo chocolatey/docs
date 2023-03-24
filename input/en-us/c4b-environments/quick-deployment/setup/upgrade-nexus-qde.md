@@ -5,7 +5,7 @@ Title: Upgrade Nexus
 Description: How to upgrade Nexus installed on QDE
 ---
 
-# Upgrade Nexus in Quick Deploy Environment
+## Upgrade Nexus in Quick Deploy Environment
 
 This document outlines the process for upgrading Nexus running inside our Quick Deployment Environment.
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
@@ -17,12 +17,13 @@ If your server is restricted then internalize the package to your internal repos
 > and do not have a Nexus instance configured with SSL, leave off the package parameters.
 >
 > This command will backup the SSL configuration to the root of your User Profile in a NexusBackup folder.
-# Instructions
+
+## Instructions
 
 1. Internalize the nexus-repository package and push to your internal repo
 2. choco upgrade the nexus-repository package (Example command provided below, which preserves SSL Configuration)
 
-## Example Upgrade Command:
+### Example Upgrade Command:
 
 > :choco-info: **NOTE**
 >

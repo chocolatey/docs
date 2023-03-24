@@ -1,7 +1,7 @@
 ---
 Order: 150
 xref: qde
-Title: Quick Deployment Environment (QDE)
+Title: Quick Deployment Environment (QDE) [DEPRECATED]
 Description: High level information about QDE
 RedirectFrom: docs/quick-deployment-environment
 ---
@@ -67,19 +67,22 @@ The above articles document how that is done.
 * [QDE SSL/TLS Setup](xref:v2-ssl-setup)
 * [QDE Firewall Changes](xref:v2-firewall-changes)
 * [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)
-* [How do I upgrade QDE?](#how-do-i-upgrade-qde).
+* [How do I upgrade QDE?](xref:qde#how-do-we-upgrade-qde).
 
 ## FAQ
 
 ### How do we take advantage of QDE?
 
 You must have a [Business edition of Chocolatey](https://chocolatey.org/compare) or be on an active trial license. Please [reach out to us](https://chocolatey.org/contact/sales) so we can work to get you all the necessary information needed to get started.
+
 ### What OS format does QDE support?
 
 The QDE disk image is built on **Windows Server 2019 Standard** (Evaluation). The steps to license the VM are detailed in the [QDE Desktop ReadMe File](xref:v2-desktop-readme#step-6-license-the-qde-vm). This is the **only** format that QDE is built in.
+
 ### What hypervisor formats does QDE support?
 
 The QDE disk image comes in the following formats:
+
 1. **VMDK** (for use with VMware vCenter, ESX/i, or VirtualBox)
 1. **VHD** (for use with Microsoft Hyper-V)
 1. **VHD Appliance** (as a drop-in appliance to import into Hyper-V)
@@ -95,9 +98,10 @@ Yes! Chocolatey Central Management (CCM) comes with the ability to group endpoin
 If your QDE VM and all endpoint hosts are within the same internal network or VPN, you can follow the default [QDE Client Setup](xref:v2-client-setup) steps.
 
 If you are exposing QDE via the Internet, you will likely need to adjust your Client Setup script, as outlined in the "[Adjusting Scripts for Client Setup](xref:v2-internet-setup#adjusting-scripts-for-client-setup)" section of the QDE Internet Setup page.  As well, please refer to the question below for further Internet considerations.
+
 ### What if I need to expose QDE via the Internet? What are the safeguards in place to help me in this process?
 
-When initially configuring QDE using the `Set-QDEnironment.ps1` script ([**Step 3** in the QDE Desktop ReadMe file](xref:v2-desktop-readme#run-the-set-qdenvironment.ps1-script)), you have the option to pass the `-InternetEnabled` parameter. This option will configure your connections to Nexus (your NuGet V2 package repository) and the Chocolatey Central Management (CCM) Service to utilize SSL certificates and salts. As well, a role and user credential will be added at the Nexus repository level, to further secure access between your endpoints and your repository.
+When initially configuring QDE using the `Set-QDEnvironment.ps1` script ([**Step 3** in the QDE Desktop ReadMe file](xref:v2-desktop-readme#run-the-set-qdenvironment.ps1-script)), you have the option to pass the `-InternetEnabled` parameter. This option will configure your connections to Nexus (your NuGet V2 package repository) and the Chocolatey Central Management (CCM) Service to utilize SSL certificates and salts. As well, a role and user credential will be added at the Nexus repository level, to further secure access between your endpoints and your repository.
 
 Of course, in order to utilize this extra layer of security, you will be **required** to provide a trusted SSL certificate with a DNS-resolvable Fully Qualified Domain Name (FQDN). Whether you use a tool like LetsEncrypt, or purchase a certificate from a third party and set your Certificate Subject DNS name to resolve to this external IP, is entirely up to you. As well, you will need to be mindful of allowing connections to the Nexus (8443) and CCM Service (24020) ports via your firewall
 

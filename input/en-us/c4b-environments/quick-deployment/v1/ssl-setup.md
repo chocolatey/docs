@@ -6,8 +6,6 @@ Description: How to setup QDE v1 to use SSL
 RedirectFrom: docs/quick-deployment-ssl-setup-v1
 ---
 
-# Quick Deployment Environment SSL Setup
-
 > :choco-info: **NOTE**
 >
 > This document is for **Version 1** of the Quick Deployment Environment.
@@ -41,11 +39,10 @@ Once complete, this script will generate new SSL certificates for all services a
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSLCertificate.ps1
 ```
+
 > :choco-warning: **WARNING**
 >
 > Timezones are super important here and time synchronization is really important when generating SSL Certificates. You want to make sure you have this correct and good. Otherwise there is a potential edge case you could generate an SSL Certificate that is not yet valid.
-
-
 
 > :choco-warning: **WARNING**
 >
@@ -55,6 +52,5 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; . C:\choco-setup\files\New-SSL
 > You can provide your own certificate that is already trusted on machines as part of the [SSL/TLS Setup](xref:v1-ssl-setup). Your other option is to host the script to trust the certificate with an already trusted certificate. You will find a template that you will need to edit at `c:\choco_setup_files` (in the QDE) named `Import-ChocoServerCertificate.ps1`.
 >
 > Please contact support if you need help here.
-
 
 [Quick Deployment Environment](xref:v1-qde)
