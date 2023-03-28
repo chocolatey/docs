@@ -41,6 +41,13 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 5.0.2 (March 28, 2023)
+
+### Enhancements
+
+- [Security] Bump LiteDB dependency to 5.0.15 - see [licensed #340](https://github.com/chocolatey/chocolatey-licensed-issues/issues/340).
+- [Security] Bump Newtonsoft.Json dependency to 13.0.1 - see [licensed #339](https://github.com/chocolatey/chocolatey-licensed-issues/issues/339).
+
 ## 6.0.0-beta-20230321 (March 21, 2023)
 
 > :choco-warning: **WARNING**
