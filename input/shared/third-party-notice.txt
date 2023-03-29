@@ -1,0 +1,31 @@
+## Third Party Software Notice
+
+This solution relies on software delivered as a Chocolatey package from the Chocolatey Community Repository. These packages
+have been internalized and made available within the repository included with the solution.
+
+This software includes, but is not limited to:
+
+- Sonatype Nexus (`nexus-repository`)
+- Jenkins (`jenkins`)
+- Microsoft SQL Server Express (`sql-server-express`)
+- Microsoft SQL Server Management Studio (`sql-server-management-studio`)
+- .Net Runtime (`dotnet-6.0-runtime`)
+- .Net ASP Net Core Runtime (`dotnet-6.0-aspnetruntime`)
+- .Net ASP Net Core Module for IIS (`dotnet-6.0-aspnetcoremodule-v2`)
+
+### Responsibility
+
+This solution has been provided as a quick way to get up and running with Chocolatey For Business. It is not a SaaS solution. It is the responsibility
+of you, the customer, to ensure the versions of software included as part of the solution is kept updated according to your needs.
+
+For Chocolatey For Business products, you can subscribe to an Announcements mailing list which will email you when we release a new version of any of the
+products that Chocolatey Software maintains. These packages include:
+
+- Chocolatey CLI (`chocolatey`)
+- Chocolatey Licensed Extension (`chocolatey.extension`)
+- Chocolatey Agent (`chocolatey-agent`)
+- Chocolatey GUI (`chocolateygui`)
+- Chocolatey GUI Licensed Extension (`chocolateygui.extension`)
+- Chocolatey Central Management (`chocolatey-management-database`,`chocolatey-management-service`,`chocolatey-management-web`)
+
+Please subscribe to the [mailing list](https://groups.google.com/forum/#!forum/chocolatey-announce) if you would like to receive those announcements.

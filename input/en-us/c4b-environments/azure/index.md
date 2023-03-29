@@ -29,6 +29,8 @@ Currently, to deploy the Chocolatey for Business Azure Environment you will need
 
 For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed the Chocolatey for Business Azure Environment to as we will use this with the PowerShell code snippets below.
 
+<?! Include "../../../shared/third-party-notice.txt" /?>
+
 ## Deploying the Chocolatey for Business Azure Environment
 
 The Chocolatey for Business Azure Environment is available as a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde).
@@ -303,3 +305,4 @@ We have seen an occasional issue with IISReset that cannot be replicated. This r
 > the remote computer or to the domain administrator global group.
 
 If you see this error, you should redeploy the resource.
+
