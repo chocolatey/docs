@@ -1,13 +1,14 @@
 ---
-Order: 70
-xref: v2-upgrade-nexus-qde
-Title: Upgrade Nexus
-Description: How to upgrade Nexus installed on QDE
+Order: 50
+xref: upgrading-nexus
+Title: Upgrading Nexus
+Description: How to upgrade nexus
+RedirectFrom: en-us/c4b-environments/quick-deployment/setup/upgrade-nexus-qde
 ---
 
-## Upgrade Nexus in Quick Deploy Environment
+## Upgrade Nexus in Quick Start Environment
 
-This document outlines the process for upgrading Nexus running inside our Quick Deployment Environment.
+This document outlines the process for upgrading Nexus running inside our Quick Start Environment.
 The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
 If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
 
@@ -35,5 +36,5 @@ choco upgrade nexus-repository -y --package-parameters="'/Port:8443 /Fqdn:""nexu
 
 > :choco-info: **NOTE**
 >
->If you are upgrading from Nexus V 3.22.0.02+ to a newer version you may need to make the following change to the jetty-https.xml file.
+>If you are upgrading from Nexus V 3.22.0.02 or older to a newer version, you may need to make the following change to the jetty-https.xml file.
 >Change `class="org.eclipse.jetty.util.ssl.SslContextFactory">` to `class="org.eclipse.jetty.util.ssl.SslContextFactory$Server">`
