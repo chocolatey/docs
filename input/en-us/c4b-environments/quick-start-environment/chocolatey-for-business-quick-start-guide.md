@@ -1,9 +1,11 @@
 ---
 Order: 20
 xref: c4b-quick-start-guide
-Title: C4B Quick Start Guide V2
+Title: C4B Quick Start Guide
 Description: Get up and running quickly with Chocolatey for Business
-RedirectFrom: docs/chocolatey-for-business-quick-start-guide
+RedirectFrom:
+- docs/chocolatey-for-business-quick-start-guide
+- en-us/guides/organizations/quick-start-guide/chocolatey-for-business-quick-start-guide
 ---
 
 Welcome to the Chocolatey for Business (C4B) Quick-Start Guide! This guide will walk you through the basics of configuring a C4B Server on your VM infrastructure of choice. This includes the Chocolatey Licensed components, a NuGet V2 Repository (Nexus), Chocolatey Central Management (CCM), and an Automation Pipeline (Jenkins).
