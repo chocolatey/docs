@@ -13,7 +13,7 @@ const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
-const util = require('gulp-util');
+const log = require('fancy-log');
 const bundleconfig = require('./bundleconfig.json');
 const fs = require('fs');
 
@@ -114,7 +114,7 @@ const compileJs = () => {
         return b.bundle()
             .pipe(source(bundle.outputFileName))
             .pipe(buffer())
-            .on('error', util.log)
+            .on('error', error => { log.error(error.message); })
             .pipe(dest('.'));
     });
 
