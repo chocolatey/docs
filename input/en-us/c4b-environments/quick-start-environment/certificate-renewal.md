@@ -3,9 +3,10 @@ Order: 40
 xref: quick-start-guide-cert-renewal
 Title: Certificate Renewal
 Description: Certificate renewal docs for Nexus and Chocolatey Central Management
+RedirectFrom: en-us/guides/organizations/quick-start-guide/certificate-renewal
 ---
 
-This document is meant to serve as a guide for where to look when needing to renew your SSL certificate(s) for the Nexus and Chocolatey Central Management components of quick start guide.
+This document is meant to serve as a guide for where to look when needing to renew your SSL certificate(s) for the Nexus and Chocolatey Central Management components of the quick start environment.
 
 ## Set-NexusCert.ps1
 
