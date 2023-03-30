@@ -1,6 +1,6 @@
 ---
 Order: 50
-xref: upgrading-nexus
+xref: upgrade-nexus
 Title: Upgrading Nexus
 Description: How to upgrade nexus
 RedirectFrom: en-us/c4b-environments/quick-deployment/setup/upgrade-nexus-qde
