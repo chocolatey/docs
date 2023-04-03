@@ -8,7 +8,7 @@
     {
       "outputFileName": "input/assets/css/docsearch.css",
       "inputFiles": [
-        "node_modules/docsearch.js/dist/cdn/docsearch.css"
+        "node_modules/@docsearch/css/dist/style.css"
       ]
     },
     {
