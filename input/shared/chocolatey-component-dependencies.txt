@@ -23,7 +23,7 @@ The following table aims to illustrate those dependencies, based on the latest s
 > | chocolateygui           | v1.0.0  |
 > | chocolatey.extension    | v4.0.0  |
 > | chocolatey              | v1.0.0  |
->
+
 > :choco-info: **NOTE**
 >
 > Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
