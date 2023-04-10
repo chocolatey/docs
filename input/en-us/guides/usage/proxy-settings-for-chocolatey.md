@@ -6,9 +6,9 @@ Description: Settings up Chocolatey to use locally configured proxy server
 RedirectFrom: docs/proxy-settings-for-chocolatey
 ---
 
-## Installing Chocolatey behind a proxy server
+## Installing Chocolatey from behind a proxy server
 
-When trying to install Chocolatey behind a proxy server, you may be faced with errors like
+When trying to install Chocolatey behind a proxy server, you may be faced with one of the following errors:
 
 > Get Response returned: (407) Proxy Authentication Required
 
@@ -19,18 +19,29 @@ or
 Steps to help address this:
 
 1. Copy the [install.ps1](https://community.chocolatey.org/install.ps1) file locally.
-2. Open a PowerShell command line.
-3. Set the following environment variables - `$env:chocolateyProxyLocation` (with proxyserver:proxyport), `$env:chocolateyProxyUser` (if it is a domain account, ensure you have the appropriate domain prefix for the account, e.g. `AD\UserName` or `UserName`), and `$env:chocolateyProxyPassword` with your password.
-4. With that same shell open where the environment variables are set, run the downloaded script to install Chocolatey.
+1. Open a PowerShell command line as administrator.
+1. If _not_ using a proxy with authentication, set the default proxy credentials with `[Net.WebRequest]::DefaultWebProxy.Credentials = [Net.CredentialCache]::DefaultCredentials`
+1. Set the following environment variables:
+   1. `$env:chocolateyProxyLocation` (in the format `proxyserver:proxyport`, see below for an example)
+1. If your proxy requires authentication, set the following variables:
+   1. `$env:chocolateyProxyUser` (if using a domain account, ensure you have the appropriate domain prefix for the account, e.g. `AD\UserName` or `UserName`)
+   1. `$env:chocolateyProxyPassword`
+1. With that same shell open where the environment variables are set, run the downloaded script to install Chocolatey.
 
 In PowerShell, it looks like this:
 
-~~~powershell
-$env:chocolateyProxyLocation = 'https://local/proxy/server'
+```powershell
+[Net.WebRequest]::DefaultWebProxy.Credentials = [Net.CredentialCache]::DefaultCredentials
+$env:chocolateyProxyLocation = 'https://local.proxy.address:8001'
+
+# Un-comment the following lines if your proxy server requires explicit authentication and
+# substitute your username and password.
 #$env:chocolateyProxyUser = 'username'
 #$env:chocolateyProxyPassword = 'password'
-# install script
-~~~
+
+# Run the downloaded install script
+& "C:\Path\to\script\install.ps1"
+```
 
 > :choco-info: **NOTE**
 >
@@ -38,16 +49,18 @@ $env:chocolateyProxyLocation = 'https://local/proxy/server'
 
 ### Troubleshooting Installation
 
-You've tried everything and Chocolatey still won't install from https://community.chocolatey.org -
+You've tried everything and Chocolatey still won't install from <https://community.chocolatey.org> -
 
 > The underlying connection was closed: Could not establish trust relationship for the SSL / TLS secure channel.
 
 It could also be that your trusted root certificates are missing or not up to date (Windows 2012 does not install root certificates by default). You will need to download and install the following certificates into your LocalMachine's *Trusted Root Certification Authorities* certificate store.
 
 To access [community.chocolatey.org](https://community.chocolatey.org):
+
 * [Go Daddy Secure Certificate Authority - G2](https://certs.godaddy.com/repository) (File: `gdroot-g2.crt`; Thumbprint: `47BEABC922EAE80E78783462A79F45C254FDE68B`). (On the download page, this certificate is named *GoDaddy Class 2 Certification Authority Root Certificate - G2* and its listed thumbprint (`45140B3247EB9CC8C5B4F0D7B53091F73292089E6E5A63E2749DD3ACA9198EDA`) is wrong.
 
 To access [packages.chocolatey.org](https://packages.chocolatey.org):
+
 * [AddTrust External CA Root](https://support.comodo.com/index.php?/Default/Knowledgebase/Article/View/917/91/) (File: `addtrustexternalcaroot.crt`; Thumbprint: `02FAF3E291435468607857694DF5E45B68851868`)
 
 ## System Proxy Settings
