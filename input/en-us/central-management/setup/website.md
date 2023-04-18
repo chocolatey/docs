@@ -83,7 +83,22 @@ This includes (but may not be everything):
 * User needs to be given explicit Read/Execute rights (ACLs) to `c:\tools\chocolatey-management-web`.
 * User needs to be given explicit Modify rights (ACLs) to `c:\tools\chocolatey-management-web\App_Data`.
 
-### Scenarios
+### Database Authentication Scenarios
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="scenario-one-tab" data-bs-toggle="tab" href="#scenario-one" role="tab" aria-controls="scenario-one" aria-selected="true">Scenario 1</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="scenario-two-tab" data-bs-toggle="tab" href="#scenario-two" role="tab" aria-controls="scenario-two" aria-selected="false">Scenario 2</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="scenario-three-tab" data-bs-toggle="tab" href="#scenario-three" role="tab" aria-controls="scenario-three" aria-selected="false">Scenario 3</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="scenario-four-tab" data-bs-toggle="tab" href="#scenario-four" role="tab" aria-controls="scenario-four" aria-selected="false">Scenario 4</a>
+    </li>
+</ul>
 
 #### SQL Server Windows Authentication
 
