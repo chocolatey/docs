@@ -2,7 +2,7 @@
 Order: 20
 xref: setup-choco
 Title: Setup / Install
-Description: Techniques for how to install Chocolatey
+Description: How to install Chocolatey CLI
 RedirectFrom:
   - docs/installation
   - docs/install
@@ -10,21 +10,30 @@ RedirectFrom:
 
 ## Requirements
 
-* Windows 7+ / Windows Server 2003+
-* PowerShell v2+ (Not PowerShell Core yet though)(minimum is v3 for install from this website due to [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/))
-* .NET Framework 4+ (the installation will attempt to install .NET 4.0 if you do not have it installed)(minimum is 4.5 for install from this website due to [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/))
+- [A supported version of Windows](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-windows-versions)
+- Windows PowerShell v2.0 or higher
+  - Windows PowerShell v3 is required for directly installing Chocolatey CLI from the Chocolatey Community Repository due to the [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/)
 
-That's it! All you need is choco.exe (that you get from the installation scripts) and you are good to go! No Visual Studio required.
+### Chocolatey CLI v2.0+
 
-## Installing Chocolatey
+- .NET Framework 4.8
+  - The installation script will attempt to install .NET 4.8 if it is not installed.
 
-Chocolatey installs in seconds. You are just a few steps from running choco right now!
+### Chocolatey CLI v1.x
 
-1. First, ensure that you are using an **[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)** - you can also install as a non-admin, check out <a href="#non-administrative-install">Non-Administrative Installation</a>.
+- .NET Framework 4+
+  - The installation will attempt to install .NET 4.0 if you do not have it installed
+  - .NET Framework 4.5+ is required for installing directly from the Chocolatey Community Repository, due to the [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/)
+
+## Installing Chocolatey CLI
+
+1. First, ensure that you are using an **[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)**.
+   - Refer to [Non-Administrative Installation](#non-administrative-install) for information on installing without administrative rights.
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmd.exe) or [powershell.exe](#install-with-powershell.exe).
 1. Paste the copied text into your shell and press Enter.
 1. Wait a few seconds for the command to complete.
-1. If you don't see any errors, you are ready to use Chocolatey! Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
+1. If you don't see any errors, you are ready to use Chocolatey CLI!
+1. Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
 
 > :choco-info: **NOTE**
 > * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
@@ -74,7 +83,7 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 ## More Install Options
 
-<p><strong>Troubleshooting? Proxy? Need more options?</strong></p>
+**Troubleshooting? Proxy? Need more options?**
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moreInstallOptions" aria-expanded="false" aria-controls="moreInstallOptions">More Install Options</button>
 
