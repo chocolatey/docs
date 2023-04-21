@@ -215,6 +215,8 @@ choco install chocolatey-management-database -y --package-parameters='/Connectio
 >
 > **Upgrades**: Please ensure the user running the package installation has been granted `db_owner` access to an existing database.
 
+---
+
 ##### SQL Server Express
 
 ```powershell
@@ -267,6 +269,8 @@ choco install chocolatey-management-database -y --package-parameters="'/SkipData
 > **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
 >
 > **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
+
+---
 
 ##### SQL Server Express
 

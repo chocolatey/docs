@@ -123,6 +123,11 @@ When Chocolatey manages the password for a local Administrator, it creates a ver
 
 ### Database Authentication Scenarios
 
+* [Scenario 1 - Windows Authentication to Local SQL Server](xref:ccm-service#scenario-one)
+* [Scenario 2 - Active Directory Authentication to Remote SQL Server](xref:ccm-service#scenario-two)
+* [Scenario 3 - SQL Server Authentication to Local SQL Server](xref:ccm-service#scenario-three)
+* [Scenario 4 - SQL Server Authentication to Remote SQL Server](xref:ccm-service#scenario-four)
+
 <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
         <a class="nav-link active" id="scenario-one-tab" data-bs-toggle="tab" href="#scenario-one" role="tab" aria-controls="scenario-one" aria-selected="true">Scenario 1</a>
@@ -141,11 +146,11 @@ When Chocolatey manages the password for a local Administrator, it creates a ver
 ::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #scenario-one role=tabpanel aria-labelledby=scenario-one-tab}
 
-##### Windows Authentication to Local SQL Server
+#### Windows Authentication to Local SQL Server
 
 Monolithic - you have set up the [database](xref:ccm-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use a local Windows account to connect to the local database.
 
-* Specify User
+##### Specify User
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True; /Username:<LocalWindowsAccount>'" --package-parameters-sensitive="'/Password:<Local account password>'"
@@ -155,7 +160,9 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 >
 > Please ensure the user `<LocalWindowsAccount>` has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* `ChocolateyLocalAdmin` User
+---
+
+##### `ChocolateyLocalAdmin` User
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters="'/ConnectionString:Server=<Localhost\SQLEXPRESS>;Database=ChocolateyManagement;Trusted_Connection=True;'"
@@ -167,12 +174,12 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :choco-info: **NOTE**
 >
-> The connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 :::
 :::{.tab-pane .fade #scenario-two role=tabpanel aria-labelledby=scenario-two-tab}
 
-##### Active Directory Authentication to Remote SQL Server
+#### Active Directory Authentication to Remote SQL Server
 
 Split - you have set up the [database](xref:ccm-database) to use Windows Authentication (or Mixed Mode Authentication). You wish to use an Active Directory account to connect to an existing SQL instance.
 
@@ -186,16 +193,16 @@ choco install chocolatey-management-service -y --package-parameters="'/Connectio
 
 > :choco-info: **NOTE**
 >
-> The connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
+> Note the connection string doesn't include credentials. That's because Windows Authentication for SQL Server uses the context of what is running it and why the service itself needs the right user/password.
 
 :::
 :::{.tab-pane .fade #scenario-three role=tabpanel aria-labelledby=scenario-three-tab}
 
-##### SQL Server Authentication to Local SQL Server
+#### SQL Server Authentication to Local SQL Server
 
 Monolithic - you are installing the management service on the same machine as a SQL Server Express instance. You likely have a smaller environment where you have up to 1,000 machines. You have set up the [database](xref:ccm-database) to use Mixed Mode Authentication.
 
-* Licensed SQL Server
+##### Licensed SQL Server
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -205,7 +212,9 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 >
 > Please ensure the login has been given `db_datareader` and `db_datawriter` access to the database. See [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* SQL Server Express
+---
+
+##### SQL Server Express
 
 ```powershell
 choco install chocolatey-management-service -y --package-parameters-sensitive="'/ConnectionString:Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'"
@@ -218,7 +227,7 @@ choco install chocolatey-management-service -y --package-parameters-sensitive="'
 :::
 :::{.tab-pane .fade #scenario-four role=tabpanel aria-labelledby=scenario-four-tab}
 
-##### SQL Server Authentication to Remote SQL Server
+#### SQL Server Authentication to Remote SQL Server
 
 Split - you are installing the management service(s) on a server, and targeting an existing SQL Server instance in your organization. You have set up the [database](xref:ccm-database) to use Mixed Mode Authentication.
 
