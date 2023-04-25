@@ -37,11 +37,11 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Bugs
+### Bug Fixes
 
-- Chocolatey does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
-- When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
-- Prevent install/upgrade failure when using multiple sources and one or more of them cannot be reached.
+- Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
+- Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
+- Fix - Prevent install/upgrade failure when using multiple sources and one or more of them cannot be reached.
 
 ### Enhancements
 
@@ -95,7 +95,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 
 ### Bug Fix
 
-- `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
+- Fix - `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
 
 ## 2.0.0-alpha-20230307 (March 7, 2023)
 
@@ -117,8 +117,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Fix `choco search` command that was providing invalid results when using the `--version` option.
-- Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
+- Fix - Fix `choco search` command that was providing invalid results when using the `--version` option.
+- Fix - Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
 
 ### Enhancements
 
@@ -172,7 +172,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 
 ### Bug Fixes
 
-- File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
+- Fix - File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
 
 ## 2.0.0-alpha-20230124 (January 24, 2023)
 
@@ -199,8 +199,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bugs
 
-- `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
-- Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
+- Fix - `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
+- Fix - Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
 
 ### Enhancements
 
@@ -217,9 +217,9 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Running `choco new --file` returns "Cannot Combine Path" Error when Chocolatey Licensed Extension is installed and other assemblies are present in the extensions folder - see [#2865](https://github.com/chocolatey/choco/issues/2865)
-- Selecting `[A] Yes to all` at package script prompt does not work correctly - see [#2872](https://github.com/chocolatey/choco/issues/2872)
-- Attempting to upgrade multiple packages at once causes an error to be thrown about configuration backups - see [#2884](https://github.com/chocolatey/choco/issues/2884)
+- Fix - Running `choco new --file` returns "Cannot Combine Path" Error when Chocolatey Licensed Extension is installed and other assemblies are present in the extensions folder - see [#2865](https://github.com/chocolatey/choco/isFix - sues/2865)
+- Fix - Selecting `[A] Yes to all` at package script prompt does not work correctly - see [#2872](https://github.com/chocolatey/choco/issues/2872)
+- Fix - Attempting to upgrade multiple packages at once causes an error to be thrown about configuration backups - see [#2884](https://github.com/chocolatey/choco/issues/2884)
 
 ## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (October 19, 2022)
 

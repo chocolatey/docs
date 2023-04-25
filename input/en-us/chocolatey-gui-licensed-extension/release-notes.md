@@ -66,7 +66,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Chocolatey GUI v1.1.2 crashes on launch with Chocolatey GUI Licensed Extension installed - see [licensed #338](https://github.com/chocolatey/chocolatey-licensed-issues/issues/338).
+- Fix - Chocolatey GUI v1.1.2 crashes on launch with Chocolatey GUI Licensed Extension installed - see [licensed #338](https://github.com/chocolatey/chocolatey-licensed-issues/issues/338).
 
 ## 2.0.0-alpha-20230221 (February 21, 2023)
 
@@ -101,8 +101,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Breaking Changes
 
-- Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade
-- Updates Chocolatey dependency for package to v1.0.0
+- Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade.
+- Updates Chocolatey CLI dependency for package to v1.0.0.
 
 ### Release Video
 
@@ -121,7 +121,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Change
 
-- Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841)
+- Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841).
 
 ### Release Video
 
@@ -140,12 +140,12 @@ A short video explaining what is included in this release can be found here:
 
 ### Features
 
-- Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228)
-- Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240)
+- Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228).
+- Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240).
 
 ### Improvements
 
-- [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254)
+- [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254).
 
 ### Release Video
 
@@ -160,7 +160,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fix
 
-- Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209)
+- Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209).
 
 ### Release Video
 
@@ -175,14 +175,14 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Change
 
-- Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601)
+- Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601).
 
 ### Features
 
-- Provide ability for Chocolatey GUI to respect the background service allowed commands configuration option
-- Add a feature to toggle on/off a read only view for installed packages - see [licensed #201](https://github.com/chocolatey/chocolatey-licensed-issues/issues/201)
-- Add a feature to toggle on/off the option to not attempt to download icons for packages - see [licensed #199](https://github.com/chocolatey/chocolatey-licensed-issues/issues/199)
-- Add a configuration option to specify a default for a particular source when application loads - see [licensed #198](https://github.com/chocolatey/chocolatey-licensed-issues/issues/198)
+- Provide ability for Chocolatey GUI to respect the background service allowed commands configuration option.
+- Add a feature to toggle on/off a read only view for installed packages - see [licensed #201](https://github.com/chocolatey/chocolatey-licensed-issues/issues/201).
+- Add a feature to toggle on/off the option to not attempt to download icons for packages - see [licensed #199](https://github.com/chocolatey/chocolatey-licensed-issues/issues/199).
+- Add a configuration option to specify a default for a particular source when application loads - see [licensed #198](https://github.com/chocolatey/chocolatey-licensed-issues/issues/198).
 
 ### Release Video
 
@@ -199,10 +199,10 @@ Initial preview release
 
 ### Features
 
-- Branding - Support for branding portions of the Chocolatey GUI assets from provided assets
-- Provide ability to restrict access to Chocolatey GUI settings to only machine administrators
-- Packaging - Extension is deployable in the same way as the Chocolatey Licensed Extension
-- Provide visual indication in Chocolatey GUI when the Chocolatey GUI Licensed Extension is being used
+- Branding - Support for branding portions of the Chocolatey GUI assets from provided assets.
+- Provide ability to restrict access to Chocolatey GUI settings to only machine administrators.
+- Packaging - Extension is deployable in the same way as the Chocolatey Licensed Extension.
+- Provide visual indication in Chocolatey GUI when the Chocolatey GUI Licensed Extension is being used.
 
 ### Release Video
 
