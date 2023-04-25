@@ -41,6 +41,31 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey Licensed Extension and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey Licensed Extension we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Bug Fixes
+
+- Fix - PowerShell - `Get-ChocolateyUnZip` works in FOSS but not Licensed for languagetool package - see [licensed #342](https://github.com/chocolatey/chocolatey-licensed-issues/issues/342).
+- Fix - Prevent error being reported when `lib` folder is not present in Chocolatey folder.
+- Fix - Fix problem with uninstalling packages that were created using the `choco sync` command.
+
+### Enhancement
+
+- Update to use latest beta releases of Chocolatey products.
+
+
 ## 6.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**

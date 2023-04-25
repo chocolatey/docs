@@ -17,6 +17,30 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey GUI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey GUI **only** works with the beta version of the Chocolatey GUI Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey GUI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Enhancements
+
+- Added handling for large package download counts, which causes an exception to be thrown when number is too large.
+- Update to use latest beta releases of Chocolatey products.
+
+
 ## 2.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**

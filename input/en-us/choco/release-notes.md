@@ -19,6 +19,43 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the beta version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Change
+
+- Switch to use only the recommended TLS versions without fallback to earlier insecure options - see [#2902](https://github.com/chocolatey/choco/issues/2902).
+
+### Bug Fixes
+
+- Fix - `choco info` command with no package id defined returns 0 packages found rather than provide a warning - see [#2899](https://github.com/chocolatey/choco/issues/2899).
+- Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
+- Fix - Ensure that correct `count` query is used when querying oData feeds.
+
+### Enhancements
+
+- PowerShell tab completion should only show commands/options for currently installed license - see [#2887](https://github.com/chocolatey/choco/issues/2887).
+- Alphabetically sort the output from the `feature` `config` `source` and `apikey` list command - see [#2814](https://github.com/chocolatey/choco/issues/2814).
+- Add explicit handling for `choco list -li` to provide backwards compatibility - related to [#158](https://github.com/chocolatey/choco/issues/158).
+- Add ability to get status of an individual feature (`choco feature get`) - see [#2815](https://github.com/chocolatey/choco/issues/2815).
+- Ensure that the client version used when querying a repository is the version of the underlying NuGet.Client library - see [#1935](https://github.com/chocolatey/choco/issues/1935).
+
+
 ## 2.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**
