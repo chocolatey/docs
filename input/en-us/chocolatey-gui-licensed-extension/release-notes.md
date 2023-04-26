@@ -24,6 +24,25 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey GUI Licensed Extension and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey GUI Licensed Extension we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Enhancement
+
+- Update to use latest beta releases of Chocolatey products.
+
+
 ## 2.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**
@@ -66,7 +85,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Chocolatey GUI v1.1.2 crashes on launch with Chocolatey GUI Licensed Extension installed - see [licensed #338](https://github.com/chocolatey/chocolatey-licensed-issues/issues/338).
+- Fix - Chocolatey GUI v1.1.2 crashes on launch with Chocolatey GUI Licensed Extension installed - see [licensed #338](https://github.com/chocolatey/chocolatey-licensed-issues/issues/338).
 
 ## 2.0.0-alpha-20230221 (February 21, 2023)
 
@@ -101,8 +120,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Breaking Changes
 
-- Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade
-- Updates Chocolatey dependency for package to v1.0.0
+- Add Chocolatey Licensed Extension dependency to package to ensure all required dependencies are installed during upgrade.
+- Updates Chocolatey CLI dependency for package to v1.0.0.
 
 ### Release Video
 
@@ -121,7 +140,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Change
 
-- Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841)
+- Change target .NET Framework version to be 4.8 - see [#841](https://github.com/chocolatey/ChocolateyGUI/issues/841).
 
 ### Release Video
 
@@ -140,12 +159,12 @@ A short video explaining what is included in this release can be found here:
 
 ### Features
 
-- Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228)
-- Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240)
+- Add feature to allow disabling of the This PC source - see [licensed #228](https://github.com/chocolatey/chocolatey-licensed-issues/issues/228).
+- Add feature to allow disabling of "Update All" button -see [licensed #240](https://github.com/chocolatey/chocolatey-licensed-issues/issues/240).
 
 ### Improvements
 
-- [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254)
+- [Security] XML External Entity attack in log4net (CVE-2018-1285) see [licensed #254](https://github.com/chocolatey/chocolatey-licensed-issues/issues/254).
 
 ### Release Video
 
@@ -160,7 +179,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fix
 
-- Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209)
+- Fix - Incorrect configuration database being used by Chocolatey GUI Licensed Extension when running as non-administrator user - see [licensed #209](https://github.com/chocolatey/chocolatey-licensed-issues/issues/209).
 
 ### Release Video
 
@@ -175,14 +194,14 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Change
 
-- Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601)
+- Update the default value for "NonAdmin Access to Settings" feature to be false - see [#601](https://github.com/chocolatey/ChocolateyGUI/issues/601).
 
 ### Features
 
-- Provide ability for Chocolatey GUI to respect the background service allowed commands configuration option
-- Add a feature to toggle on/off a read only view for installed packages - see [licensed #201](https://github.com/chocolatey/chocolatey-licensed-issues/issues/201)
-- Add a feature to toggle on/off the option to not attempt to download icons for packages - see [licensed #199](https://github.com/chocolatey/chocolatey-licensed-issues/issues/199)
-- Add a configuration option to specify a default for a particular source when application loads - see [licensed #198](https://github.com/chocolatey/chocolatey-licensed-issues/issues/198)
+- Provide ability for Chocolatey GUI to respect the background service allowed commands configuration option.
+- Add a feature to toggle on/off a read only view for installed packages - see [licensed #201](https://github.com/chocolatey/chocolatey-licensed-issues/issues/201).
+- Add a feature to toggle on/off the option to not attempt to download icons for packages - see [licensed #199](https://github.com/chocolatey/chocolatey-licensed-issues/issues/199).
+- Add a configuration option to specify a default for a particular source when application loads - see [licensed #198](https://github.com/chocolatey/chocolatey-licensed-issues/issues/198).
 
 ### Release Video
 
@@ -199,10 +218,10 @@ Initial preview release
 
 ### Features
 
-- Branding - Support for branding portions of the Chocolatey GUI assets from provided assets
-- Provide ability to restrict access to Chocolatey GUI settings to only machine administrators
-- Packaging - Extension is deployable in the same way as the Chocolatey Licensed Extension
-- Provide visual indication in Chocolatey GUI when the Chocolatey GUI Licensed Extension is being used
+- Branding - Support for branding portions of the Chocolatey GUI assets from provided assets.
+- Provide ability to restrict access to Chocolatey GUI settings to only machine administrators.
+- Packaging - Extension is deployable in the same way as the Chocolatey Licensed Extension.
+- Provide visual indication in Chocolatey GUI when the Chocolatey GUI Licensed Extension is being used.
 
 ### Release Video
 

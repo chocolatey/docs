@@ -19,6 +19,43 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the beta version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey CLI we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Change
+
+- Switch to use only the recommended TLS versions without fallback to earlier insecure options - see [#2902](https://github.com/chocolatey/choco/issues/2902).
+
+### Bug Fixes
+
+- Fix - `choco info` command with no package id defined returns 0 packages found rather than provide a warning - see [#2899](https://github.com/chocolatey/choco/issues/2899).
+- Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
+- Fix - Ensure that correct `count` query is used when querying oData feeds.
+
+### Enhancements
+
+- PowerShell tab completion should only show commands/options for currently installed license - see [#2887](https://github.com/chocolatey/choco/issues/2887).
+- Alphabetically sort the output from the `feature` `config` `source` and `apikey` list command - see [#2814](https://github.com/chocolatey/choco/issues/2814).
+- Add explicit handling for `choco list -li` to provide backwards compatibility - related to [#158](https://github.com/chocolatey/choco/issues/158).
+- Add ability to get status of an individual feature (`choco feature get`) - see [#2815](https://github.com/chocolatey/choco/issues/2815).
+- Ensure that the client version used when querying a repository is the version of the underlying NuGet.Client library - see [#1935](https://github.com/chocolatey/choco/issues/1935).
+
+
 ## 2.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**
@@ -37,11 +74,11 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Bugs
+### Bug Fixes
 
-- Chocolatey does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
-- When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
-- Prevent install/upgrade failure when using multiple sources and one or more of them cannot be reached.
+- Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
+- Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
+- Fix - Prevent install/upgrade failure when using multiple sources and one or more of them cannot be reached.
 
 ### Enhancements
 
@@ -95,7 +132,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 
 ### Bug Fix
 
-- `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
+- Fix - `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
 
 ## 2.0.0-alpha-20230307 (March 7, 2023)
 
@@ -117,8 +154,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Fix `choco search` command that was providing invalid results when using the `--version` option.
-- Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
+- Fix - Fix `choco search` command that was providing invalid results when using the `--version` option.
+- Fix - Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
 
 ### Enhancements
 
@@ -172,7 +209,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 
 ### Bug Fixes
 
-- File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
+- Fix - File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
 
 ## 2.0.0-alpha-20230124 (January 24, 2023)
 
@@ -199,8 +236,8 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bugs
 
-- `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
-- Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
+- Fix - `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
+- Fix - Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
 
 ### Enhancements
 
@@ -217,9 +254,9 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Bug Fixes
 
-- Running `choco new --file` returns "Cannot Combine Path" Error when Chocolatey Licensed Extension is installed and other assemblies are present in the extensions folder - see [#2865](https://github.com/chocolatey/choco/issues/2865)
-- Selecting `[A] Yes to all` at package script prompt does not work correctly - see [#2872](https://github.com/chocolatey/choco/issues/2872)
-- Attempting to upgrade multiple packages at once causes an error to be thrown about configuration backups - see [#2884](https://github.com/chocolatey/choco/issues/2884)
+- Fix - Running `choco new --file` returns "Cannot Combine Path" Error when Chocolatey Licensed Extension is installed and other assemblies are present in the extensions folder - see [#2865](https://github.com/chocolatey/choco/isFix - sues/2865)
+- Fix - Selecting `[A] Yes to all` at package script prompt does not work correctly - see [#2872](https://github.com/chocolatey/choco/issues/2872)
+- Fix - Attempting to upgrade multiple packages at once causes an error to be thrown about configuration backups - see [#2884](https://github.com/chocolatey/choco/issues/2884)
 
 ## [1.2.0](https://github.com/chocolatey/choco/milestone/54?closed=1) (October 19, 2022)
 

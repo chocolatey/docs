@@ -29,6 +29,25 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-info: **NOTE**
+>
+> If you run into any problems when using this beta version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Enhancement
+
+- Update to use latest beta releases of Chocolatey products.
+
+
 ## 2.0.0-beta-20230412 (April 12, 2023)
 
 > :choco-warning: **WARNING**
@@ -66,9 +85,9 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 - Migrate from Rx-* packages to System.Reactive.* packages.
 
-## Bug
+## Bug Fix
 
-- Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
+- Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
 
 
 ## 2.0.0-alpha-20230221 (February 21, 2023)
@@ -108,9 +127,9 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Chocolatey Central Management - Add retry logic for running deployments acquired from Chocolatey Central Management Service.
 - Recheck the license on a schedule and shut down if it is invalid.
 
-### Bug Fixes
+### Bug Fix
 
-- Logging - Exception handling for all the tasks
+- Fix - Logging - Exception handling for all the tasks.
 
 ### Release Video
 
@@ -129,7 +148,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Change
 
-- Update Chocolatey Licensed Extension dependency to v4.0.0
+- Update Chocolatey Licensed Extension dependency to v4.0.0.
 
 ### Release Video
 
@@ -168,9 +187,9 @@ A short video explaining what is included in this release can be found here:
 
 ## 0.12.1 (September 14, 2021)
 
-### Bug Fixes
+### Bug Fix
 
-- [Security] - Deployments - Sensitive arguments are included in log file when advanced deployments are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255)
+- [Security] Fix - Deployments - Sensitive arguments are included in log file when advanced deployments are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255).
 
 ### Release Video
 
@@ -190,12 +209,12 @@ A short video explaining what is included in this release can be found here:
 ### Bug Fixes
 
 - Central Management
-  - Fix - Second and subsequent deployments to an agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237)
-  - Fix - Deployments - Log does not contain all information under error circumstances
+  - Fix - Second and subsequent deployments to an agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237).
+  - Fix - Deployments - Log does not contain all information under error circumstances.
 
 ### Improvements
 
-- [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #253](https://github.com/chocolatey/chocolatey-licensed-issues/issues/253)
+- [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #253](https://github.com/chocolatey/chocolatey-licensed-issues/issues/253).
 
 ### Release Video
 
@@ -208,19 +227,19 @@ A short video explaining what is included in this release can be found here:
 
 ## 0.11.2 (November 5, 2020)
 
-### Bug Fixes
+### Bug Fix
 
-- Fix - Deployments - An execution timeout in seconds value of `0` for a deployment step is not treated as infinite
+- Fix - Deployments - An execution timeout in seconds value of `0` for a deployment step is not treated as infinite.
 
 ### Improvements
 
-- Provide clarity in log messages when salt additive configuration values are misconfigured
+- Provide clarity in log messages when salt additive configuration values are misconfigured.
 
 ## 0.11.1 (October 5, 2020)
 
-### Bug Fixes
+### Bug Fix
 
-- Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script
+- Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script.
 
 ## 0.11.0 (June 25, 2020)
 
@@ -230,8 +249,8 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fixes
 
-- Fix - CCM - passphrases do not match on check-in (report_computer_information) - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152)
-- Fix - CCM Deployments - Deployments agent exit code of -1 reports successful deployment - see [Licensed #153](https://github.com/chocolatey/chocolatey-licensed-issues/issues/153)
+- Fix - CCM - passphrases do not match on check-in (report_computer_information) - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152).
+- Fix - CCM Deployments - Deployments agent exit code of -1 reports successful deployment - see [Licensed #153](https://github.com/chocolatey/chocolatey-licensed-issues/issues/153).
 
 ## 0.10.0 (June 18, 2020)
 
@@ -245,50 +264,50 @@ A short video explaining what is included in this release can be found here:
 
 ### Features
 
-- Execution for Central Management Deployments
+- Execution for Chocolatey Central Management Deployments.
 
 ### Bug Fixes
 
-- Fix - Monitoring chocolatey.config for changes could potentially lock the file from being written to by choco
-- Fix - Logging - the service stops responding to calls and stops logging after choco configuration file is edited
-- Fix - CCM Reporting - Do not report unfound packages as outdated
+- Fix - Monitoring `chocolatey.config` for changes could potentially lock the file from being written to by Chocolatey CLI.
+- Fix - Logging - the service stops responding to calls and stops logging after choco configuration file is edited.
+- Fix - CCM Reporting - Do not report unfound packages as outdated.
 
 ### Improvements
 
-- Logging - Log to the root logs folder of Chocolatey Installation
+- Logging - Log to the root logs folder of Chocolatey installation.
 
 ## 0.9.3 (March 26, 2020)
 
 ### Bug Fixes
 
 - Central Management Reporting:
-  - Fix - Ensure best available TLS is used - see [Licensed #132](https://github.com/chocolatey/chocolatey-licensed-issues/issues/132)
+  - Fix - Ensure best available TLS is used - see [Licensed #132](https://github.com/chocolatey/chocolatey-licensed-issues/issues/132).
 
 ## 0.9.2 (January 30, 2020)
 
 ### Improvements
 
-- When reporting into CCM, add the URL that is being used in log to aid when debugging issues
+- When reporting into CCM, add the URL that is being used in log to aid when debugging issues.
 
 ## 0.9.1 (April 30, 2019)
 
 ### Bug Fixes
 
 - Self-Service / Background Mode:
-  - Fix - Multiple quoted options being parsed incorrectly - see [Licensed #78](https://github.com/chocolatey/chocolatey-licensed-issues/issues/78)
+  - Fix - Multiple quoted options being parsed incorrectly - see [Licensed #78](https://github.com/chocolatey/chocolatey-licensed-issues/issues/78).
 
 ## 0.9.0 (March 18, 2019)
 
 ### Features
 
-- Central Management Reporting - Clients can now report into central management on a configurable basis. For more information, please see https://docs.chocolatey.org/en-us/features/chocolatey-central-management
+- Chocolatey Central Management Reporting - Clients can now report into Chocolatey Central Management on a configurable basis. For more information, please see [the documentation](https://docs.chocolatey.org/en-us/features/chocolatey-central-management).
 
 ### Bug Fixes
 
 - Self-Service / Background Mode:
-  - Fix - Package Arguments not being passed from Agent to choco.exe properly - see [Licensed #60](https://github.com/chocolatey/chocolatey-licensed-issues/issues/60)
-  - Fix - Background Service does not pass the exit code back to the console (service side) - see [Licensed #51](https://github.com/chocolatey/chocolatey-licensed-issues/issues/51)
-  - Fix - Execution times out after 10 minutes - ignores configuration - see [Licensed #41](https://github.com/chocolatey/chocolatey-licensed-issues/issues/41)
+  - Fix - Package Arguments not being passed from Chocolatey Agent to Chocolatey CLI properly - see [Licensed #60](https://github.com/chocolatey/chocolatey-licensed-issues/issues/60).
+  - Fix - Chocolatey Agent does not pass the exit code back to the console (service side) - see [Licensed #51](https://github.com/chocolatey/chocolatey-licensed-issues/issues/51).
+  - Fix - Execution times out after 10 minutes - ignores configuration - see [Licensed #41](https://github.com/chocolatey/chocolatey-licensed-issues/issues/41).
 
 ## 0.8.1 (September 28, 2017)
 
@@ -340,10 +359,10 @@ Initial Release
 
 ### Features
 
-- Streams logging messages back to the caller in realtime
-- Audits disallowed calls / attempted abuses of the service
-- Only runs Chocolatey functions
-- Ensures installation from approved sources only
+- Streams logging messages back to the caller in realtime.
+- Audits disallowed calls / attempted abuses of the service.
+- Only runs Chocolatey functions.
+- Ensures installation from approved sources only.
 - Receives and passes user context to Chocolatey functions.
-- Works exclusively with Chocolatey for Business - checks passcode prior to running command
-- Processes one command at a time with locking algorithm
+- Works exclusively with Chocolatey for Business - checks passcode prior to running command.
+- Processes one command at a time with locking algorithm.
