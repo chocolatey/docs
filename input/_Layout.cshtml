@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        @Html.Partial("~/global-partials/_GoogleTag.cshtml")
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,13 +43,6 @@
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
         <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
         <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey-head.bundle.min.js")"></script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2743882-12"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-2743882-12');
-        </script>
         <script type="text/javascript" async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
         <title>@title</title>
     </head>
@@ -65,16 +59,8 @@
             <nav id="topNav" class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/">
-                        @* <img class="d-md-none" src='@Context.GetLink("/assets/images/global-shared/logo.svg")' alt="Chocolatey" />
-                        <img class="d-none d-md-block navbar-brand-desktop" src='@Context.GetLink("/assets/images/global-shared/logo-square.svg")' alt="Chocolatey" /> *@
-                        <span class="dark-theme">
-                            <img class="d-md-none" src="https://img.chocolatey.org/logos/chocolatey-12-icon-dark.svg" alt="Chocolatey" />
-                            <img class="d-none d-md-block navbar-brand-desktop" src="https://img.chocolatey.org/logos/chocolatey-12-dark.svg" alt="Chocolatey" />
-                        </span>
-                        <span class="light-theme">
-                            <img class="d-md-none" src="https://img.chocolatey.org/logos/chocolatey-12-icon-light.svg" alt="Chocolatey" />
-                            <img class="d-none d-md-block navbar-brand-desktop" src="https://img.chocolatey.org/logos/chocolatey-12-light.svg" alt="Chocolatey" />
-                        </span>
+                        <img class="d-md-none" src='@Context.GetLink("/assets/images/global-shared/logo.svg")' alt="Chocolatey" />
+                        <img class="d-none d-md-block navbar-brand-desktop" src='@Context.GetLink("/assets/images/global-shared/logo-square.svg")' alt="Chocolatey" />
                     </a>
                     <div class="d-flex align-items-center justify-content-end">
                         <label class="mb-0 me-2 d-md-none" for="themeToggle">
