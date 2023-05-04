@@ -7,19 +7,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @{
             string title = @Document.ContainsKey(Keys.Title) ? $"Chocolatey Software Docs | {Document.GetString(Keys.Title)}" : "Chocolatey Software Docs";
+            string description = @Document.ContainsKey(WebKeys.Description) ? @Document.GetString(WebKeys.Description) : "Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments.";
+            string ogImage = @Document.ContainsKey("OgImage") ? @Document.GetString("OgImage") : "https://docs.chocolatey.org/assets/images/global-shared/facebook-share.png";
         }
-        <meta name="description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
+        <meta name="description" content="@description" />
         @* Twitter Card data *@
-        <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@@chocolateynuget">
         <meta name="twitter:title" content="@title">
-        <meta name="twitter:image" content="https://docs.chocolatey.org/assets/images/global-shared/twitter-share.png">
+        @if (Document.ContainsKey("TwitterImage"))
+        {
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:image" content='@Document.GetString("TwitterImage")'>
+        }
+        else
+        {
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:image" content="https://docs.chocolatey.org/assets/images/global-shared/twitter-share.png">
+        }
         @* Open Graph data *@
         <meta property="og:title" content="@title" />
-        <meta property="og:description" content="Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments." />
+        <meta property="og:description" content="@description" />
         <meta property="og:site_name" content="Chocolatey Software" />
         <meta property="og:type" content="product" />
-        <meta property="og:image" content="https://docs.chocolatey.org/assets/images/global-shared/facebook-share.png" />
+        <meta property="og:image" content="@ogImage" />
         <meta property="og:url" content="@Context.GetLink().TrimEnd('/')@Document.GetLink()" />
         @* Additional data *@
         <meta property="product:brand" content="Chocolatey Software" />

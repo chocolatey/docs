@@ -3,6 +3,8 @@ Order: 10
 xref: ccm-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey Central Management
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-central-management-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-central-management-twitter.png
 RedirectFrom: docs/release-notes-central-management
 ---
 

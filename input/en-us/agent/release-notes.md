@@ -3,6 +3,8 @@ Order: 10
 xref: agent-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey Agent
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-twitter.png
 RedirectFrom: docs/release-notes-agent
 ---
 

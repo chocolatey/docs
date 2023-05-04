@@ -3,6 +3,8 @@ Order: 10
 xref: c4b-azure-release-notes
 Title: Release Notes
 Description: Release Notes for the Chocolatey for Business Azure Environment
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-twitter.png
 ---
 
 # Chocolatey for Business Azure Environment Release Notes

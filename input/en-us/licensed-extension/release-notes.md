@@ -2,7 +2,9 @@
 Order: 10
 xref: licensed-extension-release-notes
 Title: Release Notes
-Description: Release Notes for Chocolatey Extension
+Description: Release Notes for Chocolatey Licensed Extension
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-licensed-extension-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-licensed-extension-twitter.png
 RedirectFrom: docs/release-notes-extension
 ---
 
