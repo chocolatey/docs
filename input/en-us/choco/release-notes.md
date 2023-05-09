@@ -3,6 +3,8 @@ Order: 10
 xref: choco-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey CLI
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-cli-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-cli-twitter.png
 RedirectFrom: docs/release-notes-choco-cli
 ---
 

@@ -3,6 +3,8 @@ Order: 10
 xref: chocolateygui-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey GUI
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-twitter.png
 RedirectFrom: docs/release-notes-chocolatey-gui
 ---
 

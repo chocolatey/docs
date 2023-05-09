@@ -3,6 +3,8 @@ Order: 10
 xref: chocolatey-gui-licensed-extension-release-notes
 Title: Release Notes
 Description: Release Notes for Chocolatey GUI Extension
+OgImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-licensed-extension-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-licensed-extension-twitter.png
 ---
 
 # Chocolatey Release Notes - Chocolatey GUI Licensed Extension

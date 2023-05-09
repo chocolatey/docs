@@ -3,6 +3,8 @@ Order: 20
 xref: chococcm-release-notes
 Title: Release Notes
 Description: Release Notes for ChocoCCM
+OgImage: https://img.chocolatey.org/social-share/release-notes-choco-ccm-og.png
+TwitterImage: https://img.chocolatey.org/social-share/release-notes-choco-ccm-twitter.png
 ---
 
 # Chocolatey Release Notes - ChocoCCM
