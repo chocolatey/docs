@@ -8,10 +8,13 @@ Title: Intune Frequently Asked Questions
 
 ## General FAQs
 
-### Why does the Intune install of Chocolatey CLI require a restart of the computer
-
+### Why does the Intune install of Chocolatey CLI require a restart of the computer?
 
 During the installation of Chocolatey CLI, a number of environment variables are set or updated. This includes the `PATH` environment variable that tells Windows where to look for programs to run. The only reliable way to ensure that these are updated prior to running any subsequent Chocolatey CLI commands is to inform Intune that the package requires a restart to complete installation.
+
+### Why do I need all the Chocolatey products if I'm not using them?
+
+In order to ensure upgrades of Chocolatey behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether you think you are using them or not. This is to prevent the scenario where one of your systems have installed a Chocolatey product, but not deployed it through Intune.
 
 ## Intune Convert Command
 
