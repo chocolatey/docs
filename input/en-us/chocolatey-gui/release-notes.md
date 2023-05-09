@@ -19,6 +19,13 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 1.1.3 (May 10, 2023)
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive - see [#999](https://github.com/chocolatey/ChocolateyGUI/issues/999).
+
+
 ## 2.0.0-beta-20230426 (April 26, 2023)
 
 > :choco-warning: **WARNING**

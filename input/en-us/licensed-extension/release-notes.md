@@ -43,6 +43,13 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 5.0.3 (May 10, 2023)
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
+
+
 ## 6.0.0-beta-20230426 (April 26, 2023)
 
 > :choco-warning: **WARNING**

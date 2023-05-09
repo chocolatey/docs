@@ -21,6 +21,17 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 1.4.0 (May 10, 2023)
+
+### Bug Fix
+
+- Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
+
+### Improvement
+
+- Ensure the most recent version of Chocolatey-NuGet.Core package is being used - see [#3150](https://github.com/chocolatey/choco/issues/3150).
+
+
 ## 2.0.0-beta-20230426 (April 26, 2023)
 
 > :choco-warning: **WARNING**
