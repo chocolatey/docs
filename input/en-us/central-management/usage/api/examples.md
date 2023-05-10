@@ -261,6 +261,13 @@ function Connect-CCMServer {
         }
         $Result = Invoke-WebRequest -Uri "$($protocol)://$Name/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop
         $script:Session = $Session
+
+        $script:CcmConnection = @{
+            CcmHost = $Name
+            Protocol = $protocol
+            Session = $Session
+        }
+
     }
 }
 ```
@@ -302,14 +309,14 @@ function Get-AllComputers {
     )
 
     begin {
-        if (-not $Session) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
+        if (-not $CcmConnection['Session']) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
     }
 
     process {
         $params = @{
-            Uri        = "$($protocol)://$CcmHost/api/services/app/Computers/GetAll"
+            Uri        = "$($CcmConnection['Protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Computers/GetAll"
             Method     = 'GET'
-            WebSession = $Session
+            WebSession = $CcmConnection['Session']
         }
         $ComputerList = Invoke-RestMethod @params
 
@@ -357,16 +364,16 @@ function Test-GroupExists {
     )
 
     begin {
-        if (-not $Session) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
+        if (-not $CcmConnection['Session']) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
     }
 
 
     process {
         $params = @{
-            Uri = "$($protocol)://$CcmHost/api/services/app/Groups/GetAll"
+            Uri = "$($CcmConnection['protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Groups/GetAll"
             Method = 'GET'
             ContentType = 'application/json'
-            WebSession = $Session
+            WebSession = $CcmConnection['Session']
         }
         $result = Invoke-RestMethod @params
 
@@ -413,15 +420,15 @@ function Add-CCMGroup {
     )
 
     begin {
-        if (-not $Session) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
+        if (-not $CcmConnection['Session']) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
     }
 
     process {
         if (-not (Test-GroupExists -Group $Group)) {
             $Params = @{
-                Uri         = "$($protocol)://$CcmServerHostname/api/services/app/Groups/CreateOrEdit"
+                Uri         = "$($CcmConnection['protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Groups/CreateOrEdit"
                 Method      = 'POST'
-                WebSession  = $Session
+                WebSession  = $CcmConnection['Session']
                 ContentType = 'application/json'
                 Body        = @{
                     name        = $Group
@@ -433,14 +440,12 @@ function Add-CCMGroup {
             $null = Invoke-RestMethod @params
 
             $params = @{
-                Uri        = "$($protocol)://$CcmServerHostname/api/services/app/Groups/GetAll"
+                Uri        = "$($CcmConnection['protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Groups/GetAll"
                 Method     = "GET"
-                WebSession = $Session
+                WebSession = $CcmConnection['Session']
             }
 
-            [pscustomObject](Invoke-RestMethod @params |
-            Select-Object -ExpandProperty result |
-            Where-Object Name -EQ $Group | Select-Object Name, Id)
+            [pscustomObject](Invoke-RestMethod @params | Select-Object -ExpandProperty result | Where-Object Name -EQ $Group | Select-Object Name, Id)
         }
         else {
             Write-Warning "Group already exists, skipping creation!"
@@ -487,7 +492,7 @@ function Add-CCMGroupMember {
     )
 
     begin {
-        if (-not $Session) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
+        if (-not $CcmConnection['Session']) { throw "Not connected to CCM instance. Run Connect-CCMServer first!" }
     }
 
     process {
@@ -495,9 +500,9 @@ function Add-CCMGroupMember {
 
         #Get the ID of the group via CCM API
         $params = @{
-            Uri        = "$($protocol)://$CcmHost/api/services/app/Groups/GetAll"
+            Uri        = "$($CcmConnection['protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Groups/GetAll"
             Method     = "GET"
-            WebSession = $Session
+            WebSession = $CcmConnection['Session']
         }
 
         $GroupData = Invoke-RestMethod @params |
@@ -514,7 +519,7 @@ function Add-CCMGroupMember {
             $name = $_
             if($_ -in $CentralManagementComputers.name){
                 $c = [pscustomObject]@{
-                    computerId = $($CentralManagementComputers | Where-Object { $_.Name -eq $name}  | Select-Object -ExpandProperty Id)
+                    computerId = $CentralManagementComputers | Where-Object { $_.Name -eq $name}  | Select-Object -ExpandProperty Id
                 }
 
                 $collection.Add($c)
@@ -525,13 +530,13 @@ function Add-CCMGroupMember {
 
         #Modify group membership via CCM API
         $params = @{
-            Uri         = "$($protocol)://$CcmHost/api/services/app/Groups/CreateOrEdit"
+            Uri         = "$($CcmConnection['protocol'])://$($CcmConnection['CcmHost'])/api/services/app/Groups/CreateOrEdit"
             Method      = "POST"
-            WebSession  = $Session
+            WebSession  = $CcmConnection['Session']
             ContentType = 'application/json'
             Body        = @{
                 id        = $Id
-                name = $ccmGroupName
+                name      = $ccmGroupName
                 computers = $collection
             } | ConvertTo-Json
         }
@@ -542,7 +547,7 @@ function Add-CCMGroupMember {
             $null = Invoke-RestMethod @params -ErrorAction Stop
         }
         catch {
-            $_.Exception.Message
+            Write-Error -ErrorRecord $_
         }
     }
 }
