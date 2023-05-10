@@ -31,6 +31,13 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 1.1.2 (May 10, 2023)
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
+
+
 ## 2.0.0-beta-20230426 (April 26, 2023)
 
 > :choco-warning: **WARNING**
