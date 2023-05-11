@@ -14,7 +14,7 @@ During the installation of Chocolatey CLI, a number of environment variables are
 
 ### Why do I need all the Chocolatey products if I'm not using them?
 
-In order to ensure upgrades of Chocolatey behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether you think you are using them or not. This is to prevent the scenario where one of your systems have installed a Chocolatey product, but not deployed it through Intune.
+In order to ensure upgrades of Chocolatey behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether you think you are using them or not. Without this requirement, you run the risk of one of your systems have installed a Chocolatey product without having deployed it through Intune; this could result in the upgrade of Chocolatey failing dependency resolution.
 
 ## Intune Convert Command
 
