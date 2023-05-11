@@ -52,7 +52,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey products.
 
@@ -71,7 +71,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey Components.
 

@@ -70,7 +70,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix - Prevent error being reported when `lib` folder is not present in Chocolatey folder.
 - Fix - Fix problem with uninstalling packages that were created using the `choco sync` command.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey products.
 
@@ -89,7 +89,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancements
+### Improvements
 
 - Update to use latest beta releases of Chocolatey Components.
 - Re-enable Intune support which had been excluded in previous pre-release version.
@@ -98,7 +98,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ## 5.0.2 (March 28, 2023)
 
-### Enhancements
+### Improvements
 
 - [Security] Bump LiteDB dependency to 5.0.15 - see [licensed #340](https://github.com/chocolatey/chocolatey-licensed-issues/issues/340).
 - [Security] Bump Newtonsoft.Json dependency to 13.0.1 - see [licensed #339](https://github.com/chocolatey/chocolatey-licensed-issues/issues/339).
@@ -143,7 +143,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Improvements made to warnings that are emitted when a dependency fails to be resolved during a `choco upgrade` or `choco install`.
 

@@ -60,7 +60,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
 - Fix - Ensure that correct `count` query is used when querying oData feeds.
 
-### Enhancements
+### Improvements
 
 - PowerShell tab completion should only show commands/options for currently installed license - see [#2887](https://github.com/chocolatey/choco/issues/2887).
 - Alphabetically sort the output from the `feature` `config` `source` and `apikey` list command - see [#2814](https://github.com/chocolatey/choco/issues/2814).
@@ -93,7 +93,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
 - Fix - Prevent install/upgrade failure when using multiple sources and one or more of them cannot be reached.
 
-### Enhancements
+### Improvements
 
 - Chocolatey products should no longer warn about possible errors when upgrading from versions before 1.0.0 - see [#3097](https://github.com/chocolatey/choco/issues/3097).
 - All the different ways that a proxy can be configured (environment variables, chocolatey.config file, command arguments) have been tested and verified to work as expected.
@@ -135,7 +135,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 - `choco config list --limit-output` does not limit output as expected - see [#2013](https://github.com/chocolatey/choco/issues/2013).
 - Change default behavior of `choco list` to be local only - see [#158](https://github.com/chocolatey/choco/issues/158).
 
-### Enhancements
+### Improvements
 
 - Ability to specify a default source when doing `choco push` - see [#62](https://github.com/chocolatey/choco/issues/62).
 - Remove re-instated Chocolatey commands which were added in v1.0.1 - see [#2678](https://github.com/chocolatey/choco/issues/2678).
@@ -170,7 +170,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix - Fix `choco search` command that was providing invalid results when using the `--version` option.
 - Fix - Fix dependency resolution problems during execution of `choco upgrade` and `choco install`.
 
-### Enhancements
+### Improvements
 
 - Add back support for the `--disable-repository-optimizations` option which was missing in previous alpha releases.
 - Improvements made to warnings that are emitted when a dependency fails to be resolved during a `choco upgrade` or `choco install`.
@@ -201,7 +201,7 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 - Introduce upper limit when querying for packages and warn when threshold is close to being hit - see [3014](https://github.com/chocolatey/choco/issues/3014).
 - Disallow passing in a path to a NUPKG file directly when installing/upgrading packages - see [3008](https://github.com/chocolatey/choco/issues/3008).
 
-### Enhancement
+### Improvement
 
 - Add back validation messages after upgrade to NuGet v3+ - see [3000](https://github.com/chocolatey/choco/issues/3000).
 
@@ -252,7 +252,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix - `choco pack` command fails with error on Linux when using a file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
 - Fix - Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
 
-### Enhancements
+### Improvements
 
 - Upgrade to target version 6.4.0 of NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
 - Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).

@@ -147,7 +147,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
   - Users who are not a member of the CCM Administrator role will only be shown a warning that the passphrase needs to be changed and to contact their Administrator to do so.
   - The links provided in email activation or password reset emails that were sent prior to the passphrase change will no longer be valid. The user clicking the link will be directed to a page where they can request them again.
 
-### Enhancements
+### Improvements
 
 - Web - Ability to add sensitive variables to advanced PowerShell deployment steps - see [documentation](https://docs.chocolatey.org/en-us/central-management/usage/website/sensitive-variables)
 - API - Hide token API endpoints from Swagger documentation.
@@ -234,7 +234,7 @@ A short video explaining what is included in this release can be found here:
   - This can be [changed](https://docs.chocolatey.org/en-us/central-management/setup/website#step-4.5-audit-retention) within the Administration | Settings screen of the CCM Web Application
   - If you wish to retain all your current audit logs, we recommend that you back up the AbpAuditLogs table prior to upgrading to this release
 
-### Enhancements
+### Improvements
 
 - All CCM Components have been updated to use .NET Core 3.1 which is supported until [December 2022](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Previous versions of CCM used NET Core 2.2 which Microsoft ended support for in [December 2019](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)
 - Due to this update, the CCM Website now uses the in-process hosting model within IIS. This is enabled by [default starting with ASP.NET Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/in-process-hosting?view=aspnetcore-5.0#enable-in-process-hosting).

@@ -44,7 +44,7 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancements
+### Improvements
 
 - Added handling for large package download counts, which causes an exception to be thrown when number is too large.
 - Update to use latest beta releases of Chocolatey products.
@@ -68,7 +68,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey Components.
 

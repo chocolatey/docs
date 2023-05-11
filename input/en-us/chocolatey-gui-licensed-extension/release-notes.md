@@ -47,7 +47,7 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey products.
 
@@ -66,7 +66,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey Components.
 
@@ -85,7 +85,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-### Enhancement
+### Improvement
 
 - Update to use latest beta releases of Chocolatey Components.
 
