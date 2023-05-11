@@ -88,10 +88,6 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
 ~~~
 
- downloading multiple packages, and you use `--version=1.0.0`, it is
- going to look for and try to download version 1.0.0 of every package
-
-
  -?, --help, -h
      Prints out the help menu.
 
