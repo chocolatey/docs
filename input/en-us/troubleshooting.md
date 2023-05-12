@@ -600,3 +600,18 @@ By default powershell has "QuickEdit" mode and "Insert" mode enabled, which lead
 To disable these options, right-click on the PowerShell-Logo in the top-left of your terminal window, then select 'Properties'.
 
 Source: https://serverfault.com/questions/204150/sometimes-powershell-stops-sending-output-until-i-press-enter-why
+
+### SecurityProtocol was set to (some value), resetting to SystemDefault
+
+This warning can show up with a few different forms, such as:
+
+* `SecurityProtocol was set to Tls12, resetting to SystemDefault`
+* `SecurityProtocol was set to Tls, Tls11, Tls12, resetting to SystemDefault`
+
+This warning indicates that a package script, hook script, or an extension changed the TLS security protocol, usually during a package install, uninstall, or upgrade.
+Be wary of any packages that do this: depending on what it was set to, the package may be explicitly allowing older TLS versions than the system is configured to allow by default.
+This can be a security hazard, especially if the package is installing software over the Internet.
+
+In most cases, packages and extensions should not be modifying the security protocol.
+Rather, you should manage the allowed TLS versions through your operating system; as of v2.0.0, Chocolatey CLI will defer to the operating system configuration for the allowed TLS versions.
+See the [TLS Best Practices documentation](https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls) provided by Microsoft for more detailed information.
