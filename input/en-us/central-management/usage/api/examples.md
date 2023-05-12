@@ -247,8 +247,8 @@ function Connect-CCMServer {
     )
 
     process {
-        $script:CcmHost = $Name
-        $script:protocol = if($UseSSL) {
+        $CcmHost = $Name
+        $protocol = if($UseSSL) {
             'https'
         }
         else {
