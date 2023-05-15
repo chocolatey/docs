@@ -99,7 +99,16 @@
                         <div class="col-md-3 col-xl-2 p-0 text-bg-theme-elevation-1 border-end">
                             <div id="leftSidebarNav" class="sticky-md-top collapse-y-height">
                                 @{
+                                    string homePage = "Chocolatey - Software Management for Windows";
+                                    string highlightsPage = "Highlights";
+
                                     IDocument root = OutputPages["en-us/index.html"].First();
+
+                                    IDocument[] featuredHighlight = Outputs
+                                        .FromPipeline("Content")
+                                        .FilterSources("en-us/highlights/highlight.md")
+                                        .Where(x => x.GetBool("ShowInHighlight", true))
+                                        .ToArray();
                                 }
                                 <nav class="navbar navbar-expand-md p-0">
                                     <div id="leftSidebar" class="collapse navbar-collapse">
@@ -109,6 +118,16 @@
                                             </div>
                                         </div>
                                         <ul class="navbar-nav">
+                                            @if (featuredHighlight.Any())
+                                            {
+                                                <li class="bg-gradient-primary-light-elevation-1 p-3">
+                                                    <div class="card card-body card-link">
+                                                        <p class="h3">@featuredHighlight.First().GetString("Title")</p>
+                                                        @Html.Raw(featuredHighlight.First().GetContentStringAsync().Result)
+                                                        <a href='@Context.GetLink(featuredHighlight.First().GetString("Link"))' class="d-block mt-n2 stretched-link link-primary">@featuredHighlight.First().GetString("LinkText")<i class="fas fa-arrow-right ms-1"></i></a>
+                                                    </div>
+                                                </li>
+                                            }
                                             <li class="nav-item nav-item-blue">
                                                 @if(root.ShowLink())
                                                 {
@@ -240,65 +259,91 @@
                                 </nav>
                             </div>
                         </div>
-                        <div class="col-md-9 col-xl-10 py-3 py-md-5 mx-auto">
-                            <div class="ms-md-4 d-xl-none">
+                        <div class="col-md-9 col-xl-10 py-3 py-md-5 px-md-4 mx-auto">
+                            <div class="container d-xl-none">
                                 @Html.Partial("_Breadcrumbs")
                             </div>
-                            <div class="row">
-                                <div id="mainContent" class="col-xl-10 ps-md-5 order-2 order-xl-1">
-                                    <div class="d-none d-xl-block">
-                                        @Html.Partial("_Breadcrumbs")
-                                    </div>
-                                    @RenderBody()
-                                    @if (!Document.GetBool("HideChildPages", false))
-                                    {
-                                        @Html.Partial("_ChildPages")
-                                    }
-                                </div>
-                                @{
-                                    IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
-                                    if (headings.Count > 1)
-                                    {
-                                        <div id="rightSidebarNav" class="col-xl-2 ps-md-5 ps-xl-3 order-1 order-xl-2">
-                                            <button class="btn btn-link btn-collapse fw-bold w-100 d-xl-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
-                                            <div id="rightSidebar" class="sticky-xl-top collapse collapse-lg">
-                                                <div class="card card-body py-0 px-xl-0 mb-3 border-0">
-                                                    @if (Document.ContainsKey("EditLink"))
-                                                    {
-                                                        <p class="fw-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fa-solid fa-pencil" aria-hidden="true"></i> Edit This Page</a></p>
-                                                        <hr class="m-0" />
-                                                    }
-                                                    <p class="fw-bold pt-3 mb-2">On This Page</p>
-                                                    <ul class="nav nav-scrollspy flex-column pb-3">
-                                                        @foreach (IDocument heading in headings)
+                            <div class="container">
+                                <div class="row">
+                                    <div id="mainContent" class="col-xl-10 order-2 order-xl-1">
+                                        <div class="d-none d-xl-block">
+                                            @Html.Partial("_Breadcrumbs")
+                                        </div>
+                                        @if (Document.GetTitle() == highlightsPage)
+                                        {
+                                            IDocument highlightRoot = OutputPages["en-us/highlights/index.html"].First();
+                                            @foreach (IDocument document in OutputPages.GetChildrenOf(highlightRoot).Where(x => x.GetBool("IsActive", true) && !x.GetBool("ShowInHighlight", false)).OrderByDescending(x => x.GetDateTime("PostedDateTime")))
+                                            {
+                                                DocumentList<IDocument> documentHighlightChildren = OutputPages.GetChildrenOf(document);
+
+                                                <h2>@document.GetDateTime("PostedDateTime").ToUniversalTime().ToString("MMMM yyyy")</h2>
+                                                <div class="card card-body card-border-top p-md-5 overflow-hidden postition-relative">
+                                                    <ul class="fa-ul mb-0 ms-4">
+                                                        @foreach (IDocument child in documentHighlightChildren.Where(x => x.GetBool("IsActive", true)).OrderByDescending(x => x.GetDateTime("PostedDateTime")))
                                                         {
-                                                            var level = "";
-                                                            switch(heading.GetString(Statiq.Html.HtmlKeys.Level))
-                                                            {
-                                                                case "1":
-                                                                    level = "d-none";
-                                                                    break;
-                                                                case "3":
-                                                                    level = "ps-4";
-                                                                    break;
-                                                                case "4":
-                                                                    level = "ps-5";
-                                                                    break;
-                                                                case "5":
-                                                                    level = "ps-c4-5";
-                                                                    break;
-                                                                default:
-                                                                    level = level;
-                                                                    break;
-                                                            }
-                                                            <li class="nav-item"><a class="nav-link @level" href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
+                                                            <li class='@(child == documentHighlightChildren.First() ? "mt-3" : "mt-c2")'>
+                                                                <span class="fa-li mt-2"><i class="fa-solid fa-play text-primary"></i></span>
+                                                                <h3 class="d-anchor-none my-0">@child.GetString("Title")</h3>
+                                                                <p class="text-secondary"><small><i>Posted on @child.GetDateTime("PostedDateTime").ToUniversalTime().ToString("dddd, %d MMMM yyyy")</i></small></p>
+                                                                @Html.Raw(child.GetContentStringAsync().Result)
+                                                                <a href='@Context.GetLink(child.GetString("Link"))' class="d-block mt-n2 p-0">@child.GetString("LinkText")<i class="fas fa-arrow-right ms-1"></i></a>
+                                                            </li>
                                                         }
                                                     </ul>
                                                 </div>
+                                            }
+                                        }
+                                        @RenderBody()
+                                        @if (!Document.GetBool("HideChildPages", false) && Document.GetTitle() != homePage)
+                                        {
+                                            @Html.Partial("_ChildPages")
+                                        }
+                                    </div>
+                                    @{
+                                        IReadOnlyList<IDocument> headings = Document.GetDocumentList(Statiq.Html.HtmlKeys.Headings);
+                                        if (headings.Count > 1)
+                                        {
+                                            <div id="rightSidebarNav" class="col-xl-2 ps-xl-3 order-1 order-xl-2">
+                                                <button class="btn btn-link btn-collapse fw-bold w-100 d-xl-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
+                                                <div id="rightSidebar" class="sticky-xl-top collapse collapse-lg">
+                                                    <div class="card card-body py-0 px-xl-0 mb-3 border-0">
+                                                        @if (Document.ContainsKey("EditLink"))
+                                                        {
+                                                            <p class="fw-bold pt-3"><a href="@Document.GetString("EditLink")"><i class="fa-solid fa-pencil" aria-hidden="true"></i> Edit This Page</a></p>
+                                                            <hr class="m-0" />
+                                                        }
+                                                        <p class="fw-bold pt-3 mb-2">On This Page</p>
+                                                        <ul class="nav nav-scrollspy flex-column pb-3">
+                                                            @foreach (IDocument heading in headings)
+                                                            {
+                                                                var level = "";
+                                                                switch(heading.GetString(Statiq.Html.HtmlKeys.Level))
+                                                                {
+                                                                    case "1":
+                                                                        level = "d-none";
+                                                                        break;
+                                                                    case "3":
+                                                                        level = "ps-4";
+                                                                        break;
+                                                                    case "4":
+                                                                        level = "ps-5";
+                                                                        break;
+                                                                    case "5":
+                                                                        level = "ps-c4-5";
+                                                                        break;
+                                                                    default:
+                                                                        level = level;
+                                                                        break;
+                                                                }
+                                                                <li class="nav-item"><a class="nav-link @level" href="#@(heading.GetString(Statiq.Html.HtmlKeys.HeadingId))">@(await heading.GetContentStringAsync())</a></li>
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        }
                                     }
-                                }
+                                </div>
                             </div>
                         </div>
                     </div>
