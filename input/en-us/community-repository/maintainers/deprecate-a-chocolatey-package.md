@@ -15,7 +15,7 @@ From time to time, a previously approved Chocolatey Package needs to be deprecat
 * It is an older package that no longer follows the [Package Guidelines](xref:create-packages).
 * Its package id has been changed to something that better fits with the [package naming guidelines](xref:create-packages#naming-your-package).
 
-All versions of this package could simply be unlisted from chocolatey.org, meaning that they could no longer be installed, however, this solution is not ideal.  Any user who previously installed this package, and added it as part of an installation script, would get an error the next time that they tried to install it, and this is far from ideal.
+All versions of this package could simply be [unlisted](xref:list-unlist-a-package) from chocolatey.org, meaning that they could no longer be installed, however, this solution is not ideal.  Any user who previously installed this package, and added it as part of an installation script, would get an error the next time that they tried to install it, and this is far from ideal.
 
 When a package needs to be deprecated, it needs to be handled in such a way that existing users will continue to be able to use the old package id, but take advantage of the replacement package, if there is one.
 
@@ -29,6 +29,6 @@ When deprecating a Chocolatey Package, the following steps should be followed:
 * **Remove all files** except the `.nuspec` from the Chocolatey Package.
 * Replace `<files>...</files>` section in `.nuspec` with `<files />` tag to prevent any file from being included with the package.
 * **Remove the iconUrl**.
-* **Unlist all versions** from the package gallery, **except** the final deprecated version. The final deprecated version is required so that there is an update path to the new package.
+* **[Unlist all versions](xref:list-unlist-a-package)** from the package gallery, **except** the final deprecated version. The final deprecated version is required so that there is an update path to the new package.
 
 By following this process, any existing users who try to update the old package will automatically get the new package, as it will be installed as a dependency.
