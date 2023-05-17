@@ -79,6 +79,19 @@ The image shows an installation without and with package reducer. The difference
 >
 > To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 
+### Package-specific Control Of Package Reducer
+
+It is possible to control Package Reducer at a package level. This is useful where you have enabled `reduceInstalledPackageSpaceUsage` globally, but wish to maintain the
+files within a particular package (perhaps a portable package, or binary package). There are 2 options available at the package level to control behavior:
+
+#### Skip Entire Reducer Functionality
+
+To completely bypass Package Reducer during a `choco install` or `choco upgrade` operation, add a `.SkipReducer` file to the root of your package.
+
+#### Skip Extracted Files
+
+To bypass reducer for extracted files in a package, add a `.SkipReducerFiles` file to your package. This is the same as enabling `ReduceOnlyNupkgSize`.
+
 ### Options and Switches
 
 Global Config Setting:
@@ -108,7 +121,6 @@ Global Config Setting:
        'reduceOnlyNupkgSize' set to 'False'. Licensed editions only (version -
        1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
 ~~~
-
 
 ### FAQ
 
