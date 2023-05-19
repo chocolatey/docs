@@ -90,11 +90,11 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-## Enhancement
+### Improvement
 
 - Migrate from Rx-* packages to System.Reactive.* packages.
 
-## Bug Fix
+### Bug Fix
 
 - Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
 
