@@ -43,6 +43,10 @@ As illustrated in the diagram above, there are four main components to a Chocola
 
 ## Requirements
 
+> :choco-danger: **ATTENTION**
+>
+> The server used for your Chocolatey For Business environment should be a **_fresh, dedicated machine_** that serves no other purpose in your organization. Installation of C4B on a server running mission critical enterprise applications is **NOT** recommended.
+
 Below are the minimum requirements for setting up your C4B server via this guide:
 
 - Windows Server 2019+ (ideally, Windows Server 2022)
