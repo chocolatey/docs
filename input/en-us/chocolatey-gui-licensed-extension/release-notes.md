@@ -26,6 +26,13 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0 (May 31, 2023)
+
+### Improvement
+
+- Update to use latest releases of Chocolatey products.
+
+
 ## 1.0.3 (May 10, 2023)
 
 ### Bug Fix

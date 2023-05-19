@@ -21,6 +21,61 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.0.0 (May 31, 2023)
+
+### Breaking Changes
+
+- Change behavior of `choco list` to be local only - see [#158](https://github.com/chocolatey/choco/issues/158).
+- Prevent usage of leading 0 in package version numbers - see [#1174](https://github.com/chocolatey/choco/issues/1174).
+- `choco config list --limit-output` does not limit output as expected - see [#2013](https://github.com/chocolatey/choco/issues/2013).
+- Remove `Get-BinRoot` Chocolatey helper function - see [#2623](https://github.com/chocolatey/choco/issues/2623).
+- Remove the default push location when uploading/pushing packages - see [#2629](https://github.com/chocolatey/choco/issues/2629).
+- Remove deprecated configurations from Config - see [#2630](https://github.com/chocolatey/choco/issues/2630).
+- Remove deprecated Chocolatey shims (chocolatey, cinst, clist, cpush, cuninst, cup) - see [#2642](https://github.com/chocolatey/choco/issues/2642).
+- Upgrade to target version 4.8 of the .NET Framework - see [#2738](https://github.com/chocolatey/choco/issues/2738).
+- Fix spelling mistake in the `extract_binary_file_from_assembly` function - see [#2776](https://github.com/chocolatey/choco/issues/2776).
+- Remove side-by-side installs - see [#2788](https://github.com/chocolatey/choco/issues/2788).
+- Migrate from Rx-* packages to System.Reactive.* packages - see [#2896](https://github.com/chocolatey/choco/issues/2896).
+- Switch to use only the recommended TLS versions without fallback to earlier insecure options - see [#2902](https://github.com/chocolatey/choco/issues/2902).
+- Rename or migrate away from custom HashCode class - see [#2909](https://github.com/chocolatey/choco/issues/2909).
+- Remove WebPI alternative source - see [#2980](https://github.com/chocolatey/choco/issues/2980).
+- Remove the `--remove` option in `apikey` command and replace with `remove` subcommand - see [#2984](https://github.com/chocolatey/choco/issues/2984).
+- `choco config list` should only include information about config - see [#2986](https://github.com/chocolatey/choco/issues/2986).
+- Disallow passing in a path to a NUPKG file directly when installing/upgrading packages - see [#3008](https://github.com/chocolatey/choco/issues/3008).
+- Introduce upper limit when querying for packages and warn when threshold is close to being hit - see [#3014](https://github.com/chocolatey/choco/issues/3014).
+
+### Bug Fixes
+
+- Fix - NuGet does not deal with blocking version conflicts from existing installed packages - see [#116](https://github.com/chocolatey/choco/issues/116).
+- Fix - NuGet doesn't handle conflicts of versions in an install request when HighestVersion dependency - see [#507](https://github.com/chocolatey/choco/issues/507).
+- Fix - Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
+- Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
+- Fix - `choco pack` command fails with error on Linux when using file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
+- Fix - `choco info` command with no package id defined returns 0 packages found rather than provide a warning - see [#2899](https://github.com/chocolatey/choco/issues/2899).
+
+### Documentation
+
+- Fix broken URLs in repository README file - see [#2888](https://github.com/chocolatey/choco/pull/2888).
+- Update Minimum Windows Server OS to Server 2008 R2 - see [#2903](https://github.com/chocolatey/choco/issues/2903).
+- Update package files to reflect current Chocolatey Community Repository moderation requirements - see [#2920](https://github.com/chocolatey/choco/issues/2920).
+- Fix typos and spelling errors - see [#2990](https://github.com/chocolatey/choco/pull/2990).
+
+### Improvements
+
+- Ability to specify a default source when doing `choco push` - see [#62](https://github.com/chocolatey/choco/issues/62).
+- Upgrade to target version 3.1.0 of Chocolatey.NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
+- Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).
+- Ensure that the client version used when querying a repository is the version of the underlying NuGet.Client library - see [#1935](https://github.com/chocolatey/choco/issues/1935).
+- Alphabetically sort the output from the `feature` `config` `source` and `apikey` list command - see [#2814](https://github.com/chocolatey/choco/issues/2814).
+- Add ability to get status of an individual feature (`choco feature get`) - see [#2815](https://github.com/chocolatey/choco/issues/2815).
+- Provide ability to navigate directly to online version of help documentation for a command - see [#2867](https://github.com/chocolatey/choco/issues/2867).
+- PowerShell tab completion should only show commands/options for currently installed license - see [#2887](https://github.com/chocolatey/choco/issues/2887).
+- Adjust visibility / remove non-interface public methods on CygwinService - see [#3028](https://github.com/chocolatey/choco/issues/3028).
+- MSI Build should be present in this repository - see [#3061](https://github.com/chocolatey/choco/issues/3061).
+- Chocolatey products should no longer warn about possible errors when upgrading from versions before 1.0.0 - see [#3097](https://github.com/chocolatey/choco/issues/3097).
+- Sort list of installed/upgraded packages - see [#3112](https://github.com/chocolatey/choco/issues/3112).
+
+
 ## 1.4.0 (May 10, 2023)
 
 ### Bug Fix
