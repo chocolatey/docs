@@ -13,6 +13,32 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 >
 > Issue links may not be publicly available at this time.
 
+## 0.18.1 (May 25, 2023)
+
+### Bug Fix
+
+- Updating Jenkins breaks AppGateway Health Checks - see [#126](https://github.com/chocolatey/c4b-azure/issues/126)
+
+### Improvements
+
+- Update Chocolatey software components to the latest available versions - see [#128](https://github.com/chocolatey/c4b-azure/issues/128)
+- Update ARM Template Resource API Versions - see [#129](https://github.com/chocolatey/c4b-azure/issues/129)
+- Update Jenkins Plugins and match selection in C4B Quick Start - see [#131](https://github.com/chocolatey/c4b-azure/issues/131)
+
+### Bundled Version Update
+
+| Package                 | Version       |
+|-------------------------|---------------|
+| chocolatey              | 1.4.0         |
+| chocolatey.extension    | 5.0.3         |
+| chocolatey-agent        | 1.1.2         |
+| chocolateygui           | 1.1.3         |
+| chocolateygui.extension | 1.0.3         |
+| jenkins                 | 2.387.2       |
+| jenkins-set-prefix.hook | 1.0.0 (New)   |
+| nexus-repository        | 3.54.1.01     |
+| Temurin11jre            | 11.0.19.700   |
+
 ## 0.18.0 (February 21, 2023)
 
 ### Improvement
