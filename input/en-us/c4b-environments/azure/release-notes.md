@@ -17,13 +17,13 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 
 ### Bug Fix
 
-- Updating Jenkins breaks AppGateway Health Checks - see [#126](https://github.com/chocolatey/c4b-azure/issues/126)
+- Fix - Updating Jenkins breaks AppGateway Health Checks - see [#126](https://github.com/chocolatey/c4b-azure/issues/126).
 
 ### Improvements
 
-- Update Chocolatey software components to the latest available versions - see [#128](https://github.com/chocolatey/c4b-azure/issues/128)
-- Update ARM Template Resource API Versions - see [#129](https://github.com/chocolatey/c4b-azure/issues/129)
-- Update Jenkins Plugins and match selection in C4B Quick Start - see [#131](https://github.com/chocolatey/c4b-azure/issues/131)
+- Update Chocolatey software components to the latest available versions - see [#128](https://github.com/chocolatey/c4b-azure/issues/128).
+- Update ARM Template Resource API Versions - see [#129](https://github.com/chocolatey/c4b-azure/issues/129).
+- Update Jenkins Plugins and match selection in C4B Quick Start - see [#131](https://github.com/chocolatey/c4b-azure/issues/131).
 
 ### Bundled Version Update
 
