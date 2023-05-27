@@ -25,11 +25,7 @@ The Intune commands need to know what your Intune tenant is, and there are two o
 
 To push packages for the first time, you will need all of the Chocolatey products to be in the same directory as the Chocolatey package you want to push. If you don't already have these downloaded, you can download it to the current directory with the command:
 
-~~~sh
-# Architect license
-> choco download chocolatey chocolatey.extension chocolateygui --ignore-dependencies
-# Business license
-> choco download chocolatey chocolatey.extension chocolateygui chocolateygui.extension chocolatey-agent --ignore-dependencies
-~~~
+<?! Include "../../../shared/intune-download-architect.txt" /?>
+<?! Include "../../../shared/intune-download-business.txt" /?>
 
 Additionally, it is recommended to have already installed the Chocolatey packages `intunewinapputil` and `azcopy10` before converting or pushing other Chocolatey packages. If these do not exist, Chocolatey will try to install them from available sources.

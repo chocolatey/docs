@@ -1,0 +1,1 @@
+* If you are using a Business license, run `choco download chocolatey chocolatey.extension chocolateygui chocolateygui.extension chocolatey-agent --ignore-dependencies`

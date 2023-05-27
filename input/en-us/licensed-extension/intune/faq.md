@@ -8,22 +8,21 @@ Title: Intune Frequently Asked Questions
 
 ## General FAQs
 
-### Why does the Intune install of Chocolatey CLI require a restart of the computer?
+### Why Does the Intune Install of Chocolatey CLI Require a Restart of the Computer?
 
 During the installation of Chocolatey CLI, a number of environment variables are set or updated. This includes the `PATH` environment variable that tells Windows where to look for programs to run. The only reliable way to ensure that these are updated prior to running any subsequent Chocolatey CLI commands is to inform Intune that the package requires a restart to complete installation.
 
-### Why do I need all the Chocolatey products if I'm not using them?
+### Why Do I Need All of the Chocolatey Products If I'm Not Using them?
 
-In order to ensure upgrades of Chocolatey behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether they are curently being used or not. Without this requirement, you run the risk of one of your systems having installed a Chocolatey product without having deployed it through Intune; this could result in upgrades of any Chocolatey components failing due to an inability to find necessary dependencies.
+In order to ensure upgrades of Chocolatey CLI behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether they are curently being used or not. Without this requirement, deployments through Intune could result in upgrades of any Chocolatey components failing due to an inability to find required dependencies.
 
 ## Intune Convert Command
 
-### Do I need to call convert for all dependencies of a Chocolatey package?
+### Do I Need to Use `choco convert` For All Dependencies of a Chocolatey Package?
 
 If a Chocolatey package has dependencies, Chocolatey CLI will convert each of them to a Chocolatey Intune package.
 
 ### Must I download all of the Chocolatey package dependencies before conversion?
-
 
 It is recommended that all package dependencies are converted to ensure that the package installs and upgrades correctly, and to ensure the software functions as intended. If the dependencies do not exist either locally or in your Intune tenant you may be prevented from pushing the Chocolatey package.
 
