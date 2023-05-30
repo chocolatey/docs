@@ -65,7 +65,8 @@ When you are ready for full deployment to all computers, you need to update the 
 Due to the related dependencies and how they are typically specific across major versions of Chocolatey products, a specific upgrade process must be followed.
 For example, when upgrading from **v1.x** to a **v2.x** version of a Chocolatey product, the process is:
 
-1. Ensure you are on the latest stable versions of the Chocolatey products you have deployed. This will be **v1.x** version of Chocolatey CLI, **v5.x** version of Chocolatey Licensed Extension, **v1.x** version of Chocolatey GUI, **v1.x** version of Chocolatey GUI Licensed Extension, and **v1.x** version of Chocolatey Agent.
+1. Ensure you are on the latest stable versions of the Chocolatey products for your current major version.
+   For **v1.x** of Chocolatey CLI, this will be **v1.4.0** of Chocolatey CLI, **v5.0.3** of Chocolatey Licensed Extension, **v1.1.3** version of Chocolatey GUI, **v1.0.3** of Chocolatey GUI Licensed Extension, and **v1.1.2** of Chocolatey Agent.
 1. Verify what your "Chocolatey License" package version is in Intune (It will be in the format of `Year.Month.Day.NodeCount` with leading zeroes. For example a 100 node count license expiring June 15 2024 will be version 2024.06.15.100).
 1. Ensure you have downloaded all of the Chocolatey products to your working directory.
   <?! Include "../../../shared/intune-download-architect.txt" /?>
