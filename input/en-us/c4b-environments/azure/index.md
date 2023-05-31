@@ -269,6 +269,36 @@ This is based on:
 
 ## Common Errors and Resolutions
 
+### Jenkins jobs fail to run after upgrade to Chocolatey CLI v2.0.0
+
+As of version 2.0.0 of Chocolatey CLI, the `choco list` command only lists local packages. The Jenkins scripts included in the C4B Azure Environment prior to version 0.19.0 used this command when interrogating the environment's Nexus repositories. This results in the Jenkins jobs that use these scripts failing to run after updating Chocolatey CLI on ChocoServer itself to version 2.0.0 or above.
+
+To fix these scripts, you need to install a package called `chocolatey-licensed-jenkins-jobs` on ChocoServer. Start by internalizing it:
+
+1. Ensure you have your login credentials for Jenkins and Chocolatey Central Management, as described in the [Accessing Services](#accessing-services) section.
+1. Log into Jenkins at `https://<FQDN>/jenkins`
+1. Click the green "play" triangle to the right of the `Internalize packages from the Chocolatey Community and Licensed Repositories` job
+
+    ![Vault Access Policies](/assets/images/c4b-azure/Jenkins-Play-Button.png)
+
+1. Enter `chocolatey-licensed-jenkins-jobs` under the `P_PKG_LIST` parameter
+1. Change the `P_DST_URL` parameter so that it ends with `ChocolateyInternal` rather than `ChocolateyTest`, this is being changed because the job that promotes packages between these repositories will not work if you have already upgraded to Chocolatey CLI v2.0.0 or above
+1. Click `Build`
+
+    ![Vault Access Policies](/assets/images/c4b-azure/Jenkins-Job-Fix-Internalize.png)
+
+> :choco-info: **NOTE**
+>
+> You may wish to run this job a second time, leaving the `P_DST_URL` as its default value. This will allow future updates to the `chocolatey-licensed-jenkins-jobs` package to be automatically internalized.
+
+Now you need to deploy the `chocolatey-licensed-jenkins-jobs` package to ChocoServer:
+
+1. Log into Chocolatey Central Management at `https://<FQDN>/`
+1. Navigate to `Groups` and create a group the contains only ChocoServer if that does not already exist
+1. Create a [deployment](xref:ccm-deployments) that targets the group containing ChocoServer
+1. Add a basic step, selecting the `choco install` command and specifying the package name `chocolatey-licensed-jenkins-jobs`
+1. Move this deployment to the Ready [state](xref:ccm-deployments#deployment-states) and then run it
+
 ### Status Message: Exist soft deleted vault with the same name.  (Code:ConflictError)
 
 This can happen when you've deployed a Chocolatey for Business Azure Environment, deleted the Resource Group, and then redeployed it with the same name.
