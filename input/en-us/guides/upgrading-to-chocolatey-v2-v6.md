@@ -169,7 +169,8 @@ To upgrade, you need to ensure you are at the latest stable version of the Choco
 
 There are two steps to go through, depending on whether you have any of the Chocolatey 2.0.0 or 6.0.0 pre-release products installed.
 
-<video class="img-fluid" width="800" height="594" poster="/assets/images/chocolatey-upgrade-to-2-banner.png" autoplay muted loop>
+<video class="img-fluid" width="800" height="594" poster="/assets/images/chocolatey-upgrade-to-2-banner.png" controls preload="none">
+
    <source src="/assets/images/chocolatey-upgrade-to-2.mp4" type="video/mp4">
 </video>
 
