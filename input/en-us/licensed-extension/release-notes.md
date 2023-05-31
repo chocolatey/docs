@@ -45,6 +45,10 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ## 6.0.0 (May 31, 2023)
 
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 5.x and earlier versions to 6.0.0.
+
 ### Breaking Changes
 
 - Upgrade to target version 4.8 of the .NET Framework.
