@@ -23,6 +23,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 ## 2.0.0 (May 31, 2023)
 
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.0.0.
+
 ### Breaking Changes
 
 - Change behavior of `choco list` to be local only - see [#158](https://github.com/chocolatey/choco/issues/158).

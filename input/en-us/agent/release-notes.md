@@ -33,6 +33,10 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ## 2.0.0 (May 31, 2023)
 
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.0.0.
+
 ### Breaking Changes
 
 - Upgrade to target version 4.8 of the .NET Framework.

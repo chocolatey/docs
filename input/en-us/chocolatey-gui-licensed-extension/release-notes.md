@@ -28,6 +28,10 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 ## 2.0.0 (May 31, 2023)
 
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.0.0.
+
 ### Improvement
 
 - Update to use latest releases of Chocolatey products.
