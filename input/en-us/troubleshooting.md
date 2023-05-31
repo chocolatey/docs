@@ -22,9 +22,16 @@ Also consider the [frequently asked questions](xref:faqs).
 
 ### The request was aborted: Could not create SSL/TLS secure channel
 
-If you see the following: Exception calling "DownloadString" with "1" argument(s): "The request was aborted: Could not create SSL/TLS secure channel." then you are likely running an older machine that needs to be upgraded to be able to use TLS 1.2 at a minimum.
+If you see the following error:
 
-community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/. The post provides options if you have older clients that need to install Chocolatey.
+```sh
+Exception calling "DownloadString" with "1" argument(s): "The request was aborted: Could not create SSL/TLS secure channel."
+```
+
+The [Chocolatey Community Repository](https://community.chocolatey.org) now requires TLS 1.2 as a minimum, as mentioned in [this blog post](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/).
+
+If you see this error when attempting to download Chocolatey CLI or any other packages from the Chocolatey Community Repository, you are likely running an older operating system that needs to be upgraded to be able to use TLS 1.2 as a minimum.
+See the [Microsoft documentation on enabling TLS 1.2 on older operating systems](https://learn.microsoft.com/en-us/mem/configmgr/core/plan-design/security/enable-tls-1-2-client#bkmk_winhttp).
 
 ### The underlying connection was closed
 

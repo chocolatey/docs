@@ -2,9 +2,15 @@
 
 Some of the Chocolatey component packages have dependencies on other Chocolatey components.
 The following table aims to illustrate those dependencies, based on the latest shipped version of each component.
+Please refer to our [Support Lifecycle information](xref:chocolatey-components-dependencies-and-support-lifecycle#product-support-lifecycle) for details on which versions are supported for licensed and open source customers.
 
 | Package Name / Dependency      | chocolatey  | chocolatey.extension | chocolateygui |
 |------------------------------- |-------------|----------------------|---------------|
+| chocolatey v2.0.0              |             |                      |               |
+| chocolatey.extension v6.0.0    | v2.0.0      |                      |               |
+| chocolatey-agent v2.0.0        |             | v6.0.0               |               |
+| chocolateygui v2.0.0           | v2.0.0      |                      |               |
+| chocolateygui.extension v2.0.0 |             | v6.0.0               | v2.0.0        |
 | chocolatey v1.4.0              |             |                      |               |
 | chocolatey.extension v5.0.3    | v1.2.0      |                      |               |
 | chocolatey-agent v1.1.2        |             | v4.0.0               |               |
@@ -19,10 +25,10 @@ The following table aims to illustrate those dependencies, based on the latest s
 >
 > | Package Name            | Version |
 > | ----------------------- | ------- |
-> | chocolateygui.extension | v1.0.3  |
-> | chocolateygui           | v1.1.2  |
-> | chocolatey.extension    | v4.0.0  |
-> | chocolatey              | v1.0.0  |
+> | chocolateygui.extension | v2.0.0  |
+> | chocolateygui           | v2.0.0  |
+> | chocolatey.extension    | v6.0.0  |
+> | chocolatey              | v2.0.0  |
 
 > :choco-info: **NOTE**
 >
