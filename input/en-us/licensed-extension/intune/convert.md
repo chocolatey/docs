@@ -59,11 +59,9 @@ choco convert firefox.86.0.nupkg --to-format=intune --ignore-dependencies
 
 > :choco-info: **NOTE**
 >
-> If the packages `chocolatey` or `chocolatey.extension` do not exist in the same directory as the Chocolatey package you are converting, a warning about them being 'missing' will be shown. This warning can be safely ignored if these two packages are already available in your Intune tenant. If these are not available in your Intune tenant, you may use this download command:
->
-> ~~~sh
-> choco download chocolatey chocolatey.extension --internalize
-> ~~~
+> If the Chocolatey product packages do not exist in the same directory as the Chocolatey package you are converting, a warning about `chocolatey` and `chocolatey.extension` being 'missing' will be shown. This warning can be safely ignored if these two packages are already available in your Intune tenant. If these are not available in your Intune tenant, you may use one of these download commands, depending on your license:
+> <?! Include "../../../shared/intune-download-architect.txt" /?>
+> <?! Include "../../../shared/intune-download-business.txt" /?>
 
 ## FAQ
 
