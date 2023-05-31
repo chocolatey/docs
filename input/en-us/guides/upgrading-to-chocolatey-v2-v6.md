@@ -38,6 +38,16 @@ To work around this issue, please ensure that you have 29 or less package versio
 
 This is [discussed in more depth later](#side-by-side-installs-have-been-removed-1), but we wanted to highlight it here as it is a very important consideration to make before upgrading.
 
+### Package Version Normalization
+
+Due to newer semantic version requirements imposed by the NuGet libraries, some version numbers may appear differently than they did in Chocolatey CLI v1.x.
+As of Chocolatey CLI v2.0.0:
+
+* Version numbers that have fewer than three parts will have the version filled out to three segments (for example, `1.2` will be normalized to `1.2.0`).
+* Version numbers that have leading zeroes in any part will have those leading zeroes removed (for example, `1.001.2` will be normalized to `1.1.2`).
+
+This normalization is applied to the generated nupkg when using `choco pack`, and will also affect any displayed versions of packages from remote sources.
+
 ### Optimizing Performance
 
 The implementation of NuGet v3 feeds means that Chocolatey CLI now supports both NuGet v2 and v3 feed, in addition to the idiosyncrasies of some repository managers. Chocolatey CLI determines what repository manager and feed version is being used using queries to the source. In some circumstances this can cause Chocolatey CLI and Chocolatey GUI to be slower when determining outdated packages or when calculating a lengthy dependency chain.
