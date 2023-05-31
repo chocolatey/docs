@@ -64,7 +64,7 @@ The Chocolatey CLI installation process will try to install .NET Framework 4.8 i
 
 We recommend you install .NET Framework 4.8 and reboot, before installing or upgrading to Chocolatey CLI v2.0.0.
 
-If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:support-lifecycle) for Chocolatey products.
+If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
 
 ### NuGet v3 Feed Support Added
 
@@ -85,7 +85,7 @@ The Chocolatey Community Repository does not support SemVer 2.0.0 at this time s
 
 ### Supported Operating Systems
 
-We have clarified the Operating Systems we support and updated our [Support Lifecycle](xref:support-lifecycle) documentation.
+We have clarified the Operating Systems we support and updated our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) documentation.
 
 ### Side-By-Side Installs Have Been Removed
 
@@ -93,7 +93,7 @@ Side-by-side installs were introduced in Chocolatey CLI to help with the challen
 
 We do have plans for similar functionality in a future release that will allow multiple versions of a package to be installed, but do not have any timescale for that as yet.
 
-If you need side-by-side functionality, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:support-lifecycle) for Chocolatey products.
+If you need side-by-side functionality, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
