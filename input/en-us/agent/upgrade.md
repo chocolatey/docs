@@ -5,25 +5,54 @@ Title: Upgrade
 Description: Information on how to upgrade Chocolatey Agent
 ---
 
-## Upgrade process
+## Upgrade Process
 
 > :choco-info: **NOTE**
 >
 > The upgrade of `chocolatey-agent` through `chocolatey-agent` will require a restart of the service in order for the new version to be picked up.
 
-To upgrade Chocolatey Agent, you can upgrade it through Chocolatey with the command `choco upgrade chocolatey-agent`.
+### Minor / Patch Versions (for example 1.1.x to 1.3.x, or 1.1.1 to 1.1.5)
 
-### Use Chocolatey Central Management to upgrade chocolatey-agent
+To upgrade Chocolatey Agent directly, you can upgrade it through Chocolatey CLI with the command `choco upgrade chocolatey-agent`.
 
-Because Chocolatey Central Management uses `chocolatey-agent` to perform it's actions, the upgrade will require a restart of the service. The easiest way to do this is with a scheduled task as part of an advanced deployment.
+### Major Versions
 
-An example advanced deployment script to do this is as follows:
+When upgrading Chocolatey Agent to a new major version (for example, **v1.x** to **v2.x**) a specific upgrade process needs to be followed to ensure that all its dependencies will be correctly installed.
+
+As an example, the upgrade process for v1.x to v2.x is as follows:
+
+1. Ensure you are on the latest stable **v1.x** version of Chocolatey CLI, **v5.x** version of Chocolatey Licensed Extension, and **v1.x** version of Chocolatey Agent.
+    - To find the latest versions, you can use `choco search --exact chocolatey --all-versions` (or `chocolatey.extension` / `chocolatey.agent` for those packages).
+      You can also visit [Chocolatey CLI's Chocolatey Community Repository page](https://community.chocolatey.org/packages/chocolatey) (or other packages' pages on the site) and look at the Version History section to get this list.
+1. Upgrade `chocolatey` **first**.
+1. Due to the dependency version ranges and Chocolatey CLI's dependency resolution, `chocolatey-agent` will be upgraded alongside the `chocolatey` package and associated dependencies.
+
+### Using Chocolatey Central Management to Upgrade chocolatey-agent
+
+Because Chocolatey Central Management uses `chocolatey-agent` to perform its actions, the upgrade will require a restart of the service.
+The easiest way to do this is with a scheduled task as part of an Advanced Deployment.
+
+A recommended Advanced Deployment script to do this is as follows:
+
+> :choco-warning: **WARNING**
+>
+> If upgrading `chocolatey-agent` to a new **major** version, target **only** the `chocolatey` package for the `choco upgrade` command in the script below, instead of the `chocolatey-agent` package.
 
 ```powershell
 $delayInMinutes = 1
 
-choco upgrade chocolatey-agent
+# If using an internal repository to install Chocolatey Agent, replace `chocolatey.licensed` below
+# with the name or URL of your internally configured source.
+choco upgrade chocolatey-agent --source 'chocolatey.licensed'
 
+# Ensure the deployment task registers as failed if the installation failed, and skip registering the
+# scheduled task.
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'The upgrade failed!'
+    exit $LASTEXITCODE
+}
+
+# Restart the Agent service after the preset delay time via a scheduled task.
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes($delayInMinutes)
 $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-WindowStyle Hidden -Command Restart-Service chocolatey-agent"
 $principal = New-ScheduledTaskPrincipal -GroupId Administrators -RunLevel Highest
@@ -35,7 +64,7 @@ Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "restart choc
 >
 > Although the `ScheduledTasks` module is available on Windows Server 2012 R2, the [`chocolatey-agent` service encounters an error when trying to import it](https://github.com/chocolatey/chocolatey-licensed-issues/issues/273). It is recommended to explore other options for the scheduled task if you're using Windows Server 2012 R2.
 
-## Change service account username or password
+## Change Service Account Username or Password
 
 If you need to change the username or password of the Chocolatey Agent, you have a few options:
 
@@ -47,7 +76,7 @@ If you need to change the username or password of the Chocolatey Agent, you have
 >
 > The service password cannot be changed through a Chocolatey upgrade command while the service is running.
 
-### Use Chocolatey Central Management to change the service account username or password
+### Use Chocolatey Central Management to Change the Service Account Username or Password
 
 If you use Chocolatey Central Management, you won't be able to use a deployment to uninstall the agent and then install the agent. This is because the agent cannot change the username/password while is it running. Instead, you can send a deployment that creates a scheduled task to uninstall the agent, then install with the new parameters.
 
