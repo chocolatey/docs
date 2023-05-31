@@ -46,7 +46,7 @@ When calling `choco list -lo`:
 ~~~sh
    --audit, --showaudit, --show-audit, --show-audit-info
    Show Audit Information - Display auditing information for a package.
-     Available in business editions 1.12.0+.
+     Available in business editions only.
 ~~~
 
 ## FAQ

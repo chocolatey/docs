@@ -43,13 +43,13 @@ Global Feature:
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download even if a
        private CDN cache is available for a package.
-       Overrides the default feature 'downloadCache' set to 'True'. Available
-       in 0.9.10+. Licensed versions only.
+       Overrides the default feature 'downloadCache' set to 'True'. Licensed 
+       versions only.
 
      --dc, --downloadcache, --download-cache, --use-download-cache
      Use Download Cache - Use private CDN cache if
        available for a package. Overrides the default feature 'downloadCache'
-       set to 'True'. Available in 0.9.10+. Licensed versions only.
+       set to 'True'. Licensed versions only.
 ~~~
 
 ## FAQ

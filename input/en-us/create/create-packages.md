@@ -141,8 +141,6 @@ chocolateyUninstall.ps1                        |         |         | Yes
 >
 > In the upgrade scenario, the chocolateyInstall.ps1 script will be the one included in the new package. The chocolateyBeforeModify.ps1 script will be the one from the previously installed package.
 
-The chocolateyBeforeModify.ps1 script will only be executed if using choco version 0.9.10 or later.
-
 ## Nuspec
 
 The `Chocolatey` Windows package manager uses the same infrastructure as [NuGet](http://nuget.org/), the Visual Studio package manager by Outercurve Foundation (sponsored by Microsoft). Therefore packages are based on the same principles. One of those is a package description (specification) in `xml` format, known as the `Nuspec`.

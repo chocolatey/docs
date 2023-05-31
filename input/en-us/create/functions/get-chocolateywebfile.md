@@ -167,7 +167,7 @@ remove this parameter.
 
 Prefer HTTPS when available. Can be HTTP, FTP, or File URIs.
 
-In 0.10.1+, `Url64` is an alias for Url64bit.
+`Url64` is an alias for Url64bit.
 
 Property               | Value
 ---------------------- | -----
@@ -277,19 +277,19 @@ Default Value          | $checksumType
 Accept Pipeline Input? | false
  
 ###  -Options [&lt;Hashtable&gt;]
-OPTIONAL - Specify custom headers. Available in 0.9.10+.
+OPTIONAL - Specify custom headers.
 
 Property               | Value
----------------------- | --------------
+---------------------- | -----------------
 Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          | @{Headers=@{}}
+Default Value          | @{Headers = @{} }
 Accept Pipeline Input? | false
  
 ###  -GetOriginalFileName
 OPTIONAL switch to allow Chocolatey to determine the original file name
-from the url resource. Available in 0.9.10+.
+from the url resource.
 
 Property               | Value
 ---------------------- | -----
@@ -302,8 +302,6 @@ Accept Pipeline Input? | false
 ###  -ForceDownload
 OPTIONAL switch to force download of file every time, even if the file
 already exists.
-
-Available in 0.10.1+.
 
 Property               | Value
 ---------------------- | -----

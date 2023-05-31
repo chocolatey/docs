@@ -14,34 +14,30 @@ RedirectFrom:
 
 This is a listing of all of the different things you can pass to choco.
 
-## DEPRECATION NOTICE
 
-The shims `chocolatey`, `cinst`, [`clist`](xref:choco-command-list), `cpush`, `cuninst` and `cup` are deprecated.
-We recommend updating all scripts to use their full command equivalent as these will be
-removed in v2.0.0 of Chocolatey.
 
 ## Commands
 
- * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an apikey for a particular source
+ * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an API key for a particular source
  * [config](xref:choco-command-config) - Retrieve and configure config file settings
  * [convert](xref:choco-command-convert) - converts packages from one type to another type
  * [download](xref:choco-command-download) - downloads packages - optionally internalizing all remote resources
  * [export](xref:choco-command-export) - exports list of currently installed packages
  * [feature](xref:choco-command-feature) - view and configure choco features
  * [features](xref:choco-command-features) - view and configure choco features (alias for feature)
- * [find](xref:choco-command-find) - searches remote or local packages (alias for search)
+ * [find](xref:choco-command-find) - searches remote packages (alias for search)
  * [help](xref:choco-command-help) - displays top level help information for choco
  * [info](xref:choco-command-info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
- * [install](xref:choco-command-install) - installs packages from various sources
- * [list](xref:choco-command-list) - lists remote or local packages
- * [new](xref:choco-command-new) - generates files necessary for a chocolatey package from a template
  * [optimize](xref:choco-command-optimize) - optimizes installation, reducing space usage
- * [outdated](xref:choco-command-outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
+ * [install](xref:choco-command-install) - installs packages using configured sources
+ * [list](xref:choco-command-list) - lists local packages
+ * [new](xref:choco-command-new) - creates template files for creating a new Chocolatey package
+ * [outdated](xref:choco-command-outdated) - retrieves information about packages that are outdated. Similar to upgrade all --noop
  * [pack](xref:choco-command-pack) - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
  * [pin](xref:choco-command-pin) - suppress upgrades for a package
- * [push](xref:choco-command-push) - pushes a compiled nupkg or intunewin file to a source
- * [search](xref:choco-command-search) - searches remote or local packages (alias for list)
- * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
+ * [push](xref:choco-command-push) - pushes a compiled nupkg to a source
+ * [search](xref:choco-command-search) - searches remote packages
+ * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an API key for a particular source (alias for apikey)
  * [source](xref:choco-command-source) - view and configure default sources
  * [sources](xref:choco-command-sources) - view and configure default sources (alias for source)
  * [support](xref:choco-command-support) - provides support information
@@ -108,9 +104,7 @@ compatibility across different versions and editions of Chocolatey.
 Following this guide will ensure your experience is not frustrating
 based on choco not receiving things you think you are passing to it.
 
- * For consistency, always use `choco`, not `choco.exe`. Never use
-   shortcut commands like `cinst` or `cup` (The shortcuts `cinst`
-   and `cup` will be removed in v2.0.0).
+ * For consistency, always use `choco`, not `choco.exe`.
  * Always have the command as the first argument to `choco`. e.g.
    [`choco install`](xref:choco-command-install), where [`install`](xref:choco-command-install) is the command.
  * If there is a subcommand, ensure that is the second argument. e.g.
@@ -225,6 +219,11 @@ Following these scripting best practices will ensure your scripts work
  -?, --help, -h
      Prints out the help menu.
 
+     --online
+     Online - Open help for specified command in default browser application. 
+       This option only works when used in combintation with the -?/--help/-h 
+       option.
+
  -d, --debug
      Debug - Show debug messaging.
 
@@ -234,12 +233,11 @@ Following these scripting best practices will ensure your scripts work
 
      --trace
      Trace - Show trace messaging. Very, very verbose trace messaging. Avoid 
-       except when needing super low-level .NET Framework debugging. Available 
-       in 0.10.4+.
+       except when needing super low-level .NET Framework debugging.
 
      --nocolor, --no-color
      No Color - Do not show colorization in logging output. This overrides 
-       the feature 'logWithoutColor', set to 'False'. Available in 0.10.9+.
+       the feature 'logWithoutColor', set to 'False'.
 
      --acceptlicense, --accept-license
      AcceptLicense - Accept license dialogs automatically. Reserved for 
@@ -262,7 +260,7 @@ Following these scripting best practices will ensure your scripts work
      --timeout, --execution-timeout=VALUE
      CommandExecutionTimeout (in seconds) - The time to allow a command to 
        finish before timing out. Overrides the default execution timeout in the 
-       configuration of 2700 seconds. '0' for infinite starting in 0.10.4.
+       configuration of 2700 seconds. Supply '0' to disable the timeout.
 
  -c, --cache, --cachelocation, --cache-location=VALUE
      CacheLocation - Location for download cache, defaults to %TEMP% or value 
@@ -280,43 +278,38 @@ Following these scripting best practices will ensure your scripts work
      --use-system-powershell
      UseSystemPowerShell - Execute PowerShell using an external process 
        instead of the built-in PowerShell host. Should only be used when 
-       internal host is failing. Available in 0.9.10+.
+       internal host is failing.
 
      --no-progress
-     Do Not Show Progress - Do not show download progress percentages. 
-       Available in 0.10.4+.
+     Do Not Show Progress - Do not show download progress percentages.
 
      --proxy=VALUE
      Proxy Location - Explicit proxy location. Overrides the default proxy 
-       location of ''. Available for config settings in 0.9.9.9+, this CLI 
-       option available in 0.10.4+.
+       location of ''.
 
      --proxy-user=VALUE
      Proxy User Name - Explicit proxy user (optional). Requires explicit 
        proxy (`--proxy` or config setting). Overrides the default proxy user of 
-       ''. Available for config settings in 0.9.9.9+, this CLI option available 
-       in 0.10.4+.
+       ''.
 
      --proxy-password=VALUE
      Proxy Password - Explicit proxy password (optional) to be used with 
        username. Requires explicit proxy (`--proxy` or config setting) and user 
        name.  Overrides the default proxy password (encrypted in settings if 
-       set). Available for config settings in 0.9.9.9+, this CLI option 
-       available in 0.10.4+.
+       set).
 
      --proxy-bypass-list=VALUE
      ProxyBypassList - Comma separated list of regex locations to bypass on 
        proxy. Requires explicit proxy (`--proxy` or config setting). Overrides 
-       the default proxy bypass list of ''. Available in 0.10.4+.
+       the default proxy bypass list of ''.
 
      --proxy-bypass-on-local
      Proxy Bypass On Local - Bypass proxy for local connections. Requires 
        explicit proxy (`--proxy` or config setting). Overrides the default 
-       proxy bypass on local setting of 'True'. Available in 0.10.4+.
+       proxy bypass on local setting of 'True'.
 
      --log-file=VALUE
-     Log File to output to in addition to regular loggers. Available in 0.1-
-       0.8+.
+     Log File to output to in addition to regular loggers.
 
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 

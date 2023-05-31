@@ -88,7 +88,7 @@ Generating packages on the fly from Programs and Features for non-MSI installers
 
 #### How do I get machine parseable output?
 
-Use `-r`. `choco sync -r`. Requires Chocolatey v0.10.4+.
+Use `-r`. `choco sync -r`.
 
 #### What if I have an existing package that is just not tracking to Programs and Features?
 

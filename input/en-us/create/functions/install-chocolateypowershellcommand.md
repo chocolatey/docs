@@ -114,7 +114,7 @@ Full file path to PowerShell file to turn into a command. If embedding
 it in the package next to the install script, the path will be like
 `"$(Split-Path -parent $MyInvocation.MyCommand.Definition)\\Script.ps1"`
 
-In 0.10.6+, `File` and `FileFullPath` are aliases for PsFileFullPath.
+`File` and `FileFullPath` are aliases for PsFileFullPath.
 
 Property               | Value
 ---------------------- | ------------------
@@ -261,14 +261,14 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -Options [&lt;Hashtable&gt;]
-OPTIONAL - Specify custom headers. Available in 0.9.10+.
+OPTIONAL - Specify custom headers.
 
 Property               | Value
----------------------- | --------------
+---------------------- | -----------------
 Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          | @{Headers=@{}}
+Default Value          | @{Headers = @{} }
 Accept Pipeline Input? | false
  
 ###  -IgnoredArguments [&lt;Object[]&gt;]

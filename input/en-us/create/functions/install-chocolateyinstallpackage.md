@@ -210,18 +210,17 @@ for the package to be completely unattended.
 When you are using this with an MSI, it will set up the arguments as
 follows: `"C:\Full\Path\To\msiexec.exe" /i "$fileFullPath" $silentArgs`,
 where `$fileFullPath` is `$file` or `$file64`, depending on what has been
-decided to be used. Previous to 0.10.4, it will be just `$file` as
-passing `$file64` would not have been available yet.
+decided to be used.
 
 When you use this with MSU, it is similar to MSI above in that it finds
 the right executable to run.
 
 When you use this with executable installers, the `$fileFullPath` will
-be `$file` (or `$file64` starting with 0.10.4+) and expects to be a full
-path to the file. If the file is in the package, see the parameters for
-"File" and "File64" to determine how you can get that path at runtime in
-a deterministic way. SilentArgs is everything you call against that
-file, as in `"$fileFullPath" $silentArgs"`. An example would be
+be `$file` (or `$file64`) and expects to be a full path to the file. If
+the file is in the package, see the parameters for "File" and "File64"
+to determine how you can get that path at runtime in a deterministic
+way. SilentArgs is everything you call against that file, as in
+`"$fileFullPath" $silentArgs"`. An example would be
 `"c:\path\setup.exe" /S`, where `$fileFullPath = "c:\path\setup.exe"`
 and `$silentArgs = "/S"`.
 
@@ -238,7 +237,7 @@ Full file path to native installer to run. If embedding in the package,
 you can get it to the path with
 `"$(Split-Path -parent $MyInvocation.MyCommand.Definition)\\INSTALLER_FILE"`
 
-In 0.10.1+, `FileFullPath` is an alias for File.
+`FileFullPath` is an alias for File.
 
 This can be a 32-bit or 64-bit file. This is mandatory in earlier versions
 of Chocolatey, but optional if File64 has been provided.
@@ -252,7 +251,7 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -File64 [&lt;String&gt;]
-Full file path to a 64-bit native installer to run. Available in 0.10.4+.
+Full file path to a 64-bit native installer to run.
 If embedding in the package, you can get it to the path with
 `"$(Split-Path -parent $MyInvocation.MyCommand.Definition)\\INSTALLER_FILE"`
 
@@ -281,7 +280,7 @@ Accept Pipeline Input? | false
  
 ###  -UseOnlyPackageSilentArguments
 Do not allow choco to provide/merge additional silent arguments and
-only use the ones available with the package. Available in 0.9.10+.
+only use the ones available with the package.
 
 Property               | Value
 ---------------------- | ------------------------

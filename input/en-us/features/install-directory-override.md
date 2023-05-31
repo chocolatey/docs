@@ -51,8 +51,7 @@ The following options are added to install and upgrade commands.
     directory. Chocolatey will automatically determine the type of
     installer and pass the appropriate arguments to override the install
     directory. The package must use Chocolatey install helpers and be
-    installing an installer for software. Available in 0.9.10+. Licensed
-    versions only.
+    installing an installer for software. Licensed  versions only.
 ~~~
 
 ## FAQ

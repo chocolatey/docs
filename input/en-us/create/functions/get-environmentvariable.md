@@ -96,7 +96,7 @@ Accept Pipeline Input? | false
  
 ###  -PreserveVariables
 A switch parameter stating whether you want to expand the variables or
-not. Defaults to false. Available in 0.9.10+.
+not. Defaults to false.
 
 Property               | Value
 ---------------------- | -----

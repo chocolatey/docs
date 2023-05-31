@@ -39,14 +39,13 @@ Start-ChocolateyProcessAsAdmin `
 
 This command will assert UAC/Admin privileges on the machine.
 
-Starting in 0.9.10, will automatically call Set-PowerShellExitCode to
-set the package exit code in the following ways:
+Will automatically call Set-PowerShellExitCode to set the package exit
+code in the following ways:
 
 - 4 if the binary turns out to be a text file.
 - The same exit code returned from the process that is run. If a 3010 is returned, it will set 3010 for the package.
 
-Aliases `Start-ChocolateyProcess` and `Invoke-ChocolateyProcess`
-available in 0.10.2+.
+Aliases `Start-ChocolateyProcess` and `Invoke-ChocolateyProcess`.
 
 ## Aliases
 
@@ -133,8 +132,6 @@ Accept Pipeline Input? | false
 ###  -Elevated
 Indicate whether the process should run elevated.
 
-Available in 0.10.2+.
-
 Property               | Value
 ---------------------- | -----
 Aliases                | 
@@ -181,9 +178,7 @@ Accept Pipeline Input? | false
 ###  -WorkingDirectory [&lt;String&gt;]
 The working directory for the running process. Defaults to
 `Get-Location`. If current location is a UNC path, uses
-`$env:TEMP` for default as of 0.10.14.
-
-Available in 0.10.1+.
+`$env:TEMP` for default.
 
 Property               | Value
 ---------------------- | -----
@@ -199,8 +194,6 @@ Arguments to pass to  `ExeToRun` that are not logged.
 Note that only [licensed versions](https://chocolatey.org/compare) of Chocolatey provide a way to pass
 those values completely through without having them in the install
 script or on the system in some way.
-
-Available in 0.10.1+.
 
 Property               | Value
 ---------------------- | -----

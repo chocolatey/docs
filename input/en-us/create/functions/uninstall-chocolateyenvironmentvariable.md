@@ -36,9 +36,6 @@ command is elevated to an administrative session.
 
 ## Notes
 
-Available in 0.9.10+. If you need compatibility with older versions,
-use Install-ChocolateyEnvironmentVariable and set `-VariableValue $null`
-
 This command will assert UAC/Admin privileges on the machine when
 `-VariableType Machine`.
 

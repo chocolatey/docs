@@ -32,7 +32,6 @@ based on the url for the file.
 
 ## Notes
 
-Available in 0.9.10+.
 Falls back to DefaultName when the name cannot be determined.
 
 Chocolatey works best when the packages contain the software it is

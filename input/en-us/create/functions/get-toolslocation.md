@@ -34,10 +34,6 @@ same package directory could get tricky.
 
 ## Notes
 
-This is the successor to the poorly named `Get-BinRoot`. Available as
-`Get-ToolsLocation` in 0.9.10+. The Alias `Get-BinRoot` will be removed
-in version 2.0.0.
-
 Sets an environment variable called `ChocolateyToolsLocation`. If the
 older `ChocolateyBinRoot` is set, it uses the value from that and
 removes the older variable.

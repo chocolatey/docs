@@ -28,8 +28,6 @@ Formats file size into a human readable format.
 
 ## Notes
 
-Available in 0.9.10+.
-
 This function is not part of the API.
 
 ## Aliases

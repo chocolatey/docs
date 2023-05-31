@@ -89,7 +89,7 @@ None
 The name of the package - while this is an arbitrary value, it's
 recommended that it matches the package id.
 
-In 0.10.4+, `Name` is an alias for PackageName.
+`Name` is an alias for PackageName.
 
 Property               | Value
 ---------------------- | -----
@@ -104,7 +104,7 @@ The URL of the package to be installed.
 
 Prefer HTTPS when available. Can be HTTP, FTP, or File URIs.
 
-In 0.10.4+, `Url` is an alias for VsixUrl.
+`Url` is an alias for VsixUrl.
 
 Property               | Value
 ---------------------- | -----
@@ -125,7 +125,7 @@ will be targeted.
 > For Visual Studio 2015, the VsVersion is 14. It can be determined
 by looking at the folders under Program Files / Program Files (x86).
 
-In 0.10.4+, `VisualStudioVersion` is an alias for VsVersion.
+`VisualStudioVersion` is an alias for VsVersion.
 
 Property               | Value
 ---------------------- | -------------------
@@ -189,18 +189,18 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -Options [&lt;Hashtable&gt;]
-OPTIONAL - Specify custom headers. Available in 0.9.10+.
+OPTIONAL - Specify custom headers.
 
 Property               | Value
----------------------- | --------------
+---------------------- | -----------------
 Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          | @{Headers=@{}}
+Default Value          | @{Headers = @{} }
 Accept Pipeline Input? | false
  
 ###  -File [&lt;String&gt;]
-Will be used for VsixUrl if VsixUrl is empty. Available in 0.10.7+.
+Will be used for VsixUrl if VsixUrl is empty.
 
 This parameter provides compatibility, but should not be used directly
 and not with the community package repository until January 2018.

@@ -46,9 +46,9 @@ So the space usage impact changes to what you'd normally experience outside of C
 
 #### Requirements
 
-* Chocolatey (`chocolatey` package) v0.10.7+.
+* Chocolatey (`chocolatey` package).
 * Chocolatey Licensed Edition
-* Chocolatey Licensed Extension (`chocolatey.extension` package) v1.12.0+.
+* Chocolatey Licensed Extension (`chocolatey.extension` package).
 
 #### Setup
 
@@ -106,20 +106,20 @@ Global Config Setting:
      Reducer Installed Package Size (Package Reducer) - Reduce size of the
        nupkg file to very small and remove extracted archives and installers.
        Overrides the default feature 'reduceInstalledPackageSpaceUsage' set to
-       'False'. Licensed editions only (version 1.12.0+). See
+       'False'. Licensed editions only. See
        https://docs.chocolatey.org/en-us/features/package-reducer
 
      --no-reduce, --no-reduce-package-size, --no-deflate, --no-deflate-package-size
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone
        in the package. Overrides the default feature
        'reduceInstalledPackageSpaceUsage' set to 'False'. Licensed editions
-       only (version 1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
+       only. See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when
        using Package Reducer. Overrides the default feature
-       'reduceOnlyNupkgSize' set to 'False'. Licensed editions only (version -
-       1.12.0+). See https://docs.chocolatey.org/en-us/features/package-reducer
+       'reduceOnlyNupkgSize' set to 'False'. Licensed editions only. 
+       See https://docs.chocolatey.org/en-us/features/package-reducer
 ~~~
 
 ### FAQ
@@ -159,7 +159,7 @@ See the next section, the `choco optimize` command.
 
 ## Optimize Command
 
-Package Reducer's Package Optimizer is available in all licensed editions starting at Chocolatey Licensed Extension v1.12.0. It is similar to the automatic reduction, except it reduces the size of existing installations.
+Package Reducer's Package Optimizer is available in all licensed editions. It is similar to the automatic reduction, except it reduces the size of existing installations.
 
 With Package Optimizer:
 
@@ -182,9 +182,9 @@ choco optimize [<options/switches>]
 
 #### Requirements
 
-* Chocolatey (`chocolatey` package) v0.10.7+.
+* Chocolatey (`chocolatey` package)
 * Chocolatey Licensed Edition
-* Chocolatey Licensed Extension (`chocolatey.extension` package) v1.12.0+.
+* Chocolatey Licensed Extension (`chocolatey.extension` package)
 
 ### Examples
 
@@ -216,7 +216,7 @@ This image shows a display of `choco optimize` reducing space for 34 existing in
 ~~~sh
     --reduce-nupkg-only, --deflate-nupkg-only
     Reduce Only Nupkg File Size - reduce only the size of nupkg file when
-      using Package Optimizer. Licensed editions only (version 1.12.0+).
+      using Package Optimizer. Licensed editions only.
 ~~~
 
 

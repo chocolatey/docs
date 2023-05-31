@@ -116,7 +116,7 @@ This may eliminate the need to include a "`chocolateyInstall.ps1`" in the packag
 
 ### How can I ensure a GUI shim?
 
-Chocolatey 0.9.10+ will automatically detect GUI applications and adjust the shim accordingly. The detection may not always be accurate, and older versions of Chocolatey don't handle this, so it's best to create a "*.gui" file to direct the shim creation to be for a GUI application.
+Chocolatey will automatically detect GUI applications and adjust the shim accordingly. The detection may not always be accurate, and older versions of Chocolatey don't handle this, so it's best to create a "*.gui" file to direct the shim creation to be for a GUI application.
 
 If you are creating a package and want the shim to exit immediately after calling the application, create an empty "*.gui" file next to where the exe file is (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".gui". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.gui`" (pay attention to case - "`BOB.exe.gui`" may not work with all versions of Chocolatey).
 

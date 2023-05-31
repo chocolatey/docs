@@ -51,7 +51,7 @@ We take security issues very seriously. Security falls into a few areas of the C
 
 Chocolatey has grown up quite a bit since the release of 0.9.9+ series and has continued moving towards a secure by default approach. What that means is that Chocolatey will set the more secure defaults and the user has to do something (e.g. set a switch, choose to install Chocolatey to a less secure location, etc.) to reduce the overall security of Chocolatey.
 
-1. Requires elevated permissions to make changes to the default location (`C:\ProgramData\chocolatey`). The default location is locked down explicitly to Administrators starting in 0.9.10. This reduces escalation of privilege attacks.
+1. Requires elevated permissions to make changes to the default location (`C:\ProgramData\chocolatey`). The default location is locked down explicitly to Administrators. This reduces escalation of privilege attacks.
 1. Requires elevated permissions to run `choco.exe` in the default installed location. This reduces escalation of privilege attacks.
 1. Requires administrative permission to add to the Machine PATH environment variable. This reduces escalation of privilege attacks.
 1. Chocolatey by default will stop and ask you to confirm before changing state of the system, showing you the script it wants to execute.
@@ -228,7 +228,6 @@ Keep in mind that the Chocolatey CDN can only download resources for packages th
 1. Moderators will cryptographically sign packages with a PGP key that they own. This will allow folks to trust moderators.
 1. Users will also cryptographically sign packages so we can provide authenticity that the package came from them.
 1. We'll show the package checksum on the website for folks that want to verify the package is brought down appropriately.
-1. ~~A user can optionally pass their own checksums that must be validated for downloaded software - [https://github.com/chocolatey/choco/issues/112](https://github.com/chocolatey/choco/issues/112)~~ Available in v0.10.0+.
 
 ## History
 

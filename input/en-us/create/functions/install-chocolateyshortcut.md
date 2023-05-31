@@ -82,7 +82,6 @@ Install-ChocolateyShortcut `
 
 # Creates a new notepad shortcut on the root of c: that starts
 # notepad.exe as Administrator. Shortcut is also pinned to taskbar.
-# These parameters are available in 0.9.10+.
 
 Install-ChocolateyShortcut `
   -ShortcutFilePath "C:\notepad.lnk" `
@@ -128,7 +127,7 @@ Accept Pipeline Input? | false
 OPTIONAL - The full absolute path of the Working Directory that will be
 used by the new shortcut.
 
-As of v0.10.12, the directory will be created unless it contains environment
+The directory will be created unless it contains environment
 variable expansion like `%AppData%\FooBar`.
 
 Property               | Value
@@ -176,7 +175,6 @@ Accept Pipeline Input? | false
  
 ###  -WindowStyle [&lt;Int32&gt;]
 OPTIONAL - Type of windows target application should open with.
-Available in 0.9.10+.
 0 = Hidden, 1 = Normal Size, 3 = Maximized, 7 - Minimized.
 Full list table 3.9 here: https://technet.microsoft.com/en-us/library/ee156605.aspx
 
@@ -190,7 +188,7 @@ Accept Pipeline Input? | false
  
 ###  -RunAsAdmin
 OPTIONAL - Set "Run As Administrator" checkbox for the created the
-shortcut. Available in 0.9.10+.
+shortcut.
 
 Property               | Value
 ---------------------- | -----
@@ -201,7 +199,7 @@ Default Value          | False
 Accept Pipeline Input? | false
  
 ###  -PinToTaskbar
-OPTIONAL - Pin the new shortcut to the taskbar. Available in 0.9.10+.
+OPTIONAL - Pin the new shortcut to the taskbar.
 
 Property               | Value
 ---------------------- | -----

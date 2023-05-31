@@ -9,16 +9,14 @@ To install the Chocolatey Agent service, you need to install the `chocolatey-age
 
 ## Requirements
 
-* Chocolatey (`chocolatey` package) v0.10.3+ - v0.10.4+ for better compatibility. Chocolatey v0.10.7+ is recommended and required in newer versions.
+* Chocolatey (`chocolatey` package)
 * Chocolatey for Business (C4B) Edition
-* Chocolatey Licensed Extension (`chocolatey.extension` package) v1.8.4+. For chocolatey-agent v0.5.0+, licensed extension v1.9.0+. For `chocolatey-agent` v0.7.0+, licensed extension v1.11.0+.
-* Chocolatey Agent Service (`chocolatey-agent` package) - 0.7.0+ is recommended.
+* Chocolatey Licensed Extension (`chocolatey.extension` package)
+* Chocolatey Agent Service (`chocolatey-agent` package)
 
 > :choco-info: **NOTE**
 >
 > The Chocolatey Agent Service requires Log On As Service and Log On As Batch rights. We attempt to set these rights on the user at the time of installation via Local Policy, but if you have a restrictive Group Policy that will be applied to the system, please ensure that the user account you are attempting to use (or ChocolateyLocalAdmin as the default) has the correct permissions applied in your Group Policy.
-
-For use with Chocolatey GUI, you must be on Chocolatey v0.10.7+, Chocolatey Licensed Extension v1.11.0+, and Chocolatey Agent v0.7.0+.
 
 ## Chocolatey Agent Install Options
 
@@ -77,10 +75,10 @@ See [Background Mode Setup](#background-mode-setup).
 To set Chocolatey in background mode, you need to run the following:
 
 * `choco upgrade chocolatey-agent <options>` (see [agent install options](#chocolatey-agent-install-options))
-* `choco feature disable --name="'showNonElevatedWarnings'"` - requires Chocolatey v0.10.4+ to set.
+* `choco feature disable --name="'showNonElevatedWarnings'"`
 * `choco feature enable --name="'useBackgroundService'"`
 * You also need to opt in sources in for self-service packages. See [choco source](xref:choco-command-source) (and `--allow-self-service`). You can also run `choco source -?` to get the help menu.
-    * OPTIONAL (not recommended): Alternatively, you can allow any configured source to be used for self-service by running the following: `choco feature disable --name="'useBackgroundServiceWithSelfServiceSourcesOnly'"` (requires Chocolatey Extension v1.10.0+). We do not recommend this as it could be a security finding if you shut it off.
+    * OPTIONAL (not recommended): Alternatively, you can allow any configured source to be used for self-service by running the following: `choco feature disable --name="'useBackgroundServiceWithSelfServiceSourcesOnly'"` . We do not recommend this as it could be a security finding if you shut it off.
 * OPTIONAL (highly recommended): If you want self-service to apply only to non-administrators, run `choco feature enable --name="'useBackgroundServiceWithNonAdministratorsOnly'"` (requires Chocolatey Extension v1.11.1+). Do understand this means that a real non-administrator, not an administrator in a non-elevated UAC context (that scenario will go the normal route and will not go through background mode).
 * OPTIONAL (varied recommendations): If you want to configure custom commands (not just install/upgrade), use something like `choco config set --name backgroundServiceAllowedCommands --value "install,upgrade,pin,sync"` (with the commands you want to allow, requires Chocolatey Extension v1.12.4+). See [commands consideration](#command-customization-consideration) below.
 * OPTIONAL (highly recommended): If you want to allow non-admins to uninstall packages, you can also restrict down to only the packages they have installed/upgraded. Run `choco feature enable --name="'allowBackgroundServiceUninstallsFromUserInstallsOnly'"` (requires Chocolatey Extension v2.0+).

@@ -75,7 +75,7 @@ Chocolatey by default already supports system set proxy servers
 
 ## Existing Proxy Environment Variables
 
-Starting with Chocolatey v0.10.4, Chocolatey will automatically pick up the following environment variables if they are already set:
+Chocolatey will automatically pick up the following environment variables if they are already set:
 
 * `http_proxy`
 * `https_proxy`
@@ -91,8 +91,8 @@ You can simply configure 1 up to 5 settings and Chocolatey will use a proxy serv
 choco config set --name proxy --value <locationandport>
 choco config set --name proxyUser --value <username> #optional
 choco config set --name proxyPassword --value <passwordThatGetsEncryptedInFile> # optional
-choco config set --name proxyBypassList --value "'<bypasslist, comma separated>'" # optional, Chocolatey v0.10.4 required
-choco config set --name proxyBypassOnLocal --value true # optional, Chocolatey v0.10.4 required
+choco config set --name proxyBypassList --value "'<bypasslist, comma separated>'" # optional
+choco config set --name proxyBypassOnLocal --value true # optional
 ~~~~
 
 ### Example
@@ -103,8 +103,8 @@ Running the following commands in 0.9.9.9:
 choco config set --name proxy --value http://localhost:8888
 choco config set --name proxyUser --value bob
 choco config set --name proxyPassword --value 123Sup#rSecur3
-choco config set --name proxyBypassList --value "'http://localhost,http://this.location/'" #0.10.4 required
-choco config set --name proxyBypassOnLocal --value true #0.10.4 required
+choco config set --name proxyBypassList --value "'http://localhost,http://this.location/'"
+choco config set --name proxyBypassOnLocal --value true
 ~~~
 
 Results in the following items being added to the config file:
@@ -113,7 +113,7 @@ Results in the following items being added to the config file:
 
 ### Explicit Proxy Settings at Runtime
 
-Starting in 0.10.4, you can pass proxy information at runtime with each command. See https://github.com/chocolatey/choco/issues/1173
+You can pass proxy information at runtime with each command. See https://github.com/chocolatey/choco/issues/1173
 
 `--proxy="'value'" --proxy-user="'<user>'" --proxy-password="'<pwd>'" --proxy-bypass-list="'<comma separated, list>'" --proxy-bypass-on-local`
 

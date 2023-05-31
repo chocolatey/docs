@@ -440,18 +440,18 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -Options [&lt;Hashtable&gt;]
-OPTIONAL - Specify custom headers. Available in 0.9.10+.
+OPTIONAL - Specify custom headers.
 
 Property               | Value
----------------------- | --------------
+---------------------- | -----------------
 Aliases                | 
 Required?              | false
 Position?              | named
-Default Value          | @{Headers=@{}}
+Default Value          | @{Headers = @{} }
 Accept Pipeline Input? | false
  
 ###  -File [&lt;String&gt;]
-Will be used for Url if Url is empty. Available in 0.10.7+.
+Will be used for Url if Url is empty.
 
 This parameter provides compatibility, but should not be used directly
 and not with the community package repository until January 2018.
@@ -465,7 +465,7 @@ Default Value          |
 Accept Pipeline Input? | false
  
 ###  -File64 [&lt;String&gt;]
-Will be used for Url64bit if Url64bit is empty. Available in 0.10.7+.
+Will be used for Url64bit if Url64bit is empty.
 
 This parameter provides compatibility, but should not be used directly
 and not with the community package repository until January 2018.
@@ -480,7 +480,7 @@ Accept Pipeline Input? | false
  
 ###  -UseOnlyPackageSilentArguments
 Do not allow choco to provide/merge additional silent arguments and only
-use the ones available with the package. Available in 0.9.10+.
+use the ones available with the package.
 
 Property               | Value
 ---------------------- | ------------------------
@@ -493,7 +493,7 @@ Accept Pipeline Input? | false
 ###  -UseOriginalLocation
 Do not download the resources. This is typically passed if Url/Url64bit
 are pointed to local files or files on a share and those files should
-be used in place. Available in 0.10.1+.
+be used in place.
 
 > :choco-info: **NOTE**
 >
