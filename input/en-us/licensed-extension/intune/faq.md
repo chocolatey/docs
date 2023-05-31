@@ -12,7 +12,7 @@ Title: Intune Frequently Asked Questions
 
 During the installation of Chocolatey CLI, a number of environment variables are set or updated. This includes the `PATH` environment variable that tells Windows where to look for programs to run. The only reliable way to ensure that these are updated prior to running any subsequent Chocolatey CLI commands is to inform Intune that the package requires a restart to complete installation.
 
-### Why Do I Need All of the Chocolatey Products If I'm Not Using them?
+### Why Do I Need All of the Chocolatey Products if I'm Not Using Them?
 
 In order to ensure upgrades of Chocolatey CLI behave as expected, we need to include all Chocolatey products for distribution in the Intune package whether they are curently being used or not. Without this requirement, deployments through Intune could result in upgrades of any Chocolatey components failing due to an inability to find required dependencies.
 
