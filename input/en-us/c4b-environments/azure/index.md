@@ -276,7 +276,7 @@ This is based on:
 
 The only way to accomplish this is by setting the public IP address statically _from the start_. Once the public IP address is created, the application gateway does not support changing it. More information can be found [in the Microsoft documentation here.](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/configure-public-ip-application-gateway)
 
-What _can_ be done is using a CNAME record and pointing the DNS record to it while referencing the tail end of the address listed in the **Frontend public IP address** field. You can do this by following these steps.
+What _can_ be done is creating a CNAME record pointing at the existing DNS record of the Application Gateway. You can do this by following these steps.
 
 1. Navigate to your resource group, and select the Application Gateway (normally called choco-apgw)
 2. Copy the FQDN from the `Frontend public IP address` under the **Essentials** dropdown (normally ending .cloudapp.azure.com)
