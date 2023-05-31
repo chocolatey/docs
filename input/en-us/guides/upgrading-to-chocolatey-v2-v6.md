@@ -117,6 +117,18 @@ Invalid argument --local-only. This argument has been removed from the list comm
 
 To ensure we do not break any existing automation, integrations or scripts using the `--limit-output` or `-r` options, we add a warning to the logs but otherwise ignore the options. As this will be removed in a future release, please ensure you remove the `--local-only` and `-lo` options from any automations or scripts that you have.
 
+### Unresolved Dependency Constraint Warnings
+
+When installing or upgrading one or more packages you may see a warning outputted the console similar to:
+
+```text
+[NuGet] One or more unresolved package dependency constraints detected in the Chocolatey lib folder. All dependency constraints must be resolved to add or update packages. If these packages are being updated this message may be ignored, if not the following error(s) may be blocking the current package operation: 'hexchat 2.16.0 constraint: vcredist2015 (>= 14.0.24215.20170201)', 'python311 3.11.3 constraint: vcredist2015 (>= 14.0.24215.20170201)'
+```
+
+This warning happens due to the more strict enforcement that Chocolatey CLI v2.0.0 do for package dependency version ranges.
+When Chocolatey CLI detects that there is a possibility that a package may break a version range, it will output a warning similar to the above message. Most of the time you may ignore these warnings. However, in case of package failures, it was decided that to give enough information to the user to determine whether the package failed due to a broken version range, we would not hide this warning.
+If a package fails installation or upgrade due to dependency constraints, please examine the warning to see what package or constraint may be the reason for the failure. Such a failure will happen before installation scripts are run or packages downloaded.
+
 ### Chocolatey Shortcut Shims Removed
 
 In addition to the [Chocolatey shortcut shims removed in version 1.0.0](https://github.com/chocolatey/choco/issues/2468), we have removed the [remaining ones](https://github.com/chocolatey/choco/issues/2641). The shims removed (including the earlier ones) and their equivalent full commands are:
