@@ -19,6 +19,18 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.0.0 (May 31, 2023)
+
+### Breaking Changes
+
+- Upgrade to target version 3.1.0 of Chocolatey.NuGet.Client and version 2.0.0 of Chocolatey.Lib assemblies - see [#974](https://github.com/chocolatey/ChocolateyGUI/issues/974).
+- Remove side-by-side installs - see [#989](https://github.com/chocolatey/ChocolateyGUI/issues/989).
+
+### Improvement
+
+- Ensure correct usage of ListCommand after upstream changes in Chocolatey CLI - see [#990](https://github.com/chocolatey/ChocolateyGUI/issues/990).
+
+
 ## 1.1.3 (May 10, 2023)
 
 ### Bug Fix
@@ -98,7 +110,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 ## Enhancement
 
 - Ensure correct usage of ListCommand after upstream changes in Chocolatey CLI - see [#990](https://github.com/chocolatey/ChocolateyGUI/issues/990).
-  
+
 
 ## 1.1.2 (March 8, 2023)
 

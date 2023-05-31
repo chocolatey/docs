@@ -31,6 +31,23 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.0.0 (May 31, 2023)
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework.
+- Upgrade to target version 2.0.0 of Chocolatey.Lib and version 6.0.0 of Chocolatey.Licensed.Lib assemblies.
+
+### Bug Fix
+
+- Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
+
+### Improvements
+
+- Update to use latest releases of Chocolatey products.
+- Migrate from Rx-* packages to System.Reactive.* packages.
+
+
 ## 1.1.2 (May 10, 2023)
 
 ### Bug Fix
@@ -90,11 +107,11 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
 
-## Enhancement
+### Improvement
 
 - Migrate from Rx-* packages to System.Reactive.* packages.
 
-## Bug Fix
+### Bug Fix
 
 - Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
 

@@ -43,6 +43,32 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.0.0 (May 31, 2023)
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework.
+- Upgrade to target version 3.1.0 of Chocolatey.NuGet.Client and version 2.0.0 of Chocolatey.Lib assemblies.
+- Remove side-by-side installs.
+- Change behavior of `choco list` to be local only.
+- Rename or migrate away from custom HashCode class.
+
+### Bug Fixes
+
+- Fix - PowerShell - `Get-ChocolateyUnZip` works in FOSS but not Licensed for languagetool package - see [licensed #342](https://github.com/chocolatey/chocolatey-licensed-issues/issues/342).
+- Fix - Prevent error being reported when `lib` folder is not present in Chocolatey folder.
+- Fix - Fix problem with uninstalling packages that were created using the `choco sync` command.
+- Fix - Fix spelling mistake in the usage of `extract_binary_file_from_assembly` function.
+- Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
+
+### Improvements
+
+- Update to use latest releases of Chocolatey products.
+- Remove mention of unsupported versions of CLE / CLI from documentation.
+- Improvements made to warnings that are emitted when a dependency fails to be resolved during a `choco upgrade` or `choco install`.
+- Intune - When bundling Chocolatey CLI for Intune, package all the Chocolatey products along with it to allow upgrades to occur
+
+
 ## 5.0.3 (May 10, 2023)
 
 ### Bug Fix
