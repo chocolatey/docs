@@ -172,7 +172,7 @@ function cinst { choco install $args }
 
 The Chocolatey Community Repository, https://push.chocolatey.org, has been the default source for pushing packages to with Chocolatey CLI since the very first days. This has led to some accidental packages being pushed to the repository, rather than an internal organizational repository, that have had to be removed.
 
-As the vast majority of packages being pushed with Chocolatey CLI are not to the Chocolatey Community Repository, we have removed the Chocolatey Community Repository as the default push source. A new configuration value, `defaultPushSource` has been added that must be set if you want a default source to push to when not specifying a source with the `choco push` command. To set a default source, run `choco config --name="'defaultPushSource'" --value="'<PUSH URL>'"`, where `<PUSH URL>` is `https://push.chocolatey.org` for the Chocolatey Community Repository, or your internal repository source.
+As the vast majority of packages being pushed with Chocolatey CLI are not to the Chocolatey Community Repository, we have removed the Chocolatey Community Repository as the default push source. A new configuration value, `defaultPushSource` has been added that must be set if you want a default source to push to when not specifying a source with the `choco push` command. To set a default source, run `choco config set --name="'defaultPushSource'" --value="'<PUSH URL>'"`, from an elevated session, where `<PUSH URL>` is `https://push.chocolatey.org` for the Chocolatey Community Repository, or your internal repository source.
 
 Alternatively, you can specify the push source when pushing a package by running `choco push --source="'<PUSH URL>'"` where `<PUSH URL>` is the repository source URL.
 
