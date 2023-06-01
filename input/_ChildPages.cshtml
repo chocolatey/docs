@@ -1,7 +1,7 @@
 @if (OutputPages.GetChildrenOf(Document).Any())
 {
 <h2 class="title-child d-none mb-3">Child Pages</h2>
-<div class="row ms-md-n5 ms-xl-n3">
+<div class="row">
 	@foreach (IDocument child in OutputPages.GetChildrenOf(Document).OnlyVisible())
 	{
 		object[] childTreePath = child.Get<object[]>(Keys.TreePath);
