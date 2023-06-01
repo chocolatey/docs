@@ -194,9 +194,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Prerelease - Include Prereleases? Defaults to false.
 
  -i, --includeprograms, --include-programs
-     IncludePrograms - Used in conjunction with LocalOnly, filters out apps 
-       chocolatey has listed as packages and includes those in the list. 
-       Defaults to false.
+     IncludePrograms - Filters out apps Chocolatey has listed as packages and
+       includes those in the list. Defaults to false.
 
  -a, --all, --allversions, --all-versions
      AllVersions - include results from all versions.
