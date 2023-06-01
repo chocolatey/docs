@@ -107,7 +107,7 @@ If you need side-by-side functionality, **we do not recommend** you upgrade to C
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
-In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `--local-only` and `-lo` options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158).
+In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `--local-only` and `-lo` options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158). We have also removed the `-a`, `--all`, `--allversions`, and `--all-versions` options from the `list` command as you cannot have multiple versions of a package installed.
 
 Running `choco list --local-only` or `choco list -lo` will now show this message:
 
