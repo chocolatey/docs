@@ -28,6 +28,10 @@ If you have any doubts about upgrading, any areas that you are just uncertain ab
 
 We have listed the bug fixes, features and improvements below that we feel you should be most aware of before upgrading. We have also highlighted critical areas that need you need to carefully consider before you continue upgrading.
 
+### Installing a Specific Chocolatey Version
+
+When you run the [Chocolatey CLI install command](https://chocolatey.org/install), you are installing the latest version of Chocolatey CLI each time. To install a specific version, set the environment variable `chocolateyVersion` before running the installation command. See the [documentation for more information](https://docs.chocolatey.org/en-us/choco/setup#installing-a-particular-version-of-chocolatey).
+
 ### Sonatype Nexus Repository Sources
 
 The Sonatype Nexus Repository Manager has an [issue that can cause it to go into an infinite loop of querying for packages from a NuGet v2 feed](https://issues.sonatype.org/browse/NEXUS-13426) (you will need a login for Sonatypes' Jira system to view the issue). The only affects Sonatype Nexus NuGet v2 feeds as it has been fixed for NuGet v3 feeds.
@@ -46,13 +50,15 @@ As of Chocolatey CLI v2.0.0:
 * Version numbers that have fewer than three parts will have the version filled out to three segments (for example, `1.2` will be normalized to `1.2.0`).
 * Version numbers that have leading zeroes in any part will have those leading zeroes removed (for example, `1.001.2` will be normalized to `1.1.2`).
 
-This normalization is applied to the generated nupkg when using `choco pack`, and will also affect any displayed versions of packages from remote sources.
+This normalization is applied to the generated package when using `choco pack`, and will also affect any displayed versions of packages from remote sources.
 
 ### Optimizing Performance
 
-The implementation of NuGet v3 feeds means that Chocolatey CLI now supports both NuGet v2 and v3 feed, in addition to the idiosyncrasies of some repository managers. Chocolatey CLI determines what repository manager and feed version is being used using queries to the source. In some circumstances this can cause Chocolatey CLI and Chocolatey GUI to be slower when determining outdated packages or when calculating a lengthy dependency chain.
+The implementation of NuGet v3 feeds means that Chocolatey CLI now supports both NuGet v2 and v3 feed, in addition to the idiosyncrasies of some repository managers. Chocolatey CLI determines what repository manager and feed version is being used by querying the source. In some circumstances this can cause Chocolatey CLI and Chocolatey GUI to be slower when determining outdated packages or when calculating a lengthy dependency chain.
 
 We have thoroughly tested all Chocolatey products and have optimized many areas, but we acknowledge that there is more to do. But we need real-world experiences. Chocolatey values your privacy and our products do not use telemetry. To allow us to improve performance further, we ask for you [reach out to us and provide your performance experiences using Chocolatey products](#what-should-you-do-if-you-have-questions).
+
+If you are interested in the technical aspect of part of this, please see this [GitHub issue](https://github.com/chocolatey/NuGet.Client/issues/16)
 
 ## New Features and Improvements
 
@@ -68,11 +74,11 @@ As this is a major release, there are breaking changes, bug fixes, features and 
 
 ### .NET Framework 4.8 Required
 
-In previous version of Chocolatey CLI, .NET Framework 4.0 was a minimum requirements. This has now changed to be .NET Framework 4.8.
+In previous version of Chocolatey CLI, .NET Framework 4.0 was a minimum requirement. This has now changed to be .NET Framework 4.8.
 
 The Chocolatey CLI installation process will try to install .NET Framework 4.8 if it's not already present on the computer. This will require a reboot before Chocolatey CLI can then be installed and means that the installation process will have to be started again.
 
-We recommend you install .NET Framework 4.8 and reboot, before installing or upgrading to Chocolatey CLI v2.0.0.
+We recommend you install .NET Framework 4.8 and reboot, before installing or upgrading to Chocolatey CLI v2.0.0. If you are installing Chocolatey in a Docker container, please use an image that already has .NET 4.8 installed or use the [official Chocolatey CLI Docker image](https://hub.docker.com/r/chocolatey/choco).
 
 If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
 
@@ -91,7 +97,7 @@ Adding NuGet v3 feed support to Chocolatey CLI has been a long-term goal that we
 
 We have added support for [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) that allows previously invalid pre-release version numbering such as `1.0.1-alpha.23` to now be used alongside the current four part version numbering (`1.2.3.4`). The only constraint on the version number segments is that they must fit into the range `0` to `2147483647`.
 
-The Chocolatey Community Repository does not support SemVer 2.0.0 at this time so this is supported only on third-party repositories.
+The Chocolatey Community Repository does not support SemVer 2.0.0 at this time, so this is supported only on third-party repositories.
 
 ### Supported Operating Systems
 
@@ -151,7 +157,7 @@ function cinst { choco install $args }
 
 The Chocolatey Community Repository, https://push.chocolatey.org, has been the default source for pushing packages to with Chocolatey CLI since the very first days. This has led to some accidental packages being pushed to the repository, rather than an internal organizational repository, that have had to be removed.
 
-As the vast majority of packages being pushed with Chocolatey CLI are not to the Chocolatey Community Repository, we have removed the Chocolatey Community Repository as the default push source. A newconfiguration value, `defaultPushSource` has been added that must be set if you want a default source to push to when not specifying a source with the `choco push` command. To set a default source, run `choco config --name="'defaultPushSource'" --value="'<PUSH URL>'"`, where `<PUSH URL>` is `https://push.chocolatey.org` for the Chocolatey Community Repository, or your internal repository source.
+As the vast majority of packages being pushed with Chocolatey CLI are not to the Chocolatey Community Repository, we have removed the Chocolatey Community Repository as the default push source. A new configuration value, `defaultPushSource` has been added that must be set if you want a default source to push to when not specifying a source with the `choco push` command. To set a default source, run `choco config --name="'defaultPushSource'" --value="'<PUSH URL>'"`, where `<PUSH URL>` is `https://push.chocolatey.org` for the Chocolatey Community Repository, or your internal repository source.
 
 Alternatively, you can specify the push source when pushing a package by running `choco push --source="'<PUSH URL>'"` where `<PUSH URL>` is the repository source URL.
 
