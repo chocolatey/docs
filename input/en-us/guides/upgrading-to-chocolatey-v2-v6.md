@@ -109,7 +109,18 @@ Side-by-side installs were introduced in Chocolatey CLI to help with the challen
 
 We do have plans for similar functionality in a future release that will allow multiple versions of a package to be installed, but do not have any timescale for that as yet.
 
-If you need side-by-side functionality, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
+As Chocolatey CLI 2.0.0 does not support side-by-side installs, you must uninstall packages installed this way, and then install them again. To determine if you have packages that are installed as side-by-side, you must be running a version of Chocolatey CLI that supports them. We recommend Chocolatey CLI 1.4.0. Run `choco list --local-only --all-versions` and you will see output similar to this:
+
+![`choco list` command showing a side-by-side install of `gitreleasemanager.portable` package](/assets/images/choco-list-showing-side-by-side-install.png)
+
+In the example above, `gitreleasemanager.portable` has two versions installed: 0.12.1 and 0.13.0. To uninstall both versions, run `choco uninstall gitreleasemanager.portable -y`. There are two important points to make:
+
+1. The uninstallation of one of those packages may fail. However, it will still have been uninstalled. To confirm that, run `choco list --local-only --all-versions` again. If the package is still shown as installed, run the above uninstall command again.
+1. The package folder is unlikely to have been removed correctly (this is a bug in the side-by-side management). Using the example above this will be `$env:chocolateyInstall\lib\gitreleasemanager.portable`. If you run `choco list --local-only --all-versions` and the package is not listed, the package folder, `$env:chocolateyInstall\lib\gitreleasemanager.portable` can be safely deleted. **Please note that you should only remove `$env:chocolateyInstall\lib\gitreleasemanager.portable` and not any other folder. If in doubt, save a backup copy before deleting it.**
+
+Once this is complete, you can install the package again, without side-by-side, by running `choco install gitreleasemanager.portable`.
+
+If you need side-by-side functionality, or cannot uninstall packages installed side-by-side, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
@@ -122,6 +133,8 @@ Invalid argument --local-only. This argument has been removed from the list comm
 ```
 
 To ensure we do not break any existing automation, integrations or scripts using the `--limit-output` or `-r` options, we add a warning to the logs but otherwise ignore the options. As this will be removed in a future release, please ensure you remove the `--local-only` and `-lo` options from any automations or scripts that you have.
+
+While the `choco list` command is still used to query [alternative sources](xref:choco-command-install#alternative-sources), it cannot be used to query remote sources. Please use `choco search` instead. For example, if you used `choco list --source="'<SOURCE URL>'"`, you should use `choco search --source="'<SOURCE URL>'"` instead.
 
 ### Unresolved Dependency Constraint Warnings
 
