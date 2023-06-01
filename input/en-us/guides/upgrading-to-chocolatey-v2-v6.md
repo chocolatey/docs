@@ -95,9 +95,11 @@ Adding NuGet v3 feed support to Chocolatey CLI has been a long-term goal that we
 
 ### SemVer 2.0.0 Support
 
-We have added support for [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) that allows previously invalid pre-release version numbering such as `1.0.1-alpha.23` to now be used alongside the current four part version numbering (`1.2.3.4`). The only constraint on the version number segments is that they must fit into the range `0` to `2147483647`.
+> :choco-warning: **WARNING**
+>
+> The Chocolatey Community Repository does not support SemVer 2.0.0 at this time, so this is supported only on third-party repositories.
 
-The Chocolatey Community Repository does not support SemVer 2.0.0 at this time, so this is supported only on third-party repositories.
+We have added support for [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) that allows previously invalid pre-release version numbering such as `1.0.1-alpha.23` to now be used alongside the current four part version numbering (`1.2.3.4`). The only constraint on the version number segments is that they must fit into the range `0` to `2147483647`.
 
 ### Supported Operating Systems
 
