@@ -58,7 +58,7 @@ The implementation of NuGet v3 feeds means that Chocolatey CLI now supports both
 
 We have thoroughly tested all Chocolatey products and have optimized many areas, but we acknowledge that there is more to do. But we need real-world experiences. Chocolatey values your privacy and our products do not use telemetry. To allow us to improve performance further, we ask for you [reach out to us and provide your performance experiences using Chocolatey products](#what-should-you-do-if-you-have-questions).
 
-If you are interested in the technical aspect of part of this, please see this [GitHub issue](https://github.com/chocolatey/NuGet.Client/issues/16)
+Please subscribe to [this GitHub issue](https://github.com/chocolatey/choco/issues/3183) for progress updates on optimization.
 
 ## New Features and Improvements
 
