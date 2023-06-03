@@ -279,13 +279,13 @@ To fix these scripts, you need to install a package called `chocolatey-licensed-
 1. Log into Jenkins at `https://<FQDN>/jenkins`
 1. Click the green "play" triangle to the right of the `Internalize packages from the Chocolatey Community and Licensed Repositories` job
 
-    ![Vault Access Policies](/assets/images/c4b-azure/Jenkins-Play-Button.png)
+    ![Location of Jenkins job play button](/assets/images/c4b-azure/Jenkins-Play-Button.png)
 
 1. Enter `chocolatey-licensed-jenkins-jobs` under the `P_PKG_LIST` parameter
 1. Change the `P_DST_URL` parameter so that it ends with `ChocolateyInternal` rather than `ChocolateyTest`, this is being changed because the job that promotes packages between these repositories will not work if you have already upgraded to Chocolatey CLI v2.0.0 or above
 1. Click `Build`
 
-    ![Vault Access Policies](/assets/images/c4b-azure/Jenkins-Job-Fix-Internalize.png)
+    ![Example of settings for the Internalize Packages Jenkins job](/assets/images/c4b-azure/Jenkins-Job-Fix-Internalize.png)
 
 > :choco-info: **NOTE**
 >
