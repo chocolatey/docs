@@ -130,7 +130,7 @@ You can choose to start over with a newer version, but that feels like the wrong
 
 Alternatively, it is simple to upgrade the components themselves, and that is how we recommend upgrading aspects of QDE.
 Should you want to upgrade Central Management, for example, you can follow the Central Management steps for upgrade at [Upgrade Central Management](xref:ccm-upgrade).
-Upgrading Nexus can be accomplished with the steps detailed on the [QDE Nexus Upgrade](xref:v2-upgrade-nexus-qde) page.
+Upgrading Nexus can be accomplished with the steps detailed on the [QDE Nexus Upgrade](xref:upgrade-nexus) page.
 
 ### What if we have a larger environment? (> 1k nodes)
 
