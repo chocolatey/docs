@@ -126,17 +126,36 @@ If you need side-by-side functionality, or cannot uninstall packages installed s
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
-In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `--local-only` and `-lo` options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158). We have also removed the `-a`, `--all`, `--allversions`, and `--all-versions` options from the `list` command as you cannot have multiple versions of a package installed.
+In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `-l` and it's alias options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158). We have also removed the `-a` and it's alias options from the `list` command as it no longer made sense to have that option once side-by-side installs were removed.
 
-Running `choco list --local-only` or `choco list -lo` will now show this message:
+To summarise, the following options were removed:
+
+* `-l`
+* `-lo`
+* `--lo`
+* `--local`
+* `--localonly`
+* `--local-only`
+* `-a`
+* `--all`
+* `--allversions`
+* `--all-versions`
+
+If you use `choco list` commands in your automations, scripts or at the command-line, please ensure you do not also have `-l`, `-a` or one of their aliases. If you fail to remove these options, an error will be displayed, and also added to the logs:
 
 ```text
 Invalid argument --local-only. This argument has been removed from the list command and cannot be used.
 ```
 
-To ensure we do not break any existing automation, integrations or scripts using the `--limit-output` or `-r` options, we add a warning to the logs but otherwise ignore the options. As this will be removed in a future release, please ensure you remove the `--local-only` and `-lo` options from any automations or scripts that you have.
+For automations we recommend that you use the `-r`, or `--limit-output` options as it provides machine parsable output. As an example, instead of using `choco list --local-only` you would use `choco list --limit-output`. In PowerShell `choco list --limit-output | ConvertFrom-Csv -Delimiter '|' -Header PackageId,PackageVersion` will return a PowerShell object you can more easily interact with in your automations.
 
-While the `choco list` command is still used to query [alternative sources](xref:choco-command-install#alternative-sources), it cannot be used to query remote sources. Please use `choco search` instead. For example, if you used `choco list --source="'<SOURCE URL>'"`, you should use `choco search --source="'<SOURCE URL>'"` instead.
+To ensure we do not break any existing automation, integrations or scripts using the `--limit-output` or `-r` along with `-l`, `-a` or one of their aliases, will continue to run and **will not produce an error**. Only a warning will be added to the logs. In a future release this will produce an error, so please ensure you remove `-l`, `-a`, and aliases, from any automations or scripts that you have.
+
+### The List Command Cannot Be Used to Query Remote Sources
+
+While the `choco list` command is still used to query [alternative sources](xref:choco-command-install#alternative-sources), it cannot be used to query remote sources. You must instead use the `choco search` command to query these remote sources. If you are currently using the `choco list` command for this, you must use `choco search`. If you are using `--limit-output` or `-r` as part of your command, this will continue to behave as normal. For example, if you used `choco list --source="'<SOURCE URL>'"`, you should use `choco search --source="'<SOURCE URL>'"` instead.
+
+Please ensure you replace `choco list` with `choco search` in your automations and scripts as these will no longer work.
 
 ### Unresolved Dependency Constraint Warnings
 
@@ -337,6 +356,20 @@ There are many ways to manage Chocolatey packages using integrations such as [An
 1. Upgrade or downgrade as necessary, to ensure you are on the [latest 1.x and 5.x versions of Chocolatey products](#latest-1.x-and-5.x-stable-chocolatey-products). It is important that you do not skip this step.
 
 1. Upgrade to the latest stable 2.0.0 and 6.0.0 Chocolatey product versions.
+
+## Updating Automation Scripts For Chocolatey V2.0.0 Migration
+
+The breaking changes introduced with the release of Chocolatey CLI V2.0.0 and Chocolatey Licensed Extension 6.0.0 mean that any automations that you are currently using will need to be updated.
+
+### Interrogating local packages
+
+With the Chocolatey CLI v2.0.0 release the `choco list` command now only reports on locally-installed Chocolatey packages. If you are using the `-lo` or `--local-only` arguments with your `choco list` commands, these should be removed. If you fail to remove this argument, a warning will be displayed, which could cause your scripts to fail. For interrogating locally-installed packages we recommend `choco list` or `choco list --limit-output`, if you are looking for a more parsable format (recommended).
+
+In PowerShell `choco list --limit-output | ConvertFrom-Csv -Delimiter '|' -Header PackageId,PackageVersion` will return a PowerShell object you can more easily interact with in your automations.
+
+### Querying Remote Sources
+
+With the Chocolatey CLI v2.0.0 release it is now required to use the `choco search` command to query remote package information. If you are currently using the `choco list` command for this, update your automations to use `choco search`. If you are using `--limit-output` or `-r` as part of your command, this will continue to behave as normal.
 
 ## Questions?
 
