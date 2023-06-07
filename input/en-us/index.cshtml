@@ -22,13 +22,13 @@ RedirectFrom:
 
 <div class="row">
     <div class="mb-4 col-lg-6 col-xl-8">
-        <div class="card card-link card-body bg-retrowave1 overflow-hidden h-100 lead p-md-5 d-flex justify-content-center">
+        <div class="card card-link card-body bg-retrowave1 h-100 lead p-md-5 d-flex justify-content-center">
             <p class="z-index-1">Discover the power of Chocolatey with our comprehensive Getting Started guide, providing an overview of its requirements, terminology, functionality, and its ability to simplify software management on Windows.</p>
             <a class="z-index-1 stretched-link link-primary p-0" href='@Context.GetLink("/en-us/getting-started")'>Get Started with Chocolatey<i class="fas fa-arrow-right ms-1"></i></a>
         </div>
     </div>
     <div class="mb-4 col-lg-6 col-xl-4">
-        <div class="card card-link card-body bg-primary-opacity-25 overflow-hidden h-100 lead p-md-5 d-flex justify-content-center">
+        <div class="card card-link card-body bg-primary-opacity-25 h-100 lead p-md-5 d-flex justify-content-center">
             <p>Ready to unlock the convenience of Chocolatey? Visit our installation guide to learn how to effortlessly set up Chocolatey CLI in seconds.</p>
             <div><a class="btn btn-dark text-white stretched-link" href='@Context.GetLink("/en-us/choco/setup")'>Install Chocolatey CLI</a></div>
         </div>
@@ -36,7 +36,7 @@ RedirectFrom:
 </div>
 @if(highlights.Any() && Document.GetTitle() == homePage)
 {
-    <div class="card card-body card-border-top p-md-5 overflow-hidden mb-4">
+    <div class="card card-body card-border-top p-md-5 mb-4">
         <ul class="fa-ul mb-0 ms-4">
             @foreach (IDocument highlight in highlights)
             {
