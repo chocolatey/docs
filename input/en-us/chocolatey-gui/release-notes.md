@@ -19,6 +19,18 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.1.0-alpha-20230608 (June 8, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey GUI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+### Bug Fixes
+
+- Fix - Package version normalization is not being applied everywhere - see [#1005](https://github.com/chocolatey/ChocolateyGUI/issues/1005).
+- Fix - Null reference exception is thrown when accessing the Chocolatey GUI settings screen - see [#1003](https://github.com/chocolatey/ChocolateyGUI/issues/1003).
+
+
 ## 2.0.0 (May 31, 2023)
 
 > :choco-warning: **WARNING**
