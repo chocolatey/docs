@@ -21,6 +21,27 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.1.0-alpha-20230608 (June 8, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the alpha version of the Chocolatey Licensed Extension.
+
+### Bug Fixes
+
+- Fix - `choco pin remove -n packagename` removes pin for a different package - see [#3196](https://github.com/chocolatey/choco/issues/3196).
+- Fix - Package version normalization is not being applied everywhere - see [#3174](https://github.com/chocolatey/choco/issues/3174).
+
+### Improvements
+
+- Performance degradation after upgrading to version Chocolatey CLI v2.0.0 - see [#3183](https://github.com/chocolatey/choco/issues/3183).
+- `choco search` command does not use previously cached results - see [#3125](https://github.com/chocolatey/choco/issues/3125).
+
+
 ## 2.0.0 (May 31, 2023)
 
 > :choco-warning: **WARNING**
