@@ -31,6 +31,14 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 >
 > This pre-release version of Chocolatey CLI **only** works with the alpha version of the Chocolatey Licensed Extension.
 
+### Known Issues
+
+There is a known issue when attempting to do an open ended search query where the Chocolatey Licensed feed is in place.  For example, if you run the command `choco search --source chocolatey.licensed` you will get the following error message returned:
+
+> The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters.
+
+A fix has been found for this problem, and will be released in a future alpha release.
+
 ### Bug Fixes
 
 - Fix - `choco pin remove -n packagename` removes pin for a different package - see [#3196](https://github.com/chocolatey/choco/issues/3196).
