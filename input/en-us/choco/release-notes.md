@@ -21,6 +21,31 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.1.0-alpha-20230614 (June 14, 2023)
+
+> :choco-warning: **WARNING**
+>
+> This is a pre-release version of Chocolatey CLI and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+
+> :choco-warning: **WARNING**
+>
+> This pre-release version of Chocolatey CLI **only** works with the alpha version of the Chocolatey Licensed Extension.
+
+> :choco-info: **NOTE**
+>
+> The issue that was introduced in the previous alpha release regarding the open ended search query has been addressed in this alpha release.
+
+### Bug Fixes
+
+- Fix - Warning about threshold not shown for multiple sources - see [#3190](https://github.com/chocolatey/choco/issues/3190).
+- Fix - System proxy settings (automatically detect settings) are no longer used in v2.0.0 - see [#3181](https://github.com/chocolatey/choco/issues/3181).
+- Fix - Incorrect implementation of the `RuleIdEqualityComparer.Equals` method - see [#3182](https://github.com/chocolatey/choco/issues/3182).
+
+### Documentation
+
+- Update contributing documentation to be clearer for newcomers - see [#3108](https://github.com/chocolatey/choco/issues/3108).
+
+
 ## 2.1.0-alpha-20230608 (June 8, 2023)
 
 > :choco-warning: **WARNING**
