@@ -35,6 +35,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 >
 > The issue that was introduced in the previous alpha release regarding the open ended search query has been addressed in this alpha release.
 
+> :choco-info: **NOTE**
+>
+> Before installing this prerelease version, we would recommend that you read through the [Upgrade Instructions](https://docs.chocolatey.org/en-us/guides/upgrading-to-chocolatey-v2-v6) for moving to the major version of Chocolatey CLI.
+
 ### Bug Fixes
 
 - Fix - Warning about threshold not shown for multiple sources - see [#3190](https://github.com/chocolatey/choco/issues/3190).
