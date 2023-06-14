@@ -277,7 +277,7 @@
                                                 DocumentList<IDocument> documentHighlightChildren = OutputPages.GetChildrenOf(document);
 
                                                 <h2>@document.GetDateTime("PostedDateTime").ToUniversalTime().ToString("MMMM yyyy")</h2>
-                                                <div class="card card-body card-border-top p-md-5 overflow-hidden postition-relative">
+                                                <div class="card card-body card-border-top p-md-5 postition-relative">
                                                     <ul class="fa-ul mb-0 ms-4">
                                                         @foreach (IDocument child in documentHighlightChildren.Where(x => x.GetBool("IsActive", true)).OrderByDescending(x => x.GetDateTime("PostedDateTime")))
                                                         {
