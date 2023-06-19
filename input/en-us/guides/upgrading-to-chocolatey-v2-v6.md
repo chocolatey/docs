@@ -87,6 +87,7 @@ If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you 
 Chocolatey CLI has supported NuGet v2 feeds since its earliest days. But, like all things, time and technology marches on and NuGet v3 feeds provide new opportunities for package management. Chocolatey CLI now supports NuGet v3 package feeds and listed below are some of the repository managers that also support them:
 
 * [GitHub Packages](https://github.com/features/packages)
+* [GitLab Package Registry](https://docs.gitlab.com/ee/user/packages/package_registry/) ([only feeds without authentication](https://github.com/chocolatey/choco/issues/3217#issuecomment-1596710688))
 * [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository)
 * [JFrog Artifactory](https://jfrog.com/artifactory/)
 * [ProGet](https://inedo.com/proget)
