@@ -19,6 +19,22 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.1.0 (June 29, 2023)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fixes
+
+- Fix - Package version normalization is not being applied everywhere - see [#1005](https://github.com/chocolatey/ChocolateyGUI/issues/1005).
+- Fix - Null reference exception is thrown when accessing the Chocolatey GUI settings screen - see [#1003](https://github.com/chocolatey/ChocolateyGUI/issues/1003).
+
+### Improvement
+
+- Provide ability to use option for Chocolatey CLI commands to skip cached HTTP query results - see [#1014](https://github.com/chocolatey/ChocolateyGUI/issues/1014).
+
+
 ## 2.1.0-alpha-20230608 (June 8, 2023)
 
 > :choco-warning: **WARNING**

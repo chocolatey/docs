@@ -21,6 +21,37 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.1.0 (June 29, 2023)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fixes
+
+- Fix - Warning about threshold not shown for multiple sources - see [#3190](https://github.com/chocolatey/choco/issues/3190).
+- Fix - System proxy settings (automatically detect settings) are no longer used in v2.0.0 - see [#3181](https://github.com/chocolatey/choco/issues/3181).
+- Fix - Incorrect implementation of the `RuleIdEqualityComparer.Equals` method - see [#3182](https://github.com/chocolatey/choco/issues/3182).
+- Fix - `choco pin remove -n packagename` removes pin for a different package - see [#3196](https://github.com/chocolatey/choco/issues/3196).
+- Fix - Package version normalization is not being applied everywhere - see [#3174](https://github.com/chocolatey/choco/issues/3174).
+- Fix - Chocolatey CLI tries to load the licensed environment settings when the licensed extension assembly is not supposed to be loaded - see [#3224](https://github.com/chocolatey/choco/issues/3224).
+- Fix - Initial chocolatey.config configuration file is initialized with empty descriptions - see [#3201](https://github.com/chocolatey/choco/issues/3201).
+- Fix - Chocolatey CLI does not use the `cachelocation` which is configured within the chocolatey.config file - see [#3225](https://github.com/chocolatey/choco/issues/3225).
+- Fix - Checking for presence of Chocolatey license file in tab expansion PowerShell script generates `$error` - see [#3218](https://github.com/chocolatey/choco/issues/3218).
+
+### Improvements
+
+- Create PowerShell helper function to read config values - see [#2854](https://github.com/chocolatey/choco/issues/2854).
+- Add command to allow purging of cached HTTP queries - see [#3194](https://github.com/chocolatey/choco/issues/3194).
+- Provide option for Chocolatey CLI commands to skip cached query results - see [#3193](https://github.com/chocolatey/choco/issues/3193).
+- Degraded performance after upgrading to version Chocolatey CLI v2.0.0 - see [#3183](https://github.com/chocolatey/choco/issues/3183).
+- `choco search` command does not use previously cached results - see [#3125](https://github.com/chocolatey/choco/issues/3125).
+
+### Documentation
+
+- Update contributing documentation to be clearer for newcomers - see [#3108](https://github.com/chocolatey/choco/issues/3108).
+
+
 ## 2.1.0-alpha-20230614 (June 14, 2023)
 
 > :choco-warning: **WARNING**
@@ -75,7 +106,7 @@ A fix has been found for this problem, and will be released in a future alpha re
 
 ### Improvements
 
-- Performance degradation after upgrading to version Chocolatey CLI v2.0.0 - see [#3183](https://github.com/chocolatey/choco/issues/3183).
+- Degraded performance after upgrading to version Chocolatey CLI v2.0.0 - see [#3183](https://github.com/chocolatey/choco/issues/3183).
 - `choco search` command does not use previously cached results - see [#3125](https://github.com/chocolatey/choco/issues/3125).
 
 
