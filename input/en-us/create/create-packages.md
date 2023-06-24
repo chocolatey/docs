@@ -307,6 +307,7 @@ There are some guidelines in terms of the package **ID** (`<id>` tag in the nusp
 * If you want to package an open source application, first search for any pre-existing packages on services like [Repology](https://repology.org/).
   If there are already published packages for the application on another repository, **use the same package id**.
   This will make it easier for users which work with multiple platforms, so they don't have to remember and use different package names.
+* Do not use `chocolatey` in your package ID as this indicates an official package. You can use `choco` instead, but you must include the word 'Unofficial' in the package title.
 
 These guidelines are already commonly applied on packages for all major Linux distributions, because they lead to a more consistent user experience for software repositories, result in easier to remember package IDs, and reduce unnecessary considerations on naming packages for package creators.
 
