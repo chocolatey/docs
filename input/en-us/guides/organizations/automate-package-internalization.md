@@ -235,7 +235,7 @@ Jenkins requires several PowerShell scripts to automate the processes. Create a 
           else {
               Write-Verbose "Failed to download package '$($_.name)'"
           }
-          Remove-Item -$tempPath -Recurse -Force
+          Remove-Item -Path $tempPath -Recurse -Force
       }
       else {
           Write-Verbose "Package '$($_.name)' has a remote version of '$($remotePkg.version)' which is not later than the local version '$($_.version)'."
@@ -303,7 +303,7 @@ Jenkins requires several PowerShell scripts to automate the processes. Create a 
           else {
               Write-Verbose "Package testing failed."
           }
-          Remove-Item -Path $tempPath -Force
+          Remove-Item -Path $tempPath -Force -Recurse
       }
       else {
           Write-Verbose "Could not download package."
