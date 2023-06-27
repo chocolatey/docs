@@ -122,9 +122,12 @@ Chocolatey makes a number of environment variables available (You can access any
 
  * TEMP/TMP - Overridden to the CacheLocation, but may be the same as the original TEMP folder.
  * ChocolateyInstall - Top level folder where Chocolatey is installed.
- * ChocolateyPackageName - The name of the package, equivalent to the `<id />` field in the nuspec.
+ * ChocolateyPackageName - The name of the package, equivalent to the lower case `<id />` field in the nuspec.
  * ChocolateyPackageTitle - The title of the package, equivalent to the `<title />` field in the nuspec.
- * ChocolateyPackageVersion - The version of the package, equivalent to the `<version />` field in the nuspec.
+ * ChocolateyPackageVersion - The version of the package.
+   * Prior to Chocolatey CLI version 2.1.0 this is equivalent to the `<version />` field in the nuspec.
+   * Starting with Chocolatey CLI version 2.1.0 this is equivalent to the [normalized version](xref:upgrading-to-chocolatey-v2-v6#package-version-normalization) of the `<version />` field in the nuspec.
+   * If you rely on `ChocolateyPackageVersion` in a URL, ensure that all possible permutations of the package version work (eg: `1.0.0.0`, `1.0.0`, `1.0`, `1.0.00.0`).
 
 #### Advanced Environment Variables
 
