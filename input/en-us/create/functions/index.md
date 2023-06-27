@@ -1,4 +1,4 @@
-﻿---
+---
 Order: 40
 xref: powershell-reference
 Title: PowerShell Reference
@@ -120,11 +120,11 @@ There are also a number of environment variables providing access to some values
 
 Chocolatey makes a number of environment variables available (You can access any of these with $env:TheVariableNameBelow):
 
- * TEMP/TMP - Overridden to the CacheLocation, but may be the same as the original TEMP folder
- * ChocolateyInstall - Top level folder where Chocolatey is installed
- * ChocolateyPackageName - The name of the package, equivalent to the `<id />` field in the nuspec
- * ChocolateyPackageTitle - The title of the package, equivalent to the `<title />` field in the nuspec
- * ChocolateyPackageVersion - The version of the package, equivalent to the `<version />` field in the nuspec
+ * TEMP/TMP - Overridden to the CacheLocation, but may be the same as the original TEMP folder.
+ * ChocolateyInstall - Top level folder where Chocolatey is installed.
+ * ChocolateyPackageName - The name of the package, equivalent to the `<id />` field in the nuspec.
+ * ChocolateyPackageTitle - The title of the package, equivalent to the `<title />` field in the nuspec.
+ * ChocolateyPackageVersion - The version of the package, equivalent to the `<version />` field in the nuspec.
 
 #### Advanced Environment Variables
 
@@ -143,14 +143,14 @@ The following are more advanced settings:
 
 Some environment variables are set based on options that are passed, configuration and/or features that are turned on:
 
- * ChocolateyExitOnRebootDetected - Are we exiting on a detected reboot? Set by ` --exit-when-reboot-detected`  or the feature `exitOnRebootDetected`
- * ChocolateyEnvironmentDebug - Was `--debug` passed? If using the built-in PowerShell host, this is always true (but only logs debug messages to console if `--debug` was passed)
- * ChocolateyEnvironmentVerbose - Was `--verbose` passed? If using the built-in PowerShell host, this is always true (but only logs verbose messages to console if `--verbose` was passed)
+ * ChocolateyExitOnRebootDetected - Are we exiting on a detected reboot? Set by ` --exit-when-reboot-detected`  or the feature `exitOnRebootDetected`.
+ * ChocolateyEnvironmentDebug - Was `--debug` passed? If using the built-in PowerShell host, this is always true (but only logs debug messages to console if `--debug` was passed).
+ * ChocolateyEnvironmentVerbose - Was `--verbose` passed? If using the built-in PowerShell host, this is always true (but only logs verbose messages to console if `--verbose` was passed).
  * ChocolateyForce - Was `--force` passed?
  * ChocolateyForceX86 - Was `-x86` passed?
- * ChocolateyRequestTimeout - How long before a web request will time out. Set by config `webRequestTimeoutSeconds`
- * ChocolateyResponseTimeout - How long to wait for a download to complete? Set by config `commandExecutionTimeoutSeconds`
- * ChocolateyPowerShellHost - Are we using the built-in PowerShell host? Set by `--use-system-powershell` or the feature `powershellHost`
+ * ChocolateyRequestTimeout - How long before a web request will time out. Set by config `webRequestTimeoutSeconds`.
+ * ChocolateyResponseTimeout - How long to wait for a download to complete? Set by config `commandExecutionTimeoutSeconds`.
+ * ChocolateyPowerShellHost - Are we using the built-in PowerShell host? Set by `--use-system-powershell` or the feature `powershellHost`.
 
 #### Business Edition Variables
 
@@ -163,8 +163,8 @@ Some environment variables are set based on options that are passed, configurati
 
 The following are experimental or use not recommended:
 
- * OS_IS64BIT = This may not return correctly - it may depend on the process the app is running under
- * CHOCOLATEY_VERSION_PRODUCT = the version of Choco that may match CHOCOLATEY_VERSION but may be different - based on git describe
+ * OS_IS64BIT = This may not return correctly - it may depend on the process the app is running under.
+ * CHOCOLATEY_VERSION_PRODUCT = the version of Choco that may match CHOCOLATEY_VERSION but may be different - based on git describe.
  * IS_ADMIN = Is the user an administrator? But doesn't tell you if the process is elevated.
 
 #### Not Useful Or Anti-Pattern If Used
@@ -178,14 +178,14 @@ The following are experimental or use not recommended:
  * ChocolateyChecksumType32 - Was `--download-checksum-type` passed?
  * ChocolateyChecksum64 - Was `--download-checksum-x64` passed?
  * ChocolateyChecksumType64 - Was `--download-checksum-type-x64` passed?
- * ChocolateyPackageExitCode - The exit code of the script that just ran - usually set by `Set-PowerShellExitCode`
+ * ChocolateyPackageExitCode - The exit code of the script that just ran - usually set by `Set-PowerShellExitCode`.
  * ChocolateyLastPathUpdate - Set by Chocolatey as part of install, but not used for anything in particular in packaging.
- * ChocolateyProxyLocation - The explicit proxy location as set in the configuration `proxy`
- * ChocolateyDownloadCache - Use available download cache? Set by `--skip-download-cache`, `--use-download-cache`, or feature `downloadCache`
- * ChocolateyProxyBypassList - Explicitly set locations to ignore in configuration `proxyBypassList`
- * ChocolateyProxyBypassOnLocal - Should the proxy bypass on local connections? Set based on configuration `proxyBypassOnLocal`
+ * ChocolateyProxyLocation - The explicit proxy location as set in the configuration `proxy`.
+ * ChocolateyDownloadCache - Use available download cache? Set by `--skip-download-cache`, `--use-download-cache`, or feature `downloadCache`.
+ * ChocolateyProxyBypassList - Explicitly set locations to ignore in configuration `proxyBypassList`.
+ * ChocolateyProxyBypassOnLocal - Should the proxy bypass on local connections? Set based on configuration `proxyBypassOnLocal`.
  * http_proxy - Set by original `http_proxy` passthrough, or same as `ChocolateyProxyLocation` if explicitly set.
  * https_proxy - Set by original `https_proxy` passthrough, or same as `ChocolateyProxyLocation` if explicitly set.
  * no_proxy- Set by original `no_proxy` passthrough, or same as `ChocolateyProxyBypassList` if explicitly set.
- * ChocolateyPackageFolder - Not for use in package automation scripts. Recommend using `$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"` as per template generated by `choco new`
- * ChocolateyToolsLocation - Not for use in package automation scripts. Recommend using Get-ToolsLocation instead
+ * ChocolateyPackageFolder - Not for use in package automation scripts. Recommend using `$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"` as per template generated by `choco new`.
+ * ChocolateyToolsLocation - Not for use in package automation scripts. Recommend using Get-ToolsLocation instead.
