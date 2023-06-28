@@ -6,6 +6,25 @@ Description: Settings up Chocolatey to use locally configured proxy server
 RedirectFrom: docs/proxy-settings-for-chocolatey
 ---
 
+## Proxy Setting Considerations
+
+### Proxy Configuration Priority
+
+Chocolatey applies proxy configuration based on the order below:
+
+1. [Command line arguments](#explicit-proxy-settings-at-runtime).
+1. [Chocolatey configuration](#explicit-proxy-settings).
+1. [Environment variables](#existing-proxy-environment-variables).
+1. [System configured proxy server](#system-proxy-settings).
+
+### Known Limitations
+
+Certain Chocolatey products are known to apply different proxy settings depending on circumstances.
+
+* Chocolatey GUI - [Downloading icons does not honor Chocolatey CLI proxy settings](https://github.com/chocolatey/ChocolateyGUI/issues/1013).
+* Chocolatey Licensed Extension - [VirusTotal checking at runtime does not use any proxy](https://github.com/chocolatey/chocolatey-licensed-issues/issues/351).
+* Chocolatey Agent - [Agent communications do not use any proxy configuration](https://github.com/chocolatey/chocolatey-licensed-issues/issues/350).
+
 ## Installing Chocolatey From Behind A Proxy Server
 
 When trying to install Chocolatey behind a proxy server, you may be faced with one of the following errors:
@@ -83,9 +102,9 @@ Chocolatey will automatically pick up the following environment variables if the
 
 ## Explicit Proxy Settings
 
-Chocolatey has explicit proxy support starting with 0.9.9.9.
+Chocolatey has explicit proxy support through the `choco config` command.
 
-You can simply configure 1 up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.
+You can simply configure up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.
 
 ~~~sh
 choco config set --name proxy --value <locationandport>
@@ -97,7 +116,7 @@ choco config set --name proxyBypassOnLocal --value true # optional
 
 ### Example
 
-Running the following commands in 0.9.9.9:
+Running the following commands:
 
 ~~~sh
 choco config set --name proxy --value http://localhost:8888
