@@ -1,5 +1,5 @@
 ﻿---
-Order: 220
+Order: 230
 xref: install-chocolateyinstallpackage
 Title: Install-ChocolateyInstallPackage
 Description: Information on Install-ChocolateyInstallPackage function

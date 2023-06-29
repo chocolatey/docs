@@ -1,5 +1,5 @@
 ﻿---
-Order: 330
+Order: 340
 xref: start-chocolateyprocessasadmin
 Title: Start-ChocolateyProcessAsAdmin
 Description: Information on Start-ChocolateyProcessAsAdmin function

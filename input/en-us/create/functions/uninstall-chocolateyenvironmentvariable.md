@@ -1,5 +1,5 @@
 ﻿---
-Order: 360
+Order: 370
 xref: uninstall-chocolateyenvironmentvariable
 Title: Uninstall-ChocolateyEnvironmentVariable
 Description: Information on Uninstall-ChocolateyEnvironmentVariable function

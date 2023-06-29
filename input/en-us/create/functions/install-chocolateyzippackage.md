@@ -1,5 +1,5 @@
 ﻿---
-Order: 290
+Order: 300
 xref: install-chocolateyzippackage
 Title: Install-ChocolateyZipPackage
 Description: Information on Install-ChocolateyZipPackage function

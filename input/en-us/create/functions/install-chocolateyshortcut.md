@@ -1,5 +1,5 @@
 ﻿---
-Order: 270
+Order: 280
 xref: install-chocolateyshortcut
 Title: Install-ChocolateyShortcut
 Description: Information on Install-ChocolateyShortcut function

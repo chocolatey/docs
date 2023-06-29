@@ -1,5 +1,5 @@
 ﻿---
-Order: 370
+Order: 380
 xref: uninstall-chocolateypackage
 Title: Uninstall-ChocolateyPackage
 Description: Information on Uninstall-ChocolateyPackage function

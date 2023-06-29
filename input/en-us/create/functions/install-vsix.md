@@ -1,5 +1,5 @@
 ﻿---
-Order: 300
+Order: 310
 xref: install-vsix
 Title: Install-Vsix
 Description: Information on Install-Vsix function

@@ -1,5 +1,5 @@
 ﻿---
-Order: 210
+Order: 220
 xref: install-chocolateyfileassociation
 Title: Install-ChocolateyFileAssociation
 Description: Information on Install-ChocolateyFileAssociation function

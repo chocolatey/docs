@@ -105,7 +105,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --online
      Online - Open help for specified command in default browser application. 
        This option only works when used in combintation with the -?/--help/-h 
-       option.
+       option.  Available in 2.0.0+
 
  -d, --debug
      Debug - Show debug messaging.
@@ -197,7 +197,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 
        command execution when a runtime compatibility problem is found between 
-       the version of Chocolatey and the Chocolatey Licensed Extension.
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+
+
+     --ignore-http-cache
+     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
+       created when querying sources, and create new caches. Available in 2.1.0+
 
  -a, --auto, --automaticpackage
      AutomaticPackage - Generate automatic package instead of normal. 

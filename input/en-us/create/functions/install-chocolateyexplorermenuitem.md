@@ -1,5 +1,5 @@
 ﻿---
-Order: 200
+Order: 210
 xref: install-chocolateyexplorermenuitem
 Title: Install-ChocolateyExplorerMenuItem
 Description: Information on Install-ChocolateyExplorerMenuItem function

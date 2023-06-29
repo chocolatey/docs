@@ -89,7 +89,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --online
      Online - Open help for specified command in default browser application. 
        This option only works when used in combintation with the -?/--help/-h 
-       option.
+       option.  Available in 2.0.0+
 
  -d, --debug
      Debug - Show debug messaging.
@@ -184,6 +184,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        the version of Chocolatey and the Chocolatey Licensed Extension. 
        Available in 1.1.0+
 
+     --ignore-http-cache
+     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
+       created when querying sources, and create new caches. Available in 2.1.0+
+
  -s, --source=VALUE
      Source - Source location for install. Can use special 'windowsfeatures', 
        'ruby', 'cygwin', or 'python' sources. Defaults to sources.
@@ -261,12 +265,12 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Detailed - Alias for verbose.
 
      --disable-repository-optimizations, --disable-package-repository-optimizations
-     Disable Package Repository Optimizations - Do not use optimizations for
-       reducing bandwidth with repository queries during package
-       install/upgrade/outdated operations. Should not generally be used,
-       unless a repository needs to support older methods of query. When
-       disabled, this makes queries similar to the way they were done in
-       Chocolatey v0.10.11 and before. Overrides the default feature
+     Disable Package Repository Optimizations - Do not use optimizations for 
+       reducing bandwidth with repository queries during package 
+       install/upgrade/outdated operations. Should not generally be used, 
+       unless a repository needs to support older methods of query. When 
+       disabled, this makes queries similar to the way they were done in 
+       earlier versions of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
 
      --audit, --showaudit, --show-audit, --show-audit-info

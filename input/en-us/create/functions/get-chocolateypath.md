@@ -1,5 +1,5 @@
 ﻿---
-Order: 30
+Order: 40
 xref: get-chocolateypath
 Title: Get-ChocolateyPath
 Description: Information on Get-ChocolateyPath function

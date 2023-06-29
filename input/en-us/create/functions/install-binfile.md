@@ -1,5 +1,5 @@
 ﻿---
-Order: 180
+Order: 190
 xref: install-binfile
 Title: Install-BinFile
 Description: Information on Install-BinFile function
