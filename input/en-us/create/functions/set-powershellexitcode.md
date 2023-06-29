@@ -1,5 +1,5 @@
 ﻿---
-Order: 320
+Order: 330
 xref: set-powershellexitcode
 Title: Set-PowerShellExitCode
 Description: Information on Set-PowerShellExitCode function

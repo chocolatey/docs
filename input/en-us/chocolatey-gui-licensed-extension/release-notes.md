@@ -30,7 +30,7 @@ Please see [Install the Licensed Edition](xref:setup-chocolatey-gui-licensed) fo
 
 > :choco-warning: **WARNING**
 >
-> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.0.0.
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
 
 ### Improvement
 

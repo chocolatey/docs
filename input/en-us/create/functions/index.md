@@ -65,6 +65,7 @@ These are the functions from above as one list.
 
  * [Format-FileSize](xref:format-filesize)
  * [Get-ChecksumValid](xref:get-checksumvalid)
+ * [Get-ChocolateyConfigValue](xref:get-chocolateyconfigvalue)
  * [Get-ChocolateyPath](xref:get-chocolateypath)
  * [Get-ChocolateyUnzip](xref:get-chocolateyunzip)
  * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)

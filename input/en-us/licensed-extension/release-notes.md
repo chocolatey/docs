@@ -43,6 +43,25 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.1.0 (June 29, 2023)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 5.x and earlier versions to 6.x.
+
+### Bug Fixes
+
+- Fix - Package version normalization is not being applied everywhere.
+- Fix - `choco download` incorrectly uses the cached nupkg.
+- Fix - Attempting to reinstall an embedded package, a package that actually contains the application installers, can result in failure.
+- Fix - Invalid URI Format warning shown when running Chocolatey CLI command using some Chocolatey Licensed Extension command line options.
+  
+### Improvements
+
+- Degraded performance after upgrading to version Chocolatey Licensed Extension v6.0.0.
+- Fall back to using original URL for application installer if Chocolatey's CDN can not be reached.
+
+
 ## 6.1.0-alpha-20230608 (June 8, 2023)
 
 > :choco-warning: **WARNING**
@@ -55,7 +74,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ### Improvement
 
-- Performance degradation after upgrading to version Chocolatey Licensed Extension v6.0.0.
+- Degraded performance after upgrading to version Chocolatey Licensed Extension v6.0.0.
 
 
 ## 6.0.0 (May 31, 2023)

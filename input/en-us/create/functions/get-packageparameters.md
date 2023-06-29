@@ -1,5 +1,5 @@
 ﻿---
-Order: 100
+Order: 110
 xref: get-packageparameters
 Title: Get-PackageParameters
 Description: Information on Get-PackageParameters function

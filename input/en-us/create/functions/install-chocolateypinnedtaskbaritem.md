@@ -1,5 +1,5 @@
 ﻿---
-Order: 250
+Order: 260
 xref: install-chocolateypinnedtaskbaritem
 Title: Install-ChocolateyPinnedTaskBarItem
 Description: Information on Install-ChocolateyPinnedTaskBarItem function

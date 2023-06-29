@@ -1,5 +1,5 @@
 ﻿---
-Order: 190
+Order: 200
 xref: install-chocolateyenvironmentvariable
 Title: Install-ChocolateyEnvironmentVariable
 Description: Information on Install-ChocolateyEnvironmentVariable function

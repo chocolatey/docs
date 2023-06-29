@@ -19,6 +19,7 @@ This is a listing of all of the different things you can pass to choco.
 ## Commands
 
  * [apikey](xref:choco-command-apikey) - retrieves, saves or deletes an API key for a particular source
+ * [cache](xref:choco-command-cache) - Manage the local HTTP caches used to store queries (v2.1.0+)
  * [config](xref:choco-command-config) - Retrieve and configure config file settings
  * [convert](xref:choco-command-convert) - converts packages from one type to another type
  * [download](xref:choco-command-download) - downloads packages - optionally internalizing all remote resources
@@ -222,7 +223,7 @@ Following these scripting best practices will ensure your scripts work
      --online
      Online - Open help for specified command in default browser application. 
        This option only works when used in combintation with the -?/--help/-h 
-       option.
+       option.  Available in 2.0.0+
 
  -d, --debug
      Debug - Show debug messaging.
@@ -316,6 +317,10 @@ Following these scripting best practices will ensure your scripts work
        command execution when a runtime compatibility problem is found between 
        the version of Chocolatey and the Chocolatey Licensed Extension. 
        Available in 1.1.0+
+
+     --ignore-http-cache
+     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
+       created when querying sources, and create new caches. Available in 2.1.0+
 
 ~~~
 

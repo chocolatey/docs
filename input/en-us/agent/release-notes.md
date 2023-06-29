@@ -31,6 +31,21 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.1.0 (June 29, 2023)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fix
+
+- Fix - Outdated packages are not being reported to Chocolatey Central Management Service.
+
+### Improvement
+
+- Make use of option to skip HTTP cache when running Chocolatey CLI commands. 
+
+
 ## 2.0.0 (May 31, 2023)
 
 > :choco-warning: **WARNING**

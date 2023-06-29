@@ -1,5 +1,5 @@
 ﻿---
-Order: 90
+Order: 100
 xref: get-osarchitecturewidth
 Title: Get-OSArchitectureWidth
 Description: Information on Get-OSArchitectureWidth function

@@ -1,5 +1,5 @@
 ﻿---
-Order: 50
+Order: 60
 xref: get-chocolateywebfile
 Title: Get-ChocolateyWebFile
 Description: Information on Get-ChocolateyWebFile function
