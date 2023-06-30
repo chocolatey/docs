@@ -34,7 +34,9 @@ However, the System HTTP Cache will only be considered if running in an elevated
     choco cache remove
     choco cache remove --expired
 
-> :choco-info: **NOTE** See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
+> :choco-info: **NOTE**
+>
+> See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
 ## Exit Codes
