@@ -13,6 +13,34 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 >
 > Issue links may not be publicly available at this time.
 
+## 0.19.0 (July 4, 2023)
+
+### Feature
+
+- Update environment deployment to support Chocolatey CLI v2.x - see [#135](https://github.com/chocolatey/c4b-azure/issues/135).
+
+### Bug Fixes
+
+- Fix - VM Unable to Start Due to Missing Secret - see [#121](https://github.com/chocolatey/c4b-azure/issues/121).
+- Fix - Jenkins Jobs failing when executed with Chocolatey v2.x installed - see [#134](https://github.com/chocolatey/c4b-azure/issues/134).
+
+### Improvement
+
+- Update to 2.1.0 and 6.1.0 of Chocolatey products - see [#141](https://github.com/chocolatey/c4b-azure/issues/141).
+
+### Bundled Version Update
+
+| Package                             | Version       |
+|-------------------------------------|---------------|
+| chocolatey                          | 2.1.0         |
+| chocolatey.extension                | 6.1.0         |
+| chocolatey-agent                    | 2.1.0         |
+| chocolateygui                       | 2.1.0         |
+| chocolateygui.extension             | 2.0.0         |
+| chocolatey-licensed-jenkins-scripts | 0.1.1 (New)   |
+| Temurinjre                          | 20.0.1.900    |
+| vcredist140                         | 14.36.32532   |
+
 ## 0.18.1 (May 25, 2023)
 
 ### Bug Fix
