@@ -343,6 +343,8 @@ The Chocolatey for Business Azure Environment's Virtual Machine may retain a ref
 To fix this, use the PowerShell Az modules as follows:
 
 ```PowerShell
-if (-not $ResourceGroupName) {$ResourceGroupName = Read-Host 'Enter the ResourceGroupName'}
+if (-not $ResourceGroupName) {
+    $ResourceGroupName = Read-Host 'Enter the ResourceGroupName'
+}
 Get-AzVM -ResourceGroupName $ResourceGroupName | Remove-AzVMSecret | Update-AzVM
 ```
