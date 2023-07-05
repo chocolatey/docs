@@ -333,3 +333,16 @@ We have seen an occasional issue with IISReset that cannot be replicated. This r
 > the remote computer or to the domain administrator global group.
 
 If you see this error, you should redeploy the resource.
+
+### Environment VM unable to start due to missing secret  (Error: KeyVaultSecretDoesNotExist)
+
+During the deployment of the Chocolatey for Business Azure Environment your supplied certificate is converted from a [secret](https://learn.microsoft.com/en-us/azure/key-vault/secrets/about-secrets) object to a [certificate](https://learn.microsoft.com/en-us/azure/key-vault/certificates/about-certificates) object within the environment's [KeyVault](https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults)
+
+The Chocolatey for Business Azure Environment's Virtual Machine may retain a reference to the certificate from prior to the conversion, and if it is shut down then it will not be able to start again due to the referenced secret no longer existing.
+
+To fix this, use the PowerShell Az modules as follows:
+
+```PowerShell
+if (-not $ResourceGroupName) {$ResourceGroupName = Read-Host 'Enter the ResourceGroupName'}
+Get-AzVM -ResourceGroupName $ResourceGroupName | Remove-AzVMSecret | Update-AzVM
+```
