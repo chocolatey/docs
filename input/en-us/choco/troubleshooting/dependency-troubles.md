@@ -7,16 +7,16 @@ Description: Troubleshooting steps for when you encounter issues related to depe
 
 ## Installation and Upgrade Commands Fail for Many Seemingly Unrelated Packages
 
-Due to the way dependency resolution works, packages with dependency specifications can occasionally trigger undesirable behavior.
-When this happens, you will often be greeted with both warnings and errors.
+Due to the way dependency resolution works, packages with dependencies can occasionally trigger undesirable behavior.
+When this happens, you will often be presented with both warnings and errors.
 The most important information will be in the errors, and not the warnings.
 
 When you encounter these errors, it is recommended to start with the package name mentioned in the error, and attempt to install it.
-Working your way through any other failing dependencies until they're all installed.
+Repeat this process with any other failing dependencies until they're all installed.
 
 ### Example 1 - Upgrade All Fails to Upgrade One or More Packages
 
-This will sometimes be encountered with meta-packages, such as `obs-studio` which takes a dependency on `obs-studio.install`.
+This will sometimes be encountered with meta-packages, such as `obs-studio` which takes an exact-version dependency on `obs-studio.install`.
 When running `choco upgrade all` it will attempt to upgrade every installed package.
 Any packages which fail to install may be retried as part of a later dependency chain.
 For example, `obs-studio.install` may be upgraded, fail, and then later be tried again as part of the dependency chain for `obs-studio` itself.
@@ -45,7 +45,7 @@ For packages that have a specific version dependency, add the `--version` option
 > :choco-warning: **WARNING**
 >
 > This example deals with multiple missing dependencies, and installs them while ignoring dependencies.
-> It is recommended to ensure you're installing the proper versions needed for your dependencies.
+> You will need to ensure you're installing the correct versions required for your dependencies.
 
 The following scenario illustrates what can happen during an `install` where multiple existing packages have dependencies that are not currently met.
 In this example, `glab` is attempting to be installed, but a number of `KB` packages are missing from the Chocolatey `lib` directory.
@@ -75,11 +75,11 @@ When `glab` fails to install, we make note of the next package missing in our ch
 
   ![Output from choco install KB2919442 where it is already installed. Following output is from choco install glab where it fails to resolve dependency 'chocolatey-windowsupdate.extension'](/assets/images/chocolatey/kb-dependency-failure-5.png)
 
-6. Installing this in the same ways as before (`choco install chocolatey-windowsupdate.extension`, then `choco install chocolatey-windowsupdate.extension --ignore-dependencies`).
+6. We install this in the same way as before (`choco install chocolatey-windowsupdate.extension`, then `choco install chocolatey-windowsupdate.extension --ignore-dependencies`).
 
   ![Output from choco install chocolatey-windowsupdate.extension where it fails to resolve dependency 'KB3033929'](/assets/images/chocolatey/kb-dependency-failure-6.png)
 
-7. Installing the next package (`KB3033929`), we note that it did not have any dependency failures.
+7. We install the next package (`KB3033929`) and note that it did not have any dependency failures.
 
   ![Output from choco install KB3033929 where it installs with no dependency failures](/assets/images/chocolatey/kb-dependency-failure-7.png)
 
