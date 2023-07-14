@@ -6,7 +6,26 @@ Description: Settings up Chocolatey to use locally configured proxy server
 RedirectFrom: docs/proxy-settings-for-chocolatey
 ---
 
-## Installing Chocolatey from behind a proxy server
+## Proxy Setting Considerations
+
+### Proxy Configuration Priority
+
+Chocolatey applies proxy configuration based on the order below:
+
+1. [Command line arguments](#explicit-proxy-settings-at-runtime).
+1. [Chocolatey configuration](#explicit-proxy-settings).
+1. [Environment variables](#existing-proxy-environment-variables).
+1. [System configured proxy server](#system-proxy-settings).
+
+### Known Limitations
+
+Certain Chocolatey products are known to apply different proxy settings depending on circumstances.
+
+* Chocolatey GUI - [Downloading icons does not honor Chocolatey CLI proxy settings](https://github.com/chocolatey/ChocolateyGUI/issues/1013).
+* Chocolatey Licensed Extension - [VirusTotal checking at runtime does not use any proxy](https://github.com/chocolatey/chocolatey-licensed-issues/issues/351).
+* Chocolatey Agent - [Agent communications do not use any proxy configuration](https://github.com/chocolatey/chocolatey-licensed-issues/issues/350).
+
+## Installing Chocolatey From Behind A Proxy Server
 
 When trying to install Chocolatey behind a proxy server, you may be faced with one of the following errors:
 
@@ -20,12 +39,12 @@ Steps to help address this:
 
 1. Copy the [install.ps1](https://community.chocolatey.org/install.ps1) file locally.
 1. Open a PowerShell command line as administrator.
-1. If _not_ using a proxy with authentication, set the default proxy credentials with `[Net.WebRequest]::DefaultWebProxy.Credentials = [Net.CredentialCache]::DefaultCredentials`
+1. If _not_ using a proxy with authentication, set the default proxy credentials with `[Net.WebRequest]::DefaultWebProxy.Credentials = [Net.CredentialCache]::DefaultCredentials`.
 1. Set the following environment variables:
-   1. `$env:chocolateyProxyLocation` (in the format `proxyserver:proxyport`, see below for an example)
+   1. `$env:chocolateyProxyLocation` (in the format `proxyserver:proxyport`, see below for an example).
 1. If your proxy requires authentication, set the following variables:
-   1. `$env:chocolateyProxyUser` (if using a domain account, ensure you have the appropriate domain prefix for the account, e.g. `AD\UserName` or `UserName`)
-   1. `$env:chocolateyProxyPassword`
+   1. `$env:chocolateyProxyUser` (if using a domain account, ensure you have the appropriate domain prefix for the account, e.g. `AD\UserName` or `UserName`).
+   1. `$env:chocolateyProxyPassword`.
 1. With that same shell open where the environment variables are set, run the downloaded script to install Chocolatey.
 
 In PowerShell, it looks like this:
@@ -77,46 +96,46 @@ Chocolatey by default already supports system set proxy servers
 
 Chocolatey will automatically pick up the following environment variables if they are already set:
 
-* `http_proxy`
-* `https_proxy`
-* `no_proxy`
+* `http_proxy`.
+* `https_proxy`.
+* `no_proxy`.
 
 ## Explicit Proxy Settings
 
-Chocolatey has explicit proxy support starting with 0.9.9.9.
+Chocolatey has explicit proxy support through the `choco config` command.
 
-You can simply configure 1 up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.
+You can simply configure up to 5 settings and Chocolatey will use a proxy server. `proxy` is required and is the location and port of the proxy server. The values for user/password are only used for credentials when both are present.
 
 ~~~sh
-choco config set --name proxy --value <locationandport>
-choco config set --name proxyUser --value <username> #optional
-choco config set --name proxyPassword --value <passwordThatGetsEncryptedInFile> # optional
-choco config set --name proxyBypassList --value "'<bypasslist, comma separated>'" # optional
-choco config set --name proxyBypassOnLocal --value true # optional
+choco config set --name="'proxy'" --value="'<LOCATION-AND-PORT>'"
+choco config set --name="'proxyUser'" --value="'<USERNAME>'" #optional
+choco config set --name="'proxyPassword'" --value="'<PASSWORD>'" # optional, will be encrypted in the configuration file
+choco config set --name="'proxyBypassList'" --value="'<BYPASS-LIST-COMMA-SEPARATED>'" # optional
+choco config set --name="'proxyBypassOnLocal'" --value="'true'" # optional
 ~~~~
 
 ### Example
 
-Running the following commands in 0.9.9.9:
+Running the following commands:
 
 ~~~sh
-choco config set --name proxy --value http://localhost:8888
-choco config set --name proxyUser --value bob
-choco config set --name proxyPassword --value 123Sup#rSecur3
-choco config set --name proxyBypassList --value "'http://localhost,http://this.location/'"
-choco config set --name proxyBypassOnLocal --value true
+choco config set --name="'proxy'" --value="'http://localhost:8888'"
+choco config set --name="'proxyUser'" --value="'bob'"
+choco config set --name="'proxyPassword'" --value="'123Sup#rSecur3'"
+choco config set --name="'proxyBypassList'" --value="'http://localhost,http://this.location/'"
+choco config set --name="'proxyBypassOnLocal'" --value="'true'"
 ~~~
 
 Results in the following items being added to the config file:
 
 ![Shows the encrypted proxy configuration information that is stored in the chocolatey.config file](/assets/images/proxy-config-changes.png)
 
-### Explicit Proxy Settings at Runtime
+### Explicit Proxy Settings At Runtime
 
 You can pass proxy information at runtime with each command. See https://github.com/chocolatey/choco/issues/1173
 
 `--proxy="'value'" --proxy-user="'<user>'" --proxy-password="'<pwd>'" --proxy-bypass-list="'<comma separated, list>'" --proxy-bypass-on-local`
 
-## What to do if my proxy is socks?
+## What To Do If My Proxy Is Socks?
 
 It may just work. It hasn't been validated yet.
