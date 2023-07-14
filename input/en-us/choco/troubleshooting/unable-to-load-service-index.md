@@ -7,9 +7,7 @@ Title: Unable to Load Service Index Errors
 On occasion, you may run into issues where Chocolatey CLI is unable to communicate with a package source.
 There are a number of possible reasons for this, many of which will result in a warning that looks like this:
 
-```code
-Unable to load the service index for source <URL>.
-```
+> Unable to load the service index for source <URL>.
 
 This page contains the currently known information about these errors, as well as how to further diagnose the problem and find a solution.
 
@@ -32,16 +30,12 @@ One such example is the Chocolatey Community Repository, which requires TLS 1.2 
 
 Some examples of these kinds of error messages are:
 
-```code
-The request was aborted: Could not create SSL/TLS secure channel.
-```
+> The request was aborted: Could not create SSL/TLS secure channel.
 
-```code
-HTTPS handshake to community.chocolatey.org (for #3) failed. System.Security.Authentication.AuthenticationException A call to SSPI failed, see inner exception.
-< The function requested is not supported
-
-Win32 (SChannel) Native Error Code: 0x80090302
-```
+> HTTPS handshake to community.chocolatey.org (for #3) failed. System.Security.Authentication.AuthenticationException A call to SSPI failed, see inner exception.
+> < The function requested is not supported
+> 
+> Win32 (SChannel) Native Error Code: 0x80090302
 
 In these cases, one of two issues is present:
 
@@ -74,9 +68,7 @@ In some cases, users who are communicating with the Chocolatey Community Reposit
 
 A common error message in these circumstances looks like this:
 
-```code
-The remote certificate is invalid according to the validation procedure.
-```
+> The remote certificate is invalid according to the validation procedure.
 
 To confirm whether the issue is related to your proxy configuration, we recommend temporarily bypassing or disabling the proxy in order to verify whether you are otherwise able to communicate with the Chocolatey Community Repository.
 
