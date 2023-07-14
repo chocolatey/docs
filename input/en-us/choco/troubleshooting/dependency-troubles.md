@@ -38,6 +38,7 @@ To resolve the issue, we run `choco upgrade obs-studio.install` to get the corre
 For packages that have a specific version dependency, add the `--version` option and specify the exact version to install.
 
 ![Partial output from choco upgrade all, showing that obs-studio.install is attempted and failed](/assets/images/chocolatey/dependency-resolution-failure-1.png)
+
 ![Continued output from choco upgrade all, showing that obs-studio metapackage is installed and subsequently re-attempts the upgrade to obs-studio.install which again fails, followed by a dependency resolution error in the next package and failing a seemingly unrelated package installation](/assets/images/chocolatey/dependency-resolution-failure-2.png)
 
 ### Example 2 - Installing a Package Fails Due to Existing Missing Dependencies
@@ -50,40 +51,40 @@ For packages that have a specific version dependency, add the `--version` option
 The following scenario illustrates what can happen during an `install` where multiple existing packages have dependencies that are not currently met.
 In this example, `glab` is attempting to be installed, but a number of `KB` packages are missing from the Chocolatey `lib` directory.
 
-1. We start by attempting to install `glab`, and note that
+1. We start by attempting to install `glab`, and note that that the following error occurs.
 
-  ![Output from choco install glab where it fails to resolve dependency 'KB306858'](/assets/images/chocolatey/kb-dependency-failure-1.png)
+    ![Output from choco install glab where it fails to resolve dependency 'KB306858'](/assets/images/chocolatey/kb-dependency-failure-1.png)
 
-2. To resolve the issue, we first run `choco install KB3063858` to install the first identified package.
+1. To resolve the issue, we first run `choco install KB3063858` to install the first identified package.
 We note that this fails to install, so we make note of the package it couldn't find (`KB2919355`) and we run `choco install KB3063858 --ignore-dependencies` to ignore the dependency failure.
 
-  ![Output from choco install KB306858 where it fails to resolve dependency 'KB2919355'](/assets/images/chocolatey/kb-dependency-failure-2.png)
+    ![Output from choco install KB306858 where it fails to resolve dependency 'KB2919355'](/assets/images/chocolatey/kb-dependency-failure-2.png)
 
-3. Now that we have `KB3063858` installed, we attempt to run `choco install KB2919355` to install the next identified package.
+1. Now that we have `KB3063858` installed, we attempt to run `choco install KB2919355` to install the next identified package.
 Again we make note of the next package (`KB2999226`) and install this package while ignoring dependencies: `choco install KB2919355 --ignore-dependencies`.
 
-  ![Output from choco install KB2919355 where it fails to resolve dependency 'KB2999226'](/assets/images/chocolatey/kb-dependency-failure-3.png)
+    ![Output from choco install KB2919355 where it fails to resolve dependency 'KB2999226'](/assets/images/chocolatey/kb-dependency-failure-3.png)
 
-4. Now with `KB2919355` installed we continue with `choco install KB2999226`.
+1. Now with `KB2919355` installed we continue with `choco install KB2999226`.
 Again we make note of the next package (`KB2919442`) and install this package while ignoring dependencies: `choco install KB2999226 --ignore-dependencies`.
 
-  ![Output from choco install KB2999226 where it fails to resolve dependency 'KB2919442'](/assets/images/chocolatey/kb-dependency-failure-4.png)
+    ![Output from choco install KB2999226 where it fails to resolve dependency 'KB2919442'](/assets/images/chocolatey/kb-dependency-failure-4.png)
 
-5. Now with `KB2999226` installed, we attempt to run `choco install KB2919442`.
+1. Now with `KB2999226` installed, we attempt to run `choco install KB2919442`.
 We see that this one is actually already installed, so we attempt to install `glab` again.
 When `glab` fails to install, we make note of the next package missing in our chain: `chocolatey-windowsupdate.extension`.
 
-  ![Output from choco install KB2919442 where it is already installed. Following output is from choco install glab where it fails to resolve dependency 'chocolatey-windowsupdate.extension'](/assets/images/chocolatey/kb-dependency-failure-5.png)
+    ![Output from choco install KB2919442 where it is already installed. Following output is from choco install glab where it fails to resolve dependency 'chocolatey-windowsupdate.extension'](/assets/images/chocolatey/kb-dependency-failure-5.png)
 
-6. We install this in the same way as before (`choco install chocolatey-windowsupdate.extension`, then `choco install chocolatey-windowsupdate.extension --ignore-dependencies`).
+1. We install this in the same way as before (`choco install chocolatey-windowsupdate.extension`, then `choco install chocolatey-windowsupdate.extension --ignore-dependencies`).
 
-  ![Output from choco install chocolatey-windowsupdate.extension where it fails to resolve dependency 'KB3033929'](/assets/images/chocolatey/kb-dependency-failure-6.png)
+    ![Output from choco install chocolatey-windowsupdate.extension where it fails to resolve dependency 'KB3033929'](/assets/images/chocolatey/kb-dependency-failure-6.png)
 
-7. We install the next package (`KB3033929`) and note that it did not have any dependency failures.
+1. We install the next package (`KB3033929`) and note that it did not have any dependency failures.
 
-  ![Output from choco install KB3033929 where it installs with no dependency failures](/assets/images/chocolatey/kb-dependency-failure-7.png)
+    ![Output from choco install KB3033929 where it installs with no dependency failures](/assets/images/chocolatey/kb-dependency-failure-7.png)
 
-8. So, we attempt our install of `glab` once more.
+1. So, we attempt our install of `glab` once more.
 Thankfully, we are able to install it with no dependency errors.
 
-  ![Output from choco install glab where it finally installs](/assets/images/chocolatey/kb-dependency-failure-8.png)
+    ![Output from choco install glab where it finally installs](/assets/images/chocolatey/kb-dependency-failure-8.png)
