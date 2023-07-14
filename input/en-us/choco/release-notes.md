@@ -141,6 +141,7 @@ A fix has been found for this problem, and will be released in a future alpha re
 
 - Fix - NuGet does not deal with blocking version conflicts from existing installed packages - see [#116](https://github.com/chocolatey/choco/issues/116).
 - Fix - NuGet doesn't handle conflicts of versions in an install request when HighestVersion dependency - see [#507](https://github.com/chocolatey/choco/issues/507).
+- Fix - Push command does not honor proxy settings - see [#1271](https://github.com/chocolatey/choco/issues/1271).
 - Fix - Filenames that contain apostrophes aren't handled correctly when calculating checksums - see [#1590](https://github.com/chocolatey/choco/issues/1590).
 - Fix - Chocolatey CLI does not override NuGet proxy with its own - see [#1720](https://github.com/chocolatey/choco/issues/1720).
 - Fix - `choco pack` command fails with error on Linux when using file greater than 2 GB - see [#2278](https://github.com/chocolatey/choco/issues/2278).
