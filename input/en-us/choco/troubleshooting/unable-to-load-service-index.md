@@ -2,6 +2,7 @@
 Order: 10
 xref: choco-unable-to-load-service-index
 Title: Unable to Load Service Index Errors
+Description: Information on solutions/workarounds for a problem that can have multiple underlying causes
 ---
 
 On occasion, you may run into issues where Chocolatey CLI is unable to communicate with a package source.
