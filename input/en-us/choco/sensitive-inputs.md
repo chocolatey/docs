@@ -2,7 +2,7 @@
 Order: 35
 xref: sensitive-inputs
 Title: Sensitive Inputs
-Description: Information on inputs that are hidden from the Chocolatey logs if detected.
+Description: Information on inputs that are hidden from the Chocolatey logs if detected
 ---
 
 By default Chocolatey will omit logging commands or parameters that could potentially contain sensitive information.

@@ -2,7 +2,7 @@
 Order: 90
 xref: show-additional-package-information
 Title: Show Additional Package Information
-Description: Show additional package information on Local and Remote views.
+Description: Show additional package information on Local and Remote views
 ---
 
 By default, when using the list view for local and remote sources, a limited set of information is provided.  This

@@ -2,7 +2,7 @@
 Order: 160
 xref: hide-this-pc-source
 Title: Hide This PC Source
-Description: Allow control over whether Chocolatey GUI should show the local This PC source or not.
+Description: Allow control over whether Chocolatey GUI should show the local This PC source or not
 ---
 
 There are times when you want to simplify the usage of Chocolatey GUI for your end users, and only show the sources where packages can be installed from, rather than including a source which lists all of the currently installed packages.  When this feature is enabled, Chocolatey GUI would change from showing the following:

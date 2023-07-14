@@ -2,7 +2,7 @@
 Order: 40
 xref: ccm-administration-settings-email
 Title: Email (SMTP)
-Description: Information about using up email settings within the Administration Settings screen.
+Description: Information about using up email settings within the Administration Settings screen
 ---
 
 The CCM Site needs to be able to send email for certain actions.  For example, when a new user is registering with the system, or when sending out forgotten password emails.  Valid SMTP Configuration has to be provided in order for these emails to be sent out.  Follow these steps to configure SMTP for CCM.

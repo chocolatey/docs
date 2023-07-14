@@ -2,7 +2,7 @@
 Order: 20
 xref: ccm-administration-settings-user-management
 Title: User Management
-Description: Information about using up user management settings within the Administration Settings screen.
+Description: Information about using up user management settings within the Administration Settings screen
 ---
 
 ## LDAP Configuration

@@ -2,7 +2,7 @@
 Order: 70
 xref: exclude-installed-packages
 Title: Exclude Installed Packages
-Description: Do not show packages that are already installed when viewing sources.
+Description: Do not show packages that are already installed when viewing sources
 ---
 
 By default, when viewing remote sources, such as the Chocolatey Community Repository, Chocolatey GUI will show you all

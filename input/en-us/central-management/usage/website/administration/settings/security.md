@@ -2,7 +2,7 @@
 Order: 30
 xref: ccm-administration-settings-security
 Title: Security
-Description: Information about using up security settings within the Administration Settings screen.
+Description: Information about using up security settings within the Administration Settings screen
 ---
 
 ## Two Factor Login

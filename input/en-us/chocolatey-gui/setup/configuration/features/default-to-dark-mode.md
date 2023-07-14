@@ -2,7 +2,7 @@
 Order: 150
 xref: default-to-dark-mode
 Title: Default To Dark Mode
-Description: Allows control over whether dark mode should be used by default or not.
+Description: Allows control over whether dark mode should be used by default or not
 ---
 
 By default, Chocolatey GUI uses a light mode for all of its user interface.  As a result, you will see a screen similar to the following when first starting the application:

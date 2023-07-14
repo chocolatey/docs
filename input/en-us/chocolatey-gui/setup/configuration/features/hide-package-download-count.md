@@ -2,7 +2,7 @@
 Order: 120
 xref: hide-package-download-count
 Title: Hide Package Download Count
-Description: Allows control over whether package download count is displayed on remote source views.
+Description: Allows control over whether package download count is displayed on remote source views
 ---
 
 By default, Chocolatey GUI will attempt to show the download statistics for a package on a remote feed.  This can be

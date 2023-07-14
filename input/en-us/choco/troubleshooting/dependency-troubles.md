@@ -2,7 +2,7 @@
 Order: 10
 xref: choco-dependency-troubles
 Title: Dependency Troubleshooting in Chocolatey CLI
-Description: Troubleshooting steps for when you encounter issues related to dependencies.
+Description: Troubleshooting steps for when you encounter issues related to dependencies
 ---
 
 ## Installation and Upgrade Commands Fail for Many Seemingly Unrelated Packages

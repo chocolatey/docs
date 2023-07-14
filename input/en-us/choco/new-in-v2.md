@@ -2,7 +2,7 @@
 Order: 15
 xref: choco-new-in-v2
 Title: What's new in Chocolatey CLI v2.0.0
-Description: A summary of the notable differences when upgrading from Chocolatey CLI v1.x to v2.0.0.
+Description: A summary of the notable differences when upgrading from Chocolatey CLI v1.x to v2.0.0
 ---
 
 # What's New in Chocolatey CLI v2.0.0

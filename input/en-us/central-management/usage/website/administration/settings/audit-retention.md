@@ -2,7 +2,7 @@
 Order: 50
 xref: ccm-administration-settings-audit-retention
 Title: Audit Retention
-Description: Information about using up audit retention settings within the Administration Settings screen.
+Description: Information about using up audit retention settings within the Administration Settings screen
 ---
 
 > :choco-warning: **WARNING**

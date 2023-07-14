@@ -2,7 +2,7 @@
 Order: 10
 xref: gui-config-command
 Title: Config
-Description: Usage instructions on how to list/get/set/unset Chocolatey GUI config settings.
+Description: Usage instructions on how to list/get/set/unset Chocolatey GUI config settings
 ---
 
 Chocolatey GUI will allow you to interact with the config settings.

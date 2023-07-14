@@ -2,7 +2,7 @@
 Order: 10
 xref: show-console-output
 Title: Show Console Output
-Description: Shows output from the commands being executed when a job is running.
+Description: Shows output from the commands being executed when a job is running
 ---
 
 By default, when Chocolatey GUI begins what is known to be an operation that can take a while, it will show a loading

@@ -2,7 +2,7 @@
 Order: 30
 xref: default-to-tile-view-for-remote-source
 Title: Default to Tile View for Remote Source
-Description: How to configure whether the tile or list view is used by default.
+Description: How to configure whether the tile or list view is used by default
 ---
 
 By default (starting with version 0.18.0), Chocolatey GUI uses a tile view to show all of the packages that are currently available on the remote

@@ -2,7 +2,7 @@
 Order: 10
 xref: choco-http-caching
 Title: HTTP Caching in Chocolatey CLI
-Description: Information about the HTTP caching functionality in Chocolatey CLI.
+Description: Information about the HTTP caching functionality in Chocolatey CLI
 ---
 
 > :choco-info: **NOTE**

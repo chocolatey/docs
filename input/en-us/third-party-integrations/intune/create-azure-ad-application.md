@@ -2,7 +2,7 @@
 Order: 10
 xref: create-azure-ad-application
 Title: Create an Azure AD Application
-Description: Information about creating an application in Azure AD for Chocolatey to access the Intune APIs.
+Description: Information about creating an application in Azure AD for Chocolatey to access the Intune APIs
 ---
 
 <?! Include "../../../shared/intune-note.txt" /?>

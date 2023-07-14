@@ -2,7 +2,7 @@
 Order: 60
 xref: prevent-automated-outdated-packages-check
 Title: Prevent Automated Outdated Packages Check
-Description: Allows control over whether Chocolatey GUI will automatically check for outdated packages installed locally.
+Description: Allows control over whether Chocolatey GUI will automatically check for outdated packages installed locally
 ---
 
 By default, when the Chocolatey GUI application starts up it will immediately check to see what packages are outdated, so that this information can be displayed within the application.  When this check is happening, you will see the following progress bar being shown:

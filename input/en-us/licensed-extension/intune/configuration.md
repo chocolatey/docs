@@ -2,7 +2,7 @@
 Order: 20
 xref: intune-configuration
 Title: Intune Configuration
-Description: Intune specific configuration of available commands.
+Description: Intune specific configuration of available commands
 ---
 
 <?! Include "../../../shared/intune-note.txt" /?>

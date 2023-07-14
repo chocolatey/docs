@@ -2,7 +2,7 @@
 Order: 30
 xref: package-anything
 Title: Package anything
-Description: With Chocolatey you can package up anything, whether it is installers, application, zip, scripts, etc.
+Description: With Chocolatey you can package up anything, whether it is installers, application, zip, scripts, etc
 ---
 
 Chocolatey brings with it the concept of a Universal Packaging format for Windows. At the heart of this is [PowerShell](xref:packaging-for-the-masses), the automation language for Windows.

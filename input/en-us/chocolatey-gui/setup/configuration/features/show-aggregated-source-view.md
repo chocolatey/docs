@@ -2,7 +2,7 @@
 Order: 80
 xref: show-aggregated-source-view
 Title: Show Aggregated Source
-Description: Show additional source combining all sources in one place.
+Description: Show additional source combining all sources in one place
 ---
 
 By default, Chocolatey GUI shows a source view for every feed that is configured for Chocolatey.  Clicking on each tab

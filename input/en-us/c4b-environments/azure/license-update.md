@@ -2,7 +2,7 @@
 Order: 31
 xref: c4b-azure-license-update
 Title: License Update
-Description: How to update the license in use on your Chocolatey for Business Azure Environment.
+Description: How to update the license in use on your Chocolatey for Business Azure Environment
 ---
 
 ## Summary

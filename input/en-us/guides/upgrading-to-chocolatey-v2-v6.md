@@ -2,7 +2,7 @@
 Order: 5
 xref: upgrading-to-chocolatey-v2-v6
 Title: Upgrading To Chocolatey Products v2.0.0 and Chocolatey Licensed Extension 6.0.0
-Description: Find out what you need to know about upgrading to Chocolatey products v2.0.0 and Chocolatey Licensed Extension v6.0.0.
+Description: Find out what you need to know about upgrading to Chocolatey products v2.0.0 and Chocolatey Licensed Extension v6.0.0
 ---
 
 The Chocolatey v2.0.0 and v6.0.0 releases are major updates to our products that include additional functionality as well as some functionality that has changed or been removed. The major releases of these products are shown below:

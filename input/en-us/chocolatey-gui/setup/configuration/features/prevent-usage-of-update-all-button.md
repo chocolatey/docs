@@ -2,7 +2,7 @@
 Order: 170
 xref: prevent-usage-of-update-all-button
 Title: Prevent usage of Update All button
-Description: Allows control over whether the Update All button should be available or not.
+Description: Allows control over whether the Update All button should be available or not
 ---
 
 Chocolatey GUI has always had the ability to run the equivalent of the `choco upgrade all` command, via the [Update All button](xref:gui-update-all).  However, there are times when you want to provide finer grain control of what packages are being updated at any given time.  As such, this feature allowing removal of the Update All button from the Chocolatey GUI user interface.

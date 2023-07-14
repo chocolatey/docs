@@ -2,7 +2,7 @@
 Order: 40
 xref: use-delayed-search
 Title: Use Delayed Search
-Description: Enables live search, which returns results after a short delay without clicking the search button on remote sources.
+Description: Enables live search, which returns results after a short delay without clicking the search button on remote sources
 ---
 
 By default, when viewing any remote source in Chocolatey GUI (for example, the Chocolatey Community Repository), in order to start a search it is necessary to press the enter button (or to click the magnifying glass icon) after entering the search string.  Some people prefer that the search is executed immediately after typing has completed, without the need to press the enter button.  Enabling this feature toggles it so that pressing the entry key is no longer a requirement for the search to be performed.

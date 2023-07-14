@@ -2,7 +2,7 @@
 Order: 10
 xref: ccm-administration-roles
 Title: Roles
-Description: Information about configuring roles within the Chocolatey Central Management Administration section.
+Description: Information about configuring roles within the Chocolatey Central Management Administration section
 ---
 
 Chocolatey Central Management's roles are the basis for setting collections of permissions that can be assigned to specific users within Chocolatey Central Management.

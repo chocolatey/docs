@@ -2,7 +2,7 @@
 Order: 50
 xref: prevent-preload
 Title: Prevent Preload
-Description: Allows control over whether packages are immediately fetched when navigating to a remote source view.
+Description: Allows control over whether packages are immediately fetched when navigating to a remote source view
 ---
 
 By default, when navigating to a remote source (for example the Chocolatey Community Repository), Chocolatey GUI will fetch and display the first page of packages that can be installed.  Depending on your use of Chocolatey GUI, you may want to immediately search for packages, rather than install from the first page of packages.  If you enable the Prevent Preload feature, than the first pages of packages will not be fetched, and instead, you will be able to immediately search for a package that you want to install.

@@ -2,7 +2,7 @@
 Order: 60
 xref: ccm-administration-settings-stale-computer-deletion
 Title: Stale Computer Deletion
-Description: Information about using up stale computer deletion settings within the Administration Settings screen.
+Description: Information about using up stale computer deletion settings within the Administration Settings screen
 ---
 
 > :choco-info: **NOTE**
