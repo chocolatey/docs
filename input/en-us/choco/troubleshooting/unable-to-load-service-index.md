@@ -41,7 +41,7 @@ Some examples of these kinds of error messages are:
 In these cases, one of two issues is present:
 
 1. Your operating system is not using TLS 1.2 by default.
-   TLS issues are mostly seen in older Windows systems, primarily Windows Server 2008 R2 and earlier.
+   TLS issues are mostly seen in older Windows systems, primarily Windows 7/Windows Server 2008 R2, and earlier.
 1. Your operating system has a missing cipher suite that is required by the server.
 
 In both cases, this can be most easily resolved using the `iiscrypto` tool to configure your operating system correctly.
