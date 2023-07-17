@@ -159,6 +159,7 @@ A fix has been found for this problem, and will be released in a future alpha re
 - Ability to specify a default source when doing `choco push` - see [#62](https://github.com/chocolatey/choco/issues/62).
 - Upgrade to target version 3.1.0 of Chocolatey.NuGet.Client assemblies - see [#508](https://github.com/chocolatey/choco/issues/508).
 - Support Semantic Versioning 2.0.0 (semver) - see [#1610](https://github.com/chocolatey/choco/issues/1610).
+- `choco info` command doesn't show package URL - see [#1728](https://github.com/chocolatey/choco/issues/1728).
 - Ensure that the client version used when querying a repository is the version of the underlying NuGet.Client library - see [#1935](https://github.com/chocolatey/choco/issues/1935).
 - Alphabetically sort the output from the `feature` `config` `source` and `apikey` list command - see [#2814](https://github.com/chocolatey/choco/issues/2814).
 - Add ability to get status of an individual feature (`choco feature get`) - see [#2815](https://github.com/chocolatey/choco/issues/2815).
