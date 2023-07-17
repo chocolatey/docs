@@ -25,7 +25,7 @@ Certain Chocolatey products are known to apply different proxy settings dependin
 * Chocolatey Licensed Extension - [VirusTotal checking at runtime does not use any proxy](https://github.com/chocolatey/chocolatey-licensed-issues/issues/351).
 * Chocolatey Agent - [Agent communications do not use any proxy configuration](https://github.com/chocolatey/chocolatey-licensed-issues/issues/350).
 
-## Installing Chocolatey From Behind A Proxy Server
+## Installing Chocolatey From Behind a Proxy Server
 
 When trying to install Chocolatey behind a proxy server, you may be faced with one of the following errors:
 
@@ -130,12 +130,12 @@ Results in the following items being added to the config file:
 
 ![Shows the encrypted proxy configuration information that is stored in the chocolatey.config file](/assets/images/proxy-config-changes.png)
 
-### Explicit Proxy Settings At Runtime
+### Explicit Proxy Settings at Runtime
 
 You can pass proxy information at runtime with each command. See https://github.com/chocolatey/choco/issues/1173
 
 `--proxy="'value'" --proxy-user="'<user>'" --proxy-password="'<pwd>'" --proxy-bypass-list="'<comma separated, list>'" --proxy-bypass-on-local`
 
-## What To Do If My Proxy Is Socks?
+## What to do if My Proxy is Socks?
 
 It may just work. It hasn't been validated yet.
