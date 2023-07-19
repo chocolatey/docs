@@ -146,7 +146,7 @@ The following are more advanced settings:
 
 Some environment variables are set based on options that are passed, configuration and/or features that are turned on:
 
- * ChocolateyExitOnRebootDetected - Are we exiting on a detected reboot? Set by ` --exit-when-reboot-detected`  or the feature `exitOnRebootDetected`.
+ * ChocolateyExitOnRebootDetected - Are we exiting on a detected reboot? Set by `--exit-when-reboot-detected`  or the feature `exitOnRebootDetected`.
  * ChocolateyEnvironmentDebug - Was `--debug` passed? If using the built-in PowerShell host, this is always true (but only logs debug messages to console if `--debug` was passed).
  * ChocolateyEnvironmentVerbose - Was `--verbose` passed? If using the built-in PowerShell host, this is always true (but only logs verbose messages to console if `--verbose` was passed).
  * ChocolateyForce - Was `--force` passed?
