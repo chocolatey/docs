@@ -90,6 +90,7 @@ The load by default is really hard to see, so you should check to ensure it is t
 <div class="collapse" id="moreInstallOptions">
 
 * [Install from PowerShell v3+](#install-from-powershell-v3)
+* [Install using the MSI](#install-using-the-msi)
 * [Completely offline/internal install](#completely-offline-install)
 * [Install with Puppet](#install-with-puppet)
 * [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmd.exe)
@@ -121,6 +122,12 @@ With PowerShell, there is an additional step or two. You must ensure [Get-Execut
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 ~~~
+
+### Install using the MSI?
+
+From version 2.0.0 of Chocolatey CLI we provide an MSI for installation, allowing you to deploy using your existing tools. Once installed, use Chocolatey CLI as normal to upgrade.
+
+The MSI is provided as an asset on each GitHub release of Chocolatey CLI 2.0.0 onwards. See the assets section on the [Chocolatey GitHub repository release page](https://github.com/chocolatey/choco/releases).
 
 ### Completely offline install
 
@@ -896,27 +903,5 @@ Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-opt
 ### I'm getting a 403 attempting to install
 
 This is addressed in [Troubleshooting](xref:troubleshooting).
-
-### Why isn't there an MSI?
-
-> :choco-info: **NOTE**
->
-> Chocolatey installs as Chocolatey package, like everything else. A PowerShell install script just ensures that.
-
-Chocolatey was born out of providing automation for Windows and doing that with packages, packages that could surround an installer but didn't necessarily need to. The Chocolatey install scripts use the Chocolatey package (a nupkg file itself) to be installed and upgraded as just another package. This means Chocolatey is "eating its own dogfood" and it is unlikely we'd offer it as an MSI (native installer)as it would fly a bit in the face of what Chocolatey represents (although it is something that we would not rule out).
-
-The installation actually ensures a couple of things:
-
-* PowerShell is installed and is set up properly.
-
-  PowerShell is a requirement for using Chocolatey, not just for install. It is what drives the package installation process in most cases. Every package can have binaries and/or installation/uninstallation scripts (written in PowerShell). Chocolatey is the framework and each package gets to define how it is installed, upgraded, and uninstalled. It's an extremely flexible framework that has been proven to meet the insanity that is the Windows software installation ecosystem. That flexibility would not be easily achieved without PowerShell.
-
-  We do recognize there are a few organizations that disable PowerShell, so it's very likely in the future our [Business Edition](https://chocolatey.org/compare) will meet that need. PowerShell is a staple of Windows automation, so it is not the norm for an organization in this day and age to disable PowerShell.
-
-  Having an install process that uses PowerShell helps you determine quickly if Chocolatey will be able to be used in your environment.
-
-* You are open to doing things in a slightly different way, e.g. working with packages as opposed to installers.
-
-  You are open to the concept of using packages. Some folks might say this means we are asking folks to learn to 'do things "our way" because we know better'. It's less about "knowing better" and more about learning that Chocolatey does things in a slightly different way. It does that because the world of software is not just installers. Software goes beyond Programs and Features and a system that can track all of that also needs to as well. Package management is not a new concept in the world of software, perhaps just newer to Windows. If folks are not open to that, then they are probably not going to be open to Chocolatey. And that's completely fine. Chocolatey is not for everyone. We may eventually get to more of a masses approach. Right now we are targeting a specific type of audience - those that are looking for better ways to manage software on Windows and open to looking for the best process of doing that.
 
 <p>&nbsp;</p>
