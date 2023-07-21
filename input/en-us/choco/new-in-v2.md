@@ -7,6 +7,10 @@ Description: A summary of the notable differences when upgrading from Chocolatey
 
 # What's New in Chocolatey CLI v2.0.0
 
+> **Note**
+>
+> This is a high-level overview of what's new in Chocolatey CLI 2.0.0. If you are ready to upgrade, please read the [upgrade guide](xref:upgrading-to-chocolatey-v2-v6).
+
 ## NuGet v3 Feed Support
 
 You can now use NuGet v3 package feeds with Chocolatey CLI!
@@ -107,3 +111,7 @@ On reaching these limits, Chocolatey CLI will warn you to refine your query to g
   Use `choco install packagename -s ./local/path/to/folder` instead, and ensure packages are packed with `choco pack` before attempting to install them.
 - Package version numbers will no longer retain leading zeroes in any parts of the version number when using `choco pack`.
   For example, `09.00.001` will be normalized to `9.0.1`.
+
+## Ready To Upgrade?
+
+If you are ready to upgrade, please read our [upgrade guide](xref:upgrading-to-chocolatey-v2-v6).
