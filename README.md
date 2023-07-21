@@ -10,6 +10,15 @@ This site is built using [Statiq](https://statiq.dev/).
 
 The original template that was used to create this docs site came from the work that was done by [Patrik Svensson](https://github.com/patriksvensson), on his [Spectre.Console](https://spectresystems.github.io/spectre.console/) and [Spectre.Cli](https://spectresystems.github.io/spectre.cli/) docs sites. Huge thank you to Patrik for all his help!
 
+## Writing Documentation
+
+Listed below are some of the areas we consider important when writing. We have two goals:
+
+* **Consistency**. It's important when writing to be consistent in all areas including, but not limited to, headings, code style, formatting, use of bold and italics. We acknowledge that as our writing style has evolved not all of our writing has followed. When we write we should be consistent.
+* **Clarity**. When writing we must remember to write for others and not just for ourselves. It's important to understand that jargon or acronyms can cause confusion, misunderstanding and a barrier for others who are not familiar with the terms. Avoid using jargon where you can and only use acronyms once they have been defined. Ensure any [jargon or acronyms used are documented](https://docs.chocolatey.org/en-us/information/jargon-buster).
+
+To help with these goals, please refer to our guides on [writing documentation](https://design.chocolatey.org/content-and-marketing/writing-documentation) and the use of [language and grammar](https://design.chocolatey.org/content-and-marketing/language-and-grammar).
+
 ## Building the site
 
 ### Setup
