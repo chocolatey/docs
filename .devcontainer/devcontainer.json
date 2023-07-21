@@ -10,6 +10,10 @@
 			"NODE_VERSION": "20"
 		}
 	},
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb"
+	},
 	"settings": {},
 	"extensions": [
 		"ms-dotnettools.csharp",
