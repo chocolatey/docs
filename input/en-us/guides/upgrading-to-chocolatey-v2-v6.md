@@ -44,13 +44,7 @@ This is [discussed in more depth later](#side-by-side-installs-have-been-removed
 
 ### Package Version Normalization
 
-Due to newer semantic version requirements imposed by the NuGet libraries, some version numbers may appear differently than they did in Chocolatey CLI v1.x.
-As of Chocolatey CLI v2.0.0:
-
-* Version numbers that have fewer than three parts will have the version filled out to three segments (for example, `1.2` will be normalized to `1.2.0`).
-* Version numbers that have leading zeroes in any part will have those leading zeroes removed (for example, `1.001.2` will be normalized to `1.1.2`).
-
-This normalization is applied to the generated package when using `choco pack`, and will also affect any displayed versions of packages from remote sources.
+Due to newer semantic version requirements imposed by the NuGet libraries, some version numbers may appear differently than they did in Chocolatey CLI v1.x. Chocolatey CLI 2.0.0 and later will [normalize version numbers](xref:version-normalization) to comply with these new requirements.
 
 ### Optimizing Performance
 
