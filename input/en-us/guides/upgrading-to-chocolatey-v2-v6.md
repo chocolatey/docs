@@ -44,6 +44,10 @@ This is [discussed in more depth later](#side-by-side-installs-have-been-removed
 
 ### Package Version Normalization
 
+> :choco-note: **NOTE**
+>
+> **Important information for package maintainers.** The `ChocolateyPackageVersion` [environment variable](xref:powershell-reference#environment-variables) follows the below version normalization. If your package scripts use this variable, and the nuspec specified version falls outside of the normalized format, then they may not behave as expected. We recommend using specific version numbers within your scripts rather depending on these environment variables.
+
 Due to newer semantic version requirements imposed by the NuGet libraries, some version numbers may appear differently than they did in Chocolatey CLI v1.x. Chocolatey CLI 2.0.0 and later will [normalize version numbers](xref:version-normalization) to comply with these new requirements.
 
 ### Optimizing Performance
