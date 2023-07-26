@@ -21,6 +21,31 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.2.0 (July 26, 2023)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fixes
+
+- Fix - Upgrading from Chocolatey CLI v2.0.0 to v2.1.0 take a long time to complete when certain other packages are installed - see [#3237](https://github.com/chocolatey/choco/issues/3237).
+- Fix - Chocolatey CLI v2.0.0 prompts for credentials when authenticating to a source that is using Windows Authentication - see [#3242](https://github.com/chocolatey/choco/issues/3242).
+- Fix - Chocolatey CLI is unable to save HTTP Cache files when running as a non-admin user and the cacheLocation is set to point at the Chocolatey ProgramData folder - see [#3264](https://github.com/chocolatey/choco/issues/3264).
+
+### Improvements
+
+- Remove warning message about "smarter than the average bear" - see [#3186](https://github.com/chocolatey/choco/issues/3186).
+- Improve overall execution time when performing the `choco upgrade all` command - see [#3231](https://github.com/chocolatey/choco/issues/3231).
+- Expand logging around the exception that is thrown when Chocolatey CLI is unable to communicate with a source - see [#3258](https://github.com/chocolatey/choco/issues/3258).
+- Ensure that only Administrators are able to modify files that are stored within the ChocolateyHttpCache folder - see [#3281](https://github.com/chocolatey/choco/issues/3281).
+
+### Documentation
+
+- Apply scripting best practices to output which is shown from some Chocolatey CLI validations - see [#3238](https://github.com/chocolatey/choco/pull/3238).
+- Improve error message that is shown when defaultPushSource configuration value hasn't been set and no explicit source has been provided - see [#3280](https://github.com/chocolatey/choco/pull/3280).
+
+
 ## 2.1.0 (June 29, 2023)
 
 > :choco-warning: **WARNING**
