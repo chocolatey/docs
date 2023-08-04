@@ -51,7 +51,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 - Fix - Upgrading from Chocolatey CLI v2.0.0 to v2.1.0 take a long time to complete when certain other packages are installed - see [#3237](https://github.com/chocolatey/choco/issues/3237).
 - Fix - Chocolatey CLI v2.0.0 prompts for credentials when authenticating to a source that is using Windows Authentication - see [#3242](https://github.com/chocolatey/choco/issues/3242).
-- Fix - Chocolatey CLI is unable to save HTTP Cache files when running as a non-admin user and the cacheLocation is set to point at the Chocolatey ProgramData folder - see [#3264](https://github.com/chocolatey/choco/issues/3264).
+- Fix - Chocolatey CLI is unable to save HTTP Cache files when running as a non-admin user and the `cachelocation` is set to point at the Chocolatey CLI ProgramData folder - see [#3264](https://github.com/chocolatey/choco/issues/3264).
 
 ### Improvements
 
