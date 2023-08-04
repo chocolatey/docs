@@ -1,8 +1,8 @@
 ---
-Order: 60
+Order: 55
 xref: jargon-buster
 Title: Jargon Buster
-Description: A reference guide on the jargon and acronyms used in our documentation.
+Description: A reference guide on the jargon and acronyms used in our documentation
 ---
 
 While a goal for our documentation is clarity we recognize that as engineers and technical users of our software, we speak and write in a manner that may not always be as clear to others as we would like.
@@ -28,10 +28,15 @@ If you feel a definition is missing, unclear or could be better, please raise an
 * **Chocolatey**. This is another commonly used term to refer to [Chocolatey CLI](xref:choco). It is also commonly used to refer to the Chocolatey suite of products as a whole. We now try to be clearer by referring to Chocolatey CLI specifically when we need to.
 * **CLI**. This is shorthand for [Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface) and refers to interacting with an application from a terminal by typing commands.
 
+### M
+
+* **metadata**. 
+
 ### N
 
 * **NuGet**. Refers to the tool and framework used to install [NuGet packages](https://nuget.org). The Chocolatey packaging framework is based on the NuGet packaging framework.
 * **nupkg**. A Chocolatey package file has the extension `nupkg` and this is a shorthand term referring to the package file.
+* **nuspec**. A Chocolatey package file that has the extension `nuspec`. This file contains the package metadata.
 
 ### V
 
