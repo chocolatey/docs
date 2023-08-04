@@ -21,6 +21,26 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.2.1 (August 3, 2023)
+
+> :choco-warning: **WARNING**
+>
+>  Chocolatey CLI 2.2.1 was removed from public availability due to a bug identified just prior to the release.
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fixes
+
+- Fix - Can't find `choco.exe` after upgrading Chocolatey CLI using the MSI - see [#3286](https://github.com/chocolatey/choco/issues/3286).
+- Fix - Unable to do non-elevated operations when `cachelocation` is set to a restricted directory - see [#3291](https://github.com/chocolatey/choco/issues/3291).
+
+### Dependency Change
+
+- Update bundled 7zip executables to v23.01 - see [#3285](https://github.com/chocolatey/choco/issues/3285).
+
+
 ## 2.2.0 (July 26, 2023)
 
 > :choco-warning: **WARNING**
