@@ -21,6 +21,23 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.2.2 (August 8, 2023)
+
+> :choco-warning: **WARNING**
+>
+> There is a bug in Chocolatey CLI v2.2.0 that prevents upgrading if you have a package dependency that only has pre-release versions (or if the package is no longer available on the sources that you have available). If you receive the error `Object reference not set to an instance of an object` please uninstall the package that only has pre-release versions available (or which no longer exists on the sources you have available), upgrade Chocolatey CLI, and re-install the package that was uninstalled.
+
+This [bug has been fixed](https://github.com/chocolatey/choco/issues/3292) in this release of Chocolatey CLI.
+
+>  :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](https://docs.chocolatey.org/en-us/guides/upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fix
+
+- Fix - Unable to upgrade a package if a dependency only contains pre-release package versions, or if package no longer exists on available sources - see [#3292](https://github.com/chocolatey/choco/issues/3292).
+
+
 ## 2.2.1 (August 3, 2023)
 
 > :choco-warning: **WARNING**
