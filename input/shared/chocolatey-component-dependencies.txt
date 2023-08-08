@@ -6,7 +6,7 @@ Please refer to our [Support Lifecycle information](xref:chocolatey-components-d
 
 | Package Name / Dependency      | chocolatey  | chocolatey.extension | chocolateygui |
 |------------------------------- |-------------|----------------------|---------------|
-| chocolatey v2.2.0              |             |                      |               |
+| chocolatey v2.2.2              |             |                      |               |
 | chocolatey.extension v6.1.0    | v2.0.0      |                      |               |
 | chocolatey-agent v2.1.0        |             | v6.0.0               |               |
 | chocolateygui v2.1.0           | v2.0.0      |                      |               |
