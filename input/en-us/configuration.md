@@ -22,6 +22,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 * `cacheLocation` = **' '** - Cache location if not TEMP folder. Replaces `$env:TEMP` value.  It is highly recommended this be set to make Chocolatey more deterministic in cleanup.
 * `upgradeAllExceptions` = **' '** - A comma-separated list of package names that should not be upgraded when running `choco upgrade all'. Defaults to empty.
 * `defaultTemplateName` = **' '** - Default template name used when running [`choco new` command](xref:choco-command-new).
+* `defaultPushSource` = **' '** - Default source to push packages to when running [`choco push` command](xref:choco-command-push).
 
 ### Proxy
 
@@ -75,6 +76,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 ### Self-Service / Background Mode
 
 * `backgroundServiceAllowedCommands` = **'install,upgrade'** - Background Service Allowed Commands - The different commands that will direct through the background service separated with comma or semi-colon. Supported across all operational commands, not supported with commands that change configuration (config, source, feature, apikey, etc). Defaults to 'install,upgrade'. Available in business editions only.
+* `logRetentionPolicyInDays` = **'30'** - The maximum age in days before a rollover log file should be cleaned up. Invalid values or a value of '0' or below is equal to the default value of '30' days.
 
 ### Virus Checking
 
@@ -132,6 +134,7 @@ A checkbox means this feature is turned on by default.
 
 * [x] `powershellHost` - Use Chocolatey's built-in PowerShell host.
 * [ ] `removePackageInformationOnUninstall` - Remove Stored Package Information On Uninstall - When a package is uninstalled, should the stored package information also be removed?
+* [ ] `disableCompatibilityChecks` - Disable Compatibility Checks - Should a warning we shown, before and after command execution, when a runtime compatibility check determines that there is an incompatibility between Chocolatey and Chocolatey Licensed Extension. Available in 1.1.0+.
 
 ## Features - Licensed Edition
 
@@ -177,6 +180,7 @@ A checkbox means this feature is turned on by default.
 * [x] `useBackgroundServiceWithEmptySessions` - Use Background Service With Empty Sessions - Sometimes empty sessions mean remotely run sessions, but in in newer Windows it is much more normal to see empty sessions with interactive use. Leave this flag on unless you absolutely need it off (control how remote sessions use background service by enabling the feature 'useBackgroundServiceWithNonAdministratorsOnly'). Business editions only.
 * [ ] `allowBackgroundServiceUninstallsFromUserInstallsOnly` - Allow ONLY Uninstall of Packages Installed By a Self-service User in Background Service - Allow a user to uninstall packages they've installed - they must be reported as the original user in a choco list -lo --audit. The config setting 'backgroundServiceAllowedCommands' must must have 'uninstall' added as well for this to work. Business editions only.
 * [ ] `allowBackgroundServiceOverride` - Allows a user to request using the self-service when they are running the commands that can be run through the background service. Licensed editions only (version 5.0.0+).
+* [x] `useLogRetentionPolicy` - Use Automatic Log Retention Policy - Cleans any rolled over log files once a day that are older than the configured retention policy day value. Licensed editions only (version 5.0.0+).
 
 ### Virus Checking
 
