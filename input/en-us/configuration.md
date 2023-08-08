@@ -135,7 +135,7 @@ A checkbox means this feature is turned on by default.
 
 * [x] `powershellHost` - Use Chocolatey's built-in PowerShell host.
 * [ ] `removePackageInformationOnUninstall` - Remove Stored Package Information On Uninstall - When a package is uninstalled, should the stored package information also be removed?
-* [ ] `disableCompatibilityChecks` - Disable Compatibility Checks - Should a warning we shown, before and after command execution, when a runtime compatibility check determines that there is an incompatibility between Chocolatey and Chocolatey Licensed Extension. Available in 1.1.0+.
+* [ ] `disableCompatibilityChecks` - Disable Compatibility Checks - Disable showing a warning when there is an incompatibility between Chocolatey CLI and Chocolatey Licensed Extension. Available in 1.1.0+.
 
 ## Features - Licensed Edition
 
@@ -181,7 +181,7 @@ A checkbox means this feature is turned on by default.
 * [x] `useBackgroundServiceWithEmptySessions` - Use Background Service With Empty Sessions - Sometimes empty sessions mean remotely run sessions, but in in newer Windows it is much more normal to see empty sessions with interactive use. Leave this flag on unless you absolutely need it off (control how remote sessions use background service by enabling the feature 'useBackgroundServiceWithNonAdministratorsOnly'). Business editions only.
 * [ ] `allowBackgroundServiceUninstallsFromUserInstallsOnly` - Allow ONLY Uninstall of Packages Installed By a Self-service User in Background Service - Allow a user to uninstall packages they've installed - they must be reported as the original user in a choco list --audit. The config setting 'backgroundServiceAllowedCommands' must must have 'uninstall' added as well for this to work. Business editions only.
 * [ ] `allowBackgroundServiceOverride` - Allows a user to request using the self-service when they are running the commands that can be run through the background service. Licensed editions only (version 5.0.0+).
-* [x] `useLogRetentionPolicy` - Use Automatic Log Retention Policy - Cleans any rolled over log files once a day that are older than the configured retention policy day value. Licensed editions only (version 5.0.0+).
+* [x] `useLogRetentionPolicy` - Use Automatic Log Retention Policy - Once per day, remove any log files that are older than the `logRetentionPolicyInDays` value. Licensed editions only (version 5.0.0+).
 
 ### Virus Checking
 
