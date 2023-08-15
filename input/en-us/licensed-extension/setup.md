@@ -213,7 +213,7 @@ package {'chocolatey':
 ## Move cache location so Chocolatey is very deterministic about
 ## cleaning up temporary data
 chocolateyconfig {'cacheLocation':
-  value => 'c:\ProgramData\choco-cache',
+  value => 'c:\ProgramData\chocolatey\choco-cache',
 }
 
 ## Increase timeout to 4 hours
