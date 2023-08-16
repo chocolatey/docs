@@ -132,7 +132,7 @@ From the machine with internet access:
    > It is normal to see an error at this point, the next steps which install the extension resolve this.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
 1. Run `choco` - you should no longer see the error about not having chocolatey.extension installed. If you do, please circle back and use copy/paste for instructions as you may have mistyped something.
-1. Run `choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
+1. Run `choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
 1. Run `choco config set --name commandExecutionTimeoutSeconds --value 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
@@ -188,7 +188,7 @@ choco upgrade chocolatey.extension -y --pre
 Write-Host "If you see what looks like an error about a missing extension, that is what this step does so it will clear up on the next command."
 
 # Set Configuration
-choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache
+choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache
 choco config set --name commandExecutionTimeoutSeconds --value 14400
 #TODO: Add other items you would configure here
 # https://docs.chocolatey.org/en-us/configuration
@@ -239,7 +239,7 @@ Now that we've finished the first exercise and have those files over on our offl
 1. C4B / MSP / C4BTRIAL: Copy the license file ("chocolatey.license.xml") into that folder that was just created. Run `Copy-Item "$env:SystemDrive\choco-setup\files\chocolatey.license.xml" $env:ChocolateyInstall\license\chocolatey.license.xml -Force`.
 1. C4B / MSP / C4BTRIAL: Run `choco source disable --name="'chocolatey.licensed'"`. When the license is placed, Chocolatey automatically adds the license and we don't want to use that source. Note we can't remove the license because the existence of the license file will have Chocolatey adding it right back - so we just disable it. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and we are going to take care of that in the next step.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y --pre`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
-1. Run `choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
+1. Run `choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
 1. Run `choco config set --name commandExecutionTimeoutSeconds --value 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
@@ -272,7 +272,7 @@ Write-Host "You can ignore the red text in the output above, as it is more of a 
 choco upgrade chocolatey.extension -y --pre
 
 # Set Configuration
-choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache
+choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache
 choco config set --name commandExecutionTimeoutSeconds --value 14400
 #TODO: Add other items you would configure here
 # https://docs.chocolatey.org/en-us/configuration
@@ -583,7 +583,7 @@ Starting with Chocolatey.Server v0.2.3, you get a similar experience where you j
 1. C4B / MSP / C4BTRIAL: Install the license package we've pushed - `choco upgrade chocolatey-license -y`. This may be a place you see an error if things are not configured correctly. If you run into an error, be sure that you have the source added properly with the right permissions (not api key - that is for pushes only).
 1. C4B / MSP / C4BTRIAL: Run `choco source disable --name="'chocolatey.licensed'"`. When the license is placed, Chocolatey automatically adds the license and we don't want to use that source. Note we can't remove the license because the existence of the license file will have Chocolatey adding it right back - so we just disable it. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and we are going to take care of that in the next step.
 1. C4B / MSP / C4BTRIAL: Run `choco upgrade chocolatey.extension -y --pre`. You will see what looks like an error message about not having chocolatey.extension installed. That's a warning and should clear up when this command completes.
-1. Run `choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
+1. Run `choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache`. This moves the TEMP location in scripts to use this and makes clean up more deterministic.
 1. Run `choco config set --name commandExecutionTimeoutSeconds --value 14400`. This increases the timeout more than the default 45 minutes, you may wish to set it higher.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'internalizeAppendUseOriginalLocation'"`. This sets Package Internalizer to append `-UseOriginalLocation` to the end of `Install-ChocolateyPackage` to make it behave more like `Install-ChocolateyInstallPackage`. Since the files are local, we won't need it copying them to temp prior to running it.
 1. C4B / MSP / C4BTRIAL: Run `choco feature enable --name="'reduceInstalledPackageSpaceUsage'"` to ensure Package Reducer is turned on.
@@ -637,7 +637,7 @@ Write-Host "You can ignore the red text in the output above, as it is more of a 
 choco upgrade chocolatey.extension -y --pre
 
 # Set Configuration
-choco config set --name cacheLocation --value $env:ALLUSERSPROFILE\choco-cache
+choco config set --name cacheLocation --value $env:ChocolateyInstall\choco-cache
 choco config set --name commandExecutionTimeoutSeconds --value 14400
 #TODO: Add other items you would configure here
 # https://docs.chocolatey.org/en-us/configuration
