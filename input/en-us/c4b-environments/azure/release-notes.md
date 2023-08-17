@@ -13,6 +13,29 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 >
 > Issue links may not be publicly available at this time.
 
+## 0.20.0 (August 17, 2023)
+
+### Improvements
+
+- Update to Application Gateway v2 - see [#89](https://github.com/chocolatey/c4b-azure/issues/89).
+- Accessing Application Gateway Back-end Health Statistics - see [#92](https://github.com/chocolatey/c4b-azure/issues/92).
+- Update from Basic Public IP SKU to Standard - see [#108](https://github.com/chocolatey/c4b-azure/issues/108).
+- Update to Latest Packages - see [#148](https://github.com/chocolatey/c4b-azure/issues/148).
+- Upgrade to AppGateway v2 - see [#149](https://github.com/chocolatey/c4b-azure/pull/149).
+
+### Bundled Version Update
+
+| Package                    | Version       |
+|----------------------------|---------------|
+| chocolatey                 | 2.2.2         |
+| dotnet-6.0-aspnetruntime   | 6.0.20        |
+| dotnet-6.0-runtime         | 6.0.20        |
+| dotnet-aspnetcoremodule-v2 | 16.0.23172    |
+| jenkins                    | 2.401.3       |
+| nexus-repository           | 3.58.1.2      |
+| Temurin11jre               | 11.0.20.800   |
+| Temurinjre                 | N/A (Removed) |
+
 ## 0.19.0 (July 4, 2023)
 
 ### Feature

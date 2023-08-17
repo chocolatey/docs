@@ -257,13 +257,20 @@ You can also use a Microsoft Azure KeyVault and one of the [partnered CA Provide
 
 ### How much does it cost?
 
-A ballpark estimate comes to around $170 per month for the deployed infrastructure.
+A ballpark estimate comes to around $350 per month for the deployed infrastructure, after the 0.20.0 release.
 
-Using methods such as [Azure Reservations](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations), [Hybrid Benefit](https://azure.microsoft.com/en-gb/pricing/hybrid-benefit/), or [Dev-Test Subscriptions](https://azure.microsoft.com/en-gb/pricing/dev-test/#overview) can cut this cost significantly.
+| Version  | Estimated Cost | Date                     |
+| -------- | -------------- | ------------------------ |
+| ≤ 0.19.0 | $170           | 2021-07-29 -> 2023-07-17 |
+| ≥ 0.20.0 | $350           | 2023-08-17 ->            |
+
+This is due to the deprecation of the Application Gateway v1, which cost significantly less than the v2.
+
+Using methods such as [Azure Reservations](https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations), [Hybrid Benefit](https://azure.microsoft.com/en-gb/pricing/hybrid-benefit/), or [Dev-Test Subscriptions](https://azure.microsoft.com/en-gb/pricing/dev-test/#overview) can cut the overall cost significantly.
 
 This is based on:
 
-* Using a `Standard D2s v3` VM size
+* Using a `Standard B4ms` VM size
 * Deploying to a standard Pay-As-You-Go subscription
 * Deploying to the `East US` location
 
