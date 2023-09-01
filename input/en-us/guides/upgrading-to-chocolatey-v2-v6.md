@@ -38,6 +38,8 @@ The Sonatype Nexus Repository Manager has an [issue that can cause it to go into
 
 To work around this issue, please ensure that you have 29 or less package versions of any Chocolatey product in your internal Sonatype Nexus NuGet v2 feed repository _before_ you start the upgrade.
 
+Sonatype Nexus [does not support mixed v2 and v3 NuGet group repositories](https://help.sonatype.com/repomanager3/nexus-repository-administration/formats/nuget-repositories/grouping-nuget-repositories#GroupingNuGetRepositories-NuGetGroupVersion3APISupport). If you already use a v2 NuGet group or proxy repository, then you cannot add a v3 repository to the group.
+
 ### Side-By-Side Installs Have Been Removed
 
 This is [discussed in more depth later](#side-by-side-installs-have-been-removed-1), but we wanted to highlight it here as it is a very important consideration to make before upgrading.
