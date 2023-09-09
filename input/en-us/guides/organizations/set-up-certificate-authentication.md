@@ -31,7 +31,7 @@ choco source add --name="'Internal-Repository'" --source="'https://repository.ex
 
 ## Repository Setup
 
-Most package repositories do not naively support client certificate authentication, instead requiring a reverse proxy like Nginx or Apache to do that. This may take the form of having the repository allowing anonymous access, and handling all authentication on the reverse proxy side, or the repository may support user authentication via a header after the reverse proxy validates the certificate.
+Most package repositories do not natively support client certificate authentication, instead requiring a reverse proxy like Nginx or Apache to do that. This may take the form of having the repository allowing anonymous access, and handling all authentication on the reverse proxy side, or the repository may support user authentication via a header after the reverse proxy validates the certificate.
 
 ### Generating the Certificates
 
@@ -41,7 +41,7 @@ In other cases, a certificate authority and client certificates will need to be 
 
 ### Reverse Proxy Setup
 
-There are many configuration scenarios, and reverse proxies available, to give specific recommendations. For Nginx, once the reverse proxy is set up, client certificates can be enabled like this:
+There are many configuration scenarios and reverse proxies available. Far too many to give specific recommendations. However, to give a general idea for using Nginx; once the reverse proxy is set up, client certificates can be enabled like this:
 
 1. Copy the public key of the certificate authority to a location that Nginx can access.
 2. Add these lines to the Nginx configuration under the `server` that is reverse-proxying the repository:
@@ -65,7 +65,7 @@ Sonatype Nexus has the capability to use the client certificate common name to a
 
 1. Create a user named `Choco-User` that can access the `nuget-testing` repository.
 1. Enable the "Rut Auth Realm" in Settings -> Security -> Realms.
-1. Add the "Ruth Auth" capability under Settings -> System ->  Capabilities -> Create Capability with the http header name being `X-SSO-USER`.
+1. Add the "Rut Auth" capability under Settings -> System ->  Capabilities -> Create Capability with the http header name being `X-SSO-USER`.
 1. Add the [below snippet to the Nginx configuration](https://stackoverflow.com/questions/55325548/getting-common-name-from-distinguished-name-of-client-certificate-in-nginx), right before the `server` block:
 
 ```
@@ -80,5 +80,8 @@ map $ssl_client_s_dn $ssl_client_s_dn_cn {
 # Set header for Nexus Auth
 proxy_set_header X-SSO-USER $ssl_client_s_dn_cn;
 ```
-1. Add users to Nexus with the usernames the same as the Common Name (CN) of each client certificate. Assign appropriate permissions to each Nexus user, according to what the owner of the client certificate should have access to. Depending on how the client certificates are generated and the pattern of Common Names used, it may be possible to use external role mapping to automatically set this up.
+1. Add users to Nexus.
+    * The username should match the Common Name (CN) of the client certificate.
+    * Assign appropriate permissions to each Nexus user, according to what the owner of the client certificate should have access to.
+    * Depending on how the client certificates are generated and the pattern of Common Names used, it may be possible to use external role mapping to automatically set this up.
 1. Test out the configuration, see the Client Setup section above.
