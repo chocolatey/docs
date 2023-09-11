@@ -65,7 +65,7 @@ The above articles document how that is done.
 * [QDE Setup](xref:v2-qde)
 * [QDE Desktop ReadMe File](xref:v2-desktop-readme) (included here for convenience)
 * [QDE SSL/TLS Setup](xref:v2-ssl-setup)
-* [QDE Firewall Changes](xref:v2-firewall-changes)
+* [QSE Firewall Rules](xref:firewall-rules)
 * [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)
 * [How do I upgrade QDE?](xref:qde#how-do-we-upgrade-qde).
 

@@ -339,5 +339,5 @@ Stop-Process -Name explorer -Force
 - [QDE Setup](xref:v2-qde)
 - [QDE Desktop ReadMe File](xref:v2-desktop-readme)
 - [QDE SSL/TLS Setup](xref:v2-ssl-setup)
-- [QDE Firewall Changes](xref:v2-firewall-changes)
+- [QSE Firewall Rules](xref:firewall-rules)
 - [QDE Client Setup](xref:v2-client-setup) (setting up your client machines)

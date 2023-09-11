@@ -268,7 +268,7 @@ If you would like to change the credentials associated with the database, you wi
 
 ## Step 4: Firewall Changes
 
-See [QDE Firewall Changes](xref:v2-firewall-changes).
+See [QSE Firewall Changes](xref:firewall-rules).
 
 ## Step 5: Install and Configure Chocolatey on Clients
 
