@@ -17,7 +17,7 @@ During normal setup, all required SSL certificates are retrieved or generated as
 You will only need to run this script yourself in the following cases:
 
 * You want to expose this to the internet so clients can connect from outside your network, and you didn't set this up initially.
-  See [the Firewall Changes document](xref:v2-firewall-changes) document for more information and additional scripts to run in this case.
+  See [the Firewall Changes document](xref:firewall-rules) document for more information and additional scripts to run in this case.
 * If you change the hostname of the QDE server, or add it to a domain after having already completed setup.
 * If you would like to change/replace the initial SSL/TLS certificates that were provided or generated during setup, for example to replace an expiring certificate.
 
