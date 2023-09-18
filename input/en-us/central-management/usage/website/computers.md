@@ -43,6 +43,16 @@ You will be presented with a list of the installed software packages for the mac
 
 ![Computer details screen showing installed software](/assets/images/computers/ccm-computers-details.png)
 
+### Exporting a `packages.config` file for a computer
+
+> :choco-info: **NOTE**
+>
+> Starting with Chocolatey Central Management 0.11.0, the packages installed on a computer can be exported to a `packages.config` file.
+
+From the Computer details page in Chocolatey Central Management, select the `Export to packages.config` button.
+
+![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
+
 ## Removing a Computer from Central Management
 
 > :choco-info: **NOTE**
@@ -58,8 +68,9 @@ You will be prompted to confirm the deletion.
 
 ![Prompt to confirm deletion of a computer in Central Management](/assets/images/computers/ccm-computers-delete-confirm.png)
 
+## FAQ
 
-### Computers are not showing up in CCM
+### What do I do if computers are not showing up in CCM?
 
 You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
 
