@@ -380,7 +380,7 @@ https://chocolatey.org/events/chocolatey-deployments
 ### A Deployment Step Is Stalled With Infinite Execution Timeout
 
 The only way to resolve this currently is to cancel the Deployment itself, which can be done from the main Deployments list.
-On the right-hand side of the [`Active`](#active) Deployments table, click the Actions menu for the corresponding Deployment, and select [`Cancel`](#cancel).
+On the left-hand side of the [`Active`](#active) Deployments table, click the Actions menu for the corresponding Deployment, and select [`Cancel`](#cancel).
 You will be asked to confirm the cancellation.
 
 All remaining steps in the Deployment will be cancelled, along with any still running or pending tasks.
