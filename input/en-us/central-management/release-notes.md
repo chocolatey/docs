@@ -31,6 +31,32 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 - Some issues may be held internally, please follow your support routes to learn more.
 
+## 0.11.0 (September 18, 2023)
+
+### Features
+
+- Add the ability to import and export Deployment Plan definitions.
+- Add the ability to export the installed software from a computer to packages.config file - see [Licensed #355](https://github.com/chocolatey/chocolatey-licensed-issues/issues/355).
+- Add retention policies for completed and archived Deployment Plans.
+- Add computers reporting into Chocolatey Central Management to an 'All Computers' group.
+- Add the ability to send email notifications when a Deployment Plan has finished - see [Licensed #328](https://github.com/chocolatey/chocolatey-licensed-issues/issues/328).
+
+### Bug Fixes
+
+- Fix - On the Deployment Step Details screen, when showing the contents of the log, the error highlighting doesn't extend to the total available width.
+- Fix - When viewing the log for a Deployment Step, the text disappears from the `Copy` button when the mouse is hovered over it.
+- Fix - Errors are reported in the Deployment Step Details log when no errors have occurred.
+- Fix - Audit log retention does not clean up old log entries - see [Licensed #336](https://github.com/chocolatey/chocolatey-licensed-issues/issues/336).
+
+### Improvements
+
+- Add an option to provide a default value for the `executionTimoutInSeconds` setting, which will be used for all new Deployment Steps.
+- Ensure a Computer's `ComputerName` and `FriendlyName` properties are in separate fields when the API returns data.
+- Move the `Action` button to the first column in all tables.
+- Reinstate the ‘Return To Deployments’ button when editing a Deployment Plan.
+- Remove the ability to assign a User the `ChocoAdmin` Role.
+- Update email templates for consistency.
+
 ## 0.10.1 (October 6, 2022)
 
 ### Bug Fixes
