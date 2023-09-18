@@ -32,6 +32,14 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
 
+1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment plan execution timeout in seconds to be used by all Deployment steps.
+
+    ![Chocolatey Central Management New Deployment page, arrow pointing to the deployment plan execution timeout in seconds setting](/assets/images/deployments/ccm-deployments-execution-timeout-in-seconds.png)
+
+    * The Deployment plan execution timeout in seconds will be used on all steps created **after it has been modified**. A Deployment step can override the Deployment plan execution timeout in seconds by modifying the Deployment step execution timeout in seconds in the Deployment step modal located in the advanced filters dropdown.
+
+        ![Chocolatey Central Management Deployment step modal, arrow pointing to execution timeout in seconds](/assets/images/deployments/ccm-deployments-step-execution-timeout-in-seconds.png)
+
 1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
 
     ![Chocolatey Central Management New Deployment page, arrow pointing to Add Schedule button](/assets/images/deployments/ccm-deployments-add-schedule.png)
@@ -68,7 +76,7 @@ You will also need to have at least one Group of computers already defined.
     * You can use [Sensitive Variables](xref:ccm-administration-sensitive-variables#adding-sensitive-variables-to-scripts) in an Advanced script in Chocolatey Central Management version 0.7.0 and later.
    <?! Include "../../../../shared/sensitive-variables-note.txt" /?>
 
-1. (Optional) Click **Show advanced options** to set one or more of the following options:
+1. (Optional) Click **Show advanced filters** to set one or more of the following options:
     * `Execution timeout`.
     * `Valid exit codes`.
     * `Machine contact timeout` (requires Chocolatey Central Management v0.4.0+ to edit).
