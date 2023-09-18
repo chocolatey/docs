@@ -220,8 +220,6 @@ You will need an SSL certificate for the domain you intend to use. This certific
 
 You can either provide a self-signed SSL certificate, or a purchased or acquired certificate from a Certificate Authority (CA).
 
-Though you can reference the previous Quick Deployment Environment documentation on [SSL Certificates](xref:v2-internet-setup#ssl-certificate-scenarios), there are some differences as you need to have the certificate before deploying the Chocolatey for Business Azure Environment.
-
 #### Self-Signed SSL Certificates
 
 You can quickly generate a self-signed certificate on any recent Windows computer, using PowerShell.

@@ -13,9 +13,6 @@ RedirectFrom: docs/how-to-setup-offline-installation
 > It illustrates only **one** method of setting up your Chocolatey environment, and is by **NO** means exhaustive.
 > Our goal is to get you up-and-running quickly, and testing out the feature set.
 > For a more complete reference of possible scenarios and solutions, please stick to this guide.
->
-> Another thing we provide is a [Quick Deployment Environment](xref:qde) that has already taken care of everything here and also setting up the automation for package internalizer with Jenkins (covered at Automate Package Internalizer).
-> It, like the quick start implementation, provides a specific solution so you should read over the summary before you decide that is the right implementation for your needs (in about 80%+ of organizational use cases it is the correct solution).
 
 ## Summary
 
@@ -24,6 +21,7 @@ This guide is for open source organizational users all the way up to Chocolatey 
 Most organizations need a Chocolatey environment that does not access the internet. Fortunately, Chocolatey is a fully offline solution, we'll just need to remove the default community repository and point it to internal repositories. This walkthrough will provide you everything you need to get setup. We also have steps in this walkthrough that deal with environments that are air gapped (no access to the internet).
 
 > Chocolatey best practices for organizations / internal use:
+>
 > * Set up one or more internal repositories
 > * Bring all external packages you need in and internalize (not cache) any that download anything at runtime
 > * Configure Chocolatey clients for internal use - config and removal of community package repository source
@@ -306,6 +304,7 @@ Pick one or more of the following paths:
 * [Set Up An SCCM Distribution Point As A Chocolatey Source](#exercise-3d-set-up-an-sccm-distribution-point-as-a-chocolatey-source)
 
 > Recommended Option:
+>
 > * [Set Up A Different Repository](#exercise-2b-set-up-a-different-repository)
 >
 > The current recommendations for most organizational use cases are Artifactory, Nexus, or ProGet. All are quite robust, and two of those options can be used without cost.
@@ -684,7 +683,6 @@ If you've made it this far, you are ready to be quite successful with Chocolatey
 
 * [Setup Central Management](xref:ccm-setup)
 * [Automate Internalization of Community Packages](xref:recompile-packages) - allows you to have same near hands off approach to package/software updates you might have seen before if you were using community repository directly.
-* [Quick Deployment Environment](xref:qde)
 
 ## Next Steps
 
