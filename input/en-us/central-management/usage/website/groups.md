@@ -17,6 +17,20 @@ If you do not see this menu entry, verify with your administrator whether your C
 
 ![Groups menu entry on the CCM Dashboard](/assets/images/groups/ccm-groups-menu.png)
 
+## The All Computers (Automatic Group)
+
+> :choco-info: **NOTE**
+>
+> This feature is available in Chocolatey Central Management starting with version 0.11.0.
+
+All Computers present in Chocolatey Central Management are automatically added to a system managed group named `All Computers (Automatic Group)`. This Group can not be edited or deleted.
+
+![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/assets/images/groups/ccm-groups-automatic-group-table-entry.png)
+
+The  `All Computers (Automatic Group)` will have a blue lock icon next to the the name in the table. Hovering over this lock icon will display a tooltip with more information.
+
+![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the tooltip containing additional information stating, "All computers are added to this group automatically and are system managed. This group can not be edited or deleted.".](/assets/images/groups/ccm-groups-automatic-group-tooltip.png)
+
 ## Creating a Group
 
 On the main Groups page, select the **+ Create New Group** button.
