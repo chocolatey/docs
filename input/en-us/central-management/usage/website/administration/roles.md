@@ -56,7 +56,7 @@ On the main Roles page, find the role you want to delete. You can also use _Sele
 
 ## Pre-Configured Roles
 
-When first browsing to the Roles page, you'll be presented with 5 pre-configured roles that are built-in to Chocolatey Central Management.
+When first browsing to the Roles page, you'll be presented with 4 pre-configured roles that are built-in to Chocolatey Central Management.
 
 ![Pre-configured roles in CCM Dashboard](/assets/images/ccm/roles/ccm-roles-preconfiguredroles.png)
 
