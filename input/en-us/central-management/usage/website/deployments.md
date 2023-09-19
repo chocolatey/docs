@@ -241,7 +241,7 @@ The action opens the edit page for the selected Deployment plan.  Here changes c
 
 > :choco-info: **NOTE**
 >
-> This feature became available starting with Chocolatey Central Management 0.10.0
+> This feature is available in Chocolatey Central Management starting with version 0.10.0.
 
 The action makes an exact copy (with the exception of any scheduled start/end time or repeat period) of any given Deployment plan.  Once the duplicate has been created, you will be taken to the edit page ready to make any additional required changes.  The name of the new Deployment plan will be the same as the original with some additional information added to the end.  For example, if the original Deployment plan was called `Install Papercut`, the name given to the duplicate would be `Install Papercut - Copy (19 Aug 2022 12:52:25)` where the timestamp is the current date time.
 
