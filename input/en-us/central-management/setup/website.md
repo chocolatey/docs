@@ -299,11 +299,13 @@ Here is a copy of items that can be set. They are not required to be encrypted. 
 
 ### Step 4.5: Audit Retention
 
-You may want to configure the [automatic deletion of audit logs](xref:ccm-administration-settings-audit-retention) that are captured by Chocolatey Central Management website.
+You may want to configure the [automatic deletion of audit logs](xref:ccm-administration-settings-retention#audit-retention) that are captured by Chocolatey Central Management website.
 
-### Step 4.6: Stale Computer Deletion
+### Step 4.6: Stale Computer Retention
 
-You may want to setup the [automatic deletion of computers](xref:ccm-administration-settings-stale-computer-deletion) that are no longer reporting into Chocolatey Central Management.
+
+You may want to setup the [automatic deletion of computers](xref:ccm-administration-settings-retention#stale-computer-retention) that are no longer reporting into Chocolatey Central Management.
+
 
 ### Step 4.7: Set up Two Factor Login
 
