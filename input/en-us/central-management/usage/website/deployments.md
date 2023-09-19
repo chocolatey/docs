@@ -289,7 +289,7 @@ This action will export the details of the Deployment plan to a `.json` file. Th
 
 ## Deployment Status Notifications
 
-> :choco_info: **Note**
+> :choco-info: **Note**
 >
 > Email notifications require that the Email / SMTP settings have been configured first.
 > If these settings have not been configured, email notifications will not be sent.
@@ -299,7 +299,7 @@ This action will export the details of the Deployment plan to a `.json` file. Th
 As of Chocolatey Central Management v0.11.0, all Deployment Plans will issue an email notification when they finish to the user that created the Deployment Plan.
 The email notification will indicate the status of the Deployment Plan, as well as linking back to the Deployment Plan details page for further information.
 
-![Example email from Chocolatey Central Managment for a successfully completed Deployment Plan, showing the status, start time, and finish time, as well as the Deployment Plan name and a link to the Deployment Plan details.](/assets/images/deployments/ccm-deployments-email-success.png)
+![Example email from Chocolatey Central Management for a successfully completed Deployment Plan, showing the status, start time, and finish time, as well as the Deployment Plan name and a link to the Deployment Plan details.](/assets/images/deployments/ccm-deployments-email-success.png)
 
 ### Notification for Scheduled Deployments Unable to Start
 
@@ -307,7 +307,7 @@ As of Chocolatey Central Management v0.10.0, a scheduled Deployment Plan that fa
 
 ![Example notification in the Dashboard, showing a Deployment Plan that failed to start](/assets/images/deployments/ccm-deployments-notification-failed-start.png)
 
-![Example email from Chocolatey Central Management for a scheduled Deployment Plan that failed to start, showing the Deployment Plan name and scheduled start time]((/assets/images/deployments/ccm-deployments-email-failed-scheduled-start.png))
+![Example email from Chocolatey Central Management for a scheduled Deployment Plan that failed to start, showing the Deployment Plan name and scheduled start time](/assets/images/deployments/ccm-deployments-email-failed-scheduled-start.png)
 
 ## FAQ
 
