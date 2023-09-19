@@ -38,7 +38,7 @@ Click :floppy_disk: **Save** to close the modal and create the new group.
 
 On the main Groups page, find the group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
-Select the :gear: **Actions** button on the right-hand side of the group, and then select **Edit** to open the _Edit Group_ modal.
+Select the :gear: **Actions** button on the left-hand side of the group, and then select **Edit** to open the _Edit Group_ modal.
 
 ![Edit menu entry in group actions flyout menu](/assets/images/groups/ccm-groups-edit.png)
 
@@ -52,7 +52,7 @@ From the **Edit Group** modal, you can modify the group name and description, an
 
 On the main Groups page, find the group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
-Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the right-hand side of the group, and instead select **Delete**.
+Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the left-hand side of the group, and instead select **Delete**.
 You will be prompted to confirm the deletion.
 
 ## Eligibility for Deployments
