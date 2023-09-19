@@ -2,7 +2,7 @@
 Order: 50
 xref: ccm-administration-settings-retention
 Title: Retention Settings
-Description: Information about using up audit retention settings within the Administration Settings screen
+Description: Information about using retention settings within the Administration Settings screen
 RedirectFrom:
   - en-us/central-management/usage/website/administration/settings/audit-retention
   - en-us/central-management/usage/website/administration/settings/stale-computer-deletion
