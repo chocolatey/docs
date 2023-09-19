@@ -101,6 +101,29 @@ You will also need to have at least one Group of computers already defined.
 1. Continue to add steps until your Deployment is complete.
 1. Select :floppy_disk: **Save** to save the changes to the Deployment.
 
+## Importing a Deployment
+
+A Deployment plan can be imported using a `.json` file.
+
+1. [Prepare your `.json` file](xref:ccm-example-deployments) or [export](#export) an existing Deployment.
+
+1. From the Chocolatey Central Management dashboard, select `Deployments` from the left sidebar.
+
+    ![Chocolatey Central Management dashboard, arrow pointing to Deployments menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
+
+1. Select the **Import Deployment** button at the top of the page.
+
+    ![Chocolatey Central Management Deployments page, arrow pointing to Import Deployment button](/assets/images/deployments/ccm-deployments-import-deployment-button.png)
+
+1. Click the **Choose File** button to select your `.json` file. Review the imported Deployment and then click the **Import** button.
+
+    ![Chocolatey Central Management import Deployment modal, arrow pointing to the Choose Deployment button and the Import button](/assets/images/deployments/ccm-deployments-import-modal.png)
+
+    * The Deployment name is shown along with all Deployment steps after choosing a `.json` file.
+    * A yellow badge will appear next to any Deployment steps that are privileged, along with a warning that gives more information.
+
+1. Once the deployment has been successfully created, you will be taken to the edit page ready to make any additional required changes.
+
 ## Recurring Deployments
 
 As mentioned above, when creating a Deployment it possible to select a scheduled start date/time, and in addition a Repeat Period.  This Repeat Period controls how often a Deployment recurs going forward. The values for the Repeat Period are:
@@ -146,6 +169,7 @@ While in the [`Draft`](#draft) state, the available actions that can be performe
 - [Edit](#edit)
 - [Duplicate](#duplicate)
 - [Delete](#delete)
+- [Export](#export)
 
 ### Scheduled/Ready
 
@@ -164,6 +188,7 @@ While in the [`Ready`](#ready) state, the available actions that can be performe
 - [Duplicate](#duplicate)
 - [Cancel](#cancel)
 - [Delete](#delete)
+- [Export](#export)
 
 ### Active
 
@@ -174,6 +199,7 @@ While in the [`Active`](#active) state, the available actions that can be perfor
 - [Details](#details)
 - [Duplicate](#duplicate)
 - [Cancel](#cancel)
+- [Export](#export)
 
 ### Completed
 
@@ -184,6 +210,7 @@ While in one of these states, the available actions that can be performed on a D
 - [Details](#details)
 - [Duplicate](#duplicate)
 - [Archive](#archive)
+- [Export](#export)
 
 In most cases Deployments in one of the Completed states will remain in that same state.
 However, due to changes introduced in [Chocolatey Agent v1.1.0](xref:agent-release-notes#august-22-2022), a Deployment in the `Inconclusive` state due to the computer or the Agent service being shut down or restarted during the Deployment task may retry the task and later update the Deployment's status.
@@ -255,6 +282,10 @@ This action opens up the details for the selected Deployment plans, allowing the
 ### Archive
 
 This action will mark any completed Deployment plan as archived, and it will no longer be shown in the main Deployments screen of Chocolatey Central Management website.  You can access archived Deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.
+
+### Export
+
+This action will export the details of the Deployment plan to a `.json` file. The name of the new Deployment plan will be the same as the original with some additional information added to the end. For example, if the original Deployment plan was called `Install Papercut`, the name given to the exported Deployment would be `Install Papercut - Exported (19 Sept 2023 12:52:25)` where the timestamp is the current date time.
 
 ## FAQ
 
