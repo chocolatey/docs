@@ -46,7 +46,8 @@ By default, Audit Retention is enabled, and any logs that are older than 30 days
 
 ![Audit Retention Settings](/assets/images/ccm/setup/website/audit-retention-settings.png)
 
-## Stale Computer Deletion
+## Stale Computer Retention
+
 
 > :choco-info: **NOTE**
 >
@@ -66,6 +67,7 @@ By default, Stale Computer Deletion is disabled. When it is enabled, computers t
 
 Chocolatey Central Management has the ability to automatically archive or delete deployments that have reached a completion state.
 
-By default, Deployment Plan Retention is disabled for both archiving and deleting. When it is enabled, deployment plans that have completed beyond the set timeframe (the default is 30 days) will be archived, or deleted. If both archive and delete is enabled, the delete period will be considered the combination of the archive and the delete.
+By default, Deployment Plan Retention is disabled for both archiving and deleting. When it is enabled, Deployment Plans that have completed beyond the set timeframe (the default is 30 days) will be archived, or deleted. If both archive and delete is enabled, the delete period will be considered the combination of the archive and the delete.
+
 
 ![Deployment Plan Retention Settings](/assets/images/ccm/setup/website/deployment-plan-retention-settings.png)
