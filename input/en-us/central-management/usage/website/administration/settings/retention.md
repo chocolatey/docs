@@ -1,7 +1,7 @@
 ---
 Order: 50
 xref: ccm-administration-settings-retention
-Title: Retention Settings
+Title: Retention Policies
 Description: Information about using retention settings within the Administration Settings screen
 RedirectFrom:
   - en-us/central-management/usage/website/administration/settings/audit-retention
@@ -15,9 +15,11 @@ If you want to change these settings, follow these steps:
 1. Open the CCM Site in the browser.
 1. Login with the `ccmadmin` user.
 1. In the left hand menu click on `Administration` and then `Settings`.
-1. Click on the `Retention` tab
+1. Click on the `Retention Policies` tab
+
 1. Modify the settings as required
-1. Click the `Save All` button at the top right of the page to save your settings.
+1. Click the `Save All` button at the bottom left of the page to save your settings.
+
 
 As noted in the User Interface, any modifications to this section of the settings will require the Web Application to be restarted.  This can be completed by doing the following:
 
@@ -65,9 +67,11 @@ By default, Stale Computer Deletion is disabled. When it is enabled, computers t
 >
 > This feature is available in Chocolatey Central Management starting with version 0.11.0.
 
-Chocolatey Central Management has the ability to automatically archive or delete deployments that have reached a completion state.
+Chocolatey Central Management has the ability to automatically archive or delete Deployment Plans that have reached a completion state.
 
-By default, Deployment Plan Retention is disabled for both archiving and deleting. When it is enabled, Deployment Plans that have completed beyond the set timeframe (the default is 30 days) will be archived, or deleted. If both archive and delete is enabled, the delete period will be considered the combination of the archive and the delete.
+
+By default, Deployment Plan Retention is disabled for both archiving and deleting. When it is enabled, Deployment Plans that have completed beyond the set timeframe (the default is 30 days) will be archived, or deleted. If both archive and delete are enabled, the delete period will be considered the combination of the archive and the delete.
+
 
 
 ![Deployment Plan Retention Settings](/assets/images/ccm/setup/website/deployment-plan-retention-settings.png)
