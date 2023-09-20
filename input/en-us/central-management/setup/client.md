@@ -6,7 +6,7 @@ Description: How to setup client machines to report into CCM
 RedirectFrom: docs/central-management-setup-client
 ---
 
-This will guide us through getting an agent installed and configured to check into Central Management and to be set up for handling deployment tasks.
+This will guide us through getting an agent installed and configured to check into Chocolatey Central Management and to be set up for handling deployment tasks.
 
 ## Setup
 
@@ -45,7 +45,7 @@ Please see config settings and features below for a full list.
 * `centralManagementSendTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to send information to Chocolatey Central Management. Defaults to '30'. Available in business editions only.
 * `centralManagementCertificateValidationMode` = **'PeerOrChainTrust'** - The certificate mode that is used in communication to Chocolatey Central Management. Defaults to 'PeerOrChainTrust'. Available in business editions only.
 * `centralManagementMaxReceiveMessageSizeInBytes` = **'2147483647'** - The size of the permitted message, in bytes, which can be exchanged between the Chocolatey Background Agent and Chocolatey Central Management. Defaults to '2147483647'. Available in business editions only.
-* `centralManagementDeploymentCheckTimerIntervalInSeconds` = **'180'** - Amount of time, in seconds, between each execution of the background service to check for a new deployment step from Chocolatey Central Management. Defaults to '180'. Available in business editions only.
+* `centralManagementDeploymentCheckTimerIntervalInSeconds` = **'180'** - Amount of time, in seconds, between each execution of the Chocolatey Agent service to check for a new Deployment Step from Chocolatey Central Management. Defaults to '180'. Available in business editions only.
 * `centralManagementClientCommunicationSaltAdditivePassword` = **' '** - Chocolatey Central Management Client Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication from an agent TO an instance of Central Management Service (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions only. IMPORTANT: If this value is set, agents less than v0.10.0 will be unable to contact Central Management to report in.
 * `centralManagementServiceCommunicationSaltAdditivePassword` = **' '** - Chocolatey Central Management Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication FROM an instance of Central Management Service to an agent (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions only.
 
@@ -146,7 +146,7 @@ You may see messaging like the following in the chocolatey-agent.log:
 
 This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Central Management to v0.2.0+ at your earliest convenience. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix).
 
-### Unable to check for deployments from CCM
+### Unable to check for deployments from Chocolatey Central Management
 
 This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on CCM v0.3.0+, your agents need to be on v0.11.0+. Please refer to the [CCM Compatibility Matrix](xref:central-management#ccm-component-compatibility-matrix). You may need to be on at least v0.3.0 and agents on v0.11.0+ if you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
 

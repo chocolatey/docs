@@ -9,7 +9,7 @@ Description: Information about how messages are processed by the Chocolatey Cent
 >
 > The message processing that is described below was introduced in version 0.4.1 of the Chocolatey Central Management Service.
 
-In order to ensure the safe delivery of messages from each Chocolatey Agent into the Chocolatey Central Management Service, a message processing system has been implemented.  Rather than attempt to immediately add information into the database, each message is immediately stored to disk, and then processed via recurring jobs within the Chocolatey Central Management Service.  This allows for the Service to easily handle bursts of messages that may happen as a result of a deployment occurring on many machines, and then computers reporting into the Service.
+In order to ensure the safe delivery of messages from each Chocolatey Agent into the Chocolatey Central Management Service, a message processing system has been implemented.  Rather than attempt to immediately add information into the database, each message is immediately stored to disk, and then processed via recurring jobs within the Chocolatey Central Management Service.  This allows for the Service to easily handle bursts of messages that may happen as a result of a Deployment Step occurring on many machines, and then computers reporting into the Service.
 
 ## Message Processing Folders
 
@@ -21,7 +21,7 @@ The Chocolatey Central Management Service uses a number of different folders to 
 * [DeploymentStepResultMessagesProcessingFolderPath](xref:ccm-usage-service-configuration#deploymentstepresultmessagesprocessingfolderpath)
 * [DeploymentStepResultMessagesFailedFolderPath](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfailedfolderpath)
 
-As new messages, both computer information and deployment step results, arrive at the Chocolatey Central Management Service, they are immediately stored into the `*MessagesFolderPath` folders.  Then as the service begins to process these messages, they are moved into the `*MessageProcessingFolderPath` folders, and once they are processed, the stored messages are deleted.
+As new messages, both computer information and Deployment Step results, arrive at the Chocolatey Central Management Service, they are immediately stored into the `*MessagesFolderPath` folders.  Then as the service begins to process these messages, they are moved into the `*MessageProcessingFolderPath` folders, and once they are processed, the stored messages are deleted.
 
 ## Message Processing Folder Permissions
 
@@ -29,7 +29,7 @@ During start up of the Chocolatey Central Management Service, it will ensure tha
 
 ## Poison Messages
 
-Starting in version 0.8.0 of the Chocolatey Central Management service there is now an additional folder for deployment messages. Processed messages that failed to update the status of the deployment will be moved to the folder specified in [`DeploymentStepResultMessagesFailedFolderPath`](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfailedfolderpath) after the update has been tried 3 times. Files in this directory are not deleted by the Chocolatey Central Management service.
+Starting in version 0.8.0 of the Chocolatey Central Management service there is now an additional folder for Deployment Step messages. Processed messages that failed to update the status of the Deployment Step will be moved to the folder specified in [`DeploymentStepResultMessagesFailedFolderPath`](xref:ccm-usage-service-configuration#deploymentstepresultmessagesfailedfolderpath) after the update has been tried 3 times. Files in this directory are not deleted by the Chocolatey Central Management service.
 
 See the additional information below for computers which have reported in the status of their Chocolatey packages, or for older versions of Chocolatey Central Management service.
 

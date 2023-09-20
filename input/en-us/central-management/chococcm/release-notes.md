@@ -41,7 +41,7 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 
 - Added a new Remove-CCMGroup cmdlet to allow removal of a group
 - Added a new Remove-CCMGroupMember cmdlet to allow removal a computer or group from a CCM group
-- Added functionally to the Get-CCMDeploymentStep cmdlet to allow retrieval of deployment steps, results, and logs from a deployment step and its computers
+- Added functionally to the Get-CCMDeploymentStep cmdlet to allow retrieval of Deployment Steps, results, and logs from a Deployment Step and its computers
 
 ## 0.1.1 (December 4, 2020)
 

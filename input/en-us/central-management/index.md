@@ -13,7 +13,7 @@ Once installed and configured, you can use Chocolatey Central Management to:
 * Bring reporting to the organizational level
 * Quickly see all software across the organization and see what needs attention immediately
 * Create reports for tracking and auditing purposes
-* Manage endpoints with deployments through groups and collections
+* Manage endpoints with Deployment Plans through groups and collections
 
 ![Central Management Logo](/assets/images/features/ccm/central-management.png)
 

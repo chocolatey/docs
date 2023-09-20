@@ -6,7 +6,7 @@ Description: Information on sensitive variables within Chocolatey Central Manage
 RedirectFrom: en-us/central-management/usage/website/sensitive-variables
 ---
 
-Chocolatey Central Management gives you the ability to create sensitive variables for use in deployments.
+Chocolatey Central Management gives you the ability to create sensitive variables for use in Deployment Steps.
 
 The **Sensitive Variables** page can be accessed from the Administration section of Chocolatey Central Management. The page is only visible to users who have permissions to create or delete sensitive variables.
 

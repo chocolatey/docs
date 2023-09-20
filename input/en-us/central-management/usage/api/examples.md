@@ -10,8 +10,8 @@ Description: CCM API usage examples
 From a completely fresh CCM instance with at least one computer checking into Central Management, this process will:
 
 - Create a new group containing all the computers currently registered to Central Management.
-- Create a new deployment with a single step, which will upgrade all Chocolatey-managed applications to the latest available versions.
-- Start the deployment.
+- Create a new Deployment Plan with a single step, which will upgrade all Chocolatey-managed applications to the latest available versions.
+- Start the Deployment Plan.
 
 The process involves a couple of intermediary steps as well, since we're using the raw REST API endpoints here (see below).
 We're also assuming as part of this example that you've already [Authenticated to the CCM API](#authentication) and have a `$Session` variable created as in that example.
@@ -92,7 +92,7 @@ $params = @{
         deploymentStepGroups           = @(
             @{ groupId = $Group.Id; groupName = $Group.Name }
         )
-        # Syntax for basic deployment steps is "<ChocoCommand>|<PackageName>"
+        # Syntax for basic Deployment Steps is "<ChocoCommand>|<PackageName>"
         script                         = "upgrade|all"
     } | ConvertTo-Json
 }
@@ -123,12 +123,12 @@ $null = Invoke-RestMethod @params
 
 ## Create a Recurring Scheduled Task to run Recurring Deployments
 
-This example uses the concepts in the previous example and streamlines the process of creating a scheduled task on Windows to create a recurring deployment task.
+This example uses the concepts in the previous example and streamlines the process of creating a scheduled task on Windows to create a recurring Deployment Plan task.
 In this example, we set the trigger to run daily, but you could configure it to run as needed for your use case.
 
 ```powershell
 $recurringDeploymentScript = {
-    # Fill in the CCM Server name as well as the Group ID that the deployment will target
+    # Fill in the CCM Server name as well as the Group ID that the Deployment Step will target
     $CcmServerHostname = 'chocoserver'
     $GroupId = 1
 
@@ -201,7 +201,7 @@ $taskParams = @{
     # Fill in the requirements for the repeating scheduled task; here, it will trigger once a day @ 6 PM
     Trigger     = New-ScheduledTaskTrigger -Daily -At 6pm
     TaskName    = 'Repeat - Choco Update Deployment'
-    Description = "Create and start a CCM deployment which will trigger all computers in the group '$groupName' to update their Chocolatey-managed applications."
+    Description = "Create and start a Chocolatey Central Management Deployment Plan which will trigger all computers in the group '$groupName' to update their Chocolatey-managed applications."
 }
 
 Register-ScheduledTask @taskParams

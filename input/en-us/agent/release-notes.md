@@ -168,7 +168,7 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 ### Improvements
 
-- Chocolatey Central Management - Add retry logic for running deployments acquired from Chocolatey Central Management Service.
+- Chocolatey Central Management - Add retry logic for running Deployment Steps acquired from Chocolatey Central Management Service.
 - Recheck the license on a schedule and shut down if it is invalid.
 
 ### Bug Fix
@@ -217,7 +217,7 @@ A short video explaining what is included in this release can be found here:
 ### Improvements
 
 - Chocolatey Central Management
-  - Add logic to retry reporting of a deployment step result to Chocolatey Central Management if it initially fails.
+  - Add logic to retry reporting of a Deployment Step result to Chocolatey Central Management if it initially fails.
   - Ensure that no expanded sensitive variables are captured in log that is returned to Chocolatey Central Management.
 
 ### Release Video
@@ -233,7 +233,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fix
 
-- [Security] Fix - Deployments - Sensitive arguments are included in log file when advanced deployments are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255).
+- [Security] Fix - Deployments - Sensitive arguments are included in log file when advanced Deployment Steps are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255).
 
 ### Release Video
 
@@ -253,7 +253,7 @@ A short video explaining what is included in this release can be found here:
 ### Bug Fixes
 
 - Central Management
-  - Fix - Second and subsequent deployments to an agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237).
+  - Fix - Second and subsequent Deployment Steps to Chocolatey Agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237).
   - Fix - Deployments - Log does not contain all information under error circumstances.
 
 ### Improvements
@@ -273,7 +273,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fix
 
-- Fix - Deployments - An execution timeout in seconds value of `0` for a deployment step is not treated as infinite.
+- Fix - Deployments - An execution timeout in seconds value of `0` for a Deployment Step is not treated as infinite.
 
 ### Improvements
 
@@ -283,7 +283,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fix
 
-- Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script deployment when no exit code is explicitly supplied by the script.
+- Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script Deployment Step when no exit code is explicitly supplied by the script.
 
 ## 0.11.0 (June 25, 2020)
 
@@ -294,7 +294,7 @@ A short video explaining what is included in this release can be found here:
 ### Bug Fixes
 
 - Fix - CCM - passphrases do not match on check-in (report_computer_information) - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152).
-- Fix - CCM Deployments - Deployments agent exit code of -1 reports successful deployment - see [Licensed #153](https://github.com/chocolatey/chocolatey-licensed-issues/issues/153).
+- Fix - CCM Deployments - Deployments agent exit code of -1 reports successful Deployment Step - see [Licensed #153](https://github.com/chocolatey/chocolatey-licensed-issues/issues/153).
 
 ## 0.10.0 (June 18, 2020)
 

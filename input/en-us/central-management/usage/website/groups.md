@@ -71,9 +71,9 @@ You will be prompted to confirm the deletion.
 
 ## Eligibility for Deployments
 
-The Create / Edit Group modals display groups or computers that are ineligible for Deployments in either red or orange, depending on the reason for their ineligibility.
-**All** groups and computers in a given group must have their eligibility clear in order for that group to be used as part of a Deployment.
-If a Deployment is targeting ineligible groups, the deployment cannot be started until the eligibility status(es) of the affected computers has been resolved.
+The Create / Edit Group modals display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
+**All** Groups and Computers in a given Group must have their eligibility clear in order for that group to be used as part of a Deployment Step.
+If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected computers has been resolved.
 
 ![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
 

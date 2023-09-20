@@ -61,7 +61,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ### Bug Fixes
 
 - Reporting - Internal error shown when exporting individual software report to excel - see [Licensed #323](https://github.com/chocolatey/chocolatey-licensed-issues/issues/323)
-- Deployments - Recurring deployments are missing deployment steps - see [Licensed #322](https://github.com/chocolatey/chocolatey-licensed-issues/issues/322)
+- Deployments - Recurring Deployment Plans are missing Deployment Steps - see [Licensed #322](https://github.com/chocolatey/chocolatey-licensed-issues/issues/322)
 - API - GetComputerForView method result missing creationTime - see [Licensed #321](https://github.com/chocolatey/chocolatey-licensed-issues/issues/321)
 - Multi-Factor Authentication - Email verification can be enabled while SMTP settings have not been configured
 - Website - Ensure builtin accounts' default email addresses are not resolvable
@@ -80,7 +80,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 - Fix - Auditing data may be lost in the database when some entries are updated.
   - Editing a Group, Software, or Computer would erase the user who created it and the time it was created. As part of this fix, entries without that information will set the creating user to the user who last modified it.
-- Fix - API - Exception when retrieving a deployment from the `GetDeploymentPlanForView` method.
+- Fix - API - Exception when retrieving a Deployment Plan from the `GetDeploymentPlanForView` method.
 - Fix - The creation time on the Notifications table was incorrect.
 - Fix - Excel and PDF Reports incorrectly show the time in UTC and not the local time zone.
 - Fix - Non-administrative users cannot view the Login Attempts section.
@@ -89,11 +89,11 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ### Improvements
 
 - Computers tab should display Group enrolment - see [Licensed #223](https://github.com/chocolatey/chocolatey-licensed-issues/issues/223).
-- Creating a Deployment and then clicking Cancel without adding steps or saving once should remove the deployment entirely.
+- Creating a Deployment Plan and then clicking Cancel without adding steps or saving once should remove the Deployment Plan entirely.
 - Add the Deployment name to its Step Details pages.
-- Add visual indicators that editing/adding/removing deployment steps is disabled when the deployment schedule is outdated.
+- Add visual indicators that editing/adding/removing Deployment Steps is disabled when the Deployment Plan schedule is outdated.
 - Add option of `--version` and `--pre` for a Basic Deployment Step.
-- Send email notifications when a scheduled deployment fails to start.
+- Send email notifications when a scheduled Deployment Plan fails to start.
 - Warn when Chocolatey license is due to expire.
 - Remember the specified value for Show Entries dropdown on tables.
 - Replace loading animation.
@@ -145,14 +145,14 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ### Features
 
-- Ensure that a deployment step specifies whether it contains sensitive variables in the script that's to be run.
+- Ensure that a Deployment Step specifies whether it contains sensitive variables in the script that's to be run.
 - Enhanced communication contracts that are used when communicating with Chocolatey Agent.
 - Store the database package version number in a database table.
 
 ### Bug Fixes
 
 - [Security] Fix - ASP.NET Core anti-forgery cookie doesn't use the secure flag.
-- Fix - High memory/cpu consumption when there are lots of computers/software/deployments being used.
+- Fix - High memory/CPU consumption when there are lots of Computers/Software/Deployment Plans being used.
 
 ### Improvements
 
@@ -174,13 +174,13 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ### Improvements
 
-- Web - Ability to add sensitive variables to advanced PowerShell deployment steps - see [documentation](https://docs.chocolatey.org/en-us/central-management/usage/website/sensitive-variables)
+- Web - Ability to add sensitive variables to advanced PowerShell Deployment Steps - see [documentation](https://docs.chocolatey.org/en-us/central-management/usage/website/sensitive-variables)
 - API - Hide token API endpoints from Swagger documentation.
 - Web - Update jQuery dependency - see [Licensed #271](https://github.com/chocolatey/chocolatey-licensed-issues/issues/271).
 
 ### Bug Fixes
 
-- Fix - CCM - Sensitive package parameters shown in database & Deployment step page - see [Licensed #267](https://github.com/chocolatey/chocolatey-licensed-issues/issues/267).
+- Fix - CCM - Sensitive package parameters shown in database & Deployment Step page - see [Licensed #267](https://github.com/chocolatey/chocolatey-licensed-issues/issues/267).
 
 ### Release Video
 
@@ -277,7 +277,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Bug Fixes
 
-- Fix - Service - Unable to process deployment report messages that contain invalid XML characters - see [Licensed #216](https://github.com/chocolatey/chocolatey-licensed-issues/issues/216)
+- Fix - Service - Unable to process Deployment Step report messages that contain invalid XML characters - see [Licensed #216](https://github.com/chocolatey/chocolatey-licensed-issues/issues/216)
 
 ### Release Video
 
@@ -292,7 +292,7 @@ A short video explaining what is included in this release can be found here:
 
 ### Breaking Changes
 
-- Deployments - Provide better resiliency when handling large numbers of computers within a deployment - see [Licensed #212](https://github.com/chocolatey/chocolatey-licensed-issues/issues/212)
+- Deployments - Provide better resiliency when handling large numbers of computers within a Deployment Plan - see [Licensed #212](https://github.com/chocolatey/chocolatey-licensed-issues/issues/212)
 
 Previously, while not recommended, the CCM Service could be run as a user with non-administrative rights on the machine, as long as certain permissions were provided to the user.  Going forward, there is now a strict requirement that the user that is running the CCM Service has administrative rights on the machine.  This is needed to ensure reliability of messages delivered into the CCM Service.
 
@@ -319,33 +319,33 @@ A short video explaining what is included in this release can be found here:
 
 - Deployments - Machine contact timeout now defaults to infinite (0) to allow for semi-connected environments
 
-Previously this value was set to a constant value of 20 and not configurable. To revert to previous behaviour, set the machine contact timeout in minutes value for a given deployment step to 20.
+Previously this value was set to a constant value of 20 and not configurable. To revert to previous behaviour, set the machine contact timeout in minutes value for a given Deployment Step to 20.
 
 ### Features
 
 - Deployment Scheduling
-  - Scheduled Deployments allows for starting a deployment at some point in the future
-  - Maintenance Windows - Ability to specify date and time for when no more computers within a deployment can start
+  - Scheduled Deployment Plans allows for starting a Deployment Plan at some point in the future
+  - Maintenance Windows - Ability to specify date and time for when no more computers within a Deployment Step can start
 - API - Swagger UI allows visualization and interaction with all CCM API operations - see [Licensed #183](https://github.com/chocolatey/chocolatey-licensed-issues/issues/183)
 - Long Running Deployments - Enables support for semi-connected computers
 
 ### Bug Fixes
 
-- Fix - Deployments - Computers marked unreachable should not be picked up in future steps in same deployment
-- Fix - Deployments - Adding distinct groups that share computers to a deployment results in duplicated computers within deployment steps
+- Fix - Deployments - Computers marked unreachable should not be picked up in future steps in same Deployment Plan
+- Fix - Deployments - Adding distinct groups that share computers to a Deployment Plan results in duplicated computers within Deployment Steps
 - Fix - Web - Authentication of external user (i.e. LDAP) fails when no email address is configured for user - see [Licensed #181](https://github.com/chocolatey/chocolatey-licensed-issues/issues/181)
 - Fix - Database - Unable to upgrade database when user specific permissions (i.e. instead of assigning a role to a user) for CCM are used for any user
-- Fix - Deployments - Execution timeout of infinite (0) for a deployment step is not being respected when querying for timed out computers
-- Fix - Deployments - Machine contact timeout for deployment step is not being respected, deployments incorrectly wait indefinitely (due to changes in v0.3.1)
+- Fix - Deployments - Execution timeout of infinite (0) for a Deployment Step is not being respected when querying for timed out computers
+- Fix - Deployments - Machine contact timeout for Deployment Step is not being respected, Deployment Step incorrectly wait indefinitely (due to changes in v0.3.1)
 - Fix - Web - Real time notifications never reach CCM Web UI
 - Fix - Web - Notifications page has no way to see entire notification
 
 ### Improvements
 
-- Deployments - Handle deployment step activation order properly when the same computer is in multiple deployments that are active at the same time
+- Deployments - Handle Deployment Step activation order properly when the same computer is in multiple Deployment Plans that are active at the same time
 - Service - Configuration - Provide clarity in log messages when salt additive configuration values are misconfigured
-- Deployments - Round percentage complete values on report pages while deployment is in progress
-- Deployments - Auto-refresh deployment report pages
+- Deployments - Round percentage complete values on report pages while Deployment Step is in progress
+- Deployments - Auto-refresh Deployment Plan report pages
 
 ## 0.3.1 (October 5, 2020)
 
@@ -387,16 +387,16 @@ Deployments Release - we are excited to bring about managing remote machines wit
 
 - [Central Management Deployments](https://blog.chocolatey.org/2020/05/announcing-deployments/):
   - Create target groups to deploy to
-  - Create a deployment with one or more steps
+  - Create a Deployment Plan with one or more Steps
   - Each step can target multiple groups, and different groups in each step if desired
   - Script a Chocolatey package
   - With additional permissions, run a full PowerShell script instead
   - Choose how failures in each step are handled
   - Reorder steps
   - Control permissions on who can deploy Chocolatey packages and who can run full scripts
-  - See progress on active deployments
-  - View logs for computers that executed a deployment step
-  - Report on completed deployments including exporting to PDF for sharing with executive staff
+  - See progress on active Deployment Plans
+  - View logs for computers that executed a Deployment Step
+  - Report on completed Deployment Plans including exporting to PDF for sharing with executive staff
 
 ### Bug Fixes
 

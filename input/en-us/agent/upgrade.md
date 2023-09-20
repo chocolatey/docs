@@ -78,13 +78,13 @@ If you need to change the username or password of the Chocolatey Agent, you have
 
 ### Use Chocolatey Central Management to Change the Service Account Username or Password
 
-If you use Chocolatey Central Management, you won't be able to use a deployment to uninstall the agent and then install the agent. This is because the agent cannot change the username/password while is it running. Instead, you can send a deployment that creates a scheduled task to uninstall the agent, then install with the new parameters.
+If you use Chocolatey Central Management, you won't be able to use a Deployment Step to uninstall the agent and then install the agent. This is because the agent cannot change the username/password while is it running. Instead, you can send a Deployment Step that creates a scheduled task to uninstall the agent, then install with the new parameters.
 
 > :choco-info: **NOTE**
 >
 > Due to limitations of Windows Task Scheduler, it is likely that your users will see the PowerShell window initially, but it should disappear once PowerShell has fully started.
 
-An example advanced deployment script to do this is as follows:
+An example advanced Deployment Step script to do this is as follows:
 
 ```powershell
 $delayInMinutes = 1

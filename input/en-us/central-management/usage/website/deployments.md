@@ -32,13 +32,13 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management New Deployment page, arrow pointing to the edit title button](/assets/images/deployments/ccm-deployments-edit-deployment-name.png)
 
-1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment plan execution timeout in seconds to be used by all Deployment steps.
+1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment Plan execution timeout in seconds to be used by all Deployment Steps.
 
-    ![Chocolatey Central Management New Deployment page, arrow pointing to the deployment plan execution timeout in seconds setting](/assets/images/deployments/ccm-deployments-execution-timeout-in-seconds.png)
+    ![Chocolatey Central Management New Deployment page, arrow pointing to the Deployment Plan execution timeout in seconds setting](/assets/images/deployments/ccm-deployments-execution-timeout-in-seconds.png)
 
-    * The Deployment plan execution timeout in seconds will be used on all steps created **after it has been modified**. A Deployment step can override the Deployment plan execution timeout in seconds by modifying the Deployment step execution timeout in seconds in the Deployment step modal located in the advanced filters dropdown.
+    * The Deployment Plan execution timeout in seconds will be used on all steps created **after it has been modified**. A Deployment Step can override the Deployment Plan execution timeout in seconds by modifying the Deployment Step execution timeout in seconds in the Deployment Step modal located in the advanced filters dropdown.
 
-        ![Chocolatey Central Management Deployment step modal, arrow pointing to execution timeout in seconds](/assets/images/deployments/ccm-deployments-step-execution-timeout-in-seconds.png)
+        ![Chocolatey Central Management Deployment Step modal, arrow pointing to execution timeout in seconds](/assets/images/deployments/ccm-deployments-step-execution-timeout-in-seconds.png)
 
 1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the :heavy_plus_sign: **Add Schedule** button.
 
@@ -56,20 +56,20 @@ You will also need to have at least one Group of computers already defined.
 
         ![Chocolatey Central Management Deployment Repeat Period](/assets/images/deployments/ccm-deployments-repeat-period.png)
 
-1. Select :heavy_plus_sign: **Add Step** to add your first Deployment step.
+1. Select :heavy_plus_sign: **Add Step** to add your first Deployment Step.
 
     ![Chocolatey Central Management Deployment add step button](/assets/images/deployments/ccm-deployments-add-step.png)
 
-1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the deployment step.
+1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the Deployment Step.
 
     ![Chocolatey Central Management Deployment new step modal](/assets/images/deployments/ccm-deployments-new-step-modal.png)
 
-1. Add the Deployment step action:
-   * For _Basic_ Deployment steps, select a `Script command` from the list, a `Package name` to install, and optionally a specific package version to install or whether to allow Chocolatey to install the latest prerelease package version.  **NOTE:** It is not possible to use a space character within the `Package name` or `Package Version` textboxes, and the `Package Version` textbox must contain at least one digit.
+1. Add the Deployment Step action:
+   * For _Basic_ Deployment Steps, select a `Script command` from the list, a `Package name` to install, and optionally a specific package version to install or whether to allow Chocolatey to install the latest prerelease package version.  **NOTE:** It is not possible to use a space character within the `Package name` or `Package Version` textboxes, and the `Package Version` textbox must contain at least one digit.
 
         ![Chocolatey Central Management Deployment basic step action](/assets/images/deployments/ccm-deployments-basic-step-action.png)
 
-    * For _Advanced_ Deployment steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
+    * For _Advanced_ Deployment Steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
 
         ![Chocolatey Central Management Deployment advanced step action](/assets/images/deployments/ccm-deployments-advanced-step-action.png)
 
@@ -82,21 +82,21 @@ You will also need to have at least one Group of computers already defined.
     * `Machine contact timeout` (requires Chocolatey Central Management v0.4.0+ to edit).
     * `Fail overall Deployment if not successful`.
       Disabling this option will allow the overall Deployment to be marked as successful even if the step fails.
-      By default, if any Deployment step fails, the overall Deployment is marked as Failed.
-    * `Only run other Deployment steps if successful`.
-      Enabling this option will prevent subsequent Deployment steps from starting if this step fails.
+      By default, if any Deployment Step fails, the overall Deployment is marked as Failed.
+    * `Only run other Deployment Steps if successful`.
+      Enabling this option will prevent subsequent Deployment Steps from starting if this step fails.
       The overall Deployment will be marked as Failed, and subsequent steps will be Cancelled.
 1. Select the **Select Target Groups** tab.
 
-    ![Chocolatey Central Management Deployment step Select Target Group tab](/assets/images/deployments/ccm-deployments-select-groups-tab.png)
+    ![Chocolatey Central Management Deployment Step Select Target Group tab](/assets/images/deployments/ccm-deployments-select-groups-tab.png)
 
 1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button. You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
 
-    ![Chocolatey Central Management Deployment step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
+    ![Chocolatey Central Management Deployment Step Select Target Groups modal](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
 
-1. Click the :floppy_disk: **Save** button to save the step.
+1. Click the :floppy_disk: **Save** button to save the Deployment Step.
 
-    ![Chocolatey Central Management Deployment step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
+    ![Chocolatey Central Management Deployment Step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
 
 1. Continue to add steps until your Deployment is complete.
 1. Select :floppy_disk: **Save** to save the changes to the Deployment.
@@ -163,7 +163,7 @@ While in the [Ready](#ready) state, if you use the [Cancel](#cancel) or [Delete]
 A Deployment is initially created in the [`Draft`](#draft) state, and will remain in this state until it is moved into the [`Ready`](#ready) state.
 While it is in the [`Draft`](#draft) state, it cannot be run, and scheduled Deployment start times will be ignored.
 
-While in the [`Draft`](#draft) state, the available actions that can be performed on a Deployment plan are:
+While in the [`Draft`](#draft) state, the available actions that can be performed on a Deployment Plan are:
 
 - [Move To Ready](#move-to-ready)
 - [Edit](#edit)
@@ -180,7 +180,7 @@ Deployments in this state can be started manually or according to a schedule.
 >
 > Any modifications to a Deployment in this state will revert it back to the [`Draft`](#draft) state.
 
-While in the [`Ready`](#ready) state, the available actions that can be performed on a Deployment plan are:
+While in the [`Ready`](#ready) state, the available actions that can be performed on a Deployment Plan are:
 
 - [View](#view)
 - [Run Now](#run-now)
@@ -194,7 +194,7 @@ While in the [`Ready`](#ready) state, the available actions that can be performe
 
 Deployments that are currently in progress will be in this state.
 
-While in the [`Active`](#active) state, the available actions that can be performed on a Deployment plan are:
+While in the [`Active`](#active) state, the available actions that can be performed on a Deployment Plan are:
 
 - [Details](#details)
 - [Duplicate](#duplicate)
@@ -205,7 +205,7 @@ While in the [`Active`](#active) state, the available actions that can be perfor
 
 Deployments that have completed running will be in either the `Success`,  `Failed`, `Unreachable`, `Inconclusive`, or `Cancelled` state, depending on how the run went.
 
-While in one of these states, the available actions that can be performed on a Deployment plan are:
+While in one of these states, the available actions that can be performed on a Deployment Plan are:
 
 - [Details](#details)
 - [Duplicate](#duplicate)
@@ -214,28 +214,28 @@ While in one of these states, the available actions that can be performed on a D
 
 In most cases Deployments in one of the Completed states will remain in that same state.
 However, due to changes introduced in [Chocolatey Agent v1.1.0](xref:agent-release-notes#august-22-2022), a Deployment in the `Inconclusive` state due to the computer or the Agent service being shut down or restarted during the Deployment task may retry the task and later update the Deployment's status.
-This can result in the Deployment step or overall Deployment changing from the `Inconclusive` status to `Success` or `Failed` depending on the final status of the retried task.
+This can result in the Deployment Step or overall Deployment Plan changing from the `Inconclusive` status to `Success` or `Failed` depending on the final status of the retried task.
 
 ### Archived
 
 Deployments that are in a [completed](#completed) state can be actioned using [`Archive`](#archive) action to hide them from the main Deployments screen.
 This is helpful if you'd like to reduce clutter on the main Deployments screen without discarding the information the completed report contains.
 
-You can access archived Deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.  [`Archived`](#archived) Deployments will not appear in any other reports that contain Deployment plans.
+You can access archived Deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.  [`Archived`](#archived) Deployments will not appear in any other reports that contain Deployment Plans.
 
-While in the [`Archived`](#archived) state, no additional actions can be performed on a Deployment plan.
+While in the [`Archived`](#archived) state, no additional actions can be performed on a Deployment Plan.
 
 ## Deployment Plan Actions
 
-Depending on the [state](#deployment-states) that a Deployment plan is currently in, there are a defined set of actions that can be performed on them.  What follows are is a description of each of those actions.
+Depending on the [state](#deployment-states) that a Deployment Plan is currently in, there are a defined set of actions that can be performed on them.  What follows are is a description of each of those actions.
 
 ### Move To Ready
 
-This action moves a Deployment plan from the [`Draft`](#draft) state to the [`Ready`](#ready) state. While in this interim state, no additional changes can be made to the Deployment plan.  If changes are made, it will be moved back to the [`Draft`](#draft) state.
+This action moves a Deployment Plan from the [`Draft`](#draft) state to the [`Ready`](#ready) state. While in this interim state, no additional changes can be made to the Deployment Plan.  If changes are made, it will be moved back to the [`Draft`](#draft) state.
 
 ### Edit
 
-The action opens the edit page for the selected Deployment plan.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a Deployment plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
+The action opens the edit page for the selected Deployment Plan.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a Deployment Plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
 
 ### Duplicate
 
@@ -243,25 +243,25 @@ The action opens the edit page for the selected Deployment plan.  Here changes c
 >
 > This feature is available in Chocolatey Central Management starting with version 0.10.0.
 
-The action makes an exact copy (with the exception of any scheduled start/end time or repeat period) of any given Deployment plan.  Once the duplicate has been created, you will be taken to the edit page ready to make any additional required changes.  The name of the new Deployment plan will be the same as the original with some additional information added to the end.  For example, if the original Deployment plan was called `Install Papercut`, the name given to the duplicate would be `Install Papercut - Copy (19 Aug 2022 12:52:25)` where the timestamp is the current date time.
+The action makes an exact copy (with the exception of any scheduled start/end time or repeat period) of any given Deployment Plan.  Once the duplicate has been created, you will be taken to the edit page ready to make any additional required changes.  The name of the new Deployment Plan will be the same as the original with some additional information added to the end.  For example, if the original Deployment Plan was called `Install Papercut`, the name given to the duplicate would be `Install Papercut - Copy (19 Aug 2022 12:52:25)` where the timestamp is the current date time.
 
 > :choco-info: **NOTE**
 >
-> There is a specific permission to allow duplication of a Deployment plan. If you want to configure this permission, it can be done either for an individual [user](xref:ccm-administration-users), or a specific [role](xref:ccm-administration-roles)
+> There is a specific permission to allow duplication of a Deployment Plan. If you want to configure this permission, it can be done either for an individual [user](xref:ccm-administration-users), or a specific [role](xref:ccm-administration-roles)
 
 ### Delete
 
-This removes all information about the Deployment plan from Chocolatey Central Management.
+This removes all information about the Deployment Plan from Chocolatey Central Management.
 
 The action cannot be undone, so care should be taken before using it.
 
 ### View
 
-The action opens the edit page for the selected Deployment plan where all the parts of the plan can be viewed.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a Deployment plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
+The action opens the edit page for the selected Deployment Plan where all the parts of the plan can be viewed.  Here changes can be made to the steps, schedule, groups, etc.  If any changes are made on the page, a Deployment Plan that was in the [`Ready`](#ready) state, will be moved back to the [`Draft`](#draft) state.
 
 ### Run Now
 
-This action takes a Deployment plan from the [`Ready`](#ready) state, to the [`Active`](#active) state.  This can be thought of as actually setting the Deployment plan in motion, and the steps within this Deployment plan will begin to be picked up by the computers that are contained within the steps (in the order that has been defined).
+This action takes a Deployment Plan from the [`Ready`](#ready) state, to the [`Active`](#active) state.  This can be thought of as actually setting the Deployment Plan in motion, and the steps within this Deployment Plan will begin to be picked up by the computers that are contained within the steps (in the order that has been defined).
 
 > :choco-warning: **WARNING**
 >
@@ -270,22 +270,22 @@ This action takes a Deployment plan from the [`Ready`](#ready) state, to the [`A
 
 ### Cancel
 
-This action stops all future steps from being performed within a Deployment plan.  Any steps that are currently active will still be allowed to complete, but no further steps will occur.
+This action stops all future steps from being performed within a Deployment Plan.  Any steps that are currently active will still be allowed to complete, but no further steps will occur.
 
 If a recurring Deployment is Cancelled from the [`Ready`](#ready) state, all future instances of the plan are also cancelled.
 If you want to skip an iteration of a recurring Deployment, instead change its scheduled start time directly.
 
 ### Details
 
-This action opens up the details for the selected Deployment plans, allowing the user to see the progress so far.  For example: the currently active step, or which computers have picked up this step.  This view is useful for monitoring the progress in real time, as the details pages update automatically.
+This action opens up the details for the selected Deployment Plans, allowing the user to see the progress so far.  For example: the currently active step, or which computers have picked up this step.  This view is useful for monitoring the progress in real time, as the details pages update automatically.
 
 ### Archive
 
-This action will mark any completed Deployment plan as archived, and it will no longer be shown in the main Deployments screen of Chocolatey Central Management website.  You can access archived Deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.
+This action will mark any completed Deployment Plan as archived, and it will no longer be shown in the main Deployments screen of Chocolatey Central Management website.  You can access archived Deployments from the `Deployments` page and clicking on the `View Archived Deployments` button.
 
 ### Export
 
-This action will export the details of the Deployment plan to a `.json` file. The name of the new Deployment plan will be the same as the original with some additional information added to the end. For example, if the original Deployment plan was called `Install Papercut`, the name given to the exported Deployment would be `Install Papercut - Exported (19 Sept 2023 12:52:25)` where the timestamp is the current date time.
+This action will export the details of the Deployment Plan to a `.json` file. The name of the new Deployment Plan will be the same as the original with some additional information added to the end. For example, if the original Deployment Plan was called `Install Papercut`, the name given to the exported Deployment would be `Install Papercut - Exported (19 Sept 2023 12:52:25)` where the timestamp is the current date time.
 
 ## Deployment Status Notifications
 
@@ -341,7 +341,7 @@ Once you upgrade to at least Chocolatey Central Management v0.2.0, every machine
 
 ### Can I use Chocolatey Deployments to upgrade Chocolatey Central Management based components?
 
-You can upgrade the chocolatey-agent package via Chocolatey Central Management. To do so please see [here](xref:upgrade-agent#use-chocolatey-central-management-to-upgrade-chocolatey-agent) as this must be performed as an advanced Deployment step.
+You can upgrade the chocolatey-agent package via Chocolatey Central Management. To do so please see [here](xref:upgrade-agent#use-chocolatey-central-management-to-upgrade-chocolatey-agent) as this must be performed as an advanced Deployment Step.
 
 We do not recommend upgrading Chocolatey Central Management itself via an automated Deployment process. Please see our [Chocolatey Central Management Upgrade Documentation](xref:ccm-upgrade) for the supported upgrade process.
 
@@ -355,7 +355,7 @@ This is a switch that is passed to opt out of Chocolatey Self-Service. It's typi
 
 This will depend a little bit on the version of Chocolatey Central Management you're running.
 Prior to v0.4.0, control of Deployments was handled entirely on a per-Deployment-_step_ basis.
-This means that if you have an active Deployment with some of the computers in it idling (waiting for a later step in the Deployment to begin, essentially), these machines will pick up available Deployment steps from an unrelated Deployment while they're waiting.
+This means that if you have an active Deployment with some of the computers in it idling (waiting for a later step in the Deployment to begin, essentially), these machines will pick up available Deployment Steps from an unrelated Deployment while they're waiting.
 
 As of v0.4.0 of Chocolatey Central Management, this has been fine tuned a little bit so that any computer which is acted on by a Deployment will not pick up any steps from unrelated Deployments until all its assigned steps in the first Deployment are completed.
 
@@ -374,7 +374,7 @@ This can get a bit confusing, so let's consider the following scenario:
     * Computer A
 
 Let's say `Deployment A` is started first, and `Deployment B` starts while `Deployment A` is in either step 1 or step 2.
-When `Deployment A` reaches step 2, even though `Computer A` is not currently running any Deployment steps, it will not start running steps from `Deployment B` because it still has a task to do in `Deployment A`.
+When `Deployment A` reaches step 2, even though `Computer A` is not currently running any Deployment Steps, it will not start running steps from `Deployment B` because it still has a task to do in `Deployment A`.
 If you are running Chocolatey Central Management 0.3.x, `Computer A` will instead pick up and run the step from `Deployment B` despite `Deployment A` still being in progress.
 
 ### Why do My Computers or Groups Show as Ineligible for Deployments While They're Opted In?
@@ -401,13 +401,13 @@ Additionally, any group that contains any of the following will be considered in
   Once Chocolatey Central Management has confirmed the problem computer(s)/group(s) are eligible again, the Deployment can be started.
   If the Deployment was previously scheduled and it has not passed the maintenance window time (if set), it will start at that point.
 * For Deployments that are currently [`Active`](#active)
-  * As soon as Chocolatey Central Management detects the ineligible computer, it will terminate the current Deployment step.
-  * Then, all following Deployment steps will be `Cancelled`.
+  * As soon as Chocolatey Central Management detects the ineligible computer, it will terminate the current Deployment Step.
+  * Then, all following Deployment Steps will be `Cancelled`.
 
 ### How Can I Run Deployments in a Semi-Connected Environment?
 
 As of Chocolatey Central Management v0.4.0, you are able to configure Deployments to tolerate semi-connected environments.
-This effectively allows Chocolatey Central Management Deployments to simply wait until a machine is connected to the network before it begins a given Deployment step.
+This effectively allows Chocolatey Central Management Deployments to simply wait until a machine is connected to the network before it begins a given Deployment Step.
 
 To configure this, you can set the `Machine Contact Timeout` value in the Advanced settings of each individual Deployment Step to `0`.
 This value must be positive, or zero (which is treated as infinite).
@@ -415,12 +415,12 @@ You may want to configure this only for the first step of a Deployment, or for m
 
 > :choco-info: **NOTE**
 >
-> If the Deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first Deployment step is ignored.
+> If the Deployment is scheduled with a maintenance window set, the `Machine Contact Timeout` value of the first Deployment Step is ignored.
 > In this case, the maintenance window defines the contact timeout for the first step.
-The `Execution Timeout` is the maximum allowed time for the Chocolatey Agent to execute the Deployment step task.
+The `Execution Timeout` is the maximum allowed time for the Chocolatey Agent to execute the Deployment Step task.
 Any positive value for this setting will be respected, and as with `Machine Contact Timeout`, a `0` value is treated as infinite.
-However, if the execution timeout is infinite and a computer goes offline, that Deployment step will not complete until that computer checks in again. If it errors three times attempting to provide the results, it will fail it at the client and that computer will not report results, and require manual intervention.
-Infinite execution timeouts are **not recommended** for this reason &mdash; Deployment steps may end up seemingly stalling for long periods of time and/or require manual intervention to cancel them.
+However, if the execution timeout is infinite and a computer goes offline, that Deployment Step will not complete until that computer checks in again. If it errors three times attempting to provide the results, it will fail it at the client and that computer will not report results, and require manual intervention.
+Infinite execution timeouts are **not recommended** for this reason &mdash; Deployment Steps may end up seemingly stalling for long periods of time and/or require manual intervention to cancel them.
 
 ## Deployments Webinars
 

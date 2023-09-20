@@ -33,7 +33,7 @@ Default Value: `30`
 
 ### CheckForDeploymentStepResultMessagesToProcessTimerIntervalInSeconds
 
-The amount of time, in seconds, of the interval between checking for deployment step result messages to process in Chocolatey Central Management.
+The amount of time, in seconds, of the interval between checking for Deployment Step result messages to process in Chocolatey Central Management.
 
 Default Value: `30`
 
@@ -51,7 +51,7 @@ Default Value: `240`
 
 ### CheckForScheduledDeploymentPlansTimerIntervalInSeconds
 
-The amount of time, in seconds, of the interval between checking for scheduled deployments in Chocolatey Central Management.
+The amount of time, in seconds, of the interval between checking for scheduled Deployment Plans in Chocolatey Central Management.
 
 Default Value: `60`
 
@@ -69,19 +69,19 @@ Default Value: `C:\ProgramData\chocolatey\services\computer_information_messages
 
 ### DeploymentStepResultMessagesFolderPath
 
-The path to the folder where incoming deployment step result messages will be stored.
+The path to the folder where incoming Deployment Step result messages will be stored.
 
 Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messages`
 
 ### DeploymentStepResultMessagesProcessingFolderPath
 
-The path to the folder where deployment step result messages will be processed.
+The path to the folder where Deployment Step result messages will be processed.
 
 Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messages_processing`
 
 ### DeploymentStepResultMessagesFailedFolderPath
 
-The path to the folder where deployment step result messages that failed to process will be stored. _(Available since v0.8.0)_
+The path to the folder where Deployment Step result messages that failed to process will be stored. _(Available since v0.8.0)_
 
 Default Value: `C:\ProgramData\chocolatey\services\deployment_step_result_messages_failed`
 

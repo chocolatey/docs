@@ -31,7 +31,7 @@ The selection that is made here is persisted, meaning that it will be remembered
 >
 > This feature is available in Chocolatey Central Management starting with version 0.10.0.
 
-Across the various pages within the Chocolatey Central Management website, there are a number of different tables. Showing, for example, all the [computers](xref:ccm-computers) that are currently reporting into Chocolatey Central Management service, or all of the [deployments](xref:ccm-deployments) that have been created.  For each of these tables, it is possible to select the number of entries that you want to see in the table.  The selection will be remembered between logged in sessions to the Chocolatey Central Management website (assuming you are using the same browser).
+Across the various pages within the Chocolatey Central Management website, there are a number of different tables. Showing, for example, all the [Computers](xref:ccm-computers) that are currently reporting into Chocolatey Central Management service, or all of the [Deployment Plans](xref:ccm-deployments) that have been created.  For each of these tables, it is possible to select the number of entries that you want to see in the table.  The selection will be remembered between logged in sessions to the Chocolatey Central Management website (assuming you are using the same browser).
 
 ![Drop down list showing available options for how many entries to show in a table](/assets/images/ccm/general/number-of-table-entries-selection.png)
 
