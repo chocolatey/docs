@@ -29,7 +29,6 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## Known Issues
 
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
-- Some issues may be held internally, please follow your support routes to learn more.
 
 ## 0.11.0 (September 18, 2023)
 

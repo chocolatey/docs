@@ -26,7 +26,6 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ## Known Issues
 
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
-- Some issues may be held internally, please follow your support routes to learn more.
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
@@ -43,7 +42,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ### Improvement
 
-- Make use of option to skip HTTP cache when running Chocolatey CLI commands. 
+- Make use of option to skip HTTP cache when running Chocolatey CLI commands.
 
 
 ## 2.0.0 (May 31, 2023)
