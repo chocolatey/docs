@@ -51,7 +51,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 
 ### Improvements
 
-- Add an option to provide a default value for the `executionTimoutInSeconds` setting, which will be used for all new Deployment Steps.
+- Add an option to provide a default value for the `executionTimeoutInSeconds` setting, which will be used for all new Deployment Steps.
 - Ensure a Computer's `ComputerName` and `FriendlyName` properties are in separate fields when the API returns data.
 - Move the `Action` button to the first column in all tables.
 - Reinstate the ‘Return To Deployments’ button when editing a Deployment Plan.
