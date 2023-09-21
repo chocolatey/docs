@@ -32,7 +32,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ## 0.11.0 (September 18, 2023)
 
-[Release Blog Post](https://blog.chocolatey.org/2023/09/central-management-0.11.0-released/)
+Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11.0-released/) about this release.
 
 ### Features
 
