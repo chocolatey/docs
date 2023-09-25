@@ -32,9 +32,22 @@ We have listed the bug fixes, features and improvements below that we feel you s
 
 When you run the [Chocolatey CLI install command](https://chocolatey.org/install), you are installing the latest version of Chocolatey CLI each time. To install a specific version, set the environment variable `chocolateyVersion` before running the installation command. See the [documentation for more information](https://docs.chocolatey.org/en-us/choco/setup#installing-a-particular-version-of-chocolatey).
 
+### Downgrading to the Latest 1.x and 5.x Stable Chocolatey Product Versions
+
+If you have issues after upgrading to the 2.x and 6.x versions of Chocolatey products, please see the [support options available](#what-should-you-do-if-you-have-questions).
+
+Before downgrading from 2.x and 6.x to 1.x and 5.x of Chocolatey products, please ensure that you understand the [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle). If you still want to downgrade, follow the steps below:
+
+1. If you have Chocolatey GUI and / or Chocolatey GUI Licensed Extension, then uninstall them by running `choco uninstall chocolateygui.extension chocolateygui` from an elevated session.
+1. This step requires you to downgrade products depending on what you have installed.
+    1. If you have Chocolatey Agent installed, downgrade it by running `choco upgrade chocolatey-agent --version=1.1.2 --allow-downgrade` from an elevated session. Note that this will also downgrade both Chocolatey CLI and Chocolatey Licensed Extension.
+    1. If you have Chocolatey Licensed Extension installed, downgrade it by running `choco upgrade chocolatey.extension --version 5.0.3 --allow-downgrade` from an elevated session. Note that this will also downgrade Chocolatey CLI.
+    1. If you _only_ have Chocolatey CLI installed, downgrade it by running `choco upgrade chocolatey --version 1.4.0 --allow-downgrade` from an elevated session.
+1. If you uninstalled Chocolatey GUI and / or Chocolatey GUI Licensed Extension, then install the latest 1.x versions by running `choco install chocolateygui.extension -y --version=1.0.3`.
+
 ### Sonatype Nexus Repository Sources
 
-The Sonatype Nexus Repository Manager has an [issue that can cause it to go into an infinite loop of querying for packages from a NuGet v2 feed](https://issues.sonatype.org/browse/NEXUS-13426) (you will need a login for Sonatypes' Jira system to view the issue). The only affects Sonatype Nexus NuGet v2 feeds as it has been fixed for NuGet v3 feeds.
+The Sonatype Nexus Repository Manager has an [issue that can cause it to go into an infinite loop of querying for packages from a NuGet v2 feed](https://issues.sonatype.org/browse/NEXUS-13426) (you will need a login for the Sonatype Jira system to view the issue). This only affects Sonatype Nexus NuGet v2 feeds as it has been fixed for NuGet v3 feeds.
 
 To work around this issue, please ensure that you have 29 or less package versions of any Chocolatey product in your internal Sonatype Nexus NuGet v2 feed repository _before_ you start the upgrade.
 
@@ -48,7 +61,7 @@ This is [discussed in more depth later](#side-by-side-installs-have-been-removed
 
 > :choco-note: **NOTE**
 >
-> **Important information for package maintainers.** The `ChocolateyPackageVersion` [environment variable](xref:powershell-reference#environment-variables) follows the below version normalization. If your package scripts use this variable, and the nuspec specified version falls outside of the normalized format, then they may not behave as expected. We recommend using specific version numbers within your scripts rather depending on these environment variables.
+> **Important information for package maintainers.** The `ChocolateyPackageVersion` [environment variable](xref:powershell-reference#environment-variables) follows the below version normalization. If your package scripts use this variable, and the version specified in the package `.nuspec` file falls outside the normalized format, then they may not behave as expected. We recommend using specific version numbers within your scripts rather depending on these environment variables.
 
 Due to newer semantic version requirements imposed by the NuGet libraries, some version numbers may appear differently than they did in Chocolatey CLI v1.x. Chocolatey CLI 2.0.0 and later will [normalize version numbers](xref:version-normalization) to comply with these new requirements.
 
@@ -127,9 +140,9 @@ If you need side-by-side functionality, or cannot uninstall packages installed s
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
-In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `-l` and it's alias options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158). We have also removed the `-a` and it's alias options from the `list` command as it no longer made sense to have that option once side-by-side installs were removed.
+In version 1.0.0 of Chocolatey CLI, we added notices that the `choco list` command will list only local packages, and deprecated the `-l` and its alias options. See this [GitHub issue for more information](https://github.com/chocolatey/choco/issues/158). We have also removed the `-a` and its alias options from the `list` command as it no longer made sense to have that option once side-by-side installs were removed.
 
-To summarise, the following options were removed:
+To summarize, the following options were removed:
 
 * `-l`
 * `-lo`
@@ -148,7 +161,7 @@ If you use `choco list` commands in your automations, scripts or at the command-
 Invalid argument --local-only. This argument has been removed from the list command and cannot be used.
 ```
 
-For automations we recommend that you use the `-r`, or `--limit-output` options as it provides machine parsable output. As an example, instead of using `choco list --local-only` you would use `choco list --limit-output`. In PowerShell `choco list --limit-output | ConvertFrom-Csv -Delimiter '|' -Header PackageId,PackageVersion` will return a PowerShell object you can more easily interact with in your automations.
+For automations, we recommend that you use the `-r`, or `--limit-output` options as it provides machine parsable output. As an example, instead of using `choco list --local-only` you would use `choco list --limit-output`. In PowerShell `choco list --limit-output | ConvertFrom-Csv -Delimiter '|' -Header PackageId,PackageVersion` will return a PowerShell object you can more easily interact with in your automations.
 
 To ensure we do not break any existing automation, integrations or scripts using the `--limit-output` or `-r` along with `-l`, `-a` or one of their aliases, will continue to run and **will not produce an error**. Only a warning will be added to the logs. In a future release this will produce an error, so please ensure you remove `-l`, `-a`, and aliases, from any automations or scripts that you have.
 
@@ -174,13 +187,13 @@ If a package fails installation or upgrade due to dependency constraints, please
 
 In addition to the [Chocolatey shortcut shims removed in version 1.0.0](https://github.com/chocolatey/choco/issues/2468), we have removed the [remaining ones](https://github.com/chocolatey/choco/issues/2641). The shims removed (including the earlier ones) and their equivalent full commands are:
 
-* `chocolatey`: use `choco`.
-* `cinst`: use `choco install`.
-* `clist`: use `choco list`.
-* `cpush`: use `choco push`.
-* `cuninst`: use `choco uninstall`.
-* `cup`: use `choco upgrade`.
-* `cver`: use `choco --version`.
+* `chocolatey`. Use `choco`.
+* `cinst`. Use `choco install`.
+* `clist`. Use `choco list`.
+* `cpush`. Use `choco push`.
+* `cuninst`. Use `choco uninstall`.
+* `cup`. Use `choco upgrade`.
+* `cver`. Use `choco --version`.
 
 If you want to add these shortcuts back, you can create a PowerShell function or batch file to provide the same functionality. An example PowerShell function, you could add to your PowerShell profile, would be:
 
@@ -200,9 +213,9 @@ Alternatively, you can specify the push source when pushing a package by running
 
 To make working with Chocolatey CLI consistent, we have changed the `choco apikey` command to add the following subcommands:
 
-* `add`: add an API key.
-* `remove`: remove an API key.
-* `list`: list API keys.
+* `add`. Add an API key.
+* `remove`. Remove an API key.
+* `list`. List API keys.
 
 As the `remove` subcommand has been added, we have removed the `--remove` option.
 
