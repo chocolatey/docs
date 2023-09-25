@@ -28,11 +28,11 @@ The Chocolatey For Business Azure Environment was later developed as our replace
 
 ## I have a Quick Deploy Environment Solution in place. What do I do now?
 
-The beauty is while we don't support the Quick Deploy Environment as a new deployment option. If already deployed, you have the same components (Sonatype Nexus, Jenkins, and Chocolatey Central Management) as our current environment solutions. You simply need to keep them up to date going forward.
+While we don't support the Quick Deploy Environment as a new deployment option, if already deployed you have the same components (Sonatype Nexus, Jenkins, and Chocolatey Central Management) as our current environment solutions. You simply need to keep them up to date going forward.
 
 ### How Do I Handle SSL Certificate Renewal?
 
-Our [certificate renewal documentation](xref:quick-start-guide-cert-renewal) for Quick Start Guide works just fine on the older Quick Deploy Environment.
+Our [certificate renewal documentation](xref:quick-start-guide-cert-renewal) for Quick Start Guide works on the older Quick Deploy Environment.
 
 ### How Do I Upgrade My Nexus Instance?
 
@@ -40,8 +40,8 @@ The same [nexus upgrade documentation](xref:upgrade-nexus) works for Quick Start
 
 ### How Do I Upgrade Chocolatey Central Management(CCM)?
 
-Here is a link to our [Chocolatey Central Management Upgrade Documentation](xref:ccm-upgrade).
+See [Chocolatey Central Management Upgrade Documentation](xref:ccm-upgrade).
 
 ### How Do I Upgrade Jenkins?
 
-New versions of the [Jenkins package](https://community.chocolatey.org/packages/jenkins) are being continuously published to the Chocolatey Community Repository.
+See [Jenkins Upgrade Documentation](xref:upgrade-jenkins)
