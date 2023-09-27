@@ -7,14 +7,17 @@ ShowInNavbar: false
 ShowInSidebar: false
 RedirectFrom:
 - en-us/c4b-environments/quick-deployment
+- en-us/c4b-environments/quick-deployment/index.html
 - en-us/c4b-environments/quick-deployment/release-notes
 - en-us/c4b-environments/quick-deployment/setup
+- en-us/c4b-environments/quick-deployment/setup/index.html
 - en-us/c4b-environments/quick-deployment/setup/desktop-readme
 - en-us/c4b-environments/quick-deployment/setup/ssl-setup
 - en-us/c4b-environments/quick-deployment/setup/client-setup
 - en-us/c4b-environments/quick-deployment/setup/internet-setup
 - en-us/c4b-environments/quick-deployment/setup/upgrade-license
-- en-us/c4b-environments/quick-deployment/v1/
+- en-us/c4b-environments/quick-deployment/v1
+- en-us/c4b-environments/quick-deployment/v1/index.html
 - en-us/c4b-environments/quick-deployment/v1/setup
 - en-us/c4b-environments/quick-deployment/v1/desktop-readme
 - en-us/c4b-environments/quick-deployment/v1/ssl-setup
