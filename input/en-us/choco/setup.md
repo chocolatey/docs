@@ -36,22 +36,20 @@ RedirectFrom:
 1. Type `choco` or `choco -?` now, or see [Getting Started](xref:getting-started) for usage instructions.
 
 > :choco-info: **NOTE**
-> * If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
-> * Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
-> * Installing the licensed edition? See [install licensed edition](xref:setup-licensed).
-> * <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Options</a> / [Troubleshooting](xref:troubleshooting)
+> - If you are behind a proxy, please see <a href="#installing-behind-a-proxy">Installing behind a proxy</a>.
+> - Need completely offline solution? See <a href="#completely-offline-install">Completely Offline Install</a>.
+> - Installing the licensed edition? See [install licensed edition](xref:setup-licensed).
+> - <a class="btn-collapse-target" href="#more-install-options" data-collapse-target="#moreInstallOptions" role="button">More Options</a> / [Troubleshooting](xref:troubleshooting)
 
-#### Install with cmd.exe
+### Install with cmd.exe
 
 Run the following command:
 
-~~~sh
-
+```sh
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
 
-~~~
-
-#### Install with PowerShell.exe
+### Install with PowerShell.exe
 
 With PowerShell, there is an additional step. You must ensure your execution policy. The below steps cover how to check and set this value with supporting documentation.
 
@@ -59,13 +57,11 @@ With PowerShell, there is an additional step. You must ensure your execution pol
   - For further information regarding PowerShell execution policies please see Microsoft's [About Execution Policies Documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1).
 - Now run the following command:
 
-~~~powershell
-
+```powershell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
 
-~~~
-
-#### Additional considerations
+### Additional considerations
 
 > :choco-info: **NOTE**
 >
@@ -77,8 +73,8 @@ We take security very seriously. [Learn more](xref:security).
 
 Unfortunately it's not always a default, and more of the time it is not.  The low level is that it depends on .NET Framework and Windows.
 
-* Explicitly set - Basically you need .NET Fx 4.5 at a minimum to be able to explicitly set TLS 1.2.
-* Load by default - To have it load by default when you run PowerShell, you need at least .NET Fx 4.7 AND the Operating System's SystemDefault to have TLS 1.2 enabled.
+- Explicitly set - Basically you need .NET Fx 4.5 at a minimum to be able to explicitly set TLS 1.2.
+- Load by default - To have it load by default when you run PowerShell, you need at least .NET Fx 4.7 AND the Operating System's SystemDefault to have TLS 1.2 enabled.
 
 The load by default is really hard to see, so you should check to ensure it is there. Assume it doesn't and set explicitly.
 
@@ -90,22 +86,22 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 <div class="collapse" id="moreInstallOptions">
 
-* [Install from PowerShell v3+](#install-from-powershell-v3)
-* [Install using the MSI](#install-using-the-msi)
-* [Completely offline/internal install](#completely-offline-install)
-* [Install with Puppet](#install-with-puppet)
-* [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmd.exe)
-* [Install using NuGet Package Manager](#install-using-nuget-package-manager)
-* [Install using NuGet.exe from PowerShell](#install-using-nuget.exe-from-powershell)
-* [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell)
-* [Install licensed edition](#install-licensed-edition)
-* [Installing behind a proxy](#installing-behind-a-proxy)
-* [Installing behind an explicit proxy](#installing-behind-an-explicit-proxy)
-* [Installing to a different location](#installing-to-a-different-location)
-* [Installing a particular version of Chocolatey](#installing-a-particular-version-of-chocolatey)
-* [Use Windows built-in compression instead of downloading 7zip](#use-windows-built-in-compression-instead-of-downloading-7zip)
-* [Installing with restricted TLS](#installing-with-restricted-tls)
-* [Non-Administrative install](#non-administrative-install)
+- [Install from PowerShell v3+](#install-from-powershell-v3)
+- [Install using the MSI](#install-using-the-msi)
+- [Completely offline/internal install](#completely-offline-install)
+- [Install with Puppet](#install-with-puppet)
+- [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmd.exe)
+- [Install using NuGet Package Manager](#install-using-nuget-package-manager)
+- [Install using NuGet.exe from PowerShell](#install-using-nuget.exe-from-powershell)
+- [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell)
+- [Install licensed edition](#install-licensed-edition)
+- [Installing behind a proxy](#installing-behind-a-proxy)
+- [Installing behind an explicit proxy](#installing-behind-an-explicit-proxy)
+- [Installing to a different location](#installing-to-a-different-location)
+- [Installing a particular version of Chocolatey](#installing-a-particular-version-of-chocolatey)
+- [Use Windows built-in compression instead of downloading 7zip](#use-windows-built-in-compression-instead-of-downloading-7zip)
+- [Installing with restricted TLS](#installing-with-restricted-tls)
+- [Non-Administrative install](#non-administrative-install)
 
 ### Install from PowerShell v3+
 
@@ -117,11 +113,9 @@ The load by default is really hard to see, so you should check to ensure it is t
   - For further information regarding PowerShell execution policies please see Microsoft's [About Execution Policies Documentation](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-5.1).
 - Now run the following command:
 
-~~~powershell
-
+```powershell
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iwr https://community.chocolatey.org/install.ps1 -UseBasicParsing | iex
-
-~~~
+```
 
 ### Install using the MSI?
 
@@ -142,7 +136,7 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
 1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/puppetlabs/chocolatey#manage-chocolatey-installation
 1. Then you would run a script similar to the below to address that local install. If it is on a repository somewhere, you will need to enhance the below script to get that file  (the Chocolatey Puppet provider install script shows that).
 
-~~~powershell
+```powershell
 # Download and install Chocolatey nupkg from an OData (HTTP/HTTPS) url such as Artifactory, Nexus, ProGet (all of these are recommended for organizational use), or Chocolatey.Server (great for smaller organizations and POCs)
 # This is where you see the top level API - with xml to Packages - should look nearly the same as https://community.chocolatey.org/api/v2/
 # If you are using Nexus, always add the trailing slash or it won't work
@@ -425,8 +419,7 @@ if (!(Test-Path $ChocoInstallPath)) {
   # Install Chocolatey
   Install-ChocolateyFromPackage $localChocolateyPackageFilePath
 }
-
-~~~
+```
 
 ### Install with Puppet
 
@@ -436,13 +429,12 @@ if (!(Test-Path $ChocoInstallPath)) {
 
 Here's an example of setting Chocolatey up with Puppet that sets up and configures Chocolatey, sets up an internal package repository, and shows setting up the licensed edition and ensuring some packages.
 
-* Download the chocolatey.nupkg from the community repository - [download the latest chocolatey nupkg](https://community.chocolatey.org/api/v2/package/chocolatey) or see [Completely offline install](#completely-offline-install) to get an older version.
-* Optionally download the chocolatey.server package from the community repository - [download the latest chocolatey.server nupkg](https://community.chocolatey.org/api/v2/package/chocolatey.server).
-* Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg --source http://internal_repo/ --api-key abc123`)
-* Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
+- Download the chocolatey.nupkg from the community repository - [download the latest chocolatey nupkg](https://community.chocolatey.org/api/v2/package/chocolatey) or see [Completely offline install](#completely-offline-install) to get an older version.
+- Optionally download the chocolatey.server package from the community repository - [download the latest chocolatey.server nupkg](https://community.chocolatey.org/api/v2/package/chocolatey.server).
+- Use `choco push` to push those items to your internal package repository (e.g. `choco push chocolatey.0.10.7.nupkg --source http://internal_repo/ --api-key abc123`)
+- Determine how to get the bare url to download the Chocolatey.Nupkg directly. You will need that for the internal url for installing Chocolatey offline. For the community repository, it is https://community.chocolatey.org/api/v2/package/chocolatey
 
-
-~~~puppet
+```puppet
 # Requires puppetlabs/chocolatey module
 # See https://forge.puppet.com/puppetlabs/chocolatey
 
@@ -612,7 +604,7 @@ package {'screentogif':
 package {'dotnet4.5.2':
   ensure => latest,
 }
-~~~
+```
 
 ### Install using PowerShell from cmd.exe
 
@@ -620,7 +612,7 @@ This is the best method if you want to repeat it or include it in source control
 
 Create a file named `installChocolatey.cmd` with the following:
 
-~~~
+```sh
 @echo off
 
 SET DIR=%~dp0%
@@ -629,7 +621,7 @@ SET DIR=%~dp0%
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "((new-object net.webclient).DownloadFile('https://community.chocolatey.org/install.ps1','%DIR%install.ps1'))"
 ::run installer
 %systemroot%\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%DIR%install.ps1' %*"
-~~~
+```
 
 You can also get to this file by going to [https://community.chocolatey.org/installChocolatey.cmd](https://community.chocolatey.org/installChocolatey.cmd).
 
@@ -683,21 +675,17 @@ Please see [installation of licensed edition](xref:setup-licensed).
 
 Have a proxy? Try
 
-* Cmd.exe:
+- Cmd.exe:
 
-~~~sh
-
+```sh
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "[System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET PATH="%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
 
-~~~
+- PowerShell.exe (Ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is at least RemoteSigned):
 
-* PowerShell.exe (Ensure [Get-ExecutionPolicy](https://go.microsoft.com/fwlink/?LinkID=135170) is at least RemoteSigned):
-
-~~~powershell
-
+```powershell
 [System.Net.WebRequest]::DefaultWebProxy.Credentials = [System.Net.CredentialCache]::DefaultCredentials; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
-~~~
+```
 
 ### Installing behind an explicit proxy
 
@@ -705,14 +693,15 @@ See [Installing Chocolatey Behind a Proxy Server](xref:proxy-settings#installing
 
 ### Installing to a different location
 
-1. Create a __machine__ level (__user__ level will also work) environment variable named ```ChocolateyInstall``` and set it to the folder you want Chocolatey to install to prior to installation (this environment variable must be set globally or available to PowerShell- it is not enough to simply make it available to your current command prompt session).
+1. Create a **machine** level (**user** level will also work) environment variable named ```ChocolateyInstall``` and set it to the folder you want Chocolatey to install to prior to installation (this environment variable must be set globally or available to PowerShell- it is not enough to simply make it available to your current command prompt session).
 1. Don't use `"C:\Chocolatey"` unless necessary.
 1. Create the folder manually.
 1. If you have already installed (and want to change the location after the fact):
-  * Follow the above steps.
-  * Install Chocolatey again.
-  * Copy/Move over the items from the old lib/bin directory.
-  * Delete your old install directory.
+
+- Follow the above steps.
+- Install Chocolatey again.
+- Copy/Move over the items from the old lib/bin directory.
+- Delete your old install directory.
 
 > :choco-info: **NOTE**
 >
@@ -725,14 +714,14 @@ See [Why does Chocolatey install where it does](xref:default-chocolatey-install-
 
 Set the following environment variable prior to install:
 
-* `chocolateyVersion` - controls what version of Chocolatey is installed
+- `chocolateyVersion` - controls what version of Chocolatey is installed
 
 In PowerShell, it looks like this:
 
-~~~powershell
+```powershell
 $env:chocolateyVersion = '0.9.9.12'
 # install script
-~~~
+```
 
 > :choco-info: **NOTE**
 >
@@ -742,14 +731,14 @@ $env:chocolateyVersion = '0.9.9.12'
 
 Set the following environment variable prior to install:
 
-* `chocolateyUseWindowsCompression` - this will bypass the download and use of 7zip.
+- `chocolateyUseWindowsCompression` - this will bypass the download and use of 7zip.
 
 In PowerShell, it looks like this:
 
-~~~powershell
+```powershell
 $env:chocolateyUseWindowsCompression = 'true'
 # install script
-~~~
+```
 
 > :choco-info: **NOTE**
 >
@@ -759,20 +748,15 @@ $env:chocolateyUseWindowsCompression = 'true'
 
 > :choco-info: **NOTE**
 >
-> community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/.
-
-> :choco-info: **NOTE**
+> - community.chocolatey.org now requires TLS 1.2 at a minimum. Please see https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/.
 >
-> If your server is restricted to TLS 1.1+, you need to add additional logic to be able to download and install Chocolatey (this is not necessary when running Chocolatey normally as it does this automatically).
-
-> :choco-info: **NOTE**
+> - If your server is restricted to TLS 1.1+, you need to add additional logic to be able to download and install Chocolatey (this is not necessary when running Chocolatey normally as it does this automatically).
 >
-> If this is for organizational use, you should consider hosting the Chocolatey package internally and installing from there.
-
+> - If this is for organizational use, you should consider hosting the Chocolatey package internally and installing from there.
 
 If you see an error that looks similar to the following:
 
-~~~sh
+```sh
 Exception calling "DownloadString" with "1" argument(s): "The underlying connection was closed: An unexpected error
 occurred on a receive."
 At line:1 char:1
@@ -780,11 +764,11 @@ At line:1 char:1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
     + FullyQualifiedErrorId : WebException
-~~~
+```
 
 OR:
 
-~~~sh
+```sh
 Exception calling "DownloadString" with "1" argument(s): "The request was aborted: Could not create SSL/TLS secure
 channel."
 At line:1 char:51
@@ -792,7 +776,7 @@ At line:1 char:51
 +                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
     + FullyQualifiedErrorId : WebException
-~~~
+```
 
 It's possible that you are attempting to install from a server that needs to use TLS 1.1 or TLS 1.2 (has restricted the use of TLS 1.0 and SSL v3), you have some options. community.chocolatey.org now requires TLS 1.2 at a minimum.
 
@@ -802,15 +786,14 @@ If you are an organization, this is your best option and it reduces issues with 
 
 See https://chocolatey.org/install#organization for details.
 
-
 #### Option 2 - Updated PowerShell and .NET
 
 Upgrade to the following:
 
-* PowerShell v3+
-* .NET Framework 4.5
+- PowerShell v3+
+- .NET Framework 4.5
 
-~~~powershell
+```powershell
 try {
   # Set TLS 1.2 (3072) as that is the minimum required by Chocolatey.org
   # Use integers because the enumeration value for TLS 1.2 won't exist
@@ -822,12 +805,11 @@ try {
 }
 
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-~~~
+```
 
 #### Option 3 - Manual
 
 You need to download and unzip the Chocolatey package, then call the PowerShell install script from there. See the [Install downloaded NuGet package from PowerShell](#install-downloaded-nuget-package-from-powershell) section below.
-
 
 ### Non-Administrative install
 
@@ -845,7 +827,7 @@ You must choose a different location than the default (see [Installing to a diff
 
 ChocolateyInstallNonAdmin.ps1:
 
-~~~powershell
+```powershell
 # Set directory for installation - Chocolatey does not lock
 # down the directory if not the default
 $InstallDir='C:\ProgramData\chocoportable'
@@ -859,11 +841,11 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 # All install options - offline, proxy, etc at
 # https://chocolatey.org/install
 iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-~~~
+```
 
 Examples of packages you can install:
 
-~~~powershell
+```powershell
 choco install puppet-agent.portable -y
 choco install ruby.portable -y
 choco install git.commandline -y
@@ -876,7 +858,7 @@ choco install notepadplusplus.commandline -y
 
 # What else can I install without admin rights?
 # https://community.chocolatey.org/packages?q=id%3Aportable
-~~~
+```
 
 If you prefer or need cmd.exe example, please see https://gist.github.com/ferventcoder/78fa6b6f4d6e2b12c89680cbc0daec78
 
@@ -886,9 +868,9 @@ If you prefer or need cmd.exe example, please see https://gist.github.com/ferven
 
 Once installed, Chocolatey can be upgraded in exactly the same way as any other package that has been installed using Chocolatey.  Simply use the command to upgrade to the latest stable release of Chocolatey:
 
-~~~
+```powershell
 choco upgrade chocolatey
-~~~
+```
 
 ## Uninstalling Chocolatey
 
@@ -903,5 +885,3 @@ Make sure you've reviewed <a class="btn-collapse-target" href="#more-install-opt
 ### I'm getting a 403 attempting to install
 
 This is addressed in [Troubleshooting](xref:troubleshooting).
-
-<p>&nbsp;</p>
