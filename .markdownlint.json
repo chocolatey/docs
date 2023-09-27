@@ -6,4 +6,8 @@
   "MD033": {
     "allowed_elements": ["details", "strong", "summary"]
   }
+  ,
+  "MD048": {
+    "style":"backtick"
+  }
 }
