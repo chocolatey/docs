@@ -6,6 +6,7 @@ Description: Landing page for old QDE links
 ShowInNavbar: false
 ShowInSidebar: false
 RedirectFrom:
+- en-us/quick-deployment
 - en-us/c4b-environments/quick-deployment
 - en-us/c4b-environments/quick-deployment/index.html
 - en-us/c4b-environments/quick-deployment/release-notes
