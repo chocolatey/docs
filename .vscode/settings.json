@@ -71,5 +71,9 @@
     "whatif",
     "windirstat",
     "xcopy"
+  ],
+  "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
+    "qde",
+    "sonatype"
   ]
 }
