@@ -24,8 +24,8 @@ If you are running IIS 10.0 version 1709 or later, you can enable HSTS using the
 
 ### Enabling HSTS Within IIS Prior to IIS 10.0
 
-Although it sounds like HSTS is not available in IIS prior to 10.0 version 1709, you may be able to configure it with a custom setup. There is [an external blog post](https://www.saotn.org/enable-http-strict-transport-security-hsts-on-iis/) that goes into the steps needed to configure this.
+While HSTS is available natively within IIS 10.0 version 1709, it is [possible although complicated](https://learn.microsoft.com/en-us/iis/get-started/whats-new-in-iis-10-version-1709/iis-10-version-1709-hsts#challenges-on-enabling-hsts-before-iis-100-version-1709) to use it with IIS prior to this version.
 
-### Enabling HSTS Outside of IIS
+### Using a Reverse Proxy to Enable HSTS
 
-In order to configure HSTS outside of IIS, you could use a reverse proxy and configure HSTS on the reverse proxy server. For instance nginx has an [article covering HSTS configuration](https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/), or you could use Apache and follow a guide such as [this one](https://www.simplified.guide/apache/enable-hsts).
+While Chocolatey Central Management runs on IIS, you could use a reverse proxy and configure HSTS on the reverse proxy server. For instance NGINX has an [article covering HSTS configuration](https://www.nginx.com/blog/http-strict-transport-security-hsts-and-nginx/), or you could use Apache and follow a guide such as [this one](https://www.simplified.guide/apache/enable-hsts).
