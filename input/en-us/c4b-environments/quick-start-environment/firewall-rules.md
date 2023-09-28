@@ -3,7 +3,7 @@ Order: 25
 xref: firewall-rules
 Title: Firewall Rules
 Description: Firewall rules used by the Quick Start Environment
-RedirectFrom: en-us/c4b-environments/quick-deployment/v1/ssl-setup
+RedirectFrom: en-us/c4b-environments/quick-deployment/v1/firewall-changes
 ---
 
 ## External Firewall Ports (Optional)
