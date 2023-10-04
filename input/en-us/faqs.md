@@ -188,7 +188,7 @@ What is the difference between packages named *.install (i.&nbsp;e. [autohotkey.
 
 tl;dr: Nearly 100% of the time, the package with no suffix (autohotkey in this example) is going to ensure the *.install. The package without the suffix is for both discoverability and for other packages to take a dependency on.
 
-Hey, good question! You are paying attention! Chocolatey has the concept of virtual packages (coming) and meta packages. Virtual packages are packages that represent other packages when used as a dependency. Metapackages are packages that only exist to provide a grouping of dependencies.
+Hey, good question! You are paying attention! Chocolatey has the concept of virtual packages (coming, please see [GitHub Issue](https://github.com/chocolatey/choco/issues/858)) and meta packages. Virtual packages are packages that represent other packages when used as a dependency. Metapackages are packages that only exist to provide a grouping of dependencies.
 
 A package with no suffix that is surrounded by packages with suffixes is to provide a virtual package. So in the case of git, git.install, and git.commandline (deprecated for .portable) – git is that virtual package (currently it is really just a metapackage until the virtual packages feature is complete). That means that other packages could depend on it and you could have either git.install or git.portable installed and you would meet the dependency of having git installed. That keeps Chocolatey from trying to install something that already meets the dependency requirement for a package.
 
@@ -204,7 +204,14 @@ The *.portable packages are the packages that will usually result in an executab
 >
 > Now *.tool and *.commandline are deprecated and should not be used for new packages.
 
-Want more information? See http://ferventcoder.com/archive/2012/02/25/chocolatey---guidance-on-packaging-apps-with-both-an-install.aspx
+#### Video Explanation
+
+Below is a video detailing the reasoning and intention behind the use of the different package naming suffixes used on the Chocolatey Community Repository.
+
+<div class="ratio ratio-16x9 mb-3">
+    <iframe src="https://www.youtube.com/embed/aYnDDBDaAj0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
+</div>
 
 ### When I install a portable app like autohotkey.portable, how is it on my path? Without littering my path?
 
