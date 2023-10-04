@@ -63,10 +63,10 @@ As of version 0.9.8.24, binaries, libraries and Chocolatey components install in
 
 ### What kind of package types does Chocolatey support?
 
-* Binary Packages – Installable/portable applications – This is 98% of the Chocolatey packages – most are pointers to the real deal native installers and/or zipped software.
-* PowerShell Command Packages – Packages that have the suffix **.powershell** will install PowerShell scripts as commands for you to call from anywhere.
-* Development Packages – Packages that have the suffix **.dev**. For instance [dropkick.dev](https://www.nuget.org/packages/dropkick.dev).
-* Roadmap – Virtual Packages – Packages that are like a category, and you just want one package from that category. [Read more …](https://github.com/chocolatey/chocolatey/issues/7)
+* Binary Packages - Installable/portable applications - This is 98% of the Chocolatey packages - most are pointers to the real deal native installers and/or zipped software.
+* PowerShell Command Packages - Packages that have the suffix **.powershell** will install PowerShell scripts as commands for you to call from anywhere.
+* Development Packages - Packages that have the suffix **.dev**. For instance [dropkick.dev](https://www.nuget.org/packages/dropkick.dev).
+* Roadmap - Virtual Packages - Packages that are like a category, and you just want one package from that category. [Read more …](https://github.com/chocolatey/chocolatey/issues/7)
 
 ### Do you have a roadmap I can see?
 
@@ -161,11 +161,11 @@ Yes you can, see [Overriding install directory](xref:getting-started#overriding-
 #### Installable application
 
 An installable application is something that comes with a native installer and ends up in the add/remove programs (in control panel of the system).
-Installable applications end up where the native installer wants them to end up (i.&nbsp;e. Program Files). If you want to override that, please feel free to with the proper commands using InstallArgs (-ia) at the command line and possibly override – Install Command. Yes this does mean you will need to have intimate knowledge of the installer. Having Chocolatey itself make the override directory is likely at some point, but it is wwwwaaaaayyyy out on the radar (like after Rob is somehow paid to work on Chocolatey full time ;) ).
+Installable applications end up where the native installer wants them to end up (i.&nbsp;e. Program Files). If you want to override that, please feel free to with the proper commands using InstallArgs (-ia) at the command line and possibly override - Install Command. Yes this does mean you will need to have intimate knowledge of the installer. Having Chocolatey itself make the override directory is likely at some point, but it is wwwwaaaaayyyy out on the radar (like after Rob is somehow paid to work on Chocolatey full time ;) ).
 
-#### Portable application – something that doesn't require a system install to use
+#### Portable application - something that doesn't require a system install to use
 
-A portable application is something that doesn't require a native installer to use. In other words, it is not “installed” on your system (where you can go to uninstall in the control panel). It also requires no administrative access for the package install.
+A portable application is something that doesn't require a native installer to use. In other words, it is not "installed" on your system (where you can go to uninstall in the control panel). It also requires no administrative access for the package install.
 
 Portable applications end up in the %ChocolateyInstall%/lib (i.&nbsp;e. C:\ProgramData\Chocolatey\lib) folder yes, but they get a "shim" to put them on the path of the machine. This behavior is very much to how Chocolatey works and is not configurable (the directory). Where the portable apps end up is still going to be %ChocolateyInstall%/lib no matter where you move the directory, unless a package itself unpacks the portable app elsewhere (as in the case of [git-tfs](https://community.chocolatey.org/packages/gittfs)).
 
@@ -190,9 +190,9 @@ tl;dr: Nearly 100% of the time, the package with no suffix (autohotkey in this e
 
 Hey, good question! You are paying attention! Chocolatey has the concept of virtual packages (coming, please see [GitHub Issue](https://github.com/chocolatey/choco/issues/858)) and meta packages. Virtual packages are packages that represent other packages when used as a dependency. Metapackages are packages that only exist to provide a grouping of dependencies.
 
-A package with no suffix that is surrounded by packages with suffixes is to provide a virtual package. So in the case of git, git.install, and git.commandline (deprecated for .portable) – git is that virtual package (currently it is really just a metapackage until the virtual packages feature is complete). That means that other packages could depend on it and you could have either git.install or git.portable installed and you would meet the dependency of having git installed. That keeps Chocolatey from trying to install something that already meets the dependency requirement for a package.
+A package with no suffix that is surrounded by packages with suffixes is to provide a virtual package. So in the case of git, git.install, and git.commandline (deprecated for .portable) - git is that virtual package (currently it is really just a metapackage until the virtual packages feature is complete). That means that other packages could depend on it and you could have either git.install or git.portable installed and you would meet the dependency of having git installed. That keeps Chocolatey from trying to install something that already meets the dependency requirement for a package.
 
-Talking specifically about the *.install package suffix – those are for the packages that have a native installer that they have bundled or they download and run.
+Talking specifically about the *.install package suffix - those are for the packages that have a native installer that they have bundled or they download and run.
 
 > :choco-info: **NOTE**
 >
@@ -217,7 +217,7 @@ Below is a video detailing the reasoning and intention behind the use of the dif
 
 When you install portable apps that have executables in the package, Chocolatey automatically creates a "shim" file and puts that in a folder that is on the path. That allows you to run a portable application by asking for it on the command line.
 
-When you take an application with a native installer, say like WinDirStat, it is only on your path if the native installer has put it there or the instructions in the Chocolatey package itself has requested for it to be on the path. In this case, this is the “littering” the path concept.
+When you take an application with a native installer, say like WinDirStat, it is only on your path if the native installer has put it there or the instructions in the Chocolatey package itself has requested for it to be on the path. In this case, this is the "littering" the path concept.
 
 ### Is there a PowerShell Module for Chocolatey?
 
@@ -395,7 +395,7 @@ Two ways your packages can become trusted:
 * You write the underlying software that the package installs. For instance the ReSharper package that comes directly from JetBrains.
 * You put in a lot of good packages and your packages will eventually become trusted.
 
-In most cases, a package will only be switched to trusted after a few versions have been approved by moderators without any changes being required. This is to ensure that the package has been looked at by more than one person, since automated testing does not catch everything. Switching a package to trusted status is a manual change by a moderator. It is not an automated process, and does not happen imediately even if you are the software author. 
+In most cases, a package will only be switched to trusted after a few versions have been approved by moderators without any changes being required. This is to ensure that the package has been looked at by more than one person, since automated testing does not catch everything. Switching a package to trusted status is a manual change by a moderator. It is not an automated process, and does not happen imediately even if you are the software author.
 
 > :choco-info: **NOTE**
 >
@@ -437,7 +437,7 @@ If you are a maintainer of a package and you would like to self-reject an older 
 
 ### What is the validator?
 
-The [validator](xref:package-validator) is a service that checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. Many of the validation items will automatically roll back into choco and will be displayed when packaging a package. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
+The [validator](xref:package-validator) is a service that checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey's community feed. Many of the validation items will automatically roll back into choco and will be displayed when packaging a package. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
 
 What does the validator check? See the [validator docs](xref:package-validator).
 
