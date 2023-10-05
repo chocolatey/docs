@@ -47,7 +47,7 @@ Before downgrading from 2.x and 6.x to 1.x and 5.x of Chocolatey products, pleas
 
 ### Sonatype Nexus Repository Sources
 
-The Sonatype Nexus Repository Manager has an [issue that can cause it to go into an infinite loop of querying for packages from a NuGet v2 feed](https://issues.sonatype.org/browse/NEXUS-13426) (you will need a login for the Sonatype Jira system to view the issue). This only affects Sonatype Nexus NuGet v2 feeds as it has been fixed for NuGet v3 feeds.
+The Sonatype Nexus Repository Manager has an issue that can cause it to go into an infinite loop of querying for packages from a NuGet v2 feed. This only affects Sonatype Nexus NuGet v2 feeds as it has been fixed for NuGet v3 feeds.
 
 To work around this issue, please ensure that you have 29 or less package versions of any Chocolatey product in your internal Sonatype Nexus NuGet v2 feed repository _before_ you start the upgrade.
 
