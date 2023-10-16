@@ -15,12 +15,14 @@ Chocolatey Central Management is hosted by IIS and makes use of features availab
 
 ## Enabling HSTS Within IIS
 
-If you are running IIS 10.0 version 1709 or later, you can enable HSTS using the [documentation, and samples, provided by Microsoft](https://learn.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/hsts). If you are on newer versions of IIS, you may even have access to enabling HSTS within the IIS Management Console; steps to enable it this way are below.
+If you are running IIS 10.0 version 1709 or later, you can enable HSTS using the [documentation, and samples, provided by Microsoft](https://learn.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/hsts). If you are on newer versions of IIS, you may have access to enabling HSTS within the IIS Management Console; steps to enable it this way are below.
 
 1. Open the IIS Management Console.
 1. In the **Connection** pane, expand the server and then **Sites** to select `ChocolateyCentralManagement`.
 1. On the right, select **HSTS**  under **Configure** in the **Actions** pane.
 1. Configure HSTS as desired.
+
+If you don't have the option in the GUI, then you can still use the [documentation, and samples, provided by Microsoft](https://learn.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/hsts).
 
 ### Enabling HSTS Prior to IIS 10.0 Version 1709
 
