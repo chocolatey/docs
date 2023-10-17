@@ -19,7 +19,7 @@ If you are running IIS 10.0 version 1709 or later, you can enable HSTS using the
 
 1. Open the IIS Management Console.
 1. In the **Connection** pane, expand the server and then **Sites** to select `ChocolateyCentralManagement`.
-1. On the right, select **HSTS**  under **Configure** in the **Actions** pane.
+1. On the right, select **HSTS** under **Configure** in the **Actions** pane.
 1. Configure HSTS as desired.
 
 If you don't have the option in the GUI, then you can still use the [documentation, and samples, provided by Microsoft](https://learn.microsoft.com/en-us/iis/configuration/system.applicationhost/sites/site/hsts).
