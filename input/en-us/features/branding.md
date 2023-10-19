@@ -126,7 +126,8 @@ deployed out to your environment.
 > :choco-info: **NOTE**
 >
 > In order for the below to work, you must have the Chocolatey GUI licensed
-> extension (chocolateygui.extension) installed.
+> extension (chocolateygui.extension) installed. You can run `choco download chocolateygui.extension --internalize`
+> to download the package and then publish it to your repository.
 
 1. Follow the steps above to place the branding image assets into the correct location.
 1. Run the Chocolatey GUI application to generate the ChocolateyGuiBranding.dll
@@ -148,6 +149,7 @@ deployed out to your environment.
            <description>__REPLACE__MarkDown_Okay </description>
            <dependencies>
              <dependency id="chocolateygui" />
+             <dependency id="chocolateygui.extension" />
            </dependencies>
          </metadata>
          <files>
