@@ -26,7 +26,7 @@ to the bottom left corner of the application.
 > :choco-info: **NOTE**
 >
 > Branding of Chocolatey GUI is only available to our Business
-License customers, and requires the **Chocolatey GUI licensed extension**
+License customers, and requires the **Chocolatey GUI Licensed Extension**
 (chocolateygui.extension) to be installed, alongside Chocolatey GUI.
 
 In order for branding to work, there are a number of image files that are required.
@@ -57,7 +57,7 @@ files into one of two specific places.
 ### Default Location
 
 By default, Chocolatey GUI will look for custom branding files in the Chocolatey
-installation directory (normally `c:/programdata/chocolatey`, and then in a folder
+installation directory (normally `c:/programdata/chocolatey`), and then in a folder
 called `branding/gui`.  i.e. it will look in the following folder:
 
 `c:/programdata/chocolatey/branding/gui`
@@ -73,7 +73,7 @@ would then expect to find the above asset files in this location:
 
 ## ChocolateyGuiBranding.dll
 
-The first time Chocolatey GUI, with the Chocolatey GUI licensed extension installed,
+The first time Chocolatey GUI, with the Chocolatey GUI Licensed Extension installed,
 is executed, and the above asset files are in one of the defined locations, a new
 file will be generated in the same location called `ChocolateyGuiBranding.dll`.
 The new file actually contains all the image files that were created, as they have
@@ -125,8 +125,8 @@ deployed out to your environment.
 
 > :choco-info: **NOTE**
 >
-> In order for the below to work, you must have the Chocolatey GUI licensed
-> extension (chocolateygui.extension) installed. You can run `choco download chocolateygui.extension --internalize`
+> In order for the below to work, you must have the Chocolatey GUI Licensed
+> Extension (`chocolateygui.extension`) installed. You can run `choco download chocolateygui.extension --internalize`
 > to download the package and then publish it to your repository.
 
 1. Follow the steps above to place the branding image assets into the correct location.
