@@ -139,7 +139,7 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
   ![download chocolatey.nupkg visual](/assets/images/DownloadChocolateyPackage.png)
 
 1. You can also download [the latest version directly](https://community.chocolatey.org/api/v2/package/chocolatey).
-1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/puppetlabs/chocolatey#manage-chocolatey-installation
+1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/modules/puppetlabs/chocolatey/readme#manage-chocolatey-installation
 1. Then you would run a script similar to the below to address that local install. If it is on a repository somewhere, you will need to enhance the below script to get that file  (the Chocolatey Puppet provider install script shows that).
 
 ~~~powershell
