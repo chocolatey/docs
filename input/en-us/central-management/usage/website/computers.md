@@ -49,7 +49,7 @@ You will be presented with a list of the installed software packages for the mac
 >
 > Starting with Chocolatey Central Management 0.11.0, the packages installed on a computer can be exported to a `packages.config` file.
 
-From the Computer details page in Chocolatey Central Management, select the `Export to packages.config` button.
+From the Computer details page in Chocolatey Central Management, click the `Export` button and select the `Export to packages.config` option.
 
 ![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
 
