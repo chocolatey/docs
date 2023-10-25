@@ -6,6 +6,7 @@ Description: How to install Chocolatey CLI
 RedirectFrom:
   - docs/installation
   - docs/install
+  - en-us/choco/installation
 ---
 
 ## Requirements
