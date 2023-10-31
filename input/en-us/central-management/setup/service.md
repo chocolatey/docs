@@ -77,9 +77,9 @@ Note items with "`:`" mean a value should be provided. Items without are simply 
 
 ### Service Settings
 
-* Service Name:                         **chocolatey-management-service**
-* Service Displayname:                  **Chocolatey Management Service**
-* Description:                          **Chocolatey Management Service is a service for Chocolatey**
+* Service Name:                         **chocolatey-central-management**
+* Service Displayname:                  **Chocolatey Central Management Service**
+* Description:                          **Chocolatey Central Management Service is a service for Chocolatey**
 * Service Startup:                      **Automatic**
 * Service Username:                     **ChocolateyLocalAdmin** or '`/Username:`'
 
