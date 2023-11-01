@@ -9,9 +9,7 @@ Description: Example Deployment Plans that can be imported into Chocolatey Centr
 
 Chocolatey Central Management (CCM) now (in version 0.11.0 and up) supports importing and exporting Deployment Plans. We have several example Deployment Plans that you can import and use immediately, to help you make best use of your Chocolatey for Business suite!
 
-## Importing Deployment Plans
-
-To import a Deployment Plan, refer to [importing a deployment](xref:ccm-deployments#importing-a-deployment-plan).
+<?! Include "../../../../shared/import-deployment-plan.txt" /?>
 
 ### Updating Values in Deployment Plans
 

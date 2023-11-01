@@ -1,0 +1,22 @@
+## Importing a Deployment Plan
+
+A Deployment Plan can be imported using a `.json` file.
+
+1. [Prepare your `.json` file](xref:ccm-example-deployments) or [export](#export) an existing Deployment Plan.
+
+1. From the Chocolatey Central Management dashboard, select `Deployment Plans` from the left sidebar.
+
+    ![Chocolatey Central Management dashboard, arrow pointing to Deployment Plans menu in the left sidebar](/assets/images/deployments/ccm-dashboard-deployments-menu.png)
+
+1. Select the **Import Deployment Plan** button at the top of the page.
+
+    ![Chocolatey Central Management Deployment Plans page, arrow pointing to Import Deployment Plan button](/assets/images/deployments/ccm-deployments-import-deployment-button.png)
+
+1. Click the **Choose File** button to select your `.json` file. Review the imported Deployment Plan and then click the **Import** button.
+
+    ![Chocolatey Central Management import Deployment Plan modal, arrow pointing to the Choose Deployment Plan button and the Import button](/assets/images/deployments/ccm-deployments-import-modal.png)
+
+    * The Deployment Plan name is shown along with all Deployment Steps after choosing a `.json` file.
+    * A yellow badge will appear next to any Deployment Steps that are privileged, along with a warning that gives more information.
+
+1. Once the Deployment Plan has been successfully created, you will be taken to the edit page ready to make any additional required changes.
