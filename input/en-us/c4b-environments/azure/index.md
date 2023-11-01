@@ -306,9 +306,9 @@ Now you need to deploy the `chocolatey-licensed-jenkins-scripts` package to Choc
 
 1. Log into Chocolatey Central Management at `https://<FQDN>/`
 1. Navigate to `Groups` and create a group the contains only ChocoServer if that does not already exist
-1. Create a [deployment](xref:ccm-deployments) that targets the group containing ChocoServer
+1. Create a [Deployment Plan](xref:ccm-deployments) that targets the group containing ChocoServer
 1. Add a basic step, selecting the `choco install` command and specifying the package name `chocolatey-licensed-jenkins-scripts`
-1. Move this deployment to the Ready [state](xref:ccm-deployments#deployment-states) and then run it
+1. Move this Deployment Plan to the Ready [state](xref:ccm-deployments#deployment-states) and then run it
 
 ### Status Message: Exist soft deleted vault with the same name.  (Code:ConflictError)
 

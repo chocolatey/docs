@@ -16,7 +16,7 @@ First you need Chocolatey Agent installed. As there may be some steps involved w
 
 ### Step 2: Update Configuration
 
-At a minimum you need the following items set to be able to have a Chocolatey Agent be "opted-in" for both checking into Central Management and Deployments:
+At a minimum you need the following items set to be able to have a Chocolatey Agent be "opted-in" for both checking into Chocolatey Central Management and Deployments:
 
 ```powershell
 choco config set --name CentralManagementServiceUrl --value https://<FQDN_CCM_SERVICE>:24020/ChocolateyManagementService
@@ -74,7 +74,7 @@ Also found at [Chocolatey Configuration](xref:configuration).
 
 ## FAQ
 
-### Can I run Self-Service and Central Management Deployments at the same time?
+### Can I run Self-Service and Chocolatey Central Management Deployments at the same time?
 Yes
 
 ### How can I increase the level of logging for Chocolatey Central Management?

@@ -33,7 +33,7 @@ This covers the release notes for the ChocoCCM PowerShell Module, which is avail
 
 - Fix - Add-CCMGroup throws `HTTP 400` error
 - Fix - Add-CCMGroupMember throws `HTTP 400` error
-- Fix - Fetching Deployment by ID fails when Deployment is not in Draft or Ready state
+- Fix - Fetching Deployment Plan by ID fails when Deployment Plan is not in Draft or Ready state
 - Fix - Get-CCMGroupMember has incorrect URL
 - Fix - Export-CCMDeploymentReport is not exported by the module
 

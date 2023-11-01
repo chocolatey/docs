@@ -54,7 +54,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 - Add an option to provide a default value for the `executionTimeoutInSeconds` setting, which will be used for all new Deployment Steps.
 - Ensure a Computer's `ComputerName` and `FriendlyName` properties are in separate fields when the API returns data.
 - Move the `Action` button to the first column in all tables.
-- Reinstate the `Return To Deployments` button when editing a Deployment Plan.
+- Reinstate the `Return To Deployment Plans` button when editing a Deployment Plan.
 - Remove the ability to assign a User the `ChocoAdmin` Role.
 - Update email templates for consistency.
 
@@ -72,8 +72,8 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 
 ### Features
 
-- Added recurring Deployments.
-- Add ability to duplicate an existing Deployment.
+- Added recurring Deployment Plans.
+- Add ability to duplicate an existing Deployment Plan.
 - Retention Policies - Automatically delete a computer that hasn't reported in for a configurable period of time. This defaults to 365 days.
 - Implement a dark/light mode.
 - API - Add a way to query licensed machine count - see [Licensed #272](https://github.com/chocolatey/chocolatey-licensed-issues/issues/272).
@@ -92,7 +92,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 
 - Computers tab should display Group enrolment - see [Licensed #223](https://github.com/chocolatey/chocolatey-licensed-issues/issues/223).
 - Creating a Deployment Plan and then clicking Cancel without adding steps or saving once should remove the Deployment Plan entirely.
-- Add the Deployment name to its Step Details pages.
+- Add the Deployment Plan name to its Step Details pages.
 - Add visual indicators that editing/adding/removing Deployment Steps is disabled when the Deployment Plan schedule is outdated.
 - Add option of `--version` and `--pre` for a Basic Deployment Step.
 - Send email notifications when a scheduled Deployment Plan fails to start.

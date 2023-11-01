@@ -294,13 +294,13 @@ The Chocolatey 2.0.0 and 6.0.0 pre-release versions were not recommended for pro
 
 > :choco-warning: **WARNING**
 >
-> If you need to specify a `--source` option in the Advanced Deployment PowerShell script, please make sure you reference only one source value. For example, `--source="'my-internal-repo'"` and not `--source="'my-internal-repo;chocolatey.licensed'"`. Specifying multiple sources for this specific upgrade may cause the Chocolatey product packages to not be found. Note that this only affects the upgrade to version 2.0.0 or 6.0.0 of the Chocolatey products and not future packages you may install or upgrade.
+> If you need to specify a `--source` option in the Advanced Deployment Step PowerShell script, please make sure you reference only one source value. For example, `--source="'my-internal-repo'"` and not `--source="'my-internal-repo;chocolatey.licensed'"`. Specifying multiple sources for this specific upgrade may cause the Chocolatey product packages to not be found. Note that this only affects the upgrade to version 2.0.0 or 6.0.0 of the Chocolatey products and not future packages you may install or upgrade.
 
 1. In Chocolatey Central Management, ensure you have a group of computers to deploy to, and if necessary [create one](xref:ccm-groups).
 
-1. [Create an Advanced Deployment](xref:ccm-deployments) with the group of computers to deploy the upgrade to the latest stable 1.x and 5.x versions of Chocolatey products. The Deployment will have 2 steps:
+1. [Create an Advanced Deployment Step](xref:ccm-deployments) with the group of computers to deploy the upgrade to the latest stable 1.x and 5.x versions of Chocolatey products. The Deployment Plan will have 2 steps:
 
-    1. The first Deployment Step will upgrade Chocolatey Agent and it's required dependencies. As communication with Chocolatey Central Management takes place through Chocolatey Agent, we need to ensure the service is running and so the upgrade is done by a Windows scheduled task. The Advanced Deployment PowerShell script should be:
+    1. The first Deployment Step will upgrade Chocolatey Agent and it's required dependencies. As communication with Chocolatey Central Management takes place through Chocolatey Agent, we need to ensure the service is running and so the upgrade is done by a Windows scheduled task. The Advanced Deployment Step PowerShell script should be:
 
     ```powershell
     $delayInMinutes = 1
@@ -323,25 +323,25 @@ The Chocolatey 2.0.0 and 6.0.0 pre-release versions were not recommended for pro
 
     If you use an internal repository, change the `--source="'chocolatey.licensed'"` on line 4 of the script above, to your internal repository location. For further information see the [documentation on upgrading Chocolatey Agent using Chocolatey Central Management](xref:upgrade-agent#using-chocolatey-central-management-to-upgrade-chocolatey-agent).
 
-    2. The second Deployment Step ensures that all other Chocolatey products are now at their latest 1.x and 5.x versions. The Advanced Deployment PowerShell script should be `choco upgrade chocolatey --version 1.4.0 --source="'chocolatey.licensed'"`. If you use an internal repository, change the `--source="'chocolatey.licensed'"` in the command, to your internal repository location.
+    2. The second Deployment Step ensures that all other Chocolatey products are now at their latest 1.x and 5.x versions. The Advanced Deployment Step PowerShell script should be `choco upgrade chocolatey --version 1.4.0 --source="'chocolatey.licensed'"`. If you use an internal repository, change the `--source="'chocolatey.licensed'"` in the command, to your internal repository location.
 
-Once the Deployment is complete, move on to the next step.
+Once the Deployment Plan is complete, move on to the next step.
 
 #### Step 2 - Upgrade to the New 2.0.0 and 6.0.0 Product Versions
 
 > :choco-warning: **WARNING**
 >
-> If you need to specify a `--source` option in the Advanced Deployment PowerShell script, please make sure you reference only one source value. For example, `--source="'my-internal-repo'"` and not `--source="'my-internal-repo;chocolatey.licensed'"`. Specifying multiple sources for this specific upgrade may cause the Chocolatey product packages to not be found. Note that this only affects the upgrade to version 2.0.0 or 6.0.0 of the Chocolatey products and not future packages you may install or upgrade.
+> If you need to specify a `--source` option in the Advanced Deployment Step PowerShell script, please make sure you reference only one source value. For example, `--source="'my-internal-repo'"` and not `--source="'my-internal-repo;chocolatey.licensed'"`. Specifying multiple sources for this specific upgrade may cause the Chocolatey product packages to not be found. Note that this only affects the upgrade to version 2.0.0 or 6.0.0 of the Chocolatey products and not future packages you may install or upgrade.
 
 Once you have completed step 1 above, you will be ready to start the upgrade to the latest version of Chocolatey products:
 
-1. Using the same group used in Step 1 above, create an [Advanced Deployment](xref:ccm-deployments) with two Steps:
+1. Using the same group used in Step 1 above, create an [Advanced Deployment Plan](xref:ccm-deployments) with two Deployment Steps:
 
     1. The first Deployment Step will upgrade Chocolatey Agent through a Windows scheduled task. Add the [recommended code](xref:upgrade-agent#using-chocolatey-central-management-to-upgrade-chocolatey-agent) as the PowerShell script. Note that this code is different from above. If you use an internal repository, change the `--source 'chocolatey.licensed'` in the command, to your internal repository location.
 
-    1. The second Deployment Step ensures that all other Chocolatey products are now at their latest stable 2.0.0 and 6.0.0 versions. The Advanced Deployment PowerShell script should be `choco upgrade chocolatey --source="'chocolatey.licensed'"`. If you use an internal repository, change the `--source="'chocolatey.licensed'"` in the command, to your internal repository location.
+    1. The second Deployment Step ensures that all other Chocolatey products are now at their latest stable 2.0.0 and 6.0.0 versions. The Advanced Deployment Step PowerShell script should be `choco upgrade chocolatey --source="'chocolatey.licensed'"`. If you use an internal repository, change the `--source="'chocolatey.licensed'"` in the command, to your internal repository location.
 
-Once the Deployment is complete, all Chocolatey products will be upgraded to their latest 2.0.0 and 6.0.0 versions.
+Once the Deployment Plan is complete, all Chocolatey products will be upgraded to their latest 2.0.0 and 6.0.0 versions.
 
 ### Upgrade Using Microsoft Intune
 

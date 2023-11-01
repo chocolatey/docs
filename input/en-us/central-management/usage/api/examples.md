@@ -60,7 +60,7 @@ $Group = Invoke-RestMethod @params |
     Where-Object Name -EQ $GroupName
 ```
 
-### 3. Create a New Deployment
+### 3. Create a New Deployment Plan
 
 ```powershell
 $params = @{
@@ -99,7 +99,7 @@ $params = @{
 $null = Invoke-RestMethod @params
 ```
 
-### 5. Move Deployment to Ready & Start the Deployment
+### 5. Move Deployment Plan to Ready & Start the Deployment Plan
 
 ```powershell
 $params = @{
@@ -121,7 +121,7 @@ $params = @{
 $null = Invoke-RestMethod @params
 ```
 
-## Create a Recurring Scheduled Task to run Recurring Deployments
+## Create a Recurring Scheduled Task to run Recurring Deployment Plans
 
 This example uses the concepts in the previous example and streamlines the process of creating a scheduled task on Windows to create a recurring Deployment Plan task.
 In this example, we set the trigger to run daily, but you could configure it to run as needed for your use case.
@@ -142,7 +142,7 @@ $recurringDeploymentScript = {
 
     $null = Invoke-WebRequest -Uri "https://$CcmServerHostname/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop
 
-    # Create New Deployment
+    # Create New Deployment Plan
     $params = @{
         Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
         Method      = "POST"
@@ -174,7 +174,7 @@ $recurringDeploymentScript = {
     }
     $null = Invoke-RestMethod @params
 
-    # Move Deployment to Ready & Start the Deployment
+    # Move Deployment Plan to Ready & Start the Deployment Plan
     $params = @{
         Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
         Method      = "POST"

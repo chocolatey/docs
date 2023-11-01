@@ -30,9 +30,9 @@ As an example, the upgrade process for v1.x to v2.x is as follows:
 ### Using Chocolatey Central Management to Upgrade chocolatey-agent
 
 Because Chocolatey Central Management uses `chocolatey-agent` to perform its actions, the upgrade will require a restart of the service.
-The easiest way to do this is with a scheduled task as part of an Advanced Deployment.
+The easiest way to do this is with a scheduled task as part of an Advanced Deployment Step.
 
-A recommended Advanced Deployment script to do this is as follows:
+A recommended Advanced Deployment Step script to do this is as follows:
 
 > :choco-warning: **WARNING**
 >

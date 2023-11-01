@@ -67,7 +67,7 @@ When you're ready, run the following on the client from an elevated (Run as Admi
 
 ```powershell
 # Please fill in the following values
-$fqdn = 'Replace with FQDN for your Chocolatey for Business QDE Azure Environment' 
+$fqdn = 'Replace with FQDN for your Chocolatey for Business QDE Azure Environment'
 $clientCommunicationSalt = 'Your ccmClientCommunicationSalt'  #This value is stored within your Azure Key Vault
 $serverCommunicationSalt = 'Your ccmServiceCommunicationSalt' #This value is stored within your Azure Key Vault
 $password = 'Your ChocoUserPassword' #This value is stored within your Azure Key Vault
@@ -101,5 +101,5 @@ This script will accomplish the following on your client:
 1. Install the `ChocolateyGUI` package on the endpoint, for self-service support
 1. Install the `chocolatey-agent` package, which supports self-service and CCM communication
 1. Enable and disable features related to configuring self-service access on the endpoint
-1. Setup the communication channel between the endpoint and CCM, using the correct URL and salts
-1. Opt the endpoint into CCM Deployments
+1. Setup the communication channel between the endpoint and Chocolatey Central Management, using the correct URL and salts
+1. Opt the endpoint into Chocolatey Central Management Deployments
