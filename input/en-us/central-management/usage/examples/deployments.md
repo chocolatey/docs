@@ -44,47 +44,329 @@ To do so, click on the clock icon next to the `Start Date Time` field. When you 
 We have several example Deployment Plans shown below, and you can check the [CCM Deployment Examples repository](https://github.com/chocolatey/ccm-deployment-examples) on GitHub for more.
 
 #### Installing or Upgrading a Package
+---
+The only Deployment Step in this Deployment Plan upgrades, or installs if not present, the `Firefox` package ([available on the Chocolatey Community Repository](https://community.chocolatey.org/packages/firefox)).
 
-This Deployment Plan is a basic example of deploying a package using a simple Deployment Step.
+Assuming this package was available on your sources, you will only need to set the Target Groups for the Deployment Step. If you don't have it available, you can download it using `choco download firefox --source="'https://community.chocolatey.org/api/v2/'"` and then upload it to your internal repository.
 
-For further details, please see the [readme here](https://github.com/chocolatey/ccm-deployment-examples/blob/main/deployments/installing-a-package-simple/README.md).
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simplePackageJson" aria-expanded="false" aria-controls="simplePackageJson">View json</button>
+
+<div class="collapse" id="simplePackageJson">
+
+```json
+{
+  "Name": "Installing a Package (Simple)",
+  "ScheduledDateTimeUtc": null,
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 0,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Deploy Firefox",
+      "IsPrivileged": false,
+      "PlanOrder": 1,
+      "Script": "upgrade|firefox||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
 
 #### Installing Multiple Packages
-
+---
 This Deployment Plan is a basic example of deploying multiple packages.
 
 We recommend that you use a separate Deployment Step for each package to deploy to allow per-computer reporting.
 
 You can use this to generate larger Deployment Plans with more comprehensive suites of packages, even mixing Basic and Advanced Deployment Steps in order to provide additional configuration.
 
-For further details, please see the [readme here](https://github.com/chocolatey/ccm-deployment-examples/blob/main/deployments/installing-multiple-packages/README.md).
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiplePackageJson" aria-expanded="false" aria-controls="multiplePackageJson">View json</button>
+
+<div class="collapse" id="multiplePackageJson">
+
+```json
+{
+  "Name": "Deploying Multiple Packages",
+  "ScheduledDateTimeUtc": null,
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 0,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Deploy Cloudflared",
+      "IsPrivileged": false,
+      "PlanOrder": 1,
+      "Script": "upgrade|cloudflared||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    },
+    {
+      "Name": "Deploy Firefox",
+      "IsPrivileged": false,
+      "PlanOrder": 2,
+      "Script": "upgrade|firefox||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    },
+    {
+      "Name": "Deploy VSCode",
+      "IsPrivileged": false,
+      "PlanOrder": 3,
+      "Script": "upgrade|vscode||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    },
+    {
+      "Name": "Deploy 7zip",
+      "IsPrivileged": false,
+      "PlanOrder": 4,
+      "Script": "upgrade|7zip||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
 
 #### Installing a Package with Parameters
-
+---
 This Deployment Plan is an example of deploying a package using an Advanced Deployment Step, in this case to provide a package parameter during deployment.
 
 The example passes the `/InstallDir` parameter to the `python312` package, causing the package to be installed to the location provided.
 
 We use the Advanced Deployment Step to do this because the Basic Deployment Step does not allow package parameters to be used.
 
-For further details, please see the [readme here](https://github.com/chocolatey/ccm-deployment-examples/blob/main/deployments/installing-a-package-with-params/README.md).
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#packageParams" aria-expanded="false" aria-controls="packageParams">View json</button>
+
+<div class="collapse" id="packageParams">
+
+```json
+{
+  "Name": "Deployment Plan with Parameters",
+  "ScheduledDateTimeUtc": null,
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 0,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Deploy Python to Agent Directory",
+      "IsPrivileged": true,
+      "PlanOrder": 1,
+      "Script": "choco install python312 --package-parameters=\"'/InstallDir:C:\\BuildAgent\\tools\\python312'\"\nexit $LASTEXITCODE",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
 
 ### Advanced Deployments
+---
 
-#### Scheduled Deployments (Upgrading License Package)
+#### Using a Deployment Schedule
 
-These Deployment Plans are basic examples of deploying a package on a schedule - in this case a `chocolatey-license` package.
+The following Deployment Plan maintains your Chocolatey license in your environment. It assumes that as a Chocolatey For Business customer
+you have created a `chocolatey-license` package. If you don't currently have a license package, you can create one by following [the instructions](https://docs.chocolatey.org/en-us/c4b-environments/azure/license-update#creating-a-new-license-package).
 
-For further details, please see the [readme here](https://github.com/chocolatey/ccm-deployment-examples/tree/main/deployments/upgrading-license-daily).
+The Deployment Step included in this Deployment Plan upgrades, or installs if not present, the `chocolatey.license` package. The Deployment Plan
+utilizes a schedule which will execute Daily.
+
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dailyLicense" aria-expanded="false" aria-controls="dailyLicense">View json</button>
+
+<div class="collapse" id="dailyLicense">
+
+```json
+{
+  "Name": "Upgrade License (Daily)",
+  "ScheduledDateTimeUtc": "2023-01-01T00:00:00Z",
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 1,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Update License",
+      "IsPrivileged": false,
+      "PlanOrder": 1,
+      "Script": "upgrade|chocolatey.license||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
+
+A weekly version of this Deployment Plan is available. Click the button below  and save
+the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#weeklyLicense" aria-expanded="false" aria-controls="weeklyLicense">View json</button>
+
+<div class="collapse" id="weeklyLicense">
+
+```json
+{
+  "Name": "Upgrade License (Weekly)",
+  "ScheduledDateTimeUtc": "2023-01-01T00:00:00Z",
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 2,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Update License",
+      "IsPrivileged": false,
+      "PlanOrder": 1,
+      "Script": "upgrade|chocolatey.license||false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
 
 #### Upgrading Chocolatey for Business Client Packages
-
+---
 These Deployment Plans are examples of upgrading the Chocolatey for Business client components.
 
 There are two example Deployment Plans here. They follow the instructions laid out on the [upgrading to Chocolatey v2](https://docs.chocolatey.org/en-us/guides/upgrading-to-chocolatey-v2-v6#upgrade-using-chocolatey-central-management-deployments) page.
 
-The first upgrades the Chocolatey for Business client components to the latest 1.x version.
+##### Upgrade the Chocolatey for Business client components to the latest 1.x version.
 
-The second upgrades Chocolatey CLI to the latest version.
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
 
-For further details, please see the [readme here](https://github.com/chocolatey/ccm-deployment-examples/tree/main/deployments/upgrading-chocolatey-for-business-clients)
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#latest1xJson" aria-expanded="false" aria-controls="latest1xJson">View json</button>
+
+<div class="collapse" id="latest1xJson">
+
+```json
+{
+  "Name": "Upgrade Chocolatey for Business Client to Latest 1.x",
+  "ScheduledDateTimeUtc": null,
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 0,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Upgrade to Latest 1.x Client Components",
+      "IsPrivileged": true,
+      "PlanOrder": 1,
+      "Script": "$Installed = choco list --local-only --limit-output | ConvertFrom-Csv -Delimiter '|' -Header 'Id','Version'\n$ChocolateyVersion = $Installed.Where{$_.Id -eq 'chocolatey'}.Version\n$AgentVersion = $Installed.Where{$_.Id -eq 'chocolatey-agent'}.Version\n$ExtensionVersion = $Installed.Where{$_.Id -eq 'chocolatey.extension'}.Version\n# We don't need to run this step if we're already on the latest 1.*\nif ([version]$ChocolateyVersion -ge '1.4.0' -and [version]$AgentVersion -ge '1.1.2' -and [version]$ExtensionVersion -ge '5.0.3') {\n    exit 0\n}\n\n$delayInMinutes = 1\n# If using an internal repository to install Chocolatey Agent, replace `chocolatey.licensed` below\n# with the name or URL of your internally configured source.\nchoco upgrade chocolatey-agent --version=1.1.2 --source=\"'chocolatey.licensed'\"\n\n# Ensure the deployment task registers as failed if the installation failed, and skip registering the\n# scheduled task.\nif ($LASTEXITCODE -ne 0) {\n    Write-Error 'The upgrade failed!'\n    exit $LASTEXITCODE\n}\n\n# Restart the Agent service after the preset delay time via a scheduled task.\n$ScheduledTask = @{\n    TaskName = \"Restart chocolatey-agent\"\n    Description = \"Upgrade Chocolatey Agent\"\n    Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes($delayInMinutes)\n    Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument \"-WindowStyle Hidden -Command Restart-Service chocolatey-agent\"\n    Principal = New-ScheduledTaskPrincipal -GroupId Administrators -RunLevel Highest\n    Settings = New-ScheduledTaskSettingsSet -Hidden\n}\n\nRegister-ScheduledTask @ScheduledTask -Verbose:$false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    },
+    {
+      "Name": "Ensure Chocolatey CLI 1.4.0",
+      "IsPrivileged": true,
+      "PlanOrder": 2,
+      "Script": "choco upgrade chocolatey --version=1.4.0 --source=\"'chocolatey.licensed'\"\nexit $LASTEXITCODE",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
+
+##### Upgrade the Chocolatey for Business client components to the latest version.
+
+Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#absoluteLatestJson" aria-expanded="false" aria-controls="absoluteLatestJson">View json</button>
+
+<div class="collapse" id="absoluteLatestJson">
+
+```json
+{
+  "Name": "Upgrade Chocolatey for Business Client",
+  "ScheduledDateTimeUtc": null,
+  "LastScheduledDateTimeUtc": null,
+  "RepeatPeriod": 0,
+  "ExecutionTimeoutInSeconds": 14400,
+  "RequiresApproval": false,
+  "DeploymentSteps": [
+    {
+      "Name": "Upgrade Chocolatey for Business Client Components",
+      "IsPrivileged": true,
+      "PlanOrder": 1,
+      "Script": "$delayInMinutes = 1\n\n# If using an internal repository to install Chocolatey Agent, replace `chocolatey.licensed` below\n# with the name or URL of your internally configured source.\nchoco upgrade chocolatey-agent --source=\"'chocolatey.licensed'\"\n\n# Ensure the deployment task registers as failed if the installation failed, and skip registering the\n# scheduled task.\nif ($LASTEXITCODE -ne 0) {\n    Write-Error 'The upgrade failed!'\n    exit $LASTEXITCODE\n}\n\n# Restart the Agent service after the preset delay time via a scheduled task.\n$ScheduledTask = @{\n    TaskName = \"restart chocolatey-agent\"\n    Description = \"Upgrade Chocolatey Agent\"\n    Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes($delayInMinutes)\n    Action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument \"-WindowStyle Hidden -Command Restart-Service chocolatey-agent\"\n    Principal = New-ScheduledTaskPrincipal -GroupId Administrators -RunLevel Highest\n    Settings = New-ScheduledTaskSettingsSet -Hidden\n}\nRegister-ScheduledTask @ScheduledTask -Verbose:$false",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    },
+    {
+      "Name": "Ensure Chocolatey CLI is Upgraded",
+      "IsPrivileged": true,
+      "PlanOrder": 2,
+      "Script": "choco upgrade chocolatey --source=\"'chocolatey.licensed'\"\nexit $LASTEXITCODE",
+      "ValidExitCodes": "0, 1605, 1614, 1641, 3010",
+      "ExecutionTimeoutInSeconds": 14400,
+      "FailOnError": true,
+      "RequireSuccessOnAllComputers": false,
+      "MachineContactTimeoutInMinutes": 0,
+      "DeploymentStepGroupIds": []
+    }
+  ]
+}
+```
+</div>
