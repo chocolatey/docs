@@ -1,8 +1,9 @@
 ---
 Order: 10
-xref: ccm-example-deployments
-Title: Deployments
-Description: Example Deployment Plans that can be imported into Chocolatey Central Management for immediate use
+xref: ccm-example-deployment-plans
+RedirectFrom: en-us/central-management/usage/examples/deployments
+Title: Deployment Plans
+Description: Example Deployment Plans that can be imported into Chocolatey Central Management for immediate use.
 ---
 
 ## Summary
@@ -13,7 +14,7 @@ Chocolatey Central Management (CCM) now (in version 0.11.0 and up) supports impo
 
 ### Updating Values in Deployment Plans
 
-Some values in an exported Deployment Plan don't import nicely, or age well. When importing an example Deployment Plan, you are very likely to have to update the `Target Group(s)` and any `Deployment Start Time` that is set.
+When importing an example Deployment Plan, you may have to update the `Target Group(s)` and any `Deployment Start Time` that are set.
 
 After importing the Deployment Plan, you should follow these steps to ensure you are able to deploy it!
 
@@ -41,15 +42,15 @@ To do so, click on the clock icon next to the `Start Date Time` field. When you 
 
 ## Example Deployment Plans
 
-We have several example Deployment Plans shown below, and you can check the [CCM Deployment Examples repository](https://github.com/chocolatey/ccm-deployment-examples) on GitHub for more.
+We have several example Deployment Plans shown below, and you can check the [Chocolatey Central Management Deployment Plan Examples repository](https://github.com/chocolatey/ccm-deployment-examples) on GitHub for more.
 
 #### Installing or Upgrading a Package
----
+
 The only Deployment Step in this Deployment Plan upgrades, or installs if not present, the `Firefox` package ([available on the Chocolatey Community Repository](https://community.chocolatey.org/packages/firefox)).
 
 Assuming this package was available on your sources, you will only need to set the Target Groups for the Deployment Step. If you don't have it available, you can download it using `choco download firefox --source="'https://community.chocolatey.org/api/v2/'"` and then upload it to your internal repository.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simplePackageJson" aria-expanded="false" aria-controls="simplePackageJson">View json</button>
 
@@ -82,14 +83,14 @@ Save the following as a json file to import as a Chocolatey Central Management D
 </div>
 
 #### Installing Multiple Packages
----
+
 This Deployment Plan is a basic example of deploying multiple packages.
 
 We recommend that you use a separate Deployment Step for each package to deploy to allow per-computer reporting.
 
 You can use this to generate larger Deployment Plans with more comprehensive suites of packages, even mixing Basic and Advanced Deployment Steps in order to provide additional configuration.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiplePackageJson" aria-expanded="false" aria-controls="multiplePackageJson">View json</button>
 
@@ -158,14 +159,14 @@ Save the following as a json file to import as a Chocolatey Central Management D
 </div>
 
 #### Installing a Package with Parameters
----
+
 This Deployment Plan is an example of deploying a package using an Advanced Deployment Step, in this case to provide a package parameter during deployment.
 
 The example passes the `/InstallDir` parameter to the `python312` package, causing the package to be installed to the location provided.
 
 We use the Advanced Deployment Step to do this because the Basic Deployment Step does not allow package parameters to be used.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#packageParams" aria-expanded="false" aria-controls="packageParams">View json</button>
 
@@ -198,17 +199,16 @@ Save the following as a json file to import as a Chocolatey Central Management D
 </div>
 
 ### Advanced Deployments
----
 
 #### Using a Deployment Schedule
 
-The following Deployment Plan maintains your Chocolatey license in your environment. It assumes that as a Chocolatey For Business customer
+The following Deployment Plan maintains your Chocolatey license in your environment. It assumes that as a Chocolatey for Business customer
 you have created a `chocolatey-license` package. If you don't currently have a license package, you can create one by following [the instructions](https://docs.chocolatey.org/en-us/c4b-environments/azure/license-update#creating-a-new-license-package).
 
 The Deployment Step included in this Deployment Plan upgrades, or installs if not present, the `chocolatey.license` package. The Deployment Plan
-utilizes a schedule which will execute Daily.
+utilizes a schedule which will execute daily.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dailyLicense" aria-expanded="false" aria-controls="dailyLicense">View json</button>
 
@@ -240,8 +240,8 @@ Save the following as a json file to import as a Chocolatey Central Management D
 ```
 </div>
 
-A weekly version of this Deployment Plan is available. Click the button below  and save
-the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+A weekly version of this Deployment Plan is available. Click the button below and save
+the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#weeklyLicense" aria-expanded="false" aria-controls="weeklyLicense">View json</button>
 
@@ -274,14 +274,14 @@ the following as a json file to import as a Chocolatey Central Management Deploy
 </div>
 
 #### Upgrading Chocolatey for Business Client Packages
----
-These Deployment Plans are examples of upgrading the Chocolatey for Business client components.
+
+These Deployment Plans are examples of upgrading the Chocolatey for Business client packages.
 
 There are two example Deployment Plans here. They follow the instructions laid out on the [upgrading to Chocolatey v2](https://docs.chocolatey.org/en-us/guides/upgrading-to-chocolatey-v2-v6#upgrade-using-chocolatey-central-management-deployments) page.
 
-##### Upgrade the Chocolatey for Business client components to the latest 1.x version.
+##### Upgrade the Chocolatey for Business Client Packages to the Latest 1.x Version.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#latest1xJson" aria-expanded="false" aria-controls="latest1xJson">View json</button>
 
@@ -325,9 +325,9 @@ Save the following as a json file to import as a Chocolatey Central Management D
 ```
 </div>
 
-##### Upgrade the Chocolatey for Business client components to the latest version.
+##### Upgrade the Chocolatey for Business Client Packages to the Latest Version.
 
-Save the following as a json file to import as a Chocolatey Central Management Deployment Plan:
+Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
 <button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#absoluteLatestJson" aria-expanded="false" aria-controls="absoluteLatestJson">View json</button>
 

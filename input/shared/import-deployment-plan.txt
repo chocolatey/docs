@@ -2,7 +2,7 @@
 
 A Deployment Plan can be imported using a `.json` file.
 
-1. [Prepare your `.json` file](xref:ccm-example-deployments) or [export](#export) an existing Deployment Plan.
+1. Prepare your `.json` file or export an existing Deployment Plan.
 
 1. From the Chocolatey Central Management dashboard, select `Deployment Plans` from the left sidebar.
 
