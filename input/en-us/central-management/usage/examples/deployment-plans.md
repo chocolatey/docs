@@ -22,21 +22,21 @@ After importing the Deployment Plan, you should follow these steps to ensure you
 
 You will also need to set a Target Group for the Deployment Step:
 
-- Mouse-over the Deployment Step and click the `Edit` button.
+- Mouse-over the Deployment Step and click the **Edit** button.
     ![Editing a Deployment Step](/assets/images/deployments/ccm-deployments-edit-deployment-step.jpg)
 
 - Navigate to the `Select Target Groups` panel.
 
-- Highlight your preferred groups and click the `>` button to move them into `Selected Groups`.
+- Highlight your preferred groups and click the **>** button to move them into `Selected Groups`.
     ![Selecting Target Groups](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
 
-- Click `Save`.
+- Click **Save**.
 
 #### Setting the Start Time Date (Scheduled Deployments)
 
 Before you can run the Deployment Plan, you must set the `Start Date Time` to a time at least 30 minutes in the future.
 
-To do so, click on the clock icon next to the `Start Date Time` field. When you have selected an appropriate time, click `Save`.
+To do so, click on the clock icon next to the `Start Date Time` field. When you have selected an appropriate time, click **Save**.
 
 ![Updating an invalid Start Date Time](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
 
