@@ -1,9 +1,9 @@
 ---
 Order: 10
 xref: ccm-example-deployment-plans
-RedirectFrom: en-us/central-management/usage/examples/deployments
 Title: Deployment Plans
 Description: Example Deployment Plans that can be imported into Chocolatey Central Management for immediate use.
+RedirectFrom: en-us/central-management/usage/examples/deployments
 ---
 
 ## Summary
@@ -52,7 +52,7 @@ Assuming this package was available on your sources, you will only need to set t
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simplePackageJson" aria-expanded="false" aria-controls="simplePackageJson">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#simplePackageJson" aria-expanded="false" aria-controls="simplePackageJson">View JSON</button>
 
 <div class="collapse" id="simplePackageJson">
 
@@ -92,7 +92,7 @@ You can use this to generate larger Deployment Plans with more comprehensive sui
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiplePackageJson" aria-expanded="false" aria-controls="multiplePackageJson">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#multiplePackageJson" aria-expanded="false" aria-controls="multiplePackageJson">View JSON</button>
 
 <div class="collapse" id="multiplePackageJson">
 
@@ -168,7 +168,7 @@ We use the Advanced Deployment Step to do this because the Basic Deployment Step
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#packageParams" aria-expanded="false" aria-controls="packageParams">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#packageParams" aria-expanded="false" aria-controls="packageParams">View JSON</button>
 
 <div class="collapse" id="packageParams">
 
@@ -210,7 +210,7 @@ utilizes a schedule which will execute daily.
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dailyLicense" aria-expanded="false" aria-controls="dailyLicense">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#dailyLicense" aria-expanded="false" aria-controls="dailyLicense">View JSON</button>
 
 <div class="collapse" id="dailyLicense">
 
@@ -243,7 +243,7 @@ Save the following as a `.json` file to import as a Chocolatey Central Managemen
 A weekly version of this Deployment Plan is available. Click the button below and save
 the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#weeklyLicense" aria-expanded="false" aria-controls="weeklyLicense">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#weeklyLicense" aria-expanded="false" aria-controls="weeklyLicense">View JSON</button>
 
 <div class="collapse" id="weeklyLicense">
 
@@ -283,7 +283,7 @@ There are two example Deployment Plans here. They follow the instructions laid o
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#latest1xJson" aria-expanded="false" aria-controls="latest1xJson">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#latest1xJson" aria-expanded="false" aria-controls="latest1xJson">View JSON</button>
 
 <div class="collapse" id="latest1xJson">
 
@@ -329,7 +329,7 @@ Save the following as a `.json` file to import as a Chocolatey Central Managemen
 
 Save the following as a `.json` file to import as a Chocolatey Central Management Deployment Plan:
 
-<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#absoluteLatestJson" aria-expanded="false" aria-controls="absoluteLatestJson">View json</button>
+<button class="btn btn-success btn-collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#absoluteLatestJson" aria-expanded="false" aria-controls="absoluteLatestJson">View JSON</button>
 
 <div class="collapse" id="absoluteLatestJson">
 
