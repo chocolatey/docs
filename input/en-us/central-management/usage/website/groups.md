@@ -35,7 +35,7 @@ The `All Computers (Automatic Group)` will have a blue lock icon next to the nam
 
 > :choco-info: **NOTE**
 >
-> This feature is available in Chocolatey Central Management starting with version 0.12.0.  
+> This feature is available in Chocolatey Central Management starting with version 0.12.0.
 
 A Temporary Group is a Group that has been created for one or more specific circumstance, for instance as part of creating an Automatic Deployment Plan.
 These Groups are normally not viewable from anywhere, other than the Deployment Plans where they are being used, and will be cleaned up on an interval when they are no longer needed.
@@ -80,6 +80,18 @@ You can enter a search term in the text field to filter results by typing in par
 Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the left-hand side of the Group, and instead select **Delete**.
 You will be prompted to confirm the deletion.
 
+## Duplicating a Group
+
+> :choco-info: **NOTE**
+>
+> If you do not see the **Duplicate** menu entry or the :gear: **Actions** buttons, consult your administrator to determine if you have the appropriate role assigned to your account.
+
+On the main Groups page, find the Group you want to duplicate.
+You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
+Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the left-hand side of the Group, and instead select **Duplicate**.
+If the Group being duplicated is a system managed Group, a confirmation message will be shown indicating that the duplicated Group will not be system managed.
+A success message will be shown that mentions that the Group was duplicated, and if you have permissions to Edit a Group a dialog to edit this duplicated Group will be shown.
+
 ## Viewing a Group's Details
 
 On the main Groups page, find the group you want to view.
@@ -88,7 +100,7 @@ Select the :gear: **Actions** button on the left-hand side of the group, and sel
 
 ![Details menu entry in Group actions flyout menu](/assets/images/groups/ccm-groups-details.png)
 
-On the Group Details page, you'll find a searchable list of all Computers and Groups that are in the Group, as well as a more detailed view of the Group information.  
+On the Group Details page, you'll find a searchable list of all Computers and Groups that are in the Group, as well as a more detailed view of the Group information.
 
 ![Group Details screen showing the Computers and Groups that are currently in the Group](/assets/images/groups/ccm-groups-details-screen.png)
 
