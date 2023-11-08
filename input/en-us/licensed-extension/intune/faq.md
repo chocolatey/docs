@@ -38,7 +38,7 @@ choco feature enable --name=allowPreviewFeatures
 
 ### I get an error about `Stream was too long` when I try to convert a package
 
-When trying to convert packages that are larger than around 2 GB, you may encounter the error `[IntuneWinAppUtil] ERROR  System.IO.IOException: Stream was too long.` There is a [known issue](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/issues/58) with version 1.8.3 of `intunewinapputil` which is used to generate the Chocolatey Intune package `intunewin` file. You can work around this by either downgrading to `1.8.2.20220507` with the command `choco install intunewinapputil -y --version 1.8.2.20220507 --allow-downgrade --force`, or you can upgrade to the latest intunewinapputil with the command `choco upgrade intunewinapputil -y`
+When trying to convert packages that are larger than around 2 GB, you may encounter the error `[IntuneWinAppUtil] ERROR  System.IO.IOException: Stream was too long.` There is a [known issue](https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/issues/58) with version 1.8.3 of `intunewinapputil` which is used to generate the Chocolatey Intune package `intunewin` file. You can work around this by either downgrading to `1.8.2.20220507` with the command `choco upgrade intunewinapputil -y --version 1.8.2.20220507 --allow-downgrade`, or you can upgrade to the latest intunewinapputil with the command `choco upgrade intunewinapputil -y`.
 
 ## Push to Intune Command
 
