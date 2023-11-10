@@ -31,6 +31,17 @@ The `All Computers (Automatic Group)` will have a blue lock icon next to the nam
 
 ![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the tooltip containing additional information stating, "All computers are added to this Group automatically and are system managed. This Group can not be edited or deleted.".](/assets/images/groups/ccm-groups-automatic-group-tooltip.png)
 
+## Temporary Groups
+
+> :choco-info: **NOTE**
+>
+> This feature is available in Chocolatey Central Management starting with version 0.12.0.  
+
+A Temporary Group is a Group that has been created for one or more specific circumstance, for instance as part of creating an Automatic Deployment Plan.
+These Groups are normally not viewable from anywhere, other than the Deployment Plans where they are being used, and will be cleaned up on an interval when they are no longer needed.
+
+A Temporary Group can also not be Edited, Deleted, or Duplicated manually by a user. As well, no other Group can have such a Group as a Sub-Group.
+
 ## Creating a Group
 
 On the main Groups page, select the **+ Create New Group** button.
