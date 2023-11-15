@@ -80,6 +80,18 @@ You can enter a search term in the text field to filter results by typing in par
 Similar to the [Edit Group](#editing-a-group) action, select the :gear: **Actions** button on the left-hand side of the Group, and instead select **Delete**.
 You will be prompted to confirm the deletion.
 
+## Viewing a Group's Details
+
+On the main Groups page, find the group you want to view.
+You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
+Select the :gear: **Actions** button on the left-hand side of the group, and select **Details**.
+
+![Details menu entry in Group actions flyout menu](/assets/images/groups/ccm-groups-details.png)
+
+On the Group Details page, you'll find a searchable list of all Computers and Groups that are in the Group, as well as a more detailed view of the Group information.  
+
+![Group Details screen showing the Computers and Groups that are currently in the Group](/assets/images/groups/ccm-groups-details-screen.png)
+
 ## Eligibility for Deployments
 
 The Create / Edit Group modals display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
