@@ -99,6 +99,11 @@ You will also need to have at least one Group of computers already defined.
     ![Chocolatey Central Management Deployment Step Save button](/assets/images/deployments/ccm-deployments-step-save.png)
 
 1. Continue to add steps until your Deployment Plan is complete.
+
+1. (Optional, requires Chocolatey Central Management v0.12.0) If you need to create multiple similar Deployment Steps, you can use the Duplicate Deployment Step button on an individual Deployment Step to make a copy of it.
+
+    ![Chocolatey Central Management Deployment Step Duplicate button](/assets/images/deployments/ccm-deployments-step-duplicate.png)
+
 1. Select :floppy_disk: **Save** to save the changes to the Deployment Plan.
 
 <?! Include "../../../../shared/import-deployment-plan.txt" /?>
