@@ -2,7 +2,7 @@
 Order: 20
 xref: c4b-azure
 Title: Azure Environment
-Description: High level information about the Chocolatey for Business Azure Environment
+Description: Overview of the Chocolatey for Business Azure Environment
 RedirectFrom:
   - en-us/quick-deployment/azure
   - en-us/quick-deployment/azure/index.html
@@ -126,12 +126,12 @@ Please see the table below for links to help from some popular registrars:
 
 If you need help with another registrar, we recommend searching for their documentation, or reaching out to their support.
 
-### Configuring CCM
+### Configuring Chocolatey Central Management
 
 > :choco-warning: **WARNING**
 >
-> You cannot create users in CCM until you have configured an SMTP server. To do this, please see [how to configure SMTP in CCM](xref:ccm-website#step-4.2-smtp-configuration).
-> You can log in to CCM using the credentials provided in the KeyVault (see [Accessing Services](#accessing-services), below).
+> You cannot create users in Chocolatey Central Management until you have configured an SMTP server. To do this, please see [how to configure SMTP](xref:ccm-website#step-4.2-smtp-configuration).
+> You can log in to Chocolatey Central Management using the credentials provided in the KeyVault (see [Accessing Services](#accessing-services), below).
 
 ## Accessing Services
 

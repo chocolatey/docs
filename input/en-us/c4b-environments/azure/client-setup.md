@@ -58,12 +58,12 @@ You will need the following values ready when running this script:
 * `FQDN`: The fully qualified domain name used to access your environment.
 * `ccmClientCommunicationSalt`: This is the client-side salt additive. More information about this can be found in the [C4B Config Settings](xref:ccm-client#config-settings) docs.
 * `ccmServiceCommunicationSalt`: This is the server-side salt additive. More information about this can be found in the [C4B Config Settings](xref:ccm-client#config-settings) docs.
-* `ChocoUserPassword`: The password for the `chocouser` account which is used by the client to access your environment's Nexus component.
+* `ChocoUserPassword`: The password for the `chocouser` account which is used by the client to access your environments' Sonatype Nexus Repository service.
 
 Except for the `FQDN`, all of these values are available in your deployed environment's Azure Key Vault.
 See [Accessing Services](xref:c4b-azure#accessing-services) for more information about retrieving values from the Vault.
 
-When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell console:
+When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell session:
 
 ```powershell
 # Please fill in the following values
@@ -93,13 +93,13 @@ $params = @{
 
 This script will accomplish the following on your client:
 
-1. Install Chocolatey from the installation script hosted in your internal raw Nexus repository
+1. Install Chocolatey CLI from the installation script hosted in your internal raw Sonatype Nexus Repository.
 1. Add the `ChocolateyInternal` source, and enable it for self-service
-1. Disable the default `Chocolatey` Community Repository
-1. Install your Chocolatey license using the `chocolatey-license` package
-1. Install the Chocolatey Licensed Extension (without context menus for Package Builder)
-1. Install the `ChocolateyGUI` package on the endpoint, for self-service support
-1. Install the `chocolatey-agent` package, which supports self-service and CCM communication
-1. Enable and disable features related to configuring self-service access on the endpoint
-1. Setup the communication channel between the endpoint and Chocolatey Central Management, using the correct URL and salts
-1. Opt the endpoint into Chocolatey Central Management Deployments
+1. Disable the default `chocolatey` source.
+1. Install your Chocolatey license using the `chocolatey-license` package.
+1. Install the Chocolatey Licensed Extension (without context menus for Package Builder).
+1. Install the `ChocolateyGUI` package on the endpoint, for self-service support.
+1. Install the `chocolatey-agent` package, which supports self-service and Chocolatey Central Management communication.
+1. Enable and disable features related to configuring self-service access on the endpoint.
+1. Setup the communication channel between the endpoint and Chocolatey Central Management, using the correct URL and salts.
+1. Enable Chocolatey Central Management Deployments.
