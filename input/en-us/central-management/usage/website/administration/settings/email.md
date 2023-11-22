@@ -9,7 +9,7 @@ The CCM Site needs to be able to send email for certain actions.  For example, w
 
 1. Open the CCM Site in the browser
 1. Login with the `ccmadmin` user
-1. In the left hand menu click on `Administration` and then `Settings`
+1. In the left-hand menu click on `Administration` and then `Settings`
 1. Click on the `Email (SMTP)` tab in the `Settings` screen
 
     ![Chocolatey Central Management Email Settings](/assets/images/ccm/setup/email/ccm-email-settings.png)
@@ -19,7 +19,7 @@ The CCM Site needs to be able to send email for certain actions.  For example, w
 1. Change the email address to go to your email address
 1. Click the `Send Test Email` button and ensure that an email is received correctly
 
-You should received a notification similar to this:
+You should receive a notification similar to this:
 
 ![Test email sent successfully](/assets/images/features/ccm/test_email_sent_correctly.png)
 

@@ -13,7 +13,7 @@ When Chocolatey Central Management sends out emails, they need to know the hostn
 
 1. Open the CCM Site in the browser.
 1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
+1. In the left-hand menu click on `Administration` and then `Settings`.
 1. Click on the `Website` tab in the `Settings` screen.
 
     ![Chocolatey Central Management Website Settings](/assets/images/ccm/setup/website/website-settings.png)

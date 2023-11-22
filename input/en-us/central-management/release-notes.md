@@ -443,7 +443,7 @@ Deployments Release - we are excited to bring about managing remote machines wit
 - Fix - Service - IP Address of Computer is not updating - see [Licensed #86](https://github.com/chocolatey/chocolatey-licensed-issues/issues/86)
 - Fix - Web - Unable to upload a profile picture for user
 - Fix - Web - Hovering over tooltips in Internet Explorer causes the page to jump
-- Fix - Web - Clicking the Chocolatey icon in top left hand corner opens new tab
+- Fix - Web - Clicking the Chocolatey icon in top left-hand corner opens new tab
 - Fix - Web - Website Logs are not appearing the in Maintenance Tab
 - Fix - All - Move from DEBUG level reporting by default to INFO level reporting to reduce amount of logging
 - Fix - Web - Improve wording in email templates and ensure consistent naming is used

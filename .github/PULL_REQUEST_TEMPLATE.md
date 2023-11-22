@@ -46,7 +46,7 @@ Please remove all comments before submitting.
 
 ## Change Checklist
 
-* [ ] Requires a change to menu structure (top or left hand side)/
+* [ ] Requires a change to menu structure (top or left-hand side)/
 * [ ] Menu structure has been updated
 
 ## Related Issue

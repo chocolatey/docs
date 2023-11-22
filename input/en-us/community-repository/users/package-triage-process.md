@@ -43,7 +43,7 @@ We take distribution rights very seriously - see [legal](xref:legal#distribution
 #### The package IS violating distribution rights
 You've checked the previous section and it doesn't apply, and you've found that the package **is** violating distribution rights as it bundles software binaries without your permission and/or license doesn't allow for it.
 
-It's not often that a moderator would approved a package that violates distribution rights, but if you find one, please click the "Report Abuse" link on the left hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after.
+It's not often that a moderator would approved a package that violates distribution rights, but if you find one, please click the "Report Abuse" link on the left-hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after.
 
 ![report abuse](/assets/images/triage-reportabuse.jpg)
 
@@ -52,7 +52,7 @@ It's not often that a moderator would approved a package that violates distribut
 > The community feed has only been moderated since October 2014. There may be some packages were created prior to this date that possibly do violate distribution rights. These packages also likely won't list the files as the community feed did not start capturing the package files until July 2014. The package page has instructions for viewing the package content (and so does the previous section).
 
 #### I want to take over/help with package maintenance for my software
-Please click the "Contact Site Admins" link on the left hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after. Please remember to mention that you are the software vendor interested in taking over the package.
+Please click the "Contact Site Admins" link on the left-hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after. Please remember to mention that you are the software vendor interested in taking over the package.
 
 ![contact site admins](/assets/images/triage-siteadmins.jpg)
 

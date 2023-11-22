@@ -165,7 +165,7 @@ To install and configure Jenkins:
 1. [Create a server and ensure you have the pre-requisites](#server-pre-requisites) before continuing.
 1. Install Jenkins using Chocolatey: `choco install jenkins -y`
 1. Once Jenkins is installed it will open a web browser and take you to the configuration web page (if it does not open for any reason, open the web browser and browse to `http://localhost:8080`.
-   * The first page will refresh once Jenkins is installed. If it does not click `ENABLE AUTO REFRESH` in the top left hand corner.
+   * The first page will refresh once Jenkins is installed. If it does not click `ENABLE AUTO REFRESH` in the top left-hand corner.
    * Unlock Jenkins by following the instructions on the page (you need to open the file it specifies, with Notepad), finding the password and pasting it into the box and click **Continue**.
    * For this guide, click **Install Suggested Plugins** and wait for them to install.
    * On the _Create First Admin_ page, click **Continue as admin**
