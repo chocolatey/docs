@@ -18,7 +18,7 @@ This is the Chocolatey Central Management website that gives an API and a web la
 >
 > The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* Windows Server 2016
+* [High-level Requirements](xref:ccm-setup#high-level-requirements)
 * PowerShell 5.1
 * IIS Set up and available
 * dotnet-aspnetcoremodule-v2 version 16.0.23055

@@ -19,6 +19,7 @@ At the end of this, we should have a fully ready to go SQL Server:
 
 ## Step 1: Complete Prerequisites
 
+* [High-level Requirements](xref:ccm-setup#high-level-requirements)
 * SQL Server 2019 or later.
 
 > :choco-info: **NOTE**
