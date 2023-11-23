@@ -99,7 +99,7 @@ A checkbox means this feature is turned on by default.
 * [ ] `logEnvironmentValues` - Log Environment Values - will log values of environment before and after install (could disclose sensitive data).
 * [x] `showNonElevatedWarnings` - Show Non-Elevated Warnings - Display non-elevated warnings.
 * [x] `showDownloadProgress` - Show Download Progress - Show download progress percentages in the CLI.
-* [ ] `useRememberedArgumentsForUpgrades` - Use Remembered Arguments For Upgrades - when running upgrades, use arguments for upgrade that were used for installation ('remembered'). This is helpful when running upgrade for all packages. This is considered in preview and will be flipped to on by default in a future release.
+* [ ] `useRememberedArgumentsForUpgrades` - Use Remembered Arguments For Upgrades - when running upgrades, use arguments for upgrade that were used for installation ('remembered'). This is helpful when running upgrade for all packages. This is considered in preview.
 * [ ] `logValidationResultsOnWarnings` - Log validation results on warnings - Should the validation results be logged if there are warnings?
 
 ### Automatic Uninstaller
