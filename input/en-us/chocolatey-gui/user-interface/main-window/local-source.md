@@ -7,7 +7,7 @@ Description: Information about displaying of locally installed packages
 
 The "This PC" source, also known as a local source, is the first source that is shown by default when Chocolatey GUI first
 opens, and it shows all the currently installed Chocolatey packages.  It is the visual equivalent of running the `choco
-list -lo` command, and paging the results that are displayed.
+list` command in Chocolatey CLI v2, and `choco list -lo` in Chocolatey CLI v1, and paging the results that are displayed.
 
 ![The This PC Source showing currently installed Chocolatey packages](/assets/images/chocolatey-gui/feature_hide_this_pc_source_disabled.png "The This PC Source showing currently installed Chocolatey packages")
 

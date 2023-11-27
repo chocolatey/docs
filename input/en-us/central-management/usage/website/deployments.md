@@ -435,6 +435,29 @@ Once you upgrade to Chocolatey Central Management v0.3.0+, you have upgraded the
 
 When constructing a PowerShell script for a Deployment Step, all Chocolatey commands must be placed on separate lines.  It is not possible to do something like the following:
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" id="choco-v2-tab" data-bs-toggle="tab" data-bs-target="#choco-v2" role="tab" aria-controls="choco-v2" aria-selected="true" data-choco-tab-multi='{"choco-version": "choco-v2"}'>Chocolatey CLI v2.x</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" id="choco-v1-tab" data-bs-toggle="tab" data-bs-target="#choco-v1" role="tab" aria-controls="choco-v1" aria-selected="false" data-choco-tab-multi='{"choco-version": "choco-v1"}'>Chocolatey CLI v1.x</button>
+    </li>
+</ul>
+
+::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+:::{.tab-pane .fade .show .active #choco-v2 role=tabpanel aria-labelledby=choco-v2-tab}
+```powershell
+choco list -r; exit $LASTEXITCODE
+```
+
+Instead, this should be written as:
+
+```powershell
+choco list -r
+exit $LASTEXITCODE
+```
+:::
+:::{.tab-pane .fade #choco-v1 role=tabpanel aria-labelledby=choco-v1-tab}
 ```powershell
 choco list --local-only -r; exit $LASTEXITCODE
 ```
@@ -445,6 +468,9 @@ Instead, this should be written as:
 choco list --local-only -r
 exit $LASTEXITCODE
 ```
+
+:::
+::::
 
 For more information on when this will be addressed, you can subscribe to the [GitHub issue](https://github.com/chocolatey/chocolatey-licensed-issues/issues/158).
 

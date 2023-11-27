@@ -81,7 +81,8 @@ If you miss that functionality, it is still possible to add these commands back 
 
 Previously, Chocolatey CLI had three identical commands: `list`, `search`, and `find`.
 In v2.0.0, `list` has become the command used for listing locally-installed packages, while `search` and `find` work with remote repositories.
-For backwards compatibility, the `-lo` and `--local-only` flags are deprecated, with plans to remove them in Chocolatey CLI v3.0.0.
+For backwards compatibility, the `-lo` and `--local-only` flags are deprecated when using limited output `--limited-output`, with plans to remove them in Chocolatey CLI v3.0.0.
+Usage without the `--limited-output` argument will return an error when `-lo` or `--local-only` is used.
 
 ## Limits On Large Queries
 

@@ -12,7 +12,7 @@ Reporting is very important, and auditing not only when your installations occur
 
 ## Usage
 
-When calling `choco list -lo`, add `--audit` to see information on who installed and when.
+When calling `choco list` (`choco list -lo` in Chocolatey CLI v1.x), add `--audit` to see information on who installed and when.
 
 ### Requirements
 
@@ -22,14 +22,38 @@ When calling `choco list -lo`, add `--audit` to see information on who installed
 
 ## See It In Action
 
+> :choco-note: **NOTE**
+>
+> Packages installed prior to installation of Chocolatey Licensed Extension will only mention Id and Version of each package.
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" id="choco-v2-image-tab" data-bs-toggle="tab" data-bs-target="#choco-v2-image" role="tab" aria-controls="choco-v2-image" aria-selected="true" data-choco-tab-multi='{"choco-version": "choco-v2"}'>Chocolatey CLI v2.x</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" id="choco-v1-image-tab" data-bs-toggle="tab" data-bs-target="#choco-v1-image" role="tab" aria-controls="choco-v1-image" aria-selected="false" data-choco-tab-multi='{"choco-version": "choco-v1"}'>Chocolatey CLI v1.x</button>
+    </li>
+</ul>
+
+::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+:::{.tab-pane .fade .show .active #choco-v2-image role=tabpanel aria-labelledby=choco-v2-image-tab}
+
+![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](/assets/images/features/features_package_audit_v2.png)
+
+:::
+:::{.tab-pane .fade #choco-v1-image role=tabpanel aria-labelledby=choco-v1-image-tab}
+
 ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](/assets/images/features/features_package_audit.png)
+
+:::
+::::
 
 When shown, the user and domain are for the user who actually performed the installation. The "Original User" is the user who requested the install (outside of [Self-Service](xref:self-service-anywhere), it would be the same as the installing user). The Installation Date and Time are in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) UTC time.
 
 <!--
 Text in the image above:
 
-choco list -lo --audit -r
+choco list --audit -r
 
 Shows output as described above.
 
@@ -41,6 +65,29 @@ Shows output as described above.
 
 ## Options and Switches
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" id="choco-v2-options-tab" data-bs-toggle="tab" data-bs-target="#choco-v2-options" role="tab" aria-controls="choco-v2-options" aria-selected="true" data-choco-tab-multi='{"choco-version": "choco-v2"}'>Chocolatey CLI v2.x</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" id="choco-v1-options-tab" data-bs-toggle="tab" data-bs-target="#choco-v1-options" role="tab" aria-controls="choco-v1-options" aria-selected="false" data-choco-tab-multi='{"choco-version": "choco-v1"}'>Chocolatey CLI v1.x</button>
+    </li>
+</ul>
+
+::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+:::{.tab-pane .fade .show .active #choco-v2-options role=tabpanel aria-labelledby=choco-v2-options-tab}
+
+When calling `choco list`:
+
+~~~sh
+   --audit, --showaudit, --show-audit, --show-audit-info
+   Show Audit Information - Display auditing information for a package.
+     Available in business editions only.
+~~~
+
+:::
+:::{.tab-pane .fade #choco-v1-options role=tabpanel aria-labelledby=choco-v1-options-tab}
+
 When calling `choco list -lo`:
 
 ~~~sh
@@ -48,6 +95,9 @@ When calling `choco list -lo`:
    Show Audit Information - Display auditing information for a package.
      Available in business editions only.
 ~~~
+
+:::
+::::
 
 ## FAQ
 
@@ -61,7 +111,7 @@ Once you have Chocolatey for Business properly set up, any installations or upgr
 
 ### How does it work?
 
-It just works. When you install/upgrade packages, the auditing information is automatically tracked. To see the information, you simply call `choco list -lo --audit` and if you want to see it in machine parseable format, add `-r` to the end of the command.
+It just works. When you install/upgrade packages, the auditing information is automatically tracked. To see the information, you simply call `choco list --audit` (`choco list -lo --audit` in Chocolatey CLI v1.x) and if you want to see it in machine parseable format, add `-r` to the end of the command.
 
 ### I only see the audit information on packages I've installed updated since switching over to C4B.
 

@@ -85,9 +85,31 @@ command.
 As the warning text notes, this feature can be disabled in one of two ways.
 When running each Chocolatey CLI command, you can append the `--skip-compatibility-checks` flag, for example:
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" id="choco-v2-compatibility-tab" data-bs-toggle="tab" data-bs-target="#choco-v2-compatibility" role="tab" aria-controls="choco-v2-compatibility" aria-selected="true" data-choco-tab-multi='{"choco-version": "choco-v2"}'>Chocolatey CLI v2.x</button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" id="choco-v1-compatibility-tab" data-bs-toggle="tab" data-bs-target="#choco-v1-compatibility" role="tab" aria-controls="choco-v1-compatibility" aria-selected="false" data-choco-tab-multi='{"choco-version": "choco-v1"}'>Chocolatey CLI v1.x</button>
+    </li>
+</ul>
+
+::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+:::{.tab-pane .fade .show .active #choco-v2-compatibility role=tabpanel aria-labelledby=choco-v2-compatibility-tab}
+
+```powershell
+choco list --skip-compatibility-checks
+```
+
+:::
+:::{.tab-pane .fade .show .active #choco-v1-compatibility role=tabpanel aria-labelledby=choco-v1-compatibility-tab}
+
 ```powershell
 choco list --local-only --skip-compatibility-checks
 ```
+
+:::
+::::
 
 Alternatively, the compatibility checks can be persistently disabled by enabling the `disableCompatibilityChecks` feature:
 
