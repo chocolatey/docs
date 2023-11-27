@@ -27,7 +27,7 @@ All Computers present in Chocolatey Central Management are automatically added t
 
 ![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/assets/images/groups/ccm-groups-automatic-group-table-entry.png)
 
-The  `All Computers (Automatic Group)` will have a blue lock icon next to the the name in the table. Hovering over this lock icon will display a tooltip with more information.
+The `All Computers (Automatic Group)` will have a blue lock icon next to the name in the table. Hovering over this lock icon will display a tooltip with more information.
 
 ![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the tooltip containing additional information stating, "All computers are added to this group automatically and are system managed. This group can not be edited or deleted.".](/assets/images/groups/ccm-groups-automatic-group-tooltip.png)
 
