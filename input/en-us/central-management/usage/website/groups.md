@@ -13,7 +13,7 @@ In Central Management, a Group may contain one or more computers and/or other gr
 Currently, Central Management's groups are entirely self-contained, and cannot be directly mapped from Active Directory groups.
 
 The **Groups** page can be accessed from the left-hand navigation menu on your Central Management Dashboard by selecting the **Groups** menu item.
-If you do not see this menu entry, verify with your administrator whether your Central Management account has the View Groups role assigned..
+If you do not see this menu entry, verify with your administrator whether your Central Management account has the View Groups role assigned.
 
 ![Groups menu entry on the CCM Dashboard](/assets/images/groups/ccm-groups-menu.png)
 
