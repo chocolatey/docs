@@ -13,15 +13,15 @@ Hooks allow you to run code before a package automation script like a `chocolate
 
 ## Creating Hook Scripts
 
-Hook scripts are PowerShell `.ps1` files, and are run in the same environment as package automation scripts run, so they have access to all of the same environment variables and helpers.
+Hook scripts are PowerShell `.ps1` files, and are run in the same environment as package automation scripts run, so they have access to all the same environment variables and helpers.
 
 The conditions for when a hook is run is based on the filename of the hook. The filename format is `<pre|post>-<install|beforemodify|uninstall>-<packageID|all>.ps1`. The first section is for the timing of when the hook script runs. Filenames that start with `pre` run before the package automation script (e.g. the `chocolateyInstall.ps1`), while filenames that start with `post` are run afterwards. The second section of the filename determines which package automation script the hook is run before or after. The third section of the filename is either a string of the package ID for which the hook should be run, or the keyword `all` to specify that the hook should be run for all package IDs.
 
-If a package does not contain a `chocolateyInstall.ps1`, but a `pre-install-all.ps1` hook is installed, then that hook will still run at the point in the package install as the `chocolateyInstall.ps1` would have been run if the package had included it.
+If a package does not contain a `chocolateyInstall.ps1`, but a `pre-install-all.ps1` hook is installed, then that hook will still run at the same point in the package installation as the `chocolateyInstall.ps1` would have been run if the package had included it.
 
 ## Creating Hook Packages
 
-Hooks can be installed just like extensions, via a specific package type, namely `.hook`. The name of the installed hook folder is the package id, minus the `.hook`.
+Hooks can be installed just like extensions, via a specific package type, namely `.hook`. The name of the installed hook folder is the package `id`, minus the `.hook`.
 
 How to create a Hook package:
 
@@ -30,6 +30,22 @@ How to create a Hook package:
 1. Create a `hook` folder in the root of the package (next to the `.nuspec`).
 1. Put your hook PowerShell script files inside the `hook` folder.
 1. Pack and install your new Hook package.
+
+## Global Hooks
+
+These files are run either before (pre) or after (post) the normal Chocolatey install/upgrade/uninstall operation, for all Chocolatey packages.
+
+Once a global hook is installed (either manually or via hook package), any subsequent Chocolatey operations (say for example the installation of another package), will make use of the newly installed (or available), hook scripts.
+
+## Package Specific Hooks
+
+You can also create a package-specific hook by following the naming convention `<pre|post>-<install|beforemodify|uninstall>-<packageID>.ps1` where `<packageID>` is the `id` of the Chocolatey package you would wish to execute hooks against.
+
+The hooks will behave in the same way as global hooks, running either before (pre) or after (post) the normal Chocolatey install/upgrade/uninstall operation for only a Chocolatey package whose `id` matches the `id` in the hook script name.
+
+## Skipping Hooks
+
+Chocolatey provides away for skipping the running of hooks for a particular package. If you would like to skip hooks for the installation of a particular package, simply add the `--skip-hooks` option to the list of parameters you pass to the command.
 
 ## Recommendations
 
