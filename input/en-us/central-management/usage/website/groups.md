@@ -2,20 +2,20 @@
 Order: 30
 xref: ccm-groups
 Title: Groups
-Description: Information on groups within CCM
+Description: Information on groups within Chocolatey Central Management
 RedirectFrom:
   - docs/central-management-groups
    en-us/central-management/usage/groups
 ---
 
-Central Management's Groups are the basis on which a given [Deployment](xref:ccm-deployments) operates.
-In Central Management, a Group may contain one or more computers and/or other groups.
-Currently, Central Management's groups are entirely self-contained, and cannot be directly mapped from Active Directory groups.
+Groups are the basis on which a given [Deployment Plan](xref:ccm-deployments) operates.
+A Group may contain one or more Computers, and/or other Groups.
+Currently, Groups are entirely self-contained, and cannot be directly mapped from Active Directory Groups.
 
-The **Groups** page can be accessed from the left-hand navigation menu on your Central Management Dashboard by selecting the **Groups** menu item.
-If you do not see this menu entry, verify with your administrator whether your Central Management account has the View Groups role assigned.
+The **Groups** page can be accessed from the left-hand navigation menu by selecting the **Groups** menu item.
+If you do not see this menu entry, verify with your administrator whether yourhas the `View Groups` role assigned.
 
-![Groups menu entry on the CCM Dashboard](/assets/images/groups/ccm-groups-menu.png)
+![Groups menu entry on the Chocolatey Central Management Dashboard](/assets/images/groups/ccm-groups-menu.png)
 
 ## The All Computers (Automatic Group)
 
@@ -37,12 +37,12 @@ On the main Groups page, select the **+ Create New Group** button.
 
 ![Create New Group button on the Groups page](/assets/images/groups/ccm-groups-new.png)
 
-Fill in a Name for the group and (optionally) a Description in the appropriate fields in the _Create New Group_ modal.
-Then, select the computer(s) or existing group(s) you would like to include in the new group and click the **>** button in the _Available Groups/Computers_ column to add the selected items, or click the **>>** button to add all available groups and computers into the new group.
+Fill in a Name for the Group and (optionally) a Description in the appropriate fields in the _Create New Group_ modal.
+Then, select the Computer(s) or existing Group(s) you would like to include in the new group and click the **>** button in the _Available Groups/Computers_ column to add the selected items, or click the **>>** button to add all available Groups and Computers into the new Group.
 
 ![New Group Modal](/assets/images/groups/ccm-groups-modal-new.png)
 
-Click :floppy_disk: **Save** to close the modal and create the new group.
+Click :floppy_disk: **Save** to close the modal and create the new Group.
 
 ## Editing a Group
 
@@ -56,7 +56,7 @@ Select the :gear: **Actions** button on the left-hand side of the group, and the
 
 ![Edit menu entry in group actions flyout menu](/assets/images/groups/ccm-groups-edit.png)
 
-From the **Edit Group** modal, you can modify the group name and description, and modify members by adding or removing groups and/or computers.
+From the **Edit Group** modal, you can modify the Group name and description, and modify members by adding or removing Groups and/or Computers.
 
 ## Deleting a Group
 
@@ -73,7 +73,7 @@ You will be prompted to confirm the deletion.
 
 The Create / Edit Group modals display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
 **All** Groups and Computers in a given Group must have their eligibility clear in order for that group to be used as part of a Deployment Step.
-If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected computers has been resolved.
+If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected Computers has been resolved.
 
 ![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
 
