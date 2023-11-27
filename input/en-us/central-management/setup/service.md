@@ -22,7 +22,7 @@ This is the service that the agents (`chocolatey-agent`) communicates with. You 
 >
 > The [database](xref:ccm-database) must be setup and available, along with [logins and access](xref:ccm-database#step-2-set-up-sql-server-logins-and-access).
 
-* Windows Server 2019
+* [High-level Requirements](xref:ccm-setup#high-level-requirements)
 * PowerShell 5.1
 
 ## Step 2: Install Chocolatey Central Management Service Package
