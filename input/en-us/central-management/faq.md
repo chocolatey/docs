@@ -1,7 +1,7 @@
 ---
 Order: 50
 xref: ccm-faq
-Title: Chocolatey Central Management Frequently Asked Questions
+Title: FAQs
 ---
 
 ## Timezone FAQs
@@ -18,17 +18,18 @@ Some examples of timezones that may not appear:
 
 ### Why Did I Get a Notification That My Chosen Timezone is Invalid?
 
-Starting in Chocolatey Central Management version 0.12.0, if the chosen timezone is detected to be invalid, we will set it back to the default timezone and alert you through a notification. If you are a Chocolatey Central Management administrator, you may additionally receive a notification that the Chocolatey Central Management timezone was invalid.
+Starting in Chocolatey Central Management version 0.12.0, if the chosen timezone is detected to be invalid, we will set it back to the default timezone and alert you through a notification. If you are an Administrator, you may additionally receive a notification that the system timezone was invalid.
 
 #### User Account Timezone is Invalid
 
-If you received the below notification, then it means that the timezone used for your user account was invalid, and has been set back to the default used by Chocolatey Central Management. You can pick your own default by clicking the user menu in the top right and selecting `My Settings`
+If you received the below notification, then it means that the timezone used for your user account was invalid, and has been set back to the default system timezone. You can pick your own default by clicking the user menu in the top right and selecting `My Settings`.
+
 
 ![Example notification for a user configured timezone being invalid](/assets/images/ccm/administration/settings/user-timezone-invalid-notification.png)
 
 
-#### Chocolatey Central Management Timezone is Invalid
+#### System Timezone is Invalid
 
-If you received the below notification, then it means that the timezone used for Chocolatey Central Management was invalid, and has been set back to the default of `UTC`. You can adjust the Chocolatey Central Management default through the [Settings page](xref:ccm-administration-settings-general).
+If you received the below notification, then it means that the system timezone was invalid, and has been set back to the default of `UTC`. You can adjust the default through the [Settings page](xref:ccm-administration-settings-general).
 
 ![Example notification for a Chocolatey Central Management configured timezone being invalid](/assets/images/ccm/administration/settings/ccm-timezone-invalid-notification.png)
