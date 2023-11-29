@@ -43,6 +43,28 @@ You will be presented with a list of the installed software packages for the mac
 
 ![Computer details screen showing installed software](/assets/images/computers/ccm-computers-details.png)
 
+## Creating a Draft Deployment Plan for a Computer
+
+Creating a Draft Deployment Plan for a Computer can be done from two pages:
+
+1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Create New Deployment Plan** option.
+
+    ![Finding the Create New Deployment Plan menu entry for a specific Computer on the Computers page](/assets/images/computers/ccm-computers-create-new-deployment-plan-menu.png)
+
+1. From the Computer Details page, click the :gear: **Actions** button and select the **Create New Deployment Plan** option.
+
+    ![Button to create a new draft Deployment Plan from the Computer Details page](/assets/images/computers/ccm-computer-details-draft-deployment-plan-button.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with a [Temporary Group](#xref:ccm-groups#temporary-groups) that contains the Computer selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
+
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/computers/ccm-computers-add-script-command.png)
+
+The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
+
+![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/computers/ccm-computers-ineligible-deployment-warning.png)
+
+After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
+
 ### Exporting a `packages.config` file for a computer
 
 > :choco-info: **NOTE**
