@@ -45,6 +45,22 @@ Clicking this option will create a New Deployment Plan. This Deployment Plan wil
 
 From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
 
+## Upgrade All Software
+
+From the Software main page, click the **Create New Deployment Plan** button and select the **Upgrade Outdated Software** option.
+
+![Button to upgrade all outdated Software from the Software main page](/assets/images/software/ccm-software-upgrade-all-software.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will contain one Deployment Step per outdated piece of Software.  
+
+![Automatically created Deployment Plan showing a Deployment Step for each piece of Software](/assets/images/software/ccm-software-upgrade-all-steps.png)
+
+Each Deployment Step will create a [Temporary Group](xref:ccm-groups#temporary-groups) that contains all the Computers the Software is currently installed on.
+
+![Automatically created Deployment Plan showing Temporary Group](/assets/images/software/ccm-software-upgrade-all-temporary-group.png)
+
+From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plan documentation](xref:ccm-deployments).
+
 ## Software Details
 
 In the leftmost column of the Software table you will find an :gear: **Actions** menu which will display a **Details** option.
