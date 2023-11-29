@@ -65,7 +65,38 @@ The Deployment Plan can be saved without adding a script command, however it wil
 
 After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
 
-### Exporting a `packages.config` file for a computer
+![Automatically created Deployment Plan showing the script command](/assets/images/computers/ccm-computer-upgrade-all-software-script-command.png)
+
+From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
+
+## Upgrading All Outdated Software on a Computer
+
+Upgrading all outdated Software installed on a Computer can be done from two pages:
+
+1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Upgrade Outdated Software** option.
+
+    ![Finding the Upgrade Outdated Software menu entry for a specific Computer on the Computers page](/assets/images/computers/ccm-computers-upgrade-all-software-menu.png)
+
+1. From the Computer Details page, click the :gear: **Actions** button and select the **Upgrade Outdated Software** option.
+
+    ![Button to create a new Deployment Plan to upgrade all outdated Software on a Computer from the Computer Details page](/assets/images/computers/ccm-computer-details-upgrade-all-software-button.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step per outdated Software.
+
+![Automatically created Deployment Plan showing Deployment Steps](/assets/images/computers/ccm-computer-upgrade-all-software-steps.png)
+
+Each Deployment Step has a [Temporary Group](xref:ccm-groups#temporary-groups) selected that contains the Computer. 
+
+![Automatically created Deployment Plan showing Temporary Group](/assets/images/computers/ccm-computer-upgrade-all-software-temporary-group.png)
+
+Each Deployment Step has the script command automatically entered.
+
+![Automatically created Deployment Plan showing the script command](/assets/images/computers/ccm-computer-upgrade-all-software-script-command.png)
+
+From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
+
+
+## Exporting a `packages.config` file for a computer
 
 > :choco-info: **NOTE**
 >
@@ -75,7 +106,7 @@ From the Computer details page in Chocolatey Central Management, click the `Expo
 
 ![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
 
-## Removing a Computer from Central Management
+## Removing a Computer from Chocolatey Central Management
 
 > :choco-info: **NOTE**
 >
