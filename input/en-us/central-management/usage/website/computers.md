@@ -55,7 +55,7 @@ Creating a Draft Deployment Plan for a Computer can be done from two pages:
 
     ![Button to create a new draft Deployment Plan from the Computer Details page](/assets/images/computers/ccm-computer-details-draft-deployment-plan-button.png)
 
-Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with a [Temporary Group](#xref:ccm-groups#temporary-groups) that contains the Computer selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with a [Temporary Group](#xref:ccm-groups#temporary-groups) that contains the Computer selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command.
 
 ![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/computers/ccm-computers-add-script-command.png)
 
@@ -85,7 +85,7 @@ Clicking this option will create a New Deployment Plan. This Deployment Plan wil
 
 ![Automatically created Deployment Plan showing Deployment Steps](/assets/images/computers/ccm-computer-upgrade-all-software-steps.png)
 
-Each Deployment Step has a [Temporary Group](xref:ccm-groups#temporary-groups) selected that contains the Computer. 
+Each Deployment Step has a [Temporary Group](xref:ccm-groups#temporary-groups) selected that contains the Computer.
 
 ![Automatically created Deployment Plan showing Temporary Group](/assets/images/computers/ccm-computer-upgrade-all-software-temporary-group.png)
 
@@ -102,7 +102,7 @@ From here, the Deployment Plan can be edited and deployed as outlined in the [De
 >
 > Starting with Chocolatey Central Management 0.11.0, the packages installed on a computer can be exported to a `packages.config` file.
 
-From the Computer details page in Chocolatey Central Management, click the `Export` button and select the `Export to packages.config` option.
+From the Computer details page, click the `Export` button and select the `Export to packages.config` option.
 
 ![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
 

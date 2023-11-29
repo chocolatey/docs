@@ -51,7 +51,7 @@ From the Software main page, click the **Create New Deployment Plan** button and
 
 ![Button to upgrade all outdated Software from the Software main page](/assets/images/software/ccm-software-upgrade-all-software.png)
 
-Clicking this option will create a New Deployment Plan. This Deployment Plan will contain one Deployment Step per outdated piece of Software.  
+Clicking this option will create a New Deployment Plan. This Deployment Plan will contain one Deployment Step per outdated piece of Software.
 
 ![Automatically created Deployment Plan showing a Deployment Step for each piece of Software](/assets/images/software/ccm-software-upgrade-all-steps.png)
 
@@ -74,7 +74,7 @@ On the _Software Details_ page, you'll find a searchable list of all computers t
 
 ### Upgrade Individual Software
 
-From the Software Details page of an outdated Software in Chocolatey Central Management, click the **Create New Deployment Plan** button and select the **Upgrade Software** option.
+From the Software Details page of an outdated Software, click the **Create New Deployment Plan** button and select the **Upgrade Software** option.
 
 ![Button to upgrade individual Software on a Computer from the Software Details page](/assets/images/software/ccm-software-details-upgrade-software.png)
 
@@ -86,7 +86,7 @@ From here, the Deployment Plan can be edited and deployed as outlined in the [De
 
 ### Uninstall Individual Software
 
-From the Software Details in Chocolatey Central Management, click the **Create New Deployment Plan** button and select the **Uninstall Software** option.
+From the Software Details page, click the **Create New Deployment Plan** button and select the **Uninstall Software** option.
 
 ![Button to uninstall individual outdated Software on a Computer from the Software Details page](/assets/images/software/ccm-software-details-uninstall-software.png)
 
