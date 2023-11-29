@@ -1,0 +1,100 @@
+Order: 23
+xref: create-package-template
+Title: How to create a Package Template
+Description: Information on how to create Chocolatey package templates for building packages
+---
+
+Chocolatey templates are one of the more lesser-known, yet very powerful, features of Chocolatey. Templates can be created for many different types of packages, and will allow for packages of a particular type to be extremely consistent. You could create package templates for packages that:
+
+- Runs an msi installer
+- Runs an exe installer
+- Copies files to specific places
+- Makes registry edits
+- **Insert more ideas here**
+
+The key takeway is templates are only limited by your imagination, and can be as flexible as you need them to be.
+
+One of the most powerful advantages of templates is there ability to use key:value pairs to pass specific data into a package. For example, you may have a need to create multiple packages whose only difference is the location in which they will be used. In this situation,
+
+### Creating your template
+
+Templates are stored in the **C:\ProgramData\chocolatey\templates** directory. The name of the folder must match the name you wish to give the template.
+
+#### Create Template Directories
+
+Execute the following in an **elevated** PowerShell window to create our template folder.
+
+```powershell
+New-Item -Path 'C:\ProgramData\chocolatey\templates\TutorialTemplate','C:\ProgramData\chocolatey\templates\TutorialTemplate\tools' -ItemType Directory
+```
+
+#### Create Install Script
+
+We'll next create a _very_ simple chocolateyInstall.ps1 script for our template.
+
+Execute the following in an **elevated** PowerShell window to create the script.
+
+```powershell
+$contents = @'
+Write-Host "I am from [[Country]]"
+'@
+
+$contents | Set-Content 'C:\ProgramData\chocolatey\templates\TutorialTemplate\tools\chocolatyInstall.ps1'
+```
+
+#### Create Package Metadata
+
+We'll use the following for our template metadata. Execute the following in an **elevated** PowerShell window.
+
+```powershell
+@'
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>[[PackageNameLower]]</id>
+    <version>[[PackageVersion]]</version>
+    <owners>SweetTooth</owners>
+    <title>template-tutorial (Install)</title>
+    <authors>Chocolatey]</authors>
+    <tags>template</tags>
+    <summary>Tutorial package from template</summary>
+    <description>This was built from a template with [[Country]] passed to it.</description>
+  </metadata>
+  <!-- this section controls what actually gets packaged into the Chocolatey package -->
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+'@ | Set-Content 'C:\ProgramData\chocolatey\templates\TutorialTemplate\file.nuspec'
+```
+
+#### Understanding Templated Values
+
+In the code above you'll no doubt have noticed several instances of placeholders in `[[this]]` format. Items wrapped in `[[]]` will be replaced by the value from the command-line.
+
+Placeholders are addressed as `key:value` pairs on the commandline where  the `key` is the placeholder and `value` is what will be replaced in the file.
+
+#### Building Package From Template
+
+Let's see this usage of a template in practice. In an **elevated** PowerShell window execute the following
+
+```powershell
+#Substitute the country USA with your own Country below
+Set-Location '~\tutorials'
+choco new template-tutorial --version='1.0.0' --template='TutorialTemplate' Country:USA --build-package
+```
+
+#### Install Your Templated Package
+
+We can validate that our package used the template correctly by installing it. Run the following in an **elevated** PowerShell window.
+
+```powershell
+choco install template-tutorial -y
+```
+
+#### Uninstall Your Templated Package
+
+You can remove this tutorial package with the following
+
+```powershell
+choco uninstall template-tutorial -y
+```
