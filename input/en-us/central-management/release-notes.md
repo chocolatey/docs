@@ -30,6 +30,53 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 
+## 0.12.0 (November 29, 2023)
+
+### Features
+
+- Provide ability to create a Deployment Plan for a single outdated package on all affected Computers.
+- Provide ability to create a Deployment Plan for all outdated packages on all Computers.
+- Provide ability to create an empty Deployment Plan directly for a specific Computer - see [Licensed #259](https://github.com/chocolatey/chocolatey-licensed-issues/issues/259).
+- Provide ability to create a Deployment Plan for all outdated packages for a single Computer - see [Licensed #281](https://github.com/chocolatey/chocolatey-licensed-issues/issues/281).
+- Provide ability to duplicate an existing Group.
+- Provide ability to create an empty Deployment Plan directly for a specific Group.
+
+### Bug Fixes
+
+- Fix - The ability to impersonate other users should be removed - see [Licensed #318](https://github.com/chocolatey/chocolatey-licensed-issues/issues/318).
+- Fix - Unnecessary permissions should not be present in the `Edit Roles` and `Permissions` modal windows.
+- Fix - Notification about a scheduled Deployment Plan failing to start uses incorrect date format.
+- Fix - Inconsistent presentation of Export and Action buttons across pages.
+- Fix - Missing TimeZone setting for users in Colombia - (UTC - 05:00) Bogota, Lima, Quito, Rio Branco - see [Licensed #356](https://github.com/chocolatey/chocolatey-licensed-issues/issues/356).
+- Fix - The HTTP error page of the Chocolatey Central Management Website does not use standard styling.
+- Fix - Ensure colors for the "yes/no" badges are consistent on various tables across the website.
+- Fix - Encryption Settings information callout is dismissible when it shouldn't be.
+- Fix - Password reset link no longer displays an "invalid link" message after updating the Encryption Passphrase.
+- Fix - Tables should retain the current page when refreshed automatically.
+- Fix - The casing of the word for product "Excel" is incorrect on all export buttons.
+- Fix - Names of Deployment Steps can cause an overflow on some modal windows.
+- Fix - Action buttons on tables that only contain one option are hidden.
+- Fix - Existing configuration stored in the `appsettings.json` file are not respected when upgrading either the Chocolatey Central Management Database or Service packages.
+- Fix - Elements on page overlap when a Passphrase is required to be reset by an Admin.
+
+### Improvements
+
+- Provide ability to have a Group Details screen.
+- Provide ability to automatically fetch updated information for main Deployment Plan page.
+- Provide ability to see information about the last refreshed time for Dashboard.
+- Provide ability to see the number of Computers that have specific Software installed - see [Licensed #231](https://github.com/chocolatey/chocolatey-licensed-issues/issues/231).
+- Provide ability to duplicate a Deployment Step within a Deployment Plan - see [Licensed #332](https://github.com/chocolatey/chocolatey-licensed-issues/issues/332).
+- Information about the number of ready/active Deployment Plans is available within the Dashboard page.
+- Reporting - Truncate all Excel sheet names to required 31-char limit.
+- Use Windows standard naming for all timezones - see [Licensed #325](https://github.com/chocolatey/chocolatey-licensed-issues/issues/325).
+- Add an item to the Dashboard page to show the number of Computers that have not recently reported into Chocolatey Central Management.
+- Shorten generated names for Deployment Steps to remove redundant "Deployment Step" prefix.
+
+### Documentation
+
+- Normalize wording for Deployment Plan and Deployment Step in the user interface.
+
+
 ## 0.11.0 (September 18, 2023)
 
 Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11.0-released/) about this release.
