@@ -13,7 +13,7 @@ Description: Information about using up user management settings within the Admi
 
 1. Open the CCM Site in the browser.
 1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
+1. In the left-hand menu click on `Administration` and then `Settings`.
 1. Click on the `User management` tab in the `Settings` screen.
 1. Under LDAP Setting click the `Enable LDAP Authentication` button.
 1. Fill in your FQDN for the `Domain name` field and the `User name` field with an active directory account that has access to query user accounts within your active directory environment.

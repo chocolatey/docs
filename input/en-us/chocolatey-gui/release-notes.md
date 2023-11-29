@@ -472,7 +472,7 @@ A short video explaining what is included in this release can be found here:
 
 ### C4B Features
 
-- Add footer with information about current version in bottom left hand corner - see [#705](https://github.com/chocolatey/ChocolateyGUI/issues/705).
+- Add footer with information about current version in bottom left-hand corner - see [#705](https://github.com/chocolatey/ChocolateyGUI/issues/705).
 - Add ability to strong name sign the output of the build - see [#704](https://github.com/chocolatey/ChocolateyGUI/issues/704).
 
 ### Bug Fixes

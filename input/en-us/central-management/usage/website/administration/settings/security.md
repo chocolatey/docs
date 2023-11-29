@@ -17,7 +17,7 @@ If you want to change these settings, follow these steps:
 
 1. Open the CCM Site in the browser.
 1. Login with the `ccmadmin` user.
-1. In the left hand menu click on `Administration` and then `Settings`.
+1. In the left-hand menu click on `Administration` and then `Settings`.
 1. Click on the `Security` tab
 1. Either enable, or disable, the `Enable two factor user login` checkbox as required.
 
