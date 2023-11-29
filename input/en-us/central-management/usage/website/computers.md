@@ -96,7 +96,7 @@ Each Deployment Step has the script command automatically entered.
 From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
 
 
-### Exporting a `packages.config` file for a computer
+## Exporting a `packages.config` file for a computer
 
 > :choco-info: **NOTE**
 >
@@ -106,7 +106,7 @@ From the Computer details page in Chocolatey Central Management, click the `Expo
 
 ![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
 
-## Removing a Computer from Central Management
+## Removing a Computer from Chocolatey Central Management
 
 > :choco-info: **NOTE**
 >
