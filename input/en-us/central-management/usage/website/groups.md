@@ -104,6 +104,28 @@ On the Group Details page, you'll find a searchable list of all Computers and Gr
 
 ![Group Details screen showing the Computers and Groups that are currently in the Group](/assets/images/groups/ccm-groups-details-screen.png)
 
+## Creating a Deployment Plan from a Group
+
+Creating a Deployment Plan for a Group can be done from two pages:
+
+1. In the leftmost column of the Groups table you will find an :gear: **Actions** menu which will display a **Create New Deployment Plan** option.
+
+    ![Finding the Create New Deployment Plan menu entry for a specific Group on the Groups page](/assets/images/groups/ccm-groups-create-new-deployment-plan-menu.png)
+
+1. From the Group Details page, click the :gear: **Actions** button and select the **Create New Deployment Plan** option.
+
+    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/assets/images/groups/ccm-groups-details-create-new-draft-deployment-plan-button.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
+
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/groups/ccm-groups-add-script-command.png)
+
+The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
+
+![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/groups/ccm-groups-ineligible-deployment-warning.png)
+
+After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
+
 ## Eligibility for Deployments
 
 The Create / Edit Group modals display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
