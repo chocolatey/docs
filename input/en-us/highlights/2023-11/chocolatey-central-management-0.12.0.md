@@ -1,6 +1,6 @@
 ---
 Title: What's new in Chocolatey Central Management v0.12.0
-Link: en-us/central-management/release-notes#november-29-2023
+Link: /en-us/central-management/release-notes#november-29-2023
 LinkText: Read the release notes
 PostedDateTime: 2023-11-29T00:00:00Z
 ---
