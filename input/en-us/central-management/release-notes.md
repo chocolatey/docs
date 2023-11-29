@@ -32,6 +32,8 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ## 0.12.0 (November 29, 2023)
 
+Read our [blog post](https://blog.chocolatey.org/2023/11/central-management-0.12.0-released/) about this release.
+
 ### Features
 
 - Provide ability to create a Deployment Plan for a single outdated package on all affected Computers.
