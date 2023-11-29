@@ -1,6 +1,6 @@
 ---
-Title: Chocolatey CLI v2.0.0
-Link: /en-us/choco/new-in-v2
+Title: Chocolatey Central Management v0.12.0
+Link: en-us/central-management/release-notes#november-29-2023
 LinkText: See what's new
 ShouldOutput: false
 ShowInNavbar: false
@@ -9,4 +9,4 @@ ShowOnHome: false
 ShowInHighlight: true
 ---
 
-Experience the next level of Chocolatey CLI with the highly anticipated release of v2.0.0.
+Seamless Deployment Plan creation, time-saving duplications, insightful Group Details, an upgraded Dashboard, bug fixes, user interface polishing, refined documentation, plus more.
