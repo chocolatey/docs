@@ -1,7 +1,7 @@
 ---
-Order: 11
-xref: package-creation-env
-Title: Package Creation Environment Setup
+Order: 1
+xref: howto-prepare-env
+Title: How To Prepare A Package Creation Environment
 Description: Information on how to setup a workstation to create Chocolatey packages
 ---
 
