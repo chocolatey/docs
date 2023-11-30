@@ -1,5 +1,5 @@
-Order: 23
-xref: create-package-template
+Order: 41
+xref: howto-create-package-template
 Title: How to create a Package Template
 Description: Information on how to create Chocolatey package templates for building packages
 ---
