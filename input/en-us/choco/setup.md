@@ -91,6 +91,7 @@ The load by default is really hard to see, so you should check to ensure it is t
 
 * [Install from PowerShell v3+](#install-from-powershell-v3)
 * [Install using the MSI](#install-using-the-msi)
+* [Install using WinGet](#install-using-winget)
 * [Completely offline/internal install](#completely-offline-install)
 * [Install with Puppet](#install-with-puppet)
 * [Install using PowerShell from cmd.exe](#install-using-powershell-from-cmd.exe)
@@ -128,6 +129,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 From version 2.0.0 of Chocolatey CLI we provide an MSI for installation, allowing you to deploy using your existing tools. Once installed, use Chocolatey CLI as normal to upgrade.
 
 The MSI is provided as an asset on each GitHub release of Chocolatey CLI 2.0.0 onwards. See the assets section on the [Chocolatey GitHub repository release page](https://github.com/chocolatey/choco/releases).
+
+### Install using WinGet
+
+You can install Chocolatey CLI version 2.0.0 and later through WinGet by running `winget install --id chocolatey.chocolatey --source winget`. Once installed, use Chocolatey CLI as normal to upgrade.
 
 ### Completely offline install
 
