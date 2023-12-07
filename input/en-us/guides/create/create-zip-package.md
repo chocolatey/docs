@@ -2,7 +2,7 @@
 Order: 3
 xref: howto-create-zip-package
 Title: How To Create a Zip Package
-Description: Information on how to create packages that use a Zip archive with Chocolatey
+Description: Creating a package that installs from a Zip archive
 ---
 
 At its heart, a Chocolatey package is _just_ PowerShell. This makes Chocolatey packages capable of doing _almost anything_ that PowerShell can do!
@@ -21,7 +21,7 @@ that you include the Zip archive as part of the package. We'll look at downloadi
 Perform the following steps:
 
 1. Open the `tutorials` folder in VSCode.
-2. Press `Ctrl+Shift+P` or select **View** > **Command Palette**.
+2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**..
 3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands.
 4. Give your package a name, e.g. `embedded-zip`.
 5. Select `Default Template` when prompted.
@@ -32,8 +32,7 @@ Your new package will be created in the `tutorials` folder, visible in the Explo
 Expand the `tools` folder and open up the `chocolateyInstall.ps1` file. The `chocolateyInstall.ps1` file is
 executed when you run either the `install` or `upgrade` commands with your package. 
 
-The default template fills this file out for us and provides a LOT of information. For our purposes, we can press `Ctrl+A` and delete
-all of the contents of this file.
+The default template fills this file out for us and provides a LOT of information. For our purposes, we can press `Ctrl+A` and delete the contents of this file.
 
 With our install script now empty, paste the following code into the file:
 
@@ -56,7 +55,7 @@ Save `chocolateyInstall.ps1` and close the file.
 
 #### Download Example Zip Archive
 
-[Download the Zip archive](https://docs.chocolatey.org/en-us/downloads/create-embedded-zip-package-tutorial.zip) we will use in this tutorial. Once downloaded, copy the Zip archive to the `tools`` dirctory in your VSCode Explorer pane.
+[Download the Zip archive](https://docs.chocolatey.org/en-us/downloads/create-embedded-zip-package-tutorial.zip) we will use in this tutorial. Once downloaded, copy the Zip archive to the `tools`` directory in your VSCode Explorer pane.
 
 #### Creating Your Uninstall Script
 
@@ -78,7 +77,7 @@ Remove-Item 'C:\zip_tutorial'
 
 The `.nuspec` file is the metadata for your package. It provides information to Chocolatey CLI such as:
 
-- Package Id
+- Package ID
 - Package Version
 - Author
 - Synopsis
@@ -113,10 +112,10 @@ In the VSCode Explorer pane, find and open the `embedded-zip.nuspec` file. Repla
 
 The `pack` command is used to compile your Chocolatey package, giving it a `.nupkg` extension.
 
-1. In VSCode press `Ctrl+Shift+P` or **View** > **Command Pallete**.
+1. In VSCode press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
 3. Select `embedded-zip.nuspec` from the list.
-4. In the `additional arguments` dialog enter `--output-directory='C:\tutorials'` and press `Enter`.
+4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.
 
 ### Install Your Script Package
 
