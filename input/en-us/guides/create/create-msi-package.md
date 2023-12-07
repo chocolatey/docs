@@ -5,17 +5,17 @@ Title: How To Create an MSI Installer Package
 Description: Creating a package that installs an MSI
 ---
 
-When starting out with Chocolatey products, why not start simple? Installing an MSI is a popular use of a Chocolatey package, and we'll walk you through how to do just that - assuming you've already run through [Preparing Your Environment for Package Creation](#xref:howto-prepare-env).
+When starting out with Chocolatey products, why not start simple? Installing an MSI is a popular use of a Chocolatey package, and we'll walk you through how to do just that - assuming you've already run through [Preparing Your Environment for Package Creation](xref:howto-prepare-env).
 
 ### What Is an MSI
 
 MSI files are a standardised installer filetype, used by Windows. Unlike EXE installers (which can and will do just about anything), MSIs have _standards_ (or at least they all use the Windows Installer under the hood) and will behave somewhat predictably.
 
-Consequently, they're often appreciated by busy Systems Administrators who want to deploy software to a large number of computers - or anyone looking for the silent install options.
+Consequently, they're often appreciated by busy Systems Administrators who want to deploy software to many computers - or anyone looking for the silent install options.
 
 ### Using `Install-ChocolateyPackage`
 
-Chocolatey supports a lot of different types of installer, including MSIs. EXEs, MSIs, and MSUs (all popular install formats) are normally installed using the [`Install-ChocolateyPackage`](#xref:install-chocolateypackage) function - and, in fact, our default template for a new package contains an example of this!
+Chocolatey supports a lot of different types of installer, including MSIs. EXEs, MSIs, and MSUs (all popular install formats) are normally installed using the [`Install-ChocolateyPackage`](xref:install-chocolateypackage) function - and, in fact, our default template for a new package contains an example of this!
 
 You can inspect the full set of available parameters for this function at the link above.
 
@@ -43,12 +43,12 @@ In this example, we're going to be creating a new Firefox MSI package.
 > :choco-info: For the purposes of the example, we'll provide URLs that work at time of writing. If you were creating a package from scratch, you would want to find the URLs for the installers yourself.
 > In this case, we browsed to [Mozilla's download site](https://www.mozilla.org/en-GB/firefox/all/#product-desktop-release) and grabbed the URL of the MSI(s) we wanted.
 
-There are [package templates](#xref:create-custom-package-templates) to create various package types, including an MSI template!
+There are [package templates](xref:create-custom-package-templates) to create various package types, including an MSI template!
 
 We'll use this to create our new MSI package:
 
 1. Open your `tutorials` directory in VSCode.
-1. Press `Ctrl + Shift + P` (or select **View** > **Command Palette**).
+1. Press **Ctrl+Shift+P** (or select **View** > **Command Palette**).
 1. Select `Chocolatey: Install Template Package(s)`.
 1. Open the `Command Palette` again, as in the prior step.
 1. Select `Chocolatey: Create new Chocolatey package`
@@ -177,10 +177,10 @@ In the case of the example package, Chocolatey handles it well - so you can remo
 
 You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
 
-1. In VSCode, press `Ctrl + Shift + P` or use the **View** menu and click on **Command Palette**.
+1. In VSCode, press **Ctrl+Shift+P** or use the **View** menu and click on **Command Palette**.
 1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
 1. Select `firefox-msi.nuspec` from the prompt.
-1. In the `additional arguments` dialog enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press Enter.
+1. In `Additional Arguments` enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press **Enter**.
 
 You should have a new package generated in your current working directory.
 
