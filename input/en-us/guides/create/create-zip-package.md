@@ -21,7 +21,7 @@ that you include the Zip archive as part of the package. We'll look at downloadi
 Perform the following steps:
 
 1. Open the `tutorials` folder in VSCode.
-2. Press **Ctrl+Shift+P** or select **View** > **Command Palette**.
+2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**..
 3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands.
 4. Give your package a name, e.g. `embedded-zip`.
 5. Select `Default Template` when prompted.
@@ -112,10 +112,10 @@ In the VSCode Explorer pane, find and open the `embedded-zip.nuspec` file. Repla
 
 The `pack` command is used to compile your Chocolatey package, giving it a `.nupkg` extension.
 
-1. In VSCode press **Ctrl+Shift+P** or use the **View** menu and click on **Command Palette**.
+1. In VSCode press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
 3. Select `embedded-zip.nuspec` from the list.
-4. In `Additional arguments` enter `--output-directory='C:\tutorials'` and press **Enter**.
+4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.
 
 ### Install Your Script Package
 
