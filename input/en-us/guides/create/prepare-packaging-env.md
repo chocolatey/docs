@@ -23,9 +23,9 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 Thankfully (if not a little obviously), everything we need to configure is available via the Chocolatey Community Repository. We'll setup the following:
 
-- Visual Studio Code
-- The PowerShell VSCode Extension
-- The Chocolatey VSCode Extension
+- Visual Studio Code (VS Code)
+- The PowerShell VS Code Extension
+- The Chocolatey VS Code Extension
 
 You can run the following in an _administrative PowerShell console_ to get up and running in one go:
 

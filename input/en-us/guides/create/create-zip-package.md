@@ -20,7 +20,7 @@ that you include the Zip archive as part of the package. We'll look at downloadi
 
 Perform the following steps:
 
-1. Open the `tutorials` folder in VSCode.
+1. Open the `tutorials` folder in VS Code.
 2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**..
 3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands.
 4. Give your package a name, e.g. `embedded-zip`.
@@ -28,7 +28,7 @@ Perform the following steps:
 
 #### Creating Your Install Script
 
-Your new package will be created in the `tutorials` folder, visible in the Explorer pane of VSCode.
+Your new package will be created in the `tutorials` folder, visible in the Explorer pane of VS Code.
 Expand the `tools` folder and open up the `chocolateyInstall.ps1` file. The `chocolateyInstall.ps1` file is
 executed when you run either the `install` or `upgrade` commands with your package. 
 
@@ -55,13 +55,13 @@ Save `chocolateyInstall.ps1` and close the file.
 
 #### Download Example Zip Archive
 
-[Download the Zip archive](https://docs.chocolatey.org/en-us/downloads/create-embedded-zip-package-tutorial.zip) we will use in this tutorial. Once downloaded, copy the Zip archive to the `tools`` directory in your VSCode Explorer pane.
+[Download the Zip archive](https://docs.chocolatey.org/en-us/downloads/create-embedded-zip-package-tutorial.zip) we will use in this tutorial. Once downloaded, copy the Zip archive to the `tools`` directory in your VS Code Explorer pane.
 
 #### Creating Your Uninstall Script
 
 The `chocolateyUninstall.ps1` script is executed you run the `uninstall` command with your package.
 
-In the VSCode Explorer pane, find and open the `chocolateyUninstall.ps1` file. Replace the contents of this file with the following:
+In the VS Code Explorer pane, find and open the `chocolateyUninstall.ps1` file. Replace the contents of this file with the following:
 
 ```powershell
 $ErrorActionPreference = 'Stop' # stop on all errors
@@ -86,7 +86,7 @@ The `.nuspec` file is the metadata for your package. It provides information to 
 For packages being published to the [Chocolatey Community Repository](https://community.chocolatey.org/packages) additional information is required.
 You can find information on `.nuspec` requirements in our [Package Validator Rules](http://localhost:5080/en-us/community-repository/moderation/package-validator/rules/#requirements) documentation.
 
-In the VSCode Explorer pane, find and open the `embedded-zip.nuspec` file. Replace the contents of this file with the following:
+In the VS Code Explorer pane, find and open the `embedded-zip.nuspec` file. Replace the contents of this file with the following:
 
 ```xml
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
@@ -112,7 +112,7 @@ In the VSCode Explorer pane, find and open the `embedded-zip.nuspec` file. Repla
 
 The `pack` command is used to compile your Chocolatey package, giving it a `.nupkg` extension.
 
-1. In VSCode press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. In VS Code press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
 3. Select `embedded-zip.nuspec` from the list.
 4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.

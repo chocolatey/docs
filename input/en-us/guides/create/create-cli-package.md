@@ -89,7 +89,7 @@ We have already filled many of the other included fields, including the followin
 
 You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
 
-1. In VSCode, press `Ctrl+Shift+ P` or use the **View** menu and click on **Command Palette**.
+1. In VS Code, press `Ctrl+Shift+ P` or use the **View** menu and click on **Command Palette**.
 1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
 1. Select `gh.portable.nuspec` from the prompt.
 1. Add `--version 2.39.1` (or the most recent version), which will override the version in the metadata, and press **Enter**.
