@@ -5,17 +5,17 @@ Title: How to Create an Extension Package
 Description: A walkthrough creating a Chocolatey extension package
 ---
 
-As we've mentioned in other articles, a Chocolatey package can do anything PowerShell can - including sharing functions and logic between packages.
+As we've mentioned in other articles, a Chocolatey package can do near anything PowerShell can - including sharing functions and logic between packages.
 
 In this how-to, we'll talk about sharing functions between packages using extension packages.
 
-### What is an Extension Package
+### What Is an Extension Package
 
 In Chocolatey-parlance, an extension package is a package that extends the ability of other Chocolatey packages, by making additional PowerShell functions or cmdlets available.
 
 Most simply put, a given extension package will import one or more PowerShell modules every time `choco` runs!
 
-### Why would I want to use one?
+### Why Would You Use An Extension Package
 
 The main reason we talk about extension packages is to reduce having to add the same lines of code or functions to multiple packages you maintain.
 
@@ -46,39 +46,33 @@ We'll now run through how to create an extension package, assuming you have an e
 
 The extension package is actually different enough to a regular package that using the default template would result in more cleanup than help!
 
-Create a new directory within your Tutorials directory, and within that directory create a nuspec file for your new extension package - we're going to call ours `example.extension` in these examples, but you can change that to whatever you like!
+Create a new directory to hold your package files, and within that directory create a nuspec file for your new extension package - we're going to call ours `example.extension` in these examples, but you can change that to whatever you like!
 
-```powershell
-# Change location to your tutorial folder
-Set-Location ~\tutorials
+1. Create a new folder for this package. For the example, we will call it `example.extension`.
+    1. Create a package metadata file named `example.extension.nuspec`, and add content [as shown below](#package-metadata-content).
+1. In the `example.extension` folder, create a folder named `extensions`.
+    1. Within the `extensions` folder, create a `ExampleModule.psm1` file, and add content [as shown below](#simple-module-content).
 
-# Create the package source directory, if it doesn't exist
-if (-not (Test-Path .\example.extension -PathType Container)) {
-    New-Item -Name 'example.extension' -ItemType Directory | Push-Location
-    New-Item -Name 'extensions' -ItemType Directory | Out-Null
-}
+##### Package Metadata Content
 
-# Create a nuspec file for the extension package
-if (-not (Test-Path example.extension.nuspec)) {
-    New-Item -Name 'example.extension.nuspec' -Value @"
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>example.extension</id>
     <version>0.1.0</version>
     <title>Example Extension</title>
-    <authors>$($env:UserName)</authors>
+    <authors>__REPLACE__</authors>
     <description>A super cool extension package!</description>
     <summary>Extension package for testing.</summary>
     <tags>extension chocolatey package</tags>
   </metadata>
 </package>
-"@
-}
+```
 
-# Create a simple script module
-if (-not (Test-Path .\extensions\ExampleModule.psm1)) {
-    New-Item -Path extensions -Name 'ExampleModule.psm1' -Value @'
+##### Simple Module Content
+
+```PowerShell
 function Set-ConfigValue {
     <#
         .Synopsis
@@ -90,30 +84,33 @@ function Set-ConfigValue {
     [CmdletBinding()]
     param(
         # The name of the config to set
+        [Parameter(Mandatory, Position = 0, ValueFromPipelineByPropertyName)]
         [string]$Name,
 
         # The value to set the config to
-        [string]$Value
+        [Parameter(Mandatory, Position = 1, ValueFromPipelineByPropertyName)]
+        [string]$Value,
+
+        # The path to the config file to modify
+        [string]$Path = "C:\ProgramData\exampleapp\config.json"
     )
     begin {
-        $ConfigPath = "C:\ProgramData\exampleapp\config.json
         # Ensure the Config Directory exists
-        if (-not (Test-Path (Split-Path $ConfigPath))) {
-            $null = New-Item -Path $ConfigPath -ItemType Directory
+        if (-not (Test-Path (Split-Path $Path))) {
+            $null = New-Item -Path (Split-Path $Path) -ItemType Directory
         }
-    }
-    end {
-        $Configuration = if (Test-Path $ConfigPath) {
-            Get-Content $ConfigPath | ConvertFrom-Json
+        $Configuration = if (Test-Path $Path) {
+            Get-Content $Path | ConvertFrom-Json
         } else {
             @{}
         }
-
-        $Configuration.$Name = $Value
-        $Configuration | ConvertTo-Json | Set-Content -Path $ConfigPath
     }
-}
-'@
+    process {
+        $Configuration.$Name = $Value
+    }
+    end {
+        $Configuration | ConvertTo-Json | Set-Content -Path $Path
+    }
 }
 ```
 
@@ -124,18 +121,21 @@ example.extension
 ├── example.extension.nuspec
 ├── extensions
 │   ├── ExampleModule.psm1
-│   ├── ExampleModule.psd1  (optional)
 ```
+
+Open the `example.extension.nuspec` file in VS Code and modify the metadata as appropriate:
+
+* **authors**: This should be replaced with your name or handle.
 
 That's all you need!
 
 You may notice that all of the example packages above end with `.extension`. This is not required for an extension package by Chocolatey itself, but it is how we easily classify extension packages on the Chocolatey Community Repository.
 
-#### Creating your Install Script
+#### Creating Your Install Script
 
 As we mentioned earlier, there's no need for an install script in an extension package - Chocolatey CLI handles putting the extension in the right place!
 
-You can _also_ include a tools directory, with the standard Chocolatey scripts (which could be used for system-specific configuration of the module), but it is not required.
+You can _also_ include a `tools` directory, with the standard Chocolatey scripts (which could be used for system-specific configuration of the module), but it is not required.
 
 #### Considering Uninstallation
 
@@ -156,7 +156,7 @@ You should have a new package generated in your current working directory.
 
 This sort of package isn't normally installed on it's own, but you can now test installation of your package!
 
-Launch an elevated terminal on your test environment, and run the following:
+In an elevated command prompt on your test environment, run the following:
 
 ```PowerShell
 choco install example.extension --source='Tutorials' --confirm
@@ -202,4 +202,4 @@ Set-ConfigValue -Name ComputerName -Value $env:ComputerName
 
 ### Conclusion
 
-At this point, you have created a package that extends the functionality of Chocolatey - and possibly used it in another package.
+At this point, you have created a package that extends the functionality of Chocolatey CLI - and possibly used it in another package.
