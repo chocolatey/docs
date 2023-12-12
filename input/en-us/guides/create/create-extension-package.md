@@ -1,7 +1,7 @@
 ---
 Order: 42
 xref: howto-create-extension-package
-Title: How to Create an Extension Package
+Title: How To Create an Extension Package
 Description: A walkthrough creating a Chocolatey extension package
 ---
 
@@ -15,7 +15,7 @@ In Chocolatey-parlance, an extension package is a package that extends the abili
 
 Most simply put, a given extension package will import one or more PowerShell modules every time `choco` runs!
 
-### Why Would You Use An Extension Package
+### Why Would You Use an Extension Package
 
 The main reason we talk about extension packages is to reduce having to add the same lines of code or functions to multiple packages you maintain.
 
@@ -31,22 +31,22 @@ Examples of this include:
 
 - The [Chocolatey Windows Update extension](https://community.chocolatey.org/packages/chocolatey-windowsupdate.extension), which provides shared functions for many of the Windows Knowledge Base update packages on the Chocolatey Community Repository.
 
-You might choose to use this over installing a full PowerShell module if you didn't want to expose the PowerShell module to the normal users of the machine - for instance, if you never wanted to expose the functions outside of Chocolatey runspaces. If you just wanted to use an available PowerShell module, you might consider having a dependency on a package that installs that module, instead.
+You might choose to use this over installing a full PowerShell module if you didn't want to expose the PowerShell module to the normal users of the computer - for instance, if you never wanted to expose the functions outside of Chocolatey runspaces. If you just wanted to use an available PowerShell module, you might consider having a dependency on a package that installs that module, instead.
 
 ### Extension Package
 
 An extension package is organised much like any other Chocolatey package - though instead of the scripts within the `tools` directory you may be familiar with, there should be an `extensions` directory.
 
-We'll now run through how to create an extension package, assuming you have an environment set up as in [Preparing Your Environment for Package Creation](#package-creation-env-placeholder).
+We'll now run through how to create an extension package, assuming you have an environment set up as in [Preparing Your Environment for Package Creation](#xref:howto-prepare-env).
 
 #### Creating an Extension Package
 
-> **Shortcut:** You can use a [package template](#package-template-placeholder) to create an extension package!
+> **Shortcut:** You can use a [package template](#xref:create-custom-package-templates) to create an extension package!
 > Try it, by installing the `extension.template` package and running `choco new test.extension --template extension`
 
 The extension package is actually different enough to a regular package that using the default template would result in more cleanup than help!
 
-Create a new directory to hold your package files, and within that directory create a nuspec file for your new extension package - we're going to call ours `example.extension` in these examples, but you can change that to whatever you like!
+Follow the steps below to get started:
 
 1. Create a new folder for this package. For the example, we will call it `example.extension`.
     1. Create a package metadata file named `example.extension.nuspec`, and add content [as shown below](#package-metadata-content).
@@ -135,7 +135,7 @@ You may notice that all of the example packages above end with `.extension`. Thi
 
 As we mentioned earlier, there's no need for an install script in an extension package - Chocolatey CLI handles putting the extension in the right place!
 
-You can _also_ include a `tools` directory, with the standard Chocolatey scripts (which could be used for system-specific configuration of the module), but it is not required.
+You can _also_ include a `tools` directory, with the standard Chocolatey scripts (which could be used for configuration of the module), but it is not required.
 
 #### Considering Uninstallation
 
@@ -143,12 +143,12 @@ Chocolatey will also handle uninstallation of the extension module automatically
 
 ### Compiling Your Package
 
-You can now use `choco pack` to compile your Chocolatey package into a nupkg file, ready for installation!
+You can now use `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
 
-1. In VSCode, press `Ctrl + Shift + P` or use the `View` menu and click on `Command Palette`.
+1. In VS Code, press `Ctrl + Shift + P` or use the **View** menu and click on **Command Palette**.
 1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
 1. Select `example.extension.nuspec` from the prompt.
-1. Press Enter, providing no additional input.
+1. In **Additional Arguments** enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press **Enter**.
 
 You should have a new package generated in your current working directory.
 
@@ -156,10 +156,10 @@ You should have a new package generated in your current working directory.
 
 This sort of package isn't normally installed on it's own, but you can now test installation of your package!
 
-In an elevated command prompt on your test environment, run the following:
+In an elevated PowerShell command prompt, run the following:
 
 ```PowerShell
-choco install example.extension --source='Tutorials' --confirm
+choco install example.extension --source='tutorials' -y
 ```
 
 You should then be able to browse to the extensions directory, within your Chocolatey installation, and see that your PowerShell module has been placed there.
@@ -176,7 +176,7 @@ Get-ChildItem $env:ChocolateyInstall\extensions\example
 
 Once you've created your extension package, using the functions contained within is as simple as ensuring the package is installed (for instance, by adding a dependency) and calling the functions within your Chocolatey scripts.
 
-If you've already created a [config package](#config-package-placeholder), why not try adding your newly available functions to it?
+If you've already created a [config package](#xref:howto-create-config-package), why not try adding your newly available functions to it?
 
 - Open the config package `.nuspec` file in VS Code.
 - [Add a dependency](#nuspec-dependency-addition) on your new extension package.
@@ -184,11 +184,31 @@ If you've already created a [config package](#config-package-placeholder), why n
 
 #### Nuspec Dependency Addition
 
+Your final `.nuspec` file should look something like this:
+
 ```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>example-config</id>
+    <version>0.1.0</version>
+    <title>Example Configuration</title>
+    <authors>PackageMaintainer</authors>
+    <tags>example config-only</tags>
+    <summary>A package that configures 'example'</summary>
+    <description>Further detail about the configuration that is applied, and any package parameters.</description>
     <dependencies>
-      <dependency id="example.extension" />
+        <dependency id="example.extension" />
     </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
 ```
+
+Note the new `<dependencies>` section, near the bottom!
 
 You should now be able to reference your function within the package, without having defined it there.
 
