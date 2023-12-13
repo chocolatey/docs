@@ -37,11 +37,11 @@ You might choose to use this over installing a full PowerShell module if you did
 
 An extension package is organised much like any other Chocolatey package - though instead of the scripts within the `tools` directory you may be familiar with, there should be an `extensions` directory.
 
-We'll now run through how to create an extension package, assuming you have an environment set up as in [Preparing Your Environment for Package Creation](#xref:howto-prepare-env).
+We'll now run through how to create an extension package, assuming you have an environment set up as in [Preparing Your Environment for Package Creation](xref:howto-prepare-env).
 
 #### Creating an Extension Package
 
-> **Shortcut:** You can use a [package template](#xref:create-custom-package-templates) to create an extension package!
+> **Shortcut:** You can use a [package template](xref:create-custom-package-templates) to create an extension package!
 > Try it, by installing the `extension.template` package and running `choco new test.extension --template extension`
 
 The extension package is actually different enough to a regular package that using the default template would result in more cleanup than help!
@@ -176,7 +176,7 @@ Get-ChildItem $env:ChocolateyInstall\extensions\example
 
 Once you've created your extension package, using the functions contained within is as simple as ensuring the package is installed (for instance, by adding a dependency) and calling the functions within your Chocolatey scripts.
 
-If you've already created a [config package](#xref:howto-create-config-package), why not try adding your newly available functions to it?
+If you've already created a [config package](xref:howto-create-config-package), why not try adding your newly available functions to it? We'll use it as an example, here, but you can apply the same ideas to other packages.
 
 - Open the config package `.nuspec` file in VS Code.
 - [Add a dependency](#nuspec-dependency-addition) on your new extension package.
@@ -208,7 +208,7 @@ Your final `.nuspec` file should look something like this:
 </package>
 ```
 
-Note the new `<dependencies>` section, near the bottom!
+Note the new `<dependencies>` section, near the bottom! There are a lot of ways to specify specific versions, ranges of versions, and more - see [here](xref:package-dependencies) for more detail.
 
 You should now be able to reference your function within the package, without having defined it there.
 
@@ -222,4 +222,4 @@ Set-ConfigValue -Name ComputerName -Value $env:ComputerName
 
 ### Conclusion
 
-At this point, you have created a package that extends the functionality of Chocolatey CLI - and possibly used it in another package.
+At this point, you have created a package that extends the functionality of Chocolatey CLI.
