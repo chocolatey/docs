@@ -10,15 +10,14 @@ Chocolatey templates are one of the more lesser-known, yet very powerful, featur
 - Runs an exe installer
 - Copies files to specific places
 - Makes registry edits
-- **Insert more ideas here**
 
-The key takeway is templates are only limited by your imagination, and can be as flexible as you need them to be.
+The key takeaway is templates are only limited by your imagination, and can be as flexible as you need them to be.
 
-One of the most powerful advantages of templates is there ability to use key:value pairs to pass specific data into a package. For example, you may have a need to create multiple packages whose only difference is the location in which they will be used. In this situation,
+One of the most powerful advantages of templates is their ability to use key-value pairs to pass specific data into a package. For example, you may have a need to create multiple packages whose only difference is the location in which they will be used. In this situation,
 
-### Creating your template
+### Creating Your Template
 
-Templates are stored in the **C:\ProgramData\chocolatey\templates** directory. The name of the folder must match the name you wish to give the template.
+Templates are stored in the `C:\ProgramData\chocolatey\templates` directory. The name of the folder must match the name you wish to give the template.
 
 #### Create Template Directories
 
@@ -30,16 +29,14 @@ New-Item -Path 'C:\ProgramData\chocolatey\templates\TutorialTemplate','C:\Progra
 
 #### Create Install Script
 
-We'll next create a _very_ simple chocolateyInstall.ps1 script for our template.
+We'll next create a _very_ simple `chocolateyInstall.ps1` script for our template.
 
 Execute the following in an **elevated** PowerShell window to create the script.
 
 ```powershell
-$contents = @'
+ @'
 Write-Host "I am from [[Country]]"
-'@
-
-$contents | Set-Content 'C:\ProgramData\chocolatey\templates\TutorialTemplate\tools\chocolatyInstall.ps1'
+'@ | Set-Content 'C:\ProgramData\chocolatey\templates\TutorialTemplate\tools\chocolateyInstall.ps1'
 ```
 
 #### Create Package Metadata
@@ -78,7 +75,7 @@ Placeholders are addressed as `key:value` pairs on the commandline where  the `k
 Let's see this usage of a template in practice. In an **elevated** PowerShell window execute the following
 
 ```powershell
-#Substitute the country USA with your own Country below
+# Substitute the country USA with your own Country below
 Set-Location '~\tutorials'
 choco new template-tutorial --version='1.0.0' --template='TutorialTemplate' Country:USA --build-package
 ```
