@@ -13,7 +13,7 @@ Chocolatey templates are one of the more lesser-known, yet very powerful, featur
 
 The key takeaway is templates are only limited by your imagination, and can be as flexible as you need them to be.
 
-One of the most powerful advantages of templates is their ability to use key-value pairs to pass specific data into a package. For example, you may have a need to create multiple packages whose only difference is the location in which they will be used. In this situation,
+One of the most powerful advantages of templates is their ability to use key-value pairs to pass specific data into a package. For example, you may have a need to create multiple packages whose only difference is the location in which they will be used. In this situation, you could pass the location data to your template, which could update the necessary portions of any scripts included in the template.
 
 ### Creating Your Template
 
