@@ -11,7 +11,7 @@ Meta packages are essentially "bundles" of Chocolatey packages, allowing you to,
 - Any necessary Visual Studio workloads
 - Git
 - BeyondCompare
-- VSCode
+- VS Code
 - GitKraken
 - Cake
 
@@ -19,7 +19,7 @@ Meta packages are a really cool trick to keep up your sleeve, let's go ahead and
 
 ### Creating Your Meta Package
 
-1. Open the `tutorials` folder in VSCode.
+1. Open the `tutorials` folder in VS Code.
 2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands.
 4. Give your package a name, e.g. `meta-package`.
@@ -52,7 +52,7 @@ Replace the contents of `meta-package.nuspec` with the following:
 
 The `choco pack` command is used to compile your Chocolatey package, creating a file with a `.nupkg` extension.
 
-1. In VSCode press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. In VS Code press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
 3. Select `meta-package.nuspec` from the list.
 4. In **Additional Arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.

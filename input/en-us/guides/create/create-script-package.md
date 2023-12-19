@@ -13,7 +13,7 @@ you are ready to go before continuing.
 
 ### Creating Your Package
 
-1. Open the `tutorials` folder in VSCode.
+1. Open the `tutorials` folder in VS Code.
 2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands
 4. Give your package a name, e.g. `script-package`.
@@ -27,7 +27,7 @@ Next we'll create an install script that leverages the sample script.
 
 ### Create Your Install Script
 
-Open the `chocolateyInstall.ps1` script from the VSCode Explorer pane. Replace the contents of the script with the following:
+Open the `chocolateyInstall.ps1` script from the VS Code Explorer pane. Replace the contents of the script with the following:
 
 ```powershell
 $ErrorActionPreference = 'Stop' # stop on all errors
@@ -43,7 +43,7 @@ Save and close the file.
 
 ### Cleaning Up The Packaging
 
-Our simple example here doesn't require anything special for an upgrade or uninstall scenario. In the VSCode Explorer pane find both the `chocolateyBeforeModify.ps1` and `chocolateyUninstall.ps1` files and remove them.
+Our simple example here doesn't require anything special for an upgrade or uninstall scenario. In the VS Code Explorer pane find both the `chocolateyBeforeModify.ps1` and `chocolateyUninstall.ps1` files and remove them.
 
 ### Creating The Package Metadata
 
@@ -85,7 +85,7 @@ Replace the contents of the nuspec file with the following:
 
 The `choco pack` command is used to compile your package files into a usable Chocolatey package.
 
-1. In VSCode press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. In VS Code press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
 3. Select `script-package.nuspec` from the list.
 4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.

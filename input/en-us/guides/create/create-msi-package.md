@@ -47,7 +47,7 @@ There are [package templates](xref:create-custom-package-templates) to create va
 
 We'll use this to create our new MSI package:
 
-1. Open your `tutorials` directory in VSCode.
+1. Open your `tutorials` directory in VS Code.
 1. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 1. Select `Chocolatey: Install Template Package(s)`.
 1. Open the `Command Palette` again, as in the prior step.
@@ -177,7 +177,7 @@ In the case of the example package, Chocolatey handles it well - so you can remo
 
 You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
 
-1. In VSCode, press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. In VS Code, press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
 1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
 1. Select `firefox-msi.nuspec` from the prompt.
 1. In **Additional Arguments** enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press `Enter`.
