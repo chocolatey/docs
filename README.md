@@ -19,28 +19,55 @@ Listed below are some of the areas we consider important when writing. We have t
 
 To help with these goals, please refer to our guides on [writing documentation](https://design.chocolatey.org/content-and-marketing/writing-documentation) and the use of [language and grammar](https://design.chocolatey.org/content-and-marketing/language-and-grammar).
 
-## Building the site
+## Building the Site
 
-### Setup
+There are two options to build the site:
+
+1. Build it on your own computer.
+1. Build it using a Docker container.
+
+### Build the Site On Your Computer
 
 There are a number or pre-requisites that are needed before you will be able to build the website locally.  These include:
 
 * .NET Core SDK
 * NodeJS
 
-There is a `.\setup.ps1` file in the root of this repository that can be used to install all necessary packages, and which will be kept up to date as these change.
+There is a `.\setup.ps1` file in the root of this repository that can be used to install all necessary packages.
 
-### Building the site
+#### Building the Site
 
-To build the site locally on your machine, either run the `.\build.ps1` or the `build.sh` file (depending on your system).  This will compile the site, and all generated output file be placed into the `output` folder.
+To build the site locally on your computer, either run the `.\build.ps1` or the `build.sh` file (depending on your operating system).  This will compile the site, and all generated output file be placed into the `output` folder.
 
-### Previewing the site
+### Build the Site Using a Docker Container
 
-To preview the site locally on your machine, either run the `.\preview.ps1` or the `preview.sh` file (depending on your system).  Once completed, you should be able to open a browser on your machine to `http://localhost:5080` and the site will be loaded.  Once running, any changes made to the files within the `input` folder will cause the site to be rebuilt with the new content.
+There are two ways you can do this:
+
+* Using the Visual Studio Code Dev Containers extension.
+* Running the Docker container from the command line.
+
+#### Using the Visual Studio Code Dev Containers Extension
+
+Connect to the Docker Container in Visual Studio Code. This will launch Visual Studio Code and open a terminal that is running inside the Docker Container whose configuration is defined in `/.devcontainer/devcontainer.json` and `/.devcontainer/Dockerfile`. You can now move onto [previewing the site](#previewing-the-site).
+
+#### Running the Docker Container From the Command Line
+
+Follow these steps:
+
+1. Run `docker pull mcr.microsoft.com/vscode/devcontainers/dotnet:0-3.1-focal`.
+1. Change to the `/.devcontainer` directory and run `docker build . --tag chocolatey-docs-container`. This will build the image you can use to preview the docs. Note that you can change the name `chocolatey-docs-container` to whatever you want.
+
+#### Previewing the Site
+
+To preview the site locally on your computer, either run the `.\preview.ps1` or the `preview.sh` file (depending on your operating system). If you are previewing the site using the Docker container from the command line, change to the directory containing this repository and run `docker run -p 5080:5080 -v ${pwd}:/workspaces/chocolatey-docs -w /workspaces/chocolatey-docs -i -t chocolatey-docs-container /bin/bash ./preview.sh`. Replace `chocolatey-docs-container` with whatever you named your container above.
+
+Once completed, you should be able to open a browser on your machine to `http://localhost:5080` and the site will be loaded.  Once running, any changes made to the files within the `input` folder will cause the site to be rebuilt with the new content.
 
 ### Troubleshooting the build
 
 If you are having build errors with `'copyTheme' errored after`, try removing the `node_modules` directory and clearing your yarn cache with `yarn cache clean`.
+
+If you receive the error `The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached` then you can increase the number by running `echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`. See [this GitHub comment](https://github.com/dotnet/aspnetcore/issues/8449#issuecomment-512275929) for more information.
 
 ## Adding a New Highlight
 
