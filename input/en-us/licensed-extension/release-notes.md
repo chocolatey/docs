@@ -42,6 +42,22 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.1.1 (December 19, 2023)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+- Fix - Unable to disable some features when with a Pro license - see [licensed #364](https://github.com/chocolatey/chocolatey-licensed-issues/issues/364).
+
+
+## 5.0.4 (December 19, 2023)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+- Fix - Unable to disable some features when with a Pro license - see [licensed #366](https://github.com/chocolatey/chocolatey-licensed-issues/issues/366).
+
+
 ## 6.1.0 (June 29, 2023)
 
 > :choco-warning: **WARNING**
