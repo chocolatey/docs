@@ -47,6 +47,8 @@ Requirements represent the minimum quality of a package that is acceptable. When
 * The description should explicitly mention if this package installs trial software or software that needs a license present, or both.
 * The tags field is not being abused - note this doesn't mean they are missing tags you believe they should have (that is a guideline).
 * Tags do not include "chocolatey" (with the exception of the chocolatey packages)
+* When using an `iconUrl`, GitHub raw links are not allowed; linking through a CDN like jsDelivr, Statically, or Githack is required. 
+* When using an `iconUrl`, the icon needs to be hosted at a location that the package maintainer has control over. In most cases this is the package source repository, but can be the software website if the software author is also the package maintainer. 
 * Look over the package files
   * If binaries are included in the package, does the maintainer have distribution rights? If they have explicit permission, a copy of that in PDF should be in the package contents.
   * **Install/Uninstall scripts:**
@@ -74,7 +76,7 @@ Guidelines are strong suggestions that improve the quality of a package version.
 * Trial software should include the #trial tag. (will become a requirement in Feb 2016)
 * Software that requires a license should include a tag #license. (will become a requirement in Feb 2016)
 * LicenseUrl is nearly a requirement. The only reason it sits in guidelines is that not all software has a url out there containing its license information. We request that in those cases they point to the url for the FOSS license of the software, if they have an open license.
-* We really want to see the IconUrl being used, and some moderators want to see it being used properly, using the jsDelivr, Statically, or Githack  CDN. However it is a guideline, and something to note for a maintainer to fix up next time, not currently. Some software doesn't have a proper icon.
+* Usage of the `iconUrl` is very strongly encouraged, however, the addition of a `iconUrl` is a guideline and something to note for a maintainer to fix up next time. Some software doesn't have a proper icon, in which case an `iconUrl` should not be added. See the requirements section for the requirements if a `iconUrl` is included. 
 * Suggest description get really filled out and they take full advantage of the use of markdown.
 * Summary is important, but it doesn't show up on the package page.
 * Tags could always use suggestions to add.
