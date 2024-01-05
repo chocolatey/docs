@@ -7,26 +7,32 @@ Description: How to upgrade jenkins
 
 ## Upgrade Jenkins in Quick Start Environment
 
-This document outlines the process for upgrading Jenkins running inside our Quick Start Environment.
-The script provided assumes your server has access to the internet to download the Jenkins package from the community repository.
-If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
+This document outlines the process for upgrading Jenkins, and it's Java dependency running on your Quick Start Environment.
+This guide assumes your server has access to the internet to internalize the needed packages from the Chocolatey community repository.
+If your server is internet restricted, please internalize the needed packages on a machine that does have internet access, then push these packages to your internal repository.
 
 > :choco-warning: **WARNING**
 >
-> The current Jenkins package requires a Java 18 or 11 which hasn't been added as a dependency (due to the numerous flavours of Java out there). As part of the Quick Start Guide setup we install the temurin11jre package. However any Java version 11 or 18 package will work.
+> The current Jenkins package requires Java version 17 or 21 which hasn't been added as a package dependency to jenkins (due to the numerous flavours of Java out there). As part of the Quick Start Guide setup we install the temurin21jre package. However any Java version 17 or 21 package will work.
+>
+> More information is available in the [Java support policy documentation](https://www.jenkins.io/doc/book/platform-information/support-policy-java/).
 
 ## Instructions
 
-1. Internalize the nexus-repository package and push to your internal repo
-2. Internalize a java package compatible with Jenkins and push to your internal repo. We recommend the [temurin11jre package](https://community.chocolatey.org/packages/Temurin11jre) used during setup in the Quick Start Guide.
-3. choco upgrade the temurin11jre and nexus-repository packages (Example command provided below)
+1. Internalize the Jenkins package and push it to your internal repo.
+2. Internalize a java package compatible with Jenkins and push it to your internal repo. We recommend the [temurin21jre package](https://community.chocolatey.org/packages/Temurin21jre).
+3. Upgrade the temurin21jre and Jenkins packages (Example commands provided below).
 
 > :choco-info: **Internalizing Note**
 >
-> You can add the temurin11jre and jenkins packages to your jenkins pipelines, setup by the Quick Start Guide, to help keep new versions of these packages in your internal repo.
+> You can add the temurin21jre and Jenkins packages to your Jenkins pipelines, setup by the Quick Start Guide, to help keep new versions of these packages in your internal repo.
 
-### Example Upgrade Command:
+### Example Upgrade Commands:
 
 ```powershell
-choco upgrade temruin11jre jenkins -y --source="'Your Internal Repo'"
+choco upgrade temurin21jre --package-parameters="/ADDLOCAL=FeatureJavaHome" -y --source="'Your Internal Repo'"
+```
+
+```powershell
+choco upgrade jenkins -y --source="'Your Internal Repo'"
 ```
