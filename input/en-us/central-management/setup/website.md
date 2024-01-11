@@ -483,6 +483,8 @@ These errors happen very early in the application execution, and as a result, ar
 
 In these situations, we have found that incorrect database connection strings are typically the root cause of the problem.
 
+Another possible cause for this error is if there are mismatching versions of `dotnet-6.0-aspnetruntime` and `dotnet-aspnetcoremodule-v2`. Ensure that both are on the same patch level. Note that `dotnet-aspnetcoremodule-v2` package versioning does not directly correspond to the dotnet patch level, so it is recommended to use the versions specified in the prerequisites above  
+
 ### The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
 
 In the beta version of Chocolatey Licensed Extension, there was a cmdlet named `Install-ChocolateyAppSettingsJsonFile` and this was used in the 0.1.0-beta-20181009 release of the Chocolatey Central Management components. In the final released version of the Chocolatey Licensed Extension, this was renamed to `Install-AppSettingsJsonFile`.
