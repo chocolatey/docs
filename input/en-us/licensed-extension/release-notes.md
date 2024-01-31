@@ -42,6 +42,20 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.1.2 (January 31, 2024)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+
+
+## 5.0.5 (January 31, 2024)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+
+
 ## 6.1.1 (December 19, 2023)
 
 ### Bug Fixes
