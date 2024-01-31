@@ -35,6 +35,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### Bug Fix
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 1.1.4 (January 31, 2024)
@@ -42,6 +43,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### Bug Fix
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 2.1.1 (December 19, 2023)
@@ -49,6 +51,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### Bug Fix
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 1.1.3 (December 19, 2023)
@@ -56,6 +59,7 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 ### Bug Fix
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 2.1.0 (June 29, 2023)
