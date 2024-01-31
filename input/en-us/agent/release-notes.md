@@ -30,6 +30,20 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
 
+## 2.1.2 (January 31, 2024)
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+
+
+## 1.1.4 (January 31, 2024)
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+
+
 ## 2.1.1 (December 19, 2023)
 
 ### Bug Fix
