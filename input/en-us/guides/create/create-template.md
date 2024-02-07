@@ -1,3 +1,4 @@
+---
 Order: 41
 xref: howto-create-package-template
 Title: How to create a Package Template
@@ -77,7 +78,8 @@ Let's see this usage of a template in practice. In an **elevated** PowerShell wi
 ```powershell
 # Substitute the country USA with your own Country below
 Set-Location '~\tutorials'
-choco new template-tutorial --version='1.0.0' --template='TutorialTemplate' Country:USA --build-package
+choco new template-tutorial --version='1.0.0' --template='TutorialTemplate' Country=USA
+choco pack .\template-tutorial\template-tutorial.nuspec
 ```
 
 #### Install Your Templated Package
