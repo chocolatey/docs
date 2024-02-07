@@ -36,6 +36,46 @@ Why this is desirable:
 
 This makes for happy users and happy admins as they are able to move quicker towards a better organization.
 
+### Background Service Restricted Options
+
+> :choco-info: **NOTE**
+>
+> The restricted options cannot be customised at this time. We will add this ability in upcoming versions.
+> 
+> The options restrictions affect the following versions of Chocolatey Agent and Chocolatey Licensed Extension:
+> 
+> | Product                       | Versions Affected                                              |
+> |------------------------------ |--------------------------------------------------------------- |
+> | Chocolatey Agent              | 1.1.3 and later 1.x versions, and 2.1.1 and later 2.x versions |
+> | Chocolatey Licensed Extension | 5.0.4 and later 5.x versions, and 6.1.1 and later 6.x versions |
+
+
+Chocolatey CLI allows a number of different options that can be used to configure package management when using the Background Service. To help minimise issues and improve security, the following options, along with their aliases, cannot be used in Chocolatey CLI or Chocolatey GUI when using the Background Service:
+
+* Added in Chocolatey Agent 1.1.3 / 2.1.1 and Chocolatey Licensed Extension 5.0.4 / 6.1.1:
+  * `--cache-location`
+  * `--install-arguments`
+  * `--not-silent`
+  * `--install-args-global`
+  * `--install-arguments-sensitive`
+  * `--install-directory`
+* Added in Chocolatey Agent 1.1.4 / 2.1.2 and Chocolatey Licensed Extension 5.0.5 / 6.1.2:
+  * `--allow-empty-checksums`
+  * `--allow-empty-checksums-secure`
+  * `--download-checksum`
+  * `--download-checksum-x64`
+  * `--from-programs-and-features`
+  * `--ignore-checksums`
+  * `--override-arguments`
+  * `--proxy`
+  * `--proxy-bypass-list`
+  * `--proxy-bypass-on-local`
+  * `--skip-virus-check`
+  * `--uninstall-arguments`
+  * `--uninstall-arguments-sensitive`
+  * `--use-system-powershell`
+  * `--virus-positives-minimum`
+
 ### See It In Action
 
 * Chocolatey's Self-Service Installer - Part 1:

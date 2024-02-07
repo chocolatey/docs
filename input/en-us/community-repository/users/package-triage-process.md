@@ -52,11 +52,16 @@ It's not often that a moderator would approved a package that violates distribut
 > The community feed has only been moderated since October 2014. There may be some packages were created prior to this date that possibly do violate distribution rights. These packages also likely won't list the files as the community feed did not start capturing the package files until July 2014. The package page has instructions for viewing the package content (and so does the previous section).
 
 #### I want to take over/help with package maintenance for my software
-Please click the "Contact Site Admins" link on the left-hand side of the package page, and fill out and submit the form. The site admins for the community feed will follow up with you shortly after. Please remember to mention that you are the software vendor interested in taking over the package.
 
-![contact site admins](/assets/images/triage-siteadmins.jpg)
+1. The first step is to contact the maintainers. Use the "Contact Maintainers" link on the package page to request that they add you as a maintainer. We ask software authors to first contact the current maintainer, so the current maintainer can be kept informed.
 
-We ask that you contact the site admins directly and skip the triage process altogether because we want to get you maintaining the package as quickly as possible. There is a greater trust for packages when they are provided by the vendors.
+   ![contact maintainers link](/assets/images/triage-maintainers.jpg)
+
+1. If the maintainer(s) do[es] not respond after one week, or if they do not add you as a maintainer, use the "Contact Site Admins" link to contact the site Moderators. Please include details of how and when you attempted to contact the Maintainer(s), and that you are an author/vendor of the software.
+
+   ![Contact admins link](/assets/images/triage-siteadmins.jpg)
+
+1. Wait for a response from the Moderators. Once you have been added as a maintainer of the package, please follow the instructions for a [Package Maintainer Handover/Switch](xref:package-maintainer-handover) for how to start maintaining the package.
 
 ### Questions About a Package or Software
 Use the Contact Maintainers link on the package page of the community feed or the Disqus comment thread (at the bottom of the package page) to reach out to the maintainers. Neither require an account on Chocolatey.org.

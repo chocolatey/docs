@@ -42,11 +42,28 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 6.1.2 (January 31, 2024)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 5.0.5 (January 31, 2024)
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
 ## 6.1.1 (December 19, 2023)
 
 ### Bug Fixes
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 - Fix - Unable to disable some features when with a Pro license - see [licensed #364](https://github.com/chocolatey/chocolatey-licensed-issues/issues/364).
 
 
@@ -55,6 +72,7 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 ### Bug Fixes
 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 - Fix - Unable to disable some features when with a Pro license - see [licensed #366](https://github.com/chocolatey/chocolatey-licensed-issues/issues/366).
 
 
