@@ -13,6 +13,36 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 >
 > Issue links may not be publicly available at this time.
 
+## 0.21.0 (February 8, 2024){#0.21.0}
+
+### Breaking Change
+
+- Trim the list of included Jenkins plugins - see [#103](https://github.com/chocolatey/c4b-azure/issues/103).
+
+### Improvements
+
+- Setup Nexus Using NuGet V3 Repositories - see [#145](https://github.com/chocolatey/c4b-azure/issues/145).
+- Update to Latest Packages - see [#154](https://github.com/chocolatey/c4b-azure/issues/154).
+- Update Jenkins Java Dependency - see [#155](https://github.com/chocolatey/c4b-azure/issues/155).
+
+### Bundled Version Update
+
+| Package                        | Version       |
+|--------------------------------|---------------|
+| chocolatey-agent               | 2.1.2         |
+| chocolatey-management-database | 0.12.0        |
+| chocolatey-management-service  | 0.12.0        |
+| chocolatey-management-web      | 0.12.0        |
+| chocolatey.extension           | 6.1.2         |
+| dotnet-6.0-aspnetruntime       | 6.0.26        |
+| dotnet-6.0-runtime             | 6.0.26        |
+| dotnet-aspnetcoremodule-v2     | 16.0.23339    |
+| jenkins                        | 2.426.3       |
+| nexus-repository               | 3.64.0.4      |
+| Temurin11jre                   | N/A (Removed) |
+| Temurin21jre                   | 21.0.1.1200 (New) |
+| vcredist140                    | 14.38.33135   |
+
 ## 0.20.0 (August 17, 2023)
 
 ### Improvements
