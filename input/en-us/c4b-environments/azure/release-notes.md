@@ -13,7 +13,7 @@ TwitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-f
 >
 > Issue links may not be publicly available at this time.
 
-## 0.21.0 (February 8, 2024){#0.21.0}
+## 0.21.0 (February 8, 2024){#v0.21.0}
 
 ### Breaking Change
 
