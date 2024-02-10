@@ -25,10 +25,20 @@ When deprecating a Chocolatey Package, the following steps should be followed:
 * Create a **[new version](xref:create-packages#package-fix-version-notation)** of the deprecated Chocolatey Package.
 * Prepend **[Deprecated]** to the **title** of the package (e.g. `<title>[Deprecated] Software Title</title>`
 * Update the package **description**: Why is the package being deprecated?
-* Add a **[dependency](http://docs.nuget.org/docs/reference/nuspec-reference#Specifying_Dependencies) on the other package** (if the package is being superseded).
-* **Remove all files** except the `.nuspec` from the Chocolatey Package.
-* Replace `<files>...</files>` section in `.nuspec` with `<files />` tag to prevent any file from being included with the package.
-* **Remove the iconUrl**.
-* **[Unlist all versions](xref:list-unlist-a-package)** from the package gallery, **except** the final deprecated version. The final deprecated version is required so that there is an update path to the new package.
+### The package is being superseded
+  * Add a **[dependency](http://docs.nuget.org/docs/reference/nuspec-reference#Specifying_Dependencies) on the other package**.
+  * **Replace** `<files>...</files>` section in `.nuspec` with `<files />` tag to prevent any file from being included with the package.
+  * **Remove all files** except the `.nuspec` from the Chocolatey Package.
+### The package is no longer available and is not being superseded
+  * **Remove** `<dependency>...</dependency>`.
+  * **Remove** the content of `tools\chocolateyInstall.ps1`.
+  * **Remove all files** except the `.nuspec` and `tools\chocolateyInstall.ps1` the from the Chocolatey Package.
 
-By following this process, any existing users who try to update the old package will automatically get the new package, as it will be installed as a dependency.
+In both cases:
+* If they are no longer available, **remove** `<projectSourceUrl>...</projectSourceUrl>`, `<docsUrl>...</docsUrl>`, `<mailingListUrl>...</mailingListUrl>`, `<bugTrackerUrl>...</bugTrackerUrl>`, `<releaseNotes>...</releaseNotes>`
+* **Remove the iconUrl**.
+* **[Unlist all versions](xref:list-unlist-a-package)** from the package gallery, **except** the final deprecated version. The final deprecated version is required to, depending on the case, provide an update path to the new package or provide an empty package.
+
+By following this process, any existing users who try to update the old package will automatically get either:
+* **The new package**, as it will be installed as a dependency if the package is being superseded.
+* **A new version package doing nothing** if the package does no longer exist.
