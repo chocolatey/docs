@@ -30,7 +30,7 @@ When deprecating a Chocolatey Package, the following steps should be followed:
   * **Replace** `<files>...</files>` section in `.nuspec` with `<files />` tag to prevent any file from being included with the package.
   * **Remove all files** except the `.nuspec` from the Chocolatey Package.
 ### The package is no longer available and is not being superseded
-  * **Remove** `<dependencies>...</dependencies>` if any.
+  * **Remove** `<dependencies>...</dependencies>` if any, except if there is only a dependency linking to the install ([packagename].install) or the portable ([packagename].portable) version of this same package.
   * **Remove** the content of `tools\chocolateyInstall.ps1`  if any.
   * **Remove all files** except the `.nuspec` and `tools\chocolateyInstall.ps1` from the Chocolatey Package.
 
