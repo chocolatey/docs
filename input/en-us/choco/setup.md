@@ -28,7 +28,7 @@ RedirectFrom:
 
 ## Installing Chocolatey CLI
 
-1. First, ensure that you are using an **[administrative shell](http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/)**.
+1. First, ensure that you are using an **[administrative shell](https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-10/)**.
    - Refer to [Non-Administrative Installation](#non-administrative-install) for information on installing without administrative rights.
 1. Copy the text specific to your command shell - [cmd.exe](#install-with-cmd.exe) or [powershell.exe](#install-with-powershell.exe).
 1. Paste the copied text into your shell and press Enter.
