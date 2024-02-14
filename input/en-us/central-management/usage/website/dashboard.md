@@ -33,4 +33,4 @@ Starting with Chocolatey Central Management 0.12.0, the following metrics are al
 
 The `Last Updated` date/time that is shown is when the information was last updated by the Chocolatey Central Management Service.
 
-![Dashboard page for Chocolatey Central Management showing available KPI's and last updated time](/assets/images/ccm/general/dashboard.png)
+![Dashboard page for Chocolatey Central Management showing available KPI's and last updated time](/assets/images/ccm-playwright/dashboard/left-menu-dashboard.png)

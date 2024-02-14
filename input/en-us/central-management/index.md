@@ -15,7 +15,7 @@ Once installed and configured, you can use Chocolatey Central Management to:
 * Create reports for tracking and auditing purposes
 * Manage endpoints with Deployment Plans through groups and collections
 
-![Central Management Logo](/assets/images/features/ccm/central-management.png)
+![Central Management Logo](/assets/images/ccm-playwright/account/login/logo.png)
 
 This provides an overview on Chocolatey Central Management (CCM). It provides both setup and use of CCM.
 
@@ -96,7 +96,7 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 * [Chocolatey Central Management Deployments](xref:ccm-deployments)
 * [Chocolatey Central Management Reports](xref:ccm-reports)
 
-![Chocolatey Central Management Overview](/assets/images/features/ccm/ccm_overview.jpg)
+![Chocolatey Central Management Overview](/assets/images/ccm-manual/screens-mockup.jpg)
 
 ### Chocolatey Central Management API
 

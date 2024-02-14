@@ -23,12 +23,12 @@ After importing the Deployment Plan, you should follow these steps to ensure you
 You will also need to set a Target Group for the Deployment Step:
 
 - Mouse-over the Deployment Step and click the **Edit** button.
-    ![Editing a Deployment Step](/assets/images/deployments/ccm-deployments-edit-deployment-step.jpg)
+    ![Editing a Deployment Step](/assets/images/ccm-playwright/deployment-plans/edit/button-edit-step.png)
 
 - Navigate to the `Select Target Groups` panel.
 
 - Highlight your preferred groups and click the **>** button to move them into `Selected Groups`.
-    ![Selecting Target Groups](/assets/images/deployments/ccm-deployments-step-select-groups-modal.png)
+    ![Selecting Target Groups](/assets/images/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
 
 - Click **Save**.
 
@@ -38,7 +38,7 @@ Before you can run the Deployment Plan, you must set the `Start Date Time` to a 
 
 To do so, click on the clock icon next to the `Start Date Time` field. When you have selected an appropriate time, click **Save**.
 
-![Updating an invalid Start Date Time](/assets/images/deployments/ccm-deployments-set-schedule-datetime.png)
+![Updating an invalid Start Date Time](/assets/images/ccm-playwright/deployment-plans/edit/calendar-start-date-time.png)
 
 ## Example Deployment Plans
 

@@ -12,7 +12,7 @@ Chocolatey Central Management gives you visibility into what's installed on a gi
 
 The **Computers** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar.
 
-![Computers menu entry on the CCM Dashboard](/assets/images/computers/ccm-computers-nav.png)
+![Computers menu entry on the CCM Dashboard](/assets/images/ccm-playwright/dashboard/left-menu-computers.png)
 
 ## Registering a New Computer
 
@@ -37,11 +37,11 @@ Please see [Central Management Client Setup](xref:ccm-client) for more details a
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
 Select the :gear: **Actions** menu in the corresponding left-hand column, and click **Details**.
 
-![Finding a computer's details menu option](/assets/images/computers/ccm-computers-details-menu.png)
+![Finding a computer's details menu option](/assets/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-details.png)
 
 You will be presented with a list of the installed software packages for the machine, similar to below.
 
-![Computer details screen showing installed software](/assets/images/computers/ccm-computers-details.png)
+![Computer details screen showing installed software](/assets/images/ccm-playwright/computers/details/screen.png)
 
 ## Creating a Draft Deployment Plan for a Computer
 
@@ -49,23 +49,21 @@ Creating a Draft Deployment Plan for a Computer can be done from two pages:
 
 1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Create New Deployment Plan** option.
 
-    ![Finding the Create New Deployment Plan menu entry for a specific Computer on the Computers page](/assets/images/computers/ccm-computers-create-new-deployment-plan-menu.png)
+    ![Finding the Create New Deployment Plan menu entry for a specific Computer on the Computers page](/assets/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-create-new-deployment-plan.png)
 
 1. From the Computer Details page, click the :gear: **Actions** button and select the **Create New Deployment Plan** option.
 
-    ![Button to create a new draft Deployment Plan from the Computer Details page](/assets/images/computers/ccm-computer-details-draft-deployment-plan-button.png)
+    ![Button to create a new draft Deployment Plan from the Computer Details page](/assets/images/ccm-playwright/computers/details/button-action-dropdown-menu-create-new-deployment-plan.png)
 
 Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with a [Temporary Group](#xref:ccm-groups#temporary-groups) that contains the Computer selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command.
 
-![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/computers/ccm-computers-add-script-command.png)
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/ccm-playwright/deployment-plans/edit/computers-modal-new-deployment-plan.png)
 
 The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
 
-![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/computers/ccm-computers-ineligible-deployment-warning.png)
+![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
 
 After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
-
-![Automatically created Deployment Plan showing the script command](/assets/images/computers/ccm-computer-upgrade-all-software-script-command.png)
 
 From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
 
@@ -75,26 +73,19 @@ Upgrading all outdated Software installed on a Computer can be done from two pag
 
 1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Upgrade Outdated Software** option.
 
-    ![Finding the Upgrade Outdated Software menu entry for a specific Computer on the Computers page](/assets/images/computers/ccm-computers-upgrade-all-software-menu.png)
+    ![Finding the Upgrade Outdated Software menu entry for a specific Computer on the Computers page](/assets/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-upgrade-outdated-software.png)
 
 1. From the Computer Details page, click the :gear: **Actions** button and select the **Upgrade Outdated Software** option.
 
-    ![Button to create a new Deployment Plan to upgrade all outdated Software on a Computer from the Computer Details page](/assets/images/computers/ccm-computer-details-upgrade-all-software-button.png)
+    ![Button to create a new Deployment Plan to upgrade all outdated Software on a Computer from the Computer Details page](/assets/images/ccm-playwright/computers/details/button-action-dropdown-menu-upgrade-outdated-software.png)
 
 Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step per outdated Software.
 
-![Automatically created Deployment Plan showing Deployment Steps](/assets/images/computers/ccm-computer-upgrade-all-software-steps.png)
+![Automatically created Deployment Plan showing Deployment Steps](/assets/images/ccm-playwright/deployment-plans/edit/computers-upgrade-outdated-software.png)
 
-Each Deployment Step has a [Temporary Group](xref:ccm-groups#temporary-groups) selected that contains the Computer.
-
-![Automatically created Deployment Plan showing Temporary Group](/assets/images/computers/ccm-computer-upgrade-all-software-temporary-group.png)
-
-Each Deployment Step has the script command automatically entered.
-
-![Automatically created Deployment Plan showing the script command](/assets/images/computers/ccm-computer-upgrade-all-software-script-command.png)
+Each Deployment Step has a [Temporary Group](xref:ccm-groups#temporary-groups) selected that contains the Computer, and the script command automatically entered.
 
 From here, the Deployment Plan can be edited and deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
-
 
 ## Exporting a `packages.config` file for a computer
 
@@ -104,7 +95,7 @@ From here, the Deployment Plan can be edited and deployed as outlined in the [De
 
 From the Computer details page, click the `Export` button and select the `Export to packages.config` option.
 
-![Computer details screen highlighting Export to packages.config button](/assets/images/computers/ccm-computers-details-export-packages-config.png)
+![Computer details screen highlighting Export to packages.config button](/assets/images/ccm-playwright/computers/details/button-action-dropdown-menu-export-to-packages.config.png)
 
 ## Removing a Computer from Chocolatey Central Management
 
@@ -113,13 +104,9 @@ From the Computer details page, click the `Export` button and select the `Export
 > Unless you first uninstall (at minimum) the `chocolatey-agent` or disable Central Management by disabling the feature setting, the deleted computer will reappear when the Chocolatey Agent performs its next check-in.
 
 From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
-Select the :gear: **Actions** menu in the corresponding left-hand column, and click **Delete**.
+Select the :gear: **Actions** menu in the corresponding left-hand column, and click **Delete**. You will be prompted to confirm the deletion.
 
-![Deleting a computer in Central Management](/assets/images/computers/ccm-computers-delete-menu.png)
-
-You will be prompted to confirm the deletion.
-
-![Prompt to confirm deletion of a computer in Central Management](/assets/images/computers/ccm-computers-delete-confirm.png)
+![Deleting a computer in Central Management](/assets/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-delete.png)
 
 ## FAQ
 

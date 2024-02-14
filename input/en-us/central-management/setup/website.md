@@ -215,7 +215,7 @@ The `chocolatey-management-web` package is responsible for creating and deployin
 
 When you access the Chocolatey Central Management Website you will be prompted to provide a username and password to access the site.  By default, the username is `ccmadmin` and the password is `123qwe`.  After you input this, you will be prompted to change the password.
 
-![First time login - change password](/assets/images/features/ccm/change_password.png)
+![First time login - change password](/assets/images/ccm-playwright/account/login/alert-additional-settings.png)
 
 ### Step 4.2: SMTP Configuration
 
@@ -503,9 +503,7 @@ When any attempt is made by Chocolatey Central Management to send an email, an e
 
 ![HTTP 500 error when sending email](/assets/images/features/ccm/error_when_sending_email_500.png)
 
-Or an inline error, similar to this:
-
-![Inline error when sending email](/assets/images/features/ccm/error_when_sending_email_inline.png)
+Or an inline error, with text similar to: "Unable to send email, please contact System Administrator to ensure SMTP settings are configured correctly.".
 
 Checking the log file, an error similar to this is found:
 

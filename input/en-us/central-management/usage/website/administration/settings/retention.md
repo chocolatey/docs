@@ -46,7 +46,7 @@ In an attempt to control the size of the Chocolatey Central Management database,
 
 By default, Audit Retention is enabled, and any logs that are older than 30 days will automatically be removed.
 
-![Audit Retention Settings](/assets/images/ccm/setup/website/audit-retention-settings.png)
+![Audit Retention Settings](/assets/images/ccm-playwright/administration/settings/retention-policies-checkbox-enable-audit-retention.png)
 
 ## Stale Computer Retention
 
@@ -59,7 +59,7 @@ In Chocolatey Central Management, a stale computer is one which hasn't reported 
 
 By default, Stale Computer Deletion is disabled. When it is enabled, computers that haven't reported into Chocolatey Central Management within the set timeframe (the default is 365 days) will be removed.
 
-![Stale Computer Deletion Settings](/assets/images/ccm/setup/website/stale-computer-deletion-settings.png)
+![Stale Computer Deletion Settings](/assets/images/ccm-playwright/administration/settings/retention-policies-checkbox-enable-stale-computer-retention.png)
 
 ## Deployment Plan Retention
 
@@ -74,4 +74,4 @@ By default, Deployment Plan Retention is disabled for both archiving and deletin
 
 
 
-![Deployment Plan Retention Settings](/assets/images/ccm/setup/website/deployment-plan-retention-settings.png)
+![Deployment Plan Retention Settings](/assets/images/ccm-playwright/administration/settings/retention-policies-checkbox-enable-deployment-plan-retention.png)

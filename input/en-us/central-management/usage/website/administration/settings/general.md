@@ -9,4 +9,4 @@ The Administration Settings page loads the General tab by default. This page is 
 
 If a user does not set their own timezone for display from `My Settings`, then the selected timezone will be used for the display of all times.
 
-![General Settings Administration page of Chocolatey Central Management](/assets/images/ccm/administration/settings/general-tab.png)
+![General Settings Administration page of Chocolatey Central Management](/assets/images/ccm-playwright/administration/settings/tab-general.png)

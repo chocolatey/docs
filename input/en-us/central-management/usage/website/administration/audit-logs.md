@@ -24,7 +24,7 @@ Expanding the `Show advanced filters` section displays the following filters:
 
 Once the required filters have been set, pressing the `Refresh` button will show the available results.
 
-![Operation logs tab within the Audit logs section of the Administration | Settings page](/assets/images/ccm/administration/audit-logs/operation.png)
+![Operation logs tab within the Audit logs section of the Administration | Settings page](/assets/images/ccm-playwright/administration/audit-logs/left-menu-active.png)
 
 It is possible to see all available information for an operation by clicking the :mag: button to the left-hand side of the table.
 
@@ -33,7 +33,7 @@ This will generate a file named something similar to the following `Chocolatey_A
 
 The length of time that Operation logs are stored within the Chocolatey Central Management Website can be configured in the [Retention Policies](xref:ccm-administration-settings-retention#audit-retention) Settings tab.
 
-## Changes logs
+## Change logs
 
 > :choco-warning: **WARNING**
 >
