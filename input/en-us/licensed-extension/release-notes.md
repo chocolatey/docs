@@ -41,6 +41,21 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 6.1.3 (February 21, 2024){#v6.1.3}
+
+> :choco-info: **NOTE**
+>
+> This release addresses a problem that prevented users of Chocolatey GUI and the Background Service (Chocolatey Agent) from installing and upgrading packages.
+
+- Fix - An unsupported argument is passed to the Chocolatey Agent when using the API - see [licensed #380](https://github.com/chocolatey/chocolatey-licensed-issues/issues/380).
+
+## 5.0.6 (February 21, 2024){#v5.0.6}
+
+> :choco-info: **NOTE**
+>
+> This release addresses a problem that prevented users of Chocolatey GUI and the Background Service (Chocolatey Agent) from installing and upgrading packages.
+
+- Fix - An unsupported argument is passed to the Chocolatey Agent when using the API - see [licensed #380](https://github.com/chocolatey/chocolatey-licensed-issues/issues/380).
 
 ## 6.1.2 (January 31, 2024)
 
