@@ -18,16 +18,13 @@ The verifier is a service that checks the correctness (that the package actually
 
 ## Specifications
 
-> :choco-info: **NOTE**
->
-> We currently run against only one system. This was chosen as it will install almost all Chocolatey packages. We will be adding multiple systems in the future.
+We currently test on one operating system. More will be added in the future. The operating systems we test with:
 
-The systems we run against:
-* Windows Server 2012 R2 x64
-  * It's a completely stock machine, no Windows updates applied. No hotfixes. Imagine that you took the image and ran it without applying any Windows updates.
-  * Has very limited things installed (bitvise sshd, git, notepad++, 7zip)
-  * The Printer Spooler Service is stopped and disabled.  This can cause problems for packages that deal with software that relates to anything to do with printing, i.e. printing of PDF files.
-
+* Windows Server 2019
+  * Windows Subsystem for Linux (WSL) enabled.
+  * .NET 3.5 and 4.8 preinstalled
+  * Has a few Chocolatey packages installed (`git`, `notepad++`, `7zip`)
+  * The Print Spooler Service is stopped and disabled. This can cause problems for packages that deal with software that relates to anything to do with printing (i.e. printing of PDF files).
 
 ## How can I bypass the verifier?
 
