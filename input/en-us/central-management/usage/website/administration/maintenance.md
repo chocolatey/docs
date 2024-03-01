@@ -11,7 +11,7 @@ To improve overall performance of the Chocolatey Central Management Website, a n
 
 If/when required, these caches can be cleared, either individually, or all at once.
 
-![Caches tab within the Maintenance section of the Administration | Settings page](/assets/images/ccm/administration/maintenance/caches.png)
+![Caches tab within the Maintenance section of the Administration | Settings page](/assets/images/ccm-playwright/administration/maintenance/left-menu-active.png)
 
 ## Website Logs
 
@@ -21,4 +21,4 @@ Clicking the `Download all` button will download all the available Website logs 
 
 Clicking the `Refresh` button will load any additional logs that have been created since the page was first opened.
 
-![Websites Logs tab within the Maintenance section of the Administration | Settings page](/assets/images/ccm/administration/maintenance/website-logs.png)
+![Websites Logs tab within the Maintenance section of the Administration | Settings page](/assets/images/ccm-playwright/administration/maintenance/tab-website-logs.png)

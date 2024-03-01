@@ -26,7 +26,7 @@ The encryption passphrase can be changed in Chocolatey Central Management by acc
 
 1. Navigate to the `Administrator -> Settings` section of Central Management, and click on the `Security` tab to show the location that a new passphrase can be set (_New `CCM Admin` Logins will be redirected to this location_).
 
-   ![Chocolatey Central Management Settings, encryption passphrase location](/assets/images/ccm/encryption-passphrase/ccm-admin-encryption-location.png)
+   ![Chocolatey Central Management Settings, encryption passphrase location](/assets/images/ccm-playwright/administration/settings/security-alert-new-passphrase-warning.png)
 
 2. Enter the passphrase to use in the box labeled `New Passphrase`.
 
@@ -54,8 +54,8 @@ The encryption passphrase can be changed in Chocolatey Central Management by acc
    > A dialog to refresh the page will be displayed once the changes have completed.
 5. Users following links for email activation or password resets will need to re-enter their information to have a new email sent.
 
-   ![Chocolatey Central Management, invalid Forgot Password link ](/assets/images/ccm/encryption-passphrase/ccm-reset-password-link-invalid.png)
-   ![Chocolatey Central Management, invalid Email Activation link](/assets/images/ccm/encryption-passphrase/ccm-email-activation-link-invalid.png)
+   ![Chocolatey Central Management, invalid Forgot Password link ](/assets/images/ccm-playwright/account/forgot-password/alert-invalid-link.png)
+   ![Chocolatey Central Management, invalid Email Activation link](/assets/images/ccm-playwright/account/email-activation/alert-invalid-link.png)
 
 ## Update the encryption passphrase
 
@@ -68,24 +68,24 @@ We have added a number of warnings to help highlight that changes need to be mad
 
 - Before a user is logged in, they will see a warning on the login screen confirming that additional changes need to be made by a user who is a member of the CCM Administrator role.
 
-  ![Chocolatey Central Management Login warning, pointing out changes are needed](/assets/images/ccm/encryption-passphrase/ccm-login-warning.png)
+  ![Chocolatey Central Management Login warning, pointing out changes are needed](/assets/images/ccm-playwright/account/login/alert-additional-settings.png)
 - If a user is logged in, but is not in the CCM Administrator role, the same warning is displayed to the user.
 
-  ![Chocolatey Central Management Dashboard warning for normal users](/assets/images/ccm/encryption-passphrase/ccm-normal-user-warning.png)
+  ![Chocolatey Central Management Dashboard warning for normal users](/assets/images/ccm-playwright/dashboard/alert-passphrase-admin.png)
 - A user that is a member of the CCM Administrator role, will be redirected to set the encryption passphrase, when they log in.
 
-  ![Chocolatey Central Management Settings, encryption passphrase location](/assets/images/ccm/encryption-passphrase/ccm-admin-encryption-location.png)
+  ![Chocolatey Central Management Settings, encryption passphrase location](/assets/images/ccm-playwright/administration/settings/security-alert-new-passphrase-warning.png)
 
 - A user that is a member of the CCM Administrator role, will be able to navigate to other sections of Chocolatey Central Management when they have not set the encryption passphrase and have logged in less than 5 times.
 
-  ![Chocolatey Central Management Dashboard warning on Administrators](/assets/images/ccm/encryption-passphrase/ccm-admin-user-warning.png)
+  ![Chocolatey Central Management Dashboard warning on Administrators](/assets/images/ccm-playwright/dashboard/alert-passphrase-user.png)
 
 - On the 5th and subsequent logins, a user who is a member of the CCM Administrator role will be redirected to set the encryption passphrase and will not be able to navigate to other sections of Chocolatey Central Management until the passphrase has been set.
   > :choco-info: **NOTE**
   >
   > A user who is not a member of the CCM Administrators role will still be available to use Chocolatey Central Management website and API, as normal .
 
-  ![Chocolatey Central Management Settings, encryption passphrase required](/assets/images/ccm/encryption-passphrase/ccm-admin-encryption-required.png)
+  ![Chocolatey Central Management Settings, encryption passphrase required](/assets/images/ccm-playwright/administration/settings/security-alert-new-passphrase-danger.png)
 
 ## FAQ
 

@@ -9,7 +9,7 @@ In Chocolatey Central Management, Users are people who are given access to login
 
 Users can be accessed by going to Administration on the left-hand navigation and selecting Users.
 
-![Users menu entry on the Chocolatey Central Management Dashboard](/assets/images/ccm/users/ccm-users-menu.png)
+![Users menu entry on the Chocolatey Central Management Dashboard](/assets/images/ccm-playwright/dashboard/left-menu-nested-roles.png)
 
 ## Creating a User
 
@@ -19,15 +19,15 @@ Users can be accessed by going to Administration on the left-hand navigation and
 
 On the main Users page, select the **+ Create New User** button.
 
-![Create New User button on the Users page](/assets/images/ccm/users/ccm-users-new.png)
+![Create New User button on the Users page](/assets/images/ccm-playwright/administration/users/button-create-new-user.png)
 
 You will then be presented with the `Create New User` window where you can enter all the information for the User, including `First Name`, `Email address`, etc.
 
-![Creating New User Setting User Properties](/assets/images/ccm/users/ccm-users-set-properties.png)
+![Creating New User Setting User Properties](/assets/images/ccm-playwright/administration/users/modal-new-user-tab-information.png)
 
 Next you'll want to click over to `Roles``. This window will allow you to select what specific [Roles](xref:ccm-administration-roles) you wish to give your new User.
 
-![Creating New User Setting Roles](/assets/images/ccm/users/ccm-users-set-roles.png)
+![Creating New User Setting Roles](/assets/images/ccm-playwright/administration/users/modal-new-user-tab-roles.png)
 
 Click :floppy_disk: **Save** to close the window and create the new User.
 A green toast notification will be shown once the operation completes successfully.
@@ -41,7 +41,7 @@ A green toast notification will be shown once the operation completes successful
 On the main Users page, [find](#searching-for-a-user) the User you want to edit.
 Select the :gear: **Actions** button on the left-hand side of the User, and then select **Edit** to open the _Edit User_ window.
 
-![Edit menu entry in User actions flyout menu](/assets/images/ccm/users/ccm-users-edit.png)
+![Edit menu entry in User actions flyout menu](/assets/images/ccm-playwright/administration/users/table-row-button-action-dropdown-menu-edit.png)
 
 From the **Edit Role** window, you can modify all the properties for a User, for example, `First Name`, `Phone number`, etc. In addition, you can alter the [Roles](xref:ccm-administration-roles) associated with the User.
 
@@ -55,7 +55,7 @@ In addition to configuring a set of Roles for an individual User, so can set spe
 On the main Users page, [find](#searching-for-a-user) the User you want to edit.
 Select the :gear: **Actions** button on the left-hand side of the User, and then select **Permission** to open the _Permissions_ window.
 
-![Permissions menu entry in User actions flyout menu](/assets/images/ccm/users/ccm-users-permissions.png)
+![Permissions menu entry in User actions flyout menu](/assets/images/ccm-playwright/administration/users/modal-permissions.png)
 
 From the tree of permissions, check/uncheck the permissions that are needed.
 
@@ -86,8 +86,6 @@ To allow them to attempt to login again, the account will need to be unlocked.
 On the main Users page, [find](#searching-for-a-user) the User that is locked out.
 Select the :gear: **Actions** button on the left-hand side of the User, and then select **Unlock**.
 A green toast notification will be shown once the operation completes successfully.
-
-![Action menu item showing how to unlock a User](/assets/images/ccm/users/unlock-a-user.png)
 
 ## Searching for a User
 

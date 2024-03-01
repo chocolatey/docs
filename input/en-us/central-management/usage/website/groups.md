@@ -15,7 +15,7 @@ Currently, Groups are entirely self-contained, and cannot be directly mapped fro
 The **Groups** page can be accessed from the left-hand navigation menu by selecting the **Groups** menu item.
 If you do not see this menu entry, verify with your administrator whether yourhas the `View Groups` role assigned.
 
-![Groups menu entry on the Chocolatey Central Management Dashboard](/assets/images/groups/ccm-groups-menu.png)
+![Groups menu entry on the Chocolatey Central Management Dashboard](/assets/images/ccm-playwright/dashboard/left-menu-groups.png)
 
 ## The All Computers (Automatic Group)
 
@@ -23,13 +23,9 @@ If you do not see this menu entry, verify with your administrator whether yourha
 >
 > This feature is available in Chocolatey Central Management starting with version 0.11.0.
 
-All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted.
+All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted. It will have a blue lock icon next to the name in the table. Hovering over this lock icon will display a tooltip with more information.
 
-![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/assets/images/groups/ccm-groups-automatic-group-table-entry.png)
-
-The `All Computers (Automatic Group)` will have a blue lock icon next to the name in the table. Hovering over this lock icon will display a tooltip with more information.
-
-![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the tooltip containing additional information stating, "All computers are added to this Group automatically and are system managed. This Group can not be edited or deleted.".](/assets/images/groups/ccm-groups-automatic-group-tooltip.png)
+![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/assets/images/ccm-playwright/groups/table-row-icon-automatic-group-lock.png)
 
 ## Temporary Groups
 
@@ -46,12 +42,12 @@ A Temporary Group can also not be Edited, Deleted, or Duplicated manually by a u
 
 On the main Groups page, select the **+ Create New Group** button.
 
-![Create New Group button on the Groups page](/assets/images/groups/ccm-groups-new.png)
+![Create New Group button on the Groups page](/assets/images/ccm-playwright/groups/button-create-new-group.png)
 
 Fill in a Name for the Group and (optionally) a Description in the appropriate fields in the _Create New Group_ modal.
 Then, select the Computer(s) or existing Group(s) you would like to include in the new Group and click the **>** button in the _Available Groups/Computers_ column to add the selected items, or click the **>>** button to add all available Groups and Computers into the new Group.
 
-![New Group Modal](/assets/images/groups/ccm-groups-modal-new.png)
+![New Group Modal](/assets/images/ccm-playwright/groups/modal-create-new-group.png)
 
 Click :floppy_disk: **Save** to close the modal and create the new Group.
 
@@ -65,7 +61,7 @@ On the main Groups page, find the Group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
 Select the :gear: **Actions** button on the left-hand side of the Group, and then select **Edit** to open the _Edit Group_ modal.
 
-![Edit menu entry in Group actions flyout menu](/assets/images/groups/ccm-groups-edit.png)
+![Edit menu entry in Group actions flyout menu](/assets/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-edit.png)
 
 From the **Edit Group** modal, you can modify the Group name and description, and modify members by adding or removing Groups and/or Computers.
 
@@ -98,11 +94,11 @@ On the main Groups page, find the group you want to view.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the :mag: button.
 Select the :gear: **Actions** button on the left-hand side of the group, and select **Details**.
 
-![Details menu entry in Group actions flyout menu](/assets/images/groups/ccm-groups-details.png)
+![Details menu entry in Group actions flyout menu](/assets/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-details.png)
 
 On the Group Details page, you'll find a searchable list of all Computers and Groups that are in the Group, as well as a more detailed view of the Group information.
 
-![Group Details screen showing the Computers and Groups that are currently in the Group](/assets/images/groups/ccm-groups-details-screen.png)
+![Group Details screen showing the Computers and Groups that are currently in the Group](/assets/images/ccm-playwright/groups/details/screen.png)
 
 ## Creating a Deployment Plan from a Group
 
@@ -110,19 +106,19 @@ Creating a Deployment Plan for a Group can be done from two pages:
 
 1. In the leftmost column of the Groups table you will find an :gear: **Actions** menu which will display a **Create New Deployment Plan** option.
 
-    ![Finding the Create New Deployment Plan menu entry for a specific Group on the Groups page](/assets/images/groups/ccm-groups-create-new-deployment-plan-menu.png)
+    ![Finding the Create New Deployment Plan menu entry for a specific Group on the Groups page](/assets/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-create-new-deployment-plan.png)
 
 1. From the Group Details page, click the :gear: **Actions** button and select the **Create New Deployment Plan** option.
 
-    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/assets/images/groups/ccm-groups-details-create-new-draft-deployment-plan-button.png)
+    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/assets/images/ccm-playwright/groups/details/button-action-dropdown-menu-create-new-deployment-plan.png)
 
 Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
 
-![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/groups/ccm-groups-add-script-command.png)
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](/assets/images/ccm-playwright/deployment-plans/edit/groups-modal-new-deployment-plan.png)
 
 The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
 
-![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/groups/ccm-groups-ineligible-deployment-warning.png)
+![Red popover warning on Deployment Step with ineligible deployment message](/assets/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
 
 After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the [Deployment Plans documentation](xref:ccm-deployments).
 
@@ -132,7 +128,7 @@ The Create / Edit Group modals display Groups or Computers that are ineligible f
 **All** Groups and Computers in a given Group must have their eligibility clear in order for that Group to be used as part of a Deployment Step.
 If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected Computers has been resolved.
 
-![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
+![Group eligibility legend](/assets/images/ccm-playwright/groups/modal-warning-legend.png)
 
 ## FAQ
 
@@ -140,7 +136,7 @@ If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot 
 
 If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deployments (Configuration)".
 
-![Group eligibility legend](/assets/images/groups/ccm-groups-eligibility.png)
+![Group eligibility legend](/assets/images/ccm-playwright/groups/modal-warning-legend.png)
 
 As you can see from the text, it is meant to help you figure out the issue:
 

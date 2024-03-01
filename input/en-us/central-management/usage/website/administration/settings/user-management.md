@@ -18,11 +18,11 @@ Description: Information about using up user management settings within the Admi
 1. Under LDAP Setting click the `Enable LDAP Authentication` button.
 1. Fill in your FQDN for the `Domain name` field and the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
 
-    ![CCM LDAP Setup](/assets/images/features/ccm/ccm_ldap_setup.png)
+    ![CCM LDAP Setup](/assets/images/ccm-playwright/administration/settings/user-management-checkbox-enable-ldap.png)
 
 1. Click the `Update LDAP Password` button to open a modal window to allow you to enter/confirm the password that is to be used.
 
-    ![Update LDAP Password](/assets/images/features/ccm/update_ldap_password.png)
+    ![Update LDAP Password](/assets/images/ccm-playwright/administration/settings/user-management-modal-ldap-password.png)
 
 1. Click the `Save` button
 1. Click the `Save All` button at the top right of the page to save your settings.
