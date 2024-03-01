@@ -651,9 +651,9 @@ Run `installChocolatey.cmd` from an elevated `cmd.exe` command prompt and it wil
 
 When you have Visual Studio 2010+ and the NuGet extension installed (pre-installed on any newer versions of Visual Studio), you can simply type the following three commands and you will have Chocolatey installed on your machine.
 
- `Install-Package chocolatey`
- `Initialize-Chocolatey`
- `Uninstall-Package chocolatey`
+ * `Install-Package chocolatey`
+ * `Initialize-Chocolatey`
+ * `Uninstall-Package chocolatey`
 
 ### Install using NuGet.exe from PowerShell
 
