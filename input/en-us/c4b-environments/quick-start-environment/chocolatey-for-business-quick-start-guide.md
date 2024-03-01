@@ -146,7 +146,26 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > </ul>
     > </details>
 
-### Step 4: SSL Setup
+### Step 4: Jenkins Setup
+
+1. In the same **elevated** PowerShell console as above, paste and run the following code:
+
+    ```powershell
+    Set-Location "$env:SystemDrive\choco-setup\files"
+    .\Start-C4bJenkinsSetup.ps1
+    ```
+
+    > <details>
+    > <summary><strong>What does this script do? (click to expand)</strong></summary>
+    > <ul class="list-style-type-disc">
+    > <li>Installs Jenkins package</li>
+    > <li>Updates Jenkins plugins</li>
+    > <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation</li>
+    > <li>Sets up pre-defined Jenkins jobs for the scripts above</li>
+    > </ul>
+    > </details>
+
+### Step 5: SSL Setup
 
 1. In the same **elevated** PowerShell console as above, paste and run the following code:
 
@@ -192,25 +211,6 @@ Below are the minimum requirements for setting up your C4B server via this guide
     > <li>Adds SSL certificate configuration for Nexus and CCM web portals</li>
     > <li>Generates a `Register-C4bEndpoint.ps1` script for you to easily set up endpoint clients</li>
     > <li>Outputs data to a JSON file to pass between scripts</li>
-    > </ul>
-    > </details>
-
-### Step 5: Jenkins Setup
-
-1. In the same **elevated** PowerShell console as above, paste and run the following code:
-
-    ```powershell
-    Set-Location "$env:SystemDrive\choco-setup\files"
-    .\Start-C4bJenkinsSetup.ps1
-    ```
-
-    > <details>
-    > <summary><strong>What does this script do? (click to expand)</strong></summary>
-    > <ul class="list-style-type-disc">
-    > <li>Installs Jenkins package</li>
-    > <li>Updates Jenkins plugins</li>
-    > <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation</li>
-    > <li>Sets up pre-defined Jenkins jobs for the scripts above</li>
     > <li>Writes a Readme.html file to the Public Desktop with account information for C4B services</li>
     > <li>Auto-opens README, CCM, Nexus, and Jenkins in your web browser</li>
     > <li>Removes temporary JSON files used during provisioning</li>
