@@ -93,7 +93,7 @@ See [this FAQ question](#how-do-i-find-the-package-source).
 ### How To Report An Abusive Package
 
 > :choco-info: **NOTE**
-> 
+>
 > Do not use the **Report Abuse** form to submit reports of:
 >
 > * [A package being outdated](xref:package-triage-process#package-is-outdated).
@@ -113,3 +113,33 @@ There are many definitions of what could make a package, or the software it inst
 If a package is abusive, please report it by clicking on the **Report Abuse** link on the package page, fill out and submit the form. The Site Administrators will follow up with you.
 
 ![How to report abuse on the Chocolatey Community Repository](/assets/images/triage-reportabuse.jpg)
+
+### Why do I get a 500 Internal Server Error when trying to push my package?
+
+If you receive a `500 Internal Server Error` when pushing a package, you may have a malformed package that the server was unable to process.
+One such case is documented in a [GitHub issue](https://github.com/chocolatey/home/issues/303).
+
+Make sure that none of the `<file ...>` entries in the `nuspec` file of your package have name collisions with other files or folders being packed.
+This is usually rare but can be encountered more commonly if you are trying to pack files which don't have a file extension.
+For example, if you have `<file>` entries that may look like this, you will need to change the name of the file or folder in the package to avoid collision:
+
+```xml
+<file src="bin\*" target="bin" />
+<file src="file-with-no-extension" target="bin" />
+```
+
+There are two possible solutions for this particular case:
+
+```xml
+<!-- option 1: rename the file to have a file extension -->
+<file src="bin\*" target="bin" />
+<file src="file-with.extension" target="bin" />
+
+<!-- option 2: specify the full path to the file in the package as the target, instead of just the folder name -->
+<file src="bin\*" target="bin" />
+<file src="file-with-no-extension" target="bin\file-with-no-extension" />
+```
+
+See an [issue we raised on the NuGet repository](https://github.com/NuGet/Home/issues/13273) for more information on the NuGet bug which can cause this kind of malformed package.
+
+If you receive a `500: Internal Server Error` that is not related to this specific case, please [file an issue on GitHub](https://github.com/chocolatey/home) so we can investigate the issue.
