@@ -50,9 +50,8 @@
         <link rel="apple-touch-icon" sizes="180x180" href="@Context.GetLink("/apple-touch-icon-180x180.png")" />
         @* CSS and JS *@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
-        <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
-        <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey-head.bundle.min.js")"></script>
+        <link rel="stylesheet" href="@Context.GetLink("/assets/css/docs.min.purged.css")" />
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/theme-toggle.min.js")"></script>
         <script type="text/javascript" async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
         <title>@title</title>
     </head>
@@ -62,7 +61,7 @@
             <div class="d-none d-sm-flex">
                 <div class="global-nav w-100">
                     <div class="container-fluid pe-0 pe-md-c75">
-                        @Html.Partial("~/global-partials/_globalnavigation.cshtml")
+                        @Html.Partial("~/global-partials/_GlobalNavigation.cshtml")
                     </div>
                 </div>
             </div>
@@ -114,7 +113,7 @@
                                     <div id="leftSidebar" class="collapse navbar-collapse">
                                         <div class="d-sm-none">
                                             <div class="global-nav">
-                                                @Html.Partial("global-partials/_globalnavigation")
+                                                @Html.Partial("global-partials/_GlobalNavigation")
                                             </div>
                                         </div>
                                         <ul class="navbar-nav">
@@ -362,10 +361,7 @@
                 <button type="button" class="btn btn-theme-background d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
             </div>
         </footer>
-
-        <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find,Number.parseFloat%2CNumber.parse%2CNodeList.prototype.forEach%2CNumber.parseInt"></script>
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey.bundle.min.js")"></script>
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/docsearch.min.js")"></script>
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/docs.min.js")"></script>
         <noscript><img src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx" width="1" height="1" style="display: none;" /></noscript>
     </body>
 </html>

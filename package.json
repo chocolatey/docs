@@ -11,12 +11,10 @@
     "url": "https://github.com/chocolatey/docs/issues"
   },
   "homepage": "https://github.com/chocolatey/docs#readme",
+  "scripts": {
+    "choco-theme": "yarn dlx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
+  },
   "devDependencies": {
     "choco-theme": "0.5.22"
-  },
-  "resolutions": {
-    "glob-parent": "^6.0.2",
-    "nth-check": "^2.1.1",
-    "terser": "^5.14.2"
   }
 }
