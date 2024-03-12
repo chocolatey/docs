@@ -76,6 +76,7 @@ To install the Chocolatey components and on-board clients, you could run an Ansi
         url: "https://{{ nexus_fqdn | default(ccm_fqdn) }}:8443/repository/ChocolateyInternal/index.json"
         user: "{{ nexus_user | default('chocouser') }}"
         password: "{{ nexus_password | mandatory }}"
+        self_service: true
 
     # You can add more configuration settings here.
     chocolatey_config:
@@ -235,7 +236,7 @@ To install the Chocolatey components and on-board clients, you could run an Ansi
 
         # Download Chocolatey Bootstrap Script
         $BootstrapScript = Join-Path $WorkingDirectory "Install-Chocolatey.ps1"
-        $BootstrapUrl = "$($RepositoryUrl.TrimEnd('/index.json').TrimEnd('ChocolateyInternal'))choco-setup/ChocolateyInstall.ps1"
+        $BootstrapUrl = "$($RepositoryUrl.TrimEnd('/index.json').TrimEnd('ChocolateyInternal'))choco-install/ChocolateyInstall.ps1"
         if (-not (Test-Path $BootstrapScript)) {
           Write-Verbose "Downloading '$($BootstrapUrl)'"
           $webClient.DownloadFile($BootstrapUrl, $BootstrapScript)
@@ -347,7 +348,7 @@ To install the Chocolatey components and on-board clients, you could run an Ansi
         with_dict:
           - CentralManagementServiceUrl: "https://{{ ccm_fqdn }}:24020/ChocolateyManagementService"
           - CentralManagementClientCommunicationSaltAdditivePassword: "{{ ccm_client_salt | default(omit) }}"
-          - centralManagementServiceCommunicationSaltAdditivePassword: "{{ ccm_service_salt | default(omit) }}"
+          - CentralManagementServiceCommunicationSaltAdditivePassword: "{{ ccm_service_salt | default(omit) }}"
         no_log: true
 
       - name: Set Chocolatey Features
