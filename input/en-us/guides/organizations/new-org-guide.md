@@ -1,6 +1,8 @@
 ## Overview
 
-### Pre-Requistes
+<?! Include "../../../shared/organizational-deployment/nexus-overview.txt" /?>
+
+### Pre-Requisites
 
 ### Install Sonatype Nexus
 

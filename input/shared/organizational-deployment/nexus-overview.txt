@@ -1,0 +1,12 @@
+This step will install and configure an instance of [Sonatype Nexus Repository](https://www.sonatype.com/products/sonatype-nexus-repository), to host packages for use with Chocolatey.
+
+It will result in:
+
+- A running instance of Sonatype Nexus Repository, with
+    - First-run configuration handled
+    - Demonstration repositories removed
+    - A `ChocolateyInternal` NuGet repository, for hosting production ready Chocolatey packages
+    - A `ChocolateyTest` NuGet repository, for hosting test Chocolatey packages
+    - A `choco-install` raw repository, for hosting Chocolatey deployment and package assets (for example: large binaries, scripts, etc.)
+    - Separate accounts for administration and package access
+    - Best practice configuration for use as a Chocolatey package repository
