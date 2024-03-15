@@ -1,5 +1,5 @@
 ---
-Order: 10
+Order: 25
 xref: script-builder
 Title: Script Builder
 Description: Features and benefits of Script Builder
