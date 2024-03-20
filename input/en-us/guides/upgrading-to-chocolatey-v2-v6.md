@@ -136,7 +136,7 @@ In the example above, `gitreleasemanager.portable` has two versions installed: 0
 
 Once this is complete, you can install the package again, without side-by-side, by running `choco install gitreleasemanager.portable`.
 
-If you need side-by-side functionality, or cannot uninstall packages installed side-by-side, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
+If you need side-by-side functionality, or cannot uninstall packages installed side-by-side, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. If you are able to put in some extra work, we [have documented an option that may work for you](xref:create-packages#naming-packages-to-allow-for-side-by-side-installation). Please see our [Support Lifecycle](xref:chocolatey-components-dependencies-and-support-lifecycle) for Chocolatey products.
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
