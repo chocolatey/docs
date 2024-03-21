@@ -9,7 +9,7 @@ In Chocolatey Central Management, Users are people who are given access to login
 
 Users can be accessed by going to Administration on the left-hand navigation and selecting Users.
 
-![Users menu entry on the Chocolatey Central Management Dashboard](/assets/images/ccm-playwright/dashboard/left-menu-nested-roles.png)
+![Users menu entry on the Chocolatey Central Management Dashboard](/assets/images/ccm-playwright/dashboard/left-menu-nested-users.png)
 
 ## Creating a User
 
@@ -25,7 +25,7 @@ You will then be presented with the `Create New User` window where you can enter
 
 ![Creating New User Setting User Properties](/assets/images/ccm-playwright/administration/users/modal-new-user-tab-information.png)
 
-Next you'll want to click over to `Roles``. This window will allow you to select what specific [Roles](xref:ccm-administration-roles) you wish to give your new User.
+Next you'll want to click over to `Roles`. This window will allow you to select what specific [Roles](xref:ccm-administration-roles) you wish to give your new User.
 
 ![Creating New User Setting Roles](/assets/images/ccm-playwright/administration/users/modal-new-user-tab-roles.png)
 
