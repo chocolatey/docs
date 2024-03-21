@@ -30,7 +30,7 @@ Alternatively, variables can also be added from an Deployment Step Advanced scri
 
 ## Adding Sensitive Variables to scripts
 
-<?! Include "../../../../shared/sensitive-variables-note.txt" /?>
+<?! Include "../../../../../shared/sensitive-variables-note.txt" /?>
 
 1. In an Advanced script of a Deployment Step, select the variable to insert from the Sensitive Variables drop down.
 
