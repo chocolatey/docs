@@ -37,7 +37,7 @@ The values generated during the deployment are available in the `CCM.html` file 
     </li>
 </ul>
 
-::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+::::{.tab-content .text-bg-body-secondary .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #scenario-one role=tabpanel aria-labelledby=scenario-one-tab}
 
 To install the Chocolatey components and on-board clients, you could run an Ansible playbook.

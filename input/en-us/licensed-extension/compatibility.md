@@ -94,7 +94,7 @@ When running each Chocolatey CLI command, you can append the `--skip-compatibili
     </li>
 </ul>
 
-::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+::::{.tab-content .text-bg-body-secondary .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #choco-v2-compatibility role=tabpanel aria-labelledby=choco-v2-compatibility-tab}
 
 ```powershell

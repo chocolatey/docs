@@ -447,7 +447,7 @@ When constructing a PowerShell script for a Deployment Step, all Chocolatey comm
     </li>
 </ul>
 
-::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+::::{.tab-content .text-bg-body-secondary .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #choco-v2 role=tabpanel aria-labelledby=choco-v2-tab}
 ```powershell
 choco list -r; exit $LASTEXITCODE
