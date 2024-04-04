@@ -74,3 +74,9 @@ If you recieve an error in the shell stating `chocolateyguicli is not registered
 1. Reinstall the `chococlateygui` package. `choco upgrade chocolateygui -y --force`
 1. If step 1 did not fix the issue, please check that your antivirus software is not blocking the Chocolatey GUI Config from being written to. The Chocolatey GUI Config file can be located at `C:\ProgramData\Chocolatey GUI\Config\Data.db`.
 1. If further assistance is needed please reach out via your support means. Listed by running `choco support`. If running Chocolatey OSS please reach out via our [Community Chat](https://ch0.co/community).
+
+## Package Installation Failures Don't Always Report Errors
+
+When installing packages with Chocolatey GUI, only the log output of the first installation is processed by Chocolatey GUI for reporting errors.
+
+This is due to a [known bug in Chocolatey GUI](https://github.com/chocolatey/ChocolateyGUI/issues/998).
