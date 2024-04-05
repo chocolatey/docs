@@ -210,8 +210,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -t, --template, --template-name=VALUE
      TemplateName - Use a named template in 
-       C:\code\choco\code_drop\temp\_PublishedApps\choco_merged\templates\templ-
-       atename instead of built-in template.
+       C:\ProgramData\chocolatey\templates\templatename instead of built-in
+       template.
 
      --name=VALUE
      Name [Required]- the name of the package. Can be passed as first 
