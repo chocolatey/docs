@@ -24,6 +24,7 @@
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
+var port = Argument("port", 5080);
 
 ///////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -96,7 +97,7 @@ Task("Statiq-Preview")
       Configuration = configuration
     };
 
-    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("preview --output \"{0}\"", buildData.OutputDirectory)), settings);
+    DotNetCoreRun(projectPath, new ProcessArgumentBuilder().Append(string.Format("preview --port {0} --output \"{1}\"", port, buildData.OutputDirectory)), settings);
 });
 
 Task("Statiq-Build")
