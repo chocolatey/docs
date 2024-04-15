@@ -10,7 +10,6 @@
 
 #addin nuget:?package=Cake.Git&version=0.22.0
 #addin nuget:?package=Cake.Kudu&version=1.0.1
-#addin nuget:?package=Cake.Gulp&version=1.0.0
 #addin nuget:?package=Cake.Yarn&version=0.4.8
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -82,16 +81,15 @@ Task("Yarn-Install")
     }
 });
 
-Task("Run-Gulp")
-    .WithCriteria(() => FileExists("./gulpfile.js"), "gulpfile.js file not found in repository")
+Task("Run-Choco-Theme")
     .IsDependentOn("Yarn-Install")
     .Does(() =>
 {
-    Gulp.Local.Execute();
+    Yarn.RunScript("choco-theme");
 });
 
 Task("Statiq-Preview")
-    .IsDependentOn("Run-Gulp")
+    .IsDependentOn("Run-Choco-Theme")
     .Does<BuildData>((context, buildData) =>
 {
     var settings = new DotNetCoreRunSettings {
@@ -102,7 +100,7 @@ Task("Statiq-Preview")
 });
 
 Task("Statiq-Build")
-    .IsDependentOn("Run-Gulp")
+    .IsDependentOn("Run-Choco-Theme")
     .Does<BuildData>((context, buildData) =>
 {
     var settings = new DotNetCoreRunSettings {
@@ -113,7 +111,7 @@ Task("Statiq-Build")
 });
 
 Task("Statiq-LinkValidation")
-    .IsDependentOn("Run-Gulp")
+    .IsDependentOn("Run-Choco-Theme")
     .Does<BuildData>((context, buildData) =>
 {
     var settings = new DotNetCoreRunSettings {

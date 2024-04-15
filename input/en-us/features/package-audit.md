@@ -35,7 +35,7 @@ When calling `choco list` (`choco list -lo` in Chocolatey CLI v1.x), add `--audi
     </li>
 </ul>
 
-::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+::::{.tab-content .text-bg-body-secondary .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #choco-v2-image role=tabpanel aria-labelledby=choco-v2-image-tab}
 
 ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](/assets/images/features/features_package_audit_v2.png)
@@ -74,7 +74,7 @@ Shows output as described above.
     </li>
 </ul>
 
-::::{.tab-content .text-bg-theme-elevation-1 .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
+::::{.tab-content .text-bg-body-secondary .p-3 .mb-3 .border-start .border-end .border-bottom .rounded-bottom}
 :::{.tab-pane .fade .show .active #choco-v2-options role=tabpanel aria-labelledby=choco-v2-options-tab}
 
 When calling `choco list`:

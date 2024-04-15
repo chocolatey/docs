@@ -50,9 +50,8 @@
         <link rel="apple-touch-icon" sizes="180x180" href="@Context.GetLink("/apple-touch-icon-180x180.png")" />
         @* CSS and JS *@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" data-no-mirror>
-        <link rel="stylesheet" href="@Context.GetLink("/assets/css/docsearch.min.css")" />
-        <link rel="stylesheet" href="@Context.GetLink("/assets/css/chocolatey.bundle.min.css")" />
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey-head.bundle.min.js")"></script>
+        <link rel="stylesheet" href="@Context.GetLink("/assets/css/docs.min.purged.css")" />
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/theme-toggle.min.js")"></script>
         <script type="text/javascript" async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
         <title>@title</title>
     </head>
@@ -62,7 +61,7 @@
             <div class="d-none d-sm-flex">
                 <div class="global-nav w-100">
                     <div class="container-fluid pe-0 pe-md-c75">
-                        @Html.Partial("~/global-partials/_globalnavigation.cshtml")
+                        @Html.Partial("~/global-partials/_GlobalNavigation.cshtml")
                     </div>
                 </div>
             </div>
@@ -73,12 +72,12 @@
                         <img class="d-none d-md-block navbar-brand-desktop" src='@Context.GetLink("/assets/images/global-shared/logo-square.svg")' alt="Chocolatey" />
                     </a>
                     <div class="d-flex align-items-center justify-content-end">
-                        <label class="mb-0 me-2 d-md-none" for="themeToggle">
-                            @Html.Partial("~/global-partials/_ThemeToggle.cshtml")
-                        </label>
-                        <a class="me-2 md-md-0 ms-md-3" href="https://github.com/chocolatey/docs" target="_blank" rel="noreferrer" aria-label="Edit on GitHub">
-                            <i class="fa-brands fa-github text-theme-contrast fa-2x" aria-hidden="true"></i>
+                        <a class="me-2" href="https://github.com/chocolatey/docs" target="_blank" rel="noreferrer" aria-label="Edit on GitHub">
+                            <i class="fa-brands fa-github text-body fa-2x" aria-hidden="true"></i>
                         </a>
+                        <div class="me-2 ms-md-3 d-md-none">
+                            @Html.Partial("~/global-partials/_ThemeToggle.cshtml")
+                        </div>
                         <div id="docsearchResults" class="me-2 ms-md-0 top-50 start-50"></div>
                         <button type="button" class="navbar-toggler btn btn-top-nav" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation">
                             <i class="fa-solid fa-bars"></i>
@@ -96,7 +95,7 @@
             <main>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-3 col-xl-2 p-0 text-bg-theme-elevation-1 border-end">
+                        <div class="col-md-3 col-xl-2 p-0 text-bg-body-secondary border-end">
                             <div id="leftSidebarNav" class="sticky-md-top collapse-y-height">
                                 @{
                                     string homePage = "Chocolatey - Software Management for Windows";
@@ -114,13 +113,13 @@
                                     <div id="leftSidebar" class="collapse navbar-collapse">
                                         <div class="d-sm-none">
                                             <div class="global-nav">
-                                                @Html.Partial("global-partials/_globalnavigation")
+                                                @Html.Partial("global-partials/_GlobalNavigation")
                                             </div>
                                         </div>
                                         <ul class="navbar-nav">
                                             @if (featuredHighlight.Any())
                                             {
-                                                <li class="bg-gradient-primary-light-elevation-1 p-3">
+                                                <li class="bg-gradient-adaptive-secondary p-3">
                                                     <div class="card card-body card-link">
                                                         <p class="h3">@featuredHighlight.First().GetString("Title")</p>
                                                         @Html.Raw(featuredHighlight.First().GetContentStringAsync().Result)
@@ -351,21 +350,18 @@
             </main>
         }
         <footer class="flex-shrink-0">
-            <div class="text-bg-theme-elevation-1 border-top text-center p-3">
+            <div class="text-bg-body-secondary border-top text-center p-3">
                 <span class="small">© @DateTime.Today.Year Chocolatey Software, Inc.</span><br />
                 <span class="small">Deployed from <a href="https://github.com/chocolatey/docs/commit/@VersionUtilities.GetSha()">@VersionUtilities.GetCommit()</a></span><br />
                 <span class="small"><a href="https://statiq.dev/">Generated by Statiq</a></span>
             </div>
             <div id="cookieNoticeAlert" class="alert alert-primary alert-dismissible alert-dismissible-center alert-btn-center fade show d-none" role="alert">
                 <p class="mb-0"><strong>docs.chocolatey.org uses cookies to enhance the user experience of the site.</strong></p>
-                <button type="button" class="btn btn-theme-background btn-sm d-none d-md-inline-block" data-bs-dismiss="alert" aria-label="Close">I accept</button>
-                <button type="button" class="btn btn-theme-background d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
+                <button type="button" class="btn btn-bg-body btn-sm d-none d-md-inline-block" data-bs-dismiss="alert" aria-label="Close">I accept</button>
+                <button type="button" class="btn btn-bg-body d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
             </div>
         </footer>
-
-        <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=default,Array.prototype.includes,Array.prototype.find,Number.parseFloat%2CNumber.parse%2CNodeList.prototype.forEach%2CNumber.parseInt"></script>
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/chocolatey.bundle.min.js")"></script>
-        <script type="text/javascript" src="@Context.GetLink("/assets/js/docsearch.min.js")"></script>
+        <script type="text/javascript" src="@Context.GetLink("/assets/js/docs.min.js")"></script>
         <noscript><img src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx" width="1" height="1" style="display: none;" /></noscript>
     </body>
 </html>
