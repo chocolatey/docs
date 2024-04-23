@@ -179,10 +179,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        ''.
 
      --proxy-password=VALUE
-     Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and user 
-       name.  Overrides the default proxy password (encrypted in settings if 
-       set).
+     Proxy Password - Explicit proxy password (optional) to be used with user 
+       name. Encrypted. Requires explicit proxy (`--proxy` or config setting) 
+       and user name (`--proxy-user` or config setting).  Overrides the default 
+       proxy password.
 
      --proxy-bypass-list=VALUE
      ProxyBypassList - Comma separated list of regex locations to bypass on 
