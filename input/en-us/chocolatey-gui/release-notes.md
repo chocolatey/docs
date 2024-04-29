@@ -18,6 +18,16 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
 
+## 2.1.1 (April 29, 2024)
+
+> :choco-warning: **WARNING**
+>
+> Refer to our [Upgrade Guide](xref:upgrading-to-chocolatey-v2-v6) for recommendations before upgrading from 1.x versions to 2.x.
+
+### Bug Fixes
+
+- Fix - Chocolatey GUI Not Displaying Error Output When Running as Non-Admin Through Background Service - see [#967](https://github.com/chocolatey/ChocolateyGUI/issues/967).
+- Fix - Chocolatey GUI Does Not Start if the Config Folder is Missing From C:\ProgramData\Chocolatey GUI. - see [#996](https://github.com/chocolatey/ChocolateyGUI/issues/996).
 
 ## 2.1.0 (June 29, 2023)
 
