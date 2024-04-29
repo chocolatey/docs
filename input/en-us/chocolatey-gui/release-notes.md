@@ -26,8 +26,8 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 
 ### Bug Fixes
 
-- Fix - Chocolatey GUI Not Displaying Error Output When Running as Non-Admin Through Background Service - see [#967](https://github.com/chocolatey/ChocolateyGUI/issues/967).
-- Fix - Chocolatey GUI Does Not Start if the Config Folder is Missing From C:\ProgramData\Chocolatey GUI. - see [#996](https://github.com/chocolatey/ChocolateyGUI/issues/996).
+- Fix - Chocolatey GUI not displaying error output when running as non-admin through Background Service - see [#967](https://github.com/chocolatey/ChocolateyGUI/issues/967).
+- Fix - Chocolatey GUI does not start if the config folder is missing from `C:\ProgramData\Chocolatey GUI`. - see [#996](https://github.com/chocolatey/ChocolateyGUI/issues/996).
 
 ## 2.1.0 (June 29, 2023)
 
