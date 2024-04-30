@@ -176,10 +176,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        ''.
 
      --proxy-password=VALUE
-     Proxy Password - Explicit proxy password (optional) to be used with 
-       username. Requires explicit proxy (`--proxy` or config setting) and user 
-       name.  Overrides the default proxy password (encrypted in settings if 
-       set).
+     Proxy Password - Explicit proxy password (optional) to be used with user 
+       name. Encrypted. Requires explicit proxy (`--proxy` or config setting) 
+       and user name (`--proxy-user` or config setting).  Overrides the default 
+       proxy password.
 
      --proxy-bypass-list=VALUE
      ProxyBypassList - Comma separated list of regex locations to bypass on 
@@ -210,8 +210,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -t, --template, --template-name=VALUE
      TemplateName - Use a named template in 
-       C:\code\choco\code_drop\temp\_PublishedApps\choco_merged\templates\templ-
-       atename instead of built-in template.
+       C:\ProgramData\chocolatey\templates\templatename instead of built-in
+       template.
 
      --name=VALUE
      Name [Required]- the name of the package. Can be passed as first 
