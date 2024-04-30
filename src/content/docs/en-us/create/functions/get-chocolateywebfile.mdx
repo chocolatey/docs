@@ -1,0 +1,243 @@
+﻿---
+order: 60
+xref: get-chocolateywebfile
+title: Get-ChocolateyWebFile
+description: Information on Get-ChocolateyWebFile function
+---
+import Xref from '@components/Xref.astro';
+
+# Get-ChocolateyWebFile
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyWebFile.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Downloads a file from the internet.
+
+## Syntax
+
+~~~powershell
+Get-ChocolateyWebFile `
+  -PackageName <String> `
+  -FileFullPath <String> `
+  [-Url <String>] `
+  [-Url64bit <String>] `
+  [-Checksum <String>] `
+  [-ChecksumType <String>] `
+  [-Checksum64 <String>] `
+  [-ChecksumType64 <String>] `
+  [-Options <Hashtable>] `
+  [-GetOriginalFileName] `
+  [-ForceDownload] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This will download a file from a url, tracking with a progress bar.
+It returns the filepath to the downloaded file when it is complete.
+
+## Notes
+
+Chocolatey works best when the packages contain the software it is
+managing and doesn't require downloads. However most software in the
+Windows world requires redistribution rights and when sharing packages
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
+aforementioned rights. Chocolatey understands how to work with that,
+hence this function. You are not subject to this limitation with
+internal packages.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+Get-ChocolateyWebFile '__NAME__' 'C:\somepath\somename.exe' 'URL' '64BIT_URL_DELETE_IF_NO_64BIT'
+
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+# Download from an HTTPS location
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+Get-ChocolateyWebFile -PackageName 'bob' -FileFullPath "$toolsDir\bob.exe" -Url 'https://somewhere/bob.exe'
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+
+# Download from FTP
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+Get-ChocolateyWebFile -PackageName 'bob' -FileFullPath "$toolsDir\bob.exe" -Url 'ftp://somewhere/bob.exe'
+~~~
+
+**EXAMPLE 4**
+
+~~~powershell
+
+# Download from a file share
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+Get-ChocolateyWebFile -PackageName 'bob' -FileFullPath "$toolsDir\bob.exe" -Url 'file:///\\fileshare\location\bob.exe'
+~~~
+
+**EXAMPLE 5**
+
+~~~powershell
+
+$options =
+@{
+  Headers = @{
+    Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';
+    'Accept-Charset' = 'ISO-8859-1,utf-8;q=0.7,*;q=0.3';
+    'Accept-Language' = 'en-GB,en-US;q=0.8,en;q=0.6';
+    Cookie = 'requiredinfo=info';
+    Referer = 'https://somelocation.com/';
+  }
+}
+
+Get-ChocolateyWebFile -PackageName 'package' -FileFullPath "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)\thefile.exe" -Url 'https://somelocation.com/thefile.exe' -Options $options
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -PackageName &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -FileFullPath &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 3
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url64bit [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | url64
+Required?              | false
+Position?              | 4
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -------------
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | $checksumType
+Accept Pipeline Input? | false
+ 
+###  -Options [&lt;Hashtable&gt;]
+Property               | Value
+---------------------- | -------------------
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | `@{Headers = @{}` }
+Accept Pipeline Input? | false
+ 
+###  -GetOriginalFileName
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -ForceDownload
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Get-WebFile' value='get-webfile' />
+ * <Xref title='Get-WebFileName' value='get-webfilename' />
+ * <Xref title='Get-FtpFile' value='get-ftpfile' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyWebFile -Full`.
+
+View the source for [Get-ChocolateyWebFile](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyWebFile.ps1)

@@ -1,0 +1,44 @@
+---
+order: 72
+xref: cpmr0072
+title: CPMR0072 - Usage of Private Environment Variables
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0072
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`) the scripts make use of either reading or writing private environment variables that should only be used by Chocolatey CLI helpers and not the automation scripts themselves.
+
+## Recommended Solution
+
+Remove any use of the following environment variables in the automation scripts.
+
+- `chocolateyToolsLocation`
+- `chocolateyBinRoot`
+- `chocolatey_bin_root`
+- `chocolateyPackageFolder`
+- `packageFolder`
+- `chocolateyChecksum32`
+- `chocolateyChecksum64`
+- `chocolateyChecksumType32`
+- `chocolateyChecksumType64` 
+- `downloadCacheAvailable`
+
+### Chocolatey Tools Location
+
+Any usages of the `chocolateyToolsLocation`, `chocolateyBinRoot`, or `chocolatey_bin_root` can be replaced with a call to <Xref title="Get-ToolsLocation" value="get-toolslocation" />. The `Get-ToolsLocation` helper is a wrapper that will provide the same information as directly reading the environment variable, but it also ensures that the variable is created if it did not previously exist.
+
+### Chocolatey Package Folder
+
+Replace usages of `chocolateyPackageFolder` or `packageFolder` with `Get-ChocolateyPath -PathType 'PackagePath'`. See the documentation for <Xref title="Get-ChocolateyPath" value="get-chocolateypath" /> for more information on the helper.
+
+## Reasoning
+
+The variables are used by the Chocolatey CLI helpers by including additional support and should not be used by the automation scripts themselves.

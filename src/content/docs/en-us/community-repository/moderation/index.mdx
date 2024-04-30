@@ -1,0 +1,275 @@
+---
+order: 50
+xref: moderation
+title: Moderation
+description: Information about the package moderation used on the Chocolatey Community Repository
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The community feed, which is found at https://community.chocolatey.org/packages, is a moderated feed. That means all new versions of packages are human reviewed prior to approval to check for safety, quality, and correctness. See <Xref title="What is moderation" value="faqs" anchor="what-is-moderation" /> for more details. There are also <Xref title="trusted packages" value="faqs" anchor="what-is-a-trusted-package" />, which only go through automated moderation review and bypass human review as they are coming from trusted sources and/or the software vendors themselves.
+
+By safety - we check that the package scripts do not do anything devious and that you get the software that the package indicates you are getting. Please note that the underlying software may contain crapware/malware (although it is usually not installed when allowing Chocolatey to install silently). This is not checked for currently, but we have plans for checking this in licensed versions of Chocolatey because a feature doing that is not free for us to provide.
+
+## Definitions
+
+* package - The Chocolatey/NuGet package
+* software - The underlying software that the package assists in installing
+* installer - The native installer, usually packaged as MSI, NSIS, InstallShield, Wise, Squirrel, or some other flavor.
+* the validator - The <Xref title="package validation service" value="package-validator" /> checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.
+* the verifier - The <Xref title="package verifier service" value="package-verifier-service" /> checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (checking every two weeks that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It’s testing all the parts and ensuring everything is good.
+
+## Requirements and Guidelines
+
+While probably the most comprehensive, this list may not be fully up-to-date. This should serve as a most general understanding, knowing that the <Xref title="validator" value="package-validator" /> may be checking for newer things than are written here and that reviewers/moderators may find newer things to check from time to time.
+
+<Callout type="info">
+    Moderators tend to get somewhat picky about properly stating the license, authors (software vendors), and copyright attributions. They are very important to protect both maintainers and the software vendors.
+</Callout>
+
+<Callout type="info">
+    This is still written based on a reviewer reading it, this will get cleaned up more over time to better explain it from a non-reviewer perspective.
+</Callout>
+
+### Existing Packages
+
+This section provides the requirements for packages that have had at least one released version approved or exempted. This includes any packages that existed prior to moderation being turned on (possibly an Unknown status).
+
+#### Requirements
+
+Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it **must** be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
+
+* ProjectUrl - it's required for the community feed
+* The authors field (software author/vendor) is not being used for the maintainers field (exception: when the maintainer is also the author)
+* The copyright is used appropriately. Look at anything you can find that states the copyright.
+* If there is a license available, it **must** be included in the licenseUrl.
+* Is the title appropriate?
+* At least something written in the description. It should be sufficient to explain the software.
+* The description should explicitly mention if this package installs trial software or software that needs a license present, or both.
+* The tags field is not being abused - note this doesn't mean they are missing tags you believe they should have (that is a guideline).
+* Tags do not include "chocolatey" (with the exception of the chocolatey packages)
+* When using an `iconUrl`, GitHub raw links are not allowed; linking through a CDN like jsDelivr, Statically, or Githack is required. 
+* When using an `iconUrl`, the icon needs to be hosted at a location that the package maintainer has control over. In most cases this is the package source repository, but can be the software website if the software author is also the package maintainer. 
+* Look over the package files
+  * If binaries are included in the package, does the maintainer have distribution rights? If they have explicit permission, a copy of that in PDF should be in the package contents.
+  * **Install/Uninstall scripts:**
+    * Do the scripts try to do anything malicious? This is almost always immediate grounds for banning the maintainer and deleting their packages.
+    * Do the scripts set good defaults for silent args?
+    * Is there anything there that would not work with POSH v2?
+    * If it is a download, is it getting it from the proper location? Use the project site (projectUrl) to determine where the download for the file is coming from and it should match the one in the package files. If not there needs to be a really, really good reason for not doing so.
+    * Does the download version match the package version?
+    * Does the download include both x86 and x64 urls if available?
+    * Flag the use of any of the following: $nugetChocolateyPath, $nugetPath,$nugetExePath, $nugetLibPath, $chocInstallVariableName, $nugetExe
+    * Does the PowerShell script try to use any choco commands? e.g. choco install/upgrade/uninstall?
+    * Does the package try to do anything that an existing Chocolatey function already covers? The maintainers would need a really good reason for diverging from that.
+    * If the package is a portable package (downloads a zip file or non-install archive, many times carries the .portable name), does it try to put that in Program Files? This is a no no because Program Files requires admin permissions to write to and is typically the place for natively installed software.
+* Does the package install correctly?
+* Does the package uninstall correctly? (this means the package, not the underlying software. We'd like to have that as well but it's more a guideline at the moment than a requirement. Patience, we will get there).
+* Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
+  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See <Xref title="Naming your package" value="create-packages" anchor="naming-your-package" />
+    * suggest the id split if over 25 chars with no "-" in the id
+    * flag on "." in name (unless .portable/.install)
+
+#### Guidelines
+
+Guidelines are strong suggestions that improve the quality of a package version. These are considered something to fix for next time to increase the quality of the package. Over time Guidelines can become Requirements. A package version can be approved without addressing Guideline comments but will reduce the quality of the package.
+
+* Trial software should include the #trial tag. (will become a requirement in Feb 2016)
+* Software that requires a license should include a tag #license. (will become a requirement in Feb 2016)
+* LicenseUrl is nearly a requirement. The only reason it sits in guidelines is that not all software has a url out there containing its license information. We request that in those cases they point to the url for the FOSS license of the software, if they have an open license.
+* Usage of the `iconUrl` is very strongly encouraged, however, the addition of a `iconUrl` is a guideline and something to note for a maintainer to fix up next time. Some software doesn't have a proper icon, in which case an `iconUrl` should not be added. See the requirements section for the requirements if a `iconUrl` is included. 
+* Suggest description get really filled out and they take full advantage of the use of markdown.
+* Summary is important, but it doesn't show up on the package page.
+* Tags could always use suggestions to add.
+* Look over the package files
+  * **Install / Uninstall Scripts:**
+    * Be familiar with things that have been deprecated and add a gentle reminder about those things for them to clean up.
+    * Are the commented lines from the template in there? Those should be cleaned up. It is not required to remove all comments, some comments are helpful. It’s a bit subjective on what is helpful and what is noise.
+* Something in the releaseNotes section would be great.
+
+## Package Review Process
+
+When reviewing new and existing packages, a reviewer/moderator will have a few things left for review after the verifier and validator have verified a package.
+
+### Moderation Workflow
+
+#### First Time Go Workflow
+
+When a good package is submitted, the normal flow of moderation works roughly like this:
+
+1. A maintainer submits a package. That puts the package in a "Pending" status (Pending automated review checks).
+1. If automated reviews don't require changes, the package moves to a "Ready" status. (Ready for Reviewer)
+1. If a moderator doesn't find any required changes, they move the package to an "Approved" status.
+
+#### Full Workflow
+
+The full normal workflow is like this:
+
+1. A maintainer submits a package. That puts the package in a "Pending" status (Pending automated review checks).
+1. If automated reviews don't require changes, the package moves to a "Ready" status. (Ready for Reviewer)
+1. If any of the automated review checks flag a package, the package moves to a "Waiting" status. (Waiting for maintainer to take corrective action)
+1. The package will sit in the Waiting status until a maintainer resubmits the package (starts the process from step one) or responds ("Responded"). Responses are typically questions, comments or requests for exempting from the verifier. (Maintainer responded, waiting for review/Maintainer update)
+1. If the package is in "Responded", it moves up the queue and waits for a reviewer to go over the response and process it accordingly.
+1. If a package is resubmitted, it doesn't go into a Ready status. It moves to an "Updated" status at the top of the queue. (Maintainer updated, waiting for reviewer)
+1. If a moderator asks for required changes, the package moves to a "Waiting" status. (back to step 4)
+1. If a moderator doesn't find any required changes, they move the package to an "Approved" status.
+
+#### Trusted Package Workflow
+
+This is the trusted package workflow:
+
+1. A maintainer submits a trusted package. That puts the package in a "Pending" status (Pending automated review checks).
+1. If automated reviews don't require changes, the package moves to an "Approved" status.
+1. If any of the automated review checks flag a package, the package moves to a "Waiting" status. (Waiting for maintainer to take corrective action)
+1. The package will sit in the Waiting status until a maintainer resubmits the package (starts the process from step one) or responds ("Responded"). Responses are typically questions, comments or requests for exempting from the verifier. (Maintainer responded, waiting for review/Maintainer update)
+1. If the package is in "Responded", it moves up the queue and waits for a reviewer to go over the response and process it accordingly.
+1. If a package is resubmitted, it doesn't go into a Ready status. It moves to an "Updated" status at the top of the queue. (Maintainer updated, waiting for reviewer)
+1. If the package passes automated review, the package moves to an "Approved" status.
+1. If a moderator asks for required changes, the package moves to a "Waiting" status. (back to step 4)
+1. If a moderator must manually override the approval, they move the package to an "Approved" status.
+
+### Maintainer Process
+
+**FYI:** Ensure that you can receive emails from Chocolatey.org so that you will receive email notifications when a package review is updated.
+
+The process of moderation review is an interactive process for both maintainers and moderators. As a maintainer you submit packages and they are reviewed to be sure they meet a minimum quality and correctness to be published on Chocolatey.org. It's an important distinction that while almost all valid packages are approved, a package can be rejected for a variety of reasons.
+
+Packages go through three automated checks: validation, verification, and cleanup. There is about a 30 minute lag time from submission until automatic review kicks off - this allows the CDN to recheck and pull a newer version of the package up (in the case of resubmission), so that the package version being verified is the one you submitted and not a stale copy.
+
+When you receive emails that require you to take action, you should review what is requested and make the changes. If a package is flagged and needs changes based on requirements, the process is for you to make the required changes and resubmit the **exact** same version. The faster you respond to the review process, the faster your package can get approved.
+
+The cleanup automated check, aka the cleaner, checks packages that have been in a 'waiting' (waiting for maintainer to take action) status with no action/response within 20 days and follows up with a final reminder. If after 15 more days nothing has been done, the package will automatically be rejected on non-response. We feel that 35 days prior to automatic close is ample time for a maintainer to move the ball forward (even one going on holiday). If a package gets rejected, it doesn't mean that we don't value your contributions, just that we can not continue to hold packages versions in a waiting status that have possibly been abandoned. The rejected status is also reversible in case a maintainer wants to pick it back up within a year.
+
+Moderators give you the benefit of the doubt and will work with you to help you get a package to an approved status. (This also includes the older review process based on email before the site allowed you to comment).
+
+### Reviewer / Moderator Process
+
+Typically a package goes into the moderation queue when submitted.You can get to that by signing in and going to the packages page like you normally would.
+
+1. You should see a new drop down near the top that allows you to change your view. This is the moderation queue.
+
+   ![Moderation Queue Dropdown](/images/moderation-1.jpg)
+
+1. You will see items arranged in order based on reviewed and resubmitted at the top, items ready for review in order based on when they were submitted, and at the end of the queue, you will see items that are waiting for maintainer response.
+
+   ![Moderation Queue](/images/moderation/moderation-queue.png)
+
+1. You grab a package and head in and review it based on the following items in the requirements and guidelines.
+1. Ensure package tests have ran. It will have both comments in the review and a colored ball up next to the title of the package. A package status box is present at the top of each package page with test results. The left side of the ball next to the package title represents verification testing, while the right side represents validation testing (see image below). Color of ball sections indicate:
+    - **Green** if it is ready for review and approval.
+    - **Yellow** if still pending verification/validation (has not yet run).
+    - **Red** if it failed verification/validation. The maintainer needs to fix or respond. If you find a package needs to skip verification, please contact an admin to do so. If you see a network issue from the log, you can rerun verification (see how in the next step).
+    - **Grey** if a package skips verification/validation for some reason (which will be listed by the admin that flagged the package to skip testing). If possible, you will need to run the install/uninstall yourself.
+
+   ![Package Testing Results](/images/moderation-4.jpg)
+
+1. Check over the verifier logs to be sure everything looks good (follow the link from the button). If necessary, you can rerun the verifier.
+
+   ![Rerun](/images/moderation-5.jpg)
+
+1. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](#requirements-and-guidelines) (see [Requirements and Guidelines](#requirements-and-guidelines) above).
+
+   ![Review Notes](/images/moderation-6.jpg)
+
+1. Look at the notes section from the latest run of the validator to see if there are additional flagging follow ups from the validator.
+1. Check over the package based on [moderator review](#moderator-review) (below).
+1. Review the previous comments if there are any.
+
+   ![Review previous comments for other package versions](/images/moderation/moderation-previous-comments.png)
+
+1. Look through the package files
+
+   ![Package Files](/images/moderation-10.jpg)
+
+1. Leave comments in the review box ("Add to Review Comments" section) if you have any. Note that you can use markdown here.
+
+   ![Review box](/images/moderation-11.jpg)
+
+1. If you are approving the package, change Package Status to Approved. If you are Rejecting a package, change the status to Rejected. Otherwise leave the status as is (likely in Submitted).
+1. If you are making a comment or doing another action, but don't want to flag/hold the package for the maintainer to take action, uncheck the "require maintainer to make changes?" box. This is not required to be unchecked if you are approving the package.
+
+   ![Require maintainers to make changes?](/images/moderation-13.jpg)
+
+1. If you are doing an action that doesn't need to notify the maintainer, uncheck "Send Maintainer email?".
+1. Click Save. You should get a message that the message was sent successfully.
+1. The maintainers receive an email noting the comments. They will follow up on the package page with their comments.
+1. Once the package is updated, it will show up in the top of the queue. At that time, please review it and make sure the maintainers made all changes requested.
+
+#### Moderator Review
+
+You can only ever require a maintainer to make changes if there are findings from the requirements section. Guidelines are strong suggestions that will improve the quality of the package, but consider that a quality over time. A maintainer is NOT required to make changes based on guidelines/suggestions. This deserves to be said twice: **"A moderator cannot hold up a package based on guidelines/suggestions *alone*"**.
+
+The validator checks quite a few items (<Xref title="validator rules" value="package-validator" />) and leaves a few for you to check. Ensure you have looked over the notes that it has left.
+
+With the exception of included binaries, a review that doesn't flag should take under a minute. If you are holding a package, you can refer the maintainer to this link to save time: https://docs.chocolatey.org/en-us/community-repository/moderation
+
+##### Requirements
+
+Always be explicit that you are waiting on the maintainer to fix and resubmit the same version of the package so you can move the review process along.
+
+* Is the title appropriate?
+* The description should explicitly mention if this package installs trial software or software that needs a license present, or both.
+* The authors field (software author) is not being used for the maintainers field (exception: when the maintainer is also the author)
+* The tags field is not being abused - note this doesn't mean they are missing tags you believe they should have (that is a guideline).
+* Binaries
+  * If binaries are included in the package, does the maintainer have distribution rights? If they require explicit permission, a copy of that in PDF form should be in the package contents.
+  * Find the checksum of the official binaries and verify they match the included binaries (listed on the package page).
+* Automation scripts (the `ps1`/`psm1` files such as `chocolateyInstall.ps1`)
+  * Do the scripts try to do anything malicious? This is almost always immediate grounds for banning the maintainer and deleting their packages.
+  * Do the scripts set good defaults for silent args? A package should almost ALWAYS install completely silently by default. If a maintainer makes the argument that it is so folks can choose what to pass, remind them this already exists through install arguments (CommandsInstall#options-and-switches) and if they want to add package parameters (How-To-Parse-PackageParameters-Argument), they can also do that (and add them to the description).
+  * Is there anything in the scripts that would not work with POSH v2? (We are working on making this automatically checked by the validator - see https://github.com/chocolatey/home/issues/34)
+  * If the package downloads anything, is it getting downloads from the proper location? Follow the projectUrl to the project site to see where it is downloading from - it should match the scripts. If not there needs to be a really, really good reason for not doing so.
+  * Does the download version match the package version?
+  * Does the download include both x86 and x64 urls if available?
+* Not a package duplicating another existing package
+* Brand New Packages **ONLY** (no approved or existing version in history, prereleases do not count)
+  * Package Id naming - if the naming doesn't follow our conventions, it is grounds for rejecting immediately with the suggestion they resubmit with suggested name. Note that they may have had prereleases already, and it's still okay to move forward with the rejected status as long as the name of the name of package hasn't been previously approved. See <Xref title="Naming your package" value="create-packages" anchor="naming-your-package" />
+    * suggest the id split if over 25 chars with no "-" in the id
+    * flag on "." in name (unless .portable/.install)
+
+##### Guidelines
+
+If a package is only flagging on guidelines, be sure to move forward on approval (this means no requirements flagged by you or the validator checks).
+
+* Trial software should include the #trial tag. (will become a requirement in Feb 2016)
+* Software that requires a license should include a tag #license. (will become a requirement in Feb 2016)
+* Tags could always use suggestions to add.
+* Automation scripts (the `ps1`/`psm1` files such as `chocolateyInstall.ps1`)
+  * Do any scripts try to do anything that an existing Chocolatey function already covers? The maintainers would need a really good reason for diverging from that.
+
+## Roles
+
+* Maintainer - A person that maintains packages. Maintainers are usually subject to the review process.
+* Reviewer - Able to review packages but not approve/reject them
+* Moderator - Able to set/remove package maintainers, review packages, approve/reject them, able to unlist packages.
+* Administrator - Has access to administrative sections of the site. Can perform all functions that a moderator can perform.
+
+#### Becoming a Maintainer
+
+To become a package maintainer, you must have an account on https://community.chocolatey.org and have at least one package on the site.
+
+#### Becoming a Reviewer
+
+TBD
+
+#### Becoming a Moderator
+
+There is no set process for becoming a moderator yet. Usually it is having many approved packages and understanding the process of creating Chocolatey packages. Eventually it will be something you earn through your reputation on the site.
+
+* Make awesome packages
+* Work on the Disqus threads and mailing list.
+* Have a desire to better the quality of Chocolatey
+* Know a little PowerShell. More is better but yeah.
+* Be friendly and customer service-oriented
+
+#### Becoming an Admin
+
+This is not an achievable status.
+
+### New Reviewers / Moderators
+
+* Understand the package creation process and the current recommendations, written at <Xref title="create packages" value="create-packages" />.
+* Become familiar with the package guidelines and all of the different Chocolatey functions available. <Xref title="Helper reference" value="powershell-reference" />
+* Join the [chocolatey-moderators at google groups dot com](https://groups.google.com/forum/#!forum/chocolatey-moderators) mailing list. This is necessary for communication with other moderators and receiving messages regarding changes in moderation.
+* Join our [Community Chat](https://ch0.co/community) and hang out.

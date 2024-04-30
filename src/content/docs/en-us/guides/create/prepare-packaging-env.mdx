@@ -1,0 +1,63 @@
+---
+order: 1
+xref: howto-prepare-env
+title: How To Prepare a Package Creation Environment
+description: Information on how to setup a computer to create Chocolatey packages
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Getting ready to create Chocolatey packages requires just a few steps. Follow along here, and you'll be creating gooey Chocolatey goodness is no time flat!
+
+## First Things First
+
+The very first thing you are going to need, if you've not got it already, is to install Chocolatey CLI.
+You can copy the below PowerShell code into an _administrative PowerShell console_ to quickly install it.
+
+<Callout type="info">
+    If you need a more advanced installation scenario, or for more information you can head over to [the Chocolatey CLI installation instructions](https://chocolatey.org/install) first, and then come back here when Chocolatey CLI is
+up and running.
+</Callout>
+
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+## Configuring Your Development Environment
+
+Thankfully (if not a little obviously), everything we need to configure is available via the Chocolatey Community Repository. We'll setup the following:
+
+- Visual Studio Code (VS Code)
+- The PowerShell VS Code Extension
+- The Chocolatey VS Code Extension
+
+You can run the following in an _administrative PowerShell console_ to get up and running in one go:
+
+```powershell
+choco install vscode vscode-powershell chocolatey-vscode -y --source='https://community.chocolatey.org/api/v2/'
+```
+
+## Setting Up The Filesystem
+
+We want an easy to reference place to perform any of the tutorials available in this Packaging Creation documentation. In a PowerShell console create a `~\tutorials` directory with the following command:
+
+```powershell
+New-Item ~\tutorials -ItemType Directory
+```
+
+## Configure a Source For Tutorials
+
+While working through the various tutorials here, you'll likely want to actually install, upgrade, and uninstall the packages you create to see the fruits of your labor.
+
+The easiest way to do that is to configure a source for those packages to be stored. In an _administrative PowerShell console_ set that source up with the following:
+
+```powershell
+choco source add --name='Tutorials' --source="$(Convert-Path ~/tutorials)"
+```
+
+Oh, and don't worry, the tutorials available here all ensure that the packages you create as part of the tutorial end up here. The important thing is that you actually _have_ the source!
+
+## You're Done!
+
+Oh, SWEET! You're all ready to begin working through the tutorials here. Before long you'll be a Master Chocolatier. Happy Packaging!

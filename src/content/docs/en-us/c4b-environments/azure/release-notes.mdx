@@ -1,0 +1,402 @@
+---
+order: 10
+xref: c4b-azure-release-notes
+title: Release Notes
+description: Release Notes for the Chocolatey for Business Azure Environment
+ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-og.png
+twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-twitter.png
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Chocolatey for Business Azure Environment Release Notes
+
+<Callout type="info">
+    Issue links may not be publicly available at this time.
+</Callout>
+
+## 0.21.0 (February 8, 2024) \{#v0.21.0}
+
+### Breaking Change
+
+- Trim the list of included Jenkins plugins - see [#103](https://github.com/chocolatey/c4b-azure/issues/103).
+
+### Improvements
+
+- Setup Nexus Using NuGet V3 Repositories - see [#145](https://github.com/chocolatey/c4b-azure/issues/145).
+- Update to Latest Packages - see [#154](https://github.com/chocolatey/c4b-azure/issues/154).
+- Update Jenkins Java Dependency - see [#155](https://github.com/chocolatey/c4b-azure/issues/155).
+
+### Bundled Version Update
+
+| Package                        | Version       |
+|--------------------------------|---------------|
+| chocolatey-agent               | 2.1.2         |
+| chocolatey-management-database | 0.12.0        |
+| chocolatey-management-service  | 0.12.0        |
+| chocolatey-management-web      | 0.12.0        |
+| chocolatey.extension           | 6.1.2         |
+| dotnet-6.0-aspnetruntime       | 6.0.26        |
+| dotnet-6.0-runtime             | 6.0.26        |
+| dotnet-aspnetcoremodule-v2     | 16.0.23339    |
+| jenkins                        | 2.426.3       |
+| nexus-repository               | 3.64.0.4      |
+| Temurin11jre                   | N/A (Removed) |
+| Temurin21jre                   | 21.0.1.1200 (New) |
+| vcredist140                    | 14.38.33135   |
+
+## 0.20.0 (August 17, 2023) \{#august-17-2023}
+
+### Improvements
+
+- Update to Application Gateway v2 - see [#89](https://github.com/chocolatey/c4b-azure/issues/89).
+- Accessing Application Gateway Back-end Health Statistics - see [#92](https://github.com/chocolatey/c4b-azure/issues/92).
+- Update from Basic Public IP SKU to Standard - see [#108](https://github.com/chocolatey/c4b-azure/issues/108).
+- Update to Latest Packages - see [#148](https://github.com/chocolatey/c4b-azure/issues/148).
+- Upgrade to AppGateway v2 - see [#149](https://github.com/chocolatey/c4b-azure/pull/149).
+
+### Bundled Version Update
+
+| Package                    | Version       |
+|----------------------------|---------------|
+| chocolatey                 | 2.2.2         |
+| dotnet-6.0-aspnetruntime   | 6.0.20        |
+| dotnet-6.0-runtime         | 6.0.20        |
+| dotnet-aspnetcoremodule-v2 | 16.0.23172    |
+| jenkins                    | 2.401.3       |
+| nexus-repository           | 3.58.1.2      |
+| Temurin11jre               | 11.0.20.800   |
+| Temurinjre                 | N/A (Removed) |
+
+## 0.19.0 (July 4, 2023) \{#july-4-2023}
+
+### Feature
+
+- Update environment deployment to support Chocolatey CLI v2.x - see [#135](https://github.com/chocolatey/c4b-azure/issues/135).
+
+### Bug Fixes
+
+- Fix - VM Unable to Start Due to Missing Secret - see [#121](https://github.com/chocolatey/c4b-azure/issues/121).
+- Fix - Jenkins Jobs failing when executed with Chocolatey v2.x installed - see [#134](https://github.com/chocolatey/c4b-azure/issues/134).
+
+### Improvement
+
+- Update to 2.1.0 and 6.1.0 of Chocolatey products - see [#141](https://github.com/chocolatey/c4b-azure/issues/141).
+
+### Bundled Version Update
+
+| Package                             | Version       |
+|-------------------------------------|---------------|
+| chocolatey                          | 2.1.0         |
+| chocolatey.extension                | 6.1.0         |
+| chocolatey-agent                    | 2.1.0         |
+| chocolateygui                       | 2.1.0         |
+| chocolateygui.extension             | 2.0.0         |
+| chocolatey-licensed-jenkins-scripts | 0.1.1 (New)   |
+| Temurinjre                          | 20.0.1.900    |
+| vcredist140                         | 14.36.32532   |
+
+## 0.18.1 (May 25, 2023) \{#may-25-2023}
+
+### Bug Fix
+
+- Fix - Updating Jenkins breaks AppGateway Health Checks - see [#126](https://github.com/chocolatey/c4b-azure/issues/126).
+
+### Improvements
+
+- Update Chocolatey software components to the latest available versions - see [#128](https://github.com/chocolatey/c4b-azure/issues/128).
+- Update ARM Template Resource API Versions - see [#129](https://github.com/chocolatey/c4b-azure/issues/129).
+- Update Jenkins Plugins and match selection in C4B Quick Start - see [#131](https://github.com/chocolatey/c4b-azure/issues/131).
+
+### Bundled Version Update
+
+| Package                 | Version       |
+|-------------------------|---------------|
+| chocolatey              | 1.4.0         |
+| chocolatey.extension    | 5.0.3         |
+| chocolatey-agent        | 1.1.2         |
+| chocolateygui           | 1.1.3         |
+| chocolateygui.extension | 1.0.3         |
+| jenkins                 | 2.387.2       |
+| jenkins-set-prefix.hook | 1.0.0 (New)   |
+| nexus-repository        | 3.54.1.01     |
+| Temurin11jre            | 11.0.19.700   |
+
+## 0.18.0 (February 21, 2023) \{#february-21-2023}
+
+### Improvement
+
+- Update Chocolatey software components to the latest available versions - see [#124](https://github.com/chocolatey/c4b-azure/issues/124)
+
+### Bundled Version Update
+
+| Package       | Version       |
+|---------------|---------------|
+| chocolatey    | 1.3.0         |
+| chocolateygui | 1.1.1         |
+
+## 0.17.1 (February 3, 2023) \{#february-3-2023}
+
+### Improvement
+
+- Update Chocolatey software components to the latest available versions - see [#123](https://github.com/chocolatey/c4b-azure/issues/123)
+
+### Bundled Version Update
+
+| Package                            | Version       |
+|------------------------------------|---------------|
+| chocolatey                         | 1.2.1         |
+| chocolatey-windowsupdate.extension | 1.0.5         |
+| chocolatey.extension               | 5.0.1         |
+| nexus-repository                   | 3.43.0.01     |
+| Temurin11jre                       | 11.0.18.1000  |
+| vcredist140                        | 14.32.31332   |
+
+## 0.17.0 (October 28, 2022) \{#october-28-2022}
+
+### Improvements
+
+- Update Chocolatey software components to the latest available versions - see [#110](https://github.com/chocolatey/c4b-azure/issues/110)
+- Jenkins Job should account for multiple new releases when syncing from test to prod repository  - see [#111](https://github.com/chocolatey/c4b-azure/issues/111)
+
+### Bundled Version Update
+
+| Package                        | Version       |
+|--------------------------------|---------------|
+| chocolatey                     | 1.2.0         |
+| chocolatey.extension           | 5.0.0         |
+| chocolatey-agent               | 1.1.1         |
+| chocolateygui                  | 1.1.0         |
+| chocolateygui.extension        | 1.0.1         |
+| chocolatey-management-database | 0.10.1        |
+| chocolatey-management-service  | 0.10.1        |
+| chocolatey-management-web      | 0.10.1        |
+
+## 0.16.0 (September 7, 2022) \{#september-7-2022}
+
+### Improvements
+
+- Update Chocolatey Central Management to 0.10.0 and include new dependencies - see [#94](https://github.com/chocolatey/c4b-azure/issues/94)
+- Update chocolatey.extension to 4.2.0 - see [#99](https://github.com/chocolatey/c4b-azure/issues/99)
+- Update chocolatey-agent to 1.1.0 - see [#100](https://github.com/chocolatey/c4b-azure/issues/100)
+- Deployment should fail if installation of key components is not successful - see [#101](https://github.com/chocolatey/c4b-azure/issues/101)
+
+### Bundled Version Update
+
+| Package                        | Version             |
+|--------------------------------|---------------------|
+| aspnetcore-runtimepackagestore | N/A (Removed)       |
+| chocolatey-agent               | 1.1.0               |
+| chocolatey-management-database | 0.10.0              |
+| chocolatey-management-service  | 0.10.0              |
+| chocolatey-management-web      | 0.10.0              |
+| chocolatey.extension           | 4.2.0               |
+| dotnet-6.0-aspnetruntime       | 6.0.5 (New)         |
+| dotnet-6.0-runtime             | 6.0.5 (New)         |
+| dotnet-aspnetcoremodule-v2     | 16.0.22108 (New)    |
+| dotnetcore-sdk                 | N/A (Removed)       |
+| dotnetcore-windowshosting      | N/A (Removed)       |
+| dotnetfx                       | 4.8.0.20220524      |
+| KB2533623                      | N/A (Removed)       |
+| nexus-repository               | 3.41.1.01           |
+| Temurin11jre                   | 11.0.16.10100       |
+| vcredist140                    | 14.28.29913         |
+| vcredist2015                   | N/A (Removed)       |
+
+## 0.15.0 (May 18, 2022) \{#may-18-2022}
+
+Updates the bundled versions of:
+
+- [Chocolatey 1.1.0](https://docs.chocolatey.org/en-us/choco/release-notes#march-30-2022)
+- [Chocolatey Licensed Extension 4.1.1](https://docs.chocolatey.org/en-us/licensed-extension/release-notes#april-11-2022)
+- [Chocolatey Central Management 0.8.0](https://docs.chocolatey.org/en-us/central-management/release-notes#february-28-2022)
+- [Chocolatey GUI 1.0.0](https://docs.chocolatey.org/en-us/chocolatey-gui/release-notes#march-21-2022)
+- [Chocolatey GUI Licensed Extension 1.0.0](https://docs.chocolatey.org/en-us/chocolatey-gui-licensed-extension/release-notes#march-21-2022)
+- [Chocolatey Agent 1.0.0](https://docs.chocolatey.org/en-us/agent/release-notes#march-21-2022)
+
+### Features
+
+- Provide easy mechanism for update Certificate - see [#78](https://github.com/chocolatey/c4b-azure/issues/78)
+
+### Improvements
+
+- Update to the latest Chocolatey components - see [#77](https://github.com/chocolatey/c4b-azure/issues/77)
+- Add Cleanup to Get-UpdatedPackage Jenkins Script - see [#75](https://github.com/chocolatey/c4b-azure/issues/75)
+- Packages from the Licensed Feed aren't updated by existing Jenkins Jobs - see [#72](https://github.com/chocolatey/c4b-azure/issues/72)
+- Bundled Packages contain x86 and x64 Installers - see [#67](https://github.com/chocolatey/c4b-azure/issues/67)
+- Jenkins plugins complain that Jenkins is outdated - see [#65](https://github.com/chocolatey/c4b-azure/issues/65)
+
+### Documentation
+
+- Rename repository to match new name - see [#69](https://github.com/chocolatey/c4b-azure/issues/69)
+- Allow users to manage their licenses - see [#62](https://github.com/chocolatey/c4b-azure/issues/62)
+
+### Bundled Version Update
+
+| Package                            | Version            |
+|------------------------------------|--------------------|
+| chocolatey                         | 1.1.0              |
+| chocolatey-compatibility.extension | 1.0.0 (new)        |
+| chocolatey-core.extension          | 1.4.0              |
+| chocolatey-agent                   | 1.0.0              |
+| chocolatey-extension               | 4.1.1              |
+| chocolateygui                      | 1.0.0              |
+| chocolateygui.extension            | 1.0.0              |
+| chocolatey-management-database     | 0.8.0              |
+| chocolatey-management-service      | 0.8.0              |
+| chocolatey-management-web          | 0.8.0              |
+| jenkins                            | 2.332.3            |
+| nexus-repository                   | 3.38.3.01          |
+| Temurinjre                         | 18.0.1.1000        |
+| Temurin11jre                       | 11.0.15.1000 (new) |
+| vcredist140                        | 14.32.31326        |
+
+## 0.14.0 (February 14, 2022) \{#february-14-2022}
+
+Updates the bundled versions of:
+
+- [Chocolatey 0.12.1](https://docs.chocolatey.org/en-us/choco/release-notes#january-25th-2022)
+- [Chocolatey Central Management 0.7.0](https://docs.chocolatey.org/en-us/central-management/release-notes#november-17th-2021)
+- [Chocolatey GUI 0.20.0](https://docs.chocolatey.org/en-us/chocolatey-gui/release-notes#february-10-2022).
+
+### Breaking Changes
+
+- Internalize Jenkins Plugins - see [#49](https://github.com/chocolatey/c4b-azure/issues/49)
+    In scenarios where the Jenkins plugins were unavailable to download, the deployment would previously fail.
+    We have now changed it to contain all of the plugins we require, and to _attempt_ to download the rest.
+    This may result in an environment that doesn't fail deployment, but is unlike previous successful deployments.
+
+### Features
+
+- Upgrades bundled software, as above - see [#60](https://github.com/chocolatey/c4b-azure/issues/60)
+- Internalizes packages on first run with the deployed Jenkins job - see [#46](https://github.com/chocolatey/c4b-azure/issues/46)
+- Adds commas as a valid separator for Jenkins params - see [#50](https://github.com/chocolatey/c4b-azure/issues/50)
+- Adds a HTTP->HTTPS redirect - see [#42](https://github.com/chocolatey/c4b-azure/issues/42)
+- Changes the deployed VM size to `B4ms` - see [#55](https://github.com/chocolatey/c4b-azure/issues/55)
+
+### Bug Fixes
+
+- Fixes an issue with generated passwords containing quotes - see [#61](https://github.com/chocolatey/c4b-azure/issues/61)
+- Deployment now correctly installs internalized version of Chocolatey - see [#59](https://github.com/chocolatey/c4b-azure/issues/59)
+
+### Bundled Version Update
+
+| Package                            | Version         |
+|------------------------------------|-----------------|
+| chocolatey                         | 0.12.1          |
+| chocolatey-agent                   | 0.12.1          |
+| chocolatey-extension               | 3.1.0           |
+| chocolatey-dotnetfx.extension      | 1.0.1           |
+| chocolateygui                      | 0.20.0          |
+| chocolateygui.extension            | 0.4.0           |
+| chocolatey-management-database     | 0.7.0           |
+| chocolatey-management-service      | 0.7.0           |
+| chocolatey-management-web          | 0.7.0           |
+| dotnetcore-sdk                     | 3.1.410         |
+| dotnetfx                           | 4.8.0.20190930  |
+| nexus-repository                   | 3.37.3.02       |
+| Temurinjre                         | 17.0.1.1200     |
+| vcredist140                        | 14.30.30708     |
+| AdoptOpenJDKjre                    | N/A (Removed)   |
+| DotNet4.5.2                        | N/A (Removed)   |
+
+## 0.13.2 (September 14, 2021) \{#september-14-2021}
+
+Updates the bundled version of CCM  to the [recently released 0.6.2](https://docs.chocolatey.org/en-us/central-management/release-notes#august-26th-2021).
+
+### Features
+
+- Upgrades CCM to 0.6.2 - see [#51](https://github.com/chocolatey/c4b-azure/issues/51)
+
+### Bug Fixes
+
+- Fixes an issue with package internalization - see [#54](https://github.com/chocolatey/c4b-azure/issues/54)
+
+### Documentation
+
+- Adds a guide to enabling RDP [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/rdp) - see [#52](https://github.com/chocolatey/c4b-azure/issues/52)
+- Adds a guide for onboarding clients [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/client-setup) - see [#53](https://github.com/chocolatey/c4b-azure/issues/53)
+
+### Bundled Version Updates
+
+| Package                            | Version         |
+|------------------------------------|-----------------|
+| chocolatey-management-database     | 0.6.2           |
+| chocolatey-management-service      | 0.6.2           |
+| chocolatey-management-web          | 0.6.2           |
+| dotnetcore-sdk                     | 3.1.410         |
+| vcredist140                        | 14.29.30133     |
+
+## 0.13.1 (August 13, 2021) \{#august-13-2021}
+
+Update the bundled version of CCM to the [recently released 0.6.1](https://docs.chocolatey.org/en-us/central-management/release-notes#august-5th-2021).
+
+### Features
+
+- Updates CCM to version 0.6.1, and updates dependencies
+- Validates Chocolatey Licence _before_ deploying resources
+- Ensured Chocolatey Agent is installed and checking into the CCM installation
+
+### Bug Fixes
+
+- Uses `Restart-WebAppPool` instead of `iisreset`, which fixes a rare issue that failed deployments complaining of insufficient permissions
+
+### Improvements
+
+- Changes the available base packages to offer packages not available in the bundles
+
+### Bundled Version Updates
+
+| Package                            | Version         |
+|------------------------------------|-----------------|
+| aspnetcore-runtimepackagestore     | 3.1.16          |
+| chocolatey-management-database     | 0.6.1           |
+| chocolatey-management-service      | 0.6.1           |
+| chocolatey-management-web          | 0.6.1           |
+| dotnetcore-windowshosting          | 3.1.16          |
+| vcredist140                        | 14.29.30040     |
+
+## 0.11.5 (July 29, 2021) \{#july-29-2021}
+
+The first released version! Available on the [Azure Marketplace](https://portal.azure.com/#create/chocolateysoftwareinc1605695330527.c4b_azure_qdec4b-qde) from 2021-07-29.
+
+### Features
+
+- QDE Deployment via the Azure Marketplace
+- Deploys CCM, Nexus, and Jenkins to a VM
+- Takes an SSL certificate and FQDN and configures the environment appropriately
+
+### Documentation
+
+- Adds basic docs [here](https://docs.chocolatey.org/en-us/quick-deployment/azure/)
+
+### Bundled Packages
+
+| Package                            | Version             |
+|------------------------------------|---------------------|
+| AdoptOpenJDKjre                    | 16.0.1.900          |
+| aspnetcore-runtimepackagestore     | 2.2.7               |
+| chocolatey                         | 0.10.15             |
+| chocolatey.extension               | 2.1.1               |
+| chocolatey-agent                   | 0.11.2              |
+| chocolatey-core.extension          | 1.3.5.1             |
+| chocolateygui                      | 0.18.1              |
+| chocolateygui.extension            | 0.2.1               |
+| chocolatey-management-database     | 0.5.1               |
+| chocolatey-management-service      | 0.5.1               |
+| chocolatey-management-web          | 0.5.1               |
+| chocolatey-windowsupdate.extension | 1.0.4               |
+| DotNet4.5.2                        | 4.5.2.20140902      |
+| dotnetcore-windowshosting          | 2.2.7               |
+| jenkins                            | 2.222.4             |
+| KB2533623                          | 2.0.0               |
+| KB2919355                          | 1.0.20160915        |
+| KB2919442                          | 1.0.20160915        |
+| KB2999226                          | 1.0.20181019        |
+| KB3033929                          | 1.0.5               |
+| KB3035131                          | 1.0.3               |
+| KB3063858                          | 1.0.0               |
+| nexus-repository                   | 3.31.1.01           |
+| vcredist140                        | 14.29.30037         |
+| vcredist2015                       | 14.0.24215.20170201 |

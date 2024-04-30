@@ -1,0 +1,155 @@
+---
+order: 43
+xref: howto-create-hook-package
+title: How To Create a Hook Package
+description: How to create a package containing Package Hooks
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Sometimes, you want to do something around a package installation or upgrade. Hook packages are a fairly advanced concept, but they can be really helpful.
+
+In this how-to, we'll walk through creating install actions in a hook package.
+
+### What Is a Hook Package
+
+Hook packages install scripts that are run before or after packaging operations - either triggered by a specific package ID, or by all packages.
+
+### Why Use a Hook Package
+
+As with so many things around Chocolatey, the possibilities are endless.
+
+Examples of what you can do with hook packages include:
+
+* Removing desktop shortcuts that are created during software installation (during any package).
+
+* Applying configuration to files that are reset during upgrades (during a specific package).
+
+* Pushing records to a logging endpoint on successful installation (during any package).
+
+* Packages to clean up specific filetypes to minimise disk space usage (during any package).
+
+* Packages to display additional information during install or upgrade (during any package).
+
+For more details on hook packages, you can refer to <Xref title="the docs" value="hooks" />.
+
+### Hook Package
+
+Hook packages, similar to extension packages, don't require many of the files that most Chocolatey packages do.
+
+You will require:
+
+* A package manifest (`.nuspec` file).
+
+* One or more hook scripts (`.ps1` file(s)), in a `hook` directory.
+
+As mentioned above, you can add hook scripts that trigger on specific package IDs _or_ for all packages (also known as a 'global hook'). This scope is controlled by naming the hook script files that you distribute in the package in specific ways.
+
+The name of the hook script can be broken down into three parts:
+
+* `pre` or `post`, showing if the script should run before or after a given package script.
+* `install`, `beforemodify`, or `uninstall`, showing which package script the hook should trigger with.
+* `all` or a package ID, to create a global hook or run only with specific packages.
+
+<Callout type="info">
+    `all` is being used as a magic ID, here, causing the hook to trigger on all packages.
+</Callout>
+
+These should be joined with the `-` character, and the file should be a valid PowerShell script with the extension `.ps1`:
+
+`(pre|post)-(install|beforemodify|uninstall)-(all|PackageID).ps1`
+
+Examples:
+
+* `pre-install-all.ps1` would run the script before all install scripts.
+* `post-uninstall-jenkins.ps1` would run the script after the Jenkins package uninstall script.
+
+#### Creating a Hook Package
+
+We're going to create a basic package that will run on every package install, and display a timestamp so users can easily see how long installs are taking.
+
+<Callout type="info">
+    If you want to publish a hook package to the Chocolatey Community Repository, you should have `.hook` as a package ID suffix.
+</Callout>
+
+1. Create a new folder for this package. For the example, we will call it `timestamp-example.hook`.
+    1. Create a package metadata file named `timestamp-example.hook.nuspec`, and add content [as shown below](#package-metadata-content).
+1. In the `timestamp-example.hook` folder, create a folder named `hook`.
+    1. Within the `hook` folder, create a `pre-install-all.ps1` and `post-install-all.ps1`, and add content [as shown below](#package-powershell-content).
+
+##### Package Metadata Content
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>timestamp-example.hook</id>
+    <version>0.1.0</version>
+    <title>Example Hook (Timestamps)</title>
+    <authors>__REPLACE__</authors>
+    <description>A super cool hook package!</description>
+    <summary>A hook package that displays timestamps before and after installs.</summary>
+    <tags>hook timestamp package</tags>
+  </metadata>
+  <files>
+    <file src="hook\**" target="hook" />
+  </files>
+</package>
+```
+
+##### Package PowerShell Content
+
+###### `pre-install-all.ps1`
+
+```powershell
+Write-Host "$($env:ChocolateyPackageName): Starting Install at $(Get-Date)"
+```
+
+###### `post-install-all.ps1`
+
+```powershell
+Write-Host "$($env:ChocolateyPackageName): Finished Install at $(Get-Date)"
+```
+
+#### Compiling Your Package
+
+You can now use `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
+
+1. In VS Code, press `Ctrl + Shift + P` or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
+1. Select `timestamp-example.hook.nuspec` from the prompt.
+1. In **Additional Arguments** enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press **Enter**.
+
+You should have a new package generated in your tutorials directory.
+
+#### Installing Your Package
+
+This sort of package isn't normally installed on it's own (as it relies on interaction with other packages), but you can now test installation of your package!
+
+In an elevated PowerShell command prompt, run the following:
+
+```powershell
+choco install timestamp-example.hook --source='tutorials' -y
+```
+
+You should then be able to browse to the hooks directory, within your Chocolatey installation, and see that your PowerShell module has been placed there.
+
+```powershell
+# This should show an 'example' directory, along with all of your other installed extensions
+Get-ChildItem $env:ChocolateyInstall\hooks
+# This should show your hook script(s)
+Get-ChildItem $env:ChocolateyInstall\hooks\timestamp-example
+```
+
+If you now run any `choco install`, you should be able to see a timestamp output before and after the installation!
+
+You can then uninstall the hook, if you want, by running the following:
+
+```powershell
+choco uninstall timestamp-example.hook -y
+```
+
+#### Conclusion
+
+You've now created a basic Chocolatey hook package! You can take the knowledge you've gained forward, and create some awesome new packages! To see more examples of hook packages, why not have a look at the [chocolatey-hooks](https://github.com/chocolatey-community/chocolatey-hooks) repository!

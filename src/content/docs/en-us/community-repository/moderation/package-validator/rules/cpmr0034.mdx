@@ -1,0 +1,34 @@
+---
+order: 34
+xref: cpmr0034
+title: CPMR0034 - Use of SourceForge (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0034
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`), the use of sourceforge was found for downloading software. It is not recommended to use SourceForge if an alternative, official distribution location is available. Unfortunately, some software is only available on SourceForge so this is a Guideline and not a Requirement.
+
+<Callout type="info">
+    You may not be able to change this and this is okay.
+</Callout>
+
+<Callout type="info">
+    The search can also hit a false positive if it finds any of the following words in your automation scripts (`ps1`/`psm1`):
+    * sourceforge
+</Callout>
+
+## Recommended Solution
+
+Please find another official distribution point to download from if there is one.
+
+## Reasoning
+
+We've found that SourceForge has had some practices in recent times that are at odds with how we want to get software installed (malware free). Usually when installing silently, software doesn't also try to install crapware on a machine. This is not always so with the sourceforge wrapper that comes along with some of these downloads.

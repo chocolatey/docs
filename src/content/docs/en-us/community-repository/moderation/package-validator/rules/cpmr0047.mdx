@@ -1,0 +1,25 @@
+---
+order: 47
+xref: cpmr0047
+title: CPMR0047 - Summary Missing (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0047
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+In the nuspec, there is a `<summary />` element. It was found to be missing or empty in the package.
+
+## Recommended Solution
+
+Please update the nuspec to include a `<summary />` element that is non-empty. If your nuspec file is missing this field, you should run `choco new testpkg` and look at the output from that (ensure you have the [latest version of Chocolatey](https://community.chocolatey.org/packages?q=id%3Achocolatey)).
+
+## Reasoning
+
+The summary gives a high level explanation that is a sentence explaining what the software is.

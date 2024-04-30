@@ -1,5 +1,6 @@
 # build output
 dist/
+
 # generated types
 .astro/
 
@@ -12,6 +13,21 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# npm 
+npm-debug.log
+.coverage
+.coverage.*
+.env
+.aws
+
+# yarn 
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # environment variables
 .env
@@ -22,3 +38,21 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# choco-theme
+public/fonts
+public/scripts
+public/styles
+public/images/global-shared
+
+# general
+apple-touch-*.png
+favicon.ico
+.astro
+
+# playwright
+/src/tests/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/

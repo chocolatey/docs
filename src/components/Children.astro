@@ -1,0 +1,82 @@
+---
+// Scripts and types
+import type { ContentTree } from '@scripts/types';
+import { generateContentTree } from '@scripts/generate-content-tree.ts';
+
+// Components
+import Xref from '@components/Xref.astro';
+
+let { content, filter, value } = Astro.props;
+
+if (!content) {
+    content = await generateContentTree();
+}
+
+interface Props {
+    content: ContentTree[];
+    filter?: string;
+    value?: string;
+}
+
+const findObjectBySlug = async (obj: ContentTree, slug: string): Promise<ContentTree | null> => {
+    // Base case: If obj is not an object or is null, return null
+    if (!obj || typeof obj !== 'object') {
+        return null;
+    }
+
+    // Check if the current object has the specified slug
+    if (slug === obj.slug || slug === obj.slug.slice(0, -1)) {
+        return obj;
+    }
+
+    // Check if the current object has children
+    if (obj.children && obj.children.length > 0) {
+        // Recursively search through the children
+        for (const child of obj.children) {
+            const result = await findObjectBySlug(child, slug);
+
+            // If the object with the specified slug is found in any child, return it
+            if (result !== null) {
+                return result;
+            }
+        }
+    }
+
+    // If the object is not found, return null
+    return null;
+};
+
+let doc = await findObjectBySlug(content[0], Astro.url.pathname);
+
+if (doc) {
+    if (doc.children && doc.children.length > 0 && filter && value) {
+        doc = {
+            ...doc,
+            children: doc.children.filter((child: { data: { [key: string]: any } }) => child.data[filter] === value)
+        };
+    } else if (doc.children && doc.children.length > 0 && doc.data.hideChildPages) {
+        doc = {
+            ...doc,
+            children: []
+        };
+    }
+}
+---
+
+{(doc && doc.children && doc.children.length > 0) && (
+    <div class="row">
+        {doc.children.map(child => (
+            <div class="col-lg-6 col-xl-4 pb-4">
+                <div class="card card-body card-link card-index">
+                    <div class="circle">
+                        <i class="fa-solid fa-file" aria-hidden="true"></i>
+                    </div>
+                    <div class="d-flex flex-column ps-3">
+                        <p class="h5 fw-bold card-title"><Xref classes="stretched-link" title={child.data.title} value={child.data.xref} anchor="" icon="" /></p>
+                        <p class="card-content">{child.data.description}</p>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+)}

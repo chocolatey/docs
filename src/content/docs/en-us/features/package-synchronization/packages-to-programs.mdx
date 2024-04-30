@@ -1,0 +1,65 @@
+---
+order: 30
+xref: packages-to-programs
+title: Packages to Programs (C4B)
+description: Add an entry into Add/Remove programs for every package that is under Chocolatey management
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## All Packages in Programs and Features
+
+In C4B, you can flip a switch and see all packages in Programs and Features, even those packages that don't have underlying native installers! This makes reporting back to legacy inventory reporting systems a snap.
+
+### Usage
+
+![All Packages in Programs And Features - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/images/features/features_packages_in_programs_and_features.png)
+
+{/*
+Text in the image above:
+
+Package Synchronizer - All Packages in Programs and Features
+
+- All packages show up, even if they don't use a native installer
+- Managed automatically by Chocolatey
+- Supporting legacy inventory tracking systems is now a snap
+- No need to build MSIs for internal software
+
+This image shows a display of `choco list -lo` side by side with Programs and Features. It links a package with a native installer (Launchy) to show that it didn't do anything differently. It links a package that uses a zip archive (Screen To Gif), shows part of the nuspec file and how that all maps to the Programs and Features entry.
+*/}
+
+### Requirements
+
+* Chocolatey (`chocolatey` package) v0.10.7+.
+* Chocolatey for Business (C4B) Edition.
+* Chocolatey Licensed Extension (`chocolatey.extension` package) v1.10.0+.
+
+### Setup
+
+* `choco feature enable --name showAllPackagesInProgramsAndFeatures`
+
+### Options and Switches
+
+ Global Feature Setting:
+
+ * `showAllPackagesInProgramsAndFeatures` - Package Synchronizer's Packages In Programs And Features Synchronization - Show all packages in Programs and Features, not just packages that use a native installer.
+
+### FAQ
+
+#### How do I take advantage of this feature?
+
+You must have the [business edition of Chocolatey](https://chocolatey.org/pricing). Business editions are great for organizations that need to manage the total software management lifecycle.
+
+#### I'm a business customer, now what?
+
+Once you set the feature, it just works automatically.
+
+#### How does it work?
+
+Chocolatey tracks packages that manage natively installed software. For packages that are zip archives or configuration, Chocolatey will add an entry into Programs and Features based on the nuspec. It's smart enough not to add an entry for a meta-package - say `notepadplusplus` and `notepadplusplus.install` are installed. The meta-package would be `notepadpluplus`.
+
+### Packages in Programs and Features Known Issues
+
+* MSU type packages will show up - Chocolatey doesn't automatically track Windows Updates types of installers. So if you install WMF 5 through Chocolatey and turn this feature on, it will show up as well.
+* You must run choco at least one more time after setting the feature for it to take effect. So flip the feature and then run `choco -v`.

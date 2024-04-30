@@ -1,0 +1,31 @@
+---
+order: 35
+xref: cpmr0035
+title: CPMR0035 - Use of Get-BinRoot (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0035
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+<Callout type="info">
+    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
+</Callout>
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`),
+
+## Recommended Solution
+
+Replace all uses of the cmdlet `Get-BinRoot` to use `Get-ToolsLocation` instead.
+
+## Reasoning
+
+The PowerShell cmdlet is badly named, and was replaced with a new cmdlet called `Get-ToolsLocation` instead.
+The cmdlet is also deprecated in version 1.0.0 of Chocolatey and will be removed in version 2.0.0 so any calls
+to the cmdlet should no longer be made.

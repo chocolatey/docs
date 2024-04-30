@@ -1,0 +1,42 @@
+---
+order: 50
+xref: upgrade-nexus
+title: Upgrading Nexus
+description: How to upgrade nexus
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Upgrade Nexus in Quick Start Environment
+
+This document outlines the process for upgrading Nexus running inside our Quick Start Environment.
+The script provided assumes your server has access to the internet to download the Nexus package from the community repository.
+If your server is restricted then internalize the package to your internal repository and update the source in the script appropriately.
+
+<Callout type="warning">
+    The instructions on this page use parameters available to the nexus-repository package to conserve SSL configuration. If you have arrived here,
+    and do not have a Nexus instance configured with SSL, leave off the package parameters.
+
+    This command will backup the SSL configuration to the root of your User Profile in a NexusBackup folder.
+</Callout>
+
+## Instructions
+
+1. Internalize the nexus-repository package and push to your internal repo
+2. choco upgrade the nexus-repository package (Example command provided below, which preserves SSL Configuration)
+
+### Example Upgrade Command:
+
+<Callout type="info">
+    The following command assumes your nexus instance is available at nexus.example.com. Use your actual FQDN instead
+</Callout>
+
+```powershell
+choco upgrade nexus-repository -y --package-parameters="'/Port:8443 /Fqdn:""nexus.example.com"" /BackupSslConfig'"
+```
+
+<Callout type="info">
+    If you are upgrading from Nexus V 3.22.0.02 or older to a newer version, you may need to make the following change to the jetty-https.xml file.
+    Change `class="org.eclipse.jetty.util.ssl.SslContextFactory">` to `class="org.eclipse.jetty.util.ssl.SslContextFactory$Server">`
+</Callout>

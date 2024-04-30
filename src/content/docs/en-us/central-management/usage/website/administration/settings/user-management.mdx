@@ -1,0 +1,38 @@
+---
+order: 20
+xref: ccm-administration-settings-user-management
+title: User Management
+description: Information about using up user management settings within the Administration Settings screen
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## LDAP Configuration
+
+<Callout type="info">
+    The Central Management Server must be joined to the Active Directory Domain.
+</Callout>
+
+1. Open the CCM Site in the browser.
+1. Login with the `ccmadmin` user.
+1. In the left-hand menu click on `Administration` and then `Settings`.
+1. Click on the `User management` tab in the `Settings` screen.
+1. Under LDAP Setting click the `Enable LDAP Authentication` button.
+1. Fill in your FQDN for the `Domain name` field and the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
+
+    ![CCM LDAP Setup](/images/ccm-playwright/administration/settings/user-management-checkbox-enable-ldap.png)
+
+1. Click the `Update LDAP Password` button to open a modal window to allow you to enter/confirm the password that is to be used.
+
+    ![Update LDAP Password](/images/ccm-playwright/administration/settings/user-management-modal-ldap-password.png)
+
+1. Click the `Save` button
+1. Click the `Save All` button at the top right of the page to save your settings.
+
+<Callout type="info">
+    In order for LDAP authentication to succeed in versions of Central Management 0.3.1 and lower
+    an Email Address, Surname, and GivenName must be configured on the properties of the Active Directory user you are
+    attempting to use for login. If any of these fields are empty, errors will be encountered when attempting to login
+    to the Central Management application.
+</Callout>

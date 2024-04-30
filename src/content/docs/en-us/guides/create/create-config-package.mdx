@@ -1,0 +1,202 @@
+---
+order: 6
+xref: howto-create-config-package
+title: How To Create a Configuration Package
+description: A walkthrough creating a package that configures your computer
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Some people are surprised when they learn that Chocolatey packages don't always install software.
+
+Sometimes, you may want to apply configuration to software you've installed. Sometimes, you just need to drop a file into the right place.
+
+In this how-to, we'll talk about how to make a package that doesn't install anything - and just applies configuration.
+
+### What Is a Configuration Package
+
+A configuration package, predictably, applies configuration during the installation stage. You can also use this sort of package to drop files into the right place.
+
+### Why Would I Want To Use One?
+
+An example of a basic configuration package would be a package that drops a license file to the right location on a computer, or a package that configures a web-server with some known values that you want to be used across a set of computers.
+
+We actually suggest something like this for Chocolatey for Business customers to ensure their Chocolatey licenses are in-date and easily maintained!
+
+### Using `Copy-Item` (and Friends)
+
+A lot of package types have Chocolatey helper-functions ready to be used. However, configuration and file-distributing packages don't have specific functions shipped for the purpose.
+
+We'll be using built-in PowerShell functions and cmdlets instead, such as `Copy-Item`.
+
+#### Creating a Configuration Package
+
+In this example, we're going to create an example package to license and configure an example application, helpfully titled `exampleapp`.
+
+We can run `choco new` to create a basic package, and then remove everything we don't need:
+
+1. Open your `tutorials` folder in VSCode.
+1. Press **Ctrl+Shift+P** or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Create new Chocolatey package`.
+1. Give your package a name, e.g. `example-config`.
+1. Select the default template, and press **Enter**.
+
+This should result in a new directory, containing the following files:
+
+```text
+example-config
+├── tools
+│   ├── chocolateyBeforeModify.ps1
+│   ├── chocolateyInstall.ps1
+│   ├── chocolateyUninstall.ps1
+│   ├── LICENSE.txt
+│   ├── VERIFICATION.txt
+├── example-config.nuspec
+├── ReadMe.md
+```
+
+Delete the `chocolateyBeforeModify.ps1`, `VERIFICATION.txt`, and `ReadMe.md` files from the folder structure.
+
+You'll want to open the `example-config.nuspec` file, and fill out the following fields in the `metadata` section if required:
+
+* **packageSourceUrl**: This can be removed, or updated with your source URL.
+* **owners**: This field shows who maintains the package - your name or username is appropriate!
+* **authors**: The authors of the software in question - this should be updated with your name or username.
+* **projectUrl**: The URL of the software in question - for this example package, this should be removed.
+* **tags**: Tags for the repository you're publishing the package to. These can be updated however you prefer, though the Chocolatey Community Repository has some guidance on what is needed there.
+* **summary**: This is a summary of the package contents. For this example, you could add that this package will license and configure your example software.
+* **description**: This is a description of the package contents, and generally contains more detail than the summary - including things like package parameters. It supports markdown. We won't be dealing with anything that complex here!
+
+You can now fill or remove any other commented out sections of the `example-config.nuspec` file, if you want. Your file should end up looking something like this:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>example-config</id>
+    <version>0.1.0</version>
+    <title>Example Configuration</title>
+    <authors>PackageMaintainer</authors>
+    <tags>example config-only</tags>
+    <summary>A package that configures 'example'</summary>
+    <description>Further detail about the configuration that is applied, and any package parameters.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+```
+
+#### Creating Your Install Script
+
+Install may be a bit of a misnomer, here, but as the script that runs when the package is "installed" is called `chocolateyInstall.ps1`, it seems appropriate.
+
+The new package you have created will already have an install script in the `tools` directory.
+
+You can remove the contents of the script, as it's the familiar template - and we won't be installing anything.
+
+Instead, replace it with some sample content for our planned configuration:
+
+```powershell
+$ErrorActionPreference = 'Stop'
+$ToolsDir = Split-Path $MyInvocation.MyCommand.Definition -Parent
+
+$ConfigDirectory = "C:\ProgramData\exampleapp\"
+
+# Ensure the license directory exists
+if (-not (Test-Path $ConfigDirectory)) {
+    $null = New-Item $ConfigDirectory -ItemType Directory
+}
+
+# Copy the license to the correct path
+Copy-Item -Path (Join-Path $ToolsDir "LICENSE.txt") -Destination $ConfigDirectory
+
+# Backup the existing Configuration file, if it exists
+$ConfigFile = Join-Path $ConfigDirectory "config.json"
+if (Test-Path $ConfigFile) {
+    Copy-Item $ConfigFile -Destination "$ConfigFile.backup"
+}
+
+# Write Configuration File
+@{
+    LicensePath  = Join-Path $ConfigDirectory "LICENSE.txt"
+    ComputerName = $env:ComputerName
+} | ConvertTo-Json | Set-Content $ConfigFile
+```
+
+#### Considering Uninstallation
+
+There's no automatic procedure for uninstalling configuration. In this case, you can add an uninstall script that rolls back your changes.
+
+If you wanted to do this, you would overwrite the contents of the `chocolateyUninstall.ps1` script with something like this:
+
+```powershell
+$ConfigDirectory = "C:\ProgramData\exampleapp\"
+$LicensePath = Join-Path $ConfigDirectory "LICENSE.txt"
+$ConfigPath = Join-Path $ConfigDirectory "config.json"
+
+# Remove the license flie if it exists
+if (Test-Path $LicensePath) {
+    Remove-Item $LicensePath
+}
+
+# Remove the config file if it exists
+if (Test-Path $ConfigPath) {
+    Remove-Item $ConfigPath
+}
+
+# And restore the backup, if it exists
+if (Test-Path "$ConfigPath.backup") {
+    Move-Item "$ConfigPath.backup" -Destination $ConfigPath
+}
+
+# Clean up the config directory, if it's empty
+if (-not (Get-ChildItem $ConfigDirectory)) {
+    Remove-Item $ConfigDirectory
+}
+```
+
+<Callout type="warning">
+    Please note that this uninstall script is quite naive, as you would need to consider updated backups and what state you would want to restore to.
+</Callout>
+
+### Compiling Your Package
+
+You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
+
+1. In VSCode, press **Ctrl+Shift+P** or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
+1. Select `example-config.nuspec` from the prompt.
+1. Press **Enter**, providing no additional input.
+
+You should have a new package generated in your current working directory.
+
+### Installing Your Package
+
+You can now test installation of your package.
+
+In many cases, we would recommend testing on a dedicated test system that will not be affected by a package being installed - but as this package is entirely made up, there is nearly no consequence of installing and uninstalling it (assuming you don't have an application called `exampleapp` that stores data in the way we've used, here).
+
+In an _elevated PowerShell command prompt_, run the following:
+
+```powershell
+choco install example-config --source='tutorials' -y
+```
+
+The command should run, and opening the `C:\ProgramData\exampleapp` directory should show your license and config file.
+
+### Uninstalling Your Package
+
+If you did update the uninstall script, you should be able to run `choco uninstall`:
+
+```powershell
+choco uninstall example-config -y
+```
+
+The package should be uninstalled successfully, and checking `ProgramData` should show that the `exampleapp` directory (and the contained files) should have been removed.
+
+### Conclusion
+
+At this point, you should have a package that licenses and configures an (imaginary) application! Congratulations! Hopefully the lessons here can be applied to your more specific applications.

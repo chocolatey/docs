@@ -1,0 +1,274 @@
+---
+order: 40
+xref: c4b-ansible
+title: Ansible Environment
+description: Overview of the Chocolatey for Business Ansible Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Summary
+
+This is an overview of the Chocolatey for Business Ansible Environment.
+
+It is a playbook and selection of modules, allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Sonatype Nexus Repository), and an automation engine (Jenkins).
+
+<Callout type="info">
+    A Chocolatey for Business Ansible Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
+</Callout>
+
+## Prerequisites
+
+To deploy the Chocolatey for Business Ansible Environment you will need:
+
+* A Chocolatey for Business license, or Trial license.
+* One or more existing server accessible from your Ansible host.
+* The ability to create a CNAME DNS record for your chosen FQDN.
+* A valid certificate for your chosen FQDN, in PFX format, with exportable private key.
+
+For portions of this guide using Ansible, we will assume that you either have an Ansible Execution Environment preconfigured, or are using the [dev container](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers) to execute the playbooks. You should have the latest supported version of the [Chocolatey.Chocolatey](https://galaxy.ansible.com/ui/repo/published/chocolatey/chocolatey/) Ansible collection installed, along with any additional prerequisites listed in the [requirements.txt](https://github.com/chocolatey/c4b-ansible/blob/main/requirements.txt).
+
+You can install the Python requirements for the module using `PIP`, e.g.:
+
+```powershell
+pip3 install --upgrade -r /requirements.txt
+```
+
+## Deploying the Chocolatey for Business Ansible Environment
+
+The Chocolatey for Business Ansible Environment is designed to deploy Chocolatey Central Management and all the suggested softwares to one or more servers within your environment, and provide methods for deploying Chocolatey for Business to your other endpoints.
+
+You can deploy this using Ansible Automation Platform, an existing installation of the Ansible client, or the dev container image provided within the repository (as well as a variety of other methods).
+
+This guide will be written as if you were using Ansible from a local installation or the dev container, but can be easily adapted to run from Automation Platform / AWX.
+
+<Callout type="info">
+    If you want to run this deployment on an environment that doesn't have access to the internet, refer to the <Xref title="offline deployment" value="c4b-ansible-offline-deployment" /> page and start on a Windows machine.
+</Callout>
+
+### Setup
+
+Clone or otherwise download the `c4b-ansible` repository from [GitHub](https://github.com/chocolatey/c4b-ansible).
+
+```powershell
+git clone https://github.com/chocolatey/c4b-ansible.git
+```
+
+### Configuring Your Hosts
+
+You can deploy the Chocolatey for Business Ansible Environment to one or more servers. There are four services being installed:
+
+* Chocolatey Central Management
+* Sonatype Nexus Repository
+* Jenkins
+* Optional: SQL Server Express
+
+#### Installing On a Single Host
+
+To install on a single host, create a host with the title `ccm_server`. All services will be installed to this host. There is an example of a hosts file containing a single host in the root of the repository - [hosts.yml](https://github.com/chocolatey/c4b-ansible/blob/main/hosts.yml).
+
+Example:
+
+```yaml
+all:
+  hosts:
+    ccm_server:
+      ansible_connection: winrm
+      ansible_winrm_transport: ntlm
+      ansible_port: 5986
+      ansible_winrm_scheme: https
+      ansible_host: chocoserver
+      ansible_user: ansibleuser
+      ansible_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          [...]
+```
+
+#### Installing On Multiple Hosts
+
+To install on multiple hosts, define hosts with the following names:
+
+* `ccm_server`: Chocolatey Central Management service and website
+* `nexus_server`: Sonatype Nexus Repository
+* `jenkins_server`: Jenkins
+* `database_server`: SQL Server Express
+
+Example:
+
+```yaml
+all:
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_transport: ntlm
+    ansible_port: 5986
+    ansible_winrm_scheme: https
+    ansible_user: ansibleuser
+    ansible_password: !vault |
+        $ANSIBLE_VAULT;1.1;AES256
+        [...]
+  hosts:
+    ccm_server:
+      ansible_host: chocoserver
+    nexus_server:
+      ansible_host: nexus
+    jenkins_server:
+      ansible_host: chocorunner
+    database_server:
+      ansible_host: db1
+```
+
+If any are not defined, the service will be installed on the `ccm_server` host.
+
+If a connection string is passed, we assume the database is set up and do not install SQL Server.
+
+For further details on defining Windows hosts in Ansible, see [this blog post](https://www.ansible.com/blog/connecting-to-a-windows-host) for some basics on Windows hosts and [this documentation](https://docs.ansible.com/ansible/latest/inventory_guide/intro_inventory.html) for further information on inventories.
+
+#### Using An Existing Database
+
+You can provide a connection string to the environment to use for storing Chocolatey Central Management data. This can have significant benefits for performance, as well as simplifying backups and load-balancing of instances.
+
+To use an existing database server you wish to use, follow the instructions for <Xref title="creating a database" value="ccm-database" /> and provide the connection string as a variable.
+
+### Setting Secrets
+
+Secrets, including credentials, for the various services will be generated during the deployment. They are stored temporarily in the `/credentials` directory within the repository, and you should store and remove them from this when the deployment is complete.
+
+If you would prefer to create and maintain them from scratch, you can modify the values of the following secrets within the [`/group_vars/all.yml`](https://github.com/chocolatey/c4b-ansible/blob/main/group_vars/all.yml) file:
+
+Example:
+
+```yaml
+ccm_password: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  [...]
+ccm_client_salt: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  [...]
+ccm_service_salt: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  [...]
+ccm_encryption_password: !vault |
+  $ANSIBLE_VAULT;1.1;AES256
+  [...]
+```
+
+<Callout type="info">
+    We have shown examples of redacted secrets being stored securely using [Ansible Vault](https://docs.ansible.com/ansible/latest/vault_guide/index.html) throughout this document. They will need to be replaced with your secrets, and we'd recommend you store them securely!
+</Callout>
+
+### Internalize Packages
+
+You can select packages to directly internalize at the end of the deployment from the [Chocolatey Community Repository](https://community.chocolatey.org/packages/).
+
+To do so, uncomment the example array `internalize_packages` in the `/group_vars/all.yml`, and add packages that you wish to be internalized.
+
+Example:
+
+```yaml
+# Packages to Internalize
+internalize_packages:
+- 1password
+- 7zip
+- adobereader
+- azcopy
+- azure-cli
+- firefox
+- git
+- notepadplusplus
+- powershell
+- slack
+- vscode
+```
+
+This will result in packages matching the ID's being internalized from the Chocolatey Community Repository.
+
+### Deploying the Environment
+
+You can now run the playbook using `ansible-playbook`. If you have modified the hosts file in the base of the repository, you can run it as follows:
+
+```powershell
+ansible-playbook ./c4b-environment.yml -i ./hosts.yml
+```
+
+The playbook will prompt you for the location of your license, certificate, and password. After you have answered these prompts, the playbook will deploy all of the services.
+
+![Initial Playbook Prompts](/images/c4b-ansible/playbook-prompts.jpg)
+
+<Callout type="info">
+    You can add the values to an inventory file or the playbook directly, instead of being prompted at runtime.
+</Callout>
+
+### Configuring Chocolatey Central Management
+
+<Callout type="warning">
+    You cannot create users in Chocolatey Central Management until you have configured an SMTP server. To do this, please see <Xref title="how to configure SMTP" value="ccm-website" anchor="step-4.2-smtp-configuration" />.
+    You can log in to Chocolatey Central Management using the credentials provided in the credentials document (see [Accessing Services](#accessing-services), below).
+</Callout>
+
+## Accessing Services
+
+At this point, the Chocolatey for Business Ansible Environment should be deployed with the following accessible services:
+
+| Service                           | Initial Username |
+| --------------------------------- | ---------------- |
+| **Chocolatey Central Management** | ccmadmin         |
+| **Sonatype Nexus Repository**     | admin            |
+| **Jenkins**                       | admin            |
+
+Passwords to login to the services have been stored in the credentials directory within the root of the `c4b-ansible` repository.
+
+There should be a `CCM.html` file that contains a start-up guide, including initial steps and credentials for the various services. You should secure this appropriately.
+
+## FAQ
+
+### SSL Certificate
+
+You will need an SSL certificate for the domain you intend to use. This certificate:
+
+* Needs to be in the PFX format.
+* Needs to include an exportable Private Key.
+* Must have a password.
+
+You can either provide a self-signed SSL certificate, or a purchased or acquired certificate from a Certificate Authority (CA).
+
+#### Self-Signed SSL Certificates
+
+You can quickly generate a self-signed certificate on any recent Windows machine, using PowerShell.
+
+**PowerShell:**
+
+1. Open an elevated PowerShell console
+1. Run code similar to the following, modifying the `-FilePath` parameter of `Export-PfxCertificate` if necessary:
+
+```powershell
+$Domain   = Read-Host "Enter the FQDN you plan to use to access the Chocolatey for Business Ansible Environment sites"
+$Password = Read-Host "Enter a password to use for the PFX" -AsSecureString
+
+$Cert = New-SelfSignedCertificate -DnsName $Domain -CertStoreLocation cert:\LocalMachine\My
+$Cert | Export-PfxCertificate -FilePath ~\Desktop\$($Domain).pfx -Password $Password
+```
+
+You can then use this generated file and the password you set to deploy your Chocolatey for Business Ansible Environment.
+
+<Callout type="info">
+    Your browser will display warnings when accessing the Chocolatey for Business Ansible Environment sites with a self-signed certificate. To stop these warnings, you need to import this certificate to the `Trusted Root Certification Authorities` store on any clients used to access the services. Unless you know what you're doing, we would strongly recommend using a certificate from a CA like [LetsEncrypt](https://letsencrypt.org/).
+</Callout>
+
+#### Purchased/Acquired Certificates From a Certificate Authority
+
+Organizations can also opt to purchase or acquire a certificate from an external Certificate Authority (e.g. [LetsEncrypt](https://github.com/win-acme/win-acme)).
+As mentioned before, you will need to ensure that the "Subject/Common Name" attribute on the SSL certificates matches the FQDN you are using.
+If you have a preferred vendor for certificates, you should refer to their documentation for best practices in acquiring a certificate.
+
+## Common Errors and Resolutions
+
+### SQL Installation Stalling
+
+We have seen the SQL Server installation fail with code `-2068774911`, or hang indefinitely when the target server only has IPv6 DNS.
+
+This can be resolved by a login to the server using RDP and re-running the playbook, or by ensuring the target server has IPv4 DNS available.
+
+### Timeout When Downloading Jenkins Plugins
+
+Sometimes the downloading of Jenkins plugins times out. Rerunning the playbook again should complete this.

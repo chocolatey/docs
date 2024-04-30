@@ -1,0 +1,73 @@
+---
+order: 180
+xref: get-deploymentresult
+title: Get-DeploymentResult
+description: Information about the Get-DeploymentResult function
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Get-DeploymentResult
+
+{/* This documentation is automatically generated from /Get-DeploymentResult.ps1 using GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Return the result of a Central Management Deployment
+
+## Syntax
+
+```powershell
+Get-DeploymentResult `
+  -Deployment <String> [<CommonParameters>]
+```
+
+## Description
+
+Return the result of a Central Management Deployment
+
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+```powershell
+Get-CCMDeploymentResult -Name 'Google Chrome Upgrade'
+
+```
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -Deployment &lt;String&gt;
+The Deployment for which to return information
+
+Property               | Value
+---------------------- | -----
+Aliases                |
+Required?              | true
+Position?              | 1
+Default Value          |
+Accept Pipeline Input? | false
+
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` https://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+
+<Xref title="Function Reference" value="chococcm-functions" />
+
+<Callout type="info">
+    This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Get-DeploymentResult -Full`.
+</Callout>

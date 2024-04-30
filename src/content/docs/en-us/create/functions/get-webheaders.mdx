@@ -1,0 +1,90 @@
+﻿---
+order: 180
+xref: get-webheaders
+title: Get-WebHeaders
+description: Information on Get-WebHeaders function
+---
+import Xref from '@components/Xref.astro';
+
+# Get-WebHeaders
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Gets the request/response headers for a url.
+
+## Syntax
+
+~~~powershell
+Get-WebHeaders `
+  [-Url <String>] `
+  [-UserAgent <String>] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This is a low-level function that is used by Chocolatey to get the
+headers for a request/response to better help when getting and
+validating internet resources.
+
+
+## Aliases
+
+None
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -Url [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -UserAgent [&lt;String&gt;]
+Property               | Value
+---------------------- | -----------------------
+Aliases                | 
+Required?              | false
+Position?              | 2
+Default Value          | chocolatey command line
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Get-ChocolateyWebFile' value='get-chocolateywebfile' />
+ * <Xref title='Get-WebFileName' value='get-webfilename' />
+ * <Xref title='Get-WebFile' value='get-webfile' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-WebHeaders -Full`.
+
+View the source for [Get-WebHeaders](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-WebHeaders.ps1)

@@ -1,0 +1,62 @@
+---
+order: 30
+xref: package-dependencies
+title: Package Dependencies in Chocolatey
+description: Understanding Package Dependencies in Chocolatey
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Introduction
+
+Chocolatey being built on top of a NuGet framework means that we can take advantage of the rich dependency experience that NuGet provides to developers. This allows you to simplify complex application requirements into a single easy-to-use Chocolatey package.
+
+## Understanding Dependency Syntax
+
+Dependencies for a particular application are all defined within a package's nuspec file. This file contains _all_ of the metadata about a particular Chocolatey package including:
+- Title
+- Author
+- Version
+- Description
+- Release Notes, etc
+
+A `nuspec` _also_ includes a section for defining package dependencies.
+
+A common example that you'll see across many Chocolatey packages on the [Community Repository](https://community.chocolatey.org/packages) looks like the following:
+
+```xml
+<dependencies>
+  <dependency id="chocolatey-core.extension" version="1.3.3" />
+</dependencies>
+```
+
+You will notice in the above sample that there are two elements to a `<dependency />`:
+-  The `id`, or package name
+-  An _optional_ `version`.
+
+If you _do NOT_ provide a version number, Chocolatey will attempt to resolve the dependency to the latest stable release available on the available source(s) per your Chocolatey configuration, or command line you passed.
+
+In our particular example above the `chocolatey-core.extension` package will resolve at _least_ the 1.3.3 version of the package, unless a newer version is available on your configured source(s).
+
+### Version Semantics
+
+Chocolatey follows the NuGet SemVer notation, including exact versions, minimum inclusive, maximum exclusive etc etc. For more information on the available version ranges and their syntax please see the [NuGet SemVer Reference](https://docs.microsoft.com/en-us/nuget/concepts/package-versioning#version-ranges) documentation available from docs.microsoft.com.
+
+Additionally, any time you run the `choco new` command to manually build a new Chocolatey Package, the included nuspec template will include information about dependencies and how to use them in the Dependencies section of the file.
+
+## Understanding how Dependencies are installed
+
+When a package has a dependency defined, Chocolatey ensures that that dependency is first installed before installing the requested package. For example, you may have a LOB application packaged with Chocolatey that takes a dependency on a particular version of Java Runtime Environment. By defining the specific jre package id and version this LOB application requires, you need only worry about issuing a `choco install LOB -y` command on your target system, and Chocolatey will first check if the dependency is installed, and whether it needs to be upgraded based on the version of the dependency defined. If the dependency is already met, nothing happens, and your LOB application is installed. If the dependency is missing or not the correct version, Chocolatey ensures this _first_ and then installs your LOB application.
+
+## What you can do with Dependencies and chaining.
+
+Now that you see how dependencies are defined, their syntax, and how they work, you can start to experiment with things! Perhaps you have a role within your organization that requires a certain list of applications. You could use what is known as a "metapackage" to issue a single `choco install` command, but ensure that _all_ of the required applications are installed. This is done by creating a package for this specific role, and _only including_ a `.nuspec` file. Inside of this nuspec fill out all the required metadata, and list as dependencies all of your required application packages. Chocolatey will do the hard work of ensuring those things are installed when you install this metapackage.
+
+It is also helpful for very complex packages where a package may take a dependency, which in turn has another dependency. Chocolatey will walk this dependency chain all the way to the beginning, and work backwards until all dependencies are met, and then proceed to install your requested package.
+
+## Wrapping up
+
+As you can see dependencies in Chocolatey packages are relatively easy to understand, define, and utilize in your Chocolatey packaging! We encourage you to take advantage of this enhanced functionality in your environments.
+
+Still have questions?  Join our [Discord](Community Chat)! If you're a Chocolatey For Business customer, run `choco support` to see how to get in touch with our support team, who are at the ready to assist you with Package Dependencies!

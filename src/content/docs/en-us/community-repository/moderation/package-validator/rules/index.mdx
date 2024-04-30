@@ -1,0 +1,42 @@
+---
+order: 10
+xref: package-validator-rules
+title: Package Validator Rules
+description: Information on the Package Validator rules
+hideChildPages: true
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import Children from '@components/Children.astro';
+
+There are 4 different types of Package Validator rules:
+
+- [Requirements](#requirements)
+- [Guidelines](#guidelines)
+- [Suggestions](#suggestions)
+- [Notes](#notes)
+
+## Requirements
+
+Requirements represent the minimum quality of a package that is acceptable. When a package version has failed requirements, the package version requires fixing and/or response by the maintainer. Provided a Requirement has flagged correctly, it must be fixed before the package version can be approved. The exact same version should be uploaded during moderation review.
+
+<Children filter="ruleType" value="Requirement" />
+
+## Guidelines
+
+Guidelines are strong suggestions that improve the quality of a package version. These are considered something to fix for next time to increase the quality of the package. Over time Guidelines can become Requirements. A package version can be approved without addressing Guideline comments but will reduce the quality of the package.
+
+<Children filter="ruleType" value="Guideline" />
+
+## Suggestions
+
+Suggestions are either newly introduced items that will later become Guidelines or items that don't carry enough weight to become a Guideline. Either way, they should be considered. A package version can be approved without addressing Suggestion comments.
+
+<Children filter="ruleType" value="Suggestion" />
+
+## Notes
+
+Notes typically flag things for both you and the reviewer to go over. Sometimes this is the use of things that may or may not be necessary given the constraints of what you are trying to do and/or are harder for automation to flag for other reasons. Items found in Notes might be Requirements depending on the context. A package version can be approved without addressing Note comments.
+
+<Children filter="ruleType" value="Note" />

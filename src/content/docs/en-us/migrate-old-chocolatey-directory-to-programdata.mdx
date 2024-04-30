@@ -1,0 +1,51 @@
+---
+order: 77
+xref: migrate-chocolatey
+title: Migrate Old Chocolatey Directory to ProgramData
+description: When upgrading from older versions of Chocolatey, so additional steps need to be completed
+showInSidebar: false
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+After an upgrade, you may see a message similar to the following:
+
+```powershell
+The default install location has been changed to 'C:\ProgramData\chocolatey'.
+This install will be updated to that location in the next version. It
+is strongly suggested you move this installation to the new location
+as soon as possible to limit write access from all users. Do not forget
+to update PATH & ChocolateyInstall environment variables.
+```
+
+The new path and name of the ChocolateyInstall variable may be different for you.
+
+Here's how to move Chocolatey.
+
+First, move the directory.  Open a [Command Prompt as Administrator](https://www.howtogeek.com/howto/windows-vista/run-a-command-as-administrator-from-the-windows-vista-run-box/) and run the following:
+
+```powershell
+cd c:\
+md ProgramData\chocolatey
+xcopy /s /e c:\chocolatey\*.* ProgramData\chocolatey\.
+rd chocolatey /s /q
+```
+
+Next, check your environment variables. Note that some software that lives in `c:\chocolatey` may have added itself to your path.
+
+```powershell
+PS C:\Users\james> (echo $Env:PATH).split(";") | where {$_ -match "chocolatey"}
+C:\chocolatey\lib\minecraft.1.1\tools\minecraft.exe
+C:\chocolatey\bin
+```
+
+![Right click and select properties](https://i.imgur.com/Xser6iG.png)
+
+![Click advanced system settings](https://i.imgur.com/6SsGw9v.png)
+
+![Click environment variables button](https://i.imgur.com/N6YtQSk.png)
+
+![Edit environment variables](https://i.imgur.com/Bszc7qg.png)
+
+Now, change your environment variables. Note that Chocolatey may appear in both the user PATH and the system PATH. I strongly recommend copy and pasting the contents of the text box to and from notepad for significantly easier editing.

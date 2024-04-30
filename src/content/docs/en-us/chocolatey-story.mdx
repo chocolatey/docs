@@ -1,0 +1,24 @@
+---
+order: 72
+xref: chocolatey-story
+title: Story of Bob and Richard
+description: Background information about where the idea for Chocolatey came from
+showInSidebar: false
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Let’s start with a story. Two guys, Bob and Richard (whose names have been changed to protect the innocent) need to get their computers ready to do some development work with [Git](https://git-scm.com/). Neither Bob or Richard have worked with Git before. This is a story about the process they each go through to get Git.
+
+Richard goes off to research. After a while he learns the tool he wants to install for Windows is Git for Windows. He searches, downloads the latest version and goes to install it. He realizes he downloaded the wrong architecture and starts over.  He may not have his settings set up properly. So then he spends time trying to figure out what his settings should be. After a process of maybe a whole morning, he finally has Git installed and hopes he is set up properly. And Richard only knows about Git and not any other tools that may have helped him with using Git.
+
+Bob has recently installed this tool called Chocolatey. He heads out to the community repository at [community.chocolatey.org](https://community.chocolatey.org/packages) and searches for Git. He learns that there are several cool tools for working with Git on Windows. He decides that he wants to use Git Extensions for helping him visualize some of the Git work. He opens a command line, types `choco install gitextensions` and hits Enter. Git Extensions has a dependency on Git for Windows, so Chocolatey downloads and installs it silently on his machine. It configures Git for proper Windows usage. Then Chocolatey downloads and silently installs Git Extensions on his machine. In less than ten minutes Bob is ready to go and has some of the best tools for working with Git available to him.
+
+Did Bob get lucky? No. It’s just that Bob didn’t have to really make that many decisions. He decided he wanted a tool. Then Chocolatey did all of the work, made all of the decisions, got the dependent applications, and even configured his machine properly. He has little left to do to finish setting up the machine for access to [GitHub](https://github.com).
+
+The moral of the story? Richard took 3-4 hours to get somewhat up to speed. Bob came fully up to speed in less than ten minutes. Don’t be a Richard.
+
+References
+
+* [https://lostechies.com/jimmybogard/2012/02/01/improving-the-git-windows-experience-downloads/](https://lostechies.com/jimmybogard/2012/02/01/improving-the-git-windows-experience-downloads/)

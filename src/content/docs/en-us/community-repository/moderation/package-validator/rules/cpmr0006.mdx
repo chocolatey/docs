@@ -1,0 +1,27 @@
+---
+order: 6
+xref: cpmr0006
+title: CPMR0006 - VERIFICATION.txt file missing when binaries included (package)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0006
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In the package, you have included binaries but have not given moderators and the community a way to verify the files are legitimate.
+
+## Recommended Solution
+
+Please add a file named VERIFICATION.txt. You can see the format for that file if you call `choco new test` (upgrade to the latest version of Chocolatey first) and look at the generated file in `test\tools\VERIFICATION.txt`
+
+This check also looks for `VERIFICATION` and `VERIFICATION.md`. Casing doesn't matter for validation.
+
+## Reasoning
+
+If you include binaries in the package, even if you are the software vendor, you need to include a VERIFICATION.txt file. This allows moderators and the community build trust in using the package. A verification file tells folks how to verify the files are legitimate with specific instructions on verifying with the official location.

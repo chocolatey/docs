@@ -1,0 +1,58 @@
+---
+order: 43
+xref: c4b-ansible-license-update
+title: License Update
+description: How to Update the License in Use on Your Chocolatey for Business Ansible Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Summary
+
+If you use the Chocolatey for Business Ansible Environment for long periods of time, the license you used to deploy it may expire and you will need to update it.
+
+You can either run through the process manually, or run the Chocolatey for Business Ansible Environment playbook again with a specific tag.
+
+## Ansible Update
+
+To create your updated license package with the Ansible playbook, re-run the playbook with the `licensepackage` tag and provide the path to your new Chocolatey for Business license.
+
+Example of running via Playbook:
+
+```powershell
+ansible-playbook ./c4b-environment.yml -i ./hosts.yml -tags licensepackage
+```
+
+## Manual Update
+### Prerequisites
+
+- You will need Chocolatey CLI installed.
+- You will need your new Chocolatey for Business license file.
+- You will need the FQDN of your Sonatype Nexus Repository server.
+- You will need the API Key for your Sonatype Nexus Repository.
+
+### Creating a New License Package
+
+Please refer to <Xref title="the Chocolatey for Business Azure Environment documentation" value="c4b-azure-license-update" anchor="creating-a-new-license-package" /> for creating the license package.
+
+### Uploading the License Package
+
+We now need to upload this new package to the `ChocolateyInternal` repository. Open a PowerShell terminal and run the following code (which will prompt you for information for values that are not set):
+
+```powershell
+if (-not $FQDN) {
+    $FQDN = "$(Read-Host -Prompt 'Please enter the FQDN for the Nexus repository')"
+    if (([uri]$FQDN).Host) {$FQDN = ([uri]$FQDN).Host}
+}
+if (-not $NexusApiKey) {
+    $NexusApiKey = "$(Read-Host -Prompt 'Please enter the API Key to be used to push Chocolatey packages to Nexus')"
+}
+
+$LicensePackage = (Get-Item $env:Temp\ChocolateyLicensedPackage\*.nupkg)[-1]
+choco push $LicensePackage.FullName --source="https://$($FQDN):8443/repository/ChocolateyInternal/" --api-key="$NexusApiKey" --force
+```
+
+### Pushing the New License to Clients
+
+You can either rely on automation to push this package (and updated license) to your clients, or refer to <Xref title="these documents" value="ccm-deployments" /> to manually create a deployment.

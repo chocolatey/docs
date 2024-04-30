@@ -1,0 +1,114 @@
+---
+order: 5
+xref: howto-create-script-package
+title: How To Create a Script Package
+description: Information on how to create packages that execute bundled PowerShell scripts with Chocolatey
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+This tutorial will focus on creating a Chocolatey script package. This type of package is one which contains one or more PowerShell scripts that are executed by Chocolatey on the target system.
+This powerful package type allows you to version system configuration, making reporting and compliance much simpler!
+
+If you have not yet read <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />, please do so now and ensure
+you are ready to go before continuing.
+
+### Creating Your Package
+
+1. Open the `tutorials` folder in VS Code.
+2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands
+4. Give your package a name, e.g. `script-package`.
+5. Select `Default Template` when prompted.
+
+### Adding Your PowerShell Script
+
+You can download an example PowerShell script from [here](https://docs.chocolatey.org/downloads/create-embedded-script-package-tutorial.ps1). Once downloaded, place this script inside the `tools` folder of your script package.
+
+Next we'll create an install script that leverages the sample script.
+
+### Create Your Install Script
+
+Open the `chocolateyInstall.ps1` script from the VS Code Explorer pane. Replace the contents of the script with the following:
+
+```powershell
+$ErrorActionPreference = 'Stop' # stop on all errors
+$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
+$script = Join-Path $toolsDir -ChildPath 'example.ps1'
+
+Write-Host "Executing script: $script"
+& $script
+```
+
+Save and close the file.
+
+### Cleaning Up The Packaging
+
+Our simple example here doesn't require anything special for an upgrade or uninstall scenario. In the VS Code Explorer pane find both the `chocolateyBeforeModify.ps1` and `chocolateyUninstall.ps1` files and remove them.
+
+### Creating The Package Metadata
+
+The package metadata is stored in a file with a `.nuspec` extension. It provides information to Chocolatey such as:
+
+- Package Id
+- Package Version
+- Author
+- Synopsis
+- Dependencies
+
+For packages being published to the [Chocolatey Community Repository](https://community.chocolatey.org/packages) additional information is required.
+You can find information on package metadata requirements in our <Xref title="Package Validator Rules" value="package-validator-rules" /> documentation.
+
+In the VS Code Explorer pane find and open the `embedded-zip.nuspec` file.
+
+Replace the contents of the nuspec file with the following:
+
+```xml
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>script-package</id>
+    <version>1.0.0</version>
+    <title>script-package (Install)</title>
+    <authors>Chocolatey Software</authors>
+    <tags>script-package script tutorial</tags>
+    <summary>Tutorial for script package</summary>
+    <description>Tutorial for script package</description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+```
+
+### Compile Your Package
+
+The `choco pack` command is used to compile your package files into a usable Chocolatey package.
+
+1. In VS Code press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
+3. Select `script-package.nuspec` from the list.
+4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.
+
+### Install Your Script Package
+
+You can test your package, and see how it behaves with the following command:
+
+```powershell
+choco install script-package -y --source='tutorials'
+```
+
+### Uninstall Your Script Package
+
+You can test the uninstall behavior with the following:
+
+```powershell
+choco uninstall script-package -y
+```
+
+### Conclusion
+
+At this point, you should have a working script package! Congratulations! Hopefully you can apply this to other scripts!

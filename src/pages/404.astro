@@ -1,0 +1,26 @@
+---
+// Scripts and types
+import Layout from '@layouts/Layout.astro';
+
+const title = '404';
+const description = 'We were unable to find this page. This could be as a result of the recent changes to the site, where we have moved some files around. Please verify that the link you are using is what you expect.  If you are still having problems, please reach out to the Chocolatey Team, and we will do our best to fix this problem.';
+---
+
+<Layout title={title} description={description}>
+    <main id="centeredLayout" class="position-relative d-sm-flex">
+        <div class="container py-3 py-md-5 d-flex flex-column justify-content-center">
+            <div class="row">
+                <div class="col-md-8 col-xl-6 mx-auto">
+                    <div class="card card-body p-md-5">
+                        <div class="text-center">
+                            <img class="mb-3" width="300" src="/images/global-shared/404.svg" title="404 Page Not Found" alt="404 Page Not Found" />
+                            <h1 class="bg-primary-opacity-25 p-2 mt-0 h3">Oops! Page not found.</h1>
+                        </div>
+                        <p class="text-reset">{description}</p>
+                        <div class="text-center"><a role="button" class="btn btn-primary" href="/en-us/">Back to Docs</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

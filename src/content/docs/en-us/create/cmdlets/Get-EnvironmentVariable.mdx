@@ -1,0 +1,130 @@
+---
+description: Information on Get-EnvironmentVariable cmdlet
+external help file: Chocolatey.PowerShell.dll-Help.xml
+Module Name: Chocolatey.PowerShell
+online version: https://docs.chocolatey.org/en-us/create/cmdlets/get-environmentvariable
+order: 70
+schema: 2.0.0
+title: Get-EnvironmentVariable
+xref: get-environmentvariable
+---
+import Xref from '@components/Xref.astro';
+
+# Get-EnvironmentVariable
+
+## SYNOPSIS
+Gets an Environment Variable.
+
+## SYNTAX
+
+```
+Get-EnvironmentVariable [-Name] <String> [-Scope] <EnvironmentVariableTarget> [-PreserveVariables]
+ [-IgnoredArguments <Object[]>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+This will will get an environment variable based on the variable name and scope while accounting whether to expand the variable or not
+(e.g.: `%TEMP%`-> `C:\User\Username\AppData\Local\Temp`).
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Get-EnvironmentVariable -Name 'TEMP' -Scope User -PreserveVariables
+```
+
+Gets the `TEMP` encironment variable from the user scope, without expanding embedded environment variables.
+
+### Example 2
+```powershell
+PS C:\> Get-EnvironmentVariable -Name 'PATH' -Scope Machine
+```
+
+Gets the `PATH` environment variable from the machine scope, expanding embedded environment variables.
+
+## PARAMETERS
+
+### -IgnoredArguments
+Allows splatting with arguments that do not apply. Do not use directly.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The environment variable you want to get the value from.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PreserveVariables
+Whether you want to expand embedded environment variable names or not. When not set, variables will be expanded.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Scope
+The environment variable target scope. This is `Process`, `User`, or `Machine`.
+
+```yaml
+Type: EnvironmentVariableTarget
+Parameter Sets: (All)
+Aliases:
+Accepted values: Process, User, Machine
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.String
+
+Outputs the value of the target environment variable as a string.
+
+## NOTES
+This helper reduces the number of lines one would have to write to get environment variables, mainly when not expanding the variables is a must.
+
+## RELATED LINKS
+
+<Xref title="Get-EnvironmentVariableNames" value="get-environmentvariablenames" classes="mb-3 d-block" />
+
+<Xref title="Set-EnvironmentVariable" value="set-environmentvariable" classes="mb-3 d-block" />
+
+<Xref title="Cmdlet Reference" value="powershell-cmdlet-reference" classes="mb-3 d-block" />
+
+<Xref title="Function Reference" value="powershell-reference" classes="d-block" />

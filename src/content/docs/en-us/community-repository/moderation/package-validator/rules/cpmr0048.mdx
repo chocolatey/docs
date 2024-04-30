@@ -1,0 +1,25 @@
+---
+order: 48
+xref: cpmr0048
+title: CPMR0048 - Tags Contain Chocolatey (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0048
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+In the nuspec, there is a `<tag />` element that contains `chocolatey` as one of the values.
+
+## Recommended Solution
+
+Please update the nuspec to remove `chocolatey` from the list of tags.
+
+## Reasoning
+
+Tags are about the underlying software. If that software has little or nothing to do with Chocolatey, there is no reason to carry the `chocolatey` tag. The `chocolatey` tag is specifically for things that are about Chocolatey and its framework, not about packages that can be installed with Chocolatey. If the purpose was for packages that are Chocolatey compatible, every package on https://community.chocolatey.org/packages would contain `chocolatey` for a tag and thus reduce the usefulness of the tag.

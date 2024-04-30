@@ -1,0 +1,45 @@
+---
+order: 31
+xref: cpmr0031
+title: CPMR0031 - Invalid URL (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0031
+ruleType: Note
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.mdx';
+
+<PackageValidatorRuleNote />
+
+## Issue
+
+In the nuspec, one of the URLs provided is invalid. Usually this means that the URL does not actually go to a website.
+
+The following URL's, if invalid, will be marked as a Note.
+
+* bugTrackerUrl - Note
+* docsUrl - Note
+* iconUrl - Note
+* licenseUrl - Note
+* mailingListUrl - Note
+* packageSourceUrl - Note
+* projectSourceUrl - Note
+* projectUrl - Note
+* wikiUrl - Note
+
+<Callout type="info">
+    Within the Description and ReleaseNotes elements, all URL's contained within them will be validated.
+</Callout>
+
+## Recommended Solution
+
+Please update the incorrect field(s) so that it results in a valid URL.
+
+## Reasoning
+
+We expect that the URLs actually go to an existing URL
+
+## Troubleshooting
+
+We have worked through a number of issues where valid URL were actually being flagged as invalid.  If you believe that a valid URL within your nuspec file is being flagged as invalid, please reply on the package moderation page, and a moderator can help investigate.

@@ -1,0 +1,39 @@
+---
+order: 20
+xref: chococcm-setup
+title: Setup
+description: How to setup the ChocoCCM PowerShell Module
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="info">
+    The ChocoCCM PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
+</Callout>
+
+## Installation
+
+To install the ChocoCCM PowerShell Module from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ChocoCCM) use the following command:
+
+```powershell
+Install-Module -Name ChocoCCM
+```
+
+## Upgrade
+
+To upgrade to a newer version, when available from the [PowerShell Gallery](https://www.powershellgallery.com/packages/ChocoCCM), run the following command:
+
+```powershell
+Update-Module -Name ChocoCCM
+```
+
+## Available Functions
+
+Have a look at the <Xref title="complete" value="chococcm-functions" /> list of all available functions included within the ChocoCCM module.
+
+Or you can run the following command:
+
+```powershell
+Get-Command -Module ChocoCCM
+```

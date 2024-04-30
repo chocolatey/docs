@@ -1,0 +1,25 @@
+---
+order: 74
+xref: cpmr0074
+title: CPMR0074 - Dependency On Hook Package (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0074
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+Within the nuspec, a dependency on a package with the `.hook` suffix was found. Packages, other than `.hook` packages, should not have such a dependency.
+
+## Recommended Solution
+
+Remove any dependency that specifies a package with a `.hook` suffix.
+
+## Reasoning
+
+Since a `.hook` package will introduce scripts that will be installed on the user's computer and run before or after any install, upgrade or uninstall that the user attempts, such packages should never be automatically installed. A user should explicitly opt into using such packages, and other packages should not go against this practice.

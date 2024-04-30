@@ -1,0 +1,48 @@
+---
+order: 20
+xref: ccm-usage-service-message-processing
+title: Message Processing
+description: Information about how messages are processed by the Chocolatey Central Management Service
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="info">
+    The message processing that is described below was introduced in version 0.4.1 of the Chocolatey Central Management Service.
+</Callout>
+
+In order to ensure the safe delivery of messages from each Chocolatey Agent into the Chocolatey Central Management Service, a message processing system has been implemented.  Rather than attempt to immediately add information into the database, each message is immediately stored to disk, and then processed via recurring jobs within the Chocolatey Central Management Service.  This allows for the Service to easily handle bursts of messages that may happen as a result of a Deployment Step occurring on many machines, and then computers reporting into the Service.
+
+## Message Processing Folders
+
+The Chocolatey Central Management Service uses a number of different folders to process the incoming messages. These can be configured in the `chocolatey-central-management.exe.config` within the installation folder for the service.  These folders are:
+
+* <Xref title="ComputerInformationMessagesFolderPath" value="ccm-usage-service-configuration" anchor="computerinformationmessagesfolderpath" />
+* <Xref title="ComputerInformationMessagesProcessingFolderPath" value="ccm-usage-service-configuration" anchor="computerinformationmessagesprocessingfolderpath" />
+* <Xref title="DeploymentStepResultMessagesFolderPath" value="ccm-usage-service-configuration" anchor="deploymentstepresultmessagesfolderpath" />
+* <Xref title="DeploymentStepResultMessagesProcessingFolderPath" value="ccm-usage-service-configuration" anchor="deploymentstepresultmessagesprocessingfolderpath" />
+* <Xref title="DeploymentStepResultMessagesFailedFolderPath" value="ccm-usage-service-configuration" anchor="deploymentstepresultmessagesfailedfolderpath" />
+
+As new messages, both computer information and Deployment Step results, arrive at the Chocolatey Central Management Service, they are immediately stored into the `*MessagesFolderPath` folders.  Then as the service begins to process these messages, they are moved into the `*MessageProcessingFolderPath` folders, and once they are processed, the stored messages are deleted.
+
+## Message Processing Folder Permissions
+
+During start up of the Chocolatey Central Management Service, it will ensure that all required folders are created (based on the configured values above).  In addition, it will ensure, for security purposes, that only the user account that is currently running the Chocolatey Central Management Service has read/write permissions to these folders.  By default, this will be the ChocolateyLocalAdmin user, which Chocolatey creates as part of the installation process.  If an additional account is used to run the Chocolatey Central Management Service, then this account, and only this account, will be provided read/write permissions to these folders.
+
+## Poison Messages
+
+Starting in version 0.8.0 of the Chocolatey Central Management service there is now an additional folder for Deployment Step messages. Processed messages that failed to update the status of the Deployment Step will be moved to the folder specified in <Xref title="`DeploymentStepResultMessagesFailedFolderPath`" value="ccm-usage-service-configuration" anchor="deploymentstepresultmessagesfailedfolderpath" /> after the update has been tried 3 times. Files in this directory are not deleted by the Chocolatey Central Management service.
+
+See the additional information below for computers which have reported in the status of their Chocolatey packages, or for older versions of Chocolatey Central Management service.
+
+If there is an error during the processing of a message, the message will not be deleted from the `*MessageProcessingFolderPath`.  As a result, the message will attempt to be processed again.
+
+In the unlikely event that there is something "wrong" with the message, and it can't be processed, it will become what is known as a "poison message" and it will remain in the queue indefinitely, attempting to be processed each cycle.  If/when this happens, it will be necessary to remove this message from the `*MessageProcessingFolderPath` folder.
+
+To do this, first stop the Chocolatey Central Management Service.  Due to the permissions that are applied on these folders, it will first be necessary for an administrator of the machine to take ownership of the folder that contains the message(s), and to either:
+
+* move the message to another location
+* delete the message
+
+Once any poison messages have been removed, the Chocolatey Central Management Service should be restarted, and the permissions for those folders will be reapplied.

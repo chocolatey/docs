@@ -1,0 +1,61 @@
+---
+order: 30
+xref: default-to-tile-view-for-remote-source
+title: Default to Tile View for Remote Source
+description: How to configure whether the tile or list view is used by default
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+By default (starting with version 0.18.0), Chocolatey GUI uses a tile view to show all of the packages that are currently available on the remote
+sources that have been configured.  As a result, you will see a screen similar to the following when first
+starting the application and clicking on a remote source:
+
+![Default to Tile View for Remote Source Disabled](/images/chocolatey-gui/feature_default_tile_view_remote_disabled.png "Default to Tile View for Remote Source Disabled")
+
+It is possible to toggle between the list view and a tile view for the packages that are available on a remote source
+using the buttons at the top right hand corner of the application, but it you prefer to see the list view by default,
+then you can enable it with this feature.  As a result, you will see something like the following when first starting
+the application and clicking on a remote source:
+
+![Default to Tile View for Remote Source Enabled](/images/chocolatey-gui/feature_default_tile_view_remote_enabled.png "Default to Tile View for Remote Source Enabled")
+
+## Resources
+
+Below is a short video which shows this feature in action:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/Zsyr51jr4QY?list=PL84yg23i9GBjAMY0OfHfn-MH4rviaccuc" />
+
+## Example
+
+This feature can be enabled, for the currently logged in user, by running the following command:
+
+```powershell
+chocolateyguicli feature enable --name="'DefaultToTileViewForRemoteSource'"
+```
+
+This feature can be disabled, for the currently logged in user, by running the following command:
+
+```powershell
+chocolateyguicli feature disable --name="'DefaultToTileViewForRemoteSource'"
+```
+
+Or, to enable/disable it globally at the machine level, run the following commands:
+
+```powershell
+chocolateyguicli feature enable --name="'DefaultToTileViewForRemoteSource'" --global
+
+chocolateyguicli feature disable --name="'DefaultToTileViewForRemoteSource'" --global
+```
+
+## Default Value
+
+As of version 0.18.0 of Chocolatey GUI, the default value for this feature is enabled.
+
+## Availability
+
+The ability to control this feature from the Chocolatey GUI Settings screen has existed since Chocolatey GUI v0.16.0.
+
+The ability to control this feature from the command line using `chocolateyguicli` has existed since Chocolatey GUI
+v0.17.0.

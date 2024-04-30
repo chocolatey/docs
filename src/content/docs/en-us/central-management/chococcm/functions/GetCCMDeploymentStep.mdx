@@ -1,0 +1,111 @@
+---
+order: 95
+xref: get-ccmdeploymentstep
+title: Get-CCMDeploymentStep
+description: Information about the Get-CCMDeploymentStep function
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Get-CCMDeploymentStep
+
+{/* This documentation is automatically generated from /Get-CCMDeploymentStep.ps1 using GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Return information about a CCM Deployment step.
+
+## Syntax
+
+```powershell
+Get-CCMDeploymentStep `
+  -InputObject <PSObject> `
+  [-IncludeResults] [<CommonParameters>]
+```
+
+```powershell
+Get-CCMDeploymentStep `
+  -Id <Int64> `
+  [-IncludeResults] [<CommonParameters>]
+```
+
+## Description
+
+Returns detailed information about Central Management Deployment Steps.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+```powershell
+Get-CCMDeploymentStep -Id 583 -IncludeResults
+
+```
+
+**EXAMPLE 2**
+
+```powershell
+Get-CCMDeploymentStep -InputObject $step -IncludeResults
+
+```
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+### -InputObject &lt;PSObject&gt;
+
+Retrieves additional details for the given step.
+
+Property               | Value
+---------------------- | --------------
+Aliases                | Step
+Required?              | true
+Position?              | named
+Default Value          |
+Accept Pipeline Input? | true (ByValue)
+
+### -Id &lt;Int64&gt;
+
+Returns the Deployment Step with the given Id.
+
+Property               | Value
+---------------------- | ------------------------------
+Aliases                | DeploymentStepId
+Required?              | true
+Position?              | named
+Default Value          | 0
+Accept Pipeline Input? | true (ByValue, ByPropertyName)
+
+### -IncludeResults
+
+If set, additionally retrieves the results for the targeted step.
+
+Property               | Value
+---------------------- | -----
+Aliases                |
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+
+<Xref title="Function Reference" value="chococcm-functions" />
+
+<Callout type="info">
+    This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Get-CCMDeploymentStep -Full`.
+</Callout>

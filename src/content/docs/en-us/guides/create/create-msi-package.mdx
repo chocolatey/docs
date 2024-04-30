@@ -1,0 +1,229 @@
+---
+order: 2
+xref: howto-create-msi-package
+title: How To Create an MSI Installer Package
+description: Creating a package that installs an MSI
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+When starting out with Chocolatey products, why not start simple? Installing an MSI is a popular use of a Chocolatey package, and we'll walk you through how to do just that - assuming you've already run through <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />.
+
+### What Is an MSI
+
+MSI files are a standardised installer filetype, used by Windows. Unlike EXE installers (which can and will do just about anything), MSIs have _standards_ (or at least they all use the Windows Installer under the hood) and will behave somewhat predictably.
+
+Consequently, they're often appreciated by busy Systems Administrators who want to deploy software to many computers - or anyone looking for the silent install options.
+
+### Using `Install-ChocolateyPackage`
+
+Chocolatey supports a lot of different types of installer, including MSIs. EXEs, MSIs, and MSUs (all popular install formats) are normally installed using the <Xref title="`Install-ChocolateyPackage`" value="install-chocolateypackage" /> function - and, in fact, our default template for a new package contains an example of this!
+
+You can inspect the full set of available parameters for this function at the link above.
+
+At the most basic level, though, you can use it by simply passing in a `PackageName` and `URL` (or `URL64`for 64-bit installers):
+
+```powershell
+$InstallArgs = @{
+    PackageName = $env:ChocolateyPackageName
+    Url         = "https://github.com/chocolatey/ChocolateyGUI/releases/download/2.1.0/ChocolateyGUI.msi"
+}
+
+Install-ChocolateyPackage @InstallArgs
+```
+
+<Callout type="info">
+    If you hadn't seen it before, `$env:ChocolateyPackageName` is a variable within Chocolatey scripts set to the ID of the current package.
+</Callout>
+
+Of course, in a real-world package you would also want to add arguments to ensure the software installed silently, use a 64-bit installer (if available), and add checksums to ensure that the URL you downloaded matched with your expectations (if you weren't going to add the installer to the package).
+
+We'll dive into the additional options in [Creating your Install Script](#creating-your-install-script), later on this page.
+
+#### Creating an MSI Package
+
+In this example, we're going to be creating a new Firefox MSI package.
+
+<Callout type="info">
+    For the purposes of the example, we'll provide URLs that work at time of writing. If you were creating a package from scratch, you would want to find the URLs for the installers yourself.
+    In this case, we browsed to [Mozilla's download site](https://www.mozilla.org/en-GB/firefox/all/#product-desktop-release) and grabbed the URL of the MSI(s) we wanted.
+</Callout>
+
+There are <Xref title="package templates" value="create-custom-package-templates" /> to create various package types, including an MSI template!
+
+We'll use this to create our new MSI package:
+
+1. Open your `tutorials` directory in VS Code.
+1. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Install Template Package(s)`.
+1. Open the `Command Palette` again, as in the prior step.
+1. Select `Chocolatey: Create new Chocolatey package`
+1. Give your package a name, e.g. `firefox-msi`, and hit `Enter`.
+1. Select `msi` from the template list.
+
+This should result in a new directory, containing the following files:
+
+```text
+firefox-msi
+├── tools
+│   ├── chocolateyBeforeModify.ps1
+│   ├── chocolateyInstall.ps1
+│   ├── chocolateyUninstall.ps1
+│   ├── LICENSE.txt
+│   ├── VERIFICATION.txt
+├── firefox-msi.nuspec
+├── ReadMe.md
+```
+
+For this package, you can delete the `chocolateyBeforeModify.ps1`, `LICENSE.txt`, and `VERIFICATION.txt` files from the `tools` directory, and the `ReadMe.md` file from the root of `firefox-msi`.
+
+You'll want to open the `firefox-msi.nuspec` file, and fill out the following fields in the `metadata` section if required:
+
+* **packageSourceUrl**: This can be removed, or updated with your source URL.
+* **owners**: This field shows who maintains the package - your name or username is appropriate!
+* **authors**: The authors of the software in question - for the example package, this should be removed or updated to  `Mozilla Foundation`.
+* **projectUrl**: The URL of the software in question - for the example package, this should be removed or updated to `https://www.mozilla.org/en-GB/firefox/`.
+* **tags**: Tags for the nuget feed you're publishing the package to. These can be updated however you prefer, though the Chocolatey Community Repository has some guidance on what is needed there.
+* **summary**: This is a summary of the package contents. For this example, you could add `Mozilla Firefox is a web-browser.`
+* **description**: This is a description of the package contents, and generally contains more detail than the summary - including things like package arguments. It supports markdown. We won't be dealing with anything that complex here!
+
+You can now fill or remove any other commented out sections of the nuspec file, if you want.
+
+Your final content should look like this:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>firefox-msi</id>
+    <version>120.0.1</version>
+    <owners>PackageMaintainer</owners>
+    <title>Mozilla Firefox (Install)</title>
+    <authors>Mozilla Foundation</authors>
+    <projectUrl>https://www.mozilla.org/en-GB/firefox/</projectUrl>
+    <tags>browser mozilla firefox oss</tags>
+    <summary>Mozilla Firefox is a web-browser.</summary>
+    <!-- description>More detail</description -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+
+```
+
+#### Creating Your Install Script
+
+So, you already have a `chocolateyInstall.ps1` script present in your `tools` directory! However, it's been generated from a template - so will be missing a few details!
+
+As mentioned above, we're going to be using [Mozilla Firefox](https://www.mozilla.org/en-GB/firefox/) for our example package. You can use the following values in the upcoming steps - or, find them yourself:
+
+* **URL**: `https://download-installer.cdn.mozilla.net/pub/firefox/releases/120.0.1/win32/en-GB/Firefox%20Setup%20120.0.1.msi`
+* **URL64bit**: `https://download-installer.cdn.mozilla.net/pub/firefox/releases/120.0.1/win64/en-GB/Firefox%20Setup%20120.0.1.msi`
+* **Checksum**: `1D871A1364C2EF0371C172548E564102DC698E0FA48E3E72118E92C17F163C7A`
+* **Checksum64**: `0FC6959385CB89C03E1C82F991EB8449BC8E2E080075A648A4C65CCDC5CD7D58`
+
+If you open the `chocolateyInstall.ps1` from the newly created `tools` directory, you will see that there are comments to walk you through creating this package, and blank strings to be filled in! Most of these strings are found within the `$packageArgs` hashtable.
+
+Update the following values in the install script:
+
+* **URL**: You will need to provide a URL for the MSI to install.
+* **URL64**: If there is a separate 64-bit MSI, you should provide a URL for that here.
+* **Checksum**: To ensure you download the correct file, we support providing a checksum (and recommend you use it)
+* **Checksum64**: Similar to the `URL64`, if there is a separate install provided, you will need to calculate a checksum for it and add it here.
+
+To calculate the checksum yourself, download the file and run `Get-FileHash` in a PowerShell window:
+
+```powershell
+Invoke-WebRequest -Uri 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/120.0.1/win32/en-GB/Firefox%20Setup%20120.0.1.msi' -OutFile '~\Downloads\Firefox Setup 120.0.1.msi' -UseBasicParsing
+Get-FileHash '~\Downloads\Firefox Setup 120.0.1.msi'
+```
+
+This will output the SHA256 hash for the file. Repeat for each file you want to generate a hash for (or use the values provided above).
+
+You can now remove all commented out sections from this file, and save it.
+
+Your final file should look something like this:
+
+```powershell
+$ErrorActionPreference = 'Stop'
+
+$packageArgs = @{
+  packageName   = 'firefox-msi'
+  fileType      = 'MSI'
+  url           = 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/120.0.1/win32/en-GB/Firefox%20Setup%20120.0.1.msi'
+  url64bit      = 'https://download-installer.cdn.mozilla.net/pub/firefox/releases/120.0.1/win64/en-GB/Firefox%20Setup%20120.0.1.msi'
+
+  checksum      = '1D871A1364C2EF0371C172548E564102DC698E0FA48E3E72118E92C17F163C7A'
+  checksumType  = 'sha256'
+  checksum64    = '0FC6959385CB89C03E1C82F991EB8449BC8E2E080075A648A4C65CCDC5CD7D58'
+  checksumType64= 'sha256'
+
+  silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
+  validExitCodes= @(0, 3010, 1641)
+}
+
+Install-ChocolateyPackage @packageArgs
+```
+
+You could add additional configuration after the initial installation, if you wanted, or have this package simply install the software, and have a separate package for applying configuration!
+
+#### Considering Uninstallation
+
+Chocolatey will handle uninstallation of most software installed like this automatically. However, if you find that you have software that is not removed cleanly, you can provide a `chocolateyUninstall.ps1` script to run when the package is removed.
+
+The logic present in the uninstall script provided by the template is a basic version of this.
+
+This can also be used to clean up user data, or to roll-back configuration changes made - but that will be more useful in later package types.
+
+In the case of the example package, Chocolatey handles it well - so you can remove the `tools\chocolateyUninstall.ps1` file if you want.
+
+### Compiling Your Package
+
+You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
+
+1. In VS Code, press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
+1. Select `firefox-msi.nuspec` from the prompt.
+1. In **Additional Arguments** enter `--output-directory='~\tutorials'` (or whichever directory you're using for these tutorials), and press `Enter`.
+
+You should have a new package generated in your current working directory.
+
+### Installing Your Package
+
+You can now test installation of your package!
+
+We prefer to test this in a Windows Sandbox environment, or the [Chocolatey Test Environment](https://github.com/chocolatey-community/chocolatey-test-environment) (particularly if you already have an installation of Firefox present) - but you can just use your computer, if you want.
+
+export const callout3 = {
+    title: 'Beware',
+    type: 'warning'
+};
+
+<Callout content={callout3}>
+    Installing and uninstalling the example package may affect existing installations of Firefox (as you're essentially testing in production).
+</Callout>
+
+In an _elevated PowerShell command prompt_ run the following:
+
+```powershell
+choco install firefox-msi --source='tutorials' -y
+```
+
+The command should run, and Firefox should be installed! You should be able to find it in the Start Menu, in the install location in Program Files, and within Programs and Features.
+
+### Uninstalling Your Package
+
+You should be able to test the uninstall by running the following command in an _elevated PowerShell command prompt_:
+
+```powershell
+choco uninstall firefox-msi -y
+```
+
+The package should be uninstalled, along with the software. It should not be present in the Start Menu, the install location, or Programs and Features.
+
+### Conclusion
+
+At this point, you should have a working MSI package! Congratulations! Hopefully you can apply this to other MSIs!

@@ -1,0 +1,15 @@
+---
+order: 200
+xref: package-synchronization
+title: Package Synchronization
+description: Keep changes made to applications outside of Chocolatey in sync
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Chocolatey maintains its own state of the world, while Windows maintains the state of Programs and Features. If an application is upgraded or uninstalled outside of Chocolatey, such as is the case with Google Chrome and its auto updating utility, Chocolatey open source doesn't know about the change. The synchronize features in licensed editions keep Chocolatey's state in sync with Programs and Features, removing possible system-installed state drift.
+
+* <Xref title="Automatic Sync (All Licensed Editions)" value="automatic-sync" />
+* <Xref title="Synchronize Command" value="sync-command" /> (currently Business edition only - check https://chocolatey.org/compare#compare for availability)
+* <Xref title="All Packages in Programs And Features (C4B)" value="packages-to-programs" />

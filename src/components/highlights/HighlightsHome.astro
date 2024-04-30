@@ -1,0 +1,13 @@
+---
+// Scripts and types
+import { getCollection } from 'astro:content';
+
+// Components
+import Highlight from '@components/highlights/Highlight.astro';
+
+const highlightsHome = await getCollection('docs', ({ data }) => {
+    return data.highlight && data.highlight.showOnHome;
+});
+---
+
+<Highlight content={highlightsHome} />

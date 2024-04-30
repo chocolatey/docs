@@ -1,0 +1,42 @@
+---
+// Scripts and types
+import type { CollectionEntry } from 'astro:content';
+
+// Components
+import Xref from '@components/Xref.astro';
+import DateTime from '@components/DateTime.astro';
+
+interface Props {
+    content: CollectionEntry<'docs'>[];
+}
+
+const { content } = Astro.props;
+
+let sortedHighlights;
+
+if (content) {
+    sortedHighlights = content.sort((a, b) => {
+        const aDateTime = a.data.highlight?.postedDateTime || '';
+        const bDateTime = b.data.highlight?.postedDateTime || '';
+        return Math.floor(new Date(bDateTime).getTime() / 1000) - Math.floor(new Date(aDateTime).getTime() / 1000);
+    });
+}
+---
+
+{(sortedHighlights && sortedHighlights.length > 0) && (
+    <div class="card card-body card-border-top p-md-5 mb-4">
+        <ul class="fa-ul mb-0 ms-4">
+            {sortedHighlights.map((highlight, index) => (
+                (highlight && highlight.data && highlight.data.highlight) && (
+                    <li class={`${index === 0 ? "mt-3" : "mt-c2"}`}>
+                        <span class="fa-li mt-2"><i class="fa-solid fa-play text-primary"></i></span>
+                        <h2 class="d-anchor-none my-0">{highlight.data.title}</h2>
+                        <p class="text-secondary mb-2"><small><i>Posted on <DateTime dateTime={highlight.data.highlight.postedDateTime} /></i></small></p>
+                        <p>{highlight.data.description}</p>
+                        <Xref title={highlight.data.highlight.ctaText} value={highlight.data.highlight.ctaXref} anchor={highlight.data.highlight.ctaAnchor ? highlight.data.highlight.ctaAnchor : ''} classes="d-block mt-n2 p-0" icon="fa-arrow-right" />
+                    </li>
+                )
+            ))}
+        </ul>
+    </div>
+)}

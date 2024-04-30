@@ -1,0 +1,30 @@
+---
+order: 35
+xref: sensitive-inputs
+title: Sensitive Inputs
+description: Information on inputs that are hidden from the Chocolatey logs if detected
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+By default Chocolatey will omit logging commands or parameters that could potentially contain sensitive information.
+
+## Commands hidden from logs
+
+* `apikey`
+* `config`
+* `push`
+
+## Parameters hidden from logs
+
+* `--install-arguments-sensitive`
+* `--package-parameters-sensitive`
+* `-p`
+* `--password`
+* `-cp`
+* `--certpassword`
+* `-k`
+* `--key`
+* `--apikey`
+* `--api-key`

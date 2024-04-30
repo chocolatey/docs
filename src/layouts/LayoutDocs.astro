@@ -1,0 +1,45 @@
+---
+// Scripts and types
+import { config } from '@scripts/config.ts';
+
+// Components
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import GlobalNavigation from '@components/global/GlobalNavigation.astro';
+import Layout from '@layouts/Layout.astro';
+import Sidebar from '@components/sidebar/Sidebar.astro';
+
+const { title, description, ogImage, twitterImage, contentTree } = Astro.props;
+const isHome = title === config.titleHome;
+---
+
+<Layout title={title} description={description} ogImage={ogImage} twitterImage={twitterImage}>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-xl-2 p-0 text-bg-body-secondary border-end">
+                    <div id="leftSidebarNav" class="sticky-md-top collapse-y-height">
+                        <nav class="navbar navbar-expand-md p-0">
+                            <div id="leftSidebar" class="collapse navbar-collapse">
+                                <div class="d-sm-none">
+                                    <div class="global-nav">
+                                        <GlobalNavigation />
+                                    </div>
+                                </div>
+                                <Sidebar content={contentTree}/>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-9 col-xl-10 py-3 py-md-5 px-md-4 mx-auto">
+                    <div class="container d-xl-none">
+                        <h1 class="title">{title}</h1>
+                        <Breadcrumbs isHome={isHome} />
+                    </div>
+                    <div class="container">
+                        <slot />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

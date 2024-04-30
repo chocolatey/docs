@@ -1,0 +1,42 @@
+---
+// Scripts and types
+import { getEntry } from 'astro:content';
+
+const { isHome } = Astro.props;
+
+const paths = Astro.url.pathname.split('/').filter(x => x);
+
+const parts = [{
+    text: 'Chocolatey',
+    href: 'en-us'
+}];
+
+const buildPartsList = async () => {
+    for (let i = 0; i < paths.length; i++) {
+        const href = `${paths.slice(0, i + 1).join('/')}`;
+
+        if (href !== 'en-us') {
+            const blogPost = await getEntry('docs', href);
+
+            if (blogPost) {
+                parts.push({
+                    text: blogPost.data.title,
+                    href: blogPost.slug
+                });
+            }
+        }
+    }
+}
+
+await buildPartsList();
+---
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        {parts.map(({ text, href }, index) => 
+            <li class={`breadcrumb-item ${index + 1 === parts.length ? 'active' : ''} ${isHome ? 'd-none' : ''}`} role="listitem" aria-current={index + 1 === parts.length ? 'page' : false}>
+                {index + 1 !== parts.length ? <a href={`/${href}/`}>{text}</a> : text}
+            </li>
+        )}
+    </ol>
+</nav>
