@@ -1552,9 +1552,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"choco-theme@npm:0.6.0":
-  version: 0.6.0
-  resolution: "choco-theme@npm:0.6.0"
+"choco-theme@npm:0.7.0":
+  version: 0.7.0
+  resolution: "choco-theme@npm:0.7.0"
   dependencies:
     "@fortawesome/fontawesome-free": "npm:^6.1.2"
     "@playwright/test": "npm:1.35.1"
@@ -1593,7 +1593,7 @@ __metadata:
     stylelint-config-twbs-bootstrap: "npm:^14.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.4.2"
-  checksum: 10c0/c445671fe4cf0aeaa0211b1fcf538941e30cae6bcc6848600b361404a2af9cc41b6442e62cd401628d525b121f01dc9e62d85e0deb2c7b4e325a48b40a102af8
+  checksum: 10c0/3e3e344860c6c3d55477525f63703826affb22359af4866deaf7292578d8c4ad398233031c63bb126094425e0d90e5481f58d78cb6abf3a5f0ce3923b924090c
   languageName: node
   linkType: hard
 
@@ -2048,7 +2048,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:."
   dependencies:
-    choco-theme: "npm:0.6.0"
+    choco-theme: "npm:0.7.0"
   languageName: unknown
   linkType: soft
 

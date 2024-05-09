@@ -15,6 +15,6 @@
     "choco-theme": "yarn dlx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
   },
   "devDependencies": {
-    "choco-theme": "0.6.0"
+    "choco-theme": "0.7.0"
   }
 }
