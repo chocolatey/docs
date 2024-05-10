@@ -1,7 +1,7 @@
 ﻿---
 Order: 40
 xref: powershell-reference
-Title: PowerShell Reference
+Title: PowerShell Functions Reference
 Description: PowerShell Functions aka Helpers Reference
 RedirectFrom:
   - docs/helpers-reference
@@ -42,6 +42,7 @@ When creating packages that need to run one of the following commands below, one
 * [Install-ChocolateyEnvironmentVariable](xref:install-chocolateyenvironmentvariable) - when specifying machine path
 * [Install-ChocolateyExplorerMenuItem](xref:install-chocolateyexplorermenuitem)
 * [Install-ChocolateyFileAssociation](xref:install-chocolateyfileassociation)
+* [Uninstall-ChocolateyPath](xref:uninstall-chocolateypath) - when specifying machine path
 
 ### Non-Administrator Safe Functions
 
@@ -58,6 +59,7 @@ These are the functions from above as one list.
 * [Install-ChocolateyEnvironmentVariable](xref:install-chocolateyenvironmentvariable) - when specifying user path
 * [Install-ChocolateyPinnedTaskBarItem](xref:install-chocolateypinnedtaskbaritem)
 * [Install-ChocolateyShortcut](xref:install-chocolateyshortcut)
+* [Uninstall-ChocolateyPath](xref:uninstall-chocolateypath) - when specifying user path
 * [Update-SessionEnvironment](xref:update-sessionenvironment)
 * [Get-PackageParameters](xref:get-packageparameters)
 
@@ -96,6 +98,7 @@ These are the functions from above as one list.
  * [Uninstall-BinFile](xref:uninstall-binfile)
  * [Uninstall-ChocolateyEnvironmentVariable](xref:uninstall-chocolateyenvironmentvariable)
  * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateypackage)
+ * [Uninstall-ChocolateyPath](xref:uninstall-chocolateypath)
  * [Uninstall-ChocolateyZipPackage](xref:uninstall-chocolateyzippackage)
  * [Write-FunctionCallLogMessage](xref:write-functioncalllogmessage)
 
