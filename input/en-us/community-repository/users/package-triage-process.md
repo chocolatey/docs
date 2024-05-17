@@ -41,6 +41,10 @@ Package maintainers are unlikely to provide fixes to versions of packages that a
 > * dtgm
 > * adgellida
 
+> :choco-info: **WARNING**
+>
+> If the maintainer of the package is `chocolatey-community`, do not follow these steps. Instead, open an issue or discussion at the [chocolatey-community/chocolatey-packages](https://github.com/chocolatey-community/chocolatey-packages/issues) package source repository. These packages that are managed and maintained by core community team, and communication for these goes through the Github repository. 
+
 If a package needs to be fixed or updated. Here are the steps to follow:
 
 1. The first steps are:
