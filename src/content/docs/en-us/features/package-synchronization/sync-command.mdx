@@ -10,19 +10,55 @@ import Xref from '@components/Xref.astro';
 
 ## Sync Command
 
-Starting in 1.9.0 of the licensed extension, sync has been added as a preview feature for organizations to try out. Currently Business edition only, but expected to be in Pro+ at some point - check https://chocolatey.org/compare#compare for availability.
+Chocolatey is aware of, and manages, Chocolatey packages. What about your existing software, installed prior to your use of Chocolatey? How do you track and manage those items over time?
+
+Package Synchronizer, available in Chocolatey For Business, inspects Programs and Features and attempts to generate Chocolatey packaging for every item not currently under management of Chocolatey.
 
 Sync looks at all software that is in Programs and Features that is not being managed with Chocolatey packages and brings them under management. This means you can run one command and suddenly, all of the software installed on a machine is under management by Chocolatey!
 
 ### Usage
 
-To synchronize your system, Simply call `choco sync` and Chocolatey will ensure that all software in Programs and Features comes under Chocolatey management and provides you the packages/package sources so you can add them to source control for managing those packages over time.
 
-#### Setup
+#### View software available to sync
 
-At 1.9.0, sync is in preview. You need to turn it on by enabling the feature  `allowPreviewFeatures`:
+To see what programs are able to be synchronized use the following:
 
-* `choco feature enable --name allowPreviewFeatures`
+###### Chocolatey v2.x and newer
+
+```powershell
+choco list --include-programs
+```
+
+###### Chocola†ey v1.x and older
+
+```powershell
+choco list --local-only --include-programs
+```
+
+>:choco-info:
+> The sync command will create a folder for each package it creates inside a `sync` folder in the directory from which the sync command is executed.
+> It is recommended you use a known, clean directory when running the sync command to make things a little easier to find afterwords.
+> The packaging folders can then be checked into source control, where you can manage the packages over time.
+
+#### Sync all unmanaged applications
+
+To sync all unmanaged software using default package ids, run the following:
+
+```powershell
+choco sync
+```
+
+#### Sync an individual application
+
+It is possible to sync a specific application to Chocolatey using the following command line where `--id` is the name of the application exactly as shown in Programs and Features, and `--package-id` is the name you wish to give the Chocolatey package to track and manage the application over time 
+
+```powershell
+choco sync --id='Application DisplayName' --package-id='choco-package-id'
+```
+
+>:choco-info:
+> If you intend to leverage [Package Internalizer]() you will want the Chocolatey package id as it exists on the Chocolatey Community Repository, allowing for automated updates to the package.
+>
 
 ### See it in action
 
