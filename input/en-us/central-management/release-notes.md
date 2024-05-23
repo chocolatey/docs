@@ -30,6 +30,12 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 
+## 0.12.1 (May 23, 2024)
+
+### Bug Fixes
+
+- Fix - Duplicated Delpoyment Step reports created for unreachable and unresponsive computers.
+
 ## 0.12.0 (November 29, 2023)
 
 Read our [blog post](https://blog.chocolatey.org/2023/11/central-management-0.12.0-released/) about this release.
