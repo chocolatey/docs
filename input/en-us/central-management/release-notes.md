@@ -34,7 +34,7 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 ### Bug Fixes
 
-- Fix - Duplicated Delpoyment Step reports created for unreachable and unresponsive computers.
+- Fix - Duplicated Deployment Step reports created for unreachable and unresponsive computers.
 
 ## 0.12.0 (November 29, 2023)
 
