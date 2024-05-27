@@ -21,12 +21,6 @@ Installs a package or a list of packages (sometimes specified as a
 
 > :choco-info: **NOTE**
 >
-> `all` is a special package keyword that will allow you to install
- all packages from a custom feed. Will not work with Chocolatey default
- feed. THIS IS NOT YET REIMPLEMENTED.
-
-> :choco-info: **NOTE**
->
 > Any package name ending with .config is considered a
  'packages.config' file. Please see https://ch0.co/packages_config
 
@@ -65,6 +59,13 @@ Installs a package or a list of packages (sometimes specified as a
 
 > :choco-info: **NOTE**
 >
+> `all` is a special package keyword that will allow you to install
+ all packages available on a source. This keyword is not available for
+ public repositories like the Chocolatey [Community Repository](https://community.chocolatey.org/packages), and is
+ intended to  be used with internal package sources only.
+
+> :choco-info: **NOTE**
+> 
 > See scripting in [how to pass arguments](xref:choco-commands#how-to-pass-options-switches) (`choco -?`) for how to
  write proper scripts and integrations.
 
@@ -444,80 +445,83 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --skiphooks, --skip-hooks
      Skip hooks - Do not run hook scripts. Available in 1.2.0+
 
+     --include-configured-sources
+     Include Configured Sources - When using the '--source' option, this 
+       appends the sources that have been saved into the chocolatey.config file 
+       by 'source' command.  Available in 2.3.0+
+
      --sdc, --skipdownloadcache, --skip-download-cache
-     Skip Download Cache - Use the original download even if a private CDN
-       cache is available for a package. Overrides the default feature
-       'downloadCache' set to 'True'. [Licensed editions](https://chocolatey.org/compare)
-       only. See https://docs.chocolatey.org/en-us/features/private-cdn
+     Skip Download Cache - Use the original download even if a private CDN 
+       cache is available for a package. Overrides the default feature 
+       'downloadCache' set to 'True'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --dc, --downloadcache, --download-cache, --use-download-cache
-     Use Download Cache - Use private CDN cache if available for a package.
-       Overrides the default feature 'downloadCache' set to 'True'. Available
-       in 0.9.10+. [Licensed editions](https://chocolatey.org/compare) only. See https://docs.chocolatey.org/en-
-       us/features/private-cdn
+     Use Download Cache - Use private CDN cache if available for a package. 
+       Overrides the default feature 'downloadCache' set to 'True'. Licensed 
+       editions only.
+       See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --svc, --skipvirus, --skip-virus, --skipviruscheck, --skip-virus-check
      Skip Virus Check - Skip the virus check for downloaded files on this ru-
-       n. Overrides the default feature 'virusCheck' set to 'False'. Available
-       in 0.9.10+. [Licensed editions](https://chocolatey.org/compare) only. See https://docs.chocolatey.org/en-
-       us/features/virus-check
+       n. Overrides the default feature 'virusCheck' set to 'False'. Licensed 
+       editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --virus, --viruscheck, --virus-check
-     Virus Check - check downloaded files for viruses. Overrides the default
-       feature 'virusCheck' set to 'False'. Licensed
-       editions only. See https://docs.chocolatey.org/en-us/features/virus-check
+     Virus Check - check downloaded files for viruses. Overrides the default 
+       feature 'virusCheck' set to 'False'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
-     Virus Check Minimum Scan Result Positives - the minimum number of scan
-       result positives required to flag a package. Used when virusScannerType
-       is VirusTotal. Overrides the default configuration value
-       'virusCheckMinimumPositives' set to '4'. Licensed
-       editions only. See https://docs.chocolatey.org/en-us/features/virus-
-       check
+     Virus Check Minimum Scan Result Positives - the minimum number of scan 
+       result positives required to flag a package. Used when virusScannerType 
+       is VirusTotal. Overrides the default configuration value 
+       'virusCheckMinimumPositives' set to '4'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --install-arguments-sensitive=VALUE
-     InstallArgumentsSensitive - Install Arguments to pass to the native
-       installer in the package that are sensitive and you do not want logged.
-       Defaults to unspecified. [Licensed editions](https://chocolatey.org/compare) only.
+     InstallArgumentsSensitive - Install Arguments to pass to the native 
+       installer in the package that are sensitive and you do not want logged. 
+       Defaults to unspecified. Licensed editions only.
 
      --package-parameters-sensitive=VALUE
      PackageParametersSensitive - Package Parameters to pass the package that
        are sensitive and you do not want logged. Defaults to unspecified.
-       [Licensed editions](https://chocolatey.org/compare) only.
+       Licensed editions only.
 
      --dir, --directory, --installdir, --installdirectory, --install-dir, --install-directory=VALUE
-     Install Directory Override - Override the default installation director-
-       y. Chocolatey will automatically determine the type of installer and
+     Install Directory Override - Override the default installation directory.
+       Chocolatey will automatically determine the type of installer and
        pass the appropriate arguments to override the install directory. The
        package must use Chocolatey install helpers and be installing an
-       installer for software. [Licensed editions](https://chocolatey.org/compare) only.
+       installer for software. Licensed editions only.
        See https://docs.chocolatey.org/en-us/features/install-directory-override
 
      --bps, --maxdownloadrate, --max-download-rate, --maxdownloadbitspersecond, --max-download-bits-per-second, --maximumdownloadbitspersecond, --maximum-download-bits-per-second=VALUE
      Maximum Download Rate Bits Per Second - The maximum download rate in
        bits per second. '0' or empty means no maximum. A number means that will
        be the maximum download rate in bps. Defaults to config setting of '0'.
-       Available in [licensed editions](https://chocolatey.org/compare) only. See https://docs.chocolate-
-       y.org/en-us/features/package-throttle
+       Available in licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/package-throttle
 
      --reduce, --reduce-package-size, --deflate, --deflate-package-size
      Reducer Installed Package Size (Package Reducer) - Reduce size of the
        nupkg file to very small and remove extracted archives and installers.
        Overrides the default feature 'reduceInstalledPackageSpaceUsage' set to
-       'True'. [Licensed editions](https://chocolatey.org/compare) only. See https://doc-
-       s.chocolatey.org/en-us/features/package-reducer
+       'True'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --no-reduce, --no-reduce-package-size, --no-deflate, --no-deflate-package-size
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone
        in the package. Overrides the default feature
-       'reduceInstalledPackageSpaceUsage' set to 'True'. [Licensed editions](https://chocolatey.org/compare) only. 
-       See https://docs.chocolatey.org/en-
-       us/features/package-reducer
+       'reduceInstalledPackageSpaceUsage' set to 'True'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when
        using Package Reducer. Overrides the default feature
-       'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only.
+       'reduceOnlyNupkgSize' set to 'False'. Licensed editions only.
        See https://docs.chocolatey.org/en-us/features/package-reducer
 
      --reason, --pin-reason, --note=VALUE

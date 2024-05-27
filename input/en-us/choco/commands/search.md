@@ -63,12 +63,6 @@ If you find other exit codes that we have not yet documented, please
 
 
 ## Alternative Sources
-### Windows Features
-This specifies that the source is a Windows Feature and we should
- install via the Deployment Image Servicing and Management tool (DISM)
- on the local machine.
- e.g. `choco search --source windowsfeatures`
-
 ## Options and Switches
 
 > :choco-info: **NOTE**
@@ -273,9 +267,10 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        earlier versions of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
 
-     --audit, --showaudit, --show-audit, --show-audit-info
-     Show Audit Information - Display auditing information for a package.
-       Available in business editions only.
+     --include-configured-sources
+     Include Configured Sources - When using the '--source' option, this 
+       appends the sources that have been saved into the chocolatey.config file 
+       by 'source' command.  Available in 2.3.0+
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not

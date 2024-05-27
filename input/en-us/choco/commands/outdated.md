@@ -46,7 +46,7 @@ Normal:
 Enhanced:
  - 0: no outdated packages
  - -1 or 1: an error has occurred
- - 2: outdated packages have been found
+ - 2: outdated packages have been found (enhanced)
 
 > :choco-info: **NOTE**
 >
@@ -220,8 +220,13 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        install/upgrade/outdated operations. Should not generally be used, 
        unless a repository needs to support older methods of query. When 
        disabled, this makes queries similar to the way they were done in 
-       Chocolatey v0.10.11 and before. Overrides the default feature 
+       earlier versions of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
+
+     --include-configured-sources
+     Include Configured Sources - When using the '--source' option, this 
+       appends the sources that have been saved into the chocolatey.config file 
+       by 'source' command.  Available in 2.3.0+
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not 

@@ -14,14 +14,13 @@ RedirectFrom:
 
 ### Package Copy / Package Downloader
 
-[Chocolatey Professional](https://chocolatey.org/compare) and up (Pro+) starting in version 1.7.1.
+Chocolatey [Licensed Editions](https://chocolatey.org/compare) only.
 
 Downloads a package from a source and unpacks it.
 
 ### Package Internalizer
 
-[Chocolatey for Business](https://chocolatey.org/compare) (C4B) starting at licensed version 1.5.0.
-Chocolatey for Managed Service Providers (MSP) starting in 1.12.1.
+[Chocolatey for Business](https://chocolatey.org/compare) (C4B) and Managed Service Providers (MSP) only.
 
 Downloads a package from a source, optionally downloading remote
  resources and recompiling the package to use internal resources. This
@@ -173,7 +172,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 
        command execution when a runtime compatibility problem is found between 
-       the version of Chocolatey and the Chocolatey Licensed Extension.
+       the version of Chocolatey and the Chocolatey Licensed Extension. 
+       Available in 1.1.0+
 
      --ignore-http-cache
      IgnoreHttpCache - Ignore any HTTP caches that have previously been 
@@ -209,24 +209,23 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
  -i, --ignoredependencies, --ignore-dependencies
      IgnoreDependencies - Ignore dependencies when installing package(s). 
-       [Licensed editions](https://chocolatey.org/compare) only. Defaults to false.
+       Licensed editions only. Defaults to false.
 
      --installed, --installed-packages
      Installed Packages - Download all installed Chocolatey packages. 
-       [Licensed editions](https://chocolatey.org/compare) only. Defaults to false.
+       Licensed editions only. Defaults to false.
 
      --ignore-unfound, --ignore-unfound-packages
      Ignore Unfound Packages - When downloading more than one package, 
-       continue when one is unfound. [Licensed editions](https://chocolatey.org/compare) only. Defaults to 
-       false.
+       continue when one is unfound. Licensed editions only. Defaults to false.
 
      --disable-repository-optimizations, --disable-package-repository-optimizations
      Disable Package Repository Optimizations - Do not use optimizations for 
        reducing bandwidth with repository queries during package 
        install/upgrade/outdated operations. Should not generally be used, 
        unless a repository needs to support older methods of query. When used, 
-       this makes queries similar to the way they were done in Chocolatey v0.1-
-       0.11 and before. Overrides the default feature 
+       this makes queries similar to the way they were done in earlier versions 
+       of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
 
      --recompile, --internalize
@@ -260,36 +259,38 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download url even if a private 
        CDN cache is available for a package. Overrides the default feature 
-       'downloadCache' set to 'True'. Business editions only. See https://docs.chocolatey.org/en-us/features/private-cdn 
+       'downloadCache' set to 'True'. Business editions only.
+       See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --dc, --downloadcache, --download-cache, --use-download-cache
      Use Download Cache - Use private CDN cache if available for a package. 
        Overrides the default feature 'downloadCache' set to 'True'. Business 
-       editions only. See https://docs.chocolate-
-       y.org/en-us/features/private-cdn 
+       editions only.
+       See https://docs.chocolatey.org/en-us/features/private-cdn
 
      --svc, --skipvirus, --skip-virus, --skipviruscheck, --skip-virus-check
      Skip Virus Check - Skip the virus check for downloaded files on this ru-
        n. Overrides the default feature 'virusCheck' set to 'False'. Licensed 
-       editions only. See https://docs.chocolatey.org/en-us/features/virus-check 
+       editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --virus, --viruscheck, --virus-check
      Virus Check - check downloaded files for viruses. Overrides the default 
-       feature 'virusCheck' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only. See 
-       https://docs.chocolatey.org/en-us/features/virus-check 
+       feature 'virusCheck' set to 'False'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
      Virus Check Minimum Scan Result Positives - the minimum number of scan 
        result positives required to flag a package. Used when virusScannerType 
        is VirusTotal. Overrides the default configuration value 
-       'virusCheckMinimumPositives' set to '4'. [Licensed editions](https://chocolatey.org/compare) only. See 
-       https://docs.chocolatey.org/en-us/features/virus-check 
+       'virusCheckMinimumPositives' set to '4'. Licensed editions only.
+       See https://docs.chocolatey.org/en-us/features/virus-check
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not 
        configured to allow this command. This option requires the features for 
        self-service and self-service command override to be enabled. Business 
-       editions only.
+       editions only (licensed version 5.0.0+).
 
 ~~~
 

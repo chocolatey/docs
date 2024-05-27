@@ -12,12 +12,12 @@ RedirectFrom:
 
 # Synchronize Command (choco synchronize)
 
-Business editions of Chocolatey starting at licensed version 1.9.0.
+Business editions of Chocolatey only.
 
-Synchronizes against the system installed software that are not 
- installed as packages on Chocolatey. Searches through the system to 
+Synchronizes against the system installed software that are not
+ installed as packages on Chocolatey. Searches through the system to
  see software that has been installed and generates packages from that
- software, baselines the packages against Chocolatey and makes the 
+ software, baselines the packages against Chocolatey and makes the
  packages available to upload to source.
 
 See https://docs.chocolatey.org/en-us/features/package-synchronization/

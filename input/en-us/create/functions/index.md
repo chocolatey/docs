@@ -1,4 +1,4 @@
----
+﻿---
 Order: 40
 xref: powershell-reference
 Title: PowerShell Reference
@@ -69,8 +69,6 @@ These are the functions from above as one list.
  * [Get-ChocolateyPath](xref:get-chocolateypath)
  * [Get-ChocolateyUnzip](xref:get-chocolateyunzip)
  * [Get-ChocolateyWebFile](xref:get-chocolateywebfile)
- * [Get-EnvironmentVariable](xref:get-environmentvariable)
- * [Get-EnvironmentVariableNames](xref:get-environmentvariablenames)
  * [Get-FtpFile](xref:get-ftpfile)
  * [Get-OSArchitectureWidth](xref:get-osarchitecturewidth)
  * [Get-PackageParameters](xref:get-packageparameters)
@@ -87,22 +85,18 @@ These are the functions from above as one list.
  * [Install-ChocolateyFileAssociation](xref:install-chocolateyfileassociation)
  * [Install-ChocolateyInstallPackage](xref:install-chocolateyinstallpackage)
  * [Install-ChocolateyPackage](xref:install-chocolateypackage)
- * [Install-ChocolateyPath](xref:install-chocolateypath)
  * [Install-ChocolateyPinnedTaskBarItem](xref:install-chocolateypinnedtaskbaritem)
  * [Install-ChocolateyPowershellCommand](xref:install-chocolateypowershellcommand)
  * [Install-ChocolateyShortcut](xref:install-chocolateyshortcut)
  * [Install-ChocolateyVsixPackage](xref:install-chocolateyvsixpackage)
  * [Install-ChocolateyZipPackage](xref:install-chocolateyzippackage)
  * [Install-Vsix](xref:install-vsix)
- * [Set-EnvironmentVariable](xref:set-environmentvariable)
  * [Set-PowerShellExitCode](xref:set-powershellexitcode)
  * [Start-ChocolateyProcessAsAdmin](xref:start-chocolateyprocessasadmin)
- * [Test-ProcessAdminRights](xref:test-processadminrights)
  * [Uninstall-BinFile](xref:uninstall-binfile)
  * [Uninstall-ChocolateyEnvironmentVariable](xref:uninstall-chocolateyenvironmentvariable)
  * [Uninstall-ChocolateyPackage](xref:uninstall-chocolateypackage)
  * [Uninstall-ChocolateyZipPackage](xref:uninstall-chocolateyzippackage)
- * [Update-SessionEnvironment](xref:update-sessionenvironment)
  * [Write-FunctionCallLogMessage](xref:write-functioncalllogmessage)
 
 ## Chocolatey for Business Functions

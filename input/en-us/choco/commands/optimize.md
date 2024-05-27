@@ -170,7 +170,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when 
-       using Package Optimizer. [Licensed editions](https://chocolatey.org/compare) only. 
+       using Package Optimizer. Licensed editions only.
 
      --id=VALUE
      Id - The package to optimize
