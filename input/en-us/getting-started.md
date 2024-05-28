@@ -18,7 +18,7 @@ You know those massively complicated, complex, and expensive software management
 
 ### Features
 
-* **Deploy Anywhere You Have Windows**/**Cloud Ready** (except Nano, sorry little buddy!). Yes, that includes Server.Core and [Windows Docker Containers](https://github.com/Microsoft/vsts-agent-docker/blob/f870fbf259a803c6a6d902e1c01f631936069d66/windows/servercore/10.0.14393/standard/VS2017/Dockerfile). Windows 7+/Windows 2003+ (although, we have been scaling down on 2003. I mean, 2003 is a bit long in the tooth, but some customers are still using it). Requires PowerShell v2+ (not PowerShell 6 yet - you're doing amazing if you are already on this, but give us some time) and Microsoft .NET Framework 4.x. You can deploy on prem, to Azure, AWS, or any cloud provider you might be looking at.
+* **Deploy Anywhere You Have Windows**/**Cloud Ready** (except Nano, sorry little buddy!). Yes, that includes Server.Core and [Windows Docker Containers](https://github.com/Microsoft/vsts-agent-docker/blob/f870fbf259a803c6a6d902e1c01f631936069d66/windows/servercore/10.0.14393/standard/VS2017/Dockerfile). [Any supported version of Windows](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-windows-versions). Requires [any supported version of PowerShell](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-powershell-versions) and Microsoft .NET Framework 4.x+. You can deploy on-prem, to Azure, AWS, or any cloud provider you might be looking at.
 * **Deploy with Everything.** Anything that can manage endpoints or do remote deployments can either direct Chocolatey through commands, batches, or scripts. Full configuration management solutions like Ansible, Chef, PowerShell DSC, Puppet or Salt typically have providers/modules that allow you to work within their languages to manage both Chocolatey installation/configuration and software.
 * **All Software Is a First Class Citizen.** You know how for most things, they only manage/report on the things installed in Add/Remove Programs (Programs and Features)? We count it all, because Windows software is more than just installers, and they all have security findings. So deploy your installers, your scripts, zips, runtime binaries, and yes, internal software all with one simple solution. Then lean on the reporting and inventory to be aware of all aspects of software you are managing.
 * **Packages are Independent and Portable.** When you deploy through multiple systems or want to migrate from one to another, you can take the work you've done with Chocolatey with you. How is that for some major time-savings?
@@ -62,11 +62,7 @@ Chocolatey manages packages (strictly nupkg files) and those packages manage sof
 
 With Chocolatey clients, we ensure that Chocolatey is going to run with low memory footprints because you will have all aspects of things you will need to manage and different space and memory available across all of those clients. Chocolatey has a very wide reach into where it can be installed.
 
-For Chocolatey clients, you will need the following:
-
-* Windows 7+/Windows 2003+ (Server Core also, but not Windows Nano Server)
-* Windows PowerShell v2+ (not PowerShell Core aka PowerShell 6 yet)
-* .NET Framework 4.x+
+For Chocolatey CLI clients, you will need to [set up the requirements](xref:setup-choco#requirements).
 
 #### Chocolatey Components
 
@@ -160,7 +156,7 @@ How the heck does this all work?
 2. The package is installed into `$env:ChocolateyInstall\lib\<pkgId>`. The package install location is not configurable - the package must install here for tracking, upgrade, and uninstall purposes. The software that may be installed later during this process **is** configurable. See [Terminology](#terminology) to understand the difference between "package" and "software" as the terms relate to Chocolatey.
 3. Choco determines if it is self-contained or has automation scripts - PowerShell scripts (*.ps1 files) and possibly other formats at a later date.
 4. Choco takes a registry snapshot for later comparison.
-5. If there are automation scripts, choco will run those. They can contain whatever you need to do, if they are PowerShell you have the full power of Posh (PowerShell), but you should try to ensure they are compatible with Posh v2+ (PowerShell v2 and beyond).
+5. If there are automation scripts, Chocolatey CLI will run those. They can contain whatever you need to do, if they are PowerShell you have the full power of Posh (PowerShell), but you should try to ensure they are compatible with the [supported PowerShell versions](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-powershell-versions).
 6. Choco compares the snapshot and determines uninstaller information and saves that to a .registry file.
 7. Choco snapshots the folder based on all files that are currently in the package directory.
 8. Choco looks for executable files in the package folder and generates shims into the `$env:ChocolateyInstall\bin` folder so those items are available on the path. Those could have been embedded into the package or brought down from somewhere (internet, ftp, file folder share, etc) and placed there. If there is a shim ignore file `<exeName>.exe.ignore`, then Chocolatey will not generate a shim in the bin folder.
