@@ -37,20 +37,27 @@ Chocolatey products' support for Windows Operating Systems follows Microsoft's S
 >
 > This information is up-to-date as of 17 April 2024.
 
-| Windows Operating System                                                                                                 | End Of Support                               |
-|------------------------------------------------------------------------------------------------------------------------- |----------------------------------------------|
-| [Windows Server 2022][serv2022]                                                                                          | 14 October 2031                              |
-| [Windows Server 2019][serv2019]                                                                                          | 9 January 2029                               | 
-| [Windows Server 2016][serv2016]                                                                                          | 12 January 2027                              |
-| [Windows Server 2012 R2][serv2012r2]                                                                                     | 13 October 2026                              |
-| [Windows Server 2012][serv2012]                                                                                          | 13 October 2026                              |
-| Windows 11 23H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>10 November 2026<br>11 November 2025     |
-| Windows 11 22H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>14 October 2025<br>8 October 2024        |
-| Windows 11 21H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]                                                    | <br>8 October 2024                           |
-| Windows 10 LTSC 2021<br>&nbsp;&nbsp;- [Enterprise][10ltsc2021]                                                           | <br>12 January 2027                          |
-| Windows 10 LTSC 2019<br>&nbsp;&nbsp;- [Enterprise][10ltsc2019]                                                           | <br>9 January 2029                           |
-| Windows 10 22H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>14 October 2025<br>14 October 2025       |
-| Windows 10 21H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]                                                    | <br>11 June 2024                             |
+| Windows Server Operating System                                                                                              | End Of Support    |
+|------------------------------------------------------------------------------------------------------------------------------|-------------------|
+| [Windows Server 2022](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2022)                              | 14 October 2031   |
+| [Windows Server 2019](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2019)                              | 9 January 2029    | 
+| [Windows Server 2016](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016)                              | 12 January 2027   |
+| [Windows Server 2012 R2](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2)                        | 13 October 2026   |
+| [Windows Server 2012](https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012)                              | 13 October 2026   |
+| **Windows Client Operating System**                                                                                          | **End Of Support**|
+| **Home and Pro Editions**                                                                                                    |                   |
+| [Windows 11 23H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-11-home-and-pro)                              | 11 November 2025  |
+| [Windows 11 22H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-11-home-and-pro)                              | 8 October 2024    |
+| [Windows 10 22H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro)                              | 14 October 2025   |
+| **Enterprise and Education Editions**                                                                                        |                   |
+| [Windows 11 23H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education)                  | 10 November 2026  |
+| [Windows 11 22H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education)                  | 14 October 2025   |
+| [Windows 11 21H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education)                  | 8 October 2024    |
+| [Windows 10 22H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education)                  | 14 October 2025   |
+| [Windows 10 21H2](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education)                  | 11 June 2024      |
+| **LTSC Enterprise Editions**                                                                                                 | |
+| [Windows 10 LTSC 2021](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2021)                 | 12 January 2027   |
+| [Windows 10 LTSC 2019](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2019)                 | 9 January 2029    |
 
 ## Supported PowerShell Versions
 
@@ -70,15 +77,3 @@ Chocolatey products' support for PowerShell follows the lifecycle of the operati
 <?! Include "./shared/maintenance-and-support.txt" /?>
 
 <?! Include "./shared/chocolatey-component-dependencies.txt" /?>
-
-[11homepro]: https://learn.microsoft.com/en-us/lifecycle/products/windows-11-home-and-pro
-[11entedu]: https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education
-[10ltsc2021]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2021
-[10ltsc2019]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2019
-[10homepro]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro
-[10entedu]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education
-[serv2022]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2022
-[serv2019]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2019
-[serv2016]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2016
-[serv2012r2]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012-r2
-[serv2012]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2012
