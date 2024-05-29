@@ -47,6 +47,8 @@ Chocolatey products' support for Windows Operating Systems follows Microsoft's S
 | Windows 11 23H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>10 November 2026<br>11 November 2025     |
 | Windows 11 22H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>14 October 2025<br>8 October 2024        |
 | Windows 11 21H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]                                                    | <br>8 October 2024                           |
+| Windows 10 LTSC 2021<br>&nbsp;&nbsp;- [Enterprise][10ltsc2021]                                                           | <br>12 January 2027                          |
+| Windows 10 LTSC 2019<br>&nbsp;&nbsp;- [Enterprise][10ltsc2019]                                                           | <br>9 January 2029                           |
 | Windows 10 22H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]<br>&nbsp;&nbsp;- [Home and Pro][11homepro]         | <br>14 October 2025<br>14 October 2025       |
 | Windows 10 21H2<br>&nbsp;&nbsp;- [Enterprise and Education][11entedu]                                                    | <br>11 June 2024                             |
 
@@ -71,6 +73,8 @@ Chocolatey products' support for PowerShell follows the lifecycle of the operati
 
 [11homepro]: https://learn.microsoft.com/en-us/lifecycle/products/windows-11-home-and-pro
 [11entedu]: https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education
+[10ltsc2021]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2021
+[10ltsc2019]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-ltsc-2019
 [10homepro]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro
 [10entedu]: https://learn.microsoft.com/en-us/lifecycle/products/windows-10-enterprise-and-education
 [serv2022]: https://learn.microsoft.com/en-us/lifecycle/products/windows-server-2022
