@@ -21,6 +21,52 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
 
+## 2.3.0 (June 5, 2024){#v2.3.0}
+
+### Deprecated Feature
+
+- Deprecate `unpackself` command - see [#3426](https://github.com/chocolatey/choco/issues/3426).
+
+### Features
+
+- Save software install location for future use - see [#3315](https://github.com/chocolatey/choco/issues/3315).
+- Allow viewing package creation validation rules via new `choco rule` command - see [#3381](https://github.com/chocolatey/choco/issues/3381).
+
+### Bug Fixes
+
+- Fix - Ensure `Install-ChocolateyInstallPackage` does not add a trailing space to silent arguments - see [#2345](https://github.com/chocolatey/choco/issues/2345).
+- Fix - Ensure `Install-ChocolateyPath` adds a new entry to the PATH when part of it is already there - see [#3318](https://github.com/chocolatey/choco/issues/3318).
+- Fix - Using `Install-ChocolateyPath -PathType Machine` in a non-admin context spawns PowerShell endlessly and never completes - see [#3424](https://github.com/chocolatey/choco/issues/3424).
+
+### Improvements
+
+- Allow all packages from a source to be installed - see [#23](https://github.com/chocolatey/choco/issues/23).
+- Allow the ability to add the configured sources when using the `--source` option - see [#72](https://github.com/chocolatey/choco/issues/72).
+- Add `Uninstall-ChocolateyPath` function to manage removing entries from PATH - see [#310](https://github.com/chocolatey/choco/issues/310).
+- Verify the checksum of a package before installation, and fail if not matched - see [#1144](https://github.com/chocolatey/choco/issues/1144).
+- Show remembered arguments for packages - see [#1310](https://github.com/chocolatey/choco/issues/1310).
+- Add the source URL where the package was downloaded from, to the output of the `choco install` and `choco upgrade` commands - see [#1485](https://github.com/chocolatey/choco/issues/1485).
+- `choco apikey` - Exit 2 if nothing to do (enhanced exit code) - see [#1759](https://github.com/chocolatey/choco/issues/1759).
+- `choco config` - Exit 2 if nothing to do (enhanced exit code) - see [#1760](https://github.com/chocolatey/choco/issues/1760).
+- `choco feature` - Exit 2 if nothing to do (enhanced exit code) - see [#1761](https://github.com/chocolatey/choco/issues/1761).
+- `choco pin` - Exit 2 if nothing to do (enhanced exit code) - see [#1762](https://github.com/chocolatey/choco/issues/1762).
+- `choco source` - Exit 2 if nothing to do (enhanced exit code) - see [#1764](https://github.com/chocolatey/choco/issues/1764).
+- `choco upgrade` - Exit 2 if nothing to do (enhanced exit code) - see [#2200](https://github.com/chocolatey/choco/issues/2200).
+- Allow upgrading a pinned package without removing the pin beforehand - see [#2050](https://github.com/chocolatey/choco/issues/2050).
+- Update `OS_NAME` environment variable to support Windows 11 and Server 2019/2022 - see [#2754](https://github.com/chocolatey/choco/issues/2754).
+- Rerunning Install Script after reboot should not be necessary - see [#3327](https://github.com/chocolatey/choco/issues/3327).
+- Improve package dependency lookup when an exact version is defined - see [#3433](https://github.com/chocolatey/choco/issues/3433).
+
+### Documentation
+
+- Clarify what `--include-programs` option does, in the help output - see [#147](https://github.com/chocolatey/choco/issues/147).
+- Fix grammar in the pending reboot warning message - see [#3164](https://github.com/chocolatey/choco/pull/3164).
+- Improve the feature `DisableCompatibilityChecks` help description - see [#3296](https://github.com/chocolatey/choco/pull/3296).
+- Fix typos and punctuation in `choco feature` and `choco config` error output - see [#3324](https://github.com/chocolatey/choco/pull/3324).
+- Clarify `Proxy BypassList` value must be a regular expression, in the help output - see [#3401](https://github.com/chocolatey/choco/issues/3401).
+- Remove reference of unused `zip.sh` from README.md file - see [#3402](https://github.com/chocolatey/choco/pull/3402).
+
+
 ## 2.2.2 (August 8, 2023)
 
 > :choco-warning: **WARNING**
