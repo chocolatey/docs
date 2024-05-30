@@ -41,6 +41,20 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 <?! Include "../../shared/chocolatey-component-dependencies-link.txt" /?>
 
+## 6.2.0 (June 5, 2024){#v6.2.0}
+
+> :choco-info: **NOTE**
+>
+> When upgrading to Chocolatey Licensed Extension 6.2.0, it is recommended that an upgrade to Chocolatey CLI 2.3.0 is also performed.
+
+### Improvements
+
+- [Security] Prevent usage of new option when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+- Show remembered arguments for packages - see [#1310](https://github.com/chocolatey/choco/issues/1310).
+- `choco pin` - Exit 2 if nothing to do (enhanced exit code) - see [#1762](https://github.com/chocolatey/choco/issues/1762).
+
+
 ## 6.1.3 (February 21, 2024){#v6.1.3}
 
 > :choco-info: **NOTE**
