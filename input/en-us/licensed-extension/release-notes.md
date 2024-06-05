@@ -43,6 +43,8 @@ Please see [Install the Licensed Edition](xref:setup-licensed) for information o
 
 ## 6.2.0 (June 5, 2024){#v6.2.0}
 
+Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-620-agent213-releases/) about this release.
+
 > :choco-info: **NOTE**
 >
 > When upgrading to Chocolatey Licensed Extension 6.2.0, it is recommended that an upgrade to Chocolatey CLI 2.3.0 is also performed.

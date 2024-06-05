@@ -32,6 +32,8 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 ## 2.1.3 (June 5, 2024){#v2.1.3}
 
+Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-620-agent213-releases/) about this release.
+
 ### Improvement
 
 - [Security] Prevent usage of new option when running in Self-Service mode.
