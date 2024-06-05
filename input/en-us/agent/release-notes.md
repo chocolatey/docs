@@ -12,7 +12,7 @@ RedirectFrom: docs/release-notes-agent
 
 ## Summary
 
-This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc, please refer to [Chocolatey Agent Service](xref:setup-agent).
+This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc., please refer to [Chocolatey Agent Service](xref:setup-agent).
 
 > :choco-info: **NOTE**
 >
@@ -28,6 +28,14 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 - Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
 
 <?! Include "../../shared/chocolatey-component-dependencies.txt" /?>
+
+
+## 2.1.3 (June 5, 2024){#v2.1.3}
+
+### Improvement
+
+- [Security] Prevent usage of new option when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 2.1.2 (January 31, 2024)
