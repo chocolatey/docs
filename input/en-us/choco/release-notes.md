@@ -23,6 +23,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 ## 2.3.0 (June 5, 2024){#v2.3.0}
 
+> :choco-info: **NOTE**
+>
+> Currently, at the time of release, there was an issue publishing all parts of Chocolatey CLI v2.3.0 to Docker Hub.  We are working on getting this resolved.
+
 ### Deprecated Feature
 
 - Deprecate `unpackself` command - see [#3426](https://github.com/chocolatey/choco/issues/3426).
