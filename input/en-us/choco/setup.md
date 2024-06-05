@@ -11,9 +11,8 @@ RedirectFrom:
 
 ## Requirements
 
-- [A supported version of Windows](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-windows-versions)
-- Windows PowerShell v2.0 or higher
-  - Windows PowerShell v3 is required for directly installing Chocolatey CLI from the Chocolatey Community Repository due to the [TLS 1.2 requirement](https://blog.chocolatey.org/2020/01/remove-support-for-old-tls-versions/)
+- [A supported version of Windows](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-windows-versions).
+- [Supported version of PowerShell](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-powershell-versions).
 
 ### Chocolatey CLI v2.0+
 
@@ -813,7 +812,7 @@ See https://chocolatey.org/install#organization for details.
 
 Upgrade to the following:
 
-* PowerShell v3+
+* [A supported PowerShell version](xref:chocolatey-components-dependencies-and-support-lifecycle#supported-powershell-versions)
 * .NET Framework 4.5
 
 ~~~powershell

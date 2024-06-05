@@ -67,13 +67,9 @@ Please see  [Requirements](xref:getting-started#requirements) for the most up to
 
 ### Chocolatey Clients
 
-With Chocolatey clients, we ensure that Chocolatey is going to run with low memory footprints because you will have all aspects of things you will need to manage and different space and memory available across all of those clients. Chocolatey has a very wide reach into where it can be installed.
+With Chocolatey CLI clients, we ensure that Chocolatey is going to run with low memory footprints because you will have all aspects of things you will need to manage and different space and memory available across all of those clients. Chocolatey has a very wide reach into where it can be installed.
 
-For Chocolatey clients, you will need the following:
-
-* Windows 7+/Windows 2003+ (Server Core also, but not Windows Nano Server)
-* Windows PowerShell v2+ (not PowerShell Core)
-* .NET Framework 4.x+
+For Chocolatey CLI clients, you will need to [set up the requirements](xref:setup-choco#requirements).
 
 #### Chocolatey Components
 
