@@ -129,6 +129,7 @@ A checkbox means this feature is turned on by default.
 * [ ] `allowEmptyChecksums` - Allow packages to have empty/missing checksums for downloaded resources from non-secure locations (HTTP, FTP). Enabling is not recommended if using sources that download resources from the internet.
 * [x] `allowEmptyChecksumsSecure` - Allow packages to have empty/missing checksums for downloaded resources from secure locations (HTTPS).
 * [ ] `allowGlobalConfirmation` - Prompt for confirmation in scripts or bypass.
+* [ ] `usePackageHashValidation` - Check the hash of the downloaded package file against the source provided hash. Only supports sources that provide SHA512 hashes. Available in 2.3.0+.
 
 ### Other
 
