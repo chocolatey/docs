@@ -75,6 +75,8 @@ Chocolatey CLI allows a number of different options that can be used to configur
   * `--uninstall-arguments-sensitive`
   * `--use-system-powershell`
   * `--virus-positives-minimum`
+* Added in Chocolatey Agent 2.1.3 and Chocolatey Licensed Extension 6.2.0:
+  * `--ignore-pinned`
 
 ### See It In Action
 
