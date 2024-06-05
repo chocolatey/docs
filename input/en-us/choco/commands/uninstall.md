@@ -325,7 +325,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      --fromprograms, --from-programs, --fromprogramsandfeatures, --from-programs-and-features
      From Programs and Features - Uninstalls a program from programs and 
        features. Name used for id must be a match or a wildcard (*) to Display 
-       Name in Programs and Features. Available in [licensed editions](https://chocolatey.org/compare) only.
+       Name in Programs and Features. Available in licensed editions only.
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not 

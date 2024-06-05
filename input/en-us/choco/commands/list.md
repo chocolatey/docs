@@ -181,8 +181,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Prerelease - Include Prereleases? Defaults to false.
 
  -i, --includeprograms, --include-programs
-     IncludePrograms - Filters out apps Chocolatey has listed as packages and
-       includes those in the list. Defaults to false.
+     IncludePrograms - Includes software from Programs and Features not being 
+       managed by Chocolatey CLI.
 
      --version=VALUE
      Version - Specific version of a package to return.
@@ -209,19 +209,11 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        filter.
 
      --detail, --detailed
-     Detailed - Alias for verbose
-
-     --disable-repository-optimizations, --disable-package-repository-optimizations
-     Disable Package Repository Optimizations - Do not use optimizations for
-       reducing bandwidth with repository queries during package
-       install/upgrade/outdated operations. Should not generally be used,
-       unless a repository needs to support older methods of query. When
-       disabled, this makes queries similar to the way they were done in
-       Chocolatey v0.10.11 and before. Overrides the default feature
-       'usePackageRepositoryOptimizations' set to 'True'.
+     Detailed - Alias for verbose.
 
      --audit, --showaudit, --show-audit, --show-audit-info
      Show Audit Information - Display auditing information for a package.
+       Available in business editions only.
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not

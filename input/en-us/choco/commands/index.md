@@ -29,14 +29,15 @@ This is a listing of all of the different things you can pass to choco.
  * [find](xref:choco-command-find) - searches remote packages (alias for search)
  * [help](xref:choco-command-help) - displays top level help information for choco
  * [info](xref:choco-command-info) - retrieves package information. Shorthand for choco search pkgname --exact --verbose
- * [optimize](xref:choco-command-optimize) - optimizes installation, reducing space usage
  * [install](xref:choco-command-install) - installs packages using configured sources
  * [list](xref:choco-command-list) - lists local packages
  * [new](xref:choco-command-new) - creates template files for creating a new Chocolatey package
- * [outdated](xref:choco-command-outdated) - retrieves information about packages that are outdated. Similar to upgrade all --noop
+ * [optimize](xref:choco-command-optimize) - optimizes installation, reducing space usage
+ * [outdated](xref:choco-command-outdated) - retrieves packages that are outdated. Similar to upgrade all --noop
  * [pack](xref:choco-command-pack) - packages nuspec, scripts, and other Chocolatey package resources into a nupkg file
  * [pin](xref:choco-command-pin) - suppress upgrades for a package
  * [push](xref:choco-command-push) - pushes a compiled nupkg to a source
+ * [rule](xref:choco-command-rule) - view or list implemented package rules (v2.3.0+)
  * [search](xref:choco-command-search) - searches remote packages
  * [setapikey](xref:choco-command-setapikey) - retrieves, saves or deletes an API key for a particular source (alias for apikey)
  * [source](xref:choco-command-source) - view and configure default sources
@@ -47,7 +48,7 @@ This is a listing of all of the different things you can pass to choco.
  * [template](xref:choco-command-template) - get information about installed templates
  * [templates](xref:choco-command-templates) - get information about installed templates (alias for template)
  * [uninstall](xref:choco-command-uninstall) - uninstalls a package
- * [unpackself](xref:choco-command-unpackself) - re-installs Chocolatey base files
+ * [unpackself](xref:choco-command-unpackself) - [DEPRECATED] will be removed in v3.0.0 - re-installs Chocolatey base files
  * [upgrade](xref:choco-command-upgrade) - upgrades packages from various sources
 
 

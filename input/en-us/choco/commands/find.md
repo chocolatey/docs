@@ -63,12 +63,6 @@ If you find other exit codes that we have not yet documented, please
 
 
 ## Alternative Sources
-### Windows Features
-This specifies that the source is a Windows Feature and we should
- install via the Deployment Image Servicing and Management tool (DISM)
- on the local machine.
- e.g. `choco find --source windowsfeatures`
-
 ## Options and Switches
 
 > :choco-info: **NOTE**
@@ -199,7 +193,7 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
      Prerelease - Include Prereleases? Defaults to false.
 
  -i, --includeprograms, --include-programs
-     IncludePrograms - Filters out apps Chocolatey has listed as packages and
+     IncludePrograms - Filters out apps Chocolatey has listed as packages and 
        includes those in the list. Defaults to false.
 
  -a, --all, --allversions, --all-versions
@@ -273,13 +267,15 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        earlier versions of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
 
-     --audit, --showaudit, --show-audit, --show-audit-info
-     Show Audit Information - Display auditing information for a package.
+     --include-configured-sources
+     Include Configured Sources - When using the '--source' option, this 
+       appends the sources that have been saved into the chocolatey.config file 
+       by 'source' command.  Available in 2.3.0+
 
      --use-self-service, --force-self-service
-     Force the command to be handled through the self-service when not
-       configured to allow this command. This option requires the features for
-       self-service and self-service command override to be enabled. Business
+     Force the command to be handled through the self-service when not 
+       configured to allow this command. This option requires the features for 
+       self-service and self-service command override to be enabled. Business 
        editions only (licensed version 5.0.0+).
 
 ~~~

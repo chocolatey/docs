@@ -15,11 +15,10 @@ RedirectFrom:
 Chocolatey [Licensed editions](https://chocolatey.org/compare) include some level of Package Builder.
 
  - Professional can take advantage of Package Builder UI minus the auto-detection
- - Business can use `--file` or Package Builder UI to generate a fully 
-   ready to go unattended software deployment in seconds. So easy a 7
-   year old can do it. Right Click 'Create Package...'
- - Business can use `--from-programs-and-features` to generate packages
-   directly from Programs and Features! 
+ - Business can use `--file` or Package Builder UI to generate a fully ready to go
+   unattended software deployment in seconds. Right-click, 'Create Package...'
+ - Business can use `--from-programs-and-features` to generate packages directly
+   from Programs and Features!
 
 See more information about [Package Builder features](xref:package-builder)
 
@@ -238,8 +237,8 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        detection (native installer, zip, patch/upgrade file, or remote url to 
        download first) to completely create a package with proper silent 
        arguments! Can be 32-bit or 64-bit architecture.  Available in licensed 
-       editions only. See 
-       https://docs.chocolatey.org/en-us/features/package-builder 
+       editions only.
+       See https://docs.chocolatey.org/en-us/features/package-builder
 
      --file64, --url64=VALUE
      Optional - used when specifying both a 32-bit and a 64-bit file. Can be 
@@ -248,15 +247,15 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --keepremote, --keep-remote, --originallocation, --original-location, --useoriginallocation, --use-original-location, --useoriginalfileslocation, --use-original-files-location
      Use Original Files Location - when using file or url, use the original 
-       location in packaging. Available in [licensed editions](https://chocolatey.org/compare) only.
+       location in packaging. Available in licensed editions only.
 
      --checksum, --downloadchecksum, --download-checksum=VALUE
      Download Checksum - checksum to verify File/Url with. Defaults to empty. 
-       Available in [licensed editions](https://chocolatey.org/compare) only.
+       Available in licensed editions only.
 
      --checksum64, --checksumx64, --downloadchecksumx64, --download-checksum-x64=VALUE
      Download Checksum 64-bit - checksum to verify File64/Url64 with. 
-       Defaults to empty. Available in [licensed editions](https://chocolatey.org/compare) only.
+       Defaults to empty. Available in licensed editions only.
 
      --checksumtype, --checksum-type, --downloadchecksumtype, --download-checksum-type=VALUE
      Download Checksum Type - checksum type for File/Url (and optional 
@@ -267,11 +266,11 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
 
      --pauseonerror, --pause-on-error
      Pause on Error - Pause when there is an error with creating the package. 
-       Available in [licensed editions](https://chocolatey.org/compare) only.
+       Available in licensed editions only.
 
      --buildpackage, --build-package, --build-packages
      Build Package - Attempt to compile the package after creating it. 
-       Available in [licensed editions](https://chocolatey.org/compare) only.
+       Available in licensed editions only.
 
      --fromprograms, --from-programs, --fromprogramsandfeatures, --from-programs-and-features
      Generate Packages From Installed Software - Generate packages from the 

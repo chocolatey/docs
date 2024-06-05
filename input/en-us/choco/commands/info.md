@@ -212,6 +212,11 @@ Includes [default options/switches](xref:choco-commands#default-options-and-swit
        of Chocolatey. Overrides the default feature 
        'usePackageRepositoryOptimizations' set to 'True'.
 
+     --include-configured-sources
+     Include Configured Sources - When using the '--source' option, this 
+       appends the sources that have been saved into the chocolatey.config file 
+       by 'source' command.  Available in 2.3.0+
+
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not 
        configured to allow this command. This option requires the features for 
