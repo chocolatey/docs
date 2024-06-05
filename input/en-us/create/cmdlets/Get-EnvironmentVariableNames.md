@@ -4,7 +4,10 @@ external help file: Chocolatey.PowerShell.dll-Help.xml
 Module Name: Chocolatey.PowerShell
 online version: https://docs.chocolatey.org/en-us/create/functions/get-environmentvariablenames
 Order: 80
-RedirectFrom: [ docs/helpers-get-environment-variable-names, docs/helpersgetenvironmentvariablenames ]
+RedirectFrom:
+  - docs/helpers-get-environment-variable-names
+  - docs/helpersgetenvironmentvariablenames
+  - en-us/create/functions/get-environmentvariablenames
 schema: 2.0.0
 Title: Get-EnvironmentVariableNames
 xref: get-environmentvariablenames

@@ -4,7 +4,10 @@ external help file: Chocolatey.PowerShell.dll-Help.xml
 Module Name: Chocolatey.PowerShell
 online version: https://docs.chocolatey.org/en-us/create/functions/test-processadminrights
 Order: 350
-RedirectFrom: [ docs/helpers-test-process-admin-rights, docs/helperstestprocessadminrights ]
+RedirectFrom:
+  - docs/helpers-test-process-admin-rights
+  - docs/helperstestprocessadminrights
+  - en-us/create/functions/test-processadminrights
 schema: 2.0.0
 Title: Test-ProcessAdminRights
 xref: test-processadminrights

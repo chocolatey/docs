@@ -12,7 +12,7 @@ xref: uninstall-chocolateypath
 # Uninstall-ChocolateyPath
 
 ## SYNOPSIS
-> :choco_info: **NOTE**
+> :choco-info: **NOTE**
 >
 > Administrative Access Required when `-PathType 'Machine'.`
 

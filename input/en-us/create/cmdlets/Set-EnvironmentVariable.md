@@ -4,10 +4,13 @@ external help file: Chocolatey.PowerShell.dll-Help.xml
 Module Name: Chocolatey.PowerShell
 online version: https://docs.chocolatey.org/en-us/create/functions/set-environmentvariable
 Order: 320
-RedirectFrom: [ docs/helpers-set-environment-variable, docs/helperssetenvironmentvariable ]
+RedirectFrom:
+  - docs/helpers-set-environment-variable
+  - docs/helperssetenvironmentvariable
+  - en-us/create/functions/set-environmentvariable
 schema: 2.0.0
 Title: Set-EnvironmentVariable
-xref: Set-environmentvariable
+xref: set-environmentvariable
 ---
 
 # Set-EnvironmentVariable

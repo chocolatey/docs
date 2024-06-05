@@ -4,7 +4,10 @@ external help file: Chocolatey.PowerShell.dll-Help.xml
 Module Name: Chocolatey.PowerShell
 online version: https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment
 Order: 400
-RedirectFrom: [ docs/helpers-update-session-environment, docs/helpersupdatesessionenvironment ]
+RedirectFrom:
+  - docs/helpers-update-session-environment
+  - docs/helpersupdatesessionenvironment
+  - en-us/create/functions/update-sessionenvironment
 schema: 2.0.0
 Title: Update-SessionEnvironment
 xref: update-sessionenvironment

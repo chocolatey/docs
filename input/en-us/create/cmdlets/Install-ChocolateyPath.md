@@ -4,7 +4,10 @@ external help file: Chocolatey.PowerShell.dll-Help.xml
 Module Name: Chocolatey.PowerShell
 online version: https://docs.chocolatey.org/en-us/create/functions/install-chocolateypath
 Order: 250
-RedirectFrom: [ docs/helpers-install-chocolatey-path, docs/helpersinstallchocolateypath ]
+RedirectFrom:
+  - docs/helpers-install-chocolatey-path
+  - docs/helpersinstallchocolateypath
+  - en-us/create/functions/install-chocolateypath
 schema: 2.0.0
 Title: Install-ChocolateyPath
 xref: install-chocolateypath
