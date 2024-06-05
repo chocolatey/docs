@@ -1,6 +1,6 @@
 ---
 Title: What's new in Chocolatey CLI v2.3.0
-Link: /en-us/choco/release-notes#2.3.0
+Link: /en-us/choco/release-notes#v2.3.0
 LinkText: Read the release notes
 PostedDateTime: 2024-06-05T00:00:00Z
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Chocolatey CLI v2.3.0
-Link: en-us/choco/release-notes#2.3.0
+Link: en-us/choco/release-notes#v2.3.0
 LinkText: See what's new
 ShouldOutput: false
 ShowInNavbar: false
