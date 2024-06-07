@@ -1,4 +1,4 @@
----
+-desbloquear rede--
 Order: 10
 xref: community-packages-disclaimer
 Title: community.chocolatey.org Packages Disclaimer
