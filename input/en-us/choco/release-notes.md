@@ -25,10 +25,6 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-620-agent213-releases/) about this release.
 
-> :choco-info: **NOTE**
->
-> Currently, at the time of release, there was an issue publishing all parts of Chocolatey CLI v2.3.0 to Docker Hub.  We are working on getting this resolved.
-
 ### Deprecated Feature
 
 - Deprecate `unpackself` command - see [#3426](https://github.com/chocolatey/choco/issues/3426).
