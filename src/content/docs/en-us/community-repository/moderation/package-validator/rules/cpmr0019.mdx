@@ -1,0 +1,25 @@
+---
+order: 19
+xref: cpmr0019
+title: CPMR0019 - Nuspec Contains Templated Values (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0019
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In the nuspec, templates values that were added by Chocolatey CLI have been left in the file. These values are not considered to be valid information, and only a placeholder for what users can make use of.
+
+## Recommended Solution
+
+Any templated values given by Chocolatey CLI should be replaced with an appropriate value for the Software the Package is responsible for, or removed if no proper information is available.
+
+## Reasoning
+
+As these are informations given to users, having such invalid placeholders in the nuspec file only serves to confuse users and cause packages to be considered of bad quality.

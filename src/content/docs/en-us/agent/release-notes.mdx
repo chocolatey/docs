@@ -1,0 +1,444 @@
+---
+order: 10
+xref: agent-release-notes
+title: Release Notes
+description: Release Notes for Chocolatey Agent
+ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-og.png
+twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-twitter.png
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import ChocolateyComponentDependenciesLink from '@components/docs/ChocolateyComponentDependenciesLink.mdx';
+import MaintenanceAndSupportLink from '@components/docs/MaintenanceAndSupportLink.mdx';
+
+# Chocolatey Release Notes - Chocolatey Agent Service
+
+## Summary
+
+This covers the release notes for the Chocolatey Agent Service (`chocolatey-agent`) package, which covers Self-Service and Central Management client functionality. For more information, installation options, etc., please refer to <Xref title="Chocolatey Agent Service" value="setup-agent" />.
+
+<Callout type="info">
+    This package is available to Chocolatey for Business (C4B) customers only.
+</Callout>
+
+## Other Release Notes
+
+- Refer to <Xref title="Open Source Release Notes" value="floss-release-notes" /> as commercial editions build on top of open source.
+- Chocolatey for Business (C4B) customers - also refer to <Xref title="Chocolatey Licensed Extension Release Notes" value="licensed-extension-release-notes" /> and <Xref title="Chocolatey Central Management Release Notes" value="ccm-release-notes" />.
+
+## Known Issues
+
+- Please see https://github.com/chocolatey/chocolatey-licensed-issues/labels/AgentService
+
+<MaintenanceAndSupportLink />
+
+<ChocolateyComponentDependenciesLink />
+
+## 2.1.3 (June 5, 2024) \{#v2.1.3}
+
+Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-620-agent213-releases/) about this release.
+
+### Improvement
+
+- [Security] Prevent usage of new option when running in Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+
+## 2.1.2 (January 31, 2024) \{#january-31-2024}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 1.1.4 (January 31, 2024) \{#january-31-2024}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 2.1.1 (December 19, 2023) \{#december-19-2023}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 1.1.3 (December 19, 2023) \{#december-19-2023}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 2.1.0 (June 29, 2023) \{#june-29-2023}
+
+<Callout type="warning">
+    Refer to our <Xref title="Upgrade Guide" value="upgrading-to-chocolatey-v2-v6" /> for recommendations before upgrading from 1.x versions to 2.x.
+</Callout>
+
+### Bug Fix
+
+- Fix - Outdated packages are not being reported to Chocolatey Central Management Service.
+
+### Improvement
+
+- Make use of option to skip HTTP cache when running Chocolatey CLI commands.
+
+
+## 2.0.0 (May 31, 2023) \{#may-31-2023}
+
+<Callout type="warning">
+    Refer to our <Xref title="Upgrade Guide" value="upgrading-to-chocolatey-v2-v6" /> for recommendations before upgrading from 1.x versions to 2.0.0.
+</Callout>
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework.
+- Upgrade to target version 2.0.0 of Chocolatey.Lib and version 6.0.0 of Chocolatey.Licensed.Lib assemblies.
+
+### Bug Fix
+
+- Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
+
+### Improvements
+
+- Update to use latest releases of Chocolatey products.
+- Migrate from Rx-* packages to System.Reactive.* packages.
+
+
+## 1.1.2 (May 10, 2023) \{#may-10-2023}
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
+
+
+## 2.0.0-beta-20230426 (April 26, 2023)
+
+<Callout type="warning">
+    This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+</Callout>
+
+<Callout type="info">
+    If you run into any problems when using this beta version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+</Callout>
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Improvement
+
+- Update to use latest beta releases of Chocolatey products.
+
+
+## 2.0.0-beta-20230412 (April 12, 2023)
+
+<Callout type="warning">
+    This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+</Callout>
+
+<Callout type="info">
+    If you run into any problems when using this beta version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+</Callout>
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Improvement
+
+- Update to use latest beta releases of Chocolatey Components.
+
+
+## 2.0.0-beta-20230321 (March 21, 2023)
+
+<Callout type="warning">
+    This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+</Callout>
+
+<Callout type="info">
+    If you run into any problems when using this beta version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this beta release.
+</Callout>
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Improvement
+
+- Migrate from Rx-* packages to System.Reactive.* packages.
+
+### Bug Fix
+
+- Fix - Handle the removal of deprecated configurations from Config class in Chocolatey CLI.
+
+
+## 2.0.0-alpha-20230221 (February 21, 2023) \{#alpha-20230221-february-21-2023}
+
+<Callout type="warning">
+    This is a pre-release version of Chocolatey Agent and it is **NOT** suitable for production use! A pre-release version will have bugs that could have a detrimental impact to your environment. Ensure all necessary due diligence steps are taken before using in your environment.
+</Callout>
+
+<Callout type="info">
+    If you run into any problems when using this alpha version of Chocolatey Agent we would ask that you comment on this [discussion](https://github.com/chocolatey/choco/discussions/2995), which is where we will be collating issues, and providing workarounds, etc.  We will not be accepting issues raised against this alpha release.
+</Callout>
+
+### Known Issues
+
+See this [list](https://github.com/chocolatey/choco/discussions/2995) for known issues with this pre-release.
+
+### Breaking Changes
+
+- Upgrade to target version 4.8 of the .NET Framework.
+- Upgrade to target version 2.0.0 of Chocolatey.Lib and version 6.0.0 of Chocolatey.Licensed.Lib assemblies.
+
+
+## 1.1.1 (October 12, 2022) \{#october-12-2022}
+
+### Improvements
+
+- Update package version range for Chocolatey Licensed Extension to support 5.0.0+.
+
+## 1.1.0 (August 22, 2022) \{#august-22-2022}
+
+### Features
+
+- Add scheduled automatic log cleaner for Chocolatey and Chocolatey Agent rollover log files - see [licensed #214](https://github.com/chocolatey/chocolatey-licensed-issues/issues/214).
+
+### Improvements
+
+- Chocolatey Central Management - Add retry logic for running Deployment Steps acquired from Chocolatey Central Management Service.
+- Recheck the license on a schedule and shut down if it is invalid.
+
+### Bug Fix
+
+- Fix - Logging - Exception handling for all the tasks.
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/o6WCHzfntSo?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" />
+
+## 1.0.0 (March 21, 2022) \{#march-21-2022}
+
+<Callout type="warning">
+    The dependencies of the chocolatey-agent package have changed in this release. It now requires Chocolatey Licensed Extension v4.0.0.
+</Callout>
+
+### Breaking Change
+
+- Update Chocolatey Licensed Extension dependency to v4.0.0.
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/TnJP8hgEtjQ?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" />
+
+## 0.13.0 (February 28, 2022) \{#february-28-2022}
+
+<Callout type="warning">
+    The dependencies of the chocolatey-agent package have changed in this release, and it now requires Chocolatey Licensed Extension v3.2.0+.
+</Callout>
+
+### Breaking Changes
+
+- Chocolatey Central Management - Enhanced communication method for reporting information in Chocolatey Central Management.
+  - **NOTE:** This version of Chocolatey Agent is backwards compatible with versions of Chocolatey Central Management earlier than 0.8.0. However, we always recommend updating to the latest version of Chocolatey Central Management.
+
+### Improvements
+
+- Chocolatey Central Management
+  - Add logic to retry reporting of a Deployment Step result to Chocolatey Central Management if it initially fails.
+  - Ensure that no expanded sensitive variables are captured in log that is returned to Chocolatey Central Management.
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/AISFNuSH6XQ?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" />
+
+## 0.12.1 (September 14, 2021) \{#september-14-2021}
+
+### Bug Fix
+
+- [Security] Fix - Deployments - Sensitive arguments are included in log file when advanced Deployment Steps are executed via Chocolatey Central Management - see [licensed #255](https://github.com/chocolatey/chocolatey-licensed-issues/issues/255).
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/AISFNuSH6XQ?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" />
+
+## 0.12.0 (September 2, 2021) \{#september-2-2021}
+
+<Callout type="warning">
+    The dependencies of the chocolatey-agent package have changed in this release, and it now requires chocolatey.extension v2.2.0.
+</Callout>
+
+### Bug Fixes
+
+- Central Management
+  - Fix - Second and subsequent Deployment Steps to Chocolatey Agent with PowerShell v4 come back inconclusive (possibly earlier PowerShell versions as well) - see [licensed #237](https://github.com/chocolatey/chocolatey-licensed-issues/issues/237).
+  - Fix - Deployments - Log does not contain all information under error circumstances.
+
+### Improvements
+
+- [Security] XML External Entity attack in log4net (CVE-2018-1285) - see [licensed #253](https://github.com/chocolatey/chocolatey-licensed-issues/issues/253).
+
+### Release Video
+
+A short video explaining what is included in this release can be found here:
+
+<Iframe ratio="16x9" link="https://www.youtube.com/embed/Uv59msxXzeg?list=PLGvGJzqY88snXVlfxr8pt9WxQ4nCjB9Uj" />
+
+## 0.11.2 (November 5, 2020) \{#november-5-2020}
+
+### Bug Fix
+
+- Fix - Deployments - An execution timeout in seconds value of `0` for a Deployment Step is not treated as infinite.
+
+### Improvements
+
+- Provide clarity in log messages when salt additive configuration values are misconfigured.
+
+## 0.11.1 (October 5, 2020) \{#october-5-2020}
+
+### Bug Fix
+
+- Fix - CCM - Prevent incorrect exit code of -1 from successful PowerShell script Deployment Step when no exit code is explicitly supplied by the script.
+
+## 0.11.0 (June 25, 2020) \{#june-25-2020}
+
+### Breaking Changes
+
+- Chocolatey Agent v0.11.0 will only work with Central Management v0.3.0+. Upgrade order doesn't matter as you'll need to be on CCM v0.3.0 and Agent v0.11.0 before things start working again. See https://docs.chocolatey.org/en-us/central-management/#ccm-component-compatibility-matrix.
+
+### Bug Fixes
+
+- Fix - CCM - passphrases do not match on check-in (report_computer_information) - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152).
+- Fix - CCM Deployments - Deployments agent exit code of -1 reports successful Deployment Step - see [Licensed #153](https://github.com/chocolatey/chocolatey-licensed-issues/issues/153).
+
+## 0.10.0 (June 18, 2020) \{#june-18-2020}
+
+### Breaking Changes
+
+- Chocolatey Agent v0.10.0 will only work with Central Management v0.2.0+. Please upgrade Central Management first if you are using CCM with the agent service.
+
+<Callout type="info">
+    Log locations have changed. Please see <Xref title="Log File for Chocolatey Agent" value="setup-agent" anchor="log-file-location-for-chocolatey-agent" /> for more information.
+</Callout>
+
+### Features
+
+- Execution for Chocolatey Central Management Deployments.
+
+### Bug Fixes
+
+- Fix - Monitoring `chocolatey.config` for changes could potentially lock the file from being written to by Chocolatey CLI.
+- Fix - Logging - the service stops responding to calls and stops logging after choco configuration file is edited.
+- Fix - CCM Reporting - Do not report unfound packages as outdated.
+
+### Improvements
+
+- Logging - Log to the root logs folder of Chocolatey installation.
+
+## 0.9.3 (March 26, 2020) \{#march-26-2020}
+
+### Bug Fixes
+
+- Central Management Reporting:
+  - Fix - Ensure best available TLS is used - see [Licensed #132](https://github.com/chocolatey/chocolatey-licensed-issues/issues/132).
+
+## 0.9.2 (January 30, 2020) \{#january-30-2020}
+
+### Improvements
+
+- When reporting into CCM, add the URL that is being used in log to aid when debugging issues.
+
+## 0.9.1 (April 30, 2019) \{#april-30-2019}
+
+### Bug Fixes
+
+- Self-Service / Background Mode:
+  - Fix - Multiple quoted options being parsed incorrectly - see [Licensed #78](https://github.com/chocolatey/chocolatey-licensed-issues/issues/78).
+
+## 0.9.0 (March 18, 2019) \{#march-18-2019}
+
+### Features
+
+- Chocolatey Central Management Reporting - Clients can now report into Chocolatey Central Management on a configurable basis. For more information, please see [the documentation](https://docs.chocolatey.org/en-us/features/chocolatey-central-management).
+
+### Bug Fixes
+
+- Self-Service / Background Mode:
+  - Fix - Package Arguments not being passed from Chocolatey Agent to Chocolatey CLI properly - see [Licensed #60](https://github.com/chocolatey/chocolatey-licensed-issues/issues/60).
+  - Fix - Chocolatey Agent does not pass the exit code back to the console (service side) - see [Licensed #51](https://github.com/chocolatey/chocolatey-licensed-issues/issues/51).
+  - Fix - Execution times out after 10 minutes - ignores configuration - see [Licensed #41](https://github.com/chocolatey/chocolatey-licensed-issues/issues/41).
+
+## 0.8.1 (September 28, 2017) \{#september-28-2017}
+
+### Bug Fixes
+
+- Fix - bump dependency on Chocolatey Licensed Extension to ensure user is created with complex password instead of created with no password and then updated with complex password.
+
+## 0.8.0 (September 27, 2017) \{#september-27-2017}
+
+### Breaking Changes
+
+- [Security] Use 'ChocolateyLocalAdmin' user and manage the user by default - using LocalSystem doesn't work well with all software installations. Using a local user that is an admin works much better for ensuring applications are installed. If you need the previous functionality, pass `/UseDefaultChocolateyConfigUser`. This will use whatever Chocolatey is configured to use by default for new service installations. You can also pass in a username and optionally a password for a domain account or local administrator account.
+
+### Improvements
+
+- Upgrade - Pass `/NoRestartService` to upgrade the service without shutting down the current running service. You will need to restart the service to take advantage of the new changes - see [#26](https://github.com/chocolatey/chocolatey-licensed-issues/issues/26).
+- Install/Upgrade - Pick username/password for runtime. Pass `/Username:value /Password:value2` through package parameters.
+- Install/Upgrade - Pass `/EnterPassword` through package parameters to have Chocolatey ask for the user password at runtime during installation. Captures as a secure string.
+
+## 0.7.0 (June 27, 2017) \{#june-27-2017}
+
+### Breaking Changes
+
+- Fix - Use a URI with WCF named pipes that doesn't exclusively hold a lock on the root (blocking other services) - see [#12](https://github.com/chocolatey/chocolatey-licensed-issues/issues/12).
+
+### Bug Fixes
+
+- Fix - Allow chocolatey.lib (not just calls from choco.exe) to run self-service.
+
+## 0.6.0 (March 20, 2017) \{#march-20-2017}
+
+### Breaking Changes
+
+- Sources must be opted in for self-service if the feature `UseBackgroundServiceWithSelfServiceSourcesOnly` is turned on. This is automatically the case with Chocolatey Licensed v1.10.0+ (and Chocolatey 0.10.4+).
+
+### Bug Fixes
+
+- Fix - Sources using nupkg/nuspec were being allowed. This is now disabled as well.
+
+## 0.5.0 (January 14, 2017) \{#january-14-2017}
+
+### Breaking Changes
+
+- New pattern for dependencies requires a reload of the interface that works between the Agent and Chocolatey.Extension, requiring a bump in the sub v1.
+
+## 0.4.0 (January 4, 2017) \{#january-4-2017}
+
+Initial Release
+
+### Features
+
+- Streams logging messages back to the caller in realtime.
+- Audits disallowed calls / attempted abuses of the service.
+- Only runs Chocolatey functions.
+- Ensures installation from approved sources only.
+- Receives and passes user context to Chocolatey functions.
+- Works exclusively with Chocolatey for Business - checks passcode prior to running command.
+- Processes one command at a time with locking algorithm.

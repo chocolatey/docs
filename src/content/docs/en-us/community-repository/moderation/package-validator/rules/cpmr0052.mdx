@@ -1,0 +1,31 @@
+---
+order: 52
+xref: cpmr0052
+title: CPMR0052 - Dependency With No Version (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0052
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+<Callout type="warning">
+    There is a bug with this check - https://github.com/chocolatey/home/issues/33
+</Callout>
+
+If you have implemented the recommended fixes, you should see this go away on checks after this has been corrected.
+
+## Issue
+
+In the nuspec, you have a dependency on another package without at the very least a minimum version.
+
+## Recommended Solution
+
+Version-less dependencies are not recommended now that choco will resolve the latest version of a package. Please add at the very least the minimum version (also known as the lower bound) of the package you depend on. Note how version ranges work, see http://docs.nuget.org/Create/versioning#Specifying-Version-Ranges-in-.nuspec-Files
+
+## Reasoning
+
+At a point in history, NuGet would always get the oldest version of a package that would meet the version range that was specified. When you didn't specify a version, it would get the latest possible version. Once choco 0.9.9+ came out, it flipped NuGet to always getting the most recent version of a package that satisfied a dependency. It's considered incorrect to not at the very least specify a minimum version that would meet a dependency. This way it is more explicit.

@@ -1,0 +1,18 @@
+---
+order: 10
+xref: package-validator
+title: Package Validator Moderation Service
+description: Information on the Package Validator Moderation Service
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Here you will find a collection of more information and resources for when things fail validation. A comprehensive set of how items are reviewed is found at <Xref title="the moderation docs" value="moderation" anchor="requirements" />.
+
+<Callout type="info">
+    If you find you are getting flagged for many of these items, you should consider using choco new to generate and adapt updated templates that have all of the latest recommendations.
+</Callout>
+
+What is the validator?
+The validator is a service that checks the quality of a package based on requirements, guidelines and suggestions for creating packages for Chocolatey’s community feed. We like to think of the validator as unit testing. It is validating that everything is as it should be and meets the minimum requirements for a package on the community feed.

@@ -1,0 +1,55 @@
+---
+// Scripts and types
+import { getCollection } from 'astro:content';
+import { generateContentToc } from '@scripts/generate-content-toc.ts';
+import { generateContentTree } from '@scripts/generate-content-tree.ts';
+
+// Components
+import Breadcrumbs from '@components/Breadcrumbs.astro';
+import Children from '@components/Children.astro';
+import LayoutDocs from '@layouts/LayoutDocs.astro';
+import TableOfContents from '@components/toc/TableOfContents.astro';
+
+export const getStaticPaths = (async () => {
+    const pages = await getCollection('docs', ({ data }) => {
+        return data.highlight === undefined;
+    });
+
+    const paths = pages.map(page => {
+        const [lang, ...slug] = page.slug.split('/');
+        return {
+            params: {
+                lang,
+                slug: slug.join('/') || undefined
+            },
+            props: page,
+        };
+    });
+
+    return paths;
+});
+
+// const { lang, slug } = Astro.params;
+const page = Astro.props;
+
+const isHome = page.data.xref === 'home';
+
+const { Content } = await page.render();
+const headings = await page.render().then(data => data.headings);
+const contentToc = await generateContentToc(headings);
+const contentTree = await generateContentTree();
+---
+
+<LayoutDocs title={page.data.title} description={page.data.description} ogImage={page.data.ogImage} twitterImage={page.data.twitterImage} contentTree={contentTree}>
+    <div class="row">
+        <div id="mainContent" class="anchorjs-container col-xl-10 order-2 order-xl-1">
+            <div class="d-none d-xl-block">
+                <h1 class="title">{page.data.title}</h1>
+                <Breadcrumbs isHome={isHome} />
+            </div>
+            <Content />
+            <Children content={contentTree} />
+        </div>
+        <TableOfContents content={contentToc} />
+    </div>
+</LayoutDocs>

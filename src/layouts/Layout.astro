@@ -1,0 +1,138 @@
+---
+// Scripts and types
+import childProcess from 'child_process';
+import { config } from '@scripts/config.ts';
+
+// Components
+import GlobalNavigation from '@components/global/GlobalNavigation.astro';
+import GoogleTag from '@components/global/GoogleTag.astro';
+import ThemeToggle from '@components/global/ThemeToggle.astro';
+import TopAlertBanner from '@components/TopAlertBanner.astro';
+
+const { title, description, ogImage, twitterImage } = Astro.props;
+const canonicalURL = new URL(Astro.url, Astro.site);
+const metaTitle = title !== config.title ? `${config.title} Docs | ${title}` : `${config.title} Docs`;
+const ogImageURL = ogImage ? ogImage : new URL(`/share-og.png`, Astro.site);
+const twitterImageURL = twitterImage ? twitterImage : new URL(`/images/global-shared/twitter-share.png`, Astro.site);
+const twitterCardType = twitterImage ? 'summary_large_image' : 'summary';
+
+// obtain Git commit hash
+const hash = childProcess
+  .execSync("git rev-parse --short HEAD")
+  .toString()
+  .trim();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <GoogleTag />
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+        <!-- Favicons -->
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+
+        <!-- SEO -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- General Meta Tags -->
+		<meta name="title" content={metaTitle} />
+		<meta name="description" content={description} />
+		<meta name="author" content={config.title} />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Additional Meta Tags -->
+        <meta property="product:brand" content={config.title} />
+        <meta property="product:category" content="software" />
+        <meta name="flattr:id" content="mqgjkp">
+        <meta property="DC.title" content={metaTitle} />
+        <meta property="copyright" content={`Chocolatey is Copyright 2020 - ${new Date().getFullYear()} Chocolatey Software, Inc.`} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:title" content={metaTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={ogImageURL} />
+
+		<!-- Twitter -->
+        <meta name="twitter:site" content="@chocolateynuget">
+        <meta property="twitter:title" content={metaTitle} />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={twitterImageURL} />
+        <meta property="twitter:card" content={twitterCardType} />
+		
+		<!-- Google Font -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="/styles/docs.min.purged.css" />
+
+		<!-- JS -->
+		<script is:inline src="/scripts/theme-toggle.min.js"></script>
+        <script is:inline async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
+        <title>{metaTitle}</title>
+	</head>
+	<body class="chocolatey-docs">
+		<header>
+            <TopAlertBanner />
+            <div class="d-none d-sm-flex">
+                <div class="global-nav w-100">
+                    <div class="container-fluid pe-0 pe-md-c75">
+                        <GlobalNavigation />
+                    </div>
+                </div>
+            </div>
+            <nav id="topNav" class="navbar navbar-expand-md">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/en-us/">
+                        <img class="d-md-none" src="/images/global-shared/logo.svg" alt="Chocolatey" />
+                        <img class="d-none d-md-block navbar-brand-desktop" src="/images/global-shared/logo-square.svg" alt="Chocolatey" />
+                    </a>
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a class="me-2" href="https://github.com/chocolatey/docs" target="_blank" rel="noreferrer" aria-label="Edit on GitHub">
+                            <i class="fa-brands fa-github text-body fa-2x" aria-hidden="true"></i>
+                        </a>
+                        <div class="me-2 ms-md-3 d-md-none">
+                            <ThemeToggle />
+                        </div>
+                        <div id="docsearchResults" class="me-2 ms-md-0 top-50 start-50"></div>
+                        <button type="button" class="navbar-toggler btn btn-top-nav" data-bs-toggle="collapse" data-bs-target="#leftSidebar" aria-expanded="false" aria-controls="leftSidebar" aria-label="Toggle navigation">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+		<slot />
+		<footer class="flex-shrink-0">
+            <div class="text-bg-body-secondary border-top text-center p-3">
+                <span class="small">&copy; {new Date().getFullYear()} {config.title}, Inc.</span><br />
+                <span class="small">Deployed from <a href={`https://github.com/chocolatey/docs/commit/${hash}`}>{hash}</a></span><br />
+            </div>
+            <div id="cookieNoticeAlert" class="alert alert-primary alert-dismissible alert-dismissible-center alert-btn-center fade show d-none" role="alert">
+                <p class="mb-0"><strong>docs.chocolatey.org uses cookies to enhance the user experience of the site.</strong></p>
+                <button type="button" class="btn btn-bg-body btn-sm d-none d-md-inline-block" data-bs-dismiss="alert" aria-label="Close">I accept</button>
+                <button type="button" class="btn btn-bg-body d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
+            </div>
+        </footer>
+		<script is:inline src="/scripts/docs.min.js"></script>
+	</body>
+</html>

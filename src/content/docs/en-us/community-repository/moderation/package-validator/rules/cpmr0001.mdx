@@ -1,0 +1,25 @@
+---
+order: 1
+xref: cpmr0001
+title: CPMR0001 - Copyright Character Count Below 4 (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0001
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In the nuspec, there is a `<copyright>` field. Usually a copyright contains year (or range of years) and a company. Since a year takes up four characters by itself, the validator has detected that you are not using the copyright field correctly.
+
+## Recommended Solution
+
+Please update the copyright field so that it is using at least 4 characters.
+
+## Reasoning
+
+Usually the year alone takes up four characters, so properly setting a copyright would include years and name of company.

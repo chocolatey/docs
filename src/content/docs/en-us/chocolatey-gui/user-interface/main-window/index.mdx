@@ -1,0 +1,21 @@
+---
+order: 10
+xref: gui-main-window
+title: Main Window
+description: The primary interface that is used within Chocolatey GUI
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The primary user interface for Chocolatey GUI is split into a number of sections.
+
+![The primary user interface for Chocolatey GUI](/images/chocolatey-gui/user_interface_main-window_sections.png "The primary user interface for Chocolatey GUI")
+
+1. The top navigation menu, which allows you to navigate to the <Xref title="settings" value="gui-settings" /> and <Xref title="about" value="gui-about" />
+pages, and in addition to toggle whether or not to use the <Xref title="dark or light mode" value="gui-darkmode" />.
+1. The main action bar, which allows you to <Xref title="search" value="gui-search" />, <Xref title="check for outdated packages" value="check-for-outdated" />, <Xref title="refresh the current list of packages" value="gui-refresh" />, <Xref title="update all packages" value="gui-update-all" />, <Xref title="export currently installed packages" value="gui-export" />, and to toggle between <Xref title="list or grid view" value="gui-tileview" />.
+1. The `This PC` to the <Xref title="local source" value="gui-local-source" /> tab
+1. One or more <Xref title="remote sources" value="gui-remote-source" />, based on current Chocolatey <Xref title="source configuration" value="gui-sources" />
+1. Displays the current version number of Chocolatey GUI
+1. Shows the current package list, based on the selected source (either local, or a remote one). Double clicking on a package, right clicking and selecting `Details` in the context menu, will take you to the <Xref title="package details page" value="gui-package-details" />.

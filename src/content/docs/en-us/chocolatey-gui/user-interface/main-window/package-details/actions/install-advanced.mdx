@@ -1,0 +1,30 @@
+---
+order: 20
+xref: gui-package-details-actions-install-advanced
+title: Install Advanced
+description: Information on how to use the Install Advanced action
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+During normal execution, Chocolatey GUI performs a standard installation of a package, specifying only the package version
+and the Source to install from.  For most installations, this is all that is required.
+
+There are times though when additional parameters need to be set for a package.
+
+For example, a package may have one or more package parameters, to allow for controlling whether desktop shortcuts are
+created, or what entries should appear on the Windows path.  In order to set these values so that they are passed when
+installing the package, you have to make use of the Install Advanced window:
+
+![Modal window showing the ability to set install arguments when installing a package](/images/chocolatey-gui/user_interface_main-window_package-details_install-advanced.png "Modal window showing the ability to set install arguments when installing a package")
+
+All of the command line options (with the exception of the additional log file) that you can specify when running
+choco.exe directly, can be set within this window.
+
+The settings are grouped into sections:
+
+- Install Options
+- Advanced Options
+- Dependency Options
+- Checksum Option

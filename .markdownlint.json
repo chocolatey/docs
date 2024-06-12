@@ -1,9 +1,9 @@
 {
-  "MD026": false,
-  "MD013": false,
-  "MD024": false,
-  "MD034": false,
-  "MD033": {
-    "allowed_elements": ["details", "strong", "summary"]
-  }
+    "MD026": false,
+    "MD013": false,
+    "MD024": false,
+    "MD034": false,
+    "MD033": {
+        "allowed_elements": ["details", "strong", "summary"]
+    }
 }

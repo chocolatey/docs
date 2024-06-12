@@ -1,0 +1,85 @@
+﻿---
+order: 30
+xref: get-chocolateyconfigvalue
+title: Get-ChocolateyConfigValue
+description: Information on Get-ChocolateyConfigValue function
+---
+import Xref from '@components/Xref.astro';
+
+# Get-ChocolateyConfigValue
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyConfigValue.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Retrieve a value from the Chocolatey Configuration file
+
+## Syntax
+
+~~~powershell
+Get-ChocolateyConfigValue `
+  -ConfigKey <String> `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This function will attempt to retrieve the path according to the specified Path Type
+to a valid location that can be used by maintainers in certain scenarios.
+
+## Notes
+
+Available in 2.1.0+
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+
+$value = Get-ChocolateyConfigValue -configKey 'cacheLocation'
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -ConfigKey &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-ChocolateyConfigValue -Full`.
+
+View the source for [Get-ChocolateyConfigValue](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-ChocolateyConfigValue.ps1)

@@ -1,0 +1,36 @@
+---
+order: 73
+xref: cpmr0073
+title: CPMR0073 - Script do not validate downloaded files
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0073
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`), one or more calls that downloads files from a remote location are used without verifying the checksums of these files.
+
+The following helper functions are currently being validated by this rule, with possibly more being added in the future.
+
+- <Xref title="`Install-ChocolateyPackage`" value="install-chocolateypackage" /> - If the `Url` parameter is used, the associated `Checksum` parameter is additionally set (For 64bit this would be `Url64` / `Url64bit` and `Checksum64`).
+- <Xref title="`Install-ChocolateyZipPackage`" value="install-chocolateyzippackage" /> - If the `Url` parameter is used, the associated `Checksum` parameter is additionally set (For 64bit this would be `Url64` / `Url64bit` and `Checksum64`).
+- <Xref title="`Get-ChocolateyWebFile`" value="get-chocolateywebfile" /> - If the `Url` parameter is used, the associated `Checksum` parameter is additionally set (For 64bit this would be `Url64` / `Url64bit` and `Checksum64`).
+- <Xref title="`Install-ChocolateyPowershellCommand`" value="install-chocolateypowershellcommand" /> - If the `Url` parameter is used, the associated `Checksum` parameter is additionally set (For 64bit this would be `Url64` / `Url64bit` and `Checksum64`).
+- <Xref title="`Install-ChocolateyVsixPackage`" value="install-chocolateyvsixpackage" /> - If the `VsixUrl` / `Url` parameter is used, the associated `Checksum` parameter is additionally set.
+- <Xref title="`Get-WebFile`" value="get-webfile" /> - A low-level download of a single file that should generally be avoided unless necessary, requires an additional call to `Get-ChecksumValid` using the same file name specified for the output.
+- <Xref title="`Get-FtpFile`" value="get-ftpfile" /> - A low-level download of a single file that should generally be avoided unless necessary, requires an additional call to `Get-ChecksumValid` using the same file name specified for the output.
+
+## Recommended Solution
+
+Update all calls to helper functions that download files from a remote location to include the use of their respective `Checksum` property, or make a call to `Get-ChecksumValid` if no such parameter exists.
+
+## Reasoning
+
+All packages on the Chocolatey Community Repository should aim to be as safe and resilient as possible.
+Adding a checksum when downloading remote files helps with the security that the file is the same as the maintainer created the package for, and it has not been changed during the request.

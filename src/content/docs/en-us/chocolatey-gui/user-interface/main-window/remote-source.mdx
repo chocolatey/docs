@@ -1,0 +1,29 @@
+---
+order: 30
+xref: gui-remote-source
+title: Remote Source
+description: Information about displaying available packages from remote sources
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Any <Xref title="Chocolatey source" value="gui-sources" /> that is configured will show as a remote source in the Chocolatey GUI <Xref title="main window" value="gui-main-window" />.  When selected, either directly through the user interface, or via a <Xref title="keyboard shortcut" value="use-keyboard-bindings" />, the available packages from that source will be fetched, and shown.
+
+It is the visual equivalent of running the `choco list --source https://community.chocolatey.org` command, and paging the results that are displayed.
+
+There are various features that can be used to configure how remote sources work, including:
+
+- <Xref title="Exclude Install Packages" value="exclude-installed-packages" />
+- <Xref title="Prevent Preload" value="prevent-preload" />
+- <Xref title="Show Aggregated Source View" value="show-aggregated-source-view" />
+
+![Remote Source showing packages from the Chocolatey Community Repository](/images/chocolatey-gui/feature_default_tile_view_remote_enabled.png "Remote Source showing packages from the Chocolatey Community Repository")
+
+It is possible to show this view in both tile and list format, and this can be controlled through the <Xref title="toggle switch" value="gui-tileview" />, or
+by setting the <Xref title="Default to Tile View for Local Source" value="default-to-tile-view-for-remote-source" /> feature to the required setting.
+
+From any remote source view, either by navigating to the <Xref title="package details page" value="gui-package-details" />, or by activating the context menu for the
+required package, it is possible to perform one of the <Xref title="available actions" value="gui-package-details-actions" /> for a package.
+
+All remote sources can be turned off using the <Xref title="Hide All Remote Chocolatey Sources" value="hide-all-remote-chocolatey-sources" /> feature.  **NOTE:** This is a commercial feature that requires the use of the <Xref title="Chocolatey GUI Licensed Extension" value="chocolatey-gui-licensed-extension" />.

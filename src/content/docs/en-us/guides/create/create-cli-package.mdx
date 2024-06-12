@@ -1,0 +1,145 @@
+---
+order: 4
+xref: howto-create-cli-package
+title: How To Create a CLI Executable Package
+description: A walkthrough creating a package containing a CLI executable application
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Chocolatey packages can also just contain executables - and you won't even need to write an installation script to use them! We're going to walk you through creating a CLI executable package now - assuming you've already run through <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />.
+
+### What Is a CLI Executable
+
+We'd class just about any executable (or EXE file) that can be run without installation as a CLI executable, and developers of software projects will sometimes publish a separate version of software available to just download and run rather than install.
+
+### Why Might You Use an Executable Package
+
+These packages can be very helpful for users who want to have tools quickly available without installation - sometimes referred to on the Chocolatey Community Repository as portable packages.
+
+They're generally extremely quick to install, as there's no additional logic being run, and leave little to no footprint on the computer after removal.
+
+This can be very helpful on a build container, or for tools that just don't need to be installed.
+
+### Using Shimgen
+
+Normally, we'd talk about a function included with Chocolatey CLI that allows us to install some files - in this case, we're just dropping an EXE onto disk (and in the package directory, at that) - how is this going to work? Nobody will want to find and use the entire path to the tool every time! Happily, this has been solved for a while:
+
+<Xref title="`Shimgen.exe`" value="shim" /> is a long-term feature included with Chocolatey CLI, and is used so that you can have items available on the `PATH` (allowing them to be run on the command-line) without adding a new entry to the `PATH` for every package that needs it.
+
+EXEs that are found within the package directories at the end of installation have a shim created in the `$env:ChocolateyInstall\bin` folder, which is on the `PATH`.
+
+If you have an EXE file within your package that you don't want to have shimmed, you should create an empty file named `<FILENAME>.ignore` in the same directory as the EXE will be found.
+
+You can find more details around uses for Shimgen on <Xref title="the docs page" value="shim" anchor="faq" />.
+
+#### Creating a CLI Executable Package
+
+In this example, we will create a package that contains `gh.exe`, the GitHub CLI executable.
+
+<Callout type="info">
+    For this example, we'll provide URLs that are based on versioned URL that worked at the time of writing.
+    These were found in the [GitHub releases](https://github.com/cli/cli/releases) for the tool.
+</Callout>
+
+#### Creating Package Structure
+
+This package type is very simple, mostly needing the EXE itself, and a package metadata file - often referred to as the `.nuspec`.
+
+1. In your `tutorials` folder, create a new folder for this package. For the example, we will call it `gh.portable`.
+1. Within this folder, create `gh.portable.nuspec`, with the content as [shown below](#package-metadata-content).
+1. Navigate to the [GH GitHub Releases](https://github.com/cli/cli/releases/) page, and download the latest version of `GitHub CLI <VERSION> windows amd64` (e.g. `GitHub CLI 2.39.2 windows amd64.zip` - you may need to click `Show all releases` to find it).
+    a. This will be a zip file so, after the download has completed, extract it directly into the package directory.
+
+##### Package Metadata Content
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter
+enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <id>gh.portable</id>
+        <version>$version$</version>
+        <owners>__REPLACE_YOUR_NAME__</owners>
+        <title>GitHub CLI (Portable)</title>
+        <authors>GitHub</authors>
+        <projectUrl>https://cli.github.com/</projectUrl>
+        <licenseUrl>https://github.com/cli/cli/blob/trunk/LICENSE</licenseUrl>
+        <projectSourceUrl>https://github.com/cli/cli/</projectSourceUrl>
+        <bugTrackerUrl>https://github.com/cli/cli/issues</bugTrackerUrl>
+        <tags>gh cli portable example</tags>
+        <summary>GitHub on the Command Line</summary>
+        <releaseNotes>https://github.com/cli/cli/releases</releaseNotes>
+    </metadata>
+    <files>
+        <file src="bin/gh.exe" target="tools/gh.exe" />
+        <file src="LICENSE" target="tools/LICENSE.txt" />
+    </files>
+</package>
+```
+
+You'll want to update the following fields in the `metadata` section:
+
+* **owners**: This field shows who maintains the package - your name or handle should be added!
+
+We have already filled many of the other included fields, including the following:
+
+* **id**: We have chosen the example package name, including the `.portable` suffix - which is often used to denote non-install packages on the Chocolatey Community Repository.
+* **version**: We have used `$version$` here, as we're going to introduce a neat trick later to update this during `choco pack`.
+* **files**: We have added paths matching the files within the release artifact you downloaded above in order to pack the extracted files correctly.
+
+### Compiling Your Package
+
+You can now run `choco pack` to compile your Chocolatey package, creating a file with a `.nupkg` extension, ready for installation!
+
+1. In VS Code, press `Ctrl+Shift+ P` or use the **View** menu and click on **Command Palette**.
+1. Select `Chocolatey: Package Chocolatey package(s)` from the prompt.
+1. Select `gh.portable.nuspec` from the prompt.
+1. Add `--version 2.39.1` (or the most recent version), which will override the version in the metadata, and press **Enter**.
+
+You should have a new package generated in your root directory.
+
+### Installing Your Package
+
+You can now test installation of the package.
+
+export const callout2 = {
+    title: 'Beware',
+    type: 'warning'
+};
+
+<Callout content={callout2}>
+    Installing and uninstalling the example package may affect existing installations (as you're essentially testing in production). We recommend testing on a separate environment that is not crucial to your workflow.
+</Callout>
+
+In an _elevated PowerShell command prompt_, run the following:
+
+```powershell
+choco install gh.portable --source='tutorials' -y
+```
+
+The command should run, and `gh.exe` should now be available on the command line. You should be able to run it:
+
+```powershell
+# Should produce output
+gh.exe --version
+
+# Should show the path to the shim, within chocolatey/bin
+Get-Command gh.exe
+```
+
+### Uninstalling Your Package
+
+Similarly, you should be able to test the uninstall.
+
+```powershell
+choco uninstall gh.portable -y
+```
+
+The same tests shown above should now show an error, and no command found.
+
+### Conclusion
+
+You should now have a grasp of the potential for portable / CLI packages! Congratulations. Have fun, and try creating your own!

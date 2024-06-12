@@ -1,0 +1,25 @@
+---
+order: 24
+xref: cpmr0024
+title: CPMR0024 - Prerelease information shouldn't be included as part of Package Id (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0024
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+<Callout type="info">
+    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
+</Callout>
+
+## Issue
+
+The `<id>` field in the package `.nuspec` file, contains a prerelease version name such as `alpha`, `beta`, etc.
+
+## Recommended Solution
+
+Please update the `<id>` field in the `.nuspec` file to ensure it only contains the name. The prerelease version name should be added to the `<version>` field. Prerelease packages can be [installed](https://docs.chocolatey.org/en-us/choco/commands/install#options-and-switches) or [upgraded](https://docs.chocolatey.org/en-us/choco/commands/upgrade#options-and-switches) using the `--pre` option in Chocolatey CLI.

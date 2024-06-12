@@ -1,0 +1,57 @@
+---
+order: 26
+xref: c4b-azure-packages
+title: Package Selection
+description: A summary of the package offerings for the Chocolatey for Business Azure Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Summary
+
+When deploying the Chocolatey for Business Azure Environment, you are prompted to select <Xref title="packages to internalize" value="c4b-azure" anchor="internalize-packages" />.
+
+This page shows the packages we bundle as recommendations, and discusses how to source other packages to automatically publish to your new Chocolatey for Business Azure Environment.
+
+## Recommendations
+
+We provide bundles of packages that are commonly used by Chocolatey for Business customers:
+
+| Bundle  | Contains                                                          |
+| ------- | ----------------------------------------------------------------- |
+| All     | Google Chrome<br />Mozilla Firefox<br />Microsoft Edge<br />Microsoft VS Code<br />Microsoft PowerShell<br />Microsoft Office 365 ProPlus<br />Notepad++<br />Adobe Reader<br />Slack<br />Microsoft Teams<br />Zoom<br />Google Drive<br />Microsoft OneDrive<br />Skype<br />VSCode PowerShell<br />Git<br />GIMP<br />VLC<br />SysInternals<br />Azure-CLI<br />AzCopy<br />1password<br />PuTTY<br />Java Runtime Environment |
+| Minimal | Google Chrome<br />Microsoft Edge<br />Microsoft VS Code<br />Microsoft PowerShell<br />Microsoft Office 365 ProPlus<br />Notepad++<br />Adobe Reader<br />Slack<br />Microsoft Teams<br />Zoom |
+| None    | -                                                                 |
+
+You can remove any of these packages from your repository without using them by logging into Nexus, browsing to the `ChocolateyTest` and `ChocolateyInternal` repositories, and deleting the package from each.
+
+## Custom Packages
+
+You can add custom packages using the `Specify any other packages` textbox.
+
+Please provide these as a comma-separated list, e.g.
+
+```text
+nexus-repository, notepadplusplus, sublimetext3
+```
+
+<Callout type="warning">
+    We recommend you review and test all packages before internalizing and deploying them from the [Chocolatey Community Repository](https://community.chocolatey.org/packages).
+</Callout>
+
+## Adding Packages Post-Deployment
+
+You can download and internalize packages after the deployment of your environment.
+
+To do so, log into Jenkins at `https://<FQDN>/jenkins`, and click the `Schedule a Build...` icon on the right of the `Internalize packages from the Community Repository` job. This will take you to a screen where you can add Package IDs as a semicolon-separated list to the `P_PKG_LIST` parameter, e.g.
+
+```text
+nexus-repository; notepadplusplus; sublimetext3
+```
+
+Start the internalize job by clicking `Build`.
+
+The specified packages will then be downloaded and pushed to your ChocolateyTest repository, ready for testing, and then be promoted to the ChocolateyInternal repository either by you or by the `Update production repository` job.
+
+There are further details on these default jobs <Xref title="here" value="automate-package-internalization" anchor="create-jenkins-jobs" />.

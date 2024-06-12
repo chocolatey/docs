@@ -1,0 +1,25 @@
+---
+// Scripts and types
+import { getCollection } from 'astro:content';
+
+// Components
+import Xref from '@components/Xref.astro';
+
+const highlightsSidebar = await getCollection('docs', ({ data }) => {
+    return data.highlight && data.highlight.showInSidebar;
+});
+---
+
+{(highlightsSidebar && highlightsSidebar.length > 0) && (
+    <li class="bg-gradient-adaptive-secondary p-3">
+        {highlightsSidebar.map((highlight, index) => (
+            (highlight && highlight.data && highlight.data.highlight) && (
+                <div class={`card card-body card-link ms-0 ${index > 0 ? "mt-3" : ''}`}>
+                    <p class="h3">{highlight.data.title}</p>
+                    <p>{highlight.data.description}</p>
+                    <Xref title={highlight.data.highlight.ctaText} value={highlight.data.highlight.ctaXref} anchor={highlight.data.highlight.ctaAnchor ? highlight.data.highlight.ctaAnchor : ''} classes="d-block mt-n2 stretched-link link-primary" icon="fa-arrow-right" />
+                </div>
+            )
+        ))}
+    </li>
+)}

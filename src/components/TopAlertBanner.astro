@@ -1,0 +1,12 @@
+---
+const topNoticeText = "<a href='https://chocolatey.org/events' target='_blank'>Don't miss a byte of Chocolatey goodness! Explore our livestream events now!</a>";
+---
+
+{topNoticeText && (
+    <div id="topNoticeAlert" class="alert alert-purple alert-dismissible alert-dismissible-center fade show d-none" role="alert">
+        <p class="mb-0 me-3 me-xl-0"><Fragment set:html={topNoticeText} /></p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+    </div>
+)}

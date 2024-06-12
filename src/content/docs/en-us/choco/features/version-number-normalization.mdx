@@ -1,0 +1,23 @@
+---
+order: 20
+xref: version-normalization
+title: Version Number Normalization
+description: Information about the version number normalization introduced in Chocolatey CLI 2.0.0.
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The release of Chocolatey CLI 2.0.0 brought with it new semantic version number requirements. To comply with these new requirements, Chocolatey CLI will normalize version numbers to at least three parts, and remove leading zeroes.
+
+* Version numbers that have fewer than three parts will have missing parts added, as `0` (for example, `1.2` will be normalized to `1.2.0`).
+* Version numbers that have four parts, will have the fourth part removed if it is `0` (for example, `1.0.0.0` will be normalized to `1.0.0`, but `1.0.0.1` will not).
+* Version numbers that have leading zeroes in any part will have those leading zeroes removed (for example, `1.001.2` will be normalized to `1.1.2`).
+
+This normalization is applied to the generated package when using `choco pack` under Chocolatey CLI 2.x onwards, and will also affect any displayed versions of packages from remote sources.
+
+This is a change from how Chocolatey CLI 1.x worked with version numbers.
+
+## Special Consideration For Package Maintainers
+
+Many Chocolatey package scripts use the `$env:ChocolateyPackageVersion` environment variable. As version number normalization affects the package version number, the expected behaviour of the package may be affected. Our recommendation is to use a version number explicitly, rather than relying on the contents of `$env:ChocolateyPackageVersion`. See the <Xref title="PowerShell Environmental Variables Reference" value="powershell-reference" anchor="environment-variables" /> for more information.

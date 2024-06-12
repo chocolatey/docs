@@ -1,0 +1,11 @@
+---
+// Scripts and types
+import { config } from '@scripts/config';
+
+// Components
+import Layout from '@layouts/Layout.astro';
+
+return Astro.redirect('en-us/');
+---
+
+<Layout title={config.titleHome} description={config.description} />

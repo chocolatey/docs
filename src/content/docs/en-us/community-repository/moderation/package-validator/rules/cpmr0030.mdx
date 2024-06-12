@@ -1,0 +1,38 @@
+---
+order: 30
+xref: cpmr0030
+title: CPMR0030 - Description Contains Invalid Markdown Heading (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0030
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+The Description element of the package nuspec file contains invalid Markdown headings.  For example, you may have this:
+
+```
+###This is my heading
+```
+instead of:
+
+```
+### This is my heading
+```
+
+## Recommended Solution
+
+Please update the description element of the nuspec file to contain valid Markdown Headings.  More information can be found [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#headers).
+
+## Reasoning
+
+The Chocolatey Community Repository uses the Markdig Library for parsing/rendering Markdown content.  When invalid headings are used, the result looks like the following:
+
+![Example of invalid markdown from nuspec description rendering on the website](/images/moderation/invalid-markdown-rendering.png)
+
+A prior version of the Chocolatey Community Repository did support this way for writing headings, but it is not part of the official Markdown specification, and as such, we don't want any further invalid headings making their way into the repository.

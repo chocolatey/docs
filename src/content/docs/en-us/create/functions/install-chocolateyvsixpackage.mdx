@@ -1,0 +1,176 @@
+﻿---
+order: 290
+xref: install-chocolateyvsixpackage
+title: Install-ChocolateyVsixPackage
+description: Information on Install-ChocolateyVsixPackage function
+---
+import Xref from '@components/Xref.astro';
+
+# Install-ChocolateyVsixPackage
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyVsixPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Downloads and installs a VSIX package for Visual Studio
+
+## Syntax
+
+~~~powershell
+Install-ChocolateyVsixPackage `
+  -PackageName <String> `
+  [-VsixUrl <String>] `
+  [-VsVersion <Int32>] `
+  [-Checksum <String>] `
+  [-ChecksumType <String>] `
+  [-Options <Hashtable>] `
+  [-File <String>] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+VSIX packages are Extensions for the Visual Studio IDE. The Visual
+Studio Gallery at  http://visualstudiogallery.msdn.microsoft.com/ is the
+public extension feed and hosts thousands of extensions. You can locate
+a VSIX Url by finding the download link of Visual Studio extensions on
+the Visual Studio Gallery.
+
+## Notes
+
+Chocolatey works best when the packages contain the software it is
+managing and doesn't require downloads. However most software in the
+Windows world requires redistribution rights and when sharing packages
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
+aforementioned rights. Chocolatey understands how to work with that,
+hence this function. You are not subject to this limitation with
+internal packages.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+
+# This downloads the AutoWrockTestable VSIX from the Visual Studio
+# Gallery and installs it to the latest version of VS.
+
+Install-ChocolateyVsixPackage -PackageName "MyPackage" `
+  -VsixUrl http://visualstudiogallery.msdn.microsoft.com/ea3a37c9-1c76-4628-803e-b10a109e7943/file/73131/1/AutoWrockTestable.vsix
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+# This downloads the AutoWrockTestable VSIX from the Visual Studio
+# Gallery and installs it to Visual Studio 2012 (v11.0).
+
+Install-ChocolateyVsixPackage -PackageName "MyPackage" `
+  -VsixUrl http://visualstudiogallery.msdn.microsoft.com/ea3a37c9-1c76-4628-803e-b10a109e7943/file/73131/1/AutoWrockTestable.vsix `
+  -VsVersion 11
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -PackageName &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | name
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -VsixUrl [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | url
+Required?              | false
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -VsVersion [&lt;Int32&gt;]
+Property               | Value
+---------------------- | -------------------
+Aliases                | visualStudioVersion
+Required?              | false
+Position?              | 3
+Default Value          | 0
+Accept Pipeline Input? | false
+ 
+###  -Checksum [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Options [&lt;Hashtable&gt;]
+Property               | Value
+---------------------- | -------------------
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | `@{Headers = @{}` }
+Accept Pipeline Input? | false
+ 
+###  -File [&lt;String&gt;]
+Property               | Value
+---------------------- | ------------
+Aliases                | fileFullPath
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Install-ChocolateyInstallPackage' value='install-chocolateyinstallpackage' />
+ * <Xref title='Install-ChocolateyZipPackage' value='install-chocolateyzippackage' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyVsixPackage -Full`.
+
+View the source for [Install-ChocolateyVsixPackage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyVsixPackage.ps1)

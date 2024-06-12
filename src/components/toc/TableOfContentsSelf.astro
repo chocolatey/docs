@@ -1,0 +1,23 @@
+---
+import type { ContentToc } from '@scripts/types';
+const { heading } = Astro.props;
+
+interface Props {
+    heading: ContentToc;
+}
+---
+
+<li class="nav-item">
+    <a class="nav-link" href={'#' + heading.slug}>
+        {heading.text}
+    </a>
+    {
+        (heading.subheadings && heading.subheadings.length > 0) && (
+            <ul class="list-unstyled ms-2">
+                {heading.subheadings.map((subheading) => (
+                    <Astro.self heading={subheading} />
+                ))}
+            </ul>
+        )
+    }
+</li>

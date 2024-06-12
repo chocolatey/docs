@@ -1,0 +1,31 @@
+---
+order: 5
+xref: cpmr0005
+title: CPMR0005 - LICENSE.txt file missing when binaries included (package)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0005
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In the package, you have included binaries that you may have the right to distribute, but you have not included the license of the software to verify that.
+
+## Recommended Solution
+
+Please add the a file named LICENSE.txt. You can see the format for that file if you call `choco new test` and look at the generated file in `test\tools\LICENSE.txt`
+
+This check also looks for `LICENSE`, `LICENSE.md`, `NOTICE.txt`, `NOTICE`, and `NOTICE.md`. Casing doesn't matter for validation.
+
+## Reasoning
+
+It is not enough to point to the License Url in the package (although make sure you do that to if one exists), as the contents of the Url could change or go away over time. The contents of the package are permanent and folks need to understand the licensing that applies with the included binaries. It also a protection for you, the package maintainer, to ensure the legitimacy of having distribution rights for the software that you packaged at the time you packaged when it may need to be verified 5 years down the line.
+
+<Callout type="info">
+    If you received special permission to distribute, explain that in the LICENSE file and note the name of the permission file that is also included with the packaging.
+</Callout>

@@ -1,0 +1,54 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# git history
+.git
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# npm 
+npm-debug.log
+.coverage
+.coverage.*
+.env
+.aws
+
+# yarn 
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# choco-theme
+public/fonts
+public/scripts
+public/styles
+public/images/global-shared
+
+# general
+apple-touch-*.png
+favicon.ico
+.astro

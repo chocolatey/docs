@@ -1,0 +1,53 @@
+---
+order: 10
+xref: choco-http-caching
+title: HTTP Caching in Chocolatey CLI
+description: Information about the HTTP caching functionality in Chocolatey CLI
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="info">
+    HTTP Caching was introduced in Chocolatey CLI v2.0.0 and is unavailable to earlier versions.
+</Callout>
+
+<Callout type="warning">
+    HTTP caching is still considered experimental and is subject to change in future versions of Chocolatey  CLI.
+</Callout>
+
+Chocolatey CLI introduces HTTP Caching to minimize the time taken for subsequent checks for the same packages when they need to be looked up multiple times as part of an install, upgrade, search, or checking for outdated packages.
+
+At the time of writing, only some things reaching out to Chocolatey/NuGet feeds are cached. In general, the only HTTP requests that Chocolatey CLI will cache are responses from the feeds for specific package versions or if we request all package versions.
+This caching behavior occurs for both v2 and v3 API feeds.
+
+## Locations for HTTP Cache
+
+There are two locations where Chocolatey CLI will store HTTP caches.
+This location will depend entirely on the context in which you are launching Chocolatey CLI.
+
+Suppose you launch Chocolatey CLI in an elevated context (As an administrator). In that case, the HTTP cache will be read and stored from `C:\ProgramData\ChocolateyHttpCache`.
+
+When you launch Chocolatey CLI in a non-elevated context, the HTTP cache will be read and stored underneath your user profile. This location will look similar to `C:\Users\<USERNAME>\.chocolatey\http-cache` (**replace `<USERNAME>` with your logged in username**).
+
+These two locations are entirely separate, and launching in an elevated context will not read the cache stored for non-elevated executions. Non-elevated executions will not read the cache from elevated executions.
+
+## HTTP Cache Expiration
+
+<Callout type="warning">
+    The time before HTTP cache expiration is likely to be changed in the future.
+</Callout>
+
+Any created HTTP cache will be valid for 30 minutes. After this time has passed, any new requests made for the cached items will reach out to the appropriate feeds again and replace the expired cache with the new response.
+
+It is important to note that Chocolatey CLI will not remove any caches, but rather a request to the cached call replaces it.
+
+### What To Do if Experiencing Problems With Caching / Force Up To Date Requests
+
+It is necessary to make manual changes if you are experiencing problems with the caching solution or want to force Chocolatey CLI to get the latest up-to-date information.
+
+Suppose you are experiencing problems with the caching solution or want to force Chocolatey CLI to get the latest information. In that case, you will need to delete the cached data manually. Refer to [Locations for HTTP Cache](#locations-for-http-cache) to find the appropriate cache location for your use case. Removing all files in these locations will clear the cached data and prompt Chocolatey CLI to reach out to the relevant feeds when it next needs that data.
+
+<Callout type="info">
+    In a future version, we expect to add alternative methods to skip, ignore or clear the cache directories through Chocolatey CLI.
+</Callout>

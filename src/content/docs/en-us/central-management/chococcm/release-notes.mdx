@@ -1,0 +1,68 @@
+---
+order: 20
+xref: chococcm-release-notes
+title: Release Notes
+description: Release Notes for ChocoCCM
+ogImage: https://img.chocolatey.org/social-share/release-notes-choco-ccm-og.png
+twitterImage: https://img.chocolatey.org/social-share/release-notes-choco-ccm-twitter.png
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Chocolatey Release Notes - ChocoCCM
+
+## Summary
+
+This covers the release notes for the ChocoCCM PowerShell Module, which is available for installation from the <Xref title="PowerShell Gallery](https://www.powershellgallery.com/packages/ChocoCCM). For more information, installation options, etc, please refer to [ChocoCCM" value="chococcm" />.
+
+<Callout type="info">
+    This PowerShell Module requires an installation of at least CCM v0.4.0 in order to be fully compatible.
+</Callout>
+
+## 0.3.0 (September 8, 2022) \{#september-8-2022}
+
+### Improvement
+
+- Sign PowerShell Module Files - see [#73](https://github.com/chocolatey/ChocoCCM/issues/73)
+
+### Documentation
+
+- Add documentation around building and testing locally - see [#61](https://github.com/chocolatey/ChocoCCM/issues/61)
+
+## 0.2.0 (April 1, 2021) \{#april-1-2021}
+
+### Bug Fixes
+
+- Fix - Add-CCMGroup throws `HTTP 400` error
+- Fix - Add-CCMGroupMember throws `HTTP 400` error
+- Fix - Fetching Deployment Plan by ID fails when Deployment Plan is not in Draft or Ready state
+- Fix - Get-CCMGroupMember has incorrect URL
+- Fix - Export-CCMDeploymentReport is not exported by the module
+
+### Improvements
+
+- Added a new Remove-CCMGroup cmdlet to allow removal of a group
+- Added a new Remove-CCMGroupMember cmdlet to allow removal a computer or group from a CCM group
+- Added functionally to the Get-CCMDeploymentStep cmdlet to allow retrieval of Deployment Steps, results, and logs from a Deployment Step and its computers
+
+## 0.1.1 (December 4, 2020) \{#december-4-2020}
+
+### Bug Fixes
+
+- Fix - New-CCMDeploymentStep Throws HTTP 400 Error
+- Fix - Not all functions are returning all objects by default
+
+## 0.1.0 (November 13, 2020) \{#november-13-2020}
+
+Initial preview release
+
+### Features
+
+- PowerShell functions are provided for interacting with the core entities within CCM via the Web API
+  - Roles
+  - Groups
+  - Computers
+  - Deployments
+  - Outdated Software
+  - Reports

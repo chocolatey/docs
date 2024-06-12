@@ -1,0 +1,12 @@
+---
+
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="warning">
+    It is not possible to use both the <Xref title="HideAllRemoteChocolateySources" value="hide-all-remote-chocolatey-sources" /> and the <Xref title="HideThisPCSource" value="hide-this-pc-source" /> features at the same time.
+    Doing this would effectively mean that there is nothing to display within the Chocolatey GUI Application.
+    If both of these features are enabled at the same time, the HideAllRemoteChocolateySources feature takes precedence and only the This PC source will be displayed.
+</Callout>

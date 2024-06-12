@@ -1,0 +1,235 @@
+---
+order: 40
+xref: set-up-chocolatey-server
+title: Set up the Chocolatey.Server
+description: How to setup Chocolatey.Server
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import IisWsusChocolatey from '@components/docs/IisWsusChocolatey.mdx';
+
+<Callout type="info">
+    Refer to <Xref title="How To Set Up Chocolatey For Organizational/Internal Use" value="organizational-deployment-guide" /> in tandem with this article.
+</Callout>
+
+## Summary
+
+**tl;dr - Chocolatey.Server is not recommended for most organizational use cases. There are more robust options out there. However if you have a very simple use case or are conducting a POC, Chocolatey.Server may be good enough for your needs. If you don't find it robust enough, our recommendation is to look to something more robust like Artifactory, Nexus, or ProGet (two of which are also free to use).**
+
+The [Chocolatey.Server package](https://community.chocolatey.org/packages/chocolatey.server) contains the binaries for a fully ready to go Chocolatey NuGet Server where you can serve packages over HTTP using a NuGet-compatible v2 OData Atom Feed. Chocolatey Simple Server (aka Chocolatey Server aka chocolatey.server) is an implementation of a NuGet.Server compiled and ready to go.
+
+<Callout type="info">
+    This is meant to be a simple implementation and may not have the features to be used in a robust environment where you need multiple repositories with multiple users/API keys. If you are an organization, the recommendation is to evaluate your needs and determine if you instead need a Repository Server like Nexus, Artifactory Pro, or ProGet. See <Xref title="hosting your own server" value="host-packages" /> for those options.
+</Callout>
+
+## Links
+
+* [Package](https://community.chocolatey.org/packages/chocolatey.server)
+* [Changelog](https://github.com/chocolatey-community/simple-server/blob/master/CHANGELOG.md)
+* [Source Code](https://github.com/chocolatey-community/simple-server)
+
+When you install it, it will install the website typically to `c:\tools\chocolatey.server`.
+
+## Requirements
+
+* .NET Framework 4.6+.
+* You need a Windows box with at least 50GB of free space (or where ever you are going to put the packages).
+* 50GB of free space for where ever you will put packages.
+* We recommend at least 8GB RAM, but more if you can.
+* Ability to set up an IIS site and unblock website ports.
+* If you have an IIS site for WSUS administration, see [Configure Simple Server alongside WSUS admin-site](#configure-simple-server-alongside-wsus-admin-site) for instructions on how to make Chocolatey Simple Server work alongside the WSUS admin-site.
+* If you can ensure your server is up to date with all of the Windows Updates, you will move through this process quite a bit quicker.
+
+## Setup
+
+### Setup with Ansible
+
+If you are using Ansible, you can use the [win_chocolatey_server](https://galaxy.ansible.com/jborean93/win_chocolatey_server) role to set up an Chocolatey.Server instance on a host running Windows Server 2008 R2 or newer.
+
+This Ansible role allows you to configure the following:
+
+* The API token required to push packages
+* Multiple credentials that can be used for basic authentication
+* The location to install Chocolatey.Server to
+* Binding settings for the Chocolatey.Server website such as the http and https port as well as the https certificate thumpbrint
+* Generate a self-signed certificate alongside a https binding if a CA is not available
+* Automatically install the Chocolatey nupkg from a path or a URL
+
+### Setup with Chef
+
+If you are using Chef, you can use [Galen Emery's POC](https://github.com/galenemery/chocolatey_server) as a starting point to set up a Chocolatey Simple Server.
+
+### Setup with Puppet
+
+If you are using the Puppet module [chocolatey/chocolatey_server](https://forge.puppet.com/chocolatey/chocolatey_server), it will do all of the additional setup for this package and allow some customization.
+
+<Callout type="info">
+    For now it may be best to look at the one in GitHub.
+</Callout>
+
+The module works with Windows Server 2008/2012.
+For a simple `include chocolatey_server` it does the following automatically:
+
+* Ensures IIS is installed
+* Ensures ASP.NET is installed
+* Ensures the chocolatey.server package is installed
+* Ensures an app pool for the chocolatey.server site
+* Ensures the IIS website is setup for chocolatey.server
+* Ensures permissions for the site are set correctly.
+
+### Setup Manually
+
+* If your Windows updates are not up to date, there are two required Windows updates you are going to need (heads up they take awhile)
+  * Install KB2919355 - `choco install KB2919355 -y` - this one or the other Windows update takes a **very** long time to install, just be patient
+  * Restart your machine.
+  * Install KB2919442 - `choco install KB2919442 -y` (IIRC this is the one that takes forever...) -
+  * Reboot that machine again
+* You need at least .NET Framework 4.6. If you don't have that or newer, then run `choco install dotnet4.6.1 -y`
+  * Reboot one more time, thanks Windows!!
+* Install or upgrade the package - `choco upgrade chocolatey.server -y`
+* Ensure IIS is installed. You can try `choco install IIS-WebServer --source windowsfeatures`
+* Ensure that ASP.NET is installed. Try `choco install IIS-ASPNET45 --source windowsfeatures` (Windows Server 2012). Use `IIS-ASPNET` for Windows Server 2008, possibly `IIS-ASPNET46` for Windows Server 2016.
+* Disable or remove the Default website
+* Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is `v4.0` (or some version of 4). Ensure it is "Integrated" and not "Classic".
+* Set up an IIS website pointed to the install location and set it to use the app pool.
+* Go to explorer and right click on `c:\tools\chocolatey.server` and add the following permissions:
+  * `IIS_IUSRS` - Read
+  * `IUSR` - Read
+  * `IIS APPPOOL\<app pool name>` - Read
+* Right click on the `App_Data` subfolder and add the following permissions:
+  * `IIS_IUSRS` - Modify
+  * `IIS APPPOOL\<app pool name>` - Modify
+
+### Setup with PowerShell Script
+
+To install and configure Chocolatey.Server using PowerShell run the following script in an **elevated administrator session**:
+
+```powershell
+$siteName = 'ChocolateyServer'
+$appPoolName = 'ChocolateyServerAppPool'
+$sitePath = 'c:\tools\chocolatey.server'
+
+function Add-Acl {
+    [CmdletBinding()]
+    Param (
+        [string]$Path,
+        [System.Security.AccessControl.FileSystemAccessRule]$AceObject
+    )
+
+    Write-Verbose "Retrieving existing ACL from $Path"
+    $objACL = Get-ACL -Path $Path
+    $objACL.AddAccessRule($AceObject)
+    Write-Verbose "Setting ACL on $Path"
+    Set-ACL -Path $Path -AclObject $objACL
+}
+
+function New-AclObject {
+    [CmdletBinding()]
+    Param (
+        [string]$SamAccountName,
+        [System.Security.AccessControl.FileSystemRights]$Permission,
+        [System.Security.AccessControl.AccessControlType]$AccessControl = 'Allow',
+        [System.Security.AccessControl.InheritanceFlags]$Inheritance = 'None',
+        [System.Security.AccessControl.PropagationFlags]$Propagation = 'None'
+    )
+
+    New-Object -TypeName System.Security.AccessControl.FileSystemAccessRule($SamAccountName, $Permission, $Inheritance, $Propagation, $AccessControl)
+}
+
+if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
+    Write-Warning "Chocolatey not installed. Cannot install standard packages."
+    Exit 1
+}
+# Install Chocolatey.Server prereqs
+choco install IIS-WebServer --source windowsfeatures
+choco install IIS-ASPNET45 --source windowsfeatures
+
+# Install Chocolatey.Server
+choco upgrade chocolatey.server -y
+
+# Step by step instructions here https://docs.chocolatey.org/en-us/guides/organizations/set-up-chocolatey-server#setup-normally
+# Import the right modules
+Import-Module WebAdministration
+# Disable or remove the Default website
+Get-Website -Name 'Default Web Site' | Stop-Website
+Set-ItemProperty "IIS:\Sites\Default Web Site" serverAutoStart False    # disables website
+
+# Set up an app pool for Chocolatey.Server. Ensure 32-bit is enabled and the managed runtime version is v4.0 (or some version of 4). Ensure it is "Integrated" and not "Classic".
+New-WebAppPool -Name $appPoolName -Force
+Set-ItemProperty IIS:\AppPools\$appPoolName enable32BitAppOnWin64 True       # Ensure 32-bit is enabled
+Set-ItemProperty IIS:\AppPools\$appPoolName managedRuntimeVersion v4.0       # managed runtime version is v4.0
+Set-ItemProperty IIS:\AppPools\$appPoolName managedPipelineMode Integrated   # Ensure it is "Integrated" and not "Classic"
+Restart-WebAppPool -Name $appPoolName   # likely not needed ... but just in case
+
+# Set up an IIS website pointed to the install location and set it to use the app pool.
+New-Website -Name $siteName -ApplicationPool $appPoolName -PhysicalPath $sitePath
+
+# Add permissions to c:\tools\chocolatey.server:
+'IIS_IUSRS', 'IUSR', "IIS APPPOOL\$appPoolName" | ForEach-Object {
+    $obj = New-AclObject -SamAccountName $_ -Permission 'ReadAndExecute' -Inheritance 'ContainerInherit','ObjectInherit'
+    Add-Acl -Path $sitePath -AceObject $obj
+}
+
+# Add the permissions to the App_Data subfolder:
+$appdataPath = Join-Path -Path $sitePath -ChildPath 'App_Data'
+'IIS_IUSRS', "IIS APPPOOL\$appPoolName" | ForEach-Object {
+    $obj = New-AclObject -SamAccountName $_ -Permission 'Modify' -Inheritance 'ContainerInherit', 'ObjectInherit'
+    Add-Acl -Path $appdataPath -AceObject $obj
+}
+```
+
+## Additional Configuration
+
+Looking for where the apikey is and how it is changed, that is all done through the web.config. The config is pretty well-documented on each of the appSettings key values.
+
+To update the apiKey, it is kept in the web.config, search for that value and update it. If you reach out to the server on https://localhost (it will show you what the apikey is, only locally though).
+
+### Performance
+
+To configure for performance, you will want to do the following:
+
+* Keep the site warm (https://serverfault.com/a/595215/79259):
+  * Turn on Application Initialization in Windows Features under Web Server (IIS) -> Web Server -> Application Development -> Application Initialization (you can also try `choco install IIS-ApplicationInit --source windowsfeatures`)
+  * Application Pool Advanced Settings:
+    * General: Start Mode -> Always Running
+    * Process Model: Idle Time-out (minutes) -> 0
+    * Recycling: Regular Time Interval (minutes) -> 0
+  * Under the Site's Advanced Settings:
+    * Preload Enabled -> True
+
+#### Future
+
+We are looking to add support for the package source to automatically handle this aspect - http://blog.nuget.org/20150922/Accelerate-Package-Source.html
+
+### Configure Simple Server alongside WSUS admin-site
+
+<IisWsusChocolatey />
+
+## Common Errors and Resolutions
+
+When you are attempting to install the Simple Server, you may run into some errors depending on your configuration. Here are some common ones we've seen that you may get when you browse to the the site.
+
+### Error 404 on Push
+
+If you can do everything except push packages, it is likely your application pool is set to Classic mode and can't find directories. It needs to be "Integrated". Please change that to Integrated and then recycle the application pool. That should resolve the issue of pushing packages. Reference: https://stackoverflow.com/a/37702935/18475.
+
+### Error 500
+
+Take a closer look at the error. It may be one of the other errors below.
+
+### Error 500.19 - "The requested page cannot be accessed because the related configuration data for the page is invalid."
+
+This can mean a couple of things:
+
+* You missed ensuring the website is using an app pool that is at least .NET 4.0. Check the app pool that your site is using, then ensure that app pool has `32-bit` enabled and the managed runtime version is `v4.0` (or some version of 4).
+* You have made a change to the xml file and it is not valid xml. This typically happens if you put an xml escape character into the password (`&`). To do that you would need to set CData around the value or use a different password. It could also happen if you accidentallly change the xml and it is no longer valid.
+* You are attempting to set up Chocolatey Server next to WSUS Administration website. See [Configure Simple Server alongside WSUS admin-site](#configure-simple-server-alongside-wsus-admin-site) for instructions on how to make Chocolatey Simple Server work alongside the WSUS admin-site.
+
+### Other error
+
+Turn on customErrors under system.web `<customErrors mode="Off" />` see this guide to set it - https://stackify.com/web-config-customerrors-asp-net/
+
+Then browse to the site to see if you can gather any more information.
+
+If so, and you are a commercial edition customer or open source Chocolatey user, please open a ticket at https://github.com/chocolatey-community/simple-server/issues.

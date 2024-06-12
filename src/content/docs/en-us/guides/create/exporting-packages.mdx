@@ -1,0 +1,93 @@
+---
+order: 44
+xref: howto-export-packages
+title: How To Export Your Packages
+description: A walkthrough exporting your currently installed packages
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+You've probably seen a few posts on how to create new packages, and installing them. What if you wanted to export a list of your currently installed packages, so you can install them all onto a new machine?
+
+In this post, we'll walk you through doing that.
+
+### Exporting Packages With Chocolatey CLI
+
+In a command prompt, run the following code:
+
+```powershell
+# Change to your tutorials directory
+Set-Location ~\tutorials
+
+# Export your currently installed packages
+choco export packages.config
+```
+
+You should now have an XML formatted file (also known as a manifest) available in your current working directory named `packages.config`.
+
+<Callout type="info">
+    You can call this file anything, as long as the extension is `.config`
+</Callout>
+
+If you open it up, you should be able to see a list of packages that matches your current installs.
+
+It should look something like this:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="1PasswordCLI" />
+  <package id="7zip" />
+  <package id="7zip.install" />
+  <package id="chocolatey" />
+  <package id="chocolatey.extension" />
+  <package id="chocolatey-compatibility.extension" />
+  <package id="chocolatey-core.extension" />
+  <!--... -->
+</packages>
+```
+
+Using this to provision a machine would result in the latest versions of every package being installed, though - what if you wanted to lock in specific versions of packages to install?
+
+You can also pass the `--include-version-numbers` argument to `choco export` (e.g. `choco export versionedpackages.config --include-version-numbers`) - this will result in an export containing the current version of each package:
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<packages>
+  <package id="1PasswordCLI" version="2.0.0.8" />
+  <package id="7zip" version="23.1.0" />
+  <package id="7zip.install" version="23.1.0" />
+  <package id="chocolatey" version="2.2.2" />
+  <package id="chocolatey.extension" version="6.1.0" />
+  <package id="chocolatey-compatibility.extension" version="1.0.0" />
+  <package id="chocolatey-core.extension" version="1.4.0" />
+  <!--... -->
+</packages>
+```
+
+You can then edit the result to remove any packages you didn't intend to capture, or to add, remove, or update expected versions.
+
+For more information on `choco export`, please see <Xref title="this page" value="choco-command-export" />.
+
+### Installing Packages From a Manifest
+
+`choco install` is often one of the first Chocolatey CLI commands people try out - you may know that it accepts one or more package IDs, but did you know that it can also accept an export file like those we just created?
+
+To install everything in a `packages.config` file, open an elevated command prompt and run the following:
+
+```powershell
+# Change to your tutorials directory
+Set-Location ~\tutorials
+
+# Or provide a full path to your packages.config file
+choco install packages.config
+```
+
+This will then install every package in that manifest, from your configured sources.
+
+For more information on `choco install`, please see <Xref title="this page" value="choco-command-install" anchor="packages.config" />.
+
+### Conclusion
+
+You should now be able to export a list of packages, and install them on a new machine! Hopefully that will be helpful to you.

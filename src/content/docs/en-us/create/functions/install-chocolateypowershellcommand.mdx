@@ -1,0 +1,207 @@
+﻿---
+order: 270
+xref: install-chocolateypowershellcommand
+title: Install-ChocolateyPowershellCommand
+description: Information on Install-ChocolateyPowershellCommand function
+---
+import Xref from '@components/Xref.astro';
+
+# Install-ChocolateyPowershellCommand
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Installs a PowerShell Script as a command
+
+## Syntax
+
+~~~powershell
+Install-ChocolateyPowershellCommand `
+  [-PackageName <String>] `
+  -PsFileFullPath <String> `
+  [-Url <String>] `
+  [-Url64bit <String>] `
+  [-Checksum <String>] `
+  [-ChecksumType <String>] `
+  [-Checksum64 <String>] `
+  [-ChecksumType64 <String>] `
+  [-Options <Hashtable>] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This will install a PowerShell script as a command on your system. Like
+an executable can be run from a batch redirect, this will do the same,
+calling PowerShell with this command and passing your arguments to it.
+If you include a url, it will first download the PowerShell file.
+
+## Notes
+
+Chocolatey works best when the packages contain the software it is
+managing and doesn't require downloads. However most software in the
+Windows world requires redistribution rights and when sharing packages
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
+aforementioned rights. Chocolatey understands how to work with that,
+hence this function. You are not subject to this limitation with
+internal packages.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+
+$psFile = Join-Path $(Split-Path -Parent $MyInvocation.MyCommand.Definition) "Install-WindowsImage.ps1"
+Install-ChocolateyPowershellCommand -PackageName 'installwindowsimage.powershell' -PSFileFullPath $psFile
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+$psFile = Join-Path $(Split-Path -Parent $MyInvocation.MyCommand.Definition) `
+ "Install-WindowsImage.ps1"
+Install-ChocolateyPowershellCommand `
+ -PackageName 'installwindowsimage.powershell' `
+ -PSFileFullPath $psFile `
+ -PSFileFullPath $psFile `
+ -Url 'http://somewhere.com/downloads/Install-WindowsImage.ps1'
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+
+$psFile = Join-Path $(Split-Path -Parent $MyInvocation.MyCommand.Definition) `
+ "Install-WindowsImage.ps1"
+Install-ChocolateyPowershellCommand `
+ -PackageName 'installwindowsimage.powershell' `
+ -PSFileFullPath $psFile `
+ -Url 'http://somewhere.com/downloads/Install-WindowsImage.ps1' `
+ -Url64 'http://somewhere.com/downloads/Install-WindowsImagex64.ps1'
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -PackageName [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -PsFileFullPath &lt;String&gt;
+Property               | Value
+---------------------- | ------------------
+Aliases                | file, fileFullPath
+Required?              | true
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 3
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url64bit [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | url64
+Required?              | false
+Position?              | 4
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Options [&lt;Hashtable&gt;]
+Property               | Value
+---------------------- | -------------------
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | `@{Headers = @{}` }
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Get-ChocolateyWebFile' value='get-chocolateywebfile' />
+ * <Xref title='Install-ChocolateyInstallPackage' value='install-chocolateyinstallpackage' />
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Install-ChocolateyZipPackage' value='install-chocolateyzippackage' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyPowershellCommand -Full`.
+
+View the source for [Install-ChocolateyPowershellCommand](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyPowershellCommand.ps1)

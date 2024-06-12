@@ -4,11 +4,7 @@ This repository contains the source files for the documentation site that can be
 
 https://docs.chocolatey.org/en-us/
 
-This site is built using [Statiq](https://statiq.dev/).
-
-## Thanks
-
-The original template that was used to create this docs site came from the work that was done by [Patrik Svensson](https://github.com/patriksvensson), on his [Spectre.Console](https://spectresystems.github.io/spectre.console/) and [Spectre.Cli](https://spectresystems.github.io/spectre.cli/) docs sites. Huge thank you to Patrik for all his help!
+This site is built using [Astro](https://astro.build/).
 
 ## Writing Documentation
 
@@ -21,47 +17,51 @@ To help with these goals, please refer to our guides on [writing documentation](
 
 ## Building the Site
 
-There are two options to build the site:
+There are multiple options to build the site:
 
-1. Build it on your own computer.
-1. Build it using a Docker container.
+1. Build it on [your own computer](#build-the-site-on-your-computer).
+1. Open in [GitHub Codespaces](https://codespaces.new/chocolatey/docs?devcontainer_path=.devcontainer/devcontainer.json).
+1. Build it using a [Dev Container](#build-the-site-using-a-dev-container).
+1. Build it using [Docker](#build-the-site-using-docker).
 
 ### Build the Site On Your Computer
 
-There are a number or pre-requisites that are needed before you will be able to build the website locally.  These include:
+Ensure that you have Node v20+ installed by running `node -v`. There is a `.\setup.ps1` file in the root of this repository that uses Chocolatey to install or upgrade Node to the correct version.
 
-* .NET Core SDK
-* NodeJS
+After confirming the required Node version, run the following command from a terminal:
 
-There is a `.\setup.ps1` file in the root of this repository that can be used to install all necessary packages.
+```
+yarn dev
+```
 
-#### Building the Site
+This will compile the site, and bring up a preview on `http:localhost:5086`. Any changes you make will automatically be hot reloaded.
 
-To build the site locally on your computer, either run the `.\build.ps1` or the `build.sh` file (depending on your operating system).  This will compile the site, and all generated output file be placed into the `output` folder.
+### Build the Site Using a Dev Container
 
-### Build the Site Using a Docker Container
+Follow these steps to open the project in a [Dev Container](https://containers.dev/):
 
-There are two ways you can do this:
+1. Install the Dev Containers extension for Visual Studio Code if you haven't already. You can install it from the Extensions view (Ctrl+Shift+X) by searching for "Dev Containers".
+2. Open the Command Palette (Ctrl+Shift+P or F1) and run the command `Dev Containers: Open Folder in Container...`.
+3. Select the folder containing this repository (or the repository root if you've already opened it in VS Code).
+4. Wait for the Dev Container to start up. This may take a few minutes the first time as it needs to download the container image. Subsequent starts will be faster.
+5. Once the Dev Container is ready, you'll have a full development environment with all the required tools and dependencies pre-installed. Any changes you make will automatically be hot reloaded.
+6. When you're done, you can close the Dev Container by running the `Dev Containers: Close Remote Connection` command from the Command Palette.
 
-* Using the Visual Studio Code Dev Containers extension.
-* Running the Docker container from the command line.
+### Build the Site Using Docker
 
-#### Using the Visual Studio Code Dev Containers Extension
+From a terminal, run the following:
 
-Connect to the Docker Container in Visual Studio Code. This will launch Visual Studio Code and open a terminal that is running inside the Docker Container whose configuration is defined in `/.devcontainer/devcontainer.json` and `/.devcontainer/Dockerfile`. You can now move onto [previewing the site](#previewing-the-site).
+```
+docker build -t chocolatey-docs-container .
+```
 
-#### Running the Docker Container From the Command Line
+Once this is complete, run the following from the same terminal:
 
-Follow these steps:
+```
+docker run -p 5086:5086 -v $(pwd):/app chocolatey-docs-container
+```
 
-1. Run `docker pull mcr.microsoft.com/vscode/devcontainers/dotnet:0-3.1-focal`.
-1. Change to the `/.devcontainer` directory and run `docker build . --tag chocolatey-docs-container`. This will build the image you can use to preview the docs. Note that you can change the name `chocolatey-docs-container` to whatever you want.
-
-#### Previewing the Site
-
-To preview the site locally on your computer, either run the `.\preview.ps1` or the `preview.sh` file (depending on your operating system). If you are previewing the site using the Docker container from the command line, change to the directory containing this repository and run `docker run -p 5080:5080 -v ${pwd}:/workspaces/chocolatey-docs -w /workspaces/chocolatey-docs -i -t chocolatey-docs-container /bin/bash ./preview.sh`. Replace `chocolatey-docs-container` with whatever you named your container above.
-
-Once completed, you should be able to open a browser on your machine to `http://localhost:5080` and the site will be loaded.  Once running, any changes made to the files within the `input` folder will cause the site to be rebuilt with the new content.
+This will compile the site, and bring up a preview on `http:localhost:5086`. Any changes you make will automatically be hot reloaded.
 
 ### Troubleshooting the build
 
@@ -69,19 +69,37 @@ If you are having build errors with `'copyTheme' errored after`, try removing th
 
 If you receive the error `The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached` then you can increase the number by running `echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`. See [this GitHub comment](https://github.com/dotnet/aspnetcore/issues/8449#issuecomment-512275929) for more information.
 
-## Adding a New Highlight
+## Understanding Astro
 
-To add a new Highlight, follow the steps below:
+The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](https://github.com/chocolatey/choco-astro) contain information on how to understand several Astro concepts:
 
-1. Check to see if the Highlight you are writing already has a folder associated with it. This will match the current year and month that you are posting the Highlight in. If there is already a folder, copy the file from `/en-us/highlights/template/template.md` into the folder your new Highlight will go in, then skip to step #4.
-1. Copy the folder `/en-us/highlights/template` and rename it to the format of "YYYY-MM". For example: "2023-04".
-1. In your new folder, update the `index.md` file:
-    1. Change the `PostedDateTime` to the first day of the current month. This should match the folder name. This will be the heading title that appears on the [Highlights page](xref:highlights).
-    1. Remove the `IsActive: false` line completely. This is set to `true` by default, and a section will now appear for the given month on the Highlights page.
-1. In your new folder, change the file name of `template.md` to match the title of the Highlight you are writing. This should be something that can easily be identified if changes will need to be made by another person later.
-1. Update your new (previously `template.md`) file as needed:
-    1. Remove the `IsActive: false` line completely. This is set to `true` by default, and will now be shown on the Highlights page.
-    1. To make the Highlight appear on the Home page, remove the `ShowOnHome: false` line completely. This is set to `true` by default, and will now be shown on the Home page.
+* Learn how to [override automatically generated heading ID's](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#overriding-automatically-generated-heading-ids).
+* Learn about Astro and how to use [Components in `.mdx` and `.astro`](https://design.chocolatey.org/foundations/astro) file types.
+* Learn how to use the [`<Callout />` Component](https://design.chocolatey.org/components/callouts) to display notes and important information.
+* Learn how to use the [`<CollapseButton />` Component](https://design.chocolatey.org/collapse-button) to display a button that triggers a collapsed element.
+* Learn how to use the [`<Iframe />` Component](https://design.chocolatey.org/components/iframe) to display videos with defined aspect ratios.
+* Learn how to use the [`<Tabs />` Component](https://design.chocolatey.org/components/tabs) to display content in tabbed interface.
+* Learn how to use the [`<Xref />` Component](https://design.chocolatey.org/components/xref) to link to other documents within this repository.
+
+## Markdown Diagrams with Mermaid
+
+[Mermaid](https://mermaid.js.org/) via an [Astro integration](https://github.com/chocolatey/choco-astro/blob/main/astro.config.mjs.json) allows an easy way to display information with diagrams written in markdown. Find more information on usage at the [choco-astro repository](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#markdown-diagrams-with-mermaid).
+
+## Running Playwright Tests
+
+To run all the Playwright tests, first run the following command:
+
+```
+yarn build
+```
+
+Once this has completed, run:
+
+```
+yarn playwright
+```
+
+This will run all Playwright tests and report any errors for further investigation.
 
 ## Build Status
 
@@ -95,4 +113,3 @@ Please make sure you've read over and agree with the [etiquette regarding commun
 ## Search
 
 Search uses [Algolia DocSearch](https://docsearch.algolia.com/) as backend.
-Configuration for crawler is available at https://github.com/algolia/docsearch-configs/blob/master/configs/chocolatey.json.

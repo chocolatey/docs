@@ -1,27 +1,34 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.202.5/containers/dotnet
+// https://github.com/withastro/astro/blob/main/.devcontainer/with-mdx/devcontainer.json
 {
-	"name": "C# (.NET)",
-	"runArgs": ["--init"],
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "3.1-focal",
-			"NODE_VERSION": "20"
+    "name": "Node.js & TypeScript",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+    "forwardPorts": [5086],
+    "portsAttributes": {
+        "5086": {
+            "label": "Astro",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postAttachCommand": "yarn dev",
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["README.md"]
+        },
+        "vscode": {
+            "extensions": [
+                "DavidAnson.vscode-markdownlint",
+                "shardulm94.trailing-spaces",
+                "nhoizey.gremlins",
+                "streetsidesoftware.code-spell-checker",
+                "bierner.emojisense",
+                "astro-build.astro-vscode",
+                "esbenp.prettier-vscode",
+                "unifiedjs.vscode-mdx",
+                "ms-vscode.vscode-typescript-next",
+                "dbaeumer.vscode-eslint"
+			]
 		}
-	},
-	"hostRequirements": {
-		"cpus": 4,
-		"memory": "8gb"
-	},
-	"settings": {},
-	"extensions": [
-		"ms-dotnettools.csharp",
-		"DavidAnson.vscode-markdownlint",
-		"shardulm94.trailing-spaces",
-		"nhoizey.gremlins",
-		"streetsidesoftware.code-spell-checker",
-		"bierner.emojisense"
-	],
-	"remoteUser": "vscode"
+    },
+    "remoteUser": "node"
 }

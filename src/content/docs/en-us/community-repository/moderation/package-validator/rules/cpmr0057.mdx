@@ -1,0 +1,39 @@
+---
+order: 57
+xref: cpmr0057
+title: CPMR0057 - Nuspec Enhancements Missing (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0057
+ruleType: Suggestion
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleSuggestion from '@components/docs/PackageValidatorRuleSuggestion.mdx';
+
+<PackageValidatorRuleSuggestion />
+
+## Issue
+
+The nuspec is missing the recent enhancements that give consumers information related to the underlying software.
+
+## Recommended Solution
+
+Please update the nuspec to contain one or more of the following:
+
+  * `docsUrl` - points to the location of the wiki or docs of the software
+  * `mailingListUrl` - points to the forum or email list group for the software
+  * `bugTrackerUrl` - points to the location where issues and tickets can be accessed
+  * `packageSourceUrl` - points to the location of your chocolatey package files in source (e.g. `https://github.com/chocolatey-community/chocolatey-packages`)
+  * `projectSourceUrl` - points to the location of the underlying software source
+
+<Callout type="info">
+    You must use `choco pack` with at least version [0.9.9.7](https://docs.chocolatey.org/en-us/choco/release-notes#june-20-2015) (see [#205](https://github.com/chocolatey/choco/issues/205)) to use these elements. Using NuGet or `nuget.exe` will error on this element.
+</Callout>
+
+<Callout type="info">
+    If your nuspec file is missing these fields, you should run `choco new testpkg` and look at the output from that (ensure you have the [latest version of Chocolatey](https://community.chocolatey.org/packages?q=id%3Achocolatey)).
+</Callout>
+
+## Reasoning
+
+This provides folks with more information related to the software itself and gives folks a quick location reference to start from when attempting to find more information related to a project.

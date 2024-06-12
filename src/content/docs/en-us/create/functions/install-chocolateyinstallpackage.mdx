@@ -1,0 +1,256 @@
+﻿---
+order: 230
+xref: install-chocolateyinstallpackage
+title: Install-ChocolateyInstallPackage
+description: Information on Install-ChocolateyInstallPackage function
+---
+import Xref from '@components/Xref.astro';
+
+# Install-ChocolateyInstallPackage
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyInstallPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+> :choco-info: **NOTE**
+>
+> Administrative Access Required.
+
+Installs software into "Programs and Features". Use
+Install-ChocolateyPackage when software must be downloaded first.
+
+## Syntax
+
+~~~powershell
+Install-ChocolateyInstallPackage `
+  -PackageName <String> `
+  [-FileType <String>] `
+  [-SilentArgs <String[]>] `
+  [-File <String>] `
+  [-File64 <String>] `
+  [-ValidExitCodes <Object>] `
+  [-UseOnlyPackageSilentArguments] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This will run an installer (local file) on your machine.
+
+## Notes
+
+This command will assert UAC/Admin privileges on the machine.
+
+If you are embedding files into a package, ensure that you have the
+rights to redistribute those files if you are sharing this package
+publicly (like on the [community feed](https://community.chocolatey.org/packages)). Otherwise, please use
+Install-ChocolateyPackage to download those resources from their
+official distribution points.
+
+This is a native installer wrapper function. A "true" package will
+contain all the run time files and not an installer. That could come
+pre-zipped and require unzipping in a PowerShell script. Chocolatey
+works best when the packages contain the software it is managing. Most
+software in the Windows world comes as installers and Chocolatey
+understands how to work with that, hence this wrapper function.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+
+$packageName= 'bob'
+$toolsDir   = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$fileLocation = Join-Path $toolsDir 'INSTALLER_EMBEDDED_IN_PACKAGE'
+
+$packageArgs = @{
+  packageName   = $packageName
+  fileType      = 'msi'
+  file          = $fileLocation
+  silentArgs    = "/qn /norestart"
+  validExitCodes= @(0, 3010, 1641)
+  softwareName  = 'Bob*'
+}
+
+Install-ChocolateyInstallPackage @packageArgs
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+$packageArgs = @{
+  packageName   = 'bob'
+  fileType      = 'exe'
+  file          = '\\SHARE_LOCATION\to\INSTALLER_FILE'
+  silentArgs    = "/S"
+  validExitCodes= @(0)
+  softwareName  = 'Bob*'
+}
+
+Install-ChocolateyInstallPackage @packageArgs
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+
+$packageName= 'bob'
+$toolsDir   = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$fileLocation = Join-Path $toolsDir 'someinstaller.msi'
+
+$packageArgs = @{
+  packageName   = $packageName
+  fileType      = 'msi'
+  file          = $fileLocation
+  silentArgs    = "/qn /norestart MSIPROPERTY=`"true`""
+  validExitCodes= @(0, 3010, 1641)
+  softwareName  = 'Bob*'
+}
+
+Install-ChocolateyInstallPackage @packageArgs
+~~~
+
+**EXAMPLE 4**
+
+~~~powershell
+
+$packageName= 'bob'
+$toolsDir   = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$fileLocation = Join-Path $toolsDir 'someinstaller.msi'
+$mstFileLocation = Join-Path $toolsDir 'transform.mst'
+
+$packageArgs = @{
+  packageName   = $packageName
+  fileType      = 'msi'
+  file          = $fileLocation
+  silentArgs    = "/qn /norestart TRANSFORMS=`"$mstFileLocation`""
+  validExitCodes= @(0, 3010, 1641)
+  softwareName  = 'Bob*'
+}
+
+Install-ChocolateyInstallPackage @packageArgs
+~~~
+
+**EXAMPLE 5**
+
+~~~powershell
+Install-ChocolateyInstallPackage 'bob' 'exe' '/S' "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)\bob.exe"
+
+~~~
+
+**EXAMPLE 6**
+
+~~~powershell
+
+Install-ChocolateyInstallPackage -PackageName 'bob' -FileType 'exe' `
+  -SilentArgs '/S' `
+  -File "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)\bob.exe" `
+  -ValidExitCodes @(0)
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -PackageName &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -FileType [&lt;String&gt;]
+Property               | Value
+---------------------- | --------------------------
+Aliases                | installerType, installType
+Required?              | false
+Position?              | 2
+Default Value          | exe
+Accept Pipeline Input? | false
+ 
+###  -SilentArgs [&lt;String[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 3
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -File [&lt;String&gt;]
+Property               | Value
+---------------------- | ------------
+Aliases                | fileFullPath
+Required?              | false
+Position?              | 4
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -File64 [&lt;String&gt;]
+Property               | Value
+---------------------- | --------------
+Aliases                | fileFullPath64
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ValidExitCodes [&lt;Object&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | @(0)
+Accept Pipeline Input? | false
+ 
+###  -UseOnlyPackageSilentArguments
+Property               | Value
+---------------------- | ------------------------
+Aliases                | useOnlyPackageSilentArgs
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Uninstall-ChocolateyPackage' value='uninstall-chocolateypackage' />
+ * <Xref title='Get-UninstallRegistryKey' value='get-uninstallregistrykey' />
+ * <Xref title='Start-ChocolateyProcessAsAdmin' value='start-chocolateyprocessasadmin' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyInstallPackage -Full`.
+
+View the source for [Install-ChocolateyInstallPackage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyInstallPackage.ps1)

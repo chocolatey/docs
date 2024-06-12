@@ -1,0 +1,205 @@
+﻿---
+order: 340
+xref: start-chocolateyprocessasadmin
+title: Start-ChocolateyProcessAsAdmin
+description: Information on Start-ChocolateyProcessAsAdmin function
+---
+import Xref from '@components/Xref.astro';
+
+# Start-ChocolateyProcessAsAdmin
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Start-ChocolateyProcessAsAdmin.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+> :choco-info: **NOTE**
+>
+> Administrative Access Required.
+
+Runs a process with administrative privileges. If `-ExeToRun` is not
+specified, it is run with PowerShell.
+
+## Syntax
+
+~~~powershell
+Start-ChocolateyProcessAsAdmin `
+  [-Statements <String[]>] `
+  [-ExeToRun <String>] `
+  [-Elevated] `
+  [-Minimized] `
+  [-NoSleep] `
+  [-ValidExitCodes <Object>] `
+  [-WorkingDirectory <String>] `
+  [-SensitiveStatements <String>] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+
+## Notes
+
+This command will assert UAC/Admin privileges on the machine.
+
+Will automatically call Set-PowerShellExitCode to set the package exit
+code in the following ways:
+
+- 4 if the binary turns out to be a text file.
+- The same exit code returned from the process that is run. If a 3010 is returned, it will set 3010 for the package.
+
+Aliases `Start-ChocolateyProcess` and `Invoke-ChocolateyProcess`.
+
+## Aliases
+
+`Invoke-ChocolateyProcess`
+`Start-ChocolateyProcess`
+
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+Start-ChocolateyProcessAsAdmin -Statements "$msiArgs" -ExeToRun 'msiexec'
+
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+Start-ChocolateyProcessAsAdmin -Statements "$silentArgs" -ExeToRun $file
+
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+Start-ChocolateyProcessAsAdmin -Statements "$silentArgs" -ExeToRun $file -ValidExitCodes @(0,21)
+
+~~~
+
+**EXAMPLE 4**
+
+~~~powershell
+
+# Run PowerShell statements
+$psFile = Join-Path "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" 'someInstall.ps1'
+Start-ChocolateyProcessAsAdmin "& `'$psFile`'"
+~~~
+
+**EXAMPLE 5**
+
+~~~powershell
+# This also works for cmd and is required if you have any spaces in the paths within your command
+$appPath = "$env:ProgramFiles\myapp"
+$cmdBatch = "/c `"$appPath\bin\installmyappservice.bat`""
+Start-ChocolateyProcessAsAdmin $cmdBatch cmd
+# or more explicitly
+Start-ChocolateyProcessAsAdmin -Statements $cmdBatch -ExeToRun "cmd.exe"
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -Statements [&lt;String[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ExeToRun [&lt;String&gt;]
+Property               | Value
+---------------------- | ----------
+Aliases                | 
+Required?              | false
+Position?              | 2
+Default Value          | powershell
+Accept Pipeline Input? | false
+ 
+###  -Elevated
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | True
+Accept Pipeline Input? | false
+ 
+###  -Minimized
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -NoSleep
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -ValidExitCodes [&lt;Object&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | @(0)
+Accept Pipeline Input? | false
+ 
+###  -WorkingDirectory [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -SensitiveStatements [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Install-ChocolateyInstallPackage' value='install-chocolateyinstallpackage' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Start-ChocolateyProcessAsAdmin -Full`.
+
+View the source for [Start-ChocolateyProcessAsAdmin](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Start-ChocolateyProcessAsAdmin.ps1)

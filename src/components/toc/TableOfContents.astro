@@ -1,0 +1,30 @@
+---
+import type { ContentToc } from '@scripts/types';
+import packageJson from '@root/package.json';
+import TableOfContentsSelf from "@components/toc/TableOfContentsSelf.astro";
+
+interface Props {
+    content: ContentToc[];
+}
+
+const { content } = Astro.props;
+const editLink = `https://github.com/${packageJson.author}/${packageJson.name}/edit/master/src/content${Astro.url.pathname}.mdx`;
+---
+
+{(content && content.length > 0) && (
+    <div id="rightSidebarNav" class="col-xl-2 ps-xl-3 order-1 order-xl-2">
+        <button class="btn btn-link btn-collapse fw-bold w-100 d-xl-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#rightSidebar" aria-expanded="false" aria-controls="rightSidebar">Jump to Section</button>
+        <div id="rightSidebar" class="sticky-xl-top collapse collapse-lg">
+            <div class="card card-body py-0 px-xl-0 mb-3 border-0">
+                <p class="fw-bold pt-3"><a href={editLink}><i class="fa-solid fa-pencil" aria-hidden="true"></i> Edit This Page</a></p>
+                <hr class="m-0" />
+                <p class="fw-bold pt-3 mb-2">On This Page</p>
+                <ul class="nav nav-scrollspy flex-column pb-3">
+                    {content.map(heading => (
+                        <TableOfContentsSelf heading={heading} />
+                    ))}
+                </ul>
+            </div>
+        </div>
+    </div>
+)}

@@ -1,0 +1,126 @@
+---
+order: 40
+xref: ccm-computers
+title: Computers
+description: Information on computers within CCM
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Chocolatey Central Management gives you visibility into what's installed on a given computer, as well as their last check-in to Central Management and IP Address.
+
+The **Computers** page can be accessed from the Central Management Dashboard via the menu entry in the left-hand sidebar.
+
+![Computers menu entry on the CCM Dashboard](/images/ccm-playwright/dashboard/left-menu-computers.png)
+
+## Registering a New Computer
+
+Client computers (agents) will show up in Central Management automatically as long as long as these conditions are met for the client computer:
+
+1. The `chocolatey`, `chocolatey.extension`, and `chocolatey-agent` packages are installed, alongside a valid Chocolatey for Business license.
+1. The `useChocolateyCentralManagement` feature is enabled.
+1. The `centralManagementServiceUrl` is set correctly in the chocolatey configuration file (typically to `https://<FQDN_to_CCM_service_host>:24020/ChocolateyManagementService`)
+1. The client has access to the above URL (this may require opening the port in your firewall, etc.) so that it can resolve the SSL certificate necessary to communicate with the CCM service.
+
+Please see <Xref title="Central Management Client Setup" value="ccm-client" /> for more details and setup.
+
+## Viewing Installed Software on a Computer
+
+<Callout type="info">
+    Starting with Chocolatey Central Management 0.10.0, the groups that a computer is a member of is shown in both the table of all computers, as well as on the computer details pages.  By default, this will only show the first 5 group memberships. If there are more group associations:
+    
+    - The computers table will display a `...` link in the Groups column. Upon hovering this link, a tooltip will be shown with all group memberships.
+    - On the computer details page, a `View More` link will be shown. When clicked, this will cause an expansion to show all group memberships and the link will update to say `View Less`. Clicking this link again will show the default previous view.
+</Callout>
+
+From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
+Select the :gear: **Actions** menu in the corresponding left-hand column, and click **Details**.
+
+![Finding a computer's details menu option](/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-details.png)
+
+You will be presented with a list of the installed software packages for the machine, similar to below.
+
+![Computer details screen showing installed software](/images/ccm-playwright/computers/details/screen.png)
+
+## Creating a Draft Deployment Plan for a Computer
+
+Creating a Draft Deployment Plan for a Computer can be done from two pages:
+
+1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Create New Deployment Plan** option.
+
+    ![Finding the Create New Deployment Plan menu entry for a specific Computer on the Computers page](/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-create-new-deployment-plan.png)
+
+1. From the Computer Details page, click the :gear: **Actions** button and select the **Create New Deployment Plan** option.
+
+    ![Button to create a new draft Deployment Plan from the Computer Details page](/images/ccm-playwright/computers/details/button-action-dropdown-menu-create-new-deployment-plan.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with a [Temporary Group](#xref:ccm-groups#temporary-groups) that contains the Computer selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command.
+
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](/images/ccm-playwright/deployment-plans/edit/computers-modal-new-deployment-plan.png)
+
+The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
+
+![Red popover warning on Deployment Step with ineligible deployment message](/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
+
+After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the <Xref title="Deployment Plans documentation" value="ccm-deployments" />.
+
+From here, the Deployment Plan can be edited and deployed as outlined in the <Xref title="Deployment Plans documentation" value="ccm-deployments" />.
+
+## Upgrading All Outdated Software on a Computer
+
+Upgrading all outdated Software installed on a Computer can be done from two pages:
+
+1. In the leftmost column of the Computer table you will find an :gear: **Actions** menu which will display a **Upgrade Outdated Software** option.
+
+    ![Finding the Upgrade Outdated Software menu entry for a specific Computer on the Computers page](/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-upgrade-outdated-software.png)
+
+1. From the Computer Details page, click the :gear: **Actions** button and select the **Upgrade Outdated Software** option.
+
+    ![Button to create a new Deployment Plan to upgrade all outdated Software on a Computer from the Computer Details page](/images/ccm-playwright/computers/details/button-action-dropdown-menu-upgrade-outdated-software.png)
+
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step per outdated Software.
+
+![Automatically created Deployment Plan showing Deployment Steps](/images/ccm-playwright/deployment-plans/edit/computers-upgrade-outdated-software.png)
+
+Each Deployment Step has a <Xref title="Temporary Group" value="ccm-groups" anchor="temporary-groups" /> selected that contains the Computer, and the script command automatically entered.
+
+From here, the Deployment Plan can be edited and deployed as outlined in the <Xref title="Deployment Plans documentation" value="ccm-deployments" />.
+
+## Exporting a `packages.config` file for a computer
+
+<Callout type="info">
+    Starting with Chocolatey Central Management 0.11.0, the packages installed on a computer can be exported to a `packages.config` file.
+</Callout>
+
+From the Computer details page, click the `Export` button and select the `Export to packages.config` option.
+
+![Computer details screen highlighting Export to packages.config button](/images/ccm-playwright/computers/details/button-action-dropdown-menu-export-to-packages.config.png)
+
+## Removing a Computer from Chocolatey Central Management
+
+<Callout type="info">
+    Unless you first uninstall (at minimum) the `chocolatey-agent` or disable Central Management by disabling the feature setting, the deleted computer will reappear when the Chocolatey Agent performs its next check-in.
+</Callout>
+
+From the main Computers page in Central Management, locate the computer of interest in the list or by providing a search term in the table filter.
+Select the :gear: **Actions** menu in the corresponding left-hand column, and click **Delete**. You will be prompted to confirm the deletion.
+
+![Deleting a computer in Central Management](/images/ccm-playwright/computers/table-row-button-action-dropdown-menu-delete.png)
+
+## FAQ
+
+### What do I do if computers are not showing up in CCM?
+
+You need to check the CCM service logs. The agent will always report success when it communicates with the service successfully. The service may reject what it receives, but due to security settings, it won't tell the client about that.
+
+The logs are located at `$env:ChocolateyInstall\logs\ccm-service.log`. If you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
+
+For more common errors related to checking in, see the <Xref title="setup section (and component setup sub-sections)" value="ccm-setup" /> as they dive deeper into common errors and resolutions related to things such as this.
+
+## Related Topics
+
+* <Xref title="Chocolatey Central Management" value="central-management" />
+* <Xref title="Central Management - Software" value="ccm-software" />
+* <Xref title="Central Management - Groups" value="ccm-groups" />
+* <Xref title="Central Management - Reports" value="ccm-reports" />

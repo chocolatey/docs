@@ -1,0 +1,25 @@
+---
+order: 20
+xref: gui-local-source
+title: Local Source
+description: Information about displaying of locally installed packages
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The "This PC" source, also known as a local source, is the first source that is shown by default when Chocolatey GUI first
+opens, and it shows all the currently installed Chocolatey packages.  It is the visual equivalent of running the `choco
+list` command in Chocolatey CLI v2, and `choco list -lo` in Chocolatey CLI v1, and paging the results that are displayed.
+
+![The This PC Source showing currently installed Chocolatey packages](/images/chocolatey-gui/feature_hide_this_pc_source_disabled.png "The This PC Source showing currently installed Chocolatey packages")
+
+It is possible to show this view in both tile and list format, and this can be controlled through the <Xref title="toggle switch" value="gui-tileview" />, or
+by setting the <Xref title="Default to Tile View for Local Source" value="default-to-tile-view-for-local-source" /> feature to the required setting.
+
+In addition, you may want to use the <Xref title="Prevent Automated Outdated Packages Check" value="prevent-automated-outdated-packages-check" /> feature, to prevent Chocolatey GUI calculating what packages are outdated each time Chocolatey GUI opens. It is possible to directly trigger this check using the <Xref title="Check For Outdated" value="check-for-outdated" /> action.
+
+From the local source view, either by navigating to the <Xref title="package details page" value="gui-package-details" />, or by activating the context menu for the
+required package, it is possible to perform one of the <Xref title="available actions" value="gui-package-details-actions" /> for a package.
+
+The local source view can be turned off using the <Xref title="Hide This PC Source" value="hide-this-pc-source" /> feature.  **NOTE:** This is a commercial feature that requires the use of the <Xref title="Chocolatey GUI Licensed Extension" value="chocolatey-gui-licensed-extension" />.

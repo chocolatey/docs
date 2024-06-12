@@ -1,37 +1,32 @@
 name: Publish Documentation
+
 on:
-    workflow_dispatch:
-    push:
-      branches:
-        - master
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+# Allow this job to clone the repo and create a page deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-
-  ###################################################
-  # DOCS
-  ###################################################
-
   build:
-    name: Publish
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      - name: Checkout repository using git
+        uses: actions/checkout@v4
+      - name: Install, build, and upload site
+        uses: withastro/action@v2
 
-    - name: Setup dotnet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '3.1.301' # SDK Version to use.
-
-    - name: Publish-Documentation
-      shell: bash
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        STATIQ_GITHUB_TOKEN: ${{ secrets.STATIQ_GITHUB_TOKEN }}
-        STATIQ_DEPLOY_BRANCH: ${{ secrets.STATIQ_DEPLOY_BRANCH }}
-        STATIQ_DEPLOY_REMOTE: ${{ secrets.STATIQ_DEPLOY_REMOTE }}
-      run: |
-        dotnet tool restore
-        dotnet cake --target=Publish-Documentation
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

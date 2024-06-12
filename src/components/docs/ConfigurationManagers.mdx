@@ -1,0 +1,62 @@
+---
+
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+For common integrations, it's handy to refer to the table below to know what configuration manager to choose. Most of the implementations below are written and managed by the companies behind the product. These implementations are typically open source and each part could be added by community contributions for those familiar with the code implementations. If you are unable to provide code implementations for adding necessary functionality to the integrations, we find it best if you create issues/tickets with those organizations if you are a customer as you will have more leverage into getting them implemented.
+
+<Callout type="info">
+    If you are a configuration manager company identified in the table and you have implemented anything in the below or you find our information is incorrect, please let us know so we can get it fixed.
+</Callout>
+
+| Configuration Managers                              | [Ansible][ansible_main] | [Chef][chef_main]  | [PowerShell DSC][dsc_main] | [Puppet][pp_main] | [Salt][salt_main] | [Otter][otter_main] |
+|-----------------------------------------------------|-------------------------|--------------------|----------------------------|-------------------|-------------------|---------------------|
+| Manage Packages                                     | [x][ansible_main]       | [x][chef_main]     | [x][dsc_pkgs]              | [x][pp_pkgs]      | [x][salt_pkgs]    | [x][otter_pkgs]     |
+| <Xref title="Install Chocolatey" value="setup-choco" />              | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   | [x][salt_install] | [x][otter_install]  |
+| Install Chocolatey from internal source             | [x][ansible_main]       | [x][chef_cookbook] | [x][dsc_install]           | [x][pp_install]   |                   | [x][otter_install]  |
+| <Xref title="Manage Sources" value="choco-command-source" />         | [x][ansible_source]     | [x][chef_source]   | [x][dsc_source]            | [x][pp_source]    | [x][salt_source]  | [x][otter_source]   |
+| Manage Source Type (Admin/Self-Service)             | [x][ansible_source]     |                    |                            | [x][pp_source]    |                   |                     |
+| <Xref title="Manage Features" value="choco-command-feature" />       | [x][ansible_feature]    |                    | [x][dsc_feature]           | [x][pp_feature]   |                   | [x][otter_feature]  |
+| <Xref title="Manage Config Settings" value="choco-command-config" /> | [x][ansible_config]     | [x][chef_config]   |                            | [x][pp_config]    |                   |                     |
+
+<Callout type="info">
+    Each *x* is linked to the specific feature documentation.
+</Callout>
+
+For most of these, those configuration managers have some sort of exec you could use to manage those additional aspects, but it would be best if they supported all aspects of configuration of Chocolatey as part of the provider implementations.
+
+[ansible_main]:https://docs.ansible.com/ansible/latest/modules/win_chocolatey_module.html
+[ansible_source]: https://docs.ansible.com/ansible/latest/modules/win_chocolatey_source_module.html
+[ansible_feature]:https://docs.ansible.com/ansible/latest/modules/win_chocolatey_feature_module.html
+[ansible_config]:https://docs.ansible.com/ansible/latest/modules/win_chocolatey_config_module.html
+
+[chef_main]:https://docs.chef.io/resource_chocolatey_package.html
+[chef_cookbook]:https://supermarket.chef.io/cookbooks/chocolatey/
+[chef_source]:https://docs.chef.io/resource_chocolatey_source.html
+[chef_config]:https://docs.chef.io/resource_chocolatey_config.html
+
+[dsc_main]:https://www.powershellgallery.com/packages/cChoco
+[dsc_pkgs]:https://github.com/chocolatey/cChoco/blob/development/DSCResources/cChocoPackageInstall/cChocoPackageInstall.schema.mof
+[dsc_install]:https://github.com/chocolatey/cChoco/blob/development/DSCResources/cChocoInstaller/cChocoInstaller.schema.mof
+[dsc_source]:https://github.com/chocolatey/cChoco/blob/development/DSCResources/cChocoSource/cChocoSource.schema.mof
+[dsc_feature]:https://github.com/chocolatey/cChoco/blob/master/DSCResources/cChocoFeature/cChocoFeature.schema.mof
+
+[pp_main]:https://forge.puppet.com/puppetlabs/chocolatey
+[pp_pkgs]:https://forge.puppet.com/puppetlabs/chocolatey#package-provider-chocolatey
+[pp_install]:https://forge.puppet.com/puppetlabs/chocolatey#class-chocolatey
+[pp_source]:https://forge.puppet.com/puppetlabs/chocolatey#chocolateysource
+[pp_feature]:https://forge.puppet.com/puppetlabs/chocolatey#chocolateyfeature
+[pp_config]:https://forge.puppet.com/puppetlabs/chocolatey#chocolateyconfig
+
+[salt_main]:https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html
+[salt_pkgs]:https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html#salt.modules.chocolatey.install
+[salt_install]:https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html#salt.modules.chocolatey.bootstrap
+[salt_source]:https://docs.saltstack.com/en/latest/ref/modules/all/salt.modules.chocolatey.html#salt.modules.chocolatey.add_source
+
+[otter_main]:https://inedo.com/den/inedox/chocolatey
+[otter_pkgs]:https://github.com/Inedo/inedox-chocolatey/blob/master/Chocolatey/InedoExtension/Configurations/ChocolateyPackageConfiguration.cs
+[otter_install]:https://github.com/Inedo/inedox-chocolatey/blob/master/Chocolatey/InedoExtension/Configurations/ChocolateyInstalledConfiguration.cs
+[otter_source]:https://github.com/Inedo/inedox-chocolatey/blob/master/Chocolatey/InedoExtension/Configurations/ChocolateySourceConfiguration.cs
+[otter_feature]:https://github.com/Inedo/inedox-chocolatey/blob/master/Chocolatey/InedoExtension/Configurations/ChocolateyFeatureConfiguration.cs

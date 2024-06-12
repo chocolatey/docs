@@ -1,0 +1,26 @@
+---
+order: 71
+xref: cpmr0071
+title: CPMR0071 - Script uses commercial cmdlets (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0071
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`), one or more calls to a licensed function that is only available in licensed editions of Chocolatey, is being used.
+
+## Recommended Solution
+
+Please do not use licensed features when creating packages that you will submit to the Chocolatey Community Repository. Update all automation scripts to use functions that are available in open-source Chocolatey.
+
+## Reasoning
+
+Packages created with licensed features should not be made available in the Chocolatey Community Repository and are intended for use by organizations hosting their own internal package repository.
+All packages submitted to the Chocolatey Community Repository are for the community and should work on all editions of Chocolatey.

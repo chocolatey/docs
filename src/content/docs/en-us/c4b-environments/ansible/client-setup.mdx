@@ -1,0 +1,571 @@
+---
+order: 42
+xref: c4b-ansible-client-setup
+title: Client Setup
+description: How to Setup a Client Machine to Use the Chocolatey for Business Ansible Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+
+## Summary
+
+Once you have your Chocolatey for Business environment deployed, you'll need to get clients talking to it.  
+To do that, you'll need to do the following on the clients:
+
+1. Ensure the client machine can access the Chocolatey Central Management service on port 24020, and the Sonatype Nexus service on 8443 (by default).
+1. **If your certificate is self-signed:** <Xref title="Install the SSL/TLS certificate" value="c4b-azure-client-setup" anchor="ssl-certificate" />.
+1. <Xref title="Install Chocolatey components and configure the client for Chocolatey for Business" value="c4b-ansible-client-setup" anchor="client-setup" /> (C4B) deployments and management.
+
+## Client Setup
+
+You will need the following values ready when running this script:
+
+* `FQDN`: The fully qualified domain name used to access your environment.
+* `ccm_client_salt`: This is the client-side salt additive. More information about this can be found in the <Xref title="Config Settings" value="ccm-client" anchor="config-settings" /> docs. The value will have been provided during the deployment of the Chocolatey for Business environment.
+* `ccm_service_salt`: This is the service salt additive. More information about this can be found in the <Xref title="Config Settings" value="ccm-client" anchor="config-settings" /> docs. The value will have been provided during the deployment of the Chocolatey for Business environment.
+* `nexus_password`: The password for the `chocouser` account which is used by the client to access your environments' Sonatype Nexus service. The value will have been provided during the deployment of the Chocolatey for Business environment.
+
+The values generated during the deployment are available in the `CCM.html` file provided in the `credentials` directory within the deployment repository.
+
+export const tabs1 = [
+    { id: 'scenario-one', title: 'Ansible Playbook', isActive: true },
+    { id: 'scenario-two', title: 'PowerShell Script' },
+    { id: 'scenario-three', title: 'Ansible Roles' },
+];
+
+<TabsTabContainer content={tabs1} />
+<TabsPaneContainer>
+    <TabsPane content={tabs1[0]}>
+        To install the Chocolatey components and on-board clients, you could run an Ansible playbook.
+
+        ### ClientSetup Playbook
+
+        ```yaml
+        ---
+        - name: Chocolatey For Business Client Setup
+          hosts: "{{ c4b_nodes }}"
+          gather_facts: true
+          vars_prompt:
+            - name: license_path
+              prompt: "Path to Chocolatey License File"
+              private: no
+
+            - name: ccm_fqdn
+              prompt: "FQDN to access Chocolatey Central Management, e.g. ccm.example.com"
+              private: no
+
+            - name: ccm_client_salt
+              prompt: "Client Salt for communicating with Chocolatey Central Management"
+              private: yes
+
+            - name: ccm_service_salt
+              prompt: "Service Salt for communicating with Chocolatey Central Management"
+              private: yes
+
+            - name: nexus_password
+              prompt: "Password for the ChocoUser account on Sonatype Nexus Repository"
+              private: yes
+          vars:
+            # You can add more sources here.
+            chocolatey_sources:
+              - name: ChocolateyInternal
+                url: "https://{{ nexus_fqdn | default(ccm_fqdn) }}:8443/repository/ChocolateyInternal/index.json"
+                user: "{{ nexus_user | default('chocouser') }}"
+                password: "{{ nexus_password | mandatory }}"
+
+            # You can add more configuration settings here.
+            chocolatey_config:
+              - cacheLocation: C:\ProgramData\chocolatey\choco-cache
+              - commandExecutionTimeoutSeconds: 14400
+              - backgroundServiceAllowedCommands: install,upgrade,uninstall
+
+            # You can add more features to enable or disable here.
+            chocolatey_features:
+              - showNonElevatedWarnings: disabled
+              - useBackgroundService: enabled
+              - useBackgroundServiceWithNonAdministratorsOnly: enabled
+              - allowBackgroundServiceUninstallsFromUserInstallsOnly: enabled
+              - excludeChocolateyPackagesDuringUpgradeAll: enabled
+
+            # If you'd prefer to use a non-latest version of Chocolatey, you can specify it here.
+            chocolatey_version: latest
+
+            # When set to true, deploys Chocolatey GUI and the Chocolatey GUI licensed extension.
+            install_gui: true
+
+            # An accessible copy of the Dotnet 4.8 installer.
+            ndp48_location: https://download.visualstudio.microsoft.com/download/pr/2d6bb6b2-226a-4baa-bdec-798822606ff1/8494001c276a4b96804cde7829c04d7f/ndp48-x86-x64-allos-enu.exe
+
+          tasks:
+          - name: Ensure a valid Chocolatey for Business License
+            block:
+              - name: Get Chocolatey License
+                ansible.builtin.set_fact:
+                  license_content: "{{ lookup('file', license_path) }}"
+                when: license_content is not defined and license_path is defined
+                delegate_to: localhost
+
+              - name: Get Chocolatey License Expiration
+                ansible.builtin.set_fact:
+                  license_expiry: "{{ license_content | regex_search('expiration=\".+?\"') | regex_replace('expiration=\"(.+)\"', '\\1') | trim() }}"
+                when: license_content is defined
+                delegate_to: localhost
+
+              - name: Test License Expiry
+                ansible.builtin.assert:
+                  that:
+                    - license_expiry is defined
+                    - license_expiry | to_datetime('%Y-%m-%dT%H:%M:%S.0000000')
+                    - license_expiry > ansible_date_time.iso8601
+                  quiet: true
+                when: license_expiry is defined
+                delegate_to: localhost
+
+          - name: Ensure choco-setup Directory
+            ansible.windows.win_tempfile:
+              state: directory
+              suffix: choco-setup
+            register: choco_setup
+
+          - name: Ensure Dotnet 4.8
+            ansible.windows.win_powershell:
+              parameters:
+                NetFx48InstallerFile: "{{ ndp48_location | default('https://download.visualstudio.microsoft.com/download/pr/2d6bb6b2-226a-4baa-bdec-798822606ff1/8494001c276a4b96804cde7829c04d7f/ndp48-x86-x64-allos-enu.exe') }}"
+                WorkingDirectory: "{{ choco_setup.path }}"
+              script: |
+                param($NetFx48InstallerFile, $WorkingDirectory)
+
+                if ((Get-ItemProperty "HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" -ErrorAction SilentlyContinue).Release -lt 528040) {
+                  Write-Warning ".NET Framework 4.8 is required for Chocolatey. Installing .NET Framework 4.8..."
+
+                  # Attempt to download the installer if it doesn't exist locally
+                  if (-not (Test-Path $NetFx48InstallerFile)) {
+                    try {
+                      $DownloadArgs = @{
+                        Uri = $NetFx48InstallerFile
+                        OutFile = Join-Path $WorkingDirectory $(Split-Path $NetFx48InstallerFile -Leaf)
+                        UseBasicParsing = $true
+                      }
+                      if (-not (Test-Path $DownloadArgs.OutFile)) {
+                        Invoke-WebRequest @DownloadArgs -ErrorAction Stop
+                      }
+                      $NetFx48InstallerFile = $DownloadArgs.OutFile
+                    } catch {
+                      $Ansible.failed = $true
+                      throw "Could not download .NET Framework 4.8"
+                    }
+                  }
+
+                  # Install .NET Framework 4.8
+                  try {
+                    $psi = New-Object System.Diagnostics.ProcessStartInfo
+                    $psi.WorkingDirectory = $WorkingDirectory
+                    $psi.FileName = $NetFx48InstallerFile
+                    $psi.Arguments = "/q /norestart"
+
+                    $s = [System.Diagnostics.Process]::Start($psi)
+                    $s.WaitForExit()
+
+                    $Ansible.changed = $true
+
+                    if ($s.ExitCode -notin (0, 1641, 3010)) {
+                      $Ansible.message = "$($s.StandardOutput.ReadToEnd())" + "$($s.StandardError.ReadToEnd())"
+                      $Ansible.failed = $true
+                    }
+                  } catch {
+                    $Ansible.failed = $true
+                    throw
+                  }
+                } else {
+                  $Ansible.changed = $false
+                }
+            register: dotnet_install
+
+          - name: Reboot Server for Prerequisites
+            ansible.windows.win_reboot:
+            when: dotnet_install.changed
+
+          - name: Get Chocolatey Package and Install Script
+            ansible.windows.win_powershell:
+              parameters:
+                RepositoryUrl: "{{ chocolatey_sources[0].url }}"
+                ChocolateyVersion: "{{ chocolatey_version }}"
+                WorkingDirectory: "{{ choco_setup.path }}"
+              script: |
+                param($RepositoryUrl, $ChocolateyVersion, $WorkingDirectory)
+                $Ansible.Changed = $false
+
+                # Download Chocolatey Package
+                $webClient = New-Object System.Net.WebClient
+                try {
+                  $Credential = [PSCredential]::new(
+                    '{{ chocolatey_sources[0].user | default('') }}',
+                    (ConvertTo-SecureString '{{ chocolatey_sources[0].password | default('') }}' -AsPlainText -Force)
+                  )
+                  $webClient.Credentials = $Credential.GetNetworkCredential()
+                } catch {}
+
+                $NupkgUrl = if (-not $ChocolateyVersion -or $ChocolateyVersion -eq 'latest') {
+                  $QueryString = "((Id eq 'chocolatey') and (not IsPrerelease)) and IsLatestVersion"
+                  $Query = 'Packages()?$filter={0}' -f [uri]::EscapeUriString($queryString)
+                  $QueryUrl = ($RepositoryUrl.TrimEnd('/index.json'), $Query) -join '/'  # This works with Nexus hosted repositories
+
+                  [xml]$result = $webClient.DownloadString($QueryUrl)
+                  $result.feed.entry.content.src
+                } else {
+                  # Otherwise, assume the URL
+                  "$($RepositoryUrl.Trim('/'))/chocolatey/$($ChocolateyVersion)"
+                }
+
+                $NupkgPath = Join-Path $WorkingDirectory "chocolatey.zip"
+                if (-not (Test-Path $NupkgPath)) {
+                  try {
+                    $webClient.DownloadFile($NupkgUrl, $NupkgPath)
+                  } catch {
+                    $Ansible.Failed = $true
+                  }
+                  $Ansible.Changed = $true
+                }
+
+                $Ansible.Result = $NupkgPath
+
+                # Download Chocolatey Bootstrap Script
+                $BootstrapScript = Join-Path $WorkingDirectory "Install-Chocolatey.ps1"
+                $BootstrapUrl = "$($RepositoryUrl.TrimEnd('/index.json').TrimEnd('ChocolateyInternal'))choco-setup/ChocolateyInstall.ps1"
+                if (-not (Test-Path $BootstrapScript)) {
+                  Write-Verbose "Downloading '$($BootstrapUrl)'"
+                  $webClient.DownloadFile($BootstrapUrl, $BootstrapScript)
+                  $Ansible.Changed = $true
+                }
+            register: local_choco_package
+
+          - name: Install Chocolatey
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolatey
+              state: "{{ 'latest' if chocolatey_version == 'latest' or chocolatey_version is undefined or chocolatey_version == omit else 'downgrade' }}"
+              source: "{{ chocolatey_sources[0].url | default(omit) }}"
+              source_username: "{{ chocolatey_sources[0].user | default(omit) }}"
+              source_password: "{{ chocolatey_sources[0].password | default(omit) }}"
+              bootstrap_script: "{{ choco_setup.path }}\\Install-Chocolatey.ps1"
+            environment:
+              chocolateyDownloadUrl: "{{ local_choco_package.result | default('') }}"
+              chocolateyUseWindowsCompression: 'true'
+            register: choco_install
+            ignore_errors: true
+
+          - name: Install Chocolatey License Package
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolatey-license
+              state: latest
+              source: "{{ chocolatey_sources[0].url | mandatory }}"
+              source_username: "{{ chocolatey_sources[0].user | default(omit) }}"
+              source_password: "{{ chocolatey_sources[0].password | default(omit) }}"
+            when: license_content is not defined
+
+          - name: Ensure License Directory
+            ansible.windows.win_file:
+              path: C:\\ProgramData\\chocolatey\\license\\
+              state: directory
+            when: license_content is defined
+
+          - name: Install Chocolatey License
+            ansible.windows.win_copy:
+              dest: "C:\\ProgramData\\chocolatey\\license\\chocolatey.license.xml"
+              content: "{{ license_content }}"
+              force: true
+            when: license_content is defined
+
+          - name: Install Chocolatey.Extension
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolatey.extension
+              state: latest
+              source: "{{ chocolatey_sources[0].url | default(omit) }}"
+              source_username: "{{ chocolatey_sources[0].user | default(omit) }}"
+              source_password: "{{ chocolatey_sources[0].password | default(omit) }}"
+              package_params: /NoContextMenu
+
+          - name: Set Chocolatey Features
+            chocolatey.chocolatey.win_chocolatey_feature:
+              name: "{{ item.key }}"
+              state: "{{ item.value }}"
+            with_dict: "{{ chocolatey_features }}"
+
+          - name: Set Chocolatey Configuration
+            chocolatey.chocolatey.win_chocolatey_config:
+              name: "{{ item.key }}"
+              state: "{{ 'absent' if not item.value else 'present' }}"
+              value: "{{ item.value | default('omit') }}"
+            with_dict: "{{ chocolatey_config }}"
+
+          - name: Add Chocolatey Source
+            chocolatey.chocolatey.win_chocolatey_source:
+              name: "{{ item.name }}"
+              source: "{{ item.url }}"
+              source_username: "{{ item.user | default(omit) }}"
+              source_password: "{{ item.password | default(omit) }}"
+              priority: 1
+              state: present
+            loop: "{{ chocolatey_sources }}"
+            no_log: true
+
+          - name: Install ChocolateyGUI
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolateygui
+              state: latest
+            when: install_gui is not false
+
+          - name: Install ChocolateyGUI Extension
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolateygui.extension
+              state: latest
+            when: install_gui is not false
+
+          - name: Disable other sources
+            chocolatey.chocolatey.win_chocolatey_source:
+              name: "{{ item }}"
+              state: disabled
+            loop:
+              - chocolatey
+              - chocolatey.licensed
+
+          - name: Install Chocolatey Agent
+            chocolatey.chocolatey.win_chocolatey:
+              name: chocolatey-agent
+              state: latest
+
+          - name: Configure Chocolatey Agent to use Chocolatey Central Management
+            block:
+              - name: Set Chocolatey Configuration
+                chocolatey.chocolatey.win_chocolatey_config:
+                  name: "{{ item.key }}"
+                  state: "{{ 'absent' if not item.value else 'present' }}"
+                  value: "{{ item.value | default('omit') }}"
+                with_dict:
+                  - CentralManagementServiceUrl: "https://{{ ccm_fqdn }}:24020/ChocolateyManagementService"
+                  - CentralManagementClientCommunicationSaltAdditivePassword: "{{ ccm_client_salt | default(omit) }}"
+                  - centralManagementServiceCommunicationSaltAdditivePassword: "{{ ccm_service_salt | default(omit) }}"
+                no_log: true
+
+              - name: Set Chocolatey Features
+                chocolatey.chocolatey.win_chocolatey_feature:
+                  name: "{{ item.key }}"
+                  state: "{{ item.value }}"
+                with_dict:
+                  - useChocolateyCentralManagement: enabled
+                  - useChocolateyCentralManagementDeployments: enabled
+        ...
+        ```
+
+        After saving the example playbook to a file, e.g. `client-setup.yml`, you can run it with one of the following commands:
+
+        ```powershell
+        # This will install to all available hosts.
+        ansible-playbook /path/to/client-setup.yml --extra-vars "c4b_nodes='*'"
+
+        # You could specify an inventory to use, or be more specific when defining c4b_nodes.
+        ansible-playbook /path/to/client-setup.yml --inventory /path/to/hosts.yml --extra-vars "c4b_nodes='windows_servers'"
+        ```
+
+        You will be prompted to enter the values mentioned above, but you can pass them in using `--extra-vars` instead. Please see the Ansible documentation "[Defining Variables At Runtime](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_variables.html#defining-variables-at-runtime)" for further details and examples.
+
+        <Callout type="warning">
+            This playbook will install Dotnet 4.8 to target hosts that don't have a compatible version installed.
+
+            This will cause machines that have the dependency installed to reboot.
+        </Callout>
+    </TabsPane>
+    <TabsPane content={tabs1[1]}>
+        To install the Chocolatey components and on-board clients, you could run the `ClientSetup.ps1` script provided with your Chocolatey for Business Ansible Environment. By default, this script is stored in the newly created `choco-install` repository.
+
+        <Callout type="info">
+            You can set default values for the parameters and remove the Mandatory flag if you prefer to run the script without being prompted for input.
+        </Callout>
+
+        ### PowerShell Script
+
+        When you're ready, run the following script on the client from an elevated (Run as Administrator) PowerShell terminal:
+
+        ```powershell
+        param(
+            # The fully qualified domain name (FQDN) of the Sonatype Nexus Repository service
+            [Parameter(Mandatory)]
+            $FQDN,
+
+            # The Password for the chocouser account on Sonatype Nexus Repository service
+            [Parameter(Mandatory)]
+            $Password,
+
+            # The Chocolatey Central Management client communication salt, provided during deployment
+            [Parameter(Mandatory)]
+            $ClientCommunicationSalt,
+
+            # The Chocolatey Central Management service communication salt
+            [Parameter(Mandatory)]
+            $ServiceCommunicationSalt
+        )
+
+        $credential = [pscredential]::new('chocouser', ($Password | ConvertTo-SecureString -AsPlainText -Force))
+        $downloader = [System.Net.WebClient]::new()
+        $downloader.Credentials = $credential
+
+        $script =  $downloader.DownloadString("https://$($FQDN):8443/repository/choco-install/ClientSetup.ps1")
+
+        $params = @{
+            Credential      = $credential
+            ClientSalt      = $clientCommunicationSalt
+            ServerSalt      = $serviceCommunicationSalt
+        }
+
+        & ([scriptblock]::Create($script)) @params
+        ```
+
+        For example, to run this locally, save the script to an accessible location (in the example below shown as `~\Downloads\ChocoOnboarding.ps1`) and run:
+
+        ```powershell
+        Set-ExecutionPolicy Unrestricted -Scope Process -Force
+        ~\Downloads\ChocoOnboarding.ps1
+        ```
+
+        You will then be prompted for each parameter value.
+
+        Alternatively, you could run the ClientSetup.ps1 script with Ansible.
+
+        ### Ansible Script
+
+        An example of what to add to your Ansible tasks is shown below:
+
+        <details>
+
+        ```yaml
+        ---
+        - name: Chocolatey For Business Client Setup
+          hosts: "{{ c4b_nodes }}"
+          gather_facts: true
+          vars_prompt:
+            - name: ccm_fqdn
+              prompt: "FQDN to access Chocolatey Central Management, e.g. ccm.example.com"
+              private: no
+
+            - name: ccm_client_salt
+              prompt: "Client Salt for communicating with Chocolatey Central Management"
+              private: yes
+
+            - name: ccm_service_salt
+              prompt: "Service Salt for communicating with Chocolatey Central Management"
+              private: yes
+
+            - name: nexus_password
+              prompt: "Password for the ChocoUser account on Sonatype Nexus Repository"
+              private: yes
+          tasks:
+            - name: Run ClientSetup.ps1
+              ansible.windows.win_powershell:
+                parameters:
+                  FQDN: "{{ ccm_fqdn }}"
+                  Password: "{{ nexus_password }}"
+                  ClientCommunicationSalt: "{{ ccm_client_salt }}"
+                  ServiceCommunicationSalt: "{{ ccm_service_salt }}"
+                script: |
+                  param(
+                      # The fully qualified domain name (FQDN) of the Sonatype Nexus Repository service
+                      [Parameter(Mandatory)]
+                      $FQDN,
+
+                      # The Password for the chocouser account on Sonatype Nexus Repository service
+                      [Parameter(Mandatory)]
+                      $Password,
+
+                      # The Chocolatey Central Management client communication salt, provided during deployment
+                      [Parameter(Mandatory)]
+                      $ClientCommunicationSalt,
+
+                      # The Chocolatey Central Management service communication salt
+                      [Parameter(Mandatory)]
+                      $ServiceCommunicationSalt
+                  )
+
+                  $credential = [pscredential]::new('chocouser', ($Password | ConvertTo-SecureString -AsPlainText -Force))
+                  $downloader = [System.Net.WebClient]::new()
+                  $downloader.Credentials = $credential
+
+                  $script =  $downloader.DownloadString("https://$($FQDN):8443/repository/choco-install/ClientSetup.ps1")
+
+                  $params = @{
+                      Credential      = $credential
+                      ClientSalt      = $clientCommunicationSalt
+                      ServerSalt      = $serviceCommunicationSalt
+                  }
+
+                  & ([scriptblock]::Create($script)) @params
+        ...
+        ```
+
+        </details>
+
+        This will not be as predictable as running Ansible tasks, and will report a change regardless of the result of the script.
+    </TabsPane>
+    <TabsPane content={tabs1[2]}>
+        To install the Chocolatey components and on-board clients, you could add the example Ansible roles to a playbook.
+
+        To do this, copy the `roles` directory from the [C4B-Ansible Repository](https://github.com/chocolatey/c4b-ansible) to the directory your playbook is saved, or to a [`roles_path`](https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_reuse_roles.html#storing-and-finding-roles).
+
+        You will then be able to reference the role(s) in your playbook, as shown below:
+
+        ### Ansible Roles
+
+        ```yaml
+        ---
+        - name: Chocolatey For Business Client Setup
+          hosts: "{{ c4b_nodes }}"
+          gather_facts: true
+          vars:
+            ccm_fqdn: "chocolatey.example.com"
+            ccm_client_salt: !vault |
+              $ANSIBLE_VAULT;1.1;AES256
+              ...
+            ccm_service_salt: !vault |
+              $ANSIBLE_VAULT;1.1;AES256
+              ...
+            nexus_password: !vault |
+              $ANSIBLE_VAULT;1.1;AES256
+              ...
+          tasks:
+            - name: Add ChocolateyAgent to Server
+              ansible.builtin.include_role:
+                name: win_chocolateyagent
+              vars:
+                license_path: \path\to\chocolatey.license.xml
+                ccm_hostname: "{{ ccm_fqdn }}"
+                client_salt: "{{ ccm_client_salt }}"
+                service_salt: "{{ ccm_service_salt }}"
+                repository:
+                  - name: ChocolateyInternal
+                    url: https://{{ ccm_fqdn }}:8443/repository/ChocolateyInternal/index.json
+                    user: chocouser
+                    password: "{{ nexus_password }}"
+        ...
+        ```
+
+        For further information on the roles and available parameters, please refer to the readmes:
+
+        - [Win_ChocolateyLicensed](https://github.com/chocolatey/c4b-ansible/blob/main/roles/win_chocolateylicensed/README.md)
+        - [Win_ChocolateyAgent](https://github.com/chocolatey/c4b-ansible/blob/main/roles/win_chocolateyagent/README.md)
+    </TabsPane>
+</TabsPaneContainer>
+
+This script will accomplish the following on your client:
+
+1. Install Chocolatey CLI from the installation script hosted in your internal raw Sonatype Nexus Repository.
+1. Add the `ChocolateyInternal` source, and enable it for self-service.
+1. Disable the default `chocolatey` source.
+1. Install your Chocolatey license using the `chocolatey-license` package.
+1. Install the Chocolatey Licensed Extension (without context menus for Package Builder).
+1. Install the `ChocolateyGUI` package on the endpoint, for self-service support.
+1. Install the `chocolatey-agent` package, which supports self-service and Chocolatey Central Management communication.
+1. Enable and disable features related to configuring self-service access on the endpoint.
+1. Setup the communication channel between the endpoint and Chocolatey Central Management, using the correct URL and salts.
+1. Enable Chocolatey Central Management Deployments.

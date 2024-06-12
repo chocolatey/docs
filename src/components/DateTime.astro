@@ -1,0 +1,10 @@
+---
+const { dateTime } = Astro.props;
+const weekday = dateTime.toLocaleString('en-US', { weekday: 'long' });
+const day = dateTime.getDate();
+const month = dateTime.toLocaleString('en-US', { month: 'long' });
+const year = dateTime.getFullYear();
+const friendlyDate = `${weekday}, ${day} ${month}, ${year}`;
+---
+
+<time datetime={dateTime.toString()}>{friendlyDate}</time>

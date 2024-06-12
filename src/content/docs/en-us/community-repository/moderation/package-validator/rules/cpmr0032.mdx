@@ -1,0 +1,29 @@
+---
+order: 32
+xref: cpmr0032
+title: CPMR0032 - Description Character Count Below 30 (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0032
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+<Callout type="info">
+    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
+</Callout>
+## Issue
+
+In the nuspec the description is less than the required amount of characters.
+
+## Recommended Solution
+
+Update the description for the package to include a description that has more than 30 characters.
+
+## Reasoning
+
+It is not enough to just add a few words to the description.
+The description should be sufficient enough to explain what the software that is packaged is, and why people should use the software.

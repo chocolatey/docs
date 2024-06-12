@@ -1,0 +1,99 @@
+---
+order: 170
+xref: private-cdn
+title: CDN Download Cache (Pro+)
+description: No more 404s!
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Chocolatey offers a customer CDN cache of download content for [customers](https://chocolatey.org/pricing)! The internet is unpredictable and sometimes sites go down, the cache ensures that the packages on the community repository are not broken by issues with the internet. We lovingly call this the "**No more 404s feature**".
+
+We do this by caching a copy of the content on our private CDN. This content also gets virus checked and checksummed to verify that it matches what was originally intended by package maintainers and moderators for you to receive.
+
+## Important Information for Software Vendors
+
+When our customers download content from you, we may cache a copy of that content on our customer CDN to ensure that later our licensed customers will be able to access that content again. This allows predictable and reliable installations of packages. Like most CDNs, no changes are made, we are simply ensuring the content stays available for our private customers. We are not modifying, selling, renting, leasing, lending, or sub-licensing this content in any way.
+
+This private content cache is **only** available as a service for our [licensed customers](https://chocolatey.org/pricing).
+
+If you have questions or **prefer to opt out**, please [contact us](https://chocolatey.org/contact) and select "Software Vendor Opt Out" (vendor requests only please).
+
+## Usage
+
+This is mostly automatic, but in case the feature is turned off, you may turn it on by setting the feature `downloadCache` (`choco feature enable --name downloadCache`).
+
+To see if a package has content cached on the CDN, you can run `choco info packagename` and it will give you detailed information pertaining to a package.
+
+![choco info packagename](/images/choco_info_cached.png)
+
+When you install, you will see a message similar to the following when the cached content is used:
+
+![Pro install with CDN cache](/images/choco_install_cached.png)
+
+## Options and Switches
+
+Global Feature:
+
+* `downloadCache` - Download Cache - use the private download cache if available for a package.
+
+
+`choco install` / `choco upgrade` provide the following option(s):
+
+```
+     --sdc, --skipdownloadcache, --skip-download-cache
+     Skip Download Cache - Use the original download even if a
+       private CDN cache is available for a package.
+       Overrides the default feature 'downloadCache' set to 'True'. Licensed 
+       versions only.
+
+     --dc, --downloadcache, --download-cache, --use-download-cache
+     Use Download Cache - Use private CDN cache if
+       available for a package. Overrides the default feature 'downloadCache'
+       set to 'True'. Licensed versions only.
+```
+
+## FAQ
+
+### How do I take advantage of this feature?
+
+You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing) (Pro, MSP, or Business) and use the community package repository to install/upgrade packages. Pro is a personal, named license that costs about the price of a lunch outing per month and comes with several other features. Business editions are great for organizations that need to manage the total software management lifecycle. MSP editions are for managed service providers and contain the same features as Pro (minus VirusTotal integration).
+
+### I'm a licensed customer, now what?
+
+When you install packages from the community repository and a private cache becomes available, it will use that cache automatically. You don't have to do anything additional.
+
+### How do I turn this feature on?
+
+* Globally - `choco feature enable --name downloadCache`
+* Per command - use the switch `--use-download-cache` with install/upgrade commands.
+
+### How do I turn this feature off?
+
+* Globally - `choco feature disable --name downloadCache`
+* Per command - use the switch `--skip-download-cache` with install/upgrade commands.
+
+### Is the content modified?
+
+No, this is the original content as it would have been downloaded.
+
+### Is the content publicly available?
+
+No, this is a private CDN cache available only for [licensed customers](https://chocolatey.org/pricing).
+
+### Why isn't a cache available for x package?
+
+There are a variety of factors that go into suitability for a package.
+
+* If the software vendor has opted out, there will be no cache for a package that uses that software.
+* If the package doesn't actually download anything, there will be no cache.
+* If the package downloads resources, but not in the recommended way, there may not be a cache available.
+
+### Does this grant me a license to the software?
+
+No, you still need to work with the software vendor to obtain a license, if required.
+
+### I'm a vendor and wish to opt out.
+
+Please see [important information for software vendors](#important-information-for-software-vendors).

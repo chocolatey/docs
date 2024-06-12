@@ -1,0 +1,52 @@
+---
+order: 25
+xref: firewall-rules
+title: Firewall Rules
+description: Firewall rules used by the Quick Start Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## External Firewall Ports (Optional)
+
+<Callout type="warning">
+    - Performing this incorrectly could cause security issues and possibly cause you to be subjected to copyright law/redistribution. Read all of this first.
+    - DO NOT OPEN these ports externally until you have done the following:
+      - Locked down your repositories to user/pass access.
+      - Updated your ClientSetup script within the raw client repository.
+</Callout>
+
+These are ports that need to be opened through the corporate firewall, if users are **not** on VPN and need to install packages from anywhere.
+
+| Port  | Application                |
+| :---: | :------------------------- |
+| 8443  | Nexus Web UI               |
+| 24020 | Chocolatey Central Management Service |
+
+## Internal Firewall Ports
+
+These are the ports that are already opened on Windows Firewall in the Quick Start Environment.
+
+| Port  | Application   |
+| :---: | :------------ |
+| 8443  | Nexus Web UI  |
+|  443  | Chocolatey Central Management Dashboard |
+| 24020 | Chocolatey Central Management Service   |
+
+export const callout2 = {
+    title: 'Cloud Hosting Consideration',
+    type: 'info'
+};
+
+<Callout content={callout2}>
+    If hosting your Quick Start Environment on a cloud provider, such as Microsoft Azure or Amazon Web Services, be sure to set your inbound networking rules appropriately for the VM.
+</Callout>
+
+## FAQ
+
+### Can I open up the Chocolatey Central Management Service's port to allow machines to report in from anywhere?
+
+For best results, we recommend using a VPN connection for client check-ins.
+The Chocolatey Central Management service connection is authenticated over SSL, but our best practice recommendation is to secure the connection over a VPN as well.
+With Chocolatey Central Management v0.3.0+, more security has been put into allowing for checking in over internet connections. We _highly_ recommend setting both a `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword` Chocolatey configuration value on your client machines and Chocolatey Central Management Service host machine.

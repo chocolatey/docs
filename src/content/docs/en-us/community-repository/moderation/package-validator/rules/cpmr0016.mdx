@@ -1,0 +1,42 @@
+---
+order: 16
+xref: cpmr0016
+title: CPMR0016 - Script Contains Usage of Installation Arguments (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0016
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In an automation script (`.ps1`/`.psm1`), the use of `chocolateyInstallArguments` was found.
+
+## Recommended Solution
+
+The package should instead use package parameters - see <Xref title="How to Parse Package Parameters" value="parse-package-parameters" /> and an example package to review for how to add information to the description would be the [Git package](https://community.chocolatey.org/packages/git).
+
+## Reasoning
+
+InstallArguments is meant to be a transparent variable that is passed right to a Chocolatey install helper function. If it is called in the script it could be misused or changed. Therefore we don't allow it in scripts.
+
+Another pattern:
+
+```powershell
+$installArguments = $env:chocolateyInstallArguments
+if ([string]::IsNullOrEmpty($installArguments )) {
+  $installArguments = " /Q /IAcceptSQLServerLicenseTerms /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE "
+}
+```
+
+This behavior is unnecessary as Chocolatey already does this in the background. All you need to do in the script is set the install arguments.
+
+```powershell
+$installArguments = " /Q /IAcceptSQLServerLicenseTerms /ACTION=install /INSTANCEID=SQLEXPRESS /INSTANCENAME=SQLEXPRESS /UPDATEENABLED=FALSE "
+```
+
+The consumer will decide to override install arguments or append to the current set with `--install-arguments`/`--ia` and `--override-arguments`/`-o`, see the <Xref title="install command docs" value="choco-command-install" anchor="options-and-switches" />

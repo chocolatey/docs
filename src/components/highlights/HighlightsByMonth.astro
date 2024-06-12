@@ -1,0 +1,52 @@
+---
+// Scripts and types
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+// Components
+import Highlight from '@components/highlights/Highlight.astro';
+
+const highlights = await getCollection('docs', ({ data }) => {
+    return data.highlight && data.highlight.showOnHighlights;
+});
+
+const organizeByMonth = (posts: CollectionEntry<'docs'>[]): Record<string, CollectionEntry<'docs'>[]> => {
+    const result: Record<string, CollectionEntry<'docs'>[]> = {};
+
+    posts.forEach(post => {
+        const highlight = post.data.highlight;
+
+        if (!highlight) {
+            return;
+        }
+
+        const postedDateTime = new Date(highlight.postedDateTime);
+        const month = postedDateTime.toLocaleString('default', { month: 'long' });
+        const year = postedDateTime.getFullYear();
+        const key = `${month} ${year}`;
+
+        if (!result[key]) {
+            result[key] = [];
+        }
+
+        result[key].push(post);
+    });
+
+    // Reverse the entire postsByMonth object
+    const reversedResult: Record<string, CollectionEntry<'docs'>[]> = {};
+    const keys = Object.keys(result).toReversed();
+
+    keys.forEach(key => {
+        reversedResult[key] = result[key];
+    });
+
+    return reversedResult;
+};
+
+const highlightsByMonth = organizeByMonth(highlights);
+---
+
+{Object.entries(highlightsByMonth).map(([month, highlight]) => (
+    <h2>{month}</h2>
+    <Highlight content={highlight} />
+))}

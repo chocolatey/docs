@@ -1,0 +1,18 @@
+{
+    "extends": "astro/tsconfigs/strict",
+    "allowImportingTsExtensions": true,
+    "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": ".",
+        "paths": {
+            "@choco/components/*": ["node_modules/choco-astro/src/components/*"],
+            "@content/*": ["src/content/*"],
+            "@components/*": ["src/components/*"],
+            "@config": ["src/config.ts"],
+            "@layouts/*": ["src/layouts/*"],
+            "@root/*": ["./*"],
+            "@styles/*": ["src/styles/*"],
+            "@scripts/*": ["src/scripts/*"]
+        }
+    }
+}

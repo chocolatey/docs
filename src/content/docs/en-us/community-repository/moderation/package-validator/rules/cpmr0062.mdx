@@ -1,0 +1,25 @@
+---
+order: 62
+xref: cpmr0062
+title: CPMR0062 - Chocolatey Dependency (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0062
+ruleType: Note
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.mdx';
+
+<PackageValidatorRuleNote />
+
+## Issue
+
+In the nuspec, one or more dependencies were found, and one of them depends on the Chocolatey CLI package (`chocolatey`).
+
+## Recommended Solution
+
+Please ensure that you are using and requiring the functionality of the Chocolatey CLI dependency version in one of your automation scripts. If no automation script requires functionality only available in the defined version, please remove this dependency.
+
+## Reasoning
+
+Specifying a dependency on Chocolatey CLI is considered an antipattern and can have repercussions when a package is uninstalled while the user decides to also remove their dependencies at the same time. As such, a dependency on Chocolatey CLI should be used sparingly and only when needed.

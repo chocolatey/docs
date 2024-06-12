@@ -1,0 +1,39 @@
+---
+order: 10
+xref: ccm-dashboard
+title: Dashboard
+description: Information on the dashboard page
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The Dashboard page within the Chocolatey Central Management Website is the first page that can be seen after successful login.
+
+It captures top level information about the current state of the overall application, including:
+
+- Total Installed Packages
+  - This is the total number of packages currently installed across all the Computers that are reporting into Chocolatey Central Management.
+- Total Outdated Packages
+  - This is the total number to outdated packages currently installed across all the Computers that are reporting into Chocolatey Central Management.
+- Total Unique Installed Packages
+  - This is the total number of unique packages currently installed across all the Computers that are reporting into Chocolatey Central Management.
+- Total Unique Outdated Packages
+  - This is the total number of unique outdated packages currently installed across all the Computers that are reporting into Chocolatey Central Management.
+
+Starting with Chocolatey Central Management 0.12.0, the following metrics are also available:
+
+- Total Draft/Ready Deployment Plans
+  - This is the total number of unique Deployment Plans in the Draft or Ready states in Chocolatey Central Management.
+- Total Active Deployment Plans
+  - This is the total number of unique Deployment Plans in the Active state in Chocolatey Central Management.
+- Total Stale Computers
+  - This is the total number of Computers that haven't reported into Chocolatey Central Management in the last 180 days.
+
+<Callout type="info">
+    There is a configuration value in the <Xref title="Dashboard Settings" value="ccm-administration-settings-dashboard" /> page to control how long a Computer has to be absent from reporting into Chocolatey Central Management before being considered stale.
+</Callout>
+
+The `Last Updated` date/time that is shown is when the information was last updated by the Chocolatey Central Management Service.
+
+![Dashboard page for Chocolatey Central Management showing available KPI's and last updated time](/images/ccm-playwright/dashboard/left-menu-dashboard.png)

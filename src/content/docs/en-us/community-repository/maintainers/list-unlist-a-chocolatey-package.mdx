@@ -1,0 +1,42 @@
+---
+order: 30
+xref: list-unlist-a-package
+title: List / Unlist a Package
+description: How to list or unlist a Chocolatey package
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## The Problem
+
+From time to time, the visibility of a previously approved Chocolatey package version needs to be changed. This could be for a number of reasons, for example:
+
+* The package version was uploaded in error.
+* The installer or embedded files are no longer available.
+
+Leaving a package as listed could mean that any user who tries to install or upgrade this package might get an error, and this is far from ideal.
+
+## The Solution
+
+You can change the visibility of an individual Chocolatey package version by following these steps:
+
+1. Navigate to the package page, scroll down, and expand, **Version History**. If a package is listed, and visible on the Chocolatey Community Repository it will say **yes**. If a package is unlisted, it will say **no**.
+
+1. Under the **Listed** column, click **yes** next to the version you want to unlist, or **no** next to the version you want to list.
+
+    ![Example of a package visibility on the Chocolatey Community Repository](/images/maintainers/unlist-package-status-listed.png)
+
+1. To unlist the package version, untick the box next to **List..**. To list the package version, ensure the box is ticked. Click **Save Changes** to update the package visibility.
+
+    ![Example of unlisted a package from the Chocolatey Community Repository](/images/maintainers/unlist-package.png)
+
+1. Check the visibility of the package has been updated by expanding **Version History** again.
+
+    ![Example of unlisted a package from the Chocolatey Community Repository](/images/maintainers/unlist-package-status-unlisted.png)
+
+## FAQ
+
+### Can I list or unlist all versions of a package at once?
+
+At this time you cannot list or unlist all versions of a package at once. You must list or unlist individual package versions.

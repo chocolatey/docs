@@ -1,0 +1,31 @@
+---
+order: 20
+xref: packaging-for-the-masses
+title: Packaging for the masses - PowerShell
+description: At its heart, Chocolatey uses the Windows Automation Language, PowerShell, to perform its different operations
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Released in November 2006, Windows PowerShell, quickly became the defacto way to automate tasks on Windows. Whether it was automating the creation of Users within Active Directory, or configuring/maintaining your Exchange Server, PowerShell was the way to do it.
+
+When Chocolatey started, it was clear that PowerShell was going to be at the heart of how it works as well, and that continues to this day.
+
+Within a Chocolatey package, there are three main PowerShell files:
+
+- chocolateyInstall.ps1
+- chocolateyUninstall.ps1
+- chocolateyBeforeModify.ps1
+
+<Callout type="info">
+    Not all of these files are required within every Chocolatey package, as Chocolatey performs a number of tasks automatically, and overriding the default functionality is only required when you want to do something different.
+</Callout>
+
+When a Chocolatey package is installed/uninstalled, these files are executed at <Xref title="different times" value="create-packages" anchor="during-which-scenarios-will-my-custom-scripts-be-triggered" />, giving a <Xref title="package creator" value="create-your-own-packages" /> full control over exactly what actions are performed within a package.
+
+This flexibility allows for the creation of simple packages (that simply execute a native installer) all the way up to highly complicated installations that perform several operations.
+
+On top of this, Chocolatey ships with a number of <Xref title="built-in functions" value="powershell-reference" />, to help with the specific tasks of installing applications, binaries, zips, and scripts.
+
+When you need to create your own custom PowerShell functions, Chocolatey provides the ability to create <Xref title="extension packages" value="extensions" />, to allow the sharing of code across multiple packages, rather than duplicating it.

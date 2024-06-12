@@ -1,0 +1,130 @@
+---
+order: 10
+xref: home
+title: Chocolatey - Software Management for Windows
+description: Chocolatey is software management automation for Windows that wraps installers, executables, zips, and scripts into compiled packages. Chocolatey integrates w/SCCM, Puppet, Chef, etc. Chocolatey is trusted by businesses to manage software deployments.
+hideChildPages: true
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import HighlightsHome from '@components/highlights/HighlightsHome.astro';
+import SocialMedia from '@components/global/SocialMedia.astro';
+
+<div class="row">
+    <div class="mb-4 col-lg-6 col-xl-8">
+        <div class="card card-link card-body bg-retrowave1 h-100 lead p-md-5 d-flex justify-content-center">
+            <p class="z-1">Discover the power of Chocolatey with our comprehensive Getting Started guide, providing an overview of its requirements, terminology, functionality, and its ability to simplify software management on Windows.</p>
+            <Xref title="Get Started with Chocolatey" value="getting-started" classes="z-1 stretched-link link-primary p-0" icon="fa-arrow-right"></Xref>
+        </div>
+    </div>
+    <div class="mb-4 col-lg-6 col-xl-4">
+        <div class="card card-link card-body bg-primary-opacity-25 h-100 lead p-md-5 d-flex justify-content-center">
+            <p>Ready to unlock the convenience of Chocolatey? Visit our installation guide to learn how to effortlessly set up Chocolatey CLI in seconds.</p>
+            <div>
+                <Xref title="Install Chocolatey CLI" value="setup-choco" classes="btn btn-dark text-white stretched-link">Install Chocolatey CLI</Xref>
+            </div>
+        </div>
+    </div>
+</div>
+<HighlightsHome />
+<div class="row mb-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url(https://img.chocolatey.org/backgrounds/chocolatey-cli-commands.svg);">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Chocolatey CLI Commands" value="choco-commands" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-body h-100">
+            <img class="rounded-4 border mb-3" src="https://img.chocolatey.org/backgrounds/chocolatey-for-business.svg" alt="Chocolatey for Business" loading="lazy" />
+            <p class="mb-0">
+                Learn how to <Xref title="setup and intall" value="setup-licensed" /> 
+                Chocolatey Licenced Edition or get up and running fast with the <Xref title="Chocolatey for Business Quick Start Guide." value="c4b-quick-start-guide" />
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url(/images/chocolatey-gui/feature_default_tile_view_remote_enabled.png);">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Chocolatey GUI" value="chocolateygui" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="mt-4 pt-md-5 d-anchor-none">Helpful Links</h2>
+<div class="row pb-md-5">
+    <div class="col-md-4">
+        <ul class="mb-0">
+            <li class="mb-2"><Xref title="Why Chocolatey?" value="why" /></li>
+            <li class="mb-2"><Xref title="Features" value="features" /></li>
+            <li class="mb-2"><Xref title="FAQs" value="faqs" /></li>
+            <li class="mb-2"><Xref title="Troubleshooting" value="troubleshooting" /></li>
+            <li class="mb-2"><Xref title="Configuration" value="configuration" /></li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="mb-0">
+            <li class="mb-2"><Xref title="Chocolatey Community Repository" value="chocolatey-community-repository" /></li>
+            <li class="mb-2"><Xref title="Chocolatey CLI (choco)" value="setup-choco" /></li>
+            <li class="mb-2"><Xref title="Chocolatey Licenced Extension" value="setup-licensed" /></li>
+            <li class="mb-2"><Xref title="Chocolatey GUI Licenced Extension" value="chocolatey-gui-licensed-installation" /></li>
+            <li class="mb-2"><Xref title="Chocolatey Agent" value="setup-agent" /></li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="mb-0">
+            <li class="mb-2"><Xref title="Chocolatey Central Management" value="central-management" /></li>
+            <li class="mb-2"><Xref title="Chocolatey for Business Environments" value="c4b-envs" /></li>
+            <li class="mb-2"><Xref title="Creating Packages" value="create-packages-quick-start" /></li>
+            <li class="mb-2"><Xref title="Guides" value="guides" /></li>
+            <li class="mb-2"><Xref title="Microsoft Intune" value="intune" /></li>
+        </ul>
+    </div>
+</div>
+<div class="row mt-4 mt-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary-opacity-25 d-flex justify-content-center align-items-center min-h-px-90">
+                <h3 class="mb-0 d-anchor-none">Get Help</h3>
+            </div>
+            <div class="card-body d-flex align-items-center">
+                <p class="mb-0">
+                    Learn about how to qualify for <a href="https://chocolatey.org/support">support </a>or <a href="https://ch0.co/community" target="_blank" rel="noreferrer">join our Discord</a> and <a href="https://www.reddit.com/r/chocolatey/" target="_blank" rel="noreferrer">official Reddit </a>to chat with the Community.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary-opacity-25 d-flex justify-content-center align-items-center text-center min-h-px-90">
+                <h3 class="mb-0 d-anchor-none">Join The Community</h3>
+            </div>
+            <div class="card-body d-flex align-items-center text-center">
+                <SocialMedia />
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header bg-primary-opacity-25 d-flex justify-content-center align-items-center text-center min-h-px-90">
+                <h3 class="mb-0 d-anchor-none">Receive Notifications</h3>
+            </div>
+            <div class="card-body d-flex align-items-center">
+                <ul class="mb-0">
+                    <li class="mb-2">
+                        <a href="https://chocolatey.us8.list-manage1.com/subscribe?u=86a6d80146a0da7f2223712e4&id=73b018498d" target="_blank" rel="noreferrer">Newsletter</a> and 
+                        <a href="https://groups.google.com/group/chocolatey" target="_blank" rel="noreferrer">Mailing List</a>
+                    </li>
+                    <li class="mb-2"><a href="https://groups.google.com/group/chocolatey-announce" target="_blank" rel="noreferrer">Release Announcements Only Mailing List</a></li>
+                    <li><a href="https://groups.google.com/group/chocolatey-build-status" target="_blank" rel="noreferrer">Build Status Mailing List</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

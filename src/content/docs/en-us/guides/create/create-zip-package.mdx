@@ -1,0 +1,141 @@
+---
+order: 3
+xref: howto-create-zip-package
+title: How To Create a Zip Package
+description: Creating a package that installs from a Zip archive
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+At its heart, a Chocolatey package is _just_ PowerShell. This makes Chocolatey packages capable of doing _almost anything_ that PowerShell can do!
+In this walk-through we'll learn how to leverage zip archives within our packaging.
+
+If you have not yet read <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />, please do so now and ensure
+you are ready to go before continuing.
+
+### Using `Get-ChocolateyUnzip`
+
+In our first example, we'll leverage <Xref title="`Get-ChocolateyUnzip`" value="get-chocolateyunzip" /> to extract a Zip archive to disk. This function requires
+that you include the Zip archive as part of the package. We'll look at downloading an archive from an external location later in our **Creating A Large Package** tutorial.
+
+#### Creating Your Package
+
+Perform the following steps:
+
+1. Open the `tutorials` folder in VS Code.
+2. Press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**..
+3. Type `Chocolatey:` and select `Create new Chocolatey package` from the list of available commands.
+4. Give your package a name, e.g. `embedded-zip`.
+5. Select `Default Template` when prompted.
+
+#### Creating Your Install Script
+
+Your new package will be created in the `tutorials` folder, visible in the Explorer pane of VS Code.
+Expand the `tools` folder and open up the `chocolateyInstall.ps1` file. The `chocolateyInstall.ps1` file is
+executed when you run either the `install` or `upgrade` commands with your package. 
+
+The default template fills this file out for us and provides a LOT of information. For our purposes, we can press `Ctrl+A` and delete the contents of this file.
+
+With our install script now empty, paste the following code into the file:
+
+```powershell
+$ErrorActionPreference = 'Stop' # stop on all errors
+$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$zipArchive = Join-Path $toolsDir -ChildPath 'tutorial.zip'
+
+
+$unzipArgs = @{
+  FileFullPath = $zipArchive
+  Destination = 'C:\zip_tutorial'
+}
+
+Get-ChocolateyUnzip @unzipArgs
+
+```
+
+Save `chocolateyInstall.ps1` and close the file.
+
+#### Download Example Zip Archive
+
+[Download the Zip archive](https://docs.chocolatey.org/downloads/create-embedded-zip-package-tutorial.zip) we will use in this tutorial. Once downloaded, copy the Zip archive to the `tools`` directory in your VS Code Explorer pane.
+
+#### Creating Your Uninstall Script
+
+The `chocolateyUninstall.ps1` script is executed you run the `uninstall` command with your package.
+
+In the VS Code Explorer pane, find and open the `chocolateyUninstall.ps1` file. Replace the contents of this file with the following:
+
+```powershell
+$ErrorActionPreference = 'Stop' # stop on all errors
+Uninstall-ChocolateyZipPackage -Packagename $env:ChocolateyPackageName -ZipFileName 'tutorial.zip'
+
+# Uninstall-ChocolateyZipPackage will remove the FILES from the archive.
+# If you wish to remove the DIRECTORY they were extracted too,
+# you'll additionally have to handle that in this script.
+Remove-Item 'C:\zip_tutorial'
+```
+
+#### Creating Your `.nuspec` File
+
+The `.nuspec` file is the metadata for your package. It provides information to Chocolatey CLI such as:
+
+- Package ID
+- Package Version
+- Author
+- Synopsis
+- Dependencies
+
+For packages being published to the [Chocolatey Community Repository](https://community.chocolatey.org/packages) additional information is required.
+You can find information on `.nuspec` requirements in our [Package Validator Rules](https://docs.chocolatey.org/en-us/community-repository/moderation/package-validator/rules/#requirements) documentation.
+
+In the VS Code Explorer pane, find and open the `embedded-zip.nuspec` file. Replace the contents of this file with the following:
+
+```xml
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>embedded-zip</id>
+    <version>1.0.0</version>
+    <title>embedded-zip (Install)</title>
+    <authors>Chocolatey Software</authors>
+    <tags>embedded-zip zip tutorial</tags>
+    <summary>Tutorial for embedded zip file package</summary>
+    <description>Tutorial for embedded zip file package</description>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+
+```
+
+### Compile Your Package
+
+The `pack` command is used to compile your Chocolatey package, giving it a `.nupkg` extension.
+
+1. In VS Code press `Ctrl+Shift+P` or use the **View** menu and click on **Command Palette**.
+2. Type `Chocolatey:` and click `Chocolatey: Pack Chocolatey package(s)`.
+3. Select `embedded-zip.nuspec` from the list.
+4. In **Additional arguments** enter `--output-directory='C:\tutorials'` and press `Enter`.
+
+### Install Your Script Package
+
+You can test your package, and see how it behaves with the following command:
+
+```powershell
+choco install embedded-zip -y --source='tutorials'
+```
+
+### Uninstall Your Script Package
+
+You can test the uninstall behavior with the following:
+
+```powershell
+choco uninstall embedded-zip -y
+```
+
+## Conclusion
+
+At this point, you should have a working Zip archive package! Congratulations! Hopefully you can apply this to other Zip archives!

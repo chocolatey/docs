@@ -1,0 +1,29 @@
+---
+order: 50
+xref: cpmr0050
+title: CPMR0050 - Title Matches Id (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0050
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+<Callout type="warning">
+    There was a bug where it was not taking case into account. We've fixed the bug, but you may end up here - https://github.com/chocolatey/home/issues/32
+</Callout>
+
+## Issue
+
+In the nuspec, the id of the package `<id />` was found to match exactly with `<title />`.
+
+## Recommended Solution
+
+In the nuspec, ensure the `<id />` is completely lowercase (e.g. "`thispackage`") and the `<title />` uses title case (e.g. "`This Package`").
+
+## Reasoning
+
+In general, the id should be lowercase ("`thispackage`") and a title should have title case ("`ThisPackage`"). The names may match, but what we are generally searching for is whether someone has ran the template generation and then forgotten to update the title in the nuspec to something more appropriate.

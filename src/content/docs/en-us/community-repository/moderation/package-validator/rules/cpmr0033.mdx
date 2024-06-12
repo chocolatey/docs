@@ -1,0 +1,25 @@
+---
+order: 33
+xref: cpmr0033
+title: CPMR0033 - IconUrl Missing (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0033
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+The nuspec is missing (or has commented out) the `iconUrl`, which points to an icon image for the underlying software the package is based on. If there is an existing icon/logo for the software, it should be included with the package.
+
+## Recommended Solution
+
+Add `<iconUrl>url_here</iconUrl>` to the nuspec following the <Xref title="icon guidelines" value="create-packages" anchor="package-icon-guidelines" />. If your nuspec file is missing this field, you should run `choco new testpkg` and look at the output from that (ensure you have the [latest version of Chocolatey](https://community.chocolatey.org/packages?q=id%3Achocolatey)).
+
+## Reasoning
+
+We really want to see the IconUrl being used. It adds to the quality of the package when it has an icon to show. It is best to provide the icon from a source you control such as your GitHub repository, however GitHub raw is not intended to serve as a CDN. So please use a static CDN service. For further information on how to setup your icon with a CDN URL, please see <Xref title="icon guidelines" value="create-packages" anchor="package-icon-guidelines" />. It's not as intuitive as you might hope.

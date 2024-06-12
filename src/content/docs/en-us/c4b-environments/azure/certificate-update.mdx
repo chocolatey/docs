@@ -1,0 +1,236 @@
+---
+order: 30
+xref: c4b-azure-cert-update
+title: Certificate Update
+description: A guide to updating the certificate used in the Chocolatey for Business Azure Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Summary
+
+When deploying a Chocolatey for Business (C4B) Azure Environment, you are asked to supply an SSL certificate. This page shows you how to update that certificate when the original is expiring or has been regenerated for any other reason.
+
+To perform this operation you will need to have permissions sufficient to edit Access Policies on the environment's Azure Key Vault.
+
+Please note that it can take some time for all of the components in your C4B Azure Environment to reflect the new certificate.
+
+For portions of this document using PowerShell, we assume you have installed a recent version of the [Az modules](https://www.powershellgallery.com/packages/Az/) (easily available by running `choco install az.powershell` in an elevated prompt), and have logged in to your account using `Connect-AzAccount`. You can also set a variable, `$ResourceGroupName`, to the name of the resource group you deployed the Chocolatey for Business Azure Environment to as we will use this with the PowerShell code snippets below.
+
+## Access Policies
+
+Similar to the Access Policies configuration needed to <Xref title="access" value="c4b-azure" anchor="accessing-services" /> the usernames and passwords for the services running in your C4B Azure Environment, you will need to configure access to manage the SSL certificate.
+
+You can adjust the Access Policies using the Azure Portal or PowerShell.
+
+### Azure Portal
+
+1. Navigate to the `Resource Group` that contains your C4B Azure Environment.
+1. Select the Key vault.
+
+    ![Key vault resource](/images/c4b-azure/Cert-KeyVault-Resource.png)
+
+1. Under `Settings` on the left of the blade, select `Access Policies`.
+1. Click `+ Add Access Policy`.
+
+    ![Vault Access Policies](/images/c4b-azure/Cert-KeyVault-AccessPolicies.png)
+
+1. Select, at a minimum, `Certificate Permissions`: `Get`, `List`, `Import`, and `Update` *(You can use a Template such as `Certificate Management`)*.
+
+    ![Secret Permissions](/images/c4b-azure/Cert-KeyVault-SecretPermissions.png)
+
+1. Under `Select Principal`, click `None Selected` and find your current user, and select it.
+1. Click `Add`.
+
+    ![Add Principal](/images/c4b-azure/Cert-KeyVault-AddPrincipal.png)
+
+1. Back on the `Access Policies` blade, hit `Save` and wait for the operation to complete.
+
+### PowerShell
+
+```powershell
+if (-not $ResourceGroupName) {$ResourceGroupName = Read-Host 'Enter the ResourceGroupName'}
+$CurrentUser = (Get-AzContext).Account.Id
+
+# Grant access to the KeyVault, if missing
+$KeyVault = Get-AzKeyVault -ResourceGroupName $ResourceGroupName | ForEach-Object {Get-AzKeyVault -VaultName $_.VaultName}
+$CertPermissions = $KeyVault.AccessPolicies.Where{$_.DisplayName -like "*$CurrentUser*"}.PermissionsToCertificates
+if ($CertPermissions -notcontains 'Get' -or $CertPermissions -notcontains 'List' -or $CertPermissions -notcontains 'Update' -or $CertPermissions -notcontains 'Import') {
+    $NewCertPermissions = $CertPermissions + @('Get', 'List', 'Update', 'Import') | Select-Object -Unique
+    Set-AzKeyVaultAccessPolicy -VaultName $KeyVault.VaultName -UserPrincipalName $CurrentUser -PermissionsToCertificates $NewCertPermissions
+}
+```
+
+## Updating the Azure Key Vault
+
+The certificate used by most of the C4B Azure Environment is stored in the provided Azure Key Vault under the name `C4B-Azure-Certificate`. To update the certificate used by the environment, you create a new version of this certificate.
+
+<Callout type="info">
+    Please note that the new certificate must meet the same requirements as the original did during the <Xref title="initial deployment" value="c4b-azure" anchor="ssl-certificate" />. The certificate:
+    
+    * Needs to be in the PFX format.
+    * Needs to include an exportable Private Key.
+    * Must have a password.
+</Callout>
+
+You can upload a new version of the certificate using the Azure Portal or PowerShell.
+
+### Azure Portal
+
+1. Within the Key Vault, under `Settings` on the left of the blade, select `Certificates`.
+1. Select the certificate named `C4B-Azure-Certificate`.
+
+    ![Vault Certificates](/images/c4b-azure/Cert-KeyVault-Certificates.png)
+
+1. Click `+ New Version`.
+
+    ![Vault Certificates New Version](/images/c4b-azure/Cert-KeyVault-Cert-New.png)
+
+1. Change the `Method of Certificate Creation` to `Import`.
+1. Upload your certificate PFX file, and provide the password needed to import it.
+
+    ![Vault Import Certificates](/images/c4b-azure/Cert-KeyVault-Cert-Import.png)
+
+1. Click `Create`.
+1. The new certificate will now be listed as the `CURRENT VERSION` and any previous certificates will be listed under `OLDER VERSIONS`.
+
+    ![Vault Certificate Version List](/images/c4b-azure/Cert-KeyVault-Cert-Version-List.png)
+
+### PowerShell
+
+This script prompts you for the name of the Resource Group that contains your C4B Azure Environment and then opens a dialog box to select your new certificate.
+
+```powershell
+if (-not $ResourceGroupName) {$ResourceGroupName = Read-Host 'Enter the ResourceGroupName'}
+$KeyVault = Get-AzKeyVault -ResourceGroupName $ResourceGroupName | ForEach-Object {Get-AzKeyVault -VaultName $_.VaultName}
+
+$null = [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+$FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
+    Title  = 'Select Chocolatey for Business Azure Environment Certificate'
+    Filter = 'Certificate (*.pfx)|*.pfx'
+}
+$null = $FileBrowser.ShowDialog()
+
+$CertImport = @{
+    VaultName = $KeyVault.VaultName
+    Name      = 'C4B-Azure-Certificate'
+    FilePath  = $FileBrowser.FileName
+}
+$null = Import-AzKeyVaultCertificate @CertImport -Password (Read-Host "Enter the certificate import password" -AsSecureString)
+```
+
+## Updating the Application Gateway
+
+The Application Gateway provided with your C4B Azure Environment needs to be updated manually, as it is not able to reference the Azure Key Vault.
+
+### Azure Portal
+
+<Callout type="info">
+    In addition to the certificate in a PFX format that was used in the <Xref title="previous section" value="c4b-azure-cert-update" anchor="updating-the-azure-key-vault" />, you will need a copy of the certificate in CER format.
+    
+    You can convert your existing certificate using OpenSSL (easily installed by running `choco install openssl.light`):
+    
+    `openssl pkcs12 -in certificate.pfx -out certificate.cer -nokeys -clcerts`
+    
+    You will need to edit the resulting file to remove all of the text above the `-----BEGIN CERTIFICATE-----` line.
+</Callout>
+
+1. Navigate to the `Resource Group` the contains your C4B Azure Environment.
+1. Select the `Application gateway`.
+
+    ![Application Gateway resource](/images/c4b-azure/Cert-AppGateway-Resource.png)
+
+1. Under `Settings` on the left of the blade, select `Backend settings`.
+1. Select `CCMService`.
+
+    ![Application Gateway backend settings](/images/c4b-azure/Cert-AppGateway-BackendSettings.png)
+
+1. On the `Add Backend settings` blade, click `+ Add certificate`.
+
+    ![Backend setting add certificate](/images/c4b-azure/Cert-AppGateway-BackendCertAdd.png)
+
+1. Ensure `Create new` is selected and browse to the `.cer` version of your certificate.
+1. Provide a descriptive `Cert name` that is different to the existing certificate. The initial certificate is called `CCMCert`.
+1. Click `+ Add certificate`.
+
+    ![Add backend certificate](/images/c4b-azure/Cert-AppGateway-BackendCertDetails.png)
+
+1. Click the `...` (three dots) to the right of the previous certificate and choose `Delete`.
+1. Click `Save`.
+
+    ![Save new backend certificate](/images/c4b-azure/Cert-AppGateway-BackendCertSave.png)
+
+1. Under `Settings` on the left of the blade, select `Listeners`.
+1. Select `CCM`.
+
+    ![Application Gateway listeners settings](/images/c4b-azure/Cert-AppGateway-ListenersSettings.png)
+
+1. Ensure `SslCertificate` is the selected certificate.
+1. Check `Renew or edit selected certificate`.
+1. Browse to select the `.pfx` version of your certificate.
+1. Enter the `Password` required to import the certificate.
+1. Click `Save`.
+
+    ![Application Gateway listeners cert update](/images/c4b-azure/Cert-AppGateway-ListenersCert.png)
+
+1. It can take some time for the Application Gateway to update. When it has finished you will be able check that the new certificate is being served by visiting on the C4B Azure Environment <Xref title="services" value="c4b-azure" anchor="accessing-services" />.
+
+### PowerShell
+
+Please note that until the `Set-AzApplicationGateway` command is run, the Application Gateway will not be updated. **The update can take up to 30 minutes**, but the command should return immediately.
+
+```powershell
+if (-not $ResourceGroupName) {$ResourceGroupName = Read-Host 'Enter the ResourceGroupName'}
+$ApplicationGateway = Get-AzApplicationGateway -ResourceGroupName $ResourceGroupName
+
+$null = [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
+if (-not $FileBrowser.FileName) {
+    $FileBrowser = New-Object System.Windows.Forms.OpenFileDialog -Property @{
+        Title  = 'Select Chocolatey for Business Azure Environment Certificate'
+        Filter = 'Certificate (*.pfx)|*.pfx'
+    }
+    $null = $FileBrowser.ShowDialog()
+}
+
+$CertificateDetails = @{
+    Name               = "SslCertificate"
+    CertificateFile    = $FileBrowser.FileName
+    Password           = Read-Host "Enter the certificate import password" -AsSecureString
+}
+
+# Set the listener SSL certificate
+$ApplicationGateway = Set-AzApplicationGatewaySslCertificate -ApplicationGateway $ApplicationGateway @CertificateDetails
+
+# Convert the certificate to a CER format
+$Cert = [System.Security.Cryptography.X509Certificates.X509Certificate2]::new(
+    $CertificateDetails.CertificateFile,
+    $CertificateDetails.Password,
+    32  # EphemeralKeySet
+)
+[IO.File]::WriteAllBytes(($TemporaryCerPath = New-TemporaryFile), $Cert.Export("Cert"))
+
+# Set the authentication certificate for the CCM service
+$ApplicationGateway = Set-AzApplicationGatewayAuthenticationCertificate -ApplicationGateway $ApplicationGateway -Name "CCMCert" -CertificateFile $TemporaryCerPath
+
+# "Save" the new settings to the Application Gateway
+$null = Set-AzApplicationGateway -ApplicationGateway $ApplicationGateway
+
+# Clean up the temporary CER
+Remove-Item $TemporaryCerPath
+```
+
+## FAQ
+
+### I've uploaded a new certificate, why hasn't it been applied?
+
+Some components of the C4B Azure Environment need to select between multiple versions of a certificate when determining if an update is required.
+
+The determining factor is the `NotBefore` date on the certificate. The latest date is considered to belong to the newest certificate.
+
+You can check the `NotBefore` property of a pfx file using PowerShell:
+
+```powershell
+$CertificatePath = Read-Host 'Enter the path to the certificate file'
+Get-PfxCertificate -FilePath $CertificatePath | Select-Object NotBefore
+```

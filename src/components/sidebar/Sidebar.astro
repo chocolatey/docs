@@ -1,0 +1,25 @@
+---
+// Scripts and types
+import type { ContentTree } from '@scripts/types';
+
+// Components
+import HighlightsSidebar from '@components/highlights/HighlightsSidebar.astro';
+import SidebarSelf from '@components/sidebar/SidebarSelf.astro';
+import SidebarListItem from '@components/sidebar/SidebarListItem.astro';
+
+interface Props {
+    content: ContentTree[];
+}
+
+const { content } = Astro.props;
+---
+
+<ul class="navbar-nav">
+    <HighlightsSidebar />
+    {content.filter(doc => doc.data.showInSidebar === true).map(doc=> (
+        doc.data.xref === 'home' && (
+            <SidebarListItem content={doc} paddingClass={'ps-c2'} />
+        )
+    ))}
+    <SidebarSelf content={content[0].children} />
+</ul>

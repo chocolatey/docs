@@ -1,0 +1,33 @@
+---
+order: 10
+xref: cpmr0010
+title: CPMR0010 - Script Contains Choco Commands (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0010
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In automation scripts (`.ps1`/`.psm1`), the package has used a chocolatey command that should not be used. Rather a dependency should be taken on a package.
+
+ * cinst
+ * choco install
+ * choco upgrade
+
+<Callout type="info">
+    The search can also hit a false positive if it finds any of the above words in the package's automation scripts.
+</Callout>
+
+## Recommended Solution
+
+Please add dependencies to the nuspec.
+
+## Reasoning
+
+Calling Chocolatey commands when running Chocolatey is considered an anti-pattern, and it hides dependency required for other packages, which should be expressed.

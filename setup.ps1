@@ -17,8 +17,4 @@ Catch
 }
 
 Write-Host "Installing base line applications for Chocolatey docs..."
-choco upgrade dotnetcore-sdk -y --version 3.1.404 --no-progress
 choco upgrade nodejs-lts -y --no-progress
-
-Write-Host "Enabling corepack for Yarn management..."
-corepack enable

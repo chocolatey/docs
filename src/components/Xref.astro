@@ -1,0 +1,54 @@
+---
+// Scripts and types
+import { z } from 'zod';
+import { xref, xrefLinkAnchorSchema, xrefLinkValueSchema } from '@scripts/xref.ts';
+import type { XrefLinkAnchor, XrefLinkValue} from '@scripts/xref.ts';
+
+const { title, value, anchor, classes, icon } = Astro.props;
+const canonicalURL = new URL(Astro.url, Astro.site);
+
+if (!value) {
+    if (title) {
+        throw new Error(`No value provided for xref link title: ${title} on ${canonicalURL.toString()}`);
+    } else {
+        throw new Error(`No value provided for xref link on ${canonicalURL.toString()}`);
+    }
+}
+
+if (!title) {
+    throw new Error(`No title provided for xref link: ${value} on ${canonicalURL.toString()}`);
+}
+
+if (value.includes('#')) {
+    throw new Error(`Xref link value cannot contain an anchor: ${value} on ${canonicalURL.toString()}`);
+}
+
+const xrefLinkTitleSchema = z.string();
+const xrefLinkClassesSchema = z.string().optional();
+const xrefLinkIconSchema = z.string().optional();
+
+type XrefLinkTitle = z.infer<typeof xrefLinkTitleSchema>;
+type XrefLinkClasses = z.infer<typeof xrefLinkClassesSchema>;
+type XrefLinkIcon = z.infer<typeof xrefLinkIconSchema>;
+
+interface Props {
+    title: XrefLinkTitle
+    value: XrefLinkValue
+    anchor: XrefLinkAnchor
+    classes: XrefLinkClasses,
+    icon: XrefLinkIcon
+}
+
+// Validate the content
+xrefLinkValueSchema.parse(value);
+xrefLinkTitleSchema.parse(title);
+xrefLinkAnchorSchema.parse(anchor);
+xrefLinkClassesSchema.parse(classes);
+xrefLinkIconSchema.parse(icon);
+
+const link = await xref(value, anchor);
+const allClasses = classes ? classes : '';
+const iconTitle = `${title}<i class="fas ${icon} ms-1"></i>`;
+---
+
+<a class={allClasses} href={link} title={title}>{icon ? <Fragment set:html={iconTitle} /> : title}</a>

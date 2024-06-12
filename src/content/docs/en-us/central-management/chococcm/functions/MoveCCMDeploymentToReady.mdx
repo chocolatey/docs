@@ -1,0 +1,80 @@
+---
+order: 200
+xref: move-ccmdeploymenttoready
+title: Move-CCMDeploymentToReady
+description: Information about the Move-CCMDeploymentToReady function
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# Move-CCMDeploymentToReady
+
+{/* This documentation is automatically generated from /Move-CCMDeploymentToReady.ps1 using GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Moves a  deployment to Ready state
+
+## Syntax
+
+```powershell
+Move-CCMDeploymentToReady `
+  -Deployment <String> [<CommonParameters>]
+```
+
+## Description
+
+Moves a Deployment to the Ready state so it can start
+
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+```powershell
+Move-CCMDeploymentToReady -Deployment 'Upgrade Outdated VLC'
+
+```
+
+**EXAMPLE 2**
+
+```powershell
+Move-CCMDeploymenttoReady -Deployment 'Complex Deployment'
+
+```
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -Deployment &lt;String&gt;
+The deployment  to  move
+
+Property               | Value
+---------------------- | -----
+Aliases                |
+Required?              | true
+Position?              | 1
+Default Value          |
+Accept Pipeline Input? | false
+
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` https://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+
+<Xref title="Function Reference" value="chococcm-functions" />
+
+<Callout type="info">
+    This documentation has been automatically generated from `Import-Module "ChocoCCM" -Force; Get-Help Move-CCMDeploymentToReady -Full`.
+</Callout>

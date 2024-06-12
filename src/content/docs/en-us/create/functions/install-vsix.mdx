@@ -1,0 +1,90 @@
+﻿---
+order: 310
+xref: install-vsix
+title: Install-Vsix
+description: Information on Install-Vsix function
+---
+import Xref from '@components/Xref.astro';
+
+# Install-Vsix
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-Vsix.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+DO NOT USE. Not part of the public API.
+
+## Syntax
+
+~~~powershell
+Install-Vsix `
+  -Installer <String> `
+  -InstallFile <String> `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+Installs a VSIX package into a particular version of Visual Studio.
+
+## Notes
+
+This is not part of the public API. Please use
+Install-ChocolateyVsixPackage instead.
+
+## Aliases
+
+None
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -Installer &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -InstallFile &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyVsixPackage' value='install-chocolateyvsixpackage' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-Vsix -Full`.
+
+View the source for [Install-Vsix](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-Vsix.ps1)

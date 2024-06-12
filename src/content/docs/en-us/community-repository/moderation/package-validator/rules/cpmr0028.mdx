@@ -1,0 +1,48 @@
+---
+order: 28
+xref: cpmr0028
+title: CPMR0028 - Scripts Do Not Download Software From FossHub (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0028
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+In automation scripts (`.ps1`/`.psm1`), the package has attempted to download software from FossHub. FossHub has expressed a desire for this not to happen. They offset the costs of bandwidth with ad revenue and cannot make up for those bandwidth costs when a script does the downloading instead of a human who visits the page to download the software.
+
+## Recommended Solution(s)
+
+### Option 1 - Alternative Official Locations
+
+Look for an alternative download location that is legitimate.
+
+### Option 2 - Embed if Software Vendor's License Allows (Recommended)
+
+Please check the licensing for the software to determine if it allows embedding the software directly in the package. This is redistribution rights that the vendor will grant directly or through the license for the software. Many open sources licenses allow redistribution without modification.
+
+Should you decide to embed, you will also need to include both a
+VERIFICATION.txt and a LICENSE.txt file. To see what those look like, please run `choco new test` with a recent version of Chocolatey.
+
+Chocolatey packages on the community repository can be up to 150MB.
+
+### Option 3 - No Package for that Software on the Community Repository
+
+If there is no alternate location and the software vendor does not grant the right to embed, indirectly through licensing or directly through communication with them, then the package is not able to be hosted on the community site.
+
+## Reasoning
+
+Recently (02 DEC 2016), we learned that FossHub had a desire not to have packages download software from their site because it was causing them significant financial distress based on not being able to make up for the bandwidth costs with ad revenue. They have every right to make this request and the Chocolatey community has a due diligence to respect this.
+
+Many maintainers on the Chocolatey community side tend to err on the side of legal protection by downloading the software from the official distribution location (aka FossHub and other hosting locations), whether or not it is necessary - sometimes the licensing from software allows for redistribution. While not doing anything technically illegal by disambiguating the download location, it may violate FossHub's terms of use. While this is not technically a good steward on the community's part, violating terms of use is the lesser of issues compared to illegally redistributing software (redistribution without permission has a legal recourse).
+
+Since it is by far easier to just default to what provides the most protection, even if a software license allows otherwise, this is what folks were doing. It's the least common denominator. Right or wrong, it's human psychology.
+
+<Callout type="info">
+    We don't condone the way the message was conveyed nor the way that FossHub attacked Chocolatey when a community member simply asked for an alternative download location on the Audacity forums. Folks in the Chocolatey community should respect the wishes of FossHub and also refrain from name calling or other things that would reflect poorly on the community in general. I implore you to look past their methods of communicating the situation and only the message that has been conveyed - "Please help us keep our costs down by not using scripts to download software from our site."
+</Callout>

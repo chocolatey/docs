@@ -1,0 +1,41 @@
+---
+order: 60
+xref: cpmr0060
+title: CPMR0060 - Binaries Included (package)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0060
+ruleType: Note
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.mdx';
+
+<PackageValidatorRuleNote />
+
+## Issue
+
+In the package, you have included binaries that match one of the following extensions:
+
+* exe
+* msi
+* msu
+* msp
+* dll
+* 7z
+* zip
+* gz
+* tar
+* rar
+* sfx
+* iso
+* dmg
+* so
+* jar
+
+## Recommended Solution
+
+Please remove the binaries or update the package with a <Xref title="license file" value="cpmr0005" /> and a <Xref title="verification file" value="cpmr0006" />.
+
+## Reasoning
+
+If you include binaries in the package, even if you are the software vendor, you need to include confirmation of the right to distribute and verification that the files are legitimate.

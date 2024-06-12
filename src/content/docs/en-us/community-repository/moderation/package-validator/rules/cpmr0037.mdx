@@ -1,0 +1,36 @@
+---
+order: 37
+xref: cpmr0037
+title: CPMR0037 - Custom Action In Install With No Uninstall (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0037
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+In automation scripts (`.ps1`/`.psm1`), the package has used one of the below items without also including a `chocolateyUninstall.ps1` to remove any thing changed by those items.
+
+ * Install-ChocolateyPath
+ * Install-ChocolateyEnvironmentVariable
+ * Install-ChocolateyExplorerMenuItem
+ * Install-ChocolateyShortcut
+ * Install-ChocolateyFileAssociation
+ * Install-BinFile / Generate-BinFile / Add-BinFile
+
+<Callout type="info">
+    The search can also hit a false positive if it finds any of the above words in the package's automation scripts.
+</Callout>
+
+## Recommended Solution
+
+Please add a `chocolateyUninstall.ps1` and reverse any install actions in the uninstall.
+
+## Reasoning
+
+The above items put the computer/machine they are installing to in a certain state. When the package is removed or uninstalled, the underlying changes to the machine should go away as well.

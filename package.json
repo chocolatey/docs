@@ -11,10 +11,22 @@
     "url": "https://github.com/chocolatey/docs/issues"
   },
   "homepage": "https://github.com/chocolatey/docs#readme",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "choco-theme": "yarn dlx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
+    "astro": "npx astro",
+    "browsers": "npx playwright install --with-deps",
+    "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro check && npx astro build",
+    "dependencies": "yarn install --immutable",
+    "dev": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro dev",
+    "playwright": "npx playwright test",
+    "preview": "npx astro preview",
+    "start": "yarn dev",
+    "telemetry": "npx astro telemetry disable",
+    "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
   },
-  "devDependencies": {
-    "choco-theme": "0.7.0"
+  "dependencies": {
+    "choco-astro": "0.1.0",
+    "choco-theme": "0.7.1"
   }
 }

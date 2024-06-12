@@ -1,0 +1,121 @@
+---
+order: 15
+xref: choco-new-in-v2
+title: What's new in Chocolatey CLI v2.0.0
+description: A summary of the notable differences when upgrading from Chocolatey CLI v1.x to v2.0.0
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+# What's New in Chocolatey CLI v2.0.0
+
+> **Note**
+>
+> This is a high-level overview of what's new in Chocolatey CLI 2.0.0. If you are ready to upgrade, please read the <Xref title="upgrade guide" value="upgrading-to-chocolatey-v2-v6" />.
+
+## NuGet v3 Feed Support
+
+You can now use NuGet v3 package feeds with Chocolatey CLI!
+This allows users to work with package repositories that provide NuGet v3 feeds.
+We will be adding NuGet v3 support to the Chocolatey Community Repository in the future.
+
+Listed below are some examples of repository managers that support NuGet v3 feeds, that you can start using with Chocolatey CLI v2.0.0 and later:
+
+- [GitHub Packages](https://github.com/features/packages)
+- [ProGet](https://inedo.com/proget)
+- [Sonatype Nexus](https://www.sonatype.com/products/sonatype-nexus-repository)
+- [JFrog Artifactory](https://jfrog.com/artifactory/)
+
+## SemVer 2.0.0 Support
+
+Starting in v2.0.0, Chocolatey CLI supports SemVer 2.0.0, although it requires that all version number segments fit into the range `0-2147483647`.
+This allows some additional prerelease package version variants like `1.0.1-alpha.23` (note the period in the prerelease tag following the hyphen, which was previously considered not valid for a version number) to be built with Chocolatey CLI.
+For more information on SemVer 2.0.0, please see [the SemVer website](https://semver.org/spec/v2.0.0.html).
+
+> **Note**
+>
+> Most older version styles, like 4-part version numbers (`1.0.0.2`), are still supported.
+> Chocolatey CLI v2.0.0 and later adopt NuGet's current versioning system.
+> Any version numbers supported by NuGet are also supported by Chocolatey CLI.
+
+## Minimum Operating System Support Changes
+
+See our <Xref title="Support Lifecycle" value="chocolatey-components-dependencies-and-support-lifecycle" /> page for a full run-down.
+
+> **Note**
+>
+> To use the Chocolatey Community Repository with Windows Server 2008 R2 and 2012, you need to ensure the relevant patches are installed and registry entries configured to enable TLS v1.2 by default.
+
+## .NET Framework Uplift
+
+Chocolatey CLI v2.0.0 now requires .NET Framework 4.8.
+When possible, the installation process will attempt to install .NET Framework 4.8 if it's not already present on the system.
+However, installing .NET Framework 4.8 will require a reboot to be completed before Chocolatey CLI can be installed.
+
+For the smoothest upgrade experience, we recommend you install .NET Framework 4.8 and reboot before installing or upgrading to Chocolatey CLI v2.0.0.
+
+## API Key Subcommands
+
+The `choco apikey` syntax has changed.
+The `--remove` option has been removed, and `add` / `remove` / `list` subcommands have been added.
+For example:
+
+```powershell
+choco apikey add --source "'https://source.url/api/v2/'" --key "'API_KEY_HERE'"
+choco apikey list
+choco apikey remove --source "'https://source.url/api/v2/'"
+```
+
+For backwards compatibility, omitting the subcommand retains its original behaviour:
+
+- `choco apikey` with no arguments defaults to `list`, listing stored API keys.
+- `choco apikey --source "'https://source.url/api/v2/'" --key "'API_KEY_HERE'"` with both arguments defaults to `add`, adding a new API key.
+
+## Builtin Shims Removed
+
+For a long time Chocolatey CLI provided shortcuts for commands like `choco pack` (`cpack`) and `choco install` (`cinst`).
+This has led to some conflicts with other software and we [deprecated these shortcuts, also called _shims_](https://github.com/chocolatey/choco/issues/2641).
+We have now [removed them entirely](https://github.com/chocolatey/choco/issues/2642).
+
+If you miss that functionality, it is still possible to add these commands back as either batch files on the PATH, or PowerShell functions added to your profile.
+
+## The List Command Only Shows Local Packages
+
+Previously, Chocolatey CLI had three identical commands: `list`, `search`, and `find`.
+In v2.0.0, `list` has become the command used for listing locally-installed packages, while `search` and `find` work with remote repositories.
+For backwards compatibility, the `-lo` and `--local-only` flags are deprecated when using limited output `--limited-output`, with plans to remove them in Chocolatey CLI v3.0.0.
+Usage without the `--limited-output` argument will return an error when `-lo` or `--local-only` is used.
+
+## Limits On Large Queries
+
+Chocolatey CLI will now impose a limit on the number of packages returned by the `list`, `find`, and `search` commands.
+For local sources the limit is **10,000** packages, with remote sources being limited to **1,000**.
+The default page size in both cases is **25**.
+On reaching these limits, Chocolatey CLI will warn you to refine your query to get the results you need.
+
+## Added Options, Configurations, and Features
+
+- `--online` option added for commands' `--help`.
+  This will now take you to an online version of the command help.
+  For example, `choco install --help --online` will open the [Install command docs page](https://docs.chocolatey.org/en-us/choco/commands/install) in your default browser.
+- `choco feature` now supports the `get` subcommand, which will show a single feature state.
+- The `defaultPushSource` configuration option was added, which sets a default URL to push to when using `choco push`.
+
+## Removed Options and Features
+
+- Removed the deprecated side-by-side install functionality (aka `--allow-multiple`).
+- Removed the deprecated default push location of `push.chocolatey.org`.
+  Use the new `defaultPushSource` configuration instead (see above).
+- Removed deprecated configuration options for `cacheLocation` and `commandExecutionTimeoutSettings`.
+- Only Chocolatey CLI configuration is shown for `choco config list`.
+  Use `choco feature list` to view features, and `choco apikey list` to view API key entries.
+- [WebPi has been removed by Microsoft](https://github.com/chocolatey/choco/issues/2958) and the `--source webpi` alternative package source has been removed.
+- Removed installing directly from a `nupkg` or `nuspec` file.
+  Use `choco install packagename -s ./local/path/to/folder` instead, and ensure packages are packed with `choco pack` before attempting to install them.
+- Package version numbers will no longer retain leading zeroes in any parts of the version number when using `choco pack`.
+  For example, `09.00.001` will be normalized to `9.0.1`.
+
+## Ready To Upgrade?
+
+If you are ready to upgrade, please read our <Xref title="upgrade guide" value="upgrading-to-chocolatey-v2-v6" />.

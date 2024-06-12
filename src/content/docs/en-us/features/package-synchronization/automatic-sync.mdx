@@ -1,0 +1,106 @@
+---
+order: 10
+xref: automatic-sync
+title: Automatic Sync (Pro+)
+description: Ensure that any operation on an application, i.e. it is uninstalled, or upgraded, is tracked within Chocolatey as well
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Automatic Synchronize
+
+In all licensed editions, Chocolatey syncs the state of **already installed Chocolatey packages** (nupkg files) to the state of the software they are linked up with - so if the software is uninstalled or upgraded outside of Chocolatey, it removes the package or notes the upgrade. This behavior is known as automatic synchronization or autosync for short. There is also choco sync, which is different and is covered in [Sync Command](#sync-command) below.
+
+There is an important distinction between packages and software to understand with Chocolatey. Chocolatey manages packages (nupkg files), and packages manage software. Many packages are what we call "installer packages" - packages that manage an installer and an installation into Programs and Features. Once that software is in Programs and Features, it could be manipulated outside of Chocolatey. If it is removed without the command going through Chocolatey, open source Chocolatey will still have the package installed (which is technically correct from a package manager state, but incorrect based on expectations). With open source you end up with a disconnect if you are not careful. Licensed editions of Chocolatey are able to see system state and correct this discrepancy with autosync by updating the state of the package based on what has occurred outside of Chocolatey.
+
+For software management, which encompasses package management and above that for Windows, the state of the software is really what should be reflected with those installed packages. So if that software has been uninstalled from Programs and Features or upgraded outside of Chocolatey, autosync removes those packages to match that state or notes the upgrade (note it doesn't change the version of the package - that's much trickier to get correct).
+
+As commercial editions lean more towards software management, they have much better system integration. Autosync is great for ensuring that Chocolatey matches the state of changes on the system for what the packages it is tracking.
+
+### Usage
+
+<Callout type="warning">
+    The following image shows this behavior in Chocolatey CLI v1.x. Chocolatey CLI v2.x has the same behavior, but uses `choco list` instead of `choco list -lo` to list local packages.
+</Callout>
+
+![Automatic Synchronize - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/images/features/features_synchronize.png)
+
+In the image above, someone manually removed the 1Password software. On the next run of Chocolatey, auto sync sees the software has been removed, so it removes the package tracking to that software in response to those system changes.
+
+{/*
+Text in the image above:
+
+Synchronize with Programs and Features
+
+- Chocolatey for Business - any Chocolatey command will trigger synchronization
+- Synchronizes state between Chocolatey and Programs and Features
+- Currently supports manual software removals
+- Adding upgrade tracking
+
+This image shows running `choco list -lo`. Chocolatey for Business automatically detects that 1Password has been manually uninstalled and synchronizes Chocolatey's state.
+*/}
+
+#### Automatic Updating Software?
+
+When you have software like Google Chrome that automatically updates, it is recommended typically that you pin the package to let the software automatically upgrade. Chocolatey's autosync will track the software updates in the background and store those which will be helpful if you later remove the software from Programs and Features directly or want to run choco uninstall on the package to remove the software.
+
+#### More Details On External Upgrades
+
+You could also upgrade the software directly outside of Chocolatey, which would similarly create a discrepancy between the software being on a newer version than the package shows.
+
+Chocolatey's autosync understands that an upgrade occurred and tracks that for the software, but not the packaging. So you won't see anything visual that indicates the sync as the package version will remain the same.
+
+export const callout1 = {
+    title: "Why doesn't Chocolatey upgrade the package version?",
+    type: 'info',
+}
+
+<Callout content={callout1}>
+    There is not always a one to one line up between package version and software version. The version of software you think you are based on the software telling you and what that software reports as the version in the registry are different many times, unfortunately. This makes it very difficlt to update a package version correctly.
+</Callout>
+
+For example, for the longest time Google Chrome had a version number in the registry at 65.x when the version being displayed to users was at like 59.x. The packaging was at 59.x following what people note as the version based on what Google Chrome tells them. This is just one of many examples.
+
+<Callout type="info">
+    Software version tracking assists in uninstallations where Chocolatey's autouninstaller is invoked.
+</Callout>
+
+If the software is an MSI, the Product Guid is used for managing uninstalls. Guess what typically changes on every upgrade? Yes, the Product Guid. So autosync is keeping track of the new ones as the software automatically upgrades. Without tracking that, if you were to say `choco uninstall googlechrome` without autosync and there was no `chocolateyUninstall.ps1` in the package, then the software could potentially be left on the system because Chocolatey's automatic uninstaller wouldn't have the right Product Guid and thus be unable to handle software uninstallation.
+
+### See It In Action
+
+![auto package creation/synchronize](/images/gifs/choco_business_features.gif)
+
+<Callout type="info">
+    To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
+</Callout>
+
+### Options and Switches
+
+There are none - automatic sync just happens every run.
+
+### FAQ
+
+#### How do I take advantage of this feature?
+
+You must have a [licensed edition of Chocolatey](https://chocolatey.org/pricing) (Pro, MSP, or Business). Pro is a personal, named license that costs about the price of a lunch outing per month and comes with several other features. Business editions are great for organizations that need to manage the total software management lifecycle. MSP editions contain a subset of the Business edition features.
+
+#### I'm a licensed customer, now what?
+
+It just works.
+
+#### How does it work?
+
+Chocolatey tracks applications that it installs, so it is able to keep up with those applications as they are upgraded and uninstalled, even outside of Chocolatey.
+
+#### Sync is not tracking upgrades to applications
+
+Currently, AutoSync does not support upgrades of the underlying synced Chocolatey Package to reflect new versions of synced software being installed.
+Software installers have the following mechanisms to display their information, with no consistent standard:
+
+- Display Version in the registry (which isn't required and quite a few apps don't populate the field at all)
+- Display Name as shown in Programs and Features
+- Version field in the uninstaller registry
+
+Due to the fact that an installer version doesn't have to match the software version (Google's msi is a great example), and the consistency issues with where the information can potentially come from, Chocolatey cannot _reliably_ track application upgrades.

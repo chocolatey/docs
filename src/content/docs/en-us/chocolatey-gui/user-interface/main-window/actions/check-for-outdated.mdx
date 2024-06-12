@@ -1,0 +1,17 @@
+---
+order: 20
+xref: check-for-outdated
+title: Check for outdated packages
+description: Information on checking for outdated packages
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+Chocolatey GUI, by default, will check for installed packages that are currently outdated (based on available sources) when the application first loads.  However, this can be turned of using the <Xref title="Prevent Automated Outdated Packages Check" value="prevent-automated-outdated-packages-check" /> feature, or there can be changes to packages outside of Chocolatey GUI.  When these situations occur, you can manually invoke the check for outdated packages using the following button:
+
+![Show where the check for outdated packages button is located within the User Interface](/images/chocolatey-gui/user_interface_main-window_action_check-for-outdated.png "Show where the check for outdated packages button is located within the User Interface")
+
+<Callout type="info">
+    This button exists when looking at both local and remote sources
+</Callout>

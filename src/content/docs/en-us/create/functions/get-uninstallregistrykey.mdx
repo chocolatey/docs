@@ -1,0 +1,124 @@
+﻿---
+order: 140
+xref: get-uninstallregistrykey
+title: Get-UninstallRegistryKey
+description: Information on Get-UninstallRegistryKey function
+---
+import Xref from '@components/Xref.astro';
+
+# Get-UninstallRegistryKey
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-UninstallRegistryKey.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Retrieve registry key(s) for system-installed applications from an
+exact or wildcard search.
+
+## Syntax
+
+~~~powershell
+Get-UninstallRegistryKey `
+  -SoftwareName <String> `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This function will attempt to retrieve a matching registry key for an
+already installed application, usually to be used with a
+chocolateyUninstall.ps1 automation script.
+
+The function also prevents `Get-ItemProperty` from failing when
+handling wrongly encoded registry keys.
+
+
+## Aliases
+
+`Get-InstallRegistryKey`
+
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+
+# Version match: Software name is "Gpg4Win (2.3.0)"
+[array]$key = Get-UninstallRegistryKey -SoftwareName "Gpg4win (*)"
+$key.UninstallString
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+# Fuzzy match: Software name is "Launchy 2.5"
+[array]$key = Get-UninstallRegistryKey -SoftwareName "Launchy*"
+$key.UninstallString
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+
+# Exact match: Software name in Programs and Features is "VLC media player"
+[array]$key = Get-UninstallRegistryKey -SoftwareName "VLC media player"
+$key.UninstallString
+~~~
+
+**EXAMPLE 4**
+
+~~~powershell
+
+#  Version match: Software name is "SketchUp 2016"
+# Note that the similar software name "SketchUp Viewer" would not be matched.
+[array]$key = Get-UninstallRegistryKey -SoftwareName "SketchUp [0-9]*"
+$key.UninstallString
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -SoftwareName &lt;String&gt;
+Property               | Value
+---------------------- | --------------
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | true (ByValue)
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Install-ChocolateyPackage' value='install-chocolateypackage' />
+ * <Xref title='Install-ChocolateyInstallPackage' value='install-chocolateyinstallpackage' />
+ * <Xref title='Uninstall-ChocolateyPackage' value='uninstall-chocolateypackage' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Get-UninstallRegistryKey -Full`.
+
+View the source for [Get-UninstallRegistryKey](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Get-UninstallRegistryKey.ps1)

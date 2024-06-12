@@ -1,0 +1,25 @@
+---
+order: 49
+xref: cpmr0049
+title: CPMR0049 - Title Missing (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0049
+ruleType: Guideline
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
+
+<PackageValidatorRuleGuideline />
+
+## Issue
+
+In the nuspec, there is a `<title />` element. It was found to be missing or empty in the package.
+
+## Recommended Solution
+
+Please update the nuspec to include a `<title />` element that is non-empty. If your nuspec file is missing this field, you should run `choco new testpkg` and look at the output from that (ensure you have the [latest version of Chocolatey](https://community.chocolatey.org/packages?q=id%3Achocolatey)).
+
+## Reasoning
+
+A title is a more description version of your package id - where your package id may be something like `jjb` - the title would be `Jenkins Job Builder`.

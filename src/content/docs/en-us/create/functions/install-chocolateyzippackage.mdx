@@ -1,0 +1,237 @@
+﻿---
+order: 300
+xref: install-chocolateyzippackage
+title: Install-ChocolateyZipPackage
+description: Information on Install-ChocolateyZipPackage function
+---
+import Xref from '@components/Xref.astro';
+
+# Install-ChocolateyZipPackage
+
+{/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyZipPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
+
+Downloads file from a url and unzips it on your machine. Use
+Get-ChocolateyUnzip when local or embedded file.
+
+## Syntax
+
+~~~powershell
+Install-ChocolateyZipPackage `
+  -PackageName <String> `
+  [-Url <String>] `
+  -UnzipLocation <String> `
+  [-Url64bit <String>] `
+  [-SpecificFolder <String>] `
+  [-Checksum <String>] `
+  [-ChecksumType <String>] `
+  [-Checksum64 <String>] `
+  [-ChecksumType64 <String>] `
+  [-Options <Hashtable>] `
+  [-File <String>] `
+  [-File64 <String>] `
+  [-DisableLogging] `
+  [-IgnoredArguments <Object[]>] [<CommonParameters>]
+~~~
+
+## Description
+
+This will download a file from a url and unzip it on your machine.
+If you are embedding the file(s) directly in the package (or do not need
+to download a file first), use Get-ChocolateyUnzip instead.
+
+## Notes
+
+Chocolatey works best when the packages contain the software it is
+managing and doesn't require downloads. However most software in the
+Windows world requires redistribution rights and when sharing packages
+publicly (like on the [community feed](https://community.chocolatey.org/packages)), maintainers may not have those
+aforementioned rights. Chocolatey understands how to work with that,
+hence this function. You are not subject to this limitation with
+internal packages.
+
+## Aliases
+
+None
+
+## Examples
+
+ **EXAMPLE 1**
+
+~~~powershell
+Install-ChocolateyZipPackage -PackageName 'gittfs' -Url 'https://github.com/downloads/spraints/git-tfs/GitTfs-0.11.0.zip' -UnzipLocation $gittfsPath
+
+~~~
+
+**EXAMPLE 2**
+
+~~~powershell
+
+Install-ChocolateyZipPackage -PackageName 'sysinternals' `
+ -Url 'http://download.sysinternals.com/Files/SysinternalsSuite.zip' `
+ -UnzipLocation "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+~~~
+
+**EXAMPLE 3**
+
+~~~powershell
+
+Install-ChocolateyZipPackage -PackageName 'sysinternals' `
+ -Url 'http://download.sysinternals.com/Files/SysinternalsSuite.zip' `
+ -UnzipLocation "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)" `
+ -Url64 'http://download.sysinternals.com/Files/SysinternalsSuitex64.zip'
+~~~ 
+
+## Inputs
+
+None
+
+## Outputs
+
+None
+
+## Parameters
+
+###  -PackageName &lt;String&gt;
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | true
+Position?              | 1
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | 2
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -UnzipLocation &lt;String&gt;
+Property               | Value
+---------------------- | -----------
+Aliases                | destination
+Required?              | true
+Position?              | 3
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Url64bit [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | url64
+Required?              | false
+Position?              | 4
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -SpecificFolder [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Checksum64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -ChecksumType64 [&lt;String&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -Options [&lt;Hashtable&gt;]
+Property               | Value
+---------------------- | -------------------
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | `@{Headers = @{}` }
+Accept Pipeline Input? | false
+ 
+###  -File [&lt;String&gt;]
+Property               | Value
+---------------------- | ------------
+Aliases                | fileFullPath
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -File64 [&lt;String&gt;]
+Property               | Value
+---------------------- | --------------
+Aliases                | fileFullPath64
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+###  -DisableLogging
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | False
+Accept Pipeline Input? | false
+ 
+###  -IgnoredArguments [&lt;Object[]&gt;]
+Property               | Value
+---------------------- | -----
+Aliases                | 
+Required?              | false
+Position?              | named
+Default Value          | 
+Accept Pipeline Input? | false
+ 
+### &lt;CommonParameters&gt;
+
+This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
+
+
+## Links
+
+ * <Xref title='Get-ChocolateyWebFile' value='get-chocolateywebfile' />
+ * <Xref title='Get-ChocolateyUnzip' value='get-chocolateyunzip' />
+
+
+<Xref title="Function Reference" value="powershell-reference" />
+
+> :choco-info: **NOTE**
+>
+> This documentation has been automatically generated from `Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force; Get-Help Install-ChocolateyZipPackage -Full`.
+
+View the source for [Install-ChocolateyZipPackage](https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyZipPackage.ps1)

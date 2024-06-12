@@ -1,0 +1,47 @@
+---
+order: 10
+xref: software-vendor
+title: Software Vendors/Authors
+description: Software Vendor/Author information on the Chocolatey Community Repository.
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+If you are a Software Vendor or Author, then the information below will help answer some questions you may have on the Chocolatey Community Repository, how it works and how your software is being installed by packages.
+
+## How Do I Inspect the Contents Of a Chocolatey Package?
+
+See the <Xref title="FAQ question" value="ccr-faq" anchor="how-do-i-inspect-the-contents-of-a-chocolatey-package" />.
+
+## Does a Chocolatey Community Repository Package Violate Distribution Rights If It Installs My Software?
+
+In most cases, no. Most packages you will find on the <Xref title="Chocolatey Community Repository](https://community.chocolatey.org/packages) use automation scripts to download the software from the [official distribution point" value="legal" anchor="distributions" />.
+
+If you visit the package page you can view the <Xref title="files included with the package, or download the actual package, to inspect its contents" value="ccr-faq" anchor="how-do-i-inspect-the-contents-of-a-chocolatey-package" />.
+
+Many of the packages may look like they include files because of the result after an installation, but that's just a fantastic effect of the automation scripts working smoothly and almost unnoticeably.
+
+<Xref title="We take distribution rights very seriously" value="legal" anchor="distributions" />. If you determine that the package **is** violating your distribution rights, please see [here](#the-package-is-violating-distribution-rights).
+
+## The Package Is Violating Distribution Rights
+
+<Callout type="info">
+    The Chocolatey Community Repository has only been moderated since October 2014. There may be some packages created prior to this date that could violate distribution rights. These packages won't likely list the files as the Chocolatey Community Repository did not start capturing them until July 2014. If you visit the package page you can view the <Xref title="files included with the package, or download the actual package, to inspect its contents" value="ccr-faq" anchor="how-do-i-inspect-the-contents-of-a-chocolatey-package" />.
+</Callout>
+
+You've checked the previous section, and it doesn't apply, and you've found that the package **is** violating distribution rights as it bundles software without your permission and/or the license doesn't allow for it.
+
+It's not often that a Moderator would approve a package that violates distribution rights, but if you find one, please <Xref title="fill out and submit the abuse form" value="ccr-faq" anchor="how-to-report-an-abusive-package" />. The Site Administrators will follow up with you.
+
+## I Want To Take Over/Help With Package Maintenance For My Software
+
+1. The first step is to <Xref title="contact the Maintainers" value="ccr-faq" anchor="how-do-i-contact-the-package-maintainers" /> to explain you are the Software Vendor/Author, that you would like to help or take over package maintenance, and request that they add you as a Maintainer. Maintainers have put a lot of time and effort into maintaining the package that installs your software, so we ask Software Vendors/Authors to respect this, and first contact them.
+
+1. If the Maintainers do not respond after 7 days, or if they do not add you as a Maintainer, <Xref title="contact the Site Admins" value="ccr-faq" anchor="how-do-i-contact-the-site-admins" />. Please include details of how and when you attempted to contact the Maintainers, and that you are the Software Vendor/Author of the software.
+
+1. Wait for a response from the Site Administrators. Once you have been added as a Maintainer of the package, please follow the instructions for a <Xref title="Package Maintainer Handover/Switch" value="package-maintainer-handover" /> for how to start maintaining the package.
+
+## I Have Other Questions Not Answered Here
+
+If you have other questions, please <Xref title="contact the Site Admins" value="ccr-faq" anchor="how-do-i-contact-the-site-admins" />.
