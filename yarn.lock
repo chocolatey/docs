@@ -2949,9 +2949,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.0, caniuse-lite@npm:^1.0.30001599, caniuse-lite@npm:^1.0.30001629":
-  version: 1.0.30001632
-  resolution: "caniuse-lite@npm:1.0.30001632"
-  checksum: 10c0/960af2c7ed4367d6b72a164ecb9050ea9eada28c61e2134baaa712862364b9b6b41247c3ff4c2a497f91e879c5a1c9c7713080ac2d0c72eb4bee5ef2f4e24d62
+  version: 1.0.30001633
+  resolution: "caniuse-lite@npm:1.0.30001633"
+  checksum: 10c0/cd20fe5f8df6e5b0da567ef9d0d1cc22069548d3ed77a79e8ff62b873a7081a28b9f534dfbd23767642cbd7070e30605875d2073cef2f871e8cc7414e3a3d531
   languageName: node
   linkType: hard
 
@@ -3047,9 +3047,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"choco-theme@npm:0.7.2":
-  version: 0.7.2
-  resolution: "choco-theme@npm:0.7.2"
+"choco-theme@npm:0.7.3":
+  version: 0.7.3
+  resolution: "choco-theme@npm:0.7.3"
   dependencies:
     "@fortawesome/fontawesome-free": "npm:^6.1.2"
     "@playwright/test": "npm:^1.44.1"
@@ -3088,7 +3088,7 @@ __metadata:
     stylelint-config-twbs-bootstrap: "npm:^14.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.4.5"
-  checksum: 10c0/823d704a31f57cab47e467c11e743801d74fa838a24b45cf457b249d8230fed17926db5d2cd0a5392825f33f63cfc149f609ea1a6388a17c43313894d8f221bc
+  checksum: 10c0/2b44ffbe799577839428af3c96ce9a17b2b98711153d77a97c4f90c7a5cb8b0f4dfe78253c8f04385efc7c30f67636165a2af1dc9b00ce67febde77f3800fc0a
   languageName: node
   linkType: hard
 
@@ -4111,7 +4111,7 @@ __metadata:
   resolution: "docs@workspace:."
   dependencies:
     choco-astro: "npm:0.1.0"
-    choco-theme: "npm:0.7.2"
+    choco-theme: "npm:0.7.3"
   languageName: unknown
   linkType: soft
 
@@ -4193,9 +4193,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.796":
-  version: 1.4.799
-  resolution: "electron-to-chromium@npm:1.4.799"
-  checksum: 10c0/d347e48f8844f983ab91a7a20455013731e91dabe01286bc77f0b8ec5e1d3158aca2473da79209890d139bb3a166019147ffdb9f5c8fbf5564fbf416aaaf6ed8
+  version: 1.4.802
+  resolution: "electron-to-chromium@npm:1.4.802"
+  checksum: 10c0/a7e2daefe1f0b3af7b5986b5ce33f4452666d74a1f07a08dcc2cef8afdffbf00f6631f05e76eb526f1c17fd8bcd4b3134d2d936c847c271120ee397f4aaf6553
   languageName: node
   linkType: hard
 
@@ -4473,7 +4473,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.21.4":
+"esbuild@npm:^0.21.3, esbuild@npm:^0.21.4":
   version: 0.21.5
   resolution: "esbuild@npm:0.21.5"
   dependencies:
@@ -11229,10 +11229,10 @@ __metadata:
   linkType: hard
 
 "vite@npm:^5.2.12":
-  version: 5.2.13
-  resolution: "vite@npm:5.2.13"
+  version: 5.3.0
+  resolution: "vite@npm:5.3.0"
   dependencies:
-    esbuild: "npm:^0.20.1"
+    esbuild: "npm:^0.21.3"
     fsevents: "npm:~2.3.3"
     postcss: "npm:^8.4.38"
     rollup: "npm:^4.13.0"
@@ -11264,7 +11264,7 @@ __metadata:
       optional: true
   bin:
     vite: bin/vite.js
-  checksum: 10c0/f7a99da71884e69cc581dcfb43d73c8d56d73b9668d6980131603c544d6323c6003a20f376531dc0cfcf36bf5009bc465f89e6c5f8bd9d22868987aba4e4af1b
+  checksum: 10c0/d07e1a2ce713d3f73cb83f6289c9ff320da5953f37c35edb8c1388d610e8ca1c98edd642d5c3f163f8771dae294d3d430356a09285e344f0de9fa4b058c541f0
   languageName: node
   linkType: hard
 
