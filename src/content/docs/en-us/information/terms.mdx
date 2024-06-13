@@ -4,10 +4,10 @@ xref: terms
 title: Terms of Use
 description: Terms of Use for Chocolatey
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
-import Xref from '@components/Xref.astro';
+import TermsLastUpdated from '@components/global/TermsLastUpdated.astro';
+import TermsToc from '@components/global/TermsToc.astro';
+import TermsContent from '@components/global/TermsContent.astro';
 
-<p>@Html.Partial("global-partials/_TermsLastUpdated")</p>
-@Html.Partial("global-partials/_TermsToc")
-@Html.Partial("global-partials/_TermsContent")
+<p><TermsLastUpdated /></p>
+<TermsToc />
+<TermsContent />
