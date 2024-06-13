@@ -1,6 +1,7 @@
 ---
 // Scripts and types
 import type { ContentTree } from '@scripts/types';
+import { isActivePage } from '@scripts/is-active-page';
 
 interface Props {
     content: ContentTree;
@@ -9,12 +10,8 @@ interface Props {
 
 const { content, paddingClass } = Astro.props;
 const activeSlug = Astro.url.pathname;
-
-const isActivePage = () => {
-    return content.slug === activeSlug || content.slug.slice(0, -1) === activeSlug;
-};
 ---
 
 <li class={`nav-item nav-item-blue`}>
-    <a class={`nav-link ${paddingClass} ${isActivePage() ? 'active active-page' : ''}`} href={content.slug}>{content.data.title}</a>
+    <a class={`nav-link ${paddingClass} ${isActivePage(content.slug, activeSlug) ? 'active active-page' : ''}`} href={content.slug}>{content.data.title}</a>
 </li>
