@@ -8,7 +8,7 @@ import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-This document is meant to serve as a guide for where to look when needing to renew your SSL certificate(s) for the Nexus and Chocolatey Central Management components of the quick start environment.
+This document is meant to serve as a guide for where to look when needing to renew your SSL certificate(s) for the Jenkins, Nexus, and Chocolatey Central Management components of the quick start environment.
 
 ## Set-NexusCert.ps1
 
@@ -212,4 +212,103 @@ process {
 
 ```powershell
 .\Set-CCMCert.ps1 -CertificateThumbprint 'Your_Certificate_Thumbprint_Value'
+```
+
+## Set-JenkinsCert.ps1
+
+A version of this script may already be saved on your repository server at `C:\choco-setup\scripts\Set-JenkinsCert.ps1`.
+
+```powershell
+<#
+    .Synopsis
+        Updates a keystore and ensure Jenkins is configured to use an appropriate port and certificate for HTTPS access
+
+    .Example
+        Set-JenkinsCert -Thumbprint $Thumbprint
+
+    .Notes
+        Requires a Jenkins service restart after the changes have been made.
+#>
+[CmdletBinding()]
+param(
+    # The thumbprint of the certificate to use
+    [Parameter(Mandatory)]
+    [String]$Thumbprint,
+
+    # The port to have HTTPS available on
+    [Parameter()]
+    [uint16]$Port = 7443
+)
+
+$KeyStore = "C:\ProgramData\Jenkins\.jenkins\keystore.jks"
+$KeyTool = Convert-Path "C:\Program Files\Eclipse Adoptium\jre-*.*\bin\keytool.exe"  # Using Temurin*jre package keytool
+$Passkey = [System.Net.NetworkCredential]::new(
+    "JksPassword",
+   "$(New-Guid)"
+).Password
+
+if (Test-Path $KeyStore) {
+    Remove-Item $KeyStore -Force
+}
+
+# Generate the Keystore file
+try {
+    $CertificatePath = Join-Path $env:Temp "$($Thumbprint).pfx"
+    $CertificatePassword = [System.Net.NetworkCredential]::new(
+        "TemporaryCertificatePassword",
+        "$(New-Guid)"
+    )
+
+    # Temporarily export the certificate as a PFX
+    $null = Get-ChildItem Cert:\LocalMachine\TrustedPeople\ | Where-Object {$_.Thumbprint -eq $Thumbprint} | Export-PfxCertificate -FilePath $CertificatePath -Password $CertificatePassword.SecurePassword
+
+    # Using a job to hide improper non-output streams
+    $Job = Start-Job {
+        $CurrentAlias = ($($using:CertificatePassword.Password | & $using:KeyTool -list -v -storetype PKCS12 -keystore $using:CertificatePath) -match "^Alias.*").Split(':')[1].Trim()
+
+        $null = & $using:KeyTool -importkeystore -srckeystore $using:CertificatePath -srcstoretype PKCS12 -srcstorepass $using:CertificatePassword.Password -destkeystore $using:KeyStore -deststoretype JKS -alias $currentAlias -destalias jetty -deststorepass $using:Passkey
+        $null = & $using:KeyTool -keypasswd -keystore $using:KeyStore -alias jetty -storepass $using:Passkey -keypass $using:CertificatePassword.Password -new $using:Passkey
+    } | Wait-Job
+    if ($Job.State -eq 'Failed') {
+        $Job | Receive-Job
+    } else {
+        $Job | Remove-Job
+    }
+} finally {
+    # Clean up the exported certificate
+    Remove-Item $CertificatePath
+}
+
+# Update the Jenkins Configuration
+$XmlPath = "C:\Program Files\Jenkins\jenkins.xml"
+[xml]$Xml = Get-Content $XmlPath
+@{
+    httpPort              = -1
+    httpsPort             = $Port
+    httpsKeyStore         = $KeyStore
+    httpsKeyStorePassword = $Passkey
+}.GetEnumerator().ForEach{
+    if ($Xml.SelectSingleNode("/service/arguments")."#text" -notmatch [Regex]::Escape("--$($_.Key)=$($_.Value)")) {
+        $Xml.SelectSingleNode("/service/arguments")."#text" = $Xml.SelectSingleNode("/service/arguments")."#text" -replace "\s*--$($_.Key)=.+?\b", ""
+        $Xml.SelectSingleNode("/service/arguments")."#text" += " --$($_.Key)=$($_.Value)"
+    }
+}
+$Xml.Save($XmlPath)
+
+if ((Get-Service Jenkins).Status -eq 'Running') {
+    Restart-Service Jenkins
+}
+```
+
+### What does this script do?
+
+- The script will prompt for a certificate thumbprint. Please enter the thumbprint of a certificate available in the LocalMachine\TrustedPeople store.
+- Adds the certificate to the Jenkins Java Keystore.
+- Modifies the `jenkins.xml` configuration file to point to the new port, keystore, and passkey.
+- Restarts the Jenkins service.
+
+### Script Example
+
+```powershell
+.\Set-JenkinsCert.ps1 -Thumbprint 'Your_Certificate_Thumbprint_Value'
 ```

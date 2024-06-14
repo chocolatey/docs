@@ -16,7 +16,7 @@ If your server is internet restricted, please internalize the needed packages on
 
 <Callout type="warning">
     The current Jenkins package requires Java version 17 or 21 which hasn't been added as a package dependency to jenkins (due to the numerous flavours of Java out there). As part of the Quick Start Guide setup we install the temurin21jre package. However any Java version 17 or 21 package will work.
-    
+
     More information is available in the [Java support policy documentation](https://www.jenkins.io/doc/book/platform-information/support-policy-java/).
 </Callout>
 
@@ -25,6 +25,7 @@ If your server is internet restricted, please internalize the needed packages on
 1. Internalize the Jenkins package and push it to your internal repo.
 2. Internalize a java package compatible with Jenkins and push it to your internal repo. We recommend the [temurin21jre package](https://community.chocolatey.org/packages/Temurin21jre).
 3. Upgrade the temurin21jre and Jenkins packages (Example commands provided below).
+4. Run the `Set-JenkinsCert.ps1` script to set Jenkins to run over HTTPS again.
 
 export const callout2 = {
     title: 'Internalizing Note',
@@ -32,7 +33,7 @@ export const callout2 = {
 };
 
 <Callout content={callout2}>
-    You can add the temurin21jre and Jenkins packages to your Jenkins pipelines, setup by the Quick Start Guide, to help keep new versions of these packages in your internal repo.
+    You can add the `temurin21jre` and `jenkins` packages to your Jenkins pipelines, setup by the Quick Start Guide, to help keep new versions of these packages in your internal repo.
 </Callout>
 
 ### Example Upgrade Commands:
@@ -43,4 +44,8 @@ choco upgrade temurin21jre --package-parameters="/ADDLOCAL=FeatureJavaHome" -y -
 
 ```powershell
 choco upgrade jenkins -y --source="'Your Internal Repo'"
+```
+
+```powershell
+C:\choco-setup\files\scripts\Set-JenkinsCert.ps1 -Thumbprint 'Your_Certificate_Thumbprint_Value'
 ```
