@@ -22,14 +22,14 @@ The verifier is a service that checks the correctness (that the package actually
 ## Specifications
 
 <Callout type="info">
-    We currently run against only one system. This was chosen as it will install almost all Chocolatey packages. We will be adding multiple systems in the future.
+    We currently run against only one system. This was chosen as it will install almost all Chocolatey packages.
 </Callout>
 
 The systems we run against:
-* Windows Server 2012 R2 x64
-  * It's a completely stock machine, no Windows updates applied. No hotfixes. Imagine that you took the image and ran it without applying any Windows updates.
-  * Has very limited things installed (bitvise sshd, git, notepad++, 7zip)
-  * The Printer Spooler Service is stopped and disabled.  This can cause problems for packages that deal with software that relates to anything to do with printing, i.e. printing of PDF files.
+* Windows Server 2019
+  * Windows Subsystem for Linux (WSL) enabled
+  * .NET 3.5 and 4.8 preinstalled
+  * Windows Updates installed through to 2024-05-28
 
 
 ## How can I bypass the verifier?
@@ -42,10 +42,10 @@ If your package needs to be exempted, please contact the site admins on the pack
 
 The verifier has the following prerequisites for it to work:
 
-* VirtualBox installed (4.3.x series - the verifier box has 4.3.28 installed)
-* Vagrant installed (right now 1.7.4 is recommended)
+* VirtualBox installed (The verifier box has 6.1.18 installed)
+* Vagrant installed (right now 2.3.1 is recommended)
 * Vagrant sahara plugin installed
-* Vagrant box `win2012r2x64` available
+* Vagrant box [`chocolatey/test-environment`](https://app.vagrantup.com/chocolatey/boxes/test-environment) available
 * A Windows machine that can run 64bit virtual boxes. Usually a physical machine can do this. Others require vt-x
 
 ### What the verifier does at a high level
