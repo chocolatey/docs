@@ -47,11 +47,10 @@ export const generateContentTree = async (parentSlug = ''): Promise<ContentTree[
             };
 
             if (node.children && node.children.length > 0) {
-                newNode.slug = `/${newNode.slug}/`;
                 newNode.children = addDepthToTree(node.children, depth + 1);
-            } else {
-                newNode.slug = `/${newNode.slug}`;
             }
+
+            newNode.slug = `/${newNode.slug}/`;
 
             return newNode;
         });
