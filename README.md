@@ -69,6 +69,19 @@ If you are having build errors with `'copyTheme' errored after`, try removing th
 
 If you receive the error `The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached` then you can increase the number by running `echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`. See [this GitHub comment](https://github.com/dotnet/aspnetcore/issues/8449#issuecomment-512275929) for more information.
 
+## Recommended VS Code Extensions
+
+The following VS Code extensions are recommended to get the best development experience:
+
+* [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) - Syntax highlighting for .astro files.
+* [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) - Syntax highlighting for .mdx files.
+* [JavaScript and TypeScript Nightly](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) - JavaScript and TypeScript intelliSense.
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Highlights syntax errors in .ts and .js files.
+* [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - Highlights syntax errors in .md and .mdx files.
+* [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) - Highlights trailing spaces and allows you to easily delete them.
+* [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - Highlights spelling errors and suggests fixes.
+* [Gremlins](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins) - Highlights characters that can be harmful because they are invisible or look like legitimate ones.
+
 ## Understanding Astro
 
 The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](https://github.com/chocolatey/choco-astro) contain information on how to understand several Astro concepts:
