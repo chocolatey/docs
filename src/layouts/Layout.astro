@@ -84,10 +84,10 @@ const hash = childProcess
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="/styles/docs.min.purged.css" />
+		<link rel="stylesheet" href={`/styles/docs.min.purged.css?v=${hash}`} />
 
 		<!-- JS -->
-		<script is:inline src="/scripts/theme-toggle.min.js"></script>
+		<script is:inline src={`/scripts/theme-toggle.min.js?v=${hash}`}></script>
         <script is:inline async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
         <title>{metaTitle}</title>
 	</head>
@@ -134,6 +134,6 @@ const hash = childProcess
                 <button type="button" class="btn btn-bg-body d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
             </div>
         </footer>
-		<script is:inline src="/scripts/docs.min.js"></script>
+		<script is:inline src={`/scripts/docs.min.js?v=${hash}`}></script>
 	</body>
 </html>
