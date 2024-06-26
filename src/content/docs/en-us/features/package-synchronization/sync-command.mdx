@@ -10,14 +10,13 @@ import Xref from '@components/Xref.astro';
 
 ## Sync Command
 
-Chocolatey is aware of, and manages, Chocolatey packages. What about your existing software, installed prior to your use of Chocolatey? How do you track and manage those items over time?
+Chocolatey is aware of, and manages, Chocolatey packages. What about your existing software, installed prior to your use of Chocolatey? How do you track and manage those items over time?
 
 Package Synchronizer, available in Chocolatey For Business, inspects Programs and Features and attempts to generate Chocolatey packaging for every item not currently under management of Chocolatey.
 
 Sync looks at all software that is in Programs and Features that is not being managed with Chocolatey packages and brings them under management. This means you can run one command and suddenly, all of the software installed on a machine is under management by Chocolatey!
 
 ### Usage
-
 
 #### View software available to sync
 
@@ -29,17 +28,17 @@ To see what programs are able to be synchronized use the following:
 choco list --include-programs
 ```
 
-###### Chocola†ey v1.x and older
+###### Chocolatey v1.x and older
 
 ```powershell
 choco list --local-only --include-programs
 ```
 
->:choco-info:
-> The sync command will create a folder for each package it creates inside a `sync` folder in the directory from which the sync command is executed.
-> It is recommended you use a known, clean directory when running the sync command to make things a little easier to find afterwords.
-> The packaging folders can then be checked into source control, where you can manage the packages over time.
-
+<Callout type="info">
+  The sync command will create a folder for each package it creates inside a `sync` folder in the directory from which the sync command is executed.
+  It is recommended you use a known, clean directory when running the sync command to make things a little easier to find afterwords.
+  The packaging folders can then be checked into source control, where you can manage the packages over time.
+</Callout>
 #### Sync all unmanaged applications
 
 To sync all unmanaged software using default package ids, run the following:
@@ -56,38 +55,114 @@ It is possible to sync a specific application to Chocolatey using the following 
 choco sync --id='Application DisplayName' --package-id='choco-package-id'
 ```
 
->:choco-info:
-> If you intend to leverage [Package Internalizer]() you will want the Chocolatey package id as it exists on the Chocolatey Community Repository, allowing for automated updates to the package.
->
+<Callout type="warning">
+  If you intend to leverage [Package Internalizer]() you will want the Chocolatey package id as it exists on the Chocolatey Community Repository, allowing for automated updates to the package.
+</Callout>
+
+#### Scripting Package Internalizer
+
+If you are like us, you want to automate as much of your job as you can. All of Chocolatey's features lend themselves very well to automation, and Sync is no exception. Below is a PowerShell function you can
+use in your environment to make leveraging Package Synchronizer a cinch!
+
+```powershell
+function Sync-Package {
+    <#
+    .SYNOPSIS
+    Runs choco sync on a system
+
+    .DESCRIPTION
+    Run choco sync against a system with eiher a single item or from a map
+
+    .PARAMETER Id
+    The Package id for the synced package
+
+    .PARAMETER DisplayName
+    The Diplay Name From Programs and Features
+
+    .PARAMETER Map
+    A hashtable of DisplayName and PackageIds
+
+    .EXAMPLE
+    Sync-Package
+
+    Sync everything from Programs and Features not under Chocolatey management
+
+    .EXAMPLE
+    Sync-Package -Id googlechrome -DisplayName 'Google Chrome'
+
+    Sync the Google Chrome application from Programs and Features to the googlechrome package id
+
+    .EXAMPLE
+    Sync-Package -Map @{'Google Chrome' = 'googlechrome'}
+
+    Sync from a hashtable of DisplayName:PackageId pairs
+
+    .NOTES
+    Requires a Chocolatey For Business license
+    #>
+    [CmdletBinding(DefaultParameterSetName = 'Default')]
+    Param(
+        [Parameter(Mandatory, ParameterSetName = 'Package')]
+        [String]
+        $Id,
+
+        [Parameter(Mandatory, ParameterSetName = 'Package')]
+        [String]
+        $DisplayName,
+
+        [Parameter(Mandatory, ParameterSetName = 'Map')]
+        [hashtable]
+        $Map,
+
+        [Parameter(ParameterSetName = 'Default')]
+        [Parameter(ParameterSetName = 'Map')]
+        [Parameter(ParameterSetName = 'Package')]
+        [String]
+        $OutputDirectory = $PWD
+    )
+
+    end {
+        switch ($PSCmdlet.ParameterSetName) {
+            'Package' {
+                choco sync --id="$DisplayName" --package-id="$Id" --output-directory="$OutputDirectory"
+                $packageFolder = Join-path $OutputDirectory -ChildPath "sync\$Id"
+                $todo = Join-Path $packageFolder -ChildPath 'TODO.txt'
+
+                if (Test-Path $todo) {
+                    Write-Warning (Get-Content $todo)
+                }
+            }
+
+            'Map' {
+                $map.GetEnumerator() | Foreach-Object {
+                    choco sync --id="$($_.Key)" --package-id="$($_.Value)" --output-directory="$OutputDirectory"
+                    $packageFolder = Join-path $OutputDirectory -ChildPath $_.Value
+                    $todo = Join-Path $packageFolder -ChildPath 'TODO.txt'
+
+                    if (Test-Path $todo) {
+                        Write-Warning (Get-Content $todo)
+                    }
+                }
+            }
+
+            default {
+                choco sync --output-directory="$OutputDirectory"
+            }
+        }
+    }
+}
+
+```
 
 ### See it in action
 
-We've prepared a short video to show sync in action:
+Want to see for yourself how Simple bringing existing software into Chocolatey can be? We've got you!
 
-[![Chocolatey's Package Synchronizer - Sync Command](/images/features/sync-command-video.png)](https://youtu.be/tzSsYHYsjf4 "Chocolatey's Package Synchronizer - Sync Command")
+<Iframe ratio="16x9" link="https://www.youtube.com/watch?v=MG98KS__5C8" title="Sync in Action" />
 
 <Callout type="info">
     To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.
 </Callout>
-
-In the following image, sync is run on a system that has 18 applications installed and a base Chocolatey for Business install. Note after running sync, all software on the machine is now being managed by Chocolatey.
-
-![Chocolatey's Package Synchronizer Sync Command - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/images/features/features_choco_sync.png)
-
-{/*
-Text in the image above:
-
-Package Synchronizer's Sync Command
-
-- Brings unmanaged software under Chocolatey management
-- Provides you the source packaging and package output
-- Automate existing systems in under 90 seconds!
-- Machine parseable with `-r`
-- Links existing packages not tracking to Programs and Features
-
-This image shows running `choco sync`. It shows first a system that has 18 applications installed outside of Chocolatey, then runs `choco sync` and watches Chocolatey generate packages and baseline the system. Then it shows `choco list -lo --include-programs` again, which shows that all software on the machine is now being managed by Chocolatey.
-
-*/}
 
 ### Options and Switches
 
