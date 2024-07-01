@@ -18,26 +18,27 @@ const twitterCardType = twitterImage ? 'summary_large_image' : 'summary';
 
 // obtain Git commit hash
 const hash = childProcess
-  .execSync("git rev-parse --short HEAD")
-  .toString()
-  .trim();
+    .execSync("git rev-parse --short HEAD")
+    .toString()
+    .trim();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+    <head>
         <GoogleTag />
         <style>
             @view-transition {
                 navigation: auto;
             }
         </style>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
 
         <!-- Favicons -->
-		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
         <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
@@ -48,12 +49,12 @@ const hash = childProcess
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
 
         <!-- SEO -->
-		<link rel="canonical" href={canonicalURL} />
+        <link rel="canonical" href={canonicalURL} />
 
-		<!-- General Meta Tags -->
-		<meta name="title" content={metaTitle} />
-		<meta name="description" content={description} />
-		<meta name="author" content={config.title} />
+        <!-- General Meta Tags -->
+        <meta name="title" content={metaTitle} />
+        <meta name="description" content={description} />
+        <meta name="author" content={config.title} />
         <meta name="generator" content={Astro.generator} />
 
         <!-- Additional Meta Tags -->
@@ -63,35 +64,35 @@ const hash = childProcess
         <meta property="DC.title" content={metaTitle} />
         <meta property="copyright" content={`Chocolatey is Copyright 2020 - ${new Date().getFullYear()} Chocolatey Software, Inc.`} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:title" content={metaTitle} />
-		<meta property="og:description" content={description} />
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:image" content={ogImageURL} />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:image" content={ogImageURL} />
 
-		<!-- Twitter -->
+        <!-- Twitter -->
         <meta name="twitter:site" content="@chocolateynuget">
         <meta property="twitter:title" content={metaTitle} />
         <meta property="twitter:url" content={canonicalURL} />
         <meta property="twitter:description" content={description} />
         <meta property="twitter:image" content={twitterImageURL} />
         <meta property="twitter:card" content={twitterCardType} />
-		
-		<!-- Google Font -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-		<!-- CSS -->
-		<link rel="stylesheet" href="/styles/docs.min.purged.css" />
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-		<!-- JS -->
-		<script is:inline src="/scripts/theme-toggle.min.js"></script>
+        <!-- CSS -->
+        <link rel="stylesheet" href={`/styles/docs.min.purged.css?v=${hash}`} />
+
+        <!-- JS -->
+        <script is:inline src={`/scripts/theme-toggle.min.js?v=${hash}`}></script>
         <script is:inline async referrerpolicy="unsafe-url" src="https://ws.zoominfo.com/pixel/KPKpTJOFOv5SuV7X3eGx"></script>
         <title>{metaTitle}</title>
-	</head>
-	<body class="chocolatey-docs">
-		<header>
+    </head>
+    <body class="chocolatey-docs">
+        <header>
             <TopAlertBanner />
             <div class="d-none d-sm-flex">
                 <div class="global-nav w-100">
@@ -121,8 +122,8 @@ const hash = childProcess
                 </div>
             </nav>
         </header>
-		<slot />
-		<footer class="flex-shrink-0">
+        <slot />
+        <footer class="flex-shrink-0">
             <div class="text-bg-body-secondary border-top text-center p-3">
                 <span class="small">&copy; {new Date().getFullYear()} {config.title}, Inc.</span><br />
                 <span class="small">Deployed from <a href={`https://github.com/chocolatey/docs/commit/${hash}`}>{hash}</a></span><br />
@@ -133,6 +134,6 @@ const hash = childProcess
                 <button type="button" class="btn btn-bg-body d-md-none" data-bs-dismiss="alert" aria-label="Close">I accept</button>
             </div>
         </footer>
-		<script is:inline src="/scripts/docs.min.js"></script>
-	</body>
+        <script is:inline src={`/scripts/docs.min.js?v=${hash}`}></script>
+    </body>
 </html>

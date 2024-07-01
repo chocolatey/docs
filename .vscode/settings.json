@@ -43,6 +43,7 @@
         "HKEY",
         "HKLM",
         "honor",
+        "inotify",
         "Internalizer",
         "Intune",
         "intunewin",

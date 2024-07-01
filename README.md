@@ -15,7 +15,7 @@ Listed below are some of the areas we consider important when writing. We have t
 
 To help with these goals, please refer to our guides on [writing documentation](https://design.chocolatey.org/content-and-marketing/writing-documentation) and the use of [language and grammar](https://design.chocolatey.org/content-and-marketing/language-and-grammar).
 
-## Building the Site
+## Building the Site for Development
 
 There are multiple options to build the site:
 
@@ -30,7 +30,7 @@ Ensure that you have Node v20+ installed by running `node -v`. There is a `.\set
 
 After confirming the required Node version, run the following command from a terminal:
 
-```
+```powershell
 yarn dev
 ```
 
@@ -51,23 +51,54 @@ Follow these steps to open the project in a [Dev Container](https://containers.d
 
 From a terminal, run the following:
 
-```
+```powershell
 docker build -t chocolatey-docs-container .
 ```
 
 Once this is complete, run the following from the same terminal:
 
-```
+```powershell
 docker run -p 5086:5086 -v $(pwd):/app chocolatey-docs-container
 ```
 
 This will compile the site, and bring up a preview on `http:localhost:5086`. Any changes you make will automatically be hot reloaded.
 
-### Troubleshooting the build
+## Building the Site for Production
+
+Building the site for production is a good practice before submitting a pull request. An error of any kind will be flagged in the production build and it will fail.
+
+From a terminal, run the following:
+
+```powershell
+yarn build
+```
+
+Once this is complete, run the following from the same terminal:
+
+```powershell
+yarn preview
+```
+
+This will start a server to show what the site will look like in production. Changes made to source files will not be reflected in this preview.
+
+### Troubleshooting the Build
 
 If you are having build errors with `'copyTheme' errored after`, try removing the `node_modules` directory and clearing your yarn cache with `yarn cache clean`.
 
 If you receive the error `The configured user limit (128) on the number of inotify instances has been reached, or the per-process limit on the number of open file descriptors has been reached` then you can increase the number by running `echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p`. See [this GitHub comment](https://github.com/dotnet/aspnetcore/issues/8449#issuecomment-512275929) for more information.
+
+## Recommended VS Code Extensions
+
+The following VS Code extensions are recommended to get the best development experience:
+
+* [Astro](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) - Syntax highlighting for .astro files.
+* [MDX](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) - Syntax highlighting for .mdx files.
+* [JavaScript and TypeScript Nightly](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next) - JavaScript and TypeScript intelliSense.
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Highlights syntax errors in .ts and .js files.
+* [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) - Highlights syntax errors in .md and .mdx files.
+* [Trailing Spaces](https://marketplace.visualstudio.com/items?itemName=shardulm94.trailing-spaces) - Highlights trailing spaces and allows you to easily delete them.
+* [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) - Highlights spelling errors and suggests fixes.
+* [Gremlins](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins) - Highlights characters that can be harmful because they are invisible or look like legitimate ones.
 
 ## Understanding Astro
 
@@ -89,13 +120,13 @@ The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](
 
 To run all the Playwright tests, first run the following command:
 
-```
+```powershell
 yarn build
 ```
 
 Once this has completed, run:
 
-```
+```powershell
 yarn playwright
 ```
 
@@ -106,6 +137,7 @@ This will run all Playwright tests and report any errors for further investigati
 [![GitHub Actions Build Status](https://github.com/chocolatey/docs/workflows/Publish%20Documentation/badge.svg)](https://github.com/chocolatey/docs/actions?query=workflow%3A%22Build+Pull+Request%22)
 
 ## Chat Room
+
 Come join in the conversation about Chocolatey in our [Community Chat Room](https://ch0.co/community).
 
 Please make sure you've read over and agree with the [etiquette regarding communication](https://github.com/chocolatey/choco/blob/master/README.md#etiquette-regarding-communication).
