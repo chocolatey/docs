@@ -8,7 +8,8 @@ interface Props {
 }
 
 const { content } = Astro.props;
-const editLink = `https://github.com/${packageJson.author}/${packageJson.name}/edit/master/src/content${Astro.url.pathname}.mdx`;
+const filePath = Astro.url.pathname.endsWith('/') ? Astro.url.pathname.slice(0, -1) : Astro.url.pathname;
+const editLink = `https://github.com/${packageJson.author}/${packageJson.name}/edit/master/src/content/docs${filePath}.mdx`;
 ---
 
 {(content && content.length > 0) && (
