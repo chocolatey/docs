@@ -122,6 +122,10 @@ export const callout4 = {
     > </ul>
     > </details>
 
+<Callout content={callout3}>
+    You can now copy the `C:\choco-setup\` directory to any computer to continue the installation. To zip up that directory, run `Compress-Archive -Path C:\choco-setup\files\* -DestinationPath C:\choco-setup\C4B-Files.zip`. Move the archive to your new machine, and run `Expand-Archive -Path /path/to/C4B-Files.zip -DestinationPath C:\choco-setup\files -Force`. You should then run `Set-Location "$env:SystemDrive\choco-setup\files"; .\Start-C4bSetup.ps1`, and continue with the guide.
+</Callout>
+
 ### Step 2: Nexus Setup
 
 1. In the same **elevated** Windows PowerShell console as above, paste and run the following code:
