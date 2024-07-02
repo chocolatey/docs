@@ -1,0 +1,27 @@
+---
+order: 75
+xref: cpmr0075
+title: CPMR0075 - Script uses GitHub Comment assets (script)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0075
+ruleType: Requirement
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+
+<PackageValidatorRuleRequirement />
+
+## Issue
+
+Within one or more of the automation scripts, one or more URLs were found to point to a GitHub comment file or asset.
+
+## Recommended Solution
+
+Use the official download location of files from the software authors that are not part of a GitHub comment.
+This can be URLs on their official web page, from their GitHub releases, or from a third party that is officially endorsed by the software developers.
+
+## Reasoning
+
+Since any user can upload files to a GitHub comment, even without publishing the comment, this can be used as an attack vector by malicious actors.
+To prevent such misuse from happening and affecting our users, it has been decided to disallow these types of URLs.
