@@ -12,16 +12,15 @@ import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.
 
 <PackageValidatorRuleNote />
 
-<Callout type="info">
-    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
-</Callout>
-
 ## Issue
 
-In the nuspec,
+In the nuspec, the `<id>` field has been specified with an underscore (`_`) as part of the package identifier when separating words.
 
 ## Recommended Solution
 
-Please update _ so that _
+Please update the `<id>` field in the `.nuspec` file to ensure that the package identifier does not contain an underscore, and follows our [package naming Guidelines](https://docs.chocolatey.org/en-us/create/create-packages/#naming-your-package)
 
 ## Reasoning
+
+Packages on Chocolatey Community Repository should follow package guidelines and established conventions.
+One of the established conventions is to separate different words using a dash (`-`) instead of an underscore (`_`).
