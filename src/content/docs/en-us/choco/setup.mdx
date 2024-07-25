@@ -126,6 +126,10 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### Install using the MSI?
 
+<Callout type="info">
+    The MSI is intended to bootstrap Chocolatey CLI onto a computer and will _only_ install. It cannot upgrade, or uninstall Chocolatey CLI.
+</Callout>
+
 From version 2.0.0 of Chocolatey CLI we provide an MSI for installation, allowing you to deploy using your existing tools. Once installed, use Chocolatey CLI as normal to upgrade.
 
 The MSI is provided as an asset on each GitHub release of Chocolatey CLI 2.0.0 onwards. See the assets section on the [Chocolatey GitHub repository release page](https://github.com/chocolatey/choco/releases).
