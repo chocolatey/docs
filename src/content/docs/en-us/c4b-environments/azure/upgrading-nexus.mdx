@@ -1,0 +1,26 @@
+---
+order: 32
+xref: c4b-azure-upgrading-nexus
+title: Upgrading Nexus
+description: A guide to upgrading Sonatype Nexus in the Chocolatey for Business Azure Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Upgrade Nexus in the Azure Environment
+
+This document outlines the process for upgrading Nexus running inside our Azure Environment.
+
+If your server is restricted from access to the Chocolatey Community Repository, <Xref title="internalize the package to your internal repository" value="package-internalizer" />.
+
+## Instructions
+
+1. Internalize the nexus-repository package and push to your internal repository
+2. choco upgrade the nexus-repository package (Example command provided below)
+
+### Example Upgrade Command:
+
+```powershell
+choco upgrade nexus-repository -y
+```
