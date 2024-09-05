@@ -1,5 +1,11 @@
 # build output
 dist/
+bin/
+cache/
+input/
+obj/
+output/
+tools/
 
 # generated types
 .astro/
