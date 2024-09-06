@@ -92,6 +92,9 @@
         "windirstat",
         "xcopy"
     ],
+    "cSpell.enableFiletypes": [
+        "mdx"
+    ],
     "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
         "format-filesize",
         "get-packageparameters",

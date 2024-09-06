@@ -714,14 +714,17 @@ See <Xref title="Installing Chocolatey Behind a Proxy Server" value="proxy-setti
 
 ### Installing to a different location
 
-1. Create a __machine__ level (__user__ level will also work) environment variable named `ChocolateyInstall` and set it to the folder you want Chocolatey to install to prior to installation (this environment variable must be set globally or available to PowerShell- it is not enough to simply make it available to your current command prompt session).
+The Chocolatey installation script looks for the `ChocolateyInstall` environment variable in order to identify where it should install to. If this environment variable does not exist, it will install Chocolatey to the default location. In order to install to a non-default location, you should set this variable in a way that it is available in the process that will be running the install script. For example you could set the environment variable through the [Windows GUI](https://www.howtogeek.com/787217/how-to-edit-environment-variables-on-windows-10-or-11/), or you could use `setx`](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/setx).
+
+You can validate that PowerShell has the environment variable by running: `Write-Host $env:ChocolateyInstall`
+
+1. Create an environment variable named `ChocolateyInstall` and set it to the folder you want Chocolatey to install to prior to installation.
 1. Don't use `"C:\Chocolatey"` unless necessary.
-1. Create the folder manually.
 1. If you have already installed (and want to change the location after the fact):
-  * Follow the above steps.
-  * Install Chocolatey again.
-  * Copy/Move over the items from the old lib/bin directory.
-  * Delete your old install directory.
+    * Follow the above steps.
+    * Install Chocolatey again.
+    * Copy/Move over the items from the old lib/bin directory.
+    * Delete your old install directory.
 
 <Callout type="info">
     There is one really important consideration when installing Chocolatey to a non-default location: Chocolatey only locks down the permissions to Admins when installed to the default location `%PROGRAMDATA%\Chocolatey`, which means the same thing as `%SystemDrive%\ProgramData\Chocolatey`.
