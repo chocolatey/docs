@@ -1,0 +1,14 @@
+---
+
+---
+
+import Callout from '@choco/components/Callout.astro';
+
+<Callout type="warning">
+    As of Chocolatey Central Management v0.13.0, the SQL connection mode has changed to secure-by-default. By default, all connection strings will assume `Encrypt=true;` and attempt a connection to the SQL Server over SSL. If you wish to disable this, you must pass a complete connection string to the `/ConnectionString` package parameter that contains an explicit `Encrypt=false;` parameter.
+
+    To accommodate this new default, the package installation will automatically add the `TrustServerCertificate=True` parameter to the connection string it constructs or receives if the initial connection to the SQL server fails without it.
+
+    If you would like to ensure a completely secure SQL connection, you must [install a trusted SSL Certificate on the SQL Server instance](https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/manage-certificates?view=sql-server-ver16) before installing, upgrading, or reinstalling Chocolatey Central Management packages.
+    If you have already installed v0.13.0 or later versions of Chocolatey Central Management, you will need to explicitly pass the SQL connection package parameters when upgrading or reinstalling in order to ensure the connection is established in a fully secure mode.
+</Callout>

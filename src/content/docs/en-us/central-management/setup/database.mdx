@@ -10,6 +10,7 @@ import Xref from '@components/Xref.astro';
 import TabsPane from '@choco/components/tabs/TabsPane.astro';
 import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
 
 At the end of this, we should have a fully ready to go SQL Server:
 
@@ -165,7 +166,7 @@ The Chocolatey Central Management database package will add or update a database
 
 ### Package Parameters
 
-* `/ConnectionString:` - The SQL Server database connection string to be used to connect to the Chocolatey Central Management database. Defaults to default or explicit values for `/SqlServiceInstance` and `/Database`, along with Integrated Security (`Server=<LOCAL COMPUTER FQDN NAME>; Database=ChocolateyManagement; Trusted_Connection=True;`). The account should have `db_owner` access to the database ([database owner](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles)).
+* `/ConnectionString:` - The SQL Server database connection string to be used to connect to the Chocolatey Central Management database. By default, this value is constructed from the default or explicit values for `/SqlServiceInstance` and `/Database`, and uses Integrated Security (with all default values, this value will look like the following: `Server=<LOCAL COMPUTER FQDN NAME>; Database=ChocolateyManagement; Trusted_Connection=True; TrustServerCertificate=True;`). The account should have [`db_owner`](https://docs.microsoft.com/en-us/sql/relational-databases/security/authentication-access/database-level-roles#fixed-database-roles) access to the database.
 * `/SqlServerInstance:` - Instance name of the SQL Server database to connect to. Alternative to passing full connection string with `/ConnectionString`. Uses `/Database` (below) to build a connection string. Defaults to `<LOCAL COMPUTER FQDN NAME>`.
 * `/Database:` - Name of the SQL Server database to use. Alternative to passing full connection string with `/ConnectionString`. Uses `/SqlServerInstance` (above) to build a connection string. Defaults to `ChocolateyManagement`.
 * `/SkipDatabasePermissionCheck` - By default, a check will be completed to ensure that the installing user has access to create a new database, based on the provided/computed connection string. If this check isn't required, for example, the database has already been created or permissions will error, this step can be skipped using this parameter. Available with CCM v0.2.0+.
@@ -175,6 +176,8 @@ The Chocolatey Central Management database package will add or update a database
 </Callout>
 
 ### Database Authentication Scenarios
+
+<CentralManagementSecureConnectionStrings />
 
 * <Xref title="Scenario 1 - Windows Authentication to Local SQL Server" value="ccm-database" anchor="scenario-one" />
 * <Xref title="Scenario 2 - Active Directory Authentication to Remote SQL Server" value="ccm-database" anchor="scenario-two" />
@@ -241,9 +244,9 @@ export const tabs1 = [
         </Callout>
 
         <Callout type="warning">
-            **Installs**: Please ensure the user running the package installation is able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
-        
-            **Upgrades**: Please ensure the user running the package installation has been granted `db_owner` access to an existing database.
+            **Installation**: Please either ensure the user running the package installation is able to create databases or pass `/SkipDatabasePermissionCheck`, if you have `db_owner` permission to the pre-created database.
+
+            **Upgrade**: Please ensure the user running the package installation has been granted `db_owner` access to the existing database.
         </Callout>
     </TabsPane>
     <TabsPane content={tabs1[2]}>
@@ -291,9 +294,9 @@ export const tabs1 = [
         </Callout>
 
         <Callout type="warning">
-            **Installs**: Please ensure the login credentials provided are able to create databases unless you also pass `/SkipDatabasePermissionCheck` (in that case you simply need `db_owner` to the database being managed if it was pre-created).
-        
-            **Upgrades**: Please ensure the login credentials provided have been given `db_owner` access to an existing database.
+            **Installation**: Please either ensure the user running the package installation is able to create databases or pass `/SkipDatabasePermissionCheck`, if you have `db_owner` permission to the pre-created database.
+
+            **Upgrade**: Please ensure the user running the package installation has been granted `db_owner` access to the existing database.
         </Callout>
     </TabsPane>
 </TabsPaneContainer>
@@ -419,12 +422,12 @@ Chocolatey Central Management has specific compatibility requirements with quite
 
 ### What is the minimum required configuration for the appsettings.json file?
 
-As of Chocolatey Central Management v0.6.2, the default settings in the `appsettings.json` for the database package are:
+As of Chocolatey Central Management v0.13.0, the default settings in the `appsettings.json` for the database package are:
 
 ```json
 {
   "ConnectionStrings": {
-    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True;"
+    "Default": "Server=<HOST_NAME_OF_MACHINE_BEING_INSTALLED_ONTO>; Database=ChocolateyManagement; Trusted_Connection=True; TrustServerCertificate=True;"
   }
 }
 ```
