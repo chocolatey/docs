@@ -27,20 +27,20 @@ This is the Chocolatey Central Management website that gives an API and a web la
 * <Xref title="High-level Requirements" value="ccm-setup" anchor="high-level-requirements" />
 * PowerShell 5.1
 * IIS Set up and available
-* dotnet-aspnetcoremodule-v2 version 16.0.23055
-* dotnet-6.0-runtime version 6.0.15
-* dotnet-6.0-aspnetruntime version 6.0.15
+* dotnet-aspnetcoremodule-v2 version 18.0.24201
+* dotnet-8.0-runtime version 8.0.8
+* dotnet-8.0-aspnetruntime version 8.0.8
 
-The Chocolatey Central Management Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `6.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages was 6.0.5, though we recommend installing the latest versions of these packages.
+The Chocolatey Central Management Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `8.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages was 8.0.8, though we recommend installing the latest versions of these packages.
 
 ### Script for some prerequisites
 
 ```powershell
 choco install IIS-WebServer --source windowsfeatures --no-progress -y
 choco install IIS-ApplicationInit --source windowsfeatures --no-progress -y
-choco install dotnet-aspnetcoremodule-v2 --version 16.0.23055 --no-progress -y
-choco install dotnet-6.0-runtime --version 6.0.15 --no-progress -y
-choco install dotnet-6.0-aspnetruntime --version 6.0.15 --no-progress -y
+choco install dotnet-aspnetcoremodule-v2 --version 18.0.24201  --no-progress -y
+choco install dotnet-8.0-runtime --version 8.0.8 --no-progress -y
+choco install dotnet-8.0-aspnetruntime --version 8.0.8 --no-progress -y
 ```
 
 ## Step 2: Install Chocolatey Central Management Web Package
@@ -474,7 +474,7 @@ These errors happen very early in the application execution, and as a result, ar
 
 In these situations, we have found that incorrect database connection strings are typically the root cause of the problem.
 
-Another possible cause for this error is if there are mismatching versions of `dotnet-6.0-aspnetruntime` and `dotnet-aspnetcoremodule-v2`. Ensure that both are on the same patch level. Note that `dotnet-aspnetcoremodule-v2` package versioning does not directly correspond to the dotnet patch level, so it is recommended to use the versions specified in the prerequisites above  
+Another possible cause for this error is if there are mismatching versions of `dotnet-8.0-aspnetruntime` and `dotnet-aspnetcoremodule-v2`. Ensure that both are on the same patch level. Note that `dotnet-aspnetcoremodule-v2` package versioning does not directly correspond to the dotnet patch level, so it is recommended to use the versions specified in the prerequisites above
 
 ### The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
 
