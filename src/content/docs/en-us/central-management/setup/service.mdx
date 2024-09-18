@@ -606,11 +606,3 @@ You are attempting to set up a user that is not in the local Administrators grou
 Please refer to the <Xref title="Chocolatey Central Management Service Windows Account Considerations" value="ccm-service" anchor="chocolatey-central-management-service-windows-account-considerations" /> and select an option that works best for your organization.
 
 <Xref title="Central Management Setup" value="ccm-setup" /> | <Xref title="Chocolatey Central Management" value="central-management" />
-
-### Error 1053: The service did not respond to the start or control request in a timely fashion.
-
-If the Chocolatey Central Management Service cannot be started due to "Error 1053: The service did not respond to the start or control request in a timely fashion.", it will likely be caused by no compatible versions of dotnet aspnetruntime being installed.
-
-The installed runtimes can be listed with `dotnet --list-runtimes`. Ensure that a 8.x.x version of Microsoft.AspNetCore.App is listed. If there is not a version listed, reinstall `dotnet-8.0-aspnetruntime`.
-
-There is a known issue with the aspnetcoremodule-v2 installer that will uninstall the aspnetruntime on upgrade, which may be the root cause for this missing runtime. https://github.com/dotnetcore-chocolatey/dotnetcore-chocolateypackages/issues/64
