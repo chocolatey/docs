@@ -7,6 +7,6 @@ showInSidebar: false
 highlight:
   postedDateTime: 2024-09-19T00:00:00Z
   ctaXref: ccm-release-notes
-  ctaAnchor: september-19-2024
+  ctaAnchor: v0.13.0
   ctaText: Read the release notes
 ---
