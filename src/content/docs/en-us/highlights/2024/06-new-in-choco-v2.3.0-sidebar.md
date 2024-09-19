@@ -11,5 +11,5 @@ highlight:
   ctaText: See what's new
   showOnHome: false
   showOnHighlights: false
-  showInSidebar: true
+  showInSidebar: false
 ---
