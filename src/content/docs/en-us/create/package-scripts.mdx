@@ -1,0 +1,104 @@
+---
+order: 35
+xref: package-scripts
+title: Chocolatey Package PowerShell Scripts
+description: Information about the Chocolatey package scripts.
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="warning">
+    <Xref title="Additional rules apply" value="create-packages-for-ccr" /> if you are creating packages for the [Chocolatey Community Repository](https://community.chocolatey.org).
+</Callout>
+
+## When Will Package Scripts Be Run?
+
+The table below shows which scripts are available, and which commands will cause them to be run.
+
+<Callout type="info">
+    For an upgrade, the `chocolateyInstall.ps1` script will be the one included in the _new package_. The `chocolateyBeforeModify.ps1` script will be the one _from the previously installed package_.
+</Callout>
+
+Script Name                                      | Install | Upgrade | Uninstall
+-------------------------------------------------|---------|---------|----------
+`chocolateyBeforeModify.ps1`                     |                                   | <i class="fa-solid fa-check"></i> | <i class="fa-solid fa-check"></i>
+`chocolateyInstall.ps1`                          | <i class="fa-solid fa-check"></i> | <i class="fa-solid fa-check"></i> |
+`chocolateyUninstall.ps1`                        |                                   |                                   | <i class="fa-solid fa-check"></i>
+
+## Chocolatey Install Script: `chocolateyInstall.ps1`
+
+Chocolatey CLI will look for this script and if found, execute it during package installation or upgrade. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
+
+It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
+
+### When is the Script Run?
+
+If present in a package, the `chocolateyInstall.ps1` script will be run at the following points:
+
+- When a package is <Xref title="installed" value="choco-command-install" /> for the first time, after the package contents have been extracted.
+- When <Xref title="upgrading" value="choco-command-upgrade" />, the `chocolateyInstall.ps1` script for the new package will be executed after any `chocolateyBeforeModify.ps1` script associated with the previous version of the package.
+
+### Example
+
+This is what it takes to install [StExBar](https://community.chocolatey.org/packages/stexbar):
+
+```powershell
+$name   = 'StExBar'
+$url = 'http://stexbar.googlecode.com/files/StExBar-1.8.3.msi'
+$url64 = 'http://stexbar.googlecode.com/files/StExBar64-1.8.3.msi'
+$silent = '/quiet'
+
+Install-ChocolateyPackage -PackageName $name -FileType 'MSI' -Url $url -Url64Bit $url64 -SilentArgs $silent
+```
+
+`Install-ChocolateyPackage` uses the passed parameters to download and silently install, or upgrade, StExBar. See the <Xref title="PowerShell reference" value="install-chocolateypackage" /> for more information.
+
+## Chocolatey Before Modification Script: `chocolateyBeforeModify.ps1`
+
+Chocolatey CLI will look for this script and if found, execute it during package upgrade or uninstall. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
+
+It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
+
+This script is used to stop processes, stop services or otherwise put the system into a state where the package can be upgraded or uninstalled safely.
+
+### When is the Script Run?
+
+If present in a package, the `chocolateyBeforeModify.ps1` script will be run at the following points:
+
+- When a package is <Xref title="upgraded" value="choco-command-upgrade" />, before the package contents have been extracted, the `chocolateyBeforeModidy.ps1` _from the currently installed package_ is run.
+- When <Xref title="uninstalling" value="choco-command-uninstall" />, the `chocolateyBeforeModify.ps1` script for the new package will be executed after any `chocolateyUninstall.ps1` script, _from the currently installed package_ is run.
+
+### Example
+
+```powershell
+Get-Process -Name 'Example' -ErrorAction SilentlyContinue | Stop-Process
+```
+
+This will look for the process 'Example' and stop it if it exists. If it does not exist, it does nothing.
+
+## Chocolatey Uninstall Script: `chocolateyUninstall.ps1`
+
+Chocolatey CLI will look for this script and if found, execute it during package uninstall. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
+
+It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
+
+This script is used to uninstall any software and remove any changes that were made as part of the package installation. For example, if you manually added the software to the Start menu, added registry keys and added anything to the `PATH`, you would remove it again in this script.
+
+### When is the Script Run?
+
+If present in a package, the `chocolateyUninstall.ps1` script will be run at the following points:
+
+- When <Xref title="uninstalling" value="choco-command-uninstall" />, the `chocolateyUninstall.ps1` script will be run before the <Xref title="Chocolatey Automatic Uninstaller" value="faqs" anchor="how-do-i-skip-the-automatic-uninstaller" />.
+
+### Example
+
+```powershell
+$name   = 'Example'
+$silent = '/quiet'
+
+Uninstall-ChocolateyPackage -PackageName $name -FileType 'EXE' -SilentArgs $silent -ValidExitCodes @(0, 1603)
+```
+
+`Uninstall-ChocolateyPackage` uses the passed parameters to uninstall the software silently. See the <Xref title="PowerShell reference" value="uninstall-chocolateypackage" /> for more information.
+
