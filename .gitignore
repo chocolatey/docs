@@ -50,6 +50,7 @@ public/fonts
 public/scripts
 public/styles
 public/images/global-shared
+src/components/global
 
 # general
 apple-touch-*.png
