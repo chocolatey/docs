@@ -1,23 +1,29 @@
 ---
 order: 30
 xref: package-anything
-title: Package anything
-description: With Chocolatey you can package up anything, whether it is installers, application, zip, scripts, etc
+title: Package Anything
+description: With Chocolatey CLI you can package anything, whether it is installers, application, zip, scripts, etc.
 ---
 import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-Chocolatey brings with it the concept of a Universal Packaging format for Windows. At the heart of this is <Xref title="PowerShell" value="packaging-for-the-masses" />, the automation language for Windows.
+Chocolatey CLI brings with it the concept of a **Universal Packaging format for Windows**. At the heart of this is <Xref title="PowerShell" value="packaging-for-the-masses" />, the automation language for Windows.
 
-Since on a Windows machine you can pretty much do "anything" with PowerShell, you can pretty much do "anything" within a Chocolatey package. If you need to
+With a Windows computer, you can do pretty much _anything_ with PowerShell, and you can pretty much do _anything_ within a Chocolatey package.
 
-- install an msi or an exe
-- deploy a standalone binary
-- unzip an archive file
-- place some scripts into a particular folder
+Packages have many different uses cases:
 
-Then you can do all of these with Chocolatey. The benefit comes that you will then know exactly what version of these artifacts are deployed onto any machine, and as a result, you will know when some of these artifacts need to be updated. Gone are the days of guessing at what version of a binary is deployed onto any given machine.
+- **Install, upgrade and remove software using the distributed installer**. That installer could be an MSI, an EXE, AppX, MSIX or other type of installer.
+- **Add or remove a standalone executable binary file**. The binary file will be on the PATH automatically so the end-user just needs to run it anywhere from the command line. You could add a link on the desktop or Start menu for the desktop experience.
+- **Unzip an archive file**. The contents of the archive file can then be used in the way intended: running software, importing into other software or saved for later processing.
+- **Adding, updating or removing Windows components and libraries**. Add DLL's, code libraries and other types of Windows components and register them if necessary.
+- **Adding, updating or removing scripts**. The scripts can then be available for the end-user to run as normal.
+- **Adding, updating or removing registry keys**. Once the registry key files are on the computer, you can import these with standard PowerShell.
+- **Importing, or removing, a license. Deploy a license to your computer**. <Xref title="We use this type of package to ensure Chocolatey for Business is licensed" value="organizational-deployment-guide" anchor="exercise-4-create-a-package-for-the-license" />.
+- Many more use cases. See [packages types](#package-types) below.
+
+The benefit comes in knowing what version of these artifacts are deployed onto the computer and, as a result, you will know when some of these artifacts need to be updated. Gone are the days of guessing what version of software, or what license, is deployed onto any given computer.
 
 When you couple this with the knowledge that a single Chocolatey package can take a dependency on another Chocolatey package, then you can quite quickly see how simple it can be to chain together a complex installation scenario. For example, let's imagine that you want to install the [`vscode` package](https://community.chocolatey.org/packages/vscode), but you also wanted to perform some custom configuration after the installation was performed. You could create a separate package called `vscode-config`, which takes a dependency on `vscode`, and in that package, you could perform all the necessary configuration that you wanted to achieve. Then, when you run:
 
@@ -25,6 +31,18 @@ When you couple this with the knowledge that a single Chocolatey package can tak
 choco install vscode-config
 ```
 
-Chocolatey will first ensure that all dependencies for this package are met, and will install the `vscode` package. Once complete, the installation of the `vscode-config` package will happen, and your custom configuration will be applied. The beauty of this approach is separation of concerns that can be achieved. Here the installation of `vscode` is completed as a single unit of work, and then the custom configuration is applied afterward.
+Chocolatey CLI will first ensure that all dependencies for this package are met, and will install the `vscode` package. Once complete, the `vscode-config` package will be installed, and your custom configuration will be applied. The beauty of this approach is separation of concerns that can be achieved. Here the installation of `vscode` is completed as a single unit of work, and then the custom configuration is applied afterward.
 
-On top of this, Chocolatey has the concept of <Xref title="extension packages" value="extensions" />, which means that you can encapsulate common operations into a single Chocolatey package, which can then be used as a dependency on any other package that needs that functionality. This makes it incredibly simple to consolidate re-usable scripts into a versioned package, that can be used across multiple computers, and packages. A prime example of this is the [`chocolatey-core.extension`](https://community.chocolatey.org/packages/chocolatey-core.extension) package which was created by the Chocolatey Community to provide additional functionality on top of the core functions of Chocolatey itself.
+## Package Types
+
+While there is one **Universal Packaging format for Windows**, there are a few different package types:
+
+- **Package managing software and Windows components**. This package can be used to install, upgrade or uninstall software using the <Xref title="native installer" value="howto-create-msi-package" />, an <Xref title="archive file" value="howto-create-zip-package" /> or <Xref title="standalone executable binary file" value="howto-create-cli-package" />.
+- **Package managing scripts**. This package can be used to <Xref title="add scripts and other code to the computer" value="howto-create-script-package" /> for use by the end-user, other scripts, modules or applications.
+- **Chocolatey extension package**. This package type is used to install, upgrade or uninstall <Xref title="custom PowerShell code that is used by other Chocolatey packages" value="howto-create-extension-package" />. The Community maintained [`chocolatey-core.extension`](https://community.chocolatey.org/packages/chocolatey-core.extension) package is a good example of this.
+- **Chocolatey template package**. Chocolatey CLI comes with a default template type that is used when you run `choco new`. You can create <Xref title="your own templates" value="howto-create-package-template" /> to make repeated packaging, easier.
+- **Chocolatey hook package**. A hook package allows <Xref title="custom scripts to be run at the start, or end, of Chocolatey CLI packaging operations" value="howto-create-hook-package" />.
+
+With a Windows computer, you can do pretty much _anything_ with PowerShell, and you can pretty much do _anything_ within a Chocolatey package.
+
+Find out how to <Xref title="create your own Chocolatey package" value="package-creation" />

@@ -178,7 +178,7 @@ export default defineConfig({
         '/en-us/chocolatey-gui/setup/installation/chocolateygui': '/en-us/chocolatey-gui/setup/installation/',
         '/en-us/chocolatey-gui/setup/installation/chocolatey-gui': '/en-us/chocolatey-gui/setup/installation/',
         '/en-us/chocolatey-gui/setup/uninstallation/chocolatey-gui': '/en-us/chocolatey-gui/setup/uninstallation/',
-        '/docs/chocolatey-install-ps1': '/en-us/chocolatey-install-ps1/',
+        '/docs/chocolatey-install-ps1': '/en-us/create/package-scripts/',
         '/docs/chocolatey-story': '/en-us/chocolatey-story/',
         '/docs/chocolatey-vs-ninite': '/en-us/chocolatey-vs-ninite/',
         '/docs/community-packages-disclaimer': '/en-us/community-repository/community-packages-disclaimer/',

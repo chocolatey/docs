@@ -1,0 +1,26 @@
+---
+order: 35
+xref: package-faq
+title: Chocolatey Package FAQ
+description: Frequently Asked Questions about Chocolatey packages and packaging.
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Where is the Chocolatey Package Path?
+
+The Chocolatey package path is located at `$env:ChocolateyInstall\lib\<PACKAGENAME>` where:
+
+- `$env:ChocolateyInstall` is the value of the `ChocolateyInstall` PowerShell environment variable (by default this is `C:\ProgramData\chocolatey`).
+- `<PACKAGENAME>` is the ID of the package you are installing.
+
+## How Do I Restrict What Versions of Windows a Package Will Install On
+
+If the package is installing software that is only supported on a specific version of Windows, you need to **throw a terminating error** which Chocolatey CLI will detect and indicate a package installation failure. In PowerShell, you can create throw an exception using [`throw`](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_throw?view=powershell-5.1).
+
+There are a very small number of packages where this rule will not apply: packages, such as Windows KB's, that are used as dependencies and need to be installed even if they do not install anything. If the package failed, and it was a dependency of another package, it may cause issues for the parent package.
+
+## How Do I Stop Packages From Being Installed on Some Versions of Windows
+
+See [How Do I Restrict What Versions of Windows a Package Will Install On](#how-do-i-restrict-what-versions-of-windows-a-package-will-install-on).
