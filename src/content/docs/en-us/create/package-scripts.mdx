@@ -28,6 +28,10 @@ Script Name                                      | Install | Upgrade | Uninstall
 
 ## Chocolatey Install Script: `chocolateyInstall.ps1`
 
+<Callout type="info">
+    The `chocolateyInstall.ps1` script is not required. If a package does not contain the script then the contents of the package will be extracted to the <Xref title="Chocolatey package path" value="package-faq" anchor="where-is-the-chocolatey-package-path" />. Any executable files will be <Xref title="shimmed" value="shim" />.
+</Callout>
+
 Chocolatey CLI will look for this script and if found, execute it during package installation or upgrade. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
 
 It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
@@ -56,6 +60,10 @@ Install-ChocolateyPackage -PackageName $name -FileType 'MSI' -Url $url -Url64Bit
 
 ## Chocolatey Before Modification Script: `chocolateyBeforeModify.ps1`
 
+<Callout type="info">
+    The `chocolateyBeforeModify.ps1` script is not required.
+</Callout>
+
 Chocolatey CLI will look for this script and if found, execute it during package upgrade or uninstall. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
 
 It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
@@ -79,11 +87,16 @@ This will look for the process 'Example' and stop it if it exists. If it does no
 
 ## Chocolatey Uninstall Script: `chocolateyUninstall.ps1`
 
+<Callout type="info">
+    The `chocolateyUninstall.ps1` script is not required. If a package does not contain the script then the Chocolatey Automatic Uninstaller will uninstall the package as best it can, if enabled, and the <Xref title="Chocolatey package folder" value="package-faq" anchor="where-is-the-chocolatey-package-path" /> will be removed.
+</Callout>
+
+
 Chocolatey CLI will look for this script and if found, execute it during package uninstall. See the <Xref title="Chocolatey PowerShell reference" value="powershell-reference" /> for more information on the Chocolatey provided PowerShell that you can use.
 
 It really is just PowerShell, so you can use regular PowerShell here and it should run fine.
 
-This script is used to uninstall any software and remove any changes that were made as part of the package installation. For example, if you manually added the software to the Start menu, added registry keys and added anything to the `PATH`, you would remove it again in this script.
+This script is used to uninstall any software and remove any changes that were made as part of the package installation. For example, if you manually added the software to the Start menu, added registry keys and added anything to the `PATH`, you would remove it again in this script. If a package does not uninstall cleanly then end-user will have to manually clean up after it. Be a good maintainer and write an uninstaller that cleans everything up.
 
 ### When is the Script Run?
 

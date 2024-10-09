@@ -1,0 +1,200 @@
+---
+order: 25
+xref: package-metadata
+title: Chocolatey Package Metadata File (.nuspec)
+description: Information about the Chocolatey package `.nuspec` Metadata File
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import CollapseButton from '@choco/components/CollapseButton.astro';
+
+<Callout type="warning">
+  When creating package metadata `.nuspec` files:
+  - Use the UTF-8 character encoding for the package metadata `.nuspec` file. If you don't respect this rule, some characters may not displayed correctly.
+  - Avoid using Windows Notepad as it is still behind in capabilities as compared to other editors. Alternatives:
+    - [Visual Studio Code](https://community.chocolatey.org/packages/vscode)
+    - [Notepad++](http://community.chocolatey.org/packages/notepadplusplus)
+    - [Geany](http://community.chocolatey.org/packages/geany)
+- Use this **XML declaration**: `<?xml version="1.0" encoding="utf-8"?>`.
+</Callout>
+
+Chocolatey packages are based on the [NuGet package format](https://learn.microsoft.com/en-us/nuget/reference/nuspec) and have taken the basic information (called metadata) about the package such as the version, the license, maintainers, and package dependencies and extended it.
+
+<Callout type="warning">
+    <Xref title="Additional rules apply" value="create-packages-for-ccr" /> if you are creating packages for the [Chocolatey Community Repository](https://community.chocolatey.org).
+</Callout>
+
+<Callout type="warning">
+    If your package uses functionality introduced in specific versions of Chocolatey CLI, you should include `chocolatey` as a dependency, including the version number where the functionality was introduced. Otherwise, the installation could fail for users with an older version of Chocolatey CLI installed.
+
+    You can include the dependency using:
+
+```xml
+    <dependencies>
+      <dependency id="chocolatey" version="2.0.0" />
+    </dependencies>
+```
+
+See <Xref title="package dependencies" value="package-dependencies" /> for more information
+</Callout>
+
+Unless stated, all metadata fields are optional.
+
+### Naming Your Package: `<id>` Metadata Field (**Required**)
+
+```xml
+<id>adobereader</id>
+```
+
+There are some guidelines in terms of the package **ID** (`<id>` tag in the package metadata `.nuspec` file):
+
+* Use only lowercase letters, even if you used uppercase letters in the package title. This keeps the package names consistent in the destination repository.
+* If the original application name consists of compound words without spaces, for example _MKVToolNix_, _TightVNC_ and _VirtualBox_, the package `<id>` is simply the same: `mkvtoolnix`, `tightvnc`, and `virtualbox`.
+* If the name of the application contains multiple words separated by spaces, such as _MusicBrainz Picard_ or _Adobe Reader_, replace the spaces with the hyphen-minus character “-” (U+002D), or just omit them.
+* **Don't use dots**.
+  We recommended you use the hyphen method when there are long package names to ensure they remain readable.
+* For sub-packages, use the hyphen-minus character “-” (U+002D) as the separator, not a dot. Sub-packages are intended for separate packages that include extensions, modules or additional features/files for other applications.
+  Therefore `keepass-langfiles` is a proper package `<id>`, because it adds the language files for the main application which in this case is _KeePass_.
+  Another example is `libreoffice-help` for the help pack for _LibreOffice_, the open source office suite.
+
+These guidelines are already commonly applied on packages for all major Linux distributions, because they lead to a more consistent user experience for software repositories, result in easier to remember package IDs, and reduce unnecessary considerations on naming packages for package creators.
+
+export const collapse1 = {
+  id: 'namingPackagesSXSInstallation',
+  title: 'Naming Packages to Allow for Side-by-Side Installation',
+};
+
+<CollapseButton content={collapse1}>
+#### Naming Packages to Allow for Side-by-Side Installation
+
+<Callout type="info">
+    The ability to use side-by-side packages was <Xref title="removed in version 2.0.0 of Chocolatey CLI" value="upgrading-to-chocolatey-v2-v6" anchor="side-by-side-installs-have-been-removed-1" />.
+</Callout>
+
+For some software, it is expected that users may want multiple different versions installed simultaneously.
+This has commonly been seen with software like Python which offer some kind of runtime dependency that other scripts or applications depend on.
+
+In the past, Chocolatey CLI supported a "side-by-side" installation method which could be used for this purpose to install multiple distinct versions side-by-side, on the same machine.
+This has been deprecated and is no longer supported in version 2.0.0 due to many issues with the use and implementation of the feature.
+
+#### If the Software You're Creating a Package for Expects **Side-by-Side Installations of Different Versions**
+
+<Callout type="info">
+    The ability to use side-by-side packages was <Xref title="removed in version 2.0.0 of Chocolatey CLI" value="upgrading-to-chocolatey-v2-v6" anchor="side-by-side-installs-have-been-removed-1" />.
+</Callout>
+
+1. Create _separate package IDs_ for each major version (or major + minor version, depending on the expectations of users) which include the version number in the ID.
+  For example, if the package ID would be `python`, the package for major version 2 would be `python2`, or a package for specifically the 2.7 branch might be `python27` or `python2-7`.
+  These individual versioned packages can be updated as normal, as long as that major and/or minor version is still receiving further updates.
+1. Create a <Xref title="**metapackage**" value="getting-started" anchor="terminology" /> for the overall product with a package version for each of the versioned packages.
+  In other words, create another package (this time without a version number in the ID), which contains only a `nuspec` file and add a dependency on the versioned package.
+  Following the above example for Python, we'd create a package with the ID `python` at version `2.0.0` that takes a dependency on the `python2` package.
+1. New versions of the metapackage should be published for "sub-versions" of the dependency package as well.
+  For example, if Python version `3` is released, we'd create a new version of the `python` package with its version set to `3.0.0`, which depends on a new `python3` package.
+
+#### If the Software You're Creating a Package for Expects **Side-by-Side Installations of the Same Version**
+
+<Callout type="info">
+    The ability to use side-by-side packages was <Xref title="removed in version 2.0.0 of Chocolatey CLI" value="upgrading-to-chocolatey-v2-v6" anchor="side-by-side-installs-have-been-removed-1" />.
+</Callout>
+
+A possible example might be where multiple different instances of the software are being installed into different install directories.
+
+Chocolatey does not currently support this functionality.
+This functionality can be mimicked by making use of `--force` to forcibly overwrite an already-installed package and providing an argument or package parameter that the package can use to direct the installation to install into a different directory.
+However, Chocolatey will only be aware of the most-recently installed copy of the software, and will only be able to provide updates to that single installation of the software in most cases.
+As a result, this particular configuration is not supported.
+
+A potential workaround for users maintaining their own package repositories is to maintain separate instances of the same package under different package IDs, where each package ships the same software, but is scripted to install to a different directory.
+For example, you can create a `python3-localtoolsfolder` and a `python3-programfilesfolder` package which have the same contents, with only slight differences in the parameters passed to the install functions to ensure they install in the desired locations.
+The recommended naming conventions here are similar to sub-packages, where the package is named after the primary package ID followed by a dash and a discriminator, likely named after the install location or referencing the purpose of the additional package(s).
+</CollapseButton>
+
+### Package Version: `<version>` Metadata Field
+
+```xml
+<version>2023.003.20215</version>
+```
+
+Versioning can be both simple and complicated. The best recommendation is to use the same versioning that the software uses. With Chocolatey CLI you get four version segments. If the software only uses 1, 2 or 3 version segments, follow suit.
+
+export const collapse2 = {
+  id: 'packageFixVersionNotation',
+  title: 'Package Fix Version Notation',
+};
+
+<CollapseButton content={collapse2}>
+### Package Fix Version Notation
+
+Package fix version notation is used when the package needs to be updated, but the software stays at the same version.
+
+If the software is `1.1.0`, in a normal scenario the package version would be `1.1.0`. If you find that the `1.1.0` _package_ has an issue, that is where package fix version notation comes into play. You would end up with both a `1.1.0` package and a `1.1.0.YYYYMMDD` version of the package.
+
+If you need to fix an approved package for some reason, you can use the fourth version segment for a package fix notation. There are two recommended methods of package fix version notation:
+
+- **Date Package fix Version (`yyyyMMdd`)**. Use this notation, as in `20120627` seen as `1.2.0.20120627`.
+- **Sequential Package Fix Version Notation**. Sequential numbering uses `0` for no fix, `1` for first fix and so on, seen as `1.2.0.0` and `1.2.0.1`.
+
+It is recommended:
+
+- Date Package Fix Version Notation is recommended because one can ascertain what it is immediately upon seeing it, where sequential is not obvious on sight whether it is part of the software versioning or something special with the package.
+- Package fix version notation should only be used in the fourth segment. Do not use any of the other segments for package fix notation. If an application only uses 1 or 2 version segments, add zeros into the other segments until you get to the 4th segment (i.e. `1.0.0.20120627`). When the fourth segment is already used, it is recommended to add two zeroes (`00`) to the end of the version. Then, when you need to fix, you just increment that number. So if the package was `ruby` and the version was `2.0.0-p353`, the package is `2.0.0.35300` (adding the two zeroes at the end). Then a fix would be `2.0.0.35301` and so on.
+
+<Callout type="warning">
+    If you decide to add a secondary set of numbers to the fourth segment, you MUST ALWAYS include that secondary set of numbers while the other three version segments are the same. If you fix `.1` to `.100`, then release `.2`, `.100` is greater than `.2` because versioning doesn't look at the `.`, only the number in the element. So `100` is greater than `2`.
+</Callout>
+</CollapseButton>
+
+### Package Title: `<title>` Metadata field (**Required**)
+
+```xml
+<title>Adobe Acrobat Reader DC</title>
+```
+
+The **title** of your package should be the same as the name of the application.
+Follow the official spelling, use upper and lower case and don't forget the spaces.
+Examples of correct package titles are: _Google Chrome_, _CCleaner_, _PuTTY_ and _FileZilla_.
+The title will appear on the left side in the package list of the Chocolatey Community Repository, followed by the version.
+
+### Package Icon: `<iconUrl>` Metadata Field
+
+```xml
+<iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@fb3fc3a/icons/adobereader.png</iconUrl>
+```
+
+If there is an icon which is suitable for your package, you can specify it in the `<iconUrl>` field. But there are a few things you should consider:
+
+* **Avoid hotlinking icons from sites where you don't have control over the file**. If you use your own packages repository (<Xref title="recommended" value="organizational-deployment-guide" anchor="exercise-2-set-up-a-package-repository" />), use your own copy of the icon and put it there.
+* **Use a static CDN for icon URLs that permits you to serve files hosted in a repository on GitHub.** Some CDN services cache files permanently, and it's therefore best to use a specific tag or commit URL, not a branch URL. While we don't make any recommendations about specific services, the more popular ones used by maintainers are [jsDelivr](https://www.jsdelivr.com/), [Statically](https://statically.io/) and [Githack](https://raw.githack.com/).
+* **Avoid using GitHub raw links** (`https://raw.githubusercontent.com/...`). They are not intended to be used as CDN.
+* **Use the software's icon if one is available, not the logo.** This [blog post](https://blog.designcrowd.com/article/353/differences-between-logos-and-icons) explains the difference between logos and icons. If the software of your package doesn't have an icon, but a logo with text and an image, you can extract the image with your favorite image editor and use that as package icon. An example is [MySQL's dolphin](https://community.chocolatey.org/packages/mysql).
+* Good sources for package icons are the official desktop icons of the corresponding application you want to make a package of. The icons can be extracted from the app executables using tools like [BeCyIconGrabber](https://community.chocolatey.org/packages/becyicongrabber). Remember to take the icon with 128px or more and save it as PNG file.
+
+### Package Description: `<description`> Metadata Field
+
+```xml
+<description>
+This package installs/upgrades the Multi-lingual ("MUI") release. In some cases, this package will by default be able to install over the top of a language-specific installation. Otherwise, this package will exit and require either a manual uninstall of the language specific installation or having the parameter '/OverwriteInstallation' set to do this automatically.
+
+## Note
+
+If the package fails on Windows 8.1 or earlier, this might be due to the installation of kb2919355 (which is a dependency of this package) if your system is not up-to-date. This KB requires a reboot of the system before the adobereader package installs successfully.
+</description>
+```
+
+The `<description>` of the package should contain a short text or at least a few words about the software for which the package is made. Here are a few things that should be respected:
+
+- It should not just contain a repetition of the package name.
+- It should not just consist of a link where more information can be found. For that purpose there's already `<projectUrl>`.
+- The contents of `<description>` are parsed as Markdown, so don't insert line breaks in the middle of sentences. Remember to add empty lines to separate paragraphs and add an empty line before a list.
+
+### Package Release Notes: `<releaseNotes>` Metadata Field
+
+```xml
+<releaseNotes>https://helpx.adobe.com/acrobat/release-note/release-notes-acrobat-reader.html</releaseNotes>
+```
+
+The `<releaseNotes>` of the package should contain the release notes or a URL to them. Here are a few things that should be respected:
+
+- The contents of `<releaseNotes>` are parsed as Markdown, so don't insert line breaks in the middle of sentences. Remember to add empty lines to separate paragraphs and add an empty line before a list.
