@@ -115,10 +115,10 @@ Some packages are already internalized or don't have remote resources. In those 
 
 ### It was not able to download a resource. Why not?
 
-This feature is in preview, but is able to download/recompile quite a few packages. There are a few that it may have issues with, especially if variables with methods are used (e.g. `$(somevar).Replace(".","")`). In those cases it attempts to warn you ahead of time that it cannot handle those yet.
+This feature is able to download/recompile quite a few packages. There are a few that it may have issues with, especially if variables with methods are used (e.g. `$(somevar).Replace(".","")`). In those cases it attempts to warn you ahead of time that it cannot handle those yet.
 
 Future versions of the licensed edition will support advanced scenarios such as these.
 
 ### Are all packages guaranteed to be compatible?
 
-Unfortunately not all packages on the community repository are created equal, even with the rigorous moderation process. A few packages do not use the built-in functions for acquiring files from the internet, so they don't lend well to automatic recompiling. Typically Chocolatey will let you know when this is the case and allow you to inspect the package to allow you to finish up the next steps of recompiling. As a future enhancement, it's possible this scenario would also be supported, although it is a very small subset of packages that are created in this way.
+Unfortunately not all packages on the Chocolatey Community Repository are created equal, even with the rigorous moderation process. A few packages do not use the built-in functions for acquiring files from the internet, so they don't lend well to automatic recompiling. Typically Chocolatey will let you know when this is the case and allow you to inspect the package to allow you to finish up the next steps of recompiling. As a future enhancement, it's possible this scenario would also be supported, although it is a very small subset of packages that are created in this way.
