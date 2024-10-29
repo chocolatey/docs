@@ -100,13 +100,26 @@ Yes, but we have not decided whether shimming Program Files is a good idea yet o
 
 If you are creating a package and you need to shim a file that doesn't end in .exe (like a .bat file), you should look at <Xref title="Install-BinFile" value="install-binfile" />.
 
-### I need to exclude a file from shimming.
+### I Need to Exclude a File From Shimming.
 
-If you are creating a package and you want to skip creation of a shim for a particular file, you can create a "*.ignore" file.
+If you are creating a package, and you want to skip creation of a shim for a particular file, create an empty file next to the executable (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending `.ignore`. For example, if your file is named `bob.exe`, you need a file named `bob.exe.ignore` (pay attention to case - "`BOB.exe.ignore`" may not work with all versions of Chocolatey CLI).
 
-Set an empty file next to the executable (or where it will be downloaded/unpacked to), sharing the same name with the executable and appending ".ignore". For example, if your file is named "`bob.exe`", you need a file named "`bob.exe.ignore`" (pay attention to case - "`BOB.exe.ignore`" may not work with all versions of Chocolatey).
+Here's a great [programmatic example](https://github.com/ferventcoder/chocolatey-packages/blob/6ea7c087bd999d428a564b5d7e236ae998ef72e9/automatic/git.commandline/tools/chocolateyInstall.ps1#L13-L20):
 
-<Xref title="Read more..." value="create-packages" anchor="how-do-i-exclude-executables-from-getting-shims" />
+```powershell
+$files = Get-ChildItem -Path $installDir -Include *.exe -Recurse
+
+ForEach ($file in $files) {
+  # generate an ignore file
+  New-Item -Path "$file.ignore" -type file -force | Out-Null
+}
+```
+
+## How Do I Set Up Shims for Applications That Have a GUI?
+
+If you don't want to see a hanging window when you open an application from the command line that was installed with Chocolatey CLI, you want to create a file next to the executable that is named exactly the same (**case sensitive**) with `.gui` suffixed on the end.
+
+Example: In the case of `bob.exe` you would create a file named `bob.exe.gui` and that file would be set up as a GUI application, so the window will call it and then move on without waiting for it to finish.
 
 ### I have architecture specific binaries to shim
 
