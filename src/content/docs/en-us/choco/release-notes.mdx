@@ -26,6 +26,10 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 ## 2.4.0 (Nov 12, 2024) \{#v2.4.0}
 
+### Deprecated Feature
+
+- Deprecate the `Install-ChocolateyPinnedTaskBarItem` helper function - see [#3520](https://github.com/chocolatey/choco/issues/3520).
+
 ### Bug Fixes
 
 - Fix - Update tab completions for compatibility with PowerShell 7.4+ - see [#3364](https://github.com/chocolatey/choco/issues/3364).
@@ -36,15 +40,6 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Fix - Ensure `.arguments` files that cannot be decrypted do not prevent running Chocolatey CLI commands - see [#3503](https://github.com/chocolatey/choco/issues/3503).
 - Fix - Ensure invalid `.arguments` files do not prevent running Chocolatey CLI commands - see [#3513](https://github.com/chocolatey/choco/issues/3513).
 
-### Deprecated Feature
-
-- Deprecate the `Install-ChocolateyPinnedTaskBarItem` helper function - see [#3520](https://github.com/chocolatey/choco/issues/3520).
-
-### Documentation
-
-- Update build instructions - see [#3467](https://github.com/chocolatey/choco/pull/3467).
-- Fixed parameter name typo in the chocolateyInstall template - see [#3504](https://github.com/chocolatey/choco/pull/3504).
-
 ### Improvements
 
 - Rework build process to remove the use of `-unpackself` command - see [#3427](https://github.com/chocolatey/choco/issues/3427).
@@ -52,6 +47,12 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Remove historical folder migration logic from `chocolateysetup.psm1` - see [#3501](https://github.com/chocolatey/choco/issues/3501).
 - Updated the bundled version of 7zip to 24.08 - see [#3505](https://github.com/chocolatey/choco/issues/3505).
 - Provide better information through the user agent when querying remote repositories - see [#3526](https://github.com/chocolatey/choco/issues/3526).
+
+### Documentation
+
+- Update build instructions - see [#3467](https://github.com/chocolatey/choco/pull/3467).
+- Fixed parameter name typo in the chocolateyInstall template - see [#3504](https://github.com/chocolatey/choco/pull/3504).
+
 
 ## 2.3.0 (June 5, 2024) \{#v2.3.0}
 
@@ -98,6 +99,7 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Fix typos and punctuation in `choco feature` and `choco config` error output - see [#3324](https://github.com/chocolatey/choco/pull/3324).
 - Clarify `Proxy BypassList` value must be a regular expression, in the help output - see [#3401](https://github.com/chocolatey/choco/issues/3401).
 - Remove reference of unused `zip.sh` from README.md file - see [#3402](https://github.com/chocolatey/choco/pull/3402).
+
 
 ## 2.2.2 (August 8, 2023) \{#august-8-2023}
 
