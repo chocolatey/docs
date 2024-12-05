@@ -138,8 +138,7 @@ function New-AclObject {
 }
 
 if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
-    Write-Warning "Chocolatey not installed. Cannot install standard packages."
-    Exit 1
+    Write-Error  "Chocolatey not installed. Cannot install standard packages." -ErrorAction Stop
 }
 # Install Chocolatey.Server prereqs
 choco install IIS-WebServer --source windowsfeatures
