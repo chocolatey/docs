@@ -116,6 +116,39 @@ The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](
 
 [Mermaid](https://mermaid.js.org/) via an [Astro integration](https://github.com/chocolatey/choco-astro/blob/main/astro.config.mjs.json) allows an easy way to display information with diagrams written in markdown. Find more information on usage at the [choco-astro repository](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#markdown-diagrams-with-mermaid).
 
+## Adding A New Highlight
+
+A Highlight is what is shown on the home page of docs.chocolatey.org and the left sidebar. These need updated every so often, especially when there has been a new release. Follow the steps below to add a new Highlight.
+
+### Front Page Highlight
+
+1. Navigate to `src/content/docs/en-us/highlights` then into the current year folder.
+1. Copy a file that does not have a `-sidebar` in the file name.
+1. Change the name of the new file to include the month number as the first characters in the name, such as `10-testing-home.md`.
+1. Fill in details needed and follow the current naming convention for xrefs in the file.
+    1. Change the `ctaText` value to something unique.
+
+### Left Sidebar Highlight
+
+1. Navigate to `src/content/docs/en-us/highlights` then into the current year folder.
+1. Copy a file that has a `-sidebar` in the file name.
+1. Change the name of the new file to include the month number as the first characters in the name, such as `10-testing-home-sidebar.md`. Ensure the `-sidebar` in the name is retained.
+1. In the nested `highlight` front matter, ensure the following are set:
+    ```markdown
+    showOnHome: false
+    showOnHighlights: false
+    showInSidebar: true
+    ```
+1. Fill in the rest of the details needed and follow the current naming convention for xrefs in the file.
+    1. Change the `ctaText` value to something unique.
+1. If there is a Sidebar Highlight already active, find the file that it is referencing. The title and post date can be a clue as to what file this is inside of the `src/content/docs/en-us/highlights` folder.
+1. In the nested `highlight` front matter on the OLD file, ensure the following are set:
+    ```markdown
+    showOnHome: false
+    showOnHighlights: false
+    showInSidebar: false
+    ```
+
 ## Running Playwright Tests
 
 To run all the Playwright tests, first run the following command:
