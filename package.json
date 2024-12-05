@@ -26,7 +26,7 @@
     "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
   },
   "dependencies": {
-    "choco-astro": "0.1.2",
-    "choco-theme": "0.8.1"
+    "choco-astro": "0.1.3",
+    "choco-theme": "0.8.2"
   }
 }
