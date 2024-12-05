@@ -12,16 +12,16 @@ import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.
 
 <PackageValidatorRuleNote />
 
-<Callout type="info">
-    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
-</Callout>
-
 ## Issue
 
-In the nuspec,
+In the nuspec, the tag `notSilent` has been specified, indicating that the package is not silent, which means that there is some indication that an install, upgrade or uninstall is taking place such as a window being shown, a progress bar or something else that is visible. 
+
+A package not specifying this tag indicates it is entirely silent in all scenarios that are known.
 
 ## Recommended Solution
 
-Please update _ so that _
+If the installation, upgrade or uninstall of the package is silent, please update the nuspec to not contain the `notSilent` tag, which means there is some indication that an install, upgrade or uninstall is taking place such as a window being shown, a progress bar or something else that is visible. 
 
 ## Reasoning
+
+The tag `notSilent` should only be used to indicate that the package is not silent.
