@@ -122,18 +122,35 @@ A Highlight is what is shown on the home page of docs.chocolatey.org and the lef
 
 ### Front Page Highlight
 
+For front page highlights, we should try to keep it to less than 6 highlights. When adding a new one, consider editting existing highlights to set `showOnHome` to `false`.
+
 1. Navigate to `src/content/docs/en-us/highlights` then into the current year folder.
-1. Copy a file that does not have a `-sidebar` in the file name.
+1. Copy an existing file.
 1. Change the name of the new file to include the month number as the first characters in the name, such as `10-testing-home.md`.
 1. Fill in details needed and follow the current naming convention for xrefs in the file.
     1. Change the `ctaText` value to something unique.
 
 ### Left Sidebar Highlight
 
-1. Navigate to `src/content/docs/en-us/highlights` then into the current year folder.
-1. Copy a file that has a `-sidebar` in the file name.
-1. Change the name of the new file to include the month number as the first characters in the name, such as `10-testing-home-sidebar.md`. Ensure the `-sidebar` in the name is retained.
-1. In the nested `highlight` front matter, ensure the following are set:
+For left sidebar highlights, we want to keep it to a minimum to reduce the amount the navigation is pushed down the page. It's recommended to edit only the top highlight file to link to the current highlighted article, and leave the bottom one to link to all highlights.
+
+To edit either of these highlights:
+
+1. Navigate to `src/content/docs/en-us/highlights`.
+1. Find the highlight you want to edit: `00-top-sidebar-highlight.md` for the top one, and `99-bottom-sidebar-highlight.md` for the bottom one.
+1. Edit the details as desired making note of the following `highlight` front matter settings that control the destination and link text:
+    ```markdown
+    ctaXref: highlights
+    ctaAnchor: december-2024
+    ctaText: View December's highlights
+    ```
+
+If it's decided that extra highlights should be added:
+
+1. Navigate to `src/content/docs/en-us/highlights`.
+1. Copy one of the existing `*sidebar-highlight.md` files.
+1. Change the name of the new file to start with a number that will determine it's order in the sidebar, such as `10-testing-home-sidebar-highlight.md`. Ensure the `-sidebar-highlight` in the name is retained.
+1. In the nested `highlight` front matter, ensure the following are set in the nested `highlight` front matter:
     ```markdown
     showOnHome: false
     showOnHighlights: false
