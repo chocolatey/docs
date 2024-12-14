@@ -18,7 +18,7 @@ Updates the environment variables of the current powershell session with any env
 ## SYNTAX
 
 ```
-Update-SessionEnvironment [-IgnoredArguments <Object[]>] [<CommonParameters>]
+Update-SessionEnvironment [-IgnoredArguments <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -46,6 +46,36 @@ Allows splatting with arguments that do not apply. Do not use directly.
 Type: Object[]
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
 
 Required: False
 Position: Named

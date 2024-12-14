@@ -116,6 +116,56 @@ The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](
 
 [Mermaid](https://mermaid.js.org/) via an [Astro integration](https://github.com/chocolatey/choco-astro/blob/main/astro.config.mjs.json) allows an easy way to display information with diagrams written in markdown. Find more information on usage at the [choco-astro repository](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#markdown-diagrams-with-mermaid).
 
+## Adding A New Highlight
+
+A Highlight is what is shown on the home page of docs.chocolatey.org and the left sidebar. These need updated every so often, especially when there has been a new release. Follow the steps below to add a new Highlight.
+
+### Front Page Highlight
+
+For front page highlights, we should try to keep it to less than 6 highlights. When adding a new one, consider editting existing highlights to set `showOnHome` to `false`.
+
+1. Navigate to `src/content/docs/en-us/highlights` then into the current year folder.
+1. Copy an existing file.
+1. Change the name of the new file to include the month number as the first characters in the name, such as `10-testing-home.md`.
+1. Fill in details needed and follow the current naming convention for xrefs in the file.
+    1. Change the `ctaText` value to something unique.
+
+### Left Sidebar Highlight
+
+For left sidebar highlights, we want to keep it to a minimum to reduce the amount the navigation is pushed down the page. It's recommended to edit only the top highlight file to link to the current highlighted article, and leave the bottom one to link to all highlights.
+
+To edit either of these highlights:
+
+1. Navigate to `src/content/docs/en-us/highlights`.
+1. Find the highlight you want to edit: `00-top-sidebar-highlight.md` for the top one, and `99-bottom-sidebar-highlight.md` for the bottom one.
+1. Edit the details as desired making note of the following `highlight` front matter settings that control the destination and link text:
+    ```markdown
+    ctaXref: highlights
+    ctaAnchor: december-2024
+    ctaText: View December's highlights
+    ```
+
+If it's decided that extra highlights should be added:
+
+1. Navigate to `src/content/docs/en-us/highlights`.
+1. Copy one of the existing `*sidebar-highlight.md` files.
+1. Change the name of the new file to start with a number that will determine it's order in the sidebar, such as `10-testing-home-sidebar-highlight.md`. Ensure the `-sidebar-highlight` in the name is retained.
+1. In the nested `highlight` front matter, ensure the following are set in the nested `highlight` front matter:
+    ```markdown
+    showOnHome: false
+    showOnHighlights: false
+    showInSidebar: true
+    ```
+1. Fill in the rest of the details needed and follow the current naming convention for xrefs in the file.
+    1. Change the `ctaText` value to something unique.
+1. If there is a Sidebar Highlight already active, find the file that it is referencing. The title and post date can be a clue as to what file this is inside of the `src/content/docs/en-us/highlights` folder.
+1. In the nested `highlight` front matter on the OLD file, ensure the following are set:
+    ```markdown
+    showOnHome: false
+    showOnHighlights: false
+    showInSidebar: false
+    ```
+
 ## Running Playwright Tests
 
 To run all the Playwright tests, first run the following command:

@@ -12,6 +12,15 @@ As we've mentioned in other articles, a Chocolatey package can do near anything 
 
 In this how-to, we'll talk about sharing functions between packages using extension packages.
 
+### Back To Basics Livestream
+
+The creation, and usage, of Chocolatey extension packages was a topic of a recent [back-to-basics](https://blog.chocolatey.org/tags/back-to-basics) livestream.
+The recording of that livestream can be found here:
+
+<div class="ratio ratio-16x9 mb-3">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ODCZ7yumJJc" frameborder="0" allowfullscreen></iframe>
+</div>
+
 ### What Is an Extension Package
 
 In Chocolatey-parlance, an extension package is a package that extends the ability of other Chocolatey packages, by making additional PowerShell functions or cmdlets available.
@@ -132,8 +141,6 @@ Open the `example.extension.nuspec` file in VS Code and modify the metadata as a
 
 That's all you need!
 
-You may notice that all of the example packages above end with `.extension`. This is not required for an extension package by Chocolatey itself, but it is how we easily classify extension packages on the Chocolatey Community Repository.
-
 #### Creating Your Install Script
 
 As we mentioned earlier, there's no need for an install script in an extension package - Chocolatey CLI handles putting the extension in the right place!
@@ -174,6 +181,21 @@ Get-ChildItem $env:ChocolateyInstall\extensions
 # This should show your module
 Get-ChildItem $env:ChocolateyInstall\extensions\example
 ```
+
+### Where Are Extensions Stored?
+
+Chocolatey packages are stored within the `lib` folder, of the Chocolatey installation location.
+This is the `C:\ProgramData\chocolatey\lib` folder by default.
+However, Chocolatey CLI understands packages that end with `.extension` and some additional processing is completed.
+The actual extension package contents will be extracted, and stored, in the `C:\ProgramData\chocolatey\extensions` directory.
+The name of the folder will match the name you gave to the extension package.
+
+For example, an extension package with the name `chocolatey-windowsupdate.extension`, will, by default, have the package contents extracted to `C:\ProgramData\chocolatey\extensions\chocolatey-windowsupdate`.
+
+This special handling for packages ending with `.extension` also applies to packages that end with `.hook` and `.template`.
+For `.hook` packages, by default, there is a folder at `C:\ProgramData\chocolatey\hooks`.
+For `.template` packages, by default, there is a folder at `C:\ProgramData\chocolatey\templates`.
+
 
 ### Using Shared PowerShell Functions
 
