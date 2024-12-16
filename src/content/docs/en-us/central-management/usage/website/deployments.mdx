@@ -32,11 +32,6 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management Deployment Plans page, arrow pointing to Create New Deployment Plan button](/images/ccm-playwright/deployment-plans/button-create-new-deployment-plan.png)
 
-1. (Optional) Give the Deployment Plan a custom name by clicking the edit icon displayed next to it and entering a new name.
-   Press **Enter** to save the new name.
-
-    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to the edit title button](/images/ccm-playwright/deployment-plans/edit/button-edit-name.png)
-
 1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment Plan execution timeout in seconds to be used by all Deployment Steps.
 
     ![Chocolatey Central Management New Deployment Plan page, arrow pointing to the Deployment Plan execution timeout in seconds setting](/images/ccm-playwright/deployment-plans/edit/input-execution-timeout-in-seconds.png)
@@ -45,23 +40,19 @@ You will also need to have at least one Group of computers already defined.
 
         ![Chocolatey Central Management Deployment Step modal, arrow pointing to execution timeout in seconds](/images/ccm-playwright/deployment-plans/edit/modal-step-input-execution-timeout-in-seconds.png)
 
-1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the ➕ **Add Schedule** button.
+1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the **Schedule** tab.
 
     ![Chocolatey Central Management New Deployment Plan page, arrow pointing to Add Schedule button](/images/ccm-playwright/deployment-plans/edit/button-add-schedule.png)
 
-    * Enter a date and time, or click the 📅 button to pick the date and time from a calendar UI.
+    * Click the calendar button to pick the Start Date Time from a calendar UI. If you'd like to define an optional maintenance window for the Deployment Plan Start Date Time, then you can also set a Last Start Date Time.
 
         ![Chocolatey Central Management Deployment Plan schedule picker](/images/ccm-playwright/deployment-plans/edit/calendar-start-date-time.png)
-
-    * (Optional) If you'd like to define a maintenance window for the Deployment Plan start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
-
-       ![Chocolatey Central Management Deployment Plan maintenance window option](/images/ccm-playwright/deployment-plans/edit/checkbox-restrict-schedule.png)
 
     * (Optional) If you'd like a Deployment Plan to happen again, on a recurring basis, select how often you'd like the Deployment Plan to recur. Check the [recurring Deployment Plans section for more information](#recurring-deployments)
 
         ![Chocolatey Central Management Deployment Plan Repeat Period](/images/ccm-playwright/deployment-plans/edit/select-repeat-period.png)
 
-1. Select the **Add Step** button to add your first Deployment Step.
+1. Select the **Steps** tab and click the **Add Deployment Step** button to add your first Deployment Step.
 
     ![Chocolatey Central Management Deployment Plan add Deployment Step button](/images/ccm-playwright/deployment-plans/edit/button-add-deployment-step.png)
 
@@ -99,7 +90,7 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management Deployment Step Select Target Groups modal](/images/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
 
-1. Click the 💾 **Save** button to save the Deployment Step.
+1. Click the **Save** button to save the Deployment Step.
 
     ![Chocolatey Central Management Deployment Step Save button](/images/ccm-playwright/deployment-plans/edit/modal-step-button-save.png)
 
@@ -109,7 +100,7 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management Deployment Step Duplicate button](/images/ccm-playwright/deployment-plans/edit/button-duplicate-step.png)
 
-1. Select 💾 **Save** to save the changes to the Deployment Plan.
+1. Select **Save** to save the changes to the Deployment Plan.
 
 <ImportDeploymentPlan />
 
