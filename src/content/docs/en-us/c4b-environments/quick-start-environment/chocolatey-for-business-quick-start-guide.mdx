@@ -283,7 +283,7 @@ export const callout4 = {
     ```powershell
     Set-ExecutionPolicy Bypass -Scope Process -Force
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::tls12
-    .\Register-C4bEndpoint.ps1
+    .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) # Will prompt for username and password. Values found in README on Server Desktop.
     ```
 
     > <details>
@@ -299,6 +299,20 @@ export const callout4 = {
     > <li>Configures Central Management (CCM) check-in, and opts endpoints into CCM Deployments</li>
     > </ul>
     > </details>
+
+    #### Available parameters
+
+    * `ClientCommunicationSalt` - Chocolatey Central Management Client Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication from an agent TO an instance of Central Management Service (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions only. IMPORTANT: If this value is set, agents less than v0.10.0 will be unable to contact Central Management to report in.
+    * `ServiceCommunicationSalt` -Chocolatey Central Management Service Communication Salt Additive - The salt additive to use in the salt recipe for encrypting and verifying communication FROM an instance of Central Management Service to an agent (will need to be set the same on all clients contacting that service AND the instance of the management service itself). When not set a default encryption phrase set by the system will be used. When set the unencrypted value must match exactly with what is set in the configuration for Central Management Service and every client contacting that instance of Central Management Service. Value is not shared over the wire. Because this is a much more involved process, it is recommended only setting this if you are transmitting messages over the internet. Defaults to ''. Needs to be at least 8 characters long if set or it will throw errors and use the default. Available in business editions only.
+    * `RepositoryCredential` - The credential to use to access the repository server from the endpoint. Details available from README file on server desktop.
+    * `ProxyUrl` - The URL of a proxy server to use for connecting to the repository.
+    * `ProxyCredential` - The credentials, if required, to connect to the proxy server.
+    * `IncludePackageTools` - Install the Chocolatey Licensed Extension with right-click context menus available
+    * `AdditionalConfiguration` - Allows for the application of user-defined configuration that is applied after the base configuration.
+    * `AdditionalFeatures` - Allows for the toggling of additional features that is applied after the base configuration.
+    * `AdditionalPackages` - Allows for the installation of additional packages after the system base packages have been installed.
+    * `AdditionalSources` - Allows for the addition of alternative sources after the base configuration has been applied.
+    * `TrustCertificate` - If passed, downloads the certificate from the client server before initializing Chocolatey Agent
 
 ### Conclusion
 
