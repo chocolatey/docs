@@ -1,6 +1,8 @@
 FROM node:lts
 WORKDIR /app
 
+RUN git config --global --add safe.directory /app
+
 COPY package.json yarn.lock ./
 
 COPY . .
