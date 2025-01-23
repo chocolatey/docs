@@ -8,7 +8,6 @@
             "@choco/components/*": ["node_modules/choco-astro/src/components/*"],
             "@content/*": ["src/content/*"],
             "@components/*": ["src/components/*"],
-            "@config": ["src/config.ts"],
             "@layouts/*": ["src/layouts/*"],
             "@root/*": ["./*"],
             "@styles/*": ["src/styles/*"],
