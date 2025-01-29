@@ -8,6 +8,6 @@ highlight:
   ctaXref: choco-release-notes
   ctaAnchor: v1.4.1
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---
