@@ -2,7 +2,7 @@
 order: 0
 xref: highlight-sidebar-top-highlights
 title: Chocolatey product releases
-description: We recently released new versions of Chocolatey CLI, Chocolatey Licensed Extension, Chocolatey Agent and Chocolatey Central Management.
+description: We recently released new versions of Chocolatey CLI, Chocolatey Licensed Extension, Chocolatey Agent.
 highlight:
   postedDateTime: 2025-01-29T00:00:00Z
   ctaXref: highlights
