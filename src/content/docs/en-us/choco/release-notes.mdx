@@ -38,6 +38,24 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 - Fix - Searching for specific version on a NuGet v3 only feed returns no results - see [#3396](https://github.com/chocolatey/choco/issues/3396).
 - Fix - Credentials from configured source are used for a non-configured source when the URL is similar - see [#3565](https://github.com/chocolatey/choco/issues/3565).
 
+## 1.4.3 (February 10, 2025) \{#v1.4.3}
+
+### Bug Fixes
+
+- Fix - Unable to upgrade packages on certain authenticated feeds - see [#3613](https://github.com/chocolatey/choco/issues/3613).
+- Fix - Trace warning is outputted even when `--trace` argument is not used - see [#3621](https://github.com/chocolatey/choco/issues/3621).
+- [Security] Fix - Update bundled 7zip executables to v24.09 - see [#3625](https://github.com/chocolatey/choco/issues/3625).
+
+## 1.4.2 (Unreleased) \{#v1.4.2}
+
+<Callout type="info">
+    Due to a previous bug in 1.4.1, which has been corrected in Chocolatey CLI v1.4.3, the artifacts from the 1.4.2 release have been removed.
+</Callout>
+
+### Bug Fix
+
+- [Security] Fix - Trace logging is allowed in non-elevated session - see [#3603](https://github.com/chocolatey/choco/issues/3603).
+
 ## 1.4.1 (December 4, 2024) \{#v1.4.1}
 
 ### Bug Fix
