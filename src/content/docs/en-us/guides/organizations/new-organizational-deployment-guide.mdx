@@ -1,8 +1,8 @@
 ---
 order: 11
-xref: new-organizational-deployment-guide
-title: '[NEW] Set up Chocolatey for Internal/organizational use'
-description: Full information on how to setup/use Chocolatey internally
+xref: c4b-organizational-deployment-guide
+title: 'Chocolatey For Business Organizational Deployment Guide'
+description: Setup Chocolatey For Business in your organization
 ---
 import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
@@ -10,10 +10,23 @@ import Xref from '@components/Xref.astro';
 import ConfigurationManagers from '@components/docs/ConfigurationManagers.mdx';
 import OrgGuideRepository from '@components/docs/OrgGuideRepository.mdx';
 
-# Repository Solution
+## Planning Your Implementation
 
-<OrgGuideRepository />
+Chocolatey provides a powerful package management solution for Windows. In order for your organization to be successful with Chocolatey, you need to setup a few key components.
+The components of a robust Chocolatey implementation are:
 
-# Package Internalization Automation
+- A Package Repository - This is a repository server which supports the NuGet package format that you will use to store your Chocolatey packages.
+- A Package Internalization Automation tool - Automating Package Internalizer allows you to take advantage of the 10,000+ packages on the Community Repository, making them available offline in your Repository solution.
+- Chocolatey Central Management - This web-based management tool is Chocolatey's solution for reporting and management of Chocolatey packages on systems in your environment
 
-# Chocolatey Central Management
+When used together each piece of the Chocolatey solution provides a powerful package management solution for your organization, though you may wish to deploy only the components you need.
+
+While this guide will walk you through setting up Chocolatey For Business in your organization, those looking to use Chocolatey Open Source can follow the Repository Solution section to setup a Repository Server that will proxy the Chocolatey Community Repository,
+shielding you from any rate limits that would be applied with direct use of the Chocolatey Community Repository.
+
+When you are ready to begin, follow the instructions for any of the components you wish to use in your organization.
+
+ - <Xref title="Setup A Repository Solution" value="setup-repository-solution" />
+ - [Setup Package Internalization Automation](#placeholder)
+ - [Setup Chocolatey Central Management](#placeholder)
+ - [Setup Endpoints](#placeholder)

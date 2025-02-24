@@ -1,0 +1,26 @@
+---
+order: 12
+xref: oss-organizational-deployment-guide
+title: 'Open Source Chocolatey Organizational Deployment Guide'
+description: Full information on how to setup/use FOSS Chocolatey internally
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import ConfigurationManagers from '@components/docs/ConfigurationManagers.mdx';
+import OrgGuideRepository from '@components/docs/OrgGuideRepository.mdx';
+
+Chocolatey provides a powerful package management solution for Windows. Organizations looking to use Open Source Chocolatey are required to utilize their own Package Repository for their endpoints.
+_Organizational use of the Chocolatey Community Repository is not recommended_.
+
+<Callout type="warning" title="Organizational Use of the Chocolatey Community Repository">
+Organizations should not use the Chocolatey Community Repository for their deployments. The Chocolatey Community Repository is a public repository and is not designed for organizational use. A Package Repository Server that supports the NuGet package format to store Chocolatey packages is recommended.
+</Callout>
+
+This guide is for those looking to use Chocolatey Open Source to set up a Package Repository Server that will proxy the Chocolatey Community Repository,
+preventing rate limits that would be applied with direct use of the Chocolatey Community Repository. Creating additional repositories to host internal packages is recommended and will be discussed in this guide as well.
+
+When you are ready to begin, follow the instructions for any of the components you wish to use in your organization.
+
+ - <Xref title="Set Up A Package Repository Server" value="setup-repository-solution" />
+ - <Xref title="Creating Chocolatey Packages" value="package-creation-guide" />
