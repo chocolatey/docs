@@ -102,8 +102,7 @@ Before starting, make sure you install Chocolatey Server on separate servers.
     }
 
     if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
-        Write-Warning "Chocolatey not installed. Cannot install standard packages."
-        Exit 1
+        Write-Error  "Chocolatey not installed. Cannot install standard packages." -ErrorAction Stop
     }
 
     # Install Chocolatey.Server prereqs
