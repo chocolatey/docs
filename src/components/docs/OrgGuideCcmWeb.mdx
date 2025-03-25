@@ -1,0 +1,14 @@
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+
+export const dbOptions = [
+    { id: 'sqlexpress-integrated', title: 'SQL Express w/ Integrated Security', isActive: true },
+    { id: 'sqlexpress-locallogin', title: 'SQL Express w/ Sql Login', updateAnchor: true },
+    { id: 'sqlinstance-integrated', title: 'SQL Instance w/ Integrated Security', updateAnchor: true },
+    { id: 'sqlinstance-locallogin', title: 'SQL Instance w/ Sql Login', updateAnchor: true }
+];

@@ -1,6 +1,85 @@
 ---
-
 ---
 import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import TabsPane from '@choco/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import CentralManagementDatabaseSetup from '@components/docs/CentralManagementDatabaseSetup.mdx';
+import CentralManagementWebsiteSetup from '@components/docs/CentralManagementWebsiteSetup.mdx';
+import CentralManagementServiceSetup from '@components/docs/CentralManagementServiceSetup.mdx';
+import OrgGuideCcmDatabase from '@components/docs/OrgGuideCcmDatabase.mdx';
+import OrgGuideCcmService from '@components/docs/OrgGuideCcmService.mdx';
+export const ccmInstall = [
+    { id: 'ccm-database', title: 'CCM Database', isActive: true },
+    { id: 'ccm-web', title: 'CCM Web', updateAnchor: true },
+    { id: 'ccm-service', title: 'CCM Service', updateAnchor: true }
+];
+
+Chocolatey Central Management is a web-based application for managing Chocolatey in your organization. It provides a centralized reporting
+and management dashboard allowing you to:
+
+- Report on outdated packages in your environment
+- Install, Upgrade, and Uninstall Chocolatey packages on endpoints in your environment
+- Run advanced PowerShell scripts on endpoints in your environment
+
+Chocolatey Central Management is made of of 4 components, installed via Chocolatey. Those components are:
+
+- Chocolatey Agent Service (chocolatey-agent): The service that runs on an endpoint that facilitates reporting and deployment activties from Central Management
+- Chocolatey Management Service (chocolatey-management-service): The service that handles processing requests from agents running in your environment
+- Chocolatey Management Web (chocolatey-management-web): This is the web interface for Chocolatey Central Management
+- Chocolatey Management Database (chocolatey-management-database): Provides the database schema used by Chocolatey Central Management.
+
+## Planning Your Installation
+
+Chocolatey Central Management can be installed on a single server, or you may wish to install each component on separate servers.
+
+If you have Chocolatey For Business licenses for more than 1,000 endpoints, it is recommended that you install the components on separate servers.
+For node counts of 1000 or less, you can install all components on a single server, though we still recommend the use of a licensed version of SQL Server for the database component.
+
+# Before You Begin
+
+Before you can install the Chocolatey Central Management Database, you need to have a SQL Server.
+By default this script will attempt to install SQL Server Express and configure it for use with Chocolatey Central Management.
+
+## Available Parameters
+
+- `InstanceName`: The SQL Server instance name. Defaults to 'Localhost\SQLEXPRESS'.
+- `DatabaseName`: The name of the database. Defaults to 'ChocolateyManagement'.
+- `DatabaseCredential`: The credentials to connect to the database. Must be a Sql Server Login. If account does not exist, it will be created.
+- `UseIntegratedSecurity`: Uses Trusted_Connection=true to connect to the database. User account must have access to create databases and update schemas.
+- `Component`: The component to install. Valid values: `Database`, `Web`, `Service`, `All`
+
+## Security Considerations
+
+
+## Installation
+
+The installation script is provided below for your review prior to execution. You can download a copy of this script from [Github](#placeholder).
+
+```powershell
+[CmdletBinding()]
+Param()
+
+end {
+    Write-Host 'Put the fun here'
+}
+```
+
+<TabsTabContainer content={ccmInstall} />
+<TabsPaneContainer>
+    <TabsPane content={ccmInstall[0]}>
+        <OrgGuideCcmDatabase />
+        <Xref title="Back To Top" value="setup-central-management" anchor="installation"/>
+    </TabsPane>
+    <TabsPane content={ccmInstall[1]}>
+        <CentralManagementWebsiteSetup />
+        <Xref title="Back To Top" value="setup-central-management" anchor="installation"/>
+    </TabsPane>
+    <TabsPane content={ccmInstall[2]}>
+        <OrgGuideCcmService />
+        <Xref title="Back To Top" value="setup-central-management" anchor="installation"/>
+    </TabsPane>
+</TabsPaneContainer>

@@ -1,0 +1,61 @@
+---
+
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+
+export const dbOptions = [
+    { id: 'sqlexpress-integrated', title: 'SQL Express w/ Integrated Security', isActive: true },
+    { id: 'sqlexpress-locallogin', title: 'SQL Express w/ Sql Login', updateAnchor: true },
+    { id: 'sqlinstance-integrated', title: 'SQL Instance w/ Integrated Security', updateAnchor: true },
+    { id: 'sqlinstance-locallogin', title: 'SQL Instance w/ Sql Login', updateAnchor: true }
+];
+
+### Scenarios
+
+Please select the installation scenario appropriate for your environment:
+
+- SQL Express w/ Integrated Security: This scenario will install SQL Server Express and configure it for use with Chocolatey Central Management with the currently logged in user.
+- SQL Express w/ Sql Login: This scenario will install SQL Server Express and configura a local Sql Login for use with Chocolatey Central Management.
+- SQL Instance w/ Integrated Security: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with the currently logged in user.
+- SQL Instance w/ Sql Login: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with a Sql Login.
+
+
+<TabsTabContainer content={dbOptions} />
+<TabsPaneContainer>
+    <TabsPane content={dbOptions[0]}>
+    ```powershell
+    $ccmParams = @{
+        InstanceName = 'Localhost\SQLEXPRESS'
+        DatabaseName = 'ChocolateyManagement'
+        Component = 'Database'
+    }
+
+    Install-ChocolateyCentralManagement @ccmParams
+    ```
+    </TabsPane>
+    <TabsPane content={dbOptions[1]}>
+        ```powershell
+    $ccmParams = @{
+        InstanceName = 'Localhost\SQLEXPRESS'
+        DatabaseName = 'ChocolateyManagement'
+        DatabaseCredential = (Get-Credential)
+        Component = 'Database'
+    }
+
+    Install-ChocolateyCentralManagement @ccmParams
+    ```
+    </TabsPane>
+    <TabsPane content={dbOptions[2]}>
+        <Xref title="Back To Top" value="setup-central-management" anchor="installation"/>
+    </TabsPane>
+    <TabsPane content={dbOptions[3]}>
+
+    </TabsPane>
+</TabsPaneContainer>
+
