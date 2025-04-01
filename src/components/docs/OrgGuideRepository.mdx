@@ -4,97 +4,18 @@
 import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
-import OrgGuidePrepChocolatey from '@components/docs/OrgGuidePrepChocolatey.mdx';
-import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx';
-
 
 A repository server is used to store the Chocolatey packages you wish to maintain for use within your Organization.
 This guide will help you setup and configure one of the following repository solutions:
 
-* Sonatype Nexus
-
-Open source repository manager that supports many repository formats, including the NuGet package type, which CHocolatey is built upon.
-Pro edition is available, to provide commercial support and additional features should your organization require.
-
-<SonatypeNexusHardwareRecommendations />
-
-To complete the installation the following PowerShell modules will be installed from the PowerShell Gallery:
-
-- NexuShell
-
-## Before You Begin
-
-<OrgGuidePrepChocolatey />
-
-## Sonatype Nexus Installation
-
-<Callout type="info" header="Airgapped Installation">
-    If you are deploying the server in an air-gapped environment, please download the offline zip archive and transfer it to the server before continuing with the installation.
-
-    ```powershell
-    Set-ExecutionPolicy Bypass -Scope Process -Force
-    & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://ch0.co/PrepareNexusOffline.ps1')))
-    ```
-</Callout>
-
-The installation of Sonatype Nexus will:
-
-- Configure a production NuGet repository for Chocolatey packages
-- Configure a test NuGet repository for Chocolatey packages
-- Configure Generic (Raw) repository to host large installation media
-- Configure a Generic (Raw) repository to host PowerShell scripts to onboard client workstations with Chocolatey For Business
-- Configure a read-only role for consuming packages
-- Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
-
-### Environment information
-
-Please provide the following information to configure the Sonatype Nexus Server:
-
-Production Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="FabrikamProd" />
-
-
-#### Chocolatey For Business
-
-To complete the installation run the following PowerShell script:
-
-```powershell
-
-$repositoryArgs = @{
-    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
-    TestRepository = 'TestRepo' # Please replace with your desired repository name
-    GenericRepository = 'ChocolateyFiles' # Please replace with your desired repository name
-    Credential = (Get-Credential) # Please replace with your desired credentials
-}
-
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
-
-#### Chocolatey Open Source
-
-```powershell
-
-$repositoryArgs = @{
-    UpstreamRepository = 'https://community.chocolatey.org/api/v2' # Please replace with your desired repository name
-    ProxyRepositoryName = 'ChocolateyProxy' # Please replace with your desired repository name
-    GenericRepository = 'ChocolateyFiles' # Please replace with your desired repository name
-    Credential = (Get-Credential) # Please replace with your desired credentials
-}
-
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
-
-## Validating the Installation
-
-Figure out what to do to validate the installation
-
-## Next Steps
-
-### Chocolatey For Business
-
-Now that you have a repository server setup, let's move on to setting up some [Package Internalization Automation](#Placeholder).
-
-### Chocolatey Open Source
-
-Configure endpoints to use your new repository server. See [Setup Endpoints](#placeholder).
+<div class="row mb-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Sonatype Nexus" value="setup-nexus-repository-solution" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
