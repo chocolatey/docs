@@ -46,14 +46,24 @@ By default this script will attempt to install SQL Server Express and configure 
 
 ## Available Parameters
 
+- `Component`: The component to install. Valid values: `Database`, `Web`, `Service`, `All`
 - `InstanceName`: The SQL Server instance name. Defaults to 'Localhost\SQLEXPRESS'.
 - `DatabaseName`: The name of the database. Defaults to 'ChocolateyManagement'.
 - `DatabaseCredential`: The credentials to connect to the database. Must be a Sql Server Login. If account does not exist, it will be created.
-- `UseIntegratedSecurity`: Uses Trusted_Connection=true to connect to the database. User account must have access to create databases and update schemas.
-- `Component`: The component to install. Valid values: `Database`, `Web`, `Service`, `All`
+- `ConnectionString`: The connection string to use to connect to the database. (_Advanced Method_)
 
-## Security Considerations
+## Supported Sql Authentication Methods:
 
+- `Integrated Security`: Uses the currently logged in user to connect to the database.
+- `Sql Login`: Uses a Sql Login to connect to the database.
+- `ConnectionString`: Uses a connection string to connect to the database. (_Advanced Method_)
+
+<Callout type="warning">
+If using `ConnectionString`, you must provide a valid ConnectionString to connect to the database.
+When installing the database compenent, must be able to create databases and update schemas.
+
+When installing the web or service component, ConnectionString must have `db_reader` and `db_writer` permissions.`
+</Callout>
 
 ## Installation
 
