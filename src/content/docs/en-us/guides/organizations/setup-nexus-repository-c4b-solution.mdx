@@ -1,6 +1,6 @@
 ---
 order: 13
-xref: setup-nexus-repository-solution
+xref: setup-nexus-repository-c4b-solution
 title: 'Organizational Guide: Setup Sonatype Nexus Repository Solution'
 description: Guide to complete Repository Solution setup as part of the overall Organizational Deployment Guide
 showInSidebar: false
@@ -9,20 +9,20 @@ import Callout from '@choco/components/Callout.astro';
 import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx'
-import OrgGuidePrepChocolatey from '@components/docs/OrgGuidePrepChocolatey.mdx'
+import OrgGuidePrepC4BChocolatey from '@components/docs/OrgGuidePrepC4BChocolatey.mdx'
 
-Open source repository manager that supports many repository formats, including the NuGet package type, which CHocolatey is built upon.
+Open source repository manager that supports many repository formats, including the NuGet package type, which Chocolatey is built upon.
 Pro edition is available, to provide commercial support and additional features should your organization require.
 
 <SonatypeNexusHardwareRecommendations />
 
 To complete the installation the following PowerShell modules will be installed from the PowerShell Gallery:
 
-- NexuShell
+- [NexuShell](https://nexushell.dev/)
 
 ## Before You Begin
 
-<OrgGuidePrepChocolatey />
+<OrgGuidePrepC4BChocolatey />
 
 ## Sonatype Nexus Installation
 
@@ -44,38 +44,25 @@ The installation of Sonatype Nexus will:
 - Configure a read-only role for consuming packages
 - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
 
-### Environment information
+### Environment Information
 
 Please provide the following information to configure the Sonatype Nexus Server:
 
 Production Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="FabrikamProd" />
+Test Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="FabrikamTest" />
+Raw Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="Fabrikam-Assets" />
 
-
-#### Chocolatey For Business
+#### Nexus Install Script
 
 To complete the installation run the following PowerShell script:
 
 ```powershell
 
 $repositoryArgs = @{
+    RepositoryProduct = 'Nexus'
     ProdRepository = 'ProdRepo' # Please replace with your desired repository name
     TestRepository = 'TestRepo' # Please replace with your desired repository name
-    GenericRepository = 'ChocolateyFiles' # Please replace with your desired repository name
-    Credential = (Get-Credential) # Please replace with your desired credentials
-}
-
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
-
-#### Chocolatey Open Source
-
-```powershell
-
-$repositoryArgs = @{
-    UpstreamRepository = 'https://community.chocolatey.org/api/v2' # Please replace with your desired repository name
-    ProxyRepositoryName = 'ChocolateyProxy' # Please replace with your desired repository name
-    GenericRepository = 'ChocolateyFiles' # Please replace with your desired repository name
+    RawRepository = 'ChocolateyFiles' # Please replace with your desired repository name
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
@@ -85,14 +72,22 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/In
 
 ## Validating the Installation
 
-Figure out what to do to validate the installation
+The following script will run a suite of Pester tests to validate your Sonatype Nexus installation was successful
+
+```powershell
+
+$repositoryArgs = @{
+    RepositoryProduct = 'Nexus'
+    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
+    TestRepository = 'TestRepo' # Please replace with your desired repository name
+    RawRepository = 'ChocolateyFiles' # Please replace with your desired repository name
+    Credential = (Get-Credential) # Please replace with your desired credentials
+}
+
+$RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateRepository.ps1')
+& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+```
 
 ## Next Steps
 
-### Chocolatey For Business
-
 Now that you have a repository server setup, let's move on to setting up some [Package Internalization Automation](#Placeholder).
-
-### Chocolatey Open Source
-
-Configure endpoints to use your new repository server. See [Setup Endpoints](#placeholder).
