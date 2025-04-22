@@ -18,19 +18,12 @@ export const ccmInstall = [
     { id: 'ccm-service', title: 'CCM Service', updateAnchor: true }
 ];
 
-Chocolatey Central Management is a web-based application for managing Chocolatey in your organization. It provides a centralized reporting
-and management dashboard allowing you to:
-
-- Report on outdated packages in your environment
-- Install, Upgrade, and Uninstall Chocolatey packages on endpoints in your environment
-- Run advanced PowerShell scripts on endpoints in your environment
-
 Chocolatey Central Management is made of of 4 components, installed via Chocolatey. Those components are:
 
-- Chocolatey Agent Service (chocolatey-agent): The service that runs on an endpoint that facilitates reporting and deployment activties from Central Management
+- Chocolatey Management Database (chocolatey-management-database): Provides the database schema used by Chocolatey Central Management.
 - Chocolatey Management Service (chocolatey-management-service): The service that handles processing requests from agents running in your environment
 - Chocolatey Management Web (chocolatey-management-web): This is the web interface for Chocolatey Central Management
-- Chocolatey Management Database (chocolatey-management-database): Provides the database schema used by Chocolatey Central Management.
+- Chocolatey Agent Service (chocolatey-agent): The service that runs on an endpoint that facilitates reporting and deployment activties from Central Management
 
 ## Planning Your Installation
 

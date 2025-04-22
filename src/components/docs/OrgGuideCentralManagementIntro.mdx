@@ -1,0 +1,38 @@
+---
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import CentralManagementDatabaseSetup from '@components/docs/CentralManagementDatabaseSetup.mdx';
+import CentralManagementWebsiteSetup from '@components/docs/CentralManagementWebsiteSetup.mdx';
+import CentralManagementServiceSetup from '@components/docs/CentralManagementServiceSetup.mdx';
+import OrgGuideCcmDatabase from '@components/docs/OrgGuideCcmDatabase.mdx';
+import OrgGuideCcmService from '@components/docs/OrgGuideCcmService.mdx';
+export const ccmInstall = [
+    { id: 'ccm-database', title: 'CCM Database', isActive: true },
+    { id: 'ccm-web', title: 'CCM Web', updateAnchor: true },
+    { id: 'ccm-service', title: 'CCM Service', updateAnchor: true }
+];
+
+Chocolatey Central Management is a web-based application for managing Chocolatey in your organization. It provides a centralized reporting
+and management dashboard allowing you to:
+
+- Report on outdated packages in your environment
+- Install, Upgrade, and Uninstall Chocolatey packages on endpoints in your environment
+- Run advanced PowerShell scripts on endpoints in your environment
+
+<div class="row mb-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Chocolatey Central Management" value="setup-central-management" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
