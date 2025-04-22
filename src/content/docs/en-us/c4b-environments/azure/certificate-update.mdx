@@ -68,7 +68,7 @@ The certificate used by most of the C4B Azure Environment is stored in the provi
 
 <Callout type="info">
     Please note that the new certificate must meet the same requirements as the original did during the <Xref title="initial deployment" value="c4b-azure" anchor="ssl-certificate" />. The certificate:
-    
+
     * Needs to be in the PFX format.
     * Needs to include an exportable Private Key.
     * Must have a password.
@@ -128,11 +128,11 @@ The Application Gateway provided with your C4B Azure Environment needs to be upd
 
 <Callout type="info">
     In addition to the certificate in a PFX format that was used in the <Xref title="previous section" value="c4b-azure-cert-update" anchor="updating-the-azure-key-vault" />, you will need a copy of the certificate in CER format.
-    
+
     You can convert your existing certificate using OpenSSL (easily installed by running `choco install openssl.light`):
-    
+
     `openssl pkcs12 -in certificate.pfx -out certificate.cer -nokeys -clcerts`
-    
+
     You will need to edit the resulting file to remove all of the text above the `-----BEGIN CERTIFICATE-----` line.
 </Callout>
 

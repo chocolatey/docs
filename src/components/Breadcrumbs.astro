@@ -33,7 +33,7 @@ await buildPartsList();
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        {parts.map(({ text, href }, index) => 
+        {parts.map(({ text, href }, index) =>
             <li class={`breadcrumb-item ${index + 1 === parts.length ? 'active' : ''} ${isHome ? 'd-none' : ''}`} role="listitem" aria-current={index + 1 === parts.length ? 'page' : false}>
                 {index + 1 !== parts.length ? <a href={`/${href}/`}>{text}</a> : text}
             </li>

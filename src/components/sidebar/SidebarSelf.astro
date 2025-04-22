@@ -65,7 +65,7 @@ const listPaddingClass = (depth: number) => {
 const isActiveChild = (doc: ContentTree) => {
     // Create a stack to store documents to be checked
     const stack = [doc];
-    
+
     // Iterate through the stack until it's empty
     while (stack.length > 0) {
         // Pop the last document from the stack
@@ -74,7 +74,7 @@ const isActiveChild = (doc: ContentTree) => {
         if (!currentDoc) {
             return false;
         }
-        
+
         // Check if the current document's slug matches the activeSlug
         if (isActivePage(currentDoc.slug, activeSlug)) {
             return true;
@@ -87,7 +87,7 @@ const isActiveChild = (doc: ContentTree) => {
             }
         }
     }
-    
+
     // If the activeSlug is not found in any document, return false
     return false;
 };
