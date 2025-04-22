@@ -27,8 +27,8 @@
                 "unifiedjs.vscode-mdx",
                 "ms-vscode.vscode-typescript-next",
                 "dbaeumer.vscode-eslint"
-			]
-		}
+            ]
+        }
     },
     "remoteUser": "node"
 }
