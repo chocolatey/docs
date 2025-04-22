@@ -1,0 +1,30 @@
+---
+order: 13
+xref: c4b-organizational-deployment-guide
+title: 'Chocolatey for Business (C4B) Organizational Deployment Guide'
+description: Full information on how to setup/use Chocolatey for Business internally
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import ConfigurationManagers from '@components/docs/ConfigurationManagers.mdx';
+import OrgGuideRepository from '@components/docs/OrgGuideRepository.mdx';
+
+Chocolatey provides a powerful package management solution for Windows. Organizations looking to use Chocolatey for Business (C4B) are required to utilize their own Package Repository for their endpoints.
+_Organizational use of the Chocolatey Community Repository is not recommended_.
+
+<Callout type="warning" title="Organizational Use of the Chocolatey Community Repository">
+Organizations should not use the Chocolatey Community Repository for their deployments. The Chocolatey Community Repository is a public repository and is not designed for organizational use. A Package Repository Server that supports the NuGet package format to store Chocolatey packages is recommended.
+</Callout>
+
+This guide is for those looking to use Chocolatey for Business to:
+- Set up a package repository server and create internal repositories to host packages and assets as recommended by Chocolatey.
+- Set up a package automation pipeline to internalize packages for use within the organization.
+- Set up Chocolatey Central Management to deploy packages, configuration and features settings to every endpoint via Chocolatey Agent.
+
+When you are ready to begin, follow the instructions for any of the components you wish to use in your organization.
+
+ - <Xref title="Set Up A Package Repository Server" value="setup-nexus-repository-c4b-solution" />
+ - <Xref title="Set up A Package Automation Pipeline" value="set-up-chocolatey-server" />
+ - <Xref title="Set up Chocolatey Central Management" value="setup-central-management" />
+ - <Xref title="Creating Chocolatey Packages" value="package-creation-guide" />
