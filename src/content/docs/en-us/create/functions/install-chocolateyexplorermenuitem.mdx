@@ -74,7 +74,7 @@ Install-ChocolateyExplorerMenuItem "sublime" "Open with Sublime Text 2" $sublime
 $sublimeDir = (Get-ChildItem $env:ALLUSERSPROFILE\chocolatey\lib\sublimetext* | select $_.last)
 $sublimeExe = "$sublimeDir\tools\sublime_text.exe"
 Install-ChocolateyExplorerMenuItem "sublime" "Open with Sublime Text 2" $sublimeExe "directory"
-~~~ 
+~~~
 
 ## Inputs
 
@@ -89,48 +89,48 @@ None
 ###  -MenuKey &lt;String&gt;
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -MenuLabel [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Command [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Type [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
 Default Value          | file
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

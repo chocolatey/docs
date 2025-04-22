@@ -57,7 +57,7 @@ None
 # Path to the folder where the script is executing
 $toolsDir = (Split-Path -parent $MyInvocation.MyCommand.Definition)
 Get-ChocolateyUnzip -FileFullPath "c:\someFile.zip" -Destination $toolsDir
-~~~ 
+~~~
 
 ## Inputs
 
@@ -75,63 +75,63 @@ Property               | Value
 Aliases                | file
 Required?              | false
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Destination &lt;String&gt;
 Property               | Value
 ---------------------- | -------------
 Aliases                | unzipLocation
 Required?              | true
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -SpecificFolder [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -PackageName [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -FileFullPath64 [&lt;String&gt;]
 Property               | Value
 ---------------------- | ------
 Aliases                | file64
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -DisableLogging
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .

@@ -19,14 +19,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# npm 
+# npm
 npm-debug.log
 .coverage
 .coverage.*
 .env
 .aws
 
-# yarn 
+# yarn
 .pnp.*
 .yarn/*
 !.yarn/patches

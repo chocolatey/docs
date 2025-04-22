@@ -175,7 +175,7 @@ process {
     $guid = [Guid]::NewGuid().ToString("B")
     netsh http add sslcert ipport=0.0.0.0:443 certhash=$CertificateThumbprint certstorename=MY appid="$guid"
     Get-WebBinding -Name ChocolateyCentralManagement | Remove-WebBinding
-    New-WebBinding -Name ChocolateyCentralManagement -Protocol https -Port 443 -SslFlags 0 -IpAddress '*'        
+    New-WebBinding -Name ChocolateyCentralManagement -Protocol https -Port 443 -SslFlags 0 -IpAddress '*'
 
     #Write Thumbprint to CCM Service appsettings.json
     $appSettingsJson = 'C:\ProgramData\chocolatey\lib\chocolatey-management-service\tools\service\appsettings.json'
