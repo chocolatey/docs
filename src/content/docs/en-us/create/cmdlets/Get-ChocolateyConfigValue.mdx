@@ -1,0 +1,95 @@
+---
+description: Information on Get-ChocolateyConfigValue function
+external help file: Chocolatey.PowerShell.dll-Help.xml
+Module Name: Chocolatey.PowerShell
+online version:
+order: 30
+schema: 2.0.0
+title: Get-ChocolateyConfigValue
+xref: get-chocolateyconfigvalue
+---
+import Xref from '@components/Xref.astro';
+
+# Get-ChocolateyConfigValue
+
+## SYNOPSIS
+Retrieves a named configuration value from the Chocolatey Configuration file.
+
+## SYNTAX
+
+```
+Get-ChocolateyConfigValue -Name <String> [-IgnoredArguments <Object[]>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+This cmdlet will retrieve the configuration value specified by the `-Name` parameter from the Chocolatey configuration file.
+Sensitive configuration values (for example: `proxyPassword`) will remain in encrypted form when retrieved.
+
+Configuration entries are retrieved by case-insensitive comparison of the name (`key` attribute) in the configuration file.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Get-ChocolateyConfigValue -Name cacheLocation
+```
+
+Outputs the cacheLocation from the Chocolatey configuration file.
+
+### Example 2
+```powershell
+PS C:\> Get-ChocolateyConfigValue -ConfigKey cacheLocation
+```
+
+Outputs the cacheLocation from the Chocolatey configuration file.
+
+## PARAMETERS
+
+### -IgnoredArguments
+Allows splatting with arguments that do not apply. Do not use directly.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+The name of the configuration value to retrieve.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ConfigKey
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## OUTPUTS
+
+### System.String
+
+Outputs the value of the target configuration file entry as a string.
+
+## NOTES
+
+Available in 2.1.0+
+
+## RELATED LINKS
+
+<Xref title="Cmdlet Reference" value="powershell-cmdlet-reference" />
+
+<Xref title="Function Reference" value="powershell-reference" />
