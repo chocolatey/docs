@@ -32,6 +32,55 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
 
+## 0.14.0 (April 29, 2025) \{#v0.14.0}
+
+Read our [blog post](https://blog.chocolatey.org/2025/04/central-management-0.14.0-released/) about this release.
+
+### Breaking Change
+
+- CCM API - Update the Groups/CreateOrEdit API endpoint to return the group ID of the created or modified group.
+
+### Bug Fixes
+
+- Fix - Correct typo in validation modal alert when moving Deployment Plan to ready.
+- Fix - "Back Home" link on Error page leads to a 404.
+- Fix - Broken links are present when logged in as chocoadmin.
+- Fix - Recurring Deployment Plans with expired Scheduled Start Date create Deployment Plans in the past continuously.
+- Fix - Notification Settings Modal  improperly shows "Notification Types" section when logged in as a Basic User.
+- Fix - Chocolatey Central Management - LDAP password shown in plaintext in ccm-website.log when password is changed.
+- Fix - Session Timeout Control setting does not work.
+
+### Features
+
+- Add breadcrumb navigation to every page.
+- Add a "skip link" that is only visible to screen readers/keyboard users that navigates to the main content of the page.
+- Give warning when links open in a new window.
+- Provide a way to pause auto refreshing.
+
+### Improvements
+
+- Remove modal on Deployment Edit page when hovering over left sidebar.
+- Update wording for invalid and exceeded licenses notifications.
+- Rework Deployment Plan Edit page into a tabbed interface.
+- Deployment Steps should be reorderable by keyboard commands.
+- Ensure all colors are accessible in dark and light modes.
+- Allow Toast notifications to stack.
+- Improve accessibility of Group and Deployment Step Target Group creation.
+- Remove pie charts due to poor accessibility.
+- Ensure every page has a unique title and description.
+- General accessibility enhancements.
+- Ensure all icons have correct aria labels and/or visually hidden text.
+- Ensure heading order is sequential.
+- Ensure semantically correct html structure.
+- Expand items in left sidebar and create nested options.
+- Move Create or Edit Group Modal to its own page.
+- Chocolatey Central Management web should include version information in the log.
+- Increase the size of clickable areas.
+- Improve accessibility on lockdown of Passphrase.
+- Replace icons in tables with buttons and text.
+- Improve accessibility of Session Timeout Control workflow.
+- Update verbiage for consistency.
+
 ## 0.13.2 (February 10, 2025) \{#v0.13.2}
 
 ### Bug Fixes
