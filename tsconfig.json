@@ -1,12 +1,10 @@
 {
     "extends": "astro/tsconfigs/strict",
-    "allowImportingTsExtensions": true,
     "compilerOptions": {
-        "allowJs": true,
         "baseUrl": ".",
         "paths": {
             "@choco-astro/components/*": ["node_modules/choco-astro/src/components/*"],
-            "@choco-playwright/*": ["node_modules/choco-playwright/*"],
+            "@choco-playwright/*": ["playwright/global/*"],
             "@content/*": ["src/content/*"],
             "@components/*": ["src/components/*"],
             "@layouts/*": ["src/layouts/*"],
