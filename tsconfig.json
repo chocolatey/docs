@@ -5,7 +5,8 @@
         "allowJs": true,
         "baseUrl": ".",
         "paths": {
-            "@choco/components/*": ["node_modules/choco-astro/src/components/*"],
+            "@choco-astro/components/*": ["node_modules/choco-astro/src/components/*"],
+            "@choco-playwright/*": ["node_modules/choco-playwright/*"],
             "@content/*": ["src/content/*"],
             "@components/*": ["src/components/*"],
             "@layouts/*": ["src/layouts/*"],
