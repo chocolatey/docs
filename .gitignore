@@ -58,7 +58,7 @@ favicon.ico
 .astro
 
 # playwright
-/src/tests/
+/playwright/global/
 /test-results/
 /playwright-report/
 /blob-report/

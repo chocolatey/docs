@@ -4,8 +4,8 @@ xref: gui-refresh
 title: Refresh
 description: Information on refreshing the current packages list
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey GUI, by default, will automatically check for the currently installed packages, and will fetch the first page of results when looking at remote sources, when navigating to a source when the application first loads.  However, this functionality can be configured using the <Xref title="Prevent Preload" value="prevent-preload" /> feature, or there can be changes to packages outside of Chocolatey GUI.  When these situations occur, you can manually refresh the current list of packages using the following button:

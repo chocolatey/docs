@@ -4,8 +4,8 @@ xref: howto-create-large-files-package
 title: How To Create Chocolatey Packages With Large Files
 description:  Creating a package containing files over 2GB in size
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey is built on top of NuGet, which itself does not gracefully handle packages that contain files over 2GB in size. When dealing with a scenario where you need to handle files larger than 2GB in size, it's important that the package reaches out to an external location to retrieve the large files. While UNC file paths do work as the location for such files, it is highly recommended to store them on a web host to make it easier to manage permissions.

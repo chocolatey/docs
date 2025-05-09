@@ -4,8 +4,8 @@ xref: howto-create-metapackage
 title: How To Create a Chocolatey Meta Package
 description: Creating a Chocolatey meta package allowing you to, in a single package installation, provision many things onto a computer
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Meta packages are essentially "bundles" of Chocolatey packages, allowing you to, in a single package installation, provision many things onto a computer. Meta packages work by only defining dependencies inside their package metadata. There is no need for a `tools` directory, or any scripting. Chocolatey's built-in dependency resolver does all the work for you! This is handy for things like setting up a developer computer where you may want to do something like `choco install developertools -y` and have that package actually install:
