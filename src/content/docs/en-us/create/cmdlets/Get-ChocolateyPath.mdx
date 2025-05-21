@@ -1,0 +1,96 @@
+---
+description: Information on Get-EnvironmentVariable cmdlet
+external help file: Chocolatey.PowerShell.dll-Help.xml
+Module Name: Chocolatey.PowerShell
+online version: https://docs.chocolatey.org/en-us/create/cmdlets/get-chocolateypath
+order: 40
+schema: 2.0.0
+title: Get-ChocolateyPath
+xref: get-chocolateypath
+---
+import Xref from '@components/Xref.astro';
+
+# Get-ChocolateyPath
+
+## SYNOPSIS
+Retrieve the paths available to be used by maintainers of packages.
+
+## SYNTAX
+
+```
+Get-ChocolateyPath [-PathType] <ChocolateyPathType> [-IgnoredArguments <Object[]>] [<CommonParameters>]
+```
+
+## DESCRIPTION
+This function will attempt to retrieve the filesystem path corresponding to the chosen `-PathType` in a
+valid location which may be used by package maintainers in certain scenarios.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Get-ChocolateyPath -PathType InstallPath
+```
+
+Outputs the path to the Chocolatey installation directory. For example: `C:\ProgramData\chocolatey`
+
+### Example 1
+```powershell
+PS C:\> Get-ChocolateyPath -PathType PackagePath
+```
+
+Outputs the path to the package folder. For example: `C:\ProgramData\chocolatey\lib\MyPackageName`
+
+## PARAMETERS
+
+### -IgnoredArguments
+Allows splatting with arguments that do not apply. Do not use directly.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PathType
+The type of path that should be looked up.
+Available values are:
+- `PackagePath` - The path to the the package that is being installed. Typically `C:\ProgramData\chocolatey\lib\<PackageName>`
+- `InstallPath` - The path to where Chocolatey is installed. Typically `C:\ProgramData\chocolatey`
+
+```yaml
+Type: ChocolateyPathType
+Parameter Sets: (All)
+Aliases: Type
+Accepted values: PackagePath, InstallPath
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+### None
+
+## OUTPUTS
+
+### System.String
+This function outputs the full path stored accordingly with specified path type.
+If no path could be found, there is no output.
+
+## NOTES
+Available in 1.2.0+.
+
+## RELATED LINKS
