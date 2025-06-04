@@ -100,8 +100,7 @@ export const callout3 = {
     - Run the following to zip up your offline bundle: `Compress-Archive -Path ~\Downloads\choco-quickstart-scripts\choco-quickstart-scripts-main\* -DestinationPath ~\Downloads\C4B-Files.zip`.
     - Transfer the `C4B-Files.zip` from your downloads folder to your offline system. All further steps will be carried out on the offline system.
     - Run `Expand-Archive -Path \path\to\C4B-Files.zip -DestinationPath C:\choco-setup\files -Force` on your offline system.
-    - Run `Set-Location "$env:SystemDrive\choco-setup\files"; Set-ExecutionPolicy Bypass Process; .\Start-C4bSetup.ps1` on your offline system.
-    - Proceed to Step 2!
+    - Proceed to Certificate Options!
 </Callout>
 
 ### Step 1: Begin C4B Setup
@@ -121,44 +120,18 @@ export const callout4 = {
     Set-ExecutionPolicy Bypass -Scope Process -Force
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::tls12
     Invoke-RestMethod https://ch0.co/qsg-go | Invoke-Expression
-    Set-Location "$env:SystemDrive\choco-setup\files"
-    .\Initialize-C4bSetup.ps1
     ```
 
-    > <details>
-    > <summary><strong>What does this script do? (click to expand)</strong></summary>
-    > <ul class="list-style-type-disc">
-    > <li>Installs Chocolatey client from https://community.chocolatey.org</li>
-    > <li>Prompts for your C4B license file location, with validation</li>
-    > <li>Converts your C4B license into a Chocolatey package</li>
-    > <li>Configures local "choco-setup" directories</li>
-    > <li>Downloads setup files from "choco-quickstart-scripts" GitHub repo</li>
-    > <li>Downloads Chocolatey packages required for setup</li>
-    > </ul>
-    > </details>
+#### Certificate Options
 
-<Callout content={callout3}>
-    You can now copy the `C:\choco-setup\` directory to any computer to continue the installation. To zip up that directory, run `Compress-Archive -Path C:\choco-setup\files\* -DestinationPath C:\choco-setup\C4B-Files.zip`. Move the archive to your new machine, and run `Expand-Archive -Path /path/to/C4B-Files.zip -DestinationPath C:\choco-setup\files -Force`. You should then run `Set-Location "$env:SystemDrive\choco-setup\files"; .\Start-C4bSetup.ps1`, and continue with the guide.
-</Callout>
-
-#### Running with a Certificate
-
-**ALTERNATIVE 1 : Custom SSL Certificate** - If you have your own custom SSL certificate (purchased/acquired, or from your Domain CA), you can paste and run the following script with the `Thumbprint` value of your SSL certificate specified:
+**Custom SSL Certificate** - If you have your own custom SSL certificate (purchased/acquired, or from your Domain CA), you can paste and run the following script with the `Thumbprint` value of your SSL certificate specified:
 
 ```powershell
 Set-Location "$env:SystemDrive\choco-setup\files"
 .\Initialize-C4bSetup.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>'
 ```
 
-<Callout type="warning">
-    If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Trusted People` certificate store before running the above script, and ensure that the private key is exportable.
-</Callout>
-
-<Callout type="info">
-A Role and User credential will be configured to limit access to your Nexus repositories. As well, CCM Client and Service Salts are configured to further encrypt your connection between CCM and your endpoint clients. These additional settings are also incorporated into your `Register-C4bEndpoint.ps1` script for onboarding endpoints.
-</Callout>
-
-**ALTERNATIVE 2 : Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
+**Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
 
 ```powershell
 Set-Location "$env:SystemDrive\choco-setup\files"
@@ -171,6 +144,33 @@ For example, with a wildcard certificate with a thumbprint of `deee9b2fabb24bdaa
 Set-Location "$env:SystemDrive\choco-setup\files"
 .\Initialize-C4bSetup.ps1 -Thumbprint deee9b2fabb24bdaae71d82286e08de1 -CertificateDnsName chocolatey.foo.org
 ```
+
+<Callout type="warning">
+    If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Trusted People` certificate store before running the above script, and ensure that the private key is exportable.
+</Callout>
+
+<Callout type="info">
+A Role and User credential will be configured to limit access to your Nexus repositories. As well, CCM Client and Service Salts are configured to further encrypt your connection between CCM and your endpoint clients. These additional settings are also incorporated into your `Register-C4bEndpoint.ps1` script for onboarding endpoints.
+</Callout>
+
+**Self-Signed Certificate** - If you are running a bare-minimum proof of concept environment, you can generate a self-signed certificate and use that.
+
+```powershell
+Set-Location "$env:SystemDrive\choco-setup\files"
+.\Initialize-C4bSetup.ps1
+```
+
+> <details>
+> <summary><strong>What does this script do? (click to expand)</strong></summary>
+> <ul class="list-style-type-disc">
+> <li>Installs Chocolatey client from https://community.chocolatey.org</li>
+> <li>Prompts for your C4B license file location, with validation</li>
+> <li>Converts your C4B license into a Chocolatey package</li>
+> <li>Configures local "choco-setup" directories</li>
+> <li>Downloads setup files from "choco-quickstart-scripts" GitHub repo</li>
+> <li>Downloads Chocolatey packages required for setup</li>
+> </ul>
+> </details>
 
 #### Script: Nexus Setup
 
@@ -235,23 +235,6 @@ As part of the C4B setup, we create a readme and install the Chocolatey Agent on
 <Callout type="info">
     A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
 </Callout>
-
-#### Script: Verification
-
-As a part of the C4B setup, we run tests to validate that your environment is correctly configured:
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Verifies Nexus Repository installation</li>
-> <li>Verifies Central Management installation</li>
-> <li>Verifies Jenkins installation</li>
-> <li>Ensures system firewall is configured</li>
-> <li>Ensures Windows Features are installed</li>
-> <li>Ensures services are correctly configured</li>
-> <li>Ensured README is created</li>
-> </ul>
-> </details>
 
 ### Step 2: Setting up Endpoints
 
