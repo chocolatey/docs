@@ -1,3 +1,8 @@
+* text=auto
+
+*.mdx linguist-detectable eol=lf
+*.md  linguist-detectable eol=lf
+
 /.yarn/**            linguist-vendored
 /.yarn/releases/*    binary
 /.yarn/plugins/**/*  binary
