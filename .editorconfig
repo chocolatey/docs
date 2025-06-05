@@ -1,8 +1,12 @@
 root = true
 
 [*]
-end_of_line = lf
 insert_final_newline = true
+
+[*.{md,mdx}]
+charset = utf-8
+end_of_line = lf
+trim_trailing_whitespace = false
 
 [*.{js,json,yml}]
 charset = utf-8
