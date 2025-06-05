@@ -55,7 +55,7 @@ Skip upgrading certain packages with <Xref title="`choco pin`" value="choco-comm
 
 > :choco-info: **NOTE**
 >
-> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco -?`) for how to
+> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco --help`) for how to
  write proper scripts and integrations.
 
 
@@ -114,7 +114,7 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --online
      Online - Open help for specified command in default browser application. 
-       This option only works when used in combintation with the -?/--help/-h 
+       This option only works when used in combination with the -?/--help/-h 
        option.  Available in 2.0.0+
 
  -d, --debug
@@ -149,6 +149,10 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
  -r, --limitoutput, --limit-output
      LimitOutput - Limit the output to essential information
+
+     --include-headers
+     Include header names when --limit-output is used. Requires Chocolatey 
+       CLI 2.5.0+
 
      --timeout, --execution-timeout=VALUE
      CommandExecutionTimeout (in seconds) - The time to allow a command to 
@@ -207,12 +211,11 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 
        command execution when a runtime compatibility problem is found between 
-       the version of Chocolatey and the Chocolatey Licensed Extension. 
-       Available in 1.1.0+
+       the version of Chocolatey and the Chocolatey Licensed Extension.
 
      --ignore-http-cache
-     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
-       created when querying sources, and create new caches. Available in 2.1.0+
+     Ignore any HTTP caches that have previously been created when querying 
+       sources, and create new caches. Available in 2.1.0+
 
  -s, --source=VALUE
      Source - The source to find the package(s) to install. Special sources 
@@ -421,7 +424,7 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      --sdc, --skipdownloadcache, --skip-download-cache
      Skip Download Cache - Use the original download even if a private CDN 
        cache is available for a package. Overrides the default feature 
-       'downloadCache' set to 'True'. Licensed editions only. 
+       'downloadCache' set to 'True'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/private-cdn 
 
      --dc, --downloadcache, --download-cache, --use-download-cache
@@ -438,58 +441,58 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --virus, --viruscheck, --virus-check
      Virus Check - check downloaded files for viruses. Overrides the default 
-       feature 'virusCheck' set to 'False'. Licensed editions only.
+       feature 'virusCheck' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/virus-check 
 
      --viruspositivesmin, --virus-positives-minimum=VALUE
      Virus Check Minimum Scan Result Positives - the minimum number of scan 
        result positives required to flag a package. Used when virusScannerType 
        is VirusTotal. Overrides the default configuration value 
-       'virusCheckMinimumPositives' set to '4'. Licensed editions only.
+       'virusCheckMinimumPositives' set to '4'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/virus-check 
 
      --install-arguments-sensitive=VALUE
      InstallArgumentsSensitive - Install Arguments to pass to the native 
        installer in the package that are sensitive and you do not want logged. 
-       Defaults to unspecified. Licensed editions only.
+       Defaults to unspecified. [Licensed editions](https://chocolatey.org/compare) only.
 
      --package-parameters-sensitive=VALUE
      PackageParametersSensitive - Package Parameters to pass the package that 
        are sensitive and you do not want logged. Defaults to unspecified. 
-       Licensed editions only.
+       [Licensed editions](https://chocolatey.org/compare) only.
 
      --dir, --directory, --installdir, --installdirectory, --install-dir, --install-directory=VALUE
      Install Directory Override - Override the default installation director-
        y. Chocolatey will automatically determine the type of installer and 
        pass the appropriate arguments to override the install directory. The 
        package must use Chocolatey install helpers and be installing an 
-       installer for software. Licensed editions only.
+       installer for software. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/install-directory-override 
 
      --bps, --maxdownloadrate, --max-download-rate, --maxdownloadbitspersecond, --max-download-bits-per-second, --maximumdownloadbitspersecond, --maximum-download-bits-per-second=VALUE
      Maximum Download Rate Bits Per Second - The maximum download rate in 
        bits per second. '0' or empty means no maximum. A number means that will 
        be the maximum download rate in bps. Defaults to config setting of '0'. 
-       Available in Licensed editions only.
+       Available in [licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/package-throttle  
 
      --reduce, --reduce-package-size, --deflate, --deflate-package-size
      Reducer Installed Package Size (Package Reducer) - Reduce size of the 
        nupkg file to very small and remove extracted archives and installers. 
        Overrides the default feature 'reduceInstalledPackageSpaceUsage' set to 
-       'True'. Licensed editions only.
+       'True'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/package-reducer 
 
      --no-reduce, --no-reduce-package-size, --no-deflate, --no-deflate-package-size
      Do Not Reduce Installed Package Size - Leave the nupkg and files alone 
        in the package. Overrides the default feature 
-       'reduceInstalledPackageSpaceUsage' set to 'True'. Licensed editions only.
+       'reduceInstalledPackageSpaceUsage' set to 'True'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/package-reducer 
 
      --reduce-nupkg-only, --deflate-nupkg-only
      Reduce Only Nupkg File Size - reduce only the size of nupkg file when 
        using Package Reducer. Overrides the default feature 
-       'reduceOnlyNupkgSize' set to 'False'. Licensed editions only.
+       'reduceOnlyNupkgSize' set to 'False'. [Licensed editions](https://chocolatey.org/compare) only.
        See https://docs.chocolatey.org/en-us/features/package-reducer 
 
      --exclude-chocolatey-packages-during-upgrade-all
@@ -508,13 +511,13 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --reason, --pin-reason, --note=VALUE
      Pin Reason - Text information about why you are setting a pin. Available 
-       in business editions 5.0.0+. 
+       in business editions only.
 
      --use-self-service, --force-self-service
      Force the command to be handled through the self-service when not 
        configured to allow this command. This option requires the features for 
        self-service and self-service command override to be enabled. Business 
-       editions only (licensed version 5.0.0+).
+       editions only.
 
 ~~~
 
@@ -523,6 +526,6 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
 > :choco-info: **NOTE**
 >
-> This documentation has been automatically generated from `choco upgrade -h`. 
+> This documentation has been automatically generated from `choco upgrade --help`. 
 
 

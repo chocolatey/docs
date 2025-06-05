@@ -33,7 +33,7 @@ Chocolatey will perform a search for a package local or remote.
 
 > :choco-info: **NOTE**
 >
-> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco -?`) for how to
+> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco --help`) for how to
  write proper scripts and integrations.
 
 
@@ -66,8 +66,6 @@ If you find other exit codes that we have not yet documented, please
 ![choco find](/images/gifs/choco_search.gif)
 
 
-## Alternative Sources
-
 ## Options and Switches
 
 > :choco-info: **NOTE**
@@ -87,7 +85,7 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --online
      Online - Open help for specified command in default browser application. 
-       This option only works when used in combintation with the -?/--help/-h 
+       This option only works when used in combination with the -?/--help/-h 
        option.  Available in 2.0.0+
 
  -d, --debug
@@ -122,6 +120,10 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
  -r, --limitoutput, --limit-output
      LimitOutput - Limit the output to essential information
+
+     --include-headers
+     Include header names when --limit-output is used. Requires Chocolatey 
+       CLI 2.5.0+
 
      --timeout, --execution-timeout=VALUE
      CommandExecutionTimeout (in seconds) - The time to allow a command to 
@@ -180,12 +182,11 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 
        command execution when a runtime compatibility problem is found between 
-       the version of Chocolatey and the Chocolatey Licensed Extension. 
-       Available in 1.1.0+
+       the version of Chocolatey and the Chocolatey Licensed Extension.
 
      --ignore-http-cache
-     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
-       created when querying sources, and create new caches. Available in 2.1.0+
+     Ignore any HTTP caches that have previously been created when querying 
+       sources, and create new caches. Available in 2.1.0+
 
  -s, --source=VALUE
      Source - Source location for install. Can use special 'windowsfeatures', 
@@ -243,8 +244,13 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      IdStartsWith - Only return packages where the id starts with the search 
        filter.
 
+     --order-by=VALUE
+     OrderBy - Sort package results by Id (default), Title, Popularity, 
+       LastPublished, Unsorted. Available in 2.5.0+.
+
      --order-by-popularity
-     OrderByPopularity - Sort by package results by popularity.
+     (Deprecated) OrderByPopularity - Sort package results by popularity. Use 
+       '--order-by='Popularity'' instead.
 
      --approved-only
      ApprovedOnly - Only return approved packages - this option will filter 
@@ -281,7 +287,7 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      Force the command to be handled through the self-service when not 
        configured to allow this command. This option requires the features for 
        self-service and self-service command override to be enabled. Business 
-       editions only (licensed version 5.0.0+).
+       editions only.
 
 ~~~
 
@@ -290,6 +296,6 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
 > :choco-info: **NOTE**
 >
-> This documentation has been automatically generated from `choco find -h`. 
+> This documentation has been automatically generated from `choco find --help`. 
 
 
