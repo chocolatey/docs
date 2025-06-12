@@ -3295,9 +3295,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"choco-theme@npm:1.2.0":
-  version: 1.2.0
-  resolution: "choco-theme@npm:1.2.0"
+"choco-theme@npm:1.2.1":
+  version: 1.2.1
+  resolution: "choco-theme@npm:1.2.1"
   dependencies:
     "@eonasdan/tempus-dominus": "npm:^6.9.9"
     "@eslint/js": "npm:^9.26.0"
@@ -3352,7 +3352,7 @@ __metadata:
     typescript: "npm:^5.6.2"
     typescript-eslint: "npm:^8.32.0"
     underscore: "npm:^1.13.7"
-  checksum: 10c0/68ae4d81622c68787f8b92d307b7fcfa2ab1f417dea8d474ca794d5d9815d7cb6e4043aab987311c7c77fff185f105919ab8492513675baa2ccba42cad3e1e1d
+  checksum: 10c0/6c9364bf2c064bcc45111efa7c6de97832d01a87a7ef52348128ebbfc048ebba85e5470c155361102c50e77e89ba71084f66f787c4e79d80034fdaebf65ca2c0
   languageName: node
   linkType: hard
 
@@ -4413,7 +4413,7 @@ __metadata:
   dependencies:
     choco-astro: "npm:0.3.1"
     choco-playwright: "npm:0.1.0"
-    choco-theme: "npm:1.2.0"
+    choco-theme: "npm:1.2.1"
   languageName: unknown
   linkType: soft
 
