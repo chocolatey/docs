@@ -27,7 +27,7 @@
     "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs && yarn playwright-copy"
   },
   "dependencies": {
-    "choco-astro": "0.2.4",
+    "choco-astro": "0.3.1",
     "choco-playwright": "0.1.0",
     "choco-theme": "1.2.0"
   }
