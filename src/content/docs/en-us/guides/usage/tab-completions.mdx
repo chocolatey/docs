@@ -1,0 +1,470 @@
+---
+order: 50
+xref: set-up-tab-completion
+title: Set up Tab Completion
+description: Set up tab completion for Chocolatey CLI
+---
+
+import Callout from '@choco-astro/components/Callout.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import Xref from '@components/Xref.astro';
+
+export const tabs1 = [
+    { id: 'powershell', title: 'PowerShell', isActive: true },
+    { id: 'zsh', title: 'Zsh' },
+];
+
+Chocolatey CLI has a number of <Xref title="commands" value="choco-commands" /> that can be used.
+In an attempt to make these commands as easily discoverable as possible, there is a built in tab completion file for PowerShell.
+In addition, it is possible to use tab completions in other terminals.
+Below is a collection of community driven tab completions.
+If you have any suggestions on how to improve these scripts, please reach out on our [Community Chat](https://ch0.co/community), or raise a PR to the [docs repository](https://github.com/chocolatey/docs).
+
+<TabsTabContainer content={tabs1} />
+<TabsPaneContainer>
+    <TabsPane content={tabs1[0]}>
+Out of the box, Chocolatey CLI ships with a `ChocolateyTabExpansions.ps1` file, which contains all the tab completions when using PowerShell.
+The loading of this file can be achieved by importing the `chocolateyProfile.psm1` file.
+This can be done by adding the following into your PowerShell profile.
+
+```powershell
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+```
+    </TabsPane>
+    <TabsPane content={tabs1[1]}>
+<Callout type="warning">
+    This completion script is a Chocolatey Community driven effort, which was first suggested in this [PR](https://github.com/chocolatey/choco/pull/2978).
+</Callout>
+<Callout type="info">
+    The below completion script only contains the commands/sub-commands/options which are offered by Chocolatey CLI.
+    There are no Zsh completions for Chocolatey Licensed Extension.
+</Callout>
+
+To use the below completions file with your Zsh instance, do the following steps.
+
+1. Create a file called `_choco`
+1. Copy the below script into that file
+1. Run the following commands to move the file into the correct Zsh location
+    ```shell
+    sudo cp _choco /usr/local/share/zsh/site-functions
+    sudo chmod 755  /usr/local/share/zsh/site-functions/_choco
+    ```
+1. Refresh the Zsh instance using:
+    ```shell
+    source ~/.zshrc
+    ```
+1. Verify that everything is working by doing:
+    ```shell
+    choco.exe [tab]
+    ```
+
+```shell
+#compdef choco.exe
+
+#
+# name: _choco
+# auth: hltdev [hltdev8642@gmail.com]
+# desc: Completion file for Chocolatey CLI when using Zsh (mainly intended for use in WSL/WSL2)
+#
+
+allcommands=(
+    '--accept-license'
+    '--cache-location='''
+    '--debug'
+    '--fail-on-standard-error'
+    '--force'
+    '--help'
+    '--ignore-http-cache'
+    '--include-headers'
+    '--limit-output'
+    '--log-file='''
+    '--no-color'
+    '--no-progress'
+    '--noop'
+    '--online'
+    '--proxy='''
+    '--proxy-bypass-list'
+    '--proxy-bypass-on-local'
+    '--proxy-password='''
+    '--proxy-user='''
+    '--skip-compatibility-checks'
+    '--timeout='''
+    '--trace'
+    '--use-system-powershell'
+    '--verbose'
+    '--yes'
+)
+
+apikey=(
+    'add'
+    'list'
+    'remove'
+    '--api-key='''
+    '--source='''
+    $allcommands
+)
+cache=(
+    'list'
+    'remove'
+    '--expired'
+    $allcommands
+)
+config=(
+    'get'
+    'list'
+    'set'
+    'unset'
+    '--name='''
+    '--value='''
+    $allcommands
+)
+export=(
+    '--include-version'
+    '--output-file-path='''
+    $allcommands
+)
+feature=(
+    'disable'
+    'enable'
+    'get'
+    'list'
+    '--name='''
+    $allcommands
+)
+info=(
+    '--cert='''
+    '--certpassword='''
+    '--disable-repository-optimizations'
+    '--include-configured-sources'
+    '--local-only'
+    '--password='''
+    '--prerelease'
+    '--source='''
+    '--user='''
+    '--version='''
+    $allcommands
+)
+install=(
+    '--allow-downgrade'
+    '--allow-empty-checksums'
+    '--allow-empty-checksums-secure'
+    '--apply-args-to-dependencies'
+    '--apply-package-parameters-to-dependencies'
+    '--cert='''
+    '--certpassword='''
+    '--disable-repository-optimizations'
+    '--download-checksum='''
+    '--download-checksum-x64='''
+    '--download-checksum-type='''
+    '--download-checksum-type-x64='''
+    '--exit-when-reboot-detected'
+    '--force-dependencies'
+    '--forcex86'
+    '--ignore-checksum'
+    '--ignore-dependencies'
+    '--ignore-detected-reboot'
+    '--ignore-package-exit-codes'
+    '--include-configured-sources'
+    '--install-arguments='''
+    '--not-silent'
+    '--override-arguments'
+    '--package-parameters='''
+    '--password='''
+    '--pin'
+    '--prerelease'
+    '--require-checksums'
+    '--skip-hooks'
+    '--skip-scripts'
+    '--source='''
+    '--stop-on-first-failure'
+    '--use-package-exit-codes'
+    '--user='''
+    '--version='''
+    $allcommands
+)
+license=(
+    'info'
+    $allcommands
+)
+list=(
+    '--by-id-only'
+    '--by-tag-only'
+    '--detail'
+    '--exact'
+    '--id-only'
+    '--id-starts-with'
+    '--ignore-pinned'
+    '--include-programs'
+    '--page='''
+    '--page-size='''
+    '--prerelease'
+    '--source='''
+    '--version='''
+    $allcommands
+)
+new=(
+    '--automaticpackage'
+    '--template-name='''
+    '--maintainer='''
+    '--name='''
+    '--output-directory='''
+    '--version='''
+    '--use-built-in-template'
+    $allcommands
+)
+outdated=(
+    '--cert='''
+    '--certpassword='''
+    '--disable-repository-optimizations'
+    '--ignore-pinned'
+    '--ignore-unfound'
+    '--include-configured-sources'
+    '--password='''
+    '--prerelease'
+    '--source='''
+    '--user='''
+    $allcommands
+)
+pack=(
+    '--output-directory='''
+    '--version='''
+    $allcommands
+)
+pin=(
+    'add'
+    'list'
+    'remove'
+    '--name='''
+    '--version='''
+    $allcommands
+)
+push=(
+    '--api-key='''
+    '--source='''
+    $allcommands
+)
+rule=(
+    'get'
+    'list'
+    '--name='''
+    $allcommands
+)
+search=(
+    '--all-versions'
+    '--approved-only'
+    '--by-id-only'
+    '--by-tag-only'
+    '--cert='''
+    '--certpassword='''
+    '--detail'
+    '--disable-repository-optimizations'
+    '--download-cache-only'
+    '--exact'
+    '--id-only'
+    '--id-starts-with'
+    '--include-configured-sources'
+    '--include-programs'
+    '--not-broken'
+    '--order-by='''
+    '--order-by-popularity'
+    '--page='''
+    '--page-size='''
+    '--password='''
+    '--prerelease'
+    '--source='''
+    '--user='''
+    '--version='''
+    $allcommands
+)
+source=(
+    'add'
+    'disable'
+    'enable'
+    'list'
+    'remove'
+    '--admin-only'
+    '--allow-self-service'
+    '--bypass-proxy'
+    '--cert='''
+    '--certpassword='''
+    '--name='''
+    '--password='''
+    '--priority='''
+    '--source='''
+    '--user='''
+    $allcommands
+)
+support=(
+    $allcommands
+)
+template=(
+    'info'
+    'list'
+    '--name='''
+    $allcommands
+)
+uninstall=(
+    '--all-versions'
+    '--apply-args-to-dependencies'
+    '--apply-package-parameters-to-dependencies'
+    '--exit-when-reboot-detected'
+    '--fail-on-autouninstaller'
+    '--force-dependencies'
+    '--ignore-autouninstaller-failure'
+    '--ignore-detected-reboot'
+    '--ignore-package-exit-codes'
+    '--not-silent'
+    '--override-arguments'
+    '--package-parameters='''
+    '--skip-autouninstaller'
+    '--skip-hooks'
+    '--skip-scripts'
+    '--source='''
+    '--stop-on-first-failure'
+    '--uninstall-arguments='''
+    '--use-autouninstaller'
+    '--use-package-exit-codes'
+    '--version='''
+    $allcommands
+)
+upgrade=(
+    '--allow-downgrade'
+    '--allow-empty-checksums'
+    '--allow-empty-checksums-secure'
+    '--apply-args-to-dependencies'
+    '--apply-package-parameters-to-dependencies'
+    '--cert='''
+    '--certpassword='''
+    '--disable-repository-optimizations'
+    '--download-checksum='''
+    '--download-checksum-x64='''
+    '--download-checksum-type='''
+    '--download-checksum-type-x64='''
+    '--except='''
+    '--exclude-prerelease'
+    '--exit-when-reboot-detected'
+    '--fail-on-not-installed'
+    '--fail-on-unfound'
+    '--forcex86'
+    '--ignore-checksum'
+    '--ignore-dependencies'
+    '--ignore-detected-reboot'
+    '--ignore-package-exit-codes'
+    '--ignore-pinned'
+    '--ignore-remembered-arguments'
+    '--ignore-unfound'
+    '--include-configured-sources'
+    '--install-arguments='''
+    '--install-if-not-installed'
+    '--not-silent'
+    '--override-arguments'
+    '--package-parameters='''
+    '--password='''
+    '--pin'
+    '--prerelease'
+    '--require-checksums'
+    '--skip-hooks'
+    '--skip-if-not-installed'
+    '--skip-scripts'
+    '--source='''
+    '--stop-on-first-failure'
+    '--use-package-exit-codes'
+    '--use-remembered-arguments'
+    '--user='''
+    '--version='''
+    $allcommands
+)
+
+function _choco
+{
+    local _line
+
+    _arguments -C \
+        "1: :('apikey' 'cache' 'config' 'export' 'feature' 'help' 'info' 'install' 'license' 'list' 'new' 'outdated' 'pack' 'pin' 'push' 'rule' 'search' 'source' 'support' 'template' 'uninstall' 'upgrade' '--help' '--version')" \
+        "-?" \
+        "*::arg:->args"
+
+    case $line[1] in
+        'apikey')
+            _describe 'command' apikey
+            ;;
+        'cache')
+            _describe 'command' cache
+            ;;
+        'config')
+            _describe 'command' config
+            ;;
+        'export')
+            _describe 'command' export
+            ;;
+        'feature')
+            _describe 'command' feature
+            ;;
+        'help')
+            _describe 'command' help
+            ;;
+        'info')
+            _describe 'command' info
+            ;;
+        'install')
+            _describe 'command' install
+            ;;
+        'license')
+            _describe 'command' license
+            ;;
+        'list')
+            _describe 'command' list
+            ;;
+        'new')
+            _describe 'command' new
+            ;;
+        'outdated')
+            _describe 'command' outdated
+            ;;
+        'pack')
+            _describe 'command' pack
+            ;;
+        'pin')
+            _describe 'command' pin
+            ;;
+        'push')
+            _describe 'command' push
+            ;;
+        'rule')
+            _describe 'command' rule
+            ;;
+        'search')
+            _describe 'command' search
+            ;;
+        'source')
+            _describe 'command' source
+            ;;
+        'support')
+            _describe 'command' support
+            ;;
+        'template')
+            _describe 'command' template
+            ;;
+        'uninstall')
+            _describe 'command' uninstall
+            ;;
+        'upgrade')
+            _describe 'command' upgrade
+            ;;
+    esac
+}
+
+_choco
+```
+    </TabsPane>
+</TabsPaneContainer>
