@@ -3288,9 +3288,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"choco-theme@npm:1.2.1":
-  version: 1.2.1
-  resolution: "choco-theme@npm:1.2.1"
+"choco-theme@npm:1.2.3":
+  version: 1.2.3
+  resolution: "choco-theme@npm:1.2.3"
   dependencies:
     "@eonasdan/tempus-dominus": "npm:^6.9.9"
     "@eslint/js": "npm:^9.26.0"
@@ -3345,7 +3345,7 @@ __metadata:
     typescript: "npm:^5.6.2"
     typescript-eslint: "npm:^8.32.0"
     underscore: "npm:^1.13.7"
-  checksum: 10c0/6c9364bf2c064bcc45111efa7c6de97832d01a87a7ef52348128ebbfc048ebba85e5470c155361102c50e77e89ba71084f66f787c4e79d80034fdaebf65ca2c0
+  checksum: 10c0/56ef4622bd7f034349b20b712eafccac791373f9370fa82e24bffd99b38c05a0a4df779e8370324a7e3ef943fa679869446046f42a83ed48bf6ad33ee82b6df1
   languageName: node
   linkType: hard
 
@@ -3732,9 +3732,9 @@ __metadata:
   linkType: hard
 
 "cssdb@npm:^8.1.0":
-  version: 8.3.0
-  resolution: "cssdb@npm:8.3.0"
-  checksum: 10c0/56d13cbddd90e63f45f24f71f35314f9718b72760acdf15367e33014eb45df775ae97ec05c08afaa6b4b147c757e9554c1bf39ddcdaeeb26b6c2adfeee503ae7
+  version: 8.3.1
+  resolution: "cssdb@npm:8.3.1"
+  checksum: 10c0/8eb6765eda84874cd09d064d6a463ba96b1fe47a89954863802c8c661d21f45d5dc57f13374c938d4ca32b0ae50952adda4413f494b1cf6db76cf5398c109d40
   languageName: node
   linkType: hard
 
@@ -4406,7 +4406,7 @@ __metadata:
   dependencies:
     choco-astro: "npm:0.3.2"
     choco-playwright: "npm:0.1.0"
-    choco-theme: "npm:1.2.1"
+    choco-theme: "npm:1.2.3"
   languageName: unknown
   linkType: soft
 
@@ -10516,12 +10516,13 @@ __metadata:
   linkType: hard
 
 "unifont@npm:~0.5.0":
-  version: 0.5.0
-  resolution: "unifont@npm:0.5.0"
+  version: 0.5.1
+  resolution: "unifont@npm:0.5.1"
   dependencies:
     css-tree: "npm:^3.0.0"
+    ofetch: "npm:^1.4.1"
     ohash: "npm:^2.0.0"
-  checksum: 10c0/4395af8a95722d88389ae100686577a80d9ff7a3e129dadf836e7beb1dbbd448d7bb12b9d8988084c186748fbb4763ce19457c7a119b8343a0fb5c81767896a2
+  checksum: 10c0/c91e022022d6882be852102760e32132cbb468468a04858fc24ec74bb7e6ddd5c5e6424941339de27c3e75ee4816b6cd234df3a7211be644ceff2112006e2651
   languageName: node
   linkType: hard
 
