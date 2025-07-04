@@ -1,5 +1,5 @@
 ﻿---
-order: 220
+order: 200
 xref: install-chocolateyfileassociation
 title: Install-ChocolateyFileAssociation
 description: Information on Install-ChocolateyFileAssociation function
@@ -22,6 +22,7 @@ Creates an association between a file extension and a executable.
 Install-ChocolateyFileAssociation `
   -Extension <String> `
   -Executable <String> `
+  [-Arguments <String>] `
   [-IgnoredArguments <Object[]>] [<CommonParameters>]
 ~~~
 
@@ -80,6 +81,19 @@ Required?              | true
 Position?              | 2
 Default Value          | 
 Accept Pipeline Input? | false
+ 
+###  -Arguments [&lt;String&gt;]
+Property               | Value
+---------------------- | ---------
+Aliases                | 
+Required?              | false
+Position?              | 3
+Default Value          | "%1" "%*"
+Accept Pipeline Input? | false
+
+> :choco-info: **NOTE**
+>
+> Available since Chocolatey CLI v2.5.0+
  
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Property               | Value
