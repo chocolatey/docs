@@ -40,7 +40,6 @@ When creating packages that need to run one of the following commands below, one
 * <Xref title="Install-ChocolateyEnvironmentVariable" value="install-chocolateyenvironmentvariable" /> - when specifying machine path
 * <Xref title="Install-ChocolateyExplorerMenuItem" value="install-chocolateyexplorermenuitem" />
 * <Xref title="Install-ChocolateyFileAssociation" value="install-chocolateyfileassociation" />
-* <Xref title="Uninstall-ChocolateyPath" value="uninstall-chocolateypath" /> - when specifying machine path
 
 ### Non-Administrator Safe Functions
 
@@ -57,7 +56,6 @@ These are the functions from above as one list.
 * <Xref title="Install-ChocolateyEnvironmentVariable" value="install-chocolateyenvironmentvariable" /> - when specifying user path
 * <Xref title="Install-ChocolateyPinnedTaskBarItem" value="install-chocolateypinnedtaskbaritem" />
 * <Xref title="Install-ChocolateyShortcut" value="install-chocolateyshortcut" />
-* <Xref title="Uninstall-ChocolateyPath" value="uninstall-chocolateypath" /> - when specifying user path
 * <Xref title="Update-SessionEnvironment" value="update-sessionenvironment" />
 * <Xref title="Get-PackageParameters" value="get-packageparameters" />
 
@@ -96,7 +94,6 @@ These are the functions from above as one list.
  * <Xref title='Uninstall-BinFile' value='uninstall-binfile' />
  * <Xref title='Uninstall-ChocolateyEnvironmentVariable' value='uninstall-chocolateyenvironmentvariable' />
  * <Xref title='Uninstall-ChocolateyPackage' value='uninstall-chocolateypackage' />
- * <Xref title='Uninstall-ChocolateyPath' value='uninstall-chocolateypath' />
  * <Xref title='Uninstall-ChocolateyZipPackage' value='uninstall-chocolateyzippackage' />
  * <Xref title='Write-FunctionCallLogMessage' value='write-functioncalllogmessage' />
 
@@ -172,7 +169,7 @@ The following are experimental or use not recommended:
  * ChocolateyChecksumType32 - Was `--download-checksum-type` passed?
  * ChocolateyChecksum64 - Was `--download-checksum-x64` passed?
  * ChocolateyChecksumType64 - Was `--download-checksum-type-x64` passed?
- * ChocolateyPackageExitCode - The exit code of the script that just ran - usually set by `Set-PowerShellExitCode`
+ * ChocolateyExitCode - The exit code of the script that just ran - usually set by `Set-PowerShellExitCode`
  * ChocolateyLastPathUpdate - Set by Chocolatey as part of install, but not used for anything in particular in packaging.
  * ChocolateyProxyLocation - The explicit proxy location as set in the configuration `proxy`
  * ChocolateyDownloadCache - Use available download cache? Set by `--skip-download-cache`, `--use-download-cache`, or feature `downloadCache`
