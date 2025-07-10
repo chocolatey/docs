@@ -1,0 +1,23 @@
+---
+order: 30
+xref: auto-uninstaller
+title: Automatic Uninstaller
+description: Chocolatey's Automatic Uninstaller removes software so you don't have to.
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+<Callout type="warning">
+    Chocolatey CLI Automatic Uninstaller is a powerful feature that can result in unexpected results. If you install other software while a package is being installed, Chocolatey CLI will detect these additional installations and will automatically uninstall them for you, when you uninstall the package.
+</Callout>
+
+![Auto Uninstaller](/images/features/features_auto_uninstall.png)
+
+The Automatic Uninstaller feature in Chocolatey CLI looks at the software installed on the computer, before a package is installed, and after a package is installed. Knowing what software has been installed on the computer by a package, allows Chocolatey CLI to automatically uninstall that software when uninstalling the package, without any additional effort.
+
+### How do I skip the Automatic Uninstaller?
+
+If you are trying to uninstall a package, but the Automatic Uninstall feature is uninstalling software you don't want to be uninstalled, then it can be skipped by using the `--skip-autouninstaller` option on the command line. You can <Xref title="disable the feature" value="configuration" anchor="automatic-uninstaller" /> by setting the `autoUninstaller` feature to `false`
+
+If you are <Xref title="creating a package" value="package-creation-guide" />, and want to use the `chocolateyUninstall.ps1` to uninstall software without using the Automatic Uninstaller, include an empty file with the name `.skipAutoUninstall`, inside the package. This will stop the Automatic Uninstaller for that specific package. If a `.skipAutoUninstall` file is being included, make sure that it is included in the `files` element of the `.nuspec`, either explicitly via a `file` element, or by placing the file inside a folder that is included inside the package (like the `tools` directory).
