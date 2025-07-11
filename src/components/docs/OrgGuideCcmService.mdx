@@ -6,48 +6,23 @@ import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
 
-export const dbOptionsService = [
-    { id: 'sqlexpress-integrated-service', title: 'SQL Express w/ Integrated Security', isActive: true },
-    { id: 'sqlexpress-locallogin-service', title: 'SQL Express w/ Sql Login', updateAnchor: true },
-    { id: 'sqlinstance-integrated-service', title: 'SQL Instance w/ Integrated Security', updateAnchor: true },
-    { id: 'sqlinstance-locallogin-service', title: 'SQL Instance w/ Sql Login', updateAnchor: true }
-];
+<Callout type="info">
+    <p>
+        Before installing the Chocolatey Central Management Service component, ensure you have setup the Chocolatey Central Management Database component.
+    </p>
+</Callout>
 
-### Scenarios
+<Callout type="warning">
+    <p>
+        The connection string used to install the Service component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database.
+    </p>
+</Callout>
 
-Please select the installation scenario appropriate for your environment:
+```powershell
+$ccmParams = @{
+    ConnectionString = 'YOUR CONNECTION STRING HERE'
+    Component = 'Service'
+}
 
-- SQL Express w/ Integrated Security: This scenario will install SQL Server Express and configure it for use with Chocolatey Central Management with the currently logged in user.
-- SQL Express w/ Sql Login: This scenario will install SQL Server Express and configura a local Sql Login for use with Chocolatey Central Management.
-- SQL Instance w/ Integrated Security: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with the currently logged in user.
-- SQL Instance w/ Sql Login: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with a Sql Login.
-
-<TabsTabContainer content={dbOptionsService} />
-<TabsPaneContainer>
-    
-    <TabsPane content={dbOptionsService[0]}>
-    ```powershell
-    $ccmParams = @{
-        InstanceName = "$env:COMPUTERNAME\SQLEXPRESS"
-        DatabaseName = 'ChocolateyManagement'
-        UseIntegratedSecurity = $true
-        Component = 'Database'
-    }
-
-    Install-ChocolateyCentralManagement @ccmParams
-    ```
-    </TabsPane>
-
-    <TabsPane content={dbOptionsService[1]}>
-    Bob
-    </TabsPane>
-
-    <TabsPane content={dbOptionsService[2]}>
-       Tom
-    </TabsPane>
-
-    <TabsPane content={dbOptionsService[3]}>
-        Harry
-    </TabsPane>
-</TabsPaneContainer>
-H
+Install-ChocolateyCentralManagement @ccmParams
+```

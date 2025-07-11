@@ -6,9 +6,23 @@ import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
 
-export const dbOptionsWeb = [
-    { id: 'sqlexpress-integrated', title: 'SQL Express w/ Integrated Security', isActive: true },
-    { id: 'sqlexpress-locallogin', title: 'SQL Express w/ Sql Login', updateAnchor: true },
-    { id: 'sqlinstance-integrated', title: 'SQL Instance w/ Integrated Security', updateAnchor: true },
-    { id: 'sqlinstance-locallogin', title: 'SQL Instance w/ Sql Login', updateAnchor: true }
-];
+<Callout type="info">
+    <p>
+        Before installing the Chocolaety Central Management Web component, ensure you have setup the Chocolatey Central Management Database component.
+    </p>
+</Callout>
+
+<Callout type="warning">
+    <p>
+        The connection string used to install the Website component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database.
+    </p>
+</Callout>
+
+```powershell
+$ccmParams = @{
+    ConnectionString = 'YOUR CONNECTION STRING HERE'
+    Component = 'Website'
+}
+
+Install-ChocolateyCentralManagement @ccmParams
+```

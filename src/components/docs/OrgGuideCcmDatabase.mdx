@@ -15,49 +15,19 @@ export const dbOptionsDb = [
     { id: 'connection-string-db', title: 'Authenticate w/ Connection String', updateAnchor: true }
 ];
 
-### Scenarios
+<Callout type="info">
+    <p>
+        The Chocolatey Central Management Database is the first component that should be installed.
+        It provides the database schema used by Chocolatey Central Management. The connection string
+        provided needs to have the ability to create the ChocolateyManagement database and update the schema
+    </p>
+</Callout>
 
-Please select the installation scenario appropriate for your environment:
+```powershell
+$ccmParams = @{
+    ConnectionString = 'YOUR CONNECTION STRING HERE'
+    Component = 'Database'
+}
 
-- SQL Express w/ Integrated Security: This scenario will install SQL Server Express and configure it for use with Chocolatey Central Management with the currently logged in user.
-- SQL Express w/ Sql Login: This scenario will install SQL Server Express and configura a local Sql Login for use with Chocolatey Central Management.
-- SQL Instance w/ Integrated Security: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with the currently logged in user.
-- SQL Instance w/ Sql Login: This scenario will configure an existing SQL Server instance for use with Chocolatey Central Management with a Sql Login.
-
-
-<TabsTabContainer content={dbOptionsDb} />
-<TabsPaneContainer>
-    <TabsPane content={dbOptionsDb[0]}>
-    ```powershell
-    $ccmParams = @{
-        InstanceName = $env:COMPUTERNAME\SQLEXPRESS"
-        DatabaseName = 'ChocolateyManagement'
-        Component = 'Database'
-    }
-
-    Install-ChocolateyCentralManagement @ccmParams
-    ```
-    </TabsPane>
-    <TabsPane content={dbOptionsDb[1]}>
-        ```powershell
-    $ccmParams = @{
-        InstanceName = "$env:COMPUTERNAME\SQLEXPRESS"
-        DatabaseName = 'ChocolateyManagement'
-        DatabaseCredential = (Get-Credential)
-        Component = 'Database'
-    }
-
-    Install-ChocolateyCentralManagement @ccmParams
-    ```
-    </TabsPane>
-    <TabsPane content={dbOptionsDb[2]}>
-        ```powershell
-            $ccmParams = @{
-        ConnectionString = 'PUT CONNECTION STRING HERE'
-        Component = 'Database'
-    }
-
-    Install-ChocolateyCentralManagement @ccmParams
-    ```
-    </TabsPane>
-</TabsPaneContainer>
+Install-ChocolateyCentralManagement @ccmParams
+```
