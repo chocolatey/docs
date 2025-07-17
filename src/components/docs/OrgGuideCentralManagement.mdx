@@ -1,4 +1,5 @@
 ---
+
 ---
 import Callout from '@choco-astro/components/Callout.astro';
 import Xref from '@components/Xref.astro';
@@ -23,7 +24,7 @@ Chocolatey Central Management is made of of 4 components, installed via Chocolat
 - Chocolatey Management Database (chocolatey-management-database): Provides the database schema used by Chocolatey Central Management.
 - Chocolatey Management Service (chocolatey-management-service): The service that handles processing requests from agents running in your environment
 - Chocolatey Management Web (chocolatey-management-web): This is the web interface for Chocolatey Central Management
-- Chocolatey Agent Service (chocolatey-agent): The service that runs on an endpoint that facilitates reporting and deployment activties from Central Management
+- Chocolatey Agent Service (chocolatey-agent): The service that runs on an endpoint that facilitates reporting and deployment activities from Central Management
 
 ## Planning Your Installation
 
@@ -34,7 +35,7 @@ For node counts of 1000 or less, you can install all components on a single serv
 
 # Before You Begin
 
-Before you can install the Chocolatey Central Management Database, you need to have a SQL Server Instance available. SQL Server Express is _fine_ but only recommended for testing and small environments (less than 1000 endpoints).
+Before you can install the Chocolatey Central Management Database, you need to have a SQL Server Instance available. SQL Server Express is _fine_ but only recommended for testing and small environments (less than 1000 endpoints). If you need help installing and configuring SQL Server Express, <Xref title="please see our documentation here" value="setup-sql-server-express-organizational-deployment-guide" />.
 
 ## Available Parameters
 
@@ -43,7 +44,7 @@ Before you can install the Chocolatey Central Management Database, you need to h
 - `ConnectionString`: The connection string to use to connect to the database.
 - `LicenseFile`: The path to the Chocolatey For Business license file. If not provided, you will br prompted to browse for it.
 - `IsOffline`: If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation.
-= `OfflineInstallationMedia`: The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true.
+- `OfflineInstallationMedia`: The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true.
 ## Component Installation
 
 <TabsTabContainer content={ccmInstall} />
