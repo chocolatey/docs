@@ -1,8 +1,7 @@
 ---
 
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
 import Xref from '@components/Xref.astro';
 
 A repository server is used to store the Chocolatey packages you wish to maintain for use within your Organization.
@@ -10,8 +9,8 @@ This guide will help you setup and configure one of the following repository sol
 
 <div class="row mb-md-5">
     <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
-        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
-            <div class="card-body d-flex flex-column z-1">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url('https://img.chocolatey.org/businesses/sonatype-repository-logo.png');">
+            <div class="card-body d-flex flex-column z-1">  {/* We don't seem to have an appropriate image uploaded */}
                 <div class="mt-auto">
                     <Xref title="Sonatype Nexus" value="setup-nexus-repository-c4b-solution" classes="h4 mb-0 stretched-link" />
                 </div>
