@@ -45,6 +45,14 @@ Before you can install the Chocolatey Central Management Database, you need to h
 - `LicenseFile`: The path to the Chocolatey For Business license file. If not provided, you will br prompted to browse for it.
 - `IsOffline`: If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation.
 - `OfflineInstallationMedia`: The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true.
+- `CertificateThumbprint`: The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only)
+- `CertificateDnsName`: The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only)
+
+## Securing Central Management Communications
+
+By default, the install will create and use self-signed certificates for the Chocolatey Management Service and Web components.
+If you wish to use your own certificates, you can do so by providing the `CertificateThumbprint` and `CertificateDnsName` parameters.
+
 ## Component Installation
 
 <TabsTabContainer content={ccmInstall} />

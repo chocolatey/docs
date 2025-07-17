@@ -13,9 +13,11 @@ import CentralManagementSecureConnectionStrings from '@components/docs/CentralMa
 
 <Callout type="warning">
     <p>
-        The connection string used to install the Service component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database.
+        - _The connection string used to install the Service component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database._
+        - _If you are using a custom SSL certificate, ensure that the certificate is installed  in the LocalMachine\TrustedPeople store on the server where the Chocolatey Central Management Service is being installed._
     </p>
 </Callout>
+
 
 ```powershell
 $ccmParams = @{
