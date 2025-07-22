@@ -1,0 +1,241 @@
+---
+order: 50
+xref: organizational-automation-solution
+title: Organizational Guide - Automation Solution
+description: Information on deploying an automation solution for Chocolatey For Business
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+import OrgGuidePackageAutomationIntro from '@components/docs/OrgGuidePackageAutomationIntro.mdx';
+
+<OrgGuidePackageAutomationIntro />
+
+export const automationpipeline = [
+    { id: 'jenkins', title: 'Jenkins', isActive: true },
+    { id: 'powershelluniversal', title: 'PowerShell Universal' },
+    { id: 'githubactions', title: 'GitHub Actions' },
+];
+
+<TabsTabContainer content={automationpipeline} />
+<TabsPaneContainer>
+    <TabsPane content={automationpipeline[0]}>
+        #### Requirements
+
+        To install and run Jenkins, you'll need to meet the requirements.
+
+        They are specified in the [Jenkins Documentation](https://www.jenkins.io/doc/book/installing/windows/#prerequisites), and as of v2.492.2 (2025-03-19) they are:
+
+        Minimum hardware requirements:
+
+        - 256 MB of RAM
+        - 1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)
+
+        Recommended hardware configuration for a small team:
+
+        - 4 GB+ of RAM
+        - 50 GB+ of drive space
+
+        #### Installation
+
+        This install script will:
+
+        - Install TemurinJRE and Jenkins
+        - Secure Jenkins with an SSL certificate
+        - Run initial setup steps on Jenkins
+        - Install the standard C4B jobs
+
+        #### Environment Information
+
+        Please provide the following information to configure the Jenkins installation:
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Used as the distribution point for approved packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Used as the endpoint to push un-tested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="86b9a364521fc04722" /> | Optional: Used to secure Jenkins with SSL. |
+
+        If providing a **Thumbprint**, you must install the certificate to the Machine-level TrustedPeople store before running the script.
+
+        #### Install Script
+
+<DynamicCodeBlock language="powershell">
+{`
+$repositoryArgs = @{
+    ProductionRepositoryUrl = 'OrgGuideProductionRepositoryName'
+    TestRepositoryUrl = 'OrgGuideTestRepositoryName'
+    RepositoryUser = [PSCredential]::new(
+        'OrgGuideRepoUserName',
+        (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
+    )
+    RepositoryApiKey = 'OrgGuideRepoApiKey'
+}
+
+$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/OrgGuide-AutomationPlatform-Jenkins')
+& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+`}
+</DynamicCodeBlock>
+
+<Callout type="info" header="Airgapped Installation">
+    If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before attempting to run it.
+
+    ```powershell
+    Set-ExecutionPolicy RemoteSigned -Scope Process -Force
+    .\path\to\Install-C4BAutomationPlatformJenkins.ps1 @repositoryArgs
+    ```
+</Callout>
+
+        #### Usage
+
+        There are three jobs that have been installed:
+
+        - **Internalize packages from the Community Repository**  
+            This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
+        - **Update test repository from Chocolatey Community Repository**  
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+        - **Update production repository**  
+            This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
+
+        To use your fresh new jobs, you should navigate to the Jenkins dashboard and attempt to `build` one of the jobs.
+
+        <Iframe ratio="16x9" link="https://youtu.be/XiyzBIofDiE?si=z2P9J0gLb9_kHwIq" title="Running Jenkins Jobs" />
+
+    </TabsPane>
+    <TabsPane content={automationpipeline[1]}>
+        #### Requirements
+
+        To install and run PowerShell Universal, you'll need to meet the requirements.
+
+        They are specified in the [PowerShell Universal Documentation](https://docs.powershelluniversal.com/system-requirements), and as of v5.5.2 (2025-06-22) they are:
+
+        Hardware recommendations are based on use and depend on how many scripts are running on the PowerShell Universal server and how many users are accessing the machine. Unix based machines typically require less hardware requirements than Windows based machines. The below recommendations are based on low use of the system.
+
+        Minimum:
+
+        This is the base line for a Universal server with very minimal server load. It should be used for trial or development purposes only.
+
+        - 2 CPU
+        - 4 GB
+        - 250 GB
+        - SQLite Database
+
+        Recommended:
+
+        This is the base line for a Universal server running several jobs an hour, hosting APIs with fewer than 100 requests per hour and a single App. It will support up to 10 concurrent users.
+
+        - 4 CPU
+        - 16 GB
+        - 500 GB
+        -  MS SQL\PostgreSQL Database
+
+        #### Installation
+
+        This install script will:
+
+        - Install PowerShell Universal
+        - Secure PowerShell Universal
+        - Run initial setup steps on PowerShell Universal
+        - Install the standard C4B jobs
+
+        #### Environment Information
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Used as the distribution point for approved packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Used as the endpoint to push un-tested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="86b9a364521fc04722" /> | Optional: Used to secure PowerShell Universal with SSL. |
+
+        #### Install Script
+
+<DynamicCodeBlock language="powershell">
+{`
+$repositoryArgs = @{
+    ProductionRepositoryUrl = 'OrgGuideProductionRepositoryName'
+    TestRepositoryUrl = 'OrgGuideTestRepositoryName'
+    RepositoryUser = [PSCredential]::new(
+        'OrgGuideRepoUserName',
+        (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
+    )
+    RepositoryApiKey = 'OrgGuideRepoApiKey'
+}
+
+$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/OrgGuide-AutomationPlatform-PowerShellUniversal')
+& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+`}
+</DynamicCodeBlock>
+
+        #### Usage
+
+        To use your fresh new jobs, you should navigate to the PowerShell Universal dashboard and run the jobs.
+
+        There are three standard jobs you can run:
+
+        - **Internalize packages from the Community Repository**  
+            This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
+        - **Update test repository from Chocolatey Community Repository**  
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+        - **Update production repository**  
+            This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
+
+    </TabsPane>
+    <TabsPane content={automationpipeline[2]}>
+        #### Requirements
+
+        You will need a GitHub account, or organization, within which you can create a repository and trigger actions.
+
+        #### Installation
+
+        This install process will:
+
+        - Create a repository for your GitHub Actions
+        - Set variables for the various Actions to use
+
+        #### Environment Information
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Used as the distribution point for approved packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Used as the endpoint to push un-tested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
+
+        #### Install Process
+
+        - Navigate to the [GitHub Actions Template Repository](https://github.com/chocolatey/github-actions-template)
+        - Click `Use this template` (on the top right), and `Create a new repository`
+        - In your new repository, navigate to `Actions` and click `Enable`
+        - Navigate to `Settings`, and update the action variables as follows:
+            - Create a secret named `ProductionRepositoryUrl` and populate it with ...
+            - Create a secret named `TestRepositoryUrl` and populate it with ...
+            - Create a secret named `RepositoryUserName` and populate it with ...
+            - Create a secret named `RepositoryUserPassword` and populate it with ...
+
+        #### Usage
+
+        To use your fresh new jobs, you should navigate to the GitHub Actions tab of your new repository and trigger one of the actions.
+
+        There are three new actions you can trigger:
+
+        - **Internalize packages from the Community Repository**  
+            This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
+        - **Update test repository from Chocolatey Community Repository**  
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+        - **Update production repository**  
+            This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
+
+    </TabsPane>
+</TabsPaneContainer>
+
+When you've finished setting up your automation, you should consider <Xref title="deploying Chocolatey to end users" value="organizational-deployment-guide" anchor="Exercise 6: Installing Chocolatey On Client Machines" />.

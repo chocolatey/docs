@@ -1,0 +1,50 @@
+import Xref from '@components/Xref.astro';
+
+A large part of the magic of Chocolatey is the community around it, and the Chocolatey Community Repository - a package repository filled with packages to do everything from install software to configure machines.
+
+Chocolatey For Business customers can use tools such as the Package Internalizer to download packages and ensure they're usable even in air-gapped environments, or if externally referenced binaries are changed or removed.
+
+To automate tasks like checking for updated packages, downloading and internalizing them, and pushing them to an internal repository for consumption, we recommend using a platform such as (but not limited to) Jenkins, PowerShell Universal, or GitHub Actions.
+
+In order to run Package Internalizer, though your automation platform may be running on any platform, your task agent must be running PowerShell or PowerShell Core on a Windows machine.
+
+We have example scripts and jobs that can be used in such environments, and documentation to walk through configuration of such systems - to learn more, select a platform below:
+
+<div class="row mb-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url('https://img.chocolatey.org/businesses/jenkins.png');">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Jenkins" value="organizational-automation-solution" anchor="jenkins" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+    {/* <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="PowerShell Universal" value="organizational-automation-solution" anchor="powershelluniversal" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div> */}
+    {/* <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="GitHub Actions" value="organizational-automation-solution" anchor="githubactions" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div> */}
+    {/* <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url();">
+            <div class="card-body d-flex flex-column z-1">
+                <div class="mt-auto">
+                    <Xref title="Azure DevOps Pipelines" value="organizational-automation-solution" anchor="azuredevopspipelines" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div> */}
+</div>
