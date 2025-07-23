@@ -9,6 +9,8 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Xref from '@components/Xref.astro';
 import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx'
 import OrgGuidePrepC4BChocolatey from '@components/docs/OrgGuidePrepC4BChocolatey.mdx'
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 
 Open source repository manager that supports many repository formats, including the NuGet package type, which Chocolatey is built upon.
 Pro edition is available, to provide commercial support and additional features should your organization require.
@@ -38,7 +40,7 @@ The installation of Sonatype Nexus will:
 
 - Configure a production NuGet repository for Chocolatey packages
 - Configure a test NuGet repository for Chocolatey packages
-- Configure Generic (Raw) repository to host large installation media
+- Configure a Generic (Raw) repository to host large installation media
 - Configure a Generic (Raw) repository to host PowerShell scripts to onboard client workstations with Chocolatey For Business
 - Configure a read-only role for consuming packages
 - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
@@ -46,46 +48,45 @@ The installation of Sonatype Nexus will:
 ### Environment Information
 
 Please provide the following information to configure the Sonatype Nexus Server:
-
-Production Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="FabrikamProd" />
-Test Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="FabrikamTest" />
-Raw Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="Fabrikam-Assets" />
+<DynamicCodeBlockInput name="ProdRepoName" defaultValue="Fabrikam-Prod" label="Production Repository Name" />
+<DynamicCodeBlockInput name="TestRepoName" defaultValue="Fabrikam-Test" label="Test Repository Name" />
+<DynamicCodeBlockInput name="RawRepoName" defaultValue="Fabrikam-Assets" label="Raw Repository Name" />
 
 #### Nexus Install Script
 
 To complete the installation run the following PowerShell script:
 
-```powershell
-
+<DynamicCodeBlock language="powershell">
+{`
 $repositoryArgs = @{
-    RepositoryProduct = 'Nexus'
-    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
-    TestRepository = 'TestRepo' # Please replace with your desired repository name
-    RawRepository = 'ChocolateyFiles' # Please replace with your desired repository name
+    ProdRepository = 'ProdRepoName'
+    TestRepository = 'TestRepoName'
+    RawRepository = 'RawRepoName'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallRepository.ps1')
+$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallNexusRepository.ps1')
 & ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
+`}
+</DynamicCodeBlock>
 
 ## Validating the Installation
 
 The following script will run a suite of Pester tests to validate your Sonatype Nexus installation was successful
 
-```powershell
-
+<DynamicCodeBlock language="powershell">
+{`
 $repositoryArgs = @{
-    RepositoryProduct = 'Nexus'
-    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
-    TestRepository = 'TestRepo' # Please replace with your desired repository name
-    RawRepository = 'ChocolateyFiles' # Please replace with your desired repository name
+    ProdRepository = 'ProdRepo'
+    TestRepository = 'TestRepo'
+    RawRepository = 'ChocolateyFiles'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
-$RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateRepository.ps1')
+$RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateNexusRepository.ps1')
 & ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
+`}
+</DynamicCodeBlock>
 
 ## Next Steps
 

@@ -9,6 +9,8 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Xref from '@components/Xref.astro';
 import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx'
 import OrgGuidePrepOSSChocolatey from '@components/docs/OrgGuidePrepOSSChocolatey.mdx'
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 
 Open source repository manager that supports many repository formats, including the NuGet package type, which Chocolatey is built upon.
 Pro edition is available, to provide commercial support and additional features should your organization require.
@@ -37,43 +39,45 @@ The installation of Sonatype Nexus will:
 
 Please provide the following information to configure the Sonatype Nexus Server:
 
-Proxy Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="Chocolatey-Proxy" />
-Production Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="Choco-Hosted" />
-Raw Repository Name: <input class="form-control w-20 prod-repo-name-input" type="text" placeholder="Choco-Assets" />
+<DynamicCodeBlockInput name="ProdRepoName" defaultValue="Fabrikam-Prod" label="Production Repository Name" />
+<DynamicCodeBlockInput name="ProxyRepoName" defaultValue="Fabrikam-Proxy" label="Proxy Repository Name" />
+<DynamicCodeBlockInput name="RawRepoName" defaultValue="Fabrikam-Assets" label="Raw Repository Name" />
 
 #### Nexus Install Script
 
-```powershell
-
+<DynamicCodeBlock language="powershell">
+{`
 $repositoryArgs = @{
     RepositoryProduct = 'Nexus'
-    ProxyRepository = 'ChocolateyProxy' # Please replace with your desired repository name
-    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
-    RawRepository = 'ChocolateyAssets' # Please replace with your desired repository name
+    ProxyRepository = 'ProxyRepoName'
+    ProdRepository = 'ProdRepoName'
+    RawRepository = 'RawRepoName'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
 $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallRepository.ps1')
 & ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
+`}
+</DynamicCodeBlock>
 
 ## Validating the Installation
 
 The following script will run a suite of Pester tests to validate your Sonatype Nexus installation was successful
 
-```powershell
-
+<DynamicCodeBlock language="powershell">
+{`
 $repositoryArgs = @{
     RepositoryProduct = 'Nexus'
-    ProxyRepository = 'ChocolateyProxy' # Please replace with your desired repository name
-    ProdRepository = 'ProdRepo' # Please replace with your desired repository name
-    RawRepository = 'ChocolateyAssets' # Please replace with your desired repository name
+    ProxyRepository = 'ProxyRepoName'
+    ProdRepository = 'ProdRepoName'
+    RawRepository = 'RawRepoName'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
 $RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateRepository.ps1')
 & ([Scriptblock]::Create($InstallScript)) @repositoryArgs
-```
+`}
+</DynamicCodeBlock>
 
 ## Next Steps
 
