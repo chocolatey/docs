@@ -77,14 +77,13 @@ The following script will run a suite of Pester tests to validate your Sonatype 
 <DynamicCodeBlock language="powershell">
 {`
 $repositoryArgs = @{
-    ProdRepository = 'ProdRepo'
-    TestRepository = 'TestRepo'
-    RawRepository = 'ChocolateyFiles'
+    ProdRepository = 'ProdRepoName'
+    TestRepository = 'TestRepoName'
+    RawRepository = 'RawRepoName'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
-$RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateNexusRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+./ValidateNexusRepository.ps1 @repositoryArgs
 `}
 </DynamicCodeBlock>
 

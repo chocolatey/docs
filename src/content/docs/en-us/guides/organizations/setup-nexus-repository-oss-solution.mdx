@@ -74,8 +74,7 @@ $repositoryArgs = @{
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
-$RepoValidationScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/ValidateRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+./ValidateNexusRepository.ps1 @repositoryArgs
 `}
 </DynamicCodeBlock>
 
