@@ -61,7 +61,7 @@ export const automationpipeline = [
         | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
         | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
         | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
-        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="86b9a364521fc04722" /> | Optional: Used to secure Jenkins with SSL. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: Used to secure Jenkins with SSL. |
 
         If providing a **Thumbprint**, you must install the certificate to the Machine-level TrustedPeople store before running the script.
 
@@ -69,18 +69,23 @@ export const automationpipeline = [
 
 <DynamicCodeBlock language="powershell">
 {`
-$repositoryArgs = @{
+$RepositoryArgs = @{
     ProductionRepositoryUrl = 'OrgGuideProductionRepositoryName'
     TestRepositoryUrl = 'OrgGuideTestRepositoryName'
     RepositoryUser = [PSCredential]::new(
         'OrgGuideRepoUserName',
         (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
     )
-    RepositoryApiKey = 'OrgGuideRepoApiKey'
+    RepositoryApiKey = (ConvertTo-SecureString 'OrgGuideRepoApiKey' -Force -AsPlainText)
+}
+
+$Thumbprint = 'OrgGuideCertificateThumbprint'
+if ($Thumbprint -ne 'Unchanged') {
+    $RepositoryArgs.Thumbprint = $Thumbprint
 }
 
 $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/OrgGuide-AutomationPlatform-Jenkins')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+& ([Scriptblock]::Create($InstallScript)) @RepositoryArgs
 `}
 </DynamicCodeBlock>
 
@@ -167,7 +172,12 @@ $repositoryArgs = @{
         'OrgGuideRepoUserName',
         (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
     )
-    RepositoryApiKey = 'OrgGuideRepoApiKey'
+    RepositoryApiKey = (ConvertTo-SecureString 'OrgGuideRepoApiKey' -Force -AsPlainText)
+}
+
+$Thumbprint = 'OrgGuideCertificateThumbprint'
+if ($Thumbprint -ne 'Unchanged') {
+    $RepositoryArgs.Thumbprint = $Thumbprint
 }
 
 $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/OrgGuide-AutomationPlatform-PowerShellUniversal')
@@ -237,5 +247,7 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
 
     </TabsPane>
 </TabsPaneContainer>
+
+#### Next Steps
 
 When you've finished setting up your automation, you should consider <Xref title="deploying Chocolatey to end users" value="organizational-deployment-guide" anchor="Exercise 6: Installing Chocolatey On Client Machines" />.
