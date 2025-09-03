@@ -7,6 +7,25 @@ description: Get up and running quickly with Chocolatey for Business
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+
+export const certificateTabs = [
+    { id: 'scenario-one', title: 'Custom SSL Certificate', isActive: true },
+    { id: 'scenario-two', title: 'Wildcard SSL Certificate' },
+    { id: 'scenario-three', title: 'Self-Signed Certificate' },
+];
+
+export const importantcallout = {
+    title: 'Important',
+    type: 'success'
+};
+
+export const disclaimercallout = {
+    title: 'Disclaimer',
+    type: 'warning'
+};
 
 Welcome to the Chocolatey for Business (C4B) Quick-Start Guide! This guide will walk you through the basics of configuring a C4B Server on your VM infrastructure of choice. This includes:
 
@@ -46,12 +65,7 @@ As illustrated in the diagram above, there are four main components to a Chocola
 
 ## Requirements
 
-export const callout1 = {
-    title: 'ATTENTION',
-    type: 'danger'
-};
-
-<Callout content={callout1}>
+<Callout content={importantcallout}>
     The server used for your Chocolatey For Business environment should be a **_fresh, dedicated machine_** that serves no other purpose in your organization. Installation of C4B on a server running mission critical enterprise applications is **NOT** recommended.
 </Callout>
 
@@ -78,13 +92,8 @@ Below are the minimum requirements for setting up your C4B server via this guide
 
 1. Copy your `chocolatey.license.xml` license file (from the email you received) onto your C4B Server.
 
-export const callout2 = {
-    title: 'DISCLAIMER',
-    type: 'warning'
-};
-
-<Callout content={callout2}>
-    This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence to review this code and ensure it meets your Organizational requirements.
+<Callout content={disclaimercallout}>
+    This guide utilizes code from a GitHub repository, namely: [choco-quickstart-scripts](https://github.com/chocolatey/choco-quickstart-scripts). Though we explain what each script does in drop-down boxes, please do your due diligence and review this code to ensure it meets your Organizational requirements.
 </Callout>
 
 export const callout3 = {
@@ -105,16 +114,7 @@ export const callout3 = {
 
 ### Step 1: Begin C4B Setup
 
-export const callout4 = {
-    title: 'IMPORTANT',
-    type: 'danger'
-};
-
-<Callout content={callout4}>
-    All commands must be run from an **elevated** Windows PowerShell window (and **not ISE**), by opening your PowerShell console with the `Run as Administrator` option.
-</Callout>
-
-1. Open a Windows PowerShell console with the `Run as Administrator` option, and paste and run the following code:
+1. Open an elevated Windows PowerShell console with the `Run as Administrator` option, and paste and run the following code:
 
     ```powershell
     Set-ExecutionPolicy Bypass -Scope Process -Force
@@ -122,119 +122,90 @@ export const callout4 = {
     Invoke-RestMethod https://ch0.co/qsg-go | Invoke-Expression
     ```
 
-#### Certificate Options
+2. Run `Initialize-C4bSetup.ps1` with your chosen certificate option:
 
-**Custom SSL Certificate** - If you have your own custom SSL certificate (purchased/acquired, or from your Domain CA), you can paste and run the following script with the `Thumbprint` value of your SSL certificate specified:
+    <Callout content={importantcallout}>
+        If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Trusted People` certificate store before running the following script, and ensure that the private key is exportable as the scripts need to create a Java keystore for Nexus and Jenkins.
+    </Callout>
 
-```powershell
-Set-Location "$env:SystemDrive\choco-setup\files"
-.\Initialize-C4bSetup.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>'
-```
+    <TabsTabContainer content={certificateTabs} />
+    <TabsPaneContainer>
+        <TabsPane content={certificateTabs[0]}>
+            If you have your own custom SSL certificate (purchased/acquired, or from your Domain CA), you can paste and run the following script with the `Thumbprint` value of your SSL certificate specified:
 
-**Wildcard SSL Certificate** - If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
+            ```powershell
+            Set-Location "$env:SystemDrive\choco-setup\files"
+            .\Initialize-C4bSetup.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>'
+            ```
+        </TabsPane>
+        <TabsPane content={certificateTabs[1]}>
+            If you have a wildcard certificate, you will also need to provide a DNS name you wish to use for that certificate:
 
-```powershell
-Set-Location "$env:SystemDrive\choco-setup\files"
-.\Initialize-C4bSetup.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>' -CertificateDnsName '<YOUR_DESIRED_FQDN_HERE>'
-```
+            ```powershell
+            Set-Location "$env:SystemDrive\choco-setup\files"
+            .\Initialize-C4bSetup.ps1 -Thumbprint '<YOUR_CUSTOM_SSL_CERT_THUMBPRINT_HERE>' -CertificateDnsName '<YOUR_DESIRED_FQDN_HERE>'
+            ```
 
-For example, with a wildcard certificate with a thumbprint of `deee9b2fabb24bdaae71d82286e08de1` you wish to use `chocolatey.foo.org`, the following would be required:
+            For example, with a wildcard certificate with a thumbprint of `deee9b2fabb24bdaae71d82286e08de1` you wish to use `chocolatey.foo.org`, the following would be required:
 
-```powershell
-Set-Location "$env:SystemDrive\choco-setup\files"
-.\Initialize-C4bSetup.ps1 -Thumbprint deee9b2fabb24bdaae71d82286e08de1 -CertificateDnsName chocolatey.foo.org
-```
+            ```powershell
+            Set-Location "$env:SystemDrive\choco-setup\files"
+            .\Initialize-C4bSetup.ps1 -Thumbprint deee9b2fabb24bdaae71d82286e08de1 -CertificateDnsName chocolatey.foo.org
+            ```
+        </TabsPane>
+        <TabsPane content={certificateTabs[2]}>
+            If you are running a bare-minimum proof of concept environment, you can generate a self-signed certificate and use that.
 
-<Callout type="warning">
-    If you are using your own SSL certificate, be sure to place this certificate in the `Local Machine > Trusted People` certificate store before running the above script, and ensure that the private key is exportable.
-</Callout>
+            ```powershell
+            Set-Location "$env:SystemDrive\choco-setup\files"
+            .\Initialize-C4bSetup.ps1
+            ```
+        </TabsPane>
+    </TabsPaneContainer>
 
-<Callout type="info">
-A Role and User credential will be configured to limit access to your Nexus repositories. As well, CCM Client and Service Salts are configured to further encrypt your connection between CCM and your endpoint clients. These additional settings are also incorporated into your `Register-C4bEndpoint.ps1` script for onboarding endpoints.
-</Callout>
+    > <details>
+    > <summary><strong>What does this script do? (click to expand)</strong></summary>
+    > <ul class="list-style-type-disc">
+    > <li>Installs Chocolatey client from https://community.chocolatey.org</li>
+    > <li>Prompts for your C4B license file location, with validation.</li>
+    > <li>Converts your C4B license into a Chocolatey package.</li>
+    > <li>Configures local "choco-setup" directories.</li>
+    > <li>Downloads setup files from "choco-quickstart-scripts" GitHub repo.</li>
+    > <li>Downloads Chocolatey packages required for setup.</li>
+    > <li>Installs and configures a repository solution, for hosting packages:</li>
+    > <ul>
+    > <li>Installs Sonatype Nexus Repository Manager OSS.</li>
+    > <li>Cleans up all demo repositories on Nexus.</li>
+    > <li>Creates a "ChocolateyInternal" NuGet repository.</li>
+    > <li>Creates a "ChocolateyTest" NuGet repository.</li>
+    > <li>Creates a "choco-install" raw repository.</li>
+    > <li>Sets up "ChocolateyInternal" on C4B Server as source, with an API key.</li>
+    > <li>Adds firewall rule for repository access.</li>
+    > <li>Installs MS Edge, as Internet Explorer cannot access the Sonatype Nexus site.</li>
+    > <li>Outputs data to a DPAPI secured CLIXML file to pass between scripts.</li>
+    > </ul>
+    > <li>Installs Chocolatey Central Management:</li>
+    > <ul>
+    > <li>Installs MS SQL Express.</li>
+    > <li>Creates "ChocolateyManagement" database, and adds appropriate `ChocoUser` permissions.</li>
+    > <li>Installs all 3 Chocolatey Central Management packages (database, service, web).</li>
+    > <li>Outputs data to a DPAPI secured CLIXML file to pass between scripts.</li>
+    > </ul>
+    > <li>Installs and configures an automation platform, for running tasks:</li>
+    > <ul>
+    > <li>Installs Jenkins.</li>
+    > <li>Updates Jenkins plugins.</li>
+    > <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation.</li>
+    > <li>Sets up pre-defined Jenkins jobs for the scripts above.</li>
+    > <li>Outputs data to a DPAPI secured CLIXML file to pass between scripts.</li>
+    > </ul>
+    > <li>Sets up Chocolatey Agent on this system.</li>
+    > <li>Writes a Readme.html file to the desktop with account information for C4B services.</li>
+    > <li>Auto-opens README, CCM, Nexus, and Jenkins in your web browser.</li>
+    > </ul>
+    > </details>
 
-**Self-Signed Certificate** - If you are running a bare-minimum proof of concept environment, you can generate a self-signed certificate and use that.
-
-```powershell
-Set-Location "$env:SystemDrive\choco-setup\files"
-.\Initialize-C4bSetup.ps1
-```
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Installs Chocolatey client from https://community.chocolatey.org</li>
-> <li>Prompts for your C4B license file location, with validation</li>
-> <li>Converts your C4B license into a Chocolatey package</li>
-> <li>Configures local "choco-setup" directories</li>
-> <li>Downloads setup files from "choco-quickstart-scripts" GitHub repo</li>
-> <li>Downloads Chocolatey packages required for setup</li>
-> </ul>
-> </details>
-
-#### Script: Nexus Setup
-
-As part of the C4B setup, we install and configure Sonatype Nexus Repository, which is used for hosting your Chocolatey packages internally:
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Installs Sonatype Nexus Repository Manager OSS instance</li>
-> <li>Cleans up all demo repositories on Nexus</li>
-> <li>Creates a "ChocolateyInternal" NuGet repository</li>
-> <li>Creates a "ChocolateyTest" NuGet repository</li>
-> <li>Creates a "choco-install" raw repository</li>
-> <li>Sets up "ChocolateyInternal" on C4B Server as source, with API key</li>
-> <li>Adds firewall rule for repository access</li>
-> <li>Installs MS Edge, as Internet Explorer cannot access the Sonatype Nexus site</li>
-> <li>Outputs data to a JSON file to pass between scripts</li>
-> </ul>
-> </details>
-
-#### Script: Chocolatey Central Management Setup
-
-As part of the C4B setup, we install and configure Chocolatey Central Management and associated prerequisites to manage your Chocolatey for Business nodes:
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Installs MS SQL Express and SQL Server Management Studio (SSMS)</li>
-> <li>Creates "ChocolateyManagement" database, and adds appropriate `ChocoUser` permissions</li>
-> <li>Installs all 3 Chocolatey Central Management packages (database, service, web), with correct parameters</li>
-> <li>Outputs data to a JSON file to pass between scripts</li>
-> </ul>
-> </details>
-
-#### Script: Jenkins Setup
-
-As part of the C4B setup, we install and configure Jenkins as a method for running Package Internalizer and other jobs:
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Installs Jenkins package</li>
-> <li>Updates Jenkins plugins</li>
-> <li>Configures pre-downloaded Jenkins scripts for Package Internalizer automation</li>
-> <li>Sets up pre-defined Jenkins jobs for the scripts above</li>
-> </ul>
-> </details>
-
-#### Script: Complete Setup
-
-As part of the C4B setup, we create a readme and install the Chocolatey Agent on the server:
-
-> <details>
-> <summary><strong>What does this script do? (click to expand)</strong></summary>
-> <ul class="list-style-type-disc">
-> <li>Sets up Chocolatey Agent on this system</li>
-> <li>Writes a Readme.html file to the Public Desktop with account information for C4B services</li>
-> <li>Auto-opens README, CCM, Nexus, and Jenkins in your web browser</li>
-> </ul>
-> </details>
-
-<Callout type="info">
-    A `Readme.html` file will now be generated on your desktop. This file contains login information for all 3 web portals (CCM, Nexus, and Jenkins). This `Readme.html`, along with all 3 web portals, will automatically be opened in your browser.
-</Callout>
+    Setup will take a few minutes to complete.
 
 ### Step 2: Setting up Endpoints
 
@@ -262,7 +233,7 @@ As part of the C4B setup, we create a readme and install the Chocolatey Agent on
     > </ul>
     > </details>
 
-#### Available parameters
+#### Available Parameters
 
 * `ClientCommunicationSalt`  
     The salt for communication from an agent to an instance of Central Management Service. Details available in the README file on server desktop.
