@@ -15,6 +15,14 @@ Listed below are some of the areas we consider important when writing. We have t
 
 To help with these goals, please refer to our guides on [writing documentation](https://design.chocolatey.org/content-and-marketing/writing-documentation) and the use of [language and grammar](https://design.chocolatey.org/content-and-marketing/language-and-grammar).
 
+## Images
+
+All images are located under the `docs/` folder in the [Chocolatey Image repository](https://github.com/chocolatey/img/) along with the following information:
+
+1. [How to add images to the image repository](https://github.com/chocolatey/img?tab=readme#adding-images-to-this-repository).
+1. [Where to find stock images](https://github.com/chocolatey/img?tab=readme#where-to-find-stock-images).
+1. [Using images in source code](https://github.com/chocolatey/img?tab=readme#using-images-in-source-code).
+
 ## Building the Site for Development
 
 There are multiple options to build the site:

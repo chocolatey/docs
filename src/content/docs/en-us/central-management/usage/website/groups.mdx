@@ -15,7 +15,7 @@ Currently, Groups are entirely self-contained, and cannot be directly mapped fro
 The **Groups** page can be accessed from the left-hand navigation menu by selecting the **Groups** menu item.
 If you do not see this menu entry, verify with your administrator whether your group has the `View Groups` role assigned.
 
-![Groups menu entry on the Chocolatey Central Management Dashboard](/images/ccm-playwright/dashboard/left-menu-groups.png)
+![Groups menu entry on the Chocolatey Central Management Dashboard](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-groups.png)
 
 ## The All Computers (Automatic Group)
 
@@ -25,7 +25,7 @@ If you do not see this menu entry, verify with your administrator whether your g
 
 All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted. It will have a **System managed** button next to the name in the table. Clicking this button will display a tooltip with more information.
 
-![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/images/ccm-playwright/groups/table-row-icon-automatic-group-lock.png)
+![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-icon-automatic-group-lock.png)
 
 ## Temporary Groups
 
@@ -42,15 +42,15 @@ A Temporary Group can also not be Edited, Deleted, or Duplicated manually by a u
 
 On the main Groups page, select the **Actions for Groups** button and selecting the **Create Group** menu option.
 
-![Create Group button on the Groups page](/images/ccm-playwright/groups/button-action-dropdown-menu-create-group.png)
+![Create Group button on the Groups page](https://img.chocolatey.org/docs/ccm-playwright/groups/button-action-dropdown-menu-create-group.png)
 
 Fill in a Name for the Group and (optionally) a Description in the appropriate fields in the **Create Group** page.
 
-![Create Group Details tab](/images/ccm-playwright/groups/create/tab-details.png)
+![Create Group Details tab](https://img.chocolatey.org/docs/ccm-playwright/groups/create/tab-details.png)
 
 Select preferred Groups or Computers by checking each checkbox in the table. You can also select the top left checkbox in the table head to immediately add all Groups and Computers.
 
-![Select Computer(s) or existing Group(s) tab](/images/ccm-playwright/groups/create/tab-members.png)
+![Select Computer(s) or existing Group(s) tab](https://img.chocolatey.org/docs/ccm-playwright/groups/create/tab-members.png)
 
 Click **Save** to create the new Group.
 
@@ -64,7 +64,7 @@ On the main Groups page, find the Group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description.
 Select the **Actions** button on the left-hand side of the Group, and then select **Edit** to navigate to the **Group Edit** page.
 
-![Edit menu entry in Group actions flyout menu](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-edit.png)
+![Edit menu entry in Group actions flyout menu](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-button-action-dropdown-menu-edit.png)
 
 From the **Edit Group** page, you can modify the Group name and description, and modify members by adding or removing Groups and/or Computers.
 
@@ -97,11 +97,11 @@ On the main Groups page, find the group you want to view.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description.
 Select the **Actions** button on the left-hand side of the group, and select **Details**.
 
-![Details menu entry in Group actions flyout menu](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-details.png)
+![Details menu entry in Group actions flyout menu](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-button-action-dropdown-menu-details.png)
 
 On the Group Details page, you'll find a searchable list of all Computers and Groups that are in the Group, as well as a more detailed view of the Group information.
 
-![Group Details screen showing the Computers and Groups that are currently in the Group](/images/ccm-playwright/groups/details/screen.png)
+![Group Details screen showing the Computers and Groups that are currently in the Group](https://img.chocolatey.org/docs/ccm-playwright/groups/details/screen.png)
 
 ## Creating a Deployment Plan from a Group
 
@@ -109,19 +109,19 @@ Creating a Deployment Plan for a Group can be done from two pages:
 
 1. In the leftmost column of the Groups table you will find an **Actions** button which will display a **Create Deployment Plan** option.
 
-    ![Finding the Create Deployment Plan menu entry for a specific Group on the Groups page](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-create-deployment-plan.png)
+    ![Finding the Create Deployment Plan menu entry for a specific Group on the Groups page](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-button-action-dropdown-menu-create-deployment-plan.png)
 
 1. From the Group Details page, click the **Actions for Group** button and select the **Create Deployment Plan** option.
 
-    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/images/ccm-playwright/groups/details/button-action-dropdown-menu-create-deployment-plan.png)
+    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](https://img.chocolatey.org/docs/ccm-playwright/groups/details/button-action-dropdown-menu-create-deployment-plan.png)
 
 Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
 
-![Automatically created Deployment Plan showing the Deployment Step modal script command area](/images/ccm-playwright/deployment-plans/edit/groups-modal-new-deployment-plan.png)
+![Automatically created Deployment Plan showing the Deployment Step modal script command area](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/groups-modal-new-deployment-plan.png)
 
 The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red or yellow warning button will be shown on the Deployment Step, that when clicking will show a message.
 
-![Warning on Deployment Step with ineligible deployment message](/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
+![Warning on Deployment Step with ineligible deployment message](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
 
 After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the <Xref title="Deployment Plans documentation" value="ccm-deployments" />.
 
@@ -131,7 +131,7 @@ The Create / Edit Group pages display Groups or Computers that are ineligible fo
 **All** Groups and Computers in a given Group must have their eligibility clear in order for that Group to be used as part of a Deployment Step.
 If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected Computers has been resolved.
 
-![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
+![Group eligibility legend](https://img.chocolatey.org/docs/ccm-playwright/groups/create/warning-legend.png)
 
 ## FAQ
 
@@ -139,7 +139,7 @@ If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot 
 
 If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deployments (Configuration)".
 
-![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
+![Group eligibility legend](https://img.chocolatey.org/docs/ccm-playwright/groups/create/warning-legend.png)
 
 As you can see from the text, it is meant to help you figure out the issue:
 
