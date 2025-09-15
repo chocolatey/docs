@@ -55,7 +55,7 @@ We'll use the following for our template metadata. Execute the following in an *
     <version>[[PackageVersion]]</version>
     <owners>SweetTooth</owners>
     <title>template-tutorial (Install)</title>
-    <authors>Chocolatey]</authors>
+    <authors>Chocolatey</authors>
     <tags>template</tags>
     <summary>Tutorial package from template</summary>
     <description>This was built from a template with [[Country]] passed to it.</description>
@@ -90,7 +90,7 @@ choco pack .\template-tutorial\template-tutorial.nuspec
 We can validate that our package used the template correctly by installing it. Run the following in an **elevated** PowerShell window.
 
 ```powershell
-choco install template-tutorial -y
+choco install template-tutorial --source="'.'" -y
 ```
 
 #### Uninstall Your Templated Package
