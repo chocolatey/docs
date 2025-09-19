@@ -1,16 +1,15 @@
 {
     "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
-        "baseUrl": ".",
         "paths": {
-            "@choco-astro/components/*": ["node_modules/choco-astro/src/components/*"],
-            "@choco-playwright/*": ["playwright/global/*"],
-            "@content/*": ["src/content/*"],
-            "@components/*": ["src/components/*"],
-            "@layouts/*": ["src/layouts/*"],
+            "@choco-astro/components/*": ["./node_modules/@chocolatey-software/astro/src/components/*"],
+            "@choco-playwright/*": ["./playwright/global/*"],
+            "@content/*": ["./src/content/*"],
+            "@components/*": ["./src/components/*"],
+            "@layouts/*": ["./src/layouts/*"],
             "@root/*": ["./*"],
-            "@styles/*": ["src/styles/*"],
-            "@scripts/*": ["src/scripts/*"]
+            "@styles/*": ["./src/styles/*"],
+            "@scripts/*": ["./src/scripts/*"]
         }
     }
 }

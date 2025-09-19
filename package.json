@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.10.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chocolatey/docs.git"
@@ -17,18 +17,25 @@
     "astro": "npx astro",
     "browsers": "npx playwright install --with-deps",
     "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro check && npx astro build",
+    "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts docs",
+    "build-purge-css": "npx tsx node_modules/@chocolatey-software/build-tools/build/purge-css.ts docs",
+    "build-copy-playwright": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-playwright.ts docs",
     "dependencies": "yarn install --immutable",
     "dev": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro dev",
     "playwright": "npx playwright test",
-    "playwright-copy": "node node_modules/choco-playwright/build/copy-playwright.js",
     "preview": "npx astro preview",
     "start": "yarn dev",
     "telemetry": "npx astro telemetry disable",
-    "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs && yarn playwright-copy"
+    "choco-theme": "yarn build-copy-theme && yarn build-copy-playwright && yarn build-purge-css",
+    "link-packages": "npx tsx node_modules/@chocolatey-software/build-tools/build/link.ts"
+  },
+  "devDependencies": {
+    "@chocolatey-software/assets": "2.0.0",
+    "@chocolatey-software/astro": "2.0.0",
+    "@chocolatey-software/build-tools": "2.0.0",
+    "@chocolatey-software/playwright": "2.0.0"
   },
   "dependencies": {
-    "choco-astro": "0.3.2",
-    "choco-playwright": "0.1.0",
-    "choco-theme": "1.3.0"
+    "@chocolatey-software/docs": "2.0.0"
   }
 }
