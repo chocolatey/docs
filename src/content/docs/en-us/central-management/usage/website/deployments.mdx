@@ -26,48 +26,48 @@ You will also need to have at least one Group of computers already defined.
 
 1. From the Chocolatey Central Management dashboard, select **Deployment Plans** from the left sidebar and select the **View Deployment Plans** option.
 
-    ![Chocolatey Central Management dashboard, arrow pointing to the View Deployment Plans menu option in the left sidebar](/images/ccm-playwright/dashboard/left-menu-view-deployment-plans.png)
+    ![Chocolatey Central Management dashboard, arrow pointing to the View Deployment Plans menu option in the left sidebar](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-view-deployment-plans.png)
 
 1. Select the **Actions for Deployment Plans** button and select the **Create Deployment Plan** menu option at the top of the page.
 
-    ![Chocolatey Central Management Deployment Plans page, arrow pointing to Create Deployment Plan button](/images/ccm-playwright/deployment-plans/button-action-dropdown-menu-create-deployment-plan.png)
+    ![Chocolatey Central Management Deployment Plans page, arrow pointing to Create Deployment Plan button](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/button-action-dropdown-menu-create-deployment-plan.png)
 
 1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment Plan execution timeout in seconds to be used by all Deployment Steps.
 
-    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to the Deployment Plan execution timeout in seconds setting](/images/ccm-playwright/deployment-plans/edit/input-execution-timeout-in-seconds.png)
+    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to the Deployment Plan execution timeout in seconds setting](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/input-execution-timeout-in-seconds.png)
 
     * The Deployment Plan execution timeout in seconds will be used on all steps created **after it has been modified**. A Deployment Step can override the Deployment Plan execution timeout in seconds by modifying the Deployment Step execution timeout in seconds in the Deployment Step modal located in the advanced filters dropdown.
 
-        ![Chocolatey Central Management Deployment Step modal, arrow pointing to execution timeout in seconds](/images/ccm-playwright/deployment-plans/edit/modal-step-input-execution-timeout-in-seconds.png)
+        ![Chocolatey Central Management Deployment Step modal, arrow pointing to execution timeout in seconds](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-input-execution-timeout-in-seconds.png)
 
 1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the **Schedule** tab.
 
-    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to Schedule tab](/images/ccm-playwright/deployment-plans/edit/tab-schedule.png)
+    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to Schedule tab](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/tab-schedule.png)
 
     * Click the calendar button to pick the Start Date Time from a calendar UI. If you'd like to define an optional maintenance window for the Deployment Plan Start Date Time, then you can also set a Last Start Date Time.
 
-        ![Chocolatey Central Management Deployment Plan schedule picker](/images/ccm-playwright/deployment-plans/edit/calendar-start-date-time.png)
+        ![Chocolatey Central Management Deployment Plan schedule picker](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/calendar-start-date-time.png)
 
     * (Optional) If you'd like a Deployment Plan to happen again, on a recurring basis, select how often you'd like the Deployment Plan to recur. Check the [recurring Deployment Plans section for more information](#recurring-deployments)
 
-        ![Chocolatey Central Management Deployment Plan Repeat Period](/images/ccm-playwright/deployment-plans/edit/select-repeat-period.png)
+        ![Chocolatey Central Management Deployment Plan Repeat Period](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/select-repeat-period.png)
 
 1. Select the **Steps** tab and click the **Add Deployment Step** button to add your first Deployment Step.
 
-    ![Chocolatey Central Management Deployment Plan add Deployment Step button](/images/ccm-playwright/deployment-plans/edit/button-add-deployment-step.png)
+    ![Chocolatey Central Management Deployment Plan add Deployment Step button](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/button-add-deployment-step.png)
 
 1. (Optional) In the **Create New Deployment Step** modal, enter a custom name for the Deployment Step.
 
-    ![Chocolatey Central Management Deployment Plan new step modal](/images/ccm-playwright/deployment-plans/edit/modal-step.png)
+    ![Chocolatey Central Management Deployment Plan new step modal](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step.png)
 
 1. Add the Deployment Step action:
    * For _Basic_ Deployment Steps, select a `Script command` from the list, a `Package name` to install, and optionally a specific package version to install or whether to allow Chocolatey to install the latest prerelease package version.  **NOTE:** It is not possible to use a space character within the `Package name` or `Package Version` textboxes, and the `Package Version` textbox must contain at least one digit.
 
-        ![Chocolatey Central Management Deployment Plan basic step action](/images/ccm-playwright/deployment-plans/edit/modal-step-basic-command.png)
+        ![Chocolatey Central Management Deployment Plan basic step action](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-basic-command.png)
 
     * For _Advanced_ Deployment Steps (requires the _Create Privileged Deployment_ user role), click the **Advanced** button and then enter one or more PowerShell script commands.
 
-        ![Chocolatey Central Management Deployment Plan advanced step action](/images/ccm-playwright/deployment-plans/edit/modal-step-advanced-command.png)
+        ![Chocolatey Central Management Deployment Plan advanced step action](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-advanced-command.png)
 
     * You can use <Xref title="Sensitive Variables" value="ccm-administration-sensitive-variables" anchor="adding-sensitive-variables-to-scripts" /> in an Advanced script in Chocolatey Central Management version 0.7.0 and later.
    <SensitiveVariablesNote />
@@ -84,21 +84,21 @@ You will also need to have at least one Group of computers already defined.
       The overall Deployment Plan will be marked as Failed, and subsequent Deployment Steps will be Cancelled.
 1. Select the **Select Target Groups** tab.
 
-    ![Chocolatey Central Management Deployment Step Select Target Group tab](/images/ccm-playwright/deployment-plans/edit/modal-step-tab-select-target-groups.png)
+    ![Chocolatey Central Management Deployment Step Select Target Group tab](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-tab-select-target-groups.png)
 
 1. Select preferred Groups by checking each checkbox in the table. You can also select the top left checkbox in the table head to immediately add all Groups.
 
-    ![Chocolatey Central Management Deployment Step Select Target Groups modal](/images/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
+    ![Chocolatey Central Management Deployment Step Select Target Groups modal](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
 
 1. Click the **Save** button to save the Deployment Step.
 
-    ![Chocolatey Central Management Deployment Step Save button](/images/ccm-playwright/deployment-plans/edit/modal-step-button-save.png)
+    ![Chocolatey Central Management Deployment Step Save button](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/modal-step-button-save.png)
 
 1. Continue to add steps until your Deployment Plan is complete.
 
 1. (Optional, requires Chocolatey Central Management v0.12.0) If you need to create multiple similar Deployment Steps, you can use the Duplicate option from an individual Deployment Step's action button to make a copy of it.
 
-    ![Chocolatey Central Management Deployment Step Duplicate menu option](/images/ccm-playwright/deployment-plans/edit/table-row-button-action-dropdown-menu-duplicate.png)
+    ![Chocolatey Central Management Deployment Step Duplicate menu option](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/table-row-button-action-dropdown-menu-duplicate.png)
 
 1. Select **Save** to save the changes to the Deployment Plan.
 
@@ -120,7 +120,7 @@ As mentioned above, when creating a Deployment Plan, it is possible to select a 
 
 Once a Deployment Plan has been assigned a Repeat Period, and it is moved to the [Ready](#ready) state, it will be shown with a slightly different button:
 
-![Chocolatey Central Management Deployment Plan marked as recurring](/images/ccm-playwright/deployment-plans/table-row-icon-recurring-deployment-plan.png)
+![Chocolatey Central Management Deployment Plan marked as recurring](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/table-row-icon-recurring-deployment-plan.png)
 
 Let's take as example a Deployment Plan in the [Ready](#ready) state that is scheduled to start on `23rd August 2022 at 07:11 UTC`, with a Repeat Period of `Weekly` set.
 Once this instance of the Deployment Plan moves to the [Active](#active) state, another instance of the Deployment Plan will be created.
@@ -279,13 +279,13 @@ This action will export the details of the Deployment Plan to a `.json` file. Th
 As of Chocolatey Central Management v0.11.0, all Deployment Plans will issue an email notification when they finish to the user that created the Deployment Plan.
 The email notification will indicate the status of the Deployment Plan, as well as linking back to the Deployment Plan details page for further information.
 
-![Example email from Chocolatey Central Management for a successfully completed Deployment Plan, showing the status, start time, and finish time, as well as the Deployment Plan name and a link to the Deployment Plan details.](/images/ccm-manual/deployment-plans/email-deployment-success.png)
+![Example email from Chocolatey Central Management for a successfully completed Deployment Plan, showing the status, start time, and finish time, as well as the Deployment Plan name and a link to the Deployment Plan details.](https://img.chocolatey.org/docs/ccm-manual/deployment-plans/email-deployment-success.png)
 
 ### Notification for Scheduled Deployment Plans Unable to Start
 
 As of Chocolatey Central Management v0.10.0, a scheduled Deployment Plan that fails to start will issue a push notification as well as an email notification to the user who initially created the Deployment Plan. The push notification can be viewed in Chocolatey Central Management by clicking the "bell" icon in the top navigation.
 
-![Example email from Chocolatey Central Management for a scheduled Deployment Plan that failed to start, showing the Deployment Plan name and scheduled start time](/images/ccm-manual/deployment-plans/email-failed-scheduled-start.png)
+![Example email from Chocolatey Central Management for a scheduled Deployment Plan that failed to start, showing the Deployment Plan name and scheduled start time](https://img.chocolatey.org/docs/ccm-manual/deployment-plans/email-failed-scheduled-start.png)
 
 ## FAQ
 
@@ -305,7 +305,7 @@ Chocolatey Central Management has specific compatibility requirements with quite
 
 If you are on the Groups screen, you may notice that some machines show up highlighted with a color. The legend below it mentions "Not Opted In For Deployments (Configuration)".
 
-![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
+![Group eligibility legend](https://img.chocolatey.org/docs/ccm-playwright/groups/create/warning-legend.png)
 
 As you can see from the text, it is meant to help you figure out the issue:
 

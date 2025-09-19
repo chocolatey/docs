@@ -23,11 +23,11 @@ First we will add the IP address:
 1. In the [Azure Portal](https://portal.azure.com), navigate to the Resource Group containing your deployed Chocolatey for Business Azure Environment.
 1. Select the VM's network interface (which should be called `choco-vm-nic` by default), and open the `IP configurations` panel.
 
-    ![Open IP Configurations](/images/c4b-azure/Rdp-IpConfiguration.png)
+    ![Open IP Configurations](https://img.chocolatey.org/docs/c4b/Rdp-IpConfiguration.png)
 
 1. Select the IP configuration (`ipconfig1` by default), and under `Public IP address settings` click `Associate`.
 
-    ![Create IP Address](/images/c4b-azure/Rdp-IpCreation.png)
+    ![Create IP Address](https://img.chocolatey.org/docs/c4b/Rdp-IpCreation.png)
 
 1. Click `Create new`, and create a basic IP address. For future examples, I have named this IP `choco-vm-ip`.
 
@@ -45,7 +45,7 @@ Now we will add a rule to the NSG. If you do not already know your current publi
 1. Navigate back to your Resource Group in the Azure Portal
 1. Select the `Network security group`, and open the `Inbound security rules` panel.
 
-    ![Create IP Address](/images/c4b-azure/Rdp-NsgRuleAddition.png)
+    ![Create IP Address](https://img.chocolatey.org/docs/c4b/Rdp-NsgRuleAddition.png)
 
 1. Click `Add` and fill in at least the following details:
 
