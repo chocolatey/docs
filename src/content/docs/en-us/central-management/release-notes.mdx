@@ -6,8 +6,8 @@ description: Release Notes for Chocolatey Central Management
 ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-central-management-og.png
 twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-central-management-twitter.png
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 # Chocolatey Release Notes - Chocolatey Central Management
@@ -31,6 +31,63 @@ This covers the release notes for the Chocolatey Central Management (`chocolatey
 ## Known Issues
 
 - Please see our [GitHub repository issues](https://github.com/chocolatey/chocolatey-licensed-issues/labels/CentralManagement).
+
+## 0.14.0 (April 29, 2025) \{#v0.14.0}
+
+Read our [blog post](https://blog.chocolatey.org/2025/04/announcing-ccm-release-0.14.0/) about this release.
+
+### Breaking Change
+
+- CCM API - Update the Groups/CreateOrEdit API endpoint to return the group ID of the created or modified group.
+
+### Bug Fixes
+
+- Fix - Correct typo in validation modal alert when moving Deployment Plan to ready.
+- Fix - "Back Home" link on Error page leads to a 404.
+- Fix - Broken links are present when logged in as chocoadmin.
+- Fix - Recurring Deployment Plans with expired Scheduled Start Date create Deployment Plans in the past continuously.
+- Fix - Notification Settings Modal  improperly shows "Notification Types" section when logged in as a Basic User.
+- Fix - Chocolatey Central Management - LDAP password shown in plaintext in ccm-website.log when password is changed.
+- Fix - Session Timeout Control setting does not work.
+
+### Features
+
+- Add breadcrumb navigation to every page.
+- Add a "skip link" that is only visible to screen readers/keyboard users that navigates to the main content of the page.
+- Give warning when links open in a new window.
+- Provide a way to pause auto refreshing.
+
+### Improvements
+
+- Remove modal on Deployment Edit page when hovering over left sidebar.
+- Update wording for invalid and exceeded licenses notifications.
+- Rework Deployment Plan Edit page into a tabbed interface.
+- Deployment Steps should be reorderable by keyboard commands.
+- Ensure all colors are accessible in dark and light modes.
+- Allow Toast notifications to stack.
+- Improve accessibility of Group and Deployment Step Target Group creation.
+- Remove pie charts due to poor accessibility.
+- Ensure every page has a unique title and description.
+- General accessibility enhancements.
+- Ensure all icons have correct aria labels and/or visually hidden text.
+- Ensure heading order is sequential.
+- Ensure semantically correct html structure.
+- Expand items in left sidebar and create nested options.
+- Move Create or Edit Group Modal to its own page.
+- Chocolatey Central Management web should include version information in the log.
+- Increase the size of clickable areas.
+- Improve accessibility on lockdown of Passphrase.
+- Replace icons in tables with buttons and text.
+- Improve accessibility of Session Timeout Control workflow.
+- Update verbiage for consistency.
+
+## 0.13.2 (February 10, 2025) \{#v0.13.2}
+
+### Bug Fixes
+
+- Fix - When a Deployment Plan is deleted as part of retention policy, not all objects are removed from the database - see [#404](https://github.com/chocolatey/chocolatey-licensed-issues/issues/404).
+- Fix - SQL Timeout errors are reported in the Chocolatey Central Management Website, causing the site to need to be restarted.
+- Fix - System.NullReferenceException error when trying to edit Software.
 
 ## 0.13.1 (October 16, 2024) \{#v0.13.1}
 
@@ -532,15 +589,15 @@ Initial preview release
 ### Bug Fixes
 
 - Fix - Packaging - Before upgrading Web Package ensure that dotnet process isn't running
-- Fix - Web Site - Ensure that minified versions of all assets are used
-- Fix - Web Site - Ensure consistent Date/Time Formatting used everywhere
-- Fix - Web Site - Corrected duplicate display of search input box on some screens
-- Fix - Web Site - Error when attempting to sort by any column in table on Computer Details screen
-- Fix - Web Site - Error when attempting to sort by Name or Package Title column in table on Software screen
-- Fix - Web Site - Tab does not sort by outdated first on Software screen
-- Fix - Web Site - Timezone modification doesn't provide useful information to user
-- Fix - Web Site - Only show Software that is installed on at least one machine
-- Fix - Web Site - Excel Export generates errors when DateTime values are included
+- Fix - Website - Ensure that minified versions of all assets are used
+- Fix - Website - Ensure consistent Date/Time Formatting used everywhere
+- Fix - Website - Corrected duplicate display of search input box on some screens
+- Fix - Website - Error when attempting to sort by any column in table on Computer Details screen
+- Fix - Website - Error when attempting to sort by Name or Package Title column in table on Software screen
+- Fix - Website - Tab does not sort by outdated first on Software screen
+- Fix - Website - Timezone modification doesn't provide useful information to user
+- Fix - Website - Only show Software that is installed on at least one machine
+- Fix - Website - Excel Export generates errors when DateTime values are included
 - Fix - Versioning - Ensure correct version number is stamped on all generated assemblies
 - Fix - Service - Correct usage of default port number, which should be 24020
 - Fix - Service - New-SelfSignedCertificate usage doesn't work on earlier PowerShell versions
@@ -567,7 +624,7 @@ Initial preview release
 
 - [Security] Installation - Provide encryption for all persisted configuration data
 - [Security] Installation - Sign all PowerShell Scripts and assemblies shipped as part of release
-- [Security] Web Site - Provide full RBAC to site and API
+- [Security] Website - Provide full RBAC to site and API
 - Audit - Provide ability to list all computers that are currently in use across environment
 - Audit - Provide ability to list all software that is currently installed across environment
 - Reports - Ability to view and generate report (Excel/PDF) for all currently installed software

@@ -4,8 +4,8 @@ xref: ccm-administration-settings-dashboard
 title: Dashboard
 description: Information about setting Dashboard settings within the Administration Settings screen
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 <Callout type="info">
@@ -16,13 +16,13 @@ On the <Xref title="Chocolatey Central Management Dashboard" value="ccm-dashboar
 
 1. Open the Chocolatey Central Management Site in the browser.
 1. Login with the `ccmadmin` user.
-1. In the left-hand menu click on `Administration` and then `Settings`.
-1. Click on the `Dashboard` tab in the `Settings` screen.
+1. In the left sidebar menu click on **Administration** and then **Settings**.
+1. Click on the **Dashboard** tab in the **Settings** screen.
 
     ![Chocolatey Central Management Dashboard Settings](/images/ccm-playwright/administration/settings/tab-dashboard.png)
 
 1. Adjust the `Amount of time, in Days, before being notified of Computers not reporting in`.
-1. Click the `Save All` button to save changes.
+1. Click the **Save all** button to save changes.
 
 <Callout type="info">
     When the <Xref title="Stale Computer Retention Policy" value="ccm-administration-settings-retention" anchor="stale-computer-retention" /> is enabled, it is not possible to set the `Amount of time, in Days, before being notified of Computers not reporting in` for the Dashboard to a number that is lower than what is currently configured for the `Amount of time, in Days, to keep stale Computers before deleting` setting, and vice versa.  If this is attempted, a validation warning will be shown.

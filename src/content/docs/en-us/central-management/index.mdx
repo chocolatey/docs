@@ -4,8 +4,8 @@ xref: central-management
 title: Chocolatey Central Management (CCM)
 description: What is CCM?
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments. CCM is available with Chocolatey for Business only.
@@ -46,10 +46,7 @@ Chocolatey Central Management has specific needs that are mostly handled by pack
 
 |Chocolatey Central Management|Chocolatey Agent|Chocolatey Licensed Extension|Chocolatey|
 |-----------------------------|----------------|-----------------------------|----------|
-|0.13.1                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
-|0.13.0                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
-|0.12.1                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
-|0.12.0                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
+|0.14.0                       |1.1.0+          | 4.2.0+                      | 1.1.0+   |
 
 ## Getting Chocolatey Central Management
 
@@ -91,7 +88,14 @@ If you are not a customer yet, you can [reach out for a trial](https://chocolate
 * <Xref title="Chocolatey Central Management Deployments" value="ccm-deployments" />
 * <Xref title="Chocolatey Central Management Reports" value="ccm-reports" />
 
-![Chocolatey Central Management Overview](/images/ccm-manual/screens-mockup.jpg)
+<div class="row mb-3">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+        <img src="/images/ccm-playwright/dashboard/light-mode.png" alt="Chocolatey Central Management Dashboard in light mode" />
+    </div>
+    <div class="col-sm-6">
+        <img src="/images/ccm-playwright/dashboard/dark-mode.png" alt="Chocolatey Central Management Dashboard in dark mode" />
+    </div>
+</div>
 
 ### Chocolatey Central Management API
 

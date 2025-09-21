@@ -4,8 +4,8 @@ xref: ccm-general
 title: General
 description: Top level, general, information about Chocolatey Central Management Website functionality
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Dark/Light Mode
@@ -53,3 +53,7 @@ For a normal license, this will start showing when there are 90 days remaining o
 For a trial license, this will start showing when there are 7 days remaining on your license.
 
 It is possible to dismiss this warning using the "x" on the far right of the banner, however, the banner will re-appear again in 2 days' time to remind you.  This will repeat until the license is renewed, or until the license expires.
+
+## Accessibility for Date Time Pickers
+
+Chocolatey Central Management uses the [Tempus Dominus](https://getdatepicker.com) component for date and time selection. For detailed keyboard navigation instructions, refer to the [Tempus Dominus documentation](https://getdatepicker.com/6/options/keyboard-navigation.html). 

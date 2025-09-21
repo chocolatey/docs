@@ -4,8 +4,8 @@ xref: ccm-groups
 title: Groups
 description: Information on groups within Chocolatey Central Management
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Groups are the basis on which a given <Xref title="Deployment Plan" value="ccm-deployments" /> operates.
@@ -23,7 +23,7 @@ If you do not see this menu entry, verify with your administrator whether your g
     This feature is available in Chocolatey Central Management starting with version 0.11.0.
 </Callout>
 
-All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted. It will have a blue lock icon next to the name in the table. Hovering over this lock icon will display a tooltip with more information.
+All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted. It will have a **System managed** button next to the name in the table. Clicking this button will display a tooltip with more information.
 
 ![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](/images/ccm-playwright/groups/table-row-icon-automatic-group-lock.png)
 
@@ -40,16 +40,16 @@ A Temporary Group can also not be Edited, Deleted, or Duplicated manually by a u
 
 ## Creating a Group
 
-On the main Groups page, select the **+ Create New Group** button.
+On the main Groups page, select the **Actions for Groups** button and selecting the **Create Group** menu option.
 
-![Create New Group button on the Groups page](/images/ccm-playwright/groups/button-create-new-group.png)
+![Create Group button on the Groups page](/images/ccm-playwright/groups/button-action-dropdown-menu-create-group.png)
 
-Fill in a Name for the Group and (optionally) a Description in the appropriate fields in the _Create New Group_ modal.
-Then, select the Computer(s) or existing Group(s) you would like to include in the new Group and click the **>** button in the _Available Groups/Computers_ column to add the selected items, or click the **>>** button to add all available Groups and Computers into the new Group.
+Fill in a Name for the Group and (optionally) a Description in the appropriate fields in the **Create Group** page.
 
-![New Group Modal](/images/ccm-playwright/groups/modal-create-new-group.png)
+![Create Group Details tab](/images/ccm-playwright/groups/create/tab-details.png)
 
 Click <i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> **Save**  to close the modal and create the new Group.
+
 
 ## Editing a Group
 
@@ -61,9 +61,10 @@ On the main Groups page, find the Group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> button.
 Select the <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** button on the left-hand side of the Group, and then select **Edit** to open the _Edit Group_ modal.
 
+
 ![Edit menu entry in Group actions flyout menu](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-edit.png)
 
-From the **Edit Group** modal, you can modify the Group name and description, and modify members by adding or removing Groups and/or Computers.
+From the **Edit Group** page, you can modify the Group name and description, and modify members by adding or removing Groups and/or Computers.
 
 ## Deleting a Group
 
@@ -74,6 +75,7 @@ From the **Edit Group** modal, you can modify the Group name and description, an
 On the main Groups page, find the Group you want to edit.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> button.
 Similar to the [Edit Group](#editing-a-group) action, select the <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** button on the left-hand side of the Group, and instead select **Delete**.
+
 You will be prompted to confirm the deletion.
 
 ## Duplicating a Group
@@ -85,14 +87,17 @@ You will be prompted to confirm the deletion.
 On the main Groups page, find the Group you want to duplicate.
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> button.
 Similar to the [Edit Group](#editing-a-group) action, select the <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** button on the left-hand side of the Group, and instead select **Duplicate**.
+
 If the Group being duplicated is a system managed Group, a confirmation message will be shown indicating that the duplicated Group will not be system managed.
 A success message will be shown that mentions that the Group was duplicated, and if you have permissions to Edit a Group a dialog to edit this duplicated Group will be shown.
 
 ## Viewing a Group's Details
 
 On the main Groups page, find the group you want to view.
+
 You can enter a search term in the text field to filter results by typing in part of their Name or Description and clicking the <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> button.
 Select the <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** button on the left-hand side of the group, and select **Details**.
+
 
 ![Details menu entry in Group actions flyout menu](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-details.png)
 
@@ -106,29 +111,30 @@ Creating a Deployment Plan for a Group can be done from two pages:
 
 1. In the leftmost column of the Groups table you will find an <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** menu which will display a **Create New Deployment Plan** option.
 
-    ![Finding the Create New Deployment Plan menu entry for a specific Group on the Groups page](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-create-new-deployment-plan.png)
+    ![Finding the Create Deployment Plan menu entry for a specific Group on the Groups page](/images/ccm-playwright/groups/table-row-button-action-dropdown-menu-create-deployment-plan.png)
 
 1. From the Group Details page, click the <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** button and select the **Create New Deployment Plan** option.
 
-    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/images/ccm-playwright/groups/details/button-action-dropdown-menu-create-new-deployment-plan.png)
+
+    ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](/images/ccm-playwright/groups/details/button-action-dropdown-menu-create-deployment-plan.png)
 
 Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
 
 ![Automatically created Deployment Plan showing the Deployment Step modal script command area](/images/ccm-playwright/deployment-plans/edit/groups-modal-new-deployment-plan.png)
 
-The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red warning icon will be shown on the Deployment Step, that when clicking will show a message.
+The Deployment Plan can be saved without adding a script command, however it will be ineligible for deployment. A red or yellow warning button will be shown on the Deployment Step, that when clicking will show a message.
 
-![Red popover warning on Deployment Step with ineligible deployment message](/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
+![Warning on Deployment Step with ineligible deployment message](/images/ccm-playwright/deployment-plans/edit/popover-ineligible-step.png)
 
 After adding a script command to the Deployment Step, the Deployment Plan can be deployed as outlined in the <Xref title="Deployment Plans documentation" value="ccm-deployments" />.
 
 ## Eligibility for Deployments
 
-The Create / Edit Group modals display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
+The Create / Edit Group pages display Groups or Computers that are ineligible for Deployment Steps in either red or orange, depending on the reason for their ineligibility.
 **All** Groups and Computers in a given Group must have their eligibility clear in order for that Group to be used as part of a Deployment Step.
 If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot be started until the eligibility status(es) of the affected Computers has been resolved.
 
-![Group eligibility legend](/images/ccm-playwright/groups/modal-warning-legend.png)
+![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
 
 ## FAQ
 
@@ -136,7 +142,7 @@ If a Deployment Step is targeting ineligible Groups, the Deployment Plan cannot 
 
 If you are on the Groups screen, you may notice that some machines show up highlighted with a coloring, and one of those colorings is an orange - the legend below it mentions "Not Opted In For Deployments (Configuration)".
 
-![Group eligibility legend](/images/ccm-playwright/groups/modal-warning-legend.png)
+![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
 
 As you can see from the text, it is meant to help you figure out the issue:
 
@@ -152,7 +158,7 @@ Once you upgrade to at least CCM v0.2.0, every machine will show that until they
 
 ### A Computer or Group is not showing as available for deployments, but I have plenty of available licenses
 
-Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of CCM prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
+Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of Chocolatey Central Management prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
 
 ## Related Topics
 

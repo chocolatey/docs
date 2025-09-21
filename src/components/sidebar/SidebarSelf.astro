@@ -95,10 +95,10 @@ const isActiveChild = (doc: ContentTree) => {
 
 {content.filter(doc => doc.data.showInSidebar === true).map(doc => (
     doc.children && doc.children.length > 0 ? (
-        <li class={`nav-item nav-item-blue ${isActiveChild(doc) ? 'active' : ''}`}>
-            <div class={`nav-link nav-link-collapse d-flex ${isActiveChild(doc) ? 'active' : ''} ${isActivePage(doc.slug, activeSlug) ? 'active-page' : ''}`}>
-                <button class={`btn btn-collapse rounded-0 border-0 ${listPaddingClass(doc.data.depth)} ${isActiveChild(doc) ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" aria-expanded={`${isActiveChild(doc) ? 'true' : 'false'}`} aria-controls={slugId(`id-${doc.slug}`)} aria-label="collapse or expand navigation" data-bs-target={slugId(`#id-${doc.slug}`)}></button>
-                <a href={doc.slug}>{doc.data.title}</a>
+        <li class={`nav-item nav-item-tertiary-bg ${isActiveChild(doc) ? 'active' : ''}`}>
+            <div class={`nav-link nav-link-collapse d-flex align-items-center ${isActiveChild(doc) ? 'active' : ''} ${isActivePage(doc.slug, activeSlug) ? 'active-page' : ''}`}>
+                <button class={`btn btn-collapse rounded-0 border-0 fw-normal ps-3 py-c75 min-w-auto ${listPaddingClass(doc.data.depth)} ${isActiveChild(doc) ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" aria-expanded={`${isActiveChild(doc) ? 'true' : 'false'}`} aria-controls={slugId(`id-${doc.slug}`)} aria-label="collapse or expand navigation" data-bs-target={slugId(`#id-${doc.slug}`)}></button>
+                <a class="fw-normal py-c75" href={doc.slug}>{doc.data.title}</a>
             </div>
             <div class={`collapse ${isActiveChild(doc) ? 'show' : ''}`} id={slugId(`id-${doc.slug}`)}>
                 <ul class="navbar-nav">

@@ -4,26 +4,26 @@ xref: ccm-administration-settings-retention
 title: Retention Policies
 description: Information about using retention settings within the Administration Settings screen
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey Central Management has a number of settings that allow you to adjust various retention periods. By default, only the Audit Retention policy is enabled.
 
 If you want to change these settings, follow these steps:
 
-1. Open the CCM Site in the browser.
+1. Open the Chocolatey Central Management Site in the browser.
 1. Login with the `ccmadmin` user.
-1. In the left-hand menu click on `Administration` and then `Settings`.
-1. Click on the `Retention Policies` tab
+1. In the left sidebar menu click on **Administration**and then **Settings**.
+1. Click on the **Retention Policies** tab.
 
 1. Modify the settings as required
-1. Click the `Save All` button at the bottom left of the page to save your settings.
+1. Click the **Save all** button at the bottom left of the page to save your settings.
 
 
 As noted in the User Interface, any modifications to this section of the settings will require the Web Application to be restarted.  This can be completed by doing the following:
 
-1. Get direct access to the machine that is hosting the CCM Web Application
+1. Get direct access to the machine that is hosting the Chocolatey Central Management Web Application
 1. Open an administrative PowerShell session
 1. Run the following commands:
     ```powershell
@@ -39,7 +39,7 @@ As noted in the User Interface, any modifications to this section of the setting
     **BREAKING CHANGE**
 
     This feature was added, as a breaking change, in version 0.6.0 of Chocolatey Central Management. Audit Retention is enabled by default, and will immediately start truncating the audit log table as soon as it is installed.
-    If you require keeping all audit logs, we would recommend that you first back up the CCM database before applying the new version.
+    If you require keeping all audit logs, we would recommend that you first back up the Chocolatey Central Management database before applying the new version.
 </Callout>
 
 In an attempt to control the size of the Chocolatey Central Management database, it is possible to control the retention policy for the audit logs table within the application.

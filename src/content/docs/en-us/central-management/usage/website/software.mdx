@@ -2,10 +2,10 @@
 order: 50
 xref: ccm-software
 title: Software
-description: Information on software within CCM
+description: Information on software within Chocolatey Central Management
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey Central Management gives you direct visibility into the software packages in use in your organization, making it easy to see which machines are out of date and may need packages updated.
@@ -43,7 +43,7 @@ From here, the Deployment Plan can be edited and deployed as outlined in the <Xr
 
 ## Upgrade All Software
 
-From the Software main page, click the **Create New Deployment Plan** button and select the **Upgrade Outdated Software** option.
+From the Software main page, click the **Create Deployment Plan** button and select the **Upgrade Outdated Software** option.
 
 ![Button to upgrade all outdated Software from the Software main page](/images/ccm-playwright/software/button-action-dropdown-menu-upgrade-outdated-software.png)
 
@@ -58,11 +58,12 @@ From here, the Deployment Plan can be edited and deployed as outlined in the <Xr
 ## Software Details
 
 In the leftmost column of the Software table you will find an <i class="fa-solid fa-gear" aria-hidden="true"></i> **Actions** menu which will display a **Details** option.
+
 Clicking this option will take you to the **Software Details** page.
 
 ![Finding the Details menu entry for a specific Software entry](/images/ccm-playwright/software/table-row-button-action-dropdown-menu-details.png)
 
-On the _Software Details_ page, you'll find a searchable list of all computers that currently have the package installed, as well as a more verbose view of the package information.
+On the **Software Details** page, you'll find a searchable list of all computers that currently have the package installed, as well as a more verbose view of the package information.
 
 ![Software Details page](/images/ccm-playwright/software/details/screen.png)
 

@@ -6,8 +6,8 @@ description: Release Notes for Chocolatey GUI
 ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-og.png
 twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-gui-twitter.png
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import ChocolateyComponentDependenciesLink from '@components/docs/ChocolateyComponentDependenciesLink.mdx';
 import MaintenanceAndSupportLink from '@components/docs/MaintenanceAndSupportLink.mdx';
@@ -77,13 +77,6 @@ This covers changes for the "chocolateygui" package, which is available as FOSS.
 ### Improvement
 
 - Ensure correct usage of ListCommand after upstream changes in Chocolatey CLI - see [#990](https://github.com/chocolatey/ChocolateyGUI/issues/990).
-
-
-## 1.1.3 (May 10, 2023) \{#may-10-2023}
-
-### Bug Fix
-
-- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive - see [#999](https://github.com/chocolatey/ChocolateyGUI/issues/999).
 
 
 ## 2.0.0-beta-20230426 (April 26, 2023)
@@ -160,12 +153,6 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Ensure correct usage of ListCommand after upstream changes in Chocolatey CLI - see [#990](https://github.com/chocolatey/ChocolateyGUI/issues/990).
 
 
-## 1.1.2 (March 8, 2023) \{#march-8-2023}
-
-### Improvements
-
-- Bump LiteDB dependency to 5.0.15 - see [#985](https://github.com/chocolatey/ChocolateyGUI/issues/985).
-
 ## 2.0.0-alpha-20230307 (March 7, 2023) \{#alpha-20230307-march-7-2023}
 
 <Callout type="warning">
@@ -210,6 +197,20 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 ### Breaking Change
 
 - Upgrade to target version 6.4.0 of NuGet.Client and version 2.0.0 of Chocolatey.Lib assemblies - see [#974](https://github.com/chocolatey/ChocolateyGUI/issues/974).
+
+
+## 1.1.3 (May 10, 2023) \{#may-10-2023}
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive - see [#999](https://github.com/chocolatey/ChocolateyGUI/issues/999).
+
+
+## 1.1.2 (March 8, 2023) \{#march-8-2023}
+
+### Improvements
+
+- Bump LiteDB dependency to 5.0.15 - see [#985](https://github.com/chocolatey/ChocolateyGUI/issues/985).
 
 
 ## [1.1.1](https://github.com/chocolatey/ChocolateyGUI/milestone/30?closed=1) (January 26, 2023) \{#january-26-2023}

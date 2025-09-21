@@ -4,8 +4,8 @@ xref: prevent-preload
 title: Prevent Preload
 description: Allows control over whether packages are immediately fetched when navigating to a remote source view
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 By default, when navigating to a remote source (for example the Chocolatey Community Repository), Chocolatey GUI will fetch and display the first page of packages that can be installed.  Depending on your use of Chocolatey GUI, you may want to immediately search for packages, rather than install from the first page of packages.  If you enable the Prevent Preload feature, than the first pages of packages will not be fetched, and instead, you will be able to immediately search for a package that you want to install.

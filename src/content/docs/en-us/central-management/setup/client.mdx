@@ -4,8 +4,8 @@ xref: ccm-client
 title: Client
 description: How to setup client machines to report into CCM
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 This will guide us through getting an agent installed and configured to check into Chocolatey Central Management and to be set up for handling deployment tasks.
@@ -39,7 +39,7 @@ Please see config settings and features below for a full list.
     If you decide you want to open this up for over the internet communication, you should also set `centralManagementClientCommunicationSaltAdditivePassword` and `centralManagementServiceCommunicationSaltAdditivePassword` - see [Configuration](#config-settings) below.
 </Callout>
 
-#### Config Settings
+#### Configuration Settings
 
 * `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like https://servicemachineFQDN:24020/ChocolateyManagementService. See <Xref title="FQDN usage" value="ccm" anchor="fqdn-usage" />. Defaults to '' (empty). Available in business editions only.
 * `centralManagementReportPackagesTimerIntervalInSeconds` = **'1800'** - Amount of time, in seconds, between each execution of the background service to report installed and outdated packages to Chocolatey Central Management. Defaults to '1800'. Available in business editions only.
@@ -57,10 +57,10 @@ Please see config settings and features below for a full list.
 
 Also found at <Xref title="Chocolatey Configuration" value="configuration" />.
 
-#### Features
+#### Feature Settings
 
-* <Xref title=" ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+). See [docs" value="ccm" />
-* <Xref title=" ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+). See [docs" value="ccm" />
+* `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only (version 2.0.0+).
+* `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+).
 
 Also found at <Xref title="Chocolatey Configuration" value="configuration" />.
 

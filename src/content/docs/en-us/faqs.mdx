@@ -4,8 +4,8 @@ xref: faqs
 title: FAQs
 description: Chocolatey frequently asked questions
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## General
@@ -339,9 +339,7 @@ If this is hard coded for a package that runs an installer, it may display an in
 
 ### How do I skip the Automatic Uninstaller?
 
-If you are trying to uninstall a package, but Automatic Uninstall is uninstalling software you don't want uninstalled, or otherwise misbehaving, then it can be skipped by using the `--skip-autouninstaller` switch, or disabling it by setting the `autoUninstaller` feature to `false`.
-
-If you are creating a package, and want or need to use the `chocolateyUninstall.ps1` while not running the Automatic Uninstaller, then include a `.skipAutoUninstall` file inside the package. If a file with that name is found, then during uninstall the Automatic Uninstaller will not be run. If a `.skipAutoUninstall` file is being included, make sure that it is included in the `files` element of the `.nuspec`, either explicitly via a `file` element, or by placing the file inside a folder that is included inside the package (like the `tools` directory).
+Please see the <Xref title="feature documentation" value="auto-uninstaller" />.
 
 ## Videos / Reference
 

@@ -4,10 +4,10 @@ xref: ccm-example-deployment-plans
 title: Deployment Plans
 description: Example Deployment Plans that can be imported into Chocolatey Central Management for immediate use.
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
-import CollapseButton from '@choco/components/CollapseButton.astro';
+import CollapseButton from '@choco-astro/components/CollapseButton.astro';
 import ImportDeploymentPlan from '@components/docs/ImportDeploymentPlan.mdx';
 
 ## Summary
@@ -26,12 +26,12 @@ After importing the Deployment Plan, you should follow these steps to ensure you
 
 You will also need to set a Target Group for the Deployment Step:
 
-- Mouse-over the Deployment Step and click the **Edit** button.
-    ![Editing a Deployment Step](/images/ccm-playwright/deployment-plans/edit/button-edit-step.png)
+- Click the **Actions** button and select the **Edit** option on the preferred Deployment Step.
 
-- Navigate to the `Select Target Groups` panel.
+    ![Editing a Deployment Step](/images/ccm-playwright/deployment-plans/edit/table-row-button-action-dropdown-menu-edit.png)
 
-- Highlight your preferred groups and click the **>** button to move them into `Selected Groups`.
+- Select preferred Groups by checking each checkbox in the table. You can also select the top left checkbox in the table head to immediately add all Groups.
+
     ![Selecting Target Groups](/images/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
 
 - Click **Save**.

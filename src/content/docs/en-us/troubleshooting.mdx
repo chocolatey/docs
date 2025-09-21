@@ -4,8 +4,8 @@ xref: troubleshooting
 title: Troubleshooting
 description: Having issues running Chocolatey, check here for solutions
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 There are some well-known things you may run into when you are using Chocolatey. We've tried to get some of the high level things you may run into into one document.
@@ -172,26 +172,7 @@ This means the import failed during install/upgrade. Chocolatey does supply a wa
 
 The warning may look like: `"Not setting tab completion: Profile file does not exist at 'C:\Users\garyc\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'."`
 
-Once you've looked at your log to determine what it said, here are some followup steps:
-- If this is the same shell that the upgrade occurred in, the message states you need to update your profile - run `. $profile`. Try that first, then try restarting your shell and see if it takes hold.
-- If it still doesn't work, it means there was a failure setting the profile with the module.
-- This could be due to PowerShell Execution Policy settings. Run `Get-ExecutionPolicy` - if it is set to `Restricted` you need to adjust that to something like `RemoteSigned`. To learn more about execution policies see the [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1).
-- If that is fine, then we need to look at your "$profile". Run `type $profile`. Examine the output. You should have something like this in the file:
-
-```powershell
-# Import the Chocolatey Profile that contains the necessary code to enable
-# tab-completions to function for `choco`.
-# Be aware that if you are missing these lines from your profile, tab completion
-# for `choco` will not function.
-# See https://ch0.co/tab-completion for details.
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
-```
-
-- If you don't see that, let's add it. Run `Write-Host $profile` - note the location and open it up in an editor (anything but plain old notepad.exe for the love of..., well your favorite editor).
-  - Now let's add that text above to the profile. Save and close the file. Now type `. $profile` to update your current Shell. Give `choco in<tab>` a shot again. If it still doesn't work we'll need to examine something a bit more deeply about your environment. Please submit an issue so we can investigate.
+Additional setup information can be found on the <Xref title="tab completion" value="set-up-tab-completion" anchor="powershell" /> page.
 
 ### Microsoft.Powershell_profile.ps1 cannot be loaded. The file is not digitally signed.
 

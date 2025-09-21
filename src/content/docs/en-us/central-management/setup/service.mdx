@@ -4,12 +4,12 @@ xref: ccm-service
 title: Service
 description: Information on how to setup the CCM Service
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
-import TabsPane from '@choco/components/tabs/TabsPane.astro';
-import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
-import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
 
 This is the service that the agents (`chocolatey-agent`) communicates with. You could install one or more of these depending on the size of your environment (not multiple on one machine though). The FQDN and certificate used determine what the URL will be for the agents to check into Chocolatey Central Management.
@@ -304,9 +304,9 @@ By default, the installation of the `chocolatey-management-service` package will
 netsh http show sslcert
 ```
 
->:choco-info: **NOTE**
->
->Starting with Chocolatey Central Management 0.6.0, `netsh` bindings are no longer created during the installation of the Chocolatey Central Management Service package. On installing the 0.6.0 Chocolatey Central Management Service package, any existing `netsh` bindings that were created specifically for Chocolatey Central Management usage will be removed.
+<Callout type="info">
+    Starting with Chocolatey Central Management 0.6.0, `netsh` bindings are no longer created during the installation of the Chocolatey Central Management Service package. On installing the 0.6.0 Chocolatey Central Management Service package, any existing `netsh` bindings that were created specifically for Chocolatey Central Management usage will be removed.
+</Callout>
 
 ### How can we remove a `netsh` binding that has been created?
 

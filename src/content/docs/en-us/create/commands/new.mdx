@@ -74,7 +74,7 @@ Possible properties to pass:
 
 > :choco-info: **NOTE**
 >
-> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco -?`) for how to
+> See scripting in <Xref title="how to pass arguments" value="choco-commands" anchor="how-to-pass-options-switches" /> (`choco --help`) for how to
  write proper scripts and integrations.
 
 
@@ -110,7 +110,7 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --online
      Online - Open help for specified command in default browser application. 
-       This option only works when used in combintation with the -?/--help/-h 
+       This option only works when used in combination with the -?/--help/-h 
        option.  Available in 2.0.0+
 
  -d, --debug
@@ -145,6 +145,10 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
  -r, --limitoutput, --limit-output
      LimitOutput - Limit the output to essential information
+
+     --include-headers
+     Include header names when --limit-output is used. Requires Chocolatey 
+       CLI 2.5.0+
 
      --timeout, --execution-timeout=VALUE
      CommandExecutionTimeout (in seconds) - The time to allow a command to 
@@ -203,12 +207,11 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
      --skipcompatibilitychecks, --skip-compatibility-checks
      SkipCompatibilityChecks - Prevent warnings being shown before and after 
        command execution when a runtime compatibility problem is found between 
-       the version of Chocolatey and the Chocolatey Licensed Extension. 
-       Available in 1.1.0+
+       the version of Chocolatey and the Chocolatey Licensed Extension.
 
      --ignore-http-cache
-     IgnoreHttpCache - Ignore any HTTP caches that have previously been 
-       created when querying sources, and create new caches. Available in 2.1.0+
+     Ignore any HTTP caches that have previously been created when querying 
+       sources, and create new caches. Available in 2.1.0+
 
  -a, --auto, --automaticpackage
      AutomaticPackage - Generate automatic package instead of normal. 
@@ -216,10 +219,10 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
  -t, --template, --template-name=VALUE
      TemplateName - Use a named template in 
-       C:\source\choco\code_drop\temp\_PublishedApps\choco_merged\templates\tem-
-       platename instead of built-in template.
+       C:\ProgramData\chocolatey\templates\templatename instead of built-in 
+       template.
 
-     --name=VALUE
+ -n, --name=VALUE
      Name [Required]- the name of the package. Can be passed as first 
        parameter without "--name=".
 
@@ -254,15 +257,15 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --keepremote, --keep-remote, --originallocation, --original-location, --useoriginallocation, --use-original-location, --useoriginalfileslocation, --use-original-files-location
      Use Original Files Location - when using file or url, use the original 
-       location in packaging. Available in licensed editions only.
+       location in packaging. Available in [licensed editions](https://chocolatey.org/compare) only.
 
      --checksum, --downloadchecksum, --download-checksum=VALUE
      Download Checksum - checksum to verify File/Url with. Defaults to empty. 
-       Available in licensed editions only.
+       Available in [licensed editions](https://chocolatey.org/compare) only.
 
      --checksum64, --checksumx64, --downloadchecksumx64, --download-checksum-x64=VALUE
      Download Checksum 64-bit - checksum to verify File64/Url64 with. 
-       Defaults to empty. Available in licensed editions only.
+       Defaults to empty. Available in [licensed editions](https://chocolatey.org/compare) only.
 
      --checksumtype, --checksum-type, --downloadchecksumtype, --download-checksum-type=VALUE
      Download Checksum Type - checksum type for File/Url (and optional 
@@ -273,11 +276,11 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
      --pauseonerror, --pause-on-error
      Pause on Error - Pause when there is an error with creating the package. 
-       Available in licensed editions only.
+       Available in [licensed editions](https://chocolatey.org/compare) only.
 
      --buildpackage, --build-package, --build-packages
      Build Package - Attempt to compile the package after creating it. 
-       Available in licensed editions only.
+       Available in [licensed editions](https://chocolatey.org/compare) only.
 
      --fromprograms, --from-programs, --fromprogramsandfeatures, --from-programs-and-features
      Generate Packages From Installed Software - Generate packages from the 
@@ -301,6 +304,6 @@ Includes <Xref title="default options/switches" value="choco-commands" anchor="d
 
 > :choco-info: **NOTE**
 >
-> This documentation has been automatically generated from `choco new -h`. 
+> This documentation has been automatically generated from `choco new --help`. 
 
 

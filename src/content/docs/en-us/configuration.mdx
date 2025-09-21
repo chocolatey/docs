@@ -4,8 +4,8 @@ xref: configuration
 title: Configuration
 description: Information on the different configuration options for Chocolatey
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 There are settings and features that can customize the way that Chocolatey works for you. The following is a list of config settings and features and their default values.
@@ -103,6 +103,7 @@ A checkbox means this feature is turned on by default.
 * [x] `showDownloadProgress` - Show Download Progress - Show download progress percentages in the CLI.
 * [ ] `useRememberedArgumentsForUpgrades` - Use Remembered Arguments For Upgrades - when running upgrades, use arguments for upgrade that were used for installation ('remembered'). This is helpful when running upgrade for all packages. This is considered in preview and will be flipped to on by default in a future release.
 * [ ] `logValidationResultsOnWarnings` - Log validation results on warnings - Should the validation results be logged if there are warnings?
+* [ ] `alwaysIncludeHeaders` - Include header names when --limit-output is used. Requires Chocolatey CLI 2.5.0+
 
 ### Automatic Uninstaller
 
@@ -123,6 +124,7 @@ A checkbox means this feature is turned on by default.
 * [ ] `skipPackageUpgradesWhenNotInstalled` - Skip Packages Not Installed During Upgrade - if a package is not installed, do not install it during the upgrade process.
 * [ ] `ignoreUnfoundPackagesOnUpgradeOutdated` - Ignore Unfound Packages On Upgrade Outdated - When checking outdated or upgrades, if a package is not found against sources specified, don't report the package at all.
 * [x] `usePackageRepositoryOptimizations` - Turn on optimizations for reducing bandwidth with repository queries during package install/upgrade/outdated operations. Should generally be left enabled, unless a repository needs to support older methods of query. When disabled, this makes queries similar to the way they were done in Chocolatey v0.10.11 and before.
+* [x] `useHttpCache` - Create and use HTTP caches when querying sources. Available in 2.5.0+
 
 ### Security
 

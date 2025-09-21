@@ -6,8 +6,8 @@ description: Release Notes for the Chocolatey for Business Azure Environment
 ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-og.png
 twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-for-business-azure-environment-twitter.png
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 # Chocolatey for Business Azure Environment Release Notes
@@ -15,6 +15,45 @@ import Xref from '@components/Xref.astro';
 <Callout type="info">
     Issue links may not be publicly available at this time.
 </Callout>
+
+## 0.22.0 (June 3, 2025) \{#v0.22.0}
+
+### Bug Fix
+
+- Chocolatey 2.4.1 breaks Jenkins jobs - see [#167](https://github.com/chocolatey/c4b-azure/issues/167).
+
+### Improvements
+
+- Storage Account(s) should be restricted to secure transfer only - see [#157](https://github.com/chocolatey/c4b-azure/issues/157).
+- SQL Server should be running TLS 1.2+ - see [#159](https://github.com/chocolatey/c4b-azure/issues/159).
+- Image SKU should be updated to Windows Server 2022 - see [#165](https://github.com/chocolatey/c4b-azure/issues/165).
+- ClientSetup Enhancements - see [#166](https://github.com/chocolatey/c4b-azure/issues/166).
+
+### Bundled Version Update
+
+| Package                             | Version       |
+|-------------------------------------|---------------|
+| chocolatey                          | 2.4.3         |
+| chocolatey-agent                    | 2.3.0         |
+| chocolatey-licensed-jenkins-jobs    | 0.1.3 (New)   |
+| chocolatey-licensed-jenkins-scripts | 0.1.3         |
+| chocolatey-management-database      | 0.14.0        |
+| chocolatey-management-service       | 0.14.0        |
+| chocolatey-management-web           | 0.14.0        |
+| chocolatey.extension                | 6.3.1         |
+| chocolateygui                       | 2.1.1         |
+| dotnet-6.0-aspnetruntime            | N/A (Removed) |
+| dotnet-6.0-runtime                  | N/A (Removed) |
+| dotnet-8.0-aspnetruntime            | 8.0.16 (New)  |
+| dotnet-8.0-runtime                  | 8.0.16 (New)  |
+| dotnet-aspnetcoremodule-v2          | 18.0.25074    |
+| jenkins                             | 2.504.2       |
+| jenkins-set-prefix.hook             | 1.0.1         |
+| KB3063858                           | N/A (Removed) |
+| nexus-repository                    | 3.71.0.6      |
+| nexushell                           | 1.2.0 (New)   |
+| Temurin21jre                        | 21.0.6.7      |
+| vcredist140                         | 14.44.35208   |
 
 ## 0.21.0 (February 8, 2024) \{#v0.21.0}
 

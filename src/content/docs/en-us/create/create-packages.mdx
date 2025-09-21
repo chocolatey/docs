@@ -4,8 +4,8 @@ xref: create-packages
 title: Create Packages
 description: How to start creating your own Chocolatey packages
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 # Creating Chocolatey Packages
@@ -362,6 +362,8 @@ The `<description>` of the package should contain a short text or at least a few
 Versioning can be both simple and complicated. The best recommendation is to use the same versioning that the installable/portable application uses. With Chocolatey you get four version segments. If the application only uses 1, 2 or 3 version segments, follow suit.
 
 If the 4th segment is used, some folks like to drop the segment altogether and use that as only the package fix notation using one of the notations in the next section. There is no recommendations at this time.
+
+See also <Xref title="Version number normalization" value="version-normalization" />.
 
 ### Package Fix Version Notation
 

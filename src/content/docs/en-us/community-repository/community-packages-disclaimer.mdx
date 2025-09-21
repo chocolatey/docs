@@ -4,8 +4,8 @@ xref: community-packages-disclaimer
 title: community.chocolatey.org Packages Disclaimer
 description: When you should, and shouldn't, use community.chocolatey.org
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 **Bottom line** - As an individual using Chocolatey, you are more likely okay if something breaks when setting up your personal machines - the Community Package Repository is typically fine for you. When it comes to using Chocolatey in an organizational context, you want reliability, control, and trust. You can gain trust over some packages on the community repository, and possibly some reliability if the binaries are included in the package. However there is a limiting factor with a public repository - distribution rights. This creates a large failure point that organizations just don't have when they are hosting their own internal packages.
@@ -67,7 +67,7 @@ If you are not able to take advantage of <Xref title="internalizing" value="reco
     Caching doesn't make the packages you are using from the community repository any more reliable, they may still need to download things from the internet at runtime - but it doesn't put you in a worse place than you already are at because you are already using the community repository directly which has issues identified in this document. If you want to achieve reliability when reusing community packages, you would need to <Xref title="internalize packages" value="recompile-packages" />.
 </Callout>
 
-For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the <Xref title="organizational deployment guide" value="organizational-deployment-guide" /> (which takes about 1-2 hours). With 15-30 minutes, you can implement a <Xref title="Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://community.chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://community.chocolatey.org/packages/nexus-oss)) which automatically caches (but does not [internalize" value="recompile-packages" />) packages from the community repository (`https://community.chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
+For caching of packages, something can be quickly implemented in 15-30 minutes to get your organization unblocked (and avoid rate limiting) while you look into implementing the rest of the <Xref title="organizational deployment guide" value="organizational-deployment-guide" /> (which takes about 1-2 hours). With 15-30 minutes, you can implement a [Proxy Repository](https://help.sonatype.com/repomanager3/.net-package-repositories-with-nuget) including the install of a [Nexus Repository Manager v3](https://community.chocolatey.org/packages/nexus-repository) (or [NXRM v2](https://community.chocolatey.org/packages/nexus-oss)) which automatically caches (but does not <Xref title="internalize" value="recompile-packages" />) packages from the community repository (`https://community.chocolatey.org/api/v2`). This provides the same experience you get in using the community repository now but with more availability and no rate limiting!
 
 ### What To Do When You Are Blocked For Excessive Use
 

@@ -5,16 +5,12 @@ title: CPMR0052 - Dependency With No Version (nuspec)
 description: Information on how to remediate the Chocolatey Package Moderation Rule 0052
 ruleType: Guideline
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import PackageValidatorRuleGuideline from '@components/docs/PackageValidatorRuleGuideline.mdx';
 
 <PackageValidatorRuleGuideline />
-
-<Callout type="warning">
-    There is a bug with this check - https://github.com/chocolatey/home/issues/33
-</Callout>
 
 If you have implemented the recommended fixes, you should see this go away on checks after this has been corrected.
 

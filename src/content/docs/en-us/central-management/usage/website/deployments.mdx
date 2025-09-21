@@ -4,14 +4,14 @@ xref: ccm-deployments
 title: Deployment Plans
 description: How to deploy packages, and execute PowerShell, on client machines
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import ImportDeploymentPlan from '@components/docs/ImportDeploymentPlan.mdx';
 import SensitiveVariablesNote from '@components/docs/SensitiveVariablesNote.mdx';
-import TabsPane from '@choco/components/tabs/TabsPane.astro';
-import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
-import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 
 ## Description
 
@@ -26,16 +26,13 @@ You will also need to have at least one Group of computers already defined.
 
 1. From the Chocolatey Central Management dashboard, select <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> `Deployment Plans` from the left sidebar.
 
-    ![Chocolatey Central Management dashboard, arrow pointing to Deployment Plans menu in the left sidebar](/images/ccm-playwright/dashboard/left-menu-deployment-plans.png)
+
+    ![Chocolatey Central Management dashboard, arrow pointing to the View Deployment Plans menu option in the left sidebar](/images/ccm-playwright/dashboard/left-menu-view-deployment-plans.png)
 
 1. Select the <i class="fa-solid fa-plus" aria-hidden="true"></i> **Create New Deployment Plan** button at the top of the page.
 
-    ![Chocolatey Central Management Deployment Plans page, arrow pointing to Create New Deployment Plan button](/images/ccm-playwright/deployment-plans/button-create-new-deployment-plan.png)
 
-1. (Optional) Give the Deployment Plan a custom name by clicking the edit icon displayed next to it and entering a new name.
-   Press **Enter** to save the new name.
-
-    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to the edit title button](/images/ccm-playwright/deployment-plans/edit/button-edit-name.png)
+    ![Chocolatey Central Management Deployment Plans page, arrow pointing to Create Deployment Plan button](/images/ccm-playwright/deployment-plans/button-action-dropdown-menu-create-deployment-plan.png)
 
 1. (Optional, Requires Chocolatey Central Management v0.11.0+) Add a Deployment Plan execution timeout in seconds to be used by all Deployment Steps.
 
@@ -47,15 +44,13 @@ You will also need to have at least one Group of computers already defined.
 
 1. (Optional, Requires Chocolatey Central Management v0.4.0+) Add a schedule by selecting the <i class="fa-solid fa-plus" aria-hidden="true"></i> **Add Schedule** button.
 
-    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to Add Schedule button](/images/ccm-playwright/deployment-plans/edit/button-add-schedule.png)
+
+    ![Chocolatey Central Management New Deployment Plan page, arrow pointing to Schedule tab](/images/ccm-playwright/deployment-plans/edit/tab-schedule.png)
 
     * Enter a date and time, or click the <i class="fa-regular fa-calendar" aria-hidden="true"></i> button to pick the date and time from a calendar UI.
 
+
         ![Chocolatey Central Management Deployment Plan schedule picker](/images/ccm-playwright/deployment-plans/edit/calendar-start-date-time.png)
-
-    * (Optional) If you'd like to define a maintenance window for the Deployment Plan start time, select the **Restrict schedule to a maintenance window** option and enter the ending date and time for the maintenance window.
-
-       ![Chocolatey Central Management Deployment Plan maintenance window option](/images/ccm-playwright/deployment-plans/edit/checkbox-restrict-schedule.png)
 
     * (Optional) If you'd like a Deployment Plan to happen again, on a recurring basis, select how often you'd like the Deployment Plan to recur. Check the [recurring Deployment Plans section for more information](#recurring-deployments)
 
@@ -63,9 +58,10 @@ You will also need to have at least one Group of computers already defined.
 
 1. Select <i class="fa-solid fa-plus" aria-hidden="true"></i> **Add Step** to add your first Deployment Step.
 
+
     ![Chocolatey Central Management Deployment Plan add Deployment Step button](/images/ccm-playwright/deployment-plans/edit/button-add-deployment-step.png)
 
-1. (Optional) In the `Create New Deployment Step` modal, enter a custom name for the Deployment Step.
+1. (Optional) In the **Create New Deployment Step** modal, enter a custom name for the Deployment Step.
 
     ![Chocolatey Central Management Deployment Plan new step modal](/images/ccm-playwright/deployment-plans/edit/modal-step.png)
 
@@ -81,7 +77,7 @@ You will also need to have at least one Group of computers already defined.
     * You can use <Xref title="Sensitive Variables" value="ccm-administration-sensitive-variables" anchor="adding-sensitive-variables-to-scripts" /> in an Advanced script in Chocolatey Central Management version 0.7.0 and later.
    <SensitiveVariablesNote />
 
-1. (Optional) Click **Show advanced filters** to set one or more of the following options:
+1. (Optional) Click **Toggle advanced filters** to set one or more of the following options:
     * `Execution timeout`.
     * `Valid exit codes`.
     * `Machine contact timeout` (requires Chocolatey Central Management v0.4.0+ to edit).
@@ -95,21 +91,23 @@ You will also need to have at least one Group of computers already defined.
 
     ![Chocolatey Central Management Deployment Step Select Target Group tab](/images/ccm-playwright/deployment-plans/edit/modal-step-tab-select-target-groups.png)
 
-1. Add groups from the **Available Groups** column to the **Selected Groups** column by selecting them from the list and pressing the `>` button. You can also select the `>>` button to immediately move all groups into the **Selected Groups** column.
+1. Select preferred Groups by checking each checkbox in the table. You can also select the top left checkbox in the table head to immediately add all Groups.
 
     ![Chocolatey Central Management Deployment Step Select Target Groups modal](/images/ccm-playwright/deployment-plans/edit/modal-step-select-target-groups.png)
 
 1. Click the <i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> **Save** button to save the Deployment Step.
 
+
     ![Chocolatey Central Management Deployment Step Save button](/images/ccm-playwright/deployment-plans/edit/modal-step-button-save.png)
 
 1. Continue to add steps until your Deployment Plan is complete.
 
-1. (Optional, requires Chocolatey Central Management v0.12.0) If you need to create multiple similar Deployment Steps, you can use the Duplicate Deployment Step button on an individual Deployment Step to make a copy of it.
+1. (Optional, requires Chocolatey Central Management v0.12.0) If you need to create multiple similar Deployment Steps, you can use the Duplicate option from an individual Deployment Step's action button to make a copy of it.
 
-    ![Chocolatey Central Management Deployment Step Duplicate button](/images/ccm-playwright/deployment-plans/edit/button-duplicate-step.png)
+    ![Chocolatey Central Management Deployment Step Duplicate menu option](/images/ccm-playwright/deployment-plans/edit/table-row-button-action-dropdown-menu-duplicate.png)
 
 1. Select <i class="fa-regular fa-floppy-disk" aria-hidden="true"></i> **Save** to save the changes to the Deployment Plan.
+
 
 <ImportDeploymentPlan />
 
@@ -127,7 +125,7 @@ As mentioned above, when creating a Deployment Plan, it is possible to select a 
 - `Every six months`
 - `Yearly`
 
-Once a Deployment Plan has been assigned a Repeat Period, and it is moved to the [Ready](#ready) state, it will be shown with a slightly different icon:
+Once a Deployment Plan has been assigned a Repeat Period, and it is moved to the [Ready](#ready) state, it will be shown with a slightly different button:
 
 ![Chocolatey Central Management Deployment Plan marked as recurring](/images/ccm-playwright/deployment-plans/table-row-icon-recurring-deployment-plan.png)
 
@@ -210,7 +208,7 @@ This can result in the Deployment Step or overall Deployment Plan changing from 
 Deployment Plans that are in a [completed](#completed) state can be actioned using [`Archive`](#archive) action to hide them from the main Deployment Plans screen.
 This is helpful if you'd like to reduce clutter on the main Deployment Plans screen without discarding the information the completed report contains.
 
-You can access archived Deployment Plans from the `Deployment Plans` page and clicking on the `View Archived Deployment Plans` button.  [`Archived`](#archived) Deployment Plans will not appear in any other reports that contain Deployment Plans.
+You can access archived Deployment Plans from the **Deployment Plans** page and clicking on the **View Archived Deployment Plans** button.  [`Archived`](#archived) Deployment Plans will not appear in any other reports that contain Deployment Plans.
 
 While in the [`Archived`](#archived) state, no additional actions can be performed on a Deployment Plan.
 
@@ -270,7 +268,7 @@ This action opens up the details for the selected Deployment Plans, allowing the
 
 ### Archive
 
-This action will mark any completed Deployment Plan as archived, and it will no longer be shown in the main Deployment Plans screen of Chocolatey Central Management website.  You can access archived Deployment Plans from the `Deployment Plans` page and clicking on the `View Archived Deployment Plans` button.
+This action will mark any completed Deployment Plan as archived, and it will no longer be shown in the main Deployment Plans screen of Chocolatey Central Management website.  You can access archived Deployment Plans from the **Deployment Plans** page and clicking on the **View Archived Deployment Plans** button.
 
 ### Export
 
@@ -314,7 +312,7 @@ Chocolatey Central Management has specific compatibility requirements with quite
 
 If you are on the Groups screen, you may notice that some machines show up highlighted with a color. The legend below it mentions "Not Opted In For Deployments (Configuration)".
 
-![Group eligibility legend](/images/ccm-playwright/groups/modal-warning-legend.png)
+![Group eligibility legend](/images/ccm-playwright/groups/create/warning-legend.png)
 
 As you can see from the text, it is meant to help you figure out the issue:
 
@@ -371,7 +369,7 @@ Computers can be considered ineligible for Deployments based on two criteria:
 1. Is the computer licensed under your Chocolatey for Business license?
 1. Is the computer opted in for Deployments based on the Chocolatey configuration?
 
-If **either** one of these two criteria is not met, that computer is considered ineligible for Deployments.
+If **either** one of these two criteria is not met, that Computer is considered ineligible for Deployments.
 
 Additionally, any group that contains any of the following will be considered ineligible:
 

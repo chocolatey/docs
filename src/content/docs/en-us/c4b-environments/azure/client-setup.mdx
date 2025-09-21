@@ -4,8 +4,8 @@ xref: c4b-azure-client-setup
 title: Client Setup
 description: How to setup a client machine to use Chocolatey for Business Azure Environment
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Summary
@@ -68,27 +68,58 @@ See <Xref title="Accessing Services" value="c4b-azure" anchor="accessing-service
 When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell session:
 
 ```powershell
-# Please fill in the following values
-$fqdn = 'Replace with FQDN for your Chocolatey for Business QDE Azure Environment'
-$clientCommunicationSalt = 'Your ccmClientCommunicationSalt'  #This value is stored within your Azure Key Vault
-$serverCommunicationSalt = 'Your ccmServiceCommunicationSalt' #This value is stored within your Azure Key Vault
-$password = 'Your ChocoUserPassword' #This value is stored within your Azure Key Vault
+[CmdletBinding(HelpUri = 'https://docs.chocolatey.org/en-us/c4b-environments/quick-start-environment/advanced-client-configuration/')]
+param(
+    # The DNS name of the server that hosts your repository, Jenkins, and Chocolatey Central Management
+    [String]$Fqdn = '{{ Replace with the FQDN for your Chocolatey for Business Azure Environment }}',
 
-# Touch NOTHING below this line
-$user = 'chocouser'
+    # Client salt value used to populate the centralManagementClientCommunicationSaltAdditivePassword value in the Chocolatey config file
+    [String]$ClientCommunicationSalt = '{{ Replace with ccmClientCommunicationSalt (This value is in your Azure KeyVault) }}',
 
-$securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
-$credential = [pscredential]::new($user, $securePassword)
+    # Server salt value used to populate the centralManagementServiceCommunicationSaltAdditivePassword value in the Chocolatey config file
+    [String]$ServiceCommunicationSalt = '{{ Replace with ccmServiceCommunicationSalt (This value is in your Azure KeyVault) }}',
+
+    # The credential for accessing your Nexus repository, e.g. for 'chocouser'
+    $RepositoryCredential = [System.Net.NetworkCredential]@{
+        'userName' = 'chocouser'
+        'password' = '{{ Replace with ChocoUserPassword (This value is in your Azure KeyVault) }}'
+    },
+
+    # The URL of a proxy server to use for connecting to the repository.
+    [String]$ProxyUrl,
+
+    # The credentials, if required, to connect to the proxy server.
+    [PSCredential]$ProxyCredential,
+
+    # Install the Chocolatey Licensed Extension with right-click context menus available
+    [Switch]$IncludePackageTools,
+
+    # Allows for the application of user-defined configuration that is applied after the base configuration.
+    # Can override base configuration with this parameter
+    [Hashtable]$AdditionalConfiguration,
+
+    # Allows for the toggling of additional features that is applied after the base configuration.
+    # Can override base configuration with this parameter
+    [Hashtable]$AdditionalFeatures,
+
+    # Allows for the installation of additional packages after the system base packages have been installed.
+    [Hashtable[]]$AdditionalPackages,
+
+    # Allows for the addition of alternative sources after the base configuration  has been applied.
+    # Can override base configuration with this parameter
+    [Hashtable[]]$AdditionalSources
+)
+$RepositoryCredential = [PSCredential]::new($RepositoryCredential.UserName, $RepositoryCredential.SecurePassword)
+$params = $PSBoundParameters
+$PSCmdlet.MyInvocation.MyCommand.Parameters.Keys.Where{
+    $_ -notin [System.Management.Automation.PSCmdlet]::CommonParameters + "FQDN" -and -not $params.ContainsKey($_)
+}.ForEach{ $params[$_] = (Get-Variable -Name $_ -Scope 0 -ErrorAction SilentlyContinue).Value }
+$params.RepositoryUrl = "https://$($fqdn)/nexus/repository/ChocolateyInternal/index.json"
+
 $downloader = [System.Net.WebClient]::new()
-$downloader.Credentials = $credential
+$downloader.Credentials = $RepositoryCredential
 
-$script =  $downloader.DownloadString("https://$($fqdn)/nexus/repository/choco-install/ClientSetup.ps1")
-
-$params = @{
-    Credential      = $credential
-    ClientSalt      = $clientCommunicationSalt
-    ServerSalt      = $serverCommunicationSalt
-}
+$script = $downloader.DownloadString("https://$($FQDN)/nexus/repository/choco-install/ClientSetup.ps1")
 
 & ([scriptblock]::Create($script)) @params
 ```
@@ -105,3 +136,5 @@ This script will accomplish the following on your client:
 1. Enable and disable features related to configuring self-service access on the endpoint.
 1. Setup the communication channel between the endpoint and Chocolatey Central Management, using the correct URL and salts.
 1. Enable Chocolatey Central Management Deployments.
+
+For further details on how you can customize your install using this script, please refer to the <Xref title="Advanced Client Configuration article" value="qsg-advanced-endpoint-config" />.

@@ -4,8 +4,8 @@ xref: howto-create-extension-package
 title: How To Create an Extension Package
 description: A walkthrough creating a Chocolatey extension package
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 As we've mentioned in other articles, a Chocolatey package can do near anything PowerShell can - including sharing functions and logic between packages.
@@ -47,7 +47,7 @@ You might choose to use this over installing a full PowerShell module if you did
 
 ### Extension Package
 
-An extension package is organised much like any other Chocolatey package - though instead of the scripts within the `tools` directory you may be familiar with, there should be an `extensions` directory.
+An extension package is organized much like any other Chocolatey package - though instead of the scripts within the `tools` directory you may be familiar with, there should be an `extensions` directory.
 
 We'll now run through how to create an extension package, assuming you have an environment set up as in <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />.
 
@@ -79,6 +79,9 @@ Follow the steps below to get started:
     <summary>Extension package for testing.</summary>
     <tags>extension chocolatey package</tags>
   </metadata>
+  <files>
+    <file src="extensions\**" target="extensions" />
+  </files>
 </package>
 ```
 
@@ -124,6 +127,8 @@ function Set-ConfigValue {
         $Configuration | ConvertTo-Json | Set-Content -Path $Path
     }
 }
+
+Export-ModuleMember -Function Set-ConfigValue
 ```
 
 So, if you browse through the files in VS Code or Explorer, you should see a file structure like this:
