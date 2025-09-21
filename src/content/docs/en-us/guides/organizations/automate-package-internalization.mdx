@@ -4,8 +4,8 @@ xref: automate-package-internalization
 title: Automate Package Internalizer (MSP/C4B)
 description: How to setup internal package repository
 ---
-import Callout from '@choco-astro/components/Callout.astro';
-import Iframe from '@choco-astro/components/Iframe.astro';
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Summary
@@ -102,8 +102,7 @@ Before starting, make sure you install Chocolatey Server on separate servers.
     }
 
     if ($null -eq (Get-Command -Name 'choco.exe' -ErrorAction SilentlyContinue)) {
-        Write-Warning "Chocolatey not installed. Cannot install standard packages."
-        Exit 1
+        Write-Error  "Chocolatey not installed. Cannot install standard packages." -ErrorAction Stop
     }
 
     # Install Chocolatey.Server prereqs
