@@ -13,7 +13,7 @@ const { title, description, ogImage, twitterImage } = Astro.props;
 const canonicalURL = new URL(Astro.url, Astro.site);
 const metaTitle = title !== config.title ? `${config.title} Docs | ${title}` : `${config.title} Docs`;
 const ogImageURL = ogImage ? ogImage : new URL(`/share-og.png`, Astro.site);
-const twitterImageURL = twitterImage ? twitterImage : new URL(`/images/global-shared/twitter-share.png`, Astro.site);
+const twitterImageURL = twitterImage ? twitterImage : new URL(`https://img.chocolatey.org/social-share/twitter-share.png`, Astro.site);
 const twitterCardType = twitterImage ? 'summary_large_image' : 'summary';
 
 // obtain Git commit hash
@@ -37,16 +37,16 @@ const hash = childProcess
         <link rel="sitemap" href="/sitemap-index.xml" />
 
         <!-- Favicons -->
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+        <link rel="shortcut icon" href="https://img.chocolatey.org/favicons/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="https://img.chocolatey.org/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://img.chocolatey.org/favicons/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="https://img.chocolatey.org/favicons/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="https://img.chocolatey.org/favicons/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://img.chocolatey.org/favicons/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="https://img.chocolatey.org/favicons/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="https://img.chocolatey.org/favicons/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="https://img.chocolatey.org/favicons/apple-touch-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://img.chocolatey.org/favicons/apple-touch-icon-180x180.png" />
 
         <!-- SEO -->
         <link rel="canonical" href={canonicalURL} />
@@ -99,8 +99,8 @@ const hash = childProcess
             <nav id="topNav" class="navbar navbar-expand-md">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="/en-us/">
-                        <img class="d-md-none" src="/images/global-shared/logo.svg" alt="Chocolatey" />
-                        <img class="d-none d-md-block navbar-brand-desktop" src="/images/global-shared/logo-square.svg" alt="Chocolatey" />
+                        <img class="d-md-none" src="https://img.chocolatey.org/logos/chocolatey-icon.svg" alt="Chocolatey" />
+                        <img class="d-none d-md-block navbar-brand-desktop" src="https://img.chocolatey.org/logos/chocolatey.svg" alt="Chocolatey" />
                     </a>
                     <div class="d-flex align-items-center justify-content-end">
                         <a class="me-2" href="https://github.com/chocolatey/docs" target="_blank" rel="noreferrer" aria-label="Edit on GitHub">

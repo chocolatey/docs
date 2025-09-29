@@ -39,7 +39,7 @@ Find the [Chocolatey for Business Azure Environment](https://portal.azure.com/#b
 
 Select the subscription, resource group, and region you intend to deploy to. As you need to deploy this to an empty resource group, you may need to create a new one by clicking the `Create new` button below the selector.
 
-![Resource Group Selector](/images/c4b-azure/BasicsView-ResourceGroupSelector.png)
+![Resource Group Selector](https://img.chocolatey.org/docs/c4b/BasicsView-ResourceGroupSelector.png)
 
 By default, all resources in the resource group are deployed with 'choco' prefixing the resource name. If you'd prefer to use something else for identification you can change it here.
 
@@ -47,11 +47,11 @@ By default, all resources in the resource group are deployed with 'choco' prefix
     Due to constraints in naming some resources, the prefix must be 8 characters or less and contain only alphanumeric characters.
 </Callout>
 
-![Naming Prefix](/images/c4b-azure/BasicsView-InstanceDetails.png)
+![Naming Prefix](https://img.chocolatey.org/docs/c4b/BasicsView-InstanceDetails.png)
 
 For the environment to deploy successfully, you must have a valid Chocolatey for Business license. Select and upload your license here.
 
-![License Upload](/images/c4b-azure/BasicsView-LicenseUpload.png)
+![License Upload](https://img.chocolatey.org/docs/c4b/BasicsView-LicenseUpload.png)
 
 ### Domain Configuration
 
@@ -59,7 +59,7 @@ In order to connect to your new Chocolatey for Business Azure Environment, you w
 
 Fill your intended domain name in, select and upload your PFX certificate, and enter the password for the certificate.
 
-![Custom Domain Configuration](/images/c4b-azure/DomainView-CustomDomain.png)
+![Custom Domain Configuration](https://img.chocolatey.org/docs/c4b/DomainView-CustomDomain.png)
 
 <Callout type="info">
     The PFX certificate must contain the exportable private key, and should be protected with a password.
@@ -78,7 +78,7 @@ Finally, you can specify _any other_ package from the Chocolatey Community Repos
 
 Please provide a list of Package IDs, separated with commas.
 
-![Package Internalization Screen](/images/c4b-azure/InternalizePackagesView.png)
+![Package Internalization Screen](https://img.chocolatey.org/docs/c4b/InternalizePackagesView.png)
 
 ### Review + create
 
@@ -100,7 +100,7 @@ You can get the FQDN using the [Azure Portal](https://portal.azure.com), or via 
 1. Select the resource with type `Public IP Address`
 1. Copy the `DNS name` from the `Essentials` panel at the top of the blade
 
-![Public IP Address](/images/c4b-azure/PublicIPAddress-EssentialsView.png)
+![Public IP Address](https://img.chocolatey.org/docs/c4b/PublicIPAddress-EssentialsView.png)
 
 **PowerShell:**
 
@@ -154,22 +154,22 @@ You can access these passwords either via the Azure Portal, or with PowerShell.
 1. Under `Settings` on the left of the blade, select `Access Policies`
 1. Click `+ Add Access Policy`
 
-    ![Vault Access Policies](/images/c4b-azure/KeyVault-AccessPolicies.png)
+    ![Vault Access Policies](https://img.chocolatey.org/docs/c4b/KeyVault-AccessPolicies.png)
 
 1. Select, at a minimum, `Secret Permissions`: `Get` and `List` *(You can use a Template such as `Secret Management`)*
 
-    ![Secret Permissions](/images/c4b-azure/KeyVault-SecretPermissions.png)
+    ![Secret Permissions](https://img.chocolatey.org/docs/c4b/KeyVault-SecretPermissions.png)
 
 1. Under `Select Principal`, click `None Selected` and find your current user, and select it
 1. Click `Add`
 
-    ![Add Principal](/images/c4b-azure/KeyVault-AddPrincipal.png)
+    ![Add Principal](https://img.chocolatey.org/docs/c4b/KeyVault-AddPrincipal.png)
 
 1. Back on the `Access Policies` blade, hit `Save` and wait for the operation to complete
 
 You can now view and access the secrets in this KeyVault.
 
-![Secrets in Vault](/images/c4b-azure/KeyVault-Secrets.png)
+![Secrets in Vault](https://img.chocolatey.org/docs/c4b/KeyVault-Secrets.png)
 
 1. Under `Settings` on the left of the blade, select `Secrets`
 1. For each Password you want to retrieve (e.g. nexusPassword)
@@ -290,13 +290,13 @@ To fix these scripts, you need to install a package called `chocolatey-licensed-
 1. Log into Jenkins at `https://<FQDN>/jenkins`
 1. Click the green "play" triangle to the right of the `Internalize packages from the Chocolatey Community and Licensed Repositories` job
 
-    ![Location of Jenkins job play button](/images/c4b-azure/Jenkins-Play-Button.png)
+    ![Location of Jenkins job play button](https://img.chocolatey.org/docs/c4b/Jenkins-Play-Button.png)
 
 1. Enter `chocolatey-licensed-jenkins-scripts` under the `P_PKG_LIST` parameter
 1. Change the `P_DST_URL` parameter so that it ends with `ChocolateyInternal` rather than `ChocolateyTest`, this is being changed because the job that promotes packages between these repositories will not work if you have already upgraded to Chocolatey CLI v2.0.0 or above
 1. Click `Build`
 
-    ![Example of settings for the Internalize Packages Jenkins job](/images/c4b-azure/Jenkins-Job-Fix-Internalize.png)
+    ![Example of settings for the Internalize Packages Jenkins job](https://img.chocolatey.org/docs/c4b/Jenkins-Job-Fix-Internalize.png)
 
 <Callout type="info">
     You may wish to run this job a second time, leaving the `P_DST_URL` as its default value. This will allow future updates to the `chocolatey-licensed-jenkins-scripts` package to be automatically internalized.

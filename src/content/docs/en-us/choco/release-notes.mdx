@@ -24,6 +24,25 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <ChocolateyComponentDependenciesLink />
 
+## 2.5.1 (September 3, 2025) \{#v2.5.1}
+
+### Bug Fix
+
+- Unable to install additional packages in the Docker image due to addition of backports repository.
+  - See [__#3756__](https://github.com/chocolatey/choco/issues/3756) by [LordAro](https://github.com/LordAro).
+
+### Dependency Change
+
+- [Security] Update bundled 7zip executables to v25.01.
+  - See [__#3767__](https://github.com/chocolatey/choco/issues/3767) by [nagten](https://github.com/nagten) resolved in [__!3778__](https://github.com/chocolatey/choco/pull/3778) by [gep13](https://github.com/gep13).
+
+### Contributors
+
+3 contributors made this release possible.
+
+<a href="https://github.com/LordAro"><img src="https://avatars.githubusercontent.com/u/4007992?v=4" alt="LordAro" height="32" width="32"/></a> <a href="https://github.com/nagten"><img src="https://avatars.githubusercontent.com/u/68544113?v=4" alt="nagten" height="32" width="32"/></a> <a href="https://github.com/gep13"><img src="https://avatars.githubusercontent.com/u/1271146?u=abe1c7adac9206392a54628dd0332850241ba90d&v=4" alt="gep13" height="32" width="32"/></a> 
+
+
 ## 2.5.0 (July 9, 2025) \{#v2.5.0}
 
 <Callout type="info">
@@ -121,29 +140,6 @@ Read our [blog post](https://blog.chocolatey.org/2025/07/chocolatey-cli-250-high
 - Fix - Searching for specific version on a NuGet v3 only feed returns no results - see [#3396](https://github.com/chocolatey/choco/issues/3396).
 - Fix - Credentials from configured source are used for a non-configured source when the URL is similar - see [#3565](https://github.com/chocolatey/choco/issues/3565).
 
-## 1.4.3 (February 10, 2025) \{#v1.4.3}
-
-### Bug Fixes
-
-- Fix - Unable to upgrade packages on certain authenticated feeds - see [#3613](https://github.com/chocolatey/choco/issues/3613).
-- Fix - Trace warning is outputted even when `--trace` argument is not used - see [#3621](https://github.com/chocolatey/choco/issues/3621).
-- [Security] Fix - Update bundled 7zip executables to v24.09 - see [#3625](https://github.com/chocolatey/choco/issues/3625).
-
-## 1.4.2 (Unreleased) \{#v1.4.2}
-
-<Callout type="info">
-    Due to a previous bug in 1.4.1, which has been corrected in Chocolatey CLI v1.4.3, the artifacts from the 1.4.2 release have been removed.
-</Callout>
-
-### Bug Fix
-
-- [Security] Fix - Trace logging is allowed in non-elevated session - see [#3603](https://github.com/chocolatey/choco/issues/3603).
-
-## 1.4.1 (December 4, 2024) \{#v1.4.1}
-
-### Bug Fix
-
-- Fix - Credentials from configured source used for a non-configured source when the URL is similar - see [#3566](https://github.com/chocolatey/choco/issues/3566).
 
 ## 2.4.0 (November 12, 2024) \{#v2.4.0}
 
@@ -434,17 +430,6 @@ A fix has been found for this problem, and will be released in a future alpha re
 - Sort list of installed/upgraded packages - see [#3112](https://github.com/chocolatey/choco/issues/3112).
 
 
-## 1.4.0 (May 10, 2023) \{#may-10-2023}
-
-### Bug Fix
-
-- Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
-
-### Improvement
-
-- Ensure the most recent version of Chocolatey-NuGet.Core package is being used - see [#3150](https://github.com/chocolatey/choco/issues/3150).
-
-
 ## 2.0.0-beta-20230426 (April 26, 2023)
 
 <Callout type="warning">
@@ -554,12 +539,6 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 - Remove re-instated Chocolatey commands which were added in v1.0.1 - see [#2678](https://github.com/chocolatey/choco/issues/2678).
 
 
-## 1.3.1 (March 14, 2023) \{#march-14-2023}
-
-### Bug Fix
-
-- Fix - `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
-
 ## 2.0.0-alpha-20230307 (March 7, 2023) \{#alpha-20230307-march-7-2023}
 
 <Callout type="warning">
@@ -623,20 +602,6 @@ In addition to the breaking changes listed in the previous [alpha release](#alph
 - Fix typos and spelling errors - see [2990](https://github.com/chocolatey/choco/pull/2990).
 
 
-## [1.3.0](https://github.com/chocolatey/choco/milestone/59?closed=1) (February 15, 2023) \{#february-15-2023}
-
-### Deprecated Features
-
-- Deprecate WebPI alternative source - see [#2958](https://github.com/chocolatey/choco/issues/2958).
-- Deprecate usage of direct path to nupkg or nuspec in `choco install` command - see [#2981](https://github.com/chocolatey/choco/issues/2981).
-- Deprecate the `--remove` option in the apikey command - see [#2983](https://github.com/chocolatey/choco/issues/2983).
-- Deprecate `choco config list` including output from features/sources/apikeys etc - see [#2985](https://github.com/chocolatey/choco/issues/2985).
-- Deprecate unnecessary public methods on CygwinService - see [#3026](https://github.com/chocolatey/choco/issues/3026).
-
-### Bug Fixes
-
-- Fix - File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
-
 ## 2.0.0-alpha-20230124 (January 24, 2023) \{#alpha-20230124-january-21-2023}
 
 <Callout type="warning">
@@ -674,6 +639,78 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 - Fix broken URLs in repository README file - see [#2888](https://github.com/chocolatey/choco/pull/2888).
 - Update package files to reflect current CCR moderation requirements - see [#2920](https://github.com/chocolatey/choco/issues/2920).
+
+
+## 1.4.4 (September 3, 2025) \{#v1.4.4}
+
+### Dependency Change
+
+- [Security] Update bundled 7zip executables to v25.01.
+  - See [__#3779__](https://github.com/chocolatey/choco/issues/3779) by [gep13](https://github.com/gep13) resolved in [__!3780__](https://github.com/chocolatey/choco/pull/3780) by [gep13](https://github.com/gep13).
+
+### Contributors
+
+1 contributors made this release possible.
+
+<a href="https://github.com/gep13"><img src="https://avatars.githubusercontent.com/u/1271146?v=4" alt="gep13" height="32" width="32"/></a>
+
+
+## 1.4.3 (February 10, 2025) \{#v1.4.3}
+
+### Bug Fixes
+
+- Fix - Unable to upgrade packages on certain authenticated feeds - see [#3613](https://github.com/chocolatey/choco/issues/3613).
+- Fix - Trace warning is outputted even when `--trace` argument is not used - see [#3621](https://github.com/chocolatey/choco/issues/3621).
+- [Security] Fix - Update bundled 7zip executables to v24.09 - see [#3625](https://github.com/chocolatey/choco/issues/3625).
+
+## 1.4.2 (Unreleased) \{#v1.4.2}
+
+<Callout type="info">
+    Due to a previous bug in 1.4.1, which has been corrected in Chocolatey CLI v1.4.3, the artifacts from the 1.4.2 release have been removed.
+</Callout>
+
+### Bug Fix
+
+- [Security] Fix - Trace logging is allowed in non-elevated session - see [#3603](https://github.com/chocolatey/choco/issues/3603).
+
+## 1.4.1 (December 4, 2024) \{#v1.4.1}
+
+### Bug Fix
+
+- Fix - Credentials from configured source used for a non-configured source when the URL is similar - see [#3566](https://github.com/chocolatey/choco/issues/3566).
+
+
+## 1.4.0 (May 10, 2023) \{#may-10-2023}
+
+### Bug Fix
+
+- Fix - When no hook scripts are installed you cannot install/upgrade a package on a system using PowerShell 2 - see [#3088](https://github.com/chocolatey/choco/issues/3088).
+
+### Improvement
+
+- Ensure the most recent version of Chocolatey-NuGet.Core package is being used - see [#3150](https://github.com/chocolatey/choco/issues/3150).
+
+
+## 1.3.1 (March 14, 2023) \{#march-14-2023}
+
+### Bug Fix
+
+- Fix - `chocolateyBeforeModify.ps1` does not get called for dependent packages - see [#1092](https://github.com/chocolatey/choco/issues/1092).
+
+
+## [1.3.0](https://github.com/chocolatey/choco/milestone/59?closed=1) (February 15, 2023) \{#february-15-2023}
+
+### Deprecated Features
+
+- Deprecate WebPI alternative source - see [#2958](https://github.com/chocolatey/choco/issues/2958).
+- Deprecate usage of direct path to nupkg or nuspec in `choco install` command - see [#2981](https://github.com/chocolatey/choco/issues/2981).
+- Deprecate the `--remove` option in the apikey command - see [#2983](https://github.com/chocolatey/choco/issues/2983).
+- Deprecate `choco config list` including output from features/sources/apikeys etc - see [#2985](https://github.com/chocolatey/choco/issues/2985).
+- Deprecate unnecessary public methods on CygwinService - see [#3026](https://github.com/chocolatey/choco/issues/3026).
+
+### Bug Fixes
+
+- Fix - File not found error when using `--source=cygwin` to install packages - see [#2953](https://github.com/chocolatey/choco/issues/2953).
 
 
 ## [1.2.1](https://github.com/chocolatey/choco/milestone/58?closed=1) (December 6, 2022) \{#december-6-2022}
