@@ -12,7 +12,23 @@ import Xref from '@components/Xref.astro';
 
 This is an overview of the Chocolatey for Business Azure Environment.
 
-It is a deployable resource in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde), allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
+It is a deployable offering in the [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/chocolateysoftwareinc1605695330527.c4b_azure_qde), allowing for the speedy creation of an opinionated, pre-configured environment containing Chocolatey Central Management (CCM), a package repository (Nexus OSS), and an automation engine (Jenkins).
+
+It will deploy the following Azure resources into an empty resource group of your choice:
+
+* Virtual machine
+    * Network interface
+    * 2x Disk
+* Microsoft SQL Server
+    * SQL Database
+* Virtual network
+* Network security group
+* Public IP address
+* Storage Account
+* Application gateway
+* Microsoft KeyVault
+
+It also uses Deployment Scripts during the deployment, but they are only used for validation and will be automatically cleaned up after 24 hours.
 
 <Callout type="info">
     A Chocolatey for Business Azure Environment is a fully functional Chocolatey for Business environment; as such, it will require a business or trial license.
