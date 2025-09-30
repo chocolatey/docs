@@ -14,9 +14,9 @@ In this walk-through we'll learn how to leverage zip archives within our packagi
 If you have not yet read <Xref title="Preparing Your Environment for Package Creation" value="howto-prepare-env" />, please do so now and ensure
 you are ready to go before continuing.
 
-### Using `Get-ChocolateyUnzip`
+### Using `Expand-ChocolateyArchive`
 
-In our first example, we'll leverage <Xref title="`Get-ChocolateyUnzip`" value="get-chocolateyunzip" /> to extract a Zip archive to disk. This function requires
+In our first example, we'll leverage <Xref title="`Expand-ChocolateyArchive`" value="expand-chocolateyarchive" /> to extract a Zip archive to disk. This function requires
 that you include the Zip archive as part of the package. We'll look at downloading an archive from an external location later in our **Creating A Large Package** tutorial.
 
 #### Creating Your Package
@@ -33,7 +33,7 @@ Perform the following steps:
 
 Your new package will be created in the `tutorials` folder, visible in the Explorer pane of VS Code.
 Expand the `tools` folder and open up the `chocolateyInstall.ps1` file. The `chocolateyInstall.ps1` file is
-executed when you run either the `install` or `upgrade` commands with your package. 
+executed when you run either the `install` or `upgrade` commands with your package.
 
 The default template fills this file out for us and provides a LOT of information. For our purposes, we can press `Ctrl+A` and delete the contents of this file.
 
@@ -44,13 +44,12 @@ $ErrorActionPreference = 'Stop' # stop on all errors
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $zipArchive = Join-Path $toolsDir -ChildPath 'tutorial.zip'
 
-
 $unzipArgs = @{
-  FileFullPath = $zipArchive
+  Path = $zipArchive
   Destination = 'C:\zip_tutorial'
 }
 
-Get-ChocolateyUnzip @unzipArgs
+Expand-ChocolateyArchive @unzipArgs
 
 ```
 
