@@ -1,14 +1,10 @@
 import Xref from '@components/Xref.astro';
 
-A large part of the magic of Chocolatey is the community around it, and the Chocolatey Community Repository - a package repository filled with packages to do everything from install software to configure machines.
+One of Chocolatey's greatest strengths is the Chocolatey Community Repository; a package repository with over 10,000 pre-made packages that do everything from install software to configure machines.
 
-Chocolatey For Business customers can use tools such as the Package Internalizer to download packages and ensure they're usable even in air-gapped environments, or if externally referenced binaries are changed or removed.
+Chocolatey for Business gives its users the ability to leverage those packages in their own internal repositories without needing to reach out over the internet via Package Internalizer, ensuring their usability even in air-gapped environments.
 
-To automate tasks like checking for updated packages, downloading and internalizing them, and pushing them to an internal repository for consumption, we recommend using a platform such as (but not limited to) Jenkins, PowerShell Universal, or GitHub Actions.
-
-In order to run Package Internalizer, though your automation platform may be running on any platform, your task agent must be running PowerShell or PowerShell Core on a Windows machine.
-
-We have example scripts and jobs that can be used in such environments, and documentation to walk through configuration of such systems - to learn more, select a platform below:
+Combined with an automation platform, Package Internalizer can take the packages you want, internalize them, and push them to your internal repository, then update those packages on a schedule of your choosing. To setup and configure an automation platform, please select a tile to get started:
 
 <div class="row mb-md-5">
     <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
