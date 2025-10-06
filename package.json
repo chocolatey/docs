@@ -20,13 +20,15 @@
     "dependencies": "yarn install --immutable",
     "dev": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro dev",
     "playwright": "npx playwright test",
+    "playwright-copy": "node node_modules/choco-playwright/build/copy-playwright.js",
     "preview": "npx astro preview",
     "start": "yarn dev",
     "telemetry": "npx astro telemetry disable",
-    "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs"
+    "choco-theme": "npx --quiet ts-node --skipIgnore node_modules/choco-theme/build/choco-theme.ts --repository=docs && yarn playwright-copy"
   },
   "dependencies": {
-    "choco-astro": "0.1.2",
-    "choco-theme": "0.8.1"
+    "choco-astro": "0.3.2",
+    "choco-playwright": "0.1.0",
+    "choco-theme": "1.3.0"
   }
 }

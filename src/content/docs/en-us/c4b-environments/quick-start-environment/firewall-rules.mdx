@@ -4,8 +4,8 @@ xref: firewall-rules
 title: Firewall Rules
 description: Firewall rules used by the Quick Start Environment
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## External Firewall Ports (Optional)
@@ -30,6 +30,7 @@ These are the ports that are already opened on Windows Firewall in the Quick Sta
 
 | Port  | Application   |
 | :---: | :------------ |
+| 7443  | Jenkins Web UI |
 | 8443  | Nexus Web UI  |
 |  443  | Chocolatey Central Management Dashboard |
 | 24020 | Chocolatey Central Management Service   |

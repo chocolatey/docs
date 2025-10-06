@@ -4,20 +4,20 @@ xref: exclude-installed-packages
 title: Exclude Installed Packages
 description: Do not show packages that are already installed when viewing sources
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 By default, when viewing remote sources, such as the Chocolatey Community Repository, Chocolatey GUI will show you all
 available packages, even if you already have them installed.  Installed packages will be marked with a green banner,
 indicating that they are currently installed.  As a result, you may see something like the following:
 
-![Exclude Installed Packages Disabled](/images/chocolatey-gui/feature_exclude_installed_packages_disabled.png "Exclude Installed Packages Disabled")
+![Exclude Installed Packages Disabled](https://img.chocolatey.org/docs/chocolatey-gui/feature_exclude_installed_packages_disabled.png "Exclude Installed Packages Disabled")
 
 By enabling this feature, packages that are already installed will no longer be shown in the list of available packages,
 as shown here:
 
-![Exclude Installed Packages Enabled](/images/chocolatey-gui/feature_exclude_installed_packages_enabled.png "Exclude Installed Packages Enabled")
+![Exclude Installed Packages Enabled](https://img.chocolatey.org/docs/chocolatey-gui/feature_exclude_installed_packages_enabled.png "Exclude Installed Packages Enabled")
 
 <Callout type="info">
     When first enabling this feature, if the remote source was already open, it will be refresh to refresh the package list before the packages will be excluded.

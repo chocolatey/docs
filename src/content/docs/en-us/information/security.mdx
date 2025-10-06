@@ -4,8 +4,8 @@ xref: security
 title: Security
 description: Chocolatey takes security very seriously
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## TLDR
@@ -162,7 +162,7 @@ C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC>sn -T c:\ProgramData\choc
 Microsoft (R) .NET Framework Strong Name Utility  Version 4.0.30319.1
 Copyright (c) Microsoft Corporation.  All rights reserved.
 
-Public key token is 7If 9d02ea9cad655eb
+Public key token is 79d02ea9cad655eb
 ```
 
 - Choco will warn if it is not signed with the right key (the FOSS project has a default key so that it can build appropriately) and require a user to pass `--allow-unofficial-build`. Over time we are going to increase this so that more places will restrict this (those a user can't just go change source of choco on and build).

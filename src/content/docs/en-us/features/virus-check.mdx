@@ -4,8 +4,8 @@ xref: virus-check
 title: Runtime Malware Protection (Pro+)
 description: Virus checking via VirusTotal or Generic scanner
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 We are pleased to offer runtime malware protection for our [customers](https://chocolatey.org/pricing)!
@@ -18,11 +18,11 @@ Packages which embed the software binaries will not have their binaries scanned 
 
 When a binary is not flagged:
 
-![Virus scan pass](/images/virus_scan_normal.png)
+![Virus scan pass](https://img.chocolatey.org/docs/automatic-packages/virus_scan_normal.png)
 
 When a binary is flagged:
 
-![Virus scan failure](/images/virus_scan_flagged.png)
+![Virus scan failure](https://img.chocolatey.org/docs/automatic-packages/virus_scan_flagged.png)
 
 ### VirusTotal
 
@@ -80,7 +80,7 @@ choco feature enable --name="'virusCheck'"
 
 ## See It In Action
 
-![Pro install in action](/images/gifs/chocopro_install_stopped.gif)
+![Pro install in action](https://img.chocolatey.org/docs/gifs/chocopro_install_stopped.gif)
 
 <Callout type="info">
     To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.

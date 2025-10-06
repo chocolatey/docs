@@ -1,8 +1,8 @@
 import { defineConfig, devices, type PlaywrightTestConfig } from '@playwright/test';
 
-// TODO: Import this data from choco-theme/build/data/playwright-config.ts once importing ts files in this file is supported.
+const url = 'http://localhost:5086/en-us/';
 const playwrightConfig: PlaywrightTestConfig = {
-    testDir: './src/tests',
+    testDir: './playwright/tests',
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -16,28 +16,18 @@ const playwrightConfig: PlaywrightTestConfig = {
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: '',
+        baseURL: url,
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry'
     },
     webServer: {
-        command: 'yarn preview',
+        command: process.env.CI ? 'yarn preview' : 'yarn dev',
         timeout: 120 * 1000,
         reuseExistingServer: !process.env.CI,
-        url: ''
+        url: url
     }
 };
-
-playwrightConfig.use = {
-    ...playwrightConfig.use,
-    baseURL: 'http://localhost:5086/en-us/'
-}
-
-playwrightConfig.webServer = {
-    ...playwrightConfig.webServer ? playwrightConfig.webServer : [],
-    url: 'http://localhost:5086/en-us/'
-}
 
 export default defineConfig({
     ...playwrightConfig,

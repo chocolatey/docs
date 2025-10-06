@@ -2,7 +2,7 @@
 
 ---
 
-import Callout from '@choco/components/Callout.astro';
+import Callout from '@choco-astro/components/Callout.astro';
 
 <Callout type="warning">
     As of Chocolatey Central Management v0.13.0, the SQL connection mode has changed to secure-by-default. By default, all connection strings will assume `Encrypt=true;` and attempt a connection to the SQL Server over SSL. If you wish to disable this, you must pass a complete connection string to the `/ConnectionString` package parameter that contains an explicit `Encrypt=false;` parameter.

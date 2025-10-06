@@ -4,13 +4,13 @@ xref: allow-non-admin-access-to-settings
 title: Allow Non Admin Access to Settings
 description: Controls whether or not a non-administrator user can access the Settings Screen.  NOTE - This feature will only work when using the licensed extension for Chocolatey and Chocolatey GUI.
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 When using Chocolatey GUI for Business a new feature is available in the Settings screen:
 
-![Allow non-admin access to Settings](/images/chocolatey-gui/allow_non_admin_access_to_settings.png "Allow non-admin access to Settings")
+![Allow non-admin access to Settings](https://img.chocolatey.org/docs/chocolatey-gui/allow_non_admin_access_to_settings.png "Allow non-admin access to Settings")
 
 Which controls whether or not a non-admin user has access to the Settings screen or not.
 
@@ -18,7 +18,7 @@ By default, this setting is enabled, so that we don't introduce a breaking chang
 
 When this setting is turned off, a non-admin user will no longer be able to access the Settings screen, as shown below:
 
-![Access to Settings screen removed](/images/chocolatey-gui/access_to_settings_removed.png "Access to Settings screen removed")
+![Access to Settings screen removed](https://img.chocolatey.org/docs/chocolatey-gui/access_to_settings_removed.png "Access to Settings screen removed")
 
 <Callout type="info">
     Regardless of this setting, an administrator user will always be able to access the Settings screen.

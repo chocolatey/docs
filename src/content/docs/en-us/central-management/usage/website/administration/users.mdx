@@ -4,97 +4,97 @@ xref: ccm-administration-users
 title: Users
 description: Information about configuring Users within the Chocolatey Central Management Administration section
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 In Chocolatey Central Management, Users are people who are given access to login in, and perform operations.
 
 Users can be accessed by going to Administration on the left-hand navigation and selecting Users.
 
-![Users menu entry on the Chocolatey Central Management Dashboard](/images/ccm-playwright/dashboard/left-menu-nested-users.png)
+![Users menu entry on the Chocolatey Central Management Dashboard](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-users.png)
 
 ## Creating a User
 
 <Callout type="info">
-    If you do not see the **+ Create new user** button, please see your Administrator to determine if your account has the _Creating new user_ permission.
+    If you do not see the **Create User** option, please see your Administrator to determine if your account has the _Creating new user_ permission.
 </Callout>
 
-On the main Users page, select the **+ Create New User** button.
+From the Chocolatey Central Management dashboard, select **Administration** then **Users** from the left sidebar and select the **Create User** option.
 
-![Create New User button on the Users page](/images/ccm-playwright/administration/users/button-create-new-user.png)
+![Chocolatey Central Management dashboard, arrow pointing to the Create User menu option in the left sidebar](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-create-user.png)
 
-You will then be presented with the `Create New User` window where you can enter all the information for the User, including `First Name`, `Email address`, etc.
+You will then be presented with the **Create User** modal where you can enter all the information for the User, including `First Name`, `Email address`, etc.
 
-![Creating New User Setting User Properties](/images/ccm-playwright/administration/users/modal-new-user-tab-information.png)
+![Creating New User Setting User Properties](https://img.chocolatey.org/docs/ccm-playwright/administration/users/modal-new-user-tab-information.png)
 
-Next you'll want to click over to `Roles`. This window will allow you to select what specific <Xref title="Roles" value="ccm-administration-roles" /> you wish to give your new User.
+Next you'll want to click over to **Roles** tab. This will allow you to select what specific <Xref title="Roles" value="ccm-administration-roles" /> you wish to give your new User.
 
-![Creating New User Setting Roles](/images/ccm-playwright/administration/users/modal-new-user-tab-roles.png)
+![Creating New User Setting Roles](https://img.chocolatey.org/docs/ccm-playwright/administration/users/modal-new-user-tab-roles.png)
 
-Click 💾 **Save** to close the window and create the new User.
+Click **Save** to close the modal and create the new User.
 A green toast notification will be shown once the operation completes successfully.
 
 ## Editing a User
 
 <Callout type="info">
-    If you do not see the **Edit** menu entry or the ⚙ **Actions** buttons, please see your Administrator to determine if your account has the _Editing user_ permission.
+    If you do not see the **Edit** menu entry or the **Actions** buttons, please see your Administrator to determine if your account has the _Editing user_ permission.
 </Callout>
 
 On the main Users page, [find](#searching-for-a-user) the User you want to edit.
-Select the ⚙ **Actions** button on the left-hand side of the User, and then select **Edit** to open the _Edit User_ window.
+Select the **Actions** button on the left-hand side of the User, and then select **Edit** to open the **Edit User** modal.
 
-![Edit menu entry in User actions flyout menu](/images/ccm-playwright/administration/users/table-row-button-action-dropdown-menu-edit.png)
+![Edit menu entry in User actions flyout menu](https://img.chocolatey.org/docs/ccm-playwright/administration/users/table-row-button-action-dropdown-menu-edit.png)
 
-From the **Edit Role** window, you can modify all the properties for a User, for example, `First Name`, `Phone number`, etc. In addition, you can alter the <Xref title="Roles" value="ccm-administration-roles" /> associated with the User.
+From the **Edit Role** modal, you can modify all the properties for a User, for example, `First Name`, `Phone number`, etc. In addition, you can alter the <Xref title="Roles" value="ccm-administration-roles" /> associated with the User.
 
-Once modifications are complete, click the 💾 **Save** button.
+Once modifications are complete, click the **Save** button.
 A green toast notification will be shown once the operation completes successfully.
 
 ## Fine grained permissions
 
-In addition to configuring a set of Roles for an individual User, so can set speicial permissions for an individual User.
+In addition to configuring a set of Roles for an individual User, so can set special permissions for an individual User.
 
 On the main Users page, [find](#searching-for-a-user) the User you want to edit.
-Select the ⚙ **Actions** button on the left-hand side of the User, and then select **Permission** to open the _Permissions_ window.
+Select the **Actions** button on the left-hand side of the User, and then select **Permission** to open the **Permissions** modal.
 
-![Permissions menu entry in User actions flyout menu](/images/ccm-playwright/administration/users/modal-permissions.png)
+![Permissions menu entry in User actions flyout menu](https://img.chocolatey.org/docs/ccm-playwright/administration/users/modal-permissions.png)
 
 From the tree of permissions, check/uncheck the permissions that are needed.
 
-Once modifications are complete, click the 💾 **Save** button.
+Once modifications are complete, click the **Save** button.
 A green toast notification will be shown once the operation completes successfully.
 
 ## Deleting a User
 
 <Callout type="info">
-    If you do not see the **Delete** menu entry or the ⚙ **Actions** buttons, please see your Administrator to determine if your account has the _Deleting user_ permission.
+    If you do not see the **Delete** menu entry or the **Actions** buttons, please see your Administrator to determine if your account has the _Deleting user_ permission.
 </Callout>
 
 On the main Users page, [find](#searching-for-a-user) the User that needs to be deleted.
-Select the ⚙ **Actions** button on the left-hand side of the User, and then select **Delete**.
+Select the **Actions** button on the left-hand side of the User, and then select **Delete**.
 A prompt will be shown asking `Are you sure?`.
-Click `Cancel` to not continue with the operation.
-Click `Yes` to proceed with the operation.
+Click **Cancel** to not continue with the operation.
+Click **Yes** to proceed with the operation.
 A green toast notification will be shown once the operation completes successfully.
 
 ## Unlocking a User
 
 <Callout type="info">
-    If you do not see the **Unlock** menu entry or the ⚙ **Actions** buttons, please see your Administrator to determine if your account has the _Editing user_ permission.
+    If you do not see the **Unlock** menu entry or the **Actions** buttons, please see your Administrator to determine if your account has the _Editing user_ permission.
 </Callout>
 
 If a User enters the wrong login information 5 times, their account will become locked.
 To allow them to attempt to login again, the account will need to be unlocked.
 On the main Users page, [find](#searching-for-a-user) the User that is locked out.
-Select the ⚙ **Actions** button on the left-hand side of the User, and then select **Unlock**.
+Select the **Actions** button on the left-hand side of the User, and then select **Unlock**.
 A green toast notification will be shown once the operation completes successfully.
 
 ## Searching for a User
 
 By default, there is a single search box, which can be used to search for a given User by their `User name`, `First Name`, `Surname`, and `Email`.
 
-Clicking the `Show advanced filters` link, provide additional filtering options:
+Clicking the **Toggle advanced filters** link, provide additional filtering options:
 
 - Permissions
 - Role
@@ -103,7 +103,7 @@ Clicking the `Show advanced filters` link, provide additional filtering options:
 ## Exporting User Information
 
 From the main Users page, it is possible to export all User information into either PDF or Excel format.
-This can be done by using either the `Export | Export to PDF`, or the `Export | Export to Excel` button.
+This can be done by selecting an option from the **Actions for Users** button menu.
 
 This will generate a file name similar to `Chocolatey_Users_20231122_130612.xlsx`, or `Chocolatey_Users_20231122_130612.pdf`.
 

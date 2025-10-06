@@ -4,58 +4,58 @@ xref: ccm-administration-roles
 title: Roles
 description: Information about configuring roles within the Chocolatey Central Management Administration section
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Chocolatey Central Management's roles are the basis for setting collections of permissions that can be assigned to specific users within Chocolatey Central Management.
 
 Roles can be accessed by going to Administration on the left-hand navigation and selecting roles.
 
-![Roles menu entry on the CCM Dashboard](/images/ccm-playwright/dashboard/left-menu-nested-roles.png)
+![Roles menu entry on the Chocolatey Central Management Dashboard](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-roles.png)
 
 ## Creating a Role
 
-On the main roles page, select the **+ Create New Role** button.
+From the Chocolatey Central Management dashboard, select **Administration** then **Roles** from the left sidebar and select the **Create Role** option.
 
-![Create New Role button on the Roles page](/images/ccm-playwright/administration/roles/button-create-new-role.png)
+![Chocolatey Central Management dashboard, arrow pointing to the Create Role menu option in the left sidebar](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-create-role.png)
 
-You will then be presented with the Role properties window where you can enter the name for the new role. You also have the option to make your new role the Default which will be added to all new users by default.
+You will then be presented with the Role properties tab where you can enter the name for the new role. You also have the option to make your new role the Default which will be added to all new users by default.
 
-![Creating New Role Setting Role Properties](/images/ccm-playwright/administration/roles/modal-new-role-tab-role.png)
+![Creating New Role Setting Role Properties](https://img.chocolatey.org/docs/ccm-playwright/administration/roles/modal-new-role-tab-role.png)
 
-Next you'll want to click over to Permissions. This window will allow you to select what specific permissions you wish to give your new role.
+Next you'll want to click over to Permissions. This tab will allow you to select what specific permissions you wish to give your new role.
 
-![Creating New Role Setting Permissions](/images/ccm-playwright/administration/roles/modal-new-role-tab-permissions.png)
+![Creating New Role Setting Permissions](https://img.chocolatey.org/docs/ccm-playwright/administration/roles/modal-new-role-tab-permissions.png)
 
-Click 💾 **Save** to close the window and create the new role.
+Click **Save** to close the modal and create the new role.
 
 ## Editing a Role
 
 <Callout type="info">
-    If you do not see the **Edit** menu entry or the ⚙ **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permission.
+    If you do not see the **Edit** menu entry or the **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permission.
 </Callout>
 
 On the main Roles page, find the role you want to edit.
-You can also use _Select Permissions (0)_ to filter the Roles listed based on them having the permissions you select.
+You can also use **Select permissions (0)** to filter the Roles listed based on them having the permissions you select.
 
-Select the ⚙ **Actions** button on the left-hand side of the role, and then select **Edit** to open the _Edit Group_ window.
+Select the **Actions** button on the left-hand side of the role, and then select **Edit** to open the **Edit Group** modal.
 
-![Edit menu entry in role actions flyout menu](/images/ccm-playwright/administration/roles/table-row-button-action-dropdown-menu-edit.png)
+![Edit menu entry in role actions flyout menu](https://img.chocolatey.org/docs/ccm-playwright/administration/roles/table-row-button-action-dropdown-menu-edit.png)
 
-From the **Edit Role** window, you can modify the name, set it to be the Default role, and edit its permissions.
+From the **Edit Role** modal, you can modify the name, set it to be the Default role, and edit its permissions.
 
 ## Deleting a Role
 
 <Callout type="info">
-    If you do not see the **Delete** menu entry or the ⚙ **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permissions.
+    If you do not see the **Delete** menu entry or the **Actions** buttons, please see your Administrator to determine if your account has the _Edit Roles_ permissions.
     
-    Roles labelled **Static** cannot be deleted.
+    Roles labelled **Built-in role** cannot be deleted.
     
     You cannot delete a Role if the account you are using also has the Role assigned to it.
 </Callout>
 
-On the main Roles page, find the role you want to delete. You can also use _Select Permissions (0)_ to filter the roles listed based on permission. Similar to the [Edit Role](#editing-a-role) action, select the ⚙ **Actions** button on the left-hand side of the role, and select **Delete**. You will be prompted to confirm the deletion.
+On the main Roles page, find the role you want to delete. You can also use **Select permissions (0)** to filter the roles listed based on permission. Similar to the [Edit Role](#editing-a-role) action, select the **Actions** button on the left-hand side of the role, and select **Delete**. You will be prompted to confirm the deletion.
 
 ## Pre-Configured Roles
 
@@ -66,7 +66,7 @@ When first browsing to the Roles page, you'll be presented with 4 pre-configured
 * CCM Deployment
 * CCM Deployment Privileged
 
-These pre-configured roles are labeled **Static** and cannot be deleted. They can however be edited by name, default role selection, and permissions.
+These pre-configured roles are labeled **Built-in role** and cannot be deleted. They can however be edited by name, default role selection, and permissions.
 
 We recommend you review the permissions these roles have. Then edit them, if needed, to work within your environment.
 

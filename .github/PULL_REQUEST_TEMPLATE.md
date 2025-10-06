@@ -48,6 +48,8 @@ Please remove all comments before submitting.
 
 * [ ] Requires a change to menu structure (top or left-hand side)/
 * [ ] Menu structure has been updated
+* [ ] Images added to the [img](https://github.com/chocolatey/img) repository?
+    * [ ] PR -
 
 ## Related Issue
 <!-- Make sure you have raised an issue for this pull request before continuing. -->

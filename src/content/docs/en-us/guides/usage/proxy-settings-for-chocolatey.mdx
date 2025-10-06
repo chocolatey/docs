@@ -4,8 +4,8 @@ xref: proxy-settings
 title: Use Chocolatey w/Proxy Server
 description: Settings up Chocolatey to use locally configured proxy server
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Proxy Setting Considerations
@@ -88,7 +88,7 @@ To access [community.chocolatey.org](https://community.chocolatey.org) and [pack
 
 Chocolatey by default already supports system set proxy servers
 
-![Two screenshots showing the Internet Explorer settings for System Level Proxy configuration](/images/system-proxy-settings.png)
+![Two screenshots showing the Internet Explorer settings for System Level Proxy configuration](https://img.chocolatey.org/docs/faqs/system-proxy-settings.png)
 
 <Callout type="info">
     Unfortunately proxy bypass lists may not be available when using this method. We recommend explicit proxy settings.
@@ -130,7 +130,7 @@ choco config set --name="'proxyBypassOnLocal'" --value="'true'"
 
 Results in the following items being added to the config file:
 
-![Shows the encrypted proxy configuration information that is stored in the chocolatey.config file](/images/proxy-config-changes.png)
+![Shows the encrypted proxy configuration information that is stored in the chocolatey.config file](https://img.chocolatey.org/docs/faqs/proxy-config-changes.png)
 
 ### Explicit Proxy Settings at Runtime
 

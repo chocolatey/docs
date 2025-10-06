@@ -4,18 +4,18 @@ xref: prevent-all-package-icon-downloads
 title: Prevent All Package Icon Downloads
 description: Allows control over whether an attempt is made to download icons associated with packages
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import RequireChocolateyGuiLicensedExtensionNote from '@components/docs/RequireChocolateyGuiLicensedExtensionNote.mdx';
 
 By default, when using the <Xref title="DefaultToTileViewForLocalSource" value="default-to-tile-view-for-local-source" />, <Xref title="DefaultToTileViewForRemoteSource" value="default-to-tile-view-for-remote-source" />, or the <Xref title="ShowAdditionalPackageInformation" value="show-additional-package-information" /> features, Chocolatey GUI will attempt to download the icon for the package from the URL that is defined within the nuspec file for the package.  For the most part, this works without any problems, however, when being used within an air gapped network, with no internet access, the end result looks like this:
 
-![Showing what happens when Chocolatey GUI runs with no external internet access](/images/chocolatey-gui/feature_prevent_all_package_icon_downloads_1.png "Showing what happens when Chocolatey GUI runs with no external internet access")
+![Showing what happens when Chocolatey GUI runs with no external internet access](https://img.chocolatey.org/docs/chocolatey-gui/feature_prevent_all_package_icon_downloads_1.png "Showing what happens when Chocolatey GUI runs with no external internet access")
 
 With the PreventAllPackageIconDownloads feature enabled, no attempt will be made to download the icon associated with the package, and instead the default Chocolatey icon will be used for each package.  The result being the following:
 
-![Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled](/images/chocolatey-gui/feature_prevent_all_package_icon_downloads_2.png "Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled")
+![Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled](https://img.chocolatey.org/docs/chocolatey-gui/feature_prevent_all_package_icon_downloads_2.png "Showing what happens when Chocolatey GUI runs with no external internet access with PreventAllPackageIconDownloads enabled")
 
 <RequireChocolateyGuiLicensedExtensionNote />
 

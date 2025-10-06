@@ -2,16 +2,16 @@
 order: 30
 xref: ccm-api
 title: API
-description: Information on using the CCM API
+description: Information on using the Chocolatey Central Management API
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Description
 
-As of CCM v0.4.0, the API for Chocolatey Central Management is exposed via Swagger.
-The API documentation and examples can be reached from your CCM dashboard by selecting the ⚙ **API** option on the left sidebar.
+As of Chocolatey Central Management v0.4.0, the API is exposed via Swagger.
+The API documentation and examples can be reached from your Chocolatey Central Management dashboard by selecting the **API** option on the left sidebar.
 The information contained there is referenced here, but you can additionally try out the various API endpoints directly from the Swagger API page for your own CCM environment.
 
 <Callout type="warning">
@@ -20,14 +20,14 @@ The information contained there is referenced here, but you can additionally try
 
 ## ChocoCCM
 
-The <Xref title="ChocoCCM" value="chococcm" /> PowerShell module is available from the PowerShell Gallery for use with CCM v0.4.0 and later.
-This module contains PowerShell commands designed for interfacing with the CCM API directly.
+The <Xref title="ChocoCCM" value="chococcm" /> PowerShell module is available from the PowerShell Gallery for use with Chocolatey Central Management v0.4.0 and later.
+This module contains PowerShell commands designed for interfacing with the Chocolatey Central Management API directly.
 
 See the <Xref title="ChocoCCM Function Reference" value="chococcm-functions" /> page for a full list of commands and their associated documentation.
 
 ## Authentication
 
-Before being able to utilise the CCM API, you will need to create an authenticated session.
+Before being able to utilise the Chocolatey Central Management API, you will need to create an authenticated session.
 This can be done by targeting the `/Account/Login` endpoint and submitting the username and password.
 You will need to use the authenticated session variable for any API calls.
 
@@ -51,8 +51,8 @@ Invoke-WebRequest -Uri "https://$CcmServerHostname/$endpointUrl" -Method $Method
 
 ## Endpoints
 
-Below is a list of the API endpoints available for CCM as of v0.10.0.
-For more detailed information on the API endpoints and their parameters for your version of CCM, select the ⚙ **API** option from the sidebar on the Central Management dashboard, or navigate to `https://CCM_SERVER_HOSTNAME/swagger/`.
+Below is a list of the API endpoints available for Chocolatey Central Management as of v0.10.0.
+For more detailed information on the API endpoints and their parameters for your version of Chocolatey Central Management, select the **API** option from the sidebar on the Central Management dashboard, or navigate to `https://CCM_SERVER_HOSTNAME/swagger/`.
 
 ### AuditLog
 

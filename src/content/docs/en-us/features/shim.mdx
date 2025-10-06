@@ -4,8 +4,8 @@ xref: shim
 title: Executable shimming (like symlinks but better)
 description: Information on how Chocolatey creates shims to installed executables
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 Shimming is like symlinking, but it works much better. It's a form of redirection, where you create a "shim" that redirects input to the actual binary process and shares the output. It can also work to simply call the actual binary when it shims GUI applications.
@@ -37,7 +37,7 @@ Chocolatey ensures the folder `"$($env:ChocolateyInstall)\bin"` in the PATH envi
 
 ## See It In Action
 
-![Shimming - if you are on https://docs.chocolatey.org/en-us/features/shim, see commented html below for detailed description of image](/images/features/features_shimgen.png)
+![Shimming - if you are on https://docs.chocolatey.org/en-us/features/shim, see commented html below for detailed description of image](https://img.chocolatey.org/docs/features/features_shimgen.png)
 
 {/*
 Text in the image above:

@@ -4,8 +4,8 @@ xref: hide-this-pc-source
 title: Hide This PC Source
 description: Allow control over whether Chocolatey GUI should show the local This PC source or not
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import HidingSources from '@components/docs/HidingSources.mdx';
 import RequireChocolateyGuiLicensedExtensionNote from '@components/docs/RequireChocolateyGuiLicensedExtensionNote.mdx';
@@ -13,11 +13,11 @@ import RestartRequiredWarning from '@components/docs/RestartRequiredWarning.mdx'
 
 There are times when you want to simplify the usage of Chocolatey GUI for your end users, and only show the sources where packages can be installed from, rather than including a source which lists all of the currently installed packages.  When this feature is enabled, Chocolatey GUI would change from showing the following:
 
-![Hide This PC Source Disabled](/images/chocolatey-gui/feature_hide_this_pc_source_disabled.png "Hide This PC Source Disabled")
+![Hide This PC Source Disabled](https://img.chocolatey.org/docs/chocolatey-gui/feature_hide_this_pc_source_disabled.png "Hide This PC Source Disabled")
 
 to only showing the available remote sources which are currently configured on the system:
 
-![Hide This PC Source Enabled](/images/chocolatey-gui/feature_hide_this_pc_source_enabled.png "Hide This PC Source Enabled")
+![Hide This PC Source Enabled](https://img.chocolatey.org/docs/chocolatey-gui/feature_hide_this_pc_source_enabled.png "Hide This PC Source Enabled")
 
 Notice that the "This PC" source is no longer available.
 

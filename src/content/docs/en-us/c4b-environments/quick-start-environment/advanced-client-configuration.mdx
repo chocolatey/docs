@@ -1,0 +1,125 @@
+---
+order: 21
+xref: qsg-advanced-endpoint-config
+title: Advanced Endpoint Configuration
+description: Deploy Chocolatey for Business from a Quick Start Environment with advanced configuration options.
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+The minimum configuration for a Chocolatey for Business client installs, licenses, and configures Chocolatey to work with the deployed repository solution and Chocolatey Central Management.
+While this opinionated approach is fine for most situations, flexibility is required for some organizations. This page provides examples of different scenarios in which you wish to deploy Chocolatey in your organization.
+
+<Callout type="info">
+    All examples require you to provide the credentials to connect to the repository installed during execution of the Quickstart Guide.
+
+    These credentials are found in the README file placed on the Desktop of the server during installation, or wherever you documented them if you changed them after installation.
+</Callout>
+## Include Packaging Tools with installation
+
+Some members of your team may be responsible for maintaining Chocolatey packages in your organization. These tools can be included in the installation by providing the `-IncludePackageTools` parameter.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -IncludePackageTools
+```
+
+## Enable/Disable additional features with installation
+
+Some endpoints may require a different set of features. The default installation will apply our _recommended_ configuration.
+However, you can override these defaults or enable/disable additional features by providing the `-AdditionalFeatures` parameter.
+
+In this example we will disable the use of the background service so non-admin users cannot use Chocolatey (not recommended), and enable Gloabl Confirmation so you no longer need to pass -y when performing a package operation.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalFeatures @{ useBackgroundService = 'Disabled'; allowGlobalCOnfirmation = 'Enabled' }
+```
+
+## Apply custom configuration during installation
+
+You can apply custom configuration which overrides the defaults or provides additional configuration by providing the `-AdditionalConfiguration` parameter.
+The following example sets the `centralManagementReportPackagesTimerIntervalInSeconds` configuration item to 21600 seconds (6 hours).
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalConfiguration @{ 'centralManagementReportPackagesTimerIntervalInSeconds' = '21600'}
+```
+
+## Include additional Chocolatey sources
+
+You can include additional Chocolatey sources during the installation process by providing the `-AdditionalSources` parameter.
+
+#### Include a group repository source
+In this example we will add a new source called Engineering, which is a group source configured on the repository server 
+that contains a repository for Engineering-specific packages, with a base repository of general use packages.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalSources @{Name = 'Engineering'; Source = 'https://repo.fabrikam.com/repository/EngineeringGroup/index.json'}
+```
+
+#### Include a local source
+
+<Callout type="warning">
+    The local folder must exist prior to using this source.
+</Callout>
+
+This example include Packaging Tools and sets up a local folder source for package development testing.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -IncludePackageTools -AdditionalSources @{Name = 'LocalTest'; Source = 'C:\packages\testing'}
+```
+
+#### Available options
+
+The following is a sample hashtable of all the available options you can pass while adding additional sources.
+
+```powershell
+@{
+    Name = 'MySource'
+    Source = 'https://nexus.fabrikam.com/repository/MyChocolateySource'
+    #Optional items
+    Credentials = $MySourceCredential
+    AllowSelfService = $true # Defaults to $false
+    AdminOnly = $true # Defaults to $false
+    BypassProxy = $true # Defaults to $false
+    Priority = 10
+    Certificate = 'C:\cert.pfx'
+    CertificatePassword = 's0mepa$$'
+}
+    ```
+
+## Install additional packages
+
+You can install additional Chocolatey packages during the installation process by providing the `-AdditionalPackages` parameter.
+
+<Callout type="warning">
+    To use this parameter, you must ensure that the package is available on configured sources.
+</Callout>
+
+#### Install the latest version of the notepadplusplus.install package
+The following example installs the notepadplusplus.install package.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalPackages @{Id ='notepadplusplus.install'}
+```
+
+#### Install a specific version of the notepadplusplus.install package
+The following example installs version 8.7.5 of the notepadplusplus.install package.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalPackages @{Id ='notepadplusplus.install'; Version = '8.7.5'}
+```
+
+#### Install a specific version of the notepadplusplus.install package, and pin it so it does not upgrade automaticallyThe following example installs version 8.7.5 of the notepadplusplus.install package and pins it so that it is not upgraded when using `choco upgrade`
+To upgrade this package, you will need to first unpin it, and then perform the upgrade.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalPackages @{Id ='notepadplusplus.install'; Version = '8.7.5'; Pin = $true}
+```

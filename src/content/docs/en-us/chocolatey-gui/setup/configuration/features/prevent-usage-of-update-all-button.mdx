@@ -4,8 +4,8 @@ xref: prevent-usage-of-update-all-button
 title: Prevent usage of Update All button
 description: Allows control over whether the Update All button should be available or not
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import RequireChocolateyGuiLicensedExtensionNote from '@components/docs/RequireChocolateyGuiLicensedExtensionNote.mdx';
 import RestartRequiredWarning from '@components/docs/RestartRequiredWarning.mdx';
@@ -14,11 +14,11 @@ Chocolatey GUI has always had the ability to run the equivalent of the `choco up
 
 By default, the Update All button will be shown:
 
-![Show the update all button in the Chocolatey GUI UI](/images/chocolatey-gui/user_interface_main-window_action_update-all_2.png "Show the update all button in the Chocolatey GUI UI")
+![Show the update all button in the Chocolatey GUI UI](https://img.chocolatey.org/docs/chocolatey-gui/user_interface_main-window_action_update-all_2.png "Show the update all button in the Chocolatey GUI UI")
 
 however, once this feature is enabled, it will no longer be shown
 
-![Show the update all button removed in the Chocolatey GUI UI](/images/chocolatey-gui/user_interface_main-window_update-all-removed.png "Show the update all button removed in the Chocolatey GUI UI")
+![Show the update all button removed in the Chocolatey GUI UI](https://img.chocolatey.org/docs/chocolatey-gui/user_interface_main-window_update-all-removed.png "Show the update all button removed in the Chocolatey GUI UI")
 
 <RequireChocolateyGuiLicensedExtensionNote />
 

@@ -6,8 +6,8 @@ description: Release Notes for Chocolatey Agent
 ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-og.png
 twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-agent-twitter.png
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import ChocolateyComponentDependenciesLink from '@components/docs/ChocolateyComponentDependenciesLink.mdx';
 import MaintenanceAndSupportLink from '@components/docs/MaintenanceAndSupportLink.mdx';
@@ -35,6 +35,39 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <ChocolateyComponentDependenciesLink />
 
+## 2.3.0 (April 16, 2025) \{#v2.3.0}
+
+### Improvement
+
+- Implement support for job dashboard
+
+
+## 2.2.2 (January 31, 2025) \{#v2.2.2}
+
+### Bug Fix
+
+- [Security] Fix - Prevent use of an option when running in Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+
+## 2.2.1 (December 9, 2024) \{#v2.2.1}
+
+### Bug Fix
+
+- Fix - Invalid cron expression for LogCleanerJob.
+
+## 2.2.0 (December 4, 2024) \{#v2.2.0}
+
+Read our [blog post](https://blog.chocolatey.org/2024/12/announcing-agent-220-release) about this release.
+
+### Feature
+
+- Implement Background Job Management System.
+
+### Improvement
+
+- Add scheduled retry logic when installing Chocolatey Central Management Certificates.
+
 ## 2.1.3 (June 5, 2024) \{#v2.1.3}
 
 Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-620-agent213-releases/) about this release.
@@ -49,27 +82,11 @@ Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-
 
 ### Bug Fix
 
-- [Security] Fix - Prevent usage of options when running in Self-Service mode.
-  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
-
-
-## 1.1.4 (January 31, 2024) \{#january-31-2024}
-
-### Bug Fix
-
-- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+- [Security] Fix - Prevent use of options when running in Self-Service mode.
   - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 
 
 ## 2.1.1 (December 19, 2023) \{#december-19-2023}
-
-### Bug Fix
-
-- [Security] Fix - Prevent usage of options when running in Self-Service mode.
-  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
-
-
-## 1.1.3 (December 19, 2023) \{#december-19-2023}
 
 ### Bug Fix
 
@@ -111,13 +128,6 @@ Read our [blog post](https://blog.chocolatey.org/2024/06/announcing-cli-230-cle-
 
 - Update to use latest releases of Chocolatey products.
 - Migrate from Rx-* packages to System.Reactive.* packages.
-
-
-## 1.1.2 (May 10, 2023) \{#may-10-2023}
-
-### Bug Fix
-
-- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
 
 
 ## 2.0.0-beta-20230426 (April 26, 2023)
@@ -199,6 +209,36 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 - Upgrade to target version 4.8 of the .NET Framework.
 - Upgrade to target version 2.0.0 of Chocolatey.Lib and version 6.0.0 of Chocolatey.Licensed.Lib assemblies.
+
+
+## 1.1.5 (February 10, 2025) \{#v1.1.5}
+
+### Bug Fix
+
+- [Security] Fix - Prevent use of an option when running in Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+## 1.1.4 (January 31, 2024) \{#january-31-2024}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 1.1.3 (December 19, 2023) \{#december-19-2023}
+
+### Bug Fix
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 1.1.2 (May 10, 2023) \{#may-10-2023}
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
 
 
 ## 1.1.1 (October 12, 2022) \{#october-12-2022}

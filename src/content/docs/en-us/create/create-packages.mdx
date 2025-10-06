@@ -4,8 +4,8 @@ xref: create-packages
 title: Create Packages
 description: How to start creating your own Chocolatey packages
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 # Creating Chocolatey Packages
@@ -363,6 +363,8 @@ Versioning can be both simple and complicated. The best recommendation is to use
 
 If the 4th segment is used, some folks like to drop the segment altogether and use that as only the package fix notation using one of the notations in the next section. There is no recommendations at this time.
 
+See also <Xref title="Version number normalization" value="version-normalization" />.
+
 ### Package Fix Version Notation
 
 Package fix version notation ONLY applies when you are making a fix to the package because the existing version of a package is incorrect in some way. So if the software is `1.1.0`, in a normal scenario the package version should be `1.1.0`. If you find that the `1.1.0` package has an issue and you need to fix the package but keep the same version of the software, that is where package fix version notation comes into play. You would end up with both a `1.1.0` package and a `1.1.0.YYYYMMDD` version of the package.
@@ -400,7 +402,7 @@ For Chocolatey, internationalization and localization of packages is very import
 If there is an icon which is suitable for your package, you can specify it in the `<iconUrl>` tag in the nuspec. But there are a few things you should consider:
 
 * **Avoid hotlinking icons from sites where you don’t have control over the file.** If you have a packages repository (recommended), use your own copy of the icon and put it there.
-* **Use a static CDN for icon URLs that permits you to serve files hosted in a repository on GitHub.** Some CDN services cache files permanently and it's therefore best to use a specific tag or commit URL, not a branch URL. While we don't make any recommendations about specific services, the more popular ones used by maintainers are [jsDelivr](https://www.jsdelivr.com/), [Statically](https://statically.io/) and [Githack](https://raw.githack.com/).
+* **Use a static CDN for icon URLs that permits you to serve files hosted in a repository on GitHub.** Some CDN services cache files permanently and it's therefore best to use a specific tag or commit URL, not a branch URL. While we don't make any recommendations about specific services, some popular ones used by maintainers are [jsDelivr](https://www.jsdelivr.com/) and [Statically](https://statically.io/).
 * **Avoid using GitHub raw links** (`https://raw.githubusercontent.com/...`). They are not intended to be used as CDN.
 * **Use the software’s icon if one is available, not the logo.** This blog post explains the difference between logos and icons: http://blog.designcrowd.com/article/353/differences-between-logos-and-icons. If the software of your package doesn’t have an icon, but a logo with text and an image, you can extract the image with your favorite image editor and use that as package icon. An example is [MySQL’s dolphin](https://community.chocolatey.org/packages/mysql).
 * **Use package icons with at least 128 pixels in width or height** if available. However, avoid very high resolutions, because this would only unnecessarily increase the page load time. If there are only icons with less than 128 pixels available, choose the icon with the highest resolution you can find without upscaling it. Don’t use low resolution favicons as package icons.

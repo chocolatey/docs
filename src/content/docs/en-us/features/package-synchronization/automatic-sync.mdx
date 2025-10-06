@@ -4,8 +4,8 @@ xref: automatic-sync
 title: Automatic Sync (Pro+)
 description: Ensure that any operation on an application, i.e. it is uninstalled, or upgraded, is tracked within Chocolatey as well
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Automatic Synchronize
@@ -24,7 +24,7 @@ As commercial editions lean more towards software management, they have much bet
     The following image shows this behavior in Chocolatey CLI v1.x. Chocolatey CLI v2.x has the same behavior, but uses `choco list` instead of `choco list -lo` to list local packages.
 </Callout>
 
-![Automatic Synchronize - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](/images/features/features_synchronize.png)
+![Automatic Synchronize - if you are on https://docs.chocolatey.org/en-us/features/package-synchronization, see commented html below for detailed description of image](https://img.chocolatey.org/docs/features/features_synchronize.png)
 
 In the image above, someone manually removed the 1Password software. On the next run of Chocolatey, auto sync sees the software has been removed, so it removes the package tracking to that software in response to those system changes.
 
@@ -70,7 +70,7 @@ If the software is an MSI, the Product Guid is used for managing uninstalls. Gue
 
 ### See It In Action
 
-![auto package creation/synchronize](/images/gifs/choco_business_features.gif)
+![auto package creation/synchronize](https://img.chocolatey.org/docs/gifs/choco_business_features.gif)
 
 <Callout type="info">
     To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.

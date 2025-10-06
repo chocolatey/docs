@@ -4,8 +4,8 @@ xref: c4b-azure-cert-update
 title: Certificate Update
 description: A guide to updating the certificate used in the Chocolatey for Business Azure Environment
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Summary
@@ -29,21 +29,21 @@ You can adjust the Access Policies using the Azure Portal or PowerShell.
 1. Navigate to the `Resource Group` that contains your C4B Azure Environment.
 1. Select the Key vault.
 
-    ![Key vault resource](/images/c4b-azure/Cert-KeyVault-Resource.png)
+    ![Key vault resource](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-Resource.png)
 
 1. Under `Settings` on the left of the blade, select `Access Policies`.
 1. Click `+ Add Access Policy`.
 
-    ![Vault Access Policies](/images/c4b-azure/Cert-KeyVault-AccessPolicies.png)
+    ![Vault Access Policies](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-AccessPolicies.png)
 
 1. Select, at a minimum, `Certificate Permissions`: `Get`, `List`, `Import`, and `Update` *(You can use a Template such as `Certificate Management`)*.
 
-    ![Secret Permissions](/images/c4b-azure/Cert-KeyVault-SecretPermissions.png)
+    ![Secret Permissions](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-SecretPermissions.png)
 
 1. Under `Select Principal`, click `None Selected` and find your current user, and select it.
 1. Click `Add`.
 
-    ![Add Principal](/images/c4b-azure/Cert-KeyVault-AddPrincipal.png)
+    ![Add Principal](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-AddPrincipal.png)
 
 1. Back on the `Access Policies` blade, hit `Save` and wait for the operation to complete.
 
@@ -81,21 +81,21 @@ You can upload a new version of the certificate using the Azure Portal or PowerS
 1. Within the Key Vault, under `Settings` on the left of the blade, select `Certificates`.
 1. Select the certificate named `C4B-Azure-Certificate`.
 
-    ![Vault Certificates](/images/c4b-azure/Cert-KeyVault-Certificates.png)
+    ![Vault Certificates](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-Certificates.png)
 
 1. Click `+ New Version`.
 
-    ![Vault Certificates New Version](/images/c4b-azure/Cert-KeyVault-Cert-New.png)
+    ![Vault Certificates New Version](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-Cert-New.png)
 
 1. Change the `Method of Certificate Creation` to `Import`.
 1. Upload your certificate PFX file, and provide the password needed to import it.
 
-    ![Vault Import Certificates](/images/c4b-azure/Cert-KeyVault-Cert-Import.png)
+    ![Vault Import Certificates](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-Cert-Import.png)
 
 1. Click `Create`.
 1. The new certificate will now be listed as the `CURRENT VERSION` and any previous certificates will be listed under `OLDER VERSIONS`.
 
-    ![Vault Certificate Version List](/images/c4b-azure/Cert-KeyVault-Cert-Version-List.png)
+    ![Vault Certificate Version List](https://img.chocolatey.org/docs/c4b/Cert-KeyVault-Cert-Version-List.png)
 
 ### PowerShell
 
@@ -139,32 +139,32 @@ The Application Gateway provided with your C4B Azure Environment needs to be upd
 1. Navigate to the `Resource Group` the contains your C4B Azure Environment.
 1. Select the `Application gateway`.
 
-    ![Application Gateway resource](/images/c4b-azure/Cert-AppGateway-Resource.png)
+    ![Application Gateway resource](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-Resource.png)
 
 1. Under `Settings` on the left of the blade, select `Backend settings`.
 1. Select `CCMService`.
 
-    ![Application Gateway backend settings](/images/c4b-azure/Cert-AppGateway-BackendSettings.png)
+    ![Application Gateway backend settings](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-BackendSettings.png)
 
 1. On the `Add Backend settings` blade, click `+ Add certificate`.
 
-    ![Backend setting add certificate](/images/c4b-azure/Cert-AppGateway-BackendCertAdd.png)
+    ![Backend setting add certificate](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-BackendCertAdd.png)
 
 1. Ensure `Create new` is selected and browse to the `.cer` version of your certificate.
 1. Provide a descriptive `Cert name` that is different to the existing certificate. The initial certificate is called `CCMCert`.
 1. Click `+ Add certificate`.
 
-    ![Add backend certificate](/images/c4b-azure/Cert-AppGateway-BackendCertDetails.png)
+    ![Add backend certificate](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-BackendCertDetails.png)
 
 1. Click the `...` (three dots) to the right of the previous certificate and choose `Delete`.
 1. Click `Save`.
 
-    ![Save new backend certificate](/images/c4b-azure/Cert-AppGateway-BackendCertSave.png)
+    ![Save new backend certificate](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-BackendCertSave.png)
 
 1. Under `Settings` on the left of the blade, select `Listeners`.
 1. Select `CCM`.
 
-    ![Application Gateway listeners settings](/images/c4b-azure/Cert-AppGateway-ListenersSettings.png)
+    ![Application Gateway listeners settings](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-ListenersSettings.png)
 
 1. Ensure `SslCertificate` is the selected certificate.
 1. Check `Renew or edit selected certificate`.
@@ -172,7 +172,7 @@ The Application Gateway provided with your C4B Azure Environment needs to be upd
 1. Enter the `Password` required to import the certificate.
 1. Click `Save`.
 
-    ![Application Gateway listeners cert update](/images/c4b-azure/Cert-AppGateway-ListenersCert.png)
+    ![Application Gateway listeners cert update](https://img.chocolatey.org/docs/c4b/Cert-AppGateway-ListenersCert.png)
 
 1. It can take some time for the Application Gateway to update. When it has finished you will be able check that the new certificate is being served by visiting on the C4B Azure Environment <Xref title="services" value="c4b-azure" anchor="accessing-services" />.
 

@@ -4,8 +4,8 @@ xref: hide-all-remote-chocolatey-sources
 title: Hide All Remote Chocolatey Sources
 description: Allow control over whether Chocolatey GUI should be switched into a read-only mode of operation
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import HidingSources from '@components/docs/HidingSources.mdx';
 import RequireChocolateyGuiLicensedExtensionNote from '@components/docs/RequireChocolateyGuiLicensedExtensionNote.mdx';
@@ -13,11 +13,11 @@ import RestartRequiredWarning from '@components/docs/RestartRequiredWarning.mdx'
 
 There are times when you want to use Chocolatey GUI in a read-only mode, meaning that you can view what packages are currently installed, but to not allow access to install any other packages.  When this is enabled, Chocolatey GUI would change from showing the following:
 
-![What Chocolatey GUI looks like before enabling the HideAllRemoteChocolateySources feature](/images/chocolatey-gui/feature_hide_all_remote_chocolatey_sources_1.png "What Chocolatey GUI looks like before enabling the HideAllRemoteChocolateySources feature")
+![What Chocolatey GUI looks like before enabling the HideAllRemoteChocolateySources feature](https://img.chocolatey.org/docs/chocolatey-gui/feature_hide_all_remote_chocolatey_sources_1.png "What Chocolatey GUI looks like before enabling the HideAllRemoteChocolateySources feature")
 
 to only showing a single "This PC" source:
 
-![What Chocolatey GUI looks like after enabling the HideAllRemoteChocolateySources feature](/images/chocolatey-gui/feature_hide_all_remote_chocolatey_sources_2.png "What Chocolatey GUI looks like after enabling the HideAllRemoteChocolateySources feature")
+![What Chocolatey GUI looks like after enabling the HideAllRemoteChocolateySources feature](https://img.chocolatey.org/docs/chocolatey-gui/feature_hide_all_remote_chocolatey_sources_2.png "What Chocolatey GUI looks like after enabling the HideAllRemoteChocolateySources feature")
 
 Notice that the `ChocolateyInternal` and `chocolatey.licensed` sources are no longer displayed.
 

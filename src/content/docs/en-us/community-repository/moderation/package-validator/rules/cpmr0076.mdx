@@ -1,0 +1,29 @@
+---
+order: 76
+xref: cpmr0076
+title: CPMR0076 - Raw GitHub Icon URL Is Used (nuspec)
+description: Information on how to remediate the Chocolatey Package Moderation Rule 0076
+ruleType: Requirement
+---
+import Callout from '@choco-astro/components/Callout.astro'
+import Iframe from '@choco-astro/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import PackageValidatorRuleRequirement from '@components/docs/PackageValidatorRuleRequirement.mdx';
+import PackageValidatorNotImplemented from '@components/docs/PackageValidatorNotImplemented.mdx';
+
+<PackageValidatorRuleRequirement />
+<PackageValidatorNotImplemented />
+
+## Issue
+
+In the nuspec, the Icon URL has been specified as coming from GitHub or RawGit.
+
+## Recommended Solution
+
+Please update the Icon URL to use an Icon that is coming from a proper CDN instead of GitHub or RawGit.
+There are CDN providers for GitHub links that can be used, like [JSDelivr](https://www.jsdelivr.com/) and [Statically](https://statically.io/).
+
+## Reasoning
+
+GitHub has made it clear that hotlinking to _raw_ files on GitHub should be avoided, as these are not static assets, and RawGit has shut down.
+See the [GitHub Blog](https://github.blog/2013-04-24-heads-up-nosniff-header-support-coming-to-chrome-and-firefox/) for more information.

@@ -6,8 +6,8 @@ description: Release Notes for Chocolatey Licensed Extension
 ogImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-licensed-extension-og.png
 twitterImage: https://img.chocolatey.org/social-share/release-notes-chocolatey-licensed-extension-twitter.png
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import ChocolateyComponentDependenciesLink from '@components/docs/ChocolateyComponentDependenciesLink.mdx';
 import MaintenanceAndSupportLink from '@components/docs/MaintenanceAndSupportLink.mdx';
@@ -45,6 +45,25 @@ Please see <Xref title="Install the Licensed Edition" value="setup-licensed" /> 
 
 <ChocolateyComponentDependenciesLink />
 
+## 6.3.1 (January 31, 2025) \{#v6.3.1}
+
+### Bug Fix
+
+- [Security] Fix - Prevent use of an option when running in Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+
+## 6.3.0 (December 4, 2024) \{#v6.3.0}
+
+### Bug Fixes
+
+- Fix - Ensure invalid .arguments files do not prevent running Chocolatey CLI commands.
+- Fix - Update Search threshold text to match open source.
+
+### Improvement
+
+- Provide better information through the user agent when querying remote repositories including the Licensed Extension version.
+
 ## 6.2.1 (June 27, 2024) \{#v6.2.1}
 
 ### Bug Fixes
@@ -73,23 +92,8 @@ Please see <Xref title="Install the Licensed Edition" value="setup-licensed" /> 
 
 - Fix - An unsupported argument is passed to the Chocolatey Agent when using the API - see [licensed #380](https://github.com/chocolatey/chocolatey-licensed-issues/issues/380).
 
-## 5.0.6 (February 21, 2024) \{#v5.0.6}
-
-<Callout type="info">
-    This release addresses a problem that prevented users of Chocolatey GUI and the Background Service (Chocolatey Agent) from installing and upgrading packages.
-</Callout>
-
-- Fix - An unsupported argument is passed to the Chocolatey Agent when using the API - see [licensed #380](https://github.com/chocolatey/chocolatey-licensed-issues/issues/380).
 
 ## 6.1.2 (January 31, 2024) \{#january-31-2024}
-
-### Bug Fixes
-
-- [Security] Fix - Prevent usage of options when running in Self-Service mode.
-  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
-
-
-## 5.0.5 (January 31, 2024) \{#january-31-2024}
 
 ### Bug Fixes
 
@@ -104,15 +108,6 @@ Please see <Xref title="Install the Licensed Edition" value="setup-licensed" /> 
 - [Security] Fix - Prevent usage of options when running in Self-Service mode.
   - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
 - Fix - Unable to disable some features when with a Pro license - see [licensed #364](https://github.com/chocolatey/chocolatey-licensed-issues/issues/364).
-
-
-## 5.0.4 (December 19, 2023) \{#december-19-2023}
-
-### Bug Fixes
-
-- [Security] Fix - Prevent usage of options when running in Self-Service mode.
-  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
-- Fix - Unable to disable some features when with a Pro license - see [licensed #366](https://github.com/chocolatey/chocolatey-licensed-issues/issues/366).
 
 
 ## 6.1.0 (June 29, 2023) \{#june-29-2023}
@@ -179,13 +174,6 @@ Please see <Xref title="Install the Licensed Edition" value="setup-licensed" /> 
 - Intune - When bundling Chocolatey CLI for Intune, package all the Chocolatey products along with it to allow upgrades to occur
 
 
-## 5.0.3 (May 10, 2023) \{#may-10-2023}
-
-### Bug Fix
-
-- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
-
-
 ## 6.0.0-beta-20230426 (April 26, 2023)
 
 <Callout type="warning">
@@ -231,13 +219,6 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Re-enable Intune support which had been excluded in previous pre-release version.
 - Remove mention of unsupported versions of CLE / CLI from documentation.
 
-
-## 5.0.2 (March 28, 2023) \{#march-28-2023}
-
-### Improvements
-
-- [Security] Bump LiteDB dependency to 5.0.15 - see [licensed #340](https://github.com/chocolatey/chocolatey-licensed-issues/issues/340).
-- [Security] Bump Newtonsoft.Json dependency to 13.0.1 - see [licensed #339](https://github.com/chocolatey/chocolatey-licensed-issues/issues/339).
 
 ## 6.0.0-beta-20230321 (March 21, 2023)
 
@@ -302,6 +283,64 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 
 - Upgrade to target version 4.8 of the .NET Framework.
 - Upgrade to target version 6.4.0 of NuGet.Client and version 2.0.0 of Chocolatey.Lib assemblies.
+
+
+## 5.0.8 (February 10, 2025) \{#v5.0.8}
+
+### Bug Fix
+
+- Fix - Unable to upgrade or install packages on certain authenticated feeds.
+
+## 5.0.7 (Unreleased) \{#v5.0.7}
+
+<Callout type="info">
+    Due to a previous bug in Chocolatey CLI v1.4.1, which has been corrected in Chocolatey CLI v1.4.3 and Chocolatey Licensed Extension 5.0.8, the artifacts from the 5.0.7 release have been removed.
+</Callout>
+
+### Bug Fix
+
+- [Security] Fix - Prevent use of an option when running in Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+## 5.0.6 (February 21, 2024) \{#v5.0.6}
+
+<Callout type="info">
+    This release addresses a problem that prevented users of Chocolatey GUI and the Background Service (Chocolatey Agent) from installing and upgrading packages.
+</Callout>
+
+- Fix - An unsupported argument is passed to the Chocolatey Agent when using the API - see [licensed #380](https://github.com/chocolatey/chocolatey-licensed-issues/issues/380).
+
+
+## 5.0.5 (January 31, 2024) \{#january-31-2024}
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+
+
+## 5.0.4 (December 19, 2023) \{#december-19-2023}
+
+### Bug Fixes
+
+- [Security] Fix - Prevent usage of options when running in Self-Service mode.
+  - See the [documentation](https://docs.chocolatey.org/en-us/features/self-service-anywhere#background-service-restricted-options).
+- Fix - Unable to disable some features when with a Pro license - see [licensed #366](https://github.com/chocolatey/chocolatey-licensed-issues/issues/366).
+
+
+## 5.0.3 (May 10, 2023) \{#may-10-2023}
+
+### Bug Fix
+
+- Fix - Update version ranges in nuspec file to use maximum inclusive rather than maximum exclusive.
+
+
+## 5.0.2 (March 28, 2023) \{#march-28-2023}
+
+### Improvements
+
+- [Security] Bump LiteDB dependency to 5.0.15 - see [licensed #340](https://github.com/chocolatey/chocolatey-licensed-issues/issues/340).
+- [Security] Bump Newtonsoft.Json dependency to 13.0.1 - see [licensed #339](https://github.com/chocolatey/chocolatey-licensed-issues/issues/339).
 
 
 ## 5.0.1 (December 6, 2022) \{#december-6-2022}
@@ -923,7 +962,7 @@ This release brings Package Throttle, Package Synchronizer's "Show All Packages 
 
 - Package Synchronizer's Show All Packages In Programs and Features.
 
-    This means packages that do not have an underlying installation can still show up in Programs and Features and be managed there as well, which allows for legacy inventory reporting systems to see all the software that is installed in the same way that Chocolatey is able to. A picture can probably best explain this feature, check out [All Package In Programs and Features](/images/features/features_packages_in_programs_and_features.png)
+    This means packages that do not have an underlying installation can still show up in Programs and Features and be managed there as well, which allows for legacy inventory reporting systems to see all the software that is installed in the same way that Chocolatey is able to. A picture can probably best explain this feature, check out [All Package In Programs and Features](https://img.chocolatey.org/docs/features/features_packages_in_programs_and_features.png)
 
     To turn this feature on, simply run the following command `choco feature enable --name showAllPackagesInProgramsAndFeatures`. For more details on the feature, see https://docs.chocolatey.org/en-us/configuration#package-synchronizer and https://docs.chocolatey.org/en-us/features/package-synchronization. This does require one additional run of `choco` to take affect (same when disabling the feature), hopefully we can remove that in the future.
 
@@ -1222,7 +1261,7 @@ Pro users now have the ability to download packages (minus internalization). Thi
 - Package Synchronizer:
   -Synchronize to a new location per package version.
 
-## 1.7.0 (Sep 22, 2016) \{#sep-22-2016}
+## 1.7.0 (September 22, 2016) \{#sep-22-2016}
 
 ### Bug Fixes
 
@@ -1243,13 +1282,13 @@ Pro users now have the ability to download packages (minus internalization). Thi
   - Warn of issue with `-UseOriginalLocation` when only using one file.
   - Add `--append-useoriginallocation` and feature internalizeAppendUseOriginalLocation that makes the determination to add to the end of `Install-ChocolateyPackage` when using local resources.
 
-## 1.6.3 (Sep 20, 2016) \{#sep-20-2016}
+## 1.6.3 (September 20, 2016) \{#sep-20-2016}
 
 ### Bug Fix
 
 - Require Chocolatey be upgraded to at least 0.10.1 due to internal incompatibilities that affect this extension.
 
-## 1.6.2 (Sep 19, 2016 - pulled) \{#sep-19-2016 - pulled}
+## 1.6.2 (September 19, 2016 - pulled) \{#sep-19-2016 - pulled}
 
 ### Bug Fix
 
@@ -1260,7 +1299,7 @@ Pro users now have the ability to download packages (minus internalization). Thi
 - Install/upgrade - support MSP (patch files).
 - PackageBuilder - support MSU/MSP files.
 
-## 1.6.1 (Sep 8, 2016) \{#sep-8-2016}
+## 1.6.1 (September 8, 2016) \{#sep-8-2016}
 
 ### Bug Fixes
 
@@ -1268,7 +1307,7 @@ Pro users now have the ability to download packages (minus internalization). Thi
   - Fix - Do not error on missing appsearch table in MSI.
   - Fix - Do not add similarly named items from AppSearch table to template properties more than once.
 
-## 1.6.0 (Sep 8, 2016) \{#sep-8-2016}
+## 1.6.0 (September 8, 2016) \{#sep-8-2016}
 
 Some really big improvements are now available in v1.6.0. We are excited to share them with you!
 
@@ -1311,7 +1350,7 @@ Some really big improvements are now available in v1.6.0. We are excited to shar
   - handle variables in urls set like `${word}`.
   - Append `-UseOriginalLocation` to the end of the arguments passed to `Install-ChocolateyPackage`. Work with splatting properly as well.
 
-## 1.5.1 (Aug 9, 2016) \{#aug-9-2016}
+## 1.5.1 (August 9, 2016) \{#aug-9-2016}
 
 ### Bug Fix
 

@@ -4,12 +4,12 @@ xref: package-audit
 title: Package Audit (C4B)
 description: Know who installed what package and when
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
-import TabsPane from '@choco/components/tabs/TabsPane.astro';
-import TabsPaneContainer from '@choco/components/tabs/TabsPaneContainer.astro';
-import TabsTabContainer from '@choco/components/tabs/TabsTabContainer.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 
 > Know who installed what package and when.
 
@@ -39,10 +39,10 @@ export const tabs1 = [
 <TabsTabContainer content={tabs1} multi="version" />
 <TabsPaneContainer>
     <TabsPane content={tabs1[0]}>
-        ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](/images/features/features_package_audit_v2.png)
+        ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](https://img.chocolatey.org/docs/features/features_package_audit_v2.png)
     </TabsPane>
     <TabsPane content={tabs1[1]}>
-        ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](/images/features/features_package_audit.png)
+        ![Package Audit - if you are on https://docs.chocolatey.org/en-us/features/package-audit, see commented html below for detailed description of image](https://img.chocolatey.org/docs/features/features_package_audit.png)
     </TabsPane>
 </TabsPaneContainer>
 

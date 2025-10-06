@@ -12,6 +12,6 @@ const { content, paddingClass } = Astro.props;
 const activeSlug = Astro.url.pathname;
 ---
 
-<li class={`nav-item nav-item-blue`}>
-    <a class={`nav-link ${paddingClass} ${isActivePage(content.slug, activeSlug) ? 'active active-page' : ''}`} href={content.slug}>{content.data.title}</a>
+<li class={`nav-item nav-item-tertiary-bg`}>
+    <a class={`nav-link py-c75 ${paddingClass} ${isActivePage(content.slug, activeSlug) ? 'active active-page' : ''}`} href={content.slug}>{content.data.title}</a>
 </li>

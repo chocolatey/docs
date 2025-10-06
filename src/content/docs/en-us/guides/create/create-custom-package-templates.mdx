@@ -4,8 +4,8 @@ xref: create-custom-package-templates
 title: Create Custom Package Templates
 description: How to create custom package templates
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 As of [choco 0.9.9.9](https://github.com/chocolatey/choco/issues/76), you can create your own custom package templates when the built-in template is not enough.
@@ -18,7 +18,7 @@ A template is used for creating packages. Chocolatey (choco) has a built-in temp
 
 If you drop a template into `$env:ChocolateyInstall\templates` folder, you can use `-t name_of_template` to generate a choco template based on that. So for:
 
-![Windows Explorer showing the installation location for a new template with the name of Organization](/images/features/choco-templates-location.png)
+![Windows Explorer showing the installation location for a new template with the name of Organization](https://img.chocolatey.org/docs/features/choco-templates-location.png)
 
 You would call `choco new pkgname -t organization` and choco will use the template folder instead of the built-in template.
 

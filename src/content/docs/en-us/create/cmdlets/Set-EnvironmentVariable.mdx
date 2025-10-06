@@ -22,7 +22,7 @@ DO NOT USE. Not part of the public API. Use `Install-ChocolateyEnvironmentVariab
 
 ```
 Set-EnvironmentVariable [-Name] <String> [[-Value] <String>] [[-Scope] <EnvironmentVariableTarget>]
- [-IgnoredArguments <Object[]>] [<CommonParameters>]
+ [-IgnoredArguments <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -80,7 +80,7 @@ Accepted values: Process, User, Machine
 
 Required: False
 Position: 2
-Default value: None
+Default value: Process
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -95,6 +95,36 @@ Aliases:
 
 Required: False
 Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs. The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False

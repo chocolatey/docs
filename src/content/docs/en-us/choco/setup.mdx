@@ -4,8 +4,8 @@ xref: setup-choco
 title: Setup / Install
 description: How to install Chocolatey CLI
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Requirements
@@ -145,7 +145,7 @@ With completely offline use of Chocolatey, you want to ensure you remove the def
 1. The first step with offline is to obtain a copy of the Chocolatey Nupkg (nupkg files are just fancy zip files). Go to https://community.chocolatey.org/packages/chocolatey and find a version you want.
 1. Click on Download to download that version's nupkg file.
 
-  ![download chocolatey.nupkg visual](/images/DownloadChocolateyPackage.png)
+  ![download chocolatey.nupkg visual](https://img.chocolatey.org/docs/faqs/DownloadChocolateyPackage.png)
 
 1. You can also download [the latest version directly](https://community.chocolatey.org/api/v2/package/chocolatey).
 1. You can put the chocolatey.nupkg on an internal package repository and then address that full path, similar to how you see in the Puppet provider - https://forge.puppet.com/modules/puppetlabs/chocolatey/readme#manage-chocolatey-installation

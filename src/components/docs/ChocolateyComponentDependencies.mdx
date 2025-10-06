@@ -1,8 +1,8 @@
 ---
 
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Chocolatey Component Package Dependencies
@@ -13,14 +13,14 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
 
 | Package Name / Dependency      | chocolatey  | chocolatey.extension | chocolateygui |
 | ------------------------------ | ----------- | -------------------- | ------------- |
-| chocolatey v2.3.0              |             |                      |               |
-| chocolatey.extension v6.2.1    | v2.0.0      |                      |               |
-| chocolatey-agent v2.1.3        |             | v6.0.0               |               |
+| chocolatey v2.5.1              |             |                      |               |
+| chocolatey.extension v6.3.1    | v2.0.0      |                      |               |
+| chocolatey-agent v2.3.0        |             | v6.0.0               |               |
 | chocolateygui v2.1.1           | v2.0.0      |                      |               |
 | chocolateygui.extension v2.0.0 |             | v6.0.0               | v2.0.0        |
-| chocolatey v1.4.0              |             |                      |               |
-| chocolatey.extension v5.0.6    | v1.2.0      |                      |               |
-| chocolatey-agent v1.1.4        |             | v4.0.0               |               |
+| chocolatey v1.4.3              |             |                      |               |
+| chocolatey.extension v5.0.8    | v1.2.0      |                      |               |
+| chocolatey-agent v1.1.5        |             | v4.0.0               |               |
 | chocolateygui v1.1.3           | v1.0.0      |                      |               |
 | chocolateygui.extension v1.0.3 |             | v4.0.0               | v1.1.2        |
 
@@ -28,7 +28,7 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
     Due to the nature of how Chocolatey package dependencies work, we can ensure that all the required package versions are
     installed. For example, if you were to install chocolateygui.extension then it would make sure that the following tree
     of packages, with as a minimum these package versions, are installed:
-    
+
     | Package Name            | Version |
     | ----------------------- | ------- |
     | chocolateygui.extension | v2.0.0  |
@@ -40,19 +40,19 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
 <Callout type="info">
     Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
     available that matches the defined dependency range.
-    
+
     However, there is nothing that can be done to ensure that indirect dependencies are satisfied.
     For example, if you currently have chocolateygui v0.18.1 installed along with chocolateygui.extension
      v0.2.1 and you first upgrade to chocolateygui v0.19.0, then you will see errors if you attempt to
     run Chocolatey GUI, since the chocolateygui.extension package also needs to be updated.
-    
+
     Based on the package releases, the recommended installation/upgrade order is the following:
-    
+
     * chocolateygui.extension
     * chocolateygui
     * chocolatey-agent
     * chocolatey.extension
     * chocolatey
-    
+
     This will ensure that all dependencies, both direct and indirect, are installed.
 </Callout>

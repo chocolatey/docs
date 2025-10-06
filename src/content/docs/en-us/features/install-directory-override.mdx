@@ -4,8 +4,8 @@ xref: install-directory-override
 title: Ubiquitous Install Directory Option (Pro+)
 description: Override the install directory for native installers
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 The ubiquitous install directory switch for [customers](https://chocolatey.org/pricing)! The only switch you will ever need for overriding the install directory for native installers! When working with packages that use native installers (software that actually installs on a machine), Chocolatey is able to override the default installation directory from a simple switch you pass to choco.
@@ -18,9 +18,9 @@ With the ubiquitous switch, you are not only saving time, but also possible erro
 
 Just pass `--install-directory=value` along and Chocolatey will determine what the actual call to the native installer needs to be and manage that for you!
 
-![choco install 1password --install-directory c:\1password](/images/chocopro_features_installdirectory.png)
+![choco install 1password --install-directory c:\1password](https://img.chocolatey.org/docs/chocolatey/chocopro_features_installdirectory.png)
 
-![Install override - if you are on https://docs.chocolatey.org/en-us/features/install-directory-override, see commented html below for detailed description of image](/images/features/features_override_install_directory.png)
+![Install override - if you are on https://docs.chocolatey.org/en-us/features/install-directory-override, see commented html below for detailed description of image](https://img.chocolatey.org/docs/features/features_override_install_directory.png)
 
 {/*
 Text in the image above:
@@ -36,7 +36,7 @@ The image shows installing 1password with Chocolatey for Business. The command p
 
 ## See It In Action
 
-![Directory override in action](/images/gifs/chocopro_features_installdirectory.gif)
+![Directory override in action](https://img.chocolatey.org/docs/gifs/chocopro_features_installdirectory.gif)
 
 <Callout type="info">
     To see all feature videos for Chocolatey for Business, please visit https://chocolatey.org/resources/features#c4b.

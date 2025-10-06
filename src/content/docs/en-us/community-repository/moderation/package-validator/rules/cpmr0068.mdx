@@ -5,23 +5,23 @@ title: CPMR0068 - Author Does Not Match Maintainer (nuspec)
 description: Information on how to remediate the Chocolatey Package Moderation Rule 0068
 ruleType: Note
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 import PackageValidatorRuleNote from '@components/docs/PackageValidatorRuleNote.mdx';
 
 <PackageValidatorRuleNote />
 
-<Callout type="info">
-    This page is a stub that has not yet been filled out. If you have questions about this issue, please ask in the review or reach out on [Community Chat](https://ch0.co/community)
-</Callout>
-
 ## Issue
 
-In the nuspec,
+In the nuspec, the Package Maintainers (`owners`) and Software Authors (`authors`) fields are the same names, indicating that the same people or organization are responsible for both the package, and the software.
 
 ## Recommended Solution
 
-Please update _ so that _
+If the Package Maintainers and Software Authors are not the same people / organization, please update the `owners` and / or the `authors` field to the correct names.
+If the package is provided by the same peple or organization that provides the software, there is nothing that needs to be updated.
 
 ## Reasoning
+
+Chocolatey packages are typically created and maintained by Chocolatey Community Members, rather than Software Authors.
+Due to this, and to avoid the wrong metadata being published on the Chocolatey Community Repository, such packages are flagged at all times.

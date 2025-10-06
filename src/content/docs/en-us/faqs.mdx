@@ -4,8 +4,8 @@ xref: faqs
 title: FAQs
 description: Chocolatey frequently asked questions
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## General
@@ -339,9 +339,7 @@ If this is hard coded for a package that runs an installer, it may display an in
 
 ### How do I skip the Automatic Uninstaller?
 
-If you are trying to uninstall a package, but Automatic Uninstall is uninstalling software you don't want uninstalled, or otherwise misbehaving, then it can be skipped by using the `--skip-autouninstaller` switch, or disabling it by setting the `autoUninstaller` feature to `false`.
-
-If you are creating a package, and want or need to use the `chocolateyUninstall.ps1` while not running the Automatic Uninstaller, then include a `.skipAutoUninstall` file inside the package. If a file with that name is found, then during uninstall the Automatic Uninstaller will not be run. If a `.skipAutoUninstall` file is being included, make sure that it is included in the `files` element of the `.nuspec`, either explicitly via a `file` element, or by placing the file inside a folder that is included inside the package (like the `tools` directory).
+Please see the <Xref title="feature documentation" value="auto-uninstaller" />.
 
 ## Videos / Reference
 
@@ -426,11 +424,11 @@ Related to the community package repository only (aka the default feed aka https
 
 If you are a maintainer of a package and you would like to self-reject an older version of a package that is failing verification or validation, we support that. If however you just want to reject a working package because it is older, we don't support that. Rejected != Obsolete. It's really about when the underlying software has the same download url for every release so the older versions do not apply. If you are using checksums to verify the download (and you should be), then your older versions should start failing.
 
-![Reject package checkbox is only visible if the package has failed automated review](/images/faqs/package-moderation-reject-package.png)
+![Reject package checkbox is only visible if the package has failed automated review](https://img.chocolatey.org/docs/faqs/package-moderation-reject-package.png)
 
 * Failing verification -
 
-![An example email which is sent to maintainer of package when an automated check has failed](/images/faqs/email-from-validator.png)
+![An example email which is sent to maintainer of package when an automated check has failed](https://img.chocolatey.org/docs/faqs/email-from-validator.png)
 
 * Failing validation - a message from the validator telling you it failed validation.
 
@@ -444,7 +442,7 @@ What does the validator check? See the <Xref title="validator docs" value="packa
 
 The <Xref title="verifier" value="package-verifier-service" /> is a service that checks the correctness (that the package actually works), that it installs and uninstalls correctly, has the right dependencies to ensure it is installed properly and can be installed silently. The verifier runs against both submitted packages and existing packages (currently checking once a month that a package can still install and sending notice when it fails). We like to think of the verifier as integration testing. It's testing all the parts and ensuring everything is good. On the site, you can see the current status of a package based on a little colored ball next to the title. If the ball is green or red, the ball is a link to the results (only on the package page, not in the list screen).
 
-![Passing verification](/images/faqs/verification-successful.png)
+![Passing verification](https://img.chocolatey.org/docs/faqs/verification-successful.png)
 
 * Green means good. The ball is a link to the results
 * Orange if still pending verification (has not yet run).

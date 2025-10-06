@@ -4,8 +4,8 @@ xref: automate-package-internalization
 title: Automate Package Internalizer (MSP/C4B)
 description: How to setup internal package repository
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 ## Summary
@@ -29,7 +29,7 @@ For these reasons, we do not recommend that organizations use the Chocolatey Com
 
 Chocolatey recommends you use an architecture that meets the [organizational requirements](#organizational-requirements) as we have shown below.
 
-![Chocolatey Architecture Diagram](/images/internalizer/architecture-diagram.png)
+![Chocolatey Architecture Diagram](https://img.chocolatey.org/docs/internalizer/architecture-diagram.png)
 
 Let's break down the diagram:
 
@@ -177,7 +177,7 @@ To install and configure Jenkins:
    * On the home page, click **Manage Jenkins**
    * Click **Manage Plugins**
 
-   ![Jenkins PowerShell Plugin](/images/internalizer/jenkins-ps-plugin.png)
+   ![Jenkins PowerShell Plugin](https://img.chocolatey.org/docs/internalizer/jenkins-ps-plugin.png)
 
    * Click the **Available plugins** tab
    * In the _Filter_ box type `PowerShell`

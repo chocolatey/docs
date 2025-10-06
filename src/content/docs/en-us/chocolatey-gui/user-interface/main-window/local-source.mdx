@@ -4,15 +4,15 @@ xref: gui-local-source
 title: Local Source
 description: Information about displaying of locally installed packages
 ---
-import Callout from '@choco/components/Callout.astro';
-import Iframe from '@choco/components/Iframe.astro';
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
 The "This PC" source, also known as a local source, is the first source that is shown by default when Chocolatey GUI first
 opens, and it shows all the currently installed Chocolatey packages.  It is the visual equivalent of running the `choco
 list` command in Chocolatey CLI v2, and `choco list -lo` in Chocolatey CLI v1, and paging the results that are displayed.
 
-![The This PC Source showing currently installed Chocolatey packages](/images/chocolatey-gui/feature_hide_this_pc_source_disabled.png "The This PC Source showing currently installed Chocolatey packages")
+![The This PC Source showing currently installed Chocolatey packages](https://img.chocolatey.org/docs/chocolatey-gui/feature_hide_this_pc_source_disabled.png "The This PC Source showing currently installed Chocolatey packages")
 
 It is possible to show this view in both tile and list format, and this can be controlled through the <Xref title="toggle switch" value="gui-tileview" />, or
 by setting the <Xref title="Default to Tile View for Local Source" value="default-to-tile-view-for-local-source" /> feature to the required setting.
