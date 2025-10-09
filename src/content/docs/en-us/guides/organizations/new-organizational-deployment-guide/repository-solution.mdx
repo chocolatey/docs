@@ -1,7 +1,7 @@
 ---
 order: 45
 xref: organizational-repository-solution
-title: Organizational Guide - Repository Solution
+title: Repository Solution
 description: Information on deploying a repository solution for Chocolatey For Business
 ---
 import Callout from '@choco-astro/components/Callout.astro';
@@ -31,8 +31,6 @@ export const repository = [
 
         - [NexuShell](https://nexushell.dev/)
 
-        #### Before You Begin
-
         <OrgGuidePrepC4BChocolatey />
 
         #### Sonatype Nexus Installation
@@ -46,12 +44,12 @@ export const repository = [
             ```
         </Callout>
 
-        The installation of Sonatype Nexus will:
+        This install script will:
 
         - Configure a production NuGet repository for Chocolatey packages
         - Configure a test NuGet repository for Chocolatey packages
         - Configure a Generic (Raw) repository to host large installation media
-        - Configure a Generic (Raw) repository to host PowerShell scripts to onboard client workstations with Chocolatey For Business
+        - Configure a Generic (Raw) repository to host PowerShell scripts to onboard client workstations with Chocolatey for Business
         - Configure a read-only role for consuming packages
         - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
 
@@ -80,26 +78,16 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/In
 `}
 </DynamicCodeBlock>
 
-        #### Validating the Installation
-
-        The following script will run a suite of Pester tests to validate your Sonatype Nexus installation was successful.
-
-<DynamicCodeBlock language="powershell">
-{`
-$repositoryArgs = @{
-    ProdRepository = 'ProdRepoName'
-    TestRepository = 'TestRepoName'
-    RawRepository = 'RawRepoName'
-    Credential = (Get-Credential) # Please replace with your desired credentials
-}
-
-./ValidateNexusRepository.ps1 @repositoryArgs
-`}
-</DynamicCodeBlock>
-
     </TabsPane>
 </TabsPaneContainer>
 
-#### Next Steps
+## Next Steps
 
-Now that you have a repository server setup, let's move on to setting up some [Package Internalization Automation](#Placeholder).
+Select **Previous** to return to the Organizational Guide introduction page, or **Next** to move on to the Automation Solution.
+
+<div class="d-flex justify-content-between align-items-center">
+    <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/">< Previous</a>
+    <div>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/automation-solution">Next ></a>
+    </div>
+</div>

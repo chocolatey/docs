@@ -1,7 +1,7 @@
 ---
-order: 50
+order: 46
 xref: organizational-automation-solution
-title: Organizational Guide - Automation Solution
+title: Automation Solution
 description: Information on deploying an automation solution for Chocolatey For Business
 ---
 import Callout from '@choco-astro/components/Callout.astro';
@@ -13,6 +13,8 @@ import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astr
 import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
 import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 import OrgGuidePackageAutomationIntro from '@components/docs/OrgGuidePackageAutomationIntro.mdx';
+import JenkinsHardwareRecommendations from '@components/docs/JenkinsHardwareRecommendations.mdx'
+import OrgGuidePrepC4BChocolatey from '@components/docs/OrgGuidePrepC4BChocolatey.mdx'
 
 <OrgGuidePackageAutomationIntro />
 
@@ -25,30 +27,18 @@ export const automationpipeline = [
 <TabsTabContainer content={automationpipeline} />
 <TabsPaneContainer>
     <TabsPane content={automationpipeline[0]}>
-        #### Requirements
+        <JenkinsHardwareRecommendations />
 
-        To install and run Jenkins, you'll need to meet the requirements.
+        <OrgGuidePrepC4BChocolatey />
 
-        They are specified in the [Jenkins Documentation](https://www.jenkins.io/doc/book/installing/windows/#prerequisites), and as of v2.492.2 (2025-03-19) they are:
-
-        Minimum hardware requirements:
-
-        - 256 MB of RAM
-        - 1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)
-
-        Recommended hardware configuration for a small team:
-
-        - 4 GB+ of RAM
-        - 50 GB+ of drive space
-
-        #### Installation
+        #### Jenkins Installation
 
         This install script will:
 
         - Install TemurinJRE and Jenkins
         - Secure Jenkins with an SSL certificate
         - Run initial setup steps on Jenkins
-        - Install the standard C4B jobs
+        - Install the standard jobs included in Chocolatey for Business
 
         #### Environment Information
 
@@ -63,9 +53,9 @@ export const automationpipeline = [
         | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
         | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: Used to secure Jenkins with SSL. |
 
-        If providing a **Thumbprint**, you must install the certificate to the Machine-level TrustedPeople store before running the script.
+        If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
 
-        #### Install Script
+        #### Jenkins Install Script
 
 <DynamicCodeBlock language="powershell">
 {`
@@ -90,7 +80,7 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
 </DynamicCodeBlock>
 
 <Callout type="info" header="Airgapped Installation">
-    If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before attempting to run it.
+    If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before continuing with the installation.
 
     ```powershell
     Set-ExecutionPolicy RemoteSigned -Scope Process -Force
@@ -105,13 +95,13 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
         - **Internalize packages from the Community Repository**  
             This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
         - **Update test repository from Chocolatey Community Repository**  
-            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Community Repository.
         - **Update production repository**  
             This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
 
         To use your fresh new jobs, you should navigate to the Jenkins dashboard and attempt to `build` one of the jobs.
 
-        <Iframe ratio="16x9" link="https://youtu.be/XiyzBIofDiE?si=z2P9J0gLb9_kHwIq" title="Running Jenkins Jobs" />
+        <Iframe ratio="16x9" link="https://www.youtube.com/embed/XiyzBIofDiE?si=cbZgLpsH77gEiV0R" title="Running Jenkins Jobs" />
 
     </TabsPane>
     <TabsPane content={automationpipeline[1]}>
@@ -194,7 +184,7 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
         - **Internalize packages from the Community Repository**  
             This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
         - **Update test repository from Chocolatey Community Repository**  
-            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Community Repository.
         - **Update production repository**  
             This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
 
@@ -241,13 +231,23 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
         - **Internalize packages from the Community Repository**  
             This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
         - **Update test repository from Chocolatey Community Repository**  
-            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Central Repository.
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Community Repository.
         - **Update production repository**  
             This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
 
     </TabsPane>
 </TabsPaneContainer>
 
-#### Next Steps
+## Next Steps
 
-When you've finished setting up your automation, you should consider <Xref title="deploying Chocolatey to end users" value="organizational-deployment-guide" anchor="Exercise 6: Installing Chocolatey On Client Machines" />.
+Select **Start Over** to return to the Organizational Guide introduction page.
+
+Select **Previous** to return to Repository Solution setup, or **Next** to move on to Chocolatey Central Management setup.
+
+<div class="d-flex justify-content-between align-items-center">
+    <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/">Start Over</a>
+    <div>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/repository-solution">< Previous</a>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/setup-central-management">Next ></a>
+    </div>
+</div>
