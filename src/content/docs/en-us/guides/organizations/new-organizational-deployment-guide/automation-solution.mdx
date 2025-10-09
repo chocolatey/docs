@@ -33,6 +33,15 @@ export const automationpipeline = [
 
         #### Jenkins Installation
 
+        <Callout type="info" header="Airgapped Installation">
+            If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before continuing with the installation.
+
+            ```powershell
+            Set-ExecutionPolicy RemoteSigned -Scope Process -Force
+            .\path\to\Install-C4BAutomationPlatformJenkins.ps1 @repositoryArgs
+            ```
+        </Callout>
+
         This install script will:
 
         - Install TemurinJRE and Jenkins
@@ -78,15 +87,6 @@ $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/Or
 & ([Scriptblock]::Create($InstallScript)) @RepositoryArgs
 `}
 </DynamicCodeBlock>
-
-<Callout type="info" header="Airgapped Installation">
-    If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before continuing with the installation.
-
-    ```powershell
-    Set-ExecutionPolicy RemoteSigned -Scope Process -Force
-    .\path\to\Install-C4BAutomationPlatformJenkins.ps1 @repositoryArgs
-    ```
-</Callout>
 
         #### Usage
 
