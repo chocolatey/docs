@@ -14,7 +14,6 @@ import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/Dyna
 import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 import OrgGuidePackageAutomationIntro from '@components/docs/OrgGuidePackageAutomationIntro.mdx';
 import JenkinsHardwareRecommendations from '@components/docs/JenkinsHardwareRecommendations.mdx'
-import OrgGuidePrepC4BChocolatey from '@components/docs/OrgGuidePrepC4BChocolatey.mdx'
 
 <OrgGuidePackageAutomationIntro />
 
@@ -28,8 +27,6 @@ export const automationpipeline = [
 <TabsPaneContainer>
     <TabsPane content={automationpipeline[0]}>
         <JenkinsHardwareRecommendations />
-
-        <OrgGuidePrepC4BChocolatey />
 
         #### Jenkins Installation
 
@@ -55,12 +52,12 @@ export const automationpipeline = [
 
         | Variable | Value | Usage |
         | -------- | ----- | ----- |
-        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Used as the distribution point for approved packages. |
-        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Used as the endpoint to push un-tested packages. |
-        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
-        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
-        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to push Chocolatey packages to the repository. |
-        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: Used to secure Jenkins with SSL. |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Your internal production repository for tested packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Your internal test repository for untested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | The user for managing Chocolatey Packages on the repository. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | The password for the user account listed above. |
+        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
 
         If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
 

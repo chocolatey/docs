@@ -14,7 +14,6 @@ import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/Dyna
 import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 import OrgGuideRepositoryIntro from '@components/docs/OrgGuideRepositoryIntro.mdx';
 import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx'
-import OrgGuidePrepC4BChocolatey from '@components/docs/OrgGuidePrepC4BChocolatey.mdx'
 
 <OrgGuideRepositoryIntro />
 
@@ -31,8 +30,6 @@ export const repository = [
 
         - [NexuShell](https://nexushell.dev/)
 
-        <OrgGuidePrepC4BChocolatey />
-
         #### Sonatype Nexus Installation
 
         <Callout type="info" header="Airgapped Installation">
@@ -48,16 +45,21 @@ export const repository = [
 
         - Configure a production NuGet repository for Chocolatey packages
         - Configure a test NuGet repository for Chocolatey packages
-        - Configure a Generic (Raw) repository for hosting large installation media and PowerShell scripts to onboard client workstations with Chocolatey for Business
+        - Configure a Generic (Raw) repository called `choco-install` for hosting large installation media and PowerShell scripts to onboard workstations with Chocolatey for Business
         - Configure a read-only role for consuming packages
         - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
 
         #### Environment Information
 
         Please provide the following information to configure the Sonatype Nexus Server:
-<DynamicCodeBlockInput name="ProdRepoName" defaultValue="Fabrikam-Prod" label="Production Repository Name" />
-<DynamicCodeBlockInput name="TestRepoName" defaultValue="Fabrikam-Test" label="Test Repository Name" />
-<DynamicCodeBlockInput name="RawRepoName" defaultValue="Fabrikam-Assets" label="Raw Repository Name" />
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | SSL Certificate DNS Name | <DynamicCodeBlockInput name="CertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name of your SSL certificate. |
+        | Nexus Port Number | <DynamicCodeBlockInput name="NexusPort" defaultValue="8443" /> | The port number you want to use for Nexus. |
+        | Production Repository | <DynamicCodeBlockInput name="ProdRepoName" defaultValue="Fabrikam-Prod" /> | The name chosen for your production repository. |
+        | Test Repository | <DynamicCodeBlockInput name="TestRepoName" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
+        | Package Storage Location | <DynamicCodeBlockInput name="PackageStoragePath" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. |
 
         #### Nexus Install Script
 
@@ -66,9 +68,11 @@ export const repository = [
 <DynamicCodeBlock language="powershell">
 {`
 $repositoryArgs = @{
-    ProdRepository = 'ProdRepoName'
+    SslCertificateDnsName = 'CertificateDnsName'
+    NexusPortNumber = 'NexusPort'
+    ProductionRepository = 'ProdRepoName'
     TestRepository = 'TestRepoName'
-    RawRepository = 'RawRepoName'
+    PackageStorageLocation = 'PackageStoragePath'
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
