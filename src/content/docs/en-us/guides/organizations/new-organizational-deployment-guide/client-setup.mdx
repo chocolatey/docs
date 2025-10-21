@@ -4,21 +4,20 @@ xref: organizational-client-setup
 title: Client Setup
 description: Information on deploying Chocolatey For Business to your Client Machines
 ---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
 import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
 import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
 import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+import OrgGuideClientSetupIntro from '@components/docs/OrgGuideClientSetupIntro.mdx'
 
-## Summary
+<OrgGuideClientSetupIntro />
 
-This page will help you get your client machines set up and working with Chocolaty For Business, and show you how to customise your installation to your needs.
-
-For a video overview of how to customise your client installation, check out our video on [configuring your Chocolatey client](). TODO Replace with webinar link.
-
-## Chocolatey Baseline
-
-Chocolatey provide a suggested installation and configuration script along with the rest of the organizational guide. It's available [in the choco-orgguide-scripts repository](https://github.com/chocolatey/choco-orgguide-scripts/blob/main/ClientSetup.ps1).
+<Callout type="info" title="Chocolatey Baseline">
+Chocolatey provides a suggested installation and configuration script along with the rest of the organizational guide. It's available [in the choco-orgguide-scripts repository](https://github.com/chocolatey/choco-orgguide-scripts/blob/main/ClientSetup.ps1).
+</Callout>
 
 ### Usage
 
@@ -232,3 +231,14 @@ You can install additional packages during the Client Setup script invocation.
 Only the `Id` part of the passed object is required, everything else is optional.
 
 If you find yourself wanting to perform more complex installations, e.g. using parameters, we would recommend adding them to the script itself.
+<Xref title="Back To Top" value="organizational-client-setup"/>
+## Next Steps
+
+Select **Start Over** to return to the Organizational Guide introduction page, or select **Previous** to return to Automation Solution setup.
+
+<div class="d-flex justify-content-between align-items-center">
+    <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/">Start Over</a>
+    <div>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/setup-central-management">< Previous</a>
+    </div>
+</div>

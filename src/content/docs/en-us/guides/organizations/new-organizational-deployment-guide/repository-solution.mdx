@@ -32,7 +32,7 @@ export const repository = [
 
         #### Sonatype Nexus Installation
 
-        <Callout type="info" header="Airgapped Installation">
+        <Callout type="info" title="Air-gapped Installation">
             If you are deploying the server in an air-gapped environment, please download the offline zip archive and transfer it to the server before continuing with the installation.
 
             ```powershell
@@ -43,15 +43,15 @@ export const repository = [
 
         This install script will:
 
-        - Configure a production NuGet repository for Chocolatey packages
-        - Configure a test NuGet repository for Chocolatey packages
-        - Configure a Generic (Raw) repository called `choco-install` for hosting large installation media and PowerShell scripts to onboard workstations with Chocolatey for Business
-        - Configure a read-only role for consuming packages
-        - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role
+        - Configure a production NuGet repository for Chocolatey packages.
+        - Configure a test NuGet repository for Chocolatey packages.
+        - Configure a Generic (Raw) repository called `choco-install` for hosting large installation media and PowerShell scripts to onboard workstations with Chocolatey for Business.
+        - Configure a read-only role for consuming packages.
+        - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role.
 
         #### Environment Information
 
-        Please provide the following information to configure the Sonatype Nexus Server:
+        Please provide the following information to configure the Sonatype Nexus installation:
 
         | Variable | Value | Usage |
         | -------- | ----- | ----- |
@@ -67,7 +67,7 @@ export const repository = [
 
 <DynamicCodeBlock language="powershell">
 {`
-$repositoryArgs = @{
+$RepositoryArgs = @{
     SslCertificateDnsName = 'CertificateDnsName'
     NexusPortNumber = 'NexusPort'
     ProductionRepository = 'ProdRepoName'
@@ -77,10 +77,10 @@ $repositoryArgs = @{
 }
 
 $InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallNexusRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @repositoryArgs
+& ([Scriptblock]::Create($InstallScript)) @RepositoryArgs
 `}
 </DynamicCodeBlock>
-
+<Xref title="Back To Top" value="organizational-repository-solution"/>
     </TabsPane>
 </TabsPaneContainer>
 

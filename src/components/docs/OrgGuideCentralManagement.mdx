@@ -13,47 +13,55 @@ import CentralManagementServiceSetup from '@components/docs/CentralManagementSer
 import OrgGuideCcmDatabase from '@components/docs/OrgGuideCcmDatabase.mdx';
 import OrgGuideCcmWeb from '@components/docs/OrgGuideCcmWeb.mdx';
 import OrgGuideCcmService from '@components/docs/OrgGuideCcmService.mdx';
+import OrgGuideCentralManagementIntro from '@components/docs/OrgGuideCentralManagementIntro.mdx'
 export const ccmInstall = [
     { id: 'ccm-database', title: 'Chocolatey Cental Management Database', isActive: true },
     { id: 'ccm-service', title: 'Chocolatey Central Management Service', updateAnchor: true },
     { id: 'ccm-web', title: 'Chocolatey Central Management Website', updateAnchor: true }
 ];
 
-Chocolatey Central Management is made of of 4 components, installed via Chocolatey. Those components are:
+<OrgGuideCentralManagementIntro />
 
-- Chocolatey Management Database (chocolatey-management-database): This provides the database schema used by Chocolatey Central Management.
-- Chocolatey Management Service (chocolatey-management-service): This is the service that handles processing requests from agents running in your environment.
-- Chocolatey Management Website (chocolatey-management-web): This is the web interface for Chocolatey Central Management.
-- Chocolatey Agent Service (chocolatey-agent): This is the service that runs on an endpoint that facilitates reporting and deployment activities from Chocolatey Central Management.
-
-## Planning Your Installation
+### Planning Your Installation
 
 Chocolatey Central Management can be installed on a single server or each component can be installed on separate servers. **All three components are required for a Chocolatey Central Management installation.**
 
 If you have Chocolatey for Business licenses for more than 1,000 endpoints, we recommended installing the components on separate servers.
 For 1,000 licenses or fewer, you can install all components on a single server, though we still recommend using a licensed version of SQL Server for the database component.
 
-# Before You Begin
+<Callout type="warning" title="Before You Begin">
 
 Before you can install the Chocolatey Central Management Database, you need to have a SQL Server Instance available. SQL Server Express is only recommended for testing and small environments (fewer than 1,000 endpoints). If you need help installing and configuring SQL Server Express, <Xref title="please see our documentation here" value="setup-sql-server-express-organizational-deployment-guide" />.
+</Callout>
 
-## Available Parameters
+### Environment Information
 
-- `Component`: The component to install. Valid values: `Database`, `Web`, `Service`, `All`
+| Variable | Value | Usage |
+| -------- | ----- | ----- |
+| Component | `Database`, `Service`, `Web`, `All` | The component(s) of Chocolatey Central Management to install on the current server. |
+| ServiceCredential | Varies | The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. (Service and Web components only) |
+| ConnectionString | Varies | The connection string to use to connect to the database. |
+| LicenseFile | Varies | The path to the Chocolatey for Business license file. If not provided, you will be prompted to browse for it. |
+| IsOffline | True | If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation. |
+| OfflineInstallationMedia | Varies | The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true. |
+| CertificateThumbprint | Varies | The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only) |
+| CertificateDnsName | Varies | The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) |
+
+{/* - `Component`: The component to install. Valid values: `Database`, `Service`, `Web`, `All`
 - `ServiceCredential`: The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. (Service and Web components only)
 - `ConnectionString`: The connection string to use to connect to the database.
 - `LicenseFile`: The path to the Chocolatey for Business license file. If not provided, you will br prompted to browse for it.
 - `IsOffline`: If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation.
 - `OfflineInstallationMedia`: The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true.
 - `CertificateThumbprint`: The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only)
-- `CertificateDnsName`: The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only)
+- `CertificateDnsName`: The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) */}
 
-## Securing Chocolatey Central Management Communications
+### Securing Chocolatey Central Management Communications
 
 By default, the install will create and use self-signed certificates for the Chocolatey Management Service and Web components.
 If you wish to use your own certificates, you can do so by providing the `CertificateThumbprint` and `CertificateDnsName` parameters.
 
-## Component Installation
+### Chocolatey Central Management Component Installation Scripts
 
 <TabsTabContainer content={ccmInstall} />
 <TabsPaneContainer>
