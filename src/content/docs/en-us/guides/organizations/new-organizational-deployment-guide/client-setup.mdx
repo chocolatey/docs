@@ -1,0 +1,234 @@
+---
+order: 49
+xref: organizational-client-setup
+title: Client Setup
+description: Information on deploying Chocolatey For Business to your Client Machines
+---
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+
+## Summary
+
+This page will help you get your client machines set up and working with Chocolaty For Business, and show you how to customise your installation to your needs.
+
+For a video overview of how to customise your client installation, check out our video on [configuring your Chocolatey client](). TODO Replace with webinar link.
+
+## Chocolatey Baseline
+
+Chocolatey provide a suggested installation and configuration script along with the rest of the organizational guide. It's available [in the choco-orgguide-scripts repository](https://github.com/chocolatey/choco-orgguide-scripts/blob/main/ClientSetup.ps1).
+
+### Usage
+
+You can download and run the script in one of two ways - fill out the values below, and select the tab closest to your environment:
+
+| Variable | Value | Usage |
+| -------- | ----- | ----- |
+| Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryUrl" defaultValue="https://repo.example.org:8443/repository/choco-prod/index.json" /> | Used as the distribution point for approved packages. |
+| Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocouser" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+| Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | Used to authenticate to and manage Chocolatey Packages on the repository. |
+| CCM URL | <DynamicCodeBlockInput name="OrgGuideCcmUrl" defaultValue="https://ccm.example.org:24020/ChocolateyManagementService" /> | Used to communicate with the Chocolatey Central Management service.. |
+| CCM Client Salt | <DynamicCodeBlockInput name="OrgGuideCcmClientSalt" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | Used to secure communication to the Chocolatey Central Management service. |
+| CCM Service Salt | <DynamicCodeBlockInput name="OrgGuideCcmServiceSalt" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04723" /> | Used to secure communication to the Chocolatey Central Management service. |
+
+export const clientsetupscenarios = [
+    { id: 'repo,ccm', title: 'Repository and CCM', isActive: true },
+    { id: 'repo', title: 'Repository Only' },
+    { id: 'ccm', title: 'CCM Only' },
+    { id: 'none', title: 'No Servers' },
+];
+
+<TabsTabContainer content={clientsetupscenarios} />
+<TabsPaneContainer>
+    <TabsPane content={clientsetupscenarios[0]}>
+        If your environment has a deployed repository solution that we have created, you will have a copy of the script present in a binary repository.
+
+        To download and install it, run PowerShell as shown below:
+
+<DynamicCodeBlock language="powershell">
+{`
+$ScriptArgs = @{
+    RepositoryUrl = "OrgGuideProductionRepositoryUrl"
+    RepositoryCredential = [PSCredential]::new(
+        "OrgGuideRepoUserName",
+        (ConvertTo-SecureString "OrgGuideRepoUserPassword" -AsPlainText -Force)
+    )
+    ChocolateyCentralManagementUrl = "OrgGuideCcmUrl"
+    ClientCommunicationSalt = "OrgGuideCcmClientSalt"
+    ServiceCommunicationSalt = "OrgGuideCcmServiceSalt"
+}
+$WebClient = [System.Net.WebClient]::new()
+$WebClient.Credentials = $ScriptArgs.RepositoryCredential
+& [scriptblock]::Create($WebClient.DownloadString(
+    ($ScriptArgs.RepositoryUrl -replace '\/repository\/(?<RepositoryName>.+)\/(index.json)?$', '/repository/choco-install/ChocolateyInstall.ps1')
+)) @ScriptArgs
+`}
+</DynamicCodeBlock>
+
+        This should result in a configured client with:
+        - Chocolatey CLI installed and configured for business usage.
+            - Your Production and Core sources configured for use.
+            - A selection of Chocolatey recommended features and configurations.
+        - Chocolatey Agent installed and configured for background service.
+        - Chocolatey Central Management reporting and deployments enabled.
+    </TabsPane>
+    <TabsPane content={clientsetupscenarios[1]}>
+        If your environment has a deployed repository solution that we have created, you will have a copy of the script present in a binary repository.
+
+        To download and install it, run PowerShell as shown below:
+
+<DynamicCodeBlock language="powershell">
+{`
+$ScriptArgs = @{
+    RepositoryUrl = "OrgGuideProductionRepositoryUrl"
+    RepositoryCredential = [PSCredential]::new(
+        "OrgGuideRepoUserName",
+        (ConvertTo-SecureString "OrgGuideRepoUserPassword" -AsPlainText -Force)
+    )
+    ChocolateyCentralManagementUrl = "OrgGuideCcmUrl"
+    ClientCommunicationSalt = "OrgGuideCcmClientSalt"
+    ServiceCommunicationSalt = "OrgGuideCcmServiceSalt"
+}
+$WebClient = [System.Net.WebClient]::new()
+$WebClient.Credentials = $ScriptArgs.RepositoryCredential
+& [scriptblock]::Create($WebClient.DownloadString(
+    ($ScriptArgs.RepositoryUrl -replace '\/repository\/(?<RepositoryName>.+)\/(index.json)?$', '/repository/choco-install/ChocolateyInstall.ps1')
+)) @ScriptArgs
+`}
+</DynamicCodeBlock>
+
+        This should result in a configured client with:
+        - Chocolatey CLI installed and configured for business usage.
+            - Your Production and Core sources configured for use.
+            - A selection of Chocolatey recommended features and configurations.
+        - Chocolatey Agent installed and configured for background service.
+        - Chocolatey Central Management reporting and deployments enabled.
+    </TabsPane>
+    <TabsPane content={clientsetupscenarios[2]}>
+        As you do not have a repository set up internally, you will need to download the script at runtime or host it internally and reference it.
+
+        To download and install it, run PowerShell as shown below:
+
+<DynamicCodeBlock language="powershell">
+{`
+$ScriptArgs = @{
+    ChocolateyCentralManagementUrl = "OrgGuideCcmUrl"
+    ClientCommunicationSalt = "OrgGuideCcmClientSalt"
+    ServiceCommunicationSalt = "OrgGuideCcmServiceSalt"
+}
+& [scriptblock]::Create([System.Net.WebClient]::new().DownloadString(
+    "https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/ClientSetup.ps1"
+)) @ScriptArgs
+`}
+</DynamicCodeBlock>
+
+        This should result in a configured client with:
+        - Chocolatey CLI installed and configured for business usage.
+            - A selection of Chocolatey recommended features and configurations.
+        - Chocolatey Agent installed and configured for background service.
+        - Chocolatey Central Management reporting and deployments enabled.
+    </TabsPane>
+    <TabsPane content={clientsetupscenarios[3]}>
+        As you do not have a repository set up internally, you will need to download the script at runtime or host it internally and reference it.
+
+        To download and install it, run PowerShell as shown below:
+
+<DynamicCodeBlock language="powershell">
+{`
+& [scriptblock]::Create([System.Net.WebClient]::new().DownloadString(
+    "https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/ClientSetup.ps1"
+)) -LicensePath ~\Downloads\chocolatey.license.xml
+`}
+</DynamicCodeBlock>
+
+        NOTE: You will need to update the path to a valid Chocolatey For Business license file.
+
+        This should result in a configured client with:
+        - Chocolatey CLI installed and configured for business usage.
+            - A selection of Chocolatey recommended features and configurations.
+        - Chocolatey Agent installed and configured for background service.
+    </TabsPane>
+</TabsPaneContainer>
+
+You can also save the script to your client machine and run it with the same parameters, as above:
+
+<DynamicCodeBlock language="powershell">
+{`
+.\ClientSetup.ps1 @ScriptArgs
+`}
+</DynamicCodeBlock>
+
+### Setup Modification
+
+You can additionally use this script to add configuration, packages, and more.
+
+By passing arguments to `AdditionalConfiguration`, `AdditionalFeatures`, `AdditionalSources`, and `AdditionalPackages` you can additively configure your Chocolatey client - or you can add lines directly to the Client Setup script and deploy that.
+
+#### Configuration
+
+You can adjust any Chocolatey configuration value by adding an `-AdditionalConfiguration` argument to your Client Setup script invocation.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -AdditionalConfiguration @{
+    BackgroundServiceAllowedCommands = 'install,upgrade,uninstall'
+    commandExecutionTimeoutSeconds = 6000
+}
+```
+
+This can override the base configuration we provide in the client setup.
+
+#### Features
+
+You can adjust any Chocolatey feature by adding an `-AdditionalFeatures` argument to your Client Setup script invocation.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -AdditionalFeatures @{
+    useBackgroundservice = 'Enabled'
+}
+```
+
+This can override the base features we provide in the client setup.
+
+#### Sources
+
+You can add any additional sources you desire by adding the `-AdditionalSources` argument to your Client Setup script invocation.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -AdditionalSources @(
+    @{
+        Name                = 'MySource'
+        Source              = 'https://nexus.example.org/repository/MyChocolateySource/index.json'
+        Credentials         = $MySourceCredential
+        AllowSelfService    = $true
+        AdminOnly           = $true
+        BypassProxy         = $true
+        Priority            = 10
+        Certificate         = 'C:\cert.pfx'
+        CertificatePassword = 's0mepa$$'
+    }
+)
+```
+
+Only the `Source` and `Credential` parts of the passed object are required, everything else is optional.
+
+This can override the sources we create in the client setup.
+
+#### Packages
+
+You can install additional packages during the Client Setup script invocation.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -AdditionalPackages @(
+    @{
+        Id      = 'firefox'
+        Version = '144.0.0'
+        Pin     = $true
+    }
+)
+```
+
+Only the `Id` part of the passed object is required, everything else is optional.
+
+If you find yourself wanting to perform more complex installations, e.g. using parameters, we would recommend adding them to the script itself.
