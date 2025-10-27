@@ -110,19 +110,11 @@ The following VS Code extensions are recommended to get the best development exp
 
 ## Understanding Astro
 
-The [Chocolatey Design System](https://design.chocolatey.org) and [choco-astro](https://github.com/chocolatey/choco-astro) contain information on how to understand several Astro concepts:
-
-* Learn how to [override automatically generated heading ID's](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#overriding-automatically-generated-heading-ids).
-* Learn about Astro and how to use [Components in `.mdx` and `.astro`](https://design.chocolatey.org/foundations/astro) file types.
-* Learn how to use the [`<Callout />` Component](https://design.chocolatey.org/components/callouts) to display notes and important information.
-* Learn how to use the [`<CollapseButton />` Component](https://design.chocolatey.org/collapse-button) to display a button that triggers a collapsed element.
-* Learn how to use the [`<Iframe />` Component](https://design.chocolatey.org/components/iframe) to display videos with defined aspect ratios.
-* Learn how to use the [`<Tabs />` Component](https://design.chocolatey.org/components/tabs) to display content in tabbed interface.
-* Learn how to use the [`<Xref />` Component](https://design.chocolatey.org/components/xref) to link to other documents within this repository.
+The [Chocolatey Design System](https://design.chocolatey.org) and [@chocolatey-software/astro](https://github.com/chocolatey/choco-theme/packages/astro) contain information on how to understand several Astro concepts.
 
 ## Markdown Diagrams with Mermaid
 
-[Mermaid](https://mermaid.js.org/) via an [Astro integration](https://github.com/chocolatey/choco-astro/blob/main/astro.config.mjs.json) allows an easy way to display information with diagrams written in markdown. Find more information on usage at the [choco-astro repository](https://github.com/chocolatey/choco-astro?tab=readme-ov-file#markdown-diagrams-with-mermaid).
+[Mermaid](https://mermaid.js.org/) allows an easy way to display information with diagrams written in markdown. Find more information on usage at the [chocolatey-software/astro repository](https://github.com/chocolatey/choco-theme/packages/astro#markdown-diagrams-with-mermaid).
 
 ## Adding A New Highlight
 
