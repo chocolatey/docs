@@ -37,7 +37,7 @@ export const repository = [
 
             ```powershell
             Set-ExecutionPolicy Bypass -Scope Process -Force
-            & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://ch0.co/PrepareNexusOffline.ps1')))
+            & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/OfflineInstallPreparation.ps1')))
             ```
         </Callout>
 
@@ -76,8 +76,9 @@ $RepositoryArgs = @{
     Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/InstallNexusRepository.ps1')
-& ([Scriptblock]::Create($InstallScript)) @RepositoryArgs
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-C4BRepositoryPlatformNexus.ps1 @RepositoryArgs
 `}
 </DynamicCodeBlock>
 <Xref title="Back To Top" value="organizational-repository-solution"/>

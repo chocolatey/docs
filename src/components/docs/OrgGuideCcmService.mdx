@@ -25,5 +25,7 @@ $ccmParams = @{
     Component = 'Service'
 }
 
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
 Install-ChocolateyCentralManagement @ccmParams
 ```

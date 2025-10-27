@@ -80,8 +80,9 @@ if ($Thumbprint -ne 'Unchanged') {
     $RepositoryArgs.Thumbprint = $Thumbprint
 }
 
-$InstallScript = [System.Net.WebClient]::new().DownloadString('https://ch0.co/OrgGuide-AutomationPlatform-Jenkins')
-& ([Scriptblock]::Create($InstallScript)) @RepositoryArgs
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-C4BAutomationPlatformJenkins.ps1 @RepositoryArgs
 `}
 </DynamicCodeBlock>
 
