@@ -73,7 +73,6 @@ $RepositoryArgs = @{
     ProductionRepository = 'ProdRepoName'
     TestRepository = 'TestRepoName'
     PackageStorageLocation = 'PackageStoragePath'
-    Credential = (Get-Credential) # Please replace with your desired credentials
 }
 
 & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
