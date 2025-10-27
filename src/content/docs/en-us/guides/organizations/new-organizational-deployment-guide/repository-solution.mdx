@@ -55,11 +55,16 @@ export const repository = [
 
         | Variable | Value | Usage |
         | -------- | ----- | ----- |
-        | SSL Certificate DNS Name | <DynamicCodeBlockInput name="CertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name of your SSL certificate. |
-        | Nexus Port Number | <DynamicCodeBlockInput name="NexusPort" defaultValue="8443" /> | The port number you want to use for Nexus. |
-        | Production Repository | <DynamicCodeBlockInput name="ProdRepoName" defaultValue="Fabrikam-Prod" /> | The name chosen for your production repository. |
-        | Test Repository | <DynamicCodeBlockInput name="TestRepoName" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
-        | Package Storage Location | <DynamicCodeBlockInput name="PackageStoragePath" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. |
+        | SSL Certificate DNS Name | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name of your SSL certificate. |
+        | SSL Certificate Thumbprint | <DynamicCodeBlockInput name="CertificateThumbprint" defaultValue="1234567890" /> | The Thumbprint of your SSL certificate. |
+        | Nexus Port Number | <DynamicCodeBlockInput name="NexusPortNumber" defaultValue="8443" /> | The port number you want to use for Nexus. |
+        | Production Repository | <DynamicCodeBlockInput name="ProductionRepository" defaultValue="Fabrikam-Prod" /> | The name chosen for your production repository. |
+        | Test Repository | <DynamicCodeBlockInput name="TestRepository" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
+        | Package Storage Location | <DynamicCodeBlockInput name="PackageStorageLocation" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. If changing the default value, ensure the full path is specified. |
+
+        <Callout type="info">
+        If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
+        </Callout>
 
         #### Nexus Install Script
 
@@ -68,11 +73,12 @@ export const repository = [
 <DynamicCodeBlock language="powershell">
 {`
 $RepositoryArgs = @{
-    SslCertificateDnsName = 'CertificateDnsName'
-    NexusPortNumber = 'NexusPort'
-    ProductionRepository = 'ProdRepoName'
-    TestRepository = 'TestRepoName'
-    PackageStorageLocation = 'PackageStoragePath'
+    CertificateDnsName = 'SslCertificateDnsName'
+    Thumbprint = 'CertificateThumbprint'
+    NexusPort = 'NexusPortNumber'
+    ProductionRepositoryName = 'ProductionRepository'
+    TestRepositoryName = 'TestRepository'
+    PackageStoragePath = 'PackageStorageLocation'
 }
 
 & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))

@@ -59,7 +59,9 @@ export const automationpipeline = [
         | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
         | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
 
+        <Callout type="info">
         If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
+        </Callout>
 
         #### Jenkins Install Script
 
@@ -73,11 +75,7 @@ $RepositoryArgs = @{
         (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
     )
     RepositoryApiKey = (ConvertTo-SecureString 'OrgGuideRepoApiKey' -Force -AsPlainText)
-}
-
-$Thumbprint = 'OrgGuideCertificateThumbprint'
-if ($Thumbprint -ne 'Unchanged') {
-    $RepositoryArgs.Thumbprint = $Thumbprint
+    Thumbprint = 'OrgGuideCertificateThumbprint'
 }
 
 & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
