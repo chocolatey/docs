@@ -60,7 +60,7 @@ export const automationpipeline = [
         | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
 
         <details>
-        <summary><strong>You must install the certificate to the Local Machine \ Trusted People store if providing the Thumbprint. (click to expand)</strong></summary>
+        <summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
         <ul class="list-style-type-disc">
         <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
         <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
@@ -106,7 +106,7 @@ $RepositoryArgs = @{
 
         To use your fresh new jobs, you should navigate to the Jenkins dashboard and attempt to `build` one of the jobs.
 
-        <Iframe ratio="16x9" link="https://www.youtube.com/embed/XiyzBIofDiE?si=cbZgLpsH77gEiV0R" title="Running Jenkins Jobs" />
+        {/* <Iframe ratio="16x9" link="https://www.youtube.com/embed/XiyzBIofDiE?si=cbZgLpsH77gEiV0R" title="Running Jenkins Jobs" /> */}
 <Xref title="Back To Top" value="organizational-automation-solution"/>
     </TabsPane>
 </TabsPaneContainer>

@@ -4,6 +4,8 @@ import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
 import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 
 <Callout type="info">
     <p>
@@ -19,13 +21,17 @@ import CentralManagementSecureConnectionStrings from '@components/docs/CentralMa
 </Callout>
 
 
-```powershell
+<DynamicCodeBlock language="powershell">
+{`
 $ccmParams = @{
-    ConnectionString = 'YOUR CONNECTION STRING HERE'
+    ConnectionString = 'SQLConnectionString'
     Component = 'Service'
+    CertificateDnsName = 'SslCertificateDnsName'
+    CertificateThumbprint = 'SslCertificateThumbprint'
 }
 
 & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
 
-Install-ChocolateyCentralManagement @ccmParams
-```
+.\\Install-ChocolateyCentralManagement.ps1 @ccmParams
+`}
+</DynamicCodeBlock>

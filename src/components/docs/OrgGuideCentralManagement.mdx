@@ -14,6 +14,8 @@ import OrgGuideCcmDatabase from '@components/docs/OrgGuideCcmDatabase.mdx';
 import OrgGuideCcmWeb from '@components/docs/OrgGuideCcmWeb.mdx';
 import OrgGuideCcmService from '@components/docs/OrgGuideCcmService.mdx';
 import OrgGuideCentralManagementIntro from '@components/docs/OrgGuideCentralManagementIntro.mdx'
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 export const ccmInstall = [
     { id: 'ccm-database', title: 'Chocolatey Cental Management Database', isActive: true },
     { id: 'ccm-service', title: 'Chocolatey Central Management Service', updateAnchor: true },
@@ -21,6 +23,15 @@ export const ccmInstall = [
 ];
 
 <OrgGuideCentralManagementIntro />
+
+### Requirements
+
+To install and run Chocolatey Central Management, your server(s) must meet the following requirements:
+
+- Windows Server 2022 or later.
+- 4 CPU cores
+- 16 GB RAM
+- 100 GB+ of drive space for computer information and deployment messages processed by the Chocolatey Central Management Service.
 
 ### Planning Your Installation
 
@@ -31,35 +42,38 @@ For 1,000 licenses or fewer, you can install all components on a single server, 
 
 <Callout type="warning" title="Before You Begin">
 
-Before you can install the Chocolatey Central Management Database, you need to have a SQL Server Instance available. SQL Server Express is only recommended for testing and small environments (fewer than 1,000 endpoints). If you need help installing and configuring SQL Server Express, <Xref title="please see our documentation here" value="setup-sql-server-express-organizational-deployment-guide" />.
+Before you can install the Chocolatey Central Management Database, you need to have a SQL Server Instance available. SQL Server Express is only recommended for testing and small environments (fewer than 1,000 endpoints).
 </Callout>
 
 ### Environment Information
 
 | Variable | Value | Usage |
 | -------- | ----- | ----- |
-| Component | `Database`, `Service`, `Web`, `All` | The component(s) of Chocolatey Central Management to install on the current server. |
+| Component | `Database`, `Service`, `Web` | The component(s) of Chocolatey Central Management to install on the current server. |
 | ServiceCredential | Varies | The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. (Service and Web components only) |
-| ConnectionString | Varies | The connection string to use to connect to the database. |
-| LicenseFile | Varies | The path to the Chocolatey for Business license file. If not provided, you will be prompted to browse for it. |
+| ConnectionString | <DynamicCodeBlockInput name="SQLConnectionString" defaultValue="Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;" /> | The connection string to use to connect to the database. |
 | IsOffline | True | If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation. |
 | OfflineInstallationMedia | Varies | The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true. |
-| CertificateThumbprint | Varies | The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only) |
-| CertificateDnsName | Varies | The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) |
-
-{/* - `Component`: The component to install. Valid values: `Database`, `Service`, `Web`, `All`
-- `ServiceCredential`: The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. (Service and Web components only)
-- `ConnectionString`: The connection string to use to connect to the database.
-- `LicenseFile`: The path to the Chocolatey for Business license file. If not provided, you will br prompted to browse for it.
-- `IsOffline`: If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation.
-- `OfflineInstallationMedia`: The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true.
-- `CertificateThumbprint`: The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only)
-- `CertificateDnsName`: The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) */}
+| CertificateDnsName | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) |
+| CertificateThumbprint | <DynamicCodeBlockInput name="SslCertificateThumbprint" defaultValue="1234567890" /> | The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only) |
 
 ### Securing Chocolatey Central Management Communications
 
 By default, the install will create and use self-signed certificates for the Chocolatey Management Service and Web components.
 If you wish to use your own certificates, you can do so by providing the `CertificateThumbprint` and `CertificateDnsName` parameters.
+
+<details>
+<summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the CertificateThumbprint. (click to expand)</strong></summary>
+<ul class="list-style-type-disc">
+<li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
+<li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
+<li>Select `Next`, then browse to the location of the SSL certificate you want to use.</li>
+<li>Once you select the certificate, click `Next`.</li>
+<li>Input the password for the certificate and check the box that says `Mark this key as exportable. This will allow you to back up and transport your keys at a later time.` Click `Next`.</li>
+<li>The `Trusted People` certificate store should already be input in the `Browse...` bar. Select `Next`.</li>
+<li>Verify the information in the pane and then select `Finish`.</li>
+</ul>
+</details>
 
 ### Chocolatey Central Management Component Installation Scripts
 
