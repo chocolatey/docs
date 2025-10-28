@@ -62,9 +62,18 @@ export const repository = [
         | Test Repository | <DynamicCodeBlockInput name="TestRepository" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
         | Package Storage Location | <DynamicCodeBlockInput name="PackageStorageLocation" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. If changing the default value, ensure the full path is specified. |
 
-        <Callout type="info">
-        If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
-        </Callout>
+        <details>
+        <summary><strong>You must install the certificate to the Local Machine / Trusted People if providing the Thumbprint. (click to expand)</strong></summary>
+        <ul class="list-style-type-disc">
+        <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
+        <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
+        <li>Select `Next`, then browse to the location of the SSL certificate you want to use.</li>
+        <li>Once you select the certificate, click `Next`.</li>
+        <li>Input the password for the certificate and check the box that says `Mark this key as exportable. This will allow you to back up and transport your keys at a later time.` Click `Next`.</li>
+        <li>The `Trusted People` certificate store should already be input in the `Browse...` bar. Select `Next`.</li>
+        <li>Verify the information in the pane and then select `Finish`.</li>
+        </ul>
+        </details>
 
         #### Nexus Install Script
 

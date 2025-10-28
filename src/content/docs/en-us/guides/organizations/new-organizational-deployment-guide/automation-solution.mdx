@@ -59,9 +59,18 @@ export const automationpipeline = [
         | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
         | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
 
-        <Callout type="info">
-        If providing a **Thumbprint**, you must install the certificate to the **Local Machine / Trusted People** store before running the script.
-        </Callout>
+        <details>
+        <summary><strong>You must install the certificate to the Local Machine / Trusted People if providing the Thumbprint. (click to expand)</strong></summary>
+        <ul class="list-style-type-disc">
+        <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
+        <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
+        <li>Select `Next`, then browse to the location of the SSL certificate you want to use.</li>
+        <li>Once you select the certificate, click `Next`.</li>
+        <li>Input the password for the certificate and check the box that says `Mark this key as exportable. This will allow you to back up and transport your keys at a later time.` Click `Next`.</li>
+        <li>The `Trusted People` certificate store should already be input in the `Browse...` bar. Select `Next`.</li>
+        <li>Verify the information in the pane and then select `Finish`.</li>
+        </ul>
+        </details>
 
         #### Jenkins Install Script
 
