@@ -23,7 +23,7 @@ import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCo
 <DynamicCodeBlock language="powershell">
 {`
 $ccmParams = @{
-    ConnectionString = 'SQLConnectionString'
+    ConnectionString = 'Server=Localhost\\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'
     Component = 'Website'
     CertificateDnsName = 'SslCertificateDnsName'
     Thumbprint = 'SslCertificateThumbprint'

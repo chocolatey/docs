@@ -27,7 +27,7 @@ export const dbOptionsDb = [
 <DynamicCodeBlock language="powershell">
 {`
 $ccmParams = @{
-    ConnectionString = 'SQLConnectionString'
+    ConnectionString = 'Server=Localhost\\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;'
     Component = 'Database'
     CertificateDnsName = 'SslCertificateDnsName'
     Thumbprint = 'SslCertificateThumbprint'

@@ -51,7 +51,7 @@ Before you can install the Chocolatey Central Management Database, you need to h
 | -------- | ----- | ----- |
 | Component | `Database`, `Service`, `Website` | The component(s) of Chocolatey Central Management to install on the current server. |
 | ServiceCredential | Varies | The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. The user must have `Log on as a service` privilege. (Service and Web components only) |
-| ConnectionString | <DynamicCodeBlockInput name="SQLConnectionString" defaultValue="Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;" /> | The connection string to use to connect to the database. |
+| ConnectionString | Varies | The connection string used to connect to the SQL database. |
 | IsOffline | True | If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation. |
 | OfflineInstallationMedia | Varies | The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true. |
 | CertificateDnsName | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) |
