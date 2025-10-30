@@ -1,0 +1,22 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+
+#### Before You Begin
+
+Please install and license Chocolatey CLI. This can be done using the following from an elevated PowerShell session:
+
+Step 1: Installing Chocolatey CLI
+```PowerShell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+Invoke-RestMethod https://ch0.co/go | Invoke-Expression
+```
+
+Step 2: Licensing your installation
+
+```powershell
+$licenseDir = New-Item C:\ProgramData\chocolatey\license -ItemType Directory
+Copy-Item 'YourLicenseFilePath' -Destination $licenseDir
+```

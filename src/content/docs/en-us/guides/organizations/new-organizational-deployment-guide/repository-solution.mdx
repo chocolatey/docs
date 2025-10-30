@@ -1,0 +1,109 @@
+---
+order: 45
+xref: organizational-repository-solution
+title: Repository Solution
+description: Information on deploying a repository solution for Chocolatey For Business
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+import OrgGuideRepositoryIntro from '@components/docs/OrgGuideRepositoryIntro.mdx';
+import SonatypeNexusHardwareRecommendations from '@components/docs/SonatypeNexusHardwareRecommendations.mdx'
+
+<OrgGuideRepositoryIntro />
+
+export const repository = [
+        {id: 'sonatypenexus', title: 'Sonatype Nexus', isActive: true}
+]
+
+<TabsTabContainer content={repository} />
+<TabsPaneContainer>
+    <TabsPane content={repository[0]}>
+        <SonatypeNexusHardwareRecommendations />
+
+        To complete the installation the following PowerShell modules will be installed from the PowerShell Gallery:
+
+        - [NexuShell](https://nexushell.dev/)
+
+        #### Sonatype Nexus Installation
+
+        <Callout type="info" title="Air-gapped Installation">
+            If you are deploying the server in an air-gapped environment, please download the offline zip archive and transfer it to the server before continuing with the installation.
+
+            ```powershell
+            Set-ExecutionPolicy Bypass -Scope Process -Force
+            & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/OfflineInstallPreparation.ps1')))
+            ```
+        </Callout>
+
+        This install script will:
+
+        - Configure a production NuGet repository for Chocolatey packages.
+        - Configure a test NuGet repository for Chocolatey packages.
+        - Configure a Generic (Raw) repository called `choco-install` for hosting large installation media and PowerShell scripts to onboard workstations with Chocolatey for Business.
+        - Configure a read-only role for consuming packages.
+        - Configure a Nexus user account for Chocolatey CLI authentication, added to the created read-only role.
+
+        #### Environment Information
+
+        Please provide the following information to configure the Sonatype Nexus installation:
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | SSL Certificate DNS Name | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name of your SSL certificate. |
+        | SSL Certificate Thumbprint | <DynamicCodeBlockInput name="SslCertificateThumbprint" defaultValue="1234567890" /> | The Thumbprint of your SSL certificate. |
+        | Production Repository | <DynamicCodeBlockInput name="ProductionRepository" defaultValue="Fabrikam-Prod" /> | The name chosen for your production repository. |
+        | Test Repository | <DynamicCodeBlockInput name="TestRepository" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
+        | Package Storage Location | <DynamicCodeBlockInput name="PackageStorageLocation" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. If changing the default value, ensure the full path is specified. |
+
+        <details>
+        <summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
+        <ul class="list-style-type-disc">
+        <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
+        <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
+        <li>Select `Next`, then browse to the location of the SSL certificate you want to use.</li>
+        <li>Once you select the certificate, click `Next`.</li>
+        <li>Input the password for the certificate and check the box that says `Mark this key as exportable. This will allow you to back up and transport your keys at a later time.` Click `Next`.</li>
+        <li>The `Trusted People` certificate store should already be input in the `Browse...` bar. Select `Next`.</li>
+        <li>Verify the information in the pane and then select `Finish`.</li>
+        </ul>
+        </details>
+
+        #### Nexus Install Script
+
+        To complete the installation run the following PowerShell script:
+
+<DynamicCodeBlock language="powershell">
+{`
+$RepositoryArgs = @{
+    CertificateDnsName = 'SslCertificateDnsName'
+    Thumbprint = 'SslCertificateThumbprint'
+    ProductionRepositoryName = 'ProductionRepository'
+    TestRepositoryName = 'TestRepository'
+    PackageStoragePath = 'PackageStorageLocation'
+}
+
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-C4BRepositoryPlatformNexus.ps1 @RepositoryArgs
+`}
+</DynamicCodeBlock>
+<Xref title="Back To Top" value="organizational-repository-solution"/>
+    </TabsPane>
+</TabsPaneContainer>
+
+## Next Steps
+
+Select **Previous** to return to the Organizational Guide introduction page, or **Next** to move on to the Automation Solution.
+
+<div class="d-flex justify-content-between align-items-center">
+    <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/">< Previous</a>
+    <div>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/automation-solution">Next ></a>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+
+<Callout type="info">
+    <p>
+        Before installing the Chocolatey Central Management Website component, ensure you have set up the Chocolatey Central Management Database component.
+    </p>
+</Callout>
+
+<Callout type="warning">
+    <p>
+        - _Ensure that you have enabled **Windows Authentication** and **SQL Server Authentication** in your SQL Server instance._
+        - _The connection string used to install the Service component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database._
+        - _If you are using a custom SSL certificate, ensure that the certificate is installed  in the LocalMachine\TrustedPeople store on the server where the Chocolatey Central Management Service is being installed._
+    </p>
+</Callout>
+
+<DynamicCodeBlock language="powershell">
+{`
+$ccmParams = @{
+    ConnectionString = 'Server=Localhost\\SQLEXPRESS;Database=ChocolateyManagement;User ID=ChocoUser;Password=Ch0c0R0cks;'
+    Component = 'Website'
+    CertificateDnsName = 'SslCertificateDnsName'
+    Thumbprint = 'SslCertificateThumbprint'
+}
+
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-ChocolateyCentralManagement.ps1 @ccmParams
+`}
+</DynamicCodeBlock>

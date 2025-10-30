@@ -1,0 +1,40 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+
+export const dbOptionsDb = [
+    { id: 'integrated-security-db', title: 'Authenticate w/ Integrated Security', isActive: true },
+    { id: 'sql-login-db', title: 'Authenticate w/ Sql Login', updateAnchor: true },
+    { id: 'connection-string-db', title: 'Authenticate w/ Connection String', updateAnchor: true }
+];
+
+<Callout type="info">
+    <p>
+        The Chocolatey Central Management Database is the first component that should be installed.
+        It provides the database schema used by Chocolatey Central Management. The connection string
+        provided needs to have the ability to create the ChocolateyManagement database and update the schema.
+    </p>
+</Callout>
+
+<DynamicCodeBlock language="powershell">
+{`
+$ccmParams = @{
+    ConnectionString = 'Server=Localhost\\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;'
+    Component = 'Database'
+    CertificateDnsName = 'SslCertificateDnsName'
+    Thumbprint = 'SslCertificateThumbprint'
+}
+
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-ChocolateyCentralManagement.ps1 @ccmParams
+`}
+</DynamicCodeBlock>

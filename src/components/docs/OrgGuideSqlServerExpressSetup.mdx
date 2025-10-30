@@ -1,0 +1,82 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Install SQL Server Express
+
+The quickest option forward for the Chocolatey Central Management Database is to install the latest version of SQL Server Express from the Chocolatey Community Repository. You can do this with the following command:
+
+```powershell
+choco install sql-server-express -y
+```
+If you're installing Chocolatey for Business into an offline environment, you'll want to specify the path of the `OfflineInstallationMedia` where the Chocolatey components reside:
+
+```powershell
+choco install sql-server-express -y --source='path\to\offlinearchive'
+```
+
+## Prepare SQL Server Express
+
+You'll need to do the following to prepare SQL Server Express for use with Chocolatey Central Management:
+
+* Turn on Named Pipes and TCP Server protocols
+* Ensure the TcpPort is 1433 (or know what it is you need to connect to)
+* Set SQL Server Mixed Mode Authentication
+* Restart SQL Server
+* Open Windows Firewall ports for TCP access (and SQL Server Browser in most cases)
+
+You can use the script provided below to ensure SQL Server Express is configured correctly. The script should be run on the same computer where SQL Server Express was installed.
+
+#### Script to Prepare SQL Server Express
+
+```powershell
+# https://docs.microsoft.com/en-us/sql/tools/configuration-manager/tcp-ip-properties-ip-addresses-tab
+Write-Output "SQL Server: Configuring Remote Access on SQL Server Express."
+$assemblyList = 'Microsoft.SqlServer.Management.Common', 'Microsoft.SqlServer.Smo', 'Microsoft.SqlServer.SqlWmiManagement', 'Microsoft.SqlServer.SmoExtended'
+
+foreach ($assembly in $assemblyList) {
+    $assembly = [System.Reflection.Assembly]::LoadWithPartialName($assembly)
+}
+
+$wmi = New-Object Microsoft.SqlServer.Management.Smo.Wmi.ManagedComputer # connects to localhost by default
+$instance = $wmi.ServerInstances | Where-Object { $_.Name -eq 'SQLEXPRESS' }
+
+$np = $instance.ServerProtocols | Where-Object { $_.Name -eq 'Np' }
+$np.IsEnabled = $true
+$np.Alter()
+
+$tcp = $instance.ServerProtocols | Where-Object { $_.Name -eq 'Tcp' }
+$tcp.IsEnabled = $true
+$tcp.Alter()
+
+$tcpIpAll = $tcp.IpAddresses | Where-Object { $_.Name -eq 'IpAll' }
+
+$tcpDynamicPorts = $tcpIpAll.IpAddressProperties | Where-Object { $_.Name -eq 'TcpDynamicPorts' }
+$tcpDynamicPorts.Value = ""
+$tcp.Alter()
+
+$tcpPort = $tcpIpAll.IpAddressProperties | Where-Object { $_.Name -eq 'TcpPort' }
+$tcpPort.Value = "1433"
+$tcp.Alter()
+
+Write-Output "SQL Server: Setting Mixed Mode Authentication."
+New-ItemProperty 'HKLM:\Software\Microsoft\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQLServer\' -Name 'LoginMode' -Value 2 -Force
+
+Write-Output "SQL Server: Forcing Restart of Instance."
+Restart-Service -Force 'MSSQL$SQLEXPRESS'
+
+Write-Output "SQL Server: Setting up SQL Server Browser and starting the service."
+Set-Service 'SQLBrowser' -StartupType Automatic
+Start-Service 'SQLBrowser'
+
+Write-Output "Firewall: Enabling SQLServer TCP port 1433."
+netsh advfirewall firewall add rule name="SQL Server 1433" dir=in action=allow protocol=TCP localport=1433 profile=any enable=yes service=any
+#New-NetFirewallRule -DisplayName "Allow inbound TCP Port 1433" –Direction inbound –LocalPort 1433 -Protocol TCP -Action Allow
+
+Write-Output "Firewall: Enabling SQL Server browser UDP port 1434."
+netsh advfirewall firewall add rule name="SQL Server Browser 1434" dir=in action=allow protocol=UDP localport=1434 profile=any enable=yes service=any
+#New-NetFirewallRule -DisplayName "Allow inbound UDP Port 1434" –Direction inbound –LocalPort 1434 -Protocol UDP -Action Allow
+```

@@ -1,0 +1,22 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+
+#### Validating the Installation
+
+The following script will run a suite of Pester tests to validate your Sonatype Nexus installation was successful.
+
+<DynamicCodeBlock language="powershell">
+{`
+$repositoryArgs = @{
+    ProdRepository = 'ProdRepoName'
+    TestRepository = 'TestRepoName'
+    RawRepository = 'RawRepoName'
+    Credential = (Get-Credential) # Please replace with your desired credentials
+}
+
+./ValidateNexusRepository.ps1 @repositoryArgs
+`}
+</DynamicCodeBlock>

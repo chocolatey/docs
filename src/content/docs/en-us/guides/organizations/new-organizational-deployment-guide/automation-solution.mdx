@@ -1,0 +1,126 @@
+---
+order: 46
+xref: organizational-automation-solution
+title: Automation Solution
+description: Information on deploying an automation solution for Chocolatey For Business
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
+import OrgGuidePackageAutomationIntro from '@components/docs/OrgGuidePackageAutomationIntro.mdx';
+import JenkinsHardwareRecommendations from '@components/docs/JenkinsHardwareRecommendations.mdx'
+
+<OrgGuidePackageAutomationIntro />
+
+export const automationpipeline = [
+    { id: 'jenkins', title: 'Jenkins', isActive:true },
+    // { id: 'powershelluniversal', title: 'PowerShell Universal' },
+    // { id: 'githubactions', title: 'GitHub Actions' },
+];
+
+<TabsTabContainer content={automationpipeline} />
+<TabsPaneContainer>
+    <TabsPane content={automationpipeline[0]}>
+        <JenkinsHardwareRecommendations />
+
+        #### Jenkins Installation
+
+        <Callout type="info" title="Air-gapped Installation">
+            If you are deploying the server in an air-gapped environment, please download the script and transfer it to the server before continuing with the installation.
+
+            ```powershell
+            Set-ExecutionPolicy RemoteSigned -Scope Process -Force
+            .\path\to\Install-C4BAutomationPlatformJenkins.ps1 @RepositoryArgs
+            ```
+        </Callout>
+
+        This install script will:
+
+        - Install TemurinJRE and Jenkins.
+        - Secure Jenkins with an SSL certificate.
+        - Run initial setup steps on Jenkins.
+        - Install the standard jobs included in Chocolatey for Business.
+
+        #### Environment Information
+
+        Please provide the following information to configure the Jenkins installation:
+
+        | Variable | Value | Usage |
+        | -------- | ----- | ----- |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryUrl" defaultValue="NexusProductionRepository" /> | Your internal production repository for tested packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryUrl" defaultValue="NexusTestRepository" /> | Your internal test repository for untested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocoPackager" /> | The user for uploading Chocolatey Packages on the repository. Defaults to chocoPackager. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="PackageUploadCredential" /> | The PackageUploadCredential for the user account listed above. |
+        | NuGet API Key | <DynamicCodeBlockInput name="OrgGuideRepoUserApiKey" defaultValue="NuGetApiKey" /> | The API key for pushing Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="1234567890" /> | The certificate thumbprint to secure Jenkins with SSL. |
+
+        <details>
+        <summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
+        <ul class="list-style-type-disc">
+        <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
+        <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>
+        <li>Select `Next`, then browse to the location of the SSL certificate you want to use.</li>
+        <li>Once you select the certificate, click `Next`.</li>
+        <li>Input the password for the certificate and check the box that says `Mark this key as exportable. This will allow you to back up and transport your keys at a later time.` Click `Next`.</li>
+        <li>The `Trusted People` certificate store should already be input in the `Browse...` bar. Select `Next`.</li>
+        <li>Verify the information in the pane and then select `Finish`.</li>
+        </ul>
+        </details>
+
+        #### Jenkins Install Script
+
+<DynamicCodeBlock language="powershell">
+{`
+$RepositoryArgs = @{
+    ProductionRepositoryUrl = 'OrgGuideProductionRepositoryUrl'
+    TestRepositoryUrl = 'OrgGuideTestRepositoryUrl'
+    RepositoryUser = [PSCredential]::new(
+        'OrgGuideRepoUserName',
+        $('OrgGuideRepoUserPassword' | ConvertTo-SecureString -Force -AsPlainText)
+    )
+    RepositoryApiKey = 'OrgGuideRepoUserApiKey' | ConvertTo-SecureString -Force -AsPlainText
+    Thumbprint = 'OrgGuideCertificateThumbprint'
+}
+
+& ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))
+
+.\\Install-C4BAutomationPlatformJenkins.ps1 @RepositoryArgs
+`}
+</DynamicCodeBlock>
+
+        #### Usage
+
+        There are three jobs that have been installed:
+
+        - **Internalize packages from the Community Repository**  
+            This job allows you to provide package IDs from the Chocolatey Community Repository, and the latest version of those packages will be internalized and added to your repository.
+        - **Update test repository from Chocolatey Community Repository**  
+            This job runs on a schedule, and updates any packages on your test repository to the latest version available on the Chocolatey Community Repository.
+        - **Update production repository**  
+            This job runs after the **Update test repository[...]** job, and promotes packages from the test repository that pass any testing you implement to the production repository.
+
+        To use your fresh new jobs, you should navigate to the Jenkins dashboard and attempt to `build` one of the jobs.
+
+        {/* <Iframe ratio="16x9" link="https://www.youtube.com/embed/XiyzBIofDiE?si=cbZgLpsH77gEiV0R" title="Running Jenkins Jobs" /> */}
+<Xref title="Back To Top" value="organizational-automation-solution"/>
+    </TabsPane>
+</TabsPaneContainer>
+
+## Next Steps
+
+Select **Start Over** to return to the Organizational Guide introduction page.
+
+Select **Previous** to return to Repository Solution setup, or **Next** to move on to Chocolatey Central Management setup.
+
+<div class="d-flex justify-content-between align-items-center">
+    <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/">Start Over</a>
+    <div>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/repository-solution">< Previous</a>
+        <a role="button" class="btn btn-primary btn-lg" href="/en-us/guides/organizations/new-organizational-deployment-guide/setup-central-management">Next ></a>
+    </div>
+</div>
