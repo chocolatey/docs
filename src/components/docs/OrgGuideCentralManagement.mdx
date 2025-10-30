@@ -49,21 +49,21 @@ Before you can install the Chocolatey Central Management Database, you need to h
 
 | Variable | Value | Usage |
 | -------- | ----- | ----- |
-| Component | `Database`, `Service`, `Web` | The component(s) of Chocolatey Central Management to install on the current server. |
-| ServiceCredential | Varies | The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. (Service and Web components only) |
+| Component | `Database`, `Service`, `Website` | The component(s) of Chocolatey Central Management to install on the current server. |
+| ServiceCredential | Varies | The credentials to use with the Chocolatey Management Service. If the account does not exist, it will be created. The user must have `Log on as a service` privilege. (Service and Web components only) |
 | ConnectionString | <DynamicCodeBlockInput name="SQLConnectionString" defaultValue="Server=Localhost\SQLEXPRESS;Database=ChocolateyManagement;Trusted_Connection=true;" /> | The connection string to use to connect to the database. |
 | IsOffline | True | If true, you will be required to provide the path to the zip file containing the internalized Chocolatey components required for installation. |
 | OfflineInstallationMedia | Varies | The path to the zip file containing the internalized Chocolatey components required for installation. This is only required if `IsOffline` is true. |
 | CertificateDnsName | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name to use for the Chocolatey Management Service if using a wildcard certificate. (Service and Web components only) |
-| CertificateThumbprint | <DynamicCodeBlockInput name="SslCertificateThumbprint" defaultValue="1234567890" /> | The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only) |
+| Thumbprint | <DynamicCodeBlockInput name="SslCertificateThumbprint" defaultValue="1234567890" /> | The thumbprint of the certificate to use for the Chocolatey Management Service. (Service and Web components only) |
 
 ### Securing Chocolatey Central Management Communications
 
 By default, the install will create and use self-signed certificates for the Chocolatey Management Service and Web components.
-If you wish to use your own certificates, you can do so by providing the `CertificateThumbprint` and `CertificateDnsName` parameters.
+If you wish to use your own certificates, you can do so by providing the `Thumbprint` and `CertificateDnsName` parameters.
 
 <details>
-<summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the CertificateThumbprint. (click to expand)</strong></summary>
+<summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
 <ul class="list-style-type-disc">
 <li>Once you have your SSL certificate in a locatable directory, type `certlm.msc` in the Search bar of the Chocolatey server to open the Microsoft Management Console for Certificates on the local machine.</li>
 <li>Right-click the `Trusted People` store and select `All Tasks > Import...`. This will open the Certificate Import Wizard.</li>

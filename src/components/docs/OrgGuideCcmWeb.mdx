@@ -24,9 +24,9 @@ import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCo
 {`
 $ccmParams = @{
     ConnectionString = 'SQLConnectionString'
-    Component = 'Web'
+    Component = 'Website'
     CertificateDnsName = 'SslCertificateDnsName'
-    CertificateThumbprint = 'SslCertificateThumbprint'
+    Thumbprint = 'SslCertificateThumbprint'
 }
 
 & ([Scriptblock]::Create([System.Net.WebClient]::New().DownloadString('https://raw.githubusercontent.com/chocolatey/choco-orgguide-scripts/refs/heads/main/Bootstrap.ps1')))

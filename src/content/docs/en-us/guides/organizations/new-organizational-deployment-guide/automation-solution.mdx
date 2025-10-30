@@ -54,10 +54,10 @@ export const automationpipeline = [
         | -------- | ----- | ----- |
         | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Your internal production repository for tested packages. |
         | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Your internal test repository for untested packages. |
-        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocopackagepusher" /> | The user for managing Chocolatey Packages on the repository. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="someUser" /> | The user for managing Chocolatey Packages on the repository. |
         | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | The password for the user account listed above. |
-        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideUserRepoApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
-        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="Unchanged" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
+        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideRepoUserApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="1234567890" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
 
         <details>
         <summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
@@ -81,9 +81,9 @@ $RepositoryArgs = @{
     TestRepositoryUrl = 'OrgGuideTestRepositoryName'
     RepositoryUser = [PSCredential]::new(
         'OrgGuideRepoUserName',
-        (ConvertTo-SecureString 'OrgGuideRepoUserPassword' -Force -AsPlainText)
+        $('OrgGuideRepoUserPassword' | ConvertTo-SecureString -Force -AsPlainText)
     )
-    RepositoryApiKey = (ConvertTo-SecureString 'OrgGuideRepoApiKey' -Force -AsPlainText)
+    RepositoryApiKey = 'OrgGuideRepoUserApiKey' | ConvertTo-SecureString -Force -AsPlainText
     Thumbprint = 'OrgGuideCertificateThumbprint'
 }
 
