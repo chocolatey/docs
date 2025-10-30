@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@chocolatey-software/assets": "2.0.0",
-    "@chocolatey-software/astro": "2.0.0",
+    "@chocolatey-software/astro": "2.1.0",
     "@chocolatey-software/build-tools": "2.0.0",
-    "@chocolatey-software/playwright": "2.0.0"
+    "@chocolatey-software/playwright": "2.1.0"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "2.0.0"
+    "@chocolatey-software/docs": "2.1.0"
   }
 }
