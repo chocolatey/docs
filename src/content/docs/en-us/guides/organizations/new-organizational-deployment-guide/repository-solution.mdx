@@ -56,7 +56,7 @@ export const repository = [
         | Variable | Value | Usage |
         | -------- | ----- | ----- |
         | SSL Certificate DNS Name | <DynamicCodeBlockInput name="SslCertificateDnsName" defaultValue="Fabrikam.com" /> | The DNS name of your SSL certificate. |
-        | SSL Certificate Thumbprint | <DynamicCodeBlockInput name="CertificateThumbprint" defaultValue="1234567890" /> | The Thumbprint of your SSL certificate. |
+        | SSL Certificate Thumbprint | <DynamicCodeBlockInput name="SslCertificateThumbprint" defaultValue="1234567890" /> | The Thumbprint of your SSL certificate. |
         | Production Repository | <DynamicCodeBlockInput name="ProductionRepository" defaultValue="Fabrikam-Prod" /> | The name chosen for your production repository. |
         | Test Repository | <DynamicCodeBlockInput name="TestRepository" defaultValue="Fabrikam-Test" /> | The name chosen for your test repository. |
         | Package Storage Location | <DynamicCodeBlockInput name="PackageStorageLocation" defaultValue="C:\ProgramData\sonatype-work\nexus3\blobs\default" /> | The location you want your packages stored. If changing the default value, ensure the full path is specified. |
@@ -82,7 +82,7 @@ export const repository = [
 {`
 $RepositoryArgs = @{
     CertificateDnsName = 'SslCertificateDnsName'
-    Thumbprint = 'CertificateThumbprint'
+    Thumbprint = 'SslCertificateThumbprint'
     ProductionRepositoryName = 'ProductionRepository'
     TestRepositoryName = 'TestRepository'
     PackageStoragePath = 'PackageStorageLocation'

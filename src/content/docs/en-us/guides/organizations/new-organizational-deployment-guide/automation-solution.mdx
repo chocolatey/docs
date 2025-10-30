@@ -52,12 +52,12 @@ export const automationpipeline = [
 
         | Variable | Value | Usage |
         | -------- | ----- | ----- |
-        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryName" defaultValue="ExampleProd" /> | Your internal production repository for tested packages. |
-        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryName" defaultValue="ExampleTest" /> | Your internal test repository for untested packages. |
-        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="someUser" /> | The user for managing Chocolatey Packages on the repository. |
-        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="somePassword" /> | The password for the user account listed above. |
-        | Repository API Key | <DynamicCodeBlockInput name="OrgGuideRepoUserApiKey" defaultValue="0057bf69-61af-4e86-b9a3-64521fc04722" /> | The API key for pushing Chocolatey packages to the repository. |
-        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="1234567890" /> | Optional: The certificate thumbprint to secure Jenkins with SSL. |
+        | Production Repository URL | <DynamicCodeBlockInput name="OrgGuideProductionRepositoryUrl" defaultValue="NexusProductionRepository" /> | Your internal production repository for tested packages. |
+        | Test Repository URL | <DynamicCodeBlockInput name="OrgGuideTestRepositoryUrl" defaultValue="NexusTestRepository" /> | Your internal test repository for untested packages. |
+        | Repository User Name | <DynamicCodeBlockInput name="OrgGuideRepoUserName" defaultValue="chocoPackager" /> | The user for uploading Chocolatey Packages on the repository. Defaults to chocoPackager. |
+        | Repository User Password | <DynamicCodeBlockInput name="OrgGuideRepoUserPassword" defaultValue="PackageUploadCredential" /> | The PackageUploadCredential for the user account listed above. |
+        | NuGet API Key | <DynamicCodeBlockInput name="OrgGuideRepoUserApiKey" defaultValue="NuGetApiKey" /> | The API key for pushing Chocolatey packages to the repository. |
+        | Thumbprint | <DynamicCodeBlockInput name="OrgGuideCertificateThumbprint" defaultValue="1234567890" /> | The certificate thumbprint to secure Jenkins with SSL. |
 
         <details>
         <summary><strong>You must install the certificate to the Local Machine \ Trusted People store when providing the Thumbprint. (click to expand)</strong></summary>
@@ -77,8 +77,8 @@ export const automationpipeline = [
 <DynamicCodeBlock language="powershell">
 {`
 $RepositoryArgs = @{
-    ProductionRepositoryUrl = 'OrgGuideProductionRepositoryName'
-    TestRepositoryUrl = 'OrgGuideTestRepositoryName'
+    ProductionRepositoryUrl = 'OrgGuideProductionRepositoryUrl'
+    TestRepositoryUrl = 'OrgGuideTestRepositoryUrl'
     RepositoryUser = [PSCredential]::new(
         'OrgGuideRepoUserName',
         $('OrgGuideRepoUserPassword' | ConvertTo-SecureString -Force -AsPlainText)

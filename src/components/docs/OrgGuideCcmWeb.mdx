@@ -1,3 +1,6 @@
+---
+
+---
 import Callout from '@choco-astro/components/Callout.astro';
 import Xref from '@components/Xref.astro';
 import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
@@ -15,6 +18,7 @@ import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCo
 
 <Callout type="warning">
     <p>
+        - _Ensure that you have enabled **Windows Authentication** and **SQL Server Authentication** in your SQL Server instance._
         - _The connection string used to install the Service component must have at least _**db_datareader**_ and _**db_datawriter**_ permissions on the ChocolateyManagement database._
         - _If you are using a custom SSL certificate, ensure that the certificate is installed  in the LocalMachine\TrustedPeople store on the server where the Chocolatey Central Management Service is being installed._
     </p>
