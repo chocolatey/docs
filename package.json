@@ -31,11 +31,11 @@
   },
   "devDependencies": {
     "@chocolatey-software/assets": "2.0.0",
-    "@chocolatey-software/astro": "2.0.0",
+    "@chocolatey-software/astro": "chocolatey/choco-theme#head=release/2.1.0&workspace=@chocolatey-software/astro",
     "@chocolatey-software/build-tools": "2.0.0",
-    "@chocolatey-software/playwright": "2.0.0"
+    "@chocolatey-software/playwright": "chocolatey/choco-theme#head=release/2.1.0&workspace=@chocolatey-software/playwright"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "2.0.0"
+    "@chocolatey-software/docs": "chocolatey/choco-theme#head=release/2.1.0&workspace=@chocolatey-software/docs"
   }
 }
