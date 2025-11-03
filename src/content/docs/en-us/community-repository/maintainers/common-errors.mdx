@@ -1,20 +1,20 @@
 ---
 order: 50
 xref: ccr-common-errors
-title: Common Errors Encountered
-description: descriptiono
+title: Common Errors and Resolutions
+description: Common Errors and Resolutions encountered with pushing packages to the Chocolatey Community Repository
 ---
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-## You've pushed a package, but got an error?
+## Have you pushed a package and gotten an error?
 
 Once you've pushed a package to the Chocolatey Community Repository, Chocolatey CLI will report if it was successful or not. If for any reason it's not successful, it will report the error code and any response that it received. Sometimes the error text is not fully received due to various network issues. Below is a list of HTTP responses and what it could mean.
 
 ## Error 400 Bad Request
 
-Can occur if the API Key is not a validly formatted GUID, or the package you've attempted to push contains a non-normalized version number.
+Can occur if the API Key is not a correctly formatted GUID, or the package you've attempted to push contains a non-normalized version number.
 
 ## Error 403 Unauthorized
 
@@ -41,7 +41,7 @@ Package is too large.
 ## Error 500 Internal Server Error
 
 If you receive a `500 Internal Server Error` when pushing a package, you may have a malformed package that the server was unable to process.
-One such case is documented in a [GitHub issue](https://github.com/chocolatey/home/issues/303).
+One such case is documented in this [GitHub issue](https://github.com/chocolatey/home/issues/303).
 
 Make sure that none of the `<file ...>` entries in the `nuspec` file of your package have name collisions with other files or folders being packed.
 This is usually rare but can be encountered more commonly if you are trying to pack files which don't have a file extension.
