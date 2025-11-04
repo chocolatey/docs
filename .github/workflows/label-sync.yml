@@ -5,10 +5,9 @@ on:
     # Run at the end of the day (most likely UTC)
     - cron: "0 0 * * *"
   push:
-    branches:
-      - "master"
     paths:
-      - ".github/labels.yml"
+      - '.github/workflows/label-sync.yml'
+      - '.github/labels.yml'
 
 jobs:
   labels:
@@ -16,13 +15,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3.0.2
-      - uses: EndBug/label-sync@v2.2.0
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/labels.yml
+      - uses: EndBug/label-sync@v2
         with:
           config-file: |
             https://raw.githubusercontent.com/chocolatey/.github/master/.github/labels.yml
             .github/labels.yml
           request-token: ${{ secrets.SYNC_TOKEN }} # Used when getting the config files.
-          delete-other-labels: true
+          delete-other-labels: true # After initial run, and verification change this to true
           dry-run: false
-          token: ${{ secrets.SYNC_TOKEN }} # Used when updating the lables on the repository
+          token: ${{ secrets.SYNC_TOKEN }} # Used when updating the labels on the repository.
