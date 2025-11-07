@@ -149,5 +149,8 @@
         "uninstall-chocolateyzippackage",
         "update-sessionenvironment",
         "write-functioncalllogmessage"
-    ]
+    ],
+    "files.associations": {
+        "*.mdx": "markdown"
+    },
 }

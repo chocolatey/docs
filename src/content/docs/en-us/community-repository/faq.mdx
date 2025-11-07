@@ -8,7 +8,7 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-### How Do I Ask Questions About a Package?
+## How Do I Ask Questions About a Package?
 
 If you have a question about the _package_, please follow **both** these steps:
 
@@ -17,13 +17,13 @@ If you have a question about the _package_, please follow **both** these steps:
 
 ![Package Source link on the Chocolatey Community Repository package page](https://img.chocolatey.org/docs/automatic-packages/triage-packagesource.jpg)
 
-### How Do I Ask Questions About the Package Software?
+## How Do I Ask Questions About the Package Software?
 
 If you have questions about the _software_ the package installs, please contact the Software Vendor/Author. Maintainers do not provide support for the software that is packaged.
 
 If you want to ask questions about the _package_, see [here](#how-do-i-ask-questions-about-a-package).
 
-### How Do I Contact the Package Maintainers?
+## How Do I Contact the Package Maintainers?
 
 You may want to contact the package maintainers with package questions, or to report a broken or outdated package. On the [Chocolatey Community Repository](https://community.chocolatey.org/packages) package page, click the **Contact Maintainers** link.
 
@@ -33,7 +33,7 @@ If your question is about the software installed by the package, please contact 
 
 ![Package Maintainers profile links on the Chocolatey Community Repository](https://img.chocolatey.org/docs/faqs/triage-maintainerlinks.jpg)
 
-### How Do I Contact the Site Admins?
+## How Do I Contact the Site Admins?
 
 You should contact the Site Admins if:
 
@@ -52,11 +52,11 @@ To contact the Site Admins, click the **Contact Site Admins** link to contact th
 
 ![Contact Site Admins link on the Chocolatey Community Repository package page](https://img.chocolatey.org/docs/automatic-packages/triage-siteadmins.jpg)
 
-### How Do I Create Chocolatey Packages?
+## How Do I Create Chocolatey Packages?
 
 It's easy to <Xref title="create and maintain packages" value="create-packages" />.
 
-### How Do I Find the Package Source?
+## How Do I Find the Package Source?
 
 On the [Chocolatey Community Repository](https://community.chocolatey.org/packages) package page, click the **Package Source** link, if it's available.
 
@@ -67,7 +67,7 @@ Not all Maintainers provide a publicly accessible package source. If the **Packa
 ![Package Maintainers profile links on the Chocolatey Community Repository](https://img.chocolatey.org/docs/faqs/triage-maintainerlinks.jpg)
 ![Package Maintainer profile on the Chocolatey Community Repository with GitHub repository link](https://img.chocolatey.org/docs/faqs/triage-maintainerrepository.jpg)
 
-### How Do I Inspect the Contents of a Chocolatey Package?
+## How Do I Inspect the Contents of a Chocolatey Package?
 
 <Callout type="info">
     Packages submitted before 2014 do not have files listed under the **Files** section.
@@ -81,7 +81,7 @@ You can also download the actual package and inspect the contents. On the left m
 
 ![Download package button on the Chocolatey Community Repository](https://img.chocolatey.org/docs/faqs/triage-download.jpg)
 
-### How Do I See All Versions Of a Package
+## How Do I See All Versions Of a Package
 
 Packages can have multiple version, both stable and prerelease. All of these versions are listed on the package page and can be found by scrolling down the page to the **Version History** section and clicking the link.
 
@@ -89,15 +89,15 @@ Packages can have multiple version, both stable and prerelease. All of these ver
 
 Only a limited number are shown initially. If there are more version available, click the **Show Additional Versions** button to view them all.
 
-### How Do I See the Package Source Code?
+## How Do I See the Package Source Code?
 
 See [this FAQ question](#how-do-i-find-the-package-source).
 
-### How To Report An Abusive Package
+## How To Report An Abusive Package
 
 <Callout type="info">
     Do not use the **Report Abuse** form to submit reports of:
-    
+
     * <Xref title="A package being outdated" value="package-triage-process" anchor="package-is-outdated" />.
     * <Xref title="A package being broken or not working" value="package-triage-process" anchor="package-is-broken" />.
     * Marketing or sales communications.
@@ -117,32 +117,6 @@ If a package is abusive, please report it by clicking on the **Report Abuse** li
 
 ![How to report abuse on the Chocolatey Community Repository](https://img.chocolatey.org/docs/automatic-packages/triage-reportabuse.jpg)
 
-### Why do I get a 500 Internal Server Error when trying to push my package?
+## Why do I get a 500 Internal Server Error when trying to push my package?
 
-If you receive a `500 Internal Server Error` when pushing a package, you may have a malformed package that the server was unable to process.
-One such case is documented in a [GitHub issue](https://github.com/chocolatey/home/issues/303).
-
-Make sure that none of the `<file ...>` entries in the `nuspec` file of your package have name collisions with other files or folders being packed.
-This is usually rare but can be encountered more commonly if you are trying to pack files which don't have a file extension.
-For example, if you have `<file>` entries that may look like this, you will need to change the name of the file or folder in the package to avoid collision:
-
-```xml
-<file src="bin\*" target="bin" />
-<file src="file-with-no-extension" target="bin" />
-```
-
-There are two possible solutions for this particular case:
-
-```xml
-<!-- option 1: rename the file to have a file extension -->
-<file src="bin\*" target="bin" />
-<file src="file-with.extension" target="bin" />
-
-<!-- option 2: specify the full path to the file in the package as the target, instead of just the folder name -->
-<file src="bin\*" target="bin" />
-<file src="file-with-no-extension" target="bin\file-with-no-extension" />
-```
-
-See an [issue we raised on the NuGet repository](https://github.com/NuGet/Home/issues/13273) for more information on the NuGet bug which can cause this kind of malformed package.
-
-If you receive a `500: Internal Server Error` that is not related to this specific case, please [file an issue on GitHub](https://github.com/chocolatey/home) so we can investigate the issue.
+<Xref title="See the Chocolatey Community Repository Common Errors page" value="ccr-common-errors" anchor="error-500-internal-server-error" />.
