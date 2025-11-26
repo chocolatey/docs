@@ -117,6 +117,8 @@ Chocolatey makes a number of environment variables available (You can access any
 * ChocolateyPackageName - The name of the package, equivalent to the `<id />` field in the nuspec
 * ChocolateyPackageTitle - The title of the package, equivalent to the `<title />` field in the nuspec
 * ChocolateyPackageVersion - The version of the package, equivalent to the `<version />` field in the nuspec
+* ChocolateyPreviousPackageVersion - The previous version of an already installed package, when performing an upgrade
+  * This environment variable is _only_ available in the `chocolateyInstall.ps1` file, and also the `pre`/`post` `install` hook scripts, when doing an upgrade operation
 
 #### Advanced Environment Variables
 
