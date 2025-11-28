@@ -38,6 +38,76 @@ Why this is desirable:
 
 This makes for happy users and happy admins as they are able to move quicker towards a better organization.
 
+### Background Service Restricted Operational Commands
+
+With the release of Chocolatey Licensed Extension 7.0.0 and Chocolatey Agent 3.0.0, we changed which operational commands are allowed to be specified as Background Service commands.
+
+With this change, only commands that require administrative privileges and are not admin‑related configuration commands can be added to `backgroundServiceAllowedCommands`. This change was made to allow more focused support for these commands and their behavior when running in Background Service mode.
+
+#### Why Are Commands Restricted?
+
+The Background Service is designed to empower non-administrative users with specific software management capabilities while maintaining security and system integrity. Only operational commands that:
+
+1. Require administrative privileges to execute.
+2. Are focused on package management (not system configuration).
+3. Have well-defined behavior in non-interactive contexts.
+
+are allowed to run through the Background Service. This ensures a secure, predictable experience for both users and administrators.
+
+#### Allowed Commands
+
+The operational commands that are allowed to run through the Background Service are:
+
+* `cache` - Manages cached HTTP responses from configured sources to prevent redundant server lookups.
+* `download` - Downloads packages without installing them.
+* `install` - Installs software packages from approved sources.
+* `new` - Generates new package specification files from templates.
+* `optimize` - Optimizes installed packages by reducing cache, removing installers, and minimizing disk space usage.
+* `pin` - Manages package pins to control whether packages can be upgraded or uninstalled.
+* `sync` - Creates packages based on software listed in Programs and Features if a package for that software hasn't already been installed.
+* `uninstall` - Removes installed software packages.
+* `upgrade` - Upgrades packages to their latest available versions.
+
+<Callout type="info">
+    By default, Chocolatey CLI sets `backgroundServiceAllowedCommands` to `"install,upgrade"`.
+</Callout>
+
+#### Common Configuration Examples
+
+Most organizations configure a subset of these commands based on their self-service needs:
+
+**Basic self-service** (install and upgrade only):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade'"
+```
+
+**Standard self-service** (install, upgrade, and uninstall):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade,uninstall'"
+```
+
+**Advanced self-service** (including package management):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade,uninstall,pin,sync'"
+```
+
+<Callout type="warning">
+    **Security Considerations:**
+
+    * `uninstall` - Users can remove any installed software, including potentially critical applications. If the feature `allowBackgroundServiceUninstallsFromUserInstallsOnly` is enabled, users can only uninstall or reinstall packages they themselves have installed.
+    * `pin` - Users can add or remove package pins, which can prevent packages from being upgraded or uninstalled, or allow users to remove the pin to enable these actions again. This could prevent security updates from being applied to pinned packages.
+    * `new` - Requires admin privileges in certain contexts. Users may be denied access if this command is not included in the Background Service allowed list. May not be needed for typical self-service scenarios.
+    * `optimize` - Users can trigger optimization of installed packages, which affects package cache, installers, and disk space usage.
+
+    Carefully consider which commands are appropriate for your organization's security policies and user needs.
+</Callout>
+
+#### Unsupported Commands
+
+Attempting to add any other commands to `backgroundServiceAllowedCommands` is prevented by Chocolatey CLI. If unsupported commands were added prior to Chocolatey Licensed Extension 7.0.0 and Chocolatey Agent 3.0.0, or have been added manually, they are ignored and a warning is output to the running user. These commands will not be attempted to run through the Background Service; if they do not require administrative privileges, non-administrative users can still execute them directly.
+
+Commands like `config`, `feature`, `source`, and other administrative configuration commands are intentionally excluded to prevent non-administrative users from modifying system-level Chocolatey product settings.
+
 ### Background Service Restricted Options
 
 <Callout type="info">    
