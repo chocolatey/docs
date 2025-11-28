@@ -38,30 +38,104 @@ Why this is desirable:
 
 This makes for happy users and happy admins as they are able to move quicker towards a better organization.
 
-### Background Service Restricted Options
+### Background Service Restricted Operational Commands
+
+With the release of Chocolatey Licensed Extension 7.0.0 and Chocolatey Agent 3.0.0, we changed which operational commands are allowed to be specified as Background Service commands.
+
+With this change, only commands that require administrative privileges and are not admin‑related configuration commands can be added to `backgroundServiceAllowedCommands`. This change was made to allow more focused support for these commands and their behavior when running in Background Service mode.
+
+#### Why Are Commands Restricted?
+
+The Background Service is designed to empower non-administrative users with specific software management capabilities while maintaining security and system integrity. Only operational commands that:
+
+1. Require administrative privileges to execute.
+2. Are focused on package management (not system configuration).
+3. Have well-defined behavior in non-interactive contexts.
+
+are allowed to run through the Background Service. This ensures a secure, predictable experience for both users and administrators.
+
+#### Allowed Commands
+
+The operational commands that are allowed to run through the Background Service are:
+
+* `cache` - Manages cached HTTP responses from configured sources to prevent redundant server lookups.
+* `download` - Downloads packages without installing them.
+* `install` - Installs software packages from approved sources.
+* `new` - Generates new package specification files from templates.
+* `optimize` - Optimizes installed packages by reducing cache, removing installers, and minimizing disk space usage.
+* `pin` - Manages package pins to control whether packages can be upgraded or uninstalled.
+* `sync` - Creates packages based on software listed in Programs and Features if a package for that software hasn't already been installed.
+* `uninstall` - Removes installed software packages.
+* `upgrade` - Upgrades packages to their latest available versions.
 
 <Callout type="info">
-    The restricted options cannot be customised at this time. We will add this ability in upcoming versions.
-    
-    The options restrictions affect the following versions of Chocolatey Agent and Chocolatey Licensed Extension:
-    
-    | Product                       | Versions Affected                                              |
-    |------------------------------ |--------------------------------------------------------------- |
-    | Chocolatey Agent              | 1.1.3 and later 1.x versions, and 2.1.1 and later 2.x versions |
-    | Chocolatey Licensed Extension | 5.0.4 and later 5.x versions, and 6.1.1 and later 6.x versions |
+    By default, Chocolatey CLI sets `backgroundServiceAllowedCommands` to `"install,upgrade"`.
 </Callout>
 
+#### Common Configuration Examples
 
-Chocolatey CLI allows a number of different options that can be used to configure package management when using the Background Service. To help minimise issues and improve security, the following options, along with their aliases, cannot be used in Chocolatey CLI or Chocolatey GUI when using the Background Service:
+Most organizations configure a subset of these commands based on their self-service needs:
 
-* Added in Chocolatey Agent 1.1.3 / 2.1.1 and Chocolatey Licensed Extension 5.0.4 / 6.1.1:
+**Basic self-service** (install and upgrade only):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade'"
+```
+
+**Standard self-service** (install, upgrade, and uninstall):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade,uninstall'"
+```
+
+**Advanced self-service** (including package management):
+```powershell
+choco config set --name="'backgroundServiceAllowedCommands'" --value="'install,upgrade,uninstall,pin,sync'"
+```
+
+<Callout type="warning">
+    **Security Considerations:**
+
+    * `uninstall` - Users can remove any installed software, including potentially critical applications. If the feature `allowBackgroundServiceUninstallsFromUserInstallsOnly` is enabled, users can only uninstall or reinstall packages they themselves have installed.
+    * `pin` - Users can add or remove package pins, which can prevent packages from being upgraded or uninstalled, or allow users to remove the pin to enable these actions again. This could prevent security updates from being applied to pinned packages.
+    * `new` - Requires admin privileges in certain contexts. Users may be denied access if this command is not included in the Background Service allowed list. May not be needed for typical self-service scenarios.
+    * `optimize` - Users can trigger optimization of installed packages, which affects package cache, installers, and disk space usage.
+
+    Carefully consider which commands are appropriate for your organization's security policies and user needs.
+</Callout>
+
+#### Unsupported Commands
+
+Attempting to add any other commands to `backgroundServiceAllowedCommands` is prevented by Chocolatey CLI. If unsupported commands were added prior to Chocolatey Licensed Extension 7.0.0 and Chocolatey Agent 3.0.0, or have been added manually, they are ignored and a warning is output to the running user. These commands will not be attempted to run through the Background Service; if they do not require administrative privileges, non-administrative users can still execute them directly.
+
+Commands like `config`, `feature`, `source`, and other administrative configuration commands are intentionally excluded to prevent non-administrative users from modifying system-level Chocolatey product settings.
+
+### Background Service Restricted Options
+
+<Callout type="info">    
+    The options restrictions affect the following versions of Chocolatey Agent and Chocolatey Licensed Extension:
+
+    | Product                       | Versions Affected                                              | Notes                                                                                                            |
+    |------------------------------ |--------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+    | Chocolatey Agent              | 1.1.3 and later 1.x versions, and 2.1.1 and later 2.x versions | The restricted options cannot be customized in these versions                                                    |
+    | Chocolatey Licensed Extension | 5.0.4 and later 5.x versions, and 6.1.1 and later 6.x versions | The restricted options cannot be customized in these versions                                                    |
+    | Chocolatey Agent              | 3.0.0 and later 3.x versions                                   | A list of restricted options can be customized using the `backgroundServiceDisallowedOptions` configuration item |
+    | Chocolatey Licensed Extension | 7.0.0 and later 7.x versions                                   | A list of restricted options can be customized using the `backgroundServiceDisallowedOptions` configuration item |
+</Callout>
+
+Chocolatey CLI exposes a number of options that affect how operations are performed when the Background Service is enabled and running commands on behalf of non-administrator users.
+
+In Chocolatey Agent 1.1.3 / 2.1.1 and Chocolatey Licensed Extension 5.0.4 / 6.1.1, these restricted options were hard-coded and could not be changed. Starting with Chocolatey Agent 3.0.0 and Chocolatey Licensed Extension 7.0.0, administrators can configure the set of restricted options used by the Background Service. The list below reflects the default restricted options that Chocolatey applies by default and will be enforced until an administrator overrides them in supported versions.
+
+When configuring restrictions in supported versions, administrators must specify the complete set of options to restrict, including any aliases that should also be restricted.
+To help minimize issues and improve security, the following options, along with their aliases, cannot be used in Chocolatey CLI or Chocolatey GUI for any operational command by default that has been enabled to run through the Background Service:
+
+* **Default restricted options added in Chocolatey Agent 1.1.3 / 2.1.1 and Chocolatey Licensed Extension 5.0.4 / 6.1.1:**
   * `--cache-location`
   * `--install-arguments`
   * `--not-silent`
   * `--install-args-global`
   * `--install-arguments-sensitive`
   * `--install-directory`
-* Added in Chocolatey Agent 1.1.4 / 2.1.2 and Chocolatey Licensed Extension 5.0.5 / 6.1.2:
+* **Default restricted options added in Chocolatey Agent 1.1.4 / 2.1.2 and Chocolatey Licensed Extension 5.0.5 / 6.1.2:**
   * `--allow-empty-checksums`
   * `--allow-empty-checksums-secure`
   * `--download-checksum`
@@ -77,10 +151,20 @@ Chocolatey CLI allows a number of different options that can be used to configur
   * `--uninstall-arguments-sensitive`
   * `--use-system-powershell`
   * `--virus-positives-minimum`
-* Added in Chocolatey Agent 2.1.3 and Chocolatey Licensed Extension 6.2.0:
+* **Default restricted options added in Chocolatey Agent 2.1.3 and Chocolatey Licensed Extension 6.2.0:**
   * `--ignore-pinned`
-* Added in Chocolatey Agent 1.1.5 / 2.2.2 and Chocolatey Licensed Extension 5.0.8 / 6.3.1:
+* **Default restricted options added in Chocolatey Agent 1.1.5 / 2.2.2 and Chocolatey Licensed Extension 5.0.8 / 6.3.1:**
   * `--trace`
+
+<Callout type="warning">
+  While most options can be added to or removed from the restricted list in Chocolatey Agent 3.0.0 and Chocolatey Licensed Extension 7.0.0, the following options are protected and cannot be overridden:
+
+  * `--run-actual`
+  * `--user-context`
+  * `--yes`
+
+  If a user attempts to configure any of these options through `choco config`, Chocolatey CLI returns an error. These options are required for reliable Background Service operation and must remain unrestricted.
+</Callout>
 
 ### See It In Action
 
