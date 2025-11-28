@@ -24,6 +24,33 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <ChocolateyComponentDependenciesLink />
 
+## 2.6.0 (December 1, 2025) \{#v2.6.0}
+
+Read our [blog post](https://blog.chocolatey.org/2025/12/announcing-cle-260-cle-700-agent-300-guile-201-releases/) about this release.
+
+### Bug Fixes
+
+- Paths for `TMP` & `TEMP` are overridden when running "refreshenv" as "SYSTEM".
+  - See [#3681](https://github.com/chocolatey/choco/issues/3681) by [michiexe](https://github.com/michiexe), resolved in [!3787](https://github.com/chocolatey/choco/pull/3787) by [corbob](https://github.com/corbob).
+- Installing a new license enables `chocolatey.licensed` source even if it was originally disabled.
+  - See [#3802](https://github.com/chocolatey/choco/issues/3802) by [sync-by-unito[bot]](https://github.com/apps/sync-by-unito), resolved in [!3803](https://github.com/chocolatey/choco/pull/3803) by [vexx32](https://github.com/vexx32).
+
+### Enhancements
+
+- Include software install path in `choco info` output.
+  - See [#1901](https://github.com/chocolatey/choco/issues/1901) by [Foadsf](https://github.com/Foadsf), resolved in [!3317](https://github.com/chocolatey/choco/pull/3317) by [TheCakeIsNaOH](https://github.com/TheCakeIsNaOH), [!3801](https://github.com/chocolatey/choco/pull/3801) by [corbob](https://github.com/corbob).
+- Record and display the source location used to install package.
+  - See [#3804](https://github.com/chocolatey/choco/issues/3804) by [DarwinJS](https://github.com/DarwinJS), resolved in [!3801](https://github.com/chocolatey/choco/pull/3801) by [corbob](https://github.com/corbob), [!3806](https://github.com/chocolatey/choco/pull/3806) by [corbob](https://github.com/corbob).
+- Update tab completion script with new options added in Chocolatey Licensed Extension.
+  - See [#3817](https://github.com/chocolatey/choco/issues/3817) by [AdmiringWorm](https://github.com/AdmiringWorm), resolved in [!3818](https://github.com/chocolatey/choco/pull/3818) by [AdmiringWorm](https://github.com/AdmiringWorm).
+
+### Contributors
+
+8 contributors made this release possible.
+
+<a href="https://github.com/michiexe"><img src="https://avatars.githubusercontent.com/u/42840496?v=4" alt="Profile image for contributor michiexe" height="32" width="32"/></a> <a href="https://github.com/apps/sync-by-unito"><img src="https://avatars.githubusercontent.com/in/64202?v=4" alt="Profile image for contributor sync-by-unito[bot]" height="32" width="32"/></a> <a href="https://github.com/Foadsf"><img src="https://avatars.githubusercontent.com/u/12762442?v=4" alt="Profile image for contributor Foadsf" height="32" width="32"/></a> <a href="https://github.com/DarwinJS"><img src="https://avatars.githubusercontent.com/u/11597190?v=4" alt="Profile image for contributor DarwinJS" height="32" width="32"/></a> <a href="https://github.com/AdmiringWorm"><img src="https://avatars.githubusercontent.com/u/1474648?v=4" alt="Profile image for contributor AdmiringWorm" height="32" width="32"/></a> <a href="https://github.com/corbob"><img src="https://avatars.githubusercontent.com/u/30301021?u=bd8009614da7d169028f0174b0da798f8d237c51&v=4" alt="Profile image for contributor corbob" height="32" width="32"/></a> <a href="https://github.com/vexx32"><img src="https://avatars.githubusercontent.com/u/32407840?u=d8213fbf5ef964c29ef7cfda6497c9dddb38cca9&v=4" alt="Profile image for contributor vexx32" height="32" width="32"/></a> <a href="https://github.com/TheCakeIsNaOH"><img src="https://avatars.githubusercontent.com/u/38865330?u=4d84451434721990f6a45023e22debf1c4d79182&v=4" alt="Profile image for contributor TheCakeIsNaOH" height="32" width="32"/></a> 
+
+
 ## 2.5.1 (September 3, 2025) \{#v2.5.1}
 
 ### Bug Fix
