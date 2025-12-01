@@ -45,6 +45,74 @@ Please see <Xref title="Install the Licensed Edition" value="setup-licensed" /> 
 
 <ChocolateyComponentDependenciesLink />
 
+## 7.0.0 (December 1, 2025) \{#7.0.0}
+
+<Callout type="warning">
+    Chocolatey Licensed extension now requires Chocolatey CLI v2.6.0 to be able to display additional information about packages.
+</Callout>
+
+<Callout type="warning">
+    The Background Service has been restricted to a set list of operational commands. See our <Xref title="Self Service Anywhere documentation" value="self-service-anywhere" anchor="background-service-restricted-operational-commands" /> for more information.
+</Callout>
+
+Read our [blog post](https://blog.chocolatey.org/2025/12/announcing-cle-260-cle-700-agent-300-guile-201-releases/) about this release.
+
+### Breaking Changes
+
+- Prevent execution of Background Service command when it has not been added to the `backgroundServiceAllowedCommands` configuration.
+  - See [#412](https://github.com/chocolatey/chocolatey-licensed-issues/issues/412).
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-operational-commands" />.
+- Bump minimum Chocolatey CLI dependency version to 2.6.0.
+
+### Bug Fixes
+
+- Package Builder UI - Checkboxes for excluding scripts are enabled on unsupported licenses.
+  - See [#3](https://github.com/chocolatey/chocolatey-licensed-issues/issues/3).
+- Package Internalizer fails when detecting URL being output as a string from `Write-Verbose` command.
+  - See [#232](https://github.com/chocolatey/chocolatey-licensed-issues/issues/232).
+- Package Internalizer fails when invalid URLs are detected.
+  - See [#249](https://github.com/chocolatey/chocolatey-licensed-issues/issues/249).
+- Context menus are left behind when Chocolatey Licensed Extension package is uninstalled.
+  - See [#358](https://github.com/chocolatey/chocolatey-licensed-issues/issues/358).
+- Updating the license enables the Licensed Feed when it was previously disabled.
+- Package is not installable in non-interactive systems without a user profile available.
+  - See [#413](https://github.com/chocolatey/chocolatey-licensed-issues/issues/413).
+- Title field is ignored for PackageBuilder when Business license is used.
+  - See [#384](https://github.com/chocolatey/chocolatey-licensed-issues/issues/384).
+- Ensure all operational commands work through Background Service and that only operational commands are allowed.
+  - See [#425](https://github.com/chocolatey/chocolatey-licensed-issues/issues/425).
+- Unable to set User-Agent when using `Install-ChocolateyZipPackage`.
+  - See [#372](https://github.com/chocolatey/chocolatey-licensed-issues/issues/372).
+- Header information is not available when using `--limit-output`.
+  - See [#431](https://github.com/chocolatey/chocolatey-licensed-issues/issues/431).
+- Optimize does not remove executable from package cache directory.
+- Packages can be uninstalled or reinstalled by different user when the feature `allowBackgroundServiceUninstallsFromUserInstallsOnly` is enabled.
+- Package installation fails when no original user information is available and the feature `allowBackgroundServiceUninstallsFromUserInstallsOnly` is enabled.
+
+### Enhancements
+
+- Add the ability to only download dependencies not available on named sources during `choco download`.
+  - See [#173](https://github.com/chocolatey/chocolatey-licensed-issues/issues/173).
+- Check for virus results in `Install-ChocolateyInstallPackageCmdlet` and `Get-ChocolateyUnzipCmdlet`.
+  - See [#137](https://github.com/chocolatey/chocolatey-licensed-issues/issues/137).
+- Attempt to download binaries from HTTPS before using an HTTP URL during Internalizing.
+  - See [#233](https://github.com/chocolatey/chocolatey-licensed-issues/issues/233).
+- Validate checksums for downloaded binaries when packages are internalized.
+  - See [#277](https://github.com/chocolatey/chocolatey-licensed-issues/issues/277).
+- Update error messages about unsupported Background Service commands when there are missing permissions.
+  - See [#337](https://github.com/chocolatey/chocolatey-licensed-issues/issues/337).
+- Include information about why a package was pinned during upgrades and uninstalls.
+  - See [#357](https://github.com/chocolatey/chocolatey-licensed-issues/issues/357).
+- Sync command `--noop` option does not output what actions it would have performed.
+  - See [#360](https://github.com/chocolatey/chocolatey-licensed-issues/issues/360).
+- Provide ability to configure a set of prohibited arguments when running under Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+- Users can reinstall or force upgrade a package to replace the original user and get around the `allowBackgroundServiceUninstallsFromUserInstallsOnly` setting.
+  - See [#371](https://github.com/chocolatey/chocolatey-licensed-issues/issues/371).
+- Include software install path in `choco info` output.
+- Record and display the source location used to install a package.
+- Re-use existing local Intune packages when converting new Intune packages.
+
 ## 6.3.1 (January 31, 2025) \{#v6.3.1}
 
 ### Bug Fix

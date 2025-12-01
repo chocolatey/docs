@@ -35,6 +35,28 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <ChocolateyComponentDependenciesLink />
 
+## 3.0.0 (December 1, 2025) \{#v3.0.0}
+
+<Callout type="warning">
+    To provide the ability to customize which command options should be blocked, Chocolatey Agent now requires Chocolatey Licensed Extension v7.0.0.
+</Callout>
+
+Read our [blog post](https://blog.chocolatey.org/2025/12/announcing-cle-260-cle-700-agent-300-guile-201-releases/) about this release.
+
+### Breaking Change
+
+- Bump minimum Chocolatey Licensed Extension dependency version to 7.0.0.
+
+### Bug Fix
+
+- Fix Background Service not passing `--source` argument in recommended format.
+
+### Enhancements
+
+- Provide ability to configure a set of prohibited arguments when running under Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+
 ## 2.3.0 (April 16, 2025) \{#v2.3.0}
 
 ### Improvement
