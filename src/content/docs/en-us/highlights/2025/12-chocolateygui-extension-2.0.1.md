@@ -6,8 +6,8 @@ description: Learn all about what's new in Chocolatey GUI Licensed Extension 2.0
 highlight:
   postedDateTime: 2025-12-01T00:00:40Z
   ctaXref: chocolatey-gui-licensed-extension-release-notes
-  ctaAnchor: v2.6.0
+  ctaAnchor: v2.0.1
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---
