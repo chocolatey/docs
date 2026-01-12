@@ -36,6 +36,6 @@
     "@chocolatey-software/playwright": "2.1.0"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "2.1.0"
+    "@chocolatey-software/docs": "2.2.0"
   }
 }
