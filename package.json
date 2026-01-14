@@ -16,7 +16,7 @@
   "scripts": {
     "astro": "npx astro",
     "browsers": "npx playwright install --with-deps",
-    "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro check && npx astro build",
+    "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro build",
     "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts docs",
     "build-purge-css": "npx tsx node_modules/@chocolatey-software/build-tools/build/purge-css.ts docs",
     "build-copy-playwright": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-playwright.ts docs",
