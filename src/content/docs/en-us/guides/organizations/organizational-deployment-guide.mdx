@@ -460,7 +460,7 @@ Write-Warning "REPEATED: This script will OVERWRITE the license file you might h
 Write-Warning "If there is is a note about invalid license above, you're going to run into issues."
 
 # Get license expiration from the license file for version and validation
-[xml]$licenseFile = Get-Content $env:ChocolateyInstall\license\chocolatey.license.xml
+[xml]$licenseFile = Get-Content $licenseLocation
 $licenseExpiration = Get-Date($licenseFile.license.expiration)
 
 # Validate the expiration date is in the future
