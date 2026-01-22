@@ -47,7 +47,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 ### Chocolatey Central Management
 
-* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like `https://servicemachineFQDN:24020/ChocolateyManagementService`.  See https://docs.chocolatey.org/en-us/features/chocolatey-central-management#fqdn-usage.  Available in business editions only.
+* `centralManagementServiceUrl` = **' '** - The URL that should be used to communicate with Chocolatey Central Management. It should look something like `https://servicemachineFQDN:24020/ChocolateyManagementService`.  See <Xref title="Central Management Service Setup" value="ccm-service" anchor="fqdn-usage" />. Available in business editions only.
 * `centralManagementReportPackagesTimerIntervalInSeconds` = **'1800'** - Amount of time, in seconds, between each execution of the background service to report installed and outdated packages to Chocolatey Central Management.  Available in business editions only.
 * `centralManagementReceiveTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to receive information from Chocolatey Central Management.  Available in business editions only.
 * `centralManagementSendTimeoutInSeconds` = **'30'** - The amount of time, in seconds, that the background agent should wait to send information to Chocolatey Central Management.  Available in business editions only.
@@ -68,7 +68,7 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 ### Package Throttle
 
-* `maximumDownloadRateBitsPerSecond` = **' '** - The maximum download rate in bits per second. '0' or empty means no maximum. A number means that will be the maximum download rate in bps. Defaults to ''. Available in licensed editions only. See https://docs.chocolatey.org/en-us/features/package-throttle
+* `maximumDownloadRateBitsPerSecond` = **' '** - The maximum download rate in bits per second. '0' or empty means no maximum. A number means that will be the maximum download rate in bps. Defaults to ''. Available in licensed editions only. See <Xref title="Package Throttle" value="package-throttle" />.
 
 ### Windows Services Installation
 
@@ -82,12 +82,12 @@ Config settings are adjusted using `choco config set --name="'<nameFromBelow>'" 
 
 ### Virus Checking
 
-* `virusCheckMinimumPositives` = **'4'** - Minimum number of scan result positives before flagging a binary as a possible virus. Used when virusScannerType is VirusTotal. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
-* `virusScannerType` = **'VirusTotal'** - Virus Scanner Type (Generic or VirusTotal). Defaults to VirusTotal for Pro. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
-* `genericVirusScannerPath` = **' '** - The full path to the command line virus scanner executable. Used when virusScannerType is Generic. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
-* `genericVirusScannerArgs` = **'`[[File]]`'** - The arguments to pass to the generic virus scanner. Use `[[File]]` for the file path placeholder. Used when virusScannerType is Generic. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
-* `genericVirusScannerValidExitCodes` = **'0'** - The exit codes for the generic virus scanner when a file is not flagged. Separate with comma, defaults to 0. Used when virusScannerType is Generic. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
-* `genericVirusScannerTimeoutInSeconds` = **'120'** - Generic Virus Scanner Timeout In Seconds - The number of seconds to allow the virus scanner to run before timing out. Used when virusScannerType is Generic. Defaults to '120'. Licensed editions v2.1.0+ only. See https://docs.chocolatey.org/en-us/features/virus-check
+* `virusCheckMinimumPositives` = **'4'** - Minimum number of scan result positives before flagging a binary as a possible virus. Used when virusScannerType is VirusTotal. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
+* `virusScannerType` = **'VirusTotal'** - Virus Scanner Type (Generic or VirusTotal). Defaults to VirusTotal for Pro. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
+* `genericVirusScannerPath` = **' '** - The full path to the command line virus scanner executable. Used when virusScannerType is Generic. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
+* `genericVirusScannerArgs` = **'`[[File]]`'** - The arguments to pass to the generic virus scanner. Use `[[File]]` for the file path placeholder. Used when virusScannerType is Generic. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
+* `genericVirusScannerValidExitCodes` = **'0'** - The exit codes for the generic virus scanner when a file is not flagged. Separate with comma, defaults to 0. Used when virusScannerType is Generic. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
+* `genericVirusScannerTimeoutInSeconds` = **'120'** - Generic Virus Scanner Timeout In Seconds - The number of seconds to allow the virus scanner to run before timing out. Used when virusScannerType is Generic. Defaults to '120'. Licensed editions v2.1.0+ only. See <Xref title="Virus Check" value="virus-check" />.
 
 ## Features
 
@@ -145,7 +145,7 @@ A checkbox means this feature is turned on by default.
 
 ### General
 
-* [x] `downloadCache` - Download Cache - use the private download cache if available for a package. Licensed editions only. See https://docs.chocolatey.org/en-us/features/private-cdn
+* [x] `downloadCache` - Download Cache - use the private download cache if available for a package. Licensed editions only. See <Xref title="Private CDN" value="private-cdn" />.
 * [ ] `failOnInvalidOrMissingLicense` - Fail On Invalid Or Missing License - allows knowing when a license is expired or not applied to a machine.
 * [x] `warnOnUpcomingLicenseExpiration` - Warn On Upcoming License Expiration - When a license expiration date is upcoming, should Chocolatey provide a warning? MSP and Business editions only. Setting ignored in trial editions.
 * [ ] `excludeChocolateyPackagesDuringUpgradeAll` - Exclude Chocolatey Packages During Upgrade All - When enabled, all official Chocolatey packages will be added to the comma-separated list of package names that should not be upgraded when upgrading 'all'. Any packages specified in the 'upgradeAllExceptions' configuration setting will still be respected. Licensed editions only (version 4.1.0+).
@@ -159,26 +159,26 @@ A checkbox means this feature is turned on by default.
 
 ### Chocolatey Central Management
 
-* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only. See https://docs.chocolatey.org/en-us/features/chocolatey-central-management
-* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+).  See https://docs.chocolatey.org/en-us/features/chocolatey-central-management
+* [ ] `useChocolateyCentralManagement` - Use Chocolatey Central Management - Lists of installed and outdated packages will be reported to the chosen Chocolatey Central Management server.  Business editions only. See <Xref title="Chocolatey Central Management" value="ccm" />.
+* [ ] `useChocolateyCentralManagementDeployments` - Use Chocolatey Central Management Deployments - Centrally managed deployments of packages and scripts can be sent from Chocolatey Central Management.  Business editions only (version 2.1.0+).  See <Xref title="Chocolatey Central Management" value="ccm" />.
 
 ### Package Internalizer
 
-* [x] `internalizeAppendUseOriginalLocation` - Append UseOriginalLocation with Package Internalizer - When `Install-ChocolateyPackage` is internalized, append the `-UseOriginalLocation` parameter to the function. Business editions and MSP editions only. See https://docs.chocolatey.org/en-us/guides/create/recompile-packages
+* [x] `internalizeAppendUseOriginalLocation` - Append UseOriginalLocation with Package Internalizer - When `Install-ChocolateyPackage` is internalized, append the `-UseOriginalLocation` parameter to the function. Business editions and MSP editions only. See <Xref title="Recompile Packages" value="recompile-packages" />.
 
 ### Package Reducer
 
-* [x] `reduceInstalledPackageSpaceUsage` - Reduce Installed Package Size (Package Reducer) - Reduce size of the nupkg file to very small and remove extracted archives and installers. Licensed editions only. See https://docs.chocolatey.org/en-us/features/package-reducer
-* [ ] `reduceOnlyNupkgSize` - Reduce Only Nupkg File Size - reduce only the size of nupkg file when using Package Reducer. Licensed editions only. Also requires 'reduceInstalledPackageSpaceUsage' to be enabled. See https://docs.chocolatey.org/en-us/features/package-reducer
+* [x] `reduceInstalledPackageSpaceUsage` - Reduce Installed Package Size (Package Reducer) - Reduce size of the nupkg file to very small and remove extracted archives and installers. Licensed editions only. See <Xref title="Package Reducer" value="package-reducer" />.
+* [ ] `reduceOnlyNupkgSize` - Reduce Only Nupkg File Size - reduce only the size of nupkg file when using Package Reducer. Licensed editions only. Also requires 'reduceInstalledPackageSpaceUsage' to be enabled. See <Xref title="Package Reducer" value="package-reducer" />.
 
 ### Package Synchronization
 
-* [x] `allowSynchronization` - Synchronization - Keep installed Chocolatey packages in sync with changes in Programs and Features. Licensed editions only. See https://docs.chocolatey.org/en-us/features/package-synchronization
+* [x] `allowSynchronization` - Synchronization - Keep installed Chocolatey packages in sync with changes in Programs and Features. Licensed editions only. See <Xref title="Package Synchronization" value="package-synchronization" />.
 * [ ] `showAllPackagesInProgramsAndFeatures` - Package Synchronizer's Packages In Programs And Features Synchronization - Show all packages in Programs and Features, not just packages that use a native installer. Business editions only.
 
 ### Self-Service / Background Mode
 
-* [x] `useBackgroundService` - Use Background Service (Self-Service Installer) - For some commands like install and upgrade, use a background service instead of running the command directly. Business editions only. Requires the package chocolatey-agent (choco install chocolatey-agent). See https://docs.chocolatey.org/en-us/features/self-service-anywhere
+* [x] `useBackgroundService` - Use Background Service (Self-Service Installer) - For some commands like install and upgrade, use a background service instead of running the command directly. Business editions only. Requires the package chocolatey-agent (choco install chocolatey-agent). See <Xref title="Self Service Anywhere" value="self-service-anywhere" />.
 * [x] `useBackgroundServiceWithSelfServiceSourcesOnly` - Use Background Service With Self-Service Sources Only - When using Self-Service, opt-in only sources configured to be used with self-service. This allows for other sources only an admin can use. Business editions only.
 * [x] `useBackgroundServiceWithNonAdministratorsOnly` - Use Background Service With Non-Administrators Only - When using Self-Service, only execute background mode for non-administrators. Business editions only.
 * [ ] `useBackgroundServiceInteractively` - Use Background Service Interactively (BROKEN CURRENTLY - DO NOT USE) - When using Self-Service and installing software that cannot be completely silent, installs will need to be executed against the current desktop environment. Set this flag on for the most compatibility. To use this feature, you must be using the local 'ChocolateyLocalAdmin' account. Business editions only.
@@ -189,7 +189,7 @@ A checkbox means this feature is turned on by default.
 
 ### Virus Checking
 
-* [x] `virusCheck` - Virus Check - perform virus checking on downloaded files. Licensed editions only. See https://docs.chocolatey.org/en-us/features/virus-check
+* [x] `virusCheck` - Virus Check - perform virus checking on downloaded files. Licensed editions only. See <Xref title="Virus Check" value="virus-check" />.
 
 ### Other
 
