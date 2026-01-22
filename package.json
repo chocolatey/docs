@@ -27,15 +27,16 @@
     "start": "yarn dev",
     "telemetry": "npx astro telemetry disable",
     "choco-theme": "yarn build-copy-theme && yarn build-copy-playwright && yarn build-purge-css",
-    "link-packages": "npx tsx node_modules/@chocolatey-software/build-tools/build/link.ts"
+    "link-github": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-github.ts",
+    "link-local": "npx tsx node_modules/@chocolatey-software/build-tools/build/link-local.ts"
   },
   "devDependencies": {
     "@chocolatey-software/assets": "2.0.0",
-    "@chocolatey-software/astro": "2.1.0",
-    "@chocolatey-software/build-tools": "2.0.0",
-    "@chocolatey-software/playwright": "2.1.0"
+    "@chocolatey-software/astro": "2.5.0",
+    "@chocolatey-software/build-tools": "2.5.0",
+    "@chocolatey-software/playwright": "2.5.0"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "2.2.0"
+    "@chocolatey-software/docs": "2.5.0"
   }
 }
