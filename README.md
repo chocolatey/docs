@@ -69,6 +69,12 @@ Once this is complete, run the following from the same terminal:
 docker run -p 5086:5086 -v $(pwd):/app chocolatey-docs-container
 ```
 
+Or on Windows run:
+
+```powershell
+docker run -p 5086:5086 -v ${pwd}:/app chocolatey-docs-container
+```
+
 This will compile the site, and bring up a preview on `http:localhost:5086`. Any changes you make will automatically be hot reloaded.
 
 ## Building the Site for Production
