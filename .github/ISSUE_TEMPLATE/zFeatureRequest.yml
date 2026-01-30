@@ -1,0 +1,75 @@
+name: Documentation Enhancement / Addition
+description: Would you like to see new or updated documentation?
+labels: ["Enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ensure you have read over [Submitting Issues](https://github.com/chocolatey/.github/blob/main/SUBMITTING-ISSUES.md) and you are opening this issue in the correct repository.
+
+        Please check to see if your problem already exists with a quick search of the issues. Start with one relevant term and then add others if you get too many results.
+
+        **NOTE: Keep in mind we have a [Code Of Conduct](https://github.com/chocolatey/.github/blob/main/CODE_OF_CONDUCT.md) that we expect folks to observe when they are looking for support in the Chocolatey community.**
+
+        Name your issue appropriately: give it a sentence that reads well enough for anyone seeing this in the release notes to know what it is.
+
+        When writing out the issue details, please ensure you are writing it as if you were explaining it to somebody else, even if you will be working on and resolving the issue yourself.
+        This helps others to understand the reasons for the issue and for it to be searchable in the future.
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: Before continuing, make sure you have done the following.
+      options:
+        - label: I have verified this is the correct repository for opening this issue.
+          required: true
+        - label: I have verified no other issues exist related to my request.
+          required: true
+  - type: textarea
+    id: problem-related
+    attributes:
+      label: Is Your Feature Request Related To A Problem? Please describe.
+      description: |
+        In your own words, please describe the problem that would be fixed by introducing the feature or enhancement you request.
+    validations:
+      required: false
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe The Solution. Why is it needed?
+      description: |
+        In your own words, please describe the solution and what you want to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: |
+        Please formulate a [User Story](https://github.com/chocolatey/home/blob/main/user-story-and-acceptance-criteria.md#user-story) that describes the feature you want implemented.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Please include any other information here that you feel may be relevant to the feature you want implemented that is not covered in the previous sections.
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Create [Acceptance Criteria](https://github.com/chocolatey/home/blob/main/user-story-and-acceptance-criteria.md#acceptance-criteria) for this feature request that satisfy the User Story above. Replace the placeholder checkboxes with your own.
+      placeholder: |
+        - [ ] Acceptance Criteria 1
+        - [ ] Acceptance Criteria 2
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues
+      description: |
+        Include any links to other issues that are related to this request.
+      placeholder: |
+        - Issue #
+        - Issue #
+    validations:
+      required: false
