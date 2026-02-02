@@ -1,21 +1,19 @@
 <!--
 BEFORE YOU CREATE A PULL REQUEST:
 
-Ensure you have read over [CONTRIBUTING.md](./CONTRIBUTING.md). We provide VERY defined guidance (as such, we strongly adhere to it).
+Ensure you have read over [CONTRIBUTING.md](https://github.com/chocolatey/choco/blob/develop/CONTRIBUTING.md). We provide VERY defined guidance (as such, we strongly adhere to it).
 
 A summary of our expectations:
  - You are not submitting a pull request from your MASTER / MAIN branch.
  - YOUR GIT COMMIT MESSAGE FORMAT IS EXTREMELY IMPORTANT. We have a very defined expectation for this format and are sticklers about it. Really, READ the entire Contributing document. It will save you and us pain.
  - Do not reformat code, it makes it hard to see what has changed. Leave the formatting to us.
+ - You have read and can confirm the completion of the [Definition of Done](https://github.com/chocolatey/home/blob/main/definition-of-done.md).
 
 THANKS! We appreciate you reading the entire Contributing document and not just scanning through it.
 
-Name your issue appropriately: give it a sentence that reads well enough for anyone seeing this in release notes to know what the issue is.
+Name your pull request appropriately: give it a sentence that reads well enough for anyone seeing this.
 
-When writing out the pull request details please ensure you are writing it as
-if you were explaining it to somebody else.
-Even if you will be working on and resolving the issue yourself.
-This helps others to understand the reasons for the pull request and for it to be searchable in future.
+if you were explaining it to somebody else. This helps others to understand the reasons for the pull request and for it to be searchable in future.
 
 Please do not remove any of the headings.
 If a heading is not applicable then enter N/A: Why it's not applicable
@@ -50,6 +48,7 @@ Please remove all comments before submitting.
 * [ ] Menu structure has been updated
 * [ ] Images added to the [img](https://github.com/chocolatey/img) repository?
     * [ ] PR -
+* [ ] All items are complete on the [Definition of Done](https://github.com/chocolatey/home/blob/main/definition-of-done.md).
 
 ## Related Issue
 <!-- Make sure you have raised an issue for this pull request before continuing. -->

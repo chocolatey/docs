@@ -1,0 +1,94 @@
+name: Report Issue
+description: Did you find issues in our documentation?
+labels: ["Bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ensure you have read over [Submitting Issues](https://github.com/chocolatey/.github/blob/main/SUBMITTING-ISSUES.md) and you are opening this issue in the correct repository.
+
+        Please check to see if your problem already exists with a quick search of the issues. Start with one relevant term and then add others if you get too many results.
+
+        **NOTE: Keep in mind we have a [Code Of Conduct](https://github.com/chocolatey/.github/blob/main/CODE_OF_CONDUCT.md) that we expect folks to observe when they are looking for support in the Chocolatey community.**
+
+        Name your issue appropriately: give it a sentence that reads well enough for anyone seeing this in the release notes to know what it is.
+
+        When writing out the issue details, please ensure you are writing it as if you were explaining it to somebody else, even if you will be working on and resolving the issue yourself.
+        This helps others to understand the reasons for the issue and for it to be searchable in the future.
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: Before continuing, make sure you have done the following.
+      options:
+        - label: I confirm there are no unresolved issues reported on the [Chocolatey Status page](https://status.chocolatey.org).
+          required: true
+        - label: I have verified this is the correct repository for opening this issue.
+          required: true
+        - label: I have verified no other issues exist related to my problem.
+          required: true
+        - label: I have verified this issue is not security related.
+          required: true
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: What You Are Seeing?
+      description: |
+        In your own words, please describe the problem that you are experiencing. Please include images if possible, as this can give a clearer indication of the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: What is Expected?
+      description: |
+        Instead of the behavior that you were seeing, what did you expect would be happening instead?
+    validations:
+      required: true
+  - type: textarea
+    id: repeatable-steps
+    attributes:
+      label: How Did You Get This To Happen?
+      description: |
+        Please include a complete set of _reproducible steps_ that another user or maintainer of the repository can follow to get the same behavior that you are seeing. _Reproducible steps_ should allow _anybody_ who is unfamiliar with your issue or environment to be able to reproduce your issue. This may include code, scripts or other environment configuration.
+
+        **NOTE: We are unlikely to be able to troubleshoot or respond to issues without _reproducible steps_. If you do not complete this section with _reproducible steps_, the issue will be closed.**
+      placeholder: |
+        1. I went to this page https://docs.chocolatey.org/en-us/.
+        2. I clicked the sidebar link for "Getting Started".
+        3. I was redirected to a 404 page.
+        4. etc.
+    validations:
+      required: true
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: |
+        Please formulate a [User Story](https://github.com/chocolatey/home/blob/main/user-story-and-acceptance-criteria.md#user-story) that describes how you should be able to use Chocolatey to accomplish what you are trying to do.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: |
+        Please include any other information here that you feel may be relevant to the problem you are seeing but is not covered in the previous sections.
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: |
+        Create [Acceptance Criteria](https://github.com/chocolatey/home/blob/main/user-story-and-acceptance-criteria.md#acceptance-criteria) for this issue that satisfy the User Story above. Replace the placeholder checkboxes with your own.
+      placeholder: |
+        - [ ] Acceptance Criteria 1
+        - [ ] Acceptance Criteria 2
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related Issues
+      description: |
+        Include any links to other issues that are related to this request.
+      placeholder: |
+        - Issue #
+        - Issue #
+    validations:
+      required: false
