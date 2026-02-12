@@ -34,7 +34,7 @@
     "@chocolatey-software/assets": "2.0.0",
     "@chocolatey-software/astro": "2.5.0",
     "@chocolatey-software/build-tools": "2.5.0",
-    "@chocolatey-software/playwright": "2.5.0"
+    "@chocolatey-software/playwright": "2.5.1"
   },
   "dependencies": {
     "@chocolatey-software/docs": "2.5.0"
