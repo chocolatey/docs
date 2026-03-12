@@ -48,11 +48,13 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
 
     Based on the package releases, the recommended installation/upgrade order is the following:
 
-    * chocolateygui.extension
-    * chocolateygui
-    * chocolatey-agent
     * chocolatey.extension
-    * chocolatey
+      * Dependency resolution will ensure that any dependent packages that *must* be upgraded will also be upgraded.
+    * If any packages are still out of date after upgrading chocolatey.extension, then proceed with the below order:
+        * chocolatey
+        * chocolateygui
+        * chocolateygui.extension
+        * chocolatey-agent
 
     This will ensure that all dependencies, both direct and indirect, are installed.
 </Callout>
