@@ -11,14 +11,20 @@ import Xref from '@components/Xref.astro';
 ## The Problem
 From time to time, a previously approved Chocolatey Package needs to be deprecated.  This could be for a number of reasons:
 
-* It was created in error.
+* It was created in error because the package already exists with another package id.
 * It has been superseded by another package.
-* It is an older package that no longer follows the <Xref title="Package Guidelines" value="create-packages" />.
 * Its package id has been changed to something that better fits with the <Xref title="package naming guidelines" value="create-packages" anchor="naming-your-package" />.
 
 All versions of this package could simply be <Xref title="unlisted" value="list-unlist-a-package" /> from chocolatey.org, meaning that they could no longer be installed, however, this solution is not ideal.  Any user who previously installed this package, and added it as part of an installation script, would get an error the next time that they tried to install it, and this is far from ideal.
 
 When a package needs to be deprecated, it needs to be handled in such a way that existing users will continue to be able to use the old package id, but take advantage of the replacement package, if there is one.
+
+## What Deprecation is and is not
+
+Deprecation is only for when there is a replacement package available. 
+
+If a software has gone end of life or end of support, but the package still installs correctly, then no action is needed. The last version of the package can remain listed indefintely.
+In the case that the package no longer installs correctly, e.g. the software download links are no longer working, then the package can simply be unlisted. 
 
 ## The Solution
 When deprecating a Chocolatey Package, the following steps should be followed:
