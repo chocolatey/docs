@@ -8,6 +8,6 @@ highlight:
   ctaXref: ccm-release-notes
   ctaAnchor: v0.14.0
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---
