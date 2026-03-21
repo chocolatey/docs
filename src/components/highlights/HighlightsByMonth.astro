@@ -10,9 +10,18 @@ const highlights = await getCollection('docs', ({ data }) => {
     return data.highlight && data.highlight.showOnHighlights;
 });
 
+const getTime = (date?: Date): number => {
+    return date != null ? date.getTime() : 0;
+}
+
 const organizeByMonth = (posts: CollectionEntry<'docs'>[]): Record<string, CollectionEntry<'docs'>[]> => {
+    // Pre-sort things by posted date, this lets us not have to do complicated sorting later.
+    // Without this, the below "reverse sort" on a string of "MonthName YEAR" does not actually work correctly.
+    posts = posts.sort((a, b) => getTime(a.data.highlight?.postedDateTime) - getTime(b.data.highlight?.postedDateTime));
+
     const result: Record<string, CollectionEntry<'docs'>[]> = {};
 
+    // Collect everything by-month, one at a time.
     posts.forEach(post => {
         const highlight = post.data.highlight;
 
@@ -20,7 +29,7 @@ const organizeByMonth = (posts: CollectionEntry<'docs'>[]): Record<string, Colle
             return;
         }
 
-        const postedDateTime = new Date(highlight.postedDateTime);
+        const postedDateTime = highlight.postedDateTime;
         const month = postedDateTime.toLocaleString('default', { month: 'long' });
         const year = postedDateTime.getFullYear();
         const key = `${month} ${year}`;
@@ -32,7 +41,7 @@ const organizeByMonth = (posts: CollectionEntry<'docs'>[]): Record<string, Colle
         result[key].push(post);
     });
 
-    // Reverse the entire postsByMonth object
+    // Reverse the entire set, so that we have most recent first
     const reversedResult: Record<string, CollectionEntry<'docs'>[]> = {};
     const keys = Object.keys(result).toReversed();
 

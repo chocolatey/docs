@@ -1,9 +1,9 @@
 import { defineConfig } from 'astro/config';
-import sitemap from "@astrojs/sitemap";
-import mdx from "@astrojs/mdx";
+import sitemap from '@astrojs/sitemap';
+import mdx from '@astrojs/mdx';
 import rehypeMermaid from 'rehype-mermaid';
 import remarkCustomHeaderId from 'remark-custom-header-id';
-import { mermaidConfig } from 'choco-astro/src/scripts/util/mermaid-config';
+import { mermaidConfig } from '@chocolatey-software/astro/src/scripts/util/mermaid-config';
 
 export default defineConfig({
     site: 'https://docs.chocolatey.org',
@@ -23,7 +23,7 @@ export default defineConfig({
         ],
         rehypePlugins: [
             [rehypeMermaid, {
-                mermaidConfig: mermaidConfig
+                mermaidConfig
             }]
         ]
     },

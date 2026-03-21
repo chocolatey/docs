@@ -35,6 +35,46 @@ This covers the release notes for the Chocolatey Agent Service (`chocolatey-agen
 
 <ChocolateyComponentDependenciesLink />
 
+## 4.0.0 (March 18, 2026) \{#v4.0.0}
+
+<Callout type="warning">
+    To provide the ability to report additional package information and to submit system facts to Chocolatey Central Management, Chocolatey Agent now requires Chocolatey CLI v2.7.0 and Chocolatey Licensesd Extension v8.0.0.
+</Callout>
+
+Read our [blog post](https://blog.chocolatey.org/2026/03/announcing-ccm-0150-cli-270-cle-800-agent-400-gui-300-guile-300-releases/) about this release.
+
+### Breaking ChangeS
+
+- Update to version 2.7.0 of Chocolatey CLI.
+- Update to version 8.0.0 of Chocolatey Licensed Extension.
+
+### Enhancements
+
+- Report all package related information via Chocolatey Agent to Chocolatey Central Management.
+- Report system facts via Chocolatey Agent to Chocolatey Central Management.
+
+## 3.0.0 (December 1, 2025) \{#v3.0.0}
+
+<Callout type="warning">
+    To provide the ability to customize which command options should be blocked, Chocolatey Agent now requires Chocolatey Licensed Extension v7.0.0.
+</Callout>
+
+Read our [blog post](https://blog.chocolatey.org/2025/12/announcing-cle-260-cle-700-agent-300-guile-201-releases/) about this release.
+
+### Breaking Change
+
+- Bump minimum Chocolatey Licensed Extension dependency version to 7.0.0.
+
+### Bug Fix
+
+- Fix Background Service not passing `--source` argument in recommended format.
+
+### Enhancements
+
+- Provide ability to configure a set of prohibited arguments when running under Self-Service mode.
+  - See the <Xref title="documentation" value="self-service-anywhere" anchor="background-service-restricted-options" />.
+
+
 ## 2.3.0 (April 16, 2025) \{#v2.3.0}
 
 ### Improvement

@@ -1,0 +1,36 @@
+---
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import CentralManagementDatabaseSetup from '@components/docs/CentralManagementDatabaseSetup.mdx';
+import CentralManagementWebsiteSetup from '@components/docs/CentralManagementWebsiteSetup.mdx';
+import CentralManagementServiceSetup from '@components/docs/CentralManagementServiceSetup.mdx';
+import OrgGuideCcmDatabase from '@components/docs/OrgGuideCcmDatabase.mdx';
+import OrgGuideCcmService from '@components/docs/OrgGuideCcmService.mdx';
+export const ccmInstall = [
+    { id: 'ccm-database', title: 'CCM Database', isActive: true },
+    { id: 'ccm-web', title: 'CCM Web', updateAnchor: true },
+    { id: 'ccm-service', title: 'CCM Service', updateAnchor: true }
+];
+
+Deploying Chocolatey packages to your endpoints is simple and efficient with Chocolatey Central Management, our reporting and management dashboard.
+
+Using Chocolatey Agent, your endpoints can report on currently installed and outdated packages and run Basic deployments from Chocolatey Central Management to install, upgrade, and uninstall Chocolatey packages, and with Advanced deployments, you can run PowerShell scripts on endpoints as well.
+
+To set up and configure Chocolatey Central Management, please select the tile to get started:
+
+<div class="row mb-md-5">
+    <div class="mb-4 mb-lg-0 col-sm-6 col-lg-4">
+        <div class="card card-link card-overlay-bottom card-overlay-theme-bottom h-100 min-h-px-200" style="background-image:url('https://img.chocolatey.org/backgrounds/chocolatey-for-business.svg');">
+            <div class="card-body d-flex flex-column z-1">  {/* The image above looks weird, but so much better than chocolatey-for-business/central-management-logo.png */}
+                <div class="mt-auto">
+                    <Xref title="Chocolatey Central Management" value="setup-central-management" classes="h4 mb-0 stretched-link" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

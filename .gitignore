@@ -51,6 +51,7 @@ public/scripts
 public/styles
 public/images/global-shared
 src/components/global
+eslint.config.mjs
 
 # general
 apple-touch-*.png

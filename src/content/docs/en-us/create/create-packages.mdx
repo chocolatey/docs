@@ -409,8 +409,8 @@ If there is an icon which is suitable for your package, you can specify it in th
 * Use icons with transparent background if available.
 * Don’t use distorted or blurry icons.
 * The package list in the Chocolatey Community Repository shows the icons with a maximum of 48 pixels in width/height. Application logos with very detailed graphics that are barely visible at that dimension are not suitable as package icons.
-* **PNG is the preferred format** for raster package icons. Avoid ICO, GIF and JPEG graphics.
-* Good sources for package icons are the official desktop icons of the corresponding application you want to make a package of. The icons can be extracted from the app executables using tools like [BeCyIconGrabber](https://community.chocolatey.org/packages/becyicongrabber). Remember to take the icon with 128&nbsp;px or more and save it as PNG file.
+* **The `.png` format is _very strongly_ preferred** for your package icons. While other standard image formats may work, using a `.png` ensures consistency and helps with a smooth package approval process.
+* Good sources for package icons are the official desktop icons of the corresponding application you want to make a package of. The icons can be extracted from the app executables using tools like [BeCyIconGrabber](https://community.chocolatey.org/packages/becyicongrabber). Remember to take the icon with 128&nbsp;px or more and save it as `.png` file.
 
 The icon shown on the community.chocolatey.org package page is saved, and served, locally to mitigate against cross scripting attacks and to prevent getting _non HTTPS assets_ errors on the website. Sometimes the page loads faster than the image can be served and the default image gets cached and as a result the new package icon may not be shown until you clear the browser cache for community.chocolatey.org and wait 3 hours before reloading the page.
 
