@@ -37,6 +37,43 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
     | chocolatey              | v2.0.0  |
 </Callout>
 
+## Chocolatey Component Package Upgrade Order
+
+With new dependency resolution added to Chocolatey, there have been changes to the recommendation for upgrading Chocolatey and its related components,
+based on the version you use.
+
+At Chocolatey Software we use a SemVer versioning standard with our component packages. This standard follows a Major.Minor.Patch versioning pattern.
+
+### Upgrading to a Major Release
+
+Before attempting the upgrade of Chocolatey component packages to a new major release, please have the latest versions of the last major version installed on the machine, as well as the new major version of all component packages available on your Chocolatey source.
+
+Running `choco upgrade` of the `chocolatey` package will upgrade all component packages to the next major version through package dependency resolution.
+
+### Upgrading to a Minor Release
+
+#### Chocolatey v2.X
+
+For Chocolatey v2.X installations, you can upgrade your Chocolatey component packages by upgrading the Chocolatey Licensed Extension package. This will upgrade all currently installed Chocolatey component packages through newly introduced dependency resolution.
+
+You can run `choco upgrade chocolatey.extension -y` to upgrade the Chocolatey Licensed Extension package, provided you have downloaded and pushed the latest Chocolatey component packages to your internal repository for use within your environment.
+
+#### Chocolatey v1.X
+
+For Chocolatey v1.X installations, please follow the recommended order listed below:
+
+1. `chocolateygui.extension`
+2. `chocolateygui`
+3. `chocolatey-agent`
+4. `chocolatey.extension`
+5. `chocolatey`
+
+You can run the `choco upgrade` command referencing each package from the list above one at a time, allowing each command to resolve entirely before moving on to the next command.
+
+### Upgrading Individual Package Releases
+
+In the event that there are individual package releases, for example a new version for only the chocolateygui package, you can run the choco upgrade command referencing the individual package. This method holds true for any of the Chocolatey component packages listed in this documentation.
+
 <Callout type="info">
     Newer package versions may be available at the time of installation, and Chocolatey will pick the highest
     available that matches the defined dependency range.
@@ -45,16 +82,4 @@ Please refer to our <Xref title="Support Lifecycle information" value="chocolate
     For example, if you currently have chocolateygui v0.18.1 installed along with chocolateygui.extension
      v0.2.1 and you first upgrade to chocolateygui v0.19.0, then you will see errors if you attempt to
     run Chocolatey GUI, since the chocolateygui.extension package also needs to be updated.
-
-    Based on the package releases, the recommended installation/upgrade order is the following:
-
-    * chocolatey.extension
-      * Dependency resolution will ensure that any dependent packages that *must* be upgraded will also be upgraded.
-    * If any packages are still out of date after upgrading chocolatey.extension, then proceed with the below order:
-        * chocolatey
-        * chocolateygui
-        * chocolateygui.extension
-        * chocolatey-agent
-
-    This will ensure that all dependencies, both direct and indirect, are installed.
 </Callout>
