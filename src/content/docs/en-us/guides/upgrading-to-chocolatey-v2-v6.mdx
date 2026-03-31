@@ -39,7 +39,7 @@ When you run the [Chocolatey CLI install command](https://chocolatey.org/install
 
 If you have issues after upgrading to the 2.x and 6.x versions of Chocolatey products, please see the [support options available](#what-should-you-do-if-you-have-questions).
 
-Before downgrading from 2.x and 6.x to 1.x and 5.x of Chocolatey products, please ensure that you understand the <Xref title="Support Lifecycle" value="chocolatey-components-dependencies-and-support-lifecycle" />. If you still want to downgrade, follow the steps below:
+Before downgrading from 2.x and 6.x to 1.x and 5.x of Chocolatey products, please ensure that you understand the <Xref title="Support Lifecycle" value="chocolatey-products-dependencies-and-support-lifecycle" />. If you still want to downgrade, follow the steps below:
 
 1. If you have Chocolatey GUI and / or Chocolatey GUI Licensed Extension, then uninstall them by running `choco uninstall chocolateygui.extension chocolateygui` from an elevated session.
 1. This step requires you to downgrade products depending on what you have installed.
@@ -96,7 +96,7 @@ The Chocolatey CLI installation process will try to install .NET Framework 4.8 i
 
 We recommend you install .NET Framework 4.8 and reboot, before installing or upgrading to Chocolatey CLI v2.0.0. If you are installing Chocolatey in a Docker container, please use an image that already has .NET 4.8 installed or use the [official Chocolatey CLI Docker image](https://hub.docker.com/r/chocolatey/choco).
 
-If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our <Xref title="Support Lifecycle" value="chocolatey-components-dependencies-and-support-lifecycle" /> for Chocolatey products.
+If you are unable to upgrade to .NET Framework 4.8, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. Please see our <Xref title="Support Lifecycle" value="chocolatey-products-dependencies-and-support-lifecycle" /> for Chocolatey products.
 
 ### NuGet v3 Feed Support Added
 
@@ -120,7 +120,7 @@ We have added support for [SemVer 2.0.0](https://semver.org/spec/v2.0.0.html) th
 
 ### Supported Operating Systems
 
-We have clarified the Operating Systems we support and updated our <Xref title="Support Lifecycle" value="chocolatey-components-dependencies-and-support-lifecycle" /> documentation.
+We have clarified the Operating Systems we support and updated our <Xref title="Support Lifecycle" value="chocolatey-products-dependencies-and-support-lifecycle" /> documentation.
 
 ### Side-By-Side Installs Have Been Removed
 
@@ -139,7 +139,7 @@ In the example above, `gitreleasemanager.portable` has two versions installed: 0
 
 Once this is complete, you can install the package again, without side-by-side, by running `choco install gitreleasemanager.portable`.
 
-If you need side-by-side functionality, or cannot uninstall packages installed side-by-side, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. If you are able to put in some extra work, we <Xref title="have documented an option that may work for you" value="create-packages" anchor="naming-packages-to-allow-for-side-by-side-installation" />. Please see our <Xref title="Support Lifecycle" value="chocolatey-components-dependencies-and-support-lifecycle" /> for Chocolatey products.
+If you need side-by-side functionality, or cannot uninstall packages installed side-by-side, **we do not recommend** you upgrade to Chocolatey CLI version 2.0.0 at this time. If you are able to put in some extra work, we <Xref title="have documented an option that may work for you" value="create-packages" anchor="naming-packages-to-allow-for-side-by-side-installation" />. Please see our <Xref title="Support Lifecycle" value="chocolatey-products-dependencies-and-support-lifecycle" /> for Chocolatey products.
 
 ### The List Command Now Lists Local Packages Only and the `--local-only` and `-lo` Options Have Been Removed
 
