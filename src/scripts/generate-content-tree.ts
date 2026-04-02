@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // Scripts and types
 import { contentTreeSchema } from '@scripts/types';
@@ -21,17 +22,17 @@ export const generateContentTree = async (parentSlug = ''): Promise<ContentTree[
     sortedDocs.forEach(item => {
         item.body = '';
 
-        map[item.slug] = { ...item, children: [] };
+        map[item.id] = { ...item, children: [] };
     });
 
     sortedDocs.forEach(item => {
-        if (item.slug !== parentSlug) {
-            const parent = map[item.slug.split('/').slice(0, -1).join('/')];
+        if (item.id !== parentSlug) {
+            const parent = map[item.id.split('/').slice(0, -1).join('/')];
 
             if (parent) {
-                parent.children.push(map[item.slug]);
+                parent.children.push(map[item.id]);
             } else {
-                result.push(map[item.slug]);
+                result.push(map[item.id]);
             }
         }
     });
@@ -50,7 +51,7 @@ export const generateContentTree = async (parentSlug = ''): Promise<ContentTree[
                 newNode.children = addDepthToTree(node.children, depth + 1);
             }
 
-            newNode.slug = `/${newNode.slug}/`;
+            newNode.id = `/${newNode.id}/`;
 
             return newNode;
         });

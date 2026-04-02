@@ -13,8 +13,12 @@
   "homepage": "https://github.com/chocolatey/docs#readme",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "astro": "npx astro",
+    "audit": "yarn npm audit --all --recursive --no-deprecations",
     "browsers": "npx playwright install --with-deps",
     "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro build",
     "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts docs",
@@ -32,11 +36,11 @@
   },
   "devDependencies": {
     "@chocolatey-software/assets": "2.0.0",
-    "@chocolatey-software/astro": "2.6.0",
+    "@chocolatey-software/astro": "chocolatey/choco-theme#head=choco-theme/2.7.0&workspace=@chocolatey-software/astro",
     "@chocolatey-software/build-tools": "2.6.0",
     "@chocolatey-software/playwright": "2.6.0"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "2.6.0"
+    "@chocolatey-software/docs": "chocolatey/choco-theme#head=choco-theme/2.7.0&workspace=@chocolatey-software/docs"
   }
 }

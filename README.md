@@ -34,7 +34,7 @@ There are multiple options to build the site:
 
 ### Build the Site On Your Computer
 
-Ensure that you have Node v20+ installed by running `node -v`. There is a `.\setup.ps1` file in the root of this repository that uses Chocolatey to install or upgrade Node to the correct version.
+Ensure that you have Node >= 22.12.0 installed by running `node -v`. There is a `.\setup.ps1` file in the root of this repository that uses Chocolatey to install or upgrade Node to the correct version.
 
 After confirming the required Node version, run the following command from a terminal:
 

@@ -25,7 +25,7 @@ const findObjectBySlug = async (obj: ContentTree, slug: string): Promise<Content
     }
 
     // Check if the current object has the specified slug
-    if (slug === obj.slug || slug === obj.slug.slice(0, -1)) {
+    if (slug === obj.id || slug === obj.id.slice(0, -1)) {
         return obj;
     }
 

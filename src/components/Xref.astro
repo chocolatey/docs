@@ -1,8 +1,7 @@
 ---
 // Scripts and types
-import { z } from 'zod';
-import { xref, xrefLinkAnchorSchema, xrefLinkValueSchema } from '@scripts/xref.ts';
-import type { XrefLinkAnchor, XrefLinkValue} from '@scripts/xref.ts';
+import { z } from 'astro/zod';
+import { getCollection } from 'astro:content';
 
 const { title, value, anchor, classes, icon } = Astro.props;
 const canonicalURL = new URL(Astro.url, Astro.site);
@@ -23,6 +22,18 @@ if (value.includes('#')) {
     throw new Error(`Xref link value cannot contain an anchor: ${value} on ${canonicalURL.toString()}`);
 }
 
+const posts = await getCollection('docs', ({ data }) => {
+    return data.highlight === undefined;
+});
+
+const post = posts.find(post => post.data.xref === value);
+
+if (!post) {
+    throw new Error(`No post found for xref value: ${value} on ${canonicalURL.toString()}`);
+}
+
+const xrefLinkValueSchema = z.string();
+const xrefLinkAnchorSchema = z.string().optional();
 const xrefLinkTitleSchema = z.string();
 const xrefLinkClassesSchema = z.string().optional();
 const xrefLinkIconSchema = z.string().optional();
@@ -30,6 +41,8 @@ const xrefLinkIconSchema = z.string().optional();
 type XrefLinkTitle = z.infer<typeof xrefLinkTitleSchema>;
 type XrefLinkClasses = z.infer<typeof xrefLinkClassesSchema>;
 type XrefLinkIcon = z.infer<typeof xrefLinkIconSchema>;
+type XrefLinkValue = z.infer<typeof xrefLinkValueSchema>;
+type XrefLinkAnchor = z.infer<typeof xrefLinkAnchorSchema>;
 
 interface Props {
     title: XrefLinkTitle
@@ -46,7 +59,7 @@ xrefLinkAnchorSchema.parse(anchor);
 xrefLinkClassesSchema.parse(classes);
 xrefLinkIconSchema.parse(icon);
 
-const link = await xref(value, anchor);
+const link = `/${post.id}${anchor ? `#${anchor}` : ''}`;
 const allClasses = classes ? classes : '';
 const iconTitle = `${title}<i class="fas ${icon} ms-1"></i>`;
 ---
