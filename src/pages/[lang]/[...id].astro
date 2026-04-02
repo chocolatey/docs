@@ -1,6 +1,6 @@
 ---
 // Scripts and types
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import { generateContentToc } from '@scripts/generate-content-toc.ts';
 import { generateContentTree } from '@scripts/generate-content-tree.ts';
 
@@ -10,41 +10,39 @@ import Children from '@components/Children.astro';
 import LayoutDocs from '@layouts/LayoutDocs.astro';
 import TableOfContents from '@components/toc/TableOfContents.astro';
 
-export const getStaticPaths = (async () => {
-    const pages = await getCollection('docs', ({ data }) => {
+export const getStaticPaths = async () => {
+    const posts = await getCollection('docs', ({ data }) => {
         return data.highlight === undefined;
     });
 
-    const paths = pages.map(page => {
-        const [lang, ...slug] = page.slug.split('/');
+    return posts.map(post => {
+        const parts = post.id?.split('/') ?? [];
+        const [lang, ...slugParts] = parts;
+
+        const slug = slugParts.join('/');
+
         return {
             params: {
-                lang,
-                slug: slug.join('/') || undefined
+                id: slug,
+                lang: lang,
             },
-            props: page,
-        };
+            props: { post }
+        }
     });
+};
 
-    return paths;
-});
-
-// const { lang, slug } = Astro.params;
-const page = Astro.props;
-
-const isHome = page.data.xref === 'home';
-
-const { Content } = await page.render();
-const headings = await page.render().then(data => data.headings);
+const { post } = Astro.props;
+const isHome = post.data.xref === 'home';
+const { Content, headings } = await render(post);
 const contentToc = await generateContentToc(headings);
 const contentTree = await generateContentTree();
 ---
 
-<LayoutDocs title={page.data.title} description={page.data.description} ogImage={page.data.ogImage} twitterImage={page.data.twitterImage} contentTree={contentTree}>
+<LayoutDocs title={post.data.title} description={post.data.description} ogImage={post.data.ogImage} twitterImage={post.data.twitterImage} contentTree={contentTree}>
     <div class="row">
         <div id="mainContent" class="anchorjs-container col-xl-10 order-2 order-xl-1">
             <div class="d-none d-xl-block">
-                <h1 class="title">{page.data.title}</h1>
+                <h1 class="title">{post.data.title}</h1>
                 <Breadcrumbs isHome={isHome} />
             </div>
             <Content />

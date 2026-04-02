@@ -12,9 +12,9 @@ jobs:
       - name: Checkout repository using git
         uses: actions/checkout@v4
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version-file: 'package.json'
       - name: Build site
         run: yarn build
       - name: Run Playwright tests
