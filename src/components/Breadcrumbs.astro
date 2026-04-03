@@ -16,12 +16,12 @@ const buildPartsList = async () => {
         const href = `${paths.slice(0, i + 1).join('/')}`;
 
         if (href !== 'en-us') {
-            const blogPost = await getEntry('docs', href);
+            const post = await getEntry('docs', href);
 
-            if (blogPost) {
+            if (post) {
                 parts.push({
-                    text: blogPost.data.title,
-                    href: blogPost.slug
+                    text: post.data.title,
+                    href: post.id
                 });
             }
         }

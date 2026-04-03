@@ -1,10 +1,10 @@
-import { z } from 'zod';
+import { z } from 'astro/zod';
 
 // ContentTree
 // ContentTree - Define the base schema without the recursive property
 const contentTreeBaseSchema = z.object({
     id: z.string(),
-    slug: z.string(),
+    // slug: z.string(),
     body: z.string(),
     collection: z.string(),
     data: z.object({
@@ -31,7 +31,7 @@ export const contentTreeSchema: z.ZodType<ContentTree> = contentTreeBaseSchema.e
 
 // ContentToc
 // ContentToc - Define the base schema without the recursive property
-const contentTocBaseSchema = z.object({
+export const contentTocBaseSchema = z.object({
     depth: z.number(),
     slug: z.string(),
     text: z.string()

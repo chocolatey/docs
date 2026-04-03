@@ -1,7 +1,8 @@
 // Scripts and types
-import type { ContentToc, ContentTocBase } from '@scripts/types';
+import type { ContentToc } from '@scripts/types';
+import type { MarkdownHeading } from '@astrojs/markdown-remark';
 
-export const generateContentToc = async (headings: ContentTocBase[]): Promise<ContentToc[]> => {
+export const generateContentToc = async (headings: MarkdownHeading[]): Promise<ContentToc[]> => {
     const toc: ContentToc[] = [];
     const parentHeadings = new Map();
 
