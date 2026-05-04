@@ -16,6 +16,7 @@ While this opinionated approach is fine for most situations, flexibility is requ
 
     These credentials are found in the README file placed on the Desktop of the server during installation, or wherever you documented them if you changed them after installation.
 </Callout>
+
 ## Include Packaging Tools with installation
 
 Some members of your team may be responsible for maintaining Chocolatey packages in your organization. These tools can be included in the installation by providing the `-IncludePackageTools` parameter.
@@ -25,12 +26,21 @@ Set-Location /path/to/register-c4bendpoint.ps1
 . .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -IncludePackageTools
 ```
 
+## Skip Chocolatey GUI installation
+
+Some machines within your organization might not require the installation of the self-service Chocolatey GUI application. Examples of these types of machines may include Windows servers with no GUI interface, or digital signage/kiosk thin clients. You can skip installation of the Chocolatey GUI application by providing the `-SkipChocolateyGUI` parameter.
+
+```powershell
+Set-Location /path/to/register-c4bendpoint.ps1
+. .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -SkipChocolateyGUI
+```
+
 ## Enable/Disable additional features with installation
 
 Some endpoints may require a different set of features. The default installation will apply our _recommended_ configuration.
 However, you can override these defaults or enable/disable additional features by providing the `-AdditionalFeatures` parameter.
 
-In this example we will disable the use of the background service so non-admin users cannot use Chocolatey (not recommended), and enable Gloabl Confirmation so you no longer need to pass -y when performing a package operation.
+In this example we will disable the use of the background service so non-admin users cannot use Chocolatey (not recommended), and enable Global Confirmation so you no longer need to pass -y when performing a package operation.
 
 ```powershell
 Set-Location /path/to/register-c4bendpoint.ps1
@@ -51,7 +61,8 @@ Set-Location /path/to/register-c4bendpoint.ps1
 
 You can include additional Chocolatey sources during the installation process by providing the `-AdditionalSources` parameter.
 
-#### Include a group repository source
+### Include a group repository source
+
 In this example we will add a new source called Engineering, which is a group source configured on the repository server 
 that contains a repository for Engineering-specific packages, with a base repository of general use packages.
 
@@ -60,7 +71,7 @@ Set-Location /path/to/register-c4bendpoint.ps1
 . .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalSources @{Name = 'Engineering'; Source = 'https://repo.fabrikam.com/repository/EngineeringGroup/index.json'}
 ```
 
-#### Include a local source
+### Include a local source
 
 <Callout type="warning">
     The local folder must exist prior to using this source.
@@ -90,7 +101,7 @@ The following is a sample hashtable of all the available options you can pass wh
     Certificate = 'C:\cert.pfx'
     CertificatePassword = 's0mepa$$'
 }
-    ```
+```
 
 ## Install additional packages
 
@@ -100,7 +111,8 @@ You can install additional Chocolatey packages during the installation process b
     To use this parameter, you must ensure that the package is available on configured sources.
 </Callout>
 
-#### Install the latest version of the notepadplusplus.install package
+### Install the latest version of the notepadplusplus.install package
+
 The following example installs the notepadplusplus.install package.
 
 ```powershell
@@ -108,7 +120,8 @@ Set-Location /path/to/register-c4bendpoint.ps1
 . .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalPackages @{Id ='notepadplusplus.install'}
 ```
 
-#### Install a specific version of the notepadplusplus.install package
+### Install a specific version of the notepadplusplus.install package
+
 The following example installs version 8.7.5 of the notepadplusplus.install package.
 
 ```powershell
@@ -116,7 +129,10 @@ Set-Location /path/to/register-c4bendpoint.ps1
 . .\Register-C4bEndpoint.ps1 -RepositoryCredential (Get-Credential) -AdditionalPackages @{Id ='notepadplusplus.install'; Version = '8.7.5'}
 ```
 
-#### Install a specific version of the notepadplusplus.install package, and pin it so it does not upgrade automaticallyThe following example installs version 8.7.5 of the notepadplusplus.install package and pins it so that it is not upgraded when using `choco upgrade`
+### Install a specific version of the notepadplusplus.install package, and pin it so it does not upgrade automatically
+
+The following example installs version 8.7.5 of the notepadplusplus.install package and pins it so that it is not upgraded when using `choco upgrade`.
+
 To upgrade this package, you will need to first unpin it, and then perform the upgrade.
 
 ```powershell
