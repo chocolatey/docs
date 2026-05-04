@@ -166,6 +166,22 @@ You can additionally use this script to add configuration, packages, and more.
 
 By passing arguments to `AdditionalConfiguration`, `AdditionalFeatures`, `AdditionalSources`, and `AdditionalPackages` you can additively configure your Chocolatey client - or you can add lines directly to the Client Setup script and deploy that.
 
+### Include Packaging Tools with Installation
+
+Some members of your team may be responsible for maintaining Chocolatey packages in your organization. These tools can be included in the installation by providing the `-IncludePackageTools` parameter.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -IncludePackageTools
+```
+
+### Skip Chocolatey GUI Installation
+
+Some machines within your organization might not require the installation of the self-service Chocolatey GUI application. Examples of these types of machines may include Windows servers with no GUI interface, or digital signage/kiosk thin clients. You can skip installation of the Chocolatey GUI application by providing the `-SkipChocolateyGUI` parameter.
+
+```powershell
+.\ClientSetup.ps1 @ScriptArgs -IncludePackageTools -SkipChocolateyGUI
+```
+
 #### Configuration
 
 You can adjust any Chocolatey configuration value by adding an `-AdditionalConfiguration` argument to your Client Setup script invocation.
