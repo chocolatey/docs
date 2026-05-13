@@ -8,6 +8,6 @@ highlight:
   ctaXref: chocolateygui-release-notes
   ctaAnchor: v3.0.1
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---
