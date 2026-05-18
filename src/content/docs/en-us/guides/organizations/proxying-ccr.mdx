@@ -1,0 +1,110 @@
+---
+order: 15
+xref: proxying-ccr
+title: Proxying the Chocolatey Community Repository
+description: Learn how to set up an internal proxy repository for the Chocolatey Community Repository
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Iframe from '@choco-astro/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
+import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
+import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
+
+## Summary
+
+This document details the why and how of creating an internal proxy repository for the [Chocolatey Community Repository (CCR)](https://community.chocolatey.org/packages). We provide guidance for the repository solutions supported by the Chocolatey Support Team. It assumes that you have already configured an internal repository solution for hosting Chocolatey packages.
+
+If you have not set up an internal repository solution, please see our repository setup documentation in our <Xref title="Repository Solution" value="organizational-repository-solution" /> within our <Xref title="Organizational Deployment Guide" value="organizational-deployment-guide" />.
+
+Creating an internal proxy repository allows organizations to utilize the packages hosted on the Chocolatey Community Repository without breaking our <Xref title="Terms of Use" value="terms" anchor="prohibited-activities" /> as mentioned in [our blog post here](https://blog.chocolatey.org/2026/06/updated-tos) or experiencing <Xref title="rate limiting" value="community-packages-disclaimer" anchor="rate-limiting" />. As packages are requested from the CCR, they are downloaded and hosted in the proxy repository where they can be queried when needed.
+
+### Configuring Your Internal Proxy Repository
+
+* <Xref title="Setting up an internal proxy repository in Inedo ProGet" value="proxying-ccr" anchor="inedo-proget-tab" />
+* <Xref title="Setting up an internal proxy repository in JFrog Artifactory" value="proxying-ccr" anchor="jfrog-artifactory-tab" />
+* <Xref title="Setting up an internal proxy repository in Sonatype Nexus" value="proxying-ccr" anchor="sonatype-nexus-tab" />
+
+export const tabs = [
+    { id: 'inedo-proget-tab', title: 'Inedo ProGet', isActive: true },
+    { id: 'jfrog-artifactory-tab', title: 'JFrog Artifactory' },
+    { id: 'sonatype-nexus-tab', title: 'Sonatype Nexus' },
+];
+
+<TabsTabContainer content={tabs} />
+<TabsPaneContainer>
+    <TabsPane content={tabs[0]}>
+
+#### Inedo ProGet
+
+<table>
+    <tr>
+        <th>Feed Type</th>
+        <td>Chocolatey Packages</td>
+    </tr>
+    <tr>
+        <th>New Feed</th>
+        <td>Free/Open Source Chocolatey Packages</td>
+    </tr>
+    <tr>
+        <th>Feed Name</th>
+        <td>Type a name for your proxy repository.</td>
+    </tr>
+</table>
+
+For more information, visit Inedo ProGet's documentation on [HOWTO: Set Up a Proxy Feed of the Chocolatey Community Repository](https://docs.inedo.com/docs/proget/feeds/chocolatey/howto-chocolatey-proxyccr).
+
+    </TabsPane>
+    <TabsPane content={tabs[1]}>
+
+#### JFrog Artifactory
+
+<table>
+    <tr>
+        <th>Repository Type</th>
+        <td>Remote</td>
+    </tr>
+    <tr>
+        <th>Package Type</th>
+        <td>NuGet</td>
+    </tr>
+    <tr>
+        <th>Repository Key</th>
+        <td>Create a unique identifier for the repository.</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>https://community.chocolatey.org/</td>
+    </tr>
+    <tr>
+        <th>Metadata Retrieval Cache Period (Sec) in Advanced Settings</th>
+        <td>14400</td>
+    </tr>
+</table>
+
+For more information, visit JFrog Artifactory's documentation on how to [Configure a Remote Repository](https://docs.jfrog.com/artifactory/docs/remote-repositories#configure-a-remote-repository).
+
+    </TabsPane>
+    <TabsPane content={tabs[2]}>
+
+#### Sonatype Nexus
+
+<table>
+    <tr>
+        <th>Name</th>
+        <td>Type a name for your proxy repository.</td>
+    </tr>
+    <tr>
+        <th>NuGet Protocol Version</th>
+        <td>Set the protocol version to **V2**.</td>
+    </tr>
+    <tr>
+        <th>Remote Storage</th>
+        <td>https://community.chocolatey.org/api/v2/</td>
+    </tr>
+</table>
+
+For more information, visit Sonatype Nexus' documentation on how to configure a [NuGet Proxy Repository](https://help.sonatype.com/en/nuget-repositories.html#nuget-proxy-repository).
+
+</TabsPane>
+</TabsPaneContainer>
