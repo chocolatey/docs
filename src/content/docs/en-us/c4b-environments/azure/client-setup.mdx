@@ -107,7 +107,10 @@ param(
 
     # Allows for the addition of alternative sources after the base configuration  has been applied.
     # Can override base configuration with this parameter
-    [Hashtable[]]$AdditionalSources
+    [Hashtable[]]$AdditionalSources,
+
+    # Allows for the skipping of ChocolateyGUI installation.
+    [Switch]$SkipChocolateyGUI
 )
 $RepositoryCredential = [PSCredential]::new($RepositoryCredential.UserName, $RepositoryCredential.SecurePassword)
 $params = $PSBoundParameters
