@@ -17,61 +17,73 @@ From a completely fresh CCM instance with at least one computer checking into Ce
 - Start the Deployment Plan.
 
 The process involves a couple of intermediary steps as well, since we're using the raw REST API endpoints here (see below).
-We're also assuming as part of this example that you've already [Authenticated to the CCM API](#authentication) and have a `$Session` variable created as in that example.
+We're also assuming as part of this example that you've already <Xref title="Authenticated to the CCM API" value="ccm-api" anchor="Authentication" /> and have a `$Session` variable created as in that example.
 
 ### 1. Get All CCM-Managed Computers
 
 ```powershell
 $CcmServerHostname = 'chocoserver'
 $params = @{
-    Uri        = "https://$CCmServerHostname/api/services/app/Computers/GetAll"
-    Method     = 'GET'
-    WebSession = $Session
+    Uri             = "https://$CCmServerHostname/api/services/app/Computers/GetAll"
+    Method          = 'GET'
+    WebSession      = $Session
+    UseBasicParsing = $true
 }
 $ComputerList = Invoke-RestMethod @params
 ```
 
 ### 2. Create an _All Computers_ Group
 
+<Callout type="info">
+    From Chocolatey Central Management version 0.11.0, an `All Computers` group is dynamically created already. On these installations, you can skip creation of the group and just run the retrieval step.
+</Callout>
+
 ```powershell
 # Create group in CCM
-$GroupName = 'All Clients'
 $Params = @{
-    Uri         = "https://$CcmServerHostname/api/services/app/Groups/CreateOrEdit"
-    Method      = 'POST'
-    WebSession  = $Session
-    ContentType = 'application/json'
-    Body        = @{
-        name        = $GroupName
+    Uri             = "https://$CcmServerHostname/api/services/app/Groups/CreateOrEdit"
+    Method          = 'POST'
+    WebSession      = $Session
+    ContentType     = 'application/json'
+    Body            = @{
+        name        = 'All Computers'
         description = 'All CCM client machines'
         groups      = @()
         computers   = @(
             $ComputerList.result | Select-Object -Property @{ Name = 'computerId'; Expression = { "$($_.id)" } }
         )
     } | ConvertTo-Json
+    UseBasicParsing = $true
 }
 $null = Invoke-RestMethod @params
+```
 
+You can now retrieve the details of the group, including the ID (which you will need for targeting deployments).
+
+```powershell
 # Retrieve created group information
 $params = @{
-    Uri        = "https://$CcmServerHostname/api/services/app/Groups/GetAll"
-    Method     = "GET"
-    WebSession = $Session
+    Uri             = "https://$CcmServerHostname/api/services/app/Groups/GetAll"
+    Method          = "GET"
+    WebSession      = $Session
+    UseBasicParsing = $true
 }
-$Group = Invoke-RestMethod @params |
-    Select-Object -ExpandProperty result |
-    Where-Object Name -EQ $GroupName
+$Group = (Invoke-RestMethod @params).result.Where{
+    $_.Name -eq "All Computers"
+}
+Write-Host "The '$($Group.Name)' group has the ID '$($Group.Id)'"
 ```
 
 ### 3. Create a New Deployment Plan
 
 ```powershell
 $params = @{
-    Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
-    Method      = "POST"
-    WebSession  = $Session
-    ContentType = 'application/json'
-    Body        = @{ name = "Upgrade Chocolatey-Managed Applications [$(Get-Date)]" } | ConvertTo-Json
+    Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
+    Method          = "POST"
+    WebSession      = $Session
+    ContentType     = 'application/json'
+    Body            = @{ name = "Upgrade Chocolatey-Managed Applications [$(Get-Date)]" } | ConvertTo-Json
+    UseBasicParsing = $true
 }
 $deployment = (Invoke-RestMethod @params).result
 ```
@@ -80,11 +92,11 @@ $deployment = (Invoke-RestMethod @params).result
 
 ```powershell
 $params = @{
-    Uri         = "https://$CcmServerHostname/api/services/app/DeploymentSteps/CreateOrEdit"
-    Method      = "POST"
-    WebSession  = $Session
-    ContentType = 'application/json'
-    Body        = @{
+    Uri             = "https://$CcmServerHostname/api/services/app/DeploymentSteps/CreateOrEdit"
+    Method          = "POST"
+    WebSession      = $Session
+    ContentType     = 'application/json'
+    Body            = @{
         deploymentPlanId               = $deployment.Id
         name                           = "Choco Upgrade All"
         validExitCodes                 = "0, 1605, 1614, 1641, 3010"
@@ -98,6 +110,7 @@ $params = @{
         # Syntax for basic Deployment Steps is "<ChocoCommand>|<PackageName>"
         script                         = "upgrade|all"
     } | ConvertTo-Json
+    UseBasicParsing = $true
 }
 $null = Invoke-RestMethod @params
 ```
@@ -106,20 +119,22 @@ $null = Invoke-RestMethod @params
 
 ```powershell
 $params = @{
-    Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
-    Method      = "POST"
-    WebSession  = $Session
-    ContentType = 'application/json'
-    Body        = @{ id = $deployment.Id } | ConvertTo-Json
+    Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
+    Method          = "POST"
+    WebSession      = $Session
+    ContentType     = 'application/json'
+    Body            = @{ id = $deployment.Id } | ConvertTo-Json
+    UseBasicParsing = $true
 }
 $null = Invoke-RestMethod @params
 
 $params = @{
-    Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/Start"
-    Method      = "POST"
-    WebSession  = $Session
-    ContentType = 'application/json'
-    Body        = @{ id = $deployment.Id } | ConvertTo-Json
+    Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/Start"
+    Method          = "POST"
+    WebSession      = $Session
+    ContentType     = 'application/json'
+    Body            = @{ id = $deployment.Id } | ConvertTo-Json
+    UseBasicParsing = $true
 }
 $null = Invoke-RestMethod @params
 ```
@@ -133,7 +148,7 @@ In this example, we set the trigger to run daily, but you could configure it to 
 $recurringDeploymentScript = {
     # Fill in the CCM Server name as well as the Group ID that the Deployment Step will target
     $CcmServerHostname = 'chocoserver'
-    $GroupId = 1
+    $GroupId = 1  # Default ID of the All Computers group
 
     # Authenticate to API
     # NOTE: This is an example only; it's never a great idea to store your credentials in a script or scheduled task.
@@ -143,25 +158,26 @@ $recurringDeploymentScript = {
         password               = 'ch0c0R0cks'
     }
 
-    $null = Invoke-WebRequest -Uri "https://$CcmServerHostname/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop
+    $null = Invoke-WebRequest -Uri "https://$CcmServerHostname/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop -UseBasicParsing
 
     # Create New Deployment Plan
     $params = @{
-        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
-        Method      = "POST"
-        WebSession  = $Session
-        ContentType = 'application/json'
-        Body        = @{ name = "Upgrade Chocolatey-Managed Applications [$(Get-Date)]" } | ConvertTo-Json
+        Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/CreateOrEdit"
+        Method          = "POST"
+        WebSession      = $Session
+        ContentType     = 'application/json'
+        Body            = @{ name = "Upgrade Chocolatey-Managed Applications [$(Get-Date)]" } | ConvertTo-Json
+        UseBasicParsing = $true
     }
     $deployment = (Invoke-RestMethod @params).result
 
     # Add Deployment Step
     $params = @{
-        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentSteps/CreateOrEdit"
-        Method      = "POST"
-        WebSession  = $Session
-        ContentType = 'application/json'
-        Body        = @{
+        Uri             = "https://$CcmServerHostname/api/services/app/DeploymentSteps/CreateOrEdit"
+        Method          = "POST"
+        WebSession      = $Session
+        ContentType     = 'application/json'
+        Body            = @{
             deploymentPlanId               = $deployment.Id
             name                           = "Choco Upgrade All"
             validExitCodes                 = "0, 1605, 1614, 1641, 3010"
@@ -174,25 +190,28 @@ $recurringDeploymentScript = {
             )
             script                         = "upgrade|all"
         } | ConvertTo-Json
+        UseBasicParsing = $true
     }
     $null = Invoke-RestMethod @params
 
     # Move Deployment Plan to Ready & Start the Deployment Plan
     $params = @{
-        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
-        Method      = "POST"
-        WebSession  = $Session
-        ContentType = 'application/json'
-        Body        = @{ id = $deployment.Id } | ConvertTo-Json
+        Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/MoveToReady"
+        Method          = "POST"
+        WebSession      = $Session
+        ContentType     = 'application/json'
+        Body            = @{ id = $deployment.Id } | ConvertTo-Json
+        UseBasicParsing = $true
     }
     $null = Invoke-RestMethod @params
 
     $params = @{
-        Uri         = "https://$CcmServerHostname/api/services/app/DeploymentPlans/Start"
-        Method      = "POST"
-        WebSession  = $Session
-        ContentType = 'application/json'
-        Body        = @{ id = $deployment.Id } | ConvertTo-Json
+        Uri             = "https://$CcmServerHostname/api/services/app/DeploymentPlans/Start"
+        Method          = "POST"
+        WebSession      = $Session
+        ContentType     = 'application/json'
+        Body            = @{ id = $deployment.Id } | ConvertTo-Json
+        UseBasicParsing = $true
     }
     $null = Invoke-RestMethod @params
 }

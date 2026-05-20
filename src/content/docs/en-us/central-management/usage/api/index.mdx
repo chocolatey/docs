@@ -27,19 +27,27 @@ You will need to use the authenticated session variable for any API calls.
 ```powershell
 # Replace 'chocoserver' with the hostname of your CCM server in your environment
 $CcmServerHostname = 'chocoserver'
-$Credential = Get-Credential
-$body = @{
-    usernameOrEmailAddress = $Credential.UserName
-    password = $Credential.GetNetworkCredential().Password
+$Credential = Get-Credential ccmadmin
+
+$LoginArguments = @{
+    Uri = "https://$CcmServerHostname/Account/Login"
+    Method = "POST"
+    Body = @{
+        usernameOrEmailAddress = $Credential.UserName
+        password = $Credential.GetNetworkCredential().Password
+    }
+    ContentType = "application/x-www-form-urlencoded"
+    SessionVariable = "Session"
+    UseBasicParsing = $true
 }
-$Result = Invoke-WebRequest -Uri "https://$CcmServerHostname/Account/Login" -Method POST -ContentType 'application/x-www-form-urlencoded' -Body $body -SessionVariable Session -ErrorAction Stop
+
+$null = Invoke-WebRequest @LoginArguments
 ```
 
-While authenticated, you can target API endpoints like this:
+While authenticated, you can target API endpoints like this (using `Computers/GetAll` as the example):
 
 ```powershell
-# The $Session variable name must match the string given to -SessionVariable when authenticating.
-Invoke-WebRequest -Uri "https://$CcmServerHostname/$endpointUrl" -Method $Method -Body $Parameters -Session $Session
+Invoke-RestMethod -Uri "https://$CcmServerHostname/api/services/app/Computers/GetAll" -WebSession $Session -UseBasicParsing
 ```
 
 ## Endpoints
