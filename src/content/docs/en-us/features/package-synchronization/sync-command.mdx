@@ -16,7 +16,7 @@ import Xref from '@components/Xref.astro';
 
 When running `choco list --include-programs`, a list of additional applications can be seen at the end of the output that are not managed with Chocolatey.
 
-Running the `choco sync` command allows Chocolatey to reference the registry keys for those additional applications in Programs and Features that are not being managed with Chocolatey, automatically generate a package, and then map the application to that package and bring it under Chocolatey's management.
+Running the `choco sync` command allows Chocolatey to reference the registry keys for those additional applications in Programs and Features that are not being managed with Chocolatey, automatically generate a package, and then map the application to that package and bring it under Chocolatey's management. This can save time and effort in creating packages for these applications from scratch!
 
 **Use of the `choco sync` command is only available with a Chocolatey for Business (C4B) license.**
 
@@ -49,7 +49,7 @@ $mapping.GetEnumerator() | Foreach-Object {choco sync --id="$($_.Key)" --package
 
 ### Alternate Use
 
-To synchronize your system to allow internal management only, open an administrative PowerShell session and run `choco sync` and Chocolatey will automatically create and name packages for all software in Programs and Features. These packages are placed in the `C:\Users\$USERNAME\sync` folder by default, where you can retrieve them and push them to your internal repository. If you specified a directory with the `--output-directory` option, the packages will be placed there instead.
+To synchronize your system to allow internal management only, open an administrative PowerShell session and run `choco sync` and Chocolatey will automatically create and name packages for all software in Programs and Features. These packages are placed in the directory where the command is run in the `sync` folder by default (for example, if you run the command from `C:\Packages\Chocolatey`, the synced packages will be located at `C:\Packages\Chocolatey\sync`), where you can retrieve them and push them to your internal repository. If you specified a directory with the `--output-directory` option, the packages will be placed there instead.
 
 ### Additional Considerations
 
