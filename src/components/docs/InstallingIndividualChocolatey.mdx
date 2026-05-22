@@ -1,0 +1,14 @@
+---
+
+---
+import Callout from '@choco-astro/components/Callout.astro';
+import Xref from '@components/Xref.astro';
+
+1. Open PowerShell as an administrator. Almost all software requires administrative privilege to install, upgrade, or uninstall it. If you can't run PowerShell as an administrator, refer to our our <Xref title="Non-Administrative Installation" value="setup-choco" anchor="non-administrative-install" />. If you want to install to a location other than the default (`C:\ProgramData\chocolatey`), check out <Xref title="installing to a different location" value="setup-choco" anchor="installing-to-a-different-location" />.
+1. Type `Get-ExecutionPolicy` and press Enter. If it returns `Restricted`, then run `Set-ExecutionPolicy Bypass -Scope Process`.
+1. Copy the code below and paste it into your PowerShell session:
+```PowerShell
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+4. Press Enter to run the command.
+5. Once the command completes, Chocolatey is installed! Run `choco` for basic version output or `choco --help` for help displayed in the shell.
