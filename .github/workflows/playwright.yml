@@ -11,5 +11,17 @@ jobs:
     steps:
       - name: Checkout repository using git
         uses: actions/checkout@v6
-      - name: Install, build, and upload your site
-        uses: withastro/action@v6
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: 'package.json'
+      - name: Build site
+        run: yarn build
+      - name: Run Playwright tests
+        run: yarn playwright
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
