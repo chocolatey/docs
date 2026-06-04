@@ -461,9 +461,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chocolatey-software/docs@chocolatey/choco-theme#head=choco-theme/2.9.0&workspace=@chocolatey-software/docs":
-  version: 2.9.0
-  resolution: "@chocolatey-software/docs@https://github.com/chocolatey/choco-theme.git#workspace=%40chocolatey-software%2Fdocs&commit=7b131083bde03f65502250cd639a996b94e58160"
+"@chocolatey-software/docs@npm:2.9.1":
+  version: 2.9.1
+  resolution: "@chocolatey-software/docs@npm:2.9.1"
   dependencies:
     "@docsearch/css": "npm:^4.6.3"
     "@docsearch/js": "npm:^4.6.3"
@@ -473,7 +473,7 @@ __metadata:
     clipboard: "npm:^2.0.11"
     jquery: "npm:^3.7.1"
     prismjs: "npm:^1.30.0"
-  checksum: 10c0/5f58fde9e512bb1e985d331e04ad1fa59baf399bd73a38eb749575eed656c73e0cc9e3cdb2795e78e53a40883dfa53bee862986ad929a71d647b96ab0d66fa0e
+  checksum: 10c0/0c53f5517ac3f40ab6db834be3dcf73b8c9f57e06ec44f4534fe3a6b929d86bc5a1722136dddb2d9336bf978eb8c7083419a47a4ad1936108991493dbd000f95
   languageName: node
   linkType: hard
 
@@ -3831,7 +3831,7 @@ __metadata:
     "@chocolatey-software/assets": "npm:2.0.0"
     "@chocolatey-software/astro": "npm:2.8.0"
     "@chocolatey-software/build-tools": "npm:2.8.0"
-    "@chocolatey-software/docs": "chocolatey/choco-theme#head=choco-theme/2.9.0&workspace=@chocolatey-software/docs"
+    "@chocolatey-software/docs": "npm:2.9.1"
     "@chocolatey-software/playwright": "npm:2.8.0"
   languageName: unknown
   linkType: soft
