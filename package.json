@@ -41,7 +41,7 @@
     "@chocolatey-software/playwright": "2.8.0"
   },
   "dependencies": {
-    "@chocolatey-software/docs": "chocolatey/choco-theme#head=choco-theme/2.9.0&workspace=@chocolatey-software/docs"
+    "@chocolatey-software/docs": "2.9.1"
   },
   "resolutions": {
     "@playwright/test": "^1.60.0"
