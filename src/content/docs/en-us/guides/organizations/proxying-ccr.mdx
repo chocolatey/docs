@@ -44,7 +44,7 @@ export const tabs = [
     </tr>
     <tr>
         <th>New Feed</th>
-        <td>Free/Open Source Chocolatey Packages</td>
+        <td>Chocolatey Community Packages</td>
     </tr>
     <tr>
         <th>Feed Name</th>
@@ -52,12 +52,19 @@ export const tabs = [
     </tr>
 </table>
 
-For more information, visit Inedo ProGet's documentation on [HOWTO: Set Up a Proxy Feed of the Chocolatey Community Repository](https://docs.inedo.com/docs/proget/feeds/chocolatey/howto-chocolatey-proxyccr).
+For more information, visit Inedo ProGet's documentation on [HOWTO: Proxy Packages from the Chocolatey Community Repository in ProGet](https://docs.inedo.com/docs/proget/feeds/chocolatey/howto-chocolatey-proxyccr).
 
     </TabsPane>
     <TabsPane content={tabs[1]}>
 
 #### JFrog Artifactory
+
+<div class="callout callout-warning">
+  <div class="callout-header">WARNING</div>
+  <p>
+    This does not work with the self-hosted version of Artifactory and may result in blocks for excessive usage. However, this may work in the Cloud/SaaS version. JFrog is aware that this does not work with the self-hosted version and once this has been resolved, this warning will be removed. [More information can be found here](https://jfrog.atlassian.net/browse/RTFACT-31207).
+  </p>
+</div>
 
 <table>
     <tr>
