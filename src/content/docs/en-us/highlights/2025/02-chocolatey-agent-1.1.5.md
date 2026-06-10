@@ -8,6 +8,6 @@ highlight:
   ctaXref: agent-release-notes
   ctaAnchor: v1.1.5
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---

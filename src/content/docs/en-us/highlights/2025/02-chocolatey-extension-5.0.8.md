@@ -8,6 +8,6 @@ highlight:
   ctaXref: licensed-extension-release-notes
   ctaAnchor: v5.0.8
   ctaText: Read the release notes
-  showOnHome: true
+  showOnHome: false
   showOnHighlights: true
 ---
