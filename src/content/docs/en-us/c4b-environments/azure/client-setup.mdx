@@ -7,6 +7,8 @@ description: How to setup a client machine to use Chocolatey for Business Azure 
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import DynamicCodeBlockInput from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlockInput.astro';
+import DynamicCodeBlock from '@choco-astro/components/dynamicCodeBlock/DynamicCodeBlock.astro';
 
 ## Summary
 
@@ -51,45 +53,48 @@ If you used a self-signed certificate to deploy your Chocolatey for Business Azu
 1. Click **Next**, **Next**, then **Finish**
 1. Close the Microsoft Management Console
 
-## Client Setup Script
+## Endpoint Registration
 
-To on-board clients, you run the `ClientSetup.ps1` script provided with your Chocolatey for Business Azure Environment.
+To on-board clients, you can run the following script, which will download all requirements from your environment and configure it with our suggested defaults.
 
-You will need the following values ready when running this script:
+<Callout type="info">
+    Updating the values here will update the script below - no values are sent to a server, they are temporarily stored locally in your browser.
+</Callout>
+
+You will require the following values to run this script:
 
 * `FQDN`: The fully qualified domain name used to access your environment.
+    <DynamicCodeBlockInput name="AzureFqdnValue" defaultValue="Enter the FQDN for your Chocolatey for Business Azure Environment here..." />
 * `ccmClientCommunicationSalt`: This is the client-side salt additive. More information about this can be found in the <Xref title="C4B Config Settings" value="ccm-client" anchor="config-settings" /> docs.
+    <DynamicCodeBlockInput name="AzureCcmClientSaltValue" defaultValue="Enter your ccmClientCommunicationSalt here..." />
 * `ccmServiceCommunicationSalt`: This is the server-side salt additive. More information about this can be found in the <Xref title="C4B Config Settings" value="ccm-client" anchor="config-settings" /> docs.
+    <DynamicCodeBlockInput name="AzureCcmServiceSaltValue" defaultValue="Enter your ccmServiceCommunicationSalt here..." />
 * `ChocoUserPassword`: The password for the `chocouser` account which is used by the client to access your environments' Sonatype Nexus Repository service.
+    <DynamicCodeBlockInput name="AzureChocoUserPasswordValue" defaultValue="Enter your ChocoUserPassword here..." />
 
 Except for the `FQDN`, all of these values are available in your deployed environment's Azure Key Vault.
 See <Xref title="Accessing Services" value="c4b-azure" anchor="accessing-services" /> for more information about retrieving values from the Vault.
 
-When you're ready, run the following on the client from an elevated (Run as Administrator) PowerShell session:
+When you're ready, save the following script to the target client (e.g. as `Register-C4bEndpoint.ps1`) and run it from an elevated (Run as Administrator) PowerShell session (e.g. `~\path\to\Register-C4bEndpoint.ps1`):
 
-```powershell
+<DynamicCodeBlock language="powershell">
+{`
 [CmdletBinding(HelpUri = 'https://docs.chocolatey.org/en-us/c4b-environments/quick-start-environment/advanced-client-configuration/')]
 param(
     # The DNS name of the server that hosts your repository, Jenkins, and Chocolatey Central Management
-    [String]$Fqdn = '{{ Replace with the FQDN for your Chocolatey for Business Azure Environment }}',
+    [String]$Fqdn = 'AzureFqdnValue',
 
     # Client salt value used to populate the centralManagementClientCommunicationSaltAdditivePassword value in the Chocolatey config file
-    [String]$ClientCommunicationSalt = '{{ Replace with ccmClientCommunicationSalt (This value is in your Azure KeyVault) }}',
+    [String]$ClientCommunicationSalt = 'AzureCcmClientSaltValue',
 
     # Server salt value used to populate the centralManagementServiceCommunicationSaltAdditivePassword value in the Chocolatey config file
-    [String]$ServiceCommunicationSalt = '{{ Replace with ccmServiceCommunicationSalt (This value is in your Azure KeyVault) }}',
+    [String]$ServiceCommunicationSalt = 'AzureCcmServiceSaltValue',
 
     # The credential for accessing your Nexus repository, e.g. for 'chocouser'
     $RepositoryCredential = [System.Net.NetworkCredential]@{
         'userName' = 'chocouser'
-        'password' = '{{ Replace with ChocoUserPassword (This value is in your Azure KeyVault) }}'
+        'password' = 'AzureChocoUserPasswordValue'
     },
-
-    # The URL of a proxy server to use for connecting to the repository.
-    [String]$ProxyUrl,
-
-    # The credentials, if required, to connect to the proxy server.
-    [PSCredential]$ProxyCredential,
 
     # Install the Chocolatey Licensed Extension with right-click context menus available
     [Switch]$IncludePackageTools,
@@ -122,7 +127,8 @@ $downloader.Credentials = $RepositoryCredential
 $script = $downloader.DownloadString("https://$($FQDN)/nexus/repository/choco-install/ClientSetup.ps1")
 
 & ([scriptblock]::Create($script)) @params
-```
+`}
+</DynamicCodeBlock>
 
 This script will accomplish the following on your client:
 
