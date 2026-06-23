@@ -36,3 +36,10 @@ If you want to change these settings, follow these steps:
 Once enabled, any user logging into the Chocolatey Central Management website will be presented with this screen, where they will have the allotted time to enter the security code which will have been sent to the email address associated with their account.
 
 The `Remember this browser` checkbox is what can be enabled/disabled in step 6 above.  If the user chooses to enable this setting, a cookie will be created and stored in the browser, meaning that they will not be promoted for a two factor login security code on this browser again.
+
+## Encryption Settings
+
+During initial installation of Chocolatey Central Management, there is a requirement to set a the value for the encryption passphrase.
+This value is used as the seed value when encrypting any secure value stored within the Chocolatey Central Management database.
+The value of this passphrase can be changed at any time, but it will be necessary to provide both the old passphrase, as well as the new passphrase.
+When making a change, any encrypted values will first be decrypted using the old passphrase, and then re-encrypted using the new passphrase.
