@@ -175,15 +175,15 @@ When you run the upgrade of the chocolatey-management-service package from a com
 This happens due to the bounded version numbers that are in place for the service and web packages.  Starting with 0.6.0, both the service and web packages have the following dependencies:
 
 ```xml
-    <dependency id="aspnetcore-runtimepackagestore" version="[3.1.16, 4.0.0)" />
-    <dependency id="dotnetcore-windowshosting" version="[3.1.16, 4.0.0)" />
+<dependency id="aspnetcore-runtimepackagestore" version="[3.1.16, 4.0.0)" />
+<dependency id="dotnetcore-windowshosting" version="[3.1.16, 4.0.0)" />
 ```
 
 Prior to 0.6.0, only the chocolatey-management-web package had the following dependencies:
 
 ```xml
-    <dependency id="aspnetcore-runtimepackagestore" version="[2.1.5, 3.0.0)" />
-    <dependency id="dotnetcore-windowshosting" version="[2.1.5, 3.0.0)" />
+<dependency id="aspnetcore-runtimepackagestore" version="[2.1.5, 3.0.0)" />
+<dependency id="dotnetcore-windowshosting" version="[2.1.5, 3.0.0)" />
 ```
 
 You will notice that there is an upper bounded version number of 3.0.0, meaning that Chocolatey won't allow a version higher than 3.0.0 of these dependencies to be installed.
