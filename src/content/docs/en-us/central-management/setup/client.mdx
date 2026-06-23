@@ -7,6 +7,7 @@ description: How to setup client machines to report into CCM
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import RestartServices from '@components/docs/RestartServices.mdx';
 
 This will guide us through getting an agent installed and configured to check into Chocolatey Central Management and to be set up for handling deployment tasks.
 
@@ -198,9 +199,6 @@ Once you've removed this, you'll need to restart the Agent Service to get it reg
 
 Currently, you do need to restart agents. Here's a handy script:
 
-```powershell
-Get-Service chocolatey-* | Stop-Service
-Get-Service chocolatey-* | Start-Service
-```
+<RestartServices />
 
 <Xref title="Central Management Setup" value="ccm-setup" /> | <Xref title="Chocolatey Central Management" value="central-management" />

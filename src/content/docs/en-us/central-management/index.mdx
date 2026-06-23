@@ -7,6 +7,7 @@ description: What is CCM?
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import RestartServices from '@components/docs/RestartServices.mdx';
 
 Chocolatey Central Management (CCM) provides you insights across your desktop and endpoint environments. CCM is available with Chocolatey for Business only.
 
@@ -166,10 +167,7 @@ Get-Service chocolatey-* | Start-Service
 
 For your agent machines:
 
-```powershell
-Get-Service chocolatey-* | Stop-Service
-Get-Service chocolatey-* | Start-Service
-```
+<RestartServices />
 
 ## Common Errors and Resolutions
 

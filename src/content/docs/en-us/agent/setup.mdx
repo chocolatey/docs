@@ -7,6 +7,7 @@ description: Information on how to setup Chocolatey Agent
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import RestartServices from '@components/docs/RestartServices.mdx';
 
 To install the Chocolatey Agent service, you need to install the `chocolatey-agent` package. The Chocolatey Agent is only available for business edition customers to install from the licensed source (customers trialling the business edition will be provided instructions on how to install).
 
@@ -395,10 +396,7 @@ A way to do this with LocalSystem:
 
 Currently, you do need to restart agents. Here's a handy script:
 
-```powershell
-Get-Service chocolatey-* | Stop-Service
-Get-Service chocolatey-* | Start-Service
-```
+<RestartServices />
 
 ### Background Service is not being used for my non-administrator accounts
 

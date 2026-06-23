@@ -12,6 +12,8 @@ import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
 import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import RestartCcmWebsite from '@components/docs/RestartCcmWebsite.mdx';
+import RestartCcmWebsiteAndServices from '@components/docs/RestartCcmWebsiteAndServices.mdx';
 
 This is the Chocolatey Central Management website that gives an API and a web layer to centrally manage information about your environment and manage endpoints with deployment tasks.
 
@@ -244,21 +246,7 @@ The end result should look something like this:
 
 Once this change has been added, save the file and then run the following to ensure that the process running the Chocolatey Central Management Website is stopped:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 Then try accessing the website again.  Any emails that are then sent from Chocolatey Central Management should then contain valid links back to the site.
 
@@ -364,21 +352,7 @@ It depends. You can simply go to the `appsettings.json` file and adjust the conn
 
 1. Then restart the website by running from admin powershell:
 
-   ```powershell
-   # For CCM versions older than v0.6.0
-   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-   # For CCM version 0.6.0 and 0.6.1
-   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-   Stop-Website -Name ChocolateyCentralManagement
-   Restart-WebAppPool -Name ChocolateyCentralManagement
-   Start-Website -Name ChocolateyCentralManagement
-
-   # For CCM v0.6.2 and up
-   Stop-Website -Name ChocolateyCentralManagement
-   Restart-WebAppPool -Name ChocolateyCentralManagement
-   Start-Website -Name ChocolateyCentralManagement
-   ```
+   <RestartCcmWebsite />
 
 <Callout type="warning">
     Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
@@ -401,21 +375,7 @@ System.ArgumentNullException: Value cannot be null. (Parameter 'str')
 This indicates some of the [required configuration values][required-config] for the CCM website to function are not present.
 Ensure all [required configuration values][required-config] are present, then restart the CCM website:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 ### Chocolatey Central Management Website fails to load with a `500.21` error code.
 
@@ -534,21 +494,7 @@ The end result should look something like this:
 
 Once this change has been added, save the file, and then run the following to ensure that the process running the Chocolatey Central Management Website is stopped:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 And then try accessing the website again.  Any emails that are then sent from Chocolatey Central Management should then contain valid links back to the site.
 
@@ -556,24 +502,7 @@ And then try accessing the website again.  Any emails that are then sent from Ch
 
 You need to restart the web executable currently. We are looking to have it automatically picked up in future releases. Here's a script to handle that:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# Restart Chocolatey Agent and/or CCM service (all versions)
-Get-Service chocolatey-* | Restart-Service
-```
+<RestartCcmWebsiteAndServices />
 
 ### A computer or group is not showing as available for deployments but I have plenty of available licenses.
 
