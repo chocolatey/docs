@@ -26,20 +26,20 @@ This is the Chocolatey Central Management website that gives an API and a web la
 * <Xref title="High-level Requirements" value="ccm-setup" anchor="high-level-requirements" />
 * PowerShell 5.1
 * IIS Set up and available
-* dotnet-aspnetcoremodule-v2 version 20.0.26107
-* dotnet-10.0-runtime version 10.0.7
-* dotnet-10.0-aspnetruntime version 10.0.7
+* dotnet-aspnetcoremodule-v2 version 20.0.26140
+* dotnet-10.0-runtime version 10.0.9
+* dotnet-10.0-aspnetruntime version 10.0.9
 
-The Chocolatey Central Management Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `6.x.x` of these packages, and it is critical that you install these right, otherwise you will encounter errors.  At the time of release, the most recent version of these packages was 6.0.5, though we recommend installing the latest versions of these packages.
+The Chocolatey Central Management Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `10.x.x` of these packages, and it is critical that you install these packages correctly, otherwise you will encounter errors.  The current versions of the dependencies (as of **08 JUL 2026**) are listed here, though we recommend installing the latest versions of these packages as they continue to become available.
 
 ### Script for some prerequisites
 
 ```powershell
 choco install IIS-WebServer --source windowsfeatures --no-progress -y
 choco install IIS-ApplicationInit --source windowsfeatures --no-progress -y
-choco install dotnet-aspnetcoremodule-v2 --version 20.0.26107 --no-progress -y
-choco install dotnet-10.0-runtime --version 10.0.7 --no-progress -y
-choco install dotnet-10.0-aspnetruntime --version 10.0.7 --no-progress -y
+choco install dotnet-aspnetcoremodule-v2 --version 20.0.26140 --no-progress -y
+choco install dotnet-10.0-runtime --version 10.0.9 --no-progress -y
+choco install dotnet-10.0-aspnetruntime --version 10.0.9 --no-progress -y
 ```
 
 ## Step 2: Install Chocolatey Central Management Web Package
