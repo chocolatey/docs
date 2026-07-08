@@ -7,6 +7,7 @@ description: Information about using retention settings within the Administratio
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import RestartCcmWebsite from '@components/docs/RestartCcmWebsite.mdx';
 
 Chocolatey Central Management has a number of settings that allow you to adjust various retention periods. By default, only the Audit Retention policy is enabled.
 
@@ -26,12 +27,7 @@ As noted in the User Interface, any modifications to this section of the setting
 1. Get direct access to the machine that is hosting the Chocolatey Central Management Web Application
 1. Open an administrative PowerShell session
 1. Run the following commands:
-    ```powershell
-    Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-    Stop-Website -Name ChocolateyCentralManagement
-    Restart-WebAppPool -Name ChocolateyCentralManagement
-    Start-Website -Name ChocolateyCentralManagement
-    ```
+    <RestartCcmWebsite />
 
 ## Audit Retention
 

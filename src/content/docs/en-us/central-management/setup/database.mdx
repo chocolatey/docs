@@ -82,6 +82,7 @@ In preparing SQL Server, you need to do the following:
 * Turn on Named Pipes and TCP Server protocols
 * Ensure the TcpPort is 1433 (or know what it is you need to connect to)
 * Set SQL Server Mixed Mode Authentication
+* Set the SQL Server service Startup Type to Automatic
 * Restart SQL Server
 * Open Windows Firewall ports for TCP access (and SQL Server Browser in most cases)
 
@@ -129,6 +130,9 @@ $tcp.Alter()
 Write-Output "SQL Server: Setting Mixed Mode Authentication."
 New-ItemProperty 'HKLM:\Software\Microsoft\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQLServer\' -Name 'LoginMode' -Value 2 -Force
 # VERSION DEPENDENT ABOVE
+
+# Set the SQL Server service Startup Type to Automatic
+sc.exe config 'MSSQL$SQLEXPRESS' start=auto
 
 Write-Output "SQL Server: Forcing Restart of Instance."
 Restart-Service -Force 'MSSQL$SQLEXPRESS'
@@ -418,7 +422,7 @@ Unfortunately only SQL Server SKUs work with Chocolatey Central Management at th
 
 ### What is the Chocolatey Central Management compatibility matrix?
 
-Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> for details.
+Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> for details.
 
 ### What is the minimum required configuration for the appsettings.json file?
 

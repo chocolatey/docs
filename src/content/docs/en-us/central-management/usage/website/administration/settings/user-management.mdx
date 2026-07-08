@@ -8,6 +8,58 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
+## External Login Settings
+
+1. Open the Chocolatey Central Management Site in the browser.
+1. Login with the `ccmadmin` user.
+1. In the left sidebar menu click on **Administration** and then **Settings**.
+1. Click on the **User Management** tab in the **Settings** screen.
+1. Under External Login Settings click the **Enable social logins** checkbox.
+1. From the list of available external login providers (currently Facebook, Google, X, and Microsoft) click the checkbox for each one that should be used.
+
+    ![Enable External Login Settings](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-social-logins-enable-providers.png)
+
+1. Enter all necessary information (use the **Update app secret** button to add the app secret and click the **Save** button).
+
+    ![Update Facebook Secret Modal](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-modal-facebook-secret.png)
+
+    ![Update Google Secret Modal](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-modal-google-secret.png)
+
+    ![Update X Secret Modal](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-modal-twitter-secret.png)
+
+    ![Update Microsoft Secret Modal](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-modal-microsoft-secret.png)
+
+1. Click the **Save all** button at the bottom left of the page to save your settings.
+
+<Callout type="info">
+    The id and secret can be obtained by creating an app with each of the external login providers. Below are some of the external login providers' documentation:
+    - [Facebook](https://developers.facebook.com/documentation/facebook-login)
+    - [Google](https://support.google.com/cloud/answer/15549257?hl=en)
+    - [X](https://docs.x.com/x-api/getting-started/getting-access)
+    - [Microsoft](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow)
+
+    Google user info endpoint should be set to `https://www.googleapis.com/oauth2/v2/userinfo`
+
+    Add the following to Authorized redirect URIs to each of the external login providers:
+    - Facebook: `https://<YOUR DOMAIN>/`
+    - Google: `https://<YOUR DOMAIN>/signin-google`
+    - X: `https://<YOUR DOMAIN>/signin-twitter`
+    - Microsoft: `https://<YOUR DOMAIN>/signin-microsoft`
+</Callout>
+
+After logging out of the Chocolatey Central Management Site, new options will be shown to allow logging in with the selected External Login providers.
+
+![Login screen showing options to login with selected External Login providers](https://img.chocolatey.org/docs/ccm-playwright/account/login/social-logins-buttons.png)
+
+<Callout type="info">
+    If you are unable to login with each of the social media logins check the following:
+    - Ensure the `id` and `secret` are entered correctly in the Chocolatey Central Management Site settings.
+    - Login to the external login provider's console and ensure the correct `Authorized Redirect URI` has been added with your domain.
+    - If you are unable to login to Google using a personal account change the user type in the Google Console under audience to `External` instead of `Internal`.
+    - For Facebook, go into `settings` and allow permissions to the `user email` and `public profile`.
+    - For X, under `App Permissions` you will need to enable `Request email from users`.
+</Callout>
+
 ## LDAP Configuration
 
 <Callout type="info">
@@ -19,7 +71,7 @@ import Xref from '@components/Xref.astro';
 1. In the left sidebar menu click on **Administration**and then **Settings**.
 1. Click on the **User Management** tab in the **Settings** screen.
 1. Under LDAP Setting click the **Enable LDAP authentication** checkbox.
-1. Fill in your FQDN for the `Domain name` field and the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
+1. If LDAPS (rather than bare LDAP) is to be used, ensure to check the **Use SSL** checkbox. Fill in your FQDN for the `Domain name` field and the `User name` field with an active directory account that has access to query user accounts within your active directory environment.
 
     ![Chocolatey Central Management LDAP Setup](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-checkbox-enable-ldap.png)
 
@@ -36,3 +88,27 @@ import Xref from '@components/Xref.astro';
     attempting to use for login. If any of these fields are empty, errors will be encountered when attempting to login
     to the Central Management application.
 </Callout>
+
+## Passwordless Login
+
+1. Open the Chocolatey Central Management Site in the browser.
+1. Login with the `ccmadmin` user.
+1. In the left sidebar menu click on **Administration**and then **Settings**.
+1. Click on the **User Management** tab in the **Settings** screen.
+1. Under Passwordless Login click the **Enable passwordless login via email** checkbox.
+
+    ![Enable Passwordless Login checkbox activated](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-checkbox-enable-passwordless-login.png)
+
+1. Click the **Save all** button at the bottom left of the page to save your settings.
+
+After logging out of the Chocolatey Central Management Site, a new option will be shown to allow logging in without using a password.
+
+![Login screen showing option to login without using a password](https://img.chocolatey.org/docs/ccm-playwright/account/login/passwordless-login-button.png)
+
+Clicking the **Continue without a password** button directs the user to a new page where they can enter the email to send a confirmation code to. If this email address is matched to a user on the site, a confirmation code will be sent to the email address.
+
+![Passwordless Login page](https://img.chocolatey.org/docs/ccm-playwright/account/login/passwordless-login-page.png)
+
+The user will have a 5 minute window where they will be able to enter the verification code.
+
+![Verify Passwordless Code page](https://img.chocolatey.org/docs/ccm-playwright/account/login/verify-passwordless-code.png)

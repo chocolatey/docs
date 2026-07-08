@@ -402,7 +402,7 @@ Yes, absolutely. If you use Chocolatey For Business's PowerShell Windows Service
 
 ### What is the Chocolatey Central Management Component Compatibility Matrix?
 
-Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> for details.
+Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> for details.
 
 ### I entered incorrect database details on install. Do I need to reinstall to fix that?
 
@@ -512,15 +512,15 @@ You may see messaging like the following in the `chocolatey-agent.log`:
  requirements, e.g. Message, Transport, None).
 ```
 
-This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Chocolatey Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Chocolatey Central Management to v0.2.0+ at your earliest convenience. Or if you are on Chocolatey Central Management v0.3.0+, your agents need to be on v0.11.0+. Please refer to the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" />.
+This is due to having a Chocolatey Agent that is v0.10.0+ versus an older Chocolatey Central Management Service (< v0.2.0). Newer agents are incompatible because they use newer and more secure methods of communication. Please upgrade Chocolatey Central Management to v0.2.0+ at your earliest convenience. Or if you are on Chocolatey Central Management v0.3.0+, your agents need to be on v0.11.0+. Please refer to the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" />.
 
 ### Unable to check for deployments from Chocolatey Central Management.
 
-This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on Chocolatey Central Management v0.3.0+, your agents need to be on v0.11.0+. Please refer to the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" />. You may need to be on at least v0.3.0 and agents on v0.11.0+. If you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
+This will provide similar messaging as the above. The fix is the same, upgrade Chocolatey Central Management to v0.2.0+. Or if you are on Chocolatey Central Management v0.3.0+, your agents need to be on v0.11.0+. Please refer to the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" />. You may need to be on at least v0.3.0 and agents on v0.11.0+. If you are experiencing improper passphrase issues noted below, it means you need to likely upgrade to v0.3.0+ / v0.11.0 across your infrastructure.
 
 ### We are seeing the error "attempted to call report_computer_information with an improper passphrase" in the Chocolatey Central Management service log.
 
-If you are in the Chocolatey Central Management service logs, you may see the above error. This is a bug that was found with the communication of Chocolatey Central Management v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in Chocolatey Central Management v0.3.0 and Chocolatey Agent v0.11.0. Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
+If you are in the Chocolatey Central Management service logs, you may see the above error. This is a bug that was found with the communication of Chocolatey Central Management v0.2.0 and Chocolatey Agent v0.10.0. That was resolved in Chocolatey Central Management v0.3.0 and Chocolatey Agent v0.11.0. Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> and [Licensed Issue #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152) for more details.
 
 ### The client reports successful check-in, but nothing is showing up in Chocolatey Central Management.
 

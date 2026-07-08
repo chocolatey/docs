@@ -353,6 +353,7 @@ export default defineConfig({
         '/en-us/create/functions/set-environmentvariable': '/en-us/create/cmdlets/set-environmentvariable/',
         '/en-us/create/functions/test-processadminrights': '/en-us/create/cmdlets/test-processadminrights/',
         '/en-us/create/functions/update-sessionenvironment': '/en-us/create/cmdlets/update-sessionenvironment/',
-        '/en-us/chocolatey-components-dependencies-and-support-lifecycle/': '/en-us/chocolatey-products-dependencies-and-support-lifecycle/'
+        '/en-us/chocolatey-components-dependencies-and-support-lifecycle/': '/en-us/chocolatey-products-dependencies-and-support-lifecycle/',
+        '/en-us/central-management/usage/website/administration/settings/encryption-passphrase/': '/en-us/central-management/usage/website/administration/settings/security/#encryption-settings'
     }
 });

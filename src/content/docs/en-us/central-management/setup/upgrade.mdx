@@ -7,6 +7,8 @@ description: How to upgrade CCM
 import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
+import RestartCcmWebsite from '@components/docs/RestartCcmWebsite.mdx';
+import RestartCcmWebsiteAndServices from '@components/docs/RestartCcmWebsiteAndServices.mdx';
 
 This will guide us through upgrading an existing Chocolatey Central Management installation to newer versions.
 
@@ -26,10 +28,10 @@ We suggest you go through and take a snapshot of your CCM VM before proceeding w
 ## Step 1: Download Latest Packages
 
 <Callout type="info">
-    Make sure you have read over the <Xref title="CCM Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> prior to starting internalization as this will save you some headaches.
+    Make sure you have read over the <Xref title="CCM Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> prior to starting internalization as this will save you some headaches.
 </Callout>
 
-Similar to how we internalized in <Xref title="Setup - Internalize Packages" value="ccm-setup" anchor="step-1-internalize-packages" />, we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the <Xref title="Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" />.
+Similar to how we internalized in <Xref title="Setup - Internalize Packages" value="ccm-setup" anchor="step-1-internalize-packages" />, we need to get the latest editions of everything compatible. Be sure that the versions of packages you have match up with the <Xref title="Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" />.
 
 ```powershell
 # To run this, you need Chocolatey for Business installed (chocolatey / chocolatey.extension).
@@ -41,7 +43,7 @@ $YourInternalRepositoryApiKey = '<YOUR API KEY HERE>'
 $YourBusinessLicenseGuid = '<INSERT C4B LICENSE GUID HERE>'
 
 # Download Chocolatey community related dependencies, internalization necessary
-choco download dotnet-8.0-runtime dotnet-8.0-aspnetruntime dotnet-aspnetcoremodule-v2 --source="'https://community.chocolatey.org/api/v2/'" --internalize --output-directory="'C:\packages'"
+choco download dotnet-10.0-runtime dotnet-10.0-aspnetruntime dotnet-aspnetcoremodule-v2 --source="'https://community.chocolatey.org/api/v2/'" --internalize --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155
@@ -156,24 +158,7 @@ when you have everything on the same box may work, but it may not. Please follow
 
 Yes, you do need to restart the agents, the service, and the web to pick up the license. Here's a script to handle that:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# Restart Chocolatey Agent and/or CCM service (all versions)
-Get-Service chocolatey-* | Restart-Service
-```
+<RestartCcmWebsiteAndServices />
 
 ### Can I use Chocolatey Deployments to upgrade CCM based components?
 
@@ -190,15 +175,15 @@ When you run the upgrade of the chocolatey-management-service package from a com
 This happens due to the bounded version numbers that are in place for the service and web packages.  Starting with 0.6.0, both the service and web packages have the following dependencies:
 
 ```xml
-    <dependency id="aspnetcore-runtimepackagestore" version="[3.1.16, 4.0.0)" />
-    <dependency id="dotnetcore-windowshosting" version="[3.1.16, 4.0.0)" />
+<dependency id="aspnetcore-runtimepackagestore" version="[3.1.16, 4.0.0)" />
+<dependency id="dotnetcore-windowshosting" version="[3.1.16, 4.0.0)" />
 ```
 
 Prior to 0.6.0, only the chocolatey-management-web package had the following dependencies:
 
 ```xml
-    <dependency id="aspnetcore-runtimepackagestore" version="[2.1.5, 3.0.0)" />
-    <dependency id="dotnetcore-windowshosting" version="[2.1.5, 3.0.0)" />
+<dependency id="aspnetcore-runtimepackagestore" version="[2.1.5, 3.0.0)" />
+<dependency id="dotnetcore-windowshosting" version="[2.1.5, 3.0.0)" />
 ```
 
 You will notice that there is an upper bounded version number of 3.0.0, meaning that Chocolatey won't allow a version higher than 3.0.0 of these dependencies to be installed.
@@ -241,15 +226,4 @@ The IIS hosting model changed as of v0.6.0 to use the in-process model, which al
 
 A quick workaround is to stop the CCM website manually before running the upgrade by running the following in an administrative Windows PowerShell session:
 
-```powershell
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force -PassThru
-Stop-Website -Name ChocolateyCentralManagement
-Stop-WebAppPool -Name ChocolateyCentralManagement
-```
-
-Once the upgrade process has completed, you can ensure the website is properly restarted by running:
-
-```powershell
-Start-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />

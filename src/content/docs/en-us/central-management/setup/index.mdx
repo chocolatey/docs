@@ -37,7 +37,7 @@ Additionally, the Chocolatey Central Management components should be installed o
 ## Step 1: Internalize Packages
 
 <Callout type="info">
-    Make sure you have read over the <Xref title="CCM Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> prior to starting internalization as this will save you some headaches.
+    Make sure you have read over the <Xref title="CCM Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> prior to starting internalization as this will save you some headaches.
 </Callout>
 
 The complete installation of CCM requires several packages that are available from the community repository. Let's get them internalized. We will internalize them to a `C:\packages` directory. It is highly recommended that you push the packages to an internal repository before continuing with other steps in this guide. Change the values in the first lines of this script to match what you need in your environment.
@@ -68,13 +68,13 @@ choco download dotnet4.5.2 dotnetfx --force --internalize --internalize-all-urls
   choco download $_ --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# We must use the 8.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 8.0.8, but later package versions (within the 8.x.x release) are expected to work.
-@('dotnet-8.0-runtime', 'dotnet-8.0-aspnetruntime') | Foreach-Object {
-  choco download $_ --version 8.0.8 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# We must use the 10.x.x versions of these packages, so we need to download/internalize these specific items.  At the time of publishing, the most recent version of this package is 10.0.9, but later package versions (within the 10.x.x release) are expected to work.
+@('dotnet-10.0-runtime', 'dotnet-10.0-aspnetruntime') | Foreach-Object {
+  choco download $_ --version 10.0.9 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 }
 
-# Starting with v0.9.0 of the CCM Website package, it uses dotnet-aspnetcoremodule-v2. At the time of publishing, the most recent version of this package 18.0.24201, but later package versions (within the 18.x.x release) are expected to work
-choco download dotnet-aspnetcoremodule-v2 --version 18.0.24201 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
+# Starting with v0.9.0 of the CCM Website package, it uses dotnet-aspnetcoremodule-v2. At the time of publishing, the most recent version of this package 20.0.26140, but later package versions (within the 20.x.x release) are expected to work
+choco download dotnet-aspnetcoremodule-v2 --version 20.0.26140 --force --internalize --internalize-all-urls --append-use-original-location --source="'https://community.chocolatey.org/api/v2/'" --output-directory="'C:\packages'"
 
 # Download Licensed Packages
 ## DO NOT RUN WITH `--internalize` and `--internalize-all-urls` - see https://github.com/chocolatey/chocolatey-licensed-issues/issues/155

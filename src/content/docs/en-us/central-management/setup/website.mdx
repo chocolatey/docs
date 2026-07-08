@@ -12,6 +12,8 @@ import TabsPane from '@choco-astro/components/tabs/TabsPane.astro';
 import TabsPaneContainer from '@choco-astro/components/tabs/TabsPaneContainer.astro';
 import TabsTabContainer from '@choco-astro/components/tabs/TabsTabContainer.astro';
 import CentralManagementSecureConnectionStrings from '@components/docs/CentralManagementSecureConnectionStrings.mdx';
+import RestartCcmWebsite from '@components/docs/RestartCcmWebsite.mdx';
+import RestartCcmWebsiteAndServices from '@components/docs/RestartCcmWebsiteAndServices.mdx';
 
 This is the Chocolatey Central Management website that gives an API and a web layer to centrally manage information about your environment and manage endpoints with deployment tasks.
 
@@ -28,26 +30,26 @@ This is the Chocolatey Central Management website that gives an API and a web la
 * <Xref title="High-level Requirements" value="ccm-setup" anchor="high-level-requirements" />
 * PowerShell 5.1
 * IIS Set up and available
-* dotnet-aspnetcoremodule-v2 version 18.0.26139
-* dotnet-8.0-runtime version 8.0.28
-* dotnet-8.0-aspnetruntime version 8.0.28
+* dotnet-aspnetcoremodule-v2 version 20.0.26140
+* dotnet-10.0-runtime version 10.0.9
+* dotnet-10.0-aspnetruntime version 10.0.9
 
-The Chocolatey Central Management Website is built on ASP.Net Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `8.x.x` of these packages, and it is critical that you install these packages correctly, otherwise you will encounter errors.  The current versions of the dependencies (as of **17 JUN 2026**) are listed here, though we recommend installing the latest versions of these packages as they continue to become available.
+The Chocolatey Central Management Website is built on ASP.NET Core, and as such we need to ensure that it is installed on the server for proper function. Note that the codebase is currently locked to version `10.x.x` of these packages, and it is critical that you install these packages correctly, otherwise you will encounter errors.  The current versions of the dependencies (as of **08 JUL 2026**) are listed here, though we recommend installing the latest versions of these packages as they continue to become available.
 
 ### Script for some prerequisites
 
 ```powershell
 choco install IIS-WebServer --source windowsfeatures --no-progress -y
 choco install IIS-ApplicationInit --source windowsfeatures --no-progress -y
-choco install dotnet-aspnetcoremodule-v2 --version 18.0.26139 --no-progress -y
-choco install dotnet-8.0-runtime --version 8.0.28 --no-progress -y
-choco install dotnet-8.0-aspnetruntime --version 8.0.28 --no-progress -y
+choco install dotnet-aspnetcoremodule-v2 --version 20.0.26140 --no-progress -y
+choco install dotnet-10.0-runtime --version 10.0.9 --no-progress -y
+choco install dotnet-10.0-aspnetruntime --version 10.0.9 --no-progress -y
 ```
 
 ## Step 2: Install Chocolatey Central Management Web Package
 
 <Callout type="info">
-    At this time we don't recommend opening internet access to Chocolatey Central Management web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet.
+    At this time we don't recommend opening internet access to Chocolatey Central Management web. However, if you choose to, you will want to set up SSL/TLS certificates to ensure communication is encrypted over the internet. Starting with version 0.17.0, the Chocolatey Central Management Website now _requires_ an SSL certificate to be used.
 </Callout>
 
 ### Package Parameters
@@ -244,21 +246,7 @@ The end result should look something like this:
 
 Once this change has been added, save the file and then run the following to ensure that the process running the Chocolatey Central Management Website is stopped:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 Then try accessing the website again.  Any emails that are then sent from Chocolatey Central Management should then contain valid links back to the site.
 
@@ -341,7 +329,7 @@ Currently, no.  The Chocolatey Central Management Website expects to reside at t
 
 ### What is the Chocolatey Central Management Component Compatibility Matrix?
 
-Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="ccm-component-compatibility-matrix" /> for details.
+Chocolatey Central Management has specific compatibility requirements with quite a few moving parts. It is important to understand that there are some Chocolatey Agent versions that may not be able to communicate with some versions of Chocolatey Central Management and vice versa.  Please see the <Xref title="Chocolatey Central Management Component Compatibility Matrix" value="central-management" anchor="chocolatey-central-management-component-compatibility-matrix" /> for details.
 
 ### I entered incorrect database details on install, do I need to reinstall to fix that?
 
@@ -364,21 +352,7 @@ It depends. You can simply go to the `appsettings.json` file and adjust the conn
 
 1. Then restart the website by running from admin powershell:
 
-   ```powershell
-   # For CCM versions older than v0.6.0
-   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-   # For CCM version 0.6.0 and 0.6.1
-   Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-   Stop-Website -Name ChocolateyCentralManagement
-   Restart-WebAppPool -Name ChocolateyCentralManagement
-   Start-Website -Name ChocolateyCentralManagement
-
-   # For CCM v0.6.2 and up
-   Stop-Website -Name ChocolateyCentralManagement
-   Restart-WebAppPool -Name ChocolateyCentralManagement
-   Start-Website -Name ChocolateyCentralManagement
-   ```
+   <RestartCcmWebsite />
 
 <Callout type="warning">
     Do not put `sec:` or `secure-` at the start (prefix) of any values that you are adding/modifying directly. That tells Chocolatey components they are encrypted and it will attempt to decrypt them for use. If that is done incorrectly, it will cause things to crash.
@@ -401,21 +375,7 @@ System.ArgumentNullException: Value cannot be null. (Parameter 'str')
 This indicates some of the [required configuration values][required-config] for the CCM website to function are not present.
 Ensure all [required configuration values][required-config] are present, then restart the CCM website:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 ### Chocolatey Central Management Website fails to load with a `500.21` error code.
 
@@ -477,7 +437,7 @@ These errors happen very early in the application execution, and as a result, ar
 
 In these situations, we have found that incorrect database connection strings are typically the root cause of the problem.
 
-Another possible cause for this error is if there are mismatching versions of `dotnet-8.0-aspnetruntime` and `dotnet-aspnetcoremodule-v2`. Ensure that both are on the same patch level. Note that `dotnet-aspnetcoremodule-v2` package versioning does not directly correspond to the dotnet patch level, so it is recommended to use the versions specified in the prerequisites above.
+Another possible cause for this error is if there are mismatching versions of `dotnet-10.0-aspnetruntime` and `dotnet-aspnetcoremodule-v2`. Ensure that both are on the same patch level. Note that `dotnet-aspnetcoremodule-v2` package versioning does not directly correspond to the dotnet patch level, so it is recommended to use the versions specified in the prerequisites above.
 
 ### The term 'Install-ChocolateyAppSettingsJsonFile' is not recognized as the name of a cmdlet, function, script file, or operable program.
 
@@ -534,21 +494,7 @@ The end result should look something like this:
 
 Once this change has been added, save the file, and then run the following to ensure that the process running the Chocolatey Central Management Website is stopped:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-```
+<RestartCcmWebsite />
 
 And then try accessing the website again.  Any emails that are then sent from Chocolatey Central Management should then contain valid links back to the site.
 
@@ -556,24 +502,7 @@ And then try accessing the website again.  Any emails that are then sent from Ch
 
 You need to restart the web executable currently. We are looking to have it automatically picked up in future releases. Here's a script to handle that:
 
-```powershell
-# For CCM versions older than v0.6.0
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-
-# For CCM version 0.6.0 and 0.6.1
-Get-Process -Name "ChocolateySoftware.ChocolateyManagement.Web.Mvc" -ErrorAction SilentlyContinue | Stop-Process -Force
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# For CCM v0.6.2 and up
-Stop-Website -Name ChocolateyCentralManagement
-Restart-WebAppPool -Name ChocolateyCentralManagement
-Start-Website -Name ChocolateyCentralManagement
-
-# Restart Chocolatey Agent and/or CCM service (all versions)
-Get-Service chocolatey-* | Restart-Service
-```
+<RestartCcmWebsiteAndServices />
 
 ### A computer or group is not showing as available for deployments but I have plenty of available licenses.
 
