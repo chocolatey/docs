@@ -67,6 +67,7 @@ Read our [blog post](https://blog.chocolatey.org/2026/05/announcing-ccm-0160-cli
 
 - Enable and enforce a Content Security Policy.
 
+
 ## 0.15.1 (April 20, 2026) \{#v0.15.1}
 
 ### Bug Fixes
@@ -78,6 +79,7 @@ Read our [blog post](https://blog.chocolatey.org/2026/05/announcing-ccm-0160-cli
 ### Enhancement
 
 - Ensure public-facing API endpoints are documented.
+
 
 ## 0.15.0 (March 18, 2026) \{#v0.15.0}
 
@@ -139,6 +141,7 @@ Read our [blog post](https://blog.chocolatey.org/2025/04/announcing-ccm-release-
 - Improve accessibility of Session Timeout Control workflow.
 - Update verbiage for consistency.
 
+
 ## 0.13.2 (February 10, 2025) \{#v0.13.2}
 
 ### Bug Fixes
@@ -146,6 +149,7 @@ Read our [blog post](https://blog.chocolatey.org/2025/04/announcing-ccm-release-
 - Fix - When a Deployment Plan is deleted as part of retention policy, not all objects are removed from the database - see [#404](https://github.com/chocolatey/chocolatey-licensed-issues/issues/404).
 - Fix - SQL Timeout errors are reported in the Chocolatey Central Management Website, causing the site to need to be restarted.
 - Fix - System.NullReferenceException error when trying to edit Software.
+
 
 ## 0.13.1 (October 16, 2024) \{#v0.13.1}
 
@@ -155,11 +159,12 @@ Read our [blog post](https://blog.chocolatey.org/2025/04/announcing-ccm-release-
 - Fix - The `Machine contact timeout in minutes` input box is incorrectly disabled when attempting to edit Deployment Step in Chocolatey Central Management Website.
 - Fix - Azure SQL is incorrectly reported as not supported during Chocolatey Central Management package installations.
 
+
 ## 0.13.0 (September 19, 2024) \{#v0.13.0}
 
 <Callout type="warning">
     The dependencies of all the Chocolatey Central Management packages (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) have changed in this release. This is to allow the installation of .NET 8.0, which is now a requirement to run Chocolatey Central Management.
-    
+
     In addition, support for SQL Server 2014 and earlier has been removed. Any attempt to install one of the Chocolatey Central Management packages against one of these instances will results in an error. [Further information about this change can be found in our blog post](https://blog.chocolatey.org/2024/09/announcing-ccm-release-0.13.0/).
 </Callout>
 
@@ -173,11 +178,13 @@ Read our [blog post](https://blog.chocolatey.org/2025/04/announcing-ccm-release-
 - Provide ability to ensure that all CCM Chocolatey packages are not being installed to a SQL Server 2012/2014 instance.
 - Update front-end to use common [choco-theme](https://github.com/chocolatey/choco-theme) behavior.
 
+
 ## 0.12.1 (May 23, 2024) \{#may-23-2024}
 
 ### Bug Fixes
 
 - Fix - Duplicated Deployment Step reports created for unreachable and unresponsive computers.
+
 
 ## 0.12.0 (November 29, 2023) \{#november-29-2023}
 
@@ -256,6 +263,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 - Remove the ability to assign a User the `ChocoAdmin` Role.
 - Update email templates for consistency.
 
+
 ## 0.10.1 (October 6, 2022) \{#october-6-2022}
 
 ### Bug Fixes
@@ -265,6 +273,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 - API - GetComputerForView method result missing creationTime - see [Licensed #321](https://github.com/chocolatey/chocolatey-licensed-issues/issues/321)
 - Multi-Factor Authentication - Email verification can be enabled while SMTP settings have not been configured
 - Website - Ensure builtin accounts' default email addresses are not resolvable
+
 
 ## 0.10.0 (August 30, 2022) \{#august-30-2022}
 
@@ -302,13 +311,14 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 - Uninstalling chocolatey-management-web should remove IIS Website and Application Pool.
 - Add additional auditing fields for Deployments.
 
+
 ## 0.9.0 (June 15, 2022) \{#june-15-2022}
 
 <Callout type="warning">
     The dependencies of all the Chocolatey Central Management packages (`chocolatey-management-database`, `chocolatey-management-service`, and `chocolatey-management-web`) have changed in this release. This is to allow the installation of .NET 6.0, which is now a requirement to run Chocolatey Central Management.
-    
+
     In addition to the above, all the Chocolatey Central Management packages now make use of the commercial cmdlets, which means that these packages _have_ to be installed on a correctly licensed machine. [Further information about why we have enabled this can be found on our blog post](https://blog.chocolatey.org/2021/09/chocolatey-licensed-changes-restricted-to-licensed-nodes/)
-    
+
     Finally, support for SQL Server 2008 and SQL Server 2008 R2 has been removed. Any attempt to install one of the Chocolatey Central Management packages against one of these instances will results in an error. [Further information about this change can be found in our blog post](https://blog.chocolatey.org/2022/06/ccm-090-remove-sqlserver2008-support/)
 </Callout>
 
@@ -341,6 +351,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 - Remove "Show Log" button from Deployment Step details page for a computer with a result reason of "Unreachable"
 - Provide ability to navigate to software screen from the KPI dashboard screen - see [Licensed #282](https://github.com/chocolatey/chocolatey-licensed-issues/issues/282)
 
+
 ## 0.8.0 (February 28, 2022) \{#february-28-2022}
 
 ### Features
@@ -357,6 +368,7 @@ Read our [blog post](https://blog.chocolatey.org/2023/09/central-management-0.11
 ### Improvements
 
 - Disable updating of related group information when it is not needed as computers are reporting in.
+
 
 ## 0.7.0 (November 17, 2021) \{#november-17-2021}
 
@@ -388,6 +400,7 @@ A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
 
+
 ## 0.6.3 (September 23, 2021) \{#september-23-2021}
 
 ### Bug Fixes
@@ -404,6 +417,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
+
 
 ## 0.6.2 (August 26, 2021) \{#august-26-2021}
 
@@ -426,6 +440,7 @@ A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
 
+
 ## 0.6.1 (August 5, 2021) \{#august-5-2021}
 
 ### Bug Fixes
@@ -437,6 +452,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
+
 
 ## 0.6.0 (August 3, 2021) \{#august-3-2021}
 
@@ -458,6 +474,7 @@ A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
 
+
 ## 0.5.1 (April 12, 2021) \{#april-12-2021}
 
 ### Bug Fixes
@@ -469,6 +486,7 @@ A short video explaining what is included in this release can be found here:
 A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
+
 
 ## 0.5.0 (March 25, 2021) \{#march-25-2021}
 
@@ -491,6 +509,7 @@ Previously, while not recommended, the CCM Service could be run as a user with n
 A short video explaining what is included in this release can be found here:
 
 <Iframe ratio="16x9" link="https://www.youtube.com/embed/ZeT4NxNRFwg?list=PLGvGJzqY88snxQwtZJ-OMUiMVuKHjg-br" />
+
 
 ## 0.4.0 (November 6, 2020) \{#november-6-2020}
 
@@ -526,6 +545,7 @@ Previously this value was set to a constant value of 20 and not configurable. To
 - Deployments - Round percentage complete values on report pages while Deployment Step is in progress
 - Deployments - Auto-refresh Deployment Plan report pages
 
+
 ## 0.3.1 (October 5, 2020) \{#october-5-2020}
 
 ### Bug FIxes
@@ -543,6 +563,7 @@ Previously this value was set to a constant value of 20 and not configurable. To
 - Include CreationTime property on Deployment Plan entity - useful when querying via CCM API
 - Web - Deployments UI - Add Deployment Step modal window should default to basic view
 
+
 ## 0.3.0 (June 25, 2020) \{#june-25-2020}
 
 ### Breaking Changes
@@ -553,6 +574,7 @@ Previously this value was set to a constant value of 20 and not configurable. To
 
 - Fix - Service - Communication with Chocolatey Agent fails on Incorrect Passphrase - see [Licensed #152](https://github.com/chocolatey/chocolatey-licensed-issues/issues/152)
 - Fix - Web - Do not recreate website w/bindings on upgrade - see [Licensed #156](https://github.com/chocolatey/chocolatey-licensed-issues/issues/156)
+
 
 ## 0.2.0 (June 18, 2020) \{#june-18-2020}
 
@@ -602,6 +624,7 @@ Deployments Release - we are excited to bring about managing remote machines wit
 - Database Install - Add `/SkipDatabasePermissionCheck` parameter to skip permissions check - see [licensed #147](https://github.com/chocolatey/chocolatey-licensed-issues/issues/147)
 - Trial licenses that do not include counts will allow 100 licenses - see [licensed #140](https://github.com/chocolatey/chocolatey-licensed-issues/issues/140)
 
+
 ## 0.1.1 (January 30, 2020) \{#january-30-2020}
 
 ### Bug Fixes
@@ -633,6 +656,7 @@ Deployments Release - we are excited to bring about managing remote machines wit
 - All - Show a warning during installation when provided SQL Server connection string doesn't provide an explicit user/password to connect with
 - Service - Adjust logs to provide more appropriate information for normal operations
 - Web - Autofocus on new password text box on password change screen
+
 
 ## 0.1.0 (May 22, 2019) \{#may-22-2019}
 
@@ -675,6 +699,7 @@ Initial preview release
 - Packaging - Added required dependencies to packages
 - Packaging - Add information about available installation parameters to package description
 - Service - Allow modification of configuration settings without the need to restart Windows Service
+
 
 ## 0.1.0-beta-20181009 (October 9, 2018)
 
