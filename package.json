@@ -19,6 +19,8 @@
   "scripts": {
     "astro": "npx astro",
     "audit": "yarn npm audit --all --recursive --no-deprecations",
+    "audit-direct": "yarn npm audit --all --no-deprecations",
+    "audit-resolve": "powershell -NoProfile -File node_modules/@chocolatey-software/build-tools/build/Resolve-YarnAudit.ps1",
     "browsers": "npx playwright install --with-deps",
     "build": "yarn dependencies && yarn telemetry && yarn choco-theme && yarn browsers && npx astro build",
     "build-copy-theme": "npx tsx node_modules/@chocolatey-software/build-tools/build/copy-theme.ts docs",
@@ -36,8 +38,8 @@
   },
   "devDependencies": {
     "@chocolatey-software/assets": "2.0.0",
-    "@chocolatey-software/astro": "2.8.0",
-    "@chocolatey-software/build-tools": "2.8.0",
+    "@chocolatey-software/astro": "2.9.2",
+    "@chocolatey-software/build-tools": "2.9.2",
     "@chocolatey-software/playwright": "2.8.0"
   },
   "dependencies": {
