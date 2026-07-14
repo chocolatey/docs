@@ -25,7 +25,8 @@ export default defineConfig({
             [rehypeMermaid, {
                 mermaidConfig
             }]
-        ]
+        ],
+        gfm: true
     },
     prefetch: {
         prefetchAll: true
