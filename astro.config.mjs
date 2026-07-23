@@ -4,6 +4,7 @@ import mdx from '@astrojs/mdx';
 import rehypeMermaid from 'rehype-mermaid';
 import remarkCustomHeaderId from 'remark-custom-header-id';
 import { mermaidConfig } from '@chocolatey-software/astro/src/scripts/util/mermaid-config';
+import { unified } from '@astrojs/markdown-remark';
 
 export default defineConfig({
     site: 'https://docs.chocolatey.org',
@@ -18,15 +19,18 @@ export default defineConfig({
     },
     markdown: {
         syntaxHighlight: false, // Temporarily disable syntax highlighting and rely on Prism.js via choco-theme
-        remarkPlugins: [
-            remarkCustomHeaderId,
-        ],
-        rehypePlugins: [
-            [rehypeMermaid, {
-                mermaidConfig
-            }]
-        ],
-        gfm: true
+        processor: unified({
+            remarkPlugins: [
+                remarkCustomHeaderId,
+            ],
+            rehypePlugins: [
+                [rehypeMermaid, {
+                    mermaidConfig
+                }]
+            ],
+            gfm: true,
+            smartypants: true
+        })
     },
     prefetch: {
         prefetchAll: true
