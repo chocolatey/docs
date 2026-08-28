@@ -1,0 +1,268 @@
+---
+description: Information on Expand-ChocolateyArchive cmdlet
+external help file: Chocolatey.PowerShell.dll-Help.xml
+Module Name: Chocolatey.PowerShell
+online version: https://docs.chocolatey.org/en-us/create/cmdlets/expand-chocolateyarchive
+order: 50
+schema: 2.0.0
+title: Expand-ChocolateyArchive
+xref: expand-chocolateyarchive
+---
+import Xref from '@components/Xref.astro';
+
+# Expand-ChocolateyArchive
+
+## SYNOPSIS
+Unzips an archive file and returns the location for further processing.
+
+## SYNTAX
+
+### Path (Default)
+```
+Expand-ChocolateyArchive [-Path] <String> [-Destination] <String> [[-FilesToExtract] <String>]
+ [[-PackageName] <String>] [-DisableLogging] [-UseBuiltinCompression] [-IgnoredArguments <Object[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### BothPaths
+```
+Expand-ChocolateyArchive [-Path] <String> [-Destination] <String> [[-FilesToExtract] <String>]
+ [[-PackageName] <String>] -Path64 <String> [-DisableLogging] [-UseBuiltinCompression]
+ [-IgnoredArguments <Object[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### Path64
+```
+Expand-ChocolateyArchive [-Destination] <String> [[-FilesToExtract] <String>] [[-PackageName] <String>]
+ -Path64 <String> [-DisableLogging] [-UseBuiltinCompression] [-IgnoredArguments <Object[]>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+This unzips files using the 7-zip command line tool 7z.exe by default.
+Supported archive formats are listed in the [7-Zip documentation](https://sevenzip.osdn.jp/chm/general/formats.htm).
+
+When the `useBuiltinCompression` feature is enabled, or if the `-UseBuiltinCompression` switch is provided,
+7-zip is not used. In this mode, only `.zip` archive formats are supported.
+
+## EXAMPLES
+
+### Example 1
+```powershell
+PS C:\> Expand-ChocolateyArchive -Path "c:\someFile.zip" -Destination $toolsDir
+```
+
+Extracts the contents of `someFile.zip` to `$toolsDir`.
+The destination folder will be created if it doesn't exist.
+
+### Example 2
+```powershell
+PS C:\> Expand-ChocolateyArchive -Path "c:\someFile.zip" -Path64 "C:\someFile64.zip" -Destination $toolsDir
+```
+
+Extracts the contents of one of the target zip files to `$toolsDir`.
+Depending on whether this invocation is performed on a 32-bit or a 64-bit system, the corresponding archive is selected for extraction.
+The destination folder will be created if it doesn't exist.
+
+### Example 3
+```powershell
+PS C:\> Expand-ChocolateyArchive -Path "c:\someFile.zip" -Destination $toolsDir -FilesToExtract *.exe
+```
+
+Extracts all `*.exe` files from `someFile.zip` to `$toolsDir`.
+The destination folder will be created if it doesn't exist.
+
+## PARAMETERS
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Destination
+The path to a directory where you would like the unzipped files to end up.
+If it does not exist, it will be created.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: UnzipLocation
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DisableLogging
+Disables logging of the extracted items to speed up extraction of archives containing large numbers of files.
+Usage of this parameter will prevent `Uninstall-ChocolateyZipPackage` from working; extracted files will have to be cleaned up with `Remove-Item` or a similar command instead.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FilesToExtract
+Provide a folder path or a glob pattern to specify which file(s) or folder(s) to extract from the archive.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: SpecificFolder
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -IgnoredArguments
+Allows splatting with arguments that do not apply. Do not use directly.
+
+```yaml
+Type: Object[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PackageName
+Facilitates logging unzip activity for subsequent uninstalls.
+Does not normally need to be set explicitly; Chocolatey CLI will provide the package name to the command.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path
+The path to the archive to be extracted.
+If embedding the archive in the package next to the install script, the path should be something like `"$PSScriptRoot\file.zip"`
+
+This can be a 32-bit or 64-bit file. This parameter was mandatory in earlier versions of Chocolatey, but is optional if `-Path64` has been provided.
+
+```yaml
+Type: String
+Parameter Sets: Path, BothPaths
+Aliases: File, FileFullPath
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Path64
+Full file path to a 64-bit native installer to run. If embedding in the package, you can get it to the path with
+`"$PSScriptRoot\INSTALLER_FILE"`
+
+Provide this when you want to provide both 32-bit and 64-bit installers, or explicitly only a 64-bit installer
+(which will cause a package install failure on 32-bit systems).
+
+```yaml
+Type: String
+Parameter Sets: BothPaths, Path64
+Aliases: File64, FileFullPath64
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UseBuiltinCompression
+If provided, uses .NET compression methods to extract files from the archive to avoid usage of `7-Zip`.
+Note that with this option active, only `.zip` archives are supported.
+This should not typically be provided explicitly; it is designed to be controlled via the `useBuiltinCompression` feature.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## INPUTS
+
+## OUTPUTS
+
+### System.String
+Returns the designated `-Destination` value the archive was extracted to.
+
+## NOTES
+If extraction fails, an exception is thrown.
+
+If you are embedding files into a package, ensure that you have the rights to redistribute those files if you are sharing this package publicly (like on the community feed).
+Otherwise, please use `Install-ChocolateyZipPackage` to download those resources from their official distribution points.
+
+Will automatically call `Set-PowerShellExitCode` to set the package exit code based on 7-zip's exit code.
+
+## RELATED LINKS
+
+<Xref title="Install-ChocolateyZipPackage" value="install-chocolateyzippackage" classes="mb-3 d-block" />
+
+<Xref title="Uninstall-ChocolateyZipPackage" value="uninstall-chocolateyzippackage" classes="mb-3 d-block" />
+
+<Xref title="Set-PowerShellExitCode" value="set-powershellexitcode" classes="mb-3 d-block" />
+
+<Xref title="Cmdlet Reference" value="powershell-cmdlet-reference" classes="mb-3 d-block" />
+
+<Xref title="Function Reference" value="powershell-reference" classes="d-block" />
