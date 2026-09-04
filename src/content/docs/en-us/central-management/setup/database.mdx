@@ -69,7 +69,7 @@ The quickest option to get going with the database is to use the Chocolatey Comm
 choco install sql-server-express -y
 ```
 
-You will also want to have the management tools installed, which can be installed with:
+You may also want to have the management tools installed, which can be installed with:
 
 ```powershell
 choco install sql-server-management-studio -y
@@ -91,10 +91,6 @@ We've prepared a handy script (that may turn into a package later) to help you e
 #### Script to Prepare SQL Server Express
 
 The following is a script for SQL Server Express. You may be configuring a default instance. This should be run on the computer that has SQL Server Express installed as it will have the right binaries necessary for accessing SQL Server programmatically.
-
-<Callout type="warning">
-    This script is SQL Server version dependent! Please see the TODO in the script below and adjust accordingly.
-</Callout>
 
 ```powershell
 # https://docs.microsoft.com/en-us/sql/tools/configuration-manager/tcp-ip-properties-ip-addresses-tab
@@ -126,16 +122,24 @@ $tcpPort = $tcpIpAll.IpAddressProperties | Where-Object { $_.Name -eq 'TcpPort' 
 $tcpPort.Value = "1433"
 $tcp.Alter()
 
-# TODO: THIS LINE IS VERSION DEPENDENT! Replace MSSQL16 with whatever version you have
 Write-Output "SQL Server: Setting Mixed Mode Authentication."
-New-ItemProperty 'HKLM:\Software\Microsoft\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQLServer\' -Name 'LoginMode' -Value 2 -Force
-# VERSION DEPENDENT ABOVE
+$SqlBaseKey = 'HKLM:\SOFTWARE\Microsoft\Microsoft SQL Server\'
+$SqlInstances = Get-ItemProperty (Join-Path $SqlBaseKey 'Instance Names\SQL')
+foreach ($instance in $SqlInstances.PSObject.Properties) {
+    # This is not a SQL Instance
+    if ($instance.Name -match 'PS') {
+        continue
+    }
 
-# Set the SQL Server service Startup Type to Automatic
-sc.exe config 'MSSQL$SQLEXPRESS' start=auto
-
-Write-Output "SQL Server: Forcing Restart of Instance."
-Restart-Service -Force 'MSSQL$SQLEXPRESS'
+    Write-Host "SQL Instance: $($instance.Name)"
+    $instanceKey = Join-Path $SqlBaseKey "$($instance.Value)\MSSQLServer\"
+    New-ItemProperty $instanceKey -Name 'LoginMode' -Value 2 -Force
+    $InstanceService = Get-Service -DisplayName "SQL Server ($($instance.Name))"
+    # Set the SQL Server service Startup Type to Automatic using sc.exe as Set-Service does not change it from delayed.
+    sc.exe config $InstanceService.Name start=auto
+    Write-Output "SQL Server: Forcing Restart of Instance."
+    Restart-Service $InstanceService -Force
+}
 
 Write-Output "SQL Server: Setting up SQL Server Browser and starting the service."
 Set-Service 'SQLBrowser' -StartupType Automatic
@@ -484,5 +488,3 @@ MODIFY FILE
     SIZE = 200MB);
 GO
 ```
-
-<Xref title="Central Management Setup" value="ccm-setup" />  <Xref title="Chocolatey Central Management" value="central-management" />

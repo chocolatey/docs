@@ -115,7 +115,7 @@ Creating a Deployment Plan for a Group can be done from two pages:
 
     ![Button to create a new Draft Deployment Plan for a Group from the Group Details page](https://img.chocolatey.org/docs/ccm-playwright/groups/details/button-action-dropdown-menu-create-deployment-plan.png)
 
-Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command. 
+Clicking this option will create a New Deployment Plan. This Deployment Plan will create one Deployment Step with the chosen Target Group selected. Upon arriving on the Edit Deployment Plan screen, this Deployment Step will be opened and ready to add a script command.
 
 ![Automatically created Deployment Plan showing the Deployment Step modal script command area](https://img.chocolatey.org/docs/ccm-playwright/deployment-plans/edit/groups-modal-new-deployment-plan.png)
 
@@ -156,9 +156,3 @@ Once you upgrade to at least CCM v0.2.0, every machine will show that until they
 ### A Computer or Group is not showing as available for deployments, but I have plenty of available licenses
 
 Once you upgrade to Central Management v0.3.0+, you have upgraded the Agent on the machine to v0.11.0+, and it has successfully completed a check in, then that messaging should go away. Note that clients do not get a message back that there was a failure as a security feature - you'll need to consult the Central Management Service logs. You can find that at `$env:ChocolateyInstall\logs\ccm-service.log`, or if you are on a version of Chocolatey Central Management prior to 0.2.0, the log will be located at `$env:ChocolateyInstall\lib\chocolatey-management-service\tools\service\logs\chocolatey.service.host.log`.
-
-## Related Topics
-
-* <Xref title="Chocolatey Central Management" value="central-management" />
-* <Xref title="Central Management - Deployments" value="ccm-deployments" />
-* <Xref title="Central Management - Computers" value="ccm-computers" />
