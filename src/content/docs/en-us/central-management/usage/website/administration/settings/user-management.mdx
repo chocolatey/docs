@@ -60,6 +60,53 @@ After logging out of the Chocolatey Central Management Site, new options will be
     - For X, under `App Permissions` you will need to enable `Request email from users`.
 </Callout>
 
+## OpenID Connect
+
+Configure OpenID Connect (OIDC) as a login and registration provider for Chocolatey Central Management by following these steps.
+
+1. Open the Chocolatey Central Management Site in the browser.
+2. Login with the `ccmadmin` user.
+3. In the left sidebar menu click on **Administration** and then **Settings**.
+4. Click on the **User Management** tab in the **Settings** screen.
+5. Under OpenID Connect click the **Use OpenID Connect** checkbox.  
+    ![Enable OpenID Connect Settings](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-checkbox-enable-openid-connect.png)
+6. Enter the **Authority URL** for your OpenID Connect tenant, for example `https://login.microsoftonline.com/{tenant-id}/v2.0`. The Authority URL must be a valid HTTPS URL without credentials, a query string, or a fragment.
+7. Enter the **Client Id** for your OpenID Connect application.
+8. Click the **Update OpenID Connect client secret** button to open a modal window to allow you to enter and confirm the client secret that is to be used.  
+    ![Update OpenID Connect Client Secret Modal](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-modal-openid-connect-secret.png)
+9. Enter the **Email claim** if it differs from the default of `email`. This is the required claim containing the user's email address.
+10. Click the **Save all** button at the bottom left of the page to save your settings.
+
+<Callout type="warning">
+    Changing the Authority URL does not relink existing OpenID Connect users. Users linked to the previous Authority URL will no longer be able to log in through OpenID Connect. Users from the new Authority URL, whose email address already belongs to an existing account, cannot register or log in using that account. This is only shown once an Authority URL has already been saved.
+</Callout>
+
+<Callout type="info">
+    Only one OpenID Connect provider can be configured per Chocolatey Central Management installation.
+
+    Scopes are not directly configurable. The `openid` scope is always requested, and `email`/`profile` are requested automatically when supported by your identity provider's discovery document.
+
+    The `email` and `profile` above are scopes, which is what Chocolatey Central Management asks your identity provider to release. Do not confuse the `email` scope with the **Email claim** setting, which names the individual claim that the user's email address is read from once your identity provider has responded.
+
+    Register the following fixed callback paths with your identity provider, replacing `<YOUR DOMAIN>` with your Chocolatey Central Management Site domain. These paths cannot be changed:
+    - Sign-in callback: `https://<YOUR DOMAIN>/signin-oidc`
+    - Sign-out callback: `https://<YOUR DOMAIN>/signout-callback-oidc`
+</Callout>
+
+After logging out of the Chocolatey Central Management Site, a new option will be shown to allow logging in with OpenID Connect.
+
+![Login screen showing option to login with OpenID Connect](https://img.chocolatey.org/docs/ccm-playwright/account/login/openid-connect-login-button.png)
+
+Clicking the **Continue with OpenID Connect** button redirects the user to the configured identity provider to log in.
+
+<Callout type="info">
+    If you are unable to login with OpenID Connect check the following:
+    - Ensure the Authority URL is entered correctly and is reachable from the Chocolatey Central Management Site.
+    - Ensure the `client id` and `client secret` are entered correctly in the Chocolatey Central Management Site settings.
+    - Ensure the `/signin-oidc` and `/signout-callback-oidc` callback paths have been registered with your identity provider using your Chocolatey Central Management Site domain.
+    - Ensure the Email claim configured matches the claim your identity provider returns for the user's email address.
+</Callout>
+
 ## LDAP Configuration
 
 <Callout type="info">
