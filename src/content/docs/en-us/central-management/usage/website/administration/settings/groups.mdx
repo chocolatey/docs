@@ -11,13 +11,20 @@ import Xref from '@components/Xref.astro';
 ## System Managed Dynamic Group Settings
 
 When enabled, Chocolatey Central Management will create and maintain System Managed Dynamic Groups.
+This setting is enabled by default.
 Computers are added to or removed from these Groups dynamically, according to their reported Facts. 
 Disabling this setting will not affect System Managed Automatic Groups, such as the All Computers Group.
+
+While this setting is disabled, System Managed Dynamic Groups no longer appear on the Groups page.
+Enabling the setting again restores them, based on the Facts your Computers have reported.
 
 ![Enable System Managed Dynamic Groups Setting](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/groups-checkbox-enable-dynamic-groups.png)
 
 ### Manually Sync System Managed Dynamic Groups
 
-System Managed Dynamic Groups are updated dynamically; however, you can manually trigger a sync to update Group membership based on the Facts reported by each Computer by clicking the **Sync Groups** button.
+Chocolatey Central Management updates System Managed Dynamic Group membership on a schedule, rather than as soon as a Computer checks in.
+A Computer that has just reported new Facts will therefore not appear in its Groups straight away, and Groups can take a short while to be populated after the setting is enabled, particularly when a large number of Computers have checked in.
+
+To update Group membership from the Facts reported by each Computer without waiting for the next scheduled run, click the **Sync now** button.
 
 ![Sync System Managed Dynamic Groups Button](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/groups-button-sync-groups.png)
