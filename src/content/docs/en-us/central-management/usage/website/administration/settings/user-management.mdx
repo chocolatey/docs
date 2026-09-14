@@ -138,6 +138,25 @@ Behind the scenes, Chocolatey Central Management uses the authorization code flo
     to the Central Management application.
 </Callout>
 
+### Mapping LDAP Groups to Roles
+
+<Callout type="info">
+    LDAP group mapping is available in Chocolatey Central Management 0.18.0 and later.
+</Callout>
+
+When enabled, this lets you grant Central Management <Xref title="Roles" value="ccm-administration-roles" /> to LDAP users automatically based on their LDAP group membership, rather than assigning Roles to each user by hand.
+
+1. Under **LDAP Settings**, check the **Use LDAP groups.** checkbox.
+
+    ![Enable Use LDAP groups setting](https://img.chocolatey.org/docs/ccm-playwright/administration/settings/user-management-checkbox-use-ldap-groups.png)
+
+1. Click the **Save all** button at the bottom left of the page.
+1. Map each LDAP group to a Role by entering the group's name on the Role — see <Xref title="LDAP Group Mapping" value="ccm-administration-roles" anchor="ldap-group-mapping" />.
+
+<Callout type="info">
+    While **Use LDAP groups.** is enabled, the Roles of an LDAP user are determined entirely by their directory groups. Role selections made when editing an LDAP user are ignored — see <Xref title="Editing a User" value="ccm-administration-users" anchor="editing-a-user" />.
+</Callout>
+
 ## Passwordless Login
 
 1. Open the Chocolatey Central Management Site in the browser.

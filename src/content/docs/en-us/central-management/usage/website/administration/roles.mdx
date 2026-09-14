@@ -70,6 +70,42 @@ These pre-configured roles are labeled **Built-in role** and cannot be deleted. 
 
 We recommend you review the permissions these roles have. Then edit them, if needed, to work within your environment.
 
+## LDAP Group Mapping
+
+<Callout type="info">
+    LDAP group mapping is available in Chocolatey Central Management 0.18.0 and later. It requires LDAP authentication to already be configured — see <Xref title="User Management" value="ccm-administration-settings-user-management" anchor="ldap-configuration" />.
+</Callout>
+
+When LDAP group mapping is enabled, a Role can be tied to an LDAP group — for example, an Active Directory security group. Any LDAP user who is a member of that group is granted the Role automatically when they log in, so you can manage Central Management access through your existing directory groups instead of assigning Roles to each user by hand.
+
+### Enabling LDAP Group Mapping
+
+LDAP group mapping is turned on with the **Use LDAP groups.** setting under **Administration** → **Settings** → **User Management** → **LDAP Settings**. See <Xref title="User Management" value="ccm-administration-settings-user-management" anchor="mapping-ldap-groups-to-roles" /> for the steps. The **LDAP group name** field described below only appears on the Role modal while this setting is enabled.
+
+### Mapping a Role to an LDAP Group
+
+1. [Create](#creating-a-role) or [edit](#editing-a-role) a Role.
+1. On the Role properties tab, in the **LDAP group name:** field, enter the `sAMAccountName` of the LDAP group you want to map to this Role.
+
+    ![Setting the LDAP group name on a Role](https://img.chocolatey.org/docs/ccm-playwright/administration/roles/modal-new-role-ldap-group-name.png)
+
+1. Click **Save**.
+
+<Callout type="info">
+    - The value is matched against the group's `sAMAccountName`, case-insensitively.
+    - Membership is resolved through the user's _authorization groups_, so nested (transitive) group membership is honored.
+    - The group name can be up to 256 characters.
+</Callout>
+
+### How Roles Are Applied at Login
+
+Role assignment is recalculated on **every** LDAP login:
+
+* Each LDAP group the user belongs to is matched against the Roles that carry that group's name, and the user is granted **all** matching Roles. Membership in several mapped groups grants several Roles.
+* Any Role marked as **Default** is always granted in addition to the mapped Roles.
+* The user's previous Role assignments are replaced with this freshly-computed set. Because Roles for LDAP users are owned by their directory groups, they cannot be changed by editing the user — see <Xref title="Editing a User" value="ccm-administration-users" anchor="editing-a-user" />.
+* If the calculation leaves the user with no Roles at all, the login is rejected with an **LDAP Authentication Failed** message asking them to contact their administrator. Make sure every group people sign in with is mapped to a Role, or that a Default Role exists.
+
 ## Related Topics
 
 * <Xref title="Chocolatey Central Management" value="central-management" />

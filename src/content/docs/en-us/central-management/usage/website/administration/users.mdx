@@ -48,6 +48,10 @@ Select the **Actions** button on the left-hand side of the User, and then select
 
 From the **Edit Role** modal, you can modify all the properties for a User, for example, `First Name`, `Phone number`, etc. In addition, you can alter the <Xref title="Roles" value="ccm-administration-roles" /> associated with the User.
 
+<Callout type="info">
+    If <Xref title="LDAP group mapping" value="ccm-administration-settings-user-management" anchor="mapping-ldap-groups-to-roles" /> is enabled, the Roles of an LDAP user are managed by their LDAP groups and are recalculated on every login. Any Role selection you make when editing an LDAP user is ignored — both in this modal and through the API — so their Roles cannot be changed here. Update the user's LDAP group membership, or the <Xref title="group-to-Role mapping" value="ccm-administration-roles" anchor="ldap-group-mapping" />, instead.
+</Callout>
+
 Once modifications are complete, click the **Save** button.
 A green toast notification will be shown once the operation completes successfully.
 
