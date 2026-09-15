@@ -99,6 +99,8 @@ After logging out of the Chocolatey Central Management Site, a new option will b
 
 Clicking the **Continue with OpenID Connect** button redirects the user to the configured identity provider to log in.
 
+Behind the scenes, Chocolatey Central Management uses the authorization code flow with Proof Key for Code Exchange, requires HTTPS metadata, and validates the issuer, audience, token lifetime, and signing keys. Signing out contacts your identity provider's end session endpoint when the provider advertises one.
+
 <Callout type="info">
     If you are unable to login with OpenID Connect check the following:
     - Ensure the Authority URL is entered correctly and is reachable from the Chocolatey Central Management Site.
