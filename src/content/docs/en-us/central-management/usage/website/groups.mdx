@@ -17,26 +17,67 @@ If you do not see this menu entry, verify with your administrator whether your g
 
 ![Groups menu entry on the Chocolatey Central Management Dashboard](https://img.chocolatey.org/docs/ccm-playwright/dashboard/left-menu-groups.png)
 
-## The All Computers (Automatic Group)
+Every Group has a Type, shown in the **Type** column on the Groups page and included in the PDF and Excel reports.
+You can sort the table by this column to bring Groups of the same Type together.
+The Types are described below.
+
+## System Managed Automatic Groups
 
 <Callout type="info">
     This feature is available in Chocolatey Central Management starting with version 0.11.0.
 </Callout>
 
-All Computers present in Chocolatey Central Management are automatically added to a System Managed Group named `All Computers (Automatic Group)`. This Group can not be edited or deleted. It will have a **System managed** button next to the name in the table. Clicking this button will display a tooltip with more information.
+Computers are automatically added to System Managed Automatic Groups by the system.
+These Groups cannot be edited or deleted.
 
-![The All Computers (Automatic Group) on the Groups page with an arrow pointing to the Group in the table](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-icon-automatic-group-lock.png)
+![The All Computers Group on the Groups page with an arrow pointing to the System Automatic Type badge in the table](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-automatic-badge.png)
 
-## Temporary Groups
+## System Managed Dynamic Groups
+
+<Callout type="info">
+    This feature is available in Chocolatey Central Management starting with version 0.18.0.
+</Callout>
+
+Computers are added to or removed from System Managed Dynamic Groups dynamically, according to their reported Facts.
+These Groups cannot be edited, but can be <Xref title="disabled by an Administrator" value="ccm-administration-settings-groups" anchor="system-managed-dynamic-group-settings" />.
+
+![The Operating System: Windows 11 Group on the Groups page with an arrow pointing to the System Dynamic Type badge in the table](https://img.chocolatey.org/docs/ccm-playwright/groups/table-row-dynamic-badge.png)
+
+### Groups That May Be Created
+
+Chocolatey Central Management builds these Groups from the Facts each Computer reports through Chocolatey Agent.
+You can see the Facts a Computer has reported on the <Xref title="Facts tab of its Details page" value="ccm-computers" anchor="viewing-facts-collected-for-a-computer" />.
+The operating system Facts below are all found in the **Computer System** category, within the **Operating System** group of Facts.
+
+| Group | Fact | Computers Added to the Group |
+|-------|------|------------------------------|
+| `Operating System: <name>` | **Name** | Computers reporting that operating system name. One Group is created for each distinct name reported. |
+| `Architecture: <architecture>` | **Architecture** | Computers reporting that architecture. One Group is created for each distinct architecture reported. |
+| `Servers` | **Edition** | Computers whose reported edition contains "Server". |
+| `Clients` | **Edition** | Computers whose reported edition does not contain "Server". |
+| `Expiring Chocolatey Licenses` | **Expiration Date**, in the **Chocolatey License** category | Computers whose Chocolatey license expires within the next 30 days. |
+
+A Computer is only added to a Group when it has reported the Fact that Group is built from.
+A Computer that has not reported an operating system edition, for example, is added to neither the Servers Group nor the Clients Group.
+
+A Computer whose Chocolatey license has already expired stays in the Expiring Chocolatey Licenses Group.
+Chocolatey Agent stops checking in once a license has expired, so Chocolatey Central Management continues to use the expiration date that Computer last reported.
+
+<Callout type="info">
+    A System Managed Dynamic Group only appears while at least one Computer belongs to it.
+    The Groups you see therefore reflect the Computers that have reported Facts, rather than a fixed list.
+</Callout>
+
+## System Managed Temporary Groups
 
 <Callout type="info">
     This feature is available in Chocolatey Central Management starting with version 0.12.0.
 </Callout>
 
-A Temporary Group is a Group that has been created for one or more specific circumstance, for instance as part of creating an Automatic Deployment Plan.
+Computers are automatically added to System Managed Temporary Groups by the system for a specific purpose, for instance as part of creating an Automatic Deployment Plan.
 These Groups are normally not viewable from anywhere, other than the Deployment Plans where they are being used, and will be cleaned up on an interval when they are no longer needed.
 
-A Temporary Group can also not be Edited, Deleted, or Duplicated manually by a user. As well, no other Group can have such a Group as a Sub-Group.
+These Groups cannot be edited, deleted, or duplicated manually by a user. As well, no other Group can have such a Group as a Sub-Group.
 
 ## Creating a Group
 
