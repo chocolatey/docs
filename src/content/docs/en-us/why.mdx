@@ -65,6 +65,64 @@ Now contrast that with how you do the same with **Chocolatey**:
 
 <a name="can-i-use-chocolatey-with-existing-software"></a>
 
+## What Are Chocolatey Packages?
+
+Chocolatey packages are known as nupkg files, which is a compiled NuSpec or a fancy zip file that knows about package metadata (including dependencies and versioning). These packages are an enhanced NuGet package, they have additional metadata that is specific to Chocolatey. Chocolatey is also compatible with vanilla NuGet packages. A Chocolatey package can contain embedded software and/or automation scripts.
+
+Chocolatey packages are not just something fancy on top of MSI/Exe installers. Chocolatey definitely supports that avenue and, with the addition of unzipping archives, it is the most widely used aspect of Chocolatey, especially when you see the packages on the community feed (https://community.chocolatey.org/packages aka dot org).  Chocolatey is about managing packages, and it works best when those packages contain all of the software instead of reaching out to external/internet resources for the software those packages represent. When you look at the community feed, you are seeing one representation of the way you can build packages, mostly driven by <Xref title="distribution rights" value="legal" anchor="distributions" /> that govern when packages can redistribute software or not. Those distribution rules do not govern private/internal packages, so the rules are a bit different. Packages internal to organizations are wide open to do quite a bit more. You can do software embedded packages where executables are automatically added to the path (shimmed) and/or PowerShell automation scripts to do pretty much anything, including running native installers that may be embedded or downloaded as part of the automation script (again, one of the most widely seen aspects on dot org).
+
+Packages with everything embedded are much more deterministic and repeatable, things most businesses require. You just won't see that as often on the community feed due to the aforementioned <Xref title="distribution rights" value="legal" anchor="distributions" />.
+
+The closer the underlying software a package represents is to the package (as in executables and files included in the package), the more Chocolatey behaves like a package manager.
+
+## Where are Chocolatey packages installed to?
+
+Chocolatey packages are installed to `ChocolateyInstall\lib`, but the software could go to various locations, depending on how the package maintainer created the package.
+
+Some packages are installed under `ChocolateyInstall\lib`, others - especially packages that are based on Windows installers (.msi files) - install to the default path of the original installer (which is most likely within `Program Files`).
+
+There are also packages for which you can set a custom installation path. These packages (like ruby) use the `$env:ChocolateyBinRoot` environment variable. If this variable does not exist, it will be created as `c:\tools` e.g. `C:\tools\ruby193`. To change this behavior, you can set `$env:ChocolateyBinRoot` to an existing folder, e. g. `C:\somestuff`. Packages that use the environment variable, will then be installed in the given subfolder, f. ex. `C:\somestuff\ruby193`.
+
+## Where are Chocolatey packages installed from?
+
+By default it installs packages from community.chocolatey.org (the community feed). But you can change this by adding default sources and/or using the  `--source` switch when running a command.
+
+When you <Xref title="host internal packages" value="host-packages" />, those packages can embed software and/or point to internal shares. You are not subject to software distribution rights like the packages on the community feed, so you can <Xref title="create packages" value="create-packages" /> that are more reliable and secure.
+
+## How does Chocolatey work?
+
+### Installation
+
+1. Chocolatey uses NuGet (NuGet.Core.dll) to retrieve the package from the source. This is typically a nupkg that is stored in a folder, share, or an OData location (HTTP/HTTPS). For more information on sources, please see <Xref title="Sources" value="choco-command-sources" /> and <Xref title="Source Repositories" value="host-packages" />.
+2. The package is installed into `$env:ChocolateyInstall\lib\<pkgId>`. The package install location is not configurable - the package must install here for tracking, upgrade, and uninstall purposes. The software that may be installed later during this process **is** configurable. See [Terminology](#terminology) to understand the difference between "package" and "software" as the terms relate to Chocolatey.
+3. Choco determines if it is self-contained or has automation scripts - PowerShell scripts (*.ps1 files) and possibly other formats at a later date.
+4. Choco takes a registry snapshot for later comparison.
+5. If there are automation scripts, Chocolatey CLI will run those. They can contain whatever you need to do, if they are PowerShell you have the full power of Posh (PowerShell), but you should try to ensure they are compatible with the <Xref title="supported PowerShell versions" value="chocolatey-products-dependencies-and-support-lifecycle" anchor="supported-powershell-versions" />.
+6. Choco compares the snapshot and determines uninstaller information and saves that to a .registry file.
+7. Choco snapshots the folder based on all files that are currently in the package directory.
+8. Choco looks for executable files in the package folder and generates shims into the `$env:ChocolateyInstall\bin` folder so those items are available on the path. Those could have been embedded into the package or brought down from somewhere (internet, ftp, file folder share, etc) and placed there. If there is a shim ignore file `<exeName>.exe.ignore`, then Chocolatey will not generate a shim in the bin folder.
+
+### Upgrade
+
+1. Starting in 0.9.10, Chocolatey will look for and run a chocolateyBeforeModify.ps1 file in the existing package prior to upgrading or uninstalling a package. This is your opportunity to shut down services and/or processes. This is run from the existing package, not the new version of the package. If it fails, it just passes a warning and continues on.
+2. Similar to install, except choco will make a backup of the package folder (and only the package folder) prior to attempting upgrade.
+3. The files snapshot is used to determine what files can be removed from the package folder. If those files have not changed, they will be removed.
+4. If the upgrade fails, choco will ask if you want to rollback the package folder to the previous version. If you choose to move roll back, it will put the backed up package directory back in place. This does not fix any folders you may have been using outside of the package directory, such as where the native installer may have installed a program to nor the location of `Get-ToolsLocation` (e.g. `c:\tools`). You will need to handle those fixes on your own. Chocolatey also doesn't rerun any install scripts on rollback.
+
+### Uninstall
+
+1. Choco makes the determination that the package is actually installed.
+2. Starting in 0.9.10, Chocolatey will look for and run a chocolateyBeforeModify.ps1 file in the existing package prior to upgrading or uninstalling a package. This is your opportunity to shut down services and/or processes. If it fails, it just passes a warning and continues on.
+3. Choco will make a backup of the package folder.
+4. The automation script is run if found. This should be used to clean up anything that is put there with the install script.
+5. If auto uninstaller is turned on, choco will attempt to run the auto uninstaller if a silent uninstall can be determined. Otherwise it will prompt the user (unless -y) to ask if they want the uninstaller to continue. The auto uninstaller can automatically detect about 80% of the different native uninstallers and determine or use the silent uninstall arguments.
+6. If everything is successful so far, the files snapshot is used to determine what files can be removed from the package folder. If those files have not changed, they will be removed.
+7. If everything is deleted from the package folder, the folder is also removed.
+
+When a package has an exe file, Chocolatey will create a link "shortcut" to the file (called a shim) so that you can run that tool anywhere on the machine. See <Xref title="shimming" value="shim" /> for more information.
+When a package has a chocolateyInstall.ps1, it will run the script. The instructions in the file can be anything. This is limited only by the .NET framework and PowerShell.
+Most of the Chocolatey packages that take advantage of the PowerShell download an application installer and execute it silently.
+
 ## Can I use Chocolatey with existing installed software?
 
 Yes, yes you can. Chocolatey works in a similar manner to how you would do things if you downloaded and installed things yourself. Its design and infrastructure is built that way on purpose. It takes the pain of manually doing it yourself away (see previous section).
