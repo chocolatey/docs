@@ -1,0 +1,85 @@
+---
+order: 44
+xref: c4b-ansible-upgrading-nexus
+title: Upgrading Nexus
+description: A guide to upgrading Sonatype Nexus in the Chocolatey for Business Ansible Environment
+---
+import Callout from '@choco/components/Callout.astro';
+import Iframe from '@choco/components/Iframe.astro';
+import Xref from '@components/Xref.astro';
+
+## Upgrade Nexus in the Ansible Environment
+
+This document outlines the process for upgrading Nexus running inside our Ansible Environment.
+
+If your server is restricted from access to the Chocolatey Community Repository, <Xref title="internalize the package to your internal repository" value="package-internalizer" />.
+
+## Instructions
+
+1. Internalize the nexus-repository package and push to your internal repository
+2. choco upgrade the nexus-repository package (Example command provided below)
+
+### Example Upgrade Command:
+
+```yaml
+---
+- name: Upgrade Nexus
+    hosts: "{{ c4b_nexus_nodes }}"
+    gather_facts: true
+    vars_prompt:
+    - name: nexus_fqdn
+        prompt: "FQDN to access Nexus, e.g. nexus.example.com"
+        private: no
+    tasks:
+    - name: Upgrade Sonatype Nexus
+    chocolatey.chocolatey.win_chocolatey:
+        name: nexus-repository
+        state: latest
+        params: "/Port:8443 /FQDN:{{ nexus_fqdn }} /BackupSslConfig"
+...
+```
+
+After saving the example playbook to a file, e.g. `nexus-upgrade.yml`, you can run it with one of the following commands:
+
+```powershell
+# This will install to all available hosts. Be careful!
+ansible-playbook /path/to/nexus-upgrade.yml --extra-vars "c4b_nexus_nodes='*'"
+
+# You could specify an inventory to use, or be more specific when defining c4b_nexus_nodes.
+ansible-playbook /path/to/nexus-upgrade.yml --inventory /path/to/hosts.yml --extra-vars "c4b_nexus_nodes='nexus_servers'"
+```
+
+## Upgrading to Nexus Repository 3.71.* and Higher
+
+Sonatype's upgrade to Nexus Repository 3.71.* came with several breaking changes, including the requirement to migrate your OSS instance from OrientDb to H2 before upgrading.
+
+Full details are available [here](https://help.sonatype.com/en/orient-pre-3-70-java-8-or-11.html), but to upgrade via Ansible you could run something like this playbook after pushing the modified copy of the `nexus-repository` package to your repository:
+
+```yaml
+---
+- name: Upgrade Nexus
+    hosts: "{{ c4b_nexus_nodes }}"
+    gather_facts: true
+    vars_prompt:
+    - name: nexus_fqdn
+        prompt: "FQDN to access Nexus, e.g. nexus.example.com"
+        private: no
+    tasks:
+
+    - name: Upgrade Sonatype Nexus to Migration Version
+    chocolatey.chocolatey.win_chocolatey:
+        name: nexus-repository
+        state: upgrade
+        version: 3.70.1.2
+        params: "/Port:8443 /FQDN:{{ nexus_fqdn }} /BackupSslConfig"
+
+    - name: Upgrade Sonatype Nexus
+    chocolatey.chocolatey.win_chocolatey:
+        name: nexus-repository
+        state: upgrade
+        version: 3.71.0.6
+        params: "/Port:8443 /FQDN:{{ nexus_fqdn }} /BackupSslConfig"
+...
+```
+
+This should result in a successful migration and upgrade.
