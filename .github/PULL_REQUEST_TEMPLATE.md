@@ -48,6 +48,7 @@ Please remove all comments before submitting.
 * [ ] Menu structure has been updated
 * [ ] Images added to the [img](https://github.com/chocolatey/img) repository?
     * [ ] PR -
+* [ ] ADR created to document the design decision?
 * [ ] All items are complete on the [Definition of Done](https://github.com/chocolatey/home/blob/main/definition-of-done.md).
 
 ## Related Issue
