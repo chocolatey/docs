@@ -108,3 +108,19 @@ For more information, visit Sonatype Nexus' documentation on how to configure a 
 
 </TabsPane>
 </TabsPaneContainer>
+
+### Adding Your Internal Proxy Repository as a Source
+
+Once the configuration above has been completed, you'll want to remove the old CCR source (called `chocolatey` by default) and add your new internal proxy repository as a source on your machines.
+
+<Callout type="info">
+Remember to add authentication to this code by passing `--user` and `--password` with the correct credentials, as well as any additional options you require, such as `--allow-self-service`, as in the example below. <Xref title="The options and switches for the Source command can be found here." value="choco-command-source" anchor="options-and-switches"/>
+</Callout>
+
+```powershell
+# Remove default Chocolatey community repository source
+choco source remove --name='chocolatey'
+
+# Add proxy source for Chocolatey community respository
+choco source add --name='ccr-proxy' --source='https://choco.example.com:1234/ccr-proxy/' --user='chocouser' --password='chocopassword' --allow-self-service
+```
