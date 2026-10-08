@@ -166,6 +166,44 @@ To help minimize issues and improve security, the following options, along with 
   If a user attempts to configure any of these options through `choco config`, Chocolatey CLI returns an error. These options are required for reliable Background Service operation and must remain unrestricted.
 </Callout>
 
+### Common Configuration Options
+
+<Callout type="info">
+    While the different options above have been specified using their `--` prefix, only the name of each option should be specified when setting them through `choco config`.
+</Callout>
+
+Normally there is no need to change the default options that are restricted through the Background Service, and the defaults will be sufficient for most.
+
+If the default options had been overridden at one point, and there is a need to reset these to the default restricted options, this can be done in two different ways.
+We recommend using the below explicit option.
+
+**Unset the configuration key**
+```powershell
+choco config unset --name="'backgroundServiceDisallowedOptions'"
+```
+
+**Explicitly set the default restricted options (Recommended)**
+```powershell
+choco config set --name="'backgroundServiceDisallowedOptions'" --value="'allowemptychecksum,allowemptychecksums,allow-empty-checksums,allowemptychecksumsecure,allowemptychecksumssecure,allow-empty-checksums-secure,applyargstodependencies,apply-args-to-dependencies,apply-install-arguments-to-dependencies,argsglobal,args-global,cache,cachelocation,cache-location,checksum,checksum64,checksumx64,dir,directory,downloadchecksum,download-checksum,downloadchecksumx64,download-checksum-x64,fromprograms,from-programs,fromprogramsandfeatures,from-programs-and-features,ia,ignorechecksum,ignore-checksum,ignorechecksums,ignore-checksums,ignore-pinned,installargs,install-args,installargsglobal,install-args-global,installarguments,install-arguments,install-arguments-sensitive,installdir,install-dir,installdirectory,install-directory,override,overrideargs,overridearguments,override-arguments,proxy,proxy-bypass-list,proxy-bypass-on-local,s,skipvirus,skip-virus,skipviruscheck,skip-virus-check,source,svc,trace,ua,uninstallargs,uninstallarguments,uninstall-arguments,uninstall-arguments-sensitive,use-system-powershell,viruspositivesmin,virus-positives-minimum'"
+```
+
+**Append new restricted options**
+To be able to add additional restricted options, for instance prohibit the use of the `--force` option, it is needed to include all of the existing restricted options including the options you wish to add to the list.
+
+It is recommended to get the existing list of restricted options before attempting to set an updated list.
+This can be achieved by using something similar to the below PowerShell example script.
+
+```powershell
+$existingOptions = & choco config get --name="'backgroundServiceDisallowedOptions'" --limit-output
+$updatedOptions = "$existingOptions,f,force" # Add the -f and --force to the existing restricted options variable.
+choco config set --name="'backgroundServiceDisallowedOptions'" --value="'$updatedOptions'"
+```
+
+<Callout type="info">
+    If the configuration value has previously been `unset`, appending the new options in the suggested approach above is not possible as `choco config get` will return the empty value.
+    Instead, you will need to be explicit as shown in the _Explicitly set the default restricted options_ example.
+</Callout>
+
 ### See It In Action
 
 * Chocolatey's Self-Service Installer - Part 1:
