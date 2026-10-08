@@ -118,7 +118,9 @@ Remember to add authentication to this code by passing `--user` and `--password`
 </Callout>
 
 ```powershell
+# Remove default Chocolatey community repository source
 choco source remove --name='chocolatey'
 
+# Add proxy source for Chocolatey community respository
 choco source add --name='ccr-proxy' --source='https://choco.example.com:1234/ccr-proxy/' --user='chocouser' --password='chocopassword' --allow-self-service
 ```
