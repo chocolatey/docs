@@ -652,9 +652,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chocolatey-software/astro@npm:2.14.0":
+"@chocolatey-software/astro@chocolatey/choco-theme#head=upgrade-dependencies&workspace=@chocolatey-software/astro":
   version: 2.14.0
-  resolution: "@chocolatey-software/astro@npm:2.14.0"
+  resolution: "@chocolatey-software/astro@https://github.com/chocolatey/choco-theme.git#workspace=%40chocolatey-software%2Fastro&commit=ccc519f2b7004606613c32b534608db3f50138f5"
   dependencies:
     "@astrojs/mdx": "npm:7.0.8"
     "@astrojs/node": "npm:11.1.5"
@@ -3845,7 +3845,7 @@ __metadata:
   resolution: "docs@workspace:."
   dependencies:
     "@chocolatey-software/assets": "npm:2.0.0"
-    "@chocolatey-software/astro": "npm:2.14.0"
+    "@chocolatey-software/astro": "chocolatey/choco-theme#head=upgrade-dependencies&workspace=@chocolatey-software/astro"
     "@chocolatey-software/build-tools": "npm:2.10.0"
     "@chocolatey-software/docs": "npm:2.10.0"
     "@chocolatey-software/playwright": "npm:2.8.0"
