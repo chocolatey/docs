@@ -24,6 +24,30 @@ This covers changes for the "chocolatey" and "chocolatey.lib" packages, which ar
 
 <ChocolateyProductDependenciesLink />
 
+## 2.7.5 (October 28, 2026) \{#v2.7.5}
+
+Read our [blog post](https://blog.chocolatey.org/2026/10/october-2026-releases/) about this release.
+
+### Bug Fixes
+
+- Chocolatey CLI is incorrectly reporting bad permissions on the HttpCache folder and is not setting them correctly.
+  - See [#3645](https://github.com/chocolatey/choco/issues/3645) by [pauby](https://github.com/pauby), resolved in [!3936](https://github.com/chocolatey/choco/pull/3936) by [vexx32](https://github.com/vexx32).
+- `upgrade --version` installs a different target version after dependency resolution retry.
+  - See [#3923](https://github.com/chocolatey/choco/issues/3923) by [kruegerkyle95](https://github.com/kruegerkyle95), resolved in [!3934](https://github.com/chocolatey/choco/pull/3934) by [alexaveldanez](https://github.com/alexaveldanez).
+- Fix recursive ChocolateySourceCacheContext.Dispose causing StackOverflowException.
+  - See [#3944](https://github.com/chocolatey/choco/issues/3944) by [CheneyDu0129](https://github.com/CheneyDu0129), resolved in [!3947](https://github.com/chocolatey/choco/pull/3947) by [AdmiringWorm](https://github.com/AdmiringWorm).
+
+### Dependency Change
+
+- Updated the bundled version of 7-zip to 26.05.
+  - See [#3945](https://github.com/chocolatey/choco/issues/3945) by [st3phhays](https://github.com/st3phhays), resolved in [!3948](https://github.com/chocolatey/choco/pull/3948) by [vexx32](https://github.com/vexx32).
+
+### Contributors
+
+7 contributors made this release possible.
+
+<a href="https://github.com/pauby"><img src="https://avatars.githubusercontent.com/u/12760779?v=4" alt="Profile image for contributor pauby" height="32" width="32"/></a> <a href="https://github.com/kruegerkyle95"><img src="https://avatars.githubusercontent.com/u/96922386?v=4" alt="Profile image for contributor kruegerkyle95" height="32" width="32"/></a> <a href="https://github.com/CheneyDu0129"><img src="https://avatars.githubusercontent.com/u/72074750?v=4" alt="Profile image for contributor CheneyDu0129" height="32" width="32"/></a> <a href="https://github.com/st3phhays"><img src="https://avatars.githubusercontent.com/u/42750725?v=4" alt="Profile image for contributor st3phhays" height="32" width="32"/></a> <a href="https://github.com/vexx32"><img src="https://avatars.githubusercontent.com/u/32407840?u=d8213fbf5ef964c29ef7cfda6497c9dddb38cca9&v=4" alt="Profile image for contributor vexx32" height="32" width="32"/></a> <a href="https://github.com/alexaveldanez"><img src="https://avatars.githubusercontent.com/u/54651125?u=3d238bd6bbc656f6b8a09985276750aae96b884a&v=4" alt="Profile image for contributor alexaveldanez" height="32" width="32"/></a> <a href="https://github.com/AdmiringWorm"><img src="https://avatars.githubusercontent.com/u/1474648?u=8ec5b6fa98338f420e07a34fb154b51b9b1c4ac5&v=4" alt="Profile image for contributor AdmiringWorm" height="32" width="32"/></a> 
+
 ## 2.7.4 (August 19, 2026) \{#v2.7.4}
 
 ### Dependency Changes
@@ -752,6 +776,20 @@ See this [list](https://github.com/chocolatey/choco/discussions/2995) for known 
 - Fix broken URLs in repository README file - see [#2888](https://github.com/chocolatey/choco/pull/2888).
 - Update package files to reflect current CCR moderation requirements - see [#2920](https://github.com/chocolatey/choco/issues/2920).
 
+## 1.4.8 (October 27, 2026) \{#v1.4.8}
+
+Read our [blog post](https://blog.chocolatey.org/2026/10/october-2026-releases/) about this release.
+
+### Dependency Change
+
+- Updated the bundled version of 7-zip to 26.05.
+  - See [__#3946__](https://github.com/chocolatey/choco/issues/3946) by [st3phhays](https://github.com/st3phhays).
+
+__Contributors__
+
+1 contributors made this release possible.
+
+<a href="https://github.com/st3phhays"><img src="https://avatars.githubusercontent.com/u/42750725?v=4" alt="st3phhays" height="32" width="32"/></a> 
 
 ## 1.4.7 (August 19, 2026) \{#v1.4.7}
 
