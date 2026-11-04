@@ -29,7 +29,7 @@ The systems we run against:
 * Windows Server 2019
   * Windows Subsystem for Linux (WSL) enabled
   * .NET 3.5 and 4.8 preinstalled
-  * Windows Updates installed through to 2024-05-28
+  * Windows Updates installed through the build date of box version [3.4.0](https://github.com/chocolatey-community/chocolatey-test-environment-box/releases/tag/3.4.0)
 
 
 ## How can I bypass the verifier?
@@ -42,10 +42,10 @@ If your package needs to be exempted, please contact the site admins on the pack
 
 The verifier has the following prerequisites for it to work:
 
-* VirtualBox installed (The verifier box has 6.1.18 installed)
-* Vagrant installed (right now 2.3.1 is recommended)
+* VirtualBox 7.2 installed
+* Vagrant 2.4.9 or later installed
 * Vagrant sahara plugin installed
-* Vagrant box [`chocolatey/test-environment`](https://app.vagrantup.com/chocolatey/boxes/test-environment) available
+* Vagrant box `chocolatey/test-environment` available, built from [chocolatey-test-environment-box](https://github.com/chocolatey-community/chocolatey-test-environment-box)
 * A Windows machine that can run 64bit virtual boxes. Usually a physical machine can do this. Others require vt-x
 
 ### What the verifier does at a high level
@@ -58,7 +58,7 @@ The verifier has the following prerequisites for it to work:
 #### Vagrant Testing
 
 <Callout type="info">
-    You can repeat the testing of the verifier at https://github.com/chocolatey/chocolatey-test-environment
+    You can repeat the testing of the verifier with the [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment). Microsoft's license terms for the Windows Server evaluation don't allow the Vagrant box to be redistributed, so you build it yourself from [chocolatey-test-environment-box](https://github.com/chocolatey-community/chocolatey-test-environment-box), the same build the verifier uses. See [Building the Box](https://github.com/chocolatey-community/chocolatey-test-environment#building-the-box).
 </Callout>
 
 ##### Box Prep
