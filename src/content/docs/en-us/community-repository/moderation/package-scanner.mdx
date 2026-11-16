@@ -101,7 +101,7 @@ Because that file was never scanned, the package version can only be exempted, n
 
 ## Why an Exempted Version Can't Be Approved
 
-An approved package version has passed every automated check and been reviewed by a moderator. When a package version is exempt from the Package Scanner, VirusTotal hasn't confirmed that all of its files are clean, so the package version is marked as Exempted instead of Approved.
+Approving a package version means we were able to verify that it's safe to use. When a package version is exempt from the Package Scanner, we can't say that with any certainty: some of its files either couldn't be scanned, or were detected by anti-virus engines. The package version may well be safe to use, but we weren't able to verify it, so it's marked as Exempted instead of Approved.
 
 If a moderator sets a package version that's exempt from the Package Scanner to Approved, the Chocolatey Community Repository changes the status to Exempted and adds a review comment to say so. Exempted package versions are still published, but their package page warns users that the package version is exempt from moderation and carries more risk.
 
