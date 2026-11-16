@@ -146,6 +146,12 @@ What else you need to do depends on the detection level:
 
 If the scan is incomplete, check [When the Scan Is Incomplete](#when-the-scan-is-incomplete) and [Writing Packages That Scan Cleanly](#writing-packages-that-scan-cleanly). If the cause is in your package, fix it and submit the same version again. If you have questions about the results, reply in the review comments on the package page.
 
+### Reporting False Positives
+
+VirusTotal only collects the results of the anti-virus engines, and can't change or remove their detections. If you believe a detection is a false positive, report it to the anti-virus vendor that made it. VirusTotal's [False Positive Contacts](https://docs.virustotal.com/docs/false-positive-contacts) page lists where to report a false positive to each vendor, and its [false positive documentation](https://docs.virustotal.com/docs/false-positive) explains the process.
+
+Once a vendor removes a detection, select **Rerun virus scanner?** when adding a review comment, so the Package Scanner gets the latest VirusTotal reports for your package version.
+
 ## Moderator Guidance for Flagged Packages
 
 In every case, the files the package includes or downloads must match the official distribution from the software author.
