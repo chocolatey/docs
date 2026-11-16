@@ -8,6 +8,138 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-<Callout type="warning">
-    This is a Work in Progress. Please check back later.
+The Package Scanner is one of the automated moderation services that check every package version submitted to the Chocolatey Community Repository. It runs alongside the <Xref title="Package Validator" value="package-validator" /> and the <Xref title="Package Verifier" value="package-verifier-service" />, and checks the package and the software it installs with [VirusTotal](https://www.virustotal.com). See <Xref title="the moderation docs" value="moderation" /> for the full review process.
+
+## What Is the Package Scanner?
+
+The Package Scanner sends the package, the binaries inside it, and the binaries it downloads during installation to VirusTotal. VirusTotal checks each file with many anti-virus engines and reports how many of them detected something in the file. The Package Scanner uses those detection counts to set a scan status on the package version.
+
+<Callout type="info">
+    The Package Scanner runs the install script with no language or region set. A package that chooses its installer based on the user's language downloads its fallback installer, often the en-US one, so installers for other languages aren't scanned.
 </Callout>
+
+## Where To Find the Results
+
+The package page of each package version shows the scan results:
+
+* The status box at the top of the page shows the scan testing result, with a **Details** link to the full results.
+* The **Virus Scan Results** section lists every scanned file, with the start of its SHA256 checksum and a link to its VirusTotal report. When you're signed in, it also shows the number of detections for each file.
+* When the Package Scanner has a problem with a file, the review comments list that file and the reason.
+
+## Which Files Are Scanned
+
+The Package Scanner scans:
+
+* The package (`.nupkg`) itself.
+* Each file inside the package that has one of the extensions listed below.
+* Each file the package downloads during installation that has one of the extensions listed below, for both the 32-bit and the 64-bit installation.
+
+The extensions the Package Scanner recognizes:
+
+* `.7z`
+* `.dll`
+* `.exe`
+* `.gz`
+* `.msi`
+* `.msp`
+* `.msu`
+* `.rar`
+* `.vsix`
+* `.zip`
+* `.zst`
+
+Files with any other extension aren't scanned. When two files have the same checksum, only one of them is scanned.
+
+## How the Package Scanner Finds Downloads
+
+1. The Package Scanner reads the package's PowerShell scripts (`.ps1` and `.psm1` files), except `chocolateyUninstall.ps1`. It looks for calls to the Chocolatey helpers that download files:
+    * <Xref title="Get-ChocolateyWebFile" value="get-chocolateywebfile" />
+    * <Xref title="Get-FtpFile" value="get-ftpfile" />
+    * <Xref title="Get-WebFile" value="get-webfile" />
+    * <Xref title="Install-ChocolateyPackage" value="install-chocolateypackage" />
+    * <Xref title="Install-ChocolateyPowershellCommand" value="install-chocolateypowershellcommand" />
+    * <Xref title="Install-ChocolateyVsixPackage" value="install-chocolateyvsixpackage" />
+    * <Xref title="Install-ChocolateyZipPackage" value="install-chocolateyzippackage" />
+
+   It also looks for calls to <Xref title="Get-ChocolateyUnzip" value="get-chocolateyunzip" />, and counts the web addresses (`http://`, `https://` and `ftp://`) that aren't in comments.
+1. When it finds any of those helper calls, it runs `chocolateyInstall.ps1` twice, once as a 32-bit installation and once as a 64-bit installation. These runs collect the downloaded files without installing the software.
+1. When the scripts contain web addresses but no download helper calls, or fewer files were downloaded than there are helper calls, the Package Scanner installs the package in a test environment instead. It installs both the 64-bit and the 32-bit version, and collects the files that were downloaded.
+
+## Scan Statuses
+
+| Status | Set By | Meaning |
+| --- | --- | --- |
+| Pending | Chocolatey Community Repository | The Package Scanner hasn't scanned this package version yet. |
+| Not Flagged | Package Scanner | No scanned file has any detections. |
+| Flagged | Package Scanner | At least one scanned file has detections. The detection level shows how many (see below). |
+| Investigate | Package Scanner | Fewer files were scanned than the package is expected to download, or the files couldn't be downloaded. See [When the Scan Is Incomplete](#when-the-scan-is-incomplete). |
+| Scanner Exempted | Package Scanner | One or more files weren't scanned. See [When the Scan Is Incomplete](#when-the-scan-is-incomplete). |
+| Exempted | A moderator, or the Package Scanner when a file is too big | This package version is exempt from the Package Scanner. See [Files Too Big To Scan](#files-too-big-to-scan) and [Why an Exempted Version Can't Be Approved](#why-an-exempted-version-cant-be-approved). |
+
+### Detection Levels
+
+Each flagged file gets a detection level based on how many anti-virus engines detected something in it. The package version takes the highest level of any of its files.
+
+| Level | Detections Per File | What It Means for the Package Version |
+| --- | --- | --- |
+| Note | 1 to 5 | Doesn't stop the package version from being approved. |
+| Warning | 6 to 10 | The package version can't be approved without an exemption from a moderator. |
+| Error | 11 or more | The package version is sent back to the maintainer, who needs to review the findings, then submit an updated package or reply in the review comments. |
+
+Detection counts can change as anti-virus vendors update their engines. When a package version is flagged, the maintainer or a moderator can select **Rerun virus scanner?** when adding a review comment to get the latest VirusTotal reports.
+
+## Files Too Big To Scan
+
+The Package Scanner can't upload files larger than 200 MB to VirusTotal. When a file is larger than that and VirusTotal has no existing report for it, the Package Scanner skips the file and exempts the package version automatically. When VirusTotal already has a report for the file, the Package Scanner uses that report, and the size doesn't matter.
+
+When a file is too big to scan:
+
+* The scan status is set to Exempted, with the reason "Package contains file(s) too big to be uploaded to VirusTotal!".
+* The review comments list the file, the 200 MB limit, and the size of the file.
+
+Because that file was never scanned, the package version can only be exempted, not approved.
+
+## Why an Exempted Version Can't Be Approved
+
+An approved package version has passed every automated check and been reviewed by a moderator. When a package version is exempt from the Package Scanner, VirusTotal hasn't confirmed that all of its files are clean, so the package version is marked as Exempted instead of Approved.
+
+If a moderator sets a package version that's exempt from the Package Scanner to Approved, the Chocolatey Community Repository changes the status to Exempted and adds a review comment to say so. Exempted package versions are still published, but their package page warns users that the package version is exempt from moderation and carries more risk.
+
+An exemption from the Package Scanner applies only to the package version it was set on. Every new version is scanned again, and versions can't be exempted ahead of time.
+
+## When the Scan Is Incomplete
+
+Both the Investigate and the Scanner Exempted statuses mean that the Package Scanner couldn't check every file. The package version still moves on to moderation, but a moderator needs to verify the files by hand before it can move forward.
+
+### Investigate
+
+The Package Scanner sets the Investigate status when it scanned fewer files than it expected, or couldn't download the files at all. The review comments show how many files were expected and how many were downloaded, for example:
+
+```
+We expected 3 file(s) to be downloaded as part of 64bit and 32bit installation, while only 2 file(s) were downloaded.
+```
+
+Common causes are:
+
+* The package downloads files with its own code, such as `Invoke-WebRequest`, instead of the Chocolatey helpers.
+* A downloaded file is saved with an extension the Package Scanner doesn't recognize.
+* The scripts contain web addresses that aren't downloads, such as a link to the project site. When the Package Scanner installs the package in a test environment, it expects one downloaded file for each of those addresses.
+* A download failed.
+
+### Scanner Exempted
+
+The Package Scanner sets the Scanner Exempted status when it skipped one or more files. The review comments list each skipped file and the reason:
+
+* The download returned text, such as a web page, instead of a file. The reason given is "Package downloads file(s) with text content!".
+* The file is empty. The reason given is "Package contains empty file(s)!".
+* The file was skipped by hand.
+
+## Writing Packages That Scan Cleanly
+
+To help the Package Scanner find and scan every file in your package:
+
+* Download files with the Chocolatey helpers listed in [How the Package Scanner Finds Downloads](#how-the-package-scanner-finds-downloads), not your own download code. Otherwise the Package Scanner has to install the package in a test environment, and may not find every file.
+* Do the downloads in `chocolateyInstall.ps1`, either directly or through a script it calls. That's the script the Package Scanner runs.
+* Point download web addresses at the file itself, not at a web page that links to it.
+* Make sure downloaded files are saved with their real extension, such as `.exe` or `.msi`. Files saved with any other extension aren't scanned.
+* Put web addresses that aren't downloads, such as links to the project site, in comments rather than in code.
