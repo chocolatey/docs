@@ -50,21 +50,6 @@ The extensions the Package Scanner recognizes:
 
 Files with any other extension aren't scanned. When two files have the same checksum, only one of them is scanned.
 
-## How the Package Scanner Finds Downloads
-
-1. The Package Scanner reads the package's PowerShell scripts (`.ps1` and `.psm1` files), except `chocolateyUninstall.ps1`. It looks for calls to the Chocolatey helpers that download files:
-    * <Xref title="Get-ChocolateyWebFile" value="get-chocolateywebfile" />
-    * <Xref title="Get-FtpFile" value="get-ftpfile" />
-    * <Xref title="Get-WebFile" value="get-webfile" />
-    * <Xref title="Install-ChocolateyPackage" value="install-chocolateypackage" />
-    * <Xref title="Install-ChocolateyPowershellCommand" value="install-chocolateypowershellcommand" />
-    * <Xref title="Install-ChocolateyVsixPackage" value="install-chocolateyvsixpackage" />
-    * <Xref title="Install-ChocolateyZipPackage" value="install-chocolateyzippackage" />
-
-   It also looks for calls to <Xref title="Get-ChocolateyUnzip" value="get-chocolateyunzip" />, and counts the web addresses (`http://`, `https://` and `ftp://`) that aren't in comments.
-1. When it finds any of those helper calls, it runs `chocolateyInstall.ps1` twice, once as a 32-bit installation and once as a 64-bit installation. These runs collect the downloaded files without installing the software.
-1. When the scripts contain web addresses but no download helper calls, or fewer files were downloaded than there are helper calls, the Package Scanner installs the package in a test environment instead. It installs both the 64-bit and the 32-bit version, and collects the files that were downloaded.
-
 ## Scan Statuses
 
 | Status | Set By | Meaning |
@@ -82,7 +67,7 @@ Each flagged file gets a detection level based on how many anti-virus engines de
 
 | Level | Detections Per File | What It Means for the Package Version |
 | --- | --- | --- |
-| Note | 1 to 5 | Doesn't stop the package version from being approved. |
+| Note | 1 to 5 | Doesn't stop the package version from being approved, as we consider this small number of detections to be likely false positives. |
 | Warning | 6 to 10 | The package version can't be approved without an exemption from a moderator. |
 | Error | 11 or more | The package version is sent back to the maintainer, who needs to review the findings, then submit an updated package or reply in the review comments. |
 
@@ -123,7 +108,7 @@ Common causes are:
 
 * The package downloads files with its own code, such as `Invoke-WebRequest`, instead of the Chocolatey helpers.
 * A downloaded file is saved with an extension the Package Scanner doesn't recognize.
-* The scripts contain web addresses that aren't downloads, such as a link to the project site. When the Package Scanner installs the package in a test environment, it expects one downloaded file for each of those addresses.
+* The scripts contain web addresses that aren't downloads, such as a link to the project site.
 * A download failed.
 
 ### Scanner Exempted
@@ -168,8 +153,8 @@ To exempt a package version from the Package Scanner, select **Exempt this packa
 
 To help the Package Scanner find and scan every file in your package:
 
-* Download files with the Chocolatey helpers listed in [How the Package Scanner Finds Downloads](#how-the-package-scanner-finds-downloads), not your own download code. Otherwise the Package Scanner has to install the package in a test environment, and may not find every file.
-* Do the downloads in `chocolateyInstall.ps1`, either directly or through a script it calls. That's the script the Package Scanner runs.
+* Download files with the Chocolatey <Xref title="helper functions" value="powershell-reference" />, not your own download code. Otherwise the Package Scanner may not find every file.
+* Do the downloads in `chocolateyInstall.ps1`, either directly or through a script it calls.
 * Point download web addresses at the file itself, not at a web page that links to it.
 * Make sure downloaded files are saved with their real extension, such as `.exe` or `.msi`. Files saved with any other extension aren't scanned.
 * Put web addresses that aren't downloads, such as links to the project site, in comments rather than in code.
