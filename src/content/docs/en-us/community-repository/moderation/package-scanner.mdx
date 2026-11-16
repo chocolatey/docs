@@ -173,3 +173,8 @@ To help the Package Scanner find and scan every file in your package:
 * Point download web addresses at the file itself, not at a web page that links to it.
 * Make sure downloaded files are saved with their real extension, such as `.exe` or `.msi`. Files saved with any other extension aren't scanned.
 * Put web addresses that aren't downloads, such as links to the project site, in comments rather than in code.
+
+## Known Issues
+
+* Scan results from earlier submissions of a package version aren't removed. If the same version is submitted again with different files, the **Virus Scan Results** section still lists the results for files the package no longer contains. Compare the file names and checksums with the current package files to tell them apart.
+* Rerunning the virus scanner on an approved package version doesn't currently work. The results shown are from the last scan before approval.
