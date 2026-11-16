@@ -8,6 +8,158 @@ import Callout from '@choco-astro/components/Callout.astro';
 import Iframe from '@choco-astro/components/Iframe.astro';
 import Xref from '@components/Xref.astro';
 
-<Callout type="warning">
-    This is a Work in Progress. Please check back later.
+The Package Scanner is one of the automated moderation services that check every package version submitted to the Chocolatey Community Repository. It runs alongside the <Xref title="Package Validator" value="package-validator" /> and the <Xref title="Package Verifier" value="package-verifier-service" />, and checks the package and the software it installs with [VirusTotal](https://www.virustotal.com). See <Xref title="the moderation docs" value="moderation" /> for the full review process.
+
+## What Is the Package Scanner?
+
+The Package Scanner sends the package, the binaries inside it, and the binaries it downloads during installation to VirusTotal. VirusTotal checks each file with many anti-virus engines and reports how many of them detected something in the file. The Package Scanner uses those detection counts to set a scan status on the package version.
+
+<Callout type="info">
+    The Package Scanner runs the install script with no language or region set. A package that chooses its installer based on the user's language downloads its fallback installer, often the en-US one, so installers for other languages aren't scanned.
 </Callout>
+
+## Where To Find the Results
+
+The package page of each package version shows the scan results:
+
+* The status box at the top of the page shows the scan testing result, with a **Details** link to the full results.
+* The **Virus Scan Results** section lists every scanned file, with the start of its SHA256 checksum and a link to its VirusTotal report. When you're signed in, it also shows the number of detections for each file.
+* When the Package Scanner has a problem with a file, the review comments list that file and the reason.
+
+## Which Files Are Scanned
+
+The Package Scanner scans:
+
+* The package (`.nupkg`) itself.
+* Each file inside the package that has one of the extensions listed below.
+* Each file the package downloads during installation that has one of the extensions listed below, for both the 32-bit and the 64-bit installation.
+
+The extensions the Package Scanner recognizes:
+
+* `.7z`
+* `.dll`
+* `.exe`
+* `.gz`
+* `.msi`
+* `.msp`
+* `.msu`
+* `.rar`
+* `.vsix`
+* `.zip`
+* `.zst`
+
+Files with any other extension aren't scanned. When two files have the same checksum, only one of them is scanned.
+
+## Scan Statuses
+
+| Status | Set By | Meaning |
+| --- | --- | --- |
+| Pending | Chocolatey Community Repository | The Package Scanner hasn't scanned this package version yet. |
+| Not Flagged | Package Scanner | No scanned file has any detections. |
+| Flagged | Package Scanner | At least one scanned file has detections. The detection level shows how many (see below). |
+| Investigate | Package Scanner | Fewer files were scanned than the package is expected to download, or the files couldn't be downloaded. See [When the Scan Is Incomplete](#when-the-scan-is-incomplete). |
+| Scanner Exempted | Package Scanner | One or more files weren't scanned. See [When the Scan Is Incomplete](#when-the-scan-is-incomplete). |
+| Exempted | A moderator, or the Package Scanner when a file is too big | This package version is exempt from the Package Scanner. See [Files Too Big To Scan](#files-too-big-to-scan) and [Why an Exempted Version Can't Be Approved](#why-an-exempted-version-cant-be-approved). |
+
+### Detection Levels
+
+Each flagged file gets a detection level based on how many anti-virus engines detected something in it. The package version takes the highest level of any of its files.
+
+| Level | Detections Per File | What It Means for the Package Version |
+| --- | --- | --- |
+| Note | 1 to 5 | Doesn't stop the package version from being approved, as we consider this small number of detections to be likely false positives. |
+| Warning | 6 to 10 | The package version can't be approved without an exemption from a moderator. |
+| Error | 11 or more | The package version is sent back to the maintainer, who needs to review the findings, then submit an updated package or reply in the review comments. |
+
+Detection counts can change as anti-virus vendors update their engines. When a package version is flagged, the maintainer or a moderator can select **Rerun virus scanner?** when adding a review comment to get the latest VirusTotal reports.
+
+## Files Too Big To Scan
+
+The Package Scanner can't upload files larger than 200 MB to VirusTotal. When a file is larger than that and VirusTotal has no existing report for it, the Package Scanner skips the file and exempts the package version automatically. When VirusTotal already has a report for the file, the Package Scanner uses that report, and the size doesn't matter.
+
+When a file is too big to scan:
+
+* The scan status is set to Exempted, with the reason "Package contains file(s) too big to be uploaded to VirusTotal!".
+* The review comments list the file, the 200 MB limit, and the size of the file.
+
+Because that file was never scanned, the package version can only be exempted, not approved.
+
+## Why an Exempted Version Can't Be Approved
+
+Approving a package version means we were able to verify that it's safe to use. When a package version is exempt from the Package Scanner, we can't say that with any certainty: some of its files either couldn't be scanned, or were detected by anti-virus engines. The package version may well be safe to use, but we weren't able to verify it, so it's marked as Exempted instead of Approved.
+
+If a moderator sets a package version that's exempt from the Package Scanner to Approved, the Chocolatey Community Repository changes the status to Exempted and adds a review comment to say so. Exempted package versions are still published, but their package page warns users that the package version is exempt from moderation and carries more risk.
+
+An exemption from the Package Scanner applies only to the package version it was set on. Every new version is scanned again, and versions can't be exempted ahead of time.
+
+## When the Scan Is Incomplete
+
+Both the Investigate and the Scanner Exempted statuses mean that the Package Scanner couldn't check every file. The package version still moves on to moderation, but a moderator needs to verify the files by hand before it can move forward.
+
+### Investigate
+
+The Package Scanner sets the Investigate status when it scanned fewer files than it expected, or couldn't download the files at all. The review comments show how many files were expected and how many were downloaded, for example:
+
+```
+We expected 3 file(s) to be downloaded as part of 64bit and 32bit installation, while only 2 file(s) were downloaded.
+```
+
+Common causes are:
+
+* The package downloads files with its own code, such as `Invoke-WebRequest`, instead of the Chocolatey helpers.
+* A downloaded file is saved with an extension the Package Scanner doesn't recognize.
+* The scripts contain web addresses that aren't downloads, such as a link to the project site.
+* A download failed.
+
+### Scanner Exempted
+
+The Package Scanner sets the Scanner Exempted status when it skipped one or more files. The review comments list each skipped file and the reason:
+
+* The download returned text, such as a web page, instead of a file. The reason given is "Package downloads file(s) with text content!".
+* The file is empty. The reason given is "Package contains empty file(s)!".
+* The file was skipped by hand.
+
+## When Your Package Is Flagged
+
+In every case, the files your package includes or downloads must match the official distribution from the software author. If a flagged file isn't the official file, for example because a download address is wrong, fix the package and submit the same version again.
+
+What else you need to do depends on the detection level:
+
+* **Note:** Nothing. A Note doesn't stop the package version from being approved.
+* **Warning:** Explain in the package description why the file is detected by this many anti-virus engines. If the software author has official documentation about the detections, link to it from the description. Submit the same version again with the updated description. A moderator then reviews the explanation, and can exempt the package version from the Package Scanner if the reason is satisfactory. The package version is then marked as Exempted, not Approved.
+* **Error:** The package version won't be approved or exempted. Unless the flagged file wasn't the official file and you fix the package, the package version will be rejected.
+
+If the scan is incomplete, check [When the Scan Is Incomplete](#when-the-scan-is-incomplete) and [Writing Packages That Scan Cleanly](#writing-packages-that-scan-cleanly). If the cause is in your package, fix it and submit the same version again. If you have questions about the results, reply in the review comments on the package page.
+
+### Reporting False Positives
+
+VirusTotal only collects the results of the anti-virus engines, and can't change or remove their detections. If you believe a detection is a false positive, report it to the anti-virus vendor that made it. VirusTotal's [False Positive Contacts](https://docs.virustotal.com/docs/false-positive-contacts) page lists where to report a false positive to each vendor, and its [false positive documentation](https://docs.virustotal.com/docs/false-positive) explains the process.
+
+Once a vendor removes a detection, select **Rerun virus scanner?** when adding a review comment, so the Package Scanner gets the latest VirusTotal reports for your package version.
+
+## Moderator Guidance for Flagged Packages
+
+In every case, the files the package includes or downloads must match the official distribution from the software author.
+
+To exempt a package version from the Package Scanner, select **Exempt this package version from scanner testing?** when adding a review comment, and give the reason. The exemption applies only to that package version, and the package version is then marked as Exempted, not Approved. See [Why an Exempted Version Can't Be Approved](#why-an-exempted-version-cant-be-approved).
+
+1. **Note:** The package version can be approved. No changes are needed.
+1. **Warning:** The package description must explain why the file is detected by this many anti-virus engines. If the software author has official documentation about the detections, the description must link to it. Exempt the package version from the Package Scanner only after that explanation is in the description and is a satisfactory reason.
+1. **Error:** The package version must not be approved or exempted under any circumstances. Reject it. If you're unsure, reach out to the Chocolatey Software team members in the moderators channel on [Discord](https://ch0.co/community).
+1. **Investigate or Scanner Exempted:** Upload the files that weren't scanned to [VirusTotal](https://www.virustotal.com) yourself. Once every file is verified as safe, exempt the package version from the Package Scanner.
+1. **File too big to scan:** The Package Scanner has already exempted the package version. Verify that the files that weren't scanned are likely safe, then mark the package version as Exempted. Because those files can't be fully verified, the package version is only ever exempted, never approved.
+
+## Writing Packages That Scan Cleanly
+
+To help the Package Scanner find and scan every file in your package:
+
+* Download files with the Chocolatey <Xref title="helper functions" value="powershell-reference" />, not your own download code. Otherwise the Package Scanner may not find every file.
+* Do the downloads in `chocolateyInstall.ps1`, either directly or through a script it calls.
+* Point download web addresses at the file itself, not at a web page that links to it.
+* Make sure downloaded files are saved with their real extension, such as `.exe` or `.msi`. Files saved with any other extension aren't scanned.
+* Put web addresses that aren't downloads, such as links to the project site, in comments rather than in code.
+
+## Known Issues
+
+* Scan results from earlier submissions of a package version aren't removed. If the same version is submitted again with different files, the **Virus Scan Results** section still lists the results for files the package no longer contains. Compare the file names and checksums with the current package files to tell them apart.
+* Rerunning the virus scanner on an approved package version doesn't currently work. The results shown are from the last scan before approval.

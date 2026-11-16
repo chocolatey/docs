@@ -161,7 +161,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
 1. Ensure package tests have ran. It will have both comments in the review and a colored ball up next to the title of the package. A package status box is present at the top of each package page with test results. The left side of the ball next to the package title represents verification testing, while the right side represents validation testing (see image below). Color of ball sections indicate:
     - **Green** if it is ready for review and approval.
     - **Yellow** if still pending verification/validation (has not yet run).
-    - **Red** if it failed verification/validation. The maintainer needs to fix or respond. If you find a package needs to skip verification, please contact an admin to do so. If you see a network issue from the log, you can rerun verification (see how in the next step).
+    - **Red** if it failed verification/validation. The maintainer needs to fix or respond. If you find a package needs to skip verification, a moderator can exempt it by selecting **Exempt the package from verification testing?** and giving a reason; reviewers need to ask a moderator. This exemption applies to the whole package, so later versions skip verification too. If you see a network issue from the log, you can rerun verification (see how in the next step).
     - **Grey** if a package skips verification/validation for some reason (which will be listed by the admin that flagged the package to skip testing). If possible, you will need to run the install/uninstall yourself.
 
    ![Package Testing Results](https://img.chocolatey.org/docs/moderation/moderation-4.jpg)
@@ -170,6 +170,7 @@ Typically a package goes into the moderation queue when submitted.You can get to
 
    ![Rerun](https://img.chocolatey.org/docs/moderation/moderation-5.jpg)
 
+1. Check the Package Scanner results in the package status box and the **Virus Scan Results** section. If the package version is flagged or the scan is incomplete, follow the <Xref title="moderator guidance for flagged packages" value="package-scanner-service" anchor="moderator-guidance-for-flagged-packages" />.
 1. Go over the review log - shows history and review information so far. Note that when the validator runs it leaves comments. Look for it to have done the automated part of the requirements/guidelines checks. If it has not, you are responsible to check all [requirements/guidelines](#requirements-and-guidelines) (see [Requirements and Guidelines](#requirements-and-guidelines) above).
 
    ![Review Notes](https://img.chocolatey.org/docs/moderation/moderation-6.jpg)
