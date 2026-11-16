@@ -134,6 +134,30 @@ The Package Scanner sets the Scanner Exempted status when it skipped one or more
 * The file is empty. The reason given is "Package contains empty file(s)!".
 * The file was skipped by hand.
 
+## When Your Package Is Flagged
+
+In every case, the files your package includes or downloads must match the official distribution from the software author. If a flagged file isn't the official file, for example because a download address is wrong, fix the package and submit the same version again.
+
+What else you need to do depends on the detection level:
+
+* **Note:** Nothing. A Note doesn't stop the package version from being approved.
+* **Warning:** Explain in the package description why the file is detected by this many anti-virus engines. If the software author has official documentation about the detections, link to it from the description. Submit the same version again with the updated description. A moderator then reviews the explanation, and can exempt the package version from the Package Scanner if the reason is satisfactory. The package version is then marked as Exempted, not Approved.
+* **Error:** The package version won't be approved or exempted. Unless the flagged file wasn't the official file and you fix the package, the package version will be rejected.
+
+If the scan is incomplete, check [When the Scan Is Incomplete](#when-the-scan-is-incomplete) and [Writing Packages That Scan Cleanly](#writing-packages-that-scan-cleanly). If the cause is in your package, fix it and submit the same version again. If you have questions about the results, reply in the review comments on the package page.
+
+## Moderator Guidance for Flagged Packages
+
+In every case, the files the package includes or downloads must match the official distribution from the software author.
+
+To exempt a package version from the Package Scanner, select **Exempt this package version from scanner testing?** when adding a review comment, and give the reason. The exemption applies only to that package version, and the package version is then marked as Exempted, not Approved. See [Why an Exempted Version Can't Be Approved](#why-an-exempted-version-cant-be-approved).
+
+1. **Note:** The package version can be approved. No changes are needed.
+1. **Warning:** The package description must explain why the file is detected by this many anti-virus engines. If the software author has official documentation about the detections, the description must link to it. Exempt the package version from the Package Scanner only after that explanation is in the description and is a satisfactory reason.
+1. **Error:** The package version must not be approved or exempted under any circumstances. Reject it. If you're unsure, reach out to the Chocolatey Software team members in the moderators channel on [Discord](https://ch0.co/community).
+1. **Investigate or Scanner Exempted:** Upload the files that weren't scanned to [VirusTotal](https://www.virustotal.com) yourself. Once every file is verified as safe, exempt the package version from the Package Scanner.
+1. **File too big to scan:** The Package Scanner has already exempted the package version. Verify that the files that weren't scanned are likely safe, then mark the package version as Exempted. Because those files can't be fully verified, the package version is only ever exempted, never approved.
+
 ## Writing Packages That Scan Cleanly
 
 To help the Package Scanner find and scan every file in your package:
