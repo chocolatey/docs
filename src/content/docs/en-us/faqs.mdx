@@ -447,10 +447,10 @@ The <Xref title="verifier" value="package-verifier-service" /> is a service that
 
 ### What is the package scanner?
 
-All packages (and the binaries they contain or download at runtime) on community repository are scanned by 50-60 antivirus scanners. We have partnered with [VirusTotal](https://virustotal.com) to provide this information back to the website so you can know when you are on a package page whether it is something you should be concerned with or not. It falls just under the files section of the package pages. See the <Xref title="Package Scanner Moderation Service" value="package-scanner-service" /> for how the scanner works and what happens when a package is flagged.
+All packages (and the binaries they contain or download at runtime) on community repository are scanned by many antivirus scanners. We have partnered with [VirusTotal](https://virustotal.com) to provide this information back to the website so you can know when you are on a package page whether it is something you should be concerned with or not. It falls just under the files section of the package pages. See the <Xref title="Package Scanner Moderation Service" value="package-scanner-service" /> for how the scanner works and what happens when a package is flagged.
 
 <Callout type="info">
-    Only en-US installers are tested by default via Chocolatey's Package Scanner
+    The Package Scanner runs with no language or region set. A package that chooses its installer by language is scanned with its fallback installer, often the en-US one, so installers for other languages aren't scanned.
 </Callout>
 
 <Callout type="info">
