@@ -11,7 +11,7 @@ import Xref from '@components/Xref.astro';
 {/* This documentation is automatically generated from https://github.com/chocolatey/choco/blob/master/src/chocolatey.resources/helpers/functions/Install-ChocolateyZipPackage.ps1 using https://github.com/chocolatey/choco/blob/master/GenerateDocs.ps1. Contributions are welcome at the original location(s). */}
 
 Downloads file from a url and unzips it on your machine. Use
-Get-ChocolateyUnzip when local or embedded file.
+Expand-ChocolateyArchive when local or embedded file.
 
 ## Syntax
 
@@ -37,7 +37,7 @@ Install-ChocolateyZipPackage `
 
 This will download a file from a url and unzip it on your machine.
 If you are embedding the file(s) directly in the package (or do not need
-to download a file first), use Get-ChocolateyUnzip instead.
+to download a file first), use Expand-ChocolateyArchive instead.
 
 ## Notes
 
@@ -79,7 +79,7 @@ Install-ChocolateyZipPackage -PackageName 'sysinternals' `
  -Url 'http://download.sysinternals.com/Files/SysinternalsSuite.zip' `
  -UnzipLocation "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)" `
  -Url64 'http://download.sysinternals.com/Files/SysinternalsSuitex64.zip'
-~~~ 
+~~~
 
 ## Inputs
 
@@ -94,129 +94,129 @@ None
 ###  -PackageName &lt;String&gt;
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | true
 Position?              | 1
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Url [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | 2
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -UnzipLocation &lt;String&gt;
 Property               | Value
 ---------------------- | -----------
 Aliases                | destination
 Required?              | true
 Position?              | 3
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Url64bit [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
 Aliases                | url64
 Required?              | false
 Position?              | 4
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -SpecificFolder [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Checksum [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ChecksumType [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Checksum64 [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -ChecksumType64 [&lt;String&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -Options [&lt;Hashtable&gt;]
 Property               | Value
 ---------------------- | -------------------
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | `@{Headers = @{}` }
 Accept Pipeline Input? | false
- 
+
 ###  -File [&lt;String&gt;]
 Property               | Value
 ---------------------- | ------------
 Aliases                | fileFullPath
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -File64 [&lt;String&gt;]
 Property               | Value
 ---------------------- | --------------
 Aliases                | fileFullPath64
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ###  -DisableLogging
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
 Default Value          | False
 Accept Pipeline Input? | false
- 
+
 ###  -IgnoredArguments [&lt;Object[]&gt;]
 Property               | Value
 ---------------------- | -----
-Aliases                | 
+Aliases                |
 Required?              | false
 Position?              | named
-Default Value          | 
+Default Value          |
 Accept Pipeline Input? | false
- 
+
 ### &lt;CommonParameters&gt;
 
 This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer, and -OutVariable. For more information, see `about_CommonParameters` http://go.microsoft.com/fwlink/p/?LinkID=113216 .
@@ -225,7 +225,7 @@ This cmdlet supports the common parameters: -Verbose, -Debug, -ErrorAction, -Err
 ## Links
 
  * <Xref title='Get-ChocolateyWebFile' value='get-chocolateywebfile' />
- * <Xref title='Get-ChocolateyUnzip' value='get-chocolateyunzip' />
+ * <Xref title='Expand-ChocolateyArchive' value='expand-chocolateyarchive' />
 
 
 <Xref title="Function Reference" value="powershell-reference" />
